@@ -1,161 +1,193 @@
-# Dyadic Bell Ladder — Lean 4 Formalization
+# A dyadic Bell ladder for transversal diagonal gates
 
-A Lean 4 + [Mathlib](https://github.com/leanprover-community/mathlib4) formalization
-of the **nonadditive dyadic Bell ladder** for two-sector SS–LP quantum codes: the
-two-anchor Bell-flag ladder theorem and its supporting results, together with an
-**unconditional, machine-checked infinite family of distance-3 codes** obtained by
-feeding a concrete `((7,2,3))` BD16 code into the ladder.
+Code, data, and machine-checked proofs for the dyadic Bell ladder.
 
-The development targets the paper `dyadic_lifts.tex` and its Lean-oriented companion
-note `dyadic_theorem_lean.tex`. For the full audit and scope report see
-[`FORMALIZATION_REPORT.md`](FORMALIZATION_REPORT.md); for the per-result coverage map
-and trust-base notes see [`DyadicLifts/COVERAGE.md`](DyadicLifts/COVERAGE.md).
+> **Status.** `paper/dyadic_lifts.tex` is the development note, included so the
+> repository is self-contained. A publication version will replace it. The note
+> states and proves the ladder theorem *in the abstract* and exhibits no
+> concrete code; the explicit seed, the unconditional family it generates, and
+> the proof that the distance is exactly three live in `code/` and `lean/`, and
+> are described below. The code and the Lean development therefore go beyond
+> what the note claims — they discharge its hypotheses.
 
----
+A transversal gate — one applied to each physical qubit separately — is the
+cheapest kind of fault-tolerant gate. In every explicit family we know of,
+making such a gate finer is expensive: at distance 3, a diagonal gate of
+projective order `2^ν` costs `2^{ν+1}-1` qubits along punctured Reed–Muller
+codes, `O(3^ν)` along divisible-code towers, and `2^ν+3` along
+permutation-invariant spin codes. All three grow exponentially in `ν`.
 
-## Prerequisites
+This work shows the cost can be **linear**. A lift appends to a subset-sum code
+a two-qubit Bell pair carrying the dyadic carry of the subset-sum residue, so
+each lift adds two qubits and doubles the order of the induced transversal
+diagonal gate.
 
-You only need **`elan`**, the Lean toolchain manager. Everything else (the exact Lean
-compiler version, Mathlib, and all dependencies) is pinned by this repository and
-fetched automatically.
+Refining the phase is the easy half. The distance is not preserved
+automatically, and the main theorem settles it by a finite computation:
 
-- **Install `elan`** (if you don't have it):
-  - macOS / Linux:
-    ```bash
-    curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh
-    ```
-  - Windows (PowerShell):
-    ```powershell
-    curl -O --location https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1
-    powershell -ExecutionPolicy Bypass -f elan-init.ps1
-    ```
-  - Or via a package manager (`brew install elan-init`, etc.).
-- The pinned toolchain (`leanprover/lean4:v4.27.0`, see `lean-toolchain`) is installed
-  automatically by `elan` the first time you run `lake`.
-- A network connection is needed for the first build (to download the Mathlib build
-  cache), plus roughly **10 GB of free disk** for `.lake/` (Mathlib oleans + build
-  artifacts).
+> if a seed and its first lift satisfy the Knill–Laflamme conditions for every
+> Pauli error of weight at most two, so does every rung above them.
 
-No global Lean or Mathlib installation is required — the build is fully project-local
-under `.lake/`.
+**Two finite checks therefore certify an infinite family.** Applied to an
+explicit `((7,2,3))` code with transversal `T`, this gives `((7+2r,2,3))` codes,
+of exactly distance 3, whose transversal diagonal gate has projective order
+`2^{3+r}`.
+
+The theorem, the lemmas it rests on, and the seed's two finite checks are
+verified in Lean 4 **by the kernel alone** — `native_decide` appears nowhere, so
+neither the Lean compiler nor its runtime is trusted.
 
 ---
 
-## How to reproduce
+## Layout
 
-From the repository root, run exactly two commands:
-
-```bash
-# 1. Download the prebuilt Mathlib oleans (fast; avoids compiling Mathlib from source).
-lake exe cache get
-
-# 2. Build the whole development (shared library + abstract ladder + concrete examples).
-lake build
+```
+paper/      the development note, and the scripts that re-derive its numbers
+lean/       the Lean 4 formalization (source only; `lake build` fetches the rest)
+code/       the numerics: the lift, the seed data, and the two verification runs
+data/       the sweep results
+results/    the theorem-hypothesis sweep report, and its consistency checker
 ```
 
-A clean exit with **`Build completed successfully`** and **no errors** reproduces the
-entire formalization. On a warm Mathlib cache this takes a few minutes.
-
-What `lake build` checks:
-
-- it builds the three libraries `SS`, `DyadicLifts`, and `Examples`;
-- it runs `DyadicLifts/AxiomCheck.lean`, which **fails the build** if any headline
-  theorem ever acquires a `sorry`/`sorryAx` or an unexpected axiom.
-
-> **If you skip step 1**, `lake build` will compile Mathlib *from source* instead,
-> which is very slow (tens of minutes to hours). Always run `lake exe cache get`
-> first.
-
-### The unconditional distance-3 family (opt-in, slow)
-
-The headline Tier-3 result lives in `Examples/D3/BD16Ladder.lean` and is **not** part
-of the default build, because it runs two `native_decide` Knill–Laflamme
-verifications over an exact algebraic number field — a one-time native-code
-compilation that takes roughly **45–55 minutes from scratch**. Build it explicitly:
-
-```bash
-lake build Examples.D3.BD16Ladder
-```
-
-It establishes
-
-```lean
-theorem BD16Ladder.exists_distance3_family (r : ℕ) :
-    KL (psr 8 a0 ψ0 false r) (psr 8 a0 ψ1 true r)
-```
-
-i.e. every rung of the dyadic Bell ladder over the concrete BD16v1 seed satisfies the
-full distance-3 Knill–Laflamme conditions.
+Nothing here is stale. Superseded drafts, intermediate outputs, and the
+distance-2 parameter search (on which nothing here depends) are not included.
 
 ---
 
-## Troubleshooting
+## What is verified, and how strongly
 
-- **`lake: command not found`** — `elan` is not installed or not on your `PATH`.
-  Install `elan` (see Prerequisites) and reopen your shell.
-- **`lake build` recompiles all of Mathlib (very slow)** — you skipped
-  `lake exe cache get`, or the cache did not match. Run `lake exe cache get` first.
-- **Windows: `lake exe cache get` prints `failed to execute 'tar': … non UTF-8 data`**
-  — this only affects the *optional* `ProofWidgets` release blob (interactive VS Code
-  widgets), **not** proof checking. `lake build` still succeeds. You can ignore it,
-  or run `lake build ProofWidgets` once beforehand.
-- **Moving/copying this folder** — copy the *source* folder only (it does not contain
-  `.lake/`). After copying, re-run the two commands above in the new location. Do not
-  copy a prebuilt `.lake/` between machines or paths; it contains machine-specific
-  absolute paths and is not portable — delete it and rebuild.
+Three independent layers, in decreasing order of strength.
 
----
+### 1. Lean 4, kernel only
 
-## What is proved
+`lean/` formalizes the ladder theorem, every lemma it rests on, and the seed's
+two finite checks. Every proof is reduced by the Lean kernel; the trust base is
+the kernel plus the three standard Mathlib axioms `propext`,
+`Classical.choice`, `Quot.sound`.
 
-| Result | Location |
+That claim is enforced rather than asserted: `DyadicLifts/AxiomCheck.lean` (9
+results) and `DyadicLifts/Seed/Audit.lean` (16 results) pin the axiom footprint
+of every headline theorem with `#guard_msgs` + `#print axioms`, and both are in
+the default target. If a `sorry` or a compiler-backed tactic ever enters a
+dependency, **the build fails**.
+
+| statement | Lean |
 |---|---|
-| **Two-anchor Bell-flag ladder theorem** (every rung is distance ≥ 3) | `DyadicLifts/DistanceTheorem.lean` (`two_anchor_ladder`) |
-| Iterated doubled diagonal `D_{m_r}` | `DyadicLifts/DistanceTheorem.lean` (`rung_diagonal`) |
-| Binary-dihedral group `BD_{2m_r}` on the rung code | `DyadicLifts/LogicalGroup.lean` (`rung_binary_dihedral`) |
-| Exact diagonal orders | `DyadicLifts/CyclicOrder.lean` (`orderOf_Rm`, …) |
-| General carry-tag lift criterion (paper §2) | `DyadicLifts/CarryTag.lean` (`strong_carry_tag`) |
-| Exact-field → ℂ bridge for `native_decide` KL checks | `DyadicLifts/Bridge.lean` (`KLmat_of_KLmatK`, `liftVec_bridge`) |
-| **Unconditional infinite distance-3 family** | `Examples/D3/BD16Ladder.lean` (`exists_distance3_family`) |
-| Concrete distance-3 BD16 codes (12 examples) | `Examples/D3/BD16v*.lean` |
-| Distance-3 no-go results | `Examples/D3/NoGo/` |
-| Distance-2 SS–LP examples | `Examples/D2/` |
-| Shared SS toolkit (residues, Z-type KL, exact fields) | `SS/` |
+| the ladder theorem | `DyadicLifts.two_anchor_ladder` |
+| seed KL conditions hold | `BD16Kernel.hKL0` |
+| first-lift KL conditions hold | `BD16Kernel.hKL1` |
+| every rung is a distance-3 code | `BD16Kernel.exists_distance3_family` |
+| rung `r` has transversal diagonal `D_{2^r·8}` | `BD16Kernel.seed_rung_diagonal` |
+| rung `r` has logical group `BD_{2^{r+1}·8}` | `BD16Kernel.seed_rung_binary_dihedral` |
 
-### Trust base
+**Scope.** The formalization proves distance **at least** 3 at every rung. The
+matching upper bound — that the distance is exactly 3, witnessed by
+`X⊗X⊗Z⊗id⊗…` with matrix element `−i√3/4` at every rung — is *not* formalized,
+and the note does not state it either. In this repository it is only checked
+numerically, by `paper/tools/check_exact_distance.py` at rungs 0–4 and
+`check_witness_detail.py` at rung 0. Its proof will appear in the publication
+version.
 
-- The abstract ladder, the bridge lemmas, and the logical-group results depend only on
-  the three standard Lean/Mathlib axioms `propext`, `Classical.choice`, `Quot.sound`
-  (pure kernel proofs; no `sorry`).
-- The concrete finite KL verifications (`Examples/D3/BD16*`, and hence
-  `exists_distance3_family`) additionally use `native_decide`, which adds
-  `Lean.ofReduceBool` and `Lean.trustCompiler`. This is the standard way to discharge
-  finite exact-arithmetic facts in Lean; it enlarges the trust base to include the
-  Lean compiler and the exact-field arithmetic, but introduces no `sorry`.
+### 2. Independent numerics
 
-### Checking there are no `sorry`s
+`code/verify_paper_seeds.py` lifts all 14 published seeds four times and checks
+distance 3 at every rung, in floating point, with no reference to Lean. Exit 0
+on success.
 
-```bash
-grep -rnE '\b(sorry|admit)\b|^\s*axiom ' DyadicLifts SS Examples \
-  --include='*.lean' | grep -v '`sorry`'
-```
+### 3. A sweep over published codes
 
-The only textual matches are in comments/docstrings. The build itself is the strongest
-check: Lean's kernel rejects any gap.
+`code/verify_thm44_paper.py` tests the theorem's hypotheses against 43
+instances: 33 codes whose codeword is printed in
+[arXiv:2504.20847](https://arxiv.org/abs/2504.20847), 9 built here from angle
+vectors listed in its Sec. 6.3.1, and the Steane code as a stabilizer control.
+
+The 39 subset-sum instances are each lifted five times; the remaining four are
+not subset-sum codes, so the lift is undefined and only their applicability is
+classified. The outcome is
+
+| verdict | count |
+|---|---|
+| hypotheses hold and every rung keeps `d ≥ 3` | **30** |
+| counterexample | **0** |
+| a hypothesis fails | 9 |
+| not a subset-sum code, lift undefined | 4 |
+
+Of the nine codes failing a hypothesis, eight also fail the conclusion — and
+they fail where the mechanism predicts: four at rung 1, three at rung 2, one at
+rung 3. `results/sweep_report.pdf` records all of it per code.
+
+### 4. Two checks against self-confirmation
+
+`code/verify_thm44_paper_2510.py` runs the same theorem over the ten Appendix-F
+codes of [arXiv:2510.20728](https://arxiv.org/abs/2510.20728). They carry the
+**same weight vectors** as `bd16_01..10` above but **different amplitude
+representatives**, from that appendix's closed-form families. All ten confirm —
+so the verdicts track the arithmetic hypotheses, not one choice of amplitudes.
+
+`code/_adv_bd12_typeII.py` re-verifies a *failing* code from scratch **without
+importing the distance checker used everywhere else**: independent transcription
+of the codewords from the source LaTeX, every weight-≤2 Pauli built as an
+explicit Kronecker product, the hypothesis arithmetic recomputed. It reproduces
+the sweep's verdict for `bd12_type_II` (rung 0 passes, rung 1 onward fails), so
+that verdict does not rest on a single implementation.
 
 ---
 
-## Project layout
+## Reproducing
 
-```text
-.
-├── lakefile.lean        # Lake package (default targets: SS, Examples, DyadicLifts)
-├── lean-toolchain       # pinned Lean version (v4.27.0)
-├── lake-manifest.json   # pinned Mathlib + dependency commits
-├── DyadicLifts/         # the abstract dyadic Bell ladder (main development)
-│   ├── COVERAGE.md       # per-result coverage map + scope/trust notes
-│   └── AxiomCheck.lean   # axiom-footprint regression guard
-├── SS/                  # shared toolkit (subset sums, Z-type KL, QSqrt235i, BD16)
-├── Examples/            # concrete codes: D2 (distance-2), D3 (BD16 distance-3, no-go)
-└── FORMALIZATION_REPORT.md
+Full commands, pinned versions and expected outputs are in
+[`REPRODUCE.md`](REPRODUCE.md). The short version:
+
+```bash
+cd paper   && python tools/run_all_checks.py      # the numeric claims, ~1 min
+cd results && python check_sweep_report.py        # the report against its data, <1 s
+cd code    && python verify_paper_seeds.py        # 14 seeds x 4 lifts, ~2 min
+cd lean    && lake exe cache get && lake build    # the whole formalization, ~3 h
 ```
+
+Each exits nonzero if anything it checks no longer holds. `lake build` is
+itself the audit: the axiom guards run inside it.
+
+---
+
+## The seed
+
+The explicit code the family is built from is the `((7,2,3))` code with
+transversal `T` of [arXiv:2504.20847](https://arxiv.org/abs/2504.20847),
+Sec. 6.3.1, at the phase point `θ₁ = θ₂ = 0`. Angle vector `a = (1,2,2,2,2,3,3)`,
+modulus `m₀ = 8`, and
+
+```
+4·|0_L⟩ = |0000000⟩ + √3|0111100⟩ + √3|1001110⟩ + √2|1010101⟩
+        + √2|1011001⟩ + |1110010⟩ + 2i|0100011⟩
+|1_L⟩   = X^{⊗7}|0_L⟩
+```
+
+Its angle vector satisfies the theorem's two conditions — `Σaⱼ = 15 = 2m₀−1`
+and `max aⱼ = 3 ≤ 6 = m₀−2` — and both anchor-uniqueness hypotheses hold
+sharply.
+
+---
+
+## What this is not
+
+The rungs are `((n₀+2r, 2, 3))` codes: the distance is fixed while `n` grows,
+so the rate falls to zero and no rung is a candidate for encoding at scale.
+What the construction settles is a question about reach and cost, not about
+performance. Exponential block-length growth is not intrinsic to refining a
+transversal diagonal gate; it is a property of the constructions in which such
+gates have so far been found.
+
+Block lengths quoted for other families are lengths those families *achieve*.
+For stabilizer codes a matching lower bound is known under the hypotheses of
+[arXiv:2210.14066](https://arxiv.org/abs/2210.14066); for nonadditive codes we
+know of no lower bound.
+
+---
+
+## Requirements
+
+Python 3.12, `numpy`, `scipy`, `sympy` (see `requirements.txt`); TeX Live to
+build the note (it uses `article` and an inline bibliography, so no BibTeX pass
+is needed); `elan` for Lean, which pins the compiler and every dependency
+itself.

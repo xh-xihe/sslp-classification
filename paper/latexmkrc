@@ -1,0 +1,2 @@
+# dyadic_lifts.tex uses an inline thebibliography, so no BibTeX pass is needed.
+$pdf_mode = 1;

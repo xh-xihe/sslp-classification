@@ -1,49 +1,29 @@
-# Lean / Lake
-.lake/
-build/
-*.olean
-*.ilean
-*.c
-*.o
-*.a
-*.so
-*.dylib
-*.exe
-
-# OS / editor
-.DS_Store
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# LaTeX auxiliary files
+# LaTeX build products
 *.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
 *.log
 *.out
 *.toc
-*.lof
-*.lot
-*.fls
-*.fdb_latexmk
 *.synctex.gz
-*.bbl
-*.blg
-*.bcf
-*.run.xml
-*.nav
-*.snm
-*.vrb
-*.xdv
-*.dvi
-_minted*/
+*Notes.bib
+build/
+out/
 
-# Generated PDFs for SS writeups
-/SSv*.pdf
-/522example.pdf
-/distance2_talk.pdf
-/distance23_talk.pdf
+# the two built PDFs ARE tracked, so the repo can be read without a TeX
+# install; everything else LaTeX emits is ignored above.
 
-# TeXPad
-.texpadtmp/
+# Lean
+.lake/
+*.olean
+*.ilean
+
+# Python
+__pycache__/
+*.pyc
+
+# fresh verification runs
+code/outputs/
+code/outputs_thm44/

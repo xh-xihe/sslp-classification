@@ -1,0 +1,1036 @@
+{
+  "summary": {
+    "source": "arXiv:2510.20728 Appendix F (10 codes) + Appendix G (2 no-go)",
+    "appendix_F_codes_tested": 10,
+    "appendix_G_no_go_cases": 2,
+    "max_rungs": 5,
+    "tol": 1e-08,
+    "CONFIRMS": 10,
+    "COUNTEREXAMPLE": 0,
+    "INAPPLICABLE": 0
+  },
+  "appendix_F_results": [
+    {
+      "name": "bd16v2_a",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.a",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,2,2,2,2,3,3)",
+      "description": "App F.a of arXiv:2510.20728; w=(1,2,2,2,2,3,3), 2-param family at a1=a2=0; Lambda^2=21/8",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 3,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 1.6653345369377348e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 1.6653345369377348e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 4.2327252813834093e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 4.2327252813834093e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 18.81681227684021
+    },
+    {
+      "name": "bd16v2_b",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        5
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.b",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,2,2,2,2,5)",
+      "description": "App F.b of arXiv:2510.20728; w=(1,1,2,2,2,2,5); Lambda^2=33/16; matches bd16_02 of arXiv:2504.20847",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 5,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 1.942890293094024e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 1.8735013540549517e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 2.7755575615628914e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 20.427982330322266
+    },
+    {
+      "name": "bd16v2_c",
+      "n": 7,
+      "m": 8,
+      "a": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.c",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(0,1,2,2,3,3,4)",
+      "description": "App F.c of arXiv:2510.20728; w=(0,1,2,2,3,3,4); first of 3 isolated solutions",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 4,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 3.3306690738754696e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 1.3877787807814457e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.0816681711721685e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 1.249000902703301e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 2.914335439641036e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 3.3306690738754696e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 19.47898507118225
+    },
+    {
+      "name": "bd16v2_d",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.d",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,2,2,3,3,3)",
+      "description": "App F.d of arXiv:2510.20728; w=(1,1,2,2,3,3,3); 1-param family at alpha=0; Lambda=9 sqrt2/8",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 3,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 2.636779683484747e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 2.498001805406602e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 4.3021142204224816e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 4.3021142204224816e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 16.554213762283325
+    },
+    {
+      "name": "bd16v2_e",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        4
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.e",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,2,2,2,3,4)",
+      "description": "App F.e of arXiv:2510.20728; w=(1,1,2,2,2,3,4); uniform-magnitude representative",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 4,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 0.0
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 5.551115123125783e-17
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-17
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 8.326672684688674e-17
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 1.6653345369377348e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 1.5265566588595902e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 1.6653345369377348e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 15.512712001800537
+    },
+    {
+      "name": "bd16v2_f",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        4
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.f",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,1,2,3,3,4)",
+      "description": "App F.f of arXiv:2510.20728; w=(1,1,1,2,3,3,4); self-complementary; Lambda^2=75/32",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 4,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 3.3306690738754696e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 3.3306690738754696e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 3.191891195797325e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 4.3021142204224816e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 4.3021142204224816e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 15.333388328552246
+    },
+    {
+      "name": "bd16v2_g",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        4,
+        4
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.g",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,1,2,2,4,4)",
+      "description": "App F.g of arXiv:2510.20728; w=(1,1,1,2,2,4,4); first of 3 uniform-magnitude solutions",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 4,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 0.0
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 5.551115123125783e-17
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-17
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-17
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 1.6653345369377348e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 1.6653345369377348e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 16.05177879333496
+    },
+    {
+      "name": "bd16v2_h",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        5
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.h",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,1,2,2,3,5)",
+      "description": "App F.h of arXiv:2510.20728; w=(1,1,1,2,2,3,5); self-complementary; Lambda^2=369/128",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 5,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 1.6653345369377348e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 2.498001805406602e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 1.5265566588595902e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 3.191891195797325e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 3.95516952522712e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 3.95516952522712e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 17.518683433532715
+    },
+    {
+      "name": "bd16v2_i",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        4,
+        4
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.i",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,1,1,3,4,4)",
+      "description": "App F.i of arXiv:2510.20728; w=(1,1,1,1,3,4,4); paste-ready representative of 128-element family; Lambda^2=31/8",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 4,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 4.163336342344337e-17
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 1.5265566588595902e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 2.220446049250313e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 2.220446049250313e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 16.18114137649536
+    },
+    {
+      "name": "bd16v2_j",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        5
+      ],
+      "b_list": [
+        0,
+        7
+      ],
+      "b_consistent": true,
+      "paper_section": "arXiv:2510 App F.j",
+      "transversal_group": "BD16",
+      "bell_liftable": true,
+      "notes": "w=(1,1,1,1,3,3,5)",
+      "description": "App F.j of arXiv:2510.20728; w=(1,1,1,1,3,3,5); closed-form representative at alpha=0; Lambda^2=177/64; matches bd16_10 of arXiv:2504.20847",
+      "anchors": {
+        "bot_anchor_ok": true,
+        "top_anchor_ok": true,
+        "bot_violations": [],
+        "top_violations": []
+      },
+      "bounds": {
+        "sum_a": 15,
+        "two_m_minus_1": 15,
+        "strong_sum": true,
+        "max_a": 5,
+        "m_minus_2": 6,
+        "bounded_entries": true
+      },
+      "rungs": [
+        {
+          "rung": 0,
+          "n": 7,
+          "m": 8,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 1,
+          "n": 9,
+          "m": 16,
+          "passed": true,
+          "worst_violation": 2.7755575615628914e-16
+        },
+        {
+          "rung": 2,
+          "n": 11,
+          "m": 32,
+          "passed": true,
+          "worst_violation": 2.057079970659758e-16
+        },
+        {
+          "rung": 3,
+          "n": 13,
+          "m": 64,
+          "passed": true,
+          "worst_violation": 1.1102230246251565e-16
+        },
+        {
+          "rung": 4,
+          "n": 15,
+          "m": 128,
+          "passed": true,
+          "worst_violation": 2.636779683484747e-16
+        },
+        {
+          "rung": 5,
+          "n": 17,
+          "m": 256,
+          "passed": true,
+          "worst_violation": 2.636779683484747e-16
+        }
+      ],
+      "hypotheses": {
+        "i_unique_bottom_anchor": true,
+        "ii_unique_top_anchor": true,
+        "strong_sum": true,
+        "bounded_entries": true,
+        "iii_seed_and_rung1_distance3": true,
+        "all_hypotheses_hold": true
+      },
+      "conclusion_all_rungs_distance3": true,
+      "consecutive_max_rung": 5,
+      "worst_violation_across_rungs": 2.7755575615628914e-16,
+      "thm44_status": "CONFIRMS",
+      "elapsed_sec": 15.851311683654785
+    }
+  ],
+  "appendix_G_no_go_cases": [
+    {
+      "name": "bd16v2_nogo1",
+      "n": 7,
+      "m": 8,
+      "a": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        6
+      ],
+      "b": [
+        0,
+        7
+      ],
+      "C0": [
+        "0000000",
+        "0000011",
+        "0000101",
+        "0001001",
+        "0110001",
+        "0111110",
+        "1010001",
+        "1011110",
+        "1100001",
+        "1101110"
+      ],
+      "n_eqs": 17,
+      "proof_section": "Appendix G.1, Proposition 1",
+      "description": "App G.1 of arXiv:2510.20728: 17-equation subsystem proves no complex amplitudes on C_0 satisfy weight-<=2 KL; lift is vacuous."
+    },
+    {
+      "name": "bd16v2_nogo2",
+      "n": 7,
+      "m": 8,
+      "a": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        3,
+        5
+      ],
+      "b": [
+        0,
+        7
+      ],
+      "C0": [
+        "0000000",
+        "0000011",
+        "0000101",
+        "0001110",
+        "0011001",
+        "0101001",
+        "0110110",
+        "1000000",
+        "1000011",
+        "1000101",
+        "1001110",
+        "1011001",
+        "1101001",
+        "1110110"
+      ],
+      "n_eqs": 19,
+      "proof_section": "Appendix G.2, Proposition 2",
+      "description": "App G.2 of arXiv:2510.20728: 19-equation subsystem proves no complex amplitudes on C_0 satisfy weight-<=2 KL; lift is vacuous."
+    }
+  ]
+}

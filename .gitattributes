@@ -1,6 +1,0 @@
-# Keep Lean sources LF-normalized across platforms (avoids spurious CRLF diffs).
-*.lean text eol=lf
-*.md   text eol=lf
-*.json text eol=lf
-lean-toolchain text eol=lf
-lakefile.lean  text eol=lf

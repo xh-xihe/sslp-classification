@@ -1,0 +1,44 @@
+name,paper_section,transversal_group,n,m,a_vector,b_list,sum_a,2m-1,max_a,m-2,bell_liftable,strong_sum,bounded_entries,unique_bot_anchor_i,unique_top_anchor_ii,seed_d3,rung1_d3,all_hypotheses,conclusion_all_rungs_d3,consecutive_max_rung,worst_violation_across_rungs,thm44_status,notes
+steane,prototype,2O,7,4,1 1 1 1 1 1 1,0 3,7,7,1,2,True,True,True,True,True,True,True,True,True,5,3.053e-16,CONFIRMS,"Steane [[7,1,3]] (paper's SS-LP prototype)"
+bd16_01,Sec 6.3.1,BD16,7,8,1 2 2 2 2 3 3,0 7,15,15,3,6,True,True,True,True,True,True,True,True,True,5,4.233e-16,CONFIRMS,
+bd16_02,Sec 6.3.1,BD16,7,8,1 1 2 2 2 2 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,
+bd16_03,Sec 6.3.1,BD16,7,8,0 1 2 2 3 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,3.331e-16,CONFIRMS,
+bd16_04,Sec 6.3.1,BD16,7,8,1 1 2 2 3 3 3,0 7,15,15,3,6,True,True,True,True,True,True,True,True,True,5,4.302e-16,CONFIRMS,
+bd16_05,Sec 6.3.1,BD16,7,8,1 1 2 2 2 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,1.665e-16,CONFIRMS,
+bd16_06,Sec 6.3.1,BD16,7,8,1 1 1 2 3 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,4.302e-16,CONFIRMS,
+bd16_07,Sec 6.3.1,BD16,7,8,1 1 1 2 2 4 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,1.665e-16,CONFIRMS,
+bd16_08,Sec 6.3.1,BD16,7,8,1 1 1 2 2 3 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,3.955e-16,CONFIRMS,
+bd16_09,Sec 6.3.1,BD16,7,8,1 1 1 1 3 4 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,2.220e-16,CONFIRMS,
+bd16_10,Sec 6.3.1,BD16,7,8,1 1 1 1 3 3 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,
+bd22,Numerics/D.6,BD22,7,11,1 2 3 3 3 4 5,0 10,21,21,5,9,True,True,True,True,True,True,True,True,True,5,2.220e-16,CONFIRMS,
+bd32,Sec 6.3.2,BD32,7,16,2 3 4 4 5 6 7,0 15,31,31,7,14,True,True,True,True,True,True,True,True,True,5,4.510e-16,CONFIRMS,
+c10,Sec 4.1,C10,6,5,1 1 1 1 2 3,0 4,9,9,3,3,True,True,True,True,True,True,True,True,True,5,4.996e-16,CONFIRMS,"((6,2,3)) cyclic, self-complementary"
+bd36,Sec 6.3.3,BD36,7,18,2 3 4 5 6 7 8,0 17,35,35,8,16,True,True,True,True,True,True,True,True,True,5,4.163e-16,CONFIRMS,
+bd64,Sec 6.4.1,BD64,8,32,4 7 10 12 17 23 24 30,0 31,127,63,30,30,True,False,True,False,False,True,True,False,False,1,5.937e-01,INAPPLICABLE (conclusion also fails),sum a != 2m-1 (no strong sum)
+bd84,Sec 6.4.2,BD84,8,42,4 10 13 18 22 27 34 39,0 41,167,83,39,40,True,False,True,False,False,True,True,False,False,1,4.524e-01,INAPPLICABLE (conclusion also fails),sum a != 2m-1 (no strong sum)
+bd12_type_I,App D.1,BD12,7,6,1 1 1 2 2 2 2,0 5,11,11,2,4,True,True,True,True,True,True,True,True,True,5,4.163e-16,CONFIRMS,
+bd12_type_II,App D.1,BD12,7,6,0 1 2 2 2 3 3,0 1,13,11,3,4,True,False,True,False,False,True,False,False,False,0,1.000e+00,INAPPLICABLE (conclusion also fails),sum a != 2m-1
+bd14,App D.2,BD14,7,7,1 2 3 4 5 5 6,0 5,26,13,6,5,True,False,False,False,False,True,True,False,False,2,7.143e-02,INAPPLICABLE (conclusion also fails),"sum a != 2m-1, max a > m-2"
+bd18_type_I,App D.4,BD18,7,9,2 2 2 2 3 3 3,0 8,17,17,3,7,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,
+bd20,App D.5,BD20,7,10,1 2 2 3 3 4 4,0 9,19,19,4,8,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,corrected transcription; strong sum 19=2m-1 -> CONFIRMS
+bd24,App D.7,BD24,7,12,1 1 3 3 5 5 7,0 1,25,23,7,10,True,False,True,False,False,True,False,False,False,0,8.333e-01,INAPPLICABLE (conclusion also fails),corrected coef_b=1/(2sqrt3); seed IS distance-3 but sum a=25 != 2m-1=23
+bd26,App D.8,BD26,7,13,2 2 3 3 4 5 6,0 12,25,25,6,11,True,True,True,True,True,True,True,True,True,5,4.441e-16,CONFIRMS,
+bd28,App D.9,BD28,7,14,2 3 3 4 4 5 6,0 13,27,27,6,12,True,True,True,True,True,True,True,True,True,5,3.331e-16,CONFIRMS,
+bd30,App D.10,BD30,7,15,2 2 3 3 4 7 8,0 14,29,29,8,13,True,True,True,True,True,True,True,True,True,5,6.245e-16,CONFIRMS,
+bd34,App D.11,BD34,7,17,2 2 3 4 5 8 9,0 16,33,33,9,15,True,True,True,True,True,True,True,True,True,5,6.314e-16,CONFIRMS,
+bd72,App E.2,BD72,8,36,3 5 6 8 10 12 13 14,0 35,71,71,14,34,True,True,True,True,True,True,True,True,True,5,3.209e-16,CONFIRMS,
+bd74,App E.3,BD74,8,37,4 6 7 9 10 11 12 14,0 36,73,73,14,35,True,True,True,True,True,True,True,True,True,5,2.498e-16,CONFIRMS,
+bd76,App E.4,BD76,8,38,2 4 7 9 10 12 15 16,0 37,75,75,16,36,True,True,True,True,True,True,True,True,True,5,2.810e-16,CONFIRMS,
+bd78,App E.5,BD78,8,39,3 5 8 9 10 12 14 16,0 38,77,77,16,37,True,True,True,True,True,True,True,True,True,5,2.220e-16,CONFIRMS,
+bd80,App E.6,BD80,8,40,2 5 6 8 11 14 15 18,0 39,79,79,18,38,True,True,True,True,True,True,True,True,True,5,2.862e-16,CONFIRMS,
+bd38,App E.1,BD38,8,19,2 3 3 4 4 5 7 9,0 18,37,37,9,17,True,True,True,True,True,True,True,True,True,5,1.554e-15,CONFIRMS,"STRONG SUM; theta^2 from feasibility LP (matches paper's 1/38, 4/19)"
+bd18_type_II,App D.4,BD18,7,9,1 1 2 3 3 3 4,0 8,17,17,4,7,True,True,True,True,True,True,True,True,True,5,8.016e-14,CONFIRMS,STRONG SUM; corrected |1100101> coeff sqrt(b^2+d^2+1/18); phases resolved numerically (PDF sign rendering unreliable)
+bd16_d3,App D.3,BD16,7,8,3 3 3 3 3 4 4,0 7,23,15,4,6,True,False,True,False,False,True,False,False,False,0,1.250e+00,INAPPLICABLE (conclusion also fails),"X^5(x)I^2 family, not X^7 self-complementary"
+2i_perm_inv,Sec 5.1,2I,7,5,1 1 1 1 1 1 1,0 2,7,9,1,3,True,False,True,True,False,True,True,False,True,5,2.845e-16,INAPPLICABLE (but conclusion holds),permutation-invariant; sum a != 2m-1
+2i_lambda0,Sec 5.1,2I,7,5,1 1 1 2 2 2 2,0 1,11,9,2,3,True,False,True,False,False,True,False,False,False,0,1.200e+00,INAPPLICABLE (conclusion also fails),"lambda*=0; sum a != 2m-1, theta=phi=0 rep"
+2i_lambda34,Sec 5.1,2I,7,5,1 1 1 1 1 2 2,0 4,9,9,2,3,True,True,True,True,True,True,True,True,True,5,3.331e-16,CONFIRMS,lambda*=sqrt(3/4); STRONG SUM; t=0 rep
+2t_cyclic,App C.1,2T,7,2,1 1 1 1 1 1 1,0 1,7,3,1,0,True,False,False,False,False,True,True,False,False,1,1.654e-01,INAPPLICABLE (conclusion also fails),"cyclic 2T family, m=2; corrected c1 coeff c1/(2sqrt3) -> seed IS distance-3 for ALL lambda* in [0,sqrt7] (Steane at 0, 2I perm-inv at sqrt7). INAPPLICABLE for Thm 4.4: m=2, sum a=7 != 2m-1=3 and max a=1 > m-2=0 (H1,H2 fail)."
+2o_code,App C.2,2O,7,2,1 1 1 1 1 1 1,0 0,7,3,1,0,False,False,False,False,False,True,False,False,True,0,1.665e-16,NOT-LIFTABLE (out of theorem scope),non-diagonal transversal gate; NOT Bell-liftable
+c623_from_c523_bd4,App B.1,BD4,6,2,1 1 1 1 1 1,0 0,6,3,1,0,False,False,False,False,False,True,False,False,True,0,3.719e-18,NOT-LIFTABLE (out of theorem scope),"((6,2,3)) from ((5,2,3)), theta=pi/3; not SS-LP"
+c623_from_c523_2t,App B.1,2T,6,2,1 1 1 1 1 1,0 0,6,3,1,0,False,False,False,False,False,True,False,False,True,0,3.924e-17,NOT-LIFTABLE (out of theorem scope),"((6,2,3)) from ((5,2,3)), theta=pi/3; not SS-LP"
+so5_bd4,App B.2,BD4,6,2,1 1 1 1 1 1,0 0,6,3,1,0,False,False,False,False,False,False,False,False,False,-1,2.609e-01,NOT-LIFTABLE (out of theorem scope),"((6,2,3)) SO(5) family; the paper's canonical W matrix as rendered in the PDF is not orthogonal (col0.col1 = -3 W15 W25 != 0) -- transcription needs the LaTeX source. rung-0 KL fails. NOT-LIFTABLE / out of theorem scope regardless."

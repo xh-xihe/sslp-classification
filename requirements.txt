@@ -1,0 +1,13 @@
+# Python environment for the numerics and the manuscript's verification scripts.
+#
+#   pip install -r requirements.txt
+#
+# Versions are those the checked-in outputs were produced with; see REPRODUCE.md.
+
+numpy==1.26.4
+scipy==1.13.1
+sympy==1.14.0
+
+# optional: speeds up the exact-rational path.  Without it the code falls back
+# to fractions.Fraction and produces the same values.
+gmpy2>=2.1

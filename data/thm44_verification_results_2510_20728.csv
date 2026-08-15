@@ -1,0 +1,11 @@
+name,paper_section,transversal_group,n,m,a_vector,b_list,sum_a,2m-1,max_a,m-2,bell_liftable,strong_sum,bounded_entries,unique_bot_anchor_i,unique_top_anchor_ii,seed_d3,rung1_d3,all_hypotheses,conclusion_all_rungs_d3,consecutive_max_rung,worst_violation_across_rungs,thm44_status,notes
+bd16v2_a,arXiv:2510 App F.a,BD16,7,8,1 2 2 2 2 3 3,0 7,15,15,3,6,True,True,True,True,True,True,True,True,True,5,4.233e-16,CONFIRMS,"w=(1,2,2,2,2,3,3)"
+bd16v2_b,arXiv:2510 App F.b,BD16,7,8,1 1 2 2 2 2 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,"w=(1,1,2,2,2,2,5)"
+bd16v2_c,arXiv:2510 App F.c,BD16,7,8,0 1 2 2 3 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,3.331e-16,CONFIRMS,"w=(0,1,2,2,3,3,4)"
+bd16v2_d,arXiv:2510 App F.d,BD16,7,8,1 1 2 2 3 3 3,0 7,15,15,3,6,True,True,True,True,True,True,True,True,True,5,4.302e-16,CONFIRMS,"w=(1,1,2,2,3,3,3)"
+bd16v2_e,arXiv:2510 App F.e,BD16,7,8,1 1 2 2 2 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,1.665e-16,CONFIRMS,"w=(1,1,2,2,2,3,4)"
+bd16v2_f,arXiv:2510 App F.f,BD16,7,8,1 1 1 2 3 3 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,4.302e-16,CONFIRMS,"w=(1,1,1,2,3,3,4)"
+bd16v2_g,arXiv:2510 App F.g,BD16,7,8,1 1 1 2 2 4 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,1.665e-16,CONFIRMS,"w=(1,1,1,2,2,4,4)"
+bd16v2_h,arXiv:2510 App F.h,BD16,7,8,1 1 1 2 2 3 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,3.955e-16,CONFIRMS,"w=(1,1,1,2,2,3,5)"
+bd16v2_i,arXiv:2510 App F.i,BD16,7,8,1 1 1 1 3 4 4,0 7,15,15,4,6,True,True,True,True,True,True,True,True,True,5,2.220e-16,CONFIRMS,"w=(1,1,1,1,3,4,4)"
+bd16v2_j,arXiv:2510 App F.j,BD16,7,8,1 1 1 1 3 3 5,0 7,15,15,5,6,True,True,True,True,True,True,True,True,True,5,2.776e-16,CONFIRMS,"w=(1,1,1,1,3,3,5)"
