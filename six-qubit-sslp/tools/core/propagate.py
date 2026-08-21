@@ -1,5 +1,9 @@
 """Fixpoint propagation between the moment polytope and the Walsh systems.
 
+Orbit identity is read from ``tools/manifest.json``. In particular, the second
+residue is always ``delta = q/m`` with additive order ``m``; fiber size and
+polytope dimension are diagnostics only and never select a residue.
+
 The earlier scans asked for a single certificate: one edge whose product is
 forced to vanish and whose two endpoint probabilities the polytope forces to be
 strictly positive.  That is too narrow.  The paper's own argument for orbit 27
@@ -20,17 +24,23 @@ vanish, paired with a forced-positive endpoint, yields a new zero.  Iterate.
 If at any round the polytope becomes infeasible, the orbit is impossible, and
 the accumulated derivation is the certificate.
 """
-import sys
+import io
+import json
+import os
 from fractions import Fraction
 from itertools import combinations
+from math import gcd
 
 import numpy as np
 from scipy.optimize import linprog
 from sympy import Matrix
 
-sys.path.insert(0, r'C:/Users/richa/AppData/Local/Temp/claude/D--UTD-Project-purdue/e2435927-3651-49b0-acfb-31f3430ee257/scratchpad')
 from orbit import fiber, ind
 from scan import ORBITS, bits, xor, dot, dressings
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+MANIFEST = json.loads(io.open(os.path.join(HERE, '..', 'manifest.json'),
+                              encoding='utf-8').read())
 
 TOL = 1e-9
 
@@ -151,36 +161,38 @@ def pdim(S0, S1):
 
 
 def pick_delta(oid, a, q, sizes):
-    """The orbit's delta is the one matching BOTH the fiber sizes and d_LP.
-
-    Matching sizes alone is ambiguous, and picking a wrong delta can hand back a
-    polytope that is simply infeasible -- which would 'prove' the wrong object.
-    """
+    """Return the manifest's authoritative delta after independent validation."""
+    ent = MANIFEST.get(str(oid))
+    if ent is None:
+        raise ValueError('orbit %s is absent from tools/manifest.json' % oid)
+    if ent['q'] != q or sorted(ent['a']) != sorted(a):
+        raise ValueError('orbit %s legacy data disagree with the manifest' % oid)
+    m = ent['m']
+    if m <= 0 or q % m != 0:
+        raise ValueError('orbit %s has invalid q=%s, m=%s' % (oid, q, m))
+    d = q // m
+    if ent['d'] != d or q // gcd(q, d) != m:
+        raise ValueError('orbit %s manifest delta does not have order m' % oid)
     S0 = fiber(a, q, 0)
-    out = []
-    for d in range(1, q):
-        S1 = fiber(a, q, d)
-        if not S1:
-            continue
-        if sizes is not None and (len(S0), len(S1)) != sizes:
-            continue
-        if pdim(S0, S1) == DLP[oid]:
-            out.append(d)
-    return out
+    S1 = fiber(a, q, d)
+    got_sizes = (len(S0), len(S1))
+    if sizes is not None and got_sizes != sizes:
+        raise ValueError('orbit %s legacy fiber sizes %s != manifest fiber %s'
+                         % (oid, sizes, got_sizes))
+    if got_sizes != (ent['n0'], ent['n1']):
+        raise ValueError('orbit %s recomputed fiber sizes disagree with manifest' % oid)
+    if oid in DLP and pdim(S0, S1) != DLP[oid]:
+        raise ValueError('orbit %s d_LP diagnostic disagrees with recorded value' % oid)
+    return [d]
 
 
 if __name__ == '__main__':
     print('%-5s %-6s %-9s %-6s %s' % ('orbit', 'delta', 'fibers', 'verdict', 'trace'))
     print('-' * 80)
-    solved, unsolved, ambiguous = [], [], []
+    solved, unsolved = [], []
     for oid in sorted(REMAINING):
         a, q, sizes = ORBITS[oid]
         ds = pick_delta(oid, a, q, sizes)
-        if not ds:
-            print('%-5d %-6s %-9s %-6s no delta matches both the sizes and d_LP=%d'
-                  % (oid, '?', '', 'skip', DLP[oid]))
-            ambiguous.append(oid)
-            continue
         S0 = fiber(a, q, 0)
         results = []
         for delta in ds:
@@ -197,5 +209,3 @@ if __name__ == '__main__':
     print('-' * 80)
     print('propagation closes: %d / %d' % (len(solved), len(REMAINING)), sorted(solved))
     print('still open       :', sorted(unsolved))
-    if ambiguous:
-        print('delta unresolved :', ambiguous)

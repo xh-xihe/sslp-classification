@@ -1,13 +1,19 @@
 ---
 name: sslp-orbit29-pair-coords
-description: "The certified route for six-qubit moment orbit 29 — pair coordinates in C^2, a K_4 of orthogonalities, and a two-branch endgame."
+description: "HISTORICAL construction checkpoint for the now-complete orbit-29 pair-coordinate proof."
 metadata:
   type: project
 ---
 
+> **HISTORICAL CONSTRUCTION NOTE; CURRENT PROOF COMPLETE.** The “what remains”
+> and “not yet certified” paragraphs below record the state at that checkpoint.
+> The finished kernel proof is now in `SixQubit/Orbit29.lean`, its shared algebra
+> in `SixQubit/Pair29.lean`, and its code-level wrapper in
+> `SixQubit/CodeOrbit29.lean`.
+
 Orbit 29 (`a = (1,1,1,1,2,2)`, `q = 4`, `delta = 1`, fibers 16+16) has fibers that
 are NOT complementary (`sum a = 8 = 0 mod 4`), so `relations.analyse` returns
-`None`; use `scratchpad/relgen.py` instead.
+`None`; use `tools/core/relgen.py` instead.
 
 Both fibers are closed under `X_5 X_6` (mask `000011`), splitting each into eight
 pairs.  Every two-term relation found has the uncrossed form

@@ -1,5 +1,9 @@
-"""Update the status banner now that the nine defective modules are repaired."""
+"""Archived one-shot status migration; permanently disabled."""
 import io
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 P = 'D:/UTD/Project_purdue/Lean_certification/README.md'
 s = io.open(P, encoding='utf-8').read()

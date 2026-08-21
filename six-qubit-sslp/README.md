@@ -3,8 +3,8 @@
 Every one of the **51 no-go moment orbits** of `six_qubit_sslp.tex` carries a
 Lean 4 proof that no exact six-qubit
 `((6,2,3))` code arises from it. All 51 are checked by the **Lean kernel alone**
-— axiom footprint exactly `[propext, Classical.choice, Quot.sound]`, no
-`native_decide`, no `sorry`.
+— axiom footprint exactly `[propext, Classical.choice, Quot.sound]`, with no use
+of `native_decide` or `sorry` in proof/tactic position.
 
 Start with **`formalization/formalization.pdf`**. It explains what is certified,
 the standard it was held to, the algebraic mechanisms, the four hard orbits, and
@@ -22,9 +22,9 @@ the errors that were made and caught along the way.
 | Axiom-audit entries | 332, all clean |
 | Build errors / warnings | 0 / 0 |
 
-Orbits 25–40 (no 36) and 53–66 come from `six_qubit_sslp_v7.tex`; orbits 13, 18,
-41, 42, 43, 44, 46, 47, 48, 50, 52 are the first eleven of the twenty-two added
-in `six_qubit_sslp.tex`. Orbit 66 is in
+Orbits 25–40 (no 36) and 53–66 come from `six_qubit_sslp_v7.tex`. The twenty-two
+orbits added in `six_qubit_sslp.tex` are 5, 6, 12–15, 17–20, 24, 41–44, 46–52.
+Orbit 66 is in
 `SixQubit/Order9.lean`; all others in `SixQubit/Orbit<n>.lean`.
 
 ## Status, stated precisely
@@ -38,10 +38,12 @@ being conflated. They are now tracked separately:
 | Do they state what the paper needs? | **51 of 51**, since the repair. Four modules (30, 53, 55, 65) had used a residue of the wrong additive order and were rebuilt from scratch at `delta = q/m`; five more (34, 57, 59, 64, Order9) had moment rows inconsistent with their headline ordering and were regenerated. `gate.py` now reports 51 passed, 0 failed, 0 unchecked |
 | Do they rule out a real code end to end? | **All 51 do.** Each has a `no_code` theorem taking only support, normalization and `SS.HasDistance ![c,d] 3` — no KL row is assumed. `SixQubit/Vacuity.lean` exhibits, for **all 51**, a point-mass pair satisfying every other hypothesis, so no statement is vacuous |
 
-The nine defective modules have been repaired and the gate is green. The guard
+The nine defective modules have been repaired and the checks are green. The guard
 that should have existed from the start is `tools/manifest.json` (derived from
-the paper's own 66-orbit table) plus `tools/verification/gate.py`, which enforces
-`delta = q/m`, its additive order, the fibers, and the moment-row ordering:
+the paper's own 66-orbit table) plus `tools/verification/gate.py`, which checks
+`delta = q/m`, its additive order and both fibers. The separate
+`tools/verification/momentgate.py` checks the complete content and ordering of
+the declared moment rows:
 
 What remains open is one level up: neither the reduction of an arbitrary code to
 one of the sixty-six rank-compatible moment orbits, nor the equivalence of other
@@ -74,9 +76,10 @@ lake build SixQubit.Audit 2>&1 | grep "depends on axioms" \
   | sed 's/^info: [^ ]* //' | diff - results/axiom-audit.txt
 ```
 
-The third command must print nothing. That is the whole certification: because
-`#print axioms` is transitive, one clean line per headline theorem certifies its
-entire dependency cone.
+The third command must print nothing. That is the complete **kernel dependency
+and axiom-footprint** check: because `#print axioms` is transitive, one clean line
+per headline theorem certifies its entire dependency cone. It is not, by itself,
+the paper-to-Lean transcription check described below.
 
 To confirm the forbidden constructs are absent:
 
@@ -119,36 +122,43 @@ then the three commands above. Nothing else is load-bearing for soundness.
 compilation does not perform:
 
 ```sh
+python tools/run.py verification/gate.py                # paper q/a/m/delta and both fibers
 python tools/run.py verification/classify.py            # no smuggled hypotheses
+python tools/run.py verification/classify.py --selftest  # known anti-smuggling regressions
 python tools/run.py verification/admis.py               # every row is weight <= 2
-python tools/run.py verification/momentgate.py          # moment rows transcribed correctly
-python tools/run.py verification/momentgate.py --selftest   # and that checker actually catches errors
+python tools/run.py verification/admis.py --selftest     # known parser regressions
+python tools/run.py verification/momentgate.py          # declared moment rows transcribed correctly
+python tools/run.py verification/momentgate.py --selftest   # run its non-exhaustive adversarial suite
 ```
 
-`classify.py` confirms every headline hypothesis is an off-diagonal KL row, a
-diagonal KL row, or the moment system — an algebraic fact taken as an assumption
-instead of derived would void the proof invisibly. `admis.py` confirms every row
-is a genuine weight-≤2 Pauli; a weight-3 row would silently turn a
-distance-three no-go into a much weaker claim. Both currently return zero
-violations across all 51 orbits.
+`classify.py` confirms every headline hypothesis has exactly one of the three
+allowed syntactic forms: an off-diagonal KL row, a diagonal KL row, or the
+moment system. An algebraic fact taken as an assumption instead of derived would
+void the proof invisibly. `admis.py` confirms every parsed KL row is a genuine
+weight-≤2 Pauli and cross-checks that no headline row was skipped; a weight-3
+row would silently turn a distance-three no-go into a weaker distance-four
+claim. These are fail-closed regression checks for the syntax used in this
+repository, not completeness proofs for arbitrary Lean syntax. Both currently
+return zero violations across all 51 orbits.
 
-**A reviewer asking "is the right thing proved?"** — the hypotheses of each
+**A reviewer inspecting the algebraic certificates** — the hypotheses of each
 `no_go_of_moments`. A `False` theorem is only as good as its hypotheses, and the
 failure mode to look for is an algebraic fact smuggled in as an assumption
-instead of derived. Section 5 of the process document reports the hand
+instead of derived. Section 6 of the process document reports the hand
 classification for the two hardest orbits (31: 46 hypotheses = 33 off-diagonal +
 12 diagonal + 1 moment system; 26: 41 = 24 + 16 + 1; zero smuggled in either).
 
 **A collaborator continuing the work** — `formalization/formalization.pdf`
-Sections 3–5, then `tools/core/kl.py` and `tools/core/relgen.py`. Section 6
-documents a tooling bug that gated three orbits for a long time; the invariant
+Sections 3–4, then `tools/core/kl.py` and `tools/core/relgen.py`. Section 5
+documents a tooling bug that gated three orbits for a long time; Section 6 records
+the broader error audit. The invariant
 that catches it is that the admissible Pauli count must be
 `154 = 1 + 6*3 + 15*9`.
 
 **Someone writing the paper** — Section 4 for the four hard orbits. The
 arguments obtained here are shorter than the manuscript's, and for orbits 26 and
 31 they avoid machinery the manuscript needs (matrix inverses and a genericity
-argument; a 16-type support classification). Section 8 lists what remains open.
+argument; a 16-type support classification). Section 9 lists what remains open.
 
 ## A note on the negative results
 

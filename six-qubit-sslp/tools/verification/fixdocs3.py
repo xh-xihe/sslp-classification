@@ -1,6 +1,10 @@
-"""Sync the documentation with the post-repair state the second audit verified."""
+"""Archived one-shot documentation migration; not a current fixer."""
 import io
 import re
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 R = 'D:/UTD/Project_purdue/Lean_certification/'
 log = []

@@ -1,5 +1,9 @@
-"""Clear the remaining stale and false statements the audit surfaced."""
+"""Archived one-shot documentation migration; not a current fixer."""
 import io
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 R = 'D:/UTD/Project_purdue/Lean_certification/'
 changed = []

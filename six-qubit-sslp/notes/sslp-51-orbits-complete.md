@@ -1,14 +1,15 @@
 ---
 name: sslp-51-orbits-complete
-description: All 51 no-go moment orbits of six_qubit_sslp.tex are kernel-certified; the mechanism map and the two checks that actually matter.
+description: All 51 no-go moment orbits of six_qubit_sslp.tex are kernel-certified; the mechanism map and the four complementary transcription checks.
 metadata:
   type: project
 ---
 
-As of 2026-08-20 every one of the fifty-one no-go moment orbits of
+As of 2026-08-21 every one of the fifty-one no-go moment orbits of
 `six_qubit_sslp.tex` carries a Lean 4 proof checked by the kernel alone:
-51 headline `no_go_of_moments` theorems, 332 audit entries all reading
-`[propext, Classical.choice, Quot.sound]`, 0 errors, 0 warnings, 90 109 lines.
+51 conditional `no_go_of_moments` theorems and 51 final code-level `no_code`
+theorems, with 332 audit entries all reading
+`[propext, Classical.choice, Quot.sound]`, 0 errors, 0 warnings, 90,109 lines.
 
 This extends [[sslp-29-orbits-complete]], which covered the twenty-nine orbits of
 the v7 manuscript. The twenty-two added here are orbits 5, 6, 47–52 at projective
@@ -37,14 +38,15 @@ four rows are `X_i, Y_i, X_i Z_j, Y_i Z_j`. That is exactly the class the old
 `scan.dressings` dropped — see [[kl-dressings-undercount]]. Anyone re-deriving
 these fourteen orbits with unfixed tooling will find the arguments invisible.
 
-**The two checks that matter more than compilation.** `tools/verification/classify.py`
-parses every headline and classifies each hypothesis as `offSum = 0`,
-`diagBot = diagTop`, or `MomentSystem`; anything else is an algebraic fact
-smuggled in as an assumption, which voids the proof and is invisible from the
-outside. `tools/verification/admis.py` confirms every row satisfies
-`|supp(e) ∪ supp(z)| ≤ 2`; a weight-3 row would silently downgrade a
-distance-three no-go to a much weaker claim. Both currently return zero
-violations across all 51. Run these before believing any future extension.
+**Four complementary checks beyond compilation.** `tools/verification/gate.py`
+checks the paper manifest, `delta = q/m`, additive order and both support fibers.
+`momentgate.py` checks every declared `MomentSystem` field as an exact rational
+linear form in the probability order used by the headline; its non-exhaustive
+self-test injects adversarial corruptions in memory. `classify.py` accepts only
+the three allowed algebraic headline-hypothesis forms, and `admis.py` resolves
+each KL row and checks `|supp(e) ∪ supp(z)| ≤ 2`. Unexpected syntax fails
+closed. All four currently pass across all 51 modules, but they remain regression
+checks rather than completeness proofs for arbitrary Lean syntax.
 
 **Delegation lesson.** Multi-agent builds were audited by independent adversarial
 agents. One auditor hit a session limit, and the orchestrator's own check then
@@ -55,8 +57,9 @@ finished proof was overwritten; parallel attempts on shared files need worktree
 isolation. Both proofs survived because the displaced agent parked its version
 instead of overwriting back; the spare is in `alternatives/`.
 
-The remaining fifteen of the sixty-six rank-compatible orbits are not no-gos:
-they target the realized orders {2,3,5}. Four (7, 8, 9, 36) are known realizable.
+The remaining fifteen of the sixty-six rank-compatible orbits are not among the
+fifty-one no-gos certified here; this development makes no exhaustive existence
+claim about them. Four (7, 8, 9, 36) are known realizable.
 Orbit 9's explicit witness — 22 amplitudes of the form `zeta_6^k / sqrt(d)` — was
 verified symbolically against all 154 conditions and would be the cheapest
-existence result to formalize; see [[sslp-orbit9-witness]].
+existence result to formalize; see `tools/generators/o9witness.py`.

@@ -1,9 +1,17 @@
 ---
 name: sslp-orbit31-structure
-description: "Structure of six-qubit moment orbit 31 and why it is the heaviest of the twenty-nine — a sixteen-way support audit."
+description: "HISTORICAL chronological work log for the now-complete orbit-31 proof."
 metadata:
   type: project
 ---
+
+> **HISTORICAL WORK LOG; CURRENT PROOF COMPLETE.** This file deliberately keeps
+> successive progress snapshots, including obsolete “NOT started,” “still to
+> write,” line-count, and “what is left” statements. They are not current status.
+> The completed kernel proof is in `SixQubit/Orbit31.lean`, the table algebra in
+> `SixQubit/Table31.lean`, and the code-level wrapper in
+> `SixQubit/CodeOrbit31.lean`; current counts are generated in
+> `results/orbit-table.tsv`.
 
 Orbit 31 (`a = (1,1,1,2,2,2)`, `q = 4`, `delta = 1`, fibers 16+16).  NOT started.
 
@@ -77,7 +85,7 @@ Two dead ends already ruled out by computation:
     branch search cannot even start.  The audit must be driven by enumerating
     polytope faces, not by forced zeros.
 
-## The bilinear equations (computed, `scratchpad/o31.py`)
+## The bilinear equations (computed, `tools/orbits/o31.py`)
 
 Substituting `d_{v-bar} = rho_v conj(c_v)` and conjugating, all forty-two
 cross-KL equations collapse to twenty-one distinct ones in exactly TWO families.
@@ -369,7 +377,7 @@ yet sound, and it is still numerically EXCLUDED.
 
 ## Independent end-to-end check
 
-`scratchpad/close31.py` drops the reduced system entirely: it takes the sixteen
+`tools/verification/close31.py` drops the reduced system entirely: it takes the sixteen
 bottom amplitudes AND the four column phases as free unknowns (with `|rho|^2 = 1`
 as explicit residuals) and hits the RAW Knill-Laflamme conditions directly.  Over
 sixty random starts the best residual is `2.93e-01` -- EXCLUDED.  So the phase

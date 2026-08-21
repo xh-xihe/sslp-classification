@@ -21,8 +21,8 @@ Checks, per module with a `no_go_of_moments`:
   2. The residue in `S1_eq_fiber` equals the manifest's delta = q/m.
   3. The declared bottom/top supports have the manifest's fiber cardinalities
      and are exactly the residue fibers.
-  4. Every MomentSystem moment row matches the order in which the headline
-     actually passes the probabilities.
+  4. Each recognized `m<coords>` right-hand side matches the headline's top
+     probability order. `momentgate.py` checks every complete row.
 
 Two parsing hazards are handled explicitly, because both produced false
 positives while this was being written:
@@ -39,11 +39,14 @@ import os
 import re
 import sys
 from itertools import combinations
+from math import gcd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, os.path.join(REPO, 'tools', 'core'))
 from orbit import fiber
+from no_go_inventory import (InventoryError, inventory_selftest,
+                             select_no_go_sources)
 
 SQ = os.path.join(REPO, 'SixQubit')
 MAN = json.loads(io.open(os.path.join(REPO, 'tools', 'manifest.json'),
@@ -107,14 +110,23 @@ def headline_top(src, ys, zs):
     return 'lex', [zs[i] for i in lex]
 
 
+if '--selftest' in sys.argv:
+    caught, missed, inert, details = inventory_selftest(REPO)
+    for status, why in details:
+        print('  %-6s %s' % (status, why))
+    print('INVENTORY SELF-TEST: caught %d, missed %d, not injected %d'
+          % (caught, missed, inert))
+    sys.exit(1 if missed or inert else 0)
+
+argv = [a for a in sys.argv[1:] if not a.startswith('--')]
+try:
+    selected = select_no_go_sources(REPO, argv)
+except InventoryError as exc:
+    print('FAIL - certified no-go inventory mismatch: %s' % exc)
+    sys.exit(1)
+
 fails, unchecked, ok = [], [], 0
-for f in sorted(os.listdir(SQ)):
-    if not f.endswith('.lean') or f == 'Audit.lean':
-        continue
-    src = io.open(os.path.join(SQ, f), encoding='utf-8').read()
-    if 'theorem no_go_of_moments' not in src:
-        continue
-    oid = '66' if f == 'Order9.lean' else re.sub(r'[^0-9]', '', f)
+for f, oid, src in selected:
     mod = f[:-5]
     ent = MAN.get(oid)
     if ent is None:
@@ -122,6 +134,16 @@ for f in sorted(os.listdir(SQ)):
         continue
 
     problems = []
+    if ent['m'] <= 0 or ent['q'] % ent['m'] != 0:
+        problems.append('manifest has invalid q=%s, m=%s' % (ent['q'], ent['m']))
+    else:
+        expected_d = ent['q'] // ent['m']
+        if ent['d'] != expected_d:
+            problems.append('manifest residue %s is not q/m=%s'
+                            % (ent['d'], expected_d))
+        elif ent['q'] // gcd(ent['q'], ent['d']) != ent['m']:
+            problems.append('manifest residue %s does not have additive order %s'
+                            % (ent['d'], ent['m']))
     mav = re.search(r'def' + S + r'av' + S + r':' + S + r'Fin' + S + r'6' + S +
                     r'->' + S + r'ZMod' + S + r'(\d+)' + S + r':=' + S +
                     r'!\[([^\]]*)\]', src)
@@ -150,7 +172,9 @@ for f in sorted(os.listdir(SQ)):
     if q == ent['q'] and sorted(a) == sorted(ent['a']):
         S0 = set(''.join(map(str, v)) for v in ys.values())
         want0 = set(fiber(a, q, 0))
-        if ys and S0 != want0:
+        if not ys:
+            problems.append('could not parse any declared bottom support states')
+        elif S0 != want0:
             problems.append('declared bottom support is not the residue-0 fiber')
         if ys and len(ys) != ent['n0']:
             problems.append('bottom support has %d states, manifest says %d'
@@ -172,11 +196,16 @@ for f in sorted(os.listdir(SQ)):
                 if comp != want1:
                     problems.append('complement of the bottom support is not the '
                                     'residue-%d fiber' % d)
+                if len(comp) != ent['n1']:
+                    problems.append('complement top support has %d states, manifest says %d'
+                                    % (len(comp), ent['n1']))
 
     kind, top = headline_top(src, ys, zs)
+    module_unchecked = False
     if top is None:
         unchecked.append((mod, 'could not resolve how the headline orders the '
                                'top probabilities'))
+        module_unchecked = True
     else:
         fields = struct_fields(src)
         mism = []
@@ -200,7 +229,7 @@ for f in sorted(os.listdir(SQ)):
 
     if problems:
         fails.append((mod, '; '.join(problems)))
-    else:
+    elif not module_unchecked:
         ok += 1
 
 print('modules gated: %d passed, %d failed, %d unchecked'

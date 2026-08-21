@@ -34,7 +34,8 @@ listed hypotheses and returns `False`, which made it testable on its own before
 any of the transcription plumbing existed -- worth repeating for orbits 26,
 which has the same zero-angle block structure with eight blocks.
 
-Generators: `scratchpad/genblock.py` (the algebra) and `scratchpad/gen16.py`
+Generators: `tools/generators/genblock.py` (the algebra) and
+`tools/generators/gen16.py`
 (the transcription, incidences, expansions, and moment derivations).
 
 See [[kl-dressings-undercount]] for the bug that had blocked this orbit.

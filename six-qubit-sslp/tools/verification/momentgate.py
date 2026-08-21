@@ -1,4 +1,4 @@
-"""Complete semantic check of every MomentSystem transcription.
+"""Fail-closed regression check for the current MomentSystem grammar.
 
 `gate.py` checks only the right-hand side of each `m<coords>` row. A
 collaborator showed that is not enough: mutating a left-hand side, or a row
@@ -25,13 +25,13 @@ Run standalone:
     python tools/run.py verification/momentgate.py 25 34      # selected
     python tools/run.py verification/momentgate.py --selftest # mutation test
 
-The self-test is the important one: it mutates each module in memory - flipping
-a left-hand side, renaming a row, dropping a row, corrupting a normalization -
-and asserts the checker rejects every mutation. A checker that has never been
-shown to fail is not evidence of anything.
+The non-exhaustive self-test mutates each module in memory by corrupting row
+content, binder order, field syntax and normalizations, and requires every
+requested mutation to be both injected and rejected. This is strong regression
+evidence, not a completeness theorem for arbitrary future Lean syntax; syntax
+outside the grammar is conservatively rejected.
 """
 import io
-import json
 import os
 import re
 import sys
@@ -41,6 +41,8 @@ from itertools import combinations
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, os.path.join(REPO, 'tools', 'core'))
+from no_go_inventory import (InventoryError, inventory_selftest,
+                             select_no_go_sources)
 
 SQ = os.path.join(REPO, 'SixQubit')
 BITS = {'true': 1, 'false': 0}
@@ -62,6 +64,96 @@ def structure_block(src):
     return body[:nl + m.start()] if m else body
 
 
+def headline_block(src):
+    """Return the complete headline before its top-level ``: False``.
+
+    A plain ``str.find(': False')`` is unsafe: an injected binder such as
+    ``(evil : False)`` truncates the scan before that binder and used to make an
+    extra assumption invisible to every headline checker.  This scanner skips
+    comments/strings and only accepts ``: False :=`` outside all Lean binders.
+    """
+    k = src.find('theorem no_go_of_moments')
+    if k < 0:
+        return None
+    stack, i = [], k
+    line_comment = string = False
+    block_comment = 0
+    pairs = {')': '(', ']': '[', '}': '{'}
+    while i < len(src):
+        if line_comment:
+            if src[i] == chr(10):
+                line_comment = False
+            i += 1
+            continue
+        if block_comment:
+            if src.startswith('/-', i):
+                block_comment += 1
+                i += 2
+            elif src.startswith('-/', i):
+                block_comment -= 1
+                i += 2
+            else:
+                i += 1
+            continue
+        if string:
+            if src[i] == '\\':
+                i += 2
+            else:
+                string = src[i] != '"'
+                i += 1
+            continue
+        if src.startswith('--', i):
+            line_comment = True
+            i += 2
+            continue
+        if src.startswith('/-', i):
+            block_comment = 1
+            i += 2
+            continue
+        ch = src[i]
+        if ch == '"':
+            string = True
+            i += 1
+            continue
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                return None
+        elif not stack and ch == ':':
+            if re.match(r':\s*False\s*:=', src[i:]):
+                return src[k:i]
+            # The first top-level colon is the theorem result.  Anything other
+            # than ``False`` is not the headline this checker promises to audit.
+            return None
+        i += 1
+    return None
+
+
+def parsed_field_list(block):
+    """Return (fields, syntax_errors), rejecting every unparsed structure line."""
+    hdr = re.match(
+        r'structure MomentSystem\s*\(([^)]*)\)\s*:\s*Prop\s+where\s*\r?\n',
+        block, re.S)
+    if hdr is None:
+        return [], ['cannot parse the complete MomentSystem header']
+    out, cur, errors = [], None, []
+    for no, ln in enumerate(block[hdr.end():].split(chr(10)), 1):
+        mh = re.match(r'^  ([^\s:]+)\s*:\s*(.*)$', ln)
+        if mh:
+            out.append([mh.group(1), mh.group(2)])
+            cur = out[-1]
+        elif ln.startswith('      ') and cur is not None:
+            cur[1] = cur[1] + ' ' + ln.strip()
+        elif ln.strip() == '':
+            cur = None
+        else:
+            errors.append('unparsed MomentSystem line %d: %r' %
+                          (no, ln.strip()[:48]))
+            cur = None
+    return [(a, b) for a, b in out], errors
+
+
 def field_list(block):
     """[(name, joined text)] in declaration order, honouring line wrapping.
 
@@ -70,22 +162,23 @@ def field_list(block):
     reject a duplicate field, but a checker that loses rows when its input is
     unexpected is exactly the failure mode this file exists to avoid.
     """
-    out, cur = [], None
-    for ln in block.split(chr(10)):
-        mh = re.match(r'  (\w+)\s*:\s*(.*)$', ln)
-        if mh and not ln.startswith('   '):
-            out.append([mh.group(1), mh.group(2)])
-            cur = out[-1]
-        elif cur is not None and ln.startswith('      '):
-            cur[1] = cur[1] + ' ' + ln.strip()
-        elif ln.strip() == '' or not ln.startswith(' '):
-            cur = None
-    return [(a, b) for a, b in out]
+    return parsed_field_list(block)[0]
 
 
 def fields_of(block):
     """Dict view, for callers that only need lookup by name."""
     return dict(field_list(block))
+
+
+def replace_field(src, name, row, new_name=None):
+    """Replace one complete field, including all of its continuation lines."""
+    block = structure_block(src)
+    if block is None:
+        return src
+    pat = re.compile(r'^  %s\s*:.*(?:\n      .*)*' % re.escape(name), re.M)
+    replacement = '  %s : %s' % (new_name or name, row)
+    changed, n = pat.subn(lambda _m: replacement, block, count=1)
+    return src.replace(block, changed, 1) if n == 1 else src
 
 
 def linear_form(expr):
@@ -120,7 +213,10 @@ def linear_form(expr):
         if m:
             # Fraction, never float: `eval('1/10**400')` underflows to 0.0 and a
             # nonzero constant then reads as no constant at all.
-            val = Fraction(int(m.group(1)), int(m.group(2) or 1))
+            den = int(m.group(2) or 1)
+            if den == 0:
+                return (None, 'zero denominator')
+            val = Fraction(int(m.group(1)), den)
             const += -val if neg else val
             continue
         return (None, 'unparsable term %r' % t[:24])
@@ -139,22 +235,35 @@ def bitstrings(src):
 
 def headline_orders(src, ys, zs):
     """How the headline actually supplies the bottom and top probabilities."""
-    k = src.find('theorem no_go_of_moments')
-    if k < 0:
+    body = headline_block(src)
+    if body is None:
         return None, None
-    body = src[k:src.find(': False', k)]
-    bi = [int(x) for x in re.findall(
-        r'Complex\.normSq' + S + r'\(c' + S + r'y(\d+)\)', body)]
-    comp = [int(x) for x in re.findall(
-        r'Complex\.normSq' + S + r'\(d' + S + r'\(SS\.complement' + S +
-        r'y(\d+)\)\)', body)]
+    bot_pat = r'Complex\.normSq' + S + r'\(c' + S + r'y(\d+)\)'
+    comp_pat = (r'Complex\.normSq' + S + r'\(d' + S +
+                r'\(SS\.complement' + S + r'y(\d+)\)\)')
+    top_pat = r'Complex\.normSq' + S + r'\(d' + S + r'z(\d+)\)'
+    bm = list(re.finditer(bot_pat, body))
+    cm = list(re.finditer(comp_pat, body))
+    tm = list(re.finditer(top_pat, body))
+    bi = [int(m.group(1)) for m in bm]
+    comp = [int(m.group(1)) for m in cm]
+    ti = [int(m.group(1)) for m in tm]
+    tops = cm + tm
+    # Do not separately collect bottom and top arguments and thereby forget
+    # their interleaving in the actual MomentSystem application.
+    if (cm and tm) or (bm and tops and max(m.start() for m in bm) >
+                                      min(m.start() for m in tops)):
+        return None, None
     if comp:
-        if any(i not in ys for i in comp) or any(i not in ys for i in bi):
+        # Index order is part of the interface between the theorem headline and
+        # the structure fields.  Inferring a new order from a permuted headline
+        # let a coordinated q/r relabelling evade the old checker.
+        if (bi != list(range(len(ys))) or comp != list(range(len(ys))) or
+                any(i not in ys for i in comp)):
             return None, None
         return [ys[i] for i in bi], [[1 - b for b in ys[i]] for i in comp]
-    ti = [int(x) for x in re.findall(
-        r'Complex\.normSq' + S + r'\(d' + S + r'z(\d+)\)', body)]
-    if not ti or any(i not in zs for i in ti) or any(i not in ys for i in bi):
+    if (bi != list(range(len(ys))) or ti != list(range(len(zs))) or not ti or
+            any(i not in zs for i in ti)):
         return None, None
     return [ys[i] for i in bi], [zs[i] for i in ti]
 
@@ -168,10 +277,10 @@ def check(src):
     bot, top = headline_orders(src, ys, zs)
     if bot is None:
         return ['could not resolve the order the headline passes probabilities'], 0
-    FL = field_list(block)
+    FL, parse_errors = parsed_field_list(block)
     names = [a for a, _ in FL]
     nb, nt = len(bot), len(top)
-    problems = []
+    problems = list(parse_errors)
 
     # The binder list itself. Swapping `q0 q1` in the structure header while
     # leaving every row alone silently renumbers all the probabilities, which is
@@ -286,18 +395,7 @@ def check(src):
 
 
 def modules(argv):
-    out = []
-    for f in sorted(os.listdir(SQ)):
-        if not f.endswith('.lean') or f == 'Audit.lean':
-            continue
-        src = io.open(os.path.join(SQ, f), encoding='utf-8').read()
-        if 'theorem no_go_of_moments' not in src:
-            continue
-        oid = '66' if f == 'Order9.lean' else re.sub(r'[^0-9]', '', f)
-        if argv and oid not in set(argv):
-            continue
-        out.append((f, oid, src))
-    return out
+    return select_no_go_sources(REPO, argv)
 
 
 def mutations(src):
@@ -323,80 +421,109 @@ def mutations(src):
     out = []
     if moms:
         nm = moms[0]
-        line = '  %s : %s' % (nm, F[nm])
         lhs, rhs = F[nm].split('=', 1)
         qs = re.findall(r'\bq(\d+)\b', lhs)
         rs = re.findall(r'\br(\d+)\b', rhs)
         if len(qs) >= 2:
             bad = lhs.replace('q%s + ' % qs[0], '', 1)
             out.append(('drop a left-hand term of %s' % nm,
-                        src.replace(line, '  %s : %s=%s' % (nm, bad, rhs), 1)))
-            # the same corruption under a different name: renaming must not
-            # let a wrong row escape checking
+                        replace_field(src, nm, '%s=%s' % (bad, rhs))))
             out.append(('drop a left-hand term AND rename %s to c99' % nm,
-                        src.replace(line, '  c99 : %s=%s' % (bad, rhs), 1)))
+                        replace_field(src, nm, '%s=%s' % (bad, rhs), 'c99')))
         if len(rs) >= 2:
             bad = rhs.replace('r%s + ' % rs[0], '', 1)
             out.append(('drop a right-hand term of %s' % nm,
-                        src.replace(line, '  %s : %s=%s' % (nm, lhs, bad), 1)))
+                        replace_field(src, nm, '%s=%s' % (lhs, bad))))
         if qs:
             other = str((int(qs[0]) + 1) % 99)
             bad = lhs.replace('q%s' % qs[0], 'q%s' % other, 1)
             if bad != lhs:
                 out.append(('reindex a left-hand term of %s' % nm,
-                            src.replace(line, '  %s : %s=%s' % (nm, bad, rhs), 1)))
+                            replace_field(src, nm, '%s=%s' % (bad, rhs))))
         out.append(('swap the two sides of %s' % nm,
-                    src.replace(line, '  %s : %s=%s' % (nm, rhs, lhs), 1)))
-    for nm2, row2 in FL_all:
+                    replace_field(src, nm, '%s=%s' % (rhs, lhs))))
+
+        # Six independent linear-form regression paths.  A set-of-variable-
+        # names parser loses every one of these distinctions.
+        if qs:
+            q = 'q%s' % qs[0]
+            out.append(('duplicate a term in %s' % nm,
+                        replace_field(src, nm, '%s=%s' %
+                                      (lhs.replace(q, q + ' + ' + q, 1), rhs))))
+            out.append(('give a term coefficient two in %s' % nm,
+                        replace_field(src, nm, '%s=%s' %
+                                      (lhs.replace(q, '2 * ' + q, 1), rhs))))
+        if len(qs) >= 2:
+            q = 'q%s' % qs[1]
+            out.append(('change plus to minus in %s' % nm,
+                        replace_field(src, nm, '%s=%s' %
+                                      (lhs.replace('+ ' + q, '- ' + q, 1), rhs))))
+        out.append(('add an integer constant to %s' % nm,
+                    replace_field(src, nm, '%s + 7 = %s' %
+                                  (lhs.strip(), rhs.strip()))))
+
+    for nm2, _row2 in FL_all:
         if re.fullmatch(r'n[qr]\d+', nm2):
             out.append(('replace %s by False' % nm2,
-                        src.replace('  %s : %s' % (nm2, row2),
-                                    '  %s : False' % nm2, 1)))
+                        replace_field(src, nm2, 'False')))
             break
 
     # Rows that are not equations at all, and equations that relate nothing.
-    # Skipping unrecognized fields was a false-green path: silence read as
-    # approval.
     if moms:
         nm = moms[0]
-        for ln in block.split(chr(10)):
-            if ln.startswith('  %s :' % nm):
-                for tag, rep in (
-                        ('state Eq instead of =', '  %s : Eq q0 r0' % nm),
-                        ('state True', '  %s : True' % nm),
-                        ('state an inequality', '  %s : q0 ≤ q1' % nm),
-                        ('state 0 = 1', '  %s : 0 = 1' % nm),
-                        ('smuggle in an extra bogus field',
-                         ln + chr(10) + '  evil : Eq q0 q1')):
-                    out.append((tag + ' in ' + nm, src.replace(ln, rep, 1)))
-                # a constant so small a float would underflow it to zero
-                lhs2, rhs2 = F[nm].split('=', 1)
-                out.append(('add an underflowing constant to %s' % nm,
-                            src.replace(ln, '  %s : %s + 1/%s = %s'
-                                        % (nm, lhs2.strip(), '1' + '0' * 400,
-                                           rhs2.strip()), 1)))
-                break
+        for tag, rep in (
+                ('state Eq instead of =', 'Eq q0 r0'),
+                ('state True', 'True'),
+                ('state an inequality', 'q0 %s q1' % chr(0x2264)),
+                ('state 0 = 1', '0 = 1')):
+            out.append((tag + ' in ' + nm, replace_field(src, nm, rep)))
+        out.append(('smuggle in an extra bogus field in ' + nm,
+                    replace_field(src, nm, F[nm] + chr(10) +
+                                  '  evil : Eq q0 q1')))
+        out.append(('smuggle in an extra apostrophe-named field in ' + nm,
+                    replace_field(src, nm, F[nm] + chr(10) +
+                                  "  evil' : False")))
+        lhs2, rhs2 = F[nm].split('=', 1)
+        out.append(('add an underflowing constant to %s' % nm,
+                    replace_field(src, nm, '%s + 1/%s = %s'
+                                  % (lhs2.strip(), '1' + '0' * 400,
+                                     rhs2.strip()))))
 
-    # Swapping two binders renumbers every probability while leaving the rows
-    # textually untouched.
-    hdr = re.match(r'structure MomentSystem\s*\(([^)]*)\)', block)
+    # Swap header tokens even when the generated header wraps or uses multiple
+    # spaces (Orbit5 used to turn this into a dishonest no-op).
+    hdr = re.match(r'structure MomentSystem\s*\(([^)]*)\)', block, re.S)
     if hdr:
         bs = hdr.group(1).split(':')[0].split()
         if len(bs) >= 2:
-            swapped = hdr.group(0).replace('%s %s' % (bs[0], bs[1]),
-                                           '%s %s' % (bs[1], bs[0]), 1)
+            inside = hdr.group(1)
+            inside = re.sub(r'\b%s\b' % re.escape(bs[0]), '__BINDER_TMP__',
+                            inside, count=1)
+            inside = re.sub(r'\b%s\b' % re.escape(bs[1]), bs[0], inside,
+                            count=1)
+            inside = inside.replace('__BINDER_TMP__', bs[1], 1)
+            swapped = (hdr.group(0)[:hdr.start(1)] + inside +
+                       hdr.group(0)[hdr.end(1):])
             out.append(('swap the first two binders',
                         src.replace(hdr.group(0), swapped, 1)))
+
+    # The sixth linear regression path: a top variable in the bottom norm.
+    if 'n0' in F:
+        lhs0, rhs0 = F['n0'].split('=', 1)
+        q0 = re.search(r'\bq\d+\b', lhs0)
+        if q0:
+            mixed = lhs0[:q0.start()] + 'r0' + lhs0[q0.end():]
+            out.append(('mix top probability into n0',
+                        replace_field(src, 'n0', '%s=%s' % (mixed, rhs0))))
+
     for norm in ('n0', 'n1'):
         if norm in F and F[norm].split('=')[-1].strip() == '1':
-            line = '  %s : %s' % (norm, F[norm])
             lhs = F[norm].split('=')[0]
             vs = re.findall(r'\b[qr](\d+)\b', lhs)
             if vs:
                 bad = re.sub(r'\b([qr])%s \+ ' % vs[0], '', lhs, count=1)
                 if bad != lhs:
                     out.append(('drop a term from %s' % norm,
-                                src.replace(line, '  %s : %s= 1' % (norm, bad), 1)))
+                                replace_field(src, norm, '%s= 1' % bad)))
     return out
 
 
@@ -404,18 +531,30 @@ if __name__ == '__main__':
     argv = [a for a in sys.argv[1:] if not a.startswith('--')]
     selftest = '--selftest' in sys.argv
     rc = 0
+    try:
+        selected = modules(argv)
+    except InventoryError as exc:
+        print('FAIL - certified no-go inventory mismatch: %s' % exc)
+        sys.exit(1)
+    if not selected:
+        print('FAIL - no matching no_go_of_moments module was found.')
+        sys.exit(1)
     if selftest:
         print('SELF-TEST: every mutation below must be REJECTED.')
         print()
+        inv_caught, inv_missed, inv_inert, inv_details = inventory_selftest(REPO)
+        for status, why in inv_details:
+            print('  %-6s inventory: %s' % (status, why))
+        print('  inventory corruptions caught %d, missed %d, not injected %d'
+              % (inv_caught, inv_missed, inv_inert))
         caught = missed = inert = 0
-        for f, oid, src in modules(argv):
+        for f, oid, src in selected:
             for name, bad in mutations(src):
                 if bad == src:
-                    # the field wraps across lines, so the textual substitution
-                    # matched nothing. A no-op is not a mutation and tests
-                    # nothing; counting it either way would be dishonest.
+                    # A no-op is not a mutation and tests nothing.  It is a
+                    # self-test construction failure, not a tolerated skip.
                     inert += 1
-                    print('  INERT  on %-9s %s (field wraps; not injected)'
+                    print('  INERT  on %-9s %s (not injected)'
                           % (f[:-5], name))
                     continue
                 if check(bad)[0]:
@@ -425,16 +564,16 @@ if __name__ == '__main__':
                     print('  MISSED on %-9s %s' % (f[:-5], name))
         print('  mutations caught %d, missed %d, not injected %d'
               % (caught, missed, inert))
-        if missed:
+        if missed or inert or inv_missed or inv_inert:
             print()
-            print('FAIL - the checker accepts a corrupted transcription.')
+            print('FAIL - a corruption was accepted or a mutation was not injected.')
             sys.exit(1)
         print()
         print('PASS - every injected corruption was rejected.')
         sys.exit(0)
 
     bad = 0
-    for f, oid, src in modules(argv):
+    for f, oid, src in selected:
         probs, absent = check(src)
         note = '' if not absent else '  (%d of 21 rows not declared - a '
         note = '' if not absent else ('  [uses %d of the 21 rows]' % (21 - absent))

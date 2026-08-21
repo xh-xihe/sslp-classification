@@ -1,9 +1,17 @@
 ---
 name: sslp-orbit26-hexagon
-description: "Orbit 26 structure and moment facts, plus a CORRECTION: the per-edge matrix relations I assumed do not exist."
+description: "HISTORICAL orbit-26 work log, including the rejected per-edge argument and the completed cross-anchor repair."
 metadata:
   type: project
 ---
+
+> **HISTORICAL WORK LOG; CURRENT PROOF COMPLETE.** The body preserves several
+> chronological checkpoints, so statements such as “NOT yet certified,” old
+> line counts, and “what remains” are intentionally historical rather than
+> current status. Orbit 26 is now kernel-certified in
+> `SixQubit/Orbit26.lean`, with its algebra in `SixQubit/Block26.lean` and its
+> code-level wrapper in `SixQubit/CodeOrbit26.lean`. The current per-orbit counts
+> are generated in `results/orbit-table.tsv`.
 
 Orbit 26 (`a = (0,1,1,2,2,3)`, `q = 4`, `delta = 1`, fibers 16+16).  NOT yet
 certified; everything below is verified numerically/symbolically.
@@ -147,7 +155,7 @@ verdict:
 End to end, `sum_{a,b} (D_j)_a conj((C_j)_b) E_ab` was expanded symbolically and
 verified EQUAL to `sum_c Y_{2g+c}X_{2h+1-c} + sum_c Y_{2h+c}X_{2g+1-c}` for both
 anchors and all three pairs, giving `-2(X_{2g}X_{2h+1} + X_{2g+1}X_{2h})` after
-`Y = -X`.  Negative controls all behave.  Scripts in `scratchpad/stepA_a.py`,
+`Y = -X`.  Negative controls all behave.  Scripts in `tools/verification/stepA_a.py`,
 `stepA_bd.py`, `stepA_global.py`, `stepA_end2.py`.
 
 ## THE LIKELY REPAIR: anchor-free scalar relations (not yet exploited)
@@ -300,7 +308,7 @@ and Walsh expansions, and the moment-system derivations of `P_i = Q_i`,
 `P_6 = P_7 = 1/8`, `sum_{i<6} P_i = 3/4`, the six neighbour identities, the
 matrix and scalar block relations, and the grouped diagonal conditions giving
 `C_g C_g^dagger + D_g D_g^dagger = rho/2`.  Same shape and size as
-`SixQubit/Orbit29.lean`; `scratchpad/o26.py` already computes the group data and
+`SixQubit/Orbit29.lean`; `tools/orbits/o26.py` already computes the group data and
 the certificate coefficients.
 
 `matrix_finish` is the endgame in five lines of algebra: `tr A = tr B = 1/4`,
@@ -308,8 +316,8 @@ the certificate coefficients.
 Cayley-Hamilton gives `A^2 = A/4`, hence `AB = -A/2` and `BA = -B/2`, and then
 `A(BA) = A/4` while `(AB)A = -A/8`.
 
-Generators: `scratchpad/o26.py` builds the groups and checks the matrix moment
-identity; `scratchpad/blocks.py` has the general block structure (but note its
+Generators: `tools/orbits/o26.py` builds the groups and checks the matrix moment
+identity; `tools/core/blocks.py` has the general block structure (but note its
 `TOP` uses SORTED top tails -- for block matching you must index the top block
 by the COMPLEMENT of the bottom tail, as `o26.py` does).
 

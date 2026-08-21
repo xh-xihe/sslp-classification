@@ -1,5 +1,9 @@
-"""Correct the claims a collaborator's audit showed to be false."""
+"""Archived one-shot documentation migration; not a current fixer."""
 import io
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 REPO = 'D:/UTD/Project_purdue/Lean_certification/'
 

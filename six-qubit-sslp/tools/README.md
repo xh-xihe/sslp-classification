@@ -1,7 +1,9 @@
 # Tools
 
-The Python that produced the Lean, and the independent checks that decided what
-the Lean should say. Everything here is byte-identical to what was actually run.
+This directory retains the Python generators used for the Lean transcription and
+the independent checks used to review what the Lean statements say. Execution
+provenance is not part of the kernel certificate; the checked artifacts are the
+committed Lean sources, build outputs and axiom audit.
 
 Requirements: Python 3 with `sympy`, `numpy`, `scipy`.
 
@@ -43,9 +45,12 @@ tables the generators read. `o28.py`, `o32.py` are smaller structural probes.
 
 ## `generators/` — orbit → generator → module
 
-Every certified orbit and every algebra layer, with the script that emits it.
-**This table is the reproduction map**; if a row is wrong, the artifact is not
-reproducible and that is a defect.
+This is a **historical provenance index for the major construction routes**, not
+a byte-for-byte generator manifest. Some algebra layers were hand-written, the
+order-nine source module has no complete raw-module generator committed, and
+several repaired modules require the explicit overlay scripts listed below.
+Kernel checking plus the independent verification gates, rather than this table
+alone, certify the committed Lean sources.
 
 ### First batch (from `six_qubit_sslp_v7.tex`)
 
@@ -56,7 +61,13 @@ reproducible and that is a defect.
 | 29 | `gen29a.py`, `gen29c.py`, `gen29pf.py` | `SixQubit/Orbit29.lean`, parts of `SixQubit/Pair29.lean` |
 | 31 | `gen31.py` | `SixQubit/Orbit31.lean`; algebra in `SixQubit/Table31.lean` |
 | 33 | `gen16.py`, `genblock.py` | `SixQubit/Orbit33.lean`, `SixQubit/Block33.lean` |
-| 27, 28, 30, 32, 34–35, 37–40, 53–66 | closed by the mechanism ladder in `core/scan.py` + `core/cert.py` | their `SixQubit/Orbit<n>.lean` |
+| 27, 28, 32, 35, 37–40, 54, 56, 58, 60–63 | historical mechanism-ladder route in `core/scan.py` + `core/cert.py` | their `SixQubit/Orbit<n>.lean` sources; this row records provenance, not byte reproduction |
+| 30 | `genk5.py`, then `gen30.py` | rebuilt `SixQubit/K5.lean` and `SixQubit/Orbit30.lean` at `delta = 1` |
+| 53 | `gen53.py` | rebuilt `SixQubit/Orbit53.lean` at `delta = 1` |
+| 55 | `genstar.py 55` | rebuilt `SixQubit/Orbit55.lean` at `delta = 1` |
+| 65 | `gen3lp.py 65` | rebuilt `SixQubit/Orbit65.lean` at `delta = 1` |
+| 34, 57, 59, 64 | historical base sources plus the `genmomrows.py` repair overlay | final `MomentSystem` rows in the four named orbit modules |
+| 66 | no complete raw-module generator is committed; `gencode9.py` emits only the wrapper | historical `SixQubit/Order9.lean`; generated `SixQubit/CodeOrder9.lean` |
 
 ### Second batch (the twenty-two added in `six_qubit_sslp.tex`)
 
@@ -89,16 +100,17 @@ incidences, Walsh signs, moment facts, expansions.
 
 ## `verification/` — checks independent of Lean
 
-These answer questions the Lean proofs do not: is the orbit excluded at all, is a
-relation genuinely available, is a branch live, is a claimed proof honest.
+These provide regression checks for questions compilation alone does not answer:
+whether the selected orbit data, rows and auxiliary relations match their
+intended specifications. They are not part of the Lean kernel's soundness chain.
 
 | File | Claim it supports |
 |---|---|
-| `feas2.py`, `feasnew.py` | the full weight-≤2 system is numerically unsatisfiable. **Both include controls** — `feas2.py` uses certified orbits (orbit 25 must come out excluded, and does, residual 0.79); `feasnew.py` uses the *realizable* orbits 7, 8, 9, 36 as POSITIVE controls, and the optimizer finds exact solutions for all four (residuals ~1e-31). Without controls neither is a test |
-| **`classify.py`** | **the anti-smuggling check.** Parses every headline theorem and classifies each hypothesis as `offSum = 0` / `diagBot = diagTop` / `MomentSystem`. Anything else is an algebraic fact taken as an assumption, which voids the proof invisibly from the outside. Current result across all 51: **zero** |
-| **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every row used. A weight-3 row would silently turn a distance-three no-go into a much weaker distance-four claim |
-| **`momentgate.py`** | **the transcription check.** Verifies every `MomentSystem` row against the order the headline actually passes probabilities, identifying rows by CONTENT rather than name so a renamed or reordered row cannot slip past. `--selftest` injects 749 corruptions (dropped terms, reindexed terms, swapped sides, broken normalizations, renamed-and-corrupted rows) and asserts every one is rejected — a checker never shown to fail is not evidence of anything |
-| `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed out of each Lean module and cross-checked, while `delta` and the fiber sizes come from `tools/manifest.json`, so the table cannot drift from what is actually proved |
+| `feas2.py`, `feasnew.py` | numerical feasibility/infeasibility probes for the full weight-≤2 system. **Both include controls** — `feas2.py` uses certified no-go orbits (orbit 25 must come out excluded, and does, residual 0.79); `feasnew.py` uses the *realizable* orbits 7, 8, 9, 36 as POSITIVE controls, and the optimizer finds exact solutions for all four (residuals ~1e-31). Without controls neither is a test |
+| **`classify.py`** | **the anti-smuggling check.** Parses every headline theorem and accepts only exact `offSum = 0` / `diagBot = diagTop` / `MomentSystem` hypothesis forms. Unexpected or unparsed binders fail closed. Current result across all 51: **zero** |
+| **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every parsed row. It independently cross-checks the headline classification so a syntactically unexpected row cannot disappear from both counts |
+| **`momentgate.py`** | **the transcription check.** Verifies every declared `MomentSystem` row against the order the headline passes probabilities, using exact rational linear forms rather than variable-name sets. Its non-exhaustive `--selftest` mutates every module in memory and fails if any requested mutation is missed or not injected; this is regression evidence, not a completeness theorem for the checker |
+| `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed from each Lean module and cross-checked with `tools/manifest.json`; `delta` and `m` come from the manifest; fiber sizes are recomputed from `(q,a,delta)`. Run `gate.py` separately to compare the Lean residue and support declarations with the manifest |
 | `phase4.py` | which orbits admit isolable C² *inner products* (as opposed to single monomials) |
 | `pin51.py` | the quadratic consequences that pin orbits 49 and 51 |
 | `close31.py`, `branch31.py` | orbit 31 against the raw conditions; which phase partitions die |
@@ -112,5 +124,12 @@ The `stepA_*` and `x26_*` families exist because the first orbit-26 argument had
 a real gap (per-anchor axis choices used as if global). They are the record of
 finding it and of verifying the repair.
 
-`classify.py` and `admis.py` are the two that a reviewer should run first: they
-check not that the proofs compile, but that they prove the right thing.
+Run `gate.py`, `momentgate.py`, `classify.py` and `admis.py` together. They check
+different parts of the paper-to-Lean transcription and deliberately fail on
+unrecognized input; none replaces the kernel build and axiom audit.
+
+With no orbit arguments, all four gates obtain the exact reviewed 51-module set
+from `manifest.json` (`_no_go.lean_modules`) and fail if an expected file or its
+top-level `no_go_of_moments` marker is absent, or if an unexpected module bears
+that marker. Positional orbit arguments deliberately request a certified subset.
+Their in-memory self-tests include whole-module and marker deletion checks.

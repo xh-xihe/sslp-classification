@@ -1,12 +1,19 @@
 ---
 name: sslp-nogo-mechanism-ladder
-description: "The seven mechanisms that mechanize six-qubit SSLP no-gos, in increasing strength, and what the remaining seven orbits still need."
+description: "HISTORICAL first-batch mechanism work log; its Done/Remaining counts are superseded."
 metadata: 
   node_type: memory
   type: project
   originSessionId: e2435927-3651-49b0-acfb-31f3430ee257
   modified: 2026-08-19T00:04:54.445Z
 ---
+
+> **HISTORICAL WORK LOG.** The `Done` and `Remaining` counts below are dated
+> checkpoints, not the current repository status. The four cases listed below as
+> remaining (26, 29, 31 and 33) are now kernel-certified, and the development has
+> expanded from the old 29-orbit batch to all 51 manuscript no-gos. See
+> [[sslp-51-orbits-complete]] for the authoritative current summary. The body is
+> retained to record how the mechanism ladder developed.
 
 Certifying the 29 no-go orbits of `six_qubit_sslp_v7.tex` in Lean. Each rung has
 a Python generator emitting a kernel-only Lean file; Python computes the

@@ -1,7 +1,9 @@
-"""Build the authoritative orbit manifest from the paper, and nothing else.
+"""Build the authoritative orbit data in the manifest from the paper.
 
 Every later check validates the Lean against THIS file, so it is parsed from
-`six_qubit_sslp.tex` Table tab:66orbits and never hand-edited.
+`six_qubit_sslp.tex` Table tab:66orbits.  The separately reviewed
+``_no_go.lean_modules`` certification inventory is preserved verbatim when the
+paper-derived numeric records are regenerated.
 
 For each orbit the manifest records:
   q   physical lift order
@@ -64,13 +66,22 @@ for oid in sorted(rows):
     man[str(oid)] = entry
 
 out = os.path.join(REPO, 'tools', 'manifest.json')
-io.open(out, 'w', encoding='utf-8').write(json.dumps(man, indent=1, sort_keys=True))
-print('wrote %s with %d orbits' % (out, len(man)))
-print()
+old = json.loads(io.open(out, encoding='utf-8').read()) if os.path.exists(out) else {}
+inventory = old.get('_no_go')
+if (not isinstance(inventory, dict) or
+        not isinstance(inventory.get('lean_modules'), dict) or
+        len(inventory['lean_modules']) != 51):
+    bad.append('existing manifest lacks the reviewed 51-module _no_go inventory')
+else:
+    man['_no_go'] = inventory
 if bad:
     print('INTERNAL INCONSISTENCIES (paper vs recomputation):')
     for b in bad:
         print('  ' + b)
     sys.exit(1)
+io.open(out, 'w', encoding='utf-8').write(json.dumps(man, indent=1, sort_keys=True))
+print('wrote %s with %d orbits' %
+      (out, len([k for k in man if str(k).isdigit()])))
+print()
 print('every entry self-consistent: delta = q/m, additive order = m, '
       'fiber sizes reproduce the paper table')

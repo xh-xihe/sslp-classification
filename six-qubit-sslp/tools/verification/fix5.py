@@ -3,9 +3,16 @@
 Written to a FILE rather than passed inline: the previous attempt put backticks
 inside a double-quoted shell argument and bash executed them as command
 substitution.
+
+ARCHIVED ONE-SHOT MIGRATION. It predates the current checked documentation and
+is permanently disabled; use version control to inspect or reproduce it.
 """
 import io
 import re
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 BS = chr(92)
 BT = chr(96)

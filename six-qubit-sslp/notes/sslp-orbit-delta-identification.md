@@ -8,23 +8,31 @@ metadata:
   modified: 2026-08-18T21:00:14.764Z
 ---
 
-**SUPERSEDED.** The authoritative rule is , whose additive order in  must equal ; see  and . Pinning by  (or by fiber size) is what let four modules prove a no-go for the wrong projective order.
+# Historical note: identifying the second residue fiber
 
-An orbit in `six_qubit_sslp_v7.tex` is the triple `(a, q, delta)`, and `delta`
-is **not** `sum(a) mod q` — orbit 28 has supports in residues 0 and 1 while
-`sum(a) = 7 = 3 mod 4`, so its two supports are not complement-related at all.
+**SUPERSEDED.** The authoritative rule is `delta = q/m`, and the additive
+order of `delta` in `Z_q` must be exactly the projective order `m`. The checked
+orbit data live in `tools/manifest.json`; `tools/verification/gate.py` compares
+the Lean modules with that data. Neither fiber cardinality nor `d_LP` defines
+`delta`.
 
-Identify `delta` by matching **both** the `(|S_0|,|S_delta|)` column and the
-`d_LP` column of `tab:66orbits`. Fiber sizes alone are ambiguous, and a wrong
-`delta` can hand back a moment polytope that is simply *infeasible* — which
-looks like a proof but certifies the wrong object. This actually happened: a
-propagation run reported orbits 26, 33, 37, 58 as closed, and all four were
-artifacts of a size-matched but `d_LP`-mismatched `delta`.
+The earlier workflow searched residues having the expected fiber size and then
+accepted the first easy certificate. Equal fiber sizes do not imply equal
+residues or equivalent orbit representatives. That mistake caused orbits 30,
+53, 55 and 65 to be certified at residues of additive order two instead of at
+their required orders 4, 6, 6 and 8. Their corrected fibers are disjoint from
+the old fibers, so the repairs are new proofs of the intended objects, not
+relabelings.
 
-`d_LP` is the dimension of `{x >= 0 : Mx = b}` — the polytope **with**
-nonnegativity — not the dimension of the affine solution set. Orbit 28's affine
-set is 9-dimensional and its polytope is a single point. Compute it as
-`|support| - rank(M restricted to the support)`, where the support is the set of
-coordinates the LP does not force to zero.
+`delta` is also not `sum(a) mod q`. For example, orbit 28 uses residues 0 and 1,
+whereas `sum(a) = 7 = 3 mod 4`; its two supports are not complement-related.
 
-See [[dyadic-lean-formalization]] for the sibling formalization.
+`d_LP` remains useful only as a diagnostic cross-check. It is the dimension of
+the feasible polytope `{x >= 0 : Mx = b}`, not the dimension of the unrestricted
+affine solution set. Orbit 28 illustrates the distinction: its affine solution
+set is 9-dimensional while its feasible polytope is a single point. It may be
+computed as `|support| - rank(M restricted to the support)`, where the support is
+the set of coordinates not forced to zero by the LP.
+
+The sibling dyadic formalization is outside this repository, at
+`../A_dyadic_ladder/` in the present workspace layout.

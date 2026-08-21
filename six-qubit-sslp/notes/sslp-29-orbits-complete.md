@@ -1,9 +1,18 @@
 ---
 name: sslp-29-orbits-complete
-description: "All twenty-nine six-qubit no-go moment orbits are fully kernel-certified in Lean; what the final state is and how the last four were closed."
+description: "HISTORICAL/SUPERSEDED pre-repair snapshot of the first twenty-nine-orbit milestone."
 metadata:
   type: project
 ---
+
+> **HISTORICAL / SUPERSEDED STATUS SNAPSHOT.** This note preserves the first
+> 29-orbit milestone as it was understood at the time; its present-tense status
+> claims below are not the current certification statement. A later audit found
+> wrong target residues in orbits 30, 53, 55 and 65, and mis-transcribed moment
+> rows in 34, 57, 59, 64 and Order9. All nine were subsequently repaired. For
+> the current 51-orbit status and the four independent transcription checks, see
+> [[sslp-51-orbits-complete]], the repository `README.md`, and
+> `results/README.md`.
 
 DONE.  All twenty-nine no-go moment orbits of `six_qubit_sslp_v7.tex` (Section 11
 onward) carry a fully kernel-checked Lean certification in

@@ -28,3 +28,5 @@ __pycache__/
 # formalization references it by section and line number instead.
 six_qubit_sslp.tex
 six_qubit_sslp_v7.tex
+formalization/*.fls
+formalization/*.fdb_latexmk

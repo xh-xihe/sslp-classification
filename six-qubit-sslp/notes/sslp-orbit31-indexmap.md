@@ -5,8 +5,9 @@ metadata:
   type: reference
 ---
 
-Recovered by reading `SixQubit/Orbit31.lean` directly (1777 lines, 896 theorems).
-Do NOT re-derive this by hand; the column reversal below is a real trap.
+Recovered by reading `SixQubit/Orbit31.lean` directly. The file has since grown,
+so the index map below—not a volatile line or theorem count—is the authoritative
+content. Do NOT re-derive it by hand; the column reversal below is a real trap.
 
 ## Bottom positions
 

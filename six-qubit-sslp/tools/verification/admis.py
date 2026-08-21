@@ -15,6 +15,10 @@ failure, not a silence.
 Usage:
     python tools/run.py verification/admis.py           # every module
     python tools/run.py verification/admis.py 5 26 31   # selected orbits
+    python tools/run.py verification/admis.py --selftest
+
+The parser is deliberately conservative and fail-closed for the headline
+grammar used here; it is not a general Lean parser.
 """
 import io
 import os
@@ -23,24 +27,17 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
+sys.path.insert(0, os.path.join(REPO, 'tools', 'core'))
+from no_go_inventory import (InventoryError, inventory_selftest,
+                             select_no_go_sources)
+
 SQ = os.path.join(REPO, 'SixQubit')
 BITS = {'true': 1, 'false': 0}
 S = r'\s+'
 
 
 def modules(argv):
-    out = []
-    for f in sorted(os.listdir(SQ)):
-        if not f.endswith('.lean') or f == 'Audit.lean':
-            continue
-        src = io.open(os.path.join(SQ, f), encoding='utf-8').read()
-        if 'theorem no_go_of_moments' not in src:
-            continue
-        oid = '66' if f == 'Order9.lean' else re.sub(r'[^0-9]', '', f)
-        if argv and oid not in set(argv):
-            continue
-        out.append((f, oid, src))
-    return out
+    return select_no_go_sources(REPO, argv)
 
 
 def masks(src):
@@ -69,75 +66,292 @@ def masks(src):
     return d
 
 
-rc = 0
-for f, oid, src in modules(sys.argv[1:]):
-    defs = masks(src)
+def headline_block(src):
+    """Headline before the top-level theorem result; never truncate at a binder."""
     k = src.find('theorem no_go_of_moments')
-    body = src[k:src.find(': False', k)]
-    MASK = r'(\(fun _ => false\)|\(fun _ => true\)|\S+)'
-    off = re.findall(r'offSum' + S + r'c' + S + r'd' + S + MASK + S +
-                     MASK + S + r'=' + S + r'0', body)
-    dia = re.findall(r'diagBot' + S + r'c' + S + MASK + S + MASK + S +
-                     r'=' + S + r'diagTop', body)
-    bad, unres, prof = [], [], {}
-    for kind, rows in (('offSum', off), ('diag', dia)):
-        for e, z in rows:
-            # a lambda dressing is the all-zero mask; resolve it before
-            # stripping parentheses, or the prefix test never fires
-            # only the all-false lambda is the zero mask; anything else with a
-            # `fun` in it must be refused, not guessed at
-            for slot in ('e', 'z'):
-                v = e if slot == 'e' else z
-                if 'fun' in v and 'false' not in v:
-                    unres.append((kind, e, z))
-                    v = None
-                    break
+    if k < 0:
+        return None
+    stack, i = [], k
+    line_comment = string = False
+    block_comment = 0
+    pairs = {')': '(', ']': '[', '}': '{'}
+    while i < len(src):
+        if line_comment:
+            if src[i] == chr(10):
+                line_comment = False
+            i += 1
+            continue
+        if block_comment:
+            if src.startswith('/-', i):
+                block_comment += 1; i += 2
+            elif src.startswith('-/', i):
+                block_comment -= 1; i += 2
             else:
-                if 'fun' in e:
-                    e = '__zero__'
-                if 'fun' in z:
-                    z = '__zero__'
-            defs.setdefault('__zero__', [0] * 6)
-            e, z = e.strip('()'), z.strip('()')
-            if e not in defs or z not in defs:
-                unres.append((kind, e, z))
-                continue
-            w = len({i for i in range(6) if defs[e][i]} |
-                    {i for i in range(6) if defs[z][i]})
-            prof[w] = prof.get(w, 0) + 1
-            if w > 2:
-                bad.append((kind, e, z, w))
-    # Cross-check: the regex must have seen every row the headline declares.
-    # A dressing written in an unanticipated form -- say `(fun i => i == 0)` --
-    # would otherwise be skipped silently and the script would still say OK.
-    # Count declared rows by the BARE keyword. Reusing the parser's own
-    # `offSum c d` prefix made both counters blind to the same unexpected
-    # spelling -- `offSum (c) d e1 t2 = 0` -- so they agreed while both
-    # missed the row, and the script still printed OK.
-    declared = (len(re.findall(r'\boffSum\b', body))
-                + len(re.findall(r'\bdiagBot\b', body)))
-    parsed = len(off) + len(dia)
-    if parsed != declared:
-        unres.append(('count', 'parsed %d rows' % parsed,
-                      'headline declares %d' % declared))
-    status = 'OK'
-    if bad:
-        status = 'INADMISSIBLE'
-    elif unres:
-        status = 'UNRESOLVED'
-    print('orbit %-3s %-9s %2d offSum + %2d diag rows   weights %s   %s'
-          % (oid, f[:-5], len(off), len(dia), dict(sorted(prof.items())), status))
-    for kind, e, z, w in bad:
-        print('   *** %-7s e=%-8s z=%-8s WEIGHT %d' % (kind, e, z, w))
-        rc = 1
-    for kind, e, z in unres:
-        print('   ??? %-7s e=%-8s z=%-8s could not resolve - NOT verified'
-              % (kind, e, z))
-        rc = 1
+                i += 1
+            continue
+        if string:
+            if src[i] == '\\':
+                i += 2
+            else:
+                string = src[i] != '"'; i += 1
+            continue
+        if src.startswith('--', i):
+            line_comment = True; i += 2; continue
+        if src.startswith('/-', i):
+            block_comment = 1; i += 2; continue
+        ch = src[i]
+        if ch == '"':
+            string = True; i += 1; continue
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                return None
+        elif not stack and ch == ':':
+            return src[k:i] if re.match(r':\s*False\s*:=', src[i:]) else None
+        i += 1
+    return None
 
-print()
-if rc:
-    print('FAIL - some row is inadmissible or could not be resolved.')
-else:
-    print('PASS - every row is a genuine weight-<=2 Pauli.')
-sys.exit(rc)
+
+def binders(body):
+    """All top-level (), {} and [] binders, or None on malformed syntax."""
+    out, stack, cur, outer = [], [], '', None
+    pairs = {')': '(', ']': '[', '}': '{'}
+    for ch in body:
+        if ch in '([{':
+            if not stack:
+                cur, outer = '', ch
+            else:
+                cur += ch
+            stack.append(ch)
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                return None
+            if stack:
+                cur += ch
+            else:
+                out.append((outer, cur))
+        elif stack:
+            cur += ch
+    return out if not stack else None
+
+
+def top_tokens(text):
+    """Whitespace tokens, keeping a parenthesized lambda/expression together."""
+    out, stack, cur = [], [], ''
+    pairs = {')': '(', ']': '[', '}': '{'}
+    for ch in text.strip():
+        if ch in '([{':
+            stack.append(ch); cur += ch
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                return None
+            cur += ch
+        elif ch.isspace() and not stack:
+            if cur:
+                out.append(cur); cur = ''
+        else:
+            cur += ch
+    if stack:
+        return None
+    if cur:
+        out.append(cur)
+    return out
+
+
+def binder_parts(raw):
+    """Split ``names : type`` at its top-level colon."""
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
+    for i, ch in enumerate(raw):
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                return None
+        elif ch == ':' and not stack:
+            return (' '.join(raw[:i].split()), ' '.join(raw[i + 1:].split()))
+    return None
+
+
+def row_kind(typ):
+    """Exact grammar for the only four legitimate headline binder types."""
+    if typ == 'SS.BitString 6 -> ℂ':
+        return 'amplitude', None
+    tok = top_tokens(typ)
+    if not tok:
+        return None, None
+    bot_arg = re.compile(r'^\(Complex\.normSq \(c y\d+\)\)$')
+    top_z = re.compile(r'^\(Complex\.normSq \(d z\d+\)\)$')
+    top_c = re.compile(
+        r'^\(Complex\.normSq \(d \(SS\.complement y\d+\)\)\)$')
+    if tok[0] == 'MomentSystem' and len(tok) > 2:
+        kinds = [('b' if bot_arg.fullmatch(t) else
+                  'z' if top_z.fullmatch(t) else
+                  'c' if top_c.fullmatch(t) else '?') for t in tok[1:]]
+        first_top = next((i for i, x in enumerate(kinds) if x in 'zc'), None)
+        if (first_top not in (None, 0) and all(x == 'b' for x in kinds[:first_top])
+                and len(set(kinds[first_top:])) == 1 and
+                kinds[first_top] in 'zc'):
+            return 'moment', None
+    if (len(tok) == 7 and tok[:3] == ['offSum', 'c', 'd'] and
+            tok[5:] == ['=', '0']):
+        return 'offSum', (tok[3], tok[4])
+    if (len(tok) == 9 and tok[:2] == ['diagBot', 'c'] and tok[4:7] ==
+            ['=', 'diagTop', 'd'] and tok[2:4] == tok[7:9]):
+        return 'diag', (tok[2], tok[3])
+    return None, None
+
+
+def resolve_mask(term, defs):
+    t = ' '.join(term.split())
+    while t.startswith('(') and t.endswith(')'):
+        inner = t[1:-1].strip()
+        # Only peel a genuinely enclosing pair.
+        if top_tokens(inner) is None:
+            break
+        t = inner
+    if t == 'fun _ => false':
+        return [0] * 6
+    if re.fullmatch(r'\w+', t) and t in defs:
+        return defs[t]
+    return None
+
+
+def audit_source(src):
+    """Return off rows, diag rows, bad weights, unresolved hypotheses, profile."""
+    defs = masks(src)
+    body = headline_block(src)
+    if body is None:
+        return [], [], [], [('headline', 'parse', 'failed')], {}
+    bs = binders(body)
+    if bs is None:
+        return [], [], [], [('headline', 'binders', 'malformed')], {}
+    off, dia, bad, unres, prof = [], [], [], [], {}
+    amplitudes = moments = 0
+    for opener, raw in bs:
+        parts = binder_parts(raw)
+        if parts is None:
+            unres.append(('hypothesis', 'no top-level colon', raw[:36]))
+            continue
+        names, typ = parts
+        kind, args = row_kind(typ)
+        if opener != '(':
+            unres.append(('hypothesis', names, 'implicit/instance binder'))
+            continue
+        if kind == 'amplitude':
+            if names.split() != ['c', 'd']:
+                unres.append(('amplitude', names, 'expected c d'))
+            amplitudes += 1
+            continue
+        if kind == 'moment':
+            moments += 1
+            continue
+        if kind not in ('offSum', 'diag'):
+            unres.append(('hypothesis', names, typ[:36]))
+            continue
+        e, z = args
+        (off if kind == 'offSum' else dia).append((e, z))
+        ev, zv = resolve_mask(e, defs), resolve_mask(z, defs)
+        if ev is None or zv is None:
+            unres.append((kind, e, z))
+            continue
+        w = sum(1 for i in range(6) if ev[i] or zv[i])
+        prof[w] = prof.get(w, 0) + 1
+        if w > 2:
+            bad.append((kind, e, z, w))
+    if amplitudes != 1:
+        unres.append(('headline', 'amplitude binders', str(amplitudes)))
+    if moments != 1:
+        unres.append(('headline', 'MomentSystem binders', str(moments)))
+    return off, dia, bad, unres, prof
+
+
+def insert_extra_binder(src, binder):
+    body = headline_block(src)
+    if body is None:
+        return src
+    k = src.find('theorem no_go_of_moments')
+    p = k + len(body)
+    return src[:p] + chr(10) + '    ' + binder + src[p:]
+
+
+def corrupt_moment_with_false(src):
+    body = headline_block(src)
+    if body is None:
+        return src
+    m = body.find('(hm : MomentSystem')
+    nxt = body.find(chr(10) + '    (', m + 1)
+    if m < 0 or nxt < 0:
+        return src
+    j = nxt - 1
+    while j >= 0 and body[j].isspace():
+        j -= 1
+    if j < 0 or body[j] != ')':
+        return src
+    bad_body = body[:j] + ' ∧ False' + body[j:]
+    return src.replace(body, bad_body, 1)
+
+
+def selftest():
+    _f, _oid, src = modules([])[0]
+    tests = [
+        ('extra False binder', insert_extra_binder(src, '(evil : False)')),
+        ('embedded offSum name',
+         insert_extra_binder(src, '(evil : myoffSumBogus = 0)')),
+        ('MomentSystem and False', corrupt_moment_with_false(src)),
+    ]
+    inv_caught, inv_missed, inv_inert, inv_details = inventory_selftest(REPO)
+    for status, why in inv_details:
+        print('  %-6s inventory: %s' % (status, why))
+    print('  inventory corruptions caught %d, missed %d, not injected %d'
+          % (inv_caught, inv_missed, inv_inert))
+    missed = inert = 0
+    for name, bad_src in tests:
+        if bad_src == src:
+            inert += 1
+            print('  INERT ', name)
+        elif not audit_source(bad_src)[3]:
+            missed += 1
+            print('  MISSED', name)
+    print('SELF-TEST: caught %d, missed %d, not injected %d'
+          % (len(tests) - missed - inert, missed, inert))
+    return 1 if missed or inert or inv_missed or inv_inert else 0
+
+
+def main(argv):
+    try:
+        if '--selftest' in argv:
+            return selftest()
+        argv = [a for a in argv if not a.startswith('--')]
+        selected = modules(argv)
+    except InventoryError as exc:
+        print('FAIL - certified no-go inventory mismatch: %s' % exc)
+        return 1
+    rc = 0
+    if not selected:
+        print('FAIL - no matching no_go_of_moments module was found.')
+        return 1
+    for f, oid, src in selected:
+        off, dia, bad, unres, prof = audit_source(src)
+        status = 'INADMISSIBLE' if bad else ('UNRESOLVED' if unres else 'OK')
+        print('orbit %-3s %-9s %2d offSum + %2d diag rows   weights %s   %s'
+              % (oid, f[:-5], len(off), len(dia), dict(sorted(prof.items())), status))
+        for kind, e, z, w in bad:
+            print('   *** %-10s e=%-16s z=%-16s WEIGHT %d' % (kind, e, z, w))
+            rc = 1
+        for kind, e, z in unres:
+            print('   ??? %-10s %-18s %-36s NOT VERIFIED' % (kind, e, z))
+            rc = 1
+    print()
+    if rc:
+        print('FAIL - some headline hypothesis is extra, malformed, inadmissible, '
+              'or unresolved.')
+    else:
+        print('PASS - every headline hypothesis is recognized, and every KL row '
+              'is a genuine weight-<=2 Pauli.')
+    return rc
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

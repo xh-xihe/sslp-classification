@@ -5,7 +5,7 @@ metadata:
   type: project
 ---
 
-`scratchpad/scan.py`'s `dressings(e)` returns the WRONG admissible set for the
+`tools/core/scan.py`'s `dressings(e)` returns the WRONG admissible set for the
 six-qubit Knill-Laflamme scan:
 
 * `|e| = 1`: it returns 7 strings (`{0} u {e_j}`), but the correct set is 12 --
@@ -16,7 +16,7 @@ six-qubit Knill-Laflamme scan:
 * `|e| = 2`: 4, which is correct.
 
 Correct total over all `|e| <= 2`: **154 = 1 + 6*3 + 15*9**, the number of
-weight-<=2 Paulis on six qubits.  `scratchpad/kl.py` (`dressings_full`,
+weight-<=2 Paulis on six qubits.  `tools/core/kl.py` (`dressings_full`,
 `conditions`) has the fixed version; it enumerates all 64 `z` and filters on
 `|supp(e) u supp(z)| <= 2` rather than being clever.
 
@@ -32,6 +32,6 @@ Consequences:
 
 `relations.analyse` additionally returns `None` when `S1` is not the bitwise
 complement of `S0` (angle vectors summing to `0 mod q`, e.g. orbit 29).
-`scratchpad/relgen.py` is the complement-free replacement.
+`tools/core/relgen.py` is the complement-free replacement.
 
 See [[sslp-nogo-mechanism-ladder]] and [[sslp-orbit33-block-recipe]].

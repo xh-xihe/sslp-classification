@@ -1,8 +1,12 @@
-"""Remove the self-contradictions the second audit found in the documentation."""
+"""Archived one-shot documentation migration; not a current fixer."""
 import io
 import os
 import re
 import subprocess
+import sys
+
+print('ARCHIVED: no files changed. This stale one-shot migration is disabled.')
+sys.exit(0)
 
 R = 'D:/UTD/Project_purdue/Lean_certification/'
 log = []
