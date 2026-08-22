@@ -98,6 +98,26 @@ hand-written or emitted by the scripts named above; that is where the
 mathematics lives. The generators write only the transcription layers — fibers,
 incidences, Walsh signs, moment facts, expansions.
 
+### Orbit 36 (rigidity, not a no-go)
+
+| Generator | Emits |
+|---|---|
+| `gen36code.py` | `SixQubit/Orbit36Code.lean` — the canonical pair, its fibers, `canonical_is_code` |
+| `gen36.py` | `SixQubit/Orbit36.lean` — fibers, moment system, forced magnitudes, full support |
+| `gen36alg.py` | `SixQubit/K4Kernel.lean` — the algebra layer the phase argument runs on |
+| `gen36phase.py` | `SixQubit/Orbit36Phase.lean` — `A_1 = 0`, the triangle sum, the weight-two table |
+| `gen36enum.py`, `gen36enum4.py` | `SixQubit/Orbit36Enum.lean`, `Orbit36Enum4.lean` — the enumerator through weight three, then four to six |
+| `gen36class.py` | `SixQubit/Orbit36Class.lean` — classification up to local-monomial equivalence |
+| `genmacw.py` | `SixQubit/MacWilliams.lean` — the subset MacWilliams identity at `n = 6` |
+| `gen36final.py` | `SixQubit/Orbit36Final.lean` — the assembled headline |
+| `gen36vac.py` | `SixQubit/Orbit36Vacuity.lean` — the non-vacuity witness |
+
+`SixQubit/CodeEquiv.lean`, which defines the local-monomial equivalence and its
+invariance lemmas, is hand-written: it is problem-independent and belongs with
+the `SS` infrastructure in spirit. Orbit 36 is checked by `rigidity.py`, not by
+the four gates below, which key off the `no_go_of_moments` headline it does not
+have.
+
 ## `verification/` — checks independent of Lean
 
 These provide regression checks for questions compilation alone does not answer:
@@ -110,6 +130,7 @@ intended specifications. They are not part of the Lean kernel's soundness chain.
 | **`classify.py`** | **the anti-smuggling check.** Parses every headline theorem and accepts only exact `offSum = 0` / `diagBot = diagTop` / `MomentSystem` hypothesis forms. Unexpected or unparsed binders fail closed. Current result across all 51: **zero** |
 | **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every parsed row. It independently cross-checks the headline classification so a syntactically unexpected row cannot disappear from both counts |
 | **`momentgate.py`** | **the transcription check.** Verifies every declared `MomentSystem` row against the order the headline passes probabilities, using exact rational linear forms rather than variable-name sets. Its non-exhaustive `--selftest` mutates every module in memory and fails if any requested mutation is missed or not injected; this is regression evidence, not a completeness theorem for the checker |
+| **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the one realized orbit certified here — is invisible to all of them. This verifies the same obligations for it: that the Lean angle record `(1,1,1,1,2,3)` at `q=5`, residues `0,4` is the same orbit as the manifest's `(1,1,1,2,2,4)`, `delta=1` (compared by canonical form under flips, permutation, unit scaling and logical swap, not assumed); that both fibers recompute; that no hypothesis is smuggled; that all 22 KL rows have weight ≤ 2; that every moment row is a genuine KL moment condition, derived here from the fibers rather than shared with `momentgate.py`; and that the non-vacuity witness really applies the headline. Its `--selftest` injects 14 mutations inside the headline region — a whole-file replace hits a lemma instead and tests nothing — and requires every one to be caught |
 | `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed from each Lean module and cross-checked with `tools/manifest.json`; `delta` and `m` come from the manifest; fiber sizes are recomputed from `(q,a,delta)`. Run `gate.py` separately to compare the Lean residue and support declarations with the manifest |
 | `phase4.py` | which orbits admit isolable C² *inner products* (as opposed to single monomials) |
 | `pin51.py` | the quadratic consequences that pin orbits 49 and 51 |
@@ -124,9 +145,11 @@ The `stepA_*` and `x26_*` families exist because the first orbit-26 argument had
 a real gap (per-anchor axis choices used as if global). They are the record of
 finding it and of verifying the repair.
 
-Run `gate.py`, `momentgate.py`, `classify.py` and `admis.py` together. They check
-different parts of the paper-to-Lean transcription and deliberately fail on
-unrecognized input; none replaces the kernel build and axiom audit.
+Run `gate.py`, `momentgate.py`, `classify.py`, `admis.py` and `rigidity.py`
+together. They check different parts of the paper-to-Lean transcription and
+deliberately fail on unrecognized input; none replaces the kernel build and
+axiom audit. The first four cover the 51 no-gos; `rigidity.py` covers orbit 36,
+which has no `no_go_of_moments` headline and so is outside their inventory.
 
 With no orbit arguments, all four gates obtain the exact reviewed 51-module set
 from `manifest.json` (`_no_go.lean_modules`) and fail if an expected file or its

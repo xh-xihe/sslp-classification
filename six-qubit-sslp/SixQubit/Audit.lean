@@ -122,6 +122,17 @@ import SixQubit.CodeOrbit64
 import SixQubit.CodeOrbit65
 import SixQubit.Vacuity
 import SixQubit.CodeOrder9
+import SixQubit.K4Kernel
+import SixQubit.Orbit36Code
+import SixQubit.Orbit36
+import SixQubit.Orbit36Phase
+import SixQubit.Orbit36Enum
+import SixQubit.CodeEquiv
+import SixQubit.Orbit36Class
+import SixQubit.Orbit36Enum4
+import SixQubit.MacWilliams
+import SixQubit.Orbit36Final
+import SixQubit.Orbit36Vacuity
 
 open SixQubit
 #print axioms SixQubit.Order9.S0_eq_fiber
@@ -467,3 +478,40 @@ open SixQubit
 #print axioms SixQubit.Vacuity.live_Orbit64
 #print axioms SixQubit.Vacuity.live_Orbit65
 #print axioms SixQubit.Vacuity.live_Order9
+
+/-! ## Orbit 36 rigidity -/
+
+#print axioms SixQubit.Orbit36Code.canonical_is_code
+#print axioms SixQubit.Orbit36Code.c36_normalized
+#print axioms SixQubit.Orbit36Code.d36_normalized
+#print axioms SixQubit.Orbit36Code.S0_eq_fiber
+#print axioms SixQubit.Orbit36Code.S1_eq_fiber
+#print axioms SixQubit.Orbit36.magnitudes_forced
+#print axioms SixQubit.Orbit36.full_support
+#print axioms SixQubit.Orbit36Phase.A1_eq_zero
+#print axioms SixQubit.K4Kernel.sumSq_eq_zero
+#print axioms SixQubit.K4Kernel.det_K4
+#print axioms SixQubit.Orbit36Enum.A2_value
+#print axioms SixQubit.Orbit36Enum.A3_value
+#print axioms SixQubit.Orbit36Enum.top_form
+#print axioms SixQubit.Orbit36Enum.unique_enumerator
+#print axioms SixQubit.CodeEquiv.hasDistance_iff
+#print axioms SixQubit.CodeEquiv.detectsRaw_permAct
+#print axioms SixQubit.CodeEquiv.detectsRaw_dAct
+#print axioms SixQubit.CodeEquiv.detectsRaw_swap
+#print axioms SixQubit.Orbit36Class.orbit36_rigidity
+#print axioms SixQubit.Orbit36Class.orbit36_theorem
+#print axioms SixQubit.Orbit36Class.solution_hasDistance
+#print axioms SixQubit.Orbit36Enum4.A4_value
+#print axioms SixQubit.Orbit36Enum4.A5_value
+#print axioms SixQubit.Orbit36Enum4.A6_value
+#print axioms SixQubit.Orbit36Enum4.enumerator_value
+#print axioms SixQubit.Orbit36Final.orbit36_rigidity
+#print axioms SixQubit.Orbit36Final.orbit36_enumerator
+#print axioms SixQubit.Orbit36Final.enumerator_sum
+#print axioms SS.MacWilliams.subset_macwilliams
+#print axioms SS.MacWilliams.macwilliams_six
+#print axioms SixQubit.Orbit36Vacuity.canonical_moments
+#print axioms SixQubit.Orbit36Vacuity.canonical_offSum
+#print axioms SixQubit.Orbit36Vacuity.hypotheses_satisfiable
+#print axioms SixQubit.Orbit36Vacuity.rigidity_nonvacuous

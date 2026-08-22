@@ -117,3 +117,14 @@ import SixQubit.CodeOrbit64
 import SixQubit.CodeOrbit65
 import SixQubit.Vacuity
 import SixQubit.CodeOrder9
+import SixQubit.K4Kernel
+import SixQubit.Orbit36Code
+import SixQubit.Orbit36
+import SixQubit.Orbit36Phase
+import SixQubit.Orbit36Enum
+import SixQubit.CodeEquiv
+import SixQubit.Orbit36Class
+import SixQubit.Orbit36Enum4
+import SixQubit.MacWilliams
+import SixQubit.Orbit36Final
+import SixQubit.Orbit36Vacuity

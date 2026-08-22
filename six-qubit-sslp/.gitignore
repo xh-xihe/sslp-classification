@@ -28,5 +28,8 @@ __pycache__/
 # formalization references it by section and line number instead.
 six_qubit_sslp.tex
 six_qubit_sslp_v7.tex
+# Same reason, same collaborator: the reorganized manuscript and its
+# companion documents. Referenced by section, never redistributed.
+documents/
 formalization/*.fls
 formalization/*.fdb_latexmk

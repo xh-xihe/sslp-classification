@@ -1,7 +1,7 @@
-# Six-qubit SSLP no-go orbits: machine-checked certification
+# Six-qubit SSLP orbits: machine-checked certification
 
-Every one of the **51 no-go moment orbits** of `six_qubit_sslp.tex` carries a
-Lean 4 proof that no exact six-qubit
+Every one of the **51 no-go moment orbits** of the six-qubit SSLP
+classification carries a Lean 4 proof that no exact six-qubit
 `((6,2,3))` code arises from it. All 51 are checked by the **Lean kernel alone**
 — axiom footprint exactly `[propext, Classical.choice, Quot.sound]`, with no use
 of `native_decide` or `sorry` in proof/tactic position.
@@ -14,18 +14,64 @@ the errors that were made and caught along the way.
 
 | | |
 |---|---|
-| Modules with a kernel-checked headline | 51, each with a code-level wrapper |
+| No-go modules with a kernel-checked headline | 51, each with a code-level wrapper |
 | Of those, matching the paper's target orbit | **51** |
-| Lines in orbit modules | 41,521 (the 51 orbit modules alone) |
-| Theorems in orbit modules | 12,521 |
-| Lines in the whole development | 90,109 |
-| Axiom-audit entries | 332, all clean |
+| Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
+| Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
+| Lines in the whole development | 118,710 |
+| Axiom-audit entries | 366, all clean |
 | Build errors / warnings | 0 / 0 |
 
-Orbits 25–40 (no 36) and 53–66 come from `six_qubit_sslp_v7.tex`. The twenty-two
-orbits added in `six_qubit_sslp.tex` are 5, 6, 12–15, 17–20, 24, 41–44, 46–52.
-Orbit 66 is in
+Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
+next manuscript revision are 5, 6, 12–15, 17–20, 24, 41–44, 46–52. Orbit 66 is in
 `SixQubit/Order9.lean`; all others in `SixQubit/Orbit<n>.lean`.
+
+Orbit 36 is the one orbit here that is *not* a no-go. It is realized, and what
+is certified about it is rigidity: from the support conditions, the moment
+system and twenty-two weight-≤2 KL rows alone, the amplitude magnitudes are
+forced, the code is unique up to local-monomial equivalence, and its weight
+enumerator is `(1, 0, 21/25, 0, 291/25, 384/25, 79/25)`. The chain lives in
+`SixQubit/Orbit36*.lean` with `CodeEquiv`, `MacWilliams` and `K4Kernel`, and its
+hypotheses are exhibited as satisfiable in `SixQubit/Orbit36Vacuity.lean`, so
+the rigidity statement is not vacuous.
+
+## Where the source manuscript lives now
+
+Module docstrings, notes and workflow records throughout this repository cite
+`six_qubit_sslp.tex` and `six_qubit_sslp_v7.tex`. **Neither file exists any
+more.** The manuscript was reorganized in August 2026 and its contents were
+split across the files below. The old citations are kept deliberately: they are
+provenance for when each module was written, and nothing load-bearing depends on
+them, because the datum that actually identifies an orbit is its angle vector,
+which `tools/verification/gate.py` checks against `tools/manifest.json` on every
+run.
+
+| Cited as | Now in | Contents |
+|---|---|---|
+| `six_qubit_sslp.tex`, statement of the 66 orbits | `main.tex` §§ on the `((6,2,3))` classification | the 66 SSLP moment orbits, the four classification levels, the filtration `13,877 → ⋯ → 66` |
+| `six_qubit_sslp.tex`, the 51 no-go arguments | `supplementary.tex`, eight appendices grouped by projective order `m` | see the table below |
+| — (new) | `supplementary.tex` § line 320, *Rigidity of the order-five orbit 36* | the orbit-36 chapter |
+| — (new) | `723/transversal_diagonal_lattice_classification_superexponential_ladder.tex` | the umbrella theory paper: projector lattices, SSLP as a normal form, the `β_n` bounds |
+| — (new) | `623/orbit1_so5_bd4_c4_construction.tex` | the explicit `SO(5)` family realizing orbits 1, 4 and 45 |
+
+The no-go appendices are grouped by projective order, and the grouping matches
+this repository's modules exactly — this is a useful independent check that no
+orbit was dropped or double-counted on either side:
+
+| Projective order `m` | `supplementary.tex` appendix | Orbits | Certified here |
+|---|---|---|---|
+| 9 | Exact nonexistence of projective order nine | 1 | 1 |
+| 8 | Exact nonexistence of projective order eight | 2 | 2 |
+| 7 | Exact nonexistence of projective order seven | 5 | 5 |
+| 6 | Exact nonexistence of projective order six | 4 | 4 |
+| 5 | No-go theorems for the other seven order-five orbits | 7 | 7 |
+| 4 | Projective order four: complete ten-orbit no-go | 10 | 10 |
+| 3 | Exact no-go theorems for order-three orbits 5, 6, 47–52 | 8 | 8 |
+| 2 | Exact no-go theorems for fourteen projective-order-two orbits | 14 | 14 |
+| | **total** | **51** | **51** |
+
+The manuscripts are a collaborator's unpublished work and are not redistributed
+from this repository; see `.gitignore`.
 
 ## Status, stated precisely
 
@@ -45,11 +91,39 @@ the paper's own 66-orbit table) plus `tools/verification/gate.py`, which checks
 `tools/verification/momentgate.py` checks the complete content and ordering of
 the declared moment rows:
 
-What remains open is one level up: neither the reduction of an arbitrary code to
-one of the sixty-six rank-compatible moment orbits, nor the equivalence of other
-angle records to the chosen representatives, is formalized. So the per-orbit
-no-gos are complete and code-level; the classification theorem that assembles
-them is not.
+What remains open is one level up, and it now has a name. The reduction of an
+arbitrary code to one of the sixty-six rank-compatible moment orbits is
+*Completeness of the lift-aware SSLP pipeline* (`main.tex`), and the equivalence
+of other angle records to the chosen representatives is part of the same
+statement. Neither is formalized. So the per-orbit no-gos are complete and
+code-level; the classification theorem that assembles them is not.
+
+Three things about that theorem are worth recording, because they change how
+large the remaining gap is.
+
+**SSLP is a normal form, not an ansatz.** The umbrella paper extracts two
+integer lattices from a code's projector and shows their quotient determines the
+whole physical diagonal symmetry group; for one logical qubit the finite
+characters are exactly modular subset-sum sectors. The two-fiber problem these
+modules solve is therefore the classification's normal form, not a convenient
+parameterization of it.
+
+**The enumeration is finite for an elementary reason.** The completeness theorem
+rests on a cutoff `q ≤ β_n`, where `β_n` is the largest final Smith invariant
+factor of a nonsingular `n × n` binary matrix. At six qubits `β_6 = 9`. That value
+needs no table: the last Smith factor divides the determinant, so `β_6` is at most
+the maximal `6 × 6` binary determinant, which is 9, and 9 is attained — for
+instance by the matrix with rows `100011, 010110, 001111, 101110, 111101, 011010`,
+whose Smith diagonal is `(1,1,1,1,1,9)`. Formalizing the upper bound still means
+proving the maximal-determinant fact, which is a finite but non-trivial search;
+it would narrow the gap, not close it.
+
+**These 51 exclusions are what pins the six-qubit answer.** Every one of the 22
+orbits with projective order `m ∈ {4,6,7,8,9}` is among them, so the manuscript's
+claim that the possible nontrivial projective orders at six qubits are exactly
+`{2,3,5}` rests on this set. The complementary 15 orbits are the realized ones,
+and that complement agrees exactly with the manuscript's own table of
+realizations, orbit for orbit.
 
 For the repaired residue orbits the correct and previously-used fibers are
 disjoint, so the rebuilds are genuinely new proofs rather than relabelled ones;
@@ -101,7 +175,7 @@ used mathematically.
 
 | Path | Contents |
 |---|---|
-| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the audit |
+| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 11-module orbit-36 chain, the audit |
 | `SS/` | problem-independent bit-string and Pauli infrastructure |
 | `formalization/` | the process document (`.tex` and `.pdf`) |
 | `tools/core/` | fibers, Pauli enumeration, moment matrices, relation extractors |
@@ -109,6 +183,7 @@ used mathematically.
 | `tools/generators/` | the scripts that emit the Lean modules |
 | `tools/verification/` | numerical and symbolic checks independent of Lean |
 | `results/` | axiom audit, orbit table, multi-agent workflow records |
+| `tools/push-branch.sh` | publishes this tree into the `six-qubit-sslp/` subdirectory of the `sixqubit-classification` branch |
 
 Each `tools/` and `results/` subtree has its own README mapping artifacts to the
 claims they support.
@@ -129,6 +204,8 @@ python tools/run.py verification/admis.py               # every row is weight <=
 python tools/run.py verification/admis.py --selftest     # known parser regressions
 python tools/run.py verification/momentgate.py          # declared moment rows transcribed correctly
 python tools/run.py verification/momentgate.py --selftest   # run its non-exhaustive adversarial suite
+python tools/run.py verification/rigidity.py            # the orbit-36 chain, same obligations
+python tools/run.py verification/rigidity.py --selftest  # its mutation suite
 ```
 
 `classify.py` confirms every headline hypothesis has exactly one of the three
@@ -139,7 +216,11 @@ weight-≤2 Pauli and cross-checks that no headline row was skipped; a weight-3
 row would silently turn a distance-three no-go into a weaker distance-four
 claim. These are fail-closed regression checks for the syntax used in this
 repository, not completeness proofs for arbitrary Lean syntax. Both currently
-return zero violations across all 51 orbits.
+return zero violations across all 51 orbits. `rigidity.py` holds orbit 36 to
+the same four obligations — it is the orbit the other gates do not cover,
+because it has no `no_go_of_moments` headline — and additionally re-derives the
+moment rows from the fibers instead of sharing code with `momentgate.py`, since
+two checkers built on one parser fail together.
 
 **A reviewer inspecting the algebraic certificates** — the hypotheses of each
 `no_go_of_moments`. A `False` theorem is only as good as its hypotheses, and the
