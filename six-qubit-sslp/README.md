@@ -38,9 +38,11 @@ the rigidity statement is not vacuous.
 ## Where the source manuscript lives now
 
 Module docstrings, notes and workflow records throughout this repository cite
-`six_qubit_sslp.tex` and `six_qubit_sslp_v7.tex`. **Neither file exists any
-more.** The manuscript was reorganized in August 2026 and its contents were
-split across the files below. The old citations are kept deliberately: they are
+`six_qubit_sslp.tex` and `six_qubit_sslp_v7.tex`. **Neither is the authority any
+more.** `six_qubit_sslp_v7.tex` no longer exists at all; `six_qubit_sslp.tex`
+still exists, at `documents/<date>/623/six_qubit_sslp.tex` (12,977 lines), but
+was superseded when the manuscript was reorganized in August 2026 and its
+contents were split across the files below. The old citations are kept deliberately: they are
 provenance for when each module was written, and nothing load-bearing depends on
 them, because the datum that actually identifies an orbit is its angle vector,
 which `tools/verification/gate.py` checks against `tools/manifest.json` on every
