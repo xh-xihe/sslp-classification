@@ -56,9 +56,6 @@ lemma sum4_comm {M : Type*} [AddCommMonoid M] {α β γ δ : Type*}
 
 /-! ## The sign and the pairing -/
 
-/-- The all-ones mask. -/
-def ones (n : ℕ) : SS.BitString n := fun _ => true
-
 /-- `(-1)^{|u|}`, written through `chi` so that the existing sign lemmas apply
 without a separate parity development. -/
 def psign (u : SS.BitString n) : ℝ := chi u (ones n)
@@ -144,7 +141,7 @@ lemma altsign_factor (P : SS.PauliString n) :
       = ∏ i, (if P.x i || P.z i then (-1 : ℝ) else 1) := by
     rw [chi, chi, ← Finset.prod_mul_distrib]
     refine Finset.prod_congr rfl (fun i _ => ?_)
-    simp only [ones, SS.complement]
+    simp only [SS.ones, SS.complement]
     rcases Bool.eq_false_or_eq_true (P.x i) with hx | hx <;>
       rcases Bool.eq_false_or_eq_true (P.z i) with hz | hz <;>
         simp [hx, hz]

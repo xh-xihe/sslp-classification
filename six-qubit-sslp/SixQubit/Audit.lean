@@ -136,6 +136,7 @@ import SixQubit.Orbit36Vacuity
 import SixQubit.CodeOrbit36
 import SixQubit.Realize
 import SixQubit.Shadow
+import SixQubit.ShadowTwisted
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -624,6 +625,14 @@ open SixQubit
 #print axioms SS.Shadow.alt_sum_nonneg
 #print axioms SS.Shadow.alt_sum_as_Aco
 #print axioms SS.Shadow.shadow_bound
+
+/-! ## Twisted shadow coefficients -/
+
+#print axioms SS.ShadowTwisted.altsignT_factor
+#print axioms SS.ShadowTwisted.coreT_eq_sum_normSq
+#print axioms SS.ShadowTwisted.zT_sum_collapse
+#print axioms SS.ShadowTwisted.altT_sum_eq_coreT
+#print axioms SS.ShadowTwisted.altT_sum_nonneg
 
 /-! ## Pinned enumerators -/
 
