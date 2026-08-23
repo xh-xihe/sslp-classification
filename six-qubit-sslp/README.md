@@ -92,6 +92,24 @@ works fiber-wide, so those three get attainment of one point and no more. The
 manuscript reaches further by reducing the support first, which this
 development does not attempt.
 
+Orbit 21 also carries this project's clearest reasoning error, recorded here
+rather than quietly fixed. Reducing the certificate under the two symmetries the
+source names leaves 128 inconsistent rows, so I proposed a third vanishing,
+`a_E = 0` unless `A_a(E.x) = 0`, found the identity closed with it, and reported
+the source's hypothesis list as incomplete. Both halves of that were wrong. The
+proposed condition is false — orbit 21's support is eight words of a sixteen-word
+fiber, so `A_a` is not an invariant of the support, and ninety-six labels
+violate it. And closure identifies nothing: restricting instead to labels with
+zero `X`-part also closes those rows, on 32 classes. Several strengthenings work,
+so "the identity holds once I assume P" is no evidence that P was omitted.
+
+The error surfaced because the mechanism was checked numerically before the Lean
+was written. Had it not been, the false condition would have been carried into a
+definition and the proof would have failed opaquely — or worse, been routed
+around. `SixQubit/Orbit21Coef.lean` still carries the finite check, which is a
+true arithmetic statement, with the caveat that its `forced` predicate is not a
+proved vanishing condition.
+
 Orbit 21 is the one where the remaining distance is documented rather than
 estimated. Seven layers are in the repository and none of them is assumed:
 the two coefficient symmetries as one `melTr` lemma, their two decided

@@ -78,8 +78,22 @@ def coef (x z : Nat) : Int :=
   - (if mem x z zset then 64 else 0)
   + (if x = 0 && z = 0 then 96 else 0)
 
-/-- The label is forced to have vanishing coefficient: it either anticommutes
-with `G`, or its `X`-mask does not preserve the fibers. -/
+/-- The predicate the finite check is stated against.
+
+**This is not a proved vanishing condition, and the second disjunct is false.**
+It says the label either anticommutes with `G` -- which does force the
+coefficient to vanish, since `G Pi = Pi` -- or its `X`-mask fails `A_a(x) = 0`,
+which does not.  Orbit 21's exhibited support is eight words of a sixteen-word
+fiber, so `A_a` is not an invariant of the support: the mask `011000` has
+`A_a = 2` and still maps four of the eight word-zero strings back into word
+zero, and ninety-six labels with `A_a(x) != 0` have a nonzero diagonal.
+
+`coef_group_sum` below is a true arithmetic statement about `coef` and this
+predicate, and the kernel checks it.  What it is *not* is a step in a proof of
+orbit 21's bound: discharging its second branch would require showing those
+labels contribute nothing, which is false as stated.  Finding the condition that
+does the job is open; see `tools/verification/o21farkas.py` for why closing the
+128 inconsistent rows does not by itself identify one. -/
 def forced (x : Nat) : Bool := pc (gmask &&& x) % 2 = 1 || wtA x != 0
 
 /-- Multiplication by `G`, on labels. -/
@@ -90,10 +104,11 @@ def shiftD (x z : Nat) : Nat × Nat := (x, z ^^^ (x &&& gmask))
 
 set_option maxHeartbeats 8000000 in
 set_option maxRecDepth 100000 in
-/-- **The certificate, as one finite check.**
+/-- Summed over the four-element symmetry group the coefficient vanishes at
+every label outside `forced`.
 
-Summed over the four-element symmetry group the coefficient vanishes at every
-label that is not already forced to contribute nothing. -/
+True as arithmetic, and kernel-checked.  Not usable as it stands: see the
+caveat on `forced`. -/
 theorem coef_group_sum : ∀ m < 64, ∀ k < 64,
     coef m k + coef (shiftG m k).1 (shiftG m k).2
       + coef (shiftD m k).1 (shiftD m k).2

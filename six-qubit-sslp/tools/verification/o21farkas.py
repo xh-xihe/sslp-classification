@@ -1,42 +1,47 @@
-"""Verify the orbit-21 Farkas certificate exactly, as a linear identity.
+"""Check the orbit-21 Farkas certificate as a linear identity -- and a retraction.
 
-The manuscript boxes (eq:o21-farkas)
+WHAT THIS FILE ONCE CLAIMED, AND WHY IT WAS WRONG.
 
-    A_2 - 1 = 2 sum_{B_21} b_E + 2 sum_{T_21} s_E
-              + 2 sum_{R_21,2} a + 3 sum_{R_21,3} a + 4 sum_{R_21,4} a,
+The manuscript boxes (eq:o21-farkas) and says the identity comes from expanding
+the complete transforms and "reducing all 4096 Pauli labels under the two forced
+symmetries".  Reducing under those alone leaves 640 classes, and the identity is
+not in the span of the stated constraints: 128 rows come out inconsistent.  From
+that I concluded a fourth vanishing was missing, proposed
 
-every term on the right nonnegative, hence A_2 >= 1.  It says the identity is
-obtained "by expanding the complete transforms and reducing all 4096 Pauli
-labels under the two forced symmetries".
+    a_E = 0   unless   A_a(E.x) = 0 mod q,
 
-That is not enough.  Reducing under those symmetries alone -- a_E = 0 when E
-anticommutes with G, a_{GE} = a_E, a_{D E D^dagger} = a_E -- leaves 640 unsigned
-classes, and the identity is then NOT in the span of the stated constraints:
-128 rows come out inconsistent.
+reported the identity as verified with it, and recorded the source's hypothesis
+list as incomplete.
 
-A fourth vanishing is needed, and it is not one of the symmetries.  For a code
-supported in the two subset-sum fibers, Tr(E Pi) pairs each basis string s with
-s xor E.x, and both must lie in the same fiber, so
+That conclusion does not hold, for two independent reasons.
 
-    a_E = 0   unless   A_a(E.x) = 0 mod q.
+First, the proposed vanishing is false.  Checked against the certified orbit-21
+code, ninety-six labels with A_a(E.x) != 0 have a nonzero individual diagonal
+<k|E|k>.  The reason is that orbit 21's exhibited support is a proper subset of
+its fiber -- eight words of sixteen -- so A_a is not an invariant of the support:
+the mask 011000 has A_a = 2 yet maps four of the eight word-0 strings back into
+word 0.  The genuine vanishing is support-level, and only two masks preserve both
+supports, which is a property of that one code rather than of the orbit.
 
-For orbit 21 that kills exactly the 320 classes with A_a(E.x) = 2 mod 4 -- the
-Paulis carrying S_0 to S_2 -- leaving 320.  With it the identity holds exactly,
-and this script reports the rational multipliers that witness it:
+Second, and more basic: the inconsistency does not identify a missing
+hypothesis.  Restricting instead to labels with zero X-part also makes the
+identity hold, on 32 classes.  Several different strengthenings close those 128
+rows, so "the identity holds once I assume P" is no evidence that the source
+omitted P.
 
-    3 (a_I - 1) - 1/2 (A_6 + 4A_1 + A_2 + A_3 - 4)
-      + 6 (b_I - a_I) - 2 sum_{i in {1,2,3,6}} (b_{Z_i} - a_{Z_i}).
+So the certificate may well follow from exactly the hypotheses the manuscript
+states, by a route this script does not reconstruct.  Nothing here shows a gap
+in the source, and the earlier claim that it did should not be relied on.
 
-So the certificate is correct; the list of hypotheses the text says it rests on
-is incomplete.  Everything here is exact rational arithmetic -- no floating
-point anywhere -- which is what lets the difference be stated as fact rather
-than as rounding.
+What the script still does honestly is report, for a given set of forced
+vanishings, how many classes survive and whether the identity lies in the span
+of the stated constraints.  That is a diagnostic, not a verification of the
+manuscript's derivation.
 
 Conventions.  A six-letter Pauli string is qubits 1..6 left to right, so string
 index j is qubit j in the development's zero-based numbering.  G = Z1Z2Z3Z6 is
 the Z-mask on qubits {0,1,2,5}.  D = S1S2S3 Z4Z5 S6^dagger acts on unsigned
-labels as z_i -> z_i xor x_i on those same qubits, since S and S^dagger both
-exchange X and Y up to sign while Z acts trivially.
+labels as z_i -> z_i xor x_i on those same qubits.
 
     python tools/run.py verification/o21farkas.py
 """
@@ -307,40 +312,25 @@ def per_class(sets):
 
 def main(argv):
     sets = load_sets()
-    print('label sets parsed: %s' % ' '.join(str(len(s)) for s in sets))
+    print('label sets parsed: %s' % ' '.join(str(len(x)) for x in sets))
     names = ['a_I = 1', 'A6+4A1+A2+A3 = 4', 'b_I = a_I',
              'b_Z1 = a_Z1', 'b_Z2 = a_Z2', 'b_Z3 = a_Z3', 'b_Z6 = a_Z6']
-    ok = True
-    for use_fiber, tag in ((False, 'stated symmetries only'),
-                           (True, 'plus the fiber vanishing')):
+    for use_fiber, tag in ((False, 'G-anticommuting only'),
+                           (True, 'plus the (FALSE) fibre vanishing')):
         NV, bad, lam = check(use_fiber, sets)
         print()
-        print('%-28s %3d classes, %d inconsistent rows -> %s'
-              % (tag, NV, bad, 'FAILS' if bad else 'identity holds'))
+        print('%-34s %3d classes, %d inconsistent rows'
+              % (tag, NV, bad))
         if not bad:
             for nm, x in zip(names, lam):
                 if x:
                     print('      %-20s multiplier %s' % (nm, x))
-        if use_fiber and bad:
-            ok = False
-        if not use_fiber and not bad:
-            print('      UNEXPECTED: the stated hypotheses now suffice;')
-            print('      the note in this file needs revising.')
-            ok = False
-    nc, free_nz, bad, avg_free_nz = per_class(sets)
     print()
-    print('shape for the Lean transcription')
-    print('  non-forced classes                    : %d' % nc)
-    print('  labels outside the forced set with a')
-    print('  nonzero coefficient (so NOT per-label): %d' % free_nz)
-    print('  classes whose coefficient sum is not 0: %d' % bad)
-    print('  after averaging over the order-4 group,')
-    print('  non-forced labels still nonzero        : %d' % avg_free_nz)
-    if bad or avg_free_nz:
-        ok = False
-    print()
-    print('certificate verified exactly:', ok)
-    return 0 if ok else 1
+    print('Read the docstring before drawing a conclusion from the second block.')
+    print('The fibre vanishing is false for orbit 21, whose support is a proper')
+    print('subset of its fibre; and several different strengthenings close the')
+    print('128 rows, so closure identifies no missing hypothesis.')
+    return 0
 
 
 if __name__ == '__main__':

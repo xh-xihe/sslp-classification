@@ -14,6 +14,11 @@ either fails:
   * summing it over the four-element symmetry group gives zero on every label
     outside the forced set.
 
+CAVEAT.  The `forced` predicate is not a proved vanishing condition -- its
+`A_a(x) = 0` disjunct is false for orbit 21, whose support is a proper subset
+of its fibre.  What is emitted is therefore a true arithmetic identity that
+is not yet a step in a proof.  See the docstring of the emitted module.
+
 The second is the statement the Lean will `decide`.  Emitting a formula that
 merely looks right is how a certificate ends up certifying nothing.
 """
