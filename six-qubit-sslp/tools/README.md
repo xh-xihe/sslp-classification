@@ -112,6 +112,13 @@ mask has weight four and orbit 45 has `q = 6`, where the square is not a Pauli,
 so neither is emitted — the generator reports them rather than skipping
 silently.
 
+The generated headline is `enumerator_pair_unique_fiber`, not merely an
+A-vector statement.  `SixQubit/BEnumerator.lean` proves the complete seven-row
+six-qubit MacWilliams transform from the subset identity and derives the exact
+B-vector for each of the two possible A-vectors.  Each generated module also
+contains `enumerator_pair_attained`, so uniqueness and non-emptiness are both
+kernel statements.
+
 ### The ten realizations
 
 | Generator | Emits |
@@ -141,9 +148,18 @@ from the source tables, never transcribed by hand.
 | `gen36final.py` | `SixQubit/Orbit36Final.lean` — the assembled headline |
 | `gen36vac.py` | `SixQubit/Orbit36Vacuity.lean` — the non-vacuity witness |
 
+Four hand-written closing modules now sit after this generated chain:
+`BEnumerator.lean` supplies the B-transform; `CodeEquivEnum.lean` proves
+composition/inversion of `Equivalent` and A/B invariance under the fixed
+permutation, flips and logical swap; `Orbit36Transport.lean` proves the exact
+kernel change from the manuscript's table representative
+`(1,1,1,2,2,4; 0,1)` to the symmetric representative; and
+`Orbit36Certified.lean` states the final code-level rigidity and A/B theorem
+directly on the table fibers, together with an attained witness there.
+
 `SixQubit/CodeEquiv.lean`, which defines the local-monomial equivalence and its
-invariance lemmas, is hand-written: it is problem-independent and belongs with
-the `SS` infrastructure in spirit. Orbit 36 is checked by `rigidity.py`, not by
+distance-preservation lemmas, is hand-written: it is problem-independent and
+belongs with the `SS` infrastructure in spirit. Orbit 36 is checked by `rigidity.py`, not by
 the four gates below, which key off the `no_go_of_moments` headline it does not
 have.
 
@@ -159,7 +175,7 @@ intended specifications. They are not part of the Lean kernel's soundness chain.
 | **`classify.py`** | **the anti-smuggling check.** Parses every headline theorem and accepts only exact `offSum = 0` / `diagBot = diagTop` / `MomentSystem` hypothesis forms. Unexpected or unparsed binders fail closed. Current result across all 51: **zero** |
 | **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every parsed row. It independently cross-checks the headline classification so a syntactically unexpected row cannot disappear from both counts |
 | **`momentgate.py`** | **the transcription check.** Verifies every declared `MomentSystem` row against the order the headline passes probabilities, using exact rational linear forms rather than variable-name sets. Its non-exhaustive `--selftest` mutates every module in memory and fails if any requested mutation is missed or not injected; this is regression evidence, not a completeness theorem for the checker |
-| **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the one realized orbit certified here — is invisible to all of them. This verifies the same obligations for it: that the Lean angle record `(1,1,1,1,2,3)` at `q=5`, residues `0,4` is the same orbit as the manifest's `(1,1,1,2,2,4)`, `delta=1` (compared by canonical form under flips, permutation, unit scaling and logical swap, not assumed); that both fibers recompute; that no hypothesis is smuggled; that all 22 KL rows have weight ≤ 2; that every moment row is a genuine KL moment condition, derived here from the fibers rather than shared with `momentgate.py`; and that the non-vacuity witness really applies the headline. Its `--selftest` injects 14 mutations inside the headline region — a whole-file replace hits a lemma instead and tests nothing — and requires every one to be caught |
+| **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the one realized orbit certified here — is invisible to all of them. This verifies the same obligations for it: the symmetric gauge and its fibers; the manifest's exact original representative `(1,1,1,2,2,4)` at `q=5` with residue-`0,1` fibers; the residue-shift and logical-swap direction; the absence of smuggled hypotheses; all 22 KL rows and moment equations; and the final table-level theorem's exact physical hypotheses, magnitudes/full-support/direct-equivalence/A/B conclusion, and constructive original canonical witness. Its `--selftest` retains the 14 legacy injections and adds transport/closure injections (34 total); every mutation must be caught and zero may be inert |
 | **`realized.py`** | **the realization check.** Each `Orbit<n>Real.lean` decides its own Knill–Laflamme certificate, so the kernel already proves the exhibited pair is a code. What the kernel cannot prove is that the pair belongs to the orbit the module is named for, since `manifest.json` is not a Lean object — exactly the defect that hit four no-go modules before `gate.py` existed. This checks orbit identity by canonical form, recomputes both fibers, and re-derives the amplitude norms in the same eight-integer ring the Lean uses. Six mutations in its `--selftest` |
 | `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed from each Lean module and cross-checked with `tools/manifest.json`; `delta` and `m` come from the manifest; fiber sizes are recomputed from `(q,a,delta)`. Run `gate.py` separately to compare the Lean residue and support declarations with the manifest |
 | `phase4.py` | which orbits admit isolable C² *inner products* (as opposed to single monomials) |

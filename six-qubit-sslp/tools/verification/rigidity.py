@@ -9,7 +9,7 @@ hypotheses and can fail the same way: a mis-transcribed row or a smuggled fact
 would void it invisibly, and the Lean kernel would not notice, because the
 kernel checks the proof, not the statement.
 
-Five obligations are checked here.
+Six obligations are checked here.
 
   A  orbit identity.  `Orbit36Code.av` is `(1,1,1,1,2,3)` at `q = 5` with
      fibers at residues 0 and 4.  `manifest.json` records orbit 36 as
@@ -24,6 +24,11 @@ Five obligations are checked here.
      here and compared against the `y`/`z` literals the headline indexes.  Lean
      decides the same fact, so this is a second, independent computation of it.
 
+     The original table representative `(1,1,1,2,2,4)` and its residue-0/1
+     fibers are checked separately and exactly.  The transport shift and the
+     logical swap are pinned too; canonical orbit equality alone would not pin
+     their direction.
+
   C  hypothesis classification.  Every binder of the headline must be a support
      condition, the moment system, an off-diagonal KL row, or a plain variable.
      Anything else is a candidate smuggled assumption and fails.
@@ -35,6 +40,12 @@ Five obligations are checked here.
   E  non-vacuity.  `Orbit36Vacuity.rigidity_nonvacuous` must actually apply the
      headline, so the hypotheses are known to be satisfiable rather than merely
      unrefuted.
+
+  F  table closure.  `table_representative_rigid` must have exactly the two
+     support, two normalization, and distance hypotheses, and must return the
+     original magnitudes, full support, a direct canonical equivalence, and the
+     two enumerators.  `table_representative_attained` must instantiate it with
+     the original canonical witness and actually invoke `original_enumerator_pair`.
 
 Usage:
     python tools/run.py verification/rigidity.py
@@ -58,6 +69,10 @@ SQ = os.path.join(REPO, 'SixQubit')
 
 HEADLINE_MODULE = 'Orbit36Final'
 HEADLINE = 'orbit36_rigidity'
+TRANSPORT_MODULE = 'Orbit36Transport'
+CERTIFIED_MODULE = 'Orbit36Certified'
+TABLE_HEADLINE = 'table_representative_rigid'
+ATTAINED_HEADLINE = 'table_representative_attained'
 SYMBOL_MODULES = ('Orbit36', 'Orbit36Enum')
 N = 6
 
@@ -113,16 +128,35 @@ def bitstring_symbols(sources):
     return out
 
 
-def parse_av(src):
-    m = re.search(r'def\s+av\s*:\s*Fin\s+6\s*(?:->|→)\s*ZMod\s+(\d+)\s*:=\s*!\[([^\]]*)\]',
+def parse_named_av(src, name, where):
+    m = re.search(r'def\s+' + re.escape(name)
+                  + r'\s*:\s*Fin\s+6\s*(?:->|→)\s*ZMod\s+(\d+)\s*:=\s*!\[([^\]]*)\]',
                   src)
     if not m:
-        raise CheckError('could not parse `av` from Orbit36Code')
+        raise CheckError('could not parse `%s` from %s' % (name, where))
     q = int(m.group(1))
     a = [int(x.strip()) for x in m.group(2).split(',')]
     if len(a) != N:
-        raise CheckError('`av` has %d entries, expected %d' % (len(a), N))
+        raise CheckError('`%s` has %d entries, expected %d'
+                         % (name, len(a), N))
     return a, q
+
+
+def parse_av(src):
+    return parse_named_av(src, 'av', 'Orbit36Code')
+
+
+def parse_original_fiber_residue(src, name):
+    """Parse a full-universe originalAv residue filter, rejecting aliases/subsets."""
+    m = re.search(
+        r'def\s+' + re.escape(name) + r'\s*:[^:]*?:=\s*'
+        r'Finset\.univ\.filter\s*\(fun\s+x\s*=>\s*'
+        r'SS\.weight\s+originalAv\s+x\s*=\s*(\d+)\s*\)',
+        src, re.S)
+    if not m:
+        raise CheckError('could not parse %s.%s as the full originalAv residue fiber'
+                         % (TRANSPORT_MODULE, name))
+    return int(m.group(1))
 
 
 def parse_fiber_residues(src):
@@ -205,6 +239,56 @@ def headline_binders(src, name):
             cur += ch
         i += 1
     raise CheckError('could not find the conclusion of %s' % name)
+
+
+def declaration_region(src, name):
+    """The complete top-level theorem/lemma declaration named `name`.
+
+    This intentionally accepts only the repository's current top-level grammar.
+    It lets self-test mutations be scoped to the theorem they claim to test,
+    rather than accidentally changing an earlier helper with the same text.
+    """
+    m = re.search(r'^(?:theorem|lemma)\s+' + re.escape(name) + r'\b', src, re.M)
+    if not m:
+        raise CheckError('declaration %s not found' % name)
+    start = m.start()
+    nxt = re.search(r'^(?:theorem|lemma|def|structure|namespace|end)\b',
+                    src[m.end():], re.M)
+    end = m.end() + nxt.start() if nxt else len(src)
+    return start, end
+
+
+def mutate_declaration(src, name, old, new):
+    """Apply exactly one mutation inside a named complete declaration."""
+    start, end = declaration_region(src, name)
+    region = src[start:end]
+    n = region.count(old)
+    if n != 1:
+        raise CheckError('anchor occurs %d times in declaration %s (need exactly 1): %s'
+                         % (n, name, ascii_safe(old[:60])))
+    return src[:start] + region.replace(old, new, 1) + src[end:]
+
+
+def theorem_conclusion(src, name):
+    """Return the conclusion between the top-level `:` and `:=` of a theorem."""
+    _, colon = headline_region(src, name)
+    stack, i, pairs = [], colon + 1, {')': '(', ']': '[', '}': '{'}
+    while i < len(src) - 1:
+        ch = src[i]
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in ')]}':
+            if not stack or stack.pop() != pairs[ch]:
+                raise CheckError('unbalanced brackets in conclusion of %s' % name)
+        elif not stack and src.startswith(':=', i):
+            return src[colon + 1:i].strip()
+        i += 1
+    raise CheckError('could not find proof delimiter of %s' % name)
+
+
+def compact_lean(src):
+    """Whitespace-insensitive comparison for a fixed, parsed Lean fragment."""
+    return re.sub(r'\s+', '', src)
 
 
 # --------------------------------------------------------------------------
@@ -353,6 +437,8 @@ def check(sources, manifest, report):
     """sources: module name -> text.  Returns list of (label, ok, detail)."""
     code = sources['Orbit36Code']
     final = sources[HEADLINE_MODULE]
+    transport = sources[TRANSPORT_MODULE]
+    certified = sources[CERTIFIED_MODULE]
     syms = bitstring_symbols([sources[m] for m in SYMBOL_MODULES] + [code])
 
     a, q = parse_av(code)
@@ -374,6 +460,18 @@ def check(sources, manifest, report):
     else:
         report('A  lift order', True, 'q = %d on both sides' % q)
 
+    # The final theorem is about the literal representative printed in the
+    # paper/table.  Canonical equality is insufficient here: it would accept a
+    # different gauge while claiming to certify the printed record.
+    original_a, original_q = parse_named_av(
+        transport, 'originalAv', TRANSPORT_MODULE)
+    report('A  original table vector exact',
+           original_a == entry['a'],
+           'Lean originalAv=%s ; manifest a=%s' % (original_a, entry['a']))
+    report('A  original table order exact',
+           original_q == entry['q'],
+           'Lean original q=%d ; manifest q=%d' % (original_q, entry['q']))
+
     # --- B  fibers ---------------------------------------------------------
     F0, F1 = fiber(a, q, r0), fiber(a, q, r1)
     ys = [syms['y%d' % i] for i in range(12)]
@@ -386,6 +484,62 @@ def check(sources, manifest, report):
     report('B  fibers complementary', comp_ok,
            'z_i = complement(y_i) for all 12' if comp_ok
            else 'some z_i is not the complement of y_i')
+
+    # Original table fibers: pin both the syntactic full-filter definition and
+    # an independent enumeration.  A literal/subset masquerading as a fiber is
+    # rejected by parse_original_fiber_residue before cardinality is considered.
+    original_r0 = parse_original_fiber_residue(transport, 'originalS0')
+    original_r1 = parse_original_fiber_residue(transport, 'originalS1')
+    report('B  original residues exact',
+           (original_r0, original_r1) == (0, 1),
+           'originalS0/S1 use residues %d/%d (expected 0/1)'
+           % (original_r0, original_r1))
+    OF0 = fiber(original_a, original_q, original_r0)
+    OF1 = fiber(original_a, original_q, original_r1)
+    report('B  original fiber cardinalities',
+           len(OF0) == 12 and len(OF1) == 12,
+           'independent enumeration gives %d/%d states (expected 12/12)'
+           % (len(OF0), len(OF1)))
+    card0 = bool(re.search(
+        r'theorem\s+originalS0_card\s*:\s*originalS0\.card\s*=\s*12\s*:=',
+        transport))
+    card1 = bool(re.search(
+        r'theorem\s+originalS1_card\s*:\s*originalS1\.card\s*=\s*12\s*:=',
+        transport))
+    report('B  Lean original card theorems', card0 and card1,
+           'originalS0_card/originalS1_card both state card = 12'
+           if card0 and card1 else 'missing or altered original card theorem')
+
+    weight_want = compact_lean(
+        'SS.weight originalAv (transportStr s) = SS.weight Orbit36.av s + 1')
+    weight_got = compact_lean(theorem_conclusion(transport, 'weight_transport'))
+    report('B  transport weight shift direction', weight_got == weight_want,
+           'weight(original, transportStr s) = weight(symmetric, s) + 1'
+           if weight_got == weight_want else 'got: ' + ascii_safe(weight_got))
+
+    mem0_want = compact_lean(
+        'transportStr s ∈ originalS0 ↔ s ∈ Orbit36.S1')
+    mem1_want = compact_lean(
+        'transportStr s ∈ originalS1 ↔ s ∈ Orbit36.S0')
+    mem0_got = compact_lean(theorem_conclusion(
+        transport, 'transport_mem_originalS0_iff'))
+    mem1_got = compact_lean(theorem_conclusion(
+        transport, 'transport_mem_originalS1_iff'))
+    report('B  transported fibers exact',
+           mem0_got == mem0_want and mem1_got == mem1_want,
+           'original S0 <- symmetric S1 and original S1 <- symmetric S0'
+           if mem0_got == mem0_want and mem1_got == mem1_want
+           else 'got %s ; %s' % (ascii_safe(mem0_got), ascii_safe(mem1_got)))
+
+    bottom_ok = bool(re.search(
+        r'def\s+bottom\s+\(_c\s+d\s*:\s*SS\.State\s+6\s+ℂ\)\s*:\s*'
+        r'SS\.State\s+6\s+ℂ\s*:=\s*physical\.act\s+d', transport))
+    top_ok = bool(re.search(
+        r'def\s+top\s+\(c\s+_d\s*:\s*SS\.State\s+6\s+ℂ\)\s*:\s*'
+        r'SS\.State\s+6\s+ℂ\s*:=\s*physical\.act\s+c', transport))
+    report('B  logical swap exact', bottom_ok and top_ok,
+           'bottom acts on d and top acts on c'
+           if bottom_ok and top_ok else 'bottom/top no longer encode the logical swap')
 
     # --- C  hypothesis classification -------------------------------------
     binders = headline_binders(final, HEADLINE)
@@ -525,6 +679,61 @@ def check(sources, manifest, report):
     order_ok, order_detail = headline_moment_order(final, HEADLINE, len(ys), len(zs))
     report('G  headline passes q_i = normSq (c y_i) in order', order_ok, order_detail)
 
+    # --- H  final theorem over the printed table representative ------------
+    # Compare the complete parsed binder list.  Merely counting binders would
+    # accept a support condition on the wrong fiber or a normalization of the
+    # wrong state, which are precisely the dangerous transport regressions.
+    table_binders = headline_binders(certified, TABLE_HEADLINE)
+    wanted_table_binders = [
+        'c d : SS.State 6 ℂ',
+        'hc : ∀ x, x ∉ Orbit36Transport.originalS0 → c x = 0',
+        'hd : ∀ y, y ∉ Orbit36Transport.originalS1 → d y = 0',
+        'hnc : SS.innerC c c = 1',
+        'hnd : SS.innerC d d = 1',
+        'hdist : SS.HasDistance ![c, d] 3',
+    ]
+    report('H  table theorem hypotheses exact',
+           table_binders == wanted_table_binders,
+           'only c,d; original S0/S1 support; two norms; HasDistance 3'
+           if table_binders == wanted_table_binders
+           else 'got: ' + ascii_safe(' | '.join(table_binders)))
+
+    table_want = compact_lean(
+        'Orbit36Transport.OriginalMagnitudes c d '
+        '∧ Orbit36Transport.OriginalFullSupport c d '
+        '∧ CodeEquiv.Equivalent ![c, d] ![Orbit36Code.c36, Orbit36Code.d36] '
+        '∧ IsOrbit36A ![c, d] ∧ IsOrbit36B ![c, d]')
+    table_got = compact_lean(theorem_conclusion(certified, TABLE_HEADLINE))
+    report('H  table theorem conclusion exact', table_got == table_want,
+           'magnitudes, full support, direct canonical equivalence, A and B'
+           if table_got == table_want else 'got: ' + ascii_safe(table_got))
+
+    attained_want = compact_lean(
+        '∃ c d : SS.State 6 ℂ, '
+        '(∀ x, x ∉ Orbit36Transport.originalS0 → c x = 0) '
+        '∧ (∀ y, y ∉ Orbit36Transport.originalS1 → d y = 0) '
+        '∧ SS.innerC c c = 1 ∧ SS.innerC d d = 1 '
+        '∧ SS.HasDistance ![c, d] 3 '
+        '∧ IsOrbit36A ![c, d] ∧ IsOrbit36B ![c, d]')
+    attained_got = compact_lean(theorem_conclusion(certified, ATTAINED_HEADLINE))
+    report('H  attained statement exact', attained_got == attained_want,
+           'original supports/norms/distance and both enumerators are attained'
+           if attained_got == attained_want else 'got: ' + ascii_safe(attained_got))
+
+    att_start, att_end = declaration_region(certified, ATTAINED_HEADLINE)
+    attained_decl = certified[att_start:att_end]
+    witness_call = re.search(
+        r'refine\s*⟨\s*Orbit36Transport\.originalCanonicalC\s*,\s*'
+        r'Orbit36Transport\.originalCanonicalD\s*,', attained_decl, re.S)
+    enum_call = re.search(r'\bexact\s+original_enumerator_pair\s+_\s+_',
+                          attained_decl)
+    report('H  attained uses original canonical witness', bool(witness_call),
+           'refine starts with originalCanonicalC/originalCanonicalD'
+           if witness_call else 'the original canonical witness call is absent')
+    report('H  attained invokes original enumerator pair', bool(enum_call),
+           'proof closes by original_enumerator_pair'
+           if enum_call else 'no exact original_enumerator_pair _ _ call in theorem')
+
     # --- E  non-vacuity ----------------------------------------------------
     vac = sources.get('Orbit36Vacuity', '')
     applies = re.search(r'rigidity_nonvacuous', vac) and re.search(
@@ -537,7 +746,9 @@ def check(sources, manifest, report):
 
 
 def load_sources():
-    mods = set(SYMBOL_MODULES) | {'Orbit36Code', HEADLINE_MODULE, 'Orbit36Vacuity'}
+    mods = (set(SYMBOL_MODULES)
+            | {'Orbit36Code', HEADLINE_MODULE, 'Orbit36Vacuity',
+               TRANSPORT_MODULE, CERTIFIED_MODULE})
     return {m: read(m) for m in mods}
 
 
@@ -587,6 +798,93 @@ MUTATIONS = [
      HEADLINE_MODULE,
      '(Complex.normSq (c y0)) (Complex.normSq (c y1))',
      '(Complex.normSq (c y1)) (Complex.normSq (c y0))'),
+
+    # Original table representative and transport.  These are deliberately
+    # separate from the old 14 mutations: a checker that only validates the
+    # symmetric gauge can catch every mutation above while still falsely
+    # certifying the wrong printed representative.
+    ('original table av entry changed',
+     TRANSPORT_MODULE,
+     'def originalAv : Fin 6 → ZMod 5 := ![1, 1, 1, 2, 2, 4]',
+     'def originalAv : Fin 6 → ZMod 5 := ![1, 1, 1, 2, 2, 3]'),
+    ('original table lift order changed',
+     TRANSPORT_MODULE,
+     'def originalAv : Fin 6 → ZMod 5 := ![1, 1, 1, 2, 2, 4]',
+     'def originalAv : Fin 6 → ZMod 7 := ![1, 1, 1, 2, 2, 4]'),
+    ('original S0 residue changed',
+     TRANSPORT_MODULE,
+     'def originalS0 : Finset (SS.BitString 6) :=\n'
+     '  Finset.univ.filter (fun x => SS.weight originalAv x = 0)',
+     'def originalS0 : Finset (SS.BitString 6) :=\n'
+     '  Finset.univ.filter (fun x => SS.weight originalAv x = 2)'),
+    ('original S1 residue changed',
+     TRANSPORT_MODULE,
+     'def originalS1 : Finset (SS.BitString 6) :=\n'
+     '  Finset.univ.filter (fun x => SS.weight originalAv x = 1)',
+     'def originalS1 : Finset (SS.BitString 6) :=\n'
+     '  Finset.univ.filter (fun x => SS.weight originalAv x = 3)'),
+    ('original S0 card theorem altered',
+     TRANSPORT_MODULE,
+     'theorem originalS0_card : originalS0.card = 12 := by decide',
+     'theorem originalS0_card : originalS0.card = 11 := by decide'),
+    ('transport residue shift reversed',
+     TRANSPORT_MODULE, 'weight_transport',
+     'SS.weight originalAv (transportStr s) = SS.weight Orbit36.av s + 1',
+     'SS.weight originalAv (transportStr s) = SS.weight Orbit36.av s + 2'),
+    ('transported S0 mapped to wrong fiber',
+     TRANSPORT_MODULE, 'transport_mem_originalS0_iff',
+     'transportStr s ∈ originalS0 ↔ s ∈ Orbit36.S1',
+     'transportStr s ∈ originalS0 ↔ s ∈ Orbit36.S0'),
+    ('logical swap omitted',
+     TRANSPORT_MODULE,
+     'def bottom (_c d : SS.State 6 ℂ) : SS.State 6 ℂ := physical.act d',
+     'def bottom (_c d : SS.State 6 ℂ) : SS.State 6 ℂ := physical.act _c'),
+
+    # Final closure: hypotheses, every conjunct of the promised conclusion,
+    # and both pieces of the constructive attainment proof.
+    ('table theorem smuggles an assumption',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '(hdist : SS.HasDistance ![c, d] 3)',
+     '(hdist : SS.HasDistance ![c, d] 3) (hsmug : c = d)'),
+    ('table theorem uses wrong first support',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '(hc : ∀ x, x ∉ Orbit36Transport.originalS0 → c x = 0)',
+     '(hc : ∀ x, x ∉ Orbit36Transport.originalS1 → c x = 0)'),
+    ('table theorem weakens a norm',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '(hnc : SS.innerC c c = 1)',
+     '(hnc : SS.innerC c c = 2)'),
+    ('table theorem weakens distance',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '(hdist : SS.HasDistance ![c, d] 3)',
+     '(hdist : SS.HasDistance ![c, d] 2)'),
+    ('table theorem drops magnitudes',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     'Orbit36Transport.OriginalMagnitudes c d', 'True'),
+    ('table theorem drops full support',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     'Orbit36Transport.OriginalFullSupport c d', 'True'),
+    ('table theorem changes canonical target',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '![Orbit36Code.c36, Orbit36Code.d36]',
+     '![Orbit36Code.d36, Orbit36Code.c36]'),
+    ('table theorem drops A enumerator',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '∧ IsOrbit36A ![c, d]', '∧ True'),
+    ('table theorem drops B enumerator',
+     CERTIFIED_MODULE, TABLE_HEADLINE,
+     '∧ IsOrbit36B ![c, d]', '∧ True'),
+    ('attained statement drops B enumerator',
+     CERTIFIED_MODULE, ATTAINED_HEADLINE,
+     '∧ IsOrbit36B ![c, d]', '∧ True'),
+    ('attained witness is not the original pair',
+     CERTIFIED_MODULE, ATTAINED_HEADLINE,
+     '⟨Orbit36Transport.originalCanonicalC, Orbit36Transport.originalCanonicalD,',
+     '⟨Orbit36Transport.originalCanonicalD, Orbit36Transport.originalCanonicalC,'),
+    ('attained avoids original enumerator pair',
+     CERTIFIED_MODULE, ATTAINED_HEADLINE,
+     'exact original_enumerator_pair _ _',
+     'exact original_A _ _'),
 ]
 
 
@@ -613,10 +911,20 @@ def selftest():
 
     print('%-44s %s' % ('mutation', 'caught?'))
     missed, inert = [], []
-    for name, module, old, new in MUTATIONS:
+    for mutation in MUTATIONS:
+        if len(mutation) == 4:
+            name, module, old, new = mutation
+            declaration = None
+        elif len(mutation) == 5:
+            name, module, declaration, old, new = mutation
+        else:
+            raise CheckError('bad mutation specification: %r' % (mutation,))
         mutated = dict(base)
         try:
-            if module == HEADLINE_MODULE:
+            if declaration is not None:
+                mutated[module] = mutate_declaration(
+                    base[module], declaration, old, new)
+            elif module == HEADLINE_MODULE:
                 # Must be applied inside the headline, not at the first
                 # whole-file hit; see mutate_headline.
                 mutated[module] = mutate_headline(base[module], HEADLINE, old, new)

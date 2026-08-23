@@ -129,6 +129,10 @@ import SixQubit.MacWilliams
 import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
 import SixQubit.CodeOrbit36
+import SixQubit.BEnumerator
+import SixQubit.CodeEquivEnum
+import SixQubit.Orbit36Transport
+import SixQubit.Orbit36Certified
 import SixQubit.Realize
 import SixQubit.Shadow
 import SixQubit.ShadowTwisted

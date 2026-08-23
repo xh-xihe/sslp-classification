@@ -38,6 +38,8 @@ NL = chr(10)
 VALUES = {1: (4, 0, 0, 60, 60, 0), 2: (0, 4, 0, 44, 64, 12)}
 NAMES = {1: 'E_1^A = (1, 1, 0, 0, 15, 15, 0)',
          2: 'E_2^A = (1, 0, 1, 0, 11, 16, 3)'}
+BNAMES = {1: 'E_1^B = (1, 1, 0, 30, 45, 33, 18)',
+          2: 'E_2^B = (1, 0, 1, 24, 35, 40, 27)'}
 
 
 def forced_mask(rec):
@@ -60,6 +62,7 @@ def emit(oid, rec, zm, w0, w1):
     return '''import Mathlib
 import SS.HilbertKL
 import SixQubit.Pin
+import SixQubit.BEnumerator
 import SixQubit.Orbit{oid}Real
 
 /-!
@@ -181,10 +184,48 @@ theorem enumerator_attained :
   enumerator_unique w0 w1 w0_vanishes w1_vanishes w0_normalized w1_normalized
     is_code
 
+/-! ## The complete `A`/`B` enumerator pair -/
+
+/-- **The exact `A`- and `B`-enumerator image over the complete orbit-{oid}
+fibers.**  `IsE{wt}A` and `IsE{wt}B` use the common unnormalised convention
+`Aco = 4 A`, `Bco = 4 B`; hence the second component is exactly
+`{bname}` after division by four. -/
+theorem enumerator_pair_unique_fiber (c d : SS.State 6 ℂ)
+    (hc : ∀ s, SS.weight av s ≠ {r0} → c s = 0)
+    (hd : ∀ s, SS.weight av s ≠ {r1} → d s = 0)
+    (hnc : SS.innerC c c = 1) (hnd : SS.innerC d d = 1)
+    (hdist : SS.HasDistance ![c, d] 3) :
+    IsE{wt}A ![c, d] ∧ IsE{wt}B ![c, d] := by
+  have hnorm : ∀ k, SS.innerC ((![c, d] : Fin 2 → SS.State 6 ℂ) k)
+      ((![c, d] : Fin 2 → SS.State 6 ℂ) k) = 1 := by
+    intro k
+    fin_cases k
+    · exact hnc
+    · exact hnd
+  have hA0 : Aco ![c, d] 0 = 4 := Aco_zero _ hnorm
+  rcases enumerator_unique_fiber c d hc hd hnc hnd hdist with
+    ⟨hA1, hA2, hA3, hA4, hA5, hA6⟩
+  have hA : IsE{wt}A ![c, d] := ⟨hA0, hA1, hA2, hA3, hA4, hA5, hA6⟩
+  exact ⟨hA, e{wt}B_of_e{wt}A _ hA⟩
+
+/-- The exhibited orbit-{oid} code attains the complete enumerator pair. -/
+theorem enumerator_pair_attained : IsE{wt}A ![w0, w1] ∧ IsE{wt}B ![w0, w1] := by
+  have hnorm : ∀ k, SS.innerC ((![w0, w1] : Fin 2 → SS.State 6 ℂ) k)
+      ((![w0, w1] : Fin 2 → SS.State 6 ℂ) k) = 1 := by
+    intro k
+    fin_cases k
+    · exact w0_normalized
+    · exact w1_normalized
+  have hA0 : Aco ![w0, w1] 0 = 4 := Aco_zero _ hnorm
+  rcases enumerator_attained with ⟨hA1, hA2, hA3, hA4, hA5, hA6⟩
+  have hA : IsE{wt}A ![w0, w1] := ⟨hA0, hA1, hA2, hA3, hA4, hA5, hA6⟩
+  exact ⟨hA, e{wt}B_of_e{wt}A _ hA⟩
+
 end SixQubit.Orbit{oid}Enum
 '''.format(oid=oid, q=q, m=rec['m'], a=tuple(a), bits=bits, r0=r0, r1=r1,
            bitsdoc=''.join(str(b) for b in zm), wt=wt, name=NAMES[wt],
-           branch=branch, a1=a1, a2=a2, a3=a3, a4=a4, a5=a5, a6=a6)
+           bname=BNAMES[wt], branch=branch,
+           a1=a1, a2=a2, a3=a3, a4=a4, a5=a5, a6=a6)
 
 
 def main(argv):

@@ -17,11 +17,10 @@ the errors that were made and caught along the way.
 | No-go modules with a kernel-checked headline | 51, each with a code-level wrapper |
 | Of those, matching the paper's target orbit | **51** |
 | Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
-| Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
+| Orbit-36 rigidity chain | 16 modules; original table representative through canonical classification |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
-| Shadow bound, five exact images, three attained | 10 modules, 1,487 lines / 83 theorems |
-| Lines in the whole development | 124,124 |
-| Axiom-audit entries | 529, all clean |
+| Shadow bound, universal A/B transform, five exact A/B images, three attained | kernel-checked |
+| Axiom-audit entries | 564, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -38,11 +37,13 @@ orbit 36 that is eleven realized orbits, against 51 excluded and four — 1, 2, 
 and 4 — whose exact enumerator image is still open.
 
 For five of them — orbits 10, 11, 16, 22 and 23 — the certification goes past
-existence to the **exact weight-enumerator image**. `SixQubit/Orbit<n>Enum.lean`
+existence to the **exact A/B weight-enumerator image**. `SixQubit/Orbit<n>Enum.lean`
 proves that *every* exact `((6,2,3))` code supported in that orbit's two fibers
-has one specific enumerator, and the realization module exhibits a code
-attaining it, so the image is a single point: `(1,1,0,0,15,15,0)` for orbits 11
-and 23, `(1,0,1,0,11,16,3)` for orbits 10, 16 and 22.
+has one specific pair, and the realization module exhibits a code attaining it.
+The A-vectors are `(1,1,0,0,15,15,0)` for orbits 11 and 23 and
+`(1,0,1,0,11,16,3)` for orbits 10, 16 and 22; the corresponding B-vectors are
+`(1,1,0,30,45,33,18)` and `(1,0,1,24,35,40,27)`.  The B half is derived in
+Lean from the full seven-row MacWilliams transform in `SixQubit/BEnumerator.lean`.
 
 The argument is a squeeze. The diagonal gate acts logically as `diag(1,-1)`, so
 its square is scalar on any code in the orbit; that square is the `Z`-string on
@@ -63,8 +64,8 @@ same claim. This table keeps them apart.
 
 | Orbit | Source's status | Realized | Enumerator of the exhibited code | **Reaches the source's status** |
 |---|---|---|---|---|
-| 10, 11, 16, 22, 23 | WE | yes | yes | **yes** — `enumerator_unique_fiber` |
-| 36 | rigid | yes | yes | **yes** — `Orbit36.rigid_code` |
+| 10, 11, 16, 22, 23 | WE | yes | yes | **yes** — `enumerator_pair_unique_fiber` (A and B) |
+| 36 | rigid | yes | yes | **yes** — `Orbit36Certified.table_representative_rigid` |
 | 7, 8, 9 | WE | yes | yes | no — needs a support reduction |
 | 21 | WE | yes | no | no — seven layers built, three gaps left (see below) |
 | 45 | WE | yes | no | no — **the source gives no derivation** |
@@ -145,13 +146,18 @@ length and every number of logical states; `shadow_bound` is its six-qubit
 specialization.
 
 Orbit 36 is the one realized orbit whose certification goes further than
-existence. What is certified there is rigidity: from the support conditions, the moment
-system and twenty-two weight-≤2 KL rows alone, the amplitude magnitudes are
-forced, the code is unique up to local-monomial equivalence, and its weight
-enumerator is `(1, 0, 21/25, 0, 291/25, 384/25, 79/25)`. The chain lives in
-`SixQubit/Orbit36*.lean` with `CodeEquiv`, `MacWilliams` and `K4Kernel`, and its
-hypotheses are exhibited as satisfiable in `SixQubit/Orbit36Vacuity.lean`, so
-the rigidity statement is not vacuous.
+existence.  `Orbit36Certified.table_representative_rigid` starts directly from
+the representative printed in the manuscript,
+`a = (1,1,1,2,2,4)` with residue fibers `(0,1)`, and assumes only support,
+normalization and the genuine predicate `SS.HasDistance ![c,d] 3`.  In the
+kernel it transports that code to the symmetric gauge, derives the moment and
+weight-at-most-two rows, forces every magnitude and full support, composes the
+two explicit `CodeEquiv.Equivalent` witnesses to the canonical code, and proves
+both enumerators
+`A = (1,0,21/25,0,291/25,384/25,79/25)` and
+`B = (1,0,21/25,584/25,183/5,984/25,671/25)`.
+`table_representative_attained` inverse-transports the canonical code back to
+those original fibers, so this strengthened theorem is also non-vacuous.
 
 ## Where the source manuscript lives now
 
@@ -200,7 +206,7 @@ being conflated. They are now tracked separately:
 
 | Question | Answer |
 |---|---|
-| Are the 51 Lean theorems really kernel-proved? | **Yes.** 332 audit entries, all `[propext, Classical.choice, Quot.sound]`, no escape hatches |
+| Are the Lean headline theorems really kernel-proved? | **Yes.** 564 current audit entries; every footprint is contained in `[propext, Classical.choice, Quot.sound]`, with no escape hatches |
 | Do they state what the paper needs? | **51 of 51**, since the repair. Four modules (30, 53, 55, 65) had used a residue of the wrong additive order and were rebuilt from scratch at `delta = q/m`; five more (34, 57, 59, 64, Order9) had moment rows inconsistent with their headline ordering and were regenerated. `gate.py` now reports 51 passed, 0 failed, 0 unchecked |
 | Do they rule out a real code end to end? | **All 51 do.** Each has a `no_code` theorem taking only support, normalization and `SS.HasDistance ![c,d] 3` — no KL row is assumed. `SixQubit/Vacuity.lean` exhibits, for **all 51**, a point-mass pair satisfying every other hypothesis, so no statement is vacuous |
 
@@ -264,7 +270,7 @@ checks that a module targets the orbit it claims to.
 
 ```sh
 lake build                       # expect 0 errors, 0 warnings
-lake build SixQubit.Audit        # expect 332 clean axiom lines
+lake build SixQubit.Audit        # expect 564 clean axiom lines
 
 lake build SixQubit.Audit 2>&1 | grep "depends on axioms" \
   | sed 's/^info: [^ ]* //' | diff - results/axiom-audit.txt
@@ -295,7 +301,7 @@ used mathematically.
 
 | Path | Contents |
 |---|---|
-| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 11-module orbit-36 chain, ten realization modules over a shared exact-arithmetic layer, the audit |
+| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 16-module orbit-36 chain, ten realization modules over a shared exact-arithmetic layer, the audit |
 | `SS/` | problem-independent bit-string and Pauli infrastructure |
 | `formalization/` | the process document (`.tex` and `.pdf`) |
 | `tools/core/` | fibers, Pauli enumeration, moment matrices, relation extractors |

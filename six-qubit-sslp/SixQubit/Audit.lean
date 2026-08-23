@@ -150,6 +150,10 @@ import SixQubit.Orbit11Enum
 import SixQubit.Orbit16Enum
 import SixQubit.Orbit22Enum
 import SixQubit.Orbit23Enum
+import SixQubit.BEnumerator
+import SixQubit.CodeEquivEnum
+import SixQubit.Orbit36Transport
+import SixQubit.Orbit36Certified
 import SixQubit.Orbit7Attain
 import SixQubit.Orbit8Attain
 import SixQubit.Orbit9Attain
@@ -726,3 +730,41 @@ open SixQubit
 #print axioms SixQubit.Orbit23Enum.zmask_wt
 #print axioms SixQubit.Orbit23Enum.enumerator_unique
 #print axioms SixQubit.Orbit23Enum.enumerator_attained
+
+/-! ## Complete A/B enumerators and table-level orbit-36 transport -/
+
+#print axioms SS.MacWilliams.summed_duality_six
+#print axioms SS.MacWilliams.bco_transform_six
+#print axioms SS.MacWilliams.e1B_of_e1A
+#print axioms SS.MacWilliams.e2B_of_e2A
+#print axioms SixQubit.Orbit10Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit10Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit11Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit11Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit16Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit16Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit22Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit22Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit23Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit23Enum.enumerator_pair_attained
+#print axioms SixQubit.CodeEquiv.Equivalent.symm
+#print axioms SixQubit.CodeEquiv.Equivalent.trans
+#print axioms SixQubit.CodeEquiv.Aco_permAct
+#print axioms SixQubit.CodeEquiv.Aco_flipAct
+#print axioms SixQubit.CodeEquiv.Aco_swap
+#print axioms SixQubit.CodeEquiv.Bco_permAct
+#print axioms SixQubit.CodeEquiv.Bco_flipAct
+#print axioms SixQubit.CodeEquiv.Bco_swap
+#print axioms SixQubit.Orbit36Transport.weight_transport
+#print axioms SixQubit.Orbit36Transport.equivalent_transport
+#print axioms SixQubit.Orbit36Transport.original_table_nonempty
+#print axioms SixQubit.Orbit36Transport.original_magnitudes
+#print axioms SixQubit.Orbit36Transport.original_full_support
+#print axioms SixQubit.Orbit36Certified.Aco_transport
+#print axioms SixQubit.Orbit36Certified.Bco_transport
+#print axioms SixQubit.Orbit36Certified.orbit36B_of_A
+#print axioms SixQubit.Orbit36Certified.original_A
+#print axioms SixQubit.Orbit36Certified.original_enumerator_pair
+#print axioms SixQubit.Orbit36Certified.original_equivalent_canonical
+#print axioms SixQubit.Orbit36Certified.table_representative_rigid
+#print axioms SixQubit.Orbit36Certified.table_representative_attained

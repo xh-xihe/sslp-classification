@@ -1,6 +1,7 @@
 import Mathlib
 import SS.HilbertKL
 import SixQubit.Pin
+import SixQubit.BEnumerator
 import SixQubit.Orbit23Real
 
 /-!
@@ -121,5 +122,42 @@ theorem enumerator_attained :
       ∧ Aco ![w0, w1] 6 = 0 :=
   enumerator_unique w0 w1 w0_vanishes w1_vanishes w0_normalized w1_normalized
     is_code
+
+/-! ## The complete `A`/`B` enumerator pair -/
+
+/-- **The exact `A`- and `B`-enumerator image over the complete orbit-23
+fibers.**  `IsE1A` and `IsE1B` use the common unnormalised convention
+`Aco = 4 A`, `Bco = 4 B`; hence the second component is exactly
+`E_1^B = (1, 1, 0, 30, 45, 33, 18)` after division by four. -/
+theorem enumerator_pair_unique_fiber (c d : SS.State 6 ℂ)
+    (hc : ∀ s, SS.weight av s ≠ 0 → c s = 0)
+    (hd : ∀ s, SS.weight av s ≠ 2 → d s = 0)
+    (hnc : SS.innerC c c = 1) (hnd : SS.innerC d d = 1)
+    (hdist : SS.HasDistance ![c, d] 3) :
+    IsE1A ![c, d] ∧ IsE1B ![c, d] := by
+  have hnorm : ∀ k, SS.innerC ((![c, d] : Fin 2 → SS.State 6 ℂ) k)
+      ((![c, d] : Fin 2 → SS.State 6 ℂ) k) = 1 := by
+    intro k
+    fin_cases k
+    · exact hnc
+    · exact hnd
+  have hA0 : Aco ![c, d] 0 = 4 := Aco_zero _ hnorm
+  rcases enumerator_unique_fiber c d hc hd hnc hnd hdist with
+    ⟨hA1, hA2, hA3, hA4, hA5, hA6⟩
+  have hA : IsE1A ![c, d] := ⟨hA0, hA1, hA2, hA3, hA4, hA5, hA6⟩
+  exact ⟨hA, e1B_of_e1A _ hA⟩
+
+/-- The exhibited orbit-23 code attains the complete enumerator pair. -/
+theorem enumerator_pair_attained : IsE1A ![w0, w1] ∧ IsE1B ![w0, w1] := by
+  have hnorm : ∀ k, SS.innerC ((![w0, w1] : Fin 2 → SS.State 6 ℂ) k)
+      ((![w0, w1] : Fin 2 → SS.State 6 ℂ) k) = 1 := by
+    intro k
+    fin_cases k
+    · exact w0_normalized
+    · exact w1_normalized
+  have hA0 : Aco ![w0, w1] 0 = 4 := Aco_zero _ hnorm
+  rcases enumerator_attained with ⟨hA1, hA2, hA3, hA4, hA5, hA6⟩
+  have hA : IsE1A ![w0, w1] := ⟨hA0, hA1, hA2, hA3, hA4, hA5, hA6⟩
+  exact ⟨hA, e1B_of_e1A _ hA⟩
 
 end SixQubit.Orbit23Enum

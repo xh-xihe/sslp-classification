@@ -164,11 +164,10 @@ No-go orbits certified & 51 (every no-go orbit) \\
 Headline \lean{no\_go\_of\_moments} theorems & 51 \\
 Lines in the orbit modules & 41\,521 \\
 Theorems in the orbit modules & 12\,521 \\
-Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
+Orbit-36 rigidity chain & 16 modules; table-level closure \\
 Ten exact realizations & 10 modules, 1\,606 lines \\
-Shadow bound, five exact images, three attained & 10 modules, 1\,487 lines \\
-Lines in the whole development & 123\,125 \\
-Audit entries in \lean{SixQubit/Audit.lean} & 529 \\
+A/B enumerator layer & universal transform; five exact images \\
+Audit entries in \lean{SixQubit/Audit.lean} & 564 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -185,7 +184,9 @@ $33$--$35$ and $37$--$40$ at order five; and $53$--$61$ and $64$--$66$ at orders
 six through nine. Orbit $66$ lives in \lean{SixQubit/Order9.lean} for historical
 reasons and all others in \lean{SixQubit/Orbit<n>.lean}. The remaining fifteen of
 the sixty-six rank-compatible orbits all target the realized orders $\{2,3,5\}$ and
-are not excluded; four of them ($7$, $8$, $9$ and $36$) are known to be realized.
+are not excluded. Eleven of them ($7$, $8$, $9$, $10$, $11$, $16$, $21$, $22$,
+$23$, $36$, and $45$) have explicit realized codes certified here; the four
+remaining cases $1$--$4$ are outside the scope of this development.
 A per-orbit table, generated from the sources, is in
 \path{results/orbit-table.tsv}.
 
@@ -268,8 +269,8 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 529 lines,
-every one reading
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 564 lines.
+Every footprint is contained in the three standard axioms
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
   [propext, Classical.choice, Quot.sound]
@@ -467,16 +468,18 @@ Pauli weight at most two---the code is pinned uniquely.
 
 \subsection{The statement}
 
-\lean{SixQubit/Orbit36Final.lean} carries
+\lean{SixQubit/Orbit36Certified.lean} carries the final table-level theorem
 \[
-  \lean{orbit36\_rigidity} :
-  \quad
-  \text{(2 support conditions)}
-  \ \wedge\ \text{(1 moment system)}
-  \ \wedge\ \text{(22 KL rows)}
-  \ \Longrightarrow\ \mathcal{R},
+  \begin{aligned}
+  &\lean{table\_representative\_rigid}:\\
+  &\quad \text{support in the two table fibers}
+    \ \wedge\ \text{normalization}\\
+  &\quad \wedge\ \lean{SS.HasDistance ![c,d] 3}
+    \ \Longrightarrow\ \mathcal{R}.
+  \end{aligned}
 \]
-where the conclusion $\mathcal{R}$ has three parts:
+for the representative $a=(1,1,1,2,2,4)$ and residues $(0,1)$ printed in the
+manuscript.  The conclusion $\mathcal{R}$ has four parts:
 
 \begin{enumerate}
 \item \emph{the magnitudes are forced}: the twelve bottom probabilities are
@@ -485,9 +488,12 @@ where the conclusion $\mathcal{R}$ has three parts:
 \item \emph{the code is unique}:
       \lean{CodeEquiv.Equivalent} relates the pair $(c,d)$ to the explicit
       canonical pair $(c_{36}, d_{36})$;
-\item \emph{the weight enumerator is determined}:
+\item \emph{the $A$ weight enumerator is determined}:
       $A = \bigl(1,\,0,\,\tfrac{21}{25},\,0,\,\tfrac{291}{25},\,
       \tfrac{384}{25},\,\tfrac{79}{25}\bigr)$.
+\item \emph{the $B$ weight enumerator is determined}:
+      $B = \bigl(1,\,0,\,\tfrac{21}{25},\,\tfrac{584}{25},\,
+      \tfrac{183}{5},\,\tfrac{984}{25},\,\tfrac{671}{25}\bigr)$.
 \end{enumerate}
 
 The hypotheses matter as much as the conclusion. They are exactly what an exact
@@ -511,7 +517,7 @@ smaller relation, which is the one formalized here.
 
 \subsection{The chain}
 
-Eleven modules, $28\,412$ lines and $1\,894$ theorems:
+Sixteen modules form the complete chain:
 
 \begin{center}
 \begin{tabular}{ll}
@@ -523,12 +529,18 @@ Eleven modules, $28\,412$ lines and $1\,894$ theorems:
                  \lean{full\_support} \\
 \lean{Orbit36Phase} & $A_1 = 0$, the triangle sum, the weight-two table \\
 \lean{Orbit36Enum} & the enumerator machinery through weight three \\
-\lean{CodeEquiv} & local-monomial equivalence and its invariance lemmas \\
+\lean{CodeEquiv} & local-monomial equivalence and distance invariance \\
 \lean{Orbit36Class} & the classification up to that equivalence \\
 \lean{Orbit36Enum4} & weights four to six \\
 \lean{MacWilliams} & the subset MacWilliams identity at $n = 6$ \\
 \lean{Orbit36Final} & the headline, assembled \\
 \lean{Orbit36Vacuity} & the non-vacuity witness \\
+\lean{CodeOrbit36} & derives the old moment/KL interface from
+                     \lean{HasDistance} \\
+\lean{BEnumerator} & the complete seven-row $A\mapsto B$ transform \\
+\lean{CodeEquivEnum} & equivalence composition and fixed-map $A/B$ invariance \\
+\lean{Orbit36Transport} & the table-to-symmetric gauge map in the kernel \\
+\lean{Orbit36Certified} & the direct table-level rigidity, $A/B$, and attainment theorem \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -538,20 +550,19 @@ Eleven modules, $28\,412$ lines and $1\,894$ theorems:
 A rigidity theorem with unsatisfiable hypotheses is worthless in a way a no-go
 is not: a no-go with unsatisfiable hypotheses is merely uninformative, whereas
 a rigidity statement would be asserting properties of nothing.
-\lean{Orbit36Vacuity.rigidity\_nonvacuous} applies the headline to the explicit
-canonical pair, discharging all twenty-five hypotheses. The moment hypotheses
-are discharged by rewriting to the canonical probabilities and the KL rows by
-routing through \lean{Orbit36Code.canonical\_is\_code}, so the witness is the
-code itself rather than a degenerate point mass---which is what the
-corresponding witnesses in \lean{SixQubit/Vacuity.lean} are for the no-gos,
-and correctly so, since there a point mass suffices to show the hypotheses are
-not self-contradictory.
+The older moment-level headline has an explicit canonical witness in
+\lean{Orbit36Vacuity}.  More importantly, the theorem
+\lean{table\_representative\_attained} in \lean{Orbit36Certified} constructs an
+actual code on the original table fibers by inverse-transporting the canonical
+pair.  It proves support, both normalizations, the genuine \lean{HasDistance}
+predicate, and the displayed $A/B$ pair.  Thus the direct table-level theorem
+is non-vacuous without appealing to an informal gauge identification.
 
 \subsection{Orbit 36 at the level of codes}
 
-Every orbit-36 result in Section~\ref{sec:orbit36}---the forced magnitudes, the
-local-monomial uniqueness, the enumerator---took its moment system and its
-twenty-two Knill--Laflamme rows as \emph{hypotheses}. The fifty-one no-go
+Before the code-level bridge was added, the orbit-36 magnitude, uniqueness, and
+enumerator results took the moment system and twenty-two Knill--Laflamme rows as
+\emph{hypotheses}. The fifty-one no-go
 modules never did: each \lean{CodeOrbit$n$.no\_code} derives them from the
 single statement that $![c,d]$ is a normalized distance-three code supported on
 the two fibers. Orbit 36 was the one module in the development without that
@@ -579,6 +590,20 @@ does not, supplied by $\lVert\cdot\rVert^2\ge0$. The conclusion of
 than restated, so the wrapper cannot claim more or less than the theorem it
 feeds.
 
+That first bridge still worked in the symmetric gauge
+$a^\star=(1,1,1,1,2,3)$ with residues $(0,4)$, whereas the manuscript's table
+uses $a=(1,1,1,2,2,4)$ with residues $(0,1)$.  The remaining interface is now
+closed in Lean rather than delegated to a Python orbit comparison.
+\lean{Orbit36Transport.weight\_transport} proves on all 64 basis strings that
+the explicit permutation and two flips shift the residue by one; support,
+norm, and \lean{HasDistance} are then transported with the required logical
+swap. \lean{CodeEquivEnum.Equivalent.trans} composes this witness with the
+symmetric-to-canonical witness.  The same file proves the $A$ and $B$
+enumerators invariant under exactly this fixed permutation/flip/swap map, and
+\lean{SS.MacWilliams.bco\_transform\_six} supplies the full MacWilliams
+transform.  The final theorem in \lean{Orbit36Certified} assembles these
+ingredients.
+
 \subsection{The gate that did not exist}
 
 The four independent checks of Section~\ref{sec:reruns} all key off the
@@ -587,11 +612,14 @@ reviewed 51-module inventory. Orbit~36 has no such headline and is in no such
 inventory, so every one of them silently skipped it: the single largest body of
 Lean in this repository was the only part with no transcription gate at all.
 
-\lean{tools/verification/rigidity.py} closes that. It checks the same
-obligations---orbit identity, fibers, no smuggled hypothesis, Pauli weight,
-moment-row content, the order in which the headline passes probabilities, and
-that the non-vacuity witness really applies the headline---in twenty-one
-assertions.
+\lean{tools/verification/rigidity.py} closes that. It checks the symmetric
+gauge and, independently, the exact original table vector and its two twelve-state
+fibers; it pins the residue-shift and logical-swap direction; and it checks the
+same no-smuggling, Pauli-weight, moment-row, probability-order, and non-vacuity
+obligations as before.  Finally it parses the complete table-level theorem and
+requires exactly the two support, two normalization, and distance hypotheses,
+together with the magnitude, full-support, direct-equivalence, and $A/B$
+conclusions.  The current gate has thirty-four assertions.
 
 Two details are worth recording, because both are the kind of thing that makes
 a checker agree with a wrong module.
@@ -612,14 +640,16 @@ with \lean{momentgate.py}. Two checkers built on one parser fail together; that
 already happened once in this repository, when a declared-row counter and a
 parsed-row counter shared a fragile prefix, missed the same row, and agreed.
 
-The mutation suite carries fourteen corruptions and initially caught only two
-of them. The reason is instructive and is the same failure again in miniature:
+The original mutation suite carried fourteen corruptions and initially caught
+only two of them. The reason is instructive and is the same failure again in miniature:
 an anchor such as \lean{(ho0 : offSum c d ex1 w0 = 0)} occurs five times in
 \lean{Orbit36Final.lean}---once in the headline and again in the lemmas it is
 assembled from---so a whole-file replacement mutated a lemma and left the
 headline pristine, and twelve mutations were testing nothing while reporting
 success. Mutations are now applied inside the headline region only, and a
-mutation that fails to inject is reported as inert rather than as passing.
+mutation that fails to inject is reported as inert rather than as passing.  The
+suite now retains those fourteen cases and adds twenty transport and table-closure
+corruptions: all thirty-four are caught, with zero missed and zero inert.
 
 \section{Ten realizations}
 \label{sec:realizations}
@@ -729,7 +759,7 @@ Every one agrees, and every enumerator sums to $32$. This is independent
 evidence for both sides: the generated codes are the ones the manuscript
 intends, and the manuscript's table is right about them.
 
-\subsection{Five exact images}
+\subsection{Five exact A/B images}
 
 For five of the ten---orbits 10, 11, 16, 22 and 23---the certification goes past
 existence to the exact weight-enumerator image, which is the manuscript's actual
@@ -753,12 +783,24 @@ form then determines every remaining coefficient.
 \lean{Orbit$n$Enum.lean} supplies its mask and applies it. The conclusion is
 about \emph{every} code supported in those fibers, not only the exhibited one,
 and the realization module supplies a code attaining it, so the image is a
-single point:
+single point.  The $A$ vectors are
 \[
   (1,1,0,0,15,15,0) \quad\text{for orbits 11 and 23},
   \qquad
   (1,0,1,0,11,16,3) \quad\text{for orbits 10, 16 and 22}.
 \]
+The corresponding $B$ vectors are
+\[
+  (1,1,0,30,45,33,18),
+  \qquad
+  (1,0,1,24,35,40,27).
+\]
+This second half is not a copied table: \lean{BEnumerator.lean} defines the
+Frobenius-side coefficient and derives all seven MacWilliams rows by summing
+the already proved subset duality over subsets of each cardinality.  Each
+\lean{Orbit$n$Enum.lean} packages the result as
+\path{enumerator_pair_unique_fiber} and proves the pair attained by its
+explicit realized code.
 
 Orbit 21's forced string has weight four and orbit 45 has $q=6$, where the
 square is not a Pauli at all; orbits 7, 8 and 9 have $m=q=3$, where the cube is
@@ -958,7 +1000,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 529 axiom lines; every one must read
+prints the 564 axiom lines; every footprint must be contained in
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}

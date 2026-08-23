@@ -2,7 +2,9 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 529 lines, every one reading
+The output of `lake build SixQubit.Audit`, 564 lines.  Every footprint is a
+subset of the standard kernel axioms displayed below (almost every line uses
+all three):
 
 ```
 'SixQubit.<Module>.<theorem>' depends on axioms:
