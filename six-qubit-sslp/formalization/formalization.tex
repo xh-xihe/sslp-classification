@@ -167,8 +167,8 @@ Theorems in the orbit modules & 12\,521 \\
 Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
 Ten exact realizations & 10 modules, 1\,606 lines \\
 Shadow bound, five exact images, three attained & 10 modules, 1\,487 lines \\
-Lines in the whole development & 122\,360 \\
-Audit entries in \lean{SixQubit/Audit.lean} & 504 \\
+Lines in the whole development & 123\,125 \\
+Audit entries in \lean{SixQubit/Audit.lean} & 507 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -268,7 +268,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 504 lines,
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 507 lines,
 every one reading
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -546,6 +546,38 @@ code itself rather than a degenerate point mass---which is what the
 corresponding witnesses in \lean{SixQubit/Vacuity.lean} are for the no-gos,
 and correctly so, since there a point mass suffices to show the hypotheses are
 not self-contradictory.
+
+\subsection{Orbit 36 at the level of codes}
+
+Every orbit-36 result in Section~\ref{sec:orbit36}---the forced magnitudes, the
+local-monomial uniqueness, the enumerator---took its moment system and its
+twenty-two Knill--Laflamme rows as \emph{hypotheses}. The fifty-one no-go
+modules never did: each \lean{CodeOrbit$n$.no\_code} derives them from the
+single statement that $![c,d]$ is a normalized distance-three code supported on
+the two fibers. Orbit 36 was the one module in the development without that
+bridge.
+
+The difference is not presentational. Before it, the rigidity theorem was a
+statement about amplitude pairs satisfying certain moment conditions; the step
+from ``is an exact code in orbit 36'' to ``satisfies those conditions'' was true
+but unproved. Only with the bridge does the theorem say what the manuscript
+says.
+
+It was found by asking a mechanical question of the whole tree: for each of the
+eleven realized orbits, which theorems exist, what are their hypotheses, and do
+those hypotheses include \lean{SS.HasDistance}? Scanning for that turned up
+three occurrences of \lean{HasDistance} across the orbit-36 chain, all three in
+a \emph{conclusion} and none in a hypothesis.
+
+\lean{tools/generators/gencode36.py} closes it by the route
+\lean{gencode9.py} used for orbit 66, whose fiber structure is the same. Two
+differences: orbit 36 names its top states $z_0,\ldots,z_{11}$ rather than
+complements, and the generator checks $z_i=\overline{y_i}$ before writing
+anything; and its moment structure carries nonnegativity fields that orbit 66's
+does not, supplied by $\lVert\cdot\rVert^2\ge0$. The conclusion of
+\lean{rigid\_code} is lifted verbatim out of \lean{orbit36\_rigidity} rather
+than restated, so the wrapper cannot claim more or less than the theorem it
+feeds.
 
 \subsection{The gate that did not exist}
 
@@ -926,7 +958,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 504 axiom lines; every one must read
+prints the 507 axiom lines; every one must read
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}

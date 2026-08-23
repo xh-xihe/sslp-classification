@@ -128,6 +128,7 @@ import SixQubit.Orbit36Enum4
 import SixQubit.MacWilliams
 import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
+import SixQubit.CodeOrbit36
 import SixQubit.Realize
 import SixQubit.Shadow
 import SixQubit.Pin

@@ -20,8 +20,8 @@ the errors that were made and caught along the way.
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
 | Shadow bound, five exact images, three attained | 10 modules, 1,487 lines / 83 theorems |
-| Lines in the whole development | 122,360 |
-| Axiom-audit entries | 504, all clean |
+| Lines in the whole development | 123,125 |
+| Axiom-audit entries | 507, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -61,13 +61,26 @@ all, so those two, and orbits 7, 8 and 9, keep only their realizations here.
 Three different things get called "the orbit is done", and they are not the
 same claim. This table keeps them apart.
 
-| Orbit | Realized | Enumerator of the exhibited code | Exact image, i.e. *every* code in the orbit |
-|---|---|---|---|
-| 10, 11, 16, 22, 23 | yes | yes | **yes** |
-| 36 | yes | yes | **yes**, and unique up to local-monomial equivalence |
-| 7, 8, 9 | yes | yes | no — needs a support reduction |
-| 21 | yes | no | no — needs a per-label twisted shadow positivity |
-| 45 | yes | no | no — **the source gives no derivation** |
+| Orbit | Source's status | Realized | Enumerator of the exhibited code | **Reaches the source's status** |
+|---|---|---|---|---|
+| 10, 11, 16, 22, 23 | WE | yes | yes | **yes** — `enumerator_unique_fiber` |
+| 36 | rigid | yes | yes | **yes** — `Orbit36.rigid_code` |
+| 7, 8, 9 | WE | yes | yes | no — needs a support reduction |
+| 21 | WE | yes | no | no — needs a per-label twisted shadow positivity |
+| 45 | WE | yes | no | no — **the source gives no derivation** |
+
+Six of the eleven reach what the manuscript claims. The last column is the
+only one that answers "is this orbit done"; the other two are weaker and are
+kept separate because all three get called that in conversation.
+
+A statement reaches the source's status only if its hypotheses are
+*code-level*: normalization, support in the two fibers, and
+`SS.HasDistance ![c, d] 3`. Orbit 36 did not have that until
+`SixQubit/CodeOrbit36.lean` was written — every orbit-36 theorem took its
+moment system and twenty-two Knill–Laflamme rows as hypotheses, so it spoke
+of amplitude pairs satisfying those conditions rather than of codes. The
+fifty-one no-go wrappers had had that bridge from the start; orbit 36 was the
+one module without it.
 
 Column three is `SixQubit/Orbit<n>Attain.lean`; column four is
 `SixQubit/Orbit<n>Enum.lean`. The gap between them is where the mask lives.

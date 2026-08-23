@@ -133,6 +133,7 @@ import SixQubit.Orbit36Enum4
 import SixQubit.MacWilliams
 import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
+import SixQubit.CodeOrbit36
 import SixQubit.Realize
 import SixQubit.Shadow
 import SixQubit.Pin
@@ -536,6 +537,12 @@ open SixQubit
 #print axioms SixQubit.Orbit36Vacuity.canonical_offSum
 #print axioms SixQubit.Orbit36Vacuity.hypotheses_satisfiable
 #print axioms SixQubit.Orbit36Vacuity.rigidity_nonvacuous
+
+/-! ## Orbit 36 at the level of codes -/
+
+#print axioms SixQubit.Orbit36.moments
+#print axioms SixQubit.Orbit36.klRows
+#print axioms SixQubit.Orbit36.rigid_code
 
 /-! ## The ten exact realizations -/
 
