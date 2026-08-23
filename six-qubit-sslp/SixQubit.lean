@@ -132,6 +132,10 @@ import SixQubit.CodeOrbit36
 import SixQubit.Realize
 import SixQubit.Shadow
 import SixQubit.ShadowTwisted
+import SixQubit.Averaging
+import SixQubit.Orbit21Sym
+import SixQubit.Orbit21Cert
+import SixQubit.Orbit21Coef
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum

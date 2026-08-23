@@ -20,8 +20,8 @@ the errors that were made and caught along the way.
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
 | Shadow bound, five exact images, three attained | 10 modules, 1,487 lines / 83 theorems |
-| Lines in the whole development | 123,422 |
-| Axiom-audit entries | 512, all clean |
+| Lines in the whole development | 123,804 |
+| Axiom-audit entries | 522, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the

@@ -2,7 +2,7 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 512 lines, every one reading
+The output of `lake build SixQubit.Audit`, 522 lines, every one reading
 
 ```
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -35,6 +35,19 @@ silently:
 
 ```sh
 test "$(grep -c '' results/axiom-audit.txt)" \n   = "$(grep -c '^#print axioms' SixQubit/Audit.lean)" && echo ok
+```
+
+Every axiom in every stored line must lie in
+`{propext, Classical.choice, Quot.sound}`. It need not be all three:
+`SixQubit.Orbit21Coef.coef_group_sum` prints `[propext]` alone, because a
+`decide` over `Nat` masks needs no choice. A smaller footprint is a stronger
+result, so the invariant is containment, not equality — a checker written to
+compare against the three-axiom string would reject that theorem for being
+too clean.
+
+```sh
+sed 's/^.*axioms: //' results/axiom-audit.txt | tr -d '[]' | tr ',' '
+' \n  | sed 's/^ *//;s/ *$//' | grep -v '^$' | sort -u \n  | grep -vE '^(propext|Classical.choice|Quot.sound)$'   # must print nothing
 ```
 
 Every `#print axioms` directive must contribute exactly one stored line, and

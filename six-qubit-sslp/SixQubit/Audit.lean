@@ -137,6 +137,10 @@ import SixQubit.CodeOrbit36
 import SixQubit.Realize
 import SixQubit.Shadow
 import SixQubit.ShadowTwisted
+import SixQubit.Averaging
+import SixQubit.Orbit21Sym
+import SixQubit.Orbit21Cert
+import SixQubit.Orbit21Coef
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -633,6 +637,19 @@ open SixQubit
 #print axioms SS.ShadowTwisted.zT_sum_collapse
 #print axioms SS.ShadowTwisted.altT_sum_eq_coreT
 #print axioms SS.ShadowTwisted.altT_sum_nonneg
+
+/-! ## Orbit 21 parts -/
+
+#print axioms SixQubit.Averaging.sum_shift
+#print axioms SixQubit.Averaging.sum_average_four
+#print axioms SixQubit.Averaging.sum_eq_zero_of_average
+#print axioms SixQubit.Orbit21Sym.melTr_shift
+#print axioms SixQubit.Orbit21Sym.normSq_trProj_shift
+#print axioms SixQubit.Orbit21Cert.bdot_gmask
+#print axioms SixQubit.Orbit21Cert.bdot_band_gmask
+#print axioms SixQubit.Orbit21Cert.chi_gmask_one
+#print axioms SixQubit.Orbit21Cert.chi_band_one
+#print axioms SixQubit.Orbit21Coef.coef_group_sum
 
 /-! ## Pinned enumerators -/
 
