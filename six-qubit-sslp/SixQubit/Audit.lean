@@ -603,3 +603,8 @@ open SixQubit
 #print axioms SS.Shadow.altsign_factor
 #print axioms SS.Shadow.star_melTr_eq
 #print axioms SS.Shadow.normSq_melTr_expand
+#print axioms SS.Shadow.z_sum_collapse
+#print axioms SS.Shadow.alt_sum_eq_core
+#print axioms SS.Shadow.alt_sum_nonneg
+#print axioms SS.Shadow.alt_sum_as_Aco
+#print axioms SS.Shadow.shadow_bound

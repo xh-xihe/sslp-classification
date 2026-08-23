@@ -167,7 +167,7 @@ Theorems in the orbit modules & 12\,521 \\
 Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
 Lines in the whole development & 120\,929 \\
 Ten exact realizations & 10 modules, 1\,606 lines \\
-Audit entries in \lean{SixQubit/Audit.lean} & 436 \\
+Audit entries in \lean{SixQubit/Audit.lean} & 441 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -267,7 +267,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 436 lines,
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 441 lines,
 every one reading
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -696,13 +696,13 @@ Every one agrees, and every enumerator sums to $32$. This is independent
 evidence for both sides: the generated codes are the ones the manuscript
 intends, and the manuscript's table is right about them.
 
-\subsection{What is not certified here}
+\subsection{The shadow inequality, and what is still missing}
 
 Existence is not the whole claim. For eight of these orbits the manuscript
 asserts a \emph{unique} enumerator and for three an exact interval, and both
 directions of those statements need more than one code. The upper bound in
 every case runs through the zeroth Rains shadow inequality
-$A_1+A_2+A_3\le1$, which is not yet formalized.
+$A_1+A_2+A_3\le1$. That inequality is now proved.
 
 Its usual derivation builds the spin flip
 $\Pi\mapsto Y^{\otimes n}\Pi^{\mathsf T}Y^{\otimes n}$ and quotes positivity of
@@ -719,9 +719,22 @@ transpose or matrix positivity appears. The identity was checked numerically
 before any Lean was written---on the orbit-36 code it gives $128/25$, exactly
 what the six-qubit MacWilliams normal form predicts, and it holds on random
 non-code pairs too, confirming that it is an algebraic identity rather than a
-consequence of the code property. \lean{SixQubit/Shadow.lean} carries the
-definitions and the elementary half, in which both sides are reduced to a
-common quantity; the Fourier half is not yet done.
+consequence of the code property. \lean{SixQubit/Shadow.lean} proves it. Both sides are
+computed down to a common quantity: one direction is an interchange of
+summation at depth four, the other does the $Z$-sum first, and the surviving
+index is a complement. The statement
+\lean{alt\_sum\_nonneg} holds for every $n$ and every number of
+logical states; specializing to $n=6$ and grouping by weight gives
+\lean{shadow\_bound}, namely $A_1+A_2+A_3\le1$ for an exact
+$((6,2,d\ge3))$ code, in the unnormalized form
+$\mathrm{Aco}_1+\mathrm{Aco}_2+\mathrm{Aco}_3\le4$ that the six-qubit
+MacWilliams normal form already in the development consumes.
+
+What still separates this from the manuscript's exact-image theorems is the
+orbit-specific half of each: a lower bound forcing $A_1+A_2\ge1$ or its
+analogue, and for orbits 7, 8 and 45 a one-parameter family attaining every
+value of a continuum. Neither is finite in the way everything else here has
+been.
 
 \section{A tooling bug that gated three orbits}
 \label{sec:bug}
@@ -851,7 +864,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 436 axiom lines; every one must read
+prints the 441 axiom lines; every one must read
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}

@@ -2,7 +2,7 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 436 lines, every one reading
+The output of `lake build SixQubit.Audit`, 441 lines, every one reading
 
 ```
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -28,6 +28,16 @@ lake build SixQubit.Audit 2>&1 | grep "depends on axioms" \
 ```
 
 No output means the stored audit is current.
+
+A second, cheaper invariant catches a truncated or partially written file,
+which a stray `tail` in an ad-hoc regeneration command will otherwise produce
+silently:
+
+```sh
+test "$(grep -c '' results/axiom-audit.txt)" \n   = "$(grep -c '^#print axioms' SixQubit/Audit.lean)" && echo ok
+```
+
+Every `#print axioms` directive must contribute exactly one stored line.
 
 ## `orbit-table.tsv`
 

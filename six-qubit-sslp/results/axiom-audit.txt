@@ -434,3 +434,8 @@
 'SS.Shadow.altsign_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SS.Shadow.star_melTr_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SS.Shadow.normSq_melTr_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SS.Shadow.z_sum_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SS.Shadow.alt_sum_eq_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SS.Shadow.alt_sum_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SS.Shadow.alt_sum_as_Aco' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SS.Shadow.shadow_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

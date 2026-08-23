@@ -20,7 +20,7 @@ the errors that were made and caught along the way.
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
 | Lines in the whole development | 120,929 |
-| Axiom-audit entries | 436, all clean |
+| Axiom-audit entries | 441, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -35,6 +35,15 @@ weight-≤2 Knill–Laflamme constraint is decided by the kernel there; the shar
 layer transports the decision to genuine complex matrix elements. Together with
 orbit 36 that is eleven realized orbits, against 51 excluded and four — 1, 2, 3
 and 4 — whose exact enumerator image is still open.
+
+`SixQubit/Shadow.lean` proves the zeroth Rains shadow inequality
+`A_1 + A_2 + A_3 ≤ 1`, which is the upper-bound half of the exact-image
+theorems for seven of those orbits. The usual derivation builds a spin-flip
+operator and a Pauli completeness relation; doing the `Z`-sum first is shorter,
+and what survives factors into a sum of squared norms, so nonnegativity needs no
+operator, transpose or matrix positivity. `alt_sum_nonneg` holds for every block
+length and every number of logical states; `shadow_bound` is its six-qubit
+specialization.
 
 Orbit 36 is the one realized orbit whose certification goes further than
 existence. What is certified there is rigidity: from the support conditions, the moment
