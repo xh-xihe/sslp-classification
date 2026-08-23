@@ -141,6 +141,8 @@ import SixQubit.Averaging
 import SixQubit.Orbit21Sym
 import SixQubit.Orbit21Cert
 import SixQubit.Orbit21Coef
+import SixQubit.Orbit21Bound
+import SixQubit.Orbit21Bridge
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -650,6 +652,12 @@ open SixQubit
 #print axioms SixQubit.Orbit21Cert.chi_gmask_one
 #print axioms SixQubit.Orbit21Cert.chi_band_one
 #print axioms SixQubit.Orbit21Coef.coef_group_sum
+#print axioms SixQubit.Orbit21Bound.bound_of_certificate
+#print axioms SixQubit.Orbit21Bound.residual_eq_zero
+#print axioms SixQubit.Orbit21Bound.enumerator_of_A2_bound
+#print axioms SixQubit.Orbit21Bridge.num_bxor
+#print axioms SixQubit.Orbit21Bridge.num_band
+#print axioms SixQubit.Orbit21Bridge.cf_group_sum
 
 /-! ## Pinned enumerators -/
 
