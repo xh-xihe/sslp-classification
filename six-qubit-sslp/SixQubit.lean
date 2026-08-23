@@ -130,6 +130,12 @@ import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
 import SixQubit.Realize
 import SixQubit.Shadow
+import SixQubit.Pin
+import SixQubit.Orbit10Enum
+import SixQubit.Orbit11Enum
+import SixQubit.Orbit16Enum
+import SixQubit.Orbit22Enum
+import SixQubit.Orbit23Enum
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real

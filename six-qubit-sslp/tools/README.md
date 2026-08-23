@@ -98,6 +98,20 @@ hand-written or emitted by the scripts named above; that is where the
 mathematics lives. The generators write only the transcription layers — fibers,
 incidences, Walsh signs, moment facts, expansions.
 
+### The five exact enumerator images
+
+| Generator | Emits |
+|---|---|
+| `genenum.py` | `SixQubit/Orbit<n>Enum.lean` for n in 10, 11, 16, 22, 23 |
+
+These are the orbits whose forced stabilizer `D(a;4)^2` has Pauli weight one or
+two. The generator computes that mask from the angle vector, checks in Python
+that it really does have even overlap with every support word, and refuses to
+write a module otherwise; the Lean then decides the same condition. Orbit 21's
+mask has weight four and orbit 45 has `q = 6`, where the square is not a Pauli,
+so neither is emitted — the generator reports them rather than skipping
+silently.
+
 ### The ten realizations
 
 | Generator | Emits |

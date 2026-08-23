@@ -19,8 +19,9 @@ the errors that were made and caught along the way.
 | Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
-| Lines in the whole development | 120,929 |
-| Axiom-audit entries | 441, all clean |
+| Shadow bound and five exact enumerator images | 7 modules, 978 lines / 50 theorems |
+| Lines in the whole development | 121,812 |
+| Axiom-audit entries | 471, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -35,6 +36,25 @@ weight-≤2 Knill–Laflamme constraint is decided by the kernel there; the shar
 layer transports the decision to genuine complex matrix elements. Together with
 orbit 36 that is eleven realized orbits, against 51 excluded and four — 1, 2, 3
 and 4 — whose exact enumerator image is still open.
+
+For five of them — orbits 10, 11, 16, 22 and 23 — the certification goes past
+existence to the **exact weight-enumerator image**. `SixQubit/Orbit<n>Enum.lean`
+proves that *every* exact `((6,2,3))` code supported in that orbit's two fibers
+has one specific enumerator, and the realization module exhibits a code
+attaining it, so the image is a single point: `(1,1,0,0,15,15,0)` for orbits 11
+and 23, `(1,0,1,0,11,16,3)` for orbits 10, 16 and 22.
+
+The argument is a squeeze. The diagonal gate acts logically as `diag(1,-1)`, so
+its square is scalar on any code in the orbit; that square is the `Z`-string on
+the coordinates where the angle vector is odd, and it fixes the code because its
+sign is `+1` on both fibers — a finite condition, decided. A fixing Pauli of
+weight `w` forces `A_w ≥ 1` from below; the shadow inequality forces
+`A_1 + A_2 + A_3 ≤ 1` from above; the coefficients are nonnegative. Nothing is
+left free, and the six-qubit MacWilliams normal form determines the rest.
+`SixQubit/Pin.lean` carries the squeeze.
+
+Orbit 21's forced string has weight four and orbit 45's square is not a Pauli at
+all, so those two, and orbits 7, 8 and 9, keep only their realizations here.
 
 `SixQubit/Shadow.lean` proves the zeroth Rains shadow inequality
 `A_1 + A_2 + A_3 ≤ 1`, which is the upper-bound half of the exact-image

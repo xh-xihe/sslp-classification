@@ -2,7 +2,7 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 441 lines, every one reading
+The output of `lake build SixQubit.Audit`, 471 lines, every one reading
 
 ```
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -37,7 +37,25 @@ silently:
 test "$(grep -c '' results/axiom-audit.txt)" \n   = "$(grep -c '^#print axioms' SixQubit/Audit.lean)" && echo ok
 ```
 
-Every `#print axioms` directive must contribute exactly one stored line.
+Every `#print axioms` directive must contribute exactly one stored line, and
+no stored line may still carry a `file:line:col` prefix — a `sed` that strips
+only `info:` leaves one, and the result still looks plausible at a glance:
+
+```sh
+grep -c '[.]lean:' results/axiom-audit.txt   # must be 0
+```
+
+## `axiom-audit-codewrap.txt`
+
+`SixQubit/CodeWrapAudit.lean` is a second, smaller audit module, covering the
+three code-level wrappers `CodeWrap13`, `CodeWrap18` and `CodeWrap47`. Its
+twenty lines were being printed by every build and read by nobody, because
+nothing stored them and the documented command above only regenerates
+`SixQubit.Audit`. They are stored here now, and the same two invariants apply:
+
+```sh
+lake build SixQubit.CodeWrapAudit 2>&1 | grep "depends on axioms" \n  | sed 's/^info: [^ ]* //' | diff - results/axiom-audit-codewrap.txt
+```
 
 ## `orbit-table.tsv`
 

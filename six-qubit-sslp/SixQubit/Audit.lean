@@ -135,6 +135,12 @@ import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
 import SixQubit.Realize
 import SixQubit.Shadow
+import SixQubit.Pin
+import SixQubit.Orbit10Enum
+import SixQubit.Orbit11Enum
+import SixQubit.Orbit16Enum
+import SixQubit.Orbit22Enum
+import SixQubit.Orbit23Enum
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
@@ -608,3 +614,36 @@ open SixQubit
 #print axioms SS.Shadow.alt_sum_nonneg
 #print axioms SS.Shadow.alt_sum_as_Aco
 #print axioms SS.Shadow.shadow_bound
+
+/-! ## Pinned enumerators -/
+
+#print axioms SixQubit.Pin.Aco_zero
+#print axioms SixQubit.Pin.four_le_Aco
+#print axioms SixQubit.Pin.zstring_fixes
+#print axioms SixQubit.Pin.pin_low
+#print axioms SixQubit.Pin.enumerator_of_forced
+#print axioms SixQubit.Orbit10Enum.zmask_L0
+#print axioms SixQubit.Orbit10Enum.zmask_L1
+#print axioms SixQubit.Orbit10Enum.zmask_wt
+#print axioms SixQubit.Orbit10Enum.enumerator_unique
+#print axioms SixQubit.Orbit10Enum.enumerator_attained
+#print axioms SixQubit.Orbit11Enum.zmask_L0
+#print axioms SixQubit.Orbit11Enum.zmask_L1
+#print axioms SixQubit.Orbit11Enum.zmask_wt
+#print axioms SixQubit.Orbit11Enum.enumerator_unique
+#print axioms SixQubit.Orbit11Enum.enumerator_attained
+#print axioms SixQubit.Orbit16Enum.zmask_L0
+#print axioms SixQubit.Orbit16Enum.zmask_L1
+#print axioms SixQubit.Orbit16Enum.zmask_wt
+#print axioms SixQubit.Orbit16Enum.enumerator_unique
+#print axioms SixQubit.Orbit16Enum.enumerator_attained
+#print axioms SixQubit.Orbit22Enum.zmask_L0
+#print axioms SixQubit.Orbit22Enum.zmask_L1
+#print axioms SixQubit.Orbit22Enum.zmask_wt
+#print axioms SixQubit.Orbit22Enum.enumerator_unique
+#print axioms SixQubit.Orbit22Enum.enumerator_attained
+#print axioms SixQubit.Orbit23Enum.zmask_L0
+#print axioms SixQubit.Orbit23Enum.zmask_L1
+#print axioms SixQubit.Orbit23Enum.zmask_wt
+#print axioms SixQubit.Orbit23Enum.enumerator_unique
+#print axioms SixQubit.Orbit23Enum.enumerator_attained

@@ -165,9 +165,10 @@ Headline \lean{no\_go\_of\_moments} theorems & 51 \\
 Lines in the orbit modules & 41\,521 \\
 Theorems in the orbit modules & 12\,521 \\
 Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
-Lines in the whole development & 120\,929 \\
 Ten exact realizations & 10 modules, 1\,606 lines \\
-Audit entries in \lean{SixQubit/Audit.lean} & 441 \\
+Shadow bound and five exact images & 7 modules, 978 lines \\
+Lines in the whole development & 121\,812 \\
+Audit entries in \lean{SixQubit/Audit.lean} & 471 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -267,7 +268,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 441 lines,
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 471 lines,
 every one reading
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -696,6 +697,42 @@ Every one agrees, and every enumerator sums to $32$. This is independent
 evidence for both sides: the generated codes are the ones the manuscript
 intends, and the manuscript's table is right about them.
 
+\subsection{Five exact images}
+
+For five of the ten---orbits 10, 11, 16, 22 and 23---the certification goes past
+existence to the exact weight-enumerator image, which is the manuscript's actual
+theorem for them. The argument is a squeeze, and every step of it is finite.
+
+A projective-order-two orbit with $q=4$ has a diagonal gate acting logically as
+$\mathrm{diag}(1,-1)$, so its square is scalar on any code in the orbit. That
+square is the $Z$-string on the coordinates where $a$ is odd, and its sign on a
+support word $x$ is $(-1)^{A_a(x)}$, which is $+1$ because $A_a(x)$ is $0$ or
+$2$ modulo four on the two fibers. So the string fixes the code---a condition
+over the two supports, decided by the kernel.
+
+A Pauli fixing both logical states has projector trace $2$, so it contributes
+$4$ to the coefficient at its own weight, and coefficients are sums of squared
+norms, so that is a lower bound. The shadow inequality is the matching upper
+bound on the sum of the first three. Nothing is left free:
+$\mathrm{Aco}_w=4$ and the other two vanish. The six-qubit MacWilliams normal
+form then determines every remaining coefficient.
+
+\lean{SixQubit/Pin.lean} carries the squeeze; each generated
+\lean{Orbit$n$Enum.lean} supplies its mask and applies it. The conclusion is
+about \emph{every} code supported in those fibers, not only the exhibited one,
+and the realization module supplies a code attaining it, so the image is a
+single point:
+\[
+  (1,1,0,0,15,15,0) \quad\text{for orbits 11 and 23},
+  \qquad
+  (1,0,1,0,11,16,3) \quad\text{for orbits 10, 16 and 22}.
+\]
+
+Orbit 21's forced string has weight four and orbit 45 has $q=6$, where the
+square is not a Pauli at all; orbits 7, 8 and 9 have $m=q=3$, where the cube is
+the identity and carries no information. Those five keep only their
+realizations here.
+
 \subsection{The shadow inequality, and what is still missing}
 
 Existence is not the whole claim. For eight of these orbits the manuscript
@@ -864,7 +901,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 441 axiom lines; every one must read
+prints the 471 axiom lines; every one must read
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}
