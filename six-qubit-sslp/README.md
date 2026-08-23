@@ -18,16 +18,26 @@ the errors that were made and caught along the way.
 | Of those, matching the paper's target orbit | **51** |
 | Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
-| Lines in the whole development | 118,710 |
-| Axiom-audit entries | 366, all clean |
+| Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
+| Lines in the whole development | 120,929 |
+| Axiom-audit entries | 436, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
 next manuscript revision are 5, 6, 12–15, 17–20, 24, 41–44, 46–52. Orbit 66 is in
 `SixQubit/Order9.lean`; all others in `SixQubit/Orbit<n>.lean`.
 
-Orbit 36 is the one orbit here that is *not* a no-go. It is realized, and what
-is certified about it is rigidity: from the support conditions, the moment
+Ten further orbits — 7, 8, 9, 10, 11, 16, 21, 22, 23 and 45 — are certified
+*realized*: `SixQubit/Orbit<n>Real.lean` exhibits an explicit pair and proves
+`SS.HasDistance ![w0, w1] 3`, so the orbit is nonempty. The amplitudes are
+carried in the ring `Z[sqrt 2, sqrt 3, i]` of `SixQubit/Realize.lean` and every
+weight-≤2 Knill–Laflamme constraint is decided by the kernel there; the shared
+layer transports the decision to genuine complex matrix elements. Together with
+orbit 36 that is eleven realized orbits, against 51 excluded and four — 1, 2, 3
+and 4 — whose exact enumerator image is still open.
+
+Orbit 36 is the one realized orbit whose certification goes further than
+existence. What is certified there is rigidity: from the support conditions, the moment
 system and twenty-two weight-≤2 KL rows alone, the amplitude magnitudes are
 forced, the code is unique up to local-monomial equivalence, and its weight
 enumerator is `(1, 0, 21/25, 0, 291/25, 384/25, 79/25)`. The chain lives in
@@ -177,7 +187,7 @@ used mathematically.
 
 | Path | Contents |
 |---|---|
-| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 11-module orbit-36 chain, the audit |
+| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 11-module orbit-36 chain, ten realization modules over a shared exact-arithmetic layer, the audit |
 | `SS/` | problem-independent bit-string and Pauli infrastructure |
 | `formalization/` | the process document (`.tex` and `.pdf`) |
 | `tools/core/` | fibers, Pauli enumeration, moment matrices, relation extractors |
@@ -208,6 +218,8 @@ python tools/run.py verification/momentgate.py          # declared moment rows t
 python tools/run.py verification/momentgate.py --selftest   # run its non-exhaustive adversarial suite
 python tools/run.py verification/rigidity.py            # the orbit-36 chain, same obligations
 python tools/run.py verification/rigidity.py --selftest  # its mutation suite
+python tools/run.py verification/realized.py            # the ten realizations vs the manifest
+python tools/run.py verification/realized.py --selftest  # its mutation suite
 ```
 
 `classify.py` confirms every headline hypothesis has exactly one of the three

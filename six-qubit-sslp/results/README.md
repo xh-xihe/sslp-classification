@@ -2,7 +2,7 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 366 lines, every one reading
+The output of `lake build SixQubit.Audit`, 436 lines, every one reading
 
 ```
 'SixQubit.<Module>.<theorem>' depends on axioms:

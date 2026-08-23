@@ -165,8 +165,9 @@ Headline \lean{no\_go\_of\_moments} theorems & 51 \\
 Lines in the orbit modules & 41\,521 \\
 Theorems in the orbit modules & 12\,521 \\
 Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
-Lines in the whole development & 118\,710 \\
-Audit entries in \lean{SixQubit/Audit.lean} & 366 \\
+Lines in the whole development & 120\,929 \\
+Ten exact realizations & 10 modules, 1\,606 lines \\
+Audit entries in \lean{SixQubit/Audit.lean} & 436 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -266,7 +267,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 366 lines,
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 436 lines,
 every one reading
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -587,6 +588,141 @@ headline pristine, and twelve mutations were testing nothing while reporting
 success. Mutations are now applied inside the headline region only, and a
 mutation that fails to inject is reported as inert rather than as passing.
 
+\section{Ten realizations}
+\label{sec:realizations}
+
+Of the sixty-six moment orbits, fifty-one are excluded and fifteen are
+realized. Eleven of the fifteen have a known exact weight-enumerator image;
+orbit~36 is one of them and is treated in Section~\ref{sec:orbit36}. This
+section covers the other ten---orbits 7, 8, 9, 10, 11, 16, 21, 22, 23
+and~45---at the level of \emph{existence}: each carries an explicit pair of
+words and a kernel proof that the pair is an exact $((6,2,3))$ code, so the
+orbit is nonempty.
+
+\subsection{One layer, ten tables}
+
+The orbit-36 code module carried its own ring of algebraic integers, its own
+embedding into $\CC$, and its own transport from a decided certificate to
+genuine Knill--Laflamme matrix elements. None of that depends on the amplitude
+table, so it is collected in \lean{SixQubit/Realize.lean} and the ten modules
+supply only data: two support lists, two amplitude tables, and a scale.
+
+The ring is $\mathbb{Z}[\sqrt2,\sqrt3,i]$, carried as eight integers. It is
+small enough to decide with and still large enough for every realization here,
+because each table is recorded \emph{up to a single real scale}:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+words & scale & entries \\
+\midrule
+sixteen real terms & $1/4$ & $\pm1$ \\
+eight real terms & $1/4$ & $\pm\sqrt2$ \\
+eleven complex terms & $1/12$ &
+  $2\sqrt3\,\zeta_6^{\,k}$, $2\sqrt6\,\zeta_6^{\,k}$ \\
+twelve complex terms (orbit 36) & $1/(2\sqrt{30})$ &
+  $2\sqrt3\,\zeta_6^{\,k}$, $2\sqrt2\,\zeta_6^{\,k}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pulling the irrational part out as a scale is what keeps the ring small.
+Orbit~36's amplitudes are $1/\sqrt{10}$ and $1/\sqrt{15}$, which would need
+$\sqrt5$; written as $\sqrt3/\sqrt{30}$ and $\sqrt2/\sqrt{30}$ they do not.
+For the ten modules here the scales are rational, so the normalization
+$\overline{s}\,s\,N=1$ is closed by \lean{norm\_num}.
+
+The certificate the shared layer consumes is smaller than orbit~36's. Being a
+code requires exactly three things of every Pauli of weight at most two: the
+two diagonal elements agree and both off-diagonal elements vanish. Which
+Paulis carry a nonzero diagonal scalar is extra information---orbit~36 needs it
+for the enumerator, these modules do not---so it is not part of
+\lean{checkKL}. The scale is a free parameter of the transport theorem: it
+cancels from the off-diagonal equations and enters the diagonal one
+symmetrically.
+
+\subsection{Two independent computations of the same certificate}
+
+\lean{tools/generators/genreal.py} writes all ten modules. Two habits are
+deliberate.
+
+First, the amplitudes and the orbit records are \emph{parsed} from the source
+tables, never transcribed. Hand transcription is where this project's errors
+have actually come from, and the same script that parses the base words also
+applies the qubit permutation, the translation and the optional exchange of the
+two logical words that place each base into its orbit.
+
+Second, the generator re-checks the whole certificate---all $4096$ mask pairs,
+filtered by weight---in Python, in the same eight-integer arithmetic the Lean
+uses, and refuses to write a table that does not verify. The kernel
+\lean{decide} is then a second, independent confirmation rather than the only
+one. Both computations agree on all ten.
+
+\subsection{What the kernel cannot check}
+
+Each module decides its own certificate, so the kernel establishes that the
+exhibited pair is a code. It cannot establish that the pair belongs to the
+orbit the module is named for: \path{tools/manifest.json} is not a Lean object.
+That is exactly the gap that let four no-go modules target the wrong residue
+before \lean{gate.py} existed.
+
+\lean{tools/verification/realized.py} closes it, with twelve assertions per
+module. The orbit identity is compared by canonical form under the group
+generated by local flips, qubit permutation, unit scaling and exchange of the
+two logical words, not by string equality---equivalent angle records look
+different, and orbit~36 is the standing example. Both fibers are recomputed
+from $(a,q)$, the two supports are checked disjoint, and the amplitude norms
+are re-derived in the same ring. Its \lean{--selftest} injects six corruptions
+and requires every one to be caught.
+
+\subsection{A cross-check worth recording}
+
+The exact weight enumerators of the ten exhibited codes were computed
+independently, in exact arithmetic, and compared with the images the manuscript
+claims:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+orbits & $(A_1,A_2,A_3)$ & manuscript \\
+\midrule
+8, 11, 23 & $(1,0,0)$ & $\mathcal E_1^A=(1,1,0,0,15,15,0)$ \\
+7, 9, 10, 16, 21, 22, 45 & $(0,1,0)$ & $\mathcal E_2^A=(1,0,1,0,11,16,3)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every one agrees, and every enumerator sums to $32$. This is independent
+evidence for both sides: the generated codes are the ones the manuscript
+intends, and the manuscript's table is right about them.
+
+\subsection{What is not certified here}
+
+Existence is not the whole claim. For eight of these orbits the manuscript
+asserts a \emph{unique} enumerator and for three an exact interval, and both
+directions of those statements need more than one code. The upper bound in
+every case runs through the zeroth Rains shadow inequality
+$A_1+A_2+A_3\le1$, which is not yet formalized.
+
+Its usual derivation builds the spin flip
+$\Pi\mapsto Y^{\otimes n}\Pi^{\mathsf T}Y^{\otimes n}$ and quotes positivity of
+$\operatorname{Tr}(\Pi\widetilde\Pi)$. There is a shorter route. Summing the
+alternating Pauli sum over the $Z$-mask first collapses it by the character sum
+already in \lean{SixQubit/MacWilliams.lean}, and what survives factors:
+\[
+  \sum_{P}(-1)^{\mathrm{wt}\,P}\bigl|\operatorname{Tr}(P\Pi)\bigr|^2
+  \;=\;
+  2^{n}\sum_{a,b}\Bigl|\sum_{u}(-1)^{|u|}\psi_a(u)\,\psi_b(\bar u)\Bigr|^{2},
+\]
+a sum of squared norms, so nonnegativity is immediate and no operator,
+transpose or matrix positivity appears. The identity was checked numerically
+before any Lean was written---on the orbit-36 code it gives $128/25$, exactly
+what the six-qubit MacWilliams normal form predicts, and it holds on random
+non-code pairs too, confirming that it is an algebraic identity rather than a
+consequence of the code property. \lean{SixQubit/Shadow.lean} carries the
+definitions and the elementary half, in which both sides are reduced to a
+common quantity; the Fourier half is not yet done.
+
 \section{A tooling bug that gated three orbits}
 \label{sec:bug}
 
@@ -715,7 +851,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 366 axiom lines; every one must read
+prints the 436 axiom lines; every one must read
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}

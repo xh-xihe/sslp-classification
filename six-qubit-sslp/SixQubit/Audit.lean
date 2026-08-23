@@ -133,6 +133,18 @@ import SixQubit.Orbit36Enum4
 import SixQubit.MacWilliams
 import SixQubit.Orbit36Final
 import SixQubit.Orbit36Vacuity
+import SixQubit.Realize
+import SixQubit.Shadow
+import SixQubit.Orbit7Real
+import SixQubit.Orbit8Real
+import SixQubit.Orbit9Real
+import SixQubit.Orbit10Real
+import SixQubit.Orbit11Real
+import SixQubit.Orbit16Real
+import SixQubit.Orbit21Real
+import SixQubit.Orbit22Real
+import SixQubit.Orbit23Real
+import SixQubit.Orbit45Real
 
 open SixQubit
 #print axioms SixQubit.Order9.S0_eq_fiber
@@ -515,3 +527,79 @@ open SixQubit
 #print axioms SixQubit.Orbit36Vacuity.canonical_offSum
 #print axioms SixQubit.Orbit36Vacuity.hypotheses_satisfiable
 #print axioms SixQubit.Orbit36Vacuity.rigidity_nonvacuous
+
+/-! ## The ten exact realizations -/
+
+#print axioms SixQubit.Realize.is_code_of_check
+#print axioms SixQubit.Realize.normalized_of
+#print axioms SixQubit.Realize.matElt_eq
+#print axioms SixQubit.Orbit7Real.is_code
+#print axioms SixQubit.Orbit7Real.w0_normalized
+#print axioms SixQubit.Orbit7Real.w1_normalized
+#print axioms SixQubit.Orbit7Real.L0_in_fiber
+#print axioms SixQubit.Orbit7Real.L1_in_fiber
+#print axioms SixQubit.Orbit7Real.check_all
+#print axioms SixQubit.Orbit8Real.is_code
+#print axioms SixQubit.Orbit8Real.w0_normalized
+#print axioms SixQubit.Orbit8Real.w1_normalized
+#print axioms SixQubit.Orbit8Real.L0_in_fiber
+#print axioms SixQubit.Orbit8Real.L1_in_fiber
+#print axioms SixQubit.Orbit8Real.check_all
+#print axioms SixQubit.Orbit9Real.is_code
+#print axioms SixQubit.Orbit9Real.w0_normalized
+#print axioms SixQubit.Orbit9Real.w1_normalized
+#print axioms SixQubit.Orbit9Real.L0_in_fiber
+#print axioms SixQubit.Orbit9Real.L1_in_fiber
+#print axioms SixQubit.Orbit9Real.check_all
+#print axioms SixQubit.Orbit10Real.is_code
+#print axioms SixQubit.Orbit10Real.w0_normalized
+#print axioms SixQubit.Orbit10Real.w1_normalized
+#print axioms SixQubit.Orbit10Real.L0_in_fiber
+#print axioms SixQubit.Orbit10Real.L1_in_fiber
+#print axioms SixQubit.Orbit10Real.check_all
+#print axioms SixQubit.Orbit11Real.is_code
+#print axioms SixQubit.Orbit11Real.w0_normalized
+#print axioms SixQubit.Orbit11Real.w1_normalized
+#print axioms SixQubit.Orbit11Real.L0_in_fiber
+#print axioms SixQubit.Orbit11Real.L1_in_fiber
+#print axioms SixQubit.Orbit11Real.check_all
+#print axioms SixQubit.Orbit16Real.is_code
+#print axioms SixQubit.Orbit16Real.w0_normalized
+#print axioms SixQubit.Orbit16Real.w1_normalized
+#print axioms SixQubit.Orbit16Real.L0_in_fiber
+#print axioms SixQubit.Orbit16Real.L1_in_fiber
+#print axioms SixQubit.Orbit16Real.check_all
+#print axioms SixQubit.Orbit21Real.is_code
+#print axioms SixQubit.Orbit21Real.w0_normalized
+#print axioms SixQubit.Orbit21Real.w1_normalized
+#print axioms SixQubit.Orbit21Real.L0_in_fiber
+#print axioms SixQubit.Orbit21Real.L1_in_fiber
+#print axioms SixQubit.Orbit21Real.check_all
+#print axioms SixQubit.Orbit22Real.is_code
+#print axioms SixQubit.Orbit22Real.w0_normalized
+#print axioms SixQubit.Orbit22Real.w1_normalized
+#print axioms SixQubit.Orbit22Real.L0_in_fiber
+#print axioms SixQubit.Orbit22Real.L1_in_fiber
+#print axioms SixQubit.Orbit22Real.check_all
+#print axioms SixQubit.Orbit23Real.is_code
+#print axioms SixQubit.Orbit23Real.w0_normalized
+#print axioms SixQubit.Orbit23Real.w1_normalized
+#print axioms SixQubit.Orbit23Real.L0_in_fiber
+#print axioms SixQubit.Orbit23Real.L1_in_fiber
+#print axioms SixQubit.Orbit23Real.check_all
+#print axioms SixQubit.Orbit45Real.is_code
+#print axioms SixQubit.Orbit45Real.w0_normalized
+#print axioms SixQubit.Orbit45Real.w1_normalized
+#print axioms SixQubit.Orbit45Real.L0_in_fiber
+#print axioms SixQubit.Orbit45Real.L1_in_fiber
+#print axioms SixQubit.Orbit45Real.check_all
+
+/-! ## Shadow layer (elementary half) -/
+
+#print axioms SS.Shadow.core_eq_sum_normSq
+#print axioms SS.Shadow.core_eq_nonneg_real
+#print axioms SS.Shadow.melTr_eq_RR
+#print axioms SS.Shadow.sum4_comm
+#print axioms SS.Shadow.altsign_factor
+#print axioms SS.Shadow.star_melTr_eq
+#print axioms SS.Shadow.normSq_melTr_expand

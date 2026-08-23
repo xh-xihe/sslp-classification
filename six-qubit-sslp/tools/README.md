@@ -98,6 +98,21 @@ hand-written or emitted by the scripts named above; that is where the
 mathematics lives. The generators write only the transcription layers — fibers,
 incidences, Walsh signs, moment facts, expansions.
 
+### The ten realizations
+
+| Generator | Emits |
+|---|---|
+| `genreal.py` | `SixQubit/Orbit<n>Real.lean` for n in 7, 8, 9, 10, 11, 16, 21, 22, 23, 45 |
+
+One generator covers all ten because the shared layer `SixQubit/Realize.lean`
+carries everything table-independent: the ring `Z[sqrt 2, sqrt 3, i]`, its
+embedding into the complex numbers, and the theorem taking a decided certificate
+to `SS.HasDistance`. A module contributes only its amplitude table, its support
+lists and a rational scale. The generator re-checks the whole certificate in the
+same eight-integer arithmetic before writing, so the kernel `decide` is a second
+confirmation rather than the only one. Amplitudes and orbit records are parsed
+from the source tables, never transcribed by hand.
+
 ### Orbit 36 (rigidity, not a no-go)
 
 | Generator | Emits |
@@ -131,6 +146,7 @@ intended specifications. They are not part of the Lean kernel's soundness chain.
 | **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every parsed row. It independently cross-checks the headline classification so a syntactically unexpected row cannot disappear from both counts |
 | **`momentgate.py`** | **the transcription check.** Verifies every declared `MomentSystem` row against the order the headline passes probabilities, using exact rational linear forms rather than variable-name sets. Its non-exhaustive `--selftest` mutates every module in memory and fails if any requested mutation is missed or not injected; this is regression evidence, not a completeness theorem for the checker |
 | **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the one realized orbit certified here — is invisible to all of them. This verifies the same obligations for it: that the Lean angle record `(1,1,1,1,2,3)` at `q=5`, residues `0,4` is the same orbit as the manifest's `(1,1,1,2,2,4)`, `delta=1` (compared by canonical form under flips, permutation, unit scaling and logical swap, not assumed); that both fibers recompute; that no hypothesis is smuggled; that all 22 KL rows have weight ≤ 2; that every moment row is a genuine KL moment condition, derived here from the fibers rather than shared with `momentgate.py`; and that the non-vacuity witness really applies the headline. Its `--selftest` injects 14 mutations inside the headline region — a whole-file replace hits a lemma instead and tests nothing — and requires every one to be caught |
+| **`realized.py`** | **the realization check.** Each `Orbit<n>Real.lean` decides its own Knill–Laflamme certificate, so the kernel already proves the exhibited pair is a code. What the kernel cannot prove is that the pair belongs to the orbit the module is named for, since `manifest.json` is not a Lean object — exactly the defect that hit four no-go modules before `gate.py` existed. This checks orbit identity by canonical form, recomputes both fibers, and re-derives the amplitude norms in the same eight-integer ring the Lean uses. Six mutations in its `--selftest` |
 | `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed from each Lean module and cross-checked with `tools/manifest.json`; `delta` and `m` come from the manifest; fiber sizes are recomputed from `(q,a,delta)`. Run `gate.py` separately to compare the Lean residue and support declarations with the manifest |
 | `phase4.py` | which orbits admit isolable C² *inner products* (as opposed to single monomials) |
 | `pin51.py` | the quadratic consequences that pin orbits 49 and 51 |
