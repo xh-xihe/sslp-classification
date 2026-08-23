@@ -168,7 +168,7 @@ Orbit-36 rigidity chain & 11 modules, 28\,412 lines \\
 Ten exact realizations & 10 modules, 1\,606 lines \\
 Shadow bound, five exact images, three attained & 10 modules, 1\,487 lines \\
 Lines in the whole development & 123\,125 \\
-Audit entries in \lean{SixQubit/Audit.lean} & 528 \\
+Audit entries in \lean{SixQubit/Audit.lean} & 529 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -268,7 +268,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 528 lines,
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 529 lines,
 every one reading
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -958,7 +958,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 528 axiom lines; every one must read
+prints the 529 axiom lines; every one must read
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}

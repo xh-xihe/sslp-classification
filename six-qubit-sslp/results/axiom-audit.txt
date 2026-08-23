@@ -463,6 +463,7 @@
 'SixQubit.Orbit21Bridge.num_bxor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SixQubit.Orbit21Bridge.num_band' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SixQubit.Orbit21Bridge.cf_group_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixQubit.Orbit21Chain.residual_vanishes' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SixQubit.Pin.Aco_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SixQubit.Pin.four_le_Aco' depends on axioms: [propext, Classical.choice, Quot.sound]
 'SixQubit.Pin.zstring_fixes' depends on axioms: [propext, Classical.choice, Quot.sound]

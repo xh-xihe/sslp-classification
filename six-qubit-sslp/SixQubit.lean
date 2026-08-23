@@ -138,6 +138,7 @@ import SixQubit.Orbit21Cert
 import SixQubit.Orbit21Coef
 import SixQubit.Orbit21Bound
 import SixQubit.Orbit21Bridge
+import SixQubit.Orbit21Chain
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum

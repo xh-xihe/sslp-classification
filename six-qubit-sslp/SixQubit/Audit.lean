@@ -143,6 +143,7 @@ import SixQubit.Orbit21Cert
 import SixQubit.Orbit21Coef
 import SixQubit.Orbit21Bound
 import SixQubit.Orbit21Bridge
+import SixQubit.Orbit21Chain
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -658,6 +659,7 @@ open SixQubit
 #print axioms SixQubit.Orbit21Bridge.num_bxor
 #print axioms SixQubit.Orbit21Bridge.num_band
 #print axioms SixQubit.Orbit21Bridge.cf_group_sum
+#print axioms SixQubit.Orbit21Chain.residual_vanishes
 
 /-! ## Pinned enumerators -/
 

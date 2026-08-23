@@ -20,8 +20,8 @@ the errors that were made and caught along the way.
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
 | Shadow bound, five exact images, three attained | 10 modules, 1,487 lines / 83 theorems |
-| Lines in the whole development | 124,057 |
-| Axiom-audit entries | 528, all clean |
+| Lines in the whole development | 124,124 |
+| Axiom-audit entries | 529, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -66,7 +66,7 @@ same claim. This table keeps them apart.
 | 10, 11, 16, 22, 23 | WE | yes | yes | **yes** — `enumerator_unique_fiber` |
 | 36 | rigid | yes | yes | **yes** — `Orbit36.rigid_code` |
 | 7, 8, 9 | WE | yes | yes | no — needs a support reduction |
-| 21 | WE | yes | no | no — needs a per-label twisted shadow positivity |
+| 21 | WE | yes | no | no — seven layers built, three gaps left (see below) |
 | 45 | WE | yes | no | no — **the source gives no derivation** |
 
 Six of the eleven reach what the manuscript claims. The last column is the
@@ -91,6 +91,23 @@ there. For orbits 7, 8 and 9 it has uniform parity only on the exhibited
 works fiber-wide, so those three get attainment of one point and no more. The
 manuscript reaches further by reducing the support first, which this
 development does not attempt.
+
+Orbit 21 is the one where the remaining distance is documented rather than
+estimated. Seven layers are in the repository and none of them is assumed:
+the two coefficient symmetries as one `melTr` lemma, their two decided
+instances, a general averaging skeleton, the 4096-label finite check, the
+mask-to-Pauli bridge, the certificate-to-bound shape, and the vanishing of the
+residual sum. The Farkas identity itself was verified in exact rational
+arithmetic, including that the Lean-side assembly reproduces the generated
+coefficient label for label.
+
+Three things are still missing, and they are proof work rather than
+transcription. The two symmetry-invariance hypotheses of `residual_vanishes`
+are not yet discharged for orbit 21 — the parts exist but are not connected to
+the `Equiv` form it wants. Neither is `hforced`, that a label forced to vanish
+really has zero projector trace. And `bound_of_certificate` is still a general
+lemma with no instance: it appears nowhere outside `Audit.lean`, which is the
+honest signal that the chain is not closed.
 
 The last row is a different kind of gap and is recorded as one. Orbit 45's
 bounds are asserted in one sentence each — "positivity of the reduced Gram
