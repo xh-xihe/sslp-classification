@@ -127,18 +127,71 @@ lemma zstring_fixes (c : SS.State n ℂ) (L : List (SS.BitString n))
   · rw [Bool.not_eq_true] at h
     rw [h, SS.signC_false]
 
+/-- A pure `Z`-string whose mask has *odd* overlap with every word of the support
+negates the state.
+
+The overlap parity is uniform across a support, and which parity it is decides
+the sign the string acts by.  Orbits 7 and 8 land on the odd side and orbit 9 on
+the even side, so both cases are needed. -/
+lemma zstring_negates (c : SS.State n ℂ) (L : List (SS.BitString n))
+    (hv : ∀ s, s ∉ L → c s = 0) (zm : SS.BitString n)
+    (hz : ∀ s ∈ L, SS.bdot zm s = true) :
+    SS.pauliAct (⟨fun _ => false, zm⟩ : SS.PauliString n) c = -c := by
+  classical
+  have hnumY : (⟨fun _ => false, zm⟩ : SS.PauliString n).numY = 0 := by
+    simp [SS.PauliString.numY]
+  funext t
+  simp only [SS.pauliAct, hnumY, pow_zero, one_mul, SS.bxor_zero, Pi.neg_apply]
+  by_cases h : SS.bdot zm t = true
+  · rw [h, SS.signC]
+    simp
+  · have hnl : t ∉ L := by
+      intro hm
+      rw [hz t hm] at h
+      exact h rfl
+    rw [Bool.not_eq_true] at h
+    rw [h, SS.signC_false, hv t hnl, neg_zero]
+
+/-- A Pauli acting as `-1` on both logical states bounds the coefficient at its
+weight just as well: the projector trace is `-2`, whose squared modulus is still
+`4`. -/
+lemma four_le_Aco_neg (psi : Fin 2 → SS.State n ℂ) (G : SS.PauliString n)
+    (hG : ∀ k, SS.pauliAct G (psi k) = -(psi k))
+    (hnorm : ∀ k, SS.innerC (psi k) (psi k) = 1) :
+    4 ≤ Aco psi G.wt := by
+  classical
+  have hneg : ∀ k, SS.innerC (psi k) (-(psi k)) = -1 := by
+    intro k
+    have : SS.innerC (psi k) (-(psi k)) = -SS.innerC (psi k) (psi k) := by
+      unfold SS.innerC
+      rw [← Finset.sum_neg_distrib]
+      exact Finset.sum_congr rfl (fun s _ => by simp [Pi.neg_apply])
+    rw [this, hnorm k]
+  have htr : trProj psi G = -2 := by
+    unfold trProj
+    rw [Finset.sum_congr rfl (fun k (_ : k ∈ Finset.univ) => by rw [hG k, hneg k])]
+    simp
+  have hval : Complex.normSq (trProj psi G) = 4 := by
+    rw [htr]
+    norm_num [Complex.normSq_apply]
+  have hmem : G ∈ Finset.univ.filter (fun P : SS.PauliString n => P.wt = G.wt) := by
+    simp
+  calc (4 : ℝ) = Complex.normSq (trProj psi G) := hval.symm
+    _ ≤ Aco psi G.wt :=
+        Finset.single_le_sum
+          (f := fun P : SS.PauliString n => Complex.normSq (trProj psi P))
+          (fun _ _ => Complex.normSq_nonneg _) hmem
+
 /-- **The degree-`<=3` coefficients, pinned.**
 
 A forced stabilizer of weight `w` and the shadow bound leave no freedom: the
 coefficient at `w` is `4` and the other two vanish. -/
-theorem pin_low (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
-    (hA0 : Aco psi 0 = 4) (hnorm : ∀ k, SS.innerC (psi k) (psi k) = 1)
-    (G : SS.PauliString 6) (hG : ∀ k, SS.pauliAct G (psi k) = psi k)
-    (j : ℕ) (hj : j = 1 ∨ j = 2 ∨ j = 3) (hw : G.wt = j) :
+theorem pin_low_of_bound (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
+    (hA0 : Aco psi 0 = 4)
+    (j : ℕ) (hj : j = 1 ∨ j = 2 ∨ j = 3) (hlow : 4 ≤ Aco psi j) :
     Aco psi j = 4
       ∧ (∀ i, (i = 1 ∨ i = 2 ∨ i = 3) → i ≠ j → Aco psi i = 0) := by
   have hsum := shadow_bound psi hd3 hA0
-  have hlow : 4 ≤ Aco psi j := hw ▸ four_le_Aco psi G hG hnorm
   have h1 := Aco_nonneg psi 1
   have h2 := Aco_nonneg psi 2
   have h3 := Aco_nonneg psi 3
@@ -150,6 +203,24 @@ theorem pin_low (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
         first
           | exact absurd rfl hne
           | linarith
+
+/-- The stabilizer form of the squeeze, for a Pauli acting as `+1`. -/
+theorem pin_low (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
+    (hA0 : Aco psi 0 = 4) (hnorm : ∀ k, SS.innerC (psi k) (psi k) = 1)
+    (G : SS.PauliString 6) (hG : ∀ k, SS.pauliAct G (psi k) = psi k)
+    (j : ℕ) (hj : j = 1 ∨ j = 2 ∨ j = 3) (hw : G.wt = j) :
+    Aco psi j = 4
+      ∧ (∀ i, (i = 1 ∨ i = 2 ∨ i = 3) → i ≠ j → Aco psi i = 0) :=
+  pin_low_of_bound psi hd3 hA0 j hj (hw ▸ four_le_Aco psi G hG hnorm)
+
+/-- The same, for a Pauli acting as `-1`. -/
+theorem pin_low_neg (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
+    (hA0 : Aco psi 0 = 4) (hnorm : ∀ k, SS.innerC (psi k) (psi k) = 1)
+    (G : SS.PauliString 6) (hG : ∀ k, SS.pauliAct G (psi k) = -(psi k))
+    (j : ℕ) (hj : j = 1 ∨ j = 2 ∨ j = 3) (hw : G.wt = j) :
+    Aco psi j = 4
+      ∧ (∀ i, (i = 1 ∨ i = 2 ∨ i = 3) → i ≠ j → Aco psi i = 0) :=
+  pin_low_of_bound psi hd3 hA0 j hj (hw ▸ four_le_Aco_neg psi G hG hnorm)
 
 /-- **The full enumerator.**
 
@@ -177,5 +248,54 @@ theorem enumerator_of_forced (psi : Fin 2 → SS.State 6 ℂ)
     have e1 := hoth 1 (Or.inl rfl) (by norm_num)
     have e3 := hoth 3 (Or.inr (Or.inr rfl)) (by norm_num)
     exact ⟨e1, hj, e3, by linarith, by linarith, by linarith⟩
+
+/-- **The full enumerator, for a Pauli acting as `-1`.**
+
+Identical conclusion: only the squared modulus of the projector trace enters, and
+`(-2)` and `2` have the same one. -/
+theorem enumerator_of_forced_neg (psi : Fin 2 → SS.State 6 ℂ)
+    (hd3 : SS.HasDistance psi 3) (hA0 : Aco psi 0 = 4)
+    (hnorm : ∀ k, SS.innerC (psi k) (psi k) = 1)
+    (G : SS.PauliString 6) (hG : ∀ k, SS.pauliAct G (psi k) = -(psi k)) :
+    (G.wt = 1 →
+        Aco psi 1 = 4 ∧ Aco psi 2 = 0 ∧ Aco psi 3 = 0
+        ∧ Aco psi 4 = 60 ∧ Aco psi 5 = 60 ∧ Aco psi 6 = 0)
+      ∧ (G.wt = 2 →
+        Aco psi 1 = 0 ∧ Aco psi 2 = 4 ∧ Aco psi 3 = 0
+        ∧ Aco psi 4 = 44 ∧ Aco psi 5 = 64 ∧ Aco psi 6 = 12) := by
+  obtain ⟨h4, h5, h6⟩ := macwilliams_six psi hd3 hA0
+  constructor
+  · intro hw
+    obtain ⟨hj, hoth⟩ := pin_low_neg psi hd3 hA0 hnorm G hG 1 (Or.inl rfl) hw
+    have e2 := hoth 2 (Or.inr (Or.inl rfl)) (by norm_num)
+    have e3 := hoth 3 (Or.inr (Or.inr rfl)) (by norm_num)
+    exact ⟨hj, e2, e3, by linarith, by linarith, by linarith⟩
+  · intro hw
+    obtain ⟨hj, hoth⟩ := pin_low_neg psi hd3 hA0 hnorm G hG 2 (Or.inr (Or.inl rfl)) hw
+    have e1 := hoth 1 (Or.inl rfl) (by norm_num)
+    have e3 := hoth 3 (Or.inr (Or.inr rfl)) (by norm_num)
+    exact ⟨e1, hj, e3, by linarith, by linarith, by linarith⟩
+
+/-! ## The other shape: a line rather than a point
+
+Orbits 7 and 8 do not have a forced stabilizer.  What their arguments produce is
+a lower bound on `Aco_1 + Aco_2` rather than on a single coefficient, and against
+the shadow bound that pins the sum but not the split.  The enumerator is then a
+one-parameter family in `alpha = Aco_1 / 4`, which is the manuscript's
+`F_I(alpha) = (1, alpha, 1 - alpha, 0, 11 + 4 alpha, 16 - alpha, 3 - 3 alpha)`.
+
+Only the lower bound is orbit-specific; everything after it is this lemma. -/
+theorem pin_line (psi : Fin 2 → SS.State 6 ℂ) (hd3 : SS.HasDistance psi 3)
+    (hA0 : Aco psi 0 = 4) (hlow : 4 ≤ Aco psi 1 + Aco psi 2) :
+    Aco psi 1 + Aco psi 2 = 4 ∧ Aco psi 3 = 0
+      ∧ Aco psi 4 = 44 + 4 * Aco psi 1
+      ∧ Aco psi 5 = 64 - Aco psi 1
+      ∧ Aco psi 6 = 12 - 3 * Aco psi 1 := by
+  obtain ⟨h4, h5, h6⟩ := macwilliams_six psi hd3 hA0
+  have hsum := shadow_bound psi hd3 hA0
+  have h3 := Aco_nonneg psi 3
+  have hs : Aco psi 1 + Aco psi 2 = 4 := by linarith
+  have hz : Aco psi 3 = 0 := by linarith
+  exact ⟨hs, hz, by linarith, by linarith, by linarith⟩
 
 end SixQubit.Pin

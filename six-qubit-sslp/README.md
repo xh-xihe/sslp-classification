@@ -19,9 +19,9 @@ the errors that were made and caught along the way.
 | Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
 | Orbit-36 rigidity chain | 11 modules, 28,412 lines / 1,894 theorems |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
-| Shadow bound and five exact enumerator images | 7 modules, 978 lines / 50 theorems |
-| Lines in the whole development | 121,812 |
-| Axiom-audit entries | 471, all clean |
+| Shadow bound, five exact images, three attained | 10 modules, 1,487 lines / 83 theorems |
+| Lines in the whole development | 122,360 |
+| Axiom-audit entries | 504, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -55,6 +55,37 @@ left free, and the six-qubit MacWilliams normal form determines the rest.
 
 Orbit 21's forced string has weight four and orbit 45's square is not a Pauli at
 all, so those two, and orbits 7, 8 and 9, keep only their realizations here.
+
+## What is certified about each realized orbit, and at what strength
+
+Three different things get called "the orbit is done", and they are not the
+same claim. This table keeps them apart.
+
+| Orbit | Realized | Enumerator of the exhibited code | Exact image, i.e. *every* code in the orbit |
+|---|---|---|---|
+| 10, 11, 16, 22, 23 | yes | yes | **yes** |
+| 36 | yes | yes | **yes**, and unique up to local-monomial equivalence |
+| 7, 8, 9 | yes | yes | no — needs a support reduction |
+| 21 | yes | no | no — needs a per-label twisted shadow positivity |
+| 45 | yes | no | no — **the source gives no derivation** |
+
+Column three is `SixQubit/Orbit<n>Attain.lean`; column four is
+`SixQubit/Orbit<n>Enum.lean`. The gap between them is where the mask lives.
+For orbits 10, 11, 16, 22 and 23 the forced `Z`-string has uniform overlap
+parity with the whole *fiber*, so the squeeze applies to every code supported
+there. For orbits 7, 8 and 9 it has uniform parity only on the exhibited
+11-word support; a search over all sixty-three nonzero masks finds none that
+works fiber-wide, so those three get attainment of one point and no more. The
+manuscript reaches further by reducing the support first, which this
+development does not attempt.
+
+The last row is a different kind of gap and is recorded as one. Orbit 45's
+bounds are asserted in one sentence each — "positivity of the reduced Gram
+blocks gives 2/3 ≤ t ≤ 1" names no matrix, no index set and no entries — and
+the attainment is asserted to exist with no amplitude written down anywhere.
+There is nothing to transcribe. Orbits 7 and 8 additionally need a continuous
+family for the interval half, which is the first thing in this development that
+would not be finite.
 
 `SixQubit/Shadow.lean` proves the zeroth Rains shadow inequality
 `A_1 + A_2 + A_3 ≤ 1`, which is the upper-bound half of the exact-image

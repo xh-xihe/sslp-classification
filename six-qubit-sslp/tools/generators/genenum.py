@@ -50,6 +50,9 @@ def forced_mask(rec):
 
 
 def emit(oid, rec, zm, w0, w1):
+    q, a = rec['q'], rec['a']
+    r0 = sum(ai * xi for ai, xi in zip(a, sorted(w0)[0])) % q
+    r1 = sum(ai * xi for ai, xi in zip(a, sorted(w1)[0])) % q
     wt = sum(zm)
     a1, a2, a3, a4, a5, a6 = VALUES[wt]
     bits = ', '.join('true' if b else 'false' for b in zm)
@@ -129,6 +132,46 @@ theorem enumerator_unique (c d : SS.State 6 ℂ)
   exact (enumerator_of_forced ![c, d] hdist (Aco_zero _ hnorm) hnorm _ hG){branch}
     zmask_wt
 
+/-! ## The hypothesis really is the orbit condition
+
+`L0` and `L1` are not merely *contained* in the two fibers, they *are* the two
+fibers.  Without that, `enumerator_unique` would be about codes supported in one
+particular list of words rather than about every code in the orbit, and the
+difference is not cosmetic: for orbits 7, 8, 9, 21 and 45 the exhibited support
+is a proper subset of its fiber, which is exactly why those need a
+support-reduction argument before anything else. -/
+
+/-- The bottom support list is the whole residue-{r0} fiber. -/
+theorem L0_eq_fiber :
+    (Finset.univ.filter (fun x : SS.BitString 6 => SS.weight av x = {r0}))
+      = L0.toFinset := by decide
+
+/-- The top support list is the whole residue-{r1} fiber. -/
+theorem L1_eq_fiber :
+    (Finset.univ.filter (fun x : SS.BitString 6 => SS.weight av x = {r1}))
+      = L1.toFinset := by decide
+
+/-- **The exact image, stated over the fibers.**
+
+The same conclusion as `enumerator_unique`, with the support hypothesis written
+as membership of the orbit's fibers rather than of a list. -/
+theorem enumerator_unique_fiber (c d : SS.State 6 ℂ)
+    (hc : ∀ s, SS.weight av s ≠ {r0} → c s = 0)
+    (hd : ∀ s, SS.weight av s ≠ {r1} → d s = 0)
+    (hnc : SS.innerC c c = 1) (hnd : SS.innerC d d = 1)
+    (hdist : SS.HasDistance ![c, d] 3) :
+    Aco ![c, d] 1 = {a1} ∧ Aco ![c, d] 2 = {a2} ∧ Aco ![c, d] 3 = {a3}
+      ∧ Aco ![c, d] 4 = {a4} ∧ Aco ![c, d] 5 = {a5}
+      ∧ Aco ![c, d] 6 = {a6} := by
+  refine enumerator_unique c d (fun s hs => hc s ?_) (fun s hs => hd s ?_)
+    hnc hnd hdist
+  · intro hw
+    exact hs (List.mem_toFinset.mp (L0_eq_fiber ▸ Finset.mem_filter.mpr
+      ⟨Finset.mem_univ s, hw⟩))
+  · intro hw
+    exact hs (List.mem_toFinset.mp (L1_eq_fiber ▸ Finset.mem_filter.mpr
+      ⟨Finset.mem_univ s, hw⟩))
+
 /-- The exhibited code of `SixQubit/Orbit{oid}Real.lean` satisfies the hypotheses,
 so the image is nonempty and therefore exactly one point. -/
 theorem enumerator_attained :
@@ -139,7 +182,7 @@ theorem enumerator_attained :
     is_code
 
 end SixQubit.Orbit{oid}Enum
-'''.format(oid=oid, q=rec['q'], m=rec['m'], a=tuple(rec['a']), bits=bits,
+'''.format(oid=oid, q=q, m=rec['m'], a=tuple(a), bits=bits, r0=r0, r1=r1,
            bitsdoc=''.join(str(b) for b in zm), wt=wt, name=NAMES[wt],
            branch=branch, a1=a1, a2=a2, a3=a3, a4=a4, a5=a5, a6=a6)
 

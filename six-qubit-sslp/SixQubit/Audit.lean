@@ -141,6 +141,9 @@ import SixQubit.Orbit11Enum
 import SixQubit.Orbit16Enum
 import SixQubit.Orbit22Enum
 import SixQubit.Orbit23Enum
+import SixQubit.Orbit7Attain
+import SixQubit.Orbit8Attain
+import SixQubit.Orbit9Attain
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
@@ -622,6 +625,39 @@ open SixQubit
 #print axioms SixQubit.Pin.zstring_fixes
 #print axioms SixQubit.Pin.pin_low
 #print axioms SixQubit.Pin.enumerator_of_forced
+#print axioms SixQubit.Pin.pin_line
+#print axioms SixQubit.Pin.pin_low_of_bound
+#print axioms SixQubit.Pin.pin_low_neg
+#print axioms SixQubit.Pin.zstring_negates
+#print axioms SixQubit.Pin.four_le_Aco_neg
+#print axioms SixQubit.Pin.enumerator_of_forced_neg
+#print axioms SixQubit.Orbit7Attain.zmask_L0
+#print axioms SixQubit.Orbit7Attain.zmask_L1
+#print axioms SixQubit.Orbit7Attain.zmask_wt
+#print axioms SixQubit.Orbit7Attain.enumerator
+#print axioms SixQubit.Orbit8Attain.zmask_L0
+#print axioms SixQubit.Orbit8Attain.zmask_L1
+#print axioms SixQubit.Orbit8Attain.zmask_wt
+#print axioms SixQubit.Orbit8Attain.enumerator
+#print axioms SixQubit.Orbit9Attain.zmask_L0
+#print axioms SixQubit.Orbit9Attain.zmask_L1
+#print axioms SixQubit.Orbit9Attain.zmask_wt
+#print axioms SixQubit.Orbit9Attain.enumerator
+#print axioms SixQubit.Orbit10Enum.L0_eq_fiber
+#print axioms SixQubit.Orbit10Enum.L1_eq_fiber
+#print axioms SixQubit.Orbit10Enum.enumerator_unique_fiber
+#print axioms SixQubit.Orbit11Enum.L0_eq_fiber
+#print axioms SixQubit.Orbit11Enum.L1_eq_fiber
+#print axioms SixQubit.Orbit11Enum.enumerator_unique_fiber
+#print axioms SixQubit.Orbit16Enum.L0_eq_fiber
+#print axioms SixQubit.Orbit16Enum.L1_eq_fiber
+#print axioms SixQubit.Orbit16Enum.enumerator_unique_fiber
+#print axioms SixQubit.Orbit22Enum.L0_eq_fiber
+#print axioms SixQubit.Orbit22Enum.L1_eq_fiber
+#print axioms SixQubit.Orbit22Enum.enumerator_unique_fiber
+#print axioms SixQubit.Orbit23Enum.L0_eq_fiber
+#print axioms SixQubit.Orbit23Enum.L1_eq_fiber
+#print axioms SixQubit.Orbit23Enum.enumerator_unique_fiber
 #print axioms SixQubit.Orbit10Enum.zmask_L0
 #print axioms SixQubit.Orbit10Enum.zmask_L1
 #print axioms SixQubit.Orbit10Enum.zmask_wt

@@ -73,6 +73,46 @@ theorem enumerator_unique (c d : SS.State 6 ℂ)
   exact (enumerator_of_forced ![c, d] hdist (Aco_zero _ hnorm) hnorm _ hG).2
     zmask_wt
 
+/-! ## The hypothesis really is the orbit condition
+
+`L0` and `L1` are not merely *contained* in the two fibers, they *are* the two
+fibers.  Without that, `enumerator_unique` would be about codes supported in one
+particular list of words rather than about every code in the orbit, and the
+difference is not cosmetic: for orbits 7, 8, 9, 21 and 45 the exhibited support
+is a proper subset of its fiber, which is exactly why those need a
+support-reduction argument before anything else. -/
+
+/-- The bottom support list is the whole residue-0 fiber. -/
+theorem L0_eq_fiber :
+    (Finset.univ.filter (fun x : SS.BitString 6 => SS.weight av x = 0))
+      = L0.toFinset := by decide
+
+/-- The top support list is the whole residue-2 fiber. -/
+theorem L1_eq_fiber :
+    (Finset.univ.filter (fun x : SS.BitString 6 => SS.weight av x = 2))
+      = L1.toFinset := by decide
+
+/-- **The exact image, stated over the fibers.**
+
+The same conclusion as `enumerator_unique`, with the support hypothesis written
+as membership of the orbit's fibers rather than of a list. -/
+theorem enumerator_unique_fiber (c d : SS.State 6 ℂ)
+    (hc : ∀ s, SS.weight av s ≠ 0 → c s = 0)
+    (hd : ∀ s, SS.weight av s ≠ 2 → d s = 0)
+    (hnc : SS.innerC c c = 1) (hnd : SS.innerC d d = 1)
+    (hdist : SS.HasDistance ![c, d] 3) :
+    Aco ![c, d] 1 = 0 ∧ Aco ![c, d] 2 = 4 ∧ Aco ![c, d] 3 = 0
+      ∧ Aco ![c, d] 4 = 44 ∧ Aco ![c, d] 5 = 64
+      ∧ Aco ![c, d] 6 = 12 := by
+  refine enumerator_unique c d (fun s hs => hc s ?_) (fun s hs => hd s ?_)
+    hnc hnd hdist
+  · intro hw
+    exact hs (List.mem_toFinset.mp (L0_eq_fiber ▸ Finset.mem_filter.mpr
+      ⟨Finset.mem_univ s, hw⟩))
+  · intro hw
+    exact hs (List.mem_toFinset.mp (L1_eq_fiber ▸ Finset.mem_filter.mpr
+      ⟨Finset.mem_univ s, hw⟩))
+
 /-- The exhibited code of `SixQubit/Orbit22Real.lean` satisfies the hypotheses,
 so the image is nonempty and therefore exactly one point. -/
 theorem enumerator_attained :

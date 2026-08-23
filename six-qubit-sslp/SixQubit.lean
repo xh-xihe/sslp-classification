@@ -136,6 +136,9 @@ import SixQubit.Orbit11Enum
 import SixQubit.Orbit16Enum
 import SixQubit.Orbit22Enum
 import SixQubit.Orbit23Enum
+import SixQubit.Orbit7Attain
+import SixQubit.Orbit8Attain
+import SixQubit.Orbit9Attain
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
