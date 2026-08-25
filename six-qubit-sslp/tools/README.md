@@ -98,7 +98,7 @@ hand-written or emitted by the scripts named above; that is where the
 mathematics lives. The generators write only the transcription layers — fibers,
 incidences, Walsh signs, moment facts, expansions.
 
-### The five exact enumerator images
+### The five generated scalar-squeeze exact images
 
 | Generator | Emits |
 |---|---|
@@ -118,6 +118,32 @@ six-qubit MacWilliams transform from the subset identity and derives the exact
 B-vector for each of the two possible A-vectors.  Each generated module also
 contains `enumerator_pair_attained`, so uniqueness and non-emptiness are both
 kernel statements.
+
+### The five orbit-specific exact-image stacks
+
+The other five WE orbits require individual reductions rather than the common
+`genenum.py` mask squeeze:
+
+| Orbit | Top-level module | Kernel-checked result |
+|---|---|---|
+| 7 | `Orbit7UniversalFinal.lean`, `Orbit7DirectMarginal.lean` | exact `[0,1]` A/B line and a literal rank-two `Tr(P/2)` pair marginal |
+| 8 | `Orbit8UniversalFinal.lean` | exact `[1/2,1]` A/B line |
+| 9 | `Orbit9UniversalFinal.lean` | unique `E2` pair and the uniform-gauge weight-two scalar |
+| 21 | `Orbit21Enum.lean` | full-fibre Walsh/Farkas `E2` pair and genuine attainment |
+| 45 | `Orbit45Final.lean` | exact `[2/3,1]` A/B line and two-chart attainment |
+
+Most of these reductions are hand-written Lean. Two generated finite cores have
+explicit provenance: `geno21coef.py` emits the integral orbit-21 coefficient
+table in `Orbit21Coef.lean`, and `gen_o45_attain_rows.py` emits the explicit
+Knill--Laflamme row proofs in `Orbit45AttainRows.lean`. The final theorems do not
+trust Python: all emitted identities are rechecked by the Lean kernel.
+
+Dedicated `Orbit7AxiomCheck.lean`, `Orbit8AxiomCheck.lean`,
+`Orbit9AxiomCheck.lean` and `Orbit45AxiomCheck.lean` files expose the critical
+dependency cones. `o45_gram.py` and `o45_attain_check.py` independently check
+the Gram identities and the two numerical charts; they are diagnostics, not
+members of the trusted proof base. Orbit 21's Walsh, residual, Farkas and final
+headlines are included directly in `SixQubit/Audit.lean`.
 
 ### The ten realizations
 
@@ -175,7 +201,7 @@ intended specifications. They are not part of the Lean kernel's soundness chain.
 | **`classify.py`** | **the anti-smuggling check.** Parses every headline theorem and accepts only exact `offSum = 0` / `diagBot = diagTop` / `MomentSystem` hypothesis forms. Unexpected or unparsed binders fail closed. Current result across all 51: **zero** |
 | **`admis.py`** | **the weight check.** Resolves every mask and dressing definition and confirms `\|supp(e) ∪ supp(z)\| ≤ 2` for every parsed row. It independently cross-checks the headline classification so a syntactically unexpected row cannot disappear from both counts |
 | **`momentgate.py`** | **the transcription check.** Verifies every declared `MomentSystem` row against the order the headline passes probabilities, using exact rational linear forms rather than variable-name sets. Its non-exhaustive `--selftest` mutates every module in memory and fails if any requested mutation is missed or not injected; this is regression evidence, not a completeness theorem for the checker |
-| **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the one realized orbit certified here — is invisible to all of them. This verifies the same obligations for it: the symmetric gauge and its fibers; the manifest's exact original representative `(1,1,1,2,2,4)` at `q=5` with residue-`0,1` fibers; the residue-shift and logical-swap direction; the absence of smuggled hypotheses; all 22 KL rows and moment equations; and the final table-level theorem's exact physical hypotheses, magnitudes/full-support/direct-equivalence/A/B conclusion, and constructive original canonical witness. Its `--selftest` retains the 14 legacy injections and adds transport/closure injections (34 total); every mutation must be caught and zero may be inert |
+| **`rigidity.py`** | **the orbit-36 check.** The four gates above key off the `no_go_of_moments` headline, so orbit 36 — the unique realized orbit certified to rigidity rather than only an exact WE image — is invisible to all of them. This verifies the same obligations for it: the symmetric gauge and its fibers; the manifest's exact original representative `(1,1,1,2,2,4)` at `q=5` with residue-`0,1` fibers; the residue-shift and logical-swap direction; the absence of smuggled hypotheses; all 22 KL rows and moment equations; and the final table-level theorem's exact physical hypotheses, magnitudes/full-support/direct-equivalence/A/B conclusion, and constructive original canonical witness. Its `--selftest` retains the 14 legacy injections and adds transport/closure injections (34 total); every mutation must be caught and zero may be inert |
 | **`realized.py`** | **the realization check.** Each `Orbit<n>Real.lean` decides its own Knill–Laflamme certificate, so the kernel already proves the exhibited pair is a code. What the kernel cannot prove is that the pair belongs to the orbit the module is named for, since `manifest.json` is not a Lean object — exactly the defect that hit four no-go modules before `gate.py` existed. This checks orbit identity by canonical form, recomputes both fibers, and re-derives the amplitude norms in the same eight-integer ring the Lean uses. Six mutations in its `--selftest` |
 | `mktable.py` | regenerates `results/orbit-table.tsv`: `q` and `a` are parsed from each Lean module and cross-checked with `tools/manifest.json`; `delta` and `m` come from the manifest; fiber sizes are recomputed from `(q,a,delta)`. Run `gate.py` separately to compare the Lean residue and support declarations with the manifest |
 | `phase4.py` | which orbits admit isolable C² *inner products* (as opposed to single monomials) |
@@ -191,7 +217,8 @@ The `stepA_*` and `x26_*` families exist because the first orbit-26 argument had
 a real gap (per-anchor axis choices used as if global). They are the record of
 finding it and of verifying the repair.
 
-Run `gate.py`, `momentgate.py`, `classify.py`, `admis.py` and `rigidity.py`
+Run `gate.py`, `momentgate.py`, `classify.py`, `admis.py`, `rigidity.py` and
+`realized.py`
 together. They check different parts of the paper-to-Lean transcription and
 deliberately fail on unrecognized input; none replaces the kernel build and
 axiom audit. The first four cover the 51 no-gos; `rigidity.py` covers orbit 36,

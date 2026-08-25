@@ -5,6 +5,12 @@ metadata:
   type: project
 ---
 
+> **Status update (2026-08-24).** The 51-no-go mechanism and transcription
+> record below remains authoritative for that part of the project. Its dated
+> audit count and old description of the complementary realized orbits are a
+> historical snapshot; current positive-orbit status is summarized at the end
+> of this note and in the repository `README.md`.
+
 As of 2026-08-21 every one of the fifty-one no-go moment orbits of
 `six_qubit_sslp.tex` carries a Lean 4 proof checked by the kernel alone:
 51 conditional `no_go_of_moments` theorems and 51 final code-level `no_code`
@@ -57,9 +63,9 @@ finished proof was overwritten; parallel attempts on shared files need worktree
 isolation. Both proofs survived because the displaced agent parked its version
 instead of overwriting back; the spare is in `alternatives/`.
 
-The remaining fifteen of the sixty-six rank-compatible orbits are not among the
-fifty-one no-gos certified here; this development makes no exhaustive existence
-claim about them. Four (7, 8, 9, 36) are known realizable.
-Orbit 9's explicit witness — 22 amplitudes of the form `zeta_6^k / sqrt(d)` — was
-verified symbolically against all 154 conditions and would be the cheapest
-existence result to formalize; see `tools/generators/o9witness.py`.
+The complementary positive side has since advanced. Eleven orbits
+(7, 8, 9, 10, 11, 16, 21, 22, 23, 36 and 45) now have exact realized codes in
+Lean. Orbit 36 reaches the manuscript's rigidity statement; the other ten have
+source-level exact A/B images and attainment. Orbits 1--4 remain outside the
+current formalization while their source proofs are completed. The global
+reduction of an arbitrary code to the sixty-six orbit list also remains open.

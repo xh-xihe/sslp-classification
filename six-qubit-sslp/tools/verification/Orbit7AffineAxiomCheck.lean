@@ -1,0 +1,5 @@
+import SixQubit.Orbit7Affine
+
+#print axioms SixQubit.Orbit7Universal.physical_covariant_disjoint
+#print axioms SixQubit.Orbit7Universal.physical_affine_tangent_data
+#print axioms SixQubit.Orbit7Universal.physical_hafnian_y_zero_of_full_independent

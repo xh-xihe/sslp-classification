@@ -7,8 +7,8 @@ classification carries a Lean 4 proof that no exact six-qubit
 of `native_decide` or `sorry` in proof/tactic position.
 
 Start with **`formalization/formalization.pdf`**. It explains what is certified,
-the standard it was held to, the algebraic mechanisms, the four hard orbits, and
-the errors that were made and caught along the way.
+the standard it was held to, the no-go mechanisms, orbit-36 rigidity, the ten
+realized exact-image stacks, and the errors caught along the way.
 
 ## Status
 
@@ -19,8 +19,8 @@ the errors that were made and caught along the way.
 | Lines / theorems in the 51 no-go modules | 41,521 / 12,521 |
 | Orbit-36 rigidity chain | 16 modules; original table representative through canonical classification |
 | Ten exact realizations | 10 modules, 1,606 lines / 150 theorems, over a 516-line shared layer |
-| Shadow bound, universal A/B transform, five exact A/B images, three attained | kernel-checked |
-| Axiom-audit entries | 564, all clean |
+| Shadow bound, universal A/B transform, all ten WE-orbit A/B images and their attainment | kernel-checked |
+| Axiom-audit entries | 592, all clean |
 | Build errors / warnings | 0 / 0 |
 
 Orbits 25–40 (no 36) and 53–66 were certified first; the twenty-two added in the
@@ -36,10 +36,11 @@ layer transports the decision to genuine complex matrix elements. Together with
 orbit 36 that is eleven realized orbits, against 51 excluded and four — 1, 2, 3
 and 4 — whose exact enumerator image is still open.
 
-For five of them — orbits 10, 11, 16, 22 and 23 — the certification goes past
-existence to the **exact A/B weight-enumerator image**. `SixQubit/Orbit<n>Enum.lean`
-proves that *every* exact `((6,2,3))` code supported in that orbit's two fibers
-has one specific pair, and the realization module exhibits a code attaining it.
+For all ten WE orbits the certification goes past existence to the **exact A/B
+weight-enumerator image**.  For orbits 10, 11, 16, 22 and 23,
+`SixQubit/Orbit<n>Enum.lean` proves that *every* exact `((6,2,3))` code supported
+in that orbit's two fibers has one specific pair, and the realization module
+exhibits a code attaining it.
 The A-vectors are `(1,1,0,0,15,15,0)` for orbits 11 and 23 and
 `(1,0,1,0,11,16,3)` for orbits 10, 16 and 22; the corresponding B-vectors are
 `(1,1,0,30,45,33,18)` and `(1,0,1,24,35,40,27)`.  The B half is derived in
@@ -54,8 +55,10 @@ weight `w` forces `A_w ≥ 1` from below; the shadow inequality forces
 left free, and the six-qubit MacWilliams normal form determines the rest.
 `SixQubit/Pin.lean` carries the squeeze.
 
-Orbit 21's forced string has weight four and orbit 45's square is not a Pauli at
-all, so those two, and orbits 7, 8 and 9, keep only their realizations here.
+Orbit 21's forced string has weight four, so it is closed by a separate
+support-level Walsh/Farkas certificate.  Orbits 7, 8, 9 and 45 require their own
+support, moment, phase and constructive-family reductions; those reductions are
+also now closed at source-level hypotheses.
 
 ## What is certified about each realized orbit, and at what strength
 
@@ -66,11 +69,13 @@ same claim. This table keeps them apart.
 |---|---|---|---|---|
 | 10, 11, 16, 22, 23 | WE | yes | yes | **yes** — `enumerator_pair_unique_fiber` (A and B) |
 | 36 | rigid | yes | yes | **yes** — `Orbit36Certified.table_representative_rigid` |
-| 7, 8, 9 | WE | yes | yes | no — needs a support reduction |
-| 21 | WE | yes | no | no — seven layers built, three gaps left (see below) |
-| 45 | WE | yes | no | no — **the source gives no derivation** |
+| 7 | WE | yes | yes | **yes** — exact interval `[0,1]` and a literal rank-two `Tr(P/2)` pair marginal |
+| 8 | WE | yes | yes | **yes** — exact interval `[1/2,1]` |
+| 9 | WE | yes | yes | **yes** — exact endpoint and the uniform-gauge weight-two scalar |
+| 21 | WE | yes | yes | **yes** — code-level full-fibre Walsh/Farkas theorem, A/B, and attainment |
+| 45 | WE | yes | yes | **yes** — exact interval `[2/3,1]` from the full-fibre Gram/phase reduction |
 
-Six of the eleven reach what the manuscript claims. The last column is the
+All eleven realized orbits reach what the manuscript claims. The last column is the
 only one that answers "is this orbit done"; the other two are weaker and are
 kept separate because all three get called that in conversation.
 
@@ -83,58 +88,44 @@ of amplitude pairs satisfying those conditions rather than of codes. The
 fifty-one no-go wrappers had had that bridge from the start; orbit 36 was the
 one module without it.
 
-Column three is `SixQubit/Orbit<n>Attain.lean`; column four is
-`SixQubit/Orbit<n>Enum.lean`. The gap between them is where the mask lives.
 For orbits 10, 11, 16, 22 and 23 the forced `Z`-string has uniform overlap
-parity with the whole *fiber*, so the squeeze applies to every code supported
-there. For orbits 7, 8 and 9 it has uniform parity only on the exhibited
-11-word support; a search over all sixty-three nonzero masks finds none that
-works fiber-wide, so those three get attainment of one point and no more. The
-manuscript reaches further by reducing the support first, which this
-development does not attempt.
+parity with the whole *fiber*, so the scalar squeeze applies directly.  The
+other five use genuinely different complete-fibre arguments: Walsh/Farkas for
+21; support and Hafnian reductions for 8; a finite active-support and equal-pair
+classification for 9; the covariant `K5` tangent/projector analysis for 7; and
+the reduced Gram, phase and two-chart construction for 45.  Their top-level
+modules quantify over arbitrary amplitudes on the complete fibres, rather than
+only the supports of the exhibited witnesses.
 
-Orbit 21 also carries this project's clearest reasoning error, recorded here
-rather than quietly fixed. Reducing the certificate under the two symmetries the
-source names leaves 128 inconsistent rows, so I proposed a third vanishing,
-`a_E = 0` unless `A_a(E.x) = 0`, found the identity closed with it, and reported
-the source's hypothesis list as incomplete. Both halves of that were wrong. The
-proposed condition is false — orbit 21's support is eight words of a sixteen-word
-fiber, so `A_a` is not an invariant of the support, and ninety-six labels
-violate it. And closure identifies nothing: restricting instead to labels with
-zero `X`-part also closes those rows, on 32 classes. Several strengthenings work,
-so "the identity holds once I assume P" is no evidence that P was omitted.
+Orbit 21 also records this project's clearest reasoning error and its repair.
+The old class-averaging route introduced `a_E = 0` whenever
+`A_a(E.x) != 0`. That condition is false even for the certified witness; for
+example one label marked `forced` has `normSq (trProj) = 1`. The old conditional
+lemmas remain as historical infrastructure, but no final theorem uses that
+branch.
 
-The error surfaced because the mechanism was checked numerically before the Lean
-was written. Had it not been, the false condition would have been carried into a
-definition and the proof would have failed opaquely — or worse, been routed
-around. `SixQubit/Orbit21Coef.lean` still carries the finite check, which is a
-true arithmetic statement, with the caveat that its `forced` predicate is not a
-proved vanishing condition.
+The corrected proof expands each squared projector trace into computational-
+basis autocorrelations. Only 512 `(X-mask, Walsh-frequency)` pairs can occur for
+the two full residue fibres, and the integral residual coefficient has exact
+Walsh transform zero on every one. `Orbit21Walsh.lean` checks that finite table;
+`Orbit21Residual.lean` proves the Fourier expansion for arbitrary amplitudes;
+`Orbit21Farkas.lean` proves
+`residual = 32 * (Aco_2 - 4) - positiveRhs`, with every term of `positiveRhs`
+kernel-proved nonnegative. `Orbit21Enum.lean` then proves `IsE2A ∧ IsE2B` for
+every normalized full-fibre-supported distance-three code and proves attainment
+with the explicit realization.
 
-Orbit 21 is the one where the remaining distance is documented rather than
-estimated. Seven layers are in the repository and none of them is assumed:
-the two coefficient symmetries as one `melTr` lemma, their two decided
-instances, a general averaging skeleton, the 4096-label finite check, the
-mask-to-Pauli bridge, the certificate-to-bound shape, and the vanishing of the
-residual sum. The Farkas identity itself was verified in exact rational
-arithmetic, including that the Lean-side assembly reproduces the generated
-coefficient label for label.
-
-Three things are still missing, and they are proof work rather than
-transcription. The two symmetry-invariance hypotheses of `residual_vanishes`
-are not yet discharged for orbit 21 — the parts exist but are not connected to
-the `Equiv` form it wants. Neither is `hforced`, that a label forced to vanish
-really has zero projector trace. And `bound_of_certificate` is still a general
-lemma with no instance: it appears nowhere outside `Audit.lean`, which is the
-honest signal that the chain is not closed.
-
-The last row is a different kind of gap and is recorded as one. Orbit 45's
-bounds are asserted in one sentence each — "positivity of the reduced Gram
-blocks gives 2/3 ≤ t ≤ 1" names no matrix, no index set and no entries — and
-the attainment is asserted to exist with no amplitude written down anywhere.
-There is nothing to transcribe. Orbits 7 and 8 additionally need a continuous
-family for the interval half, which is the first thing in this development that
-would not be finite.
+Orbit 45's short manuscript proof has now been expanded into kernel-checkable
+content.  The complete ten-point fibres are enumerated explicitly; genuine KL
+rows derive the block masses and phase relations; division-free Gram lemmas
+cover zero-entry boundary cases; the shadow/MacWilliams layer gives the exact
+A/B line and `2/3 ≤ t ≤ 1`.  The converse does not assume a phase ansatz.
+For attainment, two explicit real-amplitude charts cover `[2/3,3/4]` and
+`[3/4,1]`, returning normalized codewords supported on the two complete fibres
+and satisfying genuine `SS.HasDistance` at the requested parameter.  This does
+not assert nonzero amplitude at every fibre point (the endpoint `t=1` has
+zeros).  Orbits 7 and 8 likewise include explicit continuous families covering
+their full closed intervals.
 
 `SixQubit/Shadow.lean` proves the zeroth Rains shadow inequality
 `A_1 + A_2 + A_3 ≤ 1`, which is the upper-bound half of the exact-image
@@ -145,8 +136,9 @@ operator, transpose or matrix positivity. `alt_sum_nonneg` holds for every block
 length and every number of logical states; `shadow_bound` is its six-qubit
 specialization.
 
-Orbit 36 is the one realized orbit whose certification goes further than
-existence.  `Orbit36Certified.table_representative_rigid` starts directly from
+Orbit 36 is the only realized orbit whose source status is full rigidity rather
+than a weight-enumerator image. `Orbit36Certified.table_representative_rigid`
+starts directly from
 the representative printed in the manuscript,
 `a = (1,1,1,2,2,4)` with residue fibers `(0,1)`, and assumes only support,
 normalization and the genuine predicate `SS.HasDistance ![c,d] 3`.  In the
@@ -206,7 +198,7 @@ being conflated. They are now tracked separately:
 
 | Question | Answer |
 |---|---|
-| Are the Lean headline theorems really kernel-proved? | **Yes.** 564 current audit entries; every footprint is contained in `[propext, Classical.choice, Quot.sound]`, with no escape hatches |
+| Are the Lean headline theorems really kernel-proved? | **Yes.** 592 current audit entries; every footprint is contained in `[propext, Classical.choice, Quot.sound]`, with no escape hatches |
 | Do they state what the paper needs? | **51 of 51**, since the repair. Four modules (30, 53, 55, 65) had used a residue of the wrong additive order and were rebuilt from scratch at `delta = q/m`; five more (34, 57, 59, 64, Order9) had moment rows inconsistent with their headline ordering and were regenerated. `gate.py` now reports 51 passed, 0 failed, 0 unchecked |
 | Do they rule out a real code end to end? | **All 51 do.** Each has a `no_code` theorem taking only support, normalization and `SS.HasDistance ![c,d] 3` — no KL row is assumed. `SixQubit/Vacuity.lean` exhibits, for **all 51**, a point-mass pair satisfying every other hypothesis, so no statement is vacuous |
 
@@ -217,7 +209,8 @@ the paper's own 66-orbit table) plus `tools/verification/gate.py`, which checks
 `tools/verification/momentgate.py` checks the complete content and ordering of
 the declared moment rows:
 
-What remains open is one level up, and it now has a name. The reduction of an
+For the 51 no-go certifications, what remains open is one level up, and it now
+has a name. The reduction of an
 arbitrary code to one of the sixty-six rank-compatible moment orbits is
 *Completeness of the lift-aware SSLP pipeline* (`main.tex`), and the equivalence
 of other angle records to the chosen representatives is part of the same
@@ -270,7 +263,7 @@ checks that a module targets the orbit it claims to.
 
 ```sh
 lake build                       # expect 0 errors, 0 warnings
-lake build SixQubit.Audit        # expect 564 clean axiom lines
+lake build SixQubit.Audit        # expect 592 clean axiom lines
 
 lake build SixQubit.Audit 2>&1 | grep "depends on axioms" \
   | sed 's/^info: [^ ]* //' | diff - results/axiom-audit.txt
@@ -287,9 +280,8 @@ To confirm the forbidden constructs are absent:
 grep -rn "sorry\|native_decide" SixQubit/ SS/
 ```
 
-Every hit must be inside a docstring or comment. There are 181 occurrences on 123
-lines; most are the sentence in each module stating that `native_decide` is not
-used. The check that matters is the axiom footprint, not the grep count: an
+Every hit must be inside a docstring or comment; the exact comment count is not
+an invariant. The check that matters is the axiom footprint, not the grep count: an
 escape hatch actually used would show up in `#print axioms` as `sorryAx` or
 `Lean.ofReduceBool`, and none does.
 
@@ -301,7 +293,7 @@ used mathematically.
 
 | Path | Contents |
 |---|---|
-| `SixQubit/` | 51 orbit modules, 13 algebra modules, 51 code-level wrappers, the 16-module orbit-36 chain, ten realization modules over a shared exact-arithmetic layer, the audit |
+| `SixQubit/` | 51 no-go orbit modules, 13 shared algebra modules, 51 code-level wrappers, the orbit-36 rigidity chain, ten realization modules and their universal exact-image stacks, the audit |
 | `SS/` | problem-independent bit-string and Pauli infrastructure |
 | `formalization/` | the process document (`.tex` and `.pdf`) |
 | `tools/core/` | fibers, Pauli enumeration, moment matrices, relation extractors |
@@ -367,7 +359,8 @@ that catches it is that the admissible Pauli count must be
 **Someone writing the paper** — Section 4 for the four hard orbits. The
 arguments obtained here are shorter than the manuscript's, and for orbits 26 and
 31 they avoid machinery the manuscript needs (matrix inverses and a genericity
-argument; a 16-type support classification). Section 9 lists what remains open.
+argument; a 16-type support classification). The final “Open items” section
+states the remaining boundary.
 
 ## A note on the negative results
 

@@ -17,7 +17,7 @@ sources.
 | `sslp-orbit31-structure.md` | chronological work log for the now-complete 4×4-table proof; old progress counts are historical |
 | `sslp-orbit31-indexmap.md` | the authoritative index map — the manuscript's `B_{i,e} = (u_i, ē)` reverses column order versus sorted indexing |
 | `sslp-orbit33-block-recipe.md` | the certified block-reflection route |
-| `sslp-51-orbits-complete.md` | final state of the full 51-orbit certification; the four complementary transcription checks, and why 14/15/24 cannot take the orbit-13 shortcut |
+| `sslp-51-orbits-complete.md` | final state of the 51 no-go certifications, plus a dated positive-orbit addendum; the four transcription checks and why 14/15/24 cannot take the orbit-13 shortcut |
 | `sslp-29-orbits-complete.md` | superseded pre-repair snapshot of the old 29-orbit milestone; use the 51-orbit note for current status |
 
 The index-map note is worth singling out. Getting that map backwards makes a

@@ -144,6 +144,10 @@ import SixQubit.Orbit21Coef
 import SixQubit.Orbit21Bound
 import SixQubit.Orbit21Bridge
 import SixQubit.Orbit21Chain
+import SixQubit.Orbit21Walsh
+import SixQubit.Orbit21Residual
+import SixQubit.Orbit21Farkas
+import SixQubit.Orbit21Enum
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -160,6 +164,9 @@ import SixQubit.Orbit9Attain
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
+import SixQubit.Orbit7UniversalFinal
+import SixQubit.Orbit9UniversalFinal
+import SixQubit.Orbit8UniversalFinal
 import SixQubit.Orbit10Real
 import SixQubit.Orbit11Real
 import SixQubit.Orbit16Real
@@ -167,6 +174,7 @@ import SixQubit.Orbit21Real
 import SixQubit.Orbit22Real
 import SixQubit.Orbit23Real
 import SixQubit.Orbit45Real
+import SixQubit.Orbit45Final
 
 open SixQubit
 #print axioms SixQubit.Order9.S0_eq_fiber
@@ -664,6 +672,16 @@ open SixQubit
 #print axioms SixQubit.Orbit21Bridge.num_band
 #print axioms SixQubit.Orbit21Bridge.cf_group_sum
 #print axioms SixQubit.Orbit21Chain.residual_vanishes
+#print axioms SixQubit.Orbit21Walsh.fourierCoef_zero
+#print axioms SixQubit.Orbit21Residual.walsh_zero_on_pairs
+#print axioms SixQubit.Orbit21Residual.residual_vanishes
+#print axioms SixQubit.Orbit21Farkas.residual_expansion
+#print axioms SixQubit.Orbit21Farkas.positiveRhs_nonneg
+#print axioms SixQubit.Orbit21Farkas.certificate_identity
+#print axioms SixQubit.Orbit21Farkas.four_le_Aco_two
+#print axioms SixQubit.Orbit21Enum.enumerator_pair_unique_fiber
+#print axioms SixQubit.Orbit21Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit21Enum.fully_certified
 
 /-! ## Pinned enumerators -/
 
@@ -690,6 +708,21 @@ open SixQubit
 #print axioms SixQubit.Orbit9Attain.zmask_L1
 #print axioms SixQubit.Orbit9Attain.zmask_wt
 #print axioms SixQubit.Orbit9Attain.enumerator
+#print axioms SixQubit.Orbit9Universal.active_card_ne_two
+#print axioms SixQubit.Orbit9Universal.equal_pair_of_card_four
+#print axioms SixQubit.Orbit9Universal.original_universal_certification
+#print axioms SixQubit.Orbit9Universal.uniform_weightTwo_scalar
+#print axioms SixQubit.Orbit9Universal.fully_kernel_certified
+#print axioms SixQubit.Orbit8Universal.singleton_support_le_two
+#print axioms SixQubit.Orbit8Universal.universal_converse
+#print axioms SixQubit.Orbit8Universal.interval_attainment
+#print axioms SixQubit.Orbit8Universal.fully_certified
+#print axioms SixQubit.Orbit7Universal.full_support_independent_target
+#print axioms SixQubit.Orbit7Universal.pairRankTwo_of_targetStar
+#print axioms SixQubit.Orbit7Universal.uniform_universal_converse
+#print axioms SixQubit.Orbit7Universal.original_universal_converse
+#print axioms SixQubit.Orbit7Universal.interval_attainment
+#print axioms SixQubit.Orbit7Universal.fully_certified
 #print axioms SixQubit.Orbit10Enum.L0_eq_fiber
 #print axioms SixQubit.Orbit10Enum.L1_eq_fiber
 #print axioms SixQubit.Orbit10Enum.enumerator_unique_fiber
@@ -747,6 +780,9 @@ open SixQubit
 #print axioms SixQubit.Orbit22Enum.enumerator_pair_attained
 #print axioms SixQubit.Orbit23Enum.enumerator_pair_unique_fiber
 #print axioms SixQubit.Orbit23Enum.enumerator_pair_attained
+#print axioms SixQubit.Orbit45Final.universal_converse_full_fibres
+#print axioms SixQubit.Orbit45Final.interval_attainment_full_fibres
+#print axioms SixQubit.Orbit45Final.fully_certified
 #print axioms SixQubit.CodeEquiv.Equivalent.symm
 #print axioms SixQubit.CodeEquiv.Equivalent.trans
 #print axioms SixQubit.CodeEquiv.Aco_permAct

@@ -2,7 +2,7 @@
 
 ## `axiom-audit.txt`
 
-The output of `lake build SixQubit.Audit`, 564 lines.  Every footprint is a
+The output of `lake build SixQubit.Audit`, 592 lines.  Every footprint is a
 subset of the standard kernel axioms displayed below (almost every line uses
 all three):
 
@@ -36,7 +36,8 @@ which a stray `tail` in an ad-hoc regeneration command will otherwise produce
 silently:
 
 ```sh
-test "$(grep -c '' results/axiom-audit.txt)" \n   = "$(grep -c '^#print axioms' SixQubit/Audit.lean)" && echo ok
+test "$(grep -c '' results/axiom-audit.txt)" \
+  = "$(grep -c '^#print axioms' SixQubit/Audit.lean)" && echo ok
 ```
 
 Every axiom in every stored line must lie in
@@ -48,8 +49,9 @@ compare against the three-axiom string would reject that theorem for being
 too clean.
 
 ```sh
-sed 's/^.*axioms: //' results/axiom-audit.txt | tr -d '[]' | tr ',' '
-' \n  | sed 's/^ *//;s/ *$//' | grep -v '^$' | sort -u \n  | grep -vE '^(propext|Classical.choice|Quot.sound)$'   # must print nothing
+sed 's/^.*axioms: //' results/axiom-audit.txt | tr -d '[]' | tr ',' '\n' \
+  | sed 's/^ *//;s/ *$//' | grep -v '^$' | sort -u \
+  | grep -vE '^(propext|Classical.choice|Quot.sound)$'   # must print nothing
 ```
 
 Every `#print axioms` directive must contribute exactly one stored line, and
@@ -69,7 +71,8 @@ nothing stored them and the documented command above only regenerates
 `SixQubit.Audit`. They are stored here now, and the same two invariants apply:
 
 ```sh
-lake build SixQubit.CodeWrapAudit 2>&1 | grep "depends on axioms" \n  | sed 's/^info: [^ ]* //' | diff - results/axiom-audit-codewrap.txt
+lake build SixQubit.CodeWrapAudit 2>&1 | grep "depends on axioms" \
+  | sed 's/^info: [^ ]* //' | diff - results/axiom-audit-codewrap.txt
 ```
 
 ## `orbit-table.tsv`

@@ -33,7 +33,7 @@
 \theoremstyle{definition}
 \newtheorem{standard}{Rule}
 
-\title{A Machine-Checked No-Go Certification for the Six-Qubit Moment Orbits}
+\title{A Machine-Checked Certification for the Six-Qubit Moment Orbits}
 \author{Formalization notes}
 \date{}
 
@@ -41,26 +41,29 @@
 \maketitle
 
 \begin{abstract}
-Fifty-one modules of this development each carry a Lean~4 proof, checked by
-the Lean kernel alone: their axiom footprint is exactly
+Fifty-one no-go modules of this development each carry a Lean~4 proof, checked
+by the Lean kernel alone: their axiom footprint is contained in
 \lean{[propext, Classical.choice, Quot.sound]}, with no appeal to
 \lean{native\_decide} or \lean{sorry} in any proof or tactic position. This note
 describes what was certified, the standard the certification was held to, the
 architecture of the development, the handful of algebraic mechanisms that
 between them close all fifty-one cases, and how to reproduce the recorded checks.
-It
+It also records the complementary positive side: orbit~36 is certified rigid at
+the manuscript's table representative, while each of the other ten completed
+realized orbits has a source-level exact $A/B$ weight-enumerator image and
+kernel-checked attainment. It
 also reports, in Section~\ref{sec:errors}, the reasoning errors that were made
 and caught during the work, because the way they were caught is the most
 transferable part of the exercise.
 
 \medskip
-\noindent\textbf{Scope, stated precisely.} Each orbit carries two theorems. The
-first, \lean{no\_go\_of\_moments}, takes its Knill--Laflamme rows as hypotheses
+\noindent\textbf{Scope, stated precisely.} Each no-go orbit carries two theorems. The
+first, \path{no_go_of_moments}, takes its Knill--Laflamme rows as hypotheses
 and derives a contradiction. The second, \lean{no\_code}, assumes only that the
 two logical states are supported on the residue-$0$ and residue-$\delta$ fibers,
-are normalized, and satisfy \lean{SS.HasDistance ![c, d] 3}; every
+are normalized, and satisfy \path{SS.HasDistance ![c, d] 3}; every
 Knill--Laflamme row is then \emph{derived} through
-\lean{SixQubit/CodeBridge.lean}. So the development does establish, inside the
+\path{SixQubit/CodeBridge.lean}. So the development does establish, inside the
 kernel, that no exact $((6,2,3))$ code is supported on any of these fifty-one
 orbits. What it does \emph{not} yet establish is that every code must be
 supported on one of them: the reduction of an arbitrary code to one of the
@@ -158,16 +161,16 @@ entire dependency cone beneath it.
 \subsection{The result}
 
 \begin{center}
-\begin{tabular}{ll}
+\begin{tabular}{@{}p{0.48\linewidth}p{0.46\linewidth}@{}}
 \toprule
 No-go orbits certified & 51 (every no-go orbit) \\
-Headline \lean{no\_go\_of\_moments} theorems & 51 \\
+Headline no-go theorems & 51 \\
 Lines in the orbit modules & 41\,521 \\
 Theorems in the orbit modules & 12\,521 \\
 Orbit-36 rigidity chain & 16 modules; table-level closure \\
-Ten exact realizations & 10 modules, 1\,606 lines \\
-A/B enumerator layer & universal transform; five exact images \\
-Audit entries in \lean{SixQubit/Audit.lean} & 564 \\
+Ten explicit realization tables & 10 modules, 1\,606 lines \\
+A/B enumerator layer & universal transform; ten exact images and attainment \\
+Audit entries in \path{SixQubit/Audit.lean} & 592 \\
 Audit entries with a non-clean footprint & 0 \\
 Build errors & 0 \\
 Build warnings & 0 \\
@@ -269,7 +272,7 @@ the algebra can be audited on its own, without wading through several hundred
 
 \lean{SixQubit/Audit.lean} imports every orbit module and runs
 \lean{\#print axioms} on each headline theorem and on selected intermediate
-lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 564 lines.
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 592 lines.
 Every footprint is contained in the three standard axioms
 \begin{lstlisting}
 'SixQubit.<Module>.<theorem>' depends on axioms:
@@ -651,16 +654,19 @@ mutation that fails to inject is reported as inert rather than as passing.  The
 suite now retains those fourteen cases and adds twenty transport and table-closure
 corruptions: all thirty-four are caught, with zero missed and zero inert.
 
-\section{Ten realizations}
+\section{Ten realized exact-image orbits}
 \label{sec:realizations}
 
 Of the sixty-six moment orbits, fifty-one are excluded and fifteen are
 realized. Eleven of the fifteen have a known exact weight-enumerator image;
 orbit~36 is one of them and is treated in Section~\ref{sec:orbit36}. This
 section covers the other ten---orbits 7, 8, 9, 10, 11, 16, 21, 22, 23
-and~45---at the level of \emph{existence}: each carries an explicit pair of
-words and a kernel proof that the pair is an exact $((6,2,3))$ code, so the
-orbit is nonempty.
+and~45. Each carries an explicit pair of words and a kernel proof that the pair
+is an exact $((6,2,3))$ code. In addition, each now has a top-level theorem
+quantified over arbitrary amplitudes on the two complete fibres, assuming only
+support, normalization and genuine \lean{SS.HasDistance}; it proves the exact
+$A/B$ image claimed by the source, and a second direction proves every claimed
+parameter is attained.
 
 \subsection{One layer, ten tables}
 
@@ -698,9 +704,10 @@ $\overline{s}\,s\,N=1$ is closed by \lean{norm\_num}.
 The certificate the shared layer consumes is smaller than orbit~36's. Being a
 code requires exactly three things of every Pauli of weight at most two: the
 two diagonal elements agree and both off-diagonal elements vanish. Which
-Paulis carry a nonzero diagonal scalar is extra information---orbit~36 needs it
-for the enumerator, these modules do not---so it is not part of
-\lean{checkKL}. The scale is a free parameter of the transport theorem: it
+Paulis carry a nonzero diagonal scalar is extra information, so it is not part
+of the shared realization certificate \lean{checkKL}; the later universal
+enumerator stacks derive whatever orbit-specific information they need. The
+scale is a free parameter of the transport theorem: it
 cancels from the off-diagonal equations and enters the diagonal one
 symmetrically.
 
@@ -759,11 +766,10 @@ Every one agrees, and every enumerator sums to $32$. This is independent
 evidence for both sides: the generated codes are the ones the manuscript
 intends, and the manuscript's table is right about them.
 
-\subsection{Five exact A/B images}
+\subsection{Ten exact A/B images}
 
-For five of the ten---orbits 10, 11, 16, 22 and 23---the certification goes past
-existence to the exact weight-enumerator image, which is the manuscript's actual
-theorem for them. The argument is a squeeze, and every step of it is finite.
+For orbits 10, 11, 16, 22 and 23 the exact image follows from a common finite
+squeeze.
 
 A projective-order-two orbit with $q=4$ has a diagonal gate acting logically as
 $\mathrm{diag}(1,-1)$, so its square is scalar on any code in the orbit. That
@@ -802,43 +808,65 @@ the already proved subset duality over subsets of each cardinality.  Each
 \path{enumerator_pair_unique_fiber} and proves the pair attained by its
 explicit realized code.
 
-Orbit 21's forced string has weight four and orbit 45 has $q=6$, where the
-square is not a Pauli at all; orbits 7, 8 and 9 have $m=q=3$, where the cube is
-the identity and carries no information. Those five keep only their
-realizations here.
+\subsection{The five orbit-specific closures}
 
-\subsection{Three more enumerators, and the line the mask draws}
+The remaining five require more than the scalar-mask squeeze. Orbits 7 and 8
+share the affine image
+\[
+ A=(1,\alpha,1-\alpha,0,11+4\alpha,16-\alpha,3-3\alpha),
+\]
+\[
+ B=(1,\alpha,1-\alpha,24+6\alpha,35+10\alpha,40-7\alpha,27-9\alpha),
+\]
+with $0\le\alpha\le1$ for orbit~7 and $1/2\le\alpha\le1$ for orbit~8.
+Orbit~8 is closed by complete-support and Hafnian reductions. Orbit~7 uses the
+covariant $K_5$ tangent/projector analysis, including the collinear and
+zero-anchor boundary branches. Its structural conclusion is stated using a
+literal finite-sum partial trace of $P/2$, and proves that some physical
+two-qubit marginal has matrix rank two; no transported normal-form matrix is
+substituted for that marginal. Explicit circle families attain every parameter
+in both closed intervals.
 
-Orbits 7, 8 and 9 also carry a Pauli of weight at most two with projector trace
-of modulus two, so the same squeeze fixes the enumerator of each exhibited code:
-$Z$ on qubits $\{0,2\}$ for orbit 7, on $\{4\}$ for orbit 8, on $\{1,2\}$ for
-orbit 9. The first two act by $-1$ rather than $+1$, which costs nothing---only
-$|\operatorname{Tr}(P\Pi)|^2$ enters, and $(-2)^2=2^2$---but it did cost a
-search: looking only for $\operatorname{Tr}(P\Pi)=+2$ finds nothing for orbits 7
-and 8, and the right condition is modulus one. The sign is exactly the parity of
-the mask's overlap with the support, which is uniform across it.
+Orbit~9 is rigid at the enumerator level:
+\[
+ A=(1,0,1,0,11,16,3),\qquad B=(1,0,1,24,35,40,27).
+\]
+The full-fibre active-support classification rules out the two-active branch,
+produces a common equal-bit pair in the four-active branch, and also proves the
+manuscript's structural clause: in the uniform gauge an actual weight-two
+$Z_rZ_s$ fixes both logical words.
 
-What separates these three from orbits 10, 11, 16, 22 and 23 is where that
-parity is uniform. There it holds on the whole \emph{fiber}, so the conclusion is
-about every code supported in the orbit. Here it holds only on the exhibited
-eleven-word support, and a search over all sixty-three nonzero masks finds none
-that is uniform fiber-wide. So orbits 7, 8 and 9 get attainment of one point and
-nothing more; the manuscript reaches further by reducing the support first, which
-is not attempted here.
+Orbit~21 has the same rigid $A/B$ pair, but its forced string has weight four.
+The corrected proof expands projector traces into computational-basis
+autocorrelations. The kernel checks the 512 possible
+$(X\text{-mask},\text{Walsh frequency})$ pairs, proves the residual Walsh sum
+vanishes for arbitrary amplitudes on the complete fibres, and combines it with
+the exact Farkas identity
+\[
+ \mathrm{residual}=32(\mathrm{Aco}_2-4)-\mathrm{positiveRhs},
+ \qquad \mathrm{positiveRhs}\ge0.
+\]
+The older conditional forced-vanishing route is retained only as historical
+infrastructure and is absent from the final dependency chain.
 
-That distinction is worth stating plainly because it is easy to lose. The
-hypothesis $\forall s\notin L_0,\ c\,s=0$ reads like ``supported in the orbit''
-but says ``supported in this list''. The two coincide exactly when the list is
-the fiber, and \lean{L0\_eq\_fiber} now decides that where it is true rather than
-leaving it to a reader's assumption.
+For orbit~45 the result is the interval
+\[
+ A=(1,0,t,1-t,12-t,15+t,3),
+ \qquad
+ B=(1,0,t,22+2t,39-4t,42-2t,24+3t),
+ \quad \frac23\le t\le1.
+\]
+Complete-fibre Knill--Laflamme rows give the block masses and phase relations;
+division-free Gram lemmas cover zero-amplitude boundary cases. Two explicit
+real-amplitude charts cover $[2/3,3/4]$ and $[3/4,1]$ and return genuine
+normalized distance-three codes at the requested parameter. Here ``complete
+fibre'' means support is contained in the whole fibre; it does not assert every
+amplitude is nonzero.
 
-\subsection{The shadow inequality, and what is still missing}
+\subsection{The shared shadow inequality}
 
-Existence is not the whole claim. For eight of these orbits the manuscript
-asserts a \emph{unique} enumerator and for three an exact interval, and both
-directions of those statements need more than one code. The upper bound in
-every case runs through the zeroth Rains shadow inequality
-$A_1+A_2+A_3\le1$. That inequality is now proved.
+The upper bound used across these exact-image arguments is the zeroth Rains
+shadow inequality $A_1+A_2+A_3\le1$.
 
 Its usual derivation builds the spin flip
 $\Pi\mapsto Y^{\otimes n}\Pi^{\mathsf T}Y^{\otimes n}$ and quotes positivity of
@@ -866,11 +894,9 @@ $((6,2,d\ge3))$ code, in the unnormalized form
 $\mathrm{Aco}_1+\mathrm{Aco}_2+\mathrm{Aco}_3\le4$ that the six-qubit
 MacWilliams normal form already in the development consumes.
 
-What still separates this from the manuscript's exact-image theorems is the
-orbit-specific half of each: a lower bound forcing $A_1+A_2\ge1$ or its
-analogue, and for orbits 7, 8 and 45 a one-parameter family attaining every
-value of a continuum. Neither is finite in the way everything else here has
-been.
+The orbit-specific lower bounds, phase/support reductions and constructive
+families described above now supply the other half; the shadow theorem is no
+longer being presented as completion of only a shared prefix.
 
 \section{A tooling bug that gated three orbits}
 \label{sec:bug}
@@ -1000,7 +1026,7 @@ should report zero errors and zero warnings. Then
 \begin{lstlisting}
 lake build SixQubit.Audit
 \end{lstlisting}
-prints the 564 axiom lines; every footprint must be contained in
+prints the 592 axiom lines; every footprint must be contained in
 \lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
 output is \path{results/axiom-audit.txt}, so
 \begin{lstlisting}
@@ -1013,9 +1039,8 @@ To confirm the absence of the forbidden constructs:
 \begin{lstlisting}
 grep -rn "sorry\|native_decide" SixQubit/ SS/
 \end{lstlisting}
-Every hit must be inside a docstring or comment. At the recorded revision there
-are 181 occurrences on 123 lines; most are the sentence stating that
-\lean{native\_decide} is not used. The transitive \lean{\#print axioms} audit is
+Every hit must be inside a docstring or comment; the exact comment count is not
+an invariant. The transitive \lean{\#print axioms} audit is
 the load-bearing check: an active escape hatch would add \lean{sorryAx} or
 \lean{Lean.ofReduceBool}, neither of which appears.
 
@@ -1052,6 +1077,9 @@ Script & What it answers \\
 \texttt{momentgate.py --selftest} & Does the non-exhaustive mutation suite fail closed? \\
 \path{classify.py} & Does every algebraic headline hypothesis have an allowed form? \\
 \path{admis.py} & Does every headline KL row have Pauli weight at most two? \\
+\path{rigidity.py} & Does orbit~36 meet the original-table code-level rigidity contract? \\
+\path{realized.py} & Do all ten explicit codes match the manifest fibres and exact arithmetic? \\
+Orbit 45 diagnostics & Independent Gram and two-chart checks in \path{o45_gram.py} and \path{o45_attain_check.py} \\
 \path{close31.py} & Orbit 31 against the raw conditions, phases free \\
 \path{branch31.py} & Which phase partitions of orbit 31 are excluded \\
 \path{collapse29.py} & Orbit 29's support collapse \\
@@ -1076,12 +1104,12 @@ vacuous --- that are expensive to rediscover and easy to assume away.
 %======================================================================
 \section{Repository layout}
 
-\begin{longtable}{ll}
+\begin{longtable}{@{}p{0.30\linewidth}p{0.64\linewidth}@{}}
 \toprule
 Path & Contents \\
 \midrule
 \endhead
-\path{SixQubit/} & the fifty-one orbit modules, thirteen algebra modules, the audit \\
+\path{SixQubit/} & 51 no-go stacks, 11 realized-orbit certification stacks, shared algebra, and the audit \\
 \path{SS/} & problem-independent bit-string and Pauli infrastructure \\
 \path{formalization/} & this process document in source and PDF form \\
 \path{tools/core/} & fibers, Pauli enumeration, moment matrices, relation extractors \\
@@ -1096,13 +1124,17 @@ Path & Contents \\
 \section{Open items}
 \label{sec:openitems}
 
-One item concerns the formalization itself.
+Two items concern the formalization itself.
 
 \begin{enumerate}
 \item \textbf{The classification is not formalized.} Neither the reduction of an
   arbitrary code to one of the sixty-six rank-compatible moment orbits, nor the
   equivalence of other angle records to the chosen representatives, has a Lean
   proof.
+\item \textbf{The exact images of orbits 1--4 are not formalized.} Their source
+  proofs are still being completed. The present development therefore closes
+  all 51 no-go orbits, orbit~36 at rigidity level, and the ten WE orbits
+  $7,8,9,10,11,16,21,22,23,45$, but makes no claim for these four cases.
 \end{enumerate}
 
 Two further items concern the manuscript rather than the formalization.

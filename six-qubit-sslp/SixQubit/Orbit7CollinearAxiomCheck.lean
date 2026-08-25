@@ -1,0 +1,17 @@
+import SixQubit.Orbit7Collinear
+
+#print axioms SixQubit.Orbit7Universal.scaledOuter_rank
+#print axioms SixQubit.Orbit7Universal.scaledOuter_isNonzeroRankOne
+#print axioms SixQubit.Orbit7Universal.twoOuterBlocks_rank
+#print axioms SixQubit.Orbit7Universal.bloch_add_sq_eq_mass_sq_sub_wedge
+#print axioms SixQubit.Orbit7Universal.zero_angle_trace_rows
+#print axioms SixQubit.Orbit7Universal.collinear_three_trace_sum
+#print axioms SixQubit.Orbit7Universal.collinear_low_bound
+#print axioms SixQubit.Orbit7Universal.collinear_enumerator
+#print axioms SixQubit.Orbit7Universal.collinear_extreme_outer_eq
+#print axioms SixQubit.Orbit7Universal.collinear_ycoord_zero
+#print axioms SixQubit.Orbit7Universal.collinear_pair_blocks_normal_form
+#print axioms SixQubit.Orbit7Universal.collinear_pairMarginal_normal_form
+#print axioms SixQubit.Orbit7Universal.collinear_pair_blocks_rank_one
+#print axioms SixQubit.Orbit7Universal.collinear_pair_rank_two_at
+#print axioms SixQubit.Orbit7Universal.collinear_has_pair_rank_two

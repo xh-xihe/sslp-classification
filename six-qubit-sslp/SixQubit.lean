@@ -143,6 +143,10 @@ import SixQubit.Orbit21Coef
 import SixQubit.Orbit21Bound
 import SixQubit.Orbit21Bridge
 import SixQubit.Orbit21Chain
+import SixQubit.Orbit21Walsh
+import SixQubit.Orbit21Residual
+import SixQubit.Orbit21Farkas
+import SixQubit.Orbit21Enum
 import SixQubit.Pin
 import SixQubit.Orbit10Enum
 import SixQubit.Orbit11Enum
@@ -155,6 +159,9 @@ import SixQubit.Orbit9Attain
 import SixQubit.Orbit7Real
 import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
+import SixQubit.Orbit7UniversalFinal
+import SixQubit.Orbit9UniversalFinal
+import SixQubit.Orbit8UniversalFinal
 import SixQubit.Orbit10Real
 import SixQubit.Orbit11Real
 import SixQubit.Orbit16Real
@@ -162,3 +169,4 @@ import SixQubit.Orbit21Real
 import SixQubit.Orbit22Real
 import SixQubit.Orbit23Real
 import SixQubit.Orbit45Real
+import SixQubit.Orbit45Final
