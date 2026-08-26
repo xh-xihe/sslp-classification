@@ -1,0 +1,71 @@
+---
+name: sslp-51-orbits-complete
+description: All 51 no-go moment orbits of six_qubit_sslp.tex are kernel-certified; the mechanism map and the four complementary transcription checks.
+metadata:
+  type: project
+---
+
+> **Status update (2026-08-24).** The 51-no-go mechanism and transcription
+> record below remains authoritative for that part of the project. Its dated
+> audit count and old description of the complementary realized orbits are a
+> historical snapshot; current positive-orbit status is summarized at the end
+> of this note and in the repository `README.md`.
+
+As of 2026-08-21 every one of the fifty-one no-go moment orbits of
+`six_qubit_sslp.tex` carries a Lean 4 proof checked by the kernel alone:
+51 conditional `no_go_of_moments` theorems and 51 final code-level `no_code`
+theorems, with 332 audit entries all reading
+`[propext, Classical.choice, Quot.sound]`, 0 errors, 0 warnings, 90,109 lines.
+
+This extends [[sslp-29-orbits-complete]], which covered the twenty-nine orbits of
+the v7 manuscript. The twenty-two added here are orbits 5, 6, 47–52 at projective
+order three and 12–15, 17–20, 24, 41–44, 46 at order two.
+
+**The mechanism map for the second batch.** Six fell to a plain *isolation
+certificate* (47, 48, 18, 41, 42, 43): a rational combination of admissible
+dressings isolates one incidence monomial whose endpoints the polytope pins to
+positive constants. Three more (52, 44, 46) needed the endpoints only *tied by a
+positive ratio*, so each `mul_eq_zero` branch collapses. The rest needed new
+algebra layers — `Triangle` (odd triangle, division-free), `Frame` (C² block
+frames), `Spinor`, `ParityFour`, `Hafnian`, `Trace5`, `Flip5`, `Kernel5`.
+
+**Two facts that cost time and are not recoverable from the sources.**
+
+*The per-block frame equality is unavailable for orbits 14, 15 and 24.* The
+achievable coefficient patterns on the eight bottom tails have rank only 5, so a
+two-element block indicator is not in their span. Orbit 13 has rank 6, which is
+why the cheap `Frame.block_zero` route works there and nowhere else. I briefly
+believed the block structure alone made 14/15 shortcuttable; it does not, and the
+paper's connectivity argument is genuinely required. Block structure existing is
+not the same as the block-level moment condition being available.
+
+*The order-two arguments depend on `Y_i` and `Y_i Z_j`.* The half-angle system's
+four rows are `X_i, Y_i, X_i Z_j, Y_i Z_j`. That is exactly the class the old
+`scan.dressings` dropped — see [[kl-dressings-undercount]]. Anyone re-deriving
+these fourteen orbits with unfixed tooling will find the arguments invisible.
+
+**Four complementary checks beyond compilation.** `tools/verification/gate.py`
+checks the paper manifest, `delta = q/m`, additive order and both support fibers.
+`momentgate.py` checks every declared `MomentSystem` field as an exact rational
+linear form in the probability order used by the headline; its non-exhaustive
+self-test injects adversarial corruptions in memory. `classify.py` accepts only
+the three allowed algebraic headline-hypothesis forms, and `admis.py` resolves
+each KL row and checks `|supp(e) ∪ supp(z)| ≤ 2`. Unexpected syntax fails
+closed. All four currently pass across all 51 modules, but they remain regression
+checks rather than completeness proofs for arbitrary Lean syntax.
+
+**Delegation lesson.** Multi-agent builds were audited by independent adversarial
+agents. One auditor hit a session limit, and the orchestrator's own check then
+found that the orbit-5 headline did not exist at all — the builder had said so
+honestly in its docstring, but the batch would otherwise have been reported
+complete. Separately, three agents editing the same files collided and one
+finished proof was overwritten; parallel attempts on shared files need worktree
+isolation. Both proofs survived because the displaced agent parked its version
+instead of overwriting back; the spare is in `alternatives/`.
+
+The complementary positive side has since advanced. Eleven orbits
+(7, 8, 9, 10, 11, 16, 21, 22, 23, 36 and 45) now have exact realized codes in
+Lean. Orbit 36 reaches the manuscript's rigidity statement; the other ten have
+source-level exact A/B images and attainment. Orbits 1--4 remain outside the
+current formalization while their source proofs are completed. The global
+reduction of an arbitrary code to the sixty-six orbit list also remains open.

@@ -1,0 +1,1155 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
+  citecolor=blue!50!black}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  framesep=4pt,
+  xleftmargin=0pt,
+  aboveskip=1em,
+  belowskip=1em,
+}
+
+\providecommand{\ket}[1]{\lvert #1 \rangle}
+\providecommand{\bra}[1]{\langle #1 \rvert}
+\newcommand{\Sz}{S_0}
+\newcommand{\So}{S_1}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\lean}[1]{\texttt{#1}}
+
+\theoremstyle{definition}
+\newtheorem{standard}{Rule}
+
+\title{A Machine-Checked Certification for the Six-Qubit Moment Orbits}
+\author{Formalization notes}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fifty-one no-go modules of this development each carry a Lean~4 proof, checked
+by the Lean kernel alone: their axiom footprint is contained in
+\lean{[propext, Classical.choice, Quot.sound]}, with no appeal to
+\lean{native\_decide} or \lean{sorry} in any proof or tactic position. This note
+describes what was certified, the standard the certification was held to, the
+architecture of the development, the handful of algebraic mechanisms that
+between them close all fifty-one cases, and how to reproduce the recorded checks.
+It also records the complementary positive side: orbit~36 is certified rigid at
+the manuscript's table representative, while each of the other ten completed
+realized orbits has a source-level exact $A/B$ weight-enumerator image and
+kernel-checked attainment. It
+also reports, in Section~\ref{sec:errors}, the reasoning errors that were made
+and caught during the work, because the way they were caught is the most
+transferable part of the exercise.
+
+\medskip
+\noindent\textbf{Scope, stated precisely.} Each no-go orbit carries two theorems. The
+first, \path{no_go_of_moments}, takes its Knill--Laflamme rows as hypotheses
+and derives a contradiction. The second, \lean{no\_code}, assumes only that the
+two logical states are supported on the residue-$0$ and residue-$\delta$ fibers,
+are normalized, and satisfy \path{SS.HasDistance ![c, d] 3}; every
+Knill--Laflamme row is then \emph{derived} through
+\path{SixQubit/CodeBridge.lean}. So the development does establish, inside the
+kernel, that no exact $((6,2,3))$ code is supported on any of these fifty-one
+orbits. What it does \emph{not} yet establish is that every code must be
+supported on one of them: the reduction of an arbitrary code to one of the
+sixty-six rank-compatible moment orbits, and the transport of other angle
+records to the chosen representatives, are not formalized. Section
+\ref{sec:openitems} states this boundary.
+\end{abstract}
+
+\tableofcontents
+
+%======================================================================
+\section{What is certified}
+
+\subsection{The statement}
+
+Fix $q$ and an angle vector $a \in (\mathbb{Z}/q)^6$. The residue fibers are
+\[
+  \Sz = \{x \in \FF_2^6 : \textstyle\sum_i a_i x_i \equiv 0 \bmod q\},
+  \qquad
+  \So = \{x \in \FF_2^6 : \textstyle\sum_i a_i x_i \equiv \delta \bmod q\},
+\]
+and a putative code supported on this orbit is a pair of unit vectors
+\[
+  \ket{0_L} = \sum_{x \in \Sz} c_x \ket{x},
+  \qquad
+  \ket{1_L} = \sum_{y \in \So} d_y \ket{y}.
+\]
+Distance three means the Knill--Laflamme conditions hold for every Pauli $P$ of
+weight at most two:
+\[
+  \bra{0_L} P \ket{1_L} = 0,
+  \qquad
+  \bra{0_L} P \ket{0_L} = \bra{1_L} P \ket{1_L}.
+\]
+For each of the fifty-one orbits the development proves that this system has
+no solution. The Lean statement is a theorem named
+\lean{no\_go\_of\_moments} in each orbit's module, of the shape
+\begin{lstlisting}
+theorem no_go_of_moments (c d : SS.BitString 6 -> C)
+    (hm : MomentSystem (normSq (c y0)) ... (normSq (d z15)))
+    (E_ : offSum c d ef_ w_ = 0) ...
+    (D_ : diagBot c ef_ w_ = diagTop d ef_ w_) ...
+    : False
+\end{lstlisting}
+Here \lean{offSum} is the off-diagonal Knill--Laflamme sum for a flip mask and a
+$Z$-dressing. The functions \lean{diagBot} and \lean{diagTop} are the two sides
+of a diagonal condition. Finally, \lean{MomentSystem} contains the pure-$Z$
+diagonal conditions, the two normalizations, and nonnegativity of every
+probability.
+
+\subsection{The certification standard}
+\label{sec:standard}
+
+Five rules were fixed at the outset and held for all fifty-one orbits.
+
+\begin{standard}
+The transcription of the two fibers is certified by \lean{decide} over all
+sixty-four bit strings, not asserted. Each module proves
+\lean{S0\_eq\_fiber} and either \lean{S1\_eq\_fiber} or
+\lean{S1\_residue}; these state that the listed support is exactly the required
+residue fiber.
+\end{standard}
+
+\begin{standard}
+Moment data are derived, not assumed. Every probability identity used in a proof
+is a named theorem whose sole hypothesis is \lean{MomentSystem}. One invocation
+of \path{linear_combination}, with coefficients from an exact rational reduction
+against the moment matrix, closes it.
+\end{standard}
+
+\begin{standard}
+Most transcription equations were generated by script from verified matrices.
+For those generated modules, incidence lists, Walsh sign patterns, and certificate
+coefficients are computed in Python from the fiber data and emitted as Lean. The
+repository does not claim a complete byte-for-byte generator for every historical
+source module; the committed statements are checked independently by the kernel,
+the manifest gate, and the moment-transcription gate.
+\end{standard}
+
+\begin{standard}
+\label{rule:axioms}
+Only the standard axioms \lean{propext}, \lean{Classical.choice}, and
+\lean{Quot.sound} occur. In particular,
+\lean{Lean.ofReduceBool}, the signature of \lean{native\_decide}, never appears.
+\end{standard}
+
+\begin{standard}
+The build is clean: zero errors and zero warnings, with no linter suppressed.
+\end{standard}
+
+Rule~\ref{rule:axioms} is the load-bearing one. \lean{\#print axioms} is
+transitive, so a single clean line for \lean{no\_go\_of\_moments} certifies the
+entire dependency cone beneath it.
+
+\subsection{The result}
+
+\begin{center}
+\begin{tabular}{@{}p{0.48\linewidth}p{0.46\linewidth}@{}}
+\toprule
+No-go orbits certified & 51 (every no-go orbit) \\
+Headline no-go theorems & 51 \\
+Lines in the orbit modules & 41\,521 \\
+Theorems in the orbit modules & 12\,521 \\
+Orbit-36 rigidity chain & 16 modules; table-level closure \\
+Ten explicit realization tables & 10 modules, 1\,606 lines \\
+A/B enumerator layer & universal transform; ten exact images and attainment \\
+Audit entries in \path{SixQubit/Audit.lean} & 592 \\
+Audit entries with a non-clean footprint & 0 \\
+Build errors & 0 \\
+Build warnings & 0 \\
+Occurrences of \lean{sorry} in tactic position & 0 \\
+Occurrences of \lean{native\_decide} in tactic position & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The certified orbits are exactly the fifty-one the manuscript excludes:
+$5$, $6$ and $47$--$52$ at projective order three; $12$--$15$, $17$--$20$, $24$,
+$41$--$44$ and $46$ at order two; $25$--$32$ and $62$--$63$ at order four;
+$33$--$35$ and $37$--$40$ at order five; and $53$--$61$ and $64$--$66$ at orders
+six through nine. Orbit $66$ lives in \lean{SixQubit/Order9.lean} for historical
+reasons and all others in \lean{SixQubit/Orbit<n>.lean}. The remaining fifteen of
+the sixty-six rank-compatible orbits all target the realized orders $\{2,3,5\}$ and
+are not excluded. Eleven of them ($7$, $8$, $9$, $10$, $11$, $16$, $21$, $22$,
+$23$, $36$, and $45$) have explicit realized codes certified here; the four
+remaining cases $1$--$4$ are outside the scope of this development.
+A per-orbit table, generated from the sources, is in
+\path{results/orbit-table.tsv}.
+
+\subsection{Toolchain}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Lean & \lean{leanprover/lean4:v4.27.0} \\
+Mathlib & \lean{fc278a179e431ed10630af63fc05481680c0c7bd} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The pins are recorded in \path{lean-toolchain} and \path{lake-manifest.json}.
+Nothing outside Mathlib is used mathematically; the other manifest entries are
+Mathlib's own dependencies.
+
+%======================================================================
+\section{Architecture}
+
+The development is layered, and the layering is what made the harder orbits
+tractable.
+
+\subsection{The \lean{SS} layer}
+
+\path{SS/} (1\,608 lines) holds the problem-independent infrastructure: bit
+strings, Pauli strings, the enumeration of admissible weight-$\le 2$ Paulis, and
+the predicates that decide which Knill--Laflamme conditions are automatic for a
+given support. Nothing here is orbit-specific.
+
+\subsection{Transcription modules}
+
+Each orbit has a module containing:
+\begin{itemize}
+\item the two fibers as explicit \lean{def}s with a \lean{decide} proof that they
+  are the residue fibers;
+\item the \lean{MomentSystem} structure for that orbit, generated from the exact
+  rational moment matrix;
+\item the derived moment facts, each a theorem over \lean{MomentSystem};
+\item \lean{offSum}, \lean{diagBot}, \lean{diagTop}, the incidence/flip/sign
+  lemmas (all by \lean{decide}), and the Walsh expansion lemmas;
+\item the orbit's Knill--Laflamme relations, each proved by
+  \lean{linear\_combination} from expansions with script-computed coefficients;
+\item the headline \lean{no\_go\_of\_moments}.
+\end{itemize}
+
+\subsection{Algebra modules}
+
+Thirteen algebra modules carry the mathematics, separated from the bit strings
+entirely.  The first four served the hard orbits of the initial batch:
+\begin{center}
+\begin{tabular}{llr}
+\toprule
+Module & Serves & Lines \\
+\midrule
+\lean{SixQubit/Block33.lean} & orbit 33 & 327 \\
+\lean{SixQubit/Pair29.lean}  & orbit 29 & 636 \\
+\lean{SixQubit/Table31.lean} & orbit 31 & 490 \\
+\lean{SixQubit/Block26.lean} & orbit 26 & 415 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\noindent Nine more were added later. Shared layers include \lean{Triangle},
+\lean{Frame}, \lean{Spinor}, \lean{ParityFour}, and \lean{Hafnian}. The remaining
+ones are \lean{Trace5}, \lean{Flip5}, \lean{Kernel5}, and \lean{K5}, the last for
+the rebuilt orbit~30.
+
+These modules mention no bit strings at all. They take complex numbers and the
+relations among them and return \lean{False} or an algebraic conclusion. This has
+a practical consequence worth stating plainly: \emph{the mathematical core of a
+hard orbit can be written and compiled before any of the transcription
+plumbing exists}, which is how the risky part gets de-risked first. It also means
+the algebra can be audited on its own, without wading through several hundred
+\lean{by decide} lemmas.
+
+\subsection{The audit module}
+
+\lean{SixQubit/Audit.lean} imports every orbit module and runs
+\lean{\#print axioms} on each headline theorem and on selected intermediate
+lemmas. Its output, captured in \path{results/axiom-audit.txt}, is 592 lines.
+Every footprint is contained in the three standard axioms
+\begin{lstlisting}
+'SixQubit.<Module>.<theorem>' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+%======================================================================
+\section{The mechanisms}
+
+Thirty-five of the fifty-one orbits fall to one of a small ladder of
+mechanisms, each of which is driven by a script that finds the certificate and
+emits the Lean. The ladder, in increasing order of strength:
+
+\begin{enumerate}
+\item \textbf{$k$-edge Walsh.} A flip mask whose incidence set is small enough
+  that the dressing sign matrix forces one incidence product to vanish, while the
+  moment polytope forces both endpoints to have positive probability.
+\item \textbf{Support collapse.} A coordinate forced to zero by the polytope
+  removes incidences, which exposes new forced zeros; iterate.
+\item \textbf{Propagation.} Two-term relations chain across masks.
+\item \textbf{Quadratic closure.} The squared-modulus consequences of the
+  two-term relations, reduced against the moment system, sometimes linearize and
+  pin the probabilities outright.
+\item \textbf{Positive row sum.} A shared lemma turning a row of the moment
+  matrix into a contradiction with nonnegativity.
+\item \textbf{Phase-ratio transitivity.} The quantities
+  $\rho_x = \overline{c_x} d_{\hat x}$ are linked across masks; connectivity
+  forces a common phase.
+\item \textbf{Star hub and mirror permanent.} A hub vertex plus the vanishing of
+  a $2 \times 2$ permanent (not determinant --- see below).
+\item \textbf{Case analysis on the active set.} Driven by the polytope's face
+  structure.
+\item \textbf{Hub without a star.} A vanishing-pair tree replaces the hub.
+\item \textbf{Diagonal Knill--Laflamme conditions.} The last rung; orbit 25 was
+  the first orbit that could not be closed without them.
+\end{enumerate}
+
+A recurring trap deserves its own paragraph, because it caught this work three
+times. When the fibers admit an involution, a four-term Walsh sum collapses to
+\[
+  (1 + \sigma_x \sigma_y)\, P(x,\hat y) + (1 + \sigma_z \sigma_w)\, P(z,\hat w),
+\]
+which is a genuine cross relation only when \emph{both} sign products are $+1$
+and is vacuous otherwise. With the two pairs' relative sign flipped one obtains
+the $2 \times 2$ \emph{determinant} rather than the \emph{permanent}, and the
+determinant version is satisfied by any rank-one grid, so it yields no
+contradiction at all. Any argument that reads a permanent where the data supply a
+determinant is worthless, and the failure is silent.
+
+%======================================================================
+\section{The four hard orbits}
+
+Four orbits needed genuinely new arguments. In each case the argument obtained
+here is substantially shorter than the one in the manuscript, and in two cases it
+avoids machinery the manuscript needs.
+
+\subsection{Orbit 33: a block reflection}
+
+$a = (0,1,1,3,3,3)$, $q = 5$, fibers $12 + 12$. The first qubit carries angle
+zero, so both fibers are closed under flipping it and split into six blocks of
+two; write $c_i, d_i \in \CC^2$.
+
+The moment system alone pins every block norm to $R = (3,2,2,1,1,1)/10$. The
+diagonal conditions for $F$ on the zero-angle qubit together with $F Z_j$ on a
+second qubit give $C f = J C g$, where $C$ is the $6 \times 6$ tail-sign matrix
+($\det C = 160$) and $J = \operatorname{diag}(1,-1,\dots,-1)$; and
+\[
+  C^{-1} J C = 2 R \mathbf{1}^T - I,
+\]
+which is equivalent to the six matrix identities
+\[
+  c_i c_i^\dagger + d_i d_i^\dagger = 2 R_i \rho .
+\]
+The cross conditions make blocks $1,2$ collinear with block $0$ on both fibers,
+which forces $c_j^\dagger d_0 = 0$ and $c_0^\dagger d_j = 0$ for $j = 3,4,5$.
+Orthogonality in $\CC^2$ then gives $\rho = I/2$ and simultaneously
+$\rho = \tfrac{10}{3} c_0 c_0^\dagger$, so $c_0 c_0^\dagger = \tfrac{3}{20} I$,
+whose off-diagonal entry is zero while
+$\operatorname{normSq}(p_0)\operatorname{normSq}(q_0) = 9/400$.
+
+Everything is division free; the only case analysis is \lean{mul\_eq\_zero}
+against explicit nonzero rationals.
+
+\subsection{Orbit 29: a \texorpdfstring{$K_4$}{K4} of orthogonalities}
+
+$a = (1,1,1,1,2,2)$, $q = 4$, fibers $16 + 16$, and the two fibers are
+\emph{not} complementary --- a fact that breaks the tooling used elsewhere and
+required a separate relation extractor (\path{tools/core/relgen.py}).
+
+Both fibers are closed under $X_5 X_6$, so each splits into eight pairs. Read a
+pair as a vector in $\CC^2$; then every two-term relation is an orthogonality
+$C_m^\dagger D_n = 0$, and the twelve that survive realise exactly the six edges
+of $K_4$ on the four top pairs that carry them.
+
+Two observations shortened the proof considerably relative to the manuscript's
+fifteen-face audit.
+\begin{itemize}
+\item The uniform identity
+  $P_{\{n,n'\}} = Q_n + Q_{n'} - \tfrac14$
+  collapses the face table into a single lemma with one hop.
+\item One never picks a nonzero vector. Instead the common bottom direction is
+  \emph{constructed} from the anchor:
+  $u := (-\overline{v_1}, \overline{v_0})$.
+  It is automatically nonzero, automatically orthogonal to $v$, and
+  $u \perp D_n$ is literally $\det[D_n, v] = 0$. Only two case splits survive.
+\end{itemize}
+
+\subsection{Orbit 31: a \texorpdfstring{$4 \times 4$}{4 by 4} table}
+
+$a = (1,1,1,2,2,2)$, $q = 4$, fibers $16 + 16$ and complementary. The last three
+angles are all $2$, so both fibers are stabilised by the Klein four-group on those
+qubits and split into four cosets of four. The sixteen positions form a
+$4 \times 4$ table with rows $A, B_1, B_2, B_3$ and columns $e_0, \dots, e_3$.
+
+The moment normal form --- all of it verified exactly against the moment system
+--- is
+\[
+  p_1(\bar v) = p_0(v) \ \text{at every position},
+  \quad
+  \sum_e \beta_{i,e} = \tfrac14,
+  \quad
+  \alpha_e = \sum_i \beta_{i,e} - \tfrac18 .
+\]
+The first of these lets every active position be written
+$d_{\bar v} = \rho_v \overline{c_v}$ with $|\rho_v| = 1$, and twelve two-term
+relations make $\rho$ constant along \emph{columns}.
+
+Two facts remove the phase from the Lean side entirely, which is what made this
+orbit finishable:
+\begin{itemize}
+\item $v_e = \overline{d_{\hat A_e}}$: the kernel vector is literally the
+  conjugate of the top amplitude at the complement of $A_e$. No division, no
+  phase object.
+\item Two columns share a phase exactly when $v_e a_f = v_f a_e$, a
+  division-free complex equation one can \lean{by\_cases} on.
+\end{itemize}
+
+Family one then says the four bottom columns are dependent with coefficients
+$v$, so pairing against each column gives \emph{four} equations
+$\sum_e v_e M_{ef} = 0$, where $M_{ef}$ is the Gram matrix of the $B$ columns.
+Family three pins $M_{ef} = \overline{v_e} v_f$ whenever the phases differ; the
+division-free form of that statement, and the fact that closed the last gap, is
+the unconditional identity
+\[
+  \bigl(M_{ef} - \overline{v_e} v_f\bigr)
+  \bigl(v_e \overline{v_f} - a_e \overline{a_f}\bigr) = 0 .
+\]
+Its second factor packages $a_e \ne 0$, $a_f \ne 0$ and $\rho_e \ne \rho_f$ into
+one side condition. A column alone in its phase class then has bracket $3/8$ and
+dies at once, and the five branches of the phase partition close in turn.
+
+For comparison, the manuscript closes this orbit by a computer-assisted rational
+classification of sixteen support types.
+
+\subsection{Orbit 26: the cross-anchor contraction}
+
+$a = (0,1,1,2,2,3)$, $q = 4$, fibers $16+16$. Blocks pair into four groups of
+two; the group $\{6,7\}$ is the anchor and carries probability $1/8 + 1/8$.
+
+Fix an anchor block $j$, set $X_i = C_j^\dagger D_i$, and let
+$R_g = (X_{2g}, X_{2g+1})$. Contracting the outer identity with that anchor gives
+$R_g J R_h^T = 0$ for the three pairs $g < h$, with $J$ the \emph{symmetric}
+antidiagonal form; three nonzero pairwise $J$-orthogonal rows in $\CC^{1\times 2}$
+lie on one coordinate axis.
+
+The axis, however, is chosen \emph{per anchor}, and an earlier version of this
+argument silently used both anchors at once. That is a real gap: an adversarial
+review produced explicit witnesses in which $C_6 \not\parallel C_7$ and the
+counting closes with slack. The repair is to contract the outer identity with
+\emph{different} anchors in the two slots, on the $a$ index with $D_7$ and on the
+$b$ index with $\overline{C_6}$, which yields
+\[
+  R_g^{(7)} J R_h^{(6)T} + R_h^{(7)} J R_g^{(6)T} = 0 ,
+\]
+reading $a_g b_h + a_h b_g = 0$ in the mixed configuration --- whose only
+solution has one of the six entries zero. Two caveats, both checked rather than
+assumed: the cross relation is \emph{vacuous} in the aligned branch, which is
+closed separately by a moment and Cauchy--Schwarz argument; and the fact
+\[
+  P_0 + P_2 + P_4 = P_1 + P_3 + P_5 = \tfrac38
+\]
+is load-bearing --- an ablation shows that dropping it makes the whole fact set
+feasible again, precisely at the aligned point
+$P = (0,\tfrac14,0,\tfrac14,0,\tfrac14,\tfrac18,\tfrac18)$.
+
+%======================================================================
+\section{Orbit 36: rigidity rather than nonexistence}
+\label{sec:orbit36}
+
+Fifty-one of the sixty-six moment orbits are excluded. Orbit~36 is not: it is
+realized, by an exact $((6,2,3))$ code whose projective diagonal group is
+$C_5$. What is certified about it is therefore a different kind of statement,
+and a stronger one than a no-go. From the same raw material every no-go module
+consumes---support conditions, the moment system, and Knill--Laflamme rows of
+Pauli weight at most two---the code is pinned uniquely.
+
+\subsection{The statement}
+
+\lean{SixQubit/Orbit36Certified.lean} carries the final table-level theorem
+\[
+  \begin{aligned}
+  &\lean{table\_representative\_rigid}:\\
+  &\quad \text{support in the two table fibers}
+    \ \wedge\ \text{normalization}\\
+  &\quad \wedge\ \lean{SS.HasDistance ![c,d] 3}
+    \ \Longrightarrow\ \mathcal{R}.
+  \end{aligned}
+\]
+for the representative $a=(1,1,1,2,2,4)$ and residues $(0,1)$ printed in the
+manuscript.  The conclusion $\mathcal{R}$ has four parts:
+
+\begin{enumerate}
+\item \emph{the magnitudes are forced}: the twelve bottom probabilities are
+      $1/10$ on six states and $1/15$ on the other six, and likewise for the
+      top fiber---no state of either fiber may vanish;
+\item \emph{the code is unique}:
+      \lean{CodeEquiv.Equivalent} relates the pair $(c,d)$ to the explicit
+      canonical pair $(c_{36}, d_{36})$;
+\item \emph{the $A$ weight enumerator is determined}:
+      $A = \bigl(1,\,0,\,\tfrac{21}{25},\,0,\,\tfrac{291}{25},\,
+      \tfrac{384}{25},\,\tfrac{79}{25}\bigr)$.
+\item \emph{the $B$ weight enumerator is determined}:
+      $B = \bigl(1,\,0,\,\tfrac{21}{25},\,\tfrac{584}{25},\,
+      \tfrac{183}{5},\,\tfrac{984}{25},\,\tfrac{671}{25}\bigr)$.
+\end{enumerate}
+
+The hypotheses matter as much as the conclusion. They are exactly what an exact
+distance-three code supplies and nothing else: no amplitude is assumed nonzero,
+no phase is assumed generic, no basis is assumed chosen. The support conditions
+are containments, $\forall s \notin \Sz,\ c\,s = 0$, so zero amplitudes inside
+the fibers are permitted throughout---which is what makes the full-support
+conclusion in part~(1) a genuine consequence rather than a restatement of an
+assumption.
+
+\subsection{What the equivalence means}
+
+Part~(2) is stated with respect to \lean{CodeEquiv.LocalMonomial}, a qubit
+permutation together with a bit flip and a diagonal $(\alpha_i,\beta_i)$ per
+qubit with $|\alpha_i| = |\beta_i| = 1$, composed with a unit scalar on each
+logical state and an optional exchange of the two logical states. This is
+\emph{smaller} than local-unitary equivalence, so proving uniqueness at this
+level is the stronger claim; the manuscript states the result up to local
+unitaries and physical-qubit permutations and notes the proof achieves the
+smaller relation, which is the one formalized here.
+
+\subsection{The chain}
+
+Sixteen modules form the complete chain:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\lean{K4Kernel} & the $K_4$ kernel used by the phase argument \\
+\lean{Orbit36Code} & the canonical pair, its fibers, and
+                     \lean{canonical\_is\_code} \\
+\lean{Orbit36} & fibers, moment system, \lean{magnitudes\_forced},
+                 \lean{full\_support} \\
+\lean{Orbit36Phase} & $A_1 = 0$, the triangle sum, the weight-two table \\
+\lean{Orbit36Enum} & the enumerator machinery through weight three \\
+\lean{CodeEquiv} & local-monomial equivalence and distance invariance \\
+\lean{Orbit36Class} & the classification up to that equivalence \\
+\lean{Orbit36Enum4} & weights four to six \\
+\lean{MacWilliams} & the subset MacWilliams identity at $n = 6$ \\
+\lean{Orbit36Final} & the headline, assembled \\
+\lean{Orbit36Vacuity} & the non-vacuity witness \\
+\lean{CodeOrbit36} & derives the old moment/KL interface from
+                     \lean{HasDistance} \\
+\lean{BEnumerator} & the complete seven-row $A\mapsto B$ transform \\
+\lean{CodeEquivEnum} & equivalence composition and fixed-map $A/B$ invariance \\
+\lean{Orbit36Transport} & the table-to-symmetric gauge map in the kernel \\
+\lean{Orbit36Certified} & the direct table-level rigidity, $A/B$, and attainment theorem \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Non-vacuity}
+
+A rigidity theorem with unsatisfiable hypotheses is worthless in a way a no-go
+is not: a no-go with unsatisfiable hypotheses is merely uninformative, whereas
+a rigidity statement would be asserting properties of nothing.
+The older moment-level headline has an explicit canonical witness in
+\lean{Orbit36Vacuity}.  More importantly, the theorem
+\lean{table\_representative\_attained} in \lean{Orbit36Certified} constructs an
+actual code on the original table fibers by inverse-transporting the canonical
+pair.  It proves support, both normalizations, the genuine \lean{HasDistance}
+predicate, and the displayed $A/B$ pair.  Thus the direct table-level theorem
+is non-vacuous without appealing to an informal gauge identification.
+
+\subsection{Orbit 36 at the level of codes}
+
+Before the code-level bridge was added, the orbit-36 magnitude, uniqueness, and
+enumerator results took the moment system and twenty-two Knill--Laflamme rows as
+\emph{hypotheses}. The fifty-one no-go
+modules never did: each \lean{CodeOrbit$n$.no\_code} derives them from the
+single statement that $![c,d]$ is a normalized distance-three code supported on
+the two fibers. Orbit 36 was the one module in the development without that
+bridge.
+
+The difference is not presentational. Before it, the rigidity theorem was a
+statement about amplitude pairs satisfying certain moment conditions; the step
+from ``is an exact code in orbit 36'' to ``satisfies those conditions'' was true
+but unproved. Only with the bridge does the theorem say what the manuscript
+says.
+
+It was found by asking a mechanical question of the whole tree: for each of the
+eleven realized orbits, which theorems exist, what are their hypotheses, and do
+those hypotheses include \lean{SS.HasDistance}? Scanning for that turned up
+three occurrences of \lean{HasDistance} across the orbit-36 chain, all three in
+a \emph{conclusion} and none in a hypothesis.
+
+\lean{tools/generators/gencode36.py} closes it by the route
+\lean{gencode9.py} used for orbit 66, whose fiber structure is the same. Two
+differences: orbit 36 names its top states $z_0,\ldots,z_{11}$ rather than
+complements, and the generator checks $z_i=\overline{y_i}$ before writing
+anything; and its moment structure carries nonnegativity fields that orbit 66's
+does not, supplied by $\lVert\cdot\rVert^2\ge0$. The conclusion of
+\lean{rigid\_code} is lifted verbatim out of \lean{orbit36\_rigidity} rather
+than restated, so the wrapper cannot claim more or less than the theorem it
+feeds.
+
+That first bridge still worked in the symmetric gauge
+$a^\star=(1,1,1,1,2,3)$ with residues $(0,4)$, whereas the manuscript's table
+uses $a=(1,1,1,2,2,4)$ with residues $(0,1)$.  The remaining interface is now
+closed in Lean rather than delegated to a Python orbit comparison.
+\lean{Orbit36Transport.weight\_transport} proves on all 64 basis strings that
+the explicit permutation and two flips shift the residue by one; support,
+norm, and \lean{HasDistance} are then transported with the required logical
+swap. \lean{CodeEquivEnum.Equivalent.trans} composes this witness with the
+symmetric-to-canonical witness.  The same file proves the $A$ and $B$
+enumerators invariant under exactly this fixed permutation/flip/swap map, and
+\lean{SS.MacWilliams.bco\_transform\_six} supplies the full MacWilliams
+transform.  The final theorem in \lean{Orbit36Certified} assembles these
+ingredients.
+
+\subsection{The gate that did not exist}
+
+The four independent checks of Section~\ref{sec:reruns} all key off the
+\lean{no\_go\_of\_moments} headline and obtain their module list from the
+reviewed 51-module inventory. Orbit~36 has no such headline and is in no such
+inventory, so every one of them silently skipped it: the single largest body of
+Lean in this repository was the only part with no transcription gate at all.
+
+\lean{tools/verification/rigidity.py} closes that. It checks the symmetric
+gauge and, independently, the exact original table vector and its two twelve-state
+fibers; it pins the residue-shift and logical-swap direction; and it checks the
+same no-smuggling, Pauli-weight, moment-row, probability-order, and non-vacuity
+obligations as before.  Finally it parses the complete table-level theorem and
+requires exactly the two support, two normalization, and distance hypotheses,
+together with the magnitude, full-support, direct-equivalence, and $A/B$
+conclusions.  The current gate has thirty-four assertions.
+
+Two details are worth recording, because both are the kind of thing that makes
+a checker agree with a wrong module.
+
+First, the orbit identity is not a string comparison. The Lean modules use the
+angle record $a = (1,1,1,1,2,3)$ at $q = 5$ with fibers at residues $0$ and
+$4$; \path{tools/manifest.json} records orbit~36 as $a = (1,1,1,2,2,4)$ with
+$\delta = 1$. Those are different vectors, and that they describe the same
+orbit is a fact to be proved, not a discrepancy to be waved away. The checker
+reduces both to a canonical form under the group generated by local flips
+($a_j \mapsto -a_j$, under which both fibers shift together so $\delta$
+survives), qubit permutation, unit scaling ($a \mapsto ua$, $\delta \mapsto
+u\delta$) and exchange of the two logical states ($\delta \mapsto -\delta$).
+Both reduce to $\bigl((1,1,1,1,2,2),\ \delta = 1\bigr)$.
+
+Second, the moment rows are re-derived here from the fibers rather than shared
+with \lean{momentgate.py}. Two checkers built on one parser fail together; that
+already happened once in this repository, when a declared-row counter and a
+parsed-row counter shared a fragile prefix, missed the same row, and agreed.
+
+The original mutation suite carried fourteen corruptions and initially caught
+only two of them. The reason is instructive and is the same failure again in miniature:
+an anchor such as \lean{(ho0 : offSum c d ex1 w0 = 0)} occurs five times in
+\lean{Orbit36Final.lean}---once in the headline and again in the lemmas it is
+assembled from---so a whole-file replacement mutated a lemma and left the
+headline pristine, and twelve mutations were testing nothing while reporting
+success. Mutations are now applied inside the headline region only, and a
+mutation that fails to inject is reported as inert rather than as passing.  The
+suite now retains those fourteen cases and adds twenty transport and table-closure
+corruptions: all thirty-four are caught, with zero missed and zero inert.
+
+\section{Ten realized exact-image orbits}
+\label{sec:realizations}
+
+Of the sixty-six moment orbits, fifty-one are excluded and fifteen are
+realized. Eleven of the fifteen have a known exact weight-enumerator image;
+orbit~36 is one of them and is treated in Section~\ref{sec:orbit36}. This
+section covers the other ten---orbits 7, 8, 9, 10, 11, 16, 21, 22, 23
+and~45. Each carries an explicit pair of words and a kernel proof that the pair
+is an exact $((6,2,3))$ code. In addition, each now has a top-level theorem
+quantified over arbitrary amplitudes on the two complete fibres, assuming only
+support, normalization and genuine \lean{SS.HasDistance}; it proves the exact
+$A/B$ image claimed by the source, and a second direction proves every claimed
+parameter is attained.
+
+\subsection{One layer, ten tables}
+
+The orbit-36 code module carried its own ring of algebraic integers, its own
+embedding into $\CC$, and its own transport from a decided certificate to
+genuine Knill--Laflamme matrix elements. None of that depends on the amplitude
+table, so it is collected in \lean{SixQubit/Realize.lean} and the ten modules
+supply only data: two support lists, two amplitude tables, and a scale.
+
+The ring is $\mathbb{Z}[\sqrt2,\sqrt3,i]$, carried as eight integers. It is
+small enough to decide with and still large enough for every realization here,
+because each table is recorded \emph{up to a single real scale}:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+words & scale & entries \\
+\midrule
+sixteen real terms & $1/4$ & $\pm1$ \\
+eight real terms & $1/4$ & $\pm\sqrt2$ \\
+eleven complex terms & $1/12$ &
+  $2\sqrt3\,\zeta_6^{\,k}$, $2\sqrt6\,\zeta_6^{\,k}$ \\
+twelve complex terms (orbit 36) & $1/(2\sqrt{30})$ &
+  $2\sqrt3\,\zeta_6^{\,k}$, $2\sqrt2\,\zeta_6^{\,k}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pulling the irrational part out as a scale is what keeps the ring small.
+Orbit~36's amplitudes are $1/\sqrt{10}$ and $1/\sqrt{15}$, which would need
+$\sqrt5$; written as $\sqrt3/\sqrt{30}$ and $\sqrt2/\sqrt{30}$ they do not.
+For the ten modules here the scales are rational, so the normalization
+$\overline{s}\,s\,N=1$ is closed by \lean{norm\_num}.
+
+The certificate the shared layer consumes is smaller than orbit~36's. Being a
+code requires exactly three things of every Pauli of weight at most two: the
+two diagonal elements agree and both off-diagonal elements vanish. Which
+Paulis carry a nonzero diagonal scalar is extra information, so it is not part
+of the shared realization certificate \lean{checkKL}; the later universal
+enumerator stacks derive whatever orbit-specific information they need. The
+scale is a free parameter of the transport theorem: it
+cancels from the off-diagonal equations and enters the diagonal one
+symmetrically.
+
+\subsection{Two independent computations of the same certificate}
+
+\lean{tools/generators/genreal.py} writes all ten modules. Two habits are
+deliberate.
+
+First, the amplitudes and the orbit records are \emph{parsed} from the source
+tables, never transcribed. Hand transcription is where this project's errors
+have actually come from, and the same script that parses the base words also
+applies the qubit permutation, the translation and the optional exchange of the
+two logical words that place each base into its orbit.
+
+Second, the generator re-checks the whole certificate---all $4096$ mask pairs,
+filtered by weight---in Python, in the same eight-integer arithmetic the Lean
+uses, and refuses to write a table that does not verify. The kernel
+\lean{decide} is then a second, independent confirmation rather than the only
+one. Both computations agree on all ten.
+
+\subsection{What the kernel cannot check}
+
+Each module decides its own certificate, so the kernel establishes that the
+exhibited pair is a code. It cannot establish that the pair belongs to the
+orbit the module is named for: \path{tools/manifest.json} is not a Lean object.
+That is exactly the gap that let four no-go modules target the wrong residue
+before \lean{gate.py} existed.
+
+\lean{tools/verification/realized.py} closes it, with twelve assertions per
+module. The orbit identity is compared by canonical form under the group
+generated by local flips, qubit permutation, unit scaling and exchange of the
+two logical words, not by string equality---equivalent angle records look
+different, and orbit~36 is the standing example. Both fibers are recomputed
+from $(a,q)$, the two supports are checked disjoint, and the amplitude norms
+are re-derived in the same ring. Its \lean{--selftest} injects six corruptions
+and requires every one to be caught.
+
+\subsection{A cross-check worth recording}
+
+The exact weight enumerators of the ten exhibited codes were computed
+independently, in exact arithmetic, and compared with the images the manuscript
+claims:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+orbits & $(A_1,A_2,A_3)$ & manuscript \\
+\midrule
+8, 11, 23 & $(1,0,0)$ & $\mathcal E_1^A=(1,1,0,0,15,15,0)$ \\
+7, 9, 10, 16, 21, 22, 45 & $(0,1,0)$ & $\mathcal E_2^A=(1,0,1,0,11,16,3)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every one agrees, and every enumerator sums to $32$. This is independent
+evidence for both sides: the generated codes are the ones the manuscript
+intends, and the manuscript's table is right about them.
+
+\subsection{Ten exact A/B images}
+
+For orbits 10, 11, 16, 22 and 23 the exact image follows from a common finite
+squeeze.
+
+A projective-order-two orbit with $q=4$ has a diagonal gate acting logically as
+$\mathrm{diag}(1,-1)$, so its square is scalar on any code in the orbit. That
+square is the $Z$-string on the coordinates where $a$ is odd, and its sign on a
+support word $x$ is $(-1)^{A_a(x)}$, which is $+1$ because $A_a(x)$ is $0$ or
+$2$ modulo four on the two fibers. So the string fixes the code---a condition
+over the two supports, decided by the kernel.
+
+A Pauli fixing both logical states has projector trace $2$, so it contributes
+$4$ to the coefficient at its own weight, and coefficients are sums of squared
+norms, so that is a lower bound. The shadow inequality is the matching upper
+bound on the sum of the first three. Nothing is left free:
+$\mathrm{Aco}_w=4$ and the other two vanish. The six-qubit MacWilliams normal
+form then determines every remaining coefficient.
+
+\lean{SixQubit/Pin.lean} carries the squeeze; each generated
+\lean{Orbit$n$Enum.lean} supplies its mask and applies it. The conclusion is
+about \emph{every} code supported in those fibers, not only the exhibited one,
+and the realization module supplies a code attaining it, so the image is a
+single point.  The $A$ vectors are
+\[
+  (1,1,0,0,15,15,0) \quad\text{for orbits 11 and 23},
+  \qquad
+  (1,0,1,0,11,16,3) \quad\text{for orbits 10, 16 and 22}.
+\]
+The corresponding $B$ vectors are
+\[
+  (1,1,0,30,45,33,18),
+  \qquad
+  (1,0,1,24,35,40,27).
+\]
+This second half is not a copied table: \lean{BEnumerator.lean} defines the
+Frobenius-side coefficient and derives all seven MacWilliams rows by summing
+the already proved subset duality over subsets of each cardinality.  Each
+\lean{Orbit$n$Enum.lean} packages the result as
+\path{enumerator_pair_unique_fiber} and proves the pair attained by its
+explicit realized code.
+
+\subsection{The five orbit-specific closures}
+
+The remaining five require more than the scalar-mask squeeze. Orbits 7 and 8
+share the affine image
+\[
+ A=(1,\alpha,1-\alpha,0,11+4\alpha,16-\alpha,3-3\alpha),
+\]
+\[
+ B=(1,\alpha,1-\alpha,24+6\alpha,35+10\alpha,40-7\alpha,27-9\alpha),
+\]
+with $0\le\alpha\le1$ for orbit~7 and $1/2\le\alpha\le1$ for orbit~8.
+Orbit~8 is closed by complete-support and Hafnian reductions. Orbit~7 uses the
+covariant $K_5$ tangent/projector analysis, including the collinear and
+zero-anchor boundary branches. Its structural conclusion is stated using a
+literal finite-sum partial trace of $P/2$, and proves that some physical
+two-qubit marginal has matrix rank two; no transported normal-form matrix is
+substituted for that marginal. Explicit circle families attain every parameter
+in both closed intervals.
+
+Orbit~9 is rigid at the enumerator level:
+\[
+ A=(1,0,1,0,11,16,3),\qquad B=(1,0,1,24,35,40,27).
+\]
+The full-fibre active-support classification rules out the two-active branch,
+produces a common equal-bit pair in the four-active branch, and also proves the
+manuscript's structural clause: in the uniform gauge an actual weight-two
+$Z_rZ_s$ fixes both logical words.
+
+Orbit~21 has the same rigid $A/B$ pair, but its forced string has weight four.
+The corrected proof expands projector traces into computational-basis
+autocorrelations. The kernel checks the 512 possible
+$(X\text{-mask},\text{Walsh frequency})$ pairs, proves the residual Walsh sum
+vanishes for arbitrary amplitudes on the complete fibres, and combines it with
+the exact Farkas identity
+\[
+ \mathrm{residual}=32(\mathrm{Aco}_2-4)-\mathrm{positiveRhs},
+ \qquad \mathrm{positiveRhs}\ge0.
+\]
+The older conditional forced-vanishing route is retained only as historical
+infrastructure and is absent from the final dependency chain.
+
+For orbit~45 the result is the interval
+\[
+ A=(1,0,t,1-t,12-t,15+t,3),
+ \qquad
+ B=(1,0,t,22+2t,39-4t,42-2t,24+3t),
+ \quad \frac23\le t\le1.
+\]
+Complete-fibre Knill--Laflamme rows give the block masses and phase relations;
+division-free Gram lemmas cover zero-amplitude boundary cases. Two explicit
+real-amplitude charts cover $[2/3,3/4]$ and $[3/4,1]$ and return genuine
+normalized distance-three codes at the requested parameter. Here ``complete
+fibre'' means support is contained in the whole fibre; it does not assert every
+amplitude is nonzero.
+
+\subsection{The shared shadow inequality}
+
+The upper bound used across these exact-image arguments is the zeroth Rains
+shadow inequality $A_1+A_2+A_3\le1$.
+
+Its usual derivation builds the spin flip
+$\Pi\mapsto Y^{\otimes n}\Pi^{\mathsf T}Y^{\otimes n}$ and quotes positivity of
+$\operatorname{Tr}(\Pi\widetilde\Pi)$. There is a shorter route. Summing the
+alternating Pauli sum over the $Z$-mask first collapses it by the character sum
+already in \lean{SixQubit/MacWilliams.lean}, and what survives factors:
+\[
+  \sum_{P}(-1)^{\mathrm{wt}\,P}\bigl|\operatorname{Tr}(P\Pi)\bigr|^2
+  \;=\;
+  2^{n}\sum_{a,b}\Bigl|\sum_{u}(-1)^{|u|}\psi_a(u)\,\psi_b(\bar u)\Bigr|^{2},
+\]
+a sum of squared norms, so nonnegativity is immediate and no operator,
+transpose or matrix positivity appears. The identity was checked numerically
+before any Lean was written---on the orbit-36 code it gives $128/25$, exactly
+what the six-qubit MacWilliams normal form predicts, and it holds on random
+non-code pairs too, confirming that it is an algebraic identity rather than a
+consequence of the code property. \lean{SixQubit/Shadow.lean} proves it. Both sides are
+computed down to a common quantity: one direction is an interchange of
+summation at depth four, the other does the $Z$-sum first, and the surviving
+index is a complement. The statement
+\lean{alt\_sum\_nonneg} holds for every $n$ and every number of
+logical states; specializing to $n=6$ and grouping by weight gives
+\lean{shadow\_bound}, namely $A_1+A_2+A_3\le1$ for an exact
+$((6,2,d\ge3))$ code, in the unnormalized form
+$\mathrm{Aco}_1+\mathrm{Aco}_2+\mathrm{Aco}_3\le4$ that the six-qubit
+MacWilliams normal form already in the development consumes.
+
+The orbit-specific lower bounds, phase/support reductions and constructive
+families described above now supply the other half; the shadow theorem is no
+longer being presented as completion of only a shared prefix.
+
+\section{A tooling bug that gated three orbits}
+\label{sec:bug}
+
+The scan tooling under-generated the admissible Pauli set. For a weight-one flip
+$e$ it returned only $\{0\} \cup \{e_j\}$, seven strings, where the correct set
+is $\{0, e_i\} \times \{0, e_j\}$, twelve; it thereby dropped every $Y_i Z_j$. For
+$e = 0$ it returned nothing at all, dropping all twenty-two pure-$Z$ conditions.
+The correct total over all $|e| \le 2$ is
+\[
+  154 = 1 + 6 \cdot 3 + 15 \cdot 9 ,
+\]
+the number of weight-$\le 2$ Pauli operators on six qubits, which is the check
+that should have been run at the start.
+
+Three of the last four orbits were blocked by this. Orbit 33's argument needs
+$F \otimes Z_j$ for $F$ ranging over $I, X, Y, Z$ on the zero-angle qubit, and
+three of those four families were missing.
+
+\emph{No earlier certification was invalidated by this under-generation bug.}
+Those proofs used a
+\emph{subset} of the true conditions, which makes them harder, never wrong. The
+fix lives in \path{tools/core/kl.py}, which enumerates all sixty-four dressings
+and filters on $|\operatorname{supp}(e) \cup \operatorname{supp}(z)| \le 2$
+rather than being clever.
+
+%======================================================================
+\section{Errors made, and how they were caught}
+\label{sec:errors}
+
+Five reasoning errors were made during this work and all five were caught before
+anything unsound entered the development. They share one shape: \emph{asserting
+that a relation has a certain form without checking that form against the
+originals}. Recording them, and the detection methods, is more useful than
+pretending the path was straight.
+
+\begin{enumerate}
+\item \textbf{A wrong $\delta$.} Choosing the second fiber by size alone made the
+  search accept easy certificates for the wrong mathematical objects. A later
+  $d_{\mathrm{LP}}$ cross-check happened to disambiguate some orbits then still
+  outstanding, but it is not the definition of $\delta$ and did not revisit
+  modules already marked complete. Orbits $30$, $53$, $55$ and $65$ therefore
+  used residues of additive order two instead of the orders their projective
+  logical gates demand. A collaborator's audit found this; all four were rebuilt
+  with the defining value $\delta=q/m$, and the corrected fibers are disjoint
+  from the old ones. The guard that should have existed from the start is now
+  \path{tools/manifest.json} plus \path{tools/verification/gate.py}, which checks
+  the paper parameters, residue and both support fibers. The separate
+  \path{tools/verification/momentgate.py} parses exact rational linear forms and
+  checks every declared moment row against the probability order used by its
+  headline theorem.
+\item \textbf{The collapse trap, three times.} A four-term sum was read as a
+  cross relation when the sign products made it vacuous, or as a permanent when
+  the data gave a determinant. Fixed by writing an extractor
+  (\path{tools/core/relations.py}) that computes every two-term relation genuinely
+  in a mask's row space.
+\item \textbf{Orbit 26: per-edge matrix relations that do not exist.} The
+  weight-one masks carry eight incidences with rank only four and admit
+  \emph{no} two-term relation; only group-level sums exist.
+\item \textbf{Orbit 31: a family-three statement pushed too strong.} Claiming
+  each term vanishes separately gives $G_{ef} t_{ef} = 0$, which is false. The
+  bottom sign is $(-1)^{z \cdot x}$ and the $A$ row sits at complementary
+  last-three-bits from the $B$ rows, so an odd-weight dressing flips the $A$-row
+  sign relative to the others.
+\item \textbf{Orbit 31: a covering count with a counterexample.} The claim that
+  covering six column pairs with three rows forces one nonzero entry per row is
+  false. For example,
+  \[
+    Z_1=\{0,1,2\},\qquad Z_2=\{0,1,3\},\qquad Z_3=\{2,3\}
+  \]
+  covers all six pairs with empty intersection. The branch does close, but by
+  the full permanent condition, not by counting.
+\end{enumerate}
+
+The detection methods, in increasing order of usefulness:
+
+\begin{enumerate}
+\item \textbf{Row-space membership.} Reduced row echelon form against the mask's
+  dressing sign matrix answers ``is this relation actually available?'' directly.
+  This caught error 3.
+\item \textbf{Replay against the originals.} Take a solution of the reduced
+  system and evaluate the \emph{raw} Knill--Laflamme conditions on it. Exactly two
+  failed for error 4, and both were weight-one dressings, which pointed straight
+  at the sign. This is cheap and should be run on every reduction.
+\item \textbf{Adversarial review.} A multi-agent pass whose agents were
+  instructed to \emph{refute} rather than confirm produced explicit witnesses for
+  error 3's consequence in orbit 26, including a configuration satisfying every
+  fact the argument used.
+\item \textbf{Writing the Lean.} Error 5 surfaced while formalising the branch:
+  the combinatorial step had to be made concrete, and the counterexample fell
+  out. This is the cheapest of the four and argues for a working practice:
+  \emph{do not derive at length on paper and formalise in one batch; formalise as
+  you go.}
+\end{enumerate}
+
+For the final two orbits the work was delegated to multi-agent workflows under
+three non-negotiable instructions: verify by machine rather than assert, actually
+compile rather than report compiling, and classify every hypothesis of the
+headline theorem. That last one is the important one. A headline
+\lean{False} theorem is only as good as its hypotheses, and a proof becomes a
+shell the moment an algebraic fact that should have been derived is smuggled in as
+an assumption --- a defect invisible from the outside. Both final headlines were
+classified by hand after the fact:
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Orbit & Hypotheses & \lean{offSum = 0} & \lean{diagBot = diagTop} &
+  \lean{MomentSystem} & Other \\
+\midrule
+31 & 46 & 33 & 12 & 1 & 0 \\
+26 & 41 & 24 & 16 & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%======================================================================
+\section{Reproduction}
+
+\subsection{Checking the proofs}
+
+From the repository root:
+\begin{lstlisting}
+lake build
+\end{lstlisting}
+should report zero errors and zero warnings. Then
+\begin{lstlisting}
+lake build SixQubit.Audit
+\end{lstlisting}
+prints the 592 axiom lines; every footprint must be contained in
+\lean{[propext, Classical.choice, Quot.sound]}. A stored copy of the expected
+output is \path{results/axiom-audit.txt}, so
+\begin{lstlisting}
+lake build SixQubit.Audit 2>&1 | grep "depends on axioms" \
+  | sed 's/^info: [^ ]* //' | diff - results/axiom-audit.txt
+\end{lstlisting}
+should produce no output.
+
+To confirm the absence of the forbidden constructs:
+\begin{lstlisting}
+grep -rn "sorry\|native_decide" SixQubit/ SS/
+\end{lstlisting}
+Every hit must be inside a docstring or comment; the exact comment count is not
+an invariant. The transitive \lean{\#print axioms} audit is
+the load-bearing check: an active escape hatch would add \lean{sorryAx} or
+\lean{Lean.ofReduceBool}, neither of which appears.
+
+\subsection{Regenerating the Lean}
+
+Most transcription modules were emitted or repaired by scripts in
+\path{tools/generators/}. Their inputs vary: some read \path{tools/orbits/}, some
+read \path{tools/manifest.json} or checked certificate data, and some algebra
+layers are hand-written. The provenance index in \path{tools/README.md} names the
+major routes and explicitly marks the historical order-nine module, for which no
+complete raw-module generator is committed. The scripts require Python with
+\texttt{sympy}, \texttt{numpy} and \texttt{scipy}. For scripts using the shared
+modules, set \texttt{PYTHONPATH} to include \path{tools/core} and
+\path{tools/orbits}, or run from the repository root with
+\begin{lstlisting}
+python -c "import sys; sys.path[:0] = ['tools/core','tools/orbits']; ..."
+\end{lstlisting}
+
+\subsection{Re-running the independent checks}
+\label{sec:reruns}
+
+\path{tools/verification/} holds the scripts that answer questions the Lean
+proofs do not: whether an orbit is excluded numerically at all, which relations
+are genuinely available, and which branches of a case analysis are live.
+Highlights:
+\begin{center}
+\begin{tabular}{@{}p{0.34\linewidth}p{0.62\linewidth}@{}}
+\toprule
+Script & What it answers \\
+\midrule
+\path{feas2.py}, \path{feasnew.py} & Is the full weight-$\le 2$ system numerically feasible or infeasible, including positive and negative controls? \\
+\path{gate.py} & Do the paper parameters, residue and two supports match? \\
+\path{momentgate.py} & Is every declared moment row the exact intended linear form? \\
+\texttt{momentgate.py --selftest} & Does the non-exhaustive mutation suite fail closed? \\
+\path{classify.py} & Does every algebraic headline hypothesis have an allowed form? \\
+\path{admis.py} & Does every headline KL row have Pauli weight at most two? \\
+\path{rigidity.py} & Does orbit~36 meet the original-table code-level rigidity contract? \\
+\path{realized.py} & Do all ten explicit codes match the manifest fibres and exact arithmetic? \\
+Orbit 45 diagnostics & Independent Gram and two-chart checks in \path{o45_gram.py} and \path{o45_attain_check.py} \\
+\path{close31.py} & Orbit 31 against the raw conditions, phases free \\
+\path{branch31.py} & Which phase partitions of orbit 31 are excluded \\
+\path{collapse29.py} & Orbit 29's support collapse \\
+\path{stepA\_*.py} & The four silent failure modes behind orbit 26's Step A \\
+\path{t26\_*.py}, \path{x26\_*.py} & Orbit 26 facts, ablations, branch tree \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\path{feas2.py} includes certified orbits as controls: an orbit with a
+kernel-checked no-go proof must come out excluded, and it does (orbit 25 gives a
+best residual of $0.79$). Running it without the controls would not be a test.
+
+\subsection{The workflow records}
+
+\path{results/workflows/} holds the scripts of the multi-agent passes and their
+verdicts, including the adversarial review that found the orbit 26 gap and the
+audits of the final two assemblies. They are kept because they contain the
+negative results --- which relations are \emph{not} available, which branches are
+vacuous --- that are expensive to rediscover and easy to assume away.
+
+%======================================================================
+\section{Repository layout}
+
+\begin{longtable}{@{}p{0.30\linewidth}p{0.64\linewidth}@{}}
+\toprule
+Path & Contents \\
+\midrule
+\endhead
+\path{SixQubit/} & 51 no-go stacks, 11 realized-orbit certification stacks, shared algebra, and the audit \\
+\path{SS/} & problem-independent bit-string and Pauli infrastructure \\
+\path{formalization/} & this process document in source and PDF form \\
+\path{tools/core/} & fibers, Pauli enumeration, moment matrices, relation extractors \\
+\path{tools/orbits/} & per-orbit data and block structure \\
+\path{tools/generators/} & the scripts that emit the Lean modules \\
+\path{tools/verification/} & numerical and symbolic checks independent of Lean \\
+\path{results/} & axiom audit, orbit table, workflow records \\
+\bottomrule
+\end{longtable}
+
+%======================================================================
+\section{Open items}
+\label{sec:openitems}
+
+Two items concern the formalization itself.
+
+\begin{enumerate}
+\item \textbf{The classification is not formalized.} Neither the reduction of an
+  arbitrary code to one of the sixty-six rank-compatible moment orbits, nor the
+  equivalence of other angle records to the chosen representatives, has a Lean
+  proof.
+\item \textbf{The exact images of orbits 1--4 are not formalized.} Their source
+  proofs are still being completed. The present development therefore closes
+  all 51 no-go orbits, orbit~36 at rigidity level, and the ten WE orbits
+  $7,8,9,10,11,16,21,22,23,45$, but makes no claim for these four cases.
+\end{enumerate}
+
+Two further items concern the manuscript rather than the formalization.
+
+\begin{enumerate}
+\item Whether the equations and probability data developed here should be folded
+  back into the manuscript. The arguments obtained for orbits 26, 29, 31 and 33
+  are shorter than the manuscript's and in two cases avoid machinery it uses
+  (matrix inverses and a genericity argument for orbit 26; a sixteen-type support
+  classification for orbit 31), so there is a case for replacing rather than
+  supplementing.
+\item In a sibling companion manuscript, \path{../A_dyadic_ladder/paper/main.tex}: the
+  sentence at line 1045 asserting that no lower bound is known is not correct for
+  stabilizer codes, and the table caption at line 1000 needs revision. Neither
+  touches the present development.
+\end{enumerate}
+
+\end{document}
