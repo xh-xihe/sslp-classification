@@ -11,13 +11,17 @@ logical eigenspace is supported inside a single *phase sector*: a set of basis
 strings on which the gate's eigenvalue is constant.  In the SSLP setting that
 sector is exactly a residue fiber of the angle vector.
 
-The paper states the lemma for an arbitrary logical dimension and derives the
-eigenspace decomposition from the spectral theorem for a unitary operator.
-Mathlib has no such theorem -- only the Hermitian case -- so that route is not
-available.  It is also not needed for what the paper actually uses the lemma
-for.  Theorem 2.6, the two-fiber normal form, works with `K = 2` and with the
-logical *eigenbasis* already chosen; there the diagonalization is a hypothesis
-rather than something to be produced, and no spectral theorem appears.
+The paper derives the eigenspace decomposition from the spectral theorem for a
+unitary operator, which Mathlib does not have -- only the Hermitian case.  That
+route is closed, but it is needed only to *produce* the eigenbasis.  Given the
+eigenbasis, both clauses of the lemma hold at any logical dimension, and that is
+what is proved below: the results are stated one eigenvector at a time, and the
+`_family` versions at the end put them together for arbitrary `K`.
+
+At `K = 2` with a projectively nontrivial action the two eigenvalues are
+distinct and the eigenbasis is forced, so nothing is assumed there that the
+paper does not also have.  For larger `K` the eigenbasis is a hypothesis here
+and a conclusion there.
 
 That is the version formalized here, and it does real work: it *derives* the
 support condition that the whole six-qubit development takes as its hypothesis.
@@ -147,6 +151,50 @@ theorem ssCondition_nonvacuous (zeta : ℂ) (hz : IsPrimitiveRoot zeta q)
     ∃ c : SS.State n ℂ, c x ≠ 0 ∧ SS.SSConditionState a (SS.weight a x) c := by
   obtain ⟨ c, hcx, hc ⟩ := exists_eigen zeta a x
   exact ⟨ c, hcx, ssCondition_of_eigen zeta hz a c _ hc x hcx ⟩
+
+/-! ## Arbitrary logical dimension
+
+The results above are stated for one eigenvector at a time, so they do not in
+fact depend on the logical dimension.  An earlier draft of this file described
+them as the `K = 2` case; that was too cautious.  What is `K`-specific is only
+*producing* the eigenbasis: at `K = 2` with a projectively nontrivial action the
+two eigenvalues are distinct and the basis is forced, while for general `K` the
+paper obtains it from the spectral theorem for a unitary operator, which Mathlib
+does not have.  Given the eigenbasis, both clauses of Lemma 2.3 hold at any `K`,
+and that is what is recorded here. -/
+
+/-- **Clause (ii) of Lemma 2.3, at arbitrary `K`.**
+
+Every logical eigenvector of the gate is supported in a single residue fiber,
+whatever the logical dimension. -/
+theorem weight_eq_of_eigen_family {K : ℕ} (zeta : ℂ) (hz : IsPrimitiveRoot zeta q)
+    (a : Fin n → ZMod q) (psi : Fin K → SS.State n ℂ) (lam : Fin K → ℂ)
+    (h : ∀ k, gate zeta a (psi k) = fun s => lam k * psi k s)
+    (k : Fin K) (x y : BitString n) (hx : psi k x ≠ 0) (hy : psi k y ≠ 0) :
+    SS.weight a x = SS.weight a y :=
+  weight_eq_of_eigen zeta hz a (psi k) (lam k) (h k) x y hx hy
+
+omit [NeZero q] in
+/-- **Clause (i) of Lemma 2.3, at arbitrary `K`.**
+
+Logical eigenvectors with distinct eigenvalues have disjoint supports, so the
+phase sectors are pairwise disjoint. -/
+theorem disjoint_of_ne_family {K : ℕ} (zeta : ℂ)
+    (a : Fin n → ZMod q) (psi : Fin K → SS.State n ℂ) (lam : Fin K → ℂ)
+    (h : ∀ k, gate zeta a (psi k) = fun s => lam k * psi k s)
+    (k l : Fin K) (hkl : lam k ≠ lam l)
+    (x : BitString n) (hx : psi k x ≠ 0) : psi l x = 0 :=
+  disjoint_of_ne zeta a (psi k) (psi l) (lam k) (lam l) hkl (h k) (h l) x hx
+
+/-- The whole family therefore satisfies the subset-sum condition, each member
+in its own fiber. -/
+theorem ssCondition_of_eigen_family {K : ℕ} (zeta : ℂ)
+    (hz : IsPrimitiveRoot zeta q) (a : Fin n → ZMod q)
+    (psi : Fin K → SS.State n ℂ) (lam : Fin K → ℂ)
+    (h : ∀ k, gate zeta a (psi k) = fun s => lam k * psi k s)
+    (base : Fin K → BitString n) (hbase : ∀ k, psi k (base k) ≠ 0) :
+    ∀ k, SS.SSConditionState a (SS.weight a (base k)) (psi k) :=
+  fun k => ssCondition_of_eigen zeta hz a (psi k) (lam k) (h k) (base k) (hbase k)
 
 /-! ## The bridge to the six-qubit hypothesis
 

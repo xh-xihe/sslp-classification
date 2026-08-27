@@ -146,3 +146,7 @@ structure map is chosen, not constructed.
 
 #print axioms MainTheory.Covariance.mem_dualAnnihilator_span
 #print axioms MainTheory.Covariance.span_eq_of_cov_eq
+
+#print axioms MainTheory.PhaseSector.weight_eq_of_eigen_family
+#print axioms MainTheory.PhaseSector.disjoint_of_ne_family
+#print axioms MainTheory.PhaseSector.ssCondition_of_eigen_family

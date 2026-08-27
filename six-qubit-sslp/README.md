@@ -578,7 +578,7 @@ Quot.sound}`; anything else is spelled out.
 
 | # | Statement | Status |
 |---|---|---|
-| 2.3 | `lem:phase-sectors` | **Done at `K = 2`** (`PhaseSector`). The general-`K` form needs the spectral theorem for a unitary operator, which Mathlib has only in the Hermitian case. Theorem 2.6 uses only the `K = 2` form. |
+| 2.3 | `lem:phase-sectors` | **Both clauses done at arbitrary `K`** (`PhaseSector`), given the logical eigenbasis. Producing that eigenbasis for `K > 2` needs the spectral theorem for a unitary operator, which Mathlib has only in the Hermitian case; at `K = 2` it is forced by the eigenvalues being distinct. |
 | 2.4 | `thm:qualitative-finite-lift` | **Done** (`RealGate`, `Rationalize`, `Denominator`). The paper's pivot construction is replaced by a retraction argument that needs no rank theory. |
 | 2.5 | `thm:finite-projective-group` | **Blocked.** Its proof is compact-Lie-group theory; Cartan's closed-subgroup theorem is absent from Mathlib, as is any Lie algebra of a group, and `PU(K)` does not exist. This is the one genuinely research-level gap. |
 | 2.6 | `thm:rank-two-sslp` | **Geometric content and full converse done** (`RankTwo`). Not done: the quotient by qubit permutation, global scalar, logical interchange and coprime power, and the sorted canonical form. The module docstring lists every omission. |
