@@ -1,6 +1,8 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
 import MainTheory.Clearing
+import MainTheory.Covariance
+import MainTheory.AffineSpan
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize

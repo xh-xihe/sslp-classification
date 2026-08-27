@@ -1,6 +1,8 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
 import MainTheory.Clearing
+import MainTheory.Covariance
+import MainTheory.AffineSpan
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
@@ -95,3 +97,13 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Clearing.exists_cleared_of_real
 #print axioms MainTheory.Clearing.exists_clearing
 #print axioms MainTheory.Clearing.clearing_example
+
+#print axioms MainTheory.Covariance.quad_eq_sum_sq
+#print axioms MainTheory.Covariance.quad_eq_zero_iff
+#print axioms MainTheory.Covariance.quad_nonneg
+#print axioms MainTheory.Covariance.proj_eq_zero_congr
+#print axioms MainTheory.Covariance.orthDir_mem_kernel
+#print axioms MainTheory.Covariance.along_not_mem_kernel
+
+#print axioms MainTheory.AffineSpan.covariance_eq_of_hasDistance
+#print axioms MainTheory.AffineSpan.mean_eq_of_hasDistance

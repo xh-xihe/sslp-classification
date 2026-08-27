@@ -478,7 +478,25 @@ denominator out.
 So the Smith blocker is narrower than it first looked. It obstructs only the
 numerical bound `q <= beta_n`, not the finiteness of the lift.
 
-All eight modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/Covariance.lean` and `MainTheory/AffineSpan.lean` are Lemma 5.2, the
+common affine-span lemma, split along its natural seam. The geometric half --
+that for strictly positive weights the covariance form vanishes on a direction
+exactly when that direction annihilates the centred support -- mentions no codes
+at all and is stated for an arbitrary finite weighted point set. The quantum
+half turned out to be already present: `SixQubit/CodeBridge.lean` proves the
+equality of first and second occupation numbers for a distance-three code, and
+both are generic in `n` despite living in the six-qubit namespace, so the common
+covariance is two rewrites away.
+
+Splitting it that way is the point. It makes visible exactly how much of the
+lemma is about quantum codes, which is: the moments, and nothing else.
+
+What is not done is the passage from equal centred spans to
+`aff(T_0) = mu + V = aff(T_1)` as a statement about Mathlib's `AffineSubspace`.
+That is bookkeeping over an API rather than mathematics, and it is left open
+rather than claimed.
+
+All ten modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
