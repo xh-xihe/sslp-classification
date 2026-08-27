@@ -18,3 +18,9 @@ classification of `six_qubit_sslp.tex`. -/
 @[default_target]
 lean_lib SixQubit where
   globs := #[.andSubmodules `SixQubit]
+
+/-- The general classification theory of `main.tex`: statements quantified over
+all `n`, `K` and `d`, as opposed to the six-qubit enumeration in `SixQubit`. -/
+@[default_target]
+lean_lib MainTheory where
+  globs := #[.andSubmodules `MainTheory]

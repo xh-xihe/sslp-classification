@@ -33,3 +33,4 @@ six_qubit_sslp_v7.tex
 documents/
 formalization/*.fls
 formalization/*.fdb_latexmk
+debug.log

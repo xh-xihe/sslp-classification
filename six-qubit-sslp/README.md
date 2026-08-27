@@ -362,6 +362,70 @@ arguments obtained here are shorter than the manuscript's, and for orbits 26 and
 argument; a 16-type support classification). The final “Open items” section
 states the remaining boundary.
 
+## The general theory of `main.tex`
+
+Everything above certifies the *Supplementary Materials*: the six-qubit
+enumeration, orbit by orbit. Those results are all conditional on a code being
+in SSLP normal form -- supported in two modular fibers of an angle vector. The
+companion paper `main.tex` is what justifies that normal form, and it is a
+different kind of mathematics: statements quantified over all `n`, `K` and `d`
+rather than finite checks at `n = 6`.
+
+`MainTheory/` is the beginning of that half. It is a separate Lean library, held
+to the same standard: `lake build` clean, no `sorry`, no `native_decide`, every
+result audited to lie inside `{propext, Classical.choice, Quot.sound}`.
+
+`MainTheory/Rationalize.lean` carries the linear-algebraic core of the paper's
+qualitative finite-lift theorem: a linear system whose coefficients and
+right-hand side lie in a field `K`, and which is solvable over an extension `L`,
+is solvable over `K` itself. The paper proves this by choosing a nonsingular
+square submatrix and inverting it, which needs determinantal rank and the
+invariance of rank under field extension -- neither of which Mathlib has. The
+proof here instead retracts the structure map `K -> L`, which exists because `L`
+is a `K`-vector space, and applies it coordinatewise. It is shorter, holds for
+an arbitrary field extension, and uses no rank theory. A companion lemma records
+the other half of the paper's step: a coordinate at which the kernel vanishes
+takes the same value in every solution, which is what protects the colour
+coordinates.
+
+`MainTheory/Denominator.lean` carries the step the paper states without proof
+just after its eq. 2.31: that minimality of the clearing integer `q` forces
+`gcd(q, a_1, ..., a_n) = 1`, i.e. that the lift is primitive. The descent is one
+line once `q` is identified as the lcm of the denominators.
+
+Both modules exhibit their hypotheses as satisfiable rather than merely
+unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
+`lcmDen_example` computes a concrete least denominator; `lift_exists` records
+that every rational phase vector really does have a lift. The kernel checks the
+proof, not the statement, and this repository has already paid once for
+forgetting that.
+
+### What blocks the rest
+
+Three obstacles were found by reading the paper against the pinned Mathlib
+(rev `fc278a17`), and they are recorded here rather than discovered again later.
+
+The constant `beta_6 = 9` is what makes the six-qubit problem finite: it bounds
+the lift order `q`, and therefore makes the 66-orbit list exhaustive. The paper
+supports it with the words "complete binary-matrix tables give" and no proof.
+Verifying it means bounding the largest invariant factor over all nonsingular
+6x6 binary matrices -- `2^36` of them, or `6.8e7` after discarding repeated and
+zero rows. Both are far beyond `decide`, and the Hadamard bound only gives 14.
+A weaker but provable bound is a real option: `q <= 14` costs about twelve times
+the outer enumeration (6,277 primitive sorted vectors become 75,675), which is
+mechanical work of exactly the kind the generators here already do.
+
+Mathlib's Smith normal form carries no divisibility chain --
+`Module.Basis.SmithNormalForm` has no field asserting `a i` divides `a (i+1)` --
+and no uniqueness of invariant factors, which the paper's notation `d_i(C)`
+silently assumes and never proves.
+
+The paper's finite-projective-group theorem is compact-Lie-group theory, and
+Cartan's closed-subgroup theorem is absent from Mathlib entirely. Mathlib also
+has no spectral theorem for unitary or normal operators, only for Hermitian
+ones, which is what the phase-sector lemma needs; there is a route through two
+commuting self-adjoint parts, but it is real work.
+
 ## A note on the negative results
 
 `results/workflows/` holds the multi-agent records, including the adversarial
