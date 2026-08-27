@@ -3,6 +3,7 @@ import MainTheory.Denominator
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
+import MainTheory.Cyclic
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -61,3 +62,17 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Normalize.exists_unit_mul_eq_one
 #print axioms MainTheory.Normalize.ssCondition_bxor
 #print axioms MainTheory.Normalize.weight_bxor_check
+
+#print axioms MainTheory.Cyclic.chi_zero
+#print axioms MainTheory.Cyclic.diag_eq_chi
+#print axioms MainTheory.Cyclic.pow_mod
+#print axioms MainTheory.Cyclic.chi_add
+#print axioms MainTheory.Cyclic.chi_pow
+#print axioms MainTheory.Cyclic.chi_eq_one_iff
+#print axioms MainTheory.Cyclic.chi_ne_zero
+#print axioms MainTheory.Cyclic.chi_injective
+#print axioms MainTheory.Cyclic.chi_pow_eq_one_iff
+#print axioms MainTheory.Cyclic.addOrderOf_dvd_card
+#print axioms MainTheory.Cyclic.isCyclic_of_faithful
+#print axioms MainTheory.Cyclic.addOrderOf_orbit21_gap
+#print axioms MainTheory.Cyclic.orbit21_projective_order

@@ -433,7 +433,16 @@ statement outright, so the proof is three lines.
 vector. It is exactly the kind of identity where a sign error in the flip and a
 matching error in the shift would cancel and still typecheck.
 
-All five modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/Cyclic.lean` is the character `chi(x) = zeta^x.val` on `Z_q`, which
+is the algebraic content the rest of the paper leans on without naming: the
+gate's eigenvalue on a fiber is `chi` of that fiber's residue. Once it is
+available and shown faithful, two of the paper's steps become one line each.
+`chi_pow_eq_one_iff` identifies the projective logical order with the additive
+order of the residue gap -- which is what makes `m | q` a theorem rather than a
+convention -- and `isCyclic_of_faithful` is the paper's "every finite subgroup
+of `U(1)` is cyclic", which Mathlib proves for any integral domain.
+
+All six modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
