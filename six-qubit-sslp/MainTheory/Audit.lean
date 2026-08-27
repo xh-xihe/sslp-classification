@@ -1,5 +1,6 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
+import MainTheory.Clearing
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
@@ -88,3 +89,9 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Normalize.primitive_flip
 #print axioms MainTheory.RankTwo.gap_ne_zero
 #print axioms MainTheory.RankTwo.exists_unit_mul_eq_div
+
+#print axioms MainTheory.Clearing.map_mulVec
+#print axioms MainTheory.Clearing.det_smul_eq_adjugate_mulVec
+#print axioms MainTheory.Clearing.exists_cleared_of_real
+#print axioms MainTheory.Clearing.exists_clearing
+#print axioms MainTheory.Clearing.clearing_example

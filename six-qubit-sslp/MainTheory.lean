@@ -1,5 +1,6 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
+import MainTheory.Clearing
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize

@@ -463,7 +463,22 @@ runs through the entire rationalization chain. The theorem is now named
 docstring lists every omission in full, including several the first draft did
 not admit to.
 
-All seven modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/Clearing.lean` is Lemma 3.1, and it closes one of the three
+blockers -- partly, and for the part that actually matters. The paper clears the
+denominators of `C^{-1} h` with the sharp multiplier `d_s(C)`, the last
+invariant factor, and sharpness is what the constants `beta_N` measure. Mathlib
+cannot supply that: `Module.Basis.SmithNormalForm` records no divisibility chain
+and there is no uniqueness of invariant factors. But the *qualitative* statement,
+which is what Theorem 2.4 actually uses and the reason the lift is finite at all,
+needs no Smith theory: `det(C) * C^{-1} = adj(C)` is an integer matrix, so the
+determinant clears everything. `exists_cleared_of_real` then composes this with
+`Rationalize` to give the paper's step end to end -- real angles in, a finite
+denominator out.
+
+So the Smith blocker is narrower than it first looked. It obstructs only the
+numerical bound `q <= beta_n`, not the finiteness of the lift.
+
+All eight modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
@@ -503,7 +518,10 @@ What actually blocks `thm:d3-bound` is the next item, not this one.
 Mathlib's Smith normal form carries no divisibility chain --
 `Module.Basis.SmithNormalForm` has no field asserting `a i` divides `a (i+1)` --
 and no uniqueness of invariant factors, which the paper's notation `d_i(C)`
-silently assumes and never proves.
+silently assumes and never proves. This turned out to block less than expected:
+`MainTheory/Clearing.lean` gets the qualitative denominator clearing from the
+adjugate instead, so what remains blocked is only the sharp multiplier, and with
+it the numerical bound `q <= beta_n`.
 
 The paper's finite-projective-group theorem is compact-Lie-group theory, and
 Cartan's closed-subgroup theorem is absent from Mathlib entirely. Mathlib also

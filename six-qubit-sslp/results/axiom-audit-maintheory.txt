@@ -61,3 +61,8 @@
 'MainTheory.Normalize.primitive_flip' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RankTwo.gap_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RankTwo.exists_unit_mul_eq_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Clearing.map_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Clearing.det_smul_eq_adjugate_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Clearing.exists_cleared_of_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Clearing.exists_clearing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Clearing.clearing_example' depends on axioms: [propext, Classical.choice, Quot.sound]
