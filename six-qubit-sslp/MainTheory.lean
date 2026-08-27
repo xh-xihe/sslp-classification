@@ -10,6 +10,7 @@ import MainTheory.PhaseSector
 import MainTheory.Normalize
 import MainTheory.Cyclic
 import MainTheory.RankTwo
+import MainTheory.OuterIndex
 import MainTheory.Levels
 import MainTheory.WImages
 import MainTheory.Audit

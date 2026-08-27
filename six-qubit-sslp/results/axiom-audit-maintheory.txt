@@ -91,3 +91,8 @@
 'MainTheory.RealGate.angle_sub_int_of_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RealGate.diffMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RealGate.exists_rational_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.OuterIndex.card_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.OuterIndex.card_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.OuterIndex.card_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.OuterIndex.card_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.OuterIndex.outerRecords_finite' depends on axioms: [propext, Classical.choice, Quot.sound]

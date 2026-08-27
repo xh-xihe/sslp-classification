@@ -5,6 +5,7 @@ import MainTheory.Covariance
 import MainTheory.AffineSpan
 import MainTheory.D3Bound
 import MainTheory.RealGate
+import MainTheory.OuterIndex
 import MainTheory.Levels
 import MainTheory.WImages
 import MainTheory.Gate
@@ -132,3 +133,9 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.RealGate.angle_sub_int_of_eigen
 #print axioms MainTheory.RealGate.diffMatrix_mulVec
 #print axioms MainTheory.RealGate.exists_rational_angle
+
+#print axioms MainTheory.OuterIndex.card_two
+#print axioms MainTheory.OuterIndex.card_three
+#print axioms MainTheory.OuterIndex.card_four
+#print axioms MainTheory.OuterIndex.card_five
+#print axioms MainTheory.OuterIndex.outerRecords_finite
