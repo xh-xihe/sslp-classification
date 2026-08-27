@@ -570,6 +570,42 @@ has no spectral theorem for unitary or normal operators, only for Hermitian
 ones, which is what the phase-sector lemma needs; there is a route through two
 commuting self-adjoint parts, but it is real work.
 
+## Statement-by-statement status of `main.tex`
+
+Every numbered statement in the paper, with what is proved and what is not.
+"Done" means a kernel-checked Lean theorem inside `{propext, Classical.choice,
+Quot.sound}`; anything else is spelled out.
+
+| # | Statement | Status |
+|---|---|---|
+| 2.3 | `lem:phase-sectors` | **Done at `K = 2`** (`PhaseSector`). The general-`K` form needs the spectral theorem for a unitary operator, which Mathlib has only in the Hermitian case. Theorem 2.6 uses only the `K = 2` form. |
+| 2.4 | `thm:qualitative-finite-lift` | **Done** (`RealGate`, `Rationalize`, `Denominator`). The paper's pivot construction is replaced by a retraction argument that needs no rank theory. |
+| 2.5 | `thm:finite-projective-group` | **Blocked.** Its proof is compact-Lie-group theory; Cartan's closed-subgroup theorem is absent from Mathlib, as is any Lie algebra of a group, and `PU(K)` does not exist. This is the one genuinely research-level gap. |
+| 2.6 | `thm:rank-two-sslp` | **Geometric content and full converse done** (`RankTwo`). Not done: the quotient by qubit permutation, global scalar, logical interchange and coprime power, and the sorted canonical form. The module docstring lists every omission. |
+| 3.1 | `lem:denominator-clearing` | **Done qualitatively** (`Clearing`), via the adjugate. The sharp multiplier `d_s(C)` needs invariant factors, which Mathlib's Smith normal form does not provide. |
+| 3.2 | `thm:colored-finite-lift` | **Qualitative half done.** The bound `q <= beta_{n+t-1}` needs the sharp multiplier. |
+| 3.3 | `cor:quantitative-projective-group` | **Blocked**, downstream of 2.5. |
+| 4.1 | `cor:K2-q-bound` | **Qualitative half done**; the numerical bound blocked as above. |
+| 4.2 | `thm:d2-sslp-classification` | **Qualitative parts done**; the bound and the canonicalization are not. |
+| 5.2 | `lem:common-affine-span` | **Done** (`Covariance`, `AffineSpan`), split into a general convexity half and a quantum half that was already in `SixQubit/CodeBridge.lean`. The final rephrasing as `AffineSubspace` equality is API bookkeeping and is left open. |
+| 5.3 | `thm:d3-bound` | **Rationalization done** (`D3Bound`), including the agreement-on-the-row-span step. The bound `q <= beta_n` is blocked. |
+| 5.4 | `thm:d3-sslp-classification` | As 4.2. |
+| 5.6 | `thm:sslp-completeness` | **Finiteness of the outer index done** (`OuterIndex`) -- the content that makes it an algorithm. The cutoff `B_{n,d_0}` is blocked. |
+| 6.1 | `def:six-classification-levels` | **Level (iii) defined** (`Levels`). Levels (i), (ii), (iv) are not, and the module says why for each. |
+| 7.1 | Primitive sorted-vector count | **`P_6(2)` to `P_6(5)` kernel-checked**; `P_6(6)` to `P_6(9)` hit a `stack_space_exception` and are verified in Python instead. Both of the paper's totals, 13,877 and 13,449, are reproduced there. |
+| 7.2 | Maximum support rank | **Convexity core done** (`ActiveFace`). The active set itself is identified by exact LP certificates outside Lean. |
+| I | `six:thm:global-status` | **Blocked.** Needs the enumeration to be exhaustive, hence `beta_6 = 9` and the whole reduction pipeline. Its other inputs -- the 51 no-gos, the realizations, cyclicity -- are done. |
+| II | `thm:six-66-orbits` | **Blocked.** Formalizing it means formalizing the entire reduction `13,877 -> 66` in Lean. |
+| III | `thm:six-WE-status` | **Done, in full** (`WImages`). All ten realized orbits, single points and interval families alike. |
+| IV | `thm:unique-C5-LU` | **Blocked.** Needs local-unitary equivalence on projectors; there is no operator layer. Orbit 36's rigidity, its main input, is done. |
+
+Three things block the rest, and only one of them is deep. Cartan's
+closed-subgroup theorem is a genuine Mathlib-scale project. `beta_6 = 9` is an
+exhaustive computation over binary matrices that `decide` cannot reach, and the
+paper does not prove it either. The full enumeration pipeline is a large but
+ordinary engineering effort. Nothing else in `main.tex` is unformalized for want
+of mathematics.
+
 ## A note on the negative results
 
 `results/workflows/` holds the multi-agent records, including the adversarial
