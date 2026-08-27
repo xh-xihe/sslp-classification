@@ -1,6 +1,7 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
 import MainTheory.Gate
+import MainTheory.PhaseSector
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -39,3 +40,14 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Gate.primitive_orbit21
 #print axioms MainTheory.Gate.not_primitive_allEven
 #print axioms MainTheory.Gate.orbit21_order
+
+#print axioms MainTheory.PhaseSector.diag_eq_of_eigen
+#print axioms MainTheory.PhaseSector.weight_eq_of_eigen
+#print axioms MainTheory.PhaseSector.ssCondition_of_eigen
+#print axioms MainTheory.PhaseSector.disjoint_of_ne
+#print axioms MainTheory.PhaseSector.eigen_of_ssCondition
+#print axioms MainTheory.PhaseSector.eigen_iff_ssCondition
+#print axioms MainTheory.PhaseSector.exists_eigen
+#print axioms MainTheory.PhaseSector.ssCondition_nonvacuous
+#print axioms MainTheory.PhaseSector.support_of_ssCondition
+#print axioms MainTheory.PhaseSector.support_of_eigen

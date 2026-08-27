@@ -403,7 +403,23 @@ already here as `SS.weight`, already generic in `n`. The argument stays inside
 before any natural-number divisibility appears, which sidesteps the usual
 `ZMod.val` bookkeeping.
 
-All three modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/PhaseSector.lean` is Lemma 2.3, and it closes a real gap in what
+this repository proves. Every theorem in `SixQubit/` opens by *assuming* its
+logical word is supported in a residue fiber. What licenses that is
+`support_of_eigen`: given only the physical hypothesis -- that the diagonal gate
+acts on the word as a scalar -- the fiber support follows. `eigen_iff_ssCondition`
+records that the two conditions are in fact equivalent, and
+`support_of_ssCondition` translates into the exact contrapositive shape the
+six-qubit modules use, so the claim is checkable rather than rhetorical.
+
+The paper proves Lemma 2.3 for arbitrary logical dimension, via the spectral
+theorem for a unitary operator. Mathlib has only the Hermitian case, so that
+route is closed. It is also not needed: Theorem 2.6, the two-fiber normal form,
+uses the lemma with `K = 2` and with the logical eigenbasis already chosen, and
+there the diagonalization is a hypothesis rather than something to produce. That
+is the version formalized.
+
+All four modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
