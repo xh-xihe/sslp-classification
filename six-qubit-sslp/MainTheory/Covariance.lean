@@ -124,6 +124,70 @@ theorem proj_eq_zero_congr
   rw [← quad_eq_zero_iff p0 pt0 mu w hp0, ← quad_eq_zero_iff p1 pt1 mu w hp1,
     hcov]
 
+/-! ## The centred spans coincide
+
+`proj_eq_zero_congr` says a direction annihilates one centred support exactly
+when it annihilates the other.  Since a subspace of a vector space is determined
+by the functionals vanishing on it, that upgrades to equality of the two centred
+spans -- the subspace `V` of `main.tex` eq. `eq:V-r`, and with it
+`aff(T_0) = mu + V = aff(T_1)`.
+
+An earlier draft of this development left this step open, calling it
+bookkeeping.  It is short, but it is the step that turns the covariance
+computation into the statement the lemma actually makes. -/
+
+/-- Membership in the annihilator of a span is membership on the generators. -/
+theorem mem_dualAnnihilator_span {V : Type*} [AddCommGroup V] [Module ℝ V]
+    (S : Set V) (phi : Module.Dual ℝ V) :
+    phi ∈ (Submodule.span ℝ S).dualAnnihilator ↔ ∀ x ∈ S, phi x = 0 := by
+  rw [Submodule.mem_dualAnnihilator]
+  constructor
+  · intro h x hx
+    exact h x (Submodule.subset_span hx)
+  · intro h w hw
+    have : Submodule.span ℝ S ≤ LinearMap.ker phi :=
+      Submodule.span_le.2 (fun x hx => h x hx)
+    exact this hw
+
+/-- **The two centred supports span the same subspace.**
+
+This is `eq:affine-V` of `main.tex`, in the linear form; the affine statement is
+this together with `mu` lying in both affine spans, which holds because `mu` is a
+convex combination of each support. -/
+theorem span_eq_of_cov_eq
+    (p0 p1 : iota → ℝ) (pt0 pt1 : iota → Fin n → ℝ)
+    (mu : Fin n → ℝ)
+    (hp0 : ∀ k, 0 < p0 k) (hp1 : ∀ k, 0 < p1 k)
+    (hcov : cov p0 pt0 mu = cov p1 pt1 mu) :
+    Submodule.span ℝ (Set.range fun k => pt0 k - mu)
+      = Submodule.span ℝ (Set.range fun k => pt1 k - mu) := by
+  rw [← Subspace.dualAnnihilator_inj]
+  ext phi
+  set e : Fin n → Fin n → ℝ := fun i j => if i = j then 1 else 0 with he
+  have hexp : ∀ v : Fin n → ℝ, phi v = ∑ i, v i * phi (e i) := by
+    intro v
+    rw [LinearMap.pi_apply_eq_sum_univ phi v]
+    exact Finset.sum_congr rfl fun i _ => by rw [smul_eq_mul]
+  have hproj : ∀ (pt : iota → Fin n → ℝ) (k : iota),
+      phi (pt k - mu) = proj pt mu (fun i => phi (e i)) k := by
+    intro pt k
+    rw [hexp, proj]
+    exact Finset.sum_congr rfl fun i _ => by rw [Pi.sub_apply]; ring
+  have key : ∀ pt : iota → Fin n → ℝ,
+      (phi ∈ (Submodule.span ℝ (Set.range fun k => pt k - mu)).dualAnnihilator)
+        ↔ ∀ k, proj pt mu (fun i => phi (e i)) k = 0 := by
+    intro pt
+    rw [mem_dualAnnihilator_span]
+    constructor
+    · intro h k
+      rw [← hproj pt k]
+      exact h _ (Set.mem_range_self k)
+    · rintro h x ⟨k, rfl⟩
+      rw [hproj pt k]
+      exact h k
+  rw [key pt0, key pt1]
+  exact proj_eq_zero_congr p0 p1 pt0 pt1 mu hp0 hp1 hcov _
+
 /-! ## Non-vacuity
 
 A weighted point set whose covariance form has a nontrivial kernel: two points

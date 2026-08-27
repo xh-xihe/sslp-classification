@@ -17,11 +17,12 @@ numbers, and both of those are generic in `n` despite living in the `SixQubit`
 namespace.  Subtracting the outer product of the first moments turns them into
 equal covariances, which is exactly `eq:common-covariance`.
 
-Put together with `Covariance.proj_eq_zero_congr`, this gives Lemma 5.2's
-conclusion that the two supports have the same centred span, and hence the same
-affine span.  What is *not* done here is the passage from that to
-`aff(T_0) = mu + V = aff(T_1)` as a statement about `AffineSubspace`; that is
-bookkeeping over Mathlib's affine-span API and is left open rather than claimed.
+Put together with `Covariance.span_eq_of_cov_eq`, this gives Lemma 5.2's
+conclusion outright: the two supports have the same centred span, which is the
+subspace `V` of `eq:V-r`, and `aff(T_k) = mu + V` follows since `mu` is a convex
+combination of each support.  An earlier draft left that last step open and
+called it bookkeeping; it is short, but it is what turns the covariance
+computation into the statement the lemma makes, so it is proved.
 -/
 
 namespace MainTheory.AffineSpan

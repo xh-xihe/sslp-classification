@@ -143,3 +143,6 @@ structure map is chosen, not constructed.
 
 #print axioms MainTheory.ActiveFace.avg_mem
 #print axioms MainTheory.ActiveFace.avg_pos
+
+#print axioms MainTheory.Covariance.mem_dualAnnihilator_span
+#print axioms MainTheory.Covariance.span_eq_of_cov_eq

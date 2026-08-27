@@ -587,7 +587,7 @@ Quot.sound}`; anything else is spelled out.
 | 3.3 | `cor:quantitative-projective-group` | **Blocked**, downstream of 2.5. |
 | 4.1 | `cor:K2-q-bound` | **Qualitative half done**; the numerical bound blocked as above. |
 | 4.2 | `thm:d2-sslp-classification` | **Qualitative parts done**; the bound and the canonicalization are not. |
-| 5.2 | `lem:common-affine-span` | **Done** (`Covariance`, `AffineSpan`), split into a general convexity half and a quantum half that was already in `SixQubit/CodeBridge.lean`. The final rephrasing as `AffineSubspace` equality is API bookkeeping and is left open. |
+| 5.2 | `lem:common-affine-span` | **Done in full** (`Covariance`, `AffineSpan`), split into a general convexity half and a quantum half that was already in `SixQubit/CodeBridge.lean`. `span_eq_of_cov_eq` closes it: equal covariances give equal centred spans, via the dual annihilator. |
 | 5.3 | `thm:d3-bound` | **Rationalization done** (`D3Bound`), including the agreement-on-the-row-span step. The bound `q <= beta_n` is blocked. |
 | 5.4 | `thm:d3-sslp-classification` | As 4.2. |
 | 5.6 | `thm:sslp-completeness` | **Finiteness of the outer index done** (`OuterIndex`) -- the content that makes it an algorithm. The cutoff `B_{n,d_0}` is blocked. |
