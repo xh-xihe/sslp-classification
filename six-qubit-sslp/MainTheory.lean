@@ -4,6 +4,7 @@ import MainTheory.Clearing
 import MainTheory.Covariance
 import MainTheory.AffineSpan
 import MainTheory.D3Bound
+import MainTheory.RealGate
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize

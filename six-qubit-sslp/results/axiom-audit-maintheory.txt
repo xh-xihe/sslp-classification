@@ -87,3 +87,7 @@
 'MainTheory.WImages.WImage_orbit7' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.WImages.WImage_orbit8' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.WImages.WImage_orbit45' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.RealGate.exp_eq_of_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.RealGate.angle_sub_int_of_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.RealGate.diffMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.RealGate.exists_rational_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
