@@ -2,6 +2,7 @@ import MainTheory.Rationalize
 import MainTheory.Denominator
 import MainTheory.Gate
 import MainTheory.PhaseSector
+import MainTheory.Normalize
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -51,3 +52,12 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.PhaseSector.ssCondition_nonvacuous
 #print axioms MainTheory.PhaseSector.support_of_ssCondition
 #print axioms MainTheory.PhaseSector.support_of_eigen
+
+#print axioms MainTheory.Normalize.flip_flip
+#print axioms MainTheory.Normalize.weight_bxor
+#print axioms MainTheory.Normalize.weight_flip_self
+#print axioms MainTheory.Normalize.addOrderOf_dvd
+#print axioms MainTheory.Normalize.exists_unit_reduction_inv
+#print axioms MainTheory.Normalize.exists_unit_mul_eq_one
+#print axioms MainTheory.Normalize.ssCondition_bxor
+#print axioms MainTheory.Normalize.weight_bxor_check

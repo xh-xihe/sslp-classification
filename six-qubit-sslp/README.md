@@ -419,7 +419,21 @@ uses the lemma with `K = 2` and with the logical eigenbasis already chosen, and
 there the diagonalization is a hypothesis rather than something to produce. That
 is the version formalized.
 
-All four modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/Normalize.lean` carries the three moves Theorem 2.6 opens with.
+`weight_bxor` turns the paper's sentence that a local `X` conjugation "changes
+selected signs and a common scalar only" into an equation: flipping the bits of
+`x0` negates exactly the angles at those coordinates and shifts every residue by
+`A_a(x0)`. That identity is also the source of the Boolean-cube equivalence the
+six-qubit classification quotients by. `addOrderOf_dvd` is `m | q`. And where
+the paper builds a unit of `Z_q` inverting `c` modulo `m` prime by prime and
+recombines by the Chinese remainder theorem, `ZMod.unitsMap_surjective` is that
+statement outright, so the proof is three lines.
+
+`weight_bxor` is re-checked by the kernel on all 4096 pairs for a concrete angle
+vector. It is exactly the kind of identity where a sign error in the flip and a
+matching error in the shift would cancel and still typecheck.
+
+All five modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
