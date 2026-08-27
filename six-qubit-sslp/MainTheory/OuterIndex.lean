@@ -38,8 +38,14 @@ def sortedPrim (q : ℕ) : Finset (Fin 6 → Fin q) :=
 
 `main.tex` eq. `six:eq:primitivevalues` gives
 `(P_6(2), ..., P_6(9)) = (6, 27, 77, 209, 428, 923, 1632, 2975)`.  Each is a
-finite check; the ones the kernel can carry within reasonable resources are
-recorded here. -/
+finite check, and `q = 2` through `5` are carried here.
+
+`q = 6` and above are not a matter of raising a limit.  Attempted with a forty
+million heartbeat budget and a million-deep recursion allowance, `decide` aborts
+with a `stack_space_exception` from the elaborator's expression-equality test --
+a stack limit, not a time or heartbeat one.  The remaining counts are checked in
+`tools/verification/outercount.py` instead, and are not claimed as kernel
+results. -/
 
 set_option maxRecDepth 100000 in
 theorem card_two : (sortedPrim 2).card = 6 := by decide

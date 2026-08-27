@@ -3,6 +3,7 @@ import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.Covariance
 import MainTheory.AffineSpan
+import MainTheory.ActiveFace
 import MainTheory.D3Bound
 import MainTheory.RealGate
 import MainTheory.OuterIndex
@@ -139,3 +140,6 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.OuterIndex.card_four
 #print axioms MainTheory.OuterIndex.card_five
 #print axioms MainTheory.OuterIndex.outerRecords_finite
+
+#print axioms MainTheory.ActiveFace.avg_mem
+#print axioms MainTheory.ActiveFace.avg_pos

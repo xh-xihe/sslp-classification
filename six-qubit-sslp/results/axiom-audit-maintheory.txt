@@ -96,3 +96,5 @@
 'MainTheory.OuterIndex.card_four' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.OuterIndex.card_five' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.OuterIndex.outerRecords_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.ActiveFace.avg_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.ActiveFace.avg_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

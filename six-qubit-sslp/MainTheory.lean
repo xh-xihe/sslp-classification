@@ -3,6 +3,7 @@ import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.Covariance
 import MainTheory.AffineSpan
+import MainTheory.ActiveFace
 import MainTheory.D3Bound
 import MainTheory.RealGate
 import MainTheory.Gate
