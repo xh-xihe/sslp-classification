@@ -496,7 +496,28 @@ What is not done is the passage from equal centred spans to
 That is bookkeeping over an API rather than mathematics, and it is left open
 rather than claimed.
 
-All ten modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/D3Bound.lean` is Theorem 5.3's rationalization. The paper builds the
+rational representative by a pivot construction; that construction exists to make
+the bound *sharp*, and for the qualitative conclusion -- that a rational
+representative exists at all, which is what makes the lift finite -- `Rationalize`
+supplies it directly. What this module adds is the equivalence step: two
+solutions of the same row system agree on the whole row span, and the affine-span
+lemma puts both logical supports inside it. The numerical bound `q <= beta_n` is
+not proved and is the one part that genuinely needs the sharp invariant factor.
+
+`MainTheory/Levels.lean` and `MainTheory/WImages.lean` are level (iii) of
+Definition 6.1, the weight-enumerator image `W_r`, and its evaluation. Seven
+orbits -- 9, 10, 11, 16, 21, 22, 23 -- now have `W_r = {E_2^A}` or `{E_1^A}` as
+Lean theorems, stated in the paper's own terminology rather than in the ad-hoc
+form the six-qubit modules use. The mathematics was already finished; what is
+new is that `main.tex`'s definition is a Lean object those results are about.
+
+The other three levels of Definition 6.1 are not defined, and the module says
+which and why: level (i) needs the projective diagonal group as a group object,
+level (ii) needs the Boolean-cube action on labelled fiber data, level (iv) needs
+local unitaries acting on projectors and there is no operator layer.
+
+All thirteen modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries

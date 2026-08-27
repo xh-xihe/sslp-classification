@@ -3,9 +3,12 @@ import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.Covariance
 import MainTheory.AffineSpan
+import MainTheory.D3Bound
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
 import MainTheory.Cyclic
 import MainTheory.RankTwo
+import MainTheory.Levels
+import MainTheory.WImages
 import MainTheory.Audit

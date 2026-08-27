@@ -3,6 +3,9 @@ import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.Covariance
 import MainTheory.AffineSpan
+import MainTheory.D3Bound
+import MainTheory.Levels
+import MainTheory.WImages
 import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
@@ -107,3 +110,15 @@ structure map is chosen, not constructed.
 
 #print axioms MainTheory.AffineSpan.covariance_eq_of_hasDistance
 #print axioms MainTheory.AffineSpan.mean_eq_of_hasDistance
+
+#print axioms MainTheory.D3Bound.dot_eq_of_mulVec_eq
+#print axioms MainTheory.D3Bound.exists_rational_agreeing
+#print axioms MainTheory.D3Bound.exists_primitive_lift
+
+#print axioms MainTheory.Levels.WImage_orbit21
+#print axioms MainTheory.WImages.WImage_orbit9
+#print axioms MainTheory.WImages.WImage_orbit10
+#print axioms MainTheory.WImages.WImage_orbit11
+#print axioms MainTheory.WImages.WImage_orbit16
+#print axioms MainTheory.WImages.WImage_orbit22
+#print axioms MainTheory.WImages.WImage_orbit23
