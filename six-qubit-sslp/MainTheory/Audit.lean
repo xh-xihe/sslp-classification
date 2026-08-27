@@ -1,5 +1,6 @@
 import MainTheory.Rationalize
 import MainTheory.Denominator
+import MainTheory.Gate
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -29,3 +30,12 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Denominator.eq_one_of_dvd_lcmDen_of_dvd_liftNum
 #print axioms MainTheory.Denominator.lcmDen_example
 #print axioms MainTheory.Denominator.lift_exists
+
+#print axioms MainTheory.Gate.weight_stdBasis
+#print axioms MainTheory.Gate.diag_pow
+#print axioms MainTheory.Gate.natCast_mul_weight
+#print axioms MainTheory.Gate.dvd_of_forall_mul_eq_zero
+#print axioms MainTheory.Gate.pow_eq_one_iff
+#print axioms MainTheory.Gate.primitive_orbit21
+#print axioms MainTheory.Gate.not_primitive_allEven
+#print axioms MainTheory.Gate.orbit21_order

@@ -393,10 +393,25 @@ just after its eq. 2.31: that minimality of the clearing integer `q` forces
 `gcd(q, a_1, ..., a_n) = 1`, i.e. that the lift is primitive. The descent is one
 line once `q` is identified as the lcm of the denominators.
 
-Both modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/Gate.lean` supplies the object all of `main.tex` is about and which
+the repository previously lacked in any form: the diagonal gate `D(a;q)`, its
+subset-sum eigenvalue, and the equivalence the paper uses everywhere without
+proving it -- that the angle vector is primitive exactly when the gate's physical
+order is `q` rather than a proper divisor. The subset-sum residue itself was
+already here as `SS.weight`, already generic in `n`. The argument stays inside
+`ZMod q`, turning the eigenvalue condition into a linear condition on residues
+before any natural-number divisibility appears, which sidesteps the usual
+`ZMod.val` bookkeeping.
+
+All three modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
-that every rational phase vector really does have a lift. The kernel checks the
+that every rational phase vector really does have a lift. The gate layer carries
+a control in each direction: orbit 21's angle vector `(1,1,1,2,2,3)` at `q = 4`
+is proved primitive and its gate proved to have exact order four, while an
+all-even vector at the same `q` is proved *not* primitive -- without that second
+one, `Primitive` could be a predicate that holds everywhere and the order theorem
+would say nothing. The kernel checks the
 proof, not the statement, and this repository has already paid once for
 forgetting that.
 
