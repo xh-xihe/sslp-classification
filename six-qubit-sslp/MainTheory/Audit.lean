@@ -122,3 +122,7 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.WImages.WImage_orbit16
 #print axioms MainTheory.WImages.WImage_orbit22
 #print axioms MainTheory.WImages.WImage_orbit23
+
+#print axioms MainTheory.WImages.WImage_orbit7
+#print axioms MainTheory.WImages.WImage_orbit8
+#print axioms MainTheory.WImages.WImage_orbit45

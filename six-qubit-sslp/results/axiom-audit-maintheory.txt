@@ -84,3 +84,6 @@
 'MainTheory.WImages.WImage_orbit16' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.WImages.WImage_orbit22' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.WImages.WImage_orbit23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.WImages.WImage_orbit7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.WImages.WImage_orbit8' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.WImages.WImage_orbit45' depends on axioms: [propext, Classical.choice, Quot.sound]

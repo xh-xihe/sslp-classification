@@ -35,7 +35,7 @@ open SS.MacWilliams
 The set of unnormalized weight enumerators realized by exact `((6,2,3))` codes
 whose two logical words are supported in the orbit's two residue fibers. -/
 def WImage {q : ℕ} [NeZero q] (av : Fin 6 → ZMod q) (r0 r1 : ZMod q) :
-    Set (Fin 7 → ℂ) :=
+    Set (Fin 7 → ℝ) :=
   { A | ∃ c d : SS.State 6 ℂ,
       (∀ s, SS.weight av s ≠ r0 → c s = 0) ∧
       (∀ s, SS.weight av s ≠ r1 → d s = 0) ∧
@@ -44,7 +44,7 @@ def WImage {q : ℕ} [NeZero q] (av : Fin 6 → ZMod q) (r0 r1 : ZMod q) :
       ∀ j, A j = Aco ![c, d] j }
 
 /-- The enumerator `E_2^A` as a vector, in the unnormalized convention. -/
-def E2A : Fin 7 → ℂ := ![4, 0, 4, 0, 44, 64, 12]
+def E2A : Fin 7 → ℝ := ![4, 0, 4, 0, 44, 64, 12]
 
 /-! ## Orbit 21's image is a single point
 

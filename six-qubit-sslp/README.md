@@ -506,10 +506,12 @@ lemma puts both logical supports inside it. The numerical bound `q <= beta_n` is
 not proved and is the one part that genuinely needs the sharp invariant factor.
 
 `MainTheory/Levels.lean` and `MainTheory/WImages.lean` are level (iii) of
-Definition 6.1, the weight-enumerator image `W_r`, and its evaluation. Seven
-orbits -- 9, 10, 11, 16, 21, 22, 23 -- now have `W_r = {E_2^A}` or `{E_1^A}` as
-Lean theorems, stated in the paper's own terminology rather than in the ad-hoc
-form the six-qubit modules use. The mathematics was already finished; what is
+Definition 6.1, the weight-enumerator image `W_r`, and its evaluation. All ten
+realized orbits now have their `W_r` evaluated as a Lean theorem, stated in the
+paper's own terminology rather than in the ad-hoc form the six-qubit modules
+use: orbits 9, 10, 11, 16, 21, 22 and 23 to a single point, and orbits 7, 8 and
+45 to the image of an interval under the family map, `F_I` on `[0,1]` and
+`[1/2,1]` and `F_II` on `[2/3,1]`.  That is Result III of `main.tex` in full. The mathematics was already finished; what is
 new is that `main.tex`'s definition is a Lean object those results are about.
 
 The other three levels of Definition 6.1 are not defined, and the module says

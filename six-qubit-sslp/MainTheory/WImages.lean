@@ -6,6 +6,9 @@ import SixQubit.Orbit16Enum
 import SixQubit.Orbit22Enum
 import SixQubit.Orbit23Enum
 import SixQubit.Orbit9UniversalFinal
+import SixQubit.Orbit7UniversalFinal
+import SixQubit.Orbit8UniversalFinal
+import SixQubit.Orbit45Final
 import SixQubit.Orbit9Attain
 
 /-!
@@ -34,7 +37,7 @@ namespace MainTheory.WImages
 open SS.MacWilliams
 
 /-- The enumerator `E_1^A`, unnormalized. -/
-def E1A : Fin 7 → ℂ := ![4, 4, 0, 0, 60, 60, 0]
+def E1A : Fin 7 → ℝ := ![4, 4, 0, 0, 60, 60, 0]
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 10's weight-enumerator image is a single point.** -/
@@ -233,5 +236,88 @@ theorem WImage_orbit9 :
     subst hAE
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hE
     fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6]
+
+/-! ## Orbits with a one-parameter image
+
+Orbits 7, 8 and 45 have `W_r` an interval rather than a point, so the statement
+is an image of a `Set.Icc` under the family map rather than a singleton.  Both
+inclusions again come from the orbit's `fully_certified`: the converse half
+gives that every code lands in the family, the attainment half that every
+parameter is realized. -/
+
+/-- The family `F_I(a)` of `main.tex`, unnormalized. -/
+def FI (a : ℝ) : Fin 7 → ℝ :=
+  ![4, 4*a, 4*(1-a), 0, 4*(11+4*a), 4*(16-a), 4*(3-3*a)]
+
+/-- The family `F_II(t)` of `main.tex`, unnormalized. -/
+def FII (t : ℝ) : Fin 7 → ℝ :=
+  ![4, 0, 4*t, 4*(1-t), 4*(12-t), 4*(15+t), 12]
+
+set_option maxRecDepth 20000 in
+/-- **Orbit 7's weight-enumerator image is the whole interval family.** -/
+theorem WImage_orbit7 :
+    Levels.WImage SixQubit.Orbit7Real.av 0 1 = FI '' Set.Icc 0 1 := by
+  ext A
+  constructor
+  · rintro ⟨c, d, hc, hd, hnc, hnd, hdist, hA⟩
+    obtain ⟨a, ha0, ha1, hFA, _, _⟩ :=
+      SixQubit.Orbit7Universal.fully_certified.1 c d hc hd hnc hnd hdist
+    refine ⟨a, Set.mem_Icc.2 ⟨ha0, ha1⟩, ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    funext j
+    fin_cases j <;> simp [FI, hA, h0, h1, h2, h3, h4, h5, h6]
+  · rintro ⟨a, ha, rfl⟩
+    obtain ⟨ha0, ha1⟩ := Set.mem_Icc.1 ha
+    obtain ⟨C, S, _, _, hnorm, hdist, hv0, hv1, hFA, _, _⟩ :=
+      SixQubit.Orbit7Universal.fully_certified.2 a ha0 ha1
+    refine ⟨SixQubit.Orbit7Family.w0 C S, SixQubit.Orbit7Family.w1 C S,
+      hv0, hv1, hnorm 0, hnorm 1, hdist, fun j => ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    simp only [SixQubit.Orbit7Family.code] at h0 h1 h2 h3 h4 h5 h6
+    fin_cases j <;> simp [FI, h0, h1, h2, h3, h4, h5, h6]
+
+set_option maxRecDepth 20000 in
+/-- **Orbit 8's weight-enumerator image is the upper half of the same family.** -/
+theorem WImage_orbit8 :
+    Levels.WImage SixQubit.Orbit8Real.av 0 1 = FI '' Set.Icc (1/2) 1 := by
+  ext A
+  constructor
+  · rintro ⟨c, d, hc, hd, hnc, hnd, hdist, hA⟩
+    obtain ⟨a, ha0, ha1, hFA, _⟩ :=
+      SixQubit.Orbit8Universal.fully_certified.1 c d hc hd hnc hnd hdist
+    refine ⟨a, Set.mem_Icc.2 ⟨ha0, ha1⟩, ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    funext j
+    fin_cases j <;> simp [FI, hA, h0, h1, h2, h3, h4, h5, h6]
+  · rintro ⟨a, ha, rfl⟩
+    obtain ⟨ha0, ha1⟩ := Set.mem_Icc.1 ha
+    obtain ⟨C, S, _, _, hnorm, hdist, hv0, hv1, hFA, _⟩ :=
+      SixQubit.Orbit8Universal.fully_certified.2 a ha0 ha1
+    refine ⟨SixQubit.Orbit8Family.w0 C S, SixQubit.Orbit8Family.w1 C S,
+      hv0, hv1, hnorm 0, hnorm 1, hdist, fun j => ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    simp only [SixQubit.Orbit8Family.code] at h0 h1 h2 h3 h4 h5 h6
+    fin_cases j <;> simp [FI, h0, h1, h2, h3, h4, h5, h6]
+
+set_option maxRecDepth 20000 in
+/-- **Orbit 45's weight-enumerator image is the interval family `F_II`.** -/
+theorem WImage_orbit45 :
+    Levels.WImage SixQubit.Orbit45Support.av 0 3 = FII '' Set.Icc (2/3) 1 := by
+  ext A
+  constructor
+  · rintro ⟨c, d, hc, hd, hnc, hnd, hdist, hA⟩
+    obtain ⟨t, ht0, ht1, hFA, _⟩ :=
+      SixQubit.Orbit45Final.fully_certified.1 c d hc hd hnc hnd hdist
+    refine ⟨t, Set.mem_Icc.2 ⟨ht0, ht1⟩, ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    funext j
+    fin_cases j <;> simp [FII, hA, h0, h1, h2, h3, h4, h5, h6]
+  · rintro ⟨t, ht, rfl⟩
+    obtain ⟨ht0, ht1⟩ := Set.mem_Icc.1 ht
+    obtain ⟨c, d, hc, hd, hnc, hnd, hdist, hFA, _⟩ :=
+      SixQubit.Orbit45Final.fully_certified.2 t ht0 ht1
+    refine ⟨c, d, hc, hd, hnc, hnd, hdist, fun j => ?_⟩
+    obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
+    fin_cases j <;> simp [FII, h0, h1, h2, h3, h4, h5, h6]
 
 end MainTheory.WImages
