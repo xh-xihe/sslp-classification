@@ -442,7 +442,28 @@ order of the residue gap -- which is what makes `m | q` a theorem rather than a
 convention -- and `isCyclic_of_faithful` is the paper's "every finite subgroup
 of `U(1)` is cyclic", which Mathlib proves for any integral domain.
 
-All six modules exhibit their hypotheses as satisfiable rather than merely
+`MainTheory/RankTwo.lean` assembles those into Theorem 2.6, the two-fiber normal
+form -- the result that licenses everything the six-qubit development does.
+`normal_form_core` is the geometric content of the forward direction: the phase
+sector lemma puts each logical word in a fiber, the local `X` conjugation moves
+the first to residue zero, and the residue character identifies the projective
+order. `order_of_two_fiber` is the converse's arithmetic core, complete.
+`exists_unit_mul_eq_div` is the coprime-power step that puts the second fiber at
+`q/m`.
+
+That last one is there because an adversarial audit of an earlier draft caught
+it being dropped. The draft filed it under "the quotient by equivalences" and
+omitted it as bookkeeping. It is not bookkeeping: it is a proved arithmetic
+lemma, and it is the only reason the paper may write `S_{q/m}` rather than
+`S_{(q/m)c}`. The same audit caught a docstring claiming that
+`addOrderOf delta | q` was the paper's `m | q`. In `ZMod q` that is Lagrange,
+true of every element, with no reference to a gate or a code; the paper's `m | q`
+runs through the entire rationalization chain. The theorem is now named
+`addOrderOf_dvd_q` and its docstring says which one it is not. The module
+docstring lists every omission in full, including several the first draft did
+not admit to.
+
+All seven modules exhibit their hypotheses as satisfiable rather than merely
 unrefuted. `rationalized_pi_solution` rationalizes an actual irrational solution;
 `lcmDen_example` computes a concrete least denominator; `lift_exists` records
 that every rational phase vector really does have a lift. The gate layer carries
@@ -459,15 +480,25 @@ forgetting that.
 Three obstacles were found by reading the paper against the pinned Mathlib
 (rev `fc278a17`), and they are recorded here rather than discovered again later.
 
-The constant `beta_6 = 9` is what makes the six-qubit problem finite: it bounds
-the lift order `q`, and therefore makes the 66-orbit list exhaustive. The paper
-supports it with the words "complete binary-matrix tables give" and no proof.
-Verifying it means bounding the largest invariant factor over all nonsingular
-6x6 binary matrices -- `2^36` of them, or `6.8e7` after discarding repeated and
-zero rows. Both are far beyond `decide`, and the Hadamard bound only gives 14.
-A weaker but provable bound is a real option: `q <= 14` costs about twelve times
-the outer enumeration (6,277 primitive sorted vectors become 75,675), which is
-mechanical work of exactly the kind the generators here already do.
+The constant `beta_6 = 9` is what specializes the general bound to six qubits:
+it is the number that makes the 66-orbit list exhaustive. The paper supports it
+with the words "complete binary-matrix tables give" and no proof. Verifying it
+would mean bounding the largest invariant factor over all nonsingular 6x6 binary
+matrices -- `2^36` of them, or `6.8e7` after discarding repeated and zero rows --
+which is far beyond `decide`, and the Hadamard bound only gives 14.
+
+It is important to be clear about what this does and does not block. The general
+theorem `thm:d3-bound` states `q | d_r(C)` and `q <= beta_r <= beta_n` with
+`beta_n` *defined* as that maximum; the inequality is then immediate and the
+value of `beta_6` is not needed to formalize it. Only the six-qubit
+specialization -- Result I's `M_3(6) = 5`, and the exhaustiveness of the orbit
+list -- uses the number. Since the paper itself cites it as a computation rather
+than proving it, the faithful thing is to carry it as an explicit input, which
+is what is done here. Replacing it with a weaker provable bound would not be
+formalizing the paper; it would beimproving on the paper at the cost of redoing the
+Supplementary enumeration, and that is a separate project.
+
+What actually blocks `thm:d3-bound` is the next item, not this one.
 
 Mathlib's Smith normal form carries no divisibility chain --
 `Module.Basis.SmithNormalForm` has no field asserting `a i` divides `a (i+1)` --

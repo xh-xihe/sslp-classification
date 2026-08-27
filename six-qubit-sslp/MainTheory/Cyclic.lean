@@ -88,6 +88,11 @@ theorem chi_injective (zeta : ℂ) (hz : IsPrimitiveRoot zeta q) :
   have h2 := mul_right_cancel₀ (chi_ne_zero zeta hz y) h1
   exact sub_eq_zero.1 ((chi_eq_one_iff zeta hz _).1 h2)
 
+/-- The character of a difference is the quotient of the characters. -/
+theorem chi_sub (zeta : ℂ) (hz : IsPrimitiveRoot zeta q) (x y : ZMod q) :
+    chi zeta (x - y) = chi zeta x / chi zeta y := by
+  rw [eq_div_iff (chi_ne_zero zeta hz y), ← chi_add zeta hz, sub_add_cancel]
+
 /-! ## The projective order -/
 
 /-- **The projective logical order is the additive order of the residue gap.**

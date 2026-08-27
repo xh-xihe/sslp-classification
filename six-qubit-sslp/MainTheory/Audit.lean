@@ -4,6 +4,7 @@ import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
 import MainTheory.Cyclic
+import MainTheory.RankTwo
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -76,3 +77,14 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.Cyclic.isCyclic_of_faithful
 #print axioms MainTheory.Cyclic.addOrderOf_orbit21_gap
 #print axioms MainTheory.Cyclic.orbit21_projective_order
+
+#print axioms MainTheory.Cyclic.chi_sub
+#print axioms MainTheory.RankTwo.normal_form_core
+#print axioms MainTheory.RankTwo.addOrderOf_div
+#print axioms MainTheory.RankTwo.order_of_two_fiber
+#print axioms MainTheory.RankTwo.normal_form_nonvacuous
+#print axioms MainTheory.RankTwo.addOrderOf_dvd_q
+
+#print axioms MainTheory.Normalize.primitive_flip
+#print axioms MainTheory.RankTwo.gap_ne_zero
+#print axioms MainTheory.RankTwo.exists_unit_mul_eq_div

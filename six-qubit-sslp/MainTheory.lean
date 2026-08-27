@@ -4,4 +4,5 @@ import MainTheory.Gate
 import MainTheory.PhaseSector
 import MainTheory.Normalize
 import MainTheory.Cyclic
+import MainTheory.RankTwo
 import MainTheory.Audit

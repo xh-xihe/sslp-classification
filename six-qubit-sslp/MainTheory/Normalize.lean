@@ -73,6 +73,31 @@ theorem weight_flip_self (a : Fin n → ZMod q) (x0 : BitString n) :
   · simp only [Bool.not_eq_true] at hx
     simp [flip, hx]
 
+/-- **Local `X` conjugation preserves primitivity.**
+
+Without this the normalized angle vector is not known to satisfy the paper's
+eq. 2.32, so the output of the normalization would not be in canonical form.
+Flipping a sign cannot create a common divisor, because any `d` dividing `q` and
+`q - v` divides `v`. -/
+theorem primitive_flip (a : Fin n → ZMod q) (x0 : BitString n)
+    (h : MainTheory.Gate.Primitive q a) :
+    MainTheory.Gate.Primitive q (flip a x0) := by
+  intro d hdq hd
+  refine h d hdq (fun j => ?_)
+  have hj := hd j
+  by_cases hx : x0 j = true
+  · rw [flip] at hj
+    simp only [hx, if_true] at hj
+    by_cases hz : a j = 0
+    · simp [hz]
+    · rw [ZMod.neg_val] at hj
+      simp only [hz, if_false] at hj
+      have hle : (a j).val ≤ q := le_of_lt (ZMod.val_lt (a j))
+      exact (Nat.dvd_sub_iff_right hle hdq).1 hj
+  · simp only [Bool.not_eq_true] at hx
+    rw [flip] at hj
+    simpa [hx] using hj
+
 /-! ## The logical order divides the physical order -/
 
 omit [NeZero q] in
