@@ -304,4 +304,49 @@ theorem intrinsicClass_flip_eq (F : CodeSpec.OrthonormalFrame n K)
   push_cast
   rw [flipPhase_mul, flipPhase_inv]
 
+/-! ## The group depends only on the code span
+
+`RankTwoGlobal.FiniteGeneratorResolution` carries `span_eq`: its eigenframe
+spans the same code as the original frame.  Since a diagonal symmetry is defined
+by what it does to the projector *range*, and the range is the span, the
+symmetry group and its projectively trivial subgroup do not see which frame was
+used.  This is what lets the transport, stated for `shiftFrame F x0`, be applied
+with `F` the eigenframe and read off on the original code. -/
+
+theorem inProjectorRange_congr {F G : CodeSpec.OrthonormalFrame n K}
+    (h : CodeSpec.codeSpan F = CodeSpec.codeSpan G) (phi : SS.State n ℂ) :
+    InProjectorRange (CodeProjector.ofFrame F) phi
+      ↔ InProjectorRange (CodeProjector.ofFrame G) phi := by
+  rw [GlobalClassificationBridge.inProjectorRange_ofFrame_iff,
+    GlobalClassificationBridge.inProjectorRange_ofFrame_iff, h]
+
+/-- **The diagonal symmetry group is an invariant of the code span.** -/
+theorem diagonalSymmetryGroup_congr {F G : CodeSpec.OrthonormalFrame n K}
+    (h : CodeSpec.codeSpan F = CodeSpec.codeSpan G) :
+    diagonalSymmetryGroup (CodeProjector.ofFrame F)
+      = diagonalSymmetryGroup (CodeProjector.ofFrame G) := by
+  ext u
+  constructor
+  · rintro ⟨h1, h2⟩
+    refine ⟨fun phi hphi => ?_, fun phi hphi => ?_⟩
+    · exact (inProjectorRange_congr h _).1 (h1 phi ((inProjectorRange_congr h _).2 hphi))
+    · exact (inProjectorRange_congr h _).1 (h2 phi ((inProjectorRange_congr h _).2 hphi))
+  · rintro ⟨h1, h2⟩
+    refine ⟨fun phi hphi => ?_, fun phi hphi => ?_⟩
+    · exact (inProjectorRange_congr h _).2 (h1 phi ((inProjectorRange_congr h _).1 hphi))
+    · exact (inProjectorRange_congr h _).2 (h2 phi ((inProjectorRange_congr h _).1 hphi))
+
+/-- Projective triviality is likewise an invariant of the span. -/
+theorem isProjectivelyTrivial_congr {F G : CodeSpec.OrthonormalFrame n K}
+    (h : CodeSpec.codeSpan F = CodeSpec.codeSpan G)
+    (u : diagonalSymmetryGroup (CodeProjector.ofFrame F))
+    (v : diagonalSymmetryGroup (CodeProjector.ofFrame G))
+    (huv : (u : LocalPhase n) = (v : LocalPhase n))
+    (hu : IsProjectivelyTrivial (CodeProjector.ofFrame F) u) :
+    IsProjectivelyTrivial (CodeProjector.ofFrame G) v := by
+  obtain ⟨lam, hlam, hact⟩ := hu
+  refine ⟨lam, hlam, fun phi hphi => ?_⟩
+  rw [← huv]
+  exact hact phi ((inProjectorRange_congr h _).2 hphi)
+
 end MainTheory.IntrinsicTransport
