@@ -98,4 +98,50 @@ def trivialLabel : BoundedPhaseLabel 6 9 := ⟨⟨0, by decide⟩, fun _ => 0⟩
   refine Subtype.ext ?_
   simp [gateOfLabel, trivialLabel, circlePhase]
 
+/-! ## Recognising a labelled gate
+
+`HasBoundedRepresentation` needs a *label* for a symmetry, and the entrance
+supplies a bound on the order rather than a label.  The bridge is this: a local
+phase whose entries are `q`-th roots of unity for some `q <= 9` is the gate of a
+label, because the canonical primitive root generates all of them.
+
+Stating it this way avoids reconciling the resolution's arbitrary primitive root
+with the canonical one -- only the order matters, not which root was chosen. -/
+
+/-- The canonical primitive `q`-th root of unity. -/
+noncomputable def canonicalRoot (q : ℕ) : ℂ :=
+  Complex.exp (2 * Real.pi * Complex.I / (q : ℂ))
+
+theorem circlePhase_eq_canonicalRoot_pow (q a : ℕ) (hq : 0 < q) :
+    ((circlePhase (2 * Real.pi * (a : ℝ) / (q : ℝ)) : unitary ℂ) : ℂ)
+      = canonicalRoot q ^ a := by
+  rw [circlePhase, canonicalRoot, ← Complex.exp_nat_mul]
+  have hqne : ((q : ℂ)) ≠ 0 := Nat.cast_ne_zero.2 hq.ne'
+  push_cast
+  field_simp
+
+theorem canonicalRoot_isPrimitiveRoot (q : ℕ) (hq : 0 < q) :
+    IsPrimitiveRoot (canonicalRoot q) q := by
+  have := Complex.isPrimitiveRoot_exp q hq.ne'
+  simpa [canonicalRoot, mul_comm, mul_assoc, mul_left_comm] using this
+
+/-- **A local phase of finite order at most nine is a labelled gate.** -/
+theorem exists_label_of_pow_eq_one (m : ℕ) (hm : m ≤ 8)
+    (u : LocalPhase 6) (h : ∀ j, ((u j : ℂ)) ^ (m + 1) = 1) :
+    ∃ lbl : BoundedPhaseLabel 6 9, gateOfLabel lbl = u := by
+  have hq : 0 < m + 1 := Nat.succ_pos m
+  haveI : NeZero (m + 1) := ⟨hq.ne'⟩
+  have hroot := canonicalRoot_isPrimitiveRoot (m + 1) hq
+  choose a ha hpow using fun j => hroot.eq_pow_of_pow_eq_one (h j)
+  refine ⟨⟨⟨m, by omega⟩, fun j => (a j : ZMod (m + 1))⟩, ?_⟩
+  funext j
+  refine Subtype.ext ?_
+  simp only [gateOfLabel]
+  have hval : ((a j : ZMod (m + 1))).val = a j := ZMod.val_natCast_of_lt (ha j)
+  rw [hval]
+  have hcast : ((↑(⟨m, by omega⟩ : Fin 9) : ℝ)) + 1 = ((m + 1 : ℕ) : ℝ) := by
+    push_cast
+    ring
+  rw [hcast, circlePhase_eq_canonicalRoot_pow (m + 1) (a j) hq, hpow j]
+
 end MainTheory.LabelledGates
