@@ -71,6 +71,7 @@ theorem normal_form_core (zeta : ℂ) (hz : IsPrimitiveRoot zeta q)
     (hd : gate zeta a d = fun s => ld * d s)
     (x0 y0 : BitString n) (hx0 : c x0 ≠ 0) (hy0 : d y0 ≠ 0) :
     ∃ delta : ZMod q,
+      delta = SS.weight a y0 - SS.weight a x0 ∧
       SS.SSConditionState (flip a x0) 0 (fun s => c (SS.bxor s x0)) ∧
       SS.SSConditionState (flip a x0) delta (fun s => d (SS.bxor s x0)) ∧
       ld / lc = chi zeta delta ∧
@@ -87,7 +88,7 @@ theorem normal_form_core (zeta : ℂ) (hz : IsPrimitiveRoot zeta q)
     exact (PhaseSector.diag_eq_of_eigen zeta a d ld hd y0 hy0).symm
   have hratio : ld / lc = chi zeta (SS.weight a y0 - SS.weight a x0) := by
     rw [chi_sub zeta hz, hlc, hld]
-  refine ⟨ SS.weight a y0 - SS.weight a x0, ?_, ?_, hratio, ?_ ⟩
+  refine ⟨ SS.weight a y0 - SS.weight a x0, rfl, ?_, ?_, hratio, ?_ ⟩
   · have h := Normalize.ssCondition_bxor a x0 (SS.weight a x0) c hssc
     simpa using h
   · exact Normalize.ssCondition_bxor a x0 (SS.weight a y0) d hssd

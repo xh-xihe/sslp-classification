@@ -188,6 +188,148 @@ theorem span_eq_of_cov_eq
   rw [key pt0, key pt1]
   exact proj_eq_zero_congr p0 p1 pt0 pt1 mu hp0 hp1 hcov _
 
+/-! The paper's two supports need not have the same cardinality.  The following
+two theorems remove the artificial shared-index restriction of the original
+interfaces above. -/
+
+/-- Equal covariance identifies the annihilating directions even when the two
+finite supports have different index types (and hence different sizes). -/
+theorem proj_eq_zero_congr₂
+    {ι₀ ι₁ : Type*} [Fintype ι₀] [Fintype ι₁]
+    (p0 : ι₀ → ℝ) (p1 : ι₁ → ℝ)
+    (pt0 : ι₀ → Fin n → ℝ) (pt1 : ι₁ → Fin n → ℝ)
+    (mu : Fin n → ℝ)
+    (hp0 : ∀ k, 0 < p0 k) (hp1 : ∀ k, 0 < p1 k)
+    (hcov : cov p0 pt0 mu = cov p1 pt1 mu) (w : Fin n → ℝ) :
+    (∀ k, proj pt0 mu w k = 0) ↔ ∀ k, proj pt1 mu w k = 0 := by
+  rw [← quad_eq_zero_iff p0 pt0 mu w hp0,
+    ← quad_eq_zero_iff p1 pt1 mu w hp1, hcov]
+
+/-- **Common centred span for differently sized supports.**
+
+This is the actual geometric form needed both by Lemma 5.2 and by the active
+face Lemma 7.2. -/
+theorem span_eq_of_cov_eq₂
+    {ι₀ ι₁ : Type*} [Fintype ι₀] [Fintype ι₁]
+    (p0 : ι₀ → ℝ) (p1 : ι₁ → ℝ)
+    (pt0 : ι₀ → Fin n → ℝ) (pt1 : ι₁ → Fin n → ℝ)
+    (mu : Fin n → ℝ)
+    (hp0 : ∀ k, 0 < p0 k) (hp1 : ∀ k, 0 < p1 k)
+    (hcov : cov p0 pt0 mu = cov p1 pt1 mu) :
+    Submodule.span ℝ (Set.range fun k => pt0 k - mu) =
+      Submodule.span ℝ (Set.range fun k => pt1 k - mu) := by
+  rw [← Subspace.dualAnnihilator_inj]
+  ext phi
+  let e : Fin n → Fin n → ℝ := fun i j => if i = j then 1 else 0
+  have hexp : ∀ v : Fin n → ℝ, phi v = ∑ i, v i * phi (e i) := by
+    intro v
+    rw [LinearMap.pi_apply_eq_sum_univ phi v]
+    exact Finset.sum_congr rfl fun i _ => by rw [smul_eq_mul]
+  have hproj0 : ∀ k : ι₀,
+      phi (pt0 k - mu) = proj pt0 mu (fun i => phi (e i)) k := by
+    intro k
+    rw [hexp, proj]
+    exact Finset.sum_congr rfl fun i _ => by rw [Pi.sub_apply]; ring
+  have hproj1 : ∀ k : ι₁,
+      phi (pt1 k - mu) = proj pt1 mu (fun i => phi (e i)) k := by
+    intro k
+    rw [hexp, proj]
+    exact Finset.sum_congr rfl fun i _ => by rw [Pi.sub_apply]; ring
+  have key0 :
+      (phi ∈ (Submodule.span ℝ
+          (Set.range fun k => pt0 k - mu)).dualAnnihilator) ↔
+        ∀ k, proj pt0 mu (fun i => phi (e i)) k = 0 := by
+    rw [mem_dualAnnihilator_span]
+    constructor
+    · intro h k
+      rw [← hproj0 k]
+      exact h _ (Set.mem_range_self k)
+    · rintro h x ⟨k, rfl⟩
+      rw [hproj0 k]
+      exact h k
+  have key1 :
+      (phi ∈ (Submodule.span ℝ
+          (Set.range fun k => pt1 k - mu)).dualAnnihilator) ↔
+        ∀ k, proj pt1 mu (fun i => phi (e i)) k = 0 := by
+    rw [mem_dualAnnihilator_span]
+    constructor
+    · intro h k
+      rw [← hproj1 k]
+      exact h _ (Set.mem_range_self k)
+    · rintro h x ⟨k, rfl⟩
+      rw [hproj1 k]
+      exact h k
+  rw [key0, key1]
+  exact proj_eq_zero_congr₂ p0 p1 pt0 pt1 mu hp0 hp1 hcov _
+
+/-- The affine subspace obtained by translating the centred support span by its
+mean. -/
+def centeredHull {ι' : Type*} (pt : ι' → Fin n → ℝ) (mu : Fin n → ℝ) :
+    AffineSubspace ℝ (Fin n → ℝ) :=
+  AffineSubspace.mk' mu (Submodule.span ℝ (Set.range fun k => pt k - mu))
+
+/-- A normalized weighted mean lies in the affine span of its point family. -/
+theorem weightedMean_mem_affineSpan
+    {ι' : Type*} [Fintype ι'] (p : ι' → ℝ)
+    (pt : ι' → Fin n → ℝ) (mu : Fin n → ℝ)
+    (hnorm : ∑ k, p k = 1)
+    (hmean : (fun j => ∑ k, p k * pt k j) = mu) :
+    mu ∈ affineSpan ℝ (Set.range pt) := by
+  classical
+  have hmem := affineCombination_mem_affineSpan
+    (s := (Finset.univ : Finset ι')) hnorm pt
+  rw [Finset.affineCombination_eq_linear_combination _ _ _ hnorm] at hmem
+  have heq : (∑ k, p k • pt k) = mu := by
+    rw [← hmean]
+    funext j
+    simp only [Finset.sum_apply, Pi.smul_apply, smul_eq_mul]
+  rwa [heq] at hmem
+
+/-- If the chosen centre belongs to the affine span, translating the centred
+linear span recovers the actual affine hull, not merely an upper bound. -/
+theorem centeredHull_eq_affineSpan
+    {ι' : Type*} (pt : ι' → Fin n → ℝ) (mu : Fin n → ℝ)
+    (hmu : mu ∈ affineSpan ℝ (Set.range pt)) :
+    centeredHull pt mu = affineSpan ℝ (Set.range pt) := by
+  apply le_antisymm
+  · intro q hq
+    have hv : q - mu ∈ Submodule.span ℝ
+        (Set.range fun k => pt k - mu) := hq
+    have hspan : Submodule.span ℝ (Set.range fun k => pt k - mu) ≤
+        (affineSpan ℝ (Set.range pt)).direction := by
+      apply Submodule.span_le.2
+      rintro v ⟨k, rfl⟩
+      exact AffineSubspace.vsub_mem_direction
+        (mem_affineSpan ℝ (Set.mem_range_self k)) hmu
+    rw [← vsub_vadd q mu]
+    exact AffineSubspace.vadd_mem_of_mem_direction (hspan hv) hmu
+  · apply affineSpan_le.2
+    rintro _ ⟨k, rfl⟩
+    exact Submodule.subset_span (Set.mem_range_self k)
+
+/-- **Common affine-span theorem for differently sized supports.**
+
+This is the geometric headline of Lemma 5.2 with all bookkeeping present:
+normalization and the mean equations put `mu` in both affine hulls, while the
+common covariance identifies their directions. -/
+theorem affineSpan_eq_of_cov_eq₂
+    {ι₀ ι₁ : Type*} [Fintype ι₀] [Fintype ι₁]
+    (p0 : ι₀ → ℝ) (p1 : ι₁ → ℝ)
+    (pt0 : ι₀ → Fin n → ℝ) (pt1 : ι₁ → Fin n → ℝ)
+    (mu : Fin n → ℝ)
+    (hp0 : ∀ k, 0 < p0 k) (hp1 : ∀ k, 0 < p1 k)
+    (hnorm0 : ∑ k, p0 k = 1) (hnorm1 : ∑ k, p1 k = 1)
+    (hmean0 : (fun j => ∑ k, p0 k * pt0 k j) = mu)
+    (hmean1 : (fun j => ∑ k, p1 k * pt1 k j) = mu)
+    (hcov : cov p0 pt0 mu = cov p1 pt1 mu) :
+    affineSpan ℝ (Set.range pt0) = affineSpan ℝ (Set.range pt1) := by
+  have hmu0 := weightedMean_mem_affineSpan p0 pt0 mu hnorm0 hmean0
+  have hmu1 := weightedMean_mem_affineSpan p1 pt1 mu hnorm1 hmean1
+  rw [← centeredHull_eq_affineSpan pt0 mu hmu0,
+    ← centeredHull_eq_affineSpan pt1 mu hmu1]
+  unfold centeredHull
+  rw [span_eq_of_cov_eq₂ p0 p1 pt0 pt1 mu hp0 hp1 hcov]
+
 /-! ## Non-vacuity
 
 A weighted point set whose covariance form has a nontrivial kernel: two points

@@ -98,6 +98,67 @@ theorem eq_of_ker_eq_zero
   have := hker _ hz
   simpa [sub_eq_zero] using this
 
+/-- **Rationalization with protected coordinates.**
+
+This is the exact interface needed by the coloured system.  A real solution is
+replaced by a rational one, while any coordinate annihilated by the real
+kernel is preserved *exactly*.  Thus the colour coordinates encoding relative
+logical phases survive rationalization rather than merely being rationalized
+to unrelated values. -/
+theorem exists_solution_preserving_coordinate
+    (R : Matrix m n K) (h : m → K) (j : n)
+    (u : n → L)
+    (hu : (R.map (algebraMap K L)).mulVec u =
+      fun i => algebraMap K L (h i))
+    (hker : ∀ v : n → L,
+      (R.map (algebraMap K L)).mulVec v = 0 → v j = 0) :
+    ∃ u' : n → K,
+      R.mulVec u' = h ∧ algebraMap K L (u' j) = u j := by
+  obtain ⟨u', hu'⟩ := exists_solution_of_exists_solution_ext R h ⟨u, hu⟩
+  let u'L : n → L := fun k => algebraMap K L (u' k)
+  have hu'L : (R.map (algebraMap K L)).mulVec u'L =
+      fun i => algebraMap K L (h i) := by
+    funext i
+    have hi := congrArg (algebraMap K L) (congrFun hu' i)
+    simpa only [Matrix.mulVec, dotProduct, Matrix.map_apply, u'L, map_sum,
+      map_mul] using hi
+  have hdiff : (R.map (algebraMap K L)).mulVec (u - u'L) = 0 := by
+    rw [Matrix.mulVec_sub, hu, hu'L, sub_self]
+  have hj := hker (u - u'L) hdiff
+  have heq : u j = algebraMap K L (u' j) := by
+    simpa only [Pi.sub_apply, u'L, sub_eq_zero] using hj
+  exact ⟨u', hu', heq.symm⟩
+
+/-- Finite families of protected coordinates can be preserved at once. -/
+theorem exists_solution_preserving_coordinates
+    {c : Type*} (R : Matrix m n K) (h : m → K) (protect : c → n)
+    (u : n → L)
+    (hu : (R.map (algebraMap K L)).mulVec u =
+      fun i => algebraMap K L (h i))
+    (hker : ∀ v : n → L,
+      (R.map (algebraMap K L)).mulVec v = 0 →
+        ∀ g, v (protect g) = 0) :
+    ∃ u' : n → K,
+      R.mulVec u' = h ∧
+        ∀ g, algebraMap K L (u' (protect g)) = u (protect g) := by
+  obtain ⟨u', hu'⟩ := exists_solution_of_exists_solution_ext R h ⟨u, hu⟩
+  let u'L : n → L := fun k => algebraMap K L (u' k)
+  have hu'L : (R.map (algebraMap K L)).mulVec u'L =
+      fun i => algebraMap K L (h i) := by
+    funext i
+    have hi := congrArg (algebraMap K L) (congrFun hu' i)
+    simpa only [Matrix.mulVec, dotProduct, Matrix.map_apply, u'L, map_sum,
+      map_mul] using hi
+  have hdiff : (R.map (algebraMap K L)).mulVec (u - u'L) = 0 := by
+    rw [Matrix.mulVec_sub, hu, hu'L, sub_self]
+  have hcoords := hker (u - u'L) hdiff
+  refine ⟨u', hu', ?_⟩
+  intro g
+  have hg := hcoords g
+  have heq : u (protect g) = algebraMap K L (u' (protect g)) := by
+    simpa only [Pi.sub_apply, u'L, sub_eq_zero] using hg
+  exact heq.symm
+
 /-! ## Non-vacuity
 
 The kernel checks the proof, not the statement, so the hypothesis is exhibited

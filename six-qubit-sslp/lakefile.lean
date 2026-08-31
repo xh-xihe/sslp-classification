@@ -3,6 +3,10 @@ open Lake DSL
 
 package «six-qubit-nogo» where
   version := v!"0.1.0"
+  -- Keep proof checking resource-safe on ordinary workstations.  Generated
+  -- certificates are deliberately sharded; one Lean worker per module avoids
+  -- multiplying their elaboration memory by the host core count.
+  weakLeanArgs := #["-j", "1"]
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4"

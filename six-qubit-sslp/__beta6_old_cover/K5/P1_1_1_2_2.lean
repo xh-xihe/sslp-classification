@@ -1,0 +1,24 @@
+-- Generated proof-only `Fin 8` coverage node.
+import MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051
+
+namespace MainTheory.Generated.BinaryBetaSixKernel.Cover.K5.P1_1_1_2_2
+
+open MainTheory.BinaryDetCircuit
+open MainTheory.BinaryDetSymmetry
+open MainTheory.OuterEnumeration
+
+theorem cover (a5 : Fin 8)
+    (h45 : 2 <= a5.val) :
+    BottomDetBound
+      (topOfPattern (R := ℤ) (angle6 1 1 1 2 2 a5.val)) 9 := by
+  fin_cases a5 <;>
+    first
+    | omega
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0820
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0821
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0822
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0823
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0824
+    | exact MainTheory.Generated.BinaryBetaSixKernel.Target.Shard051.canonicalBound_0825
+
+end MainTheory.Generated.BinaryBetaSixKernel.Cover.K5.P1_1_1_2_2

@@ -25,19 +25,20 @@ Each proof is two inclusions: the uniqueness half of the orbit's
 `SixQubit/`; what is new is that `main.tex`'s `W_r` is a Lean object those
 results are about.
 
-The orbits with a one-parameter image -- 7, 8 and 45 -- are not here: their
-`W_r` is an interval rather than a point, and the two-sided characterization is
-already proved in its own form in `SixQubit/Orbit7UniversalFinal.lean` and
-companions.  Orbits 9 and 21 are handled in `MainTheory/Levels.lean` and here
-respectively, from their `fully_certified` statements.
+The one-parameter images of orbits 7, 8 and 45 are stated below as images of
+closed intervals.  Their two-sided raw-enumerator characterizations come from
+`SixQubit/Orbit7UniversalFinal.lean` and companions.  The singleton statements
+for orbits 9 and 21 come from their corresponding `fully_certified` results
+(orbit 21's paper-facing wrapper is in `MainTheory/Levels.lean`).
 -/
 
 namespace MainTheory.WImages
 
 open SS.MacWilliams
 
-/-- The enumerator `E_1^A`, unnormalized. -/
-def E1A : Fin 7 → ℝ := ![4, 4, 0, 0, 60, 60, 0]
+/-- The normalized enumerator
+`E_1^A = (1,1,0,0,15,15,0)` of `main.tex`. -/
+def E1A : Fin 7 → ℝ := ![1, 1, 0, 0, 15, 15, 0]
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 10's weight-enumerator image is a single point.** -/
@@ -50,7 +51,7 @@ theorem WImage_orbit10 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit10Enum.enumerator_pair_unique_fiber c d hc hd hnc hnd hdist).1
     funext j
-    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     have hs0 : ∀ s, SS.weight SixQubit.Orbit10Real.av s ≠ 0 →
         SixQubit.Orbit10Real.w0 s = 0 := by
@@ -72,7 +73,7 @@ theorem WImage_orbit10 :
       SixQubit.Orbit10Real.is_code, fun j => ?_⟩
     have hAE : A = Levels.E2A := hA
     subst hAE
-    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 11's weight-enumerator image is a single point.** -/
@@ -85,7 +86,7 @@ theorem WImage_orbit11 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit11Enum.enumerator_pair_unique_fiber c d hc hd hnc hnd hdist).1
     funext j
-    fin_cases j <;> simp [E1A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [E1A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     have hs0 : ∀ s, SS.weight SixQubit.Orbit11Real.av s ≠ 0 →
         SixQubit.Orbit11Real.w0 s = 0 := by
@@ -107,7 +108,7 @@ theorem WImage_orbit11 :
       SixQubit.Orbit11Real.is_code, fun j => ?_⟩
     have hAE : A = E1A := hA
     subst hAE
-    fin_cases j <;> simp [E1A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [E1A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 16's weight-enumerator image is a single point.** -/
@@ -120,7 +121,7 @@ theorem WImage_orbit16 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit16Enum.enumerator_pair_unique_fiber c d hc hd hnc hnd hdist).1
     funext j
-    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     have hs0 : ∀ s, SS.weight SixQubit.Orbit16Real.av s ≠ 0 →
         SixQubit.Orbit16Real.w0 s = 0 := by
@@ -142,7 +143,7 @@ theorem WImage_orbit16 :
       SixQubit.Orbit16Real.is_code, fun j => ?_⟩
     have hAE : A = Levels.E2A := hA
     subst hAE
-    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 22's weight-enumerator image is a single point.** -/
@@ -155,7 +156,7 @@ theorem WImage_orbit22 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit22Enum.enumerator_pair_unique_fiber c d hc hd hnc hnd hdist).1
     funext j
-    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     have hs0 : ∀ s, SS.weight SixQubit.Orbit22Real.av s ≠ 0 →
         SixQubit.Orbit22Real.w0 s = 0 := by
@@ -177,7 +178,7 @@ theorem WImage_orbit22 :
       SixQubit.Orbit22Real.is_code, fun j => ?_⟩
     have hAE : A = Levels.E2A := hA
     subst hAE
-    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 23's weight-enumerator image is a single point.** -/
@@ -190,7 +191,7 @@ theorem WImage_orbit23 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit23Enum.enumerator_pair_unique_fiber c d hc hd hnc hnd hdist).1
     funext j
-    fin_cases j <;> simp [E1A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [E1A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     have hs0 : ∀ s, SS.weight SixQubit.Orbit23Real.av s ≠ 0 →
         SixQubit.Orbit23Real.w0 s = 0 := by
@@ -212,7 +213,7 @@ theorem WImage_orbit23 :
       SixQubit.Orbit23Real.is_code, fun j => ?_⟩
     have hAE : A = E1A := hA
     subst hAE
-    fin_cases j <;> simp [E1A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [E1A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 /-- **Orbit 9's weight-enumerator image is a single point.**
 
@@ -227,7 +228,7 @@ theorem WImage_orbit9 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ :=
       (SixQubit.Orbit9Universal.fully_kernel_certified.1 c d hc hd hnc hnd hdist).1.1
     funext j
-    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, hA, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
   · intro hA
     obtain ⟨c, d, hc, hd, hnc, hnd, hdist, hE, _⟩ :=
       SixQubit.Orbit9Universal.fully_kernel_certified.2
@@ -235,7 +236,7 @@ theorem WImage_orbit9 :
     have hAE : A = Levels.E2A := hA
     subst hAE
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hE
-    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6]
+    fin_cases j <;> simp [Levels.E2A, h0, h1, h2, h3, h4, h5, h6] <;> norm_num
 
 /-! ## Orbits with a one-parameter image
 
@@ -245,13 +246,13 @@ inclusions again come from the orbit's `fully_certified`: the converse half
 gives that every code lands in the family, the attainment half that every
 parameter is realized. -/
 
-/-- The family `F_I(a)` of `main.tex`, unnormalized. -/
+/-- The normalized family `F_I(a)=\mathcal L(a)` of `main.tex`. -/
 def FI (a : ℝ) : Fin 7 → ℝ :=
-  ![4, 4*a, 4*(1-a), 0, 4*(11+4*a), 4*(16-a), 4*(3-3*a)]
+  ![1, a, 1-a, 0, 11+4*a, 16-a, 3-3*a]
 
-/-- The family `F_II(t)` of `main.tex`, unnormalized. -/
+/-- The normalized family `F_II(t)` of `main.tex`. -/
 def FII (t : ℝ) : Fin 7 → ℝ :=
-  ![4, 0, 4*t, 4*(1-t), 4*(12-t), 4*(15+t), 12]
+  ![1, 0, t, 1-t, 12-t, 15+t, 3]
 
 set_option maxRecDepth 20000 in
 /-- **Orbit 7's weight-enumerator image is the whole interval family.** -/
@@ -312,6 +313,7 @@ theorem WImage_orbit45 :
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
     funext j
     fin_cases j <;> simp [FII, hA, h0, h1, h2, h3, h4, h5, h6]
+    all_goals norm_num
   · rintro ⟨t, ht, rfl⟩
     obtain ⟨ht0, ht1⟩ := Set.mem_Icc.1 ht
     obtain ⟨c, d, hc, hd, hnc, hnd, hdist, hFA, _⟩ :=
@@ -319,5 +321,6 @@ theorem WImage_orbit45 :
     refine ⟨c, d, hc, hd, hnc, hnd, hdist, fun j => ?_⟩
     obtain ⟨h0, h1, h2, h3, h4, h5, h6⟩ := hFA
     fin_cases j <;> simp [FII, h0, h1, h2, h3, h4, h5, h6]
+    all_goals norm_num
 
 end MainTheory.WImages
