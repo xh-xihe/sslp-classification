@@ -1,6 +1,8 @@
 import MainTheory.LabelledGates
 import MainTheory.RankTwoGlobal
 import MainTheory.BoundedRepresentation
+import MainTheory.LocalPhaseConjugation
+import MainTheory.Normalize
 
 /-!
 # The finite gate as a local phase
@@ -105,5 +107,72 @@ theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
   haveI : NeZero (m + 1) := ⟨Nat.succ_ne_zero m⟩
   refine LabelledGates.exists_label_of_pow_eq_one m hm _ (fun j => ?_)
   rw [phaseOfAngle, coe_rootPower, ← pow_mul, mul_comm, pow_mul, hz, one_pow]
+
+/-! ## Flipping and scaling the angle
+
+`SixQubitSemanticEntrance.normalizedFiniteAngle` is
+`fun j => T.unit * Normalize.flip G.angle T.x0 j`, so the normalization the
+entrance performs is exactly a flip followed by a unit scaling.  Both operations
+are visible on the local phase: the flip is `LocalPhaseConjugation.flipPhase`,
+and the scaling is a power. -/
+
+/-- A root of unity at the negated residue is the inverse. -/
+theorem rootPow_neg_residue (zeta : ℂ) (hz : zeta ^ q = 1) (a : ZMod q) :
+    zeta ^ ((-a).val) = (zeta ^ (a.val))⁻¹ := by
+  have hne : zeta ≠ 0 := by
+    intro h
+    rw [h, zero_pow (NeZero.ne q)] at hz
+    exact zero_ne_one hz
+  refine eq_inv_of_mul_eq_one_left ?_
+  rw [← pow_add]
+  by_cases ha : a = 0
+  · subst ha
+    simp
+  · have hsum : (-a).val + a.val = q := by
+      rw [ZMod.neg_val, if_neg ha]
+      have := ZMod.val_lt a
+      omega
+    rw [hsum, hz]
+
+/-- **The flip on local phases is the flip on angle vectors.** -/
+theorem flipPhase_phaseOfAngle (zeta : ℂ) (hz : zeta ^ q = 1)
+    (a : Fin n → ZMod q) (x0 : SS.BitString n) :
+    LocalPhaseConjugation.flipPhase (phaseOfAngle zeta hz a) x0
+      = phaseOfAngle zeta hz (MainTheory.Normalize.flip a x0) := by
+  funext j
+  refine Subtype.ext ?_
+  by_cases hx : x0 j
+  · simp only [LocalPhaseConjugation.flipPhase, hx, if_true, phaseOfAngle,
+      MainTheory.Normalize.flip]
+    have h1 : ((rootPower zeta hz (a j).val : unitary ℂ) : ℂ)
+        * (((rootPower zeta hz (a j).val)⁻¹ : unitary ℂ) : ℂ) = 1 :=
+      LocalPhaseConjugation.coe_mul_coe_inv _
+    rw [coe_rootPower] at h1
+    have h2 : (((rootPower zeta hz (a j).val)⁻¹ : unitary ℂ) : ℂ)
+        = (zeta ^ (a j).val)⁻¹ := by
+      refine eq_inv_of_mul_eq_one_left ?_
+      rw [mul_comm]
+      exact h1
+    rw [h2, coe_rootPower, rootPow_neg_residue zeta hz (a j)]
+  · simp [LocalPhaseConjugation.flipPhase, hx, phaseOfAngle,
+      MainTheory.Normalize.flip]
+
+/-- **Scaling the angle is taking a power.**
+
+The other half of `normalizedFiniteAngle`: multiplying the angle vector by a
+unit of `ZMod q` raises the gate to that power. -/
+theorem phaseOfAngle_natMul (zeta : ℂ) (hz : zeta ^ q = 1)
+    (a : Fin n → ZMod q) (c : ℕ) :
+    phaseOfAngle zeta hz (fun j => (c : ZMod q) * a j)
+      = fun j => (phaseOfAngle zeta hz a j) ^ c := by
+  funext j
+  refine Subtype.ext ?_
+  simp only [phaseOfAngle, coe_rootPower, SubmonoidClass.coe_pow]
+  rw [← pow_mul, ← zeta_pow_mod zeta hz ((a j).val * c)]
+  congr 1
+  have hcast : ((c : ZMod q) * a j) = (((c * (a j).val : ℕ)) : ZMod q) := by
+    push_cast
+    rw [ZMod.natCast_val, ZMod.cast_id]
+  rw [hcast, ZMod.val_natCast, mul_comm]
 
 end MainTheory.FiniteGateAsPhase
