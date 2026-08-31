@@ -1,5 +1,6 @@
 import MainTheory.LabelledGates
 import MainTheory.RankTwoGlobal
+import MainTheory.BoundedRepresentation
 
 /-!
 # The finite gate as a local phase
@@ -87,5 +88,22 @@ theorem gate_eq_diagonalAction (zeta : ℂ) (hz : zeta ^ q = 1)
     Gate.gate zeta a psi = diagonalAction (phaseOfAngle zeta hz a) psi := by
   funext s
   rw [Gate.gate, Gate.diag, diagonalAction, diagonalValue_phaseOfAngle]
+
+/-! ## Any bounded finite gate is labelled
+
+`LabelledGates.exists_label_of_pow_eq_one` asks for a local phase whose entries
+have order dividing `m + 1`.  Every finite gate for an `(m+1)`-st root of unity
+has that property automatically -- its site `j` carries `zeta ^ a j`, and
+`(zeta ^ a j) ^ (m+1) = (zeta ^ (m+1)) ^ a j = 1`.  So the bound the entrance
+produces on the order is by itself enough to name the gate by a label; nothing
+about which root, or which angle vector, has to be tracked. -/
+
+theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
+    (hz : zeta ^ (m + 1) = 1) (a : Fin 6 → ZMod (m + 1)) :
+    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9,
+      BoundedRepresentation.gateOfLabel lbl = phaseOfAngle zeta hz a := by
+  haveI : NeZero (m + 1) := ⟨Nat.succ_ne_zero m⟩
+  refine LabelledGates.exists_label_of_pow_eq_one m hm _ (fun j => ?_)
+  rw [phaseOfAngle, coe_rootPower, ← pow_mul, mul_comm, pow_mul, hz, one_pow]
 
 end MainTheory.FiniteGateAsPhase
