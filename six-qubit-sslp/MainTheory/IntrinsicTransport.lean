@@ -198,4 +198,110 @@ theorem preserves_flip_of_preserves (F : CodeSpec.OrthonormalFrame n K)
   rw [GlobalClassificationBridge.inProjectorRange_ofFrame_iff] at hact ⊢
   exact mem_of_smul_mem (flipScalar_ne_zero u x0) hact
 
+/-! ## `flipPhase` is a group map -/
+
+/-- `unitary ℂ` is commutative, since `ℂ` is.  Mathlib registers only a `Group`
+instance, so `mul_comm` is not available by typeclass and is proved here. -/
+theorem unitary_mul_comm (z w : unitary ℂ) : z * w = w * z :=
+  Subtype.ext (by simp [mul_comm])
+
+theorem localPhase_mul_comm (u v : LocalPhase n) : u * v = v * u := by
+  funext j
+  exact unitary_mul_comm (u j) (v j)
+
+theorem flipPhase_mul (u v : LocalPhase n) (x0 : SS.BitString n) :
+    flipPhase (u * v) x0 = flipPhase u x0 * flipPhase v x0 := by
+  funext j
+  by_cases h : x0 j
+  · simp [flipPhase, h, unitary_mul_comm]
+  · simp [flipPhase, h]
+
+theorem flipPhase_inv (u : LocalPhase n) (x0 : SS.BitString n) :
+    flipPhase u⁻¹ x0 = (flipPhase u x0)⁻¹ := by
+  funext j
+  by_cases h : x0 j
+  · simp [flipPhase, h]
+  · simp [flipPhase, h]
+
+theorem flipPhase_one (x0 : SS.BitString n) :
+    flipPhase (1 : LocalPhase n) x0 = 1 := by
+  funext j
+  by_cases h : x0 j
+  · simp [flipPhase, h]
+  · simp [flipPhase, h]
+
+/-! ## The symmetry groups correspond -/
+
+/-- **A diagonal symmetry of the shifted code flips to one of the original.** -/
+theorem mem_symmetryGroup_flip (F : CodeSpec.OrthonormalFrame n K)
+    (x0 : SS.BitString n) (u : LocalPhase n)
+    (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame (shiftFrame F x0))) :
+    flipPhase u x0 ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F) := by
+  refine ⟨?_, ?_⟩
+  · exact preserves_flip_of_preserves F x0 u hu.1
+  · intro phi hphi
+    rw [← flipPhase_inv]
+    exact preserves_flip_of_preserves F x0 u⁻¹ hu.2 phi hphi
+
+/-! ## Descending to the intrinsic quotient
+
+The last step.  `flipPhase` carries projectively trivial symmetries to
+projectively trivial ones -- the scalar just picks up `flipScalar` -- so the
+correspondence descends to the quotient by exactly those, which is the intrinsic
+group of Definition 6.1(i). -/
+
+/-- **Projective triviality transports.** -/
+theorem isProjectivelyTrivial_flip (F : CodeSpec.OrthonormalFrame n K)
+    (x0 : SS.BitString n)
+    (u : diagonalSymmetryGroup (CodeProjector.ofFrame (shiftFrame F x0)))
+    (hu : IsProjectivelyTrivial (CodeProjector.ofFrame (shiftFrame F x0)) u) :
+    IsProjectivelyTrivial (CodeProjector.ofFrame F)
+      ⟨flipPhase (u : LocalPhase n) x0,
+        mem_symmetryGroup_flip F x0 (u : LocalPhase n) u.2⟩ := by
+  obtain ⟨lam, hlam, hact⟩ := hu
+  refine ⟨(flipScalar (u : LocalPhase n) x0)⁻¹ * lam,
+    mul_ne_zero (inv_ne_zero (flipScalar_ne_zero _ _)) hlam, ?_⟩
+  intro phi hphi
+  have hshift : InProjectorRange (CodeProjector.ofFrame (shiftFrame F x0))
+      (shiftState x0 phi) := by
+    rw [inRange_shiftFrame_iff]
+    simpa using hphi
+  have hid := diagonalAction_shift (u : LocalPhase n) x0 (shiftState x0 phi)
+  rw [shiftState_shiftState] at hid
+  have hs := hact _ hshift
+  rw [hs] at hid
+  -- hid : shiftState x0 (lam • shiftState x0 phi)
+  --         = flipScalar • diagonalAction (flipPhase u x0) phi
+  have hrhs : shiftState x0 (lam • shiftState x0 phi) = lam • phi := by
+    rw [shiftState_smul, shiftState_shiftState]
+  rw [hrhs] at hid
+  have hcancel : diagonalAction (flipPhase (u : LocalPhase n) x0) phi
+      = (flipScalar (u : LocalPhase n) x0)⁻¹ • (lam • phi) := by
+    rw [hid, smul_smul, inv_mul_cancel₀ (flipScalar_ne_zero _ _), one_smul]
+  rw [hcancel, smul_smul]
+
+/-- **The intrinsic classes correspond.**
+
+Equal classes on the shifted code give equal classes on the original.  With
+`flipPhase` an involution this is the isomorphism the transport needs. -/
+theorem intrinsicClass_flip_eq (F : CodeSpec.OrthonormalFrame n K)
+    (x0 : SS.BitString n)
+    (u v : diagonalSymmetryGroup (CodeProjector.ofFrame (shiftFrame F x0)))
+    (h : intrinsicClass (CodeProjector.ofFrame (shiftFrame F x0)) u
+      = intrinsicClass (CodeProjector.ofFrame (shiftFrame F x0)) v) :
+    intrinsicClass (CodeProjector.ofFrame F)
+        ⟨flipPhase (u : LocalPhase n) x0,
+          mem_symmetryGroup_flip F x0 _ u.2⟩
+      = intrinsicClass (CodeProjector.ofFrame F)
+        ⟨flipPhase (v : LocalPhase n) x0,
+          mem_symmetryGroup_flip F x0 _ v.2⟩ := by
+  rw [intrinsicClass, intrinsicClass, QuotientGroup.eq]
+  rw [intrinsicClass, intrinsicClass, QuotientGroup.eq] at h
+  have hmem := isProjectivelyTrivial_flip F x0 (u⁻¹ * v) h
+  refine Subgroup.mem_carrier.1 ?_
+  show IsProjectivelyTrivial (CodeProjector.ofFrame F) _
+  convert hmem using 2
+  push_cast
+  rw [flipPhase_mul, flipPhase_inv]
+
 end MainTheory.IntrinsicTransport
