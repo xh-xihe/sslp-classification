@@ -38,6 +38,7 @@ import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
+import MainTheory.SectionThreeNonVacuity
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -297,3 +298,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.QuantitativeGroup.qMin_le_beta
 #print axioms MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le
 #print axioms MainTheory.QuantitativeGroup.k2_q_bound
+
+/-! ## Section III is about something -/
+
+#print axioms MainTheory.SectionThreeNonVacuity.exists_nontrivial_six_qubit_code
+#print axioms MainTheory.SectionThreeNonVacuity.completeness_applies
+#print axioms MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness

@@ -245,3 +245,8 @@
 'MainTheory.QuantitativeGroup.qMin_le_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.k2_q_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SectionThreeNonVacuity.exists_nontrivial_six_qubit_code' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.SectionThreeNonVacuity.completeness_applies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
