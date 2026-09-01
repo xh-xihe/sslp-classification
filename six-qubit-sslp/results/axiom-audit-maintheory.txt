@@ -193,9 +193,15 @@
 'MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'MainTheory.D3BoundedNormalForm.d3_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'MainTheory.SSLPCompleteness.weakenDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.completeness_distance_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.completeness_distance_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.completeness_six_qubit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.orderOf_le_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SectionTwoGeneral.sectorCount_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SectionTwoGeneral.rationalLift_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.ColoredBound.pivotLift_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]

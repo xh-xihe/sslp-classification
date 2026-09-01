@@ -35,6 +35,7 @@ import MainTheory.NumberOperator
 import MainTheory.SortedNormalForm
 import MainTheory.FlipSemanticTransport
 import MainTheory.D3BoundedNormalForm
+import MainTheory.SSLPCompleteness
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -249,7 +250,13 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution
 #print axioms MainTheory.D3BoundedNormalForm.boundedGenerator
 #print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN
+#print axioms MainTheory.D3BoundedNormalForm.d3_bound
 #print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine
+#print axioms MainTheory.SSLPCompleteness.weakenDistance
+#print axioms MainTheory.SSLPCompleteness.completeness_distance_two
+#print axioms MainTheory.SSLPCompleteness.completeness_distance_three
+#print axioms MainTheory.SSLPCompleteness.completeness_six_qubit
+#print axioms MainTheory.SSLPCompleteness.orderOf_le_nine
 #print axioms MainTheory.SectionTwoGeneral.sectorCount_eq_two
 #print axioms MainTheory.SectionTwoGeneral.rationalLift_order_le
 #print axioms MainTheory.ColoredBound.pivotLift_order_le

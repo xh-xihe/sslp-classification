@@ -60,4 +60,5 @@ import MainTheory.NumberOperator
 import MainTheory.SortedNormalForm
 import MainTheory.FlipSemanticTransport
 import MainTheory.D3BoundedNormalForm
+import MainTheory.SSLPCompleteness
 import MainTheory.Audit

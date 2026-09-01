@@ -99,6 +99,46 @@ theorem exists_sortedNormalForm_le_betaN {B : ℕ}
   rw [hS]
   exact automaticFreshGenerator_order_le beta T
 
+/-- **`thm:d3-bound`.**
+
+At distance three there is a *primitive* finite generator on the code itself
+with modulus at most `beta_n`, whose projective logical order `m` satisfies
+`2 <= m` and `m | q`.
+
+One clause of the paper's statement is weaker here.  The paper says the *same*
+projective element has such a lift; what is produced is a generator of the same
+cyclic projective group -- the sparse construction normalizes the residue gap
+by a unit, so the element it returns is a coprime power of the one it started
+from.  Recovering the original element with the modulus unchanged needs a unit
+of `Z_q` congruent to that power modulo `m`, which
+`Normalize.exists_unit_mul_eq_one` supplies but which is not assembled here.
+For the bound itself the distinction is immaterial: the two elements generate
+the same group and have the same order. -/
+theorem d3_bound {B : ℕ} (beta : BinaryBeta.BetaBound n B)
+    (C : CodeSpec.ExactCode n 2 3) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ (q : ℕ) (_ : NeZero q) (Gb : RankTwoGlobal.FiniteGeneratorResolution C q),
+      2 ≤ q ∧ q ≤ B ∧ Gate.Primitive q Gb.angle ∧
+      2 ≤ orderOf Gb.intrinsicClass ∧
+      orderOf Gb.intrinsicClass ∣ q := by
+  letI : NeZero (rationalLift C GeneralFiniteness.two_le_three theta hpres).order :=
+    ⟨(rationalLift C GeneralFiniteness.two_le_three theta hpres).order_pos.ne'⟩
+  set G := finiteGenerator C GeneralFiniteness.two_le_three theta hpres hnt
+    with hG
+  set T := canonicalTwoFiber G with hT
+  letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
+  set Gb := boundedGenerator T with hGb
+  set Tb := canonicalTwoFiber Gb with hTb
+  refine ⟨_, inferInstance, Gb, Tb.two_le_physicalOrder,
+    automaticFreshGenerator_order_le beta T, Gb.primitive, ?_, ?_⟩
+  · rw [Tb.intrinsic_order_eq]
+    exact Tb.two_le_logicalOrder
+  · rw [Tb.intrinsic_order_eq]
+    exact Tb.logicalOrder_dvd_physical
+
 /-- **The six-qubit cutoff, unconditionally.**  `beta_6 = 9` is a kernel
 theorem, so the six-qubit sorted normal form has modulus at most nine with no
 hypothesis at all. -/
