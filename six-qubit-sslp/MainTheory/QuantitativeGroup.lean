@@ -45,8 +45,9 @@ theorem quantitative_projective_group {B : ℕ}
     ∃ q : ℕ,
       HasPrimitiveLift C g q ∧
       orderOf g ∣ q ∧
-      0 < orderOf g ∧
+      2 ≤ orderOf g ∧
       orderOf g ≤ q ∧
+      2 ≤ q ∧
       q ≤ B := by
   obtain ⟨v, rfl⟩ := QuotientGroup.mk_surjective g
   obtain ⟨theta, hexp⟩ :=
@@ -66,12 +67,17 @@ theorem quantitative_projective_group {B : ℕ}
       (R.zDetects hd) ht
   have hlift := hasPrimitiveLift_of_rationalLift v hexp hpres L
   have hdvd := orderOf_dvd_of_hasPrimitiveLift hlift
-  refine ⟨L.order, hlift, hdvd, ?_, Nat.le_of_dvd L.order_pos hdvd, hle⟩
-  rcases Nat.eq_zero_or_pos (orderOf
-    (intrinsicClass (exactCodeProjector C) v)) with h0 | hpos
-  · rw [h0] at hdvd
+  have hne0 : orderOf (intrinsicClass (exactCodeProjector C) v) ≠ 0 := by
+    intro h0
+    rw [h0] at hdvd
     exact absurd (Nat.eq_zero_of_zero_dvd hdvd) L.order_pos.ne'
-  · exact hpos
+  have hne1 : orderOf (intrinsicClass (exactCodeProjector C) v) ≠ 1 := by
+    intro h1
+    exact hg (orderOf_eq_one_iff.mp h1)
+  have h2 : 2 ≤ orderOf (intrinsicClass (exactCodeProjector C) v) := by
+    omega
+  exact ⟨L.order, hlift, hdvd, h2, Nat.le_of_dvd L.order_pos hdvd,
+    le_trans h2 (Nat.le_of_dvd L.order_pos hdvd), hle⟩
 
 /-- **`q_min` obeys the same bound.**  `qMin` is a minimum over primitive
 lifts, and the pivot lift is one of them. -/
@@ -80,7 +86,7 @@ theorem qMin_le_beta {B : ℕ}
     (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
     (g : IntrinsicGroup C) (hg : g ≠ 1) :
     qMin C hd g ≤ B := by
-  obtain ⟨q, hlift, _, _, _, hqB⟩ :=
+  obtain ⟨q, hlift, _, _, _, _, hqB⟩ :=
     quantitative_projective_group beta C hd g hg
   have hqpos : 0 < q := by
     rcases Nat.eq_zero_or_pos q with h0 | hpos
@@ -128,13 +134,15 @@ theorem k2_q_bound {B : ℕ} (beta : BinaryBeta.BetaBound (n + 1) B)
     (C : CodeSpec.ExactCode n 2 d) (hd : 2 ≤ d)
     (g : IntrinsicGroup C) (hg : g ≠ 1) :
     (∃ q : ℕ, HasPrimitiveLift C g q ∧ orderOf g ∣ q ∧
-        orderOf g ≤ q ∧ q ≤ B) ∧
+        orderOf g ≤ q ∧ qMin C hd g ≤ q ∧ q ≤ B) ∧
       qMin C hd g ≤ B := by
   have hsize : n + 2 - 1 = n + 1 := by omega
   have beta' : BinaryBeta.BetaBound (n + 2 - 1) B := by
     rw [hsize]; exact beta
-  obtain ⟨q, hlift, hdvd, _, hle, hqB⟩ :=
+  obtain ⟨q, hlift, hdvd, _, hle, hq2, hqB⟩ :=
     quantitative_projective_group beta' C hd g hg
-  exact ⟨⟨q, hlift, hdvd, hle, hqB⟩, qMin_le_beta beta' C hd g hg⟩
+  exact ⟨⟨q, hlift, hdvd, hle,
+    qMin_le C hd g (by omega) hlift, hqB⟩,
+    qMin_le_beta beta' C hd g hg⟩
 
 end MainTheory.QuantitativeGroup

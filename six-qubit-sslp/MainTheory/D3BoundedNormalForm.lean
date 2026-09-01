@@ -105,15 +105,14 @@ At distance three there is a *primitive* finite generator on the code itself
 with modulus at most `beta_n`, whose projective logical order `m` satisfies
 `2 <= m` and `m | q`.
 
-One clause of the paper's statement is weaker here.  The paper says the *same*
-projective element has such a lift; what is produced is a generator of the same
-cyclic projective group -- the sparse construction normalizes the residue gap
-by a unit, so the element it returns is a coprime power of the one it started
-from.  Recovering the original element with the modulus unchanged needs a unit
-of `Z_q` congruent to that power modulo `m`, which
-`Normalize.exists_unit_mul_eq_one` supplies but which is not assembled here.
-For the bound itself the distinction is immaterial: the two elements generate
-the same group and have the same order. -/
+The element this returns is a generator of the projective cyclic group rather
+than a prescribed member of it: the sparse construction normalizes the residue
+gap by a unit, so it is a coprime power of whatever one started from.  For the
+bound that is immaterial -- the two generate the same group and have the same
+order -- and if the *same* element is wanted,
+`QMinBound.d3_bound_same_class` gives it by the bounded-representation route,
+which keeps the class fixed and makes its representative primitive without
+enlarging the modulus. -/
 theorem d3_bound {B : ℕ} (beta : BinaryBeta.BetaBound n B)
     (C : CodeSpec.ExactCode n 2 3) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
