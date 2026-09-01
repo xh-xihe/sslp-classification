@@ -45,6 +45,12 @@ structure SortedNormalForm {d : ℕ} (C : CodeSpec.ExactCode n 2 d) where
   m : ℕ
   two_le_m : 2 ≤ m
   m_dvd_q : m ∣ q
+  /-- `m` really is a projective logical order: it is the order of an actual
+  element of the intrinsic group, not merely a divisor of `q` that happens to
+  fit the fibre condition.  Without this the field's name would be an
+  assertion the record does not make. -/
+  m_isOrder : ∃ g : GlobalClassificationBridge.IntrinsicGroup C,
+    orderOf g = m
   zeta : ℂ
   primitiveRoot : IsPrimitiveRoot zeta q
   /-- The angle vector: `0 <= a_1 <= ... <= a_n < q` with
@@ -68,6 +74,50 @@ structure SortedNormalForm {d : ℕ} (C : CodeSpec.ExactCode n 2 d) where
     source.vec k (SS.bxor (SixQubit.CodeEquiv.permStr perm s) x0)
 
 attribute [instance] SortedNormalForm.q_ne
+
+/-! ## The record's operator content
+
+The two fibre conditions are stated on subset-sum residues, which is what the
+enumeration consumes.  They are equivalent to the operator statement the paper
+writes -- `D(a;q)` acts diagonally on the two logical words with eigenvalues
+`1` and `omega_q^{q/m}` -- and that equivalence is `PhaseSector`.  Recording it
+here keeps `zeta` from being an inert field: the record really does say the
+gate acts. -/
+
+/-- **`D(a;q)` fixes the first logical word.** -/
+theorem SortedNormalForm.gate_left {d : ℕ} {C : CodeSpec.ExactCode n 2 d}
+    (S : SortedNormalForm C) :
+    Gate.gate S.zeta S.angle (S.frame.vec 0) = S.frame.vec 0 := by
+  have h := MainTheory.PhaseSector.eigen_of_ssCondition S.zeta S.angle (S.frame.vec 0) 0
+    S.leftFiber
+  simpa using h
+
+/-- **`q` is the exact physical order of `D(a;q)`**, not merely an exponent
+that kills it.  This is what the record's primitivity clause buys, and it is
+the sense in which `eq:primitive` makes `q` an invariant. -/
+theorem SortedNormalForm.physicalOrder {d : ℕ} {C : CodeSpec.ExactCode n 2 d}
+    (S : SortedNormalForm C) (k : ℕ) :
+    (∀ s : SS.BitString n, Gate.diag S.zeta S.angle s ^ k = 1) ↔ S.q ∣ k :=
+  Gate.pow_eq_one_iff S.zeta S.primitiveRoot S.angle S.primitive k
+
+/-- **`m` is the exact projective logical order of the displayed gate.**
+
+`m_isOrder` says `m` is the order of some group element; this says it is the
+order of *this* gate's logical action, which is the paper's `C_m`. -/
+theorem SortedNormalForm.projectiveOrder {d : ℕ}
+    {C : CodeSpec.ExactCode n 2 d} (S : SortedNormalForm C) (k : ℕ) :
+    Cyclic.chi S.zeta (((S.q / S.m : ℕ) : ZMod S.q)) ^ k = 1 ↔ S.m ∣ k := by
+  haveI := S.q_ne
+  rw [Cyclic.chi_pow_eq_one_iff S.zeta S.primitiveRoot,
+    RankTwo.addOrderOf_div S.m S.m_dvd_q]
+
+/-- **`D(a;q)` scales the second logical word by `omega_q^{q/m}`.** -/
+theorem SortedNormalForm.gate_right {d : ℕ} {C : CodeSpec.ExactCode n 2 d}
+    (S : SortedNormalForm C) :
+    Gate.gate S.zeta S.angle (S.frame.vec 1)
+      = fun s => S.zeta ^ (((S.q / S.m : ℕ) : ZMod S.q)).val
+          * S.frame.vec 1 s :=
+  MainTheory.PhaseSector.eigen_of_ssCondition S.zeta S.angle (S.frame.vec 1) _ S.rightFiber
 
 /-- The permutation that sorts a `ZMod q` vector by its residue
 representative, in the convention `permAngle` uses. -/
@@ -102,6 +152,7 @@ theorem exists_sortedNormalForm_of_generator {d q : ℕ} [NeZero q]
     m := T.logicalOrder
     two_le_m := T.two_le_logicalOrder
     m_dvd_q := T.logicalOrder_dvd_physical
+    m_isOrder := ⟨G.intrinsicClass, T.intrinsic_order_eq⟩
     zeta := G.zeta
     primitiveRoot := G.primitiveRoot
     angle := permAngle (sortingPerm (normalizedFiniteAngle G T))

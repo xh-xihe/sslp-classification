@@ -247,6 +247,10 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm_le
 #print axioms MainTheory.SortedForm.d2_sslp_classification
+#print axioms MainTheory.SortedForm.SortedNormalForm.gate_left
+#print axioms MainTheory.SortedForm.SortedNormalForm.gate_right
+#print axioms MainTheory.SortedForm.SortedNormalForm.physicalOrder
+#print axioms MainTheory.SortedForm.SortedNormalForm.projectiveOrder
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator
 #print axioms MainTheory.FlipSemanticTransport.gate_flip_shift
 #print axioms MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution
@@ -258,6 +262,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SSLPCompleteness.completeness_distance_two
 #print axioms MainTheory.SSLPCompleteness.completeness_distance_three
 #print axioms MainTheory.SSLPCompleteness.completeness_six_qubit
+#print axioms MainTheory.SSLPCompleteness.hasDistance_normalForm
+#print axioms MainTheory.SSLPCompleteness.completeness_of_nontrivial_two
+#print axioms MainTheory.SSLPCompleteness.completeness_of_nontrivial_three
 #print axioms MainTheory.SSLPCompleteness.orderOf_le_nine
 #print axioms MainTheory.PrimitiveReduction.primitive_reducedAngle
 #print axioms MainTheory.PrimitiveReduction.finiteLocalPhase_reduced

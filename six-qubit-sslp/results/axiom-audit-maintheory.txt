@@ -184,6 +184,10 @@
 'MainTheory.SortedForm.exists_sortedNormalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SortedForm.exists_sortedNormalForm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SortedForm.d2_sslp_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.SortedNormalForm.gate_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.SortedNormalForm.gate_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.SortedNormalForm.physicalOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.SortedNormalForm.projectiveOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SortedForm.exists_sortedNormalForm_of_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.FlipSemanticTransport.gate_flip_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution' depends on axioms: [propext,
@@ -201,6 +205,11 @@
 'MainTheory.SSLPCompleteness.completeness_distance_two' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SSLPCompleteness.completeness_distance_three' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SSLPCompleteness.completeness_six_qubit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.hasDistance_normalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.completeness_of_nontrivial_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SSLPCompleteness.completeness_of_nontrivial_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'MainTheory.SSLPCompleteness.orderOf_le_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.PrimitiveReduction.primitive_reducedAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.PrimitiveReduction.finiteLocalPhase_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]

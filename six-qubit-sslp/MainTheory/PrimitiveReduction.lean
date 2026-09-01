@@ -120,10 +120,16 @@ theorem primitive_reducedAngle {q : ℕ} (hq : 0 < q) (a : Fin n → ZMod q) :
     rw [he, commonDivisor]
     refine Nat.dvd_gcd hde_q ?_
     exact Finset.dvd_gcd (fun j _ => hde_a j)
-  have : d = 1 := by
-    have hle := Nat.le_of_dvd hepos hde_gcd
-    nlinarith [hepos, Nat.one_le_iff_ne_zero.2 (by rintro rfl; simp at hde_gcd; omega : d ≠ 0)]
-  exact this
+  have hdpos : 0 < d := by
+    rcases Nat.eq_zero_or_pos d with rfl | hpos
+    · rw [zero_mul] at hde_gcd
+      exact absurd (Nat.eq_zero_of_zero_dvd hde_gcd) hepos.ne'
+    · exact hpos
+  have hle : d * e ≤ 1 * e := by
+    rw [one_mul]
+    exact Nat.le_of_dvd hepos hde_gcd
+  have hd1 : d ≤ 1 := Nat.le_of_mul_le_mul_right hle hepos
+  omega
 
 /-- **The reduction changes no phase**: `omega_q^{a_j} = omega_{q/e}^{a_j/e}`. -/
 theorem canonicalRoot_pow_reduced {q : ℕ} (hq : 0 < q) (a : Fin n → ZMod q)

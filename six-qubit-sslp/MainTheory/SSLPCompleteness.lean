@@ -55,6 +55,34 @@ def weakenDistance {d d0 : ℕ} (h : d0 ≤ d) (C : CodeSpec.ExactCode n 2 d) :
     (C : CodeSpec.ExactCode n 2 d) :
     (weakenDistance h C).frame = C.frame := rfl
 
+/-- **The normal form inherits the original code's distance.**
+
+The record built over the distance-three weakening only records distance three,
+but the pair it displays is the original code's frame moved by a local `X`
+string and a permutation, and both preserve the Knill--Laflamme system.  So the
+enumeration's candidate really does satisfy the equations for every Pauli of
+weight below `d`, which is what `thm:sslp-completeness` asks at target distance
+`d0 <= d`. -/
+theorem hasDistance_normalForm {d0 d : ℕ} (h : d0 ≤ d)
+    (C : CodeSpec.ExactCode n 2 d)
+    (S : SortedForm.SortedNormalForm (weakenDistance h C)) :
+    SS.HasDistance S.frame.vec d := by
+  have hsource : SS.HasDistance S.source.vec d :=
+    CodeSpec.hasDistance_of_codeSpan_eq C.frame S.source S.source_span
+      C.hasDistance
+  have hflip : SS.HasDistance
+      (fun k s => S.source.vec k (SS.bxor s S.x0)) d :=
+    RankTwoGlobal.hasDistance_bxor S.source.vec S.x0 hsource
+  have hperm := PermutationSemanticTransport.hasDistance_permAct S.perm
+    (fun k s => S.source.vec k (SS.bxor s S.x0)) hflip
+  have hEq : S.frame.vec
+      = fun k => SixQubit.CodeEquiv.permAct S.perm
+          (fun s => S.source.vec k (SS.bxor s S.x0)) := by
+    funext k s
+    exact S.frame_eq k s
+  rw [hEq]
+  exact hperm
+
 /-- **`eq:Bnd0`**, the controlled outer cutoff. -/
 def outerCutoff (B1 Bn d0 : ℕ) : ℕ := if d0 ≤ 2 then B1 else Bn
 
@@ -69,7 +97,8 @@ theorem outerCutoff_of_three_le (B1 Bn : ℕ) {d0 : ℕ} (h : 3 ≤ d0) :
 
 Every exact `((n,2,d))` code with `d >= 2` carrying a projectively nontrivial
 diagonal operation occurs in the enumeration at cutoff `beta_{n+1}`. -/
-theorem completeness_distance_two {B1 d : ℕ} (hd : 2 ≤ d)
+theorem completeness_distance_two {B1 Bn d0 d : ℕ} (hd0 : d0 = 2)
+    (hdd : d0 ≤ d)
     (beta1 : BinaryBeta.BetaBound (n + 1) B1)
     (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
@@ -77,14 +106,19 @@ theorem completeness_distance_two {B1 d : ℕ} (hd : 2 ≤ d)
     (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     ∃ S : SortedForm.SortedNormalForm C,
-      2 ≤ S.q ∧ S.q ≤ B1 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      2 ≤ S.q ∧ S.q ≤ outerCutoff B1 Bn d0 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      (∃ g : GlobalClassificationBridge.IntrinsicGroup C, orderOf g = S.m) ∧
       Monotone (fun j => (S.angle j).val) ∧
       (∀ j, (S.angle j).val < S.q) ∧
-      Gate.Primitive S.q S.angle := by
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
+  subst hd0
   obtain ⟨S, hSB⟩ :=
-    SortedForm.exists_sortedNormalForm_le hd beta1 C theta hpres hnt
-  exact ⟨S, S.two_le_q, hSB, S.two_le_m, S.m_dvd_q, S.sorted, S.lt_q,
-    S.primitive⟩
+    SortedForm.exists_sortedNormalForm_le hdd beta1 C theta hpres hnt
+  refine ⟨S, S.two_le_q, ?_, S.two_le_m, S.m_dvd_q, S.m_isOrder, S.sorted,
+    S.lt_q, S.primitive, S.hasDistance⟩
+  rw [outerCutoff_two]
+  exact hSB
 
 /-- **Completeness at target distance three or more.**
 
@@ -92,7 +126,8 @@ The same, at cutoff `beta_n`, for every `d >= d0 >= 3`.  The record is taken on
 the code viewed at distance three, which is where the sparse binary simplex
 lives; the code's own Knill--Laflamme system at weight below `d` is
 `C.hasDistance` and is unaffected. -/
-theorem completeness_distance_three {Bn d0 d : ℕ} (hd0 : 3 ≤ d0) (hdd : d0 ≤ d)
+theorem completeness_distance_three {B1 Bn d0 d : ℕ} (hd0 : 3 ≤ d0)
+    (hdd : d0 ≤ d)
     (betan : BinaryBeta.BetaBound n Bn)
     (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
@@ -101,15 +136,20 @@ theorem completeness_distance_three {Bn d0 d : ℕ} (hd0 : 3 ≤ d0) (hdd : d0 �
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     ∃ S : SortedForm.SortedNormalForm
         (weakenDistance (show 3 ≤ d by omega) C),
-      2 ≤ S.q ∧ S.q ≤ Bn ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      2 ≤ S.q ∧ S.q ≤ outerCutoff B1 Bn d0 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      (∃ g : GlobalClassificationBridge.IntrinsicGroup
+        (weakenDistance (show 3 ≤ d by omega) C), orderOf g = S.m) ∧
       Monotone (fun j => (S.angle j).val) ∧
       (∀ j, (S.angle j).val < S.q) ∧
-      Gate.Primitive S.q S.angle := by
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
   obtain ⟨S, hSB⟩ :=
     D3BoundedNormalForm.exists_sortedNormalForm_le_betaN betan
       (weakenDistance (show 3 ≤ d by omega) C) theta hpres hnt
-  exact ⟨S, S.two_le_q, hSB, S.two_le_m, S.m_dvd_q, S.sorted, S.lt_q,
-    S.primitive⟩
+  refine ⟨S, S.two_le_q, ?_, S.two_le_m, S.m_dvd_q, S.m_isOrder, S.sorted,
+    S.lt_q, S.primitive, hasDistance_normalForm _ C S⟩
+  rw [outerCutoff_of_three_le B1 Bn hd0]
+  exact hSB
 
 /-- **The six-qubit instance of the cutoff**, with no hypothesis: `beta_6 = 9`
 is a kernel theorem, so at target distance three every six-qubit code in the
@@ -123,11 +163,77 @@ theorem completeness_six_qubit {d0 d : ℕ} (hd0 : 3 ≤ d0) (hdd : d0 ≤ d)
     ∃ S : SortedForm.SortedNormalForm
         (weakenDistance (show 3 ≤ d by omega) C),
       2 ≤ S.q ∧ S.q ≤ 9 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      (∃ g : GlobalClassificationBridge.IntrinsicGroup
+        (weakenDistance (show 3 ≤ d by omega) C), orderOf g = S.m) ∧
       Monotone (fun j => (S.angle j).val) ∧
       (∀ j, (S.angle j).val < S.q) ∧
-      Gate.Primitive S.q S.angle :=
-  completeness_distance_three hd0 hdd
-    MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper C theta hpres hnt
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
+  obtain ⟨S, h2q, hq, h2m, hmq, hord, hsort, hlt, hprim, hdist⟩ :=
+    completeness_distance_three (B1 := 0) hd0 hdd
+      MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper C theta hpres
+      hnt
+  refine ⟨S, h2q, ?_, h2m, hmq, hord, hsort, hlt, hprim, hdist⟩
+  rwa [outerCutoff_of_three_le 0 9 hd0] at hq
+
+/-! ## The paper's own hypothesis
+
+`thm:sslp-completeness` assumes the code "admits a nontrivial diagonal product
+logical operation", which is a statement about the group.  The theorems above
+take a real phase vector already known to act projectively nontrivially.  The
+two are equivalent, and the translation is done here rather than left to the
+reader. -/
+
+/-- **Completeness at target distance two, under the paper's hypothesis.** -/
+theorem completeness_of_nontrivial_two {B1 Bn d0 d : ℕ} (hd0 : d0 = 2)
+    (hdd : d0 ≤ d)
+    (beta1 : BinaryBeta.BetaBound (n + 1) B1)
+    (C : CodeSpec.ExactCode n 2 d)
+    (hnontrivial : ∃ g : GlobalClassificationBridge.IntrinsicGroup C, g ≠ 1) :
+    ∃ S : SortedForm.SortedNormalForm C,
+      2 ≤ S.q ∧ S.q ≤ outerCutoff B1 Bn d0 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      (∃ g : GlobalClassificationBridge.IntrinsicGroup C, orderOf g = S.m) ∧
+      Monotone (fun j => (S.angle j).val) ∧
+      (∀ j, (S.angle j).val < S.q) ∧
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
+  obtain ⟨g, hg1⟩ := hnontrivial
+  obtain ⟨v, rfl⟩ := QuotientGroup.mk_surjective g
+  obtain ⟨theta, hexp⟩ :=
+    MainTheory.LocalPhaseAngle.exists_angleVector
+      (v : ClassificationLevels.LocalPhase n)
+  have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame
+    (v : ClassificationLevels.LocalPhase n) v.2 theta hexp
+  have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
+    C (v : ClassificationLevels.LocalPhase n) v.2 theta hexp hg1
+  exact completeness_distance_two hd0 hdd beta1 C theta hpres hnt
+
+/-- **Completeness at target distance three or more, under the paper's
+hypothesis.** -/
+theorem completeness_of_nontrivial_three {B1 Bn d0 d : ℕ} (hd0 : 3 ≤ d0)
+    (hdd : d0 ≤ d)
+    (betan : BinaryBeta.BetaBound n Bn)
+    (C : CodeSpec.ExactCode n 2 d)
+    (hnontrivial : ∃ g : GlobalClassificationBridge.IntrinsicGroup C, g ≠ 1) :
+    ∃ S : SortedForm.SortedNormalForm
+        (weakenDistance (show 3 ≤ d by omega) C),
+      2 ≤ S.q ∧ S.q ≤ outerCutoff B1 Bn d0 ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      (∃ g : GlobalClassificationBridge.IntrinsicGroup
+        (weakenDistance (show 3 ≤ d by omega) C), orderOf g = S.m) ∧
+      Monotone (fun j => (S.angle j).val) ∧
+      (∀ j, (S.angle j).val < S.q) ∧
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
+  obtain ⟨g, hg1⟩ := hnontrivial
+  obtain ⟨v, rfl⟩ := QuotientGroup.mk_surjective g
+  obtain ⟨theta, hexp⟩ :=
+    MainTheory.LocalPhaseAngle.exists_angleVector
+      (v : ClassificationLevels.LocalPhase n)
+  have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame
+    (v : ClassificationLevels.LocalPhase n) v.2 theta hexp
+  have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
+    C (v : ClassificationLevels.LocalPhase n) v.2 theta hexp hg1
+  exact completeness_distance_three hd0 hdd betan C theta hpres hnt
 
 /-! ## `eq:m-leq9`: the six-qubit order bound -/
 
