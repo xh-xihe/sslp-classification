@@ -63,5 +63,6 @@ import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
+import MainTheory.FiniteProjectiveGroup
 import MainTheory.SectionThreeNonVacuity
 import MainTheory.Audit

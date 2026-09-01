@@ -33,6 +33,74 @@ theorem betaBound_mono {M N B : ℕ} (h : BinaryBeta.BetaBound N B)
     (hMN : M ≤ N) : BinaryBeta.BetaBound M B :=
   fun s h1 hsM C hC hdet => h s h1 (le_trans hsM hMN) C hC hdet
 
+/-! ## `thm:qualitative-finite-lift`, in one statement
+
+Section II's Theorem 2.4 was proved here as three separate results -- existence
+of a primitive lift (`GeneralLiftOrder.exists_hasPrimitiveLift`), `m | q`
+(`orderOf_dvd_of_hasPrimitiveLift`), and the pivot size
+(`PivotSize.exists_pivot_card_eq_rank_le`) -- so a reader looking for the
+theorem under one name would not find it.  The same defect an independent audit
+found in `thm:rank-two-sslp`, and the same remedy. -/
+
+/-- **`thm:qualitative-finite-lift`.**
+
+For a nontrivial projective diagonal class of an exact code detecting every
+`Z_j`: a primitive root-of-unity representative `D(a;q)` with `q >= 2`; a finite
+projective logical order `m >= 2` with `m | q` (`eq:qualitative-m-divides-q`);
+and a nonsingular zero--one pivot matrix of size `s = rank R <= n + t - 1`
+whose denominator invariant bounds `q_min` (`eq:qualitative-pivot-size`).
+
+`t <= K` is included because `cor:quantitative-projective-group` needs it and
+because it is what turns the pivot bound into `beta_{n+K-1}`. -/
+theorem qualitative_finite_lift (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
+    (g : IntrinsicGroup C) (hg : g ≠ 1) :
+    (∃ q : ℕ, 2 ≤ q ∧ HasPrimitiveLift C g q ∧ orderOf g ∣ q) ∧
+    2 ≤ orderOf g ∧
+    ∃ t s : ℕ, 2 ≤ t ∧ t ≤ K ∧ s ≤ n + t - 1 ∧
+      ∃ M : Matrix (Fin s) (Fin s) ℤ,
+        BinaryBeta.IsZeroOne M ∧ M.det ≠ 0 ∧
+        qMin C hd g ≤ SharpClearing.inverseDenominator M := by
+  obtain ⟨v, rfl⟩ := QuotientGroup.mk_surjective g
+  obtain ⟨theta, hexp⟩ :=
+    MainTheory.LocalPhaseAngle.exists_angleVector (v : LocalPhase n)
+  have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame
+    (v : LocalPhase n) v.2 theta hexp
+  have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
+    C (v : LocalPhase n) v.2 theta hexp hg
+  set R := resolutionOf C theta hpres with hR
+  have ht : 2 ≤ R.sectorCount :=
+    two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
+  have htK : R.sectorCount ≤ K := SectionTwoGeneral.sectorCount_le R.link
+  have hZ := R.zDetects hd
+  set L := ColoredBound.pivotLift R.sectors hZ with hL
+  have hlift := hasPrimitiveLift_of_rationalLift v hexp hpres L
+  have hdvd := orderOf_dvd_of_hasPrimitiveLift hlift
+  have h2m : 2 ≤ orderOf (intrinsicClass (exactCodeProjector C) v) := by
+    have hne0 : orderOf (intrinsicClass (exactCodeProjector C) v) ≠ 0 := by
+      intro h0
+      rw [h0] at hdvd
+      exact absurd (Nat.eq_zero_of_zero_dvd hdvd) L.order_pos.ne'
+    have hne1 : orderOf (intrinsicClass (exactCodeProjector C) v) ≠ 1 := by
+      intro h1
+      exact hg (orderOf_eq_one_iff.mp h1)
+    omega
+  obtain ⟨_, _, _, hrankle⟩ :=
+    PivotSize.exists_pivot_card_eq_rank_le R.sectors
+  refine ⟨⟨L.order, ?_, hlift, hdvd⟩, h2m, R.sectorCount,
+    (coloredMatrix R.sectors).rank, ht, htK, hrankle,
+    BinaryPivot.binMatrix (ColoredBound.canonicalPivot R.sectors),
+    BinaryPivot.binMatrix_isZeroOne _,
+    BinaryPivot.binMatrix_det_ne_zero _ (ColoredBound.canonicalPivot_det _),
+    ?_⟩
+  · exact le_trans h2m (Nat.le_of_dvd L.order_pos hdvd)
+  · refine le_trans (qMin_le C hd _ L.order_pos hlift) ?_
+    refine le_trans (Nat.le_of_dvd
+      (SharpClearing.inverseDenominator_pos _)
+      (FiniteLift.sharp_pivot_divisibility
+        (ColoredBound.canonicalPivot R.sectors)
+        (ColoredBound.canonicalPivot_det _) hZ)) ?_
+    exact le_of_eq (BinaryPivot.inverseDenominator_eq _)
+
 /-- **`cor:quantitative-projective-group`.**
 
 Every nontrivial projective diagonal class of a rank-`K` code detecting all

@@ -177,6 +177,33 @@ theorem modularAngle_primitive_lift {C : CodeSpec.ExactCode n K d}
     Gate.Primitive L.order (modularAngle L) :=
   modularAngle_primitive L
 
+/-! ## `eq:sector-contained-fiber` -/
+
+/-- **Each logical phase sector sits inside one residue fibre of the lift.**
+
+`eq:sector-contained-fiber` at arbitrary rank.  The tool
+(`PhaseSector.ssCondition_of_eigen`) was general all along, but nothing stated
+it of *the* resolution and *the* lift, so the containment the SSLP normal form
+rests on was not written down outside rank two. -/
+theorem sector_in_fibre {C : CodeSpec.ExactCode n K d}
+    (R : LogicalSectorResolution C theta)
+    (L : MainTheory.FiniteLift.RationalColoredLift R.sectors)
+    (u : R.sectors.Index) (x : SS.BitString n) (hx : R.sectors.vec u x ≠ 0) :
+    SS.SSConditionState (modularAngle L)
+      (SS.weight (modularAngle L) x) (R.sectors.vec u) := by
+  letI : NeZero L.order := ⟨L.order_pos.ne'⟩
+  refine MainTheory.PhaseSector.ssCondition_of_eigen
+    (D3NormalizedFiniteToReal.canonicalRoot L.order)
+    (D3NormalizedFiniteToReal.canonicalRoot_primitive L.order)
+    (modularAngle L) (R.sectors.vec u)
+    (projectiveScalar L * PhaseSectorFull.phaseExp (R.sectors.phase u.1))
+    ?_ x hx
+  have hgate := congrFun (finiteGate_eq_rationalRealGate L) (R.sectors.vec u)
+  rw [hgate, projectiveScalar_action L u]
+  funext y
+  rw [congrFun (R.sectors.eigen u) y]
+  ring
+
 /-! ## `eq:qmin`: the set of primitive moduli, and its minimum -/
 
 /-- **A projective class has a primitive finite lift of modulus `q`.**

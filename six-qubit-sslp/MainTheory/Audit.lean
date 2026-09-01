@@ -38,6 +38,7 @@ import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
+import MainTheory.FiniteProjectiveGroup
 import MainTheory.SectionThreeNonVacuity
 
 /-!
@@ -223,6 +224,10 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.GeneralFiniteness.finite_intrinsicGroup
 #print axioms MainTheory.GeneralFiniteness.isCyclic
 #print axioms MainTheory.GeneralFiniteness.finite_and_abelian
+#print axioms MainTheory.FiniteProjectiveGroup.lifts
+#print axioms MainTheory.FiniteProjectiveGroup.whole_of_finite
+#print axioms MainTheory.FiniteProjectiveGroup.whole
+#print axioms MainTheory.FiniteProjectiveGroup.whole_six_qubit
 #print axioms MainTheory.BetaExists.exists_betaBound
 #print axioms MainTheory.DeterminantalRank.exists_nonsingular_minor
 #print axioms MainTheory.PivotSize.exists_pivot_card_eq_rank_le
@@ -231,6 +236,7 @@ operation, with the spectral data produced rather than assumed. -/
 
 #print axioms MainTheory.GeneralLiftOrder.liftSymmetry
 #print axioms MainTheory.GeneralLiftOrder.intrinsicClass_liftSymmetry
+#print axioms MainTheory.GeneralLiftOrder.sector_in_fibre
 #print axioms MainTheory.GeneralLiftOrder.exists_lift_order_dvd
 #print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift
 #print axioms MainTheory.GeneralLiftOrder.qMin
@@ -295,6 +301,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.ColoredBound.pivot_order_le
 #print axioms MainTheory.ColoredBound.quantitative_colored_finite_lift
 #print axioms MainTheory.SectionTwoGeneral.sectorCount_le
+#print axioms MainTheory.QuantitativeGroup.qualitative_finite_lift
 #print axioms MainTheory.QuantitativeGroup.quantitative_projective_group
 #print axioms MainTheory.QuantitativeGroup.qMin_le_beta
 #print axioms MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le
