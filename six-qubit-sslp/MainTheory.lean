@@ -61,4 +61,6 @@ import MainTheory.SortedNormalForm
 import MainTheory.FlipSemanticTransport
 import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
+import MainTheory.PrimitiveReduction
+import MainTheory.QMinBound
 import MainTheory.Audit
