@@ -111,13 +111,26 @@ theorem SortedNormalForm.projectiveOrder {d : ℕ}
   rw [Cyclic.chi_pow_eq_one_iff S.zeta S.primitiveRoot,
     RankTwo.addOrderOf_div S.m S.m_dvd_q]
 
+/-- The right residue does not wrap: its `ZMod q` representative is literally
+`q / m`.  Without this the eigenvalue below could not be read as the paper's
+`omega_q^{q/m}`. -/
+theorem SortedNormalForm.val_rightResidue {d : ℕ}
+    {C : CodeSpec.ExactCode n 2 d} (S : SortedNormalForm C) :
+    (((S.q / S.m : ℕ) : ZMod S.q)).val = S.q / S.m := by
+  haveI := S.q_ne
+  refine ZMod.val_natCast_of_lt ?_
+  have hq : 0 < S.q := by have := S.two_le_q; omega
+  have hm : 1 < S.m := by have := S.two_le_m; omega
+  exact Nat.div_lt_self hq hm
+
 /-- **`D(a;q)` scales the second logical word by `omega_q^{q/m}`.** -/
 theorem SortedNormalForm.gate_right {d : ℕ} {C : CodeSpec.ExactCode n 2 d}
     (S : SortedNormalForm C) :
     Gate.gate S.zeta S.angle (S.frame.vec 1)
-      = fun s => S.zeta ^ (((S.q / S.m : ℕ) : ZMod S.q)).val
-          * S.frame.vec 1 s :=
-  MainTheory.PhaseSector.eigen_of_ssCondition S.zeta S.angle (S.frame.vec 1) _ S.rightFiber
+      = fun s => S.zeta ^ (S.q / S.m) * S.frame.vec 1 s := by
+  rw [← S.val_rightResidue]
+  exact MainTheory.PhaseSector.eigen_of_ssCondition S.zeta S.angle
+    (S.frame.vec 1) _ S.rightFiber
 
 /-- The permutation that sorts a `ZMod q` vector by its residue
 representative, in the convention `permAngle` uses. -/

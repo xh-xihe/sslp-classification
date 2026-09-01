@@ -38,7 +38,7 @@ variable {n t : ℕ} {theta : Fin n → ℝ}
 
 /-- The rational pivot of `PivotSize` is the rational cast of the integer
 pivot, so their nonsingularity statements agree. -/
-theorem ratPivot_eq {s : Type*} [Fintype s] [DecidableEq s]
+theorem ratPivot_eq {s : Type*} [Fintype s]
     {D : SectorDecomposition n t theta} (P : PivotData D s) :
     PivotSize.ratPivot P = ratMatrix P.matrix := by
   ext i j

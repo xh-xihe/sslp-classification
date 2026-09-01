@@ -249,6 +249,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm_le
 #print axioms MainTheory.SortedForm.d2_sslp_classification
 #print axioms MainTheory.SortedForm.SortedNormalForm.gate_left
+#print axioms MainTheory.SortedForm.SortedNormalForm.val_rightResidue
 #print axioms MainTheory.SortedForm.SortedNormalForm.gate_right
 #print axioms MainTheory.SortedForm.SortedNormalForm.physicalOrder
 #print axioms MainTheory.SortedForm.SortedNormalForm.projectiveOrder
