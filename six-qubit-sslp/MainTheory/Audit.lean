@@ -25,6 +25,7 @@ import MainTheory.IntrinsicAbelian
 import MainTheory.GeneralFiniteness
 import MainTheory.BetaExists
 import MainTheory.DeterminantalRank
+import MainTheory.GeneralLiftOrder
 import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator
@@ -219,6 +220,14 @@ operation, with the spectral data produced rather than assumed. -/
 
 /-! ## The paper's rank-two theorem, stated whole -/
 
+#print axioms MainTheory.GeneralLiftOrder.liftSymmetry
+#print axioms MainTheory.GeneralLiftOrder.intrinsicClass_liftSymmetry
+#print axioms MainTheory.GeneralLiftOrder.exists_lift_order_dvd
+#print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift
+#print axioms MainTheory.GeneralLiftOrder.qMin
+#print axioms MainTheory.GeneralLiftOrder.qMin_spec
+#print axioms MainTheory.GeneralLiftOrder.qMin_le
+#print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_qMin
 #print axioms MainTheory.RankTwoSSLP.rank_two_sslp
 #print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form
 #print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial

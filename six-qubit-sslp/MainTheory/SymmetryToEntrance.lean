@@ -36,8 +36,11 @@ theorem realGateEnd_eq_diagonalAction (u : LocalPhase n) (theta : Fin n → ℝ)
     diagonalAction]
   rw [LocalPhaseAngle.diagonalValue_eq_exp u theta h s]
 
-/-- A diagonal symmetry gives the entrance's preservation hypothesis. -/
-theorem codePreserving_of_symmetry (F : CodeSpec.OrthonormalFrame n 2)
+/-- A diagonal symmetry gives the entrance's preservation hypothesis.
+
+Stated at arbitrary rank: nothing in the argument sees the number of logical
+states, and `GeneralLiftOrder` needs it at general `K`. -/
+theorem codePreserving_of_symmetry {K : ℕ} (F : CodeSpec.OrthonormalFrame n K)
     (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
     (theta : Fin n → ℝ)

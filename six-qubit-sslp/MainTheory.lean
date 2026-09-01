@@ -50,6 +50,7 @@ import MainTheory.SectionTwoGeneral
 import MainTheory.GeneralFiniteness
 import MainTheory.BetaExists
 import MainTheory.DeterminantalRank
+import MainTheory.GeneralLiftOrder
 import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator
