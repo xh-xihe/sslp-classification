@@ -79,19 +79,15 @@ theorem monotone_permAngle_sortingPerm {q : ℕ} (a : Fin n → ZMod q) :
   have h := Tuple.monotone_sort fun j => (a j).val
   simpa [permAngle, sortingPerm, Function.comp] using h
 
-/-- **Every exact rank-two distance-three code with a projectively nontrivial
-diagonal symmetry has the sorted normal form.** -/
-theorem exists_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
-    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
-    (hpres : CodeSpec.CodePreserving C.frame
-      (PhaseSectorBridge.realGateEnd theta))
-    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
-      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
-    Nonempty (SortedNormalForm C) := by
-  letI : NeZero (rationalLift C hd theta hpres).order :=
-    ⟨(rationalLift C hd theta hpres).order_pos.ne'⟩
-  set q := (rationalLift C hd theta hpres).order with hq
-  set G := finiteGenerator C hd theta hpres hnt with hG
+/-- **Any finite generator resolution yields the sorted normal form**, of the
+generator's own modulus.
+
+Stated on an arbitrary resolution rather than on the one `finiteGenerator`
+produces, so that a resolution carrying a bound can be fed in instead. -/
+theorem exists_sortedNormalForm_of_generator {d q : ℕ} [NeZero q]
+    (C : CodeSpec.ExactCode n 2 d)
+    (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
+    ∃ S : SortedNormalForm C, S.q = q := by
   set T := canonicalTwoFiber G with hT
   have hL : SS.SSConditionState (normalizedFiniteAngle G T) 0
       (normalizedState (d := d) T 0) := T.normalizedLeft
@@ -126,6 +122,88 @@ theorem exists_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
     perm := sortingPerm (normalizedFiniteAngle G T)
     source := G.eigenFrame
     source_span := G.span_eq
-    frame_eq := fun k s => rfl }⟩
+    frame_eq := fun k s => rfl }, rfl⟩
+
+/-- **Every exact rank-two code of distance at least two with a projectively
+nontrivial diagonal symmetry has the sorted normal form.** -/
+theorem exists_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
+    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ S : SortedNormalForm C,
+      S.q = (rationalLift C hd theta hpres).order := by
+  letI : NeZero (rationalLift C hd theta hpres).order :=
+    ⟨(rationalLift C hd theta hpres).order_pos.ne'⟩
+  exact exists_sortedNormalForm_of_generator C
+    (finiteGenerator C hd theta hpres hnt)
+
+/-- The `Nonempty` form, for callers that do not need the modulus named. -/
+theorem nonempty_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
+    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    Nonempty (SortedNormalForm C) :=
+  let ⟨S, _⟩ := exists_sortedNormalForm hd C theta hpres hnt
+  ⟨S⟩
+
+/-- **The normal form's modulus obeys `beta_{n+1}`.**
+
+At rank two a projectively nontrivial operation has exactly two logical
+eigenvalues, so the coloured system has `n + 1` unknowns; and `rationalLift` is
+the pivot lift, so its modulus is bounded. -/
+theorem exists_sortedNormalForm_le {B d : ℕ} (hd : 2 ≤ d)
+    (beta : BinaryBeta.BetaBound (n + 1) B)
+    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ S : SortedNormalForm C, S.q ≤ B := by
+  obtain ⟨S, hSq⟩ := exists_sortedNormalForm hd C theta hpres hnt
+  refine ⟨S, ?_⟩
+  rw [hSq]
+  have ht : 2 ≤ (resolutionOf C theta hpres).sectorCount :=
+    two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
+  have h2 : (resolutionOf C theta hpres).sectorCount = 2 :=
+    sectorCount_eq_two C theta hpres hnt
+  refine rationalLift_order_le C hd theta hpres ?_ ht
+  rw [h2]
+  simpa using beta
+
+/-- **`thm:d2-sslp-classification`.**
+
+Fix `n` and a target distance `d0 >= 2`.  Every exact `((n,2,d))` code with
+`d >= d0` carrying a projectively nontrivial diagonal operation occurs in a
+primitive sector with
+
+  `2 <= q <= beta_{n+1}`, `m | q`, `m >= 2`,
+  `0 <= a_1 <= ... <= a_n < q`, `gcd(q, a_1, ..., a_n) = 1`,
+
+with the two logical words supported in the fibres `0` and `q/m` of that
+sector, orthonormal, and satisfying the Knill--Laflamme equations for every
+Pauli of weight below `d` -- hence below `d0`.
+
+All of that is the record `SortedNormalForm`; what this theorem adds is the
+bound, and the fact that the record exists at every `d >= d0`. -/
+theorem d2_sslp_classification {B d0 d : ℕ} (hd0 : 2 ≤ d0) (hdd : d0 ≤ d)
+    (beta : BinaryBeta.BetaBound (n + 1) B)
+    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ S : SortedNormalForm C, S.q ≤ B ∧ 2 ≤ S.q ∧ 2 ≤ S.m ∧ S.m ∣ S.q ∧
+      Monotone (fun j => (S.angle j).val) ∧
+      Gate.Primitive S.q S.angle ∧
+      SS.HasDistance S.frame.vec d := by
+  obtain ⟨S, hSB⟩ :=
+    exists_sortedNormalForm_le (le_trans hd0 hdd) beta C theta hpres hnt
+  exact ⟨S, hSB, S.two_le_q, S.two_le_m, S.m_dvd_q, S.sorted, S.primitive,
+    S.hasDistance⟩
 
 end MainTheory.SortedForm
+

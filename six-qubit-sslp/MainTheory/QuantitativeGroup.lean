@@ -33,24 +33,6 @@ theorem betaBound_mono {M N B : ℕ} (h : BinaryBeta.BetaBound N B)
     (hMN : M ≤ N) : BinaryBeta.BetaBound M B :=
   fun s h1 hsM C hC hdet => h s h1 (le_trans hsM hMN) C hC hdet
 
-/-- **`t <= K`.**  The sector vectors are a reindexing of a `K`-element logical
-frame, and each sector has positive rank, so there are at most `K` sectors. -/
-theorem sectorCount_le {t : ℕ} {theta : Fin n → ℝ}
-    {C : CodeSpec.ExactCode n K d} {D : SectorDecomposition n t theta}
-    (link : ExactCodeSectorLink C D) : t ≤ K := by
-  classical
-  have h : Fintype.card (Fin K) = Fintype.card D.Index :=
-    Fintype.card_congr link.reindex
-  have hK : Fintype.card (Fin K) = K := Fintype.card_fin K
-  have hS : Fintype.card D.Index = ∑ alpha : Fin t, D.rank alpha := by
-    rw [Fintype.card_sigma]
-    exact Finset.sum_congr rfl (fun a _ => Fintype.card_fin _)
-  have hsum : t ≤ ∑ alpha : Fin t, D.rank alpha := by
-    calc t = ∑ _a : Fin t, 1 := by simp
-      _ ≤ ∑ a : Fin t, D.rank a :=
-          Finset.sum_le_sum (fun a _ => D.rank_pos a)
-  omega
-
 /-- **`cor:quantitative-projective-group`.**
 
 Every nontrivial projective diagonal class of a rank-`K` code detecting all
@@ -76,7 +58,7 @@ theorem quantitative_projective_group {B : ℕ}
   set R := resolutionOf C theta hpres with hR
   have ht : 2 ≤ R.sectorCount :=
     two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
-  have htK : R.sectorCount ≤ K := sectorCount_le R.link
+  have htK : R.sectorCount ≤ K := SectionTwoGeneral.sectorCount_le R.link
   have hbeta : BinaryBeta.BetaBound (n + R.sectorCount - 1) B :=
     betaBound_mono beta (by omega)
   obtain ⟨L, _, _, _, _, _, hle⟩ :=
@@ -127,7 +109,7 @@ theorem exists_sectorCount_qMin_le (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
   set R := resolutionOf C theta hpres with hR
   have ht : 2 ≤ R.sectorCount :=
     two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
-  refine ⟨R.sectorCount, ht, sectorCount_le R.link, ?_⟩
+  refine ⟨R.sectorCount, ht, SectionTwoGeneral.sectorCount_le R.link, ?_⟩
   intro B hbeta
   obtain ⟨L, _, _, _, _, _, hle⟩ :=
     ColoredBound.quantitative_colored_finite_lift hbeta R.sectors

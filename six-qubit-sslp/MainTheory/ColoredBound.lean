@@ -82,6 +82,52 @@ theorem pivot_order_le {B m : ℕ}
   · exact inverseDenominator_pos P.matrix
   · rw [heq]; exact hbin
 
+/-! ## The canonical pivot lift -/
+
+/-- The pivot supplied by `PivotSize`, named once so that the lift built from
+it can be referred to by later modules. -/
+noncomputable def canonicalPivot (D : SectorDecomposition n t theta) :
+    PivotData D (Fin (coloredMatrix D).rank) :=
+  Classical.choose (PivotSize.exists_pivotData D)
+
+theorem canonicalPivot_det (D : SectorDecomposition n t theta) :
+    (canonicalPivot D).matrix.det ≠ 0 :=
+  det_ne_zero_of_ratPivot _ (Classical.choose_spec (PivotSize.exists_pivotData D))
+
+/-- **The pivot lift.**  Any rational coloured lift proves the qualitative
+statements; this one also carries the `beta` bound, because it is built by
+solving the pivot system rather than chosen arbitrarily. -/
+noncomputable def pivotLift (D : SectorDecomposition n t theta)
+    (hZ : ZDetects D) : RationalColoredLift D :=
+  (canonicalPivot D).rationalLift (canonicalPivot_det D) hZ
+
+/-- The rank of the coloured matrix is positive once there are two sectors: a
+pivot of size zero would force the lift order to divide one. -/
+theorem rank_pos (D : SectorDecomposition n t theta) (hZ : ZDetects D)
+    (ht : 2 ≤ t) : 1 ≤ (coloredMatrix D).rank := by
+  rcases Nat.eq_zero_or_pos (coloredMatrix D).rank with h0 | hpos
+  · exfalso
+    have hempty : IsEmpty (Fin (coloredMatrix D).rank) := by
+      rw [h0]; exact Fin.isEmpty'
+    have hone : inverseDenominator (canonicalPivot D).matrix = 1 :=
+      @inverseDenominator_of_isEmpty _ _ _ hempty _
+    have hdvd := sharp_pivot_divisibility (canonicalPivot D)
+      (canonicalPivot_det D) hZ
+    rw [hone] at hdvd
+    have h1 : (pivotLift D hZ).order = 1 := Nat.dvd_one.mp hdvd
+    have h2 : 2 ≤ (pivotLift D hZ).order := (pivotLift D hZ).two_le_order ht
+    omega
+  · exact hpos
+
+/-- **The pivot lift obeys the `beta` bound.** -/
+theorem pivotLift_order_le {B : ℕ}
+    (beta : BinaryBeta.BetaBound (n + t - 1) B)
+    (D : SectorDecomposition n t theta) (hZ : ZDetects D) (ht : 2 ≤ t) :
+    (pivotLift D hZ).order ≤ B := by
+  obtain ⟨P, hratdet, _, hrankle⟩ := PivotSize.exists_pivot_card_eq_rank_le D
+  exact pivot_order_le beta hZ (canonicalPivot D) (canonicalPivot_det D)
+    (rank_pos D hZ ht) hrankle
+
 /-- **`thm:colored-finite-lift`.**
 
 Every projectively nontrivial sector decomposition of an exact code detecting
@@ -98,24 +144,10 @@ theorem quantitative_colored_finite_lift {B : ℕ}
       (∀ alpha, ∃ b : ℤ,
         (L.order : ℝ) * (D.phase alpha - D.phase (baseSector D)) = (b : ℝ)) ∧
       L.order ≤ B := by
-  obtain ⟨P, hratdet, _, hrankle⟩ := PivotSize.exists_pivot_card_eq_rank_le D
-  have hdet : P.matrix.det ≠ 0 := det_ne_zero_of_ratPivot P hratdet
-  set L := P.rationalLift hdet hZ with hL
-  have h2 : 2 ≤ L.order := L.two_le_order ht
-  have hrank : 1 ≤ (coloredMatrix D).rank := by
-    rcases Nat.eq_zero_or_pos (coloredMatrix D).rank with h0 | hpos
-    · exfalso
-      have hempty : IsEmpty (Fin (coloredMatrix D).rank) := by
-        rw [h0]; exact Fin.isEmpty'
-      have hone : inverseDenominator P.matrix = 1 :=
-        @inverseDenominator_of_isEmpty _ _ _ hempty P.matrix
-      have hdvd := sharp_pivot_divisibility P hdet hZ
-      rw [hone, ← hL] at hdvd
-      have : L.order = 1 := Nat.dvd_one.mp hdvd
-      omega
-    · exact hpos
-  exact ⟨L, h2, L.same_projective_sector_action, L.numerator_spec,
-    L.primitive, L.relative_phase_cleared,
-    pivot_order_le beta hZ P hdet hrank hrankle⟩
+  refine ⟨pivotLift D hZ, (pivotLift D hZ).two_le_order ht,
+    (pivotLift D hZ).same_projective_sector_action,
+    (pivotLift D hZ).numerator_spec, (pivotLift D hZ).primitive,
+    (pivotLift D hZ).relative_phase_cleared,
+    pivotLift_order_le beta D hZ ht⟩
 
 end MainTheory.ColoredBound

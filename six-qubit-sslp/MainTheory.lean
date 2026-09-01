@@ -58,4 +58,6 @@ import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator
 import MainTheory.SortedNormalForm
+import MainTheory.FlipSemanticTransport
+import MainTheory.D3BoundedNormalForm
 import MainTheory.Audit

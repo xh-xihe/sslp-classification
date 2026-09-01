@@ -3,6 +3,7 @@ import MainTheory.SectorMeanValue
 import MainTheory.FiniteLift
 import MainTheory.PivotSize
 import MainTheory.D3RationalLiftFiniteGenerator
+import MainTheory.ColoredBound
 
 /-!
 # Section II at general `(n, K, d)`
@@ -186,14 +187,59 @@ at least two carrying a projectively nontrivial diagonal operation, a genuine
 `FiniteGeneratorResolution` exists.  Previously this object could only be
 constructed at `(6, 2, 3)`. -/
 
+/-- **`t <= K`.**  The sector vectors are a reindexing of a `K`-element logical
+frame, and every sector has positive rank, so there are at most `K` sectors. -/
+theorem sectorCount_le {t : ℕ} {theta : Fin n → ℝ}
+    {C : CodeSpec.ExactCode n K d}
+    {D : SectorDecomposition n t theta}
+    (link : MainTheory.FiniteLift.ExactCodeSectorLink C D) : t ≤ K := by
+  classical
+  have h : Fintype.card (Fin K) = Fintype.card D.Index :=
+    Fintype.card_congr link.reindex
+  have hK : Fintype.card (Fin K) = K := Fintype.card_fin K
+  have hS : Fintype.card D.Index = ∑ alpha : Fin t, D.rank alpha := by
+    rw [Fintype.card_sigma]
+    exact Finset.sum_congr rfl (fun a _ => Fintype.card_fin _)
+  have hsum : t ≤ ∑ alpha : Fin t, D.rank alpha := by
+    calc t = ∑ _a : Fin t, 1 := by simp
+      _ ≤ ∑ a : Fin t, D.rank a :=
+          Finset.sum_le_sum (fun a _ => D.rank_pos a)
+  omega
+
+/-- **At rank two a projectively nontrivial operation has exactly two logical
+eigenvalues.**  So the coloured system has `n + 1` unknowns, and the bound of
+`thm:colored-finite-lift` reads `beta_{n+1}`. -/
+theorem sectorCount_eq_two (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    (resolutionOf C theta hpres).sectorCount = 2 := by
+  have h2 := two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
+  have hle := sectorCount_le (resolutionOf C theta hpres).link
+  omega
+
 /-- The rational coloured lift of the resolution, at general `(n, 2, d)`. -/
 noncomputable def rationalLift (C : CodeSpec.ExactCode n 2 d) (hd : 2 ≤ d)
     (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta)) :
     MainTheory.FiniteLift.RationalColoredLift (resolutionOf C theta hpres).sectors :=
-  Classical.choice
-    (MainTheory.FiniteLift.exists_rationalColoredLift _
-      ((resolutionOf C theta hpres).zDetects hd))
+  MainTheory.ColoredBound.pivotLift _ ((resolutionOf C theta hpres).zDetects hd)
+
+/-- **The lift's modulus obeys the `beta` bound.**
+
+This is why `rationalLift` is the pivot lift and not an arbitrary choice: every
+object built downstream of it -- the finite generator, the two-fibre
+certificate, the sorted normal form -- inherits the bound. -/
+theorem rationalLift_order_le {B : ℕ} (C : CodeSpec.ExactCode n 2 d) (hd : 2 ≤ d)
+    (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta))
+    (beta : BinaryBeta.BetaBound
+      (n + (resolutionOf C theta hpres).sectorCount - 1) B)
+    (ht : 2 ≤ (resolutionOf C theta hpres).sectorCount) :
+    (rationalLift C hd theta hpres).order ≤ B :=
+  MainTheory.ColoredBound.pivotLift_order_le beta _
+    ((resolutionOf C theta hpres).zDetects hd) ht
 
 /-- **A finite generator resolution exists for every exact rank-two code with
 a projectively nontrivial diagonal operation**, at general `n` and `d`. -/

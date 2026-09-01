@@ -33,6 +33,8 @@ import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator
 import MainTheory.SortedNormalForm
+import MainTheory.FlipSemanticTransport
+import MainTheory.D3BoundedNormalForm
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -240,6 +242,17 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.RankTwoSSLP.cyclic_of_finite
 #print axioms MainTheory.GroupOrder.rank_two_sslp_generator
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm
+#print axioms MainTheory.SortedForm.exists_sortedNormalForm_le
+#print axioms MainTheory.SortedForm.d2_sslp_classification
+#print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator
+#print axioms MainTheory.FlipSemanticTransport.gate_flip_shift
+#print axioms MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution
+#print axioms MainTheory.D3BoundedNormalForm.boundedGenerator
+#print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN
+#print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine
+#print axioms MainTheory.SectionTwoGeneral.sectorCount_eq_two
+#print axioms MainTheory.SectionTwoGeneral.rationalLift_order_le
+#print axioms MainTheory.ColoredBound.pivotLift_order_le
 #print axioms MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard
 #print axioms MainTheory.GroupOrder.logicalOrder_dvd_natCard
 #print axioms MainTheory.NumberOperator.numberOp_apply
@@ -256,7 +269,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.BinaryPivot.coloredMatrixZ_eq
 #print axioms MainTheory.ColoredBound.pivot_order_le
 #print axioms MainTheory.ColoredBound.quantitative_colored_finite_lift
-#print axioms MainTheory.QuantitativeGroup.sectorCount_le
+#print axioms MainTheory.SectionTwoGeneral.sectorCount_le
 #print axioms MainTheory.QuantitativeGroup.quantitative_projective_group
 #print axioms MainTheory.QuantitativeGroup.qMin_le_beta
 #print axioms MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le

@@ -182,6 +182,23 @@
 'MainTheory.RankTwoSSLP.cyclic_of_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GroupOrder.rank_two_sslp_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.SortedForm.exists_sortedNormalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.exists_sortedNormalForm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.d2_sslp_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SortedForm.exists_sortedNormalForm_of_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.FlipSemanticTransport.gate_flip_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.D3BoundedNormalForm.boundedGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.SectionTwoGeneral.sectorCount_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SectionTwoGeneral.rationalLift_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.ColoredBound.pivotLift_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GroupOrder.logicalOrder_dvd_natCard' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.NumberOperator.numberOp_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -199,7 +216,7 @@
 'MainTheory.BinaryPivot.coloredMatrixZ_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.ColoredBound.pivot_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.ColoredBound.quantitative_colored_finite_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
-'MainTheory.QuantitativeGroup.sectorCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SectionTwoGeneral.sectorCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.quantitative_projective_group' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.qMin_le_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le' depends on axioms: [propext, Classical.choice, Quot.sound]
