@@ -242,6 +242,25 @@ theorem exists_lift_order_dvd (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
   obtain ⟨q, hq, h⟩ := exists_hasPrimitiveLift C hd g
   exact ⟨q, hq, h, orderOf_dvd_of_hasPrimitiveLift h⟩
 
+/-- **Every projective diagonal class has finite order**, at arbitrary rank.
+
+`cor:quantitative-projective-group` opens with this, and at `K > 2` it does not
+follow from finiteness of the group -- which is not available there.  It
+follows from having a finite lift at all. -/
+theorem orderOf_pos (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
+    (g : IntrinsicGroup C) : 0 < orderOf g := by
+  obtain ⟨q, hq, _, hdvd⟩ := exists_lift_order_dvd C hd g
+  rcases Nat.eq_zero_or_pos (orderOf g) with h | h
+  · rw [h] at hdvd
+    exact absurd (Nat.eq_zero_of_zero_dvd hdvd) hq.ne'
+  · exact h
+
+/-- The order is also bounded by any primitive lift's modulus. -/
+theorem orderOf_le_of_hasPrimitiveLift {C : CodeSpec.ExactCode n K d}
+    {g : IntrinsicGroup C} {q : ℕ} (hq : 0 < q)
+    (h : HasPrimitiveLift C g q) : orderOf g ≤ q :=
+  Nat.le_of_dvd hq (orderOf_dvd_of_hasPrimitiveLift h)
+
 open Classical in
 /-- **`q_min`**, the paper's minimal primitive modulus of a projective
 class. -/

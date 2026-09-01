@@ -538,21 +538,28 @@ Three obstacles were found by reading the paper against the pinned Mathlib
 
 The constant `beta_6 = 9` is what specializes the general bound to six qubits:
 it is the number that makes the 66-orbit list exhaustive. The paper supports it
-with the words "complete binary-matrix tables give" and no proof. Verifying it
-would mean bounding the largest invariant factor over all nonsingular 6x6 binary
-matrices -- `2^36` of them, or `6.8e7` after discarding repeated and zero rows --
-which is far beyond `decide`, and the Hadamard bound only gives 14.
+with the words "complete binary-matrix tables give" and no proof. Bounding the
+largest invariant factor over all nonsingular 6x6 binary matrices means `2^36`
+matrices, or `6.8e7` after discarding repeated and zero rows, which is far
+beyond `decide`, and the Hadamard bound only gives 14.
+
+This obstacle is closed. `MainTheory/BinaryBetaSixCanonical.lean` reduces the
+maximum to weakly increasing angle six-tuples in range, and a sharded coverage
+tree over `Fin 8` discharges those in the kernel:
+`Generated.BinaryBetaSixKernel.Certificate.upper : BetaBound 6 9`, with
+`betaExact` adding attainment, both inside
+`{propext, Classical.choice, Quot.sound}`. The paragraph below is kept because
+it records what the bound is and is not needed for.
 
 It is important to be clear about what this does and does not block. The general
 theorem `thm:d3-bound` states `q | d_r(C)` and `q <= beta_r <= beta_n` with
 `beta_n` *defined* as that maximum; the inequality is then immediate and the
 value of `beta_6` is not needed to formalize it. Only the six-qubit
 specialization -- Result I's `M_3(6) = 5`, and the exhaustiveness of the orbit
-list -- uses the number. Since the paper itself cites it as a computation rather
-than proving it, the faithful thing is to carry it as an explicit input, which
-is what is done here. Replacing it with a weaker provable bound would not be
-formalizing the paper; it would beimproving on the paper at the cost of redoing the
-Supplementary enumeration, and that is a separate project.
+list -- uses the number. The paper cites it as a computation rather than proving it; this development
+proves it, so it is a theorem here rather than an input. Downstream statements
+that only need *some* bound take one as a parameter, and the certified value is
+supplied where the sharp six-qubit form is wanted.
 
 What actually blocks `thm:d3-bound` is the next item, not this one.
 
@@ -593,29 +600,28 @@ Quot.sound}`; anything else is spelled out.
 | 2.5 | `thm:finite-projective-group` | **Done for `K = 2`, `d = 3`, at arbitrary `n`** (`GeneralFiniteness.finite_and_abelian`), by a route the paper does not take: every class has a representative whose modulus is bounded, so the group injects into a finite label type. That route runs on the distance-three rationalization, so it gives nothing at `d = 2`, and nothing at `K > 2`; there the paper's own proof is the only one, and it stays out of reach -- compact-Lie-group theory, with Cartan's closed-subgroup theorem absent from Mathlib, no Lie algebra of a group, and no `PU(K)`. |
 | 2.6 | `thm:rank-two-sslp` | **Done at arbitrary `n`, forward and converse.** The two-fibre half holds at the paper's own hypothesis `d >= 2` (`RankTwoSSLP.two_fibre_normal_form`, and `..._of_nontrivial` under the paper's hypothesis on the group rather than on a chosen phase vector). Cyclicity needs finiteness, exactly as the paper's proof does: `cyclic_of_finite` at general `d`, discharged at `d = 3` by row 2.5, giving the whole statement as `RankTwoSSLP.rank_two_sslp`. `GroupOrder.rank_two_sslp_generator` runs it on a *generator*, so the modulus that comes out is `Nat.card` of the group -- the paper's `m` in `C_m`. The sorted form `0 <= a_1 <= ... <= a_n < q` with `gcd(q,a) = 1` is `SortedForm.exists_sortedNormalForm`, also at `d >= 2`. The converse is `RankTwo.order_of_two_fiber`. What is left is `d = 2` finiteness, which is row 2.5's gap. |
 | 3.1 | `lem:denominator-clearing` | **Done qualitatively** (`Clearing`), via the adjugate. The sharp multiplier `d_s(C)` needs invariant factors, which Mathlib's Smith normal form does not provide. |
-| 3.2 | `thm:colored-finite-lift` | **Qualitative half done.** The bound `q <= beta_{n+t-1}` needs the sharp multiplier. |
-| 3.3 | `cor:quantitative-projective-group` | **Blocked**, downstream of 2.5. |
-| 4.1 | `cor:K2-q-bound` | **Qualitative half done**; the numerical bound blocked as above. |
+| 3.2 | `thm:colored-finite-lift` | **Structural half done at arbitrary `K`** (`GeneralLiftOrder`): every projective diagonal class has a primitive root-of-unity lift (`exists_hasPrimitiveLift`) and `m | q` for *any* such lift (`orderOf_dvd_of_hasPrimitiveLift`). The numerical half, `q <= beta_{n+t-1}` and `q | d_s(C)`, still needs the sharp multiplier. |
+| 3.3 | `cor:quantitative-projective-group` | **Structural half done at arbitrary `K`**: finite order (`GeneralLiftOrder.orderOf_pos`), a primitive lift, and `m | q <= that lift's modulus`. This half does not go through 2.5 -- finite order of an element follows from having a finite lift, not from finiteness of the group. The bound `q <= beta_{n+K-1}` is open for the same reason as 3.2. |
+| 4.1 | `cor:K2-q-bound` | **Done at `d = 3`**: `m | q` and cyclicity as in 2.6, and `GeneralFiniteness.hasBoundedRepresentation_general` gives every class a representative of modulus at most `beta_n` -- sharper than the corollary's `beta_{n+1}`, because the distance-three route uses a pivot of size at most `n`. At six qubits that specializes to modulus at most `9`, unconditionally (`BoundedRepresentationCertified.hasBoundedRepresentation_unconditional`). Not done: `d = 2`, where the distance-three route gives nothing; and `q_min <= beta_n` as literally phrased, which needs the gcd reduction of a non-primitive lift to a primitive one across moduli. |
 | 4.2 | `thm:d2-sslp-classification` | **Qualitative parts done**; the bound and the canonicalization are not. |
 | 5.2 | `lem:common-affine-span` | **Done in full** (`Covariance`, `AffineSpan`), split into a general convexity half and a quantum half that was already in `SixQubit/CodeBridge.lean`. `span_eq_of_cov_eq` closes it: equal covariances give equal centred spans, via the dual annihilator. |
-| 5.3 | `thm:d3-bound` | **Rationalization done** (`D3Bound`), including the agreement-on-the-row-span step. The bound `q <= beta_n` is blocked. |
+| 5.3 | `thm:d3-bound` | **Rationalization and the `beta_n` bound done** (`D3Bound`, `BetaExists`, `GeneralFiniteness`), including the agreement-on-the-row-span step: every projective class of an exact `((n,2,3))` code has a representative of modulus at most `beta_n`, with `beta_n` the maximum inverse denominator over nonsingular binary matrices of size at most `n`. Not done: `q | d_r(C)`, which needs invariant factors. |
 | 5.4 | `thm:d3-sslp-classification` | As 4.2. |
 | 5.6 | `thm:sslp-completeness` | **Finiteness of the outer index done** (`OuterIndex`) -- the content that makes it an algorithm. The cutoff `B_{n,d_0}` is blocked. |
 | 6.1 | `def:six-classification-levels` | **Level (iii) defined** (`Levels`). Levels (i), (ii), (iv) are not, and the module says why for each. |
 | 7.1 | Primitive sorted-vector count | **`P_6(2)` to `P_6(5)` kernel-checked**; `P_6(6)` to `P_6(9)` hit a `stack_space_exception` and are verified in Python instead. Both of the paper's totals, 13,877 and 13,449, are reproduced there. |
 | 7.2 | Maximum support rank | **Convexity core done** (`ActiveFace`). The active set itself is identified by exact LP certificates outside Lean. |
-| I | `six:thm:global-status` | **Blocked.** Needs the enumeration to be exhaustive, hence `beta_6 = 9` and the whole reduction pipeline. Its other inputs -- the 51 no-gos, the realizations, cyclicity -- are done. |
+| I | `six:thm:global-status` | **Blocked on the reduction pipeline.** `beta_6 = 9`, which an earlier draft of this file listed as an input, is now a kernel theorem (`Generated.BinaryBetaSixKernel.Certificate.betaExact`), as are the 51 no-gos, the realizations and cyclicity. What is left is the exhaustiveness of the enumeration itself. |
 | II | `thm:six-66-orbits` | **Blocked.** Formalizing it means formalizing the entire reduction `13,877 -> 66` in Lean. |
 | III | `thm:six-WE-status` | **Done, in full** (`WImages`). All ten realized orbits, single points and interval families alike. |
 | IV | `thm:unique-C5-LU` | **Blocked.** Needs local-unitary equivalence on projectors; there is no operator layer. Orbit 36's rigidity, its main input, is done. |
 
-Three things block the rest, and only one of them is deep. Cartan's
+Two things block the rest, and only one of them is deep. Cartan's
 closed-subgroup theorem is a genuine Mathlib-scale project -- now needed only
-for `K > 2`, since rank two no longer goes through it. `beta_6 = 9` is an
-exhaustive computation over binary matrices that `decide` cannot reach, and the
-paper does not prove it either. The full enumeration pipeline is a large but
-ordinary engineering effort. Nothing else in `main.tex` is unformalized for want
-of mathematics.
+for `K > 2` and for `d = 2`, since rank two at distance three no longer goes
+through it. The full enumeration pipeline is a large but ordinary engineering
+effort. `beta_6 = 9` used to be listed here; it is now proved. Nothing else in
+`main.tex` is unformalized for want of mathematics.
 
 ## A note on the negative results
 

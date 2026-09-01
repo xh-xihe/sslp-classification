@@ -169,6 +169,13 @@
 'MainTheory.GeneralLiftOrder.qMin_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GeneralLiftOrder.qMin_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GeneralLiftOrder.orderOf_dvd_qMin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.GeneralLiftOrder.orderOf_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation_unconditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'MainTheory.RankTwoSSLP.rank_two_sslp' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RankTwoSSLP.two_fibre_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]

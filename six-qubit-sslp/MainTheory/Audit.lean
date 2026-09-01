@@ -228,6 +228,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.GeneralLiftOrder.qMin_spec
 #print axioms MainTheory.GeneralLiftOrder.qMin_le
 #print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_qMin
+#print axioms MainTheory.GeneralLiftOrder.orderOf_pos
+#print axioms MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact
+#print axioms MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation_unconditional
 #print axioms MainTheory.RankTwoSSLP.rank_two_sslp
 #print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form
 #print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial
