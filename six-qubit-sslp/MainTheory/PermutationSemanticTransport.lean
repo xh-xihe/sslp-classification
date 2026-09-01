@@ -127,7 +127,7 @@ def permExactCode {n : ℕ} (C : CodeSpec.ExactCode n 2 3)
 
 /-- Covariance of the finite diagonal gate under the paired state/angle
 permutation. -/
-theorem gate_permAct {n q : ℕ} [NeZero q]
+theorem gate_permAct {n q : ℕ}
     (σ : Equiv.Perm (Fin n)) (zeta : ℂ) (a : Fin n → ZMod q)
     (psi : SS.State n ℂ) :
     Gate.gate zeta (permAngle σ a)

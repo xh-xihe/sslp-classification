@@ -81,7 +81,7 @@ structure FiniteGeneratorResolution {n d : ℕ}
   projectively_nontrivial : eigenvalue 0 ≠ eigenvalue 1
 
 /-- The finite diagonal gate as a complex-linear endomorphism. -/
-def finiteGateEnd {n q : ℕ} [NeZero q] (zeta : ℂ)
+def finiteGateEnd {n q : ℕ} (zeta : ℂ)
     (a : Fin n → ZMod q) : Module.End ℂ (SS.State n ℂ) where
   toFun := Gate.gate zeta a
   map_add' := by
@@ -172,7 +172,7 @@ theorem hasDistance_bxor {n d : ℕ} (p : Fin 2 → SS.State n ℂ)
 
 /-! ## Scaling by a coprime power -/
 
-theorem weight_unit_mul {n q : ℕ} [NeZero q]
+theorem weight_unit_mul {n q : ℕ}
     (u : (ZMod q)ˣ) (a : Fin n → ZMod q) (x : SS.BitString n) :
     SS.weight (fun j ↦ (u : ZMod q) * a j) x =
       (u : ZMod q) * SS.weight a x := by
