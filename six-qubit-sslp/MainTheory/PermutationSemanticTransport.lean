@@ -64,20 +64,22 @@ theorem ssConditionState_permAct_iff {n q : ℕ}
     simpa only [SixQubit.CodeEquiv.permAct_inv] using hback
   · exact ssConditionState_permAct σ a r psi
 
-/-- Forward transport of the genuine distance-three KL predicate. -/
-theorem hasDistance_permAct {n : ℕ} (σ : Equiv.Perm (Fin n))
-    (p : Fin 2 → SS.State n ℂ) (h : SS.HasDistance p 3) :
-    SS.HasDistance (fun k ↦ SixQubit.CodeEquiv.permAct σ (p k)) 3 := by
-  rw [SixQubit.CodeEquiv.hasDistance_iff]
+/-- Forward transport of the genuine KL distance predicate, at every
+requested distance.  Stated at arbitrary `d` because `thm:rank-two-sslp`
+assumes only `d >= 2`. -/
+theorem hasDistance_permAct {n d : ℕ} (σ : Equiv.Perm (Fin n))
+    (p : Fin 2 → SS.State n ℂ) (h : SS.HasDistance p d) :
+    SS.HasDistance (fun k ↦ SixQubit.CodeEquiv.permAct σ (p k)) d := by
+  apply (RankTwoGlobal.detects_iff_raw _ _).mpr
   exact SixQubit.CodeEquiv.detectsRaw_permAct σ
-    ((SixQubit.CodeEquiv.hasDistance_iff p).mp h)
+    ((RankTwoGlobal.detects_iff_raw _ _).mp h)
 
-/-- Distance three is invariant in both directions under a coordinate
+/-- The KL distance is invariant in both directions under a coordinate
 permutation. -/
-theorem hasDistance_permAct_iff {n : ℕ} (σ : Equiv.Perm (Fin n))
+theorem hasDistance_permAct_iff {n d : ℕ} (σ : Equiv.Perm (Fin n))
     (p : Fin 2 → SS.State n ℂ) :
-    SS.HasDistance (fun k ↦ SixQubit.CodeEquiv.permAct σ (p k)) 3 ↔
-      SS.HasDistance p 3 := by
+    SS.HasDistance (fun k ↦ SixQubit.CodeEquiv.permAct σ (p k)) d ↔
+      SS.HasDistance p d := by
   constructor
   · intro h
     have hback := hasDistance_permAct σ.symm

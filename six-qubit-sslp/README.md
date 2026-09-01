@@ -566,10 +566,12 @@ it the numerical bound `q <= beta_n`.
 
 The paper's finite-projective-group theorem is compact-Lie-group theory, and
 Cartan's closed-subgroup theorem is absent from Mathlib entirely. That blocked
-the paper's proof, not the theorem: at `K = 2` finiteness is now proved at
-arbitrary `n` by a different route, in which a bound on the modulus of a class
-representative makes the group inject into a finite type. `K > 2` still needs
-the Lie-theoretic argument.
+the paper's proof, not the theorem: at `K = 2` and `d = 3` finiteness is now
+proved at arbitrary `n` by a different route, in which a bound on the modulus
+of a class representative makes the group inject into a finite type. The
+substitute runs on the distance-three rationalization, so `d = 2` and `K > 2`
+still need the Lie-theoretic argument. Everything else in the rank-two normal
+form is proved at the paper's own `d >= 2`.
 
 Mathlib also has no spectral theorem for unitary or normal operators, only for
 Hermitian ones, which is what the phase-sector lemma needs.
@@ -588,8 +590,8 @@ Quot.sound}`; anything else is spelled out.
 |---|---|---|
 | 2.3 | `lem:phase-sectors` | **Done at arbitrary `K`** (`PhaseSector`, `GeneralSpectral`). The logical eigenbasis is no longer a hypothesis: `GeneralSpectral.spectralExtractionPrinciple` produces it for all `n`, `K`, `d`, on top of the unitary spectral theorem proved in `MainTheory/UnitarySpectral.lean` -- Mathlib has only the self-adjoint case, and the proof here diverges from it by using `Module.End.exists_eigenvalue` in place of the Rayleigh quotient. |
 | 2.4 | `thm:qualitative-finite-lift` | **Done** (`RealGate`, `Rationalize`, `Denominator`). The paper's pivot construction is replaced by a retraction argument that needs no rank theory. |
-| 2.5 | `thm:finite-projective-group` | **Done for `K = 2` at arbitrary `n`** (`GeneralFiniteness.finite_and_abelian`), by a route the paper does not take: every class has a representative whose modulus is bounded, so the group injects into a finite label type. `K > 2` is still open, and the paper's own proof stays out of reach -- it is compact-Lie-group theory, Cartan's closed-subgroup theorem is absent from Mathlib, as is any Lie algebra of a group, and `PU(K)` does not exist. |
-| 2.6 | `thm:rank-two-sslp` | **Done at arbitrary `n`, forward and converse.** The forward direction is stated whole as `RankTwoSSLP.rank_two_sslp`: finite cyclic group, primitive lift `D(a;q)` with `2 <= q`, projective order `m` with `2 <= m` and `m | q`, two fibres at `0` and `q/m`. The sorted canonical form and the qubit permutation are `SortedForm.exists_sortedNormalForm`; the local `X` conjugation and the coprime-power normalization are inside the certificate. The converse is `RankTwo.order_of_two_fiber`. |
+| 2.5 | `thm:finite-projective-group` | **Done for `K = 2`, `d = 3`, at arbitrary `n`** (`GeneralFiniteness.finite_and_abelian`), by a route the paper does not take: every class has a representative whose modulus is bounded, so the group injects into a finite label type. That route runs on the distance-three rationalization, so it gives nothing at `d = 2`, and nothing at `K > 2`; there the paper's own proof is the only one, and it stays out of reach -- compact-Lie-group theory, with Cartan's closed-subgroup theorem absent from Mathlib, no Lie algebra of a group, and no `PU(K)`. |
+| 2.6 | `thm:rank-two-sslp` | **Done at arbitrary `n`, forward and converse.** The two-fibre half holds at the paper's own hypothesis `d >= 2` (`RankTwoSSLP.two_fibre_normal_form`, and `..._of_nontrivial` under the paper's hypothesis on the group rather than on a chosen phase vector). Cyclicity needs finiteness, exactly as the paper's proof does: `cyclic_of_finite` at general `d`, discharged at `d = 3` by row 2.5, giving the whole statement as `RankTwoSSLP.rank_two_sslp`. `GroupOrder.rank_two_sslp_generator` runs it on a *generator*, so the modulus that comes out is `Nat.card` of the group -- the paper's `m` in `C_m`. The sorted form `0 <= a_1 <= ... <= a_n < q` with `gcd(q,a) = 1` is `SortedForm.exists_sortedNormalForm`, also at `d >= 2`. The converse is `RankTwo.order_of_two_fiber`. What is left is `d = 2` finiteness, which is row 2.5's gap. |
 | 3.1 | `lem:denominator-clearing` | **Done qualitatively** (`Clearing`), via the adjugate. The sharp multiplier `d_s(C)` needs invariant factors, which Mathlib's Smith normal form does not provide. |
 | 3.2 | `thm:colored-finite-lift` | **Qualitative half done.** The bound `q <= beta_{n+t-1}` needs the sharp multiplier. |
 | 3.3 | `cor:quantitative-projective-group` | **Blocked**, downstream of 2.5. |

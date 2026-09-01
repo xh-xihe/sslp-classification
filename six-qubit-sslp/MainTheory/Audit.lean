@@ -220,6 +220,10 @@ operation, with the spectral data produced rather than assumed. -/
 /-! ## The paper's rank-two theorem, stated whole -/
 
 #print axioms MainTheory.RankTwoSSLP.rank_two_sslp
+#print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form
+#print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial
+#print axioms MainTheory.RankTwoSSLP.cyclic_of_finite
+#print axioms MainTheory.GroupOrder.rank_two_sslp_generator
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm
 #print axioms MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard
 #print axioms MainTheory.GroupOrder.logicalOrder_dvd_natCard

@@ -1,5 +1,6 @@
 import MainTheory.RankTwoSSLP
 import MainTheory.PermutationSemanticTransport
+import MainTheory.D3BoundedOuterRecord
 
 /-!
 # The sorted canonical form `0 <= a_1 <= ... <= a_n < q`
@@ -35,7 +36,7 @@ open MainTheory.PermutationSemanticTransport
 variable {n : ℕ}
 
 /-- **The rank-two normal form with a sorted angle vector.** -/
-structure SortedNormalForm (C : CodeSpec.ExactCode n 2 3) where
+structure SortedNormalForm {d : ℕ} (C : CodeSpec.ExactCode n 2 d) where
   /-- The physical order. -/
   q : ℕ
   q_ne : NeZero q
@@ -46,13 +47,15 @@ structure SortedNormalForm (C : CodeSpec.ExactCode n 2 3) where
   m_dvd_q : m ∣ q
   zeta : ℂ
   primitiveRoot : IsPrimitiveRoot zeta q
-  /-- The angle vector, sorted. -/
+  /-- The angle vector: `0 <= a_1 <= ... <= a_n < q` with
+  `gcd(q, a_1, ..., a_n) = 1`, which is the paper's `eq:a-canonical`. -/
   angle : Fin n → ZMod q
   sorted : Monotone fun j => (angle j).val
   lt_q : ∀ j, (angle j).val < q
+  primitive : Gate.Primitive q angle
   /-- The two logical states: an orthonormal pair with distance three. -/
   frame : CodeSpec.OrthonormalFrame n 2
-  hasDistance : SS.HasDistance frame.vec 3
+  hasDistance : SS.HasDistance frame.vec d
   /-- The two residue fibres, at `0` and `q/m`. -/
   leftFiber : SS.SSConditionState angle 0 (frame.vec 0)
   rightFiber : SS.SSConditionState angle (((q / m : ℕ) : ZMod q)) (frame.vec 1)
@@ -78,22 +81,23 @@ theorem monotone_permAngle_sortingPerm {q : ℕ} (a : Fin n → ZMod q) :
 
 /-- **Every exact rank-two distance-three code with a projectively nontrivial
 diagonal symmetry has the sorted normal form.** -/
-theorem exists_sortedNormalForm (C : CodeSpec.ExactCode n 2 3)
-    (theta : Fin n → ℝ)
+theorem exists_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
+    (C : CodeSpec.ExactCode n 2 d) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
       (PhaseSectorBridge.realGateEnd theta))
     (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     Nonempty (SortedNormalForm C) := by
-  letI : NeZero (rationalLift C GeneralFiniteness.two_le_three theta hpres).order :=
-    ⟨(rationalLift C GeneralFiniteness.two_le_three theta hpres).order_pos.ne'⟩
-  set q := (rationalLift C GeneralFiniteness.two_le_three theta hpres).order with hq
-  set G := finiteGenerator C GeneralFiniteness.two_le_three theta hpres hnt with hG
+  letI : NeZero (rationalLift C hd theta hpres).order :=
+    ⟨(rationalLift C hd theta hpres).order_pos.ne'⟩
+  set q := (rationalLift C hd theta hpres).order with hq
+  set G := finiteGenerator C hd theta hpres hnt with hG
   set T := canonicalTwoFiber G with hT
   have hL : SS.SSConditionState (normalizedFiniteAngle G T) 0
-      (normalizedState T 0) := T.normalizedLeft
+      (normalizedState (d := d) T 0) := T.normalizedLeft
   have hR : SS.SSConditionState (normalizedFiniteAngle G T)
-      (((q / T.logicalOrder : ℕ) : ZMod q)) (normalizedState T 1) :=
+      (((q / T.logicalOrder : ℕ) : ZMod q))
+      (normalizedState (d := d) T 1) :=
     T.normalizedRight
   refine ⟨{
     q := q
@@ -107,11 +111,15 @@ theorem exists_sortedNormalForm (C : CodeSpec.ExactCode n 2 3)
     angle := permAngle (sortingPerm (normalizedFiniteAngle G T))
       (normalizedFiniteAngle G T)
     sorted := monotone_permAngle_sortingPerm _
+    primitive := primitive_permAngle _ _
+      (D3BoundedOuterRecord.primitive_unit_mul T.unit
+        (Normalize.flip G.angle T.x0)
+        (Normalize.primitive_flip G.angle T.x0 G.primitive))
     lt_q := fun j => ZMod.val_lt _
     frame := PermutationFrameBridge.permFrame (normalizedFrame T)
       (sortingPerm (normalizedFiniteAngle G T))
     hasDistance := hasDistance_permAct _ (normalizedFrame T).vec
-      (normalizedCode T).hasDistance
+      T.normalizedHasDistance
     leftFiber := ssConditionState_permAct _ _ 0 _ hL
     rightFiber := ssConditionState_permAct _ _ _ _ hR
     x0 := T.x0

@@ -24,6 +24,7 @@ namespace MainTheory.GroupOrder
 
 open MainTheory.ClassificationLevels
 open MainTheory.GlobalClassificationBridge
+open MainTheory.SectionTwoGeneral
 
 variable {n : ℕ}
 
@@ -90,5 +91,71 @@ theorem two_le_natCard {q : ℕ} [NeZero q]
   have hpos : 0 < Nat.card (IntrinsicGroup C) := Nat.card_pos
   exact le_trans T.two_le_logicalOrder
     (Nat.le_of_dvd hpos (logicalOrder_dvd_natCard T))
+
+/-! ## The paper's own hypothesis, and its own `m` -/
+
+/-- **`thm:rank-two-sslp` with the paper's hypothesis and the paper's `m`.**
+
+The paper assumes the projective diagonal group is nontrivial -- a statement
+about the group, not about a chosen real phase vector -- and then takes a
+*generator* of the resulting `C_m`.  Both are here.  The hypothesis is
+`∃ g ≠ 1`; the symmetry the machinery runs on is a generator, so the modulus
+that comes out is literally `Nat.card` of the group, not the order of some
+element that happens to be nontrivial.
+
+This discharges the condition that `logicalOrder_eq_natCard_of_generator` can
+only state: at `d = 3` a generator always exists, because the group is finite
+and cyclic. -/
+theorem rank_two_sslp_generator (C : CodeSpec.ExactCode n 2 3)
+    (hnontrivial : ∃ g : IntrinsicGroup C, g ≠ 1) :
+    ∃ (q : ℕ) (_ : NeZero q) (zeta : ℂ) (a : Fin n → ZMod q)
+      (F : CodeSpec.OrthonormalFrame n 2)
+      (x0 : SS.BitString n) (u : (ZMod q)ˣ),
+      CodeSpec.codeSpan C.frame = CodeSpec.codeSpan F ∧
+      IsPrimitiveRoot zeta q ∧
+      Gate.Primitive q a ∧
+      2 ≤ q ∧
+      2 ≤ Nat.card (IntrinsicGroup C) ∧
+      Nat.card (IntrinsicGroup C) ∣ q ∧
+      SS.HasDistance (fun k s => F.vec k (SS.bxor s x0)) 3 ∧
+      SS.SSConditionState
+        (fun j => (u : ZMod q) * Normalize.flip a x0 j) 0
+        (fun s => F.vec 0 (SS.bxor s x0)) ∧
+      SS.SSConditionState
+        (fun j => (u : ZMod q) * Normalize.flip a x0 j)
+        (((q / Nat.card (IntrinsicGroup C) : ℕ) : ZMod q))
+        (fun s => F.vec 1 (SS.bxor s x0)) := by
+  haveI := GeneralFiniteness.finite_intrinsicGroup C
+  haveI := GeneralFiniteness.isCyclic C
+  obtain ⟨g, hg⟩ := IsCyclic.exists_generator (α := IntrinsicGroup C)
+  have hg1 : g ≠ 1 := by
+    rintro rfl
+    obtain ⟨x, hx⟩ := hnontrivial
+    exact hx (by simpa using hg x)
+  obtain ⟨u, rfl⟩ := QuotientGroup.mk_surjective g
+  obtain ⟨theta, hexp⟩ :=
+    MainTheory.LocalPhaseAngle.exists_angleVector (u : LocalPhase n)
+  have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame
+    (u : LocalPhase n) u.2 theta hexp
+  have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
+    C (u : LocalPhase n) u.2 theta hexp hg1
+  letI : NeZero (SectionTwoGeneral.rationalLift C
+      GeneralFiniteness.two_le_three theta hpres).order :=
+    ⟨(SectionTwoGeneral.rationalLift C GeneralFiniteness.two_le_three theta
+      hpres).order_pos.ne'⟩
+  set G := SectionTwoGeneral.finiteGenerator C
+    GeneralFiniteness.two_le_three theta hpres hnt with hG
+  set T := D3NormalizedFreshPhase.canonicalTwoFiber G with hT
+  have hclass : G.intrinsicClass = intrinsicClass (exactCodeProjector C) u :=
+    GeneralFiniteness.intrinsicClass_finiteGenerator C u theta hexp hpres hnt
+  have hm : T.logicalOrder = Nat.card (IntrinsicGroup C) :=
+    logicalOrder_eq_natCard_of_generator T (by rw [hclass]; exact hg)
+  refine ⟨_, inferInstance, G.zeta, G.angle, G.eigenFrame, T.x0, T.unit,
+    G.span_eq, G.primitiveRoot, G.primitive, T.two_le_physicalOrder, ?_, ?_,
+    T.normalizedHasDistance, ?_, ?_⟩
+  · rw [← hm]; exact T.two_le_logicalOrder
+  · rw [← hm]; exact T.logicalOrder_dvd_physical
+  · exact T.normalizedLeft
+  · rw [← hm]; exact T.normalizedRight
 
 end MainTheory.GroupOrder

@@ -29,7 +29,7 @@ noncomputable section
 /-- The two logical states after the local-`X` normalization carried by a
 two-fibre certificate, exposed independently of the older pivot interface. -/
 def normalizedState
-    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    {d : ℕ} {C : CodeSpec.ExactCode n 2 d} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) (k : Fin 2) :
     SS.State n ℂ :=
@@ -37,7 +37,7 @@ def normalizedState
 
 /-- The normalized states form a genuine orthonormal frame. -/
 def normalizedFrame
-    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    {d : ℕ} {C : CodeSpec.ExactCode n 2 d} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     CodeSpec.OrthonormalFrame n 2 where
@@ -73,7 +73,7 @@ theorem normalizedCommonAffineSpan
 stored nonzero gap and the unit normalization, so the positive-rank argument
 does not depend on an unverified arithmetic side condition. -/
 theorem normalizedRightResidue_ne_zero
-    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    {d : ℕ} {C : CodeSpec.ExactCode n 2 d} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     (((q / T.logicalOrder : ℕ) : ZMod q)) ≠ 0 := by
@@ -114,7 +114,7 @@ noncomputable def freshSparsePhase
 two-fibre certificate.  This is a noncomputable choice from a proved
 `Nonempty`; it introduces no new axiom or semantic assumption. -/
 def canonicalTwoFiber
-    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    {d : ℕ} {C : CodeSpec.ExactCode n 2 d} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     RankTwoGlobal.TwoFiberCertificate G :=
   Classical.choice (RankTwoGlobal.finiteGenerator_twoFiber G)

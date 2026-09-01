@@ -65,6 +65,50 @@ theorem hasBoundedRepresentation {B : ℕ} (beta : BinaryBeta.BetaBound n B)
   exact automaticFreshGenerator_sameProjective_normalizedFinite
     (canonicalTwoFiber G)
 
+/-- **The generator resolved from a symmetry represents that symmetry's own
+class.**
+
+Without this the bounded-representation argument would bound the class of some
+unrelated element, and the identification of the paper's `m` with the order of
+a chosen group element would be unavailable.  It was proved inline inside
+`hasBoundedRepresentation_general`; it is named here because
+`RankTwoSSLP.rank_two_sslp_generator` needs it too. -/
+theorem intrinsicClass_finiteGenerator (C : CodeSpec.ExactCode n 2 3)
+    (u : diagonalSymmetryGroup (exactCodeProjector C))
+    (theta : Fin n → ℝ)
+    (hexp : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+      * ((theta j : ℝ) : ℂ)) = (((u : LocalPhase n) j : ℂ)))
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    letI : NeZero (rationalLift C two_le_three theta hpres).order :=
+      ⟨(rationalLift C two_le_three theta hpres).order_pos.ne'⟩
+    (finiteGenerator C two_le_three theta hpres hnt).intrinsicClass
+      = intrinsicClass (exactCodeProjector C) u := by
+  letI : NeZero (rationalLift C two_le_three theta hpres).order :=
+    ⟨(rationalLift C two_le_three theta hpres).order_pos.ne'⟩
+  set G := finiteGenerator C two_le_three theta hpres hnt with hG
+  have hz : G.zeta ^ (rationalLift C two_le_three theta hpres).order = 1 :=
+    G.primitiveRoot.pow_eq_one
+  rw [BoundedRepresentationProof.intrinsicClass_eq_phaseOfAngle G]
+  obtain ⟨lam, hlam, hact⟩ :=
+    finiteGenerator_sameProjective C two_le_three theta hpres hnt
+  refine IntrinsicClassBridge.intrinsicClass_eq_of_sameProjective
+    (exactCodeProjector C) _ _ lam hlam (fun phi hphi => ?_)
+  have hmem : phi ∈ CodeSpec.codeSpan C.frame :=
+    (inProjectorRange_ofFrame_iff C.frame phi).1 hphi
+  have hthis := hact phi hmem
+  simp only [D3RationalLiftFiniteGenerator.finiteGeneratorOfLiftEnd,
+    RankTwoGlobal.finiteGateEnd, LinearMap.coe_mk, AddHom.coe_mk] at hthis
+  rw [show D3RationalLiftFiniteGenerator.finiteGeneratorOfLift
+      (resolutionOf C theta hpres) (rationalLift C two_le_three theta hpres)
+      hnt = G from rfl] at hthis
+  rw [MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction G.zeta hz G.angle phi,
+    SymmetryToEntrance.realGateEnd_eq_diagonalAction
+      (u : LocalPhase n) theta hexp phi] at hthis
+  exact hthis
+
 /-- **Every class of the intrinsic group is bounded**, at arbitrary `n`.
 
 The trivial class is named by the trivial label; every other class supplies a
@@ -88,27 +132,9 @@ theorem hasBoundedRepresentation_general {B : ℕ}
     letI : NeZero (rationalLift C two_le_three theta hpres).order :=
       ⟨(rationalLift C two_le_three theta hpres).order_pos.ne'⟩
     set G := finiteGenerator C two_le_three theta hpres hnt with hG
-    have hz : G.zeta ^ (rationalLift C two_le_three theta hpres).order = 1 :=
-      G.primitiveRoot.pow_eq_one
     have hGu : G.intrinsicClass
-        = intrinsicClass (exactCodeProjector C) u := by
-      rw [BoundedRepresentationProof.intrinsicClass_eq_phaseOfAngle G]
-      obtain ⟨lam, hlam, hact⟩ :=
-        finiteGenerator_sameProjective C two_le_three theta hpres hnt
-      refine IntrinsicClassBridge.intrinsicClass_eq_of_sameProjective
-        (exactCodeProjector C) _ _ lam hlam (fun phi hphi => ?_)
-      have hmem : phi ∈ CodeSpec.codeSpan C.frame :=
-        (inProjectorRange_ofFrame_iff C.frame phi).1 hphi
-      have hthis := hact phi hmem
-      simp only [D3RationalLiftFiniteGenerator.finiteGeneratorOfLiftEnd,
-        RankTwoGlobal.finiteGateEnd, LinearMap.coe_mk, AddHom.coe_mk] at hthis
-      rw [show D3RationalLiftFiniteGenerator.finiteGeneratorOfLift
-          (resolutionOf C theta hpres) (rationalLift C two_le_three theta hpres)
-          hnt = G from rfl] at hthis
-      rw [MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction G.zeta hz G.angle phi,
-        SymmetryToEntrance.realGateEnd_eq_diagonalAction
-          (u : LocalPhase n) theta hexp phi] at hthis
-      exact hthis
+        = intrinsicClass (exactCodeProjector C) u :=
+      intrinsicClass_finiteGenerator C u theta hexp hpres hnt
     show BoundedClassPower.BoundedClass B
       (exactCodeProjector C) (intrinsicClass (exactCodeProjector C) u)
     rw [← hGu]
