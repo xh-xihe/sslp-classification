@@ -14,6 +14,8 @@ No spectral decomposition is assumed here.
 
 namespace MainTheory.D3LogicalCoordinateUnitary
 
+variable {n d : ℕ}
+
 open MainTheory
 open scoped BigOperators ComplexConjugate
 
@@ -26,8 +28,8 @@ def coordinateInner (v w : Fin 2 → ℂ) : ℂ :=
 /-- Expanding only the first synthesized vector against an arbitrary physical
 state. -/
 theorem innerC_synthesis_left
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ)
-    (psi : SS.State 6 ℂ) :
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ)
+    (psi : SS.State n ℂ) :
     SS.innerC (D3LogicalAction.synthesisLinear F v) psi =
       ∑ i, star (v i) * SS.innerC (F.vec i) psi := by
   change SS.innerC (∑ i, v i • F.vec i) psi = _
@@ -44,7 +46,7 @@ theorem innerC_synthesis_left
 
 /-- Synthesis by an orthonormal frame is an exact Hermitian isometry. -/
 theorem innerC_synthesis
-    (F : CodeSpec.OrthonormalFrame 6 2) (v w : Fin 2 → ℂ) :
+    (F : CodeSpec.OrthonormalFrame n 2) (v w : Fin 2 → ℂ) :
     SS.innerC (D3LogicalAction.synthesisLinear F v)
         (D3LogicalAction.synthesisLinear F w) =
       coordinateInner v w := by
@@ -59,7 +61,7 @@ theorem innerC_synthesis
 /-- The concrete logical action induced by a code-preserving real diagonal
 gate preserves the coordinate Hermitian product. -/
 theorem coordinateInner_logicalAction_realGate
-    (F : CodeSpec.OrthonormalFrame 6 2) (theta : Fin 6 → ℝ)
+    (F : CodeSpec.OrthonormalFrame n 2) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving F
       (PhaseSectorBridge.realGateEnd theta))
     (v w : Fin 2 → ℂ) :

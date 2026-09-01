@@ -38,6 +38,8 @@ rediscovering which one it is.
 
 namespace MainTheory.BoundedRepresentation
 
+variable {n d B : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.GlobalClassificationBridge
 open MainTheory.ProjectiveGroupFinite
@@ -58,7 +60,7 @@ noncomputable def circlePhase (t : ℝ) : unitary ℂ :=
 
 /-- The local diagonal phase named by a bounded label: site `j` carries the
 `a j`-th power of the primitive `(q+1)`-st root of unity. -/
-noncomputable def gateOfLabel (lbl : BoundedPhaseLabel 6 9) : LocalPhase 6 :=
+noncomputable def gateOfLabel (lbl : BoundedPhaseLabel n B) : LocalPhase n :=
   fun j => circlePhase
     (2 * Real.pi * ((lbl.2 j).val : ℝ) / ((lbl.1.val : ℝ) + 1))
 
@@ -71,19 +73,19 @@ diagonal symmetry whose local phase is named by a bounded label.
 
 This is the transport described above, stated on the original code so that no
 normalization appears in it. -/
-def HasBoundedRepresentation (C : CodeSpec.ExactCode 6 2 3) : Prop :=
+def HasBoundedRepresentation (B : ℕ) (C : CodeSpec.ExactCode n 2 d) : Prop :=
   ∀ g : IntrinsicGroup C,
-    ∃ (lbl : BoundedPhaseLabel 6 9)
+    ∃ (lbl : BoundedPhaseLabel n B)
       (u : diagonalSymmetryGroup (exactCodeProjector C)),
       intrinsicClass (exactCodeProjector C) u = g ∧
-        (u : LocalPhase 6) = gateOfLabel lbl
+        (u : LocalPhase n) = gateOfLabel lbl
 
 /-! ## What it buys -/
 
 /-- The action a bounded label induces: the class of its gate when that gate is
 a symmetry of the code, and the identity otherwise. -/
-noncomputable def actionOfLabel (C : CodeSpec.ExactCode 6 2 3)
-    (lbl : BoundedPhaseLabel 6 9) : IntrinsicGroup C := by
+noncomputable def actionOfLabel (C : CodeSpec.ExactCode n 2 d)
+    (lbl : BoundedPhaseLabel n B) : IntrinsicGroup C := by
   classical
   exact if hm : gateOfLabel lbl ∈ diagonalSymmetryGroup (exactCodeProjector C) then
       intrinsicClass (exactCodeProjector C) ⟨gateOfLabel lbl, hm⟩
@@ -92,9 +94,9 @@ noncomputable def actionOfLabel (C : CodeSpec.ExactCode 6 2 3)
 /-- **The cover follows.**
 
 The obligation is exactly what makes `actionOfLabel` surjective. -/
-noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode 6 2 3}
-    (h : HasBoundedRepresentation C) :
-    BoundedLiftCover 6 9 (IntrinsicGroup C) := by
+noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode n 2 d}
+    (h : HasBoundedRepresentation B C) :
+    BoundedLiftCover n B (IntrinsicGroup C) := by
   classical
   refine { actionOf := actionOfLabel C, covers := ?_ }
   intro g
@@ -108,18 +110,18 @@ noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode 6 2 3}
   rw [actionOfLabel, dif_pos hm, hu, hclass]
 
 /-- The intrinsic group is finite. -/
-theorem finite_of_representation {C : CodeSpec.ExactCode 6 2 3}
-    (h : HasBoundedRepresentation C) : Finite (IntrinsicGroup C) :=
+theorem finite_of_representation {C : CodeSpec.ExactCode n 2 d}
+    (h : HasBoundedRepresentation B C) : Finite (IntrinsicGroup C) :=
   finite_of_boundedLiftCover (coverOfRepresentation h)
 
 /-- The intrinsic group is cyclic, given a faithful character.
 
 Together with `finite_of_representation` this is `IntrinsicFiniteCyclicInputs`
 in full, so every capstone in `GlobalClassificationBridge` becomes available. -/
-noncomputable def inputsOfRepresentation {C : CodeSpec.ExactCode 6 2 3}
-    (h : HasBoundedRepresentation C)
+noncomputable def inputsOfRepresentation {C : CodeSpec.ExactCode n 2 d}
+    (h : HasBoundedRepresentation B C)
     (chi : IntrinsicGroup C →* ℂ) (hchi : Function.Injective chi) :
-    IntrinsicFiniteCyclicInputs (B := 9) C where
+    IntrinsicFiniteCyclicInputs (B := B) C where
   cover := coverOfRepresentation h
   character := chi
   faithful := hchi

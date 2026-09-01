@@ -18,6 +18,8 @@ code.
 
 namespace MainTheory.NormalizationIsShift
 
+variable {n : ℕ}
+
 open MainTheory.IntrinsicTransport
 open MainTheory.LocalPhaseConjugation
 open MainTheory.D3NormalizedFreshPhase
@@ -27,7 +29,7 @@ open MainTheory.D3NormalizedFreshPhase
 Both are `fun k s => G.eigenFrame.vec k (SS.bxor s T.x0)`; recording the
 equality keeps the transport from being applied to a lookalike. -/
 theorem normalizedFrame_eq_shiftFrame
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     normalizedFrame T = shiftFrame G.eigenFrame T.x0 :=
@@ -36,7 +38,7 @@ theorem normalizedFrame_eq_shiftFrame
 /-- The symmetry group of the original code is the symmetry group of the
 eigenframe, since they span the same space. -/
 theorem symmetryGroup_eigenFrame
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     ClassificationLevels.diagonalSymmetryGroup
         (ClassificationLevels.CodeProjector.ofFrame C.frame)
@@ -49,10 +51,10 @@ theorem symmetryGroup_eigenFrame
 A diagonal symmetry of the normalized code flips to one of the original code --
 not merely of the eigenframe, by `symmetryGroup_eigenFrame`. -/
 theorem mem_symmetryGroup_flip_normalized
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G)
-    (u : ClassificationLevels.LocalPhase 6)
+    (u : ClassificationLevels.LocalPhase n)
     (hu : u ∈ ClassificationLevels.diagonalSymmetryGroup
       (ClassificationLevels.CodeProjector.ofFrame (normalizedFrame T))) :
     flipPhase u T.x0 ∈ ClassificationLevels.diagonalSymmetryGroup

@@ -12,12 +12,14 @@ rank-two orthonormal frames is therefore equality.
 
 namespace MainTheory.D3OrthonormalFrameSpan
 
+variable {n d : ℕ}
+
 open MainTheory
 
 noncomputable section
 
 /-- A stored orthonormal frame is linearly independent. -/
-theorem frame_linearIndependent (F : CodeSpec.OrthonormalFrame 6 2) :
+theorem frame_linearIndependent (F : CodeSpec.OrthonormalFrame n 2) :
     LinearIndependent ℂ F.vec := by
   rw [Fintype.linearIndependent_iff]
   intro g hg i
@@ -30,7 +32,7 @@ theorem frame_linearIndependent (F : CodeSpec.OrthonormalFrame 6 2) :
   exact congrFun hg0 i
 
 /-- The span of a rank-two stored orthonormal frame has finrank exactly two. -/
-theorem finrank_codeSpan (F : CodeSpec.OrthonormalFrame 6 2) :
+theorem finrank_codeSpan (F : CodeSpec.OrthonormalFrame n 2) :
     Module.finrank ℂ (CodeSpec.codeSpan F) = 2 := by
   unfold CodeSpec.codeSpan
   simpa using finrank_span_eq_card (frame_linearIndependent F)
@@ -38,7 +40,7 @@ theorem finrank_codeSpan (F : CodeSpec.OrthonormalFrame 6 2) :
 /-- For two rank-two orthonormal frames, containment of every vector of the
 first in the second span already forces equality of code spans. -/
 theorem codeSpan_eq_of_vec_mem
-    (F G : CodeSpec.OrthonormalFrame 6 2)
+    (F G : CodeSpec.OrthonormalFrame n 2)
     (hmem : ∀ k, F.vec k ∈ CodeSpec.codeSpan G) :
     CodeSpec.codeSpan F = CodeSpec.codeSpan G := by
   apply Submodule.eq_of_le_of_finrank_eq

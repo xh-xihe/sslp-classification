@@ -565,10 +565,18 @@ adjugate instead, so what remains blocked is only the sharp multiplier, and with
 it the numerical bound `q <= beta_n`.
 
 The paper's finite-projective-group theorem is compact-Lie-group theory, and
-Cartan's closed-subgroup theorem is absent from Mathlib entirely. Mathlib also
-has no spectral theorem for unitary or normal operators, only for Hermitian
-ones, which is what the phase-sector lemma needs; there is a route through two
-commuting self-adjoint parts, but it is real work.
+Cartan's closed-subgroup theorem is absent from Mathlib entirely. That blocked
+the paper's proof, not the theorem: at `K = 2` finiteness is now proved at
+arbitrary `n` by a different route, in which a bound on the modulus of a class
+representative makes the group inject into a finite type. `K > 2` still needs
+the Lie-theoretic argument.
+
+Mathlib also has no spectral theorem for unitary or normal operators, only for
+Hermitian ones, which is what the phase-sector lemma needs.
+`MainTheory/UnitarySpectral.lean` proves the unitary case here rather than
+routing through two commuting self-adjoint parts, and
+`GeneralSpectral.spectralExtractionPrinciple` is the consequence the rest of
+Section II uses.
 
 ## Statement-by-statement status of `main.tex`
 
@@ -578,10 +586,10 @@ Quot.sound}`; anything else is spelled out.
 
 | # | Statement | Status |
 |---|---|---|
-| 2.3 | `lem:phase-sectors` | **Both clauses done at arbitrary `K`** (`PhaseSector`), given the logical eigenbasis. Producing that eigenbasis for `K > 2` needs the spectral theorem for a unitary operator, which Mathlib has only in the Hermitian case; at `K = 2` it is forced by the eigenvalues being distinct. |
+| 2.3 | `lem:phase-sectors` | **Done at arbitrary `K`** (`PhaseSector`, `GeneralSpectral`). The logical eigenbasis is no longer a hypothesis: `GeneralSpectral.spectralExtractionPrinciple` produces it for all `n`, `K`, `d`, on top of the unitary spectral theorem proved in `MainTheory/UnitarySpectral.lean` -- Mathlib has only the self-adjoint case, and the proof here diverges from it by using `Module.End.exists_eigenvalue` in place of the Rayleigh quotient. |
 | 2.4 | `thm:qualitative-finite-lift` | **Done** (`RealGate`, `Rationalize`, `Denominator`). The paper's pivot construction is replaced by a retraction argument that needs no rank theory. |
-| 2.5 | `thm:finite-projective-group` | **Blocked.** Its proof is compact-Lie-group theory; Cartan's closed-subgroup theorem is absent from Mathlib, as is any Lie algebra of a group, and `PU(K)` does not exist. This is the one genuinely research-level gap. |
-| 2.6 | `thm:rank-two-sslp` | **Geometric content and full converse done** (`RankTwo`). Not done: the quotient by qubit permutation, global scalar, logical interchange and coprime power, and the sorted canonical form. The module docstring lists every omission. |
+| 2.5 | `thm:finite-projective-group` | **Done for `K = 2` at arbitrary `n`** (`GeneralFiniteness.finite_and_abelian`), by a route the paper does not take: every class has a representative whose modulus is bounded, so the group injects into a finite label type. `K > 2` is still open, and the paper's own proof stays out of reach -- it is compact-Lie-group theory, Cartan's closed-subgroup theorem is absent from Mathlib, as is any Lie algebra of a group, and `PU(K)` does not exist. |
+| 2.6 | `thm:rank-two-sslp` | **Done at arbitrary `n`, forward and converse.** The forward direction is stated whole as `RankTwoSSLP.rank_two_sslp`: finite cyclic group, primitive lift `D(a;q)` with `2 <= q`, projective order `m` with `2 <= m` and `m | q`, two fibres at `0` and `q/m`. The sorted canonical form and the qubit permutation are `SortedForm.exists_sortedNormalForm`; the local `X` conjugation and the coprime-power normalization are inside the certificate. The converse is `RankTwo.order_of_two_fiber`. |
 | 3.1 | `lem:denominator-clearing` | **Done qualitatively** (`Clearing`), via the adjugate. The sharp multiplier `d_s(C)` needs invariant factors, which Mathlib's Smith normal form does not provide. |
 | 3.2 | `thm:colored-finite-lift` | **Qualitative half done.** The bound `q <= beta_{n+t-1}` needs the sharp multiplier. |
 | 3.3 | `cor:quantitative-projective-group` | **Blocked**, downstream of 2.5. |
@@ -600,7 +608,8 @@ Quot.sound}`; anything else is spelled out.
 | IV | `thm:unique-C5-LU` | **Blocked.** Needs local-unitary equivalence on projectors; there is no operator layer. Orbit 36's rigidity, its main input, is done. |
 
 Three things block the rest, and only one of them is deep. Cartan's
-closed-subgroup theorem is a genuine Mathlib-scale project. `beta_6 = 9` is an
+closed-subgroup theorem is a genuine Mathlib-scale project -- now needed only
+for `K > 2`, since rank two no longer goes through it. `beta_6 = 9` is an
 exhaustive computation over binary matrices that `decide` cannot reach, and the
 paper does not prove it either. The full enumeration pipeline is a large but
 ordinary engineering effort. Nothing else in `main.tex` is unformalized for want

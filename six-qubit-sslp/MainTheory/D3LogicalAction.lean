@@ -19,14 +19,16 @@ next layer.
 
 namespace MainTheory.D3LogicalAction
 
+variable {n d : ℕ}
+
 open MainTheory
 open scoped BigOperators
 
 noncomputable section
 
 /-- The coefficient functional `psi ↦ ⟨F_i, psi⟩`. -/
-def coordinateFunctional (F : CodeSpec.OrthonormalFrame 6 2) (i : Fin 2) :
-    (SS.State 6 ℂ) →ₗ[ℂ] ℂ where
+def coordinateFunctional (F : CodeSpec.OrthonormalFrame n 2) (i : Fin 2) :
+    (SS.State n ℂ) →ₗ[ℂ] ℂ where
   toFun psi := SS.innerC (F.vec i) psi
   map_add' psi chi := CodeSpec.innerC_add_right (F.vec i) psi chi
   map_smul' a psi := by
@@ -34,8 +36,8 @@ def coordinateFunctional (F : CodeSpec.OrthonormalFrame 6 2) (i : Fin 2) :
       CodeSpec.innerC_smul_right a (F.vec i) psi
 
 /-- Synthesis of a physical state from its two logical coordinates. -/
-def synthesisLinear (F : CodeSpec.OrthonormalFrame 6 2) :
-    (Fin 2 → ℂ) →ₗ[ℂ] SS.State 6 ℂ where
+def synthesisLinear (F : CodeSpec.OrthonormalFrame n 2) :
+    (Fin 2 → ℂ) →ₗ[ℂ] SS.State n ℂ where
   toFun v := ∑ k, v k • F.vec k
   map_add' v w := by
     funext x
@@ -54,8 +56,8 @@ def synthesisLinear (F : CodeSpec.OrthonormalFrame 6 2) :
     ring
 
 /-- Analysis of a physical state in the stored logical frame. -/
-def analysisLinear (F : CodeSpec.OrthonormalFrame 6 2) :
-    (SS.State 6 ℂ) →ₗ[ℂ] (Fin 2 → ℂ) where
+def analysisLinear (F : CodeSpec.OrthonormalFrame n 2) :
+    (SS.State n ℂ) →ₗ[ℂ] (Fin 2 → ℂ) where
   toFun psi := fun i ↦ coordinateFunctional F i psi
   map_add' psi chi := by
     funext i
@@ -66,7 +68,7 @@ def analysisLinear (F : CodeSpec.OrthonormalFrame 6 2) :
 
 /-- Analysis is a left inverse to synthesis, by frame orthonormality. -/
 @[simp] theorem analysis_synthesis
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ) :
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ) :
     analysisLinear F (synthesisLinear F v) = v := by
   funext i
   change coordinateFunctional F i (∑ k, v k • F.vec k) = v i
@@ -74,7 +76,7 @@ def analysisLinear (F : CodeSpec.OrthonormalFrame 6 2) :
   simp [coordinateFunctional, F.orthonormal]
 
 /-- In particular, synthesis is injective. -/
-theorem synthesis_injective (F : CodeSpec.OrthonormalFrame 6 2) :
+theorem synthesis_injective (F : CodeSpec.OrthonormalFrame n 2) :
     Function.Injective (synthesisLinear F) := by
   intro v w hvw
   have := congrArg (analysisLinear F) hvw
@@ -83,7 +85,7 @@ theorem synthesis_injective (F : CodeSpec.OrthonormalFrame 6 2) :
 /-- Synthesizing the frame coefficients of a state is exactly the frame
 projector. -/
 theorem synthesis_analysis_eq_projectorAction
-    (F : CodeSpec.OrthonormalFrame 6 2) (psi : SS.State 6 ℂ) :
+    (F : CodeSpec.OrthonormalFrame n 2) (psi : SS.State n ℂ) :
     synthesisLinear F (analysisLinear F psi) =
       CodeSpec.projectorAction F psi := by
   funext x
@@ -96,7 +98,7 @@ theorem synthesis_analysis_eq_projectorAction
 
 /-- Every synthesized state belongs to the actual code span. -/
 theorem synthesis_mem_codeSpan
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ) :
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ) :
     synthesisLinear F v ∈ CodeSpec.codeSpan F := by
   change (∑ k, v k • F.vec k) ∈ CodeSpec.codeSpan F
   apply Submodule.sum_mem
@@ -106,15 +108,15 @@ theorem synthesis_mem_codeSpan
 
 /-- The concrete induced `2 × 2` logical endomorphism in frame
 coordinates. -/
-def logicalAction (F : CodeSpec.OrthonormalFrame 6 2)
-    (U : Module.End ℂ (SS.State 6 ℂ)) : Module.End ℂ (Fin 2 → ℂ) :=
+def logicalAction (F : CodeSpec.OrthonormalFrame n 2)
+    (U : Module.End ℂ (SS.State n ℂ)) : Module.End ℂ (Fin 2 → ℂ) :=
   (analysisLinear F).comp (U.comp (synthesisLinear F))
 
 /-- On a preserved code, the induced logical action and the physical action
 commute exactly with synthesis. -/
 theorem synthesis_logicalAction
-    (F : CodeSpec.OrthonormalFrame 6 2)
-    (U : Module.End ℂ (SS.State 6 ℂ))
+    (F : CodeSpec.OrthonormalFrame n 2)
+    (U : Module.End ℂ (SS.State n ℂ))
     (hpres : CodeSpec.CodePreserving F U) (v : Fin 2 → ℂ) :
     synthesisLinear F (logicalAction F U v) = U (synthesisLinear F v) := by
   have hmem : U (synthesisLinear F v) ∈ CodeSpec.codeSpan F :=
@@ -130,8 +132,8 @@ theorem synthesis_logicalAction
 /-- The algebraically closed field theorem supplies a nonzero logical
 eigenvector of the induced two-dimensional endomorphism. -/
 theorem exists_logical_eigenvector
-    (F : CodeSpec.OrthonormalFrame 6 2)
-    (U : Module.End ℂ (SS.State 6 ℂ)) :
+    (F : CodeSpec.OrthonormalFrame n 2)
+    (U : Module.End ℂ (SS.State n ℂ)) :
     ∃ (mu : ℂ) (v : Fin 2 → ℂ),
       v ≠ 0 ∧ logicalAction F U v = mu • v := by
   obtain ⟨mu, hmu⟩ := Module.End.exists_eigenvalue (logicalAction F U)
@@ -142,8 +144,8 @@ theorem exists_logical_eigenvector
 actual physical code.  This is the first half of the two-dimensional spectral
 extraction, proved without an extraction premise. -/
 theorem exists_physical_code_eigenvector
-    (F : CodeSpec.OrthonormalFrame 6 2)
-    (U : Module.End ℂ (SS.State 6 ℂ))
+    (F : CodeSpec.OrthonormalFrame n 2)
+    (U : Module.End ℂ (SS.State n ℂ))
     (hpres : CodeSpec.CodePreserving F U) :
     ∃ (mu : ℂ) (v : Fin 2 → ℂ),
       v ≠ 0 ∧

@@ -34,6 +34,8 @@ flips the angle vector, leaving the modulus -- and hence the label -- alone.
 
 namespace MainTheory.BoundedRepresentationProof
 
+variable {n : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.FiniteGateAsPhase
 open MainTheory.BoundedClassPower
@@ -43,7 +45,7 @@ open MainTheory.D3AutomaticBoundedGenerator
 open MainTheory.D3NormalizedFreshPhase
 open MainTheory.GlobalClassificationBridge
 
-variable {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+variable {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
 
 /-! ## Memberships -/
 
@@ -72,7 +74,7 @@ theorem intrinsicClass_eq_phaseOfAngle
       = intrinsicClass (exactCodeProjector C)
           ⟨phaseOfAngle G.zeta G.primitiveRoot.pow_eq_one G.angle,
             mem_symmetryGroup_phaseOfAngle_code G⟩ := by
-  have hcoe : (G.intrinsicSymmetry : LocalPhase 6)
+  have hcoe : (G.intrinsicSymmetry : LocalPhase n)
       = finiteLocalPhase G.zeta G.primitiveRoot G.angle := rfl
   refine congrArg (intrinsicClass (exactCodeProjector C)) (Subtype.ext ?_)
   rw [hcoe]
@@ -103,12 +105,12 @@ order bound from its third conjunct. -/
 theorem boundedClass_of_twoFiber
     (G : RankTwoGlobal.FiniteGeneratorResolution C q)
     (T : RankTwoGlobal.TwoFiberCertificate G)
-    (hle : (frameFreshSparsePhase T).data.order ≤ 9)
+    {B : ℕ} (hle : (frameFreshSparsePhase T).data.order ≤ B)
     (h2 : CodeSpec.SameProjectiveOnCode (normalizedCode T).frame
       (freshFiniteGateEnd T)
       (RankTwoGlobal.finiteGateEnd G.zeta
-        (SixQubitSemanticEntrance.normalizedFiniteAngle G T))) :
-    BoundedClass (exactCodeProjector C) G.intrinsicClass := by
+        (SixQubitSemanticEntrance.normalizedFiniteAngle (G := G) T))) :
+    BoundedClass B (exactCodeProjector C) G.intrinsicClass := by
   letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
   have hz : G.zeta ^ q = 1 := G.primitiveRoot.pow_eq_one
   have hzF : (automaticFreshGenerator T).zeta
@@ -126,16 +128,16 @@ theorem boundedClass_of_twoFiber
     pow_mem hmemG c
   -- undoing the normalization
   have hundo : flipPhase (phaseOfAngle G.zeta hz
-        (SixQubitSemanticEntrance.normalizedFiniteAngle G T)) T.x0
+        (SixQubitSemanticEntrance.normalizedFiniteAngle (G := G) T)) T.x0
       = (phaseOfAngle G.zeta hz G.angle) ^ c :=
     UndoNormalization.flipPhase_phaseOfAngle_normalized
       G.zeta hz G.angle T.x0 T.unit
   have hback : phaseOfAngle G.zeta hz
-        (SixQubitSemanticEntrance.normalizedFiniteAngle G T)
+        (SixQubitSemanticEntrance.normalizedFiniteAngle (G := G) T)
       = flipPhase ((phaseOfAngle G.zeta hz G.angle) ^ c) T.x0 := by
     rw [← hundo, flipPhase_flipPhase]
   have hmemNorm : phaseOfAngle G.zeta hz
-        (SixQubitSemanticEntrance.normalizedFiniteAngle G T) ∈
+        (SixQubitSemanticEntrance.normalizedFiniteAngle (G := G) T) ∈
       diagonalSymmetryGroup
         (CodeProjector.ofFrame (shiftFrame G.eigenFrame T.x0)) := by
     rw [hback]
@@ -150,7 +152,7 @@ theorem boundedClass_of_twoFiber
   have hcls := SameProjectiveClass.intrinsicClass_eq_of_sameProjective
     (shiftFrame G.eigenFrame T.x0)
     (automaticFreshGenerator T).zeta hzF (automaticFreshGenerator T).angle
-    G.zeta hz (SixQubitSemanticEntrance.normalizedFiniteAngle G T)
+    G.zeta hz (SixQubitSemanticEntrance.normalizedFiniteAngle (G := G) T)
     hmemFresh hmemNorm (by rw [← hshift]; exact h2)
   -- transport back across the local X
   have hflip := intrinsicClass_flip_eq G.eigenFrame T.x0
@@ -200,7 +202,7 @@ theorem boundedClass_of_twoFiber
   obtain ⟨lbl, hlbl⟩ := exists_label_of_phaseOfAngle_le hle
     (automaticFreshGenerator T).zeta hzF
     (MainTheory.Normalize.flip (automaticFreshGenerator T).angle T.x0)
-  have hb : BoundedClass (exactCodeProjector C) (G.intrinsicClass ^ c) := by
+  have hb : BoundedClass B (exactCodeProjector C) (G.intrinsicClass ^ c) := by
     refine ⟨lbl, ⟨_, hmemLC⟩, ?_, hlbl.symm⟩
     rw [hkeyC, hpowclass]
   exact BoundedClass.of_pow_coprime (Nat.pos_of_ne_zero (NeZero.ne q))
@@ -224,7 +226,7 @@ theorem boundedClass_of_class_ne_one
     (hexp : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
       * ((theta j : ℝ) : ℂ)) = ((v j : ℂ)))
     (hne : intrinsicClass (exactCodeProjector C) ⟨v, hv⟩ ≠ 1) :
-    BoundedClass (exactCodeProjector C)
+    BoundedClass 9 (exactCodeProjector C)
       (intrinsicClass (exactCodeProjector C) ⟨v, hv⟩) := by
   have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame v hv theta hexp
   have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
@@ -255,7 +257,7 @@ theorem boundedClass_of_class_ne_one
       SymmetryToEntrance.realGateEnd_eq_diagonalAction v theta hexp phi] at hthis
     exact hthis
   rw [← hGu]
-  refine boundedClass_of_twoFiber G T
+  refine boundedClass_of_twoFiber G T (B := 9)
     (automaticFreshGenerator_order_le_nine betaSix T) ?_
   exact hc2
 
@@ -270,11 +272,11 @@ theorem hasBoundedRepresentation
     (spectral : PhaseSectorBridge.SpectralExtractionPrinciple 6 2 3)
     (betaSix : BinaryBeta.BetaBound 6 9)
     (C : CodeSpec.ExactCode 6 2 3) :
-    BoundedRepresentation.HasBoundedRepresentation C := by
+    BoundedRepresentation.HasBoundedRepresentation 9 C := by
   intro g
   by_cases hg : g = 1
   · subst hg
-    exact SymmetryToEntrance.exists_label_of_class_one C
+    exact SymmetryToEntrance.exists_label_of_class_one C (by norm_num)
   · obtain ⟨u, rfl⟩ := QuotientGroup.mk_surjective g
     obtain ⟨theta, hexp⟩ :=
       LocalPhaseAngle.exists_angleVector (u : LocalPhase 6)

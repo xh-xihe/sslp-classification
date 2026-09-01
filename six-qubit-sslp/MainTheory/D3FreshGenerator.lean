@@ -13,6 +13,8 @@ new `FiniteGeneratorResolution` whose modulus is the fresh least denominator.
 
 namespace MainTheory.D3FreshGenerator
 
+variable {n : ℕ}
+
 open MainTheory
 open MainTheory.D3FreshSparseAssembly
 
@@ -21,9 +23,9 @@ noncomputable section
 /-- The freshly bounded rational phase, expressed as a genuine primitive
 finite generator spanning the actual code. -/
 noncomputable def ofFreshSparsePhase
-    {C : CodeSpec.ExactCode 6 2 3}
-    (theta : Fin 6 → ℝ)
-    (eigenFrame : CodeSpec.OrthonormalFrame 6 2)
+    {C : CodeSpec.ExactCode n 2 3}
+    (theta : Fin n → ℝ)
+    (eigenFrame : CodeSpec.OrthonormalFrame n 2)
     (span_eq : CodeSpec.codeSpan C.frame =
       CodeSpec.codeSpan eigenFrame)
     (eigenvalue : Fin 2 → ℂ)
@@ -33,7 +35,7 @@ noncomputable def ofFreshSparsePhase
     (projectively_nontrivial : eigenvalue 0 ≠ eigenvalue 1)
     (F : FreshSparsePhase
       (eigenFrame.vec 0) (eigenFrame.vec 1) theta) :
-    @RankTwoGlobal.FiniteGeneratorResolution 6 3 C F.data.order
+    @RankTwoGlobal.FiniteGeneratorResolution n 3 C F.data.order
       ⟨F.data.order_pos.ne'⟩ := by
   letI : NeZero F.data.order := ⟨F.data.order_pos.ne'⟩
   refine
@@ -68,9 +70,9 @@ noncomputable def ofFreshSparsePhase
 same projective action on the actual code.  In fact the scalar is one; the
 projective formulation is the interface consumed by the semantic entrance. -/
 theorem ofFreshSparsePhase_sameProjective
-    {C : CodeSpec.ExactCode 6 2 3}
-    (theta : Fin 6 → ℝ)
-    (eigenFrame : CodeSpec.OrthonormalFrame 6 2)
+    {C : CodeSpec.ExactCode n 2 3}
+    (theta : Fin n → ℝ)
+    (eigenFrame : CodeSpec.OrthonormalFrame n 2)
     (span_eq : CodeSpec.codeSpan C.frame =
       CodeSpec.codeSpan eigenFrame)
     (eigenvalue : Fin 2 → ℂ)
@@ -81,7 +83,7 @@ theorem ofFreshSparsePhase_sameProjective
     (F : FreshSparsePhase
       (eigenFrame.vec 0) (eigenFrame.vec 1) theta) :
     CodeSpec.SameProjectiveOnCode C.frame
-      (@RankTwoGlobal.finiteGateEnd 6 F.data.order
+      (@RankTwoGlobal.finiteGateEnd n F.data.order
         ⟨F.data.order_pos.ne'⟩
         (D3FreshFiniteGate.standardRoot F.data) F.data.angle)
       (PhaseSectorBridge.realGateEnd theta) := by

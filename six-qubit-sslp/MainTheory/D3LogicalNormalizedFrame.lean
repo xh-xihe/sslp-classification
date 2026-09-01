@@ -13,6 +13,8 @@ exactly the original code span.
 
 namespace MainTheory.D3LogicalNormalizedFrame
 
+variable {n d : ℕ}
+
 open MainTheory
 open MainTheory.D3LogicalCoordinateUnitary
 open MainTheory.D3LogicalNormalization
@@ -22,8 +24,8 @@ noncomputable section
 /-- The physical frame synthesized from a nonzero coordinate vector and its
 explicit perpendicular. -/
 def normalizedPhysicalFrame
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
-    CodeSpec.OrthonormalFrame 6 2 where
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
+    CodeSpec.OrthonormalFrame n 2 where
   vec := ![
     D3LogicalAction.synthesisLinear F (normalized v),
     D3LogicalAction.synthesisLinear F (normalized (perpendicular v))]
@@ -58,7 +60,7 @@ def normalizedPhysicalFrame
 /-- Every vector of the new physical frame belongs to the original code
 span, because it is obtained by synthesis in the original frame. -/
 theorem normalizedPhysicalFrame_vec_mem
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ) (hv : v ≠ 0)
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ) (hv : v ≠ 0)
     (k : Fin 2) :
     (normalizedPhysicalFrame F v hv).vec k ∈ CodeSpec.codeSpan F := by
   fin_cases k
@@ -72,7 +74,7 @@ theorem normalizedPhysicalFrame_vec_mem
 
 /-- The new normalized frame spans exactly the original physical code. -/
 theorem codeSpan_normalizedPhysicalFrame
-    (F : CodeSpec.OrthonormalFrame 6 2) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
+    (F : CodeSpec.OrthonormalFrame n 2) (v : Fin 2 → ℂ) (hv : v ≠ 0) :
     CodeSpec.codeSpan F =
       CodeSpec.codeSpan (normalizedPhysicalFrame F v hv) := by
   symm

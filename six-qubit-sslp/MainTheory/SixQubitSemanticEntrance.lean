@@ -51,6 +51,8 @@ abbrev ExactSixQubitCode := CodeSpec.ExactCode 6 2 3
 
 /-! ## A supported Boolean basis chosen without certificate data -/
 
+variable {n d : ℕ}
+
 /-- A basis of the linear span of the Boolean vertices in the *actual*
 nonzero support of a state.  The vertices and their support proofs are part of
 the result, but no coordinate minor is: `D3SparseRationalization.Data.ofBitRows`
@@ -58,9 +60,9 @@ constructs that minor from `independent`.
 
 This is a linear-span basis, rather than an affine basis.  That is the form
 needed by the homogeneous phase equations in `main.tex`. -/
-structure SupportedBitBasis (psi : SS.State 6 ℂ) where
+structure SupportedBitBasis (psi : SS.State n ℂ) where
   rank : ℕ
-  vertex : Fin rank → SS.BitString 6
+  vertex : Fin rank → SS.BitString n
   vertex_supported : ∀ i, psi (vertex i) ≠ 0
   independent : LinearIndependent ℝ
     (fun i => CodeAffineSpanBridge.bitPoint (vertex i))
@@ -75,9 +77,9 @@ structure SupportedBitBasis (psi : SS.State 6 ℂ) where
 application of finite-dimensional basis extraction to the span of the actual
 support image; the preimages returned below are therefore genuine supported
 bit strings, not arbitrary real vectors. -/
-noncomputable def supportedBitBasis (psi : SS.State 6 ℂ) :
+noncomputable def supportedBitBasis (psi : SS.State n ℂ) :
     SupportedBitBasis psi := by
-  let S : Set (Fin 6 → ℝ) :=
+  let S : Set (Fin n → ℝ) :=
     CodeAffineSpanBridge.bitPoint ''
       CodeAffineSpanBridge.actualSupport psi
   let hexists := Submodule.exists_fun_fin_finrank_span_eq ℝ S
@@ -88,7 +90,7 @@ noncomputable def supportedBitBasis (psi : SS.State 6 ℂ) :
       Submodule.span ℝ S := hf_spec.2.1
   have hf_independent : LinearIndependent ℝ f := hf_spec.2.2
   let vertex : Fin (Module.finrank ℝ (Submodule.span ℝ S)) →
-      SS.BitString 6 := fun i => Classical.choose (hf_mem i)
+      SS.BitString n := fun i => Classical.choose (hf_mem i)
   have hvertex_supported : ∀ i,
       vertex i ∈ CodeAffineSpanBridge.actualSupport psi := fun i =>
     (Classical.choose_spec (hf_mem i)).1
@@ -114,14 +116,14 @@ noncomputable def supportedBitBasis (psi : SS.State 6 ℂ) :
     rw [hfun, hf_span]
 
 /-- At most six supported Boolean rows are ever needed. -/
-theorem SupportedBitBasis.rank_le_six {psi : SS.State 6 ℂ}
-    (B : SupportedBitBasis psi) : B.rank ≤ 6 := by
+theorem SupportedBitBasis.rank_le_six {psi : SS.State n ℂ}
+    (B : SupportedBitBasis psi) : B.rank ≤ n := by
   simpa using B.independent.fintype_card_le_finrank
 
 /-- Coordinatewise real embedding of bit strings is injective. -/
 theorem bitPoint_injective :
     Function.Injective
-      (CodeAffineSpanBridge.bitPoint : SS.BitString 6 → Fin 6 → ℝ) := by
+      (CodeAffineSpanBridge.bitPoint : SS.BitString n → Fin n → ℝ) := by
   intro x y hxy
   funext j
   have hj := congrFun hxy j
@@ -129,10 +131,11 @@ theorem bitPoint_injective :
     simp [CodeAffineSpanBridge.bitPoint, hx, hy] at hj ⊢
 
 /-- The all-zero Boolean vertex. -/
-def zeroBitString : SS.BitString 6 := fun _ => false
+def zeroBitString : SS.BitString n := fun _ => false
 
 @[simp] theorem bitPoint_zeroBitString :
-    CodeAffineSpanBridge.bitPoint zeroBitString = 0 := by
+    CodeAffineSpanBridge.bitPoint (zeroBitString (n := n))
+      = (0 : Fin n → ℝ) := by
   funext j
   simp [zeroBitString, CodeAffineSpanBridge.bitPoint]
 
@@ -145,10 +148,10 @@ zero cube vertex.  A supported point of the right state would then have both
 zero subset-sum and the stipulated nonzero right residue. -/
 theorem SupportedBitBasis.rank_pos_of_commonAffineSpan
     {q : ℕ} [NeZero q]
-    {c d : SS.State 6 ℂ}
+    {c d : SS.State n ℂ}
     (B : SupportedBitBasis c)
     (H : CodeAffineSpanBridge.CommonAffineSpanCertificate c d)
-    (a : Fin 6 → ZMod q) (residue : ZMod q)
+    (a : Fin n → ZMod q) (residue : ZMod q)
     (hright : SS.SSConditionState a residue d)
     (hresidue : residue ≠ 0) :
     1 ≤ B.rank := by
@@ -156,7 +159,7 @@ theorem SupportedBitBasis.rank_pos_of_commonAffineSpan
   have hrank : B.rank = 0 := by omega
   have hrange :
       Set.range (fun i => CodeAffineSpanBridge.bitPoint (B.vertex i)) =
-        (∅ : Set (Fin 6 → ℝ)) := by
+        (∅ : Set (Fin n → ℝ)) := by
     ext v
     constructor
     · rintro ⟨i, rfl⟩
@@ -213,9 +216,9 @@ theorem SupportedBitBasis.rank_pos_of_commonAffineSpan
 /-- The finite angle after the local-`X` and coprime-power normalizations in
 the rank-two theorem. -/
 def normalizedFiniteAngle {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     (G : RankTwoGlobal.FiniteGeneratorResolution C q)
-    (T : RankTwoGlobal.TwoFiberCertificate G) : Fin 6 → ZMod q :=
+    (T : RankTwoGlobal.TwoFiberCertificate G) : Fin n → ZMod q :=
   fun j ↦ (T.unit : ZMod q) * Normalize.flip G.angle T.x0 j
 
 /-- A square binary simplex cut out of actual supported vertices of the
@@ -228,17 +231,17 @@ derived below from the genuine left-fibre support equation.  In particular
 the derived integral pivot solution, denominator minimality, and
 primitivity. -/
 structure BinarySimplexPivot {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     (G : RankTwoGlobal.FiniteGeneratorResolution C q)
     (T : RankTwoGlobal.TwoFiberCertificate G) where
   rank : ℕ
   rank_pos : 1 ≤ rank
   rank_le_six : rank ≤ 6
   base_supported : G.eigenFrame.vec 0 T.x0 ≠ 0
-  vertex : Fin rank → SS.BitString 6
+  vertex : Fin rank → SS.BitString n
   vertex_supported : ∀ i,
     G.eigenFrame.vec 0 (SS.bxor (vertex i) T.x0) ≠ 0
-  coordinate : Fin rank ↪ Fin 6
+  coordinate : Fin rank ↪ Fin n
   matrix : Matrix (Fin rank) (Fin rank) ℤ
   matrix_eq : ∀ i j,
     matrix i j = if vertex i (coordinate j) then 1 else 0
@@ -263,7 +266,7 @@ constructed by rationalization, not to an unrelated pre-existing generator.
 zero--one; this is derived from its connection to supported bit strings and
 is not another trusted field. -/
 theorem BinarySimplexPivot.isZeroOne {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     {T : RankTwoGlobal.TwoFiberCertificate G}
     (P : BinarySimplexPivot G T) :
@@ -276,17 +279,17 @@ theorem BinarySimplexPivot.isZeroOne {q : ℕ} [NeZero q]
 coordinates and setting all other coordinates to zero, exactly as in the
 distance-three proof. -/
 def BinarySimplexPivot.physicalPhase {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     {T : RankTwoGlobal.TwoFiberCertificate G}
-    (P : BinarySimplexPivot G T) : Fin 6 → ℚ :=
+    (P : BinarySimplexPivot G T) : Fin n → ℚ :=
   FiniteLift.extendByZero P.coordinate P.selectedPhase
 
 /-- Extending the selected solution by zero cannot introduce a new
 denominator. -/
 theorem BinarySimplexPivot.lcmDen_physical_dvd_selected
     {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     {T : RankTwoGlobal.TwoFiberCertificate G}
     (P : BinarySimplexPivot G T) :
@@ -316,14 +319,14 @@ theorem BinarySimplexPivot.lcmDen_physical_dvd_selected
 This is the exact bridge from the `ZMod q` subset-sum equation to the integral
 right-hand side used in the binary pivot system. -/
 theorem exists_integral_support_phase {q : ℕ} [NeZero q]
-    (a : Fin 6 → ZMod q) (theta : Fin 6 → ℚ)
+    (a : Fin n → ZMod q) (theta : Fin n → ℚ)
     (hspec : ∀ j, ∃ z : ℤ,
       (q : ℚ) * theta j = (z : ℚ) ∧ (z : ZMod q) = a j)
-    (x : SS.BitString 6) (hweight : SS.weight a x = 0) :
+    (x : SS.BitString n) (hweight : SS.weight a x = 0) :
     ∃ h : ℤ,
-      (∑ j : Fin 6, (if x j then 1 else 0 : ℚ) * theta j) = h := by
+      (∑ j : Fin n, (if x j then 1 else 0 : ℚ) * theta j) = h := by
   choose z hz hza using hspec
-  let numerator : ℤ := ∑ j : Fin 6, if x j then z j else 0
+  let numerator : ℤ := ∑ j : Fin n, if x j then z j else 0
   have hcast : (numerator : ZMod q) = SS.weight a x := by
     simp only [numerator, Int.cast_sum, SS.weight]
     apply Finset.sum_congr rfl
@@ -335,7 +338,7 @@ theorem exists_integral_support_phase {q : ℕ} [NeZero q]
   have hqne : (q : ℚ) ≠ 0 := Nat.cast_ne_zero.2 (NeZero.ne q)
   have hcleared :
       (q : ℚ) *
-          (∑ j : Fin 6, (if x j then 1 else 0 : ℚ) * theta j) =
+          (∑ j : Fin n, (if x j then 1 else 0 : ℚ) * theta j) =
         (numerator : ℚ) := by
     rw [Finset.mul_sum]
     simp only [numerator, Int.cast_sum]
@@ -347,7 +350,7 @@ theorem exists_integral_support_phase {q : ℕ} [NeZero q]
   apply mul_left_cancel₀ hqne
   calc
     (q : ℚ) *
-        (∑ j : Fin 6, (if x j then 1 else 0 : ℚ) * theta j) =
+        (∑ j : Fin n, (if x j then 1 else 0 : ℚ) * theta j) =
       (numerator : ℚ) := hcleared
     _ = (q : ℚ) * (h : ℚ) := by
       rw [hnum]
@@ -359,7 +362,7 @@ constructs an integral right-hand side.  Thus `C x = h` is a theorem from the
 support semantics and `angle_spec`, not a certificate field. -/
 theorem BinarySimplexPivot.exists_integral_rhs
     {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     {T : RankTwoGlobal.TwoFiberCertificate G}
     (P : BinarySimplexPivot G T) :
@@ -367,7 +370,7 @@ theorem BinarySimplexPivot.exists_integral_rhs
       (SharpClearing.ratMatrix P.matrix).mulVec P.selectedPhase =
         fun i ↦ (rhs i : ℚ) := by
   have hrow : ∀ i : Fin P.rank, ∃ h : ℤ,
-      (∑ j : Fin 6,
+      (∑ j : Fin n,
           (if P.vertex i j then 1 else 0 : ℚ) * P.physicalPhase j) = h := by
     intro i
     apply exists_integral_support_phase
@@ -387,10 +390,10 @@ theorem BinarySimplexPivot.exists_integral_rhs
       intro k _
       split <;> simp
     _ = dotProduct
-        (fun j : Fin 6 ↦ (if P.vertex i j then 1 else 0 : ℚ))
+        (fun j : Fin n ↦ (if P.vertex i j then 1 else 0 : ℚ))
         P.physicalPhase := by
       exact (FiniteLift.dotProduct_extendByZero P.coordinate
-        (fun j : Fin 6 ↦ (if P.vertex i j then 1 else 0 : ℚ))
+        (fun j : Fin n ↦ (if P.vertex i j then 1 else 0 : ℚ))
         P.selectedPhase).symm
     _ = (rhs i : ℚ) := hrhs i
 
@@ -402,7 +405,7 @@ exactly `q`.  Integer shifts of a phase coordinate are allowed, as in the
 literal congruence in `main.tex`; canonical `.val` representatives are not
 assumed. -/
 theorem lcmDen_eq_of_primitive_residues {q : ℕ} [NeZero q]
-    (theta : Fin 6 → ℚ) (a : Fin 6 → ZMod q)
+    (theta : Fin n → ℚ) (a : Fin n → ZMod q)
     (hprimitive : Gate.Primitive q a)
     (hspec : ∀ j, ∃ z : ℤ,
       (q : ℚ) * theta j = (z : ℚ) ∧ (z : ZMod q) = a j) :
@@ -458,7 +461,7 @@ theorem lcmDen_eq_of_primitive_residues {q : ℕ} [NeZero q]
 equation and the exact primitive-residue transcription. -/
 theorem BinarySimplexPivot.q_dvd_inverseDenominator
     {q : ℕ} [NeZero q]
-    {C : ExactSixQubitCode}
+    {C : CodeSpec.ExactCode n 2 d}
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     {T : RankTwoGlobal.TwoFiberCertificate G}
     (P : BinarySimplexPivot G T)
@@ -486,7 +489,7 @@ The normalized primitive clause is kept explicit.  It is elementary under
 local `X`, coordinate permutation, and multiplication by a unit, but recording
 it here ensures that the outer enumerator can never accept an imprimitive
 angle vector through an implicit normalization claim. -/
-structure D3FiniteResolution (C : ExactSixQubitCode) (q : ℕ) [NeZero q] where
+structure D3FiniteResolution (C : CodeSpec.ExactCode n 2 d) (q : ℕ) [NeZero q] where
   generator : RankTwoGlobal.FiniteGeneratorResolution C q
   normalForm : RankTwoGlobal.TwoFiberCertificate generator
   pivot : BinarySimplexPivot generator normalForm
@@ -495,9 +498,9 @@ structure D3FiniteResolution (C : ExactSixQubitCode) (q : ℕ) [NeZero q] where
       Normalize.flip generator.angle normalForm.x0 j)
 
 /-- The normalized finite angle vector occurring in the two-fibre theorem. -/
-def D3FiniteResolution.normalizedAngle {C : ExactSixQubitCode}
+def D3FiniteResolution.normalizedAngle {C : CodeSpec.ExactCode n 2 d}
     {q : ℕ} [NeZero q] (R : D3FiniteResolution C q) :
-    Fin 6 → ZMod q :=
+    Fin n → ZMod q :=
   normalizedFiniteAngle R.generator R.normalForm
 
 /-- Natural representatives of the normalized finite angles. -/
@@ -723,10 +726,11 @@ structure ExtractedD3Resolution (C : ExactSixQubitCode)
   q : ℕ
   q_pos : 0 < q
   resolution :
-    @D3FiniteResolution C q ⟨Nat.ne_of_gt q_pos⟩
+    @D3FiniteResolution 6 3 C q ⟨Nat.ne_of_gt q_pos⟩
   sameProjectiveAction :
     CodeSpec.SameProjectiveOnCode C.frame
-      (@D3FiniteResolution.finiteGate C q ⟨Nat.ne_of_gt q_pos⟩ resolution)
+      (letI : NeZero q := ⟨Nat.ne_of_gt q_pos⟩
+       D3FiniteResolution.finiteGate resolution)
       (PhaseSectorBridge.realGateEnd theta)
 
 /-- The resolved logical order, exposed without requiring callers to

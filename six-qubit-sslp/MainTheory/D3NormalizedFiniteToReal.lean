@@ -17,6 +17,8 @@ informal phase representatives is used.
 
 namespace MainTheory.D3NormalizedFiniteToReal
 
+variable {n : ℕ}
+
 open MainTheory
 open MainTheory.SixQubitSemanticEntrance
 open MainTheory.D3FreshSparseAssembly
@@ -62,9 +64,9 @@ theorem canonicalRoot_pow_rootExponent {q : ℕ} [NeZero q]
 /-- Exact real representative of the normalized modular angle carried by a
 two-fibre certificate. -/
 def normalizedRealPhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
-    (T : RankTwoGlobal.TwoFiberCertificate G) : Fin 6 → ℝ :=
+    (T : RankTwoGlobal.TwoFiberCertificate G) : Fin n → ℝ :=
   fun j ↦
     ((rootExponent G.zeta G.primitiveRoot *
         (normalizedFiniteAngle G T j).val : ℕ) : ℝ) / (q : ℝ)
@@ -72,9 +74,9 @@ def normalizedRealPhase
 /-- Coordinate-level equality between the real representative and the
 supplied primitive root. -/
 theorem exp_normalizedRealPhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
-    (T : RankTwoGlobal.TwoFiberCertificate G) (j : Fin 6) :
+    (T : RankTwoGlobal.TwoFiberCertificate G) (j : Fin n) :
     Complex.exp
         (2 * (Real.pi : ℂ) * Complex.I *
           (normalizedRealPhase T j : ℂ)) =
@@ -105,7 +107,7 @@ theorem exp_normalizedRealPhase
 
 private theorem prod_chi_eq_chi_sum {q : ℕ} [NeZero q]
     (zeta : ℂ) (hzeta : IsPrimitiveRoot zeta q)
-    (a : Fin 6 → ZMod q) (s : SS.BitString 6) (S : Finset (Fin 6)) :
+    (a : Fin n → ZMod q) (s : SS.BitString n) (S : Finset (Fin n)) :
     (∏ j ∈ S, if s j then Cyclic.chi zeta (a j) else 1) =
       Cyclic.chi zeta (∑ j ∈ S, a j * SS.bit (s j)) := by
   classical
@@ -119,9 +121,9 @@ private theorem prod_chi_eq_chi_sum {q : ℕ} [NeZero q]
 /-- Equality of the complete diagonal values, not merely their values on the
 two logical supports. -/
 theorem normalizedDiag_eq_realPhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
-    (T : RankTwoGlobal.TwoFiberCertificate G) (s : SS.BitString 6) :
+    (T : RankTwoGlobal.TwoFiberCertificate G) (s : SS.BitString n) :
     Gate.diag G.zeta (normalizedFiniteAngle G T) s =
       Complex.exp
         (2 * (Real.pi : ℂ) * Complex.I *
@@ -131,14 +133,14 @@ theorem normalizedDiag_eq_realPhase
   calc
     Cyclic.chi G.zeta
         (SS.weight (normalizedFiniteAngle G T) s) =
-        ∏ j : Fin 6,
+        ∏ j : Fin n,
           if s j then
             G.zeta ^ (normalizedFiniteAngle G T j).val
           else 1 := by
       simpa [SS.weight, Cyclic.chi] using
         (prod_chi_eq_chi_sum G.zeta G.primitiveRoot
           (normalizedFiniteAngle G T) s Finset.univ).symm
-    _ = ∏ j : Fin 6,
+    _ = ∏ j : Fin n,
           Complex.exp
             (A *
               ((if s j then normalizedRealPhase T j else 0 : ℝ) : ℂ)) := by
@@ -146,7 +148,7 @@ theorem normalizedDiag_eq_realPhase
       intro j _
       cases s j <;> simp [A, exp_normalizedRealPhase]
     _ = Complex.exp
-        (∑ j : Fin 6,
+        (∑ j : Fin n,
           A * ((if s j then normalizedRealPhase T j else 0 : ℝ) : ℂ)) := by
       exact (Complex.exp_sum Finset.univ _).symm
     _ = Complex.exp
@@ -163,7 +165,7 @@ theorem normalizedDiag_eq_realPhase
 /-- Equality of the normalized finite and real gates on the full physical
 state space. -/
 theorem normalizedGate_eq_realGate
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     Gate.gate G.zeta (normalizedFiniteAngle G T) =
@@ -174,7 +176,7 @@ theorem normalizedGate_eq_realGate
 
 /-- The normalized left state is fixed by the exact real representative. -/
 theorem normalizedRealPhase_leftEigen
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     MainTheory.RealGate.realGate (normalizedRealPhase T)
@@ -196,7 +198,7 @@ theorem normalizedRealPhase_leftEigen
 /-- The normalized right state has its stored nontrivial finite eigenvalue
 under the same real representative. -/
 theorem normalizedRealPhase_rightEigen
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     MainTheory.RealGate.realGate (normalizedRealPhase T)
@@ -221,7 +223,7 @@ theorem normalizedRealPhase_rightEigen
 once a genuine finite generator resolution has reached its proved normalized
 two-fibre certificate. -/
 def automaticFreshSparsePhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     FreshSparsePhase

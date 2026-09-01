@@ -20,13 +20,15 @@ asks for.
 
 namespace MainTheory.SymmetryToEntrance
 
+variable {n d : ℕ}
+
 open MainTheory.ClassificationLevels
 
 /-- **The real gate of a matching angle vector is the diagonal action.** -/
-theorem realGateEnd_eq_diagonalAction (u : LocalPhase 6) (theta : Fin 6 → ℝ)
+theorem realGateEnd_eq_diagonalAction (u : LocalPhase n) (theta : Fin n → ℝ)
     (h : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I * ((theta j : ℝ) : ℂ))
       = ((u j : ℂ)))
-    (phi : SS.State 6 ℂ) :
+    (phi : SS.State n ℂ) :
     PhaseSectorBridge.realGateEnd theta phi = diagonalAction u phi := by
   funext s
   rw [PhaseSectorBridge.realGateEnd]
@@ -35,10 +37,10 @@ theorem realGateEnd_eq_diagonalAction (u : LocalPhase 6) (theta : Fin 6 → ℝ)
   rw [LocalPhaseAngle.diagonalValue_eq_exp u theta h s]
 
 /-- A diagonal symmetry gives the entrance's preservation hypothesis. -/
-theorem codePreserving_of_symmetry (F : CodeSpec.OrthonormalFrame 6 2)
-    (u : LocalPhase 6)
+theorem codePreserving_of_symmetry (F : CodeSpec.OrthonormalFrame n 2)
+    (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (h : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I * ((theta j : ℝ) : ℂ))
       = ((u j : ℂ))) :
     CodeSpec.CodePreserving F (PhaseSectorBridge.realGateEnd theta) := by
@@ -55,10 +57,10 @@ are.  So the dichotomy the assembly needs -- either the class is the identity, o
 the entrance applies -- is the same dichotomy on both sides. -/
 
 /-- If the real gate is projectively trivial, so is the symmetry. -/
-theorem isProjectivelyTrivial_of_sameProjective (F : CodeSpec.OrthonormalFrame 6 2)
-    (u : LocalPhase 6)
+theorem isProjectivelyTrivial_of_sameProjective (F : CodeSpec.OrthonormalFrame n 2)
+    (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (h : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I * ((theta j : ℝ) : ℂ))
       = ((u j : ℂ)))
     (htriv : CodeSpec.SameProjectiveOnCode F
@@ -74,14 +76,15 @@ theorem isProjectivelyTrivial_of_sameProjective (F : CodeSpec.OrthonormalFrame 6
 
 /-- Hence a nonidentity class supplies the entrance's nontriviality. -/
 theorem projectivelyNontrivialReal_of_class_ne_one
-    (C : CodeSpec.ExactCode 6 2 3)
-    (u : LocalPhase 6)
+    (C : CodeSpec.ExactCode n 2 d)
+    (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame C.frame))
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (h : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I * ((theta j : ℝ) : ℂ))
       = ((u j : ℂ)))
     (hne : intrinsicClass (CodeProjector.ofFrame C.frame) ⟨u, hu⟩ ≠ 1) :
-    SixQubitSemanticEntrance.ProjectivelyNontrivialReal C theta := by
+    ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id := by
   intro htriv
   apply hne
   rw [intrinsicClass, QuotientGroup.eq_one_iff]
@@ -93,17 +96,18 @@ The trivial branch of the assembly, complete: the identity class is represented
 by the identity symmetry, which is the gate of `trivialLabel`. -/
 
 /-- The identity local phase is a diagonal symmetry of every code. -/
-theorem one_mem_symmetryGroup (F : CodeSpec.OrthonormalFrame 6 2) :
-    (1 : LocalPhase 6) ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F) :=
+theorem one_mem_symmetryGroup (F : CodeSpec.OrthonormalFrame n 2) :
+    (1 : LocalPhase n) ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F) :=
   Subgroup.one_mem _
 
 /-- **The identity class has a bounded label.** -/
-theorem exists_label_of_class_one (C : CodeSpec.ExactCode 6 2 3) :
-    ∃ (lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9)
+theorem exists_label_of_class_one (C : CodeSpec.ExactCode n 2 d) (hB : 0 < B) :
+    ∃ (lbl : ProjectiveGroupFinite.BoundedPhaseLabel n B)
       (u : diagonalSymmetryGroup (CodeProjector.ofFrame C.frame)),
       intrinsicClass (CodeProjector.ofFrame C.frame) u = 1 ∧
-        (u : LocalPhase 6) = BoundedRepresentation.gateOfLabel lbl := by
-  refine ⟨LabelledGates.trivialLabel, ⟨1, one_mem_symmetryGroup C.frame⟩, ?_, ?_⟩
+        (u : LocalPhase n) = BoundedRepresentation.gateOfLabel lbl := by
+  refine ⟨LabelledGates.trivialLabel hB,
+    ⟨1, one_mem_symmetryGroup C.frame⟩, ?_, ?_⟩
   · rw [intrinsicClass]
     exact QuotientGroup.mk_one _
   · rw [LabelledGates.gateOfLabel_trivial]

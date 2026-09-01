@@ -41,6 +41,28 @@ Proved here: the geometric content of the forward direction
 `q/m` (`exists_unit_mul_eq_div`), and the converse's arithmetic core
 (`order_of_two_fiber`).
 
+**Where each of those was later closed.**  The list above is still an accurate
+description of *this file*, which is why it is kept verbatim; but every item on
+it is now proved elsewhere in the repository, and reading it as a statement
+about the development would be wrong.
+
+* Finiteness: `GeneralFiniteness.finite_intrinsicGroup`, at arbitrary `n`, by a
+  bounded-representation argument that needs no Lie theory.
+* Theorem 2.4: `SectionTwoGeneral.rationalLift` and `finiteGenerator`.
+* The code-theoretic layer: `RankTwoGlobal.FiniteGeneratorResolution` and
+  `TwoFiberCertificate` carry the projector, the frame and the exact
+  Knill--Laflamme distance.
+* The group order: `TwoFiberCertificate.intrinsic_order_eq` identifies
+  `addOrderOf delta` with `orderOf` of the class, and `MainTheory/GroupOrder.lean`
+  relates that to `Nat.card` of the whole group -- dividing it always, equal to
+  it exactly when the chosen symmetry generates.
+* The sorted canonical form and its permutation:
+  `SortedForm.exists_sortedNormalForm`.
+* Orthonormality of the pair: `D3NormalizedFreshPhase.normalizedFrame`.
+
+The whole forward theorem is stated once, at general `n`, as
+`RankTwoSSLP.rank_two_sslp`.
+
 The coprime-power step deserves a word.  An earlier draft filed it under "the
 quotient by equivalences" and dropped it.  That was wrong: it is a proved
 arithmetic lemma, and it is the only reason the paper may write `S_{q/m}` rather

@@ -29,12 +29,14 @@ open scoped BigOperators
 
 noncomputable section
 
+variable {n : ℕ}
+
 /-- The normalized real phase is integral on every point of the first actual
 logical support.  This is exactly `main.tex` equation `eq:h-integers`; it is a
 semantic input here, rather than an unproved consequence of a name attached
 to a matrix. -/
-def IntegralOnActualSupport (psi : SS.State 6 ℂ)
-    (theta : Fin 6 → ℝ) : Prop :=
+def IntegralOnActualSupport (psi : SS.State n ℂ)
+    (theta : Fin n → ℝ) : Prop :=
   ∀ x, x ∈ CodeAffineSpanBridge.actualSupport psi →
     ∃ h : ℤ, MainTheory.RealGate.angle theta x = (h : ℝ)
 
@@ -44,7 +46,7 @@ matrix certificate.  No distinguished supported word is required: the
 eigenvalue-one equation itself says that every supported diagonal phase has
 complex exponential one. -/
 theorem integralOnActualSupport_of_normalizedEigen
-    (psi : SS.State 6 ℂ) (theta : Fin 6 → ℝ)
+    (psi : SS.State n ℂ) (theta : Fin n → ℝ)
     (heigen : MainTheory.RealGate.realGate theta psi = psi) :
     IntegralOnActualSupport psi theta := by
   intro x hx
@@ -69,15 +71,15 @@ theorem integralOnActualSupport_of_normalizedEigen
 
 /-- Integral right-hand side obtained from the actual supported basis rows. -/
 noncomputable def integralRhs
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
     Fin B.rank → ℤ :=
   fun i => Classical.choose
     (hintegral (B.vertex i) (B.vertex_supported i))
 
 theorem integralRhs_spec
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta)
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta)
     (i : Fin B.rank) :
     MainTheory.RealGate.angle theta (B.vertex i) =
       (integralRhs B theta hintegral i : ℝ) :=
@@ -88,23 +90,23 @@ theorem integralRhs_spec
 is selected internally from real linear independence by
 `Data.ofBitRows`; neither the minor nor its nonsingularity is an input. -/
 noncomputable def sparseData
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
-    D3SparseRationalization.Data B.rank := by
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
+    D3SparseRationalization.Data n B.rank := by
   apply D3SparseRationalization.Data.ofBitRows B.vertex
     (integralRhs B theta hintegral)
   simpa only [CodeAffineSpanBridge.bitPoint] using B.independent
 
 @[simp] theorem sparseData_row
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
     (sparseData B theta hintegral).row =
       D3SparseRationalization.bitRows B.vertex :=
   rfl
 
 @[simp] theorem sparseData_rhs
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
     (sparseData B theta hintegral).rhs =
       integralRhs B theta hintegral :=
   rfl
@@ -112,8 +114,8 @@ noncomputable def sparseData
 /-- The original real phase solves the integral supported-row system from
 which the fresh sparse phase is constructed. -/
 theorem originalPhase_solves
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta) :
     (((sparseData B theta hintegral).row.map (Int.castRingHom ℝ)).mulVec
         theta) =
       fun i => ((sparseData B theta hintegral).rhs i : ℝ) := by
@@ -126,9 +128,9 @@ theorem originalPhase_solves
 /-- The fresh sparse phase and the original real phase agree on every Boolean
 vertex in the span of the selected actual-support basis. -/
 theorem angle_eq_of_mem_basisSpan
-    {psi : SS.State 6 ℂ} (B : SupportedBitBasis psi)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport psi theta)
-    (x : SS.BitString 6)
+    {psi : SS.State n ℂ} (B : SupportedBitBasis psi)
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport psi theta)
+    (x : SS.BitString n)
     (hx : CodeAffineSpanBridge.bitPoint x ∈
       Submodule.span ℝ
         (Set.range (fun i =>
@@ -159,9 +161,9 @@ of the right support lies in its affine span, hence by the common-affine-span
 certificate in the affine span of the left support, and therefore in the
 left linear span.  No support point is replaced by a declared larger fibre. -/
 theorem angle_eq_on_common_actualSupports
-    {c d : SS.State 6 ℂ} (B : SupportedBitBasis c)
+    {c d : SS.State n ℂ} (B : SupportedBitBasis c)
     (H : CodeAffineSpanBridge.CommonAffineSpanCertificate c d)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport c theta) :
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport c theta) :
     (∀ x, x ∈ CodeAffineSpanBridge.actualSupport c →
       MainTheory.RealGate.angle
           (sparseData B theta hintegral).fullSolutionReal x =
@@ -190,10 +192,10 @@ Its order is `data.order`; there is intentionally no modulus parameter in
 this structure.  In particular, a modulus used merely to prove that the two
 input supports are distinct cannot be confused with the least denominator of
 the new phase. -/
-structure FreshSparsePhase (c d : SS.State 6 ℂ) (theta : Fin 6 → ℝ) where
+structure FreshSparsePhase (c d : SS.State n ℂ) (theta : Fin n → ℝ) where
   basis : SupportedBitBasis c
   rank_pos : 1 ≤ basis.rank
-  data : D3SparseRationalization.Data basis.rank
+  data : D3SparseRationalization.Data n basis.rank
   data_row : data.row = D3SparseRationalization.bitRows basis.vertex
   agreement_left : ∀ x, x ∈ CodeAffineSpanBridge.actualSupport c →
     MainTheory.RealGate.angle data.fullSolutionReal x =
@@ -207,12 +209,12 @@ nonzero right residue are used only to rule out a zero-dimensional common
 support span.  The returned phase has the independent order `data.order`. -/
 noncomputable def assembleFreshSparsePhase
     {oldq : ℕ} [NeZero oldq]
-    {c d : SS.State 6 ℂ}
+    {c d : SS.State n ℂ}
     (H : CodeAffineSpanBridge.CommonAffineSpanCertificate c d)
-    (oldAngle : Fin 6 → ZMod oldq) (rightResidue : ZMod oldq)
+    (oldAngle : Fin n → ZMod oldq) (rightResidue : ZMod oldq)
     (hright : SS.SSConditionState oldAngle rightResidue d)
     (hresidue : rightResidue ≠ 0)
-    (theta : Fin 6 → ℝ) (hintegral : IntegralOnActualSupport c theta) :
+    (theta : Fin n → ℝ) (hintegral : IntegralOnActualSupport c theta) :
     FreshSparsePhase c d theta := by
   let B := supportedBitBasis c
   have hrank : 1 ≤ B.rank :=
@@ -237,26 +239,28 @@ finite residue data is still used only to prove that the common support span
 has positive rank; the returned phase keeps its own fresh denominator. -/
 noncomputable def assembleFreshSparsePhase_of_normalizedEigen
     {oldq : ℕ} [NeZero oldq]
-    {c d : SS.State 6 ℂ}
+    {c d : SS.State n ℂ}
     (H : CodeAffineSpanBridge.CommonAffineSpanCertificate c d)
-    (oldAngle : Fin 6 → ZMod oldq) (rightResidue : ZMod oldq)
+    (oldAngle : Fin n → ZMod oldq) (rightResidue : ZMod oldq)
     (hright : SS.SSConditionState oldAngle rightResidue d)
     (hresidue : rightResidue ≠ 0)
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (heigen : MainTheory.RealGate.realGate theta c = c) :
     FreshSparsePhase c d theta :=
   assembleFreshSparsePhase H oldAngle rightResidue hright hresidue theta
     (integralOnActualSupport_of_normalizedEigen c theta heigen)
 
-/-- At most six rows occur in the fresh binary simplex. -/
+/-- At most `n` rows occur in the fresh binary simplex: they are linearly
+independent vectors in an `n`-dimensional space.  (At six qubits this is the
+"at most six" of the paper.) -/
 theorem FreshSparsePhase.rank_le_six
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
-    (F : FreshSparsePhase c d theta) : F.basis.rank ≤ 6 :=
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
+    (F : FreshSparsePhase c d theta) : F.basis.rank ≤ n :=
   F.basis.rank_le_six
 
 /-- The selected square minor of the fresh system is entrywise zero--one. -/
 theorem FreshSparsePhase.minor_isZeroOne
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
     BinaryBeta.IsZeroOne F.data.minor := by
   intro i j
@@ -269,26 +273,29 @@ theorem FreshSparsePhase.minor_isZeroOne
 /-- The fresh least denominator divides the sharp denominator of the fresh
 binary minor. -/
 theorem FreshSparsePhase.order_dvd_inverseDenominator
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
     F.data.order ∣ SharpClearing.inverseDenominator F.data.minor :=
   F.data.order_dvd_inverseDenominator
 
 /-- The modular angle attached to the fresh least denominator is primitive. -/
 theorem FreshSparsePhase.angle_primitive
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
     Gate.Primitive F.data.order F.data.angle :=
   F.data.angle_primitive
 
-/-- The universal six-variable binary bound applies to the *fresh* order. -/
-theorem FreshSparsePhase.order_le_nine
-    (betaSix : BinaryBeta.BetaBound 6 9)
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+/-- **Any binary denominator bound at size `n` bounds the fresh order.**
+
+The minor is a nonsingular zero--one matrix of size at most `n`, so its
+inverse denominator obeys the bound, and the fresh order divides it. -/
+theorem FreshSparsePhase.order_le_of_betaBound {B : ℕ}
+    (beta : BinaryBeta.BetaBound n B)
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
-    F.data.order ≤ 9 := by
-  have hden : SharpClearing.inverseDenominator F.data.minor ≤ 9 :=
-    betaSix F.basis.rank F.rank_pos F.rank_le_six F.data.minor
+    F.data.order ≤ B := by
+  have hden : SharpClearing.inverseDenominator F.data.minor ≤ B :=
+    beta F.basis.rank F.rank_pos F.rank_le_six F.data.minor
       F.minor_isZeroOne F.data.minor_nonsingular
   have hord : F.data.order ≤
       SharpClearing.inverseDenominator F.data.minor :=
@@ -297,10 +304,18 @@ theorem FreshSparsePhase.order_le_nine
       F.order_dvd_inverseDenominator
   exact hord.trans hden
 
+/-- The universal six-variable binary bound applies to the *fresh* order. -/
+theorem FreshSparsePhase.order_le_nine
+    (betaSix : BinaryBeta.BetaBound 6 9)
+    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    (F : FreshSparsePhase c d theta) :
+    F.data.order ≤ 9 :=
+  F.order_le_of_betaBound betaSix
+
 /-- Exact support-angle agreement upgrades to equality of the two real
 diagonal actions on the entire left state. -/
 theorem FreshSparsePhase.realGate_eq_left
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
     MainTheory.RealGate.realGate F.data.fullSolutionReal c =
       MainTheory.RealGate.realGate theta c := by
@@ -313,7 +328,7 @@ theorem FreshSparsePhase.realGate_eq_left
 
 /-- The same exact action equality holds on the right logical state. -/
 theorem FreshSparsePhase.realGate_eq_right
-    {c d : SS.State 6 ℂ} {theta : Fin 6 → ℝ}
+    {c d : SS.State n ℂ} {theta : Fin n → ℝ}
     (F : FreshSparsePhase c d theta) :
     MainTheory.RealGate.realGate F.data.fullSolutionReal d =
       MainTheory.RealGate.realGate theta d := by

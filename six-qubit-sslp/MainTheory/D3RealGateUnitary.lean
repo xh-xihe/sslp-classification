@@ -15,6 +15,8 @@ because it is called a gate.
 
 namespace MainTheory.D3RealGateUnitary
 
+variable {n d : ℕ}
+
 open MainTheory
 open scoped BigOperators ComplexConjugate
 
@@ -22,7 +24,7 @@ noncomputable section
 
 /-- Norm one of every computational-basis diagonal entry. -/
 theorem realGate_diagonal_norm
-    (theta : Fin 6 → ℝ) (s : SS.BitString 6) :
+    (theta : Fin n → ℝ) (s : SS.BitString n) :
     ‖Complex.exp
       (2 * (Real.pi : ℂ) * Complex.I *
         (MainTheory.RealGate.angle theta s : ℂ))‖ = 1 := by
@@ -38,7 +40,7 @@ theorem realGate_diagonal_norm
 
 /-- Star times itself of every diagonal entry is one. -/
 theorem realGate_diagonal_star_mul
-    (theta : Fin 6 → ℝ) (s : SS.BitString 6) :
+    (theta : Fin n → ℝ) (s : SS.BitString n) :
     star (Complex.exp
       (2 * (Real.pi : ℂ) * Complex.I *
         (MainTheory.RealGate.angle theta s : ℂ))) *
@@ -52,7 +54,7 @@ theorem realGate_diagonal_star_mul
 /-- The real diagonal gate preserves the repository's Hermitian inner
 product on the full physical state space. -/
 theorem innerC_realGate
-    (theta : Fin 6 → ℝ) (phi psi : SS.State 6 ℂ) :
+    (theta : Fin n → ℝ) (phi psi : SS.State n ℂ) :
     SS.innerC (MainTheory.RealGate.realGate theta phi)
         (MainTheory.RealGate.realGate theta psi) =
       SS.innerC phi psi := by
@@ -80,7 +82,7 @@ theorem innerC_realGate
       simp
 
 /-- The real diagonal gate is injective on the full physical space. -/
-theorem realGate_injective (theta : Fin 6 → ℝ) :
+theorem realGate_injective (theta : Fin n → ℝ) :
     Function.Injective (MainTheory.RealGate.realGate theta) := by
   intro phi psi h
   funext s

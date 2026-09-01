@@ -12,6 +12,8 @@ one-dimensional orthogonal complement.
 
 namespace MainTheory.D3LogicalSecondEigenvector
 
+variable {n d : ℕ}
+
 open MainTheory
 open MainTheory.D3LogicalCoordinateUnitary
 open MainTheory.D3LogicalPerpSpan
@@ -28,7 +30,7 @@ theorem coordinateInner_smul_left (a : ℂ) (v z : Fin 2 → ℂ) :
 /-- The induced logical action is injective because synthesis and the
 physical real diagonal gate are both injective. -/
 theorem logicalAction_realGate_injective
-    (F : CodeSpec.OrthonormalFrame 6 2) (theta : Fin 6 → ℝ)
+    (F : CodeSpec.OrthonormalFrame n 2) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving F
       (PhaseSectorBridge.realGateEnd theta)) :
     Function.Injective
@@ -60,7 +62,7 @@ theorem logicalAction_realGate_injective
 /-- A nonzero logical eigenvector has nonzero eigenvalue for the induced
 real-gate action. -/
 theorem logical_eigenvalue_ne_zero
-    (F : CodeSpec.OrthonormalFrame 6 2) (theta : Fin 6 → ℝ)
+    (F : CodeSpec.OrthonormalFrame n 2) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving F
       (PhaseSectorBridge.realGateEnd theta))
     {mu : ℂ} {v : Fin 2 → ℂ} (hv : v ≠ 0)
@@ -78,7 +80,7 @@ theorem logical_eigenvalue_ne_zero
 /-- The explicit perpendicular vector is a second nonzero eigenvector of the
 same logical action. -/
 theorem perpendicular_is_logical_eigenvector
-    (F : CodeSpec.OrthonormalFrame 6 2) (theta : Fin 6 → ℝ)
+    (F : CodeSpec.OrthonormalFrame n 2) (theta : Fin n → ℝ)
     (hpres : CodeSpec.CodePreserving F
       (PhaseSectorBridge.realGateEnd theta))
     {mu : ℂ} {v : Fin 2 → ℂ} (hv : v ≠ 0)

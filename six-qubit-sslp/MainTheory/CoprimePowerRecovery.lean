@@ -17,6 +17,8 @@ instead of leaving the bounded label set.  This file records both halves.
 
 namespace MainTheory.CoprimePowerRecovery
 
+variable {n d : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.FiniteGateAsPhase
 
@@ -40,9 +42,9 @@ theorem exists_pow_eq_self {G : Type*} [Group G] (g : G) (k : ℕ)
     ← pow_eq_pow_mod 1 hgk, pow_one]
 
 /-- A power of a bounded labelled gate is again a bounded labelled gate. -/
-theorem exists_label_of_pow (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
-    (hz : zeta ^ (m + 1) = 1) (a : Fin 6 → ZMod (m + 1)) (c : ℕ) :
-    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9,
+theorem exists_label_of_pow (m : ℕ) (hm : m < B) (zeta : ℂ)
+    (hz : zeta ^ (m + 1) = 1) (a : Fin n → ZMod (m + 1)) (c : ℕ) :
+    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel n B,
       BoundedRepresentation.gateOfLabel lbl
         = (fun j => (phaseOfAngle zeta hz a j) ^ c) := by
   obtain ⟨lbl, hlbl⟩ :=

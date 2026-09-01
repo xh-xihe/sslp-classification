@@ -15,6 +15,8 @@ actual code.
 
 namespace MainTheory.D3RationalLiftFiniteGenerator
 
+variable {n d : ℕ}
+
 open MainTheory
 open MainTheory.PhaseSectorFull
 open scoped BigOperators
@@ -22,16 +24,16 @@ open scoped BigOperators
 noncomputable section
 
 /-- Modular physical angle of a qualitative rational lift. -/
-def modularAngle {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+def modularAngle {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) :
-    Fin 6 → ZMod L.order :=
+    Fin n → ZMod L.order :=
   fun j ↦ (L.numerator j : ZMod L.order)
 
 /-- Least-denominator primitivity transported from integral numerators to
 their canonical modular representatives. -/
-theorem modularAngle_primitive {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+theorem modularAngle_primitive {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) :
     Gate.Primitive L.order (modularAngle L) := by
   letI : NeZero L.order := ⟨L.order_pos.ne'⟩
@@ -55,9 +57,9 @@ theorem modularAngle_primitive {theta : Fin 6 → ℝ} {t : ℕ}
 /-- Reduction of a possibly negative lift numerator does not change the
 corresponding power of the standard root. -/
 theorem canonicalRoot_pow_modularAngle_eq_zpow_numerator
-    {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
-    (L : FiniteLift.RationalColoredLift D) (j : Fin 6) :
+    {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
+    (L : FiniteLift.RationalColoredLift D) (j : Fin n) :
     D3NormalizedFiniteToReal.canonicalRoot L.order ^
         (modularAngle L j).val =
       D3NormalizedFiniteToReal.canonicalRoot L.order ^
@@ -91,9 +93,9 @@ theorem canonicalRoot_pow_modularAngle_eq_zpow_numerator
 /-- Coordinate equality between the modular standard-root phase and the
 rational real phase. -/
 theorem canonicalRoot_pow_modularAngle
-    {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
-    (L : FiniteLift.RationalColoredLift D) (j : Fin 6) :
+    {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
+    (L : FiniteLift.RationalColoredLift D) (j : Fin n) :
     D3NormalizedFiniteToReal.canonicalRoot L.order ^
         (modularAngle L j).val =
       Complex.exp
@@ -116,7 +118,7 @@ theorem canonicalRoot_pow_modularAngle
 
 private theorem prod_chi_eq_chi_sum {q : ℕ} [NeZero q]
     (zeta : ℂ) (hzeta : IsPrimitiveRoot zeta q)
-    (a : Fin 6 → ZMod q) (s : SS.BitString 6) (S : Finset (Fin 6)) :
+    (a : Fin n → ZMod q) (s : SS.BitString n) (S : Finset (Fin n)) :
     (∏ j ∈ S, if s j then Cyclic.chi zeta (a j) else 1) =
       Cyclic.chi zeta (∑ j ∈ S, a j * SS.bit (s j)) := by
   classical
@@ -130,9 +132,9 @@ private theorem prod_chi_eq_chi_sum {q : ℕ} [NeZero q]
 /-- Equality of finite and rational-real diagonal values on every basis
 string. -/
 theorem finiteDiag_eq_rationalRealPhase
-    {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
-    (L : FiniteLift.RationalColoredLift D) (s : SS.BitString 6) :
+    {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
+    (L : FiniteLift.RationalColoredLift D) (s : SS.BitString n) :
     Gate.diag (D3NormalizedFiniteToReal.canonicalRoot L.order)
         (modularAngle L) s =
       Complex.exp
@@ -145,7 +147,7 @@ theorem finiteDiag_eq_rationalRealPhase
   calc
     Cyclic.chi (D3NormalizedFiniteToReal.canonicalRoot L.order)
         (SS.weight (modularAngle L) s) =
-        ∏ j : Fin 6,
+        ∏ j : Fin n,
           if s j then
             D3NormalizedFiniteToReal.canonicalRoot L.order ^
               (modularAngle L j).val
@@ -155,14 +157,14 @@ theorem finiteDiag_eq_rationalRealPhase
           (D3NormalizedFiniteToReal.canonicalRoot L.order)
           (D3NormalizedFiniteToReal.canonicalRoot_primitive L.order)
           (modularAngle L) s Finset.univ).symm
-    _ = ∏ j : Fin 6,
+    _ = ∏ j : Fin n,
           Complex.exp
             (A * ((if s j then (L.physical j : ℝ) else 0 : ℝ) : ℂ)) := by
       apply Finset.prod_congr rfl
       intro j _
       cases s j <;> simp [A, canonicalRoot_pow_modularAngle]
     _ = Complex.exp
-        (∑ j : Fin 6,
+        (∑ j : Fin n,
           A * ((if s j then (L.physical j : ℝ) else 0 : ℝ) : ℂ)) := by
       exact (Complex.exp_sum Finset.univ _).symm
     _ = Complex.exp
@@ -179,8 +181,8 @@ theorem finiteDiag_eq_rationalRealPhase
 
 /-- Equality of the full finite and rational-real gates. -/
 theorem finiteGate_eq_rationalRealGate
-    {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+    {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) :
     Gate.gate (D3NormalizedFiniteToReal.canonicalRoot L.order)
         (modularAngle L) =
@@ -192,19 +194,19 @@ theorem finiteGate_eq_rationalRealGate
 /-! ## Code-linked generator packaging -/
 
 /-- Common nonzero scalar from the qualitative projective-action theorem. -/
-def projectiveScalar {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+def projectiveScalar {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) : ℂ :=
   Classical.choose L.same_projective_sector_action
 
-theorem projectiveScalar_ne_zero {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+theorem projectiveScalar_ne_zero {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) :
     projectiveScalar L ≠ 0 :=
   (Classical.choose_spec L.same_projective_sector_action).1
 
-theorem projectiveScalar_action {theta : Fin 6 → ℝ} {t : ℕ}
-    {D : SectorDecomposition 6 t theta}
+theorem projectiveScalar_action {theta : Fin n → ℝ} {t : ℕ}
+    {D : SectorDecomposition n t theta}
     (L : FiniteLift.RationalColoredLift D) (u : D.Index) :
     MainTheory.RealGate.realGate (fun j ↦ (L.physical j : ℝ)) (D.vec u) =
       fun x ↦ projectiveScalar L *
@@ -213,14 +215,14 @@ theorem projectiveScalar_action {theta : Fin 6 → ℝ} {t : ℕ}
 
 /-- Eigenvalues of the rational lift on the reindexed logical frame. -/
 def liftEigenvalue
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors) : Fin 2 → ℂ :=
   fun k ↦ projectiveScalar L *
     phaseExp (R.sectors.phase (R.link.reindex k).1)
 
 theorem rationalRealGate_eigen
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors) (k : Fin 2) :
     MainTheory.RealGate.realGate (fun j ↦ (L.physical j : ℝ))
@@ -247,10 +249,11 @@ theorem rationalRealGate_eigen
 /-- Projective nontriviality of the original real action forces the two lift
 eigenvalues to remain distinct. -/
 theorem liftEigenvalue_nontrivial
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors)
-    (hnontrivial : SixQubitSemanticEntrance.ProjectivelyNontrivialReal C theta) :
+    (hnontrivial : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     liftEigenvalue R L 0 ≠ liftEigenvalue R L 1 := by
   intro heq
   have hphase :
@@ -279,11 +282,12 @@ theorem liftEigenvalue_nontrivial
 /-- A qualitative rational lift is a genuine primitive finite generator on
 the actual code. -/
 def finiteGeneratorOfLift
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors)
-    (hnontrivial : SixQubitSemanticEntrance.ProjectivelyNontrivialReal C theta) :
-    @RankTwoGlobal.FiniteGeneratorResolution 6 3 C L.order
+    (hnontrivial : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    @RankTwoGlobal.FiniteGeneratorResolution n d C L.order
       ⟨L.order_pos.ne'⟩ := by
   letI : NeZero L.order := ⟨L.order_pos.ne'⟩
   exact
@@ -319,11 +323,12 @@ def finiteGeneratorOfLift
 caller to synthesize the denominator's dependent `NeZero` instance merely to
 state a theorem. -/
 def finiteGeneratorOfLiftEnd
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors)
-    (hnontrivial : SixQubitSemanticEntrance.ProjectivelyNontrivialReal C theta) :
-    Module.End ℂ (SS.State 6 ℂ) := by
+    (hnontrivial : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    Module.End ℂ (SS.State n ℂ) := by
   letI : NeZero L.order := ⟨L.order_pos.ne'⟩
   exact RankTwoGlobal.finiteGateEnd
     (finiteGeneratorOfLift R L hnontrivial).zeta
@@ -333,10 +338,11 @@ def finiteGeneratorOfLiftEnd
 the actual code they differ by the single nonzero scalar supplied by the
 qualitative rationalization theorem. -/
 theorem finiteGeneratorOfLift_sameProjective
-    {C : CodeSpec.ExactCode 6 2 3} {theta : Fin 6 → ℝ}
+    {C : CodeSpec.ExactCode n 2 d} {theta : Fin n → ℝ}
     (R : PhaseSectorBridge.LogicalSectorResolution C theta)
     (L : FiniteLift.RationalColoredLift R.sectors)
-    (hnontrivial : SixQubitSemanticEntrance.ProjectivelyNontrivialReal C theta) :
+    (hnontrivial : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     CodeSpec.SameProjectiveOnCode C.frame
       (finiteGeneratorOfLiftEnd R L hnontrivial)
       (PhaseSectorBridge.realGateEnd theta) := by

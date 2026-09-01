@@ -17,13 +17,17 @@ CodePreserving C.frame (realGateEnd theta)
   -> Nonempty (LogicalSectorResolution C theta)
 ```
 
-is deliberately *not* asserted as a theorem below.  It requires the spectral
-theorem for the unitary restriction of `D(theta)` to the finite-dimensional
-code space, followed by grouping equal eigenvalues and choosing real phase
-representatives.  The current repository has not yet formalized that
-extraction.  `SpectralExtractionPrinciple` gives the missing statement an
-explicit name so that later aggregate theorems cannot silently treat it as
-proved.
+is not asserted as a theorem *below*, because it needs the spectral theorem
+for the unitary restriction of `D(theta)` to the finite-dimensional code
+space, followed by grouping equal eigenvalues and choosing real phase
+representatives.  `SpectralExtractionPrinciple` names it so that aggregate
+theorems cannot silently treat it as proved when it is only assumed.
+
+It is no longer only assumed: `GeneralSpectral.spectralExtractionPrinciple`
+proves it for all `n`, `K` and `d`, on top of the unitary spectral theorem
+built in `MainTheory/UnitarySpectral.lean` (Mathlib has only the self-adjoint
+case).  The name is kept because downstream statements were written against
+it, and because keeping the interface makes the dependency legible.
 
 What is kernel-proved here is the converse semantic check: supplied complete
 sector data really does imply that the real diagonal gate preserves the code.

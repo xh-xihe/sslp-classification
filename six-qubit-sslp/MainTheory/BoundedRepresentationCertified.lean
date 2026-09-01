@@ -1,5 +1,6 @@
 import MainTheory.BoundedRepresentationProof
 import MainTheory.Generated.BinaryBetaSixKernel.Certificate
+import MainTheory.D3LogicalSpectralExtraction
 
 /-!
 # The bounded representation, with the modulus bound supplied
@@ -26,7 +27,7 @@ spectral extraction principle. -/
 theorem hasBoundedRepresentation
     (spectral : PhaseSectorBridge.SpectralExtractionPrinciple 6 2 3)
     (C : CodeSpec.ExactCode 6 2 3) :
-    BoundedRepresentation.HasBoundedRepresentation C :=
+    BoundedRepresentation.HasBoundedRepresentation 9 C :=
   BoundedRepresentationProof.hasBoundedRepresentation spectral
     MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper C
 
@@ -61,5 +62,25 @@ theorem isCyclic_intrinsicGroup
     (hchi : Function.Injective chi) :
     IsCyclic (IntrinsicGroup C) :=
   (intrinsicFiniteCyclicInputs spectral C chi hchi).isCyclic
+
+/-! ## Unconditional forms
+
+`D3LogicalSpectralExtraction.spectralExtraction` proves
+`SpectralExtractionPrinciple 6 2 3` outright, so the premise carried above can
+simply be discharged.  Nothing below has any hypothesis left. -/
+
+/-- **Every exact six-qubit code has bounded representations.** -/
+theorem hasBoundedRepresentation_unconditional
+    (C : CodeSpec.ExactCode 6 2 3) :
+    BoundedRepresentation.HasBoundedRepresentation 9 C :=
+  hasBoundedRepresentation
+    MainTheory.D3LogicalSpectralExtraction.spectralExtraction C
+
+/-- **The intrinsic projective diagonal group of an exact six-qubit code is
+finite.**  No Lie theory, and no remaining semantic premise. -/
+theorem finite_intrinsicGroup_unconditional
+    (C : CodeSpec.ExactCode 6 2 3) : Finite (IntrinsicGroup C) :=
+  BoundedRepresentation.finite_of_representation
+    (hasBoundedRepresentation_unconditional C)
 
 end MainTheory.BoundedRepresentationCertified

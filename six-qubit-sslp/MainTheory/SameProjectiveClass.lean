@@ -18,6 +18,8 @@ in the level-(i) quotient, which is what the bounded-lift cover is about.
 
 namespace MainTheory.SameProjectiveClass
 
+variable {n d : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.FiniteGateAsPhase
 
@@ -27,9 +29,9 @@ variable {q r : ℕ} [NeZero q] [NeZero r]
 
 Stated for finite gates, which is the form the entrance produces. -/
 theorem intrinsicClass_eq_of_sameProjective
-    (F : CodeSpec.OrthonormalFrame 6 2)
-    (zeta : ℂ) (hz : zeta ^ q = 1) (a : Fin 6 → ZMod q)
-    (xi : ℂ) (hx : xi ^ r = 1) (b : Fin 6 → ZMod r)
+    (F : CodeSpec.OrthonormalFrame n 2)
+    (zeta : ℂ) (hz : zeta ^ q = 1) (a : Fin n → ZMod q)
+    (xi : ℂ) (hx : xi ^ r = 1) (b : Fin n → ZMod r)
     (hu : phaseOfAngle zeta hz a ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
     (hv : phaseOfAngle xi hx b ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
     (h : CodeSpec.SameProjectiveOnCode F

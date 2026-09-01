@@ -16,6 +16,8 @@ result back along local `X` is a separate equivalence theorem.
 
 namespace MainTheory.D3AutomaticBoundedGenerator
 
+variable {n : ℕ}
+
 open MainTheory
 open MainTheory.SixQubitSemanticEntrance
 open MainTheory.D3FreshSparseAssembly
@@ -27,7 +29,7 @@ noncomputable section
 /-- Eigenvalues of the normalized finite/real action on its two logical
 states. -/
 def normalizedEigenvalue
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) : Fin 2 → ℂ :=
   ![1, Cyclic.chi G.zeta (((q / T.logicalOrder : ℕ) : ZMod q))]
@@ -35,7 +37,7 @@ def normalizedEigenvalue
 /-- The right normalized eigenvalue is not one.  This is derived from the
 proved projective-order characterization and `2 <= logicalOrder`. -/
 theorem normalizedRightEigenvalue_ne_one
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     Cyclic.chi G.zeta (((q / T.logicalOrder : ℕ) : ZMod q)) ≠ 1 := by
@@ -52,7 +54,7 @@ theorem normalizedRightEigenvalue_ne_one
   omega
 
 theorem normalizedEigenvalue_nontrivial
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     normalizedEigenvalue T 0 ≠ normalizedEigenvalue T 1 := by
@@ -63,7 +65,7 @@ theorem normalizedEigenvalue_nontrivial
 /-- The exact real representative has the displayed normalized eigenframe and
 the two eigenvalues above. -/
 theorem normalizedRealPhase_eigen
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) (k : Fin 2) :
     MainTheory.RealGate.realGate (normalizedRealPhase T)
@@ -80,7 +82,7 @@ normalized frame.  This small typed adapter prevents downstream elaboration
 from unfolding the entire sparse construction merely to see that
 `normalizedFrame.vec = normalizedState`. -/
 def frameFreshSparsePhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     FreshSparsePhase
@@ -90,7 +92,7 @@ def frameFreshSparsePhase
 
 /-- Explicit span equality used by the packaging constructor. -/
 theorem normalizedCode_span_eq_normalizedFrame
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     CodeSpec.codeSpan (normalizedCode T).frame =
@@ -101,7 +103,7 @@ theorem normalizedCode_span_eq_normalizedFrame
 
 /-- Canonical local instance for the fresh least denominator. -/
 def frameFreshOrderNeZero
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     NeZero (frameFreshSparsePhase T).data.order :=
@@ -110,38 +112,48 @@ def frameFreshOrderNeZero
 /-- Fresh primitive finite generator at the internally constructed sparse
 denominator. -/
 def automaticFreshGenerator
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
-    @RankTwoGlobal.FiniteGeneratorResolution 6 3 (normalizedCode T)
+    @RankTwoGlobal.FiniteGeneratorResolution n 3 (normalizedCode T)
       (frameFreshSparsePhase T).data.order
-      (frameFreshOrderNeZero T) :=
-  D3FreshGenerator.ofFreshSparsePhase
+      (frameFreshOrderNeZero T) := by
+  letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
+  exact D3FreshGenerator.ofFreshSparsePhase
     (C := normalizedCode T)
-    (normalizedRealPhase T)
-    (normalizedFrame T)
-    (normalizedCode_span_eq_normalizedFrame T)
-    (normalizedEigenvalue T)
-    (normalizedRealPhase_eigen T)
-    (normalizedEigenvalue_nontrivial T)
-    (frameFreshSparsePhase T)
+    (theta := normalizedRealPhase T)
+    (eigenFrame := normalizedFrame T)
+    (span_eq := normalizedCode_span_eq_normalizedFrame T)
+    (eigenvalue := normalizedEigenvalue T)
+    (eigen := normalizedRealPhase_eigen T)
+    (projectively_nontrivial := normalizedEigenvalue_nontrivial T)
+    (F := frameFreshSparsePhase T)
 
 /-- The new generator's physical order satisfies the sharp six-qubit bound. -/
+theorem automaticFreshGenerator_order_le {B : ℕ}
+    (beta : BinaryBeta.BetaBound n B)
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    {G : RankTwoGlobal.FiniteGeneratorResolution C q}
+    (T : RankTwoGlobal.TwoFiberCertificate G) :
+    (frameFreshSparsePhase T).data.order ≤ B :=
+  (frameFreshSparsePhase T).order_le_of_betaBound beta
+
+/-- The sharp six-qubit form. -/
 theorem automaticFreshGenerator_order_le_nine
     (betaSix : BinaryBeta.BetaBound 6 9)
     {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     (frameFreshSparsePhase T).data.order ≤ 9 :=
-  (frameFreshSparsePhase T).order_le_nine betaSix
+  automaticFreshGenerator_order_le betaSix T
 
 /-- The fresh finite gate exposed without a dependent `NeZero` premise in its
 type.  Positivity of the fresh denominator installs the instance internally. -/
 def freshFiniteGateEnd
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
-    Module.End ℂ (SS.State 6 ℂ) := by
+    Module.End ℂ (SS.State n ℂ) := by
   letI : NeZero (frameFreshSparsePhase T).data.order :=
     frameFreshOrderNeZero T
   exact RankTwoGlobal.finiteGateEnd
@@ -151,7 +163,7 @@ def freshFiniteGateEnd
 /-- The freshly packaged finite generator has exactly the same projective
 action as the exact real representative on the normalized code. -/
 theorem automaticFreshGenerator_sameProjective_real
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     CodeSpec.SameProjectiveOnCode (normalizedCode T).frame
@@ -178,7 +190,7 @@ theorem automaticFreshGenerator_sameProjective_real
 /-- The original normalized finite action and its exact real representative
 are equal as linear endomorphisms of the full physical space. -/
 theorem normalizedFiniteGateEnd_eq_realGateEnd
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     RankTwoGlobal.finiteGateEnd G.zeta (normalizedFiniteAngle G T) =
@@ -191,7 +203,7 @@ theorem normalizedFiniteGateEnd_eq_realGateEnd
 finite generator have the same projective action on the normalized exact
 code. -/
 theorem automaticFreshGenerator_sameProjective_normalizedFinite
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     CodeSpec.SameProjectiveOnCode (normalizedCode T).frame
@@ -203,16 +215,24 @@ theorem automaticFreshGenerator_sameProjective_normalizedFinite
 /-- Generator-only form: the proved canonical two-fibre certificate is chosen
 internally, so no normal-form object is an external assumption. -/
 def automaticFreshGeneratorOfGenerator
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :=
   automaticFreshGenerator (canonicalTwoFiber G)
 
+theorem automaticFreshGeneratorOfGenerator_order_le {B : ℕ}
+    (beta : BinaryBeta.BetaBound n B)
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
+    (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
+    (frameFreshSparsePhase (canonicalTwoFiber G)).data.order ≤ B :=
+  automaticFreshGenerator_order_le beta (canonicalTwoFiber G)
+
+/-- The sharp six-qubit form. -/
 theorem automaticFreshGeneratorOfGenerator_order_le_nine
     (betaSix : BinaryBeta.BetaBound 6 9)
     {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     (frameFreshSparsePhase (canonicalTwoFiber G)).data.order ≤ 9 :=
-  automaticFreshGenerator_order_le_nine betaSix (canonicalTwoFiber G)
+  automaticFreshGeneratorOfGenerator_order_le betaSix G
 
 end
 

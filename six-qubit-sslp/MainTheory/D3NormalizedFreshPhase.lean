@@ -7,7 +7,7 @@ This module removes another semantic input from the distance-three sparse
 construction.  A `RankTwoGlobal.TwoFiberCertificate` already contains the
 local-`X`-normalized orthonormal frame, its exact distance-three KL predicate,
 and the nonzero right residue.  We package that frame as an actual
-`ExactCode 6 2 3`, derive its common affine span, and feed all of those facts
+`ExactCode n 2 d`, derive its common affine span, and feed all of those facts
 to `assembleFreshSparsePhase_of_normalizedEigen`.
 
 The only real-phase premise left by the final constructor is stated literally:
@@ -18,6 +18,8 @@ real vector with a modular angle merely because their names look related.
 
 namespace MainTheory.D3NormalizedFreshPhase
 
+variable {n : ℕ}
+
 open MainTheory
 open MainTheory.SixQubitSemanticEntrance
 open MainTheory.D3FreshSparseAssembly
@@ -27,18 +29,18 @@ noncomputable section
 /-- The two logical states after the local-`X` normalization carried by a
 two-fibre certificate, exposed independently of the older pivot interface. -/
 def normalizedState
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) (k : Fin 2) :
-    SS.State 6 ℂ :=
+    SS.State n ℂ :=
   fun s ↦ G.eigenFrame.vec k (SS.bxor s T.x0)
 
 /-- The normalized states form a genuine orthonormal frame. -/
 def normalizedFrame
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
-    CodeSpec.OrthonormalFrame 6 2 where
+    CodeSpec.OrthonormalFrame n 2 where
   vec := normalizedState T
   orthonormal := by
     intro i j
@@ -47,10 +49,10 @@ def normalizedFrame
 /-- Local `X` normalization produces another exact distance-three code, not
 merely two arbitrary amplitude vectors. -/
 def normalizedCode
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
-    CodeSpec.ExactCode 6 2 3 where
+    CodeSpec.ExactCode n 2 3 where
   positiveRank := by decide
   frame := normalizedFrame T
   hasDistance := by
@@ -59,19 +61,19 @@ def normalizedCode
 /-- The common-affine-span lemma is applied to the actual normalized code
 constructed above; it is not an extra certificate supplied by the caller. -/
 theorem normalizedCommonAffineSpan
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     CodeAffineSpanBridge.CommonAffineSpanCertificate
       (normalizedState T 0) (normalizedState T 1) := by
   exact CodeAffineSpanBridge.commonAffineSpan_of_exactCode
-    (normalizedCode T) (by decide)
+    (normalizedCode T) le_rfl
 
 /-- The canonical right residue `q / m` is nonzero.  This is derived from the
 stored nonzero gap and the unit normalization, so the positive-rank argument
 does not depend on an unverified arithmetic side condition. -/
 theorem normalizedRightResidue_ne_zero
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G) :
     (((q / T.logicalOrder : ℕ) : ZMod q)) ≠ 0 := by
@@ -92,10 +94,10 @@ and an eigenvalue-one real phase equation.  The supported basis, binary minor,
 integer right-hand side, common affine geometry, and rank positivity are all
 constructed or proved internally. -/
 noncomputable def freshSparsePhase
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     {G : RankTwoGlobal.FiniteGeneratorResolution C q}
     (T : RankTwoGlobal.TwoFiberCertificate G)
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (heigen : MainTheory.RealGate.realGate theta
       (normalizedState T 0) = normalizedState T 0) :
     FreshSparsePhase (normalizedState T 0) (normalizedState T 1) theta :=
@@ -112,7 +114,7 @@ noncomputable def freshSparsePhase
 two-fibre certificate.  This is a noncomputable choice from a proved
 `Nonempty`; it introduces no new axiom or semantic assumption. -/
 def canonicalTwoFiber
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     RankTwoGlobal.TwoFiberCertificate G :=
   Classical.choice (RankTwoGlobal.finiteGenerator_twoFiber G)
@@ -121,9 +123,9 @@ def canonicalTwoFiber
 real eigenvalue-one equation is now derived from the generator and the exact
 code. -/
 noncomputable def freshSparsePhaseOfGenerator
-    {C : CodeSpec.ExactCode 6 2 3} {q : ℕ} [NeZero q]
+    {C : CodeSpec.ExactCode n 2 3} {q : ℕ} [NeZero q]
     (G : RankTwoGlobal.FiniteGeneratorResolution C q)
-    (theta : Fin 6 → ℝ)
+    (theta : Fin n → ℝ)
     (heigen : MainTheory.RealGate.realGate theta
       (normalizedState (canonicalTwoFiber G) 0) =
         normalizedState (canonicalTwoFiber G) 0) :

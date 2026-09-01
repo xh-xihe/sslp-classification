@@ -36,38 +36,40 @@ open scoped BigOperators
 
 noncomputable section
 
+variable {n : ℕ}
+
 /-- A rectangular integral row system together with a nonsingular square
 coordinate minor and an integral right-hand side. -/
-structure Data (r : ℕ) where
-  row : Matrix (Fin r) (Fin 6) ℤ
-  coordinate : Fin r ↪ Fin 6
+structure Data (n r : ℕ) where
+  row : Matrix (Fin r) (Fin n) ℤ
+  coordinate : Fin r ↪ Fin n
   rhs : Fin r → ℤ
   nonsingular :
     (show Matrix (Fin r) (Fin r) ℤ from
       fun i j ↦ row i (coordinate j)).det ≠ 0
 
 /-- The selected square coordinate minor. -/
-def Data.minor {r : ℕ} (P : Data r) : Matrix (Fin r) (Fin r) ℤ :=
+def Data.minor {r : ℕ} (P : Data n r) : Matrix (Fin r) (Fin r) ℤ :=
   fun i j ↦ P.row i (P.coordinate j)
 
-theorem Data.minor_nonsingular {r : ℕ} (P : Data r) :
+theorem Data.minor_nonsingular {r : ℕ} (P : Data n r) :
     P.minor.det ≠ 0 :=
   P.nonsingular
 
 /-- The exact rational solution on the selected coordinates. -/
-def Data.selectedSolution {r : ℕ} (P : Data r) : Fin r → ℚ :=
+def Data.selectedSolution {r : ℕ} (P : Data n r) : Fin r → ℚ :=
   (SharpClearing.ratMatrix P.minor)⁻¹.mulVec (fun i ↦ (P.rhs i : ℚ))
 
 /-- Extend the selected solution by zero on the other physical coordinates. -/
-def Data.fullSolution {r : ℕ} (P : Data r) : Fin 6 → ℚ :=
+def Data.fullSolution {r : ℕ} (P : Data n r) : Fin n → ℚ :=
   FiniteLift.extendByZero P.coordinate P.selectedSolution
 
-theorem Data.minor_cast {r : ℕ} (P : Data r) (i j : Fin r) :
+theorem Data.minor_cast {r : ℕ} (P : Data n r) (i j : Fin r) :
     SharpClearing.ratMatrix P.minor i j = (P.row i (P.coordinate j) : ℚ) :=
   rfl
 
 /-- Nonsingularity makes the inverse-matrix expression a genuine solution. -/
-theorem Data.selectedSolution_solves {r : ℕ} (P : Data r) :
+theorem Data.selectedSolution_solves {r : ℕ} (P : Data n r) :
     (SharpClearing.ratMatrix P.minor).mulVec P.selectedSolution =
       fun i ↦ (P.rhs i : ℚ) := by
   have hdetQ : (SharpClearing.ratMatrix P.minor).det ≠ 0 := by
@@ -85,7 +87,7 @@ theorem Data.selectedSolution_solves {r : ℕ} (P : Data r) :
     Matrix.one_mulVec]
 
 /-- Every original rectangular row is solved by the zero-extended vector. -/
-theorem Data.fullSolution_solves {r : ℕ} (P : Data r) :
+theorem Data.fullSolution_solves {r : ℕ} (P : Data n r) :
     (P.row.map (Int.castRingHom ℚ)).mulVec P.fullSolution =
       fun i ↦ (P.rhs i : ℚ) := by
   funext i
@@ -97,7 +99,7 @@ theorem Data.fullSolution_solves {r : ℕ} (P : Data r) :
   simpa [Matrix.mulVec, dotProduct, P.minor_cast] using hi
 
 /-- Zero extension introduces no new coordinate denominator. -/
-theorem Data.lcmDen_full_dvd_selected {r : ℕ} (P : Data r) :
+theorem Data.lcmDen_full_dvd_selected {r : ℕ} (P : Data n r) :
     Denominator.lcmDen P.fullSolution ∣
       Denominator.lcmDen P.selectedSolution := by
   apply Denominator.lcmDen_dvd_of_clears
@@ -119,7 +121,7 @@ theorem Data.lcmDen_full_dvd_selected {r : ℕ} (P : Data r) :
 
 /-- The sparse physical phase has denominator dividing the sharp inverse
 denominator of the selected binary minor. -/
-theorem Data.lcmDen_full_dvd_inverseDenominator {r : ℕ} (P : Data r) :
+theorem Data.lcmDen_full_dvd_inverseDenominator {r : ℕ} (P : Data n r) :
     Denominator.lcmDen P.fullSolution ∣
       SharpClearing.inverseDenominator P.minor := by
   exact dvd_trans P.lcmDen_full_dvd_selected
@@ -131,31 +133,31 @@ theorem Data.lcmDen_full_dvd_inverseDenominator {r : ℕ} (P : Data r) :
 
 /-- The exact physical order attached to the sparse rational phase is its
 least positive common denominator. -/
-def Data.order {r : ℕ} (P : Data r) : ℕ :=
+def Data.order {r : ℕ} (P : Data n r) : ℕ :=
   Denominator.lcmDen P.fullSolution
 
 /-- Integral coordinate numerators at the least common denominator. -/
-noncomputable def Data.numerator {r : ℕ} (P : Data r) : Fin 6 → ℤ :=
+noncomputable def Data.numerator {r : ℕ} (P : Data n r) : Fin n → ℤ :=
   Denominator.liftNum P.fullSolution
 
 /-- Reduce the integral numerators modulo the exact physical order. -/
-noncomputable def Data.angle {r : ℕ} (P : Data r) :
-    Fin 6 → ZMod P.order :=
+noncomputable def Data.angle {r : ℕ} (P : Data n r) :
+    Fin n → ZMod P.order :=
   fun j ↦ (P.numerator j : ZMod P.order)
 
-theorem Data.order_pos {r : ℕ} (P : Data r) : 0 < P.order :=
+theorem Data.order_pos {r : ℕ} (P : Data n r) : 0 < P.order :=
   Denominator.lcmDen_pos P.fullSolution
 
 /-- The numerator is an exact integer representative of `q * theta_j`.
 This is the congruence-level transcription used in `main.tex`; no choice of a
 literal representative in `[0,q)` is required. -/
-theorem Data.numerator_spec {r : ℕ} (P : Data r) (j : Fin 6) :
+theorem Data.numerator_spec {r : ℕ} (P : Data n r) (j : Fin n) :
     (P.order : ℚ) * P.fullSolution j = (P.numerator j : ℚ) :=
   Denominator.liftNum_spec P.fullSolution j
 
 /-- Every sparse coordinate has an integral representative whose residue is
 the canonical modular angle. -/
-theorem Data.exists_angle_representative {r : ℕ} (P : Data r) (j : Fin 6) :
+theorem Data.exists_angle_representative {r : ℕ} (P : Data n r) (j : Fin n) :
     ∃ z : ℤ,
       (P.order : ℚ) * P.fullSolution j = (z : ℚ) ∧
       (z : ZMod P.order) = P.angle j :=
@@ -165,7 +167,7 @@ theorem Data.exists_angle_representative {r : ℕ} (P : Data r) (j : Fin 6) :
 The proof transports divisibility from the canonical residue back to its
 integer representative modulo `order`, using that the tested divisor already
 divides `order`. -/
-theorem Data.angle_primitive {r : ℕ} (P : Data r) :
+theorem Data.angle_primitive {r : ℕ} (P : Data n r) :
     Gate.Primitive P.order P.angle := by
   letI : NeZero P.order := ⟨Nat.ne_of_gt P.order_pos⟩
   intro d hdq hda
@@ -189,18 +191,18 @@ theorem Data.angle_primitive {r : ℕ} (P : Data r) :
 
 /-- The exact order of the internally constructed primitive modular angle
 divides the sharp inverse denominator of the selected binary minor. -/
-theorem Data.order_dvd_inverseDenominator {r : ℕ} (P : Data r) :
+theorem Data.order_dvd_inverseDenominator {r : ℕ} (P : Data n r) :
     P.order ∣ SharpClearing.inverseDenominator P.minor := by
   simpa [Data.order] using P.lcmDen_full_dvd_inverseDenominator
 
 /-! ## Agreement with the original real phase on the support span -/
 
 /-- Cast the sparse rational phase to a real physical phase. -/
-def Data.fullSolutionReal {r : ℕ} (P : Data r) : Fin 6 → ℝ :=
+def Data.fullSolutionReal {r : ℕ} (P : Data n r) : Fin n → ℝ :=
   fun j ↦ (P.fullSolution j : ℝ)
 
 /-- The cast sparse phase solves the same real row system. -/
-theorem Data.fullSolutionReal_solves {r : ℕ} (P : Data r) :
+theorem Data.fullSolutionReal_solves {r : ℕ} (P : Data n r) :
     (P.row.map (Int.castRingHom ℝ)).mulVec P.fullSolutionReal =
       fun i ↦ (P.rhs i : ℝ) := by
   funext i
@@ -211,8 +213,8 @@ theorem Data.fullSolutionReal_solves {r : ℕ} (P : Data r) :
 
 /-- If `theta` is the original real solution of the same supported vertex
 equations, then it and the sparse rational phase give equal row values. -/
-theorem Data.row_values_agree {r : ℕ} (P : Data r)
-    (theta : Fin 6 → ℝ)
+theorem Data.row_values_agree {r : ℕ} (P : Data n r)
+    (theta : Fin n → ℝ)
     (hTheta : (P.row.map (Int.castRingHom ℝ)).mulVec theta =
       fun i ↦ (P.rhs i : ℝ)) :
     (P.row.map (Int.castRingHom ℝ)).mulVec P.fullSolutionReal =
@@ -222,11 +224,11 @@ theorem Data.row_values_agree {r : ℕ} (P : Data r)
 /-- Agreement on the selected supported rows propagates to every vector in
 their real row span.  This is `eq:phase-agreement-on-support` once the common
 affine-span theorem supplies the displayed coefficient vector `w`. -/
-theorem Data.dot_eq_on_rowSpan {r : ℕ} (P : Data r)
-    (theta : Fin 6 → ℝ)
+theorem Data.dot_eq_on_rowSpan {r : ℕ} (P : Data n r)
+    (theta : Fin n → ℝ)
     (hTheta : (P.row.map (Int.castRingHom ℝ)).mulVec theta =
       fun i ↦ (P.rhs i : ℝ))
-    (x : Fin 6 → ℝ) (w : Fin r → ℝ)
+    (x : Fin n → ℝ) (w : Fin r → ℝ)
     (hx : x = fun j ↦ ∑ i, w i * (P.row i j : ℝ)) :
     (∑ j, P.fullSolutionReal j * x j) =
       ∑ j, theta j * x j := by
@@ -248,12 +250,12 @@ nonsingular.
 nonsingular square minor obtained by selecting actual physical coordinates.
 The coordinate injection is constructed, rather than accepted as data. -/
 theorem exists_nonsingular_coordinate_minor {r : ℕ}
-    (v : Fin r → Fin 6 → ℝ) (hv : LinearIndependent ℝ v) :
-    ∃ coordinate : Fin r ↪ Fin 6,
+    (v : Fin r → Fin n → ℝ) (hv : LinearIndependent ℝ v) :
+    ∃ coordinate : Fin r ↪ Fin n,
       (show Matrix (Fin r) (Fin r) ℝ from
         fun i j ↦ v i (coordinate j)).det ≠ 0 := by
   classical
-  let A : Matrix (Fin r) (Fin 6) ℝ := fun i j ↦ v i j
+  let A : Matrix (Fin r) (Fin n) ℝ := fun i j ↦ v i j
   have hrow : LinearIndependent ℝ A.row := by
     simpa [A, Matrix.row] using hv
   have hdim : Module.finrank ℝ
@@ -271,7 +273,7 @@ theorem exists_nonsingular_coordinate_minor {r : ℕ}
     apply e.injective
     apply hf_independent.injective
     rw [← hcoordinate i, ← hcoordinate j, hij]
-  let coordinateEmbedding : Fin r ↪ Fin 6 :=
+  let coordinateEmbedding : Fin r ↪ Fin n :=
     ⟨coordinate, hcoordinate_injective⟩
   let M : Matrix (Fin r) (Fin r) ℝ :=
     fun i j ↦ v i (coordinateEmbedding j)
@@ -290,11 +292,11 @@ theorem exists_nonsingular_coordinate_minor {r : ℕ}
   exact (M.isUnit_iff_isUnit_det.mp hunit).ne_zero
 
 /-- Integral zero--one row matrix of displayed Boolean-cube vertices. -/
-def bitRows {r : ℕ} (vertex : Fin r → SS.BitString 6) :
-    Matrix (Fin r) (Fin 6) ℤ :=
+def bitRows {r : ℕ} (vertex : Fin r → SS.BitString n) :
+    Matrix (Fin r) (Fin n) ℤ :=
   fun i j ↦ if vertex i j then 1 else 0
 
-theorem bitRows_isZeroOne {r : ℕ} (vertex : Fin r → SS.BitString 6) :
+theorem bitRows_isZeroOne {r : ℕ} (vertex : Fin r → SS.BitString n) :
     BinaryBeta.IsZeroOne (bitRows vertex) := by
   intro i j
   unfold bitRows
@@ -304,10 +306,10 @@ theorem bitRows_isZeroOne {r : ℕ} (vertex : Fin r → SS.BitString 6) :
 integer nonsingular coordinate minor.  Nonvanishing is transported through
 the injective cast `ℤ → ℝ`; it is not assumed independently over `ℤ`. -/
 theorem exists_nonsingular_bit_coordinate_minor {r : ℕ}
-    (vertex : Fin r → SS.BitString 6)
+    (vertex : Fin r → SS.BitString n)
     (hv : LinearIndependent ℝ
       (fun i j ↦ if vertex i j then (1 : ℝ) else (0 : ℝ))) :
-    ∃ coordinate : Fin r ↪ Fin 6,
+    ∃ coordinate : Fin r ↪ Fin n,
       (show Matrix (Fin r) (Fin r) ℤ from
         fun i j ↦ bitRows vertex i (coordinate j)).det ≠ 0 := by
   obtain ⟨coordinate, hreal⟩ :=
@@ -335,9 +337,9 @@ right-hand side as sparse rationalization data.  The physical coordinate
 injection and nonsingular integer minor are chosen by the theorem above, so
 neither is an additional premise. -/
 noncomputable def Data.ofBitRows {r : ℕ}
-    (vertex : Fin r → SS.BitString 6) (rhs : Fin r → ℤ)
+    (vertex : Fin r → SS.BitString n) (rhs : Fin r → ℤ)
     (hv : LinearIndependent ℝ
-      (fun i j ↦ if vertex i j then (1 : ℝ) else (0 : ℝ))) : Data r := by
+      (fun i j ↦ if vertex i j then (1 : ℝ) else (0 : ℝ))) : Data n r := by
   let hminor := exists_nonsingular_bit_coordinate_minor vertex hv
   exact
     { row := bitRows vertex
@@ -346,21 +348,21 @@ noncomputable def Data.ofBitRows {r : ℕ}
       nonsingular := Classical.choose_spec hminor }
 
 @[simp] theorem Data.ofBitRows_row {r : ℕ}
-    (vertex : Fin r → SS.BitString 6) (rhs : Fin r → ℤ)
+    (vertex : Fin r → SS.BitString n) (rhs : Fin r → ℤ)
     (hv : LinearIndependent ℝ
       (fun i j ↦ if vertex i j then (1 : ℝ) else (0 : ℝ))) :
     (Data.ofBitRows vertex rhs hv).row = bitRows vertex :=
   rfl
 
 @[simp] theorem Data.ofBitRows_rhs {r : ℕ}
-    (vertex : Fin r → SS.BitString 6) (rhs : Fin r → ℤ)
+    (vertex : Fin r → SS.BitString n) (rhs : Fin r → ℤ)
     (hv : LinearIndependent ℝ
       (fun i j ↦ if vertex i j then (1 : ℝ) else (0 : ℝ))) :
     (Data.ofBitRows vertex rhs hv).rhs = rhs :=
   rfl
 
 @[simp] theorem bitRows_cast_real {r : ℕ}
-    (vertex : Fin r → SS.BitString 6) (i : Fin r) (j : Fin 6) :
+    (vertex : Fin r → SS.BitString n) (i : Fin r) (j : Fin n) :
     ((bitRows vertex i j : ℤ) : ℝ) =
       (if vertex i j then 1 else 0 : ℝ) := by
   unfold bitRows

@@ -100,9 +100,9 @@ has that property automatically -- its site `j` carries `zeta ^ a j`, and
 produces on the order is by itself enough to name the gate by a label; nothing
 about which root, or which angle vector, has to be tracked. -/
 
-theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
-    (hz : zeta ^ (m + 1) = 1) (a : Fin 6 → ZMod (m + 1)) :
-    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9,
+theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m < B) (zeta : ℂ)
+    (hz : zeta ^ (m + 1) = 1) (a : Fin n → ZMod (m + 1)) :
+    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel n B,
       BoundedRepresentation.gateOfLabel lbl = phaseOfAngle zeta hz a := by
   haveI : NeZero (m + 1) := ⟨Nat.succ_ne_zero m⟩
   refine LabelledGates.exists_label_of_pow_eq_one m hm _ (fun j => ?_)
@@ -110,9 +110,9 @@ theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
 
 /-- The same statement keyed on the modulus rather than its predecessor.  The
 entrance bounds the fresh order directly, so this is the form actually used. -/
-theorem exists_label_of_phaseOfAngle_le (hq : q ≤ 9) (zeta : ℂ)
-    (hz : zeta ^ q = 1) (a : Fin 6 → ZMod q) :
-    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9,
+theorem exists_label_of_phaseOfAngle_le (hq : q ≤ B) (zeta : ℂ)
+    (hz : zeta ^ q = 1) (a : Fin n → ZMod q) :
+    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel n B,
       BoundedRepresentation.gateOfLabel lbl = phaseOfAngle zeta hz a := by
   obtain ⟨m, rfl⟩ : ∃ m, q = m + 1 :=
     ⟨q - 1, (Nat.succ_pred_eq_of_pos (Nat.pos_of_ne_zero (NeZero.ne q))).symm⟩

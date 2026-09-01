@@ -17,12 +17,12 @@ open scoped BigOperators
 noncomputable section
 
 /-- Standard primitive root at the fresh least denominator. -/
-def standardRoot {r : ℕ} (P : D3SparseRationalization.Data r) : ℂ :=
+def standardRoot {n r : ℕ} (P : D3SparseRationalization.Data n r) : ℂ :=
   Complex.exp
     (2 * (Real.pi : ℂ) * Complex.I / (P.order : ℂ))
 
-theorem standardRoot_primitive {r : ℕ}
-    (P : D3SparseRationalization.Data r) :
+theorem standardRoot_primitive {n r : ℕ}
+    (P : D3SparseRationalization.Data n r) :
     IsPrimitiveRoot (standardRoot P) P.order := by
   exact Complex.isPrimitiveRoot_exp P.order P.order_pos.ne'
 
@@ -30,8 +30,8 @@ theorem standardRoot_primitive {r : ℕ}
 the corresponding power of the standard root.  The integer numerator may be
 negative; the proof therefore uses `zpow` and Euclidean remainder rather than
 silently coercing it to a natural number. -/
-theorem standardRoot_pow_angle_val_eq_zpow_numerator {r : ℕ}
-    (P : D3SparseRationalization.Data r) (j : Fin 6) :
+theorem standardRoot_pow_angle_val_eq_zpow_numerator {n r : ℕ}
+    (P : D3SparseRationalization.Data n r) (j : Fin n) :
     standardRoot P ^ (P.angle j).val =
       standardRoot P ^ (P.numerator j : ℤ) := by
   letI : NeZero P.order := ⟨P.order_pos.ne'⟩
@@ -58,8 +58,8 @@ theorem standardRoot_pow_angle_val_eq_zpow_numerator {r : ℕ}
 
 /-- Each modular coordinate phase of the fresh finite gate is exactly the
 real exponential phase of the corresponding rational coordinate. -/
-theorem standardRoot_pow_angle_val {r : ℕ}
-    (P : D3SparseRationalization.Data r) (j : Fin 6) :
+theorem standardRoot_pow_angle_val {n r : ℕ}
+    (P : D3SparseRationalization.Data n r) (j : Fin n) :
     standardRoot P ^ (P.angle j).val =
       Complex.exp
         (2 * (Real.pi : ℂ) * Complex.I *

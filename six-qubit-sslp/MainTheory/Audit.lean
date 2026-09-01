@@ -15,6 +15,20 @@ import MainTheory.Normalize
 import MainTheory.Cyclic
 import MainTheory.RankTwo
 import MainTheory.BoundedRepresentationCertified
+import MainTheory.SectionTwoGeneral
+import MainTheory.GeneralSpectralSectors
+import MainTheory.PivotSize
+import MainTheory.SectorMeanValue
+import MainTheory.UnitarySpectral
+import MainTheory.LogicalCharacter
+import MainTheory.IntrinsicAbelian
+import MainTheory.GeneralFiniteness
+import MainTheory.BetaExists
+import MainTheory.DeterminantalRank
+import MainTheory.RankTwoSSLP
+import MainTheory.GroupOrder
+import MainTheory.NumberOperator
+import MainTheory.SortedNormalForm
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -176,3 +190,39 @@ off `BoundedPhaseLabel 6 9` makes the intrinsic group finite. -/
 #print axioms MainTheory.BoundedRepresentationProof.hasBoundedRepresentation
 #print axioms MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation
 #print axioms MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup
+
+/-! ## Section II at general code shape
+
+These are the paper's own statements: an exact code and a preserving diagonal
+operation, with the spectral data produced rather than assumed. -/
+
+#print axioms MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm
+#print axioms MainTheory.LogicalCharacter.isCyclic_of_nontrivial
+#print axioms MainTheory.UnitarySpectral.directSum_isInternal
+#print axioms MainTheory.GeneralSpectral.spectralExtractionPrinciple
+#print axioms MainTheory.SectionTwoGeneral.phaseSectors
+#print axioms MainTheory.SectionTwoGeneral.phaseSectors_mean
+#print axioms MainTheory.SectionTwoGeneral.qualitativeFiniteLift
+#print axioms MainTheory.SectorMeanValue.sectorMean_eq_klScalar
+#print axioms MainTheory.PivotSize.card_eq_rank
+#print axioms MainTheory.PivotSize.card_le
+#print axioms MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup_unconditional
+
+/-! ## Section II at arbitrary n -/
+
+#print axioms MainTheory.GeneralFiniteness.finite_intrinsicGroup
+#print axioms MainTheory.GeneralFiniteness.isCyclic
+#print axioms MainTheory.GeneralFiniteness.finite_and_abelian
+#print axioms MainTheory.BetaExists.exists_betaBound
+#print axioms MainTheory.DeterminantalRank.exists_nonsingular_minor
+#print axioms MainTheory.PivotSize.exists_pivot_card_eq_rank_le
+
+/-! ## The paper's rank-two theorem, stated whole -/
+
+#print axioms MainTheory.RankTwoSSLP.rank_two_sslp
+#print axioms MainTheory.SortedForm.exists_sortedNormalForm
+#print axioms MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard
+#print axioms MainTheory.GroupOrder.logicalOrder_dvd_natCard
+#print axioms MainTheory.NumberOperator.numberOp_apply
+#print axioms MainTheory.NumberOperator.innerC_numberOp
+#print axioms MainTheory.NumberOperator.codeProj_numberOp_codeProj

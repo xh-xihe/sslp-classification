@@ -16,6 +16,8 @@ projectively trivial class.
 
 namespace MainTheory.LabelledGates
 
+variable {n d : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.BoundedRepresentation
 open MainTheory.LocalPhaseConjugation
@@ -70,15 +72,15 @@ theorem circlePhase_neg_residue (q : ℕ) (hq : 0 < q) (a : ZMod q) :
 /-! ## The label set is closed under the conjugation -/
 
 /-- Negating the angle vector at the flipped sites, inside the label. -/
-def flipLabel (lbl : BoundedPhaseLabel 6 9) (x0 : SS.BitString 6) :
-    BoundedPhaseLabel 6 9 :=
+def flipLabel (lbl : BoundedPhaseLabel n B) (x0 : SS.BitString n) :
+    BoundedPhaseLabel n B :=
   ⟨lbl.1, fun j => if x0 j then -(lbl.2 j) else lbl.2 j⟩
 
 /-- **`flipPhase` of a labelled gate is a labelled gate.**
 
 This is what keeps `HasBoundedRepresentation` in range after the transport: the
 symmetry it hands back is still named by a bounded label. -/
-theorem flipPhase_gateOfLabel (lbl : BoundedPhaseLabel 6 9) (x0 : SS.BitString 6) :
+theorem flipPhase_gateOfLabel (lbl : BoundedPhaseLabel n B) (x0 : SS.BitString n) :
     flipPhase (gateOfLabel lbl) x0 = gateOfLabel (flipLabel lbl x0) := by
   funext j
   have hq : 0 < lbl.1.val + 1 := Nat.succ_pos _
@@ -91,9 +93,11 @@ theorem flipPhase_gateOfLabel (lbl : BoundedPhaseLabel 6 9) (x0 : SS.BitString 6
 
 /-- The label whose gate is the identity: modulus one, all angles zero.  This
 represents the projectively trivial class. -/
-def trivialLabel : BoundedPhaseLabel 6 9 := ⟨⟨0, by decide⟩, fun _ => 0⟩
+def trivialLabel (hB : 0 < B) : BoundedPhaseLabel n B :=
+  ⟨⟨0, hB⟩, fun _ => 0⟩
 
-@[simp] theorem gateOfLabel_trivial : gateOfLabel trivialLabel = 1 := by
+@[simp] theorem gateOfLabel_trivial (hB : 0 < B) :
+    gateOfLabel (n := n) (trivialLabel hB) = 1 := by
   funext j
   refine Subtype.ext ?_
   simp [gateOfLabel, trivialLabel, circlePhase]
@@ -125,21 +129,22 @@ theorem canonicalRoot_isPrimitiveRoot (q : ℕ) (hq : 0 < q) :
   have := Complex.isPrimitiveRoot_exp q hq.ne'
   simpa [canonicalRoot, mul_comm, mul_assoc, mul_left_comm] using this
 
-/-- **A local phase of finite order at most nine is a labelled gate.** -/
-theorem exists_label_of_pow_eq_one (m : ℕ) (hm : m ≤ 8)
-    (u : LocalPhase 6) (h : ∀ j, ((u j : ℂ)) ^ (m + 1) = 1) :
-    ∃ lbl : BoundedPhaseLabel 6 9, gateOfLabel lbl = u := by
+/-- **A local phase whose order fits under the label bound is a labelled
+gate.**  At `B = 9` this is the paper's "order at most nine". -/
+theorem exists_label_of_pow_eq_one (m : ℕ) (hm : m < B)
+    (u : LocalPhase n) (h : ∀ j, ((u j : ℂ)) ^ (m + 1) = 1) :
+    ∃ lbl : BoundedPhaseLabel n B, gateOfLabel lbl = u := by
   have hq : 0 < m + 1 := Nat.succ_pos m
   haveI : NeZero (m + 1) := ⟨hq.ne'⟩
   have hroot := canonicalRoot_isPrimitiveRoot (m + 1) hq
   choose a ha hpow using fun j => hroot.eq_pow_of_pow_eq_one (h j)
-  refine ⟨⟨⟨m, by omega⟩, fun j => (a j : ZMod (m + 1))⟩, ?_⟩
+  refine ⟨⟨⟨m, hm⟩, fun j => (a j : ZMod (m + 1))⟩, ?_⟩
   funext j
   refine Subtype.ext ?_
   simp only [gateOfLabel]
   have hval : ((a j : ZMod (m + 1))).val = a j := ZMod.val_natCast_of_lt (ha j)
   rw [hval]
-  have hcast : ((↑(⟨m, by omega⟩ : Fin 9) : ℝ)) + 1 = ((m + 1 : ℕ) : ℝ) := by
+  have hcast : ((↑(⟨m, hm⟩ : Fin B) : ℝ)) + 1 = ((m + 1 : ℕ) : ℝ) := by
     push_cast
     ring
   rw [hcast, circlePhase_eq_canonicalRoot_pow (m + 1) (a j) hq, hpow j]

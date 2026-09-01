@@ -19,6 +19,8 @@ bounded representative on the original one.
 
 namespace MainTheory.UndoNormalization
 
+variable {n d : ℕ}
+
 open MainTheory.ClassificationLevels
 open MainTheory.FiniteGateAsPhase
 open MainTheory.LocalPhaseConjugation
@@ -44,7 +46,7 @@ theorem coprime_unitNat (c : (ZMod q)ˣ) : Nat.Coprime (unitNat c) q := by
 The local-`X` flip is undone by itself; the normalizing unit remains as an
 exponent. -/
 theorem flipPhase_phaseOfAngle_normalized (zeta : ℂ) (hz : zeta ^ q = 1)
-    (a : Fin 6 → ZMod q) (x0 : SS.BitString 6) (c : (ZMod q)ˣ) :
+    (a : Fin n → ZMod q) (x0 : SS.BitString n) (c : (ZMod q)ˣ) :
     flipPhase
         (phaseOfAngle zeta hz
           (fun j => (c : ZMod q) * MainTheory.Normalize.flip a x0 j)) x0
