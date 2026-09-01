@@ -25,7 +25,10 @@ import MainTheory.IntrinsicAbelian
 import MainTheory.GeneralFiniteness
 import MainTheory.BetaExists
 import MainTheory.DeterminantalRank
+import MainTheory.BinaryPivot
+import MainTheory.ColoredBound
 import MainTheory.GeneralLiftOrder
+import MainTheory.QuantitativeGroup
 import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator
@@ -242,3 +245,18 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.NumberOperator.numberOp_apply
 #print axioms MainTheory.NumberOperator.innerC_numberOp
 #print axioms MainTheory.NumberOperator.codeProj_numberOp_codeProj
+
+/-! ## Section III: the quantitative bound -/
+
+#print axioms MainTheory.SharpClearing.solution_lcmDen_dvd_inverseDenominator
+#print axioms MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor
+#print axioms MainTheory.FiniteLift.sharp_pivot_divisibility
+#print axioms MainTheory.FiniteLift.quantitative_colored_finite_lift
+#print axioms MainTheory.BinaryPivot.inverseDenominator_mul_diagonal
+#print axioms MainTheory.BinaryPivot.coloredMatrixZ_eq
+#print axioms MainTheory.ColoredBound.pivot_order_le
+#print axioms MainTheory.ColoredBound.quantitative_colored_finite_lift
+#print axioms MainTheory.QuantitativeGroup.sectorCount_le
+#print axioms MainTheory.QuantitativeGroup.quantitative_projective_group
+#print axioms MainTheory.QuantitativeGroup.qMin_le_beta
+#print axioms MainTheory.QuantitativeGroup.k2_q_bound

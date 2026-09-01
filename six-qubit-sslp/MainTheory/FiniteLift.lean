@@ -762,10 +762,10 @@ noncomputable def PivotData.selectedSolution
     {D : SectorDecomposition n t theta} (P : PivotData D s) : s → ℚ :=
   (SharpClearing.ratMatrix P.matrix)⁻¹.mulVec (fun i ↦ (P.rhs i : ℚ))
 
-omit [Nonempty s] in
+omit [Nonempty s] [LinearOrder s] in
 theorem PivotData.selectedSolution_solves
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) :
+    (hdet : P.matrix.det ≠ 0) :
     (SharpClearing.ratMatrix P.matrix).mulVec P.selectedSolution =
       fun i ↦ (P.rhs i : ℚ) := by
   have hdetQ : (SharpClearing.ratMatrix P.matrix).det ≠ 0 := by
@@ -773,7 +773,7 @@ theorem PivotData.selectedSolution_solves
         (P.matrix.det : ℚ) :=
       ((Int.castRingHom ℚ).map_det P.matrix).symm
     rw [hm]
-    exact_mod_cast W.det_ne_zero
+    exact_mod_cast hdet
   have hu : IsUnit (SharpClearing.ratMatrix P.matrix).det :=
     isUnit_iff_ne_zero.mpr hdetQ
   change (SharpClearing.ratMatrix P.matrix).mulVec
@@ -788,21 +788,21 @@ noncomputable def PivotData.fullSolution
     Sum (Fin n) (Color D) → ℚ :=
   extendByZero P.column P.selectedSolution
 
-omit [Nonempty s] in
+omit [Nonempty s] [LinearOrder s] in
 theorem PivotData.selectedRow_solves
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) (i : s) :
+    (hdet : P.matrix.det ≠ 0) (i : s) :
     dotProduct (coloredMatrix D (P.row i)) P.fullSolution =
       coloredRhsQ D (P.row i) := by
   rw [PivotData.fullSolution, dotProduct_extendByZero]
-  have hi := congrFun (P.selectedSolution_solves W) i
+  have hi := congrFun (P.selectedSolution_solves hdet) i
   simpa [Matrix.mulVec, dotProduct, P.matrix_cast, PivotData.rhs,
     coloredRhsQ] using hi
 
-omit [Nonempty s] in
+omit [Nonempty s] [LinearOrder s] in
 theorem PivotData.fullSolution_solves
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) :
+    (hdet : P.matrix.det ≠ 0) :
     (coloredMatrix D).mulVec P.fullSolution = coloredRhsQ D := by
   funext r
   simp only [Matrix.mulVec]
@@ -827,7 +827,7 @@ theorem PivotData.fullSolution_solves
     _ = ∑ i, P.rowCoeff r i * coloredRhsQ D (P.row i) := by
           apply Finset.sum_congr rfl
           intro i _
-          rw [P.selectedRow_solves W]
+          rw [P.selectedRow_solves hdet]
     _ = coloredRhsQ D r := (P.rhs_spans r).symm
 
 theorem coloredMatrix_kernel_color_zero
@@ -866,10 +866,10 @@ coordinates, hence is a genuine rational finite lift rather than merely a
 solution of an unrelated square subsystem. -/
 noncomputable def PivotData.rationalLift
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) (hZ : ZDetects D) :
+    (hdet : P.matrix.det ≠ 0) (hZ : ZDetects D) :
     RationalColoredLift D where
   augmented := P.fullSolution
-  solves := P.fullSolution_solves W
+  solves := P.fullSolution_solves hdet
   color_preserved := by
     intro g
     let uR : Sum (Fin n) (Color D) → ℝ :=
@@ -879,7 +879,7 @@ noncomputable def PivotData.rationalLift
           fun r ↦ algebraMap ℚ ℝ (coloredRhsQ D r) := by
       funext r
       have hr := congrArg (algebraMap ℚ ℝ)
-        (congrFun (P.fullSolution_solves W) r)
+        (congrFun (P.fullSolution_solves hdet) r)
       simpa [Matrix.mulVec, dotProduct, Matrix.map_apply, uR,
         map_sum, map_mul] using hr
     have hker :
@@ -890,22 +890,22 @@ noncomputable def PivotData.rationalLift
       (uR - realUnknown D) hker g
     simpa [uR, sub_eq_zero] using hg
 
-omit [Nonempty s] in
+omit [Nonempty s] [LinearOrder s] in
 theorem lcmDen_physical_dvd_selected
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) (hZ : ZDetects D) :
-    Denominator.lcmDen (P.rationalLift W hZ).physical ∣
+    (hdet : P.matrix.det ≠ 0) (hZ : ZDetects D) :
+    Denominator.lcmDen (P.rationalLift hdet hZ).physical ∣
       Denominator.lcmDen P.selectedSolution := by
   apply Denominator.lcmDen_dvd_of_clears
   intro j
   by_cases hj : ∃ i, P.column i = Sum.inl j
   · obtain ⟨i, hi⟩ := hj
-    have heq : (P.rationalLift W hZ).physical j = P.selectedSolution i := by
+    have heq : (P.rationalLift hdet hZ).physical j = P.selectedSolution i := by
       change extendByZero P.column P.selectedSolution (Sum.inl j) = _
       rw [← hi, extendByZero_apply_column]
     rw [heq]
     exact Denominator.lcmDen_clears P.selectedSolution i
-  · have heq : (P.rationalLift W hZ).physical j = 0 := by
+  · have heq : (P.rationalLift hdet hZ).physical j = 0 := by
       change extendByZero P.column P.selectedSolution (Sum.inl j) = 0
       apply Finset.sum_eq_zero
       intro i _
@@ -916,24 +916,40 @@ theorem lcmDen_physical_dvd_selected
     rw [heq]
     simp
 
+omit [Nonempty s] [LinearOrder s] in
 /-- **Theorem 3.2, sharp pivot divisor.**  For the explicitly connected
 square pivot, the least denominator of the primitive physical lift divides
-the final factor certified by its Smith witness. -/
+the pivot's inverse denominator.
+
+Only nonsingularity is used.  A Smith witness is not required, and
+`sharp_pivot_divisibility_smith` below converts the conclusion into the
+paper's `d_s(C)` whenever one is supplied. -/
 theorem sharp_pivot_divisibility
     {D : SectorDecomposition n t theta} (P : PivotData D s)
-    (W : SharpClearing.SmithWitness P.matrix) (hZ : ZDetects D) :
-    (P.rationalLift W hZ).order ∣ W.lastFactor := by
-  apply dvd_trans (lcmDen_physical_dvd_selected P W hZ)
-  exact SharpClearing.solution_lcmDen_dvd_smithLastFactor
-    W P.rhs P.selectedSolution (P.selectedSolution_solves W)
+    (hdet : P.matrix.det ≠ 0) (hZ : ZDetects D) :
+    (P.rationalLift hdet hZ).order ∣
+      SharpClearing.inverseDenominator P.matrix := by
+  apply dvd_trans (lcmDen_physical_dvd_selected P hdet hZ)
+  exact SharpClearing.solution_lcmDen_dvd_inverseDenominator
+    P.matrix P.rhs P.selectedSolution hdet (P.selectedSolution_solves hdet)
 
+/-- The same divisibility against the paper's final Smith factor, for a pivot
+that carries a witness. -/
+theorem sharp_pivot_divisibility_smith
+    {D : SectorDecomposition n t theta} (P : PivotData D s)
+    (W : SharpClearing.SmithWitness P.matrix) (hZ : ZDetects D) :
+    (P.rationalLift W.det_ne_zero hZ).order ∣ W.lastFactor := by
+  rw [← SharpClearing.inverseDenominator_eq_smithLastFactor W]
+  exact sharp_pivot_divisibility P W.det_ne_zero hZ
+
+omit [Nonempty s] [LinearOrder s] in
 /-- Combined qualitative-and-sharp headline for a supplied proof-producing
 pivot.  Every clause is derived from the sector decomposition, row-span
 certificate, and Smith witness. -/
 theorem quantitative_colored_finite_lift
     (D : SectorDecomposition n t theta) (hZ : ZDetects D) (ht : 2 ≤ t)
-    (P : PivotData D s) (W : SharpClearing.SmithWitness P.matrix) :
-    let L := P.rationalLift W hZ
+    (P : PivotData D s) (hdet : P.matrix.det ≠ 0) :
+    let L := P.rationalLift hdet hZ
     2 ≤ L.order ∧
       SameProjectiveSectorAction D (fun j ↦ (L.physical j : ℝ)) ∧
       (∀ j, (L.order : ℚ) * L.physical j = (L.numerator j : ℚ)) ∧
@@ -947,13 +963,13 @@ theorem quantitative_colored_finite_lift
       (∀ alpha, ∃ b : ℤ,
         (L.order : ℝ) * (D.phase alpha - D.phase (baseSector D)) =
           (b : ℝ)) ∧
-      L.order ∣ W.lastFactor := by
+      L.order ∣ SharpClearing.inverseDenominator P.matrix := by
   dsimp only
-  let L := P.rationalLift W hZ
+  let L := P.rationalLift hdet hZ
   exact ⟨L.two_le_order ht, L.same_projective_sector_action,
     L.numerator_spec, L.primitive,
     L.same_relative_sector_phases, L.relative_phase_cleared,
-    sharp_pivot_divisibility P W hZ⟩
+    sharp_pivot_divisibility P hdet hZ⟩
 
 end Pivot
 

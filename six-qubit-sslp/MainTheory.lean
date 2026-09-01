@@ -50,7 +50,10 @@ import MainTheory.SectionTwoGeneral
 import MainTheory.GeneralFiniteness
 import MainTheory.BetaExists
 import MainTheory.DeterminantalRank
+import MainTheory.BinaryPivot
+import MainTheory.ColoredBound
 import MainTheory.GeneralLiftOrder
+import MainTheory.QuantitativeGroup
 import MainTheory.RankTwoSSLP
 import MainTheory.GroupOrder
 import MainTheory.NumberOperator

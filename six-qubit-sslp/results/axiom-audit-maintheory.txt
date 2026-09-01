@@ -187,3 +187,19 @@
 'MainTheory.NumberOperator.numberOp_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.NumberOperator.innerC_numberOp' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.NumberOperator.codeProj_numberOp_codeProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.SharpClearing.solution_lcmDen_dvd_inverseDenominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.FiniteLift.sharp_pivot_divisibility' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.FiniteLift.quantitative_colored_finite_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.BinaryPivot.inverseDenominator_mul_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.BinaryPivot.coloredMatrixZ_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.ColoredBound.pivot_order_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.ColoredBound.quantitative_colored_finite_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.QuantitativeGroup.sectorCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.QuantitativeGroup.quantitative_projective_group' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.QuantitativeGroup.qMin_le_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.QuantitativeGroup.k2_q_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

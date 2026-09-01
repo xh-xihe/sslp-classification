@@ -212,6 +212,27 @@ theorem orderOf_dvd_of_hasPrimitiveLift {C : CodeSpec.ExactCode n K d}
   rw [hone]
   rfl
 
+/-- **Any rational coloured lift of the resolution is a primitive lift of the
+class**, of modulus its own order.
+
+Factored out of `exists_hasPrimitiveLift` so that a lift carrying a bound --
+the pivot lift of `ColoredBound` -- can be fed in instead of an arbitrary
+one. -/
+theorem hasPrimitiveLift_of_rationalLift {C : CodeSpec.ExactCode n K d}
+    (v : diagonalSymmetryGroup (exactCodeProjector C)) {theta : Fin n → ℝ}
+    (hexp : ∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+      * ((theta j : ℝ) : ℂ)) = (((v : LocalPhase n) j : ℂ)))
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (L : MainTheory.FiniteLift.RationalColoredLift
+      (resolutionOf C theta hpres).sectors) :
+    HasPrimitiveLift C (intrinsicClass (exactCodeProjector C) v) L.order := by
+  letI : NeZero L.order := ⟨L.order_pos.ne'⟩
+  exact ⟨inferInstance, modularAngle L,
+    liftSymmetry (resolutionOf C theta hpres) L,
+    modularAngle_primitive_lift _ L, rfl,
+    intrinsicClass_liftSymmetry _ L v hexp⟩
+
 /-- **The set in `eq:qmin` is nonempty**, for every projective diagonal class
 of an exact code of distance at least two.  This is what
 `thm:qualitative-finite-lift` asserts, here at arbitrary rank. -/
@@ -226,11 +247,7 @@ theorem exists_hasPrimitiveLift (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
   obtain ⟨L⟩ := MainTheory.FiniteLift.exists_rationalColoredLift
     (resolutionOf C theta hpres).sectors
     ((resolutionOf C theta hpres).zDetects hd)
-  letI : NeZero L.order := ⟨L.order_pos.ne'⟩
-  exact ⟨L.order, L.order_pos, inferInstance, modularAngle L,
-    liftSymmetry (resolutionOf C theta hpres) L,
-    modularAngle_primitive_lift _ L, rfl,
-    intrinsicClass_liftSymmetry _ L v hexp⟩
+  exact ⟨L.order, L.order_pos, hasPrimitiveLift_of_rationalLift v hexp hpres L⟩
 
 /-- **The headline, from the code alone**: every projective diagonal class of
 an exact code of distance at least two has a primitive finite lift, and its

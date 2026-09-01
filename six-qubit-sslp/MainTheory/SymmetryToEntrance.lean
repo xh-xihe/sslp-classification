@@ -60,7 +60,8 @@ are.  So the dichotomy the assembly needs -- either the class is the identity, o
 the entrance applies -- is the same dichotomy on both sides. -/
 
 /-- If the real gate is projectively trivial, so is the symmetry. -/
-theorem isProjectivelyTrivial_of_sameProjective (F : CodeSpec.OrthonormalFrame n 2)
+theorem isProjectivelyTrivial_of_sameProjective {K : ℕ}
+    (F : CodeSpec.OrthonormalFrame n K)
     (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F))
     (theta : Fin n → ℝ)
@@ -78,8 +79,8 @@ theorem isProjectivelyTrivial_of_sameProjective (F : CodeSpec.OrthonormalFrame n
   simpa using hh
 
 /-- Hence a nonidentity class supplies the entrance's nontriviality. -/
-theorem projectivelyNontrivialReal_of_class_ne_one
-    (C : CodeSpec.ExactCode n 2 d)
+theorem projectivelyNontrivialReal_of_class_ne_one {K : ℕ}
+    (C : CodeSpec.ExactCode n K d)
     (u : LocalPhase n)
     (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame C.frame))
     (theta : Fin n → ℝ)
