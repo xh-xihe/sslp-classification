@@ -13,6 +13,8 @@ the same actual `FiberPair` on which the rank certificate was proved.
 
 namespace MainTheory.Generated.FiniteRankOrbitContinuity
 
+set_option maxRecDepth 1000000
+
 open MainTheory.FinitePipeline
 open MainTheory.FiniteRankPipeline
 

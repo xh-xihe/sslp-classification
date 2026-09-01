@@ -51,167 +51,200 @@ def inputAt : Segment FiberPair 32 := ![
 ]
 
 def decisionAt (i : Fin 32) : DecisionWitness (inputAt i) := by
-  fin_cases i
-  · change DecisionWitness (⟨8, 4, 7530159314451824641, 78274679457972224⟩ : FiberPair)
+  match i with
+  | ⟨0, _⟩ =>
+    show DecisionWitness (⟨8, 4, 7530159314451824641, 78274679457972224⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2146
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2146
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2146] }
-  · change DecisionWitness (⟨8, 4, 7566047373982433385, 646006702080⟩ : FiberPair)
+  | ⟨1, _⟩ =>
+    show DecisionWitness (⟨8, 4, 7566047373982433385, 646006702080⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2148
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2148
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2148] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 18224744⟩ : FiberPair)
+  | ⟨2, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 18224744⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 4295038568⟩ : FiberPair)
+  | ⟨3, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 4295038568⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 282643225645062⟩ : FiberPair)
+  | ⟨4, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 282643225645062⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 155418718044717056⟩ : FiberPair)
+  | ⟨5, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 155418718044717056⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 1614681206048161792⟩ : FiberPair)
+  | ⟨6, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 1614681206048161792⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372036854775809, 6919790173446242304⟩ : FiberPair)
+  | ⟨7, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372036854775809, 6919790173446242304⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2150
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2150
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2150] }
-  · change DecisionWitness (⟨8, 4, 9223372046518452225, 565320775434516⟩ : FiberPair)
+  | ⟨8, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372046518452225, 565320775434516⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2151
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2151
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2151] }
-  · change DecisionWitness (⟨8, 4, 9223372046518452225, 2918473296364191744⟩ : FiberPair)
+  | ⟨9, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372046518452225, 2918473296364191744⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2151
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2151
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2151] }
-  · change DecisionWitness (⟨8, 4, 9223372064235192321, 288484363338008⟩ : FiberPair)
+  | ⟨10, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372064235192321, 288484363338008⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2152
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2152
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2152] }
-  · change DecisionWitness (⟨8, 4, 9223372064235192321, 459472715125886984⟩ : FiberPair)
+  | ⟨11, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372064235192321, 459472715125886984⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2152
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2152
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2152] }
-  · change DecisionWitness (⟨8, 4, 9223372133088886785, 24739011625320⟩ : FiberPair)
+  | ⟨12, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372133088886785, 24739011625320⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2155
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2155
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2155] }
-  · change DecisionWitness (⟨8, 4, 9223372133088886785, 283124244152424⟩ : FiberPair)
+  | ⟨13, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372133088886785, 283124244152424⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2155
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2155
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2155] }
-  · change DecisionWitness (⟨8, 4, 9223372140336644097, 1695998833328152⟩ : FiberPair)
+  | ⟨14, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372140336644097, 1695998833328152⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2156
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2156
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2156] }
-  · change DecisionWitness (⟨8, 4, 9223372483900473345, 305666380005480⟩ : FiberPair)
+  | ⟨15, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372483900473345, 305666380005480⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2158
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2158
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2158] }
-  · change DecisionWitness (⟨8, 4, 9223372483900473345, 72058145538572310⟩ : FiberPair)
+  | ⟨16, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372483900473345, 72058145538572310⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2158
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2158
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2158] }
-  · change DecisionWitness (⟨8, 4, 9223372586627366913, 6216640488276072⟩ : FiberPair)
+  | ⟨17, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372586627366913, 6216640488276072⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2159
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2159
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2159] }
-  · change DecisionWitness (⟨8, 4, 9223372586627366913, 1585267163330537472⟩ : FiberPair)
+  | ⟨18, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223372586627366913, 1585267163330537472⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard134.data2159
         upper := MainTheory.Generated.Coarse.Upper.Shard134.valid2159
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard134.data2159] }
-  · change DecisionWitness (⟨8, 4, 9223373222945226753, 585217211367700⟩ : FiberPair)
+  | ⟨19, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373222945226753, 585217211367700⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2161
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2161
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2161] }
-  · change DecisionWitness (⟨8, 4, 9223373232608903169, 114898965108328⟩ : FiberPair)
+  | ⟨20, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373232608903169, 114898965108328⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2162
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2162
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2162] }
-  · change DecisionWitness (⟨8, 4, 9223373239856660481, 308415159075096⟩ : FiberPair)
+  | ⟨21, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373239856660481, 308415159075096⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2163
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2163
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2163] }
-  · change DecisionWitness (⟨8, 4, 9223373548792315905, 1715239749943320⟩ : FiberPair)
+  | ⟨22, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373548792315905, 1715239749943320⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2165
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2165
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2165] }
-  · change DecisionWitness (⟨8, 4, 9223373583420489729, 114351356772712⟩ : FiberPair)
+  | ⟨23, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373583420489729, 114351356772712⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2166
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2166
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2166] }
-  · change DecisionWitness (⟨8, 4, 9223373686147383297, 395825930829928⟩ : FiberPair)
+  | ⟨24, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223373686147383297, 395825930829928⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2167
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2167
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2167] }
-  · change DecisionWitness (⟨8, 4, 9223374408016461825, 607481248088340⟩ : FiberPair)
+  | ⟨25, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223374408016461825, 607481248088340⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2168
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2168
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2168] }
-  · change DecisionWitness (⟨8, 4, 9223374408016461825, 77827831060632640⟩ : FiberPair)
+  | ⟨26, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223374408016461825, 77827831060632640⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2168
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2168
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2168] }
-  · change DecisionWitness (⟨8, 4, 9223379046348357633, 387029703590168⟩ : FiberPair)
+  | ⟨27, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223379046348357633, 387029703590168⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2170
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2170
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2170] }
-  · change DecisionWitness (⟨8, 4, 9223379046348357633, 1765411079699464192⟩ : FiberPair)
+  | ⟨28, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223379046348357633, 1765411079699464192⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2170
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2170
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2170] }
-  · change DecisionWitness (⟨8, 4, 9223389656421761025, 99219929291579400⟩ : FiberPair)
+  | ⟨29, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223389656421761025, 99219929291579400⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2173
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2173
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2173] }
-  · change DecisionWitness (⟨8, 4, 9223389663669518337, 459507901627633672⟩ : FiberPair)
+  | ⟨30, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223389663669518337, 459507901627633672⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2174
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2174
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2174] }
-  · change DecisionWitness (⟨8, 4, 9223396673163100161, 140739635844712⟩ : FiberPair)
+  | ⟨31, _⟩ =>
+    show DecisionWitness (⟨8, 4, 9223396673163100161, 140739635844712⟩ : FiberPair)
     exact .rejectLeft
       { data := MainTheory.Generated.Coarse.Upper.Shard135.data2175
         upper := MainTheory.Generated.Coarse.Upper.Shard135.valid2175
         below := by norm_num [rMin, MainTheory.Generated.Coarse.Upper.Shard135.data2175] }
+  | ⟨n + 32, h⟩ => exact absurd h (by omega)
 
 def outputOfInput : Segment (Option OutputId) 32 := ![
   none,

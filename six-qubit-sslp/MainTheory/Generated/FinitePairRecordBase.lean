@@ -15,6 +15,16 @@ def pairAtId (i : PairId) : FinitePipeline.FiberPair := MainTheory.Generated.Fin
 def Matches (pairId : PairId) (record : OuterEnumeration.RawRecord) : Prop :=
   pairAtId pairId = OuterCompleteness.recordFiberPair record
 
+/-- `Matches` is a `def`, not an `abbrev`, so instance search will not
+unfold it on its own and `decide` cannot find a `Decidable` instance
+for it.  Both sides are `FiberPair`s, which derive `DecidableEq`, so
+the instance exists -- it only has to be named. -/
+instance instDecidableMatches (pairId : PairId)
+    (record : OuterEnumeration.RawRecord) :
+    Decidable (Matches pairId record) :=
+  inferInstanceAs
+    (Decidable (pairAtId pairId = OuterCompleteness.recordFiberPair record))
+
 /-- A bounded block of rows together with its exact semantic source.
 Blocks compose without materializing all rows in one term. -/
 structure RecordBlock (count : ℕ) where

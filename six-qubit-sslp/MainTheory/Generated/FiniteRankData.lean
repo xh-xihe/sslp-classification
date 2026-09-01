@@ -899,7 +899,6 @@ theorem certifiedRows_length : certifiedRows.length = 291 := by
   rw [MainTheory.Generated.FiniteRankSummaryShard288.rows_length]
   rw [MainTheory.Generated.FiniteRankSummaryShard289.rows_length]
   rw [MainTheory.Generated.FiniteRankSummaryShard290.rows_length]
-  norm_num
 
 theorem rankRows_size : rankRows.size = 291 := by
   simp [rankRows, certifiedRows_length]
@@ -1200,15 +1199,16 @@ theorem rankPairIds_expected :
     rw [MainTheory.Generated.FiniteRankSummaryShard288.rows_pairIds]
     rw [MainTheory.Generated.FiniteRankSummaryShard289.rows_pairIds]
     rw [MainTheory.Generated.FiniteRankSummaryShard290.rows_pairIds]
-    norm_num [FiniteMomentData.feasiblePairIds]
+    rfl
   simpa [rankPairIds] using congrArg List.toArray h
 
 theorem rankPairIds_eq_compatible_source :
-    rankPairIds = FiniteMomentData.momentResults.filter (·.isFeasible) |>.map (·.pairId) := by
+    rankPairIds =
+      ((FiniteMomentData.momentResults.toList.filter
+        MomentResultData.isFeasible).map MomentResultData.pairId).toArray := by
   rw [rankPairIds_expected]
-  have h := congrArg List.toArray FiniteMomentData.moment_feasible_result_pairIds
-  symm
-  simpa using h
+  exact (congrArg List.toArray
+    FiniteMomentData.moment_feasible_result_pairIds).symm
 
 theorem rank_compatible_count :
     (rankRows.toList.filter (fun row => row.compatible)).length = 215 := by
@@ -1506,7 +1506,6 @@ theorem rank_compatible_count :
   rw [MainTheory.Generated.FiniteRankSummaryShard288.compatible_count]
   rw [MainTheory.Generated.FiniteRankSummaryShard289.compatible_count]
   rw [MainTheory.Generated.FiniteRankSummaryShard290.compatible_count]
-  norm_num
 
 theorem rankCompatiblePairIds_eq_manifest :
     rankCompatiblePairIds = FinitePairData.compatiblePairIds := by
@@ -1804,7 +1803,7 @@ theorem rankCompatiblePairIds_eq_manifest :
     rw [MainTheory.Generated.FiniteRankSummaryShard288.compatible_pairIds]
     rw [MainTheory.Generated.FiniteRankSummaryShard289.compatible_pairIds]
     rw [MainTheory.Generated.FiniteRankSummaryShard290.compatible_pairIds]
-    norm_num [FinitePairData.compatiblePairIds]
+    rfl
   simpa [rankCompatiblePairIds] using congrArg List.toArray h
 
 /-- Every retained row has exact active masks, exact rational affine ranks,

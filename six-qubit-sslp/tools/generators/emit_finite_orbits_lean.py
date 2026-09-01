@@ -477,6 +477,10 @@ def emit_rank_bridge(out_dir: Path) -> None:
         "",
         "namespace MainTheory.Generated.FiniteOrbitRankBridge",
         "",
+        # `decide` on the 215-entry array equality needs more than the default
+        # recursion depth, as in the sibling generated modules.
+        "set_option maxRecDepth 1000000",
+        "",
         "theorem inputPairIds_eq_rankCompatible :",
         "    MainTheory.Generated.FiniteOrbitBase.inputPairIds.toArray =",
         "      MainTheory.Generated.FiniteRankData.rankCompatiblePairIds := by",

@@ -18,4 +18,7 @@ def block : LeftInverseBlock 10048 64 (by omega) where
     intro i
     fin_cases i <;> decide
 
+theorem block_pairs :
+    block.pairs = MainTheory.Generated.PairProvenance.Payload.Shard157.pairs := by rfl
+
 end MainTheory.Generated.PairProvenance.Distinct.Exact.Shard157

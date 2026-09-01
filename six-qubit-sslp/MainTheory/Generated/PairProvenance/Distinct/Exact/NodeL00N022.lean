@@ -4,6 +4,7 @@
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard176
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard177
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard178
+import MainTheory.Generated.PairProvenance.Payload.NodeL00N022
 
 namespace MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N022
 
@@ -11,5 +12,12 @@ open MainTheory.Generated.PairProvenance.Distinct.Base
 
 def block : LeftInverseBlock 11264 158 (by omega) :=
   LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard176.block) (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard177.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard178.block))
+
+theorem block_pairs :
+    block.pairs = MainTheory.Generated.PairProvenance.Payload.NodeL00N022.pairs := by
+  simp only [block, LeftInverseBlock.append, MainTheory.Generated.PairProvenance.Payload.NodeL00N022.pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard176.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard177.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard178.block_pairs]
 
 end MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N022

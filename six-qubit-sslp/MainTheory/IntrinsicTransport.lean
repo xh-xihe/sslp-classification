@@ -230,6 +230,13 @@ theorem flipPhase_one (x0 : SS.BitString n) :
   · simp [flipPhase, h]
   · simp [flipPhase, h]
 
+/-- `flipPhase` is a monoid map, so it commutes with powers. -/
+theorem flipPhase_pow (u : LocalPhase n) (x0 : SS.BitString n) (k : ℕ) :
+    flipPhase (u ^ k) x0 = (flipPhase u x0) ^ k := by
+  induction k with
+  | zero => simp [flipPhase_one]
+  | succ k ih => rw [pow_succ, pow_succ, flipPhase_mul, ih]
+
 /-! ## The symmetry groups correspond -/
 
 /-- **A diagonal symmetry of the shifted code flips to one of the original.** -/
@@ -348,5 +355,47 @@ theorem isProjectivelyTrivial_congr {F G : CodeSpec.OrthonormalFrame n K}
   refine ⟨lam, hlam, fun phi hphi => ?_⟩
   rw [← huv]
   exact hact phi ((inProjectorRange_congr h _).2 hphi)
+
+/-- **Class equality transports along an equality of code spans.**
+
+Two frames spanning the same code have the same diagonal symmetry group and
+the same projectively trivial subgroup, so a class equality proved on one is a
+class equality on the other. -/
+theorem intrinsicClass_congr {F G : CodeSpec.OrthonormalFrame n K}
+    (h : CodeSpec.codeSpan F = CodeSpec.codeSpan G)
+    (u v : diagonalSymmetryGroup (CodeProjector.ofFrame F))
+    (u' v' : diagonalSymmetryGroup (CodeProjector.ofFrame G))
+    (hu : (u : LocalPhase n) = (u' : LocalPhase n))
+    (hv : (v : LocalPhase n) = (v' : LocalPhase n))
+    (heq : intrinsicClass (CodeProjector.ofFrame F) u
+      = intrinsicClass (CodeProjector.ofFrame F) v) :
+    intrinsicClass (CodeProjector.ofFrame G) u'
+      = intrinsicClass (CodeProjector.ofFrame G) v' := by
+  rw [intrinsicClass, intrinsicClass, QuotientGroup.eq]
+  rw [intrinsicClass, intrinsicClass, QuotientGroup.eq] at heq
+  refine isProjectivelyTrivial_congr h (u ⁻¹ *  v) (u' ⁻¹ *  v') ?_ heq
+  simp [Subgroup.coe_mul, hu, hv]
+
+
+/-- The converse transport: a symmetry of the original frame becomes, after
+conjugation by the same local `X`, a symmetry of the shifted frame.  This is
+`mem_symmetryGroup_flip` applied to the shifted frame, using that shifting
+twice is the identity. -/
+theorem mem_symmetryGroup_flip' (F : CodeSpec.OrthonormalFrame n K)
+    (x0 : SS.BitString n) (u : LocalPhase n)
+    (hu : u ∈ diagonalSymmetryGroup (CodeProjector.ofFrame F)) :
+    flipPhase u x0 ∈
+      diagonalSymmetryGroup (CodeProjector.ofFrame (shiftFrame F x0)) := by
+  refine mem_symmetryGroup_flip (shiftFrame F x0) x0 u ?_
+  rwa [shiftFrame_shiftFrame]
+
+/-- The intrinsic class depends only on the underlying local phase; the
+membership proof is irrelevant.  This avoids dependent rewriting when a chain
+of transports changes the representative but not the subgroup. -/
+theorem intrinsicClass_congr_val {P : CodeProjector n}
+    {u v : diagonalSymmetryGroup P}
+    (h : (u : LocalPhase n) = (v : LocalPhase n)) :
+    intrinsicClass P u = intrinsicClass P v :=
+  congrArg (intrinsicClass P) (Subtype.ext h)
 
 end MainTheory.IntrinsicTransport

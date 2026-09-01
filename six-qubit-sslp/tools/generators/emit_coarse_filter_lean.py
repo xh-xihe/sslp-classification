@@ -527,10 +527,9 @@ def emit_directory_base(out_dir: Path) -> str:
         "def InputBlock.append {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 11422}",
         "    {rightBound : start + leftCount + rightCount ≤ 11422}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 11422}",
         "    (left : InputBlock start leftCount leftBound)",
         "    (right : InputBlock (start + leftCount) rightCount rightBound) :",
-        "    InputBlock start (leftCount + rightCount) wholeBound where",
+        "    InputBlock start (leftCount + rightCount) (by omega) where",
         "  inputAt := Segment.append left.inputAt right.inputAt",
         "  decisionAt := fun i =>",
         "    Fin.addCases",
@@ -563,10 +562,9 @@ def emit_directory_base(out_dir: Path) -> str:
         "def OutputBlock.append {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 508}",
         "    {rightBound : start + leftCount + rightCount ≤ 508}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 508}",
         "    (left : OutputBlock start leftCount leftBound)",
         "    (right : OutputBlock (start + leftCount) rightCount rightBound) :",
-        "    OutputBlock start (leftCount + rightCount) wholeBound where",
+        "    OutputBlock start (leftCount + rightCount) (by omega) where",
         "  source := Segment.append left.source right.source", "",
         "structure LookupAuditBlock",
         "    (lookup : PairId → Option OutputId) (source : OutputId → PairId)",
@@ -577,10 +575,9 @@ def emit_directory_base(out_dir: Path) -> str:
         "    {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 11422}",
         "    {rightBound : start + leftCount + rightCount ≤ 11422}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 11422}",
         "    (left : LookupAuditBlock lookup source start leftCount leftBound)",
         "    (right : LookupAuditBlock lookup source (start + leftCount) rightCount rightBound) :",
-        "    LookupAuditBlock lookup source start (leftCount + rightCount) wholeBound where",
+        "    LookupAuditBlock lookup source start (leftCount + rightCount) (by omega) where",
         "  proofAt := by",
         "    intro i",
         "    refine Fin.addCases (fun j => ?_) (fun j => ?_) i",
@@ -595,10 +592,9 @@ def emit_directory_base(out_dir: Path) -> str:
         "    {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 508}",
         "    {rightBound : start + leftCount + rightCount ≤ 508}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 508}",
         "    (left : SourceAuditBlock lookup source start leftCount leftBound)",
         "    (right : SourceAuditBlock lookup source (start + leftCount) rightCount rightBound) :",
-        "    SourceAuditBlock lookup source start (leftCount + rightCount) wholeBound where",
+        "    SourceAuditBlock lookup source start (leftCount + rightCount) (by omega) where",
         "  proofAt := by",
         "    intro i",
         "    refine Fin.addCases (fun j => ?_) (fun j => ?_) i",
@@ -649,13 +645,22 @@ def emit_input_data(data: dict, plan: dict, base_module: str,
             lines.append(f"  {pair_literal(pair)}{comma}")
         lines += ["]", ""]
 
+        # `fin_cases` is not usable here.  It eliminates through
+        # `List.Mem.casesOn`, which can only land in `Prop`, whereas
+        # `DecisionWitness (inputAt i)` lives in `Type`.  A term-level `match`
+        # on the `Fin` literal does land in `Type`, so it is what we emit; the
+        # equation compiler then demands an out-of-range branch, which the
+        # index bound refutes.  (The `Prop`-valued obligations further down --
+        # `pairExact` and `lookup_defined_exact` -- keep using `fin_cases`,
+        # which is fine for them.)
         lines += [
             f"def decisionAt (i : Fin {count}) : DecisionWitness (inputAt i) := by",
-            "  fin_cases i",
+            "  match i with",
         ]
         for local, (pair, row) in enumerate(zip(pairs[start:stop], plan["rows"][start:stop])):
             lines += [
-                f"  · change DecisionWitness {pair_literal(pair)}",
+                f"  | ⟨{local}, _⟩ =>",
+                f"    show DecisionWitness {pair_literal(pair)}",
             ]
             if row["keep"]:
                 lower0 = row["lower0"]
@@ -684,7 +689,9 @@ def emit_input_data(data: dict, plan: dict, base_module: str,
                     f"        upper := {upper_module}.valid{upper:04d}",
                     f"        below := by norm_num [rMin, {upper_data}] }}",
                 ]
-        lines += ["", f"def outputOfInput : Segment (Option OutputId) {count} := !["]
+        lines += [
+            f"  | ⟨n + {count}, h⟩ => exact absurd h (by omega)",
+            "", f"def outputOfInput : Segment (Option OutputId) {count} := !["]
         for local, output in enumerate(plan["output_of_input"][start:stop]):
             value = "none" if output is None else f"some {output}"
             comma = "," if local + 1 < count else ""
@@ -854,14 +861,27 @@ def emit_audits(plan: dict, base_module: str, input_module: str,
     expression = balanced_expr(
         [f"{node[0]}.block" for node in lookup_nodes], "LookupAuditBlock.append")
     lines += [
-        "", f"namespace {lookup_root}", "", f"open {base_module}", "",
+        # Without this open, `PairId` in `lookup_source` below is silently
+        # captured by `autoImplicit` as a variable of unknown type, and the
+        # statement elaborates to nonsense.  `InputData` already opens it;
+        # this emitter did not.
+        "", f"namespace {lookup_root}", "",
+        "open MainTheory.Generated.FinitePairMappingBase",
+        f"open {base_module}", "",
         f"def block : LookupAuditBlock {input_module}.outputOfInput",
         f"    {output_module}.outputSource 0 11422 (by omega) :=",
         f"  {expression}", "",
         "theorem lookup_source (i : PairId) (j : OutputId)",
         f"    (h : {input_module}.outputOfInput i = some j) :",
         f"    {output_module}.outputSource j = i := by",
-        "  simpa [inputId] using block.proofAt i j h", "",
+        # `block.proofAt` is stated about `inputId 0 bound i`, not about `i`.
+        # At `start = 0` those are the same `PairId`, but only after `Fin.ext`;
+        # the hypothesis has to be transported both ways.
+        "  have hi : ∀ b : 0 + 11422 ≤ 11422, inputId 0 b i = i :=",
+        "    fun _ => Fin.ext (by simp [inputId])",
+        "  have h' := block.proofAt i j (by rw [hi]; exact h)",
+        "  rw [hi] at h'",
+        "  exact h'", "",
         f"end {lookup_root}", "",
     ]
     write_generated(out_dir / "Coarse" / "Audit" / "LookupData.lean", lines)
@@ -876,6 +896,12 @@ def emit_audits(plan: dict, base_module: str, input_module: str,
         lines = [
             HEADER, f"import {input_module}", f"import {output_module}", "",
             f"namespace {module}", "", f"open {base_module}", "",
+            # Unlike the lookup direction, which reads the output id off its
+            # hypothesis, this direction has to evaluate the 11,422-entry input
+            # tree at a computed index.  Measured: it finishes well inside these
+            # limits, which are the ones the input shards already use.
+            "set_option maxRecDepth 1000000",
+            "set_option maxHeartbeats 4000000", "",
             f"def block : SourceAuditBlock {input_module}.outputOfInput",
             f"    {output_module}.outputSource {start} {count} (by omega) where",
             "  proofAt := by",
@@ -920,10 +946,20 @@ def emit_directory(base_module: str, input_module: str, output_module: str,
         f"  decisionAt := {input_module}.decisionAt",
         f"  outputSource := {output_module}.outputSource",
         f"  outputOfInput := {input_module}.outputOfInput", "",
+        # Assigning these fields directly makes the elaborator whnf the whole
+        # `directory` literal -- 11,422 inputs and their decision witnesses --
+        # to see the projections, which overflows the C++ stack.  Unfolding
+        # `directory` syntactically first keeps each check to one projection.
         "def validity : directory.Valid where",
-        f"  lookup_defined_exact := {input_module}.lookup_defined_exact",
-        f"  source_lookup := {source_module}.source_lookup",
-        f"  lookup_source := {lookup_module}.lookup_source", "",
+        "  lookup_defined_exact := by",
+        "    simp only [directory, MainTheory.CoarseFilter.Directory.keepAt]",
+        f"    exact {input_module}.lookup_defined_exact",
+        "  source_lookup := by",
+        "    simp only [directory]",
+        f"    exact {source_module}.source_lookup",
+        "  lookup_source := by",
+        "    simp only [directory]",
+        f"    exact {lookup_module}.lookup_source", "",
         "/-- The 11,422 directory inputs are exactly the independently",
         "provenanced pair function, position by position. -/",
         "theorem inputAt_eq_pairAtId (i : PairId) :",
@@ -995,10 +1031,9 @@ def emit_moment_bridge_base(out_dir: Path) -> str:
         "def MomentBlock.append {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 508}",
         "    {rightBound : start + leftCount + rightCount ≤ 508}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 508}",
         "    (left : MomentBlock start leftCount leftBound)",
         "    (right : MomentBlock (start + leftCount) rightCount rightBound) :",
-        "    MomentBlock start (leftCount + rightCount) wholeBound where",
+        "    MomentBlock start (leftCount + rightCount) (by omega) where",
         "  rowAt := Segment.append left.rowAt right.rowAt",
         "  pairIdExact := by",
         "    intro i",

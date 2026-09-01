@@ -2,6 +2,8 @@
 'MainTheory.Rationalize.retract_algebraMap' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.Rationalize.retract_algebraMap_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.Rationalize.exists_solution_of_exists_solution_ext' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'MainTheory.Rationalize.eq_of_ker_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.Rationalize.pi_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.Rationalize.rationalized_pi_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -103,3 +105,40 @@
 'MainTheory.PhaseSector.weight_eq_of_eigen_family' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.PhaseSector.disjoint_of_ne_family' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.PhaseSector.ssCondition_of_eigen_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.IntrinsicTransport.intrinsicClass_flip_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.IntrinsicTransport.mem_symmetryGroup_flip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.IntrinsicTransport.intrinsicClass_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.NormalizationIsShift.normalizedFrame_eq_shiftFrame' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.FiniteGateAsPhase.exists_label_of_phaseOfAngle_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.PhaseTranscription.phaseOfAngle_eq_finiteLocalPhase' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.SameProjectiveClass.intrinsicClass_eq_of_sameProjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.SymmetryToEntrance.exists_label_of_class_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.CoprimePowerRecovery.exists_pow_eq_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.BoundedClassPower.BoundedClass.of_pow_coprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.UndoNormalization.flipPhase_phaseOfAngle_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationProof.boundedClass_of_twoFiber' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationProof.boundedClass_of_class_ne_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationProof.hasBoundedRepresentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

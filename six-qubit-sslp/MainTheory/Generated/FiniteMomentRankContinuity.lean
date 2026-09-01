@@ -13,6 +13,8 @@ and the complete 291-entry arrays are compared by ordinary kernel reduction.
 
 namespace MainTheory.Generated.FiniteMomentRankContinuity
 
+set_option maxRecDepth 1000000
+
 open MainTheory.FinitePipeline
 open MainTheory.FiniteRankPipeline
 

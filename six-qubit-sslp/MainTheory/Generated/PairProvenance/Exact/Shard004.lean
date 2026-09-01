@@ -32,6 +32,7 @@ def records : Segment OuterEnumeration.RawRecord 1 := fun i =>
 
 theorem exactAt : Segment.Pointwise Matches ids records := by
   intro i
-  fin_cases i <;> decide
+  fin_cases i
+  decide
 
 end MainTheory.Generated.PairProvenance.Exact.Shard004

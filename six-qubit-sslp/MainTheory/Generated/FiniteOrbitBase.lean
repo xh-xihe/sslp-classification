@@ -1378,10 +1378,10 @@ def representativeAt : Fin 66 → Fin 215 :=
   210
 ]
 
-/-- Manifest paper-orbit lookup for each q/m-aware generated key.  Generated
-key order is lexicographic `(q,m,mask0,mask1)`, not paper order.  This data
-definition alone is not an identification proof; `OrderFivePaperIdentification`
-supplies the current kernel bridge. -/
+/-- Manifest paper-orbit lookup for each q/m-aware generated key.
+Generated key order is lexicographic `(q,m,mask0,mask1)`, not paper
+order.  This data definition alone is not an identification proof;
+`OrderFivePaperIdentification` supplies the current kernel bridge. -/
 def paperOrbitId : Fin 66 → ℕ :=
 ![
   1,

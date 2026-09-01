@@ -14,7 +14,8 @@ open MainTheory.Generated.PairProvenance.Distinct.LookupData
 def block : LeftInverseBlock 0 11422 (by omega) := MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL02N000.block
 
 theorem block_pairs_eq :
-    block.pairs = MainTheory.Generated.FinitePairFunctionData.pairs := by rfl
+    block.pairs = MainTheory.Generated.FinitePairFunctionData.pairs := by
+  simp only [block, MainTheory.Generated.FinitePairFunctionData.pairs, MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL02N000.block_pairs]
 
 /-- The generated lookup is a kernel-checked left inverse at every
 one of the 11,422 table indices. -/

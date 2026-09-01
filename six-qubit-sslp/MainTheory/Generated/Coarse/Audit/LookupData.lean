@@ -16,6 +16,7 @@ import MainTheory.Generated.Coarse.Audit.LookupNode11
 
 namespace MainTheory.Generated.Coarse.Audit.LookupData
 
+open MainTheory.Generated.FinitePairMappingBase
 open MainTheory.Generated.Coarse.DirectoryBase
 
 def block : LookupAuditBlock MainTheory.Generated.Coarse.InputData.outputOfInput
@@ -25,6 +26,10 @@ def block : LookupAuditBlock MainTheory.Generated.Coarse.InputData.outputOfInput
 theorem lookup_source (i : PairId) (j : OutputId)
     (h : MainTheory.Generated.Coarse.InputData.outputOfInput i = some j) :
     MainTheory.Generated.Coarse.OutputData.outputSource j = i := by
-  simpa [inputId] using block.proofAt i j h
+  have hi : ∀ b : 0 + 11422 ≤ 11422, inputId 0 b i = i :=
+    fun _ => Fin.ext (by simp [inputId])
+  have h' := block.proofAt i j (by rw [hi]; exact h)
+  rw [hi] at h'
+  exact h'
 
 end MainTheory.Generated.Coarse.Audit.LookupData

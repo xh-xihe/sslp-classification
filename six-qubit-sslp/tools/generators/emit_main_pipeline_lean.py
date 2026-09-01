@@ -367,7 +367,9 @@ def emit_rank_aggregate(data: dict, out_dir: Path, certs: list[dict],
     for name in qualified_summaries:
         lines.append(f"  rw [{name}.rows_length]")
     lines.extend([
-        "  norm_num", "",
+        # The rw chain closes this goal on its own; a trailing `norm_num` is
+        # reported by Lean as never executed.
+        "",
         "theorem rankRows_size : rankRows.size = 291 := by",
         "  simp [rankRows, certifiedRows_length]", "",
         "theorem rankPairIds_expected :",
@@ -379,14 +381,19 @@ def emit_rank_aggregate(data: dict, out_dir: Path, certs: list[dict],
     for name in qualified_summaries:
         lines.append(f"    rw [{name}.rows_pairIds]")
     lines.extend([
-        "    norm_num [FiniteMomentData.feasiblePairIds]",
+        "    rfl",
         "  simpa [rankPairIds] using congrArg List.toArray h", "",
+        # `moment_feasible_result_pairIds` is stated about
+        # `momentResults.toList.filter MomentResultData.isFeasible`.  Dropping
+        # the `.toList` left the `·` binder's type undetermined, and with
+        # `autoImplicit` on that elaborated to nonsense rather than an error.
         "theorem rankPairIds_eq_compatible_source :",
-        "    rankPairIds = FiniteMomentData.momentResults.filter (·.isFeasible) |>.map (·.pairId) := by",
+        "    rankPairIds =",
+        "      ((FiniteMomentData.momentResults.toList.filter",
+        "        MomentResultData.isFeasible).map MomentResultData.pairId).toArray := by",
         "  rw [rankPairIds_expected]",
-        "  have h := congrArg List.toArray FiniteMomentData.moment_feasible_result_pairIds",
-        "  symm",
-        "  simpa using h", "",
+        "  exact (congrArg List.toArray",
+        "    FiniteMomentData.moment_feasible_result_pairIds).symm", "",
         "theorem rank_compatible_count :",
         "    (rankRows.toList.filter (fun row => row.compatible)).length = 215 := by",
         "  change compatibleRows.length = 215",
@@ -396,7 +403,7 @@ def emit_rank_aggregate(data: dict, out_dir: Path, certs: list[dict],
     for name in qualified_summaries:
         lines.append(f"  rw [{name}.compatible_count]")
     lines.extend([
-        "  norm_num", "",
+        "",
         "theorem rankCompatiblePairIds_eq_manifest :",
         "    rankCompatiblePairIds = FinitePairData.compatiblePairIds := by",
         "  have h : compatibleRows.map RankRow.pairId =",
@@ -406,7 +413,7 @@ def emit_rank_aggregate(data: dict, out_dir: Path, certs: list[dict],
     for name in qualified_summaries:
         lines.append(f"    rw [{name}.compatible_pairIds]")
     lines.extend([
-        "    norm_num [FinitePairData.compatiblePairIds]",
+        "    rfl",
         "  simpa [rankCompatiblePairIds] using congrArg List.toArray h", "",
         "/-- Every retained row has exact active masks, exact rational affine ranks,",
         "and an exact compatibility flag. -/",

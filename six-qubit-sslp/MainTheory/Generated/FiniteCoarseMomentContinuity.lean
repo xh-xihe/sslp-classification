@@ -17,6 +17,9 @@ The proof uses ordinary kernel reduction (`decide`), not `native_decide`.
 
 namespace MainTheory.Generated.FiniteCoarseMomentContinuity
 
+set_option maxRecDepth 1000000
+set_option maxHeartbeats 4000000
+
 open MainTheory.FinitePipeline
 
 /-- The data which must remain attached while the 508 coarse outputs are

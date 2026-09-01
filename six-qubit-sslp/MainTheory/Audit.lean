@@ -14,6 +14,7 @@ import MainTheory.PhaseSector
 import MainTheory.Normalize
 import MainTheory.Cyclic
 import MainTheory.RankTwo
+import MainTheory.BoundedRepresentationCertified
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -150,3 +151,28 @@ structure map is chosen, not constructed.
 #print axioms MainTheory.PhaseSector.weight_eq_of_eigen_family
 #print axioms MainTheory.PhaseSector.disjoint_of_ne_family
 #print axioms MainTheory.PhaseSector.ssCondition_of_eigen_family
+
+/-! ## The bounded-representation route to finiteness
+
+These are the declarations that replace the Cartan argument: a diagonal
+symmetry is transported across the entrance's local-`X` and unit-power
+normalizations, comes back as a bounded label, and the resulting surjection
+off `BoundedPhaseLabel 6 9` makes the intrinsic group finite. -/
+
+#print axioms MainTheory.IntrinsicTransport.intrinsicClass_flip_eq
+#print axioms MainTheory.IntrinsicTransport.mem_symmetryGroup_flip
+#print axioms MainTheory.IntrinsicTransport.intrinsicClass_congr
+#print axioms MainTheory.NormalizationIsShift.normalizedFrame_eq_shiftFrame
+#print axioms MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction
+#print axioms MainTheory.FiniteGateAsPhase.exists_label_of_phaseOfAngle_le
+#print axioms MainTheory.PhaseTranscription.phaseOfAngle_eq_finiteLocalPhase
+#print axioms MainTheory.SameProjectiveClass.intrinsicClass_eq_of_sameProjective
+#print axioms MainTheory.SymmetryToEntrance.exists_label_of_class_one
+#print axioms MainTheory.CoprimePowerRecovery.exists_pow_eq_self
+#print axioms MainTheory.BoundedClassPower.BoundedClass.of_pow_coprime
+#print axioms MainTheory.UndoNormalization.flipPhase_phaseOfAngle_normalized
+#print axioms MainTheory.BoundedRepresentationProof.boundedClass_of_twoFiber
+#print axioms MainTheory.BoundedRepresentationProof.boundedClass_of_class_ne_one
+#print axioms MainTheory.BoundedRepresentationProof.hasBoundedRepresentation
+#print axioms MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation
+#print axioms MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup

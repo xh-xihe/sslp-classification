@@ -23,23 +23,22 @@ structure LeftInverseBlock (start count : Nat)
 def LeftInverseBlock.append {start leftCount rightCount : Nat}
     {leftBound : start + leftCount <= 11422}
     {rightBound : start + leftCount + rightCount <= 11422}
-    {wholeBound : start + (leftCount + rightCount) <= 11422}
     (left : LeftInverseBlock start leftCount leftBound)
     (right : LeftInverseBlock (start + leftCount) rightCount rightBound) :
-    LeftInverseBlock start (leftCount + rightCount) wholeBound where
+    LeftInverseBlock start (leftCount + rightCount) (by omega) where
   pairs := Segment.append left.pairs right.pairs
   exactAt := by
     intro i
     refine Fin.addCases (fun j => ?_) (fun j => ?_) i
     · change lookupPair
         (Fin.append left.pairs right.pairs (Fin.castAdd rightCount j)) =
-        pairIdAt start (leftCount + rightCount) wholeBound
+        pairIdAt start (leftCount + rightCount) (by omega)
           (Fin.castAdd rightCount j)
       rw [Fin.append_left]
       simpa [pairIdAt] using left.exactAt j
     · change lookupPair
         (Fin.append left.pairs right.pairs (Fin.natAdd leftCount j)) =
-        pairIdAt start (leftCount + rightCount) wholeBound
+        pairIdAt start (leftCount + rightCount) (by omega)
           (Fin.natAdd leftCount j)
       rw [Fin.append_right]
       simpa [pairIdAt, Nat.add_assoc] using right.exactAt j

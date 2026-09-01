@@ -8,6 +8,7 @@ import MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N019
 import MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N020
 import MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N021
 import MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N022
+import MainTheory.Generated.PairProvenance.Payload.NodeL01N002
 
 namespace MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL01N002
 
@@ -15,5 +16,16 @@ open MainTheory.Generated.PairProvenance.Distinct.Base
 
 def block : LeftInverseBlock 8192 3230 (by omega) :=
   LeftInverseBlock.append (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N016.block) (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N017.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N018.block))) (LeftInverseBlock.append (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N019.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N020.block)) (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N021.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N022.block)))
+
+theorem block_pairs :
+    block.pairs = MainTheory.Generated.PairProvenance.Payload.NodeL01N002.pairs := by
+  simp only [block, LeftInverseBlock.append, MainTheory.Generated.PairProvenance.Payload.NodeL01N002.pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N016.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N017.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N018.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N019.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N020.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N021.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N022.block_pairs]
 
 end MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL01N002

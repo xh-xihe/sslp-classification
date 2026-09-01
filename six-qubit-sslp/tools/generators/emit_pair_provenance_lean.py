@@ -437,23 +437,22 @@ def emit_pair_distinctness(
         "def LeftInverseBlock.append {start leftCount rightCount : Nat}",
         "    {leftBound : start + leftCount <= 11422}",
         "    {rightBound : start + leftCount + rightCount <= 11422}",
-        "    {wholeBound : start + (leftCount + rightCount) <= 11422}",
         "    (left : LeftInverseBlock start leftCount leftBound)",
         "    (right : LeftInverseBlock (start + leftCount) rightCount rightBound) :",
-        "    LeftInverseBlock start (leftCount + rightCount) wholeBound where",
+        "    LeftInverseBlock start (leftCount + rightCount) (by omega) where",
         "  pairs := Segment.append left.pairs right.pairs",
         "  exactAt := by",
         "    intro i",
         "    refine Fin.addCases (fun j => ?_) (fun j => ?_) i",
         "    · change lookupPair",
         "        (Fin.append left.pairs right.pairs (Fin.castAdd rightCount j)) =",
-        "        pairIdAt start (leftCount + rightCount) wholeBound",
+        "        pairIdAt start (leftCount + rightCount) (by omega)",
         "          (Fin.castAdd rightCount j)",
         "      rw [Fin.append_left]",
         "      simpa [pairIdAt] using left.exactAt j",
         "    · change lookupPair",
         "        (Fin.append left.pairs right.pairs (Fin.natAdd leftCount j)) =",
-        "        pairIdAt start (leftCount + rightCount) wholeBound",
+        "        pairIdAt start (leftCount + rightCount) (by omega)",
         "          (Fin.natAdd leftCount j)",
         "      rw [Fin.append_right]",
         "      simpa [pairIdAt, Nat.add_assoc] using right.exactAt j", "",
@@ -478,7 +477,18 @@ def emit_pair_distinctness(
             f"  pairs := {payload_module}.pairs",
             "  exactAt := by",
             "    intro i",
-            "    fin_cases i <;> decide", "", f"end {module}", "",
+            # `<;>` on the single goal a one-row shard leaves trips the style
+            # linter; the sequential form is what it asks for.
+            ("    fin_cases i <;> decide" if count > 1 else "    fin_cases i"),
+        ] + ([] if count > 1 else ["    decide"]) + [
+            "",
+            # The `pairs` field is the payload segment verbatim, so this is a
+            # projection out of a structure literal and stays cheap.  Naming it
+            # lets the node lemmas below compose without ever forcing a
+            # definitional comparison of a whole subtree.
+            "theorem block_pairs :",
+            f"    block.pairs = {payload_module}.pairs := by rfl", "",
+            f"end {module}", "",
         ]
         path = out_dir.joinpath(*module.split(".")[2:]).with_suffix(".lean")
         write_generated(path, lines)
@@ -493,15 +503,30 @@ def emit_pair_distinctness(
             count = sum(child[2] for child in children)
             module = ("MainTheory.Generated.PairProvenance.Distinct.Exact."
                       f"NodeL{level:02d}N{node_index:03d}")
+            payload_node = ("MainTheory.Generated.PairProvenance.Payload."
+                            f"NodeL{level:02d}N{node_index:03d}")
             lines = [HEADER]
             lines += [f"import {child[0]}" for child in children]
+            lines += [f"import {payload_node}"]
             lines += [
                 "", f"namespace {module}", "", f"open {distinct_base}", "",
                 f"def block : LeftInverseBlock {start} {count} (by omega) :=",
                 "  " + balanced_expr(
                     [f"{child[0]}.block" for child in children],
-                    "LeftInverseBlock.append"), "", f"end {module}", "",
+                    "LeftInverseBlock.append"), "",
+                # A `show`/`rfl` here would ask the elaborator to compare the
+                # two whole subtrees definitionally, which overflows the C++
+                # stack from level one upward.  Unfolding syntactically and
+                # rewriting with the children's lemmas keeps every step the
+                # size of one node.
+                "theorem block_pairs :",
+                f"    block.pairs = {payload_node}.pairs := by",
+                f"  simp only [block, LeftInverseBlock.append, {payload_node}.pairs,",
             ]
+            for child_index, child in enumerate(children):
+                tail = "]" if child_index + 1 == len(children) else ","
+                lines.append(f"    {child[0]}.block_pairs{tail}")
+            lines += ["", f"end {module}", ""]
             path = out_dir.joinpath(*module.split(".")[2:]).with_suffix(".lean")
             write_generated(path, lines)
             next_level.append((module, start, count))
@@ -520,7 +545,8 @@ def emit_pair_distinctness(
         f"open {distinct_base}", f"open {lookup_module}", "",
         f"def block : LeftInverseBlock 0 11422 (by omega) := {exact_root}.block", "",
         "theorem block_pairs_eq :",
-        f"    block.pairs = {pair_module}.pairs := by rfl", "",
+        f"    block.pairs = {pair_module}.pairs := by",
+        f"  simp only [block, {pair_module}.pairs, {exact_root}.block_pairs]", "",
         "/-- The generated lookup is a kernel-checked left inverse at every",
         "one of the 11,422 table indices. -/",
         "theorem lookupAt (i : PairId) :",
@@ -558,6 +584,21 @@ def emit_record_base(pair_module: str, out_dir: Path) -> str:
         f"def pairAtId (i : PairId) : FinitePipeline.FiberPair := {pair_module}.pairAtId i", "",
         "def Matches (pairId : PairId) (record : OuterEnumeration.RawRecord) : Prop :=",
         "  pairAtId pairId = OuterCompleteness.recordFiberPair record", "",
+        # `Matches` is a `def`, not an `abbrev`, so instance search will not
+        # unfold it and `decide` finds no `Decidable` instance for the
+        # per-row obligations below.  Both sides are `FiberPair`s, which
+        # derive `DecidableEq`, so the instance exists -- it only has to be
+        # named here.
+        "/-- `Matches` is a `def`, not an `abbrev`, so instance search will not",
+        "unfold it on its own and `decide` cannot find a `Decidable` instance",
+        "for it.  Both sides are `FiberPair`s, which derive `DecidableEq`, so",
+        "the instance exists -- it only has to be named. -/",
+        "instance instDecidableMatches (pairId : PairId)",
+        "    (record : OuterEnumeration.RawRecord) :",
+        "    Decidable (Matches pairId record) :=",
+        "  inferInstanceAs",
+        "    (Decidable (pairAtId pairId = OuterCompleteness.recordFiberPair record))",
+        "",
         "/-- A bounded block of rows together with its exact semantic source.",
         "Blocks compose without materializing all rows in one term. -/",
         "structure RecordBlock (count : ℕ) where",
@@ -639,7 +680,9 @@ def emit_exact_shards(data: dict, records: list[tuple[int, int, tuple[int, ...],
                 "  recordArray[Fin.cast recordArray_size.symm i]", "",
                 "theorem exactAt : Segment.Pointwise Matches ids records := by",
                 "  intro i",
-                "  fin_cases i <;> decide", "",
+                ("  fin_cases i <;> decide" if count > 1 else "  fin_cases i"),
+            ] + ([] if count > 1 else ["  decide"]) + [
+                "",
                 f"end {module}", "",
             ]
             path = out_dir.joinpath(*module.split(".")[2:]).with_suffix(".lean")
@@ -839,10 +882,9 @@ def emit_record_aggregate(
         "def WitnessSegment.append {start leftCount rightCount : ℕ}",
         "    {leftBound : start + leftCount ≤ 11422}",
         "    {rightBound : start + leftCount + rightCount ≤ 11422}",
-        "    {wholeBound : start + (leftCount + rightCount) ≤ 11422}",
         "    (left : WitnessSegment start leftCount leftBound)",
         "    (right : WitnessSegment (start + leftCount) rightCount rightBound) :",
-        "    WitnessSegment start (leftCount + rightCount) wholeBound where",
+        "    WitnessSegment start (leftCount + rightCount) (by omega) where",
         "  witnesses := Segment.append left.witnesses right.witnesses",
         "  inverseVal := by",
         "    intro i",
@@ -890,7 +932,9 @@ def emit_inverse_shards(data: dict, record_module: str, record_base: str,
             "  witnesses := witnesses",
             "  inverseVal := by",
             "    intro i",
-            "    fin_cases i <;> decide", "",
+            ("    fin_cases i <;> decide" if count > 1 else "    fin_cases i"),
+        ] + ([] if count > 1 else ["    decide"]) + [
+            "",
             f"end {module}", "",
         ]
         path = out_dir.joinpath(*module.split(".")[2:]).with_suffix(".lean")
@@ -975,8 +1019,10 @@ def emit_final(record_module: str, record_base: str, inverse_module: str,
               "  recordToPair := fun i => recordPairId (generatedIndexForOuter i)", "",
               "theorem exactRecord (i : PairProvenance.OuterRecordIndex) :",
               "    table.pairAt (table.recordToPair i) = PairProvenance.outerPair i := by",
-              "  change pairAtId (recordPairId (generatedIndexForOuter i)) =",
-              "    OuterCompleteness.recordFiberPair (PairProvenance.outerRecord i)",
+              # `change` is itself the expensive definitional check here: both
+              # sides mention the 11,422-entry pair function.  Unfolding the
+              # three definitions syntactically avoids it.
+              "  simp only [PairProvenance.Table.pairAt, table, PairProvenance.outerPair]",
               "  rw [← generatedIndexForOuter_spec i]",
               "  exact exactRecordId (generatedIndexForOuter i)", "",
               "theorem noGhostIndex (j : PairId) :",
@@ -985,8 +1031,7 @@ def emit_final(record_module: str, record_base: str, inverse_module: str,
               f"  let recordId := {inverse_module}.pairWitnessRecord j",
               "  rcases generatedRecord_has_outer recordId with ⟨i, hi⟩",
               "  refine ⟨i, ?_⟩",
-              "  change pairAtId j =",
-              "    OuterCompleteness.recordFiberPair (PairProvenance.outerRecord i)",
+              "  simp only [PairProvenance.Table.pairAt, table, PairProvenance.outerPair]",
               "  rw [hi]",
               f"  rw [← {inverse_module}.inverseAt j]",
               "  exact exactRecordId recordId", "",

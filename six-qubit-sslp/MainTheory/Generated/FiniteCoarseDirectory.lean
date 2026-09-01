@@ -19,9 +19,15 @@ def directory : PaperDirectory where
   outputOfInput := MainTheory.Generated.Coarse.InputData.outputOfInput
 
 def validity : directory.Valid where
-  lookup_defined_exact := MainTheory.Generated.Coarse.InputData.lookup_defined_exact
-  source_lookup := MainTheory.Generated.Coarse.Audit.SourceData.source_lookup
-  lookup_source := MainTheory.Generated.Coarse.Audit.LookupData.lookup_source
+  lookup_defined_exact := by
+    simp only [directory, MainTheory.CoarseFilter.Directory.keepAt]
+    exact MainTheory.Generated.Coarse.InputData.lookup_defined_exact
+  source_lookup := by
+    simp only [directory]
+    exact MainTheory.Generated.Coarse.Audit.SourceData.source_lookup
+  lookup_source := by
+    simp only [directory]
+    exact MainTheory.Generated.Coarse.Audit.LookupData.lookup_source
 
 /-- The 11,422 directory inputs are exactly the independently
 provenanced pair function, position by position. -/

@@ -8,6 +8,9 @@ namespace MainTheory.Generated.Coarse.Audit.SourceShard15
 
 open MainTheory.Generated.Coarse.DirectoryBase
 
+set_option maxRecDepth 1000000
+set_option maxHeartbeats 4000000
+
 def block : SourceAuditBlock MainTheory.Generated.Coarse.InputData.outputOfInput
     MainTheory.Generated.Coarse.OutputData.outputSource 480 28 (by omega) where
   proofAt := by

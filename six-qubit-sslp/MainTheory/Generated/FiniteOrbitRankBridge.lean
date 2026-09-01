@@ -7,6 +7,8 @@ import MainTheory.Generated.FiniteRankData
 
 namespace MainTheory.Generated.FiniteOrbitRankBridge
 
+set_option maxRecDepth 1000000
+
 theorem inputPairIds_eq_rankCompatible :
     MainTheory.Generated.FiniteOrbitBase.inputPairIds.toArray =
       MainTheory.Generated.FiniteRankData.rankCompatiblePairIds := by

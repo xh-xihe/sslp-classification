@@ -35,10 +35,9 @@ structure InputBlock (start count : ℕ) (bound : start + count ≤ 11422) where
 def InputBlock.append {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 11422}
     {rightBound : start + leftCount + rightCount ≤ 11422}
-    {wholeBound : start + (leftCount + rightCount) ≤ 11422}
     (left : InputBlock start leftCount leftBound)
     (right : InputBlock (start + leftCount) rightCount rightBound) :
-    InputBlock start (leftCount + rightCount) wholeBound where
+    InputBlock start (leftCount + rightCount) (by omega) where
   inputAt := Segment.append left.inputAt right.inputAt
   decisionAt := fun i =>
     Fin.addCases
@@ -73,10 +72,9 @@ structure OutputBlock (start count : ℕ) (bound : start + count ≤ 508) where
 def OutputBlock.append {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 508}
     {rightBound : start + leftCount + rightCount ≤ 508}
-    {wholeBound : start + (leftCount + rightCount) ≤ 508}
     (left : OutputBlock start leftCount leftBound)
     (right : OutputBlock (start + leftCount) rightCount rightBound) :
-    OutputBlock start (leftCount + rightCount) wholeBound where
+    OutputBlock start (leftCount + rightCount) (by omega) where
   source := Segment.append left.source right.source
 
 structure LookupAuditBlock
@@ -89,10 +87,9 @@ def LookupAuditBlock.append {lookup source}
     {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 11422}
     {rightBound : start + leftCount + rightCount ≤ 11422}
-    {wholeBound : start + (leftCount + rightCount) ≤ 11422}
     (left : LookupAuditBlock lookup source start leftCount leftBound)
     (right : LookupAuditBlock lookup source (start + leftCount) rightCount rightBound) :
-    LookupAuditBlock lookup source start (leftCount + rightCount) wholeBound where
+    LookupAuditBlock lookup source start (leftCount + rightCount) (by omega) where
   proofAt := by
     intro i
     refine Fin.addCases (fun j => ?_) (fun j => ?_) i
@@ -109,10 +106,9 @@ def SourceAuditBlock.append {lookup source}
     {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 508}
     {rightBound : start + leftCount + rightCount ≤ 508}
-    {wholeBound : start + (leftCount + rightCount) ≤ 508}
     (left : SourceAuditBlock lookup source start leftCount leftBound)
     (right : SourceAuditBlock lookup source (start + leftCount) rightCount rightBound) :
-    SourceAuditBlock lookup source start (leftCount + rightCount) wholeBound where
+    SourceAuditBlock lookup source start (leftCount + rightCount) (by omega) where
   proofAt := by
     intro i
     refine Fin.addCases (fun j => ?_) (fun j => ?_) i

@@ -108,6 +108,16 @@ theorem exists_label_of_phaseOfAngle (m : ℕ) (hm : m ≤ 8) (zeta : ℂ)
   refine LabelledGates.exists_label_of_pow_eq_one m hm _ (fun j => ?_)
   rw [phaseOfAngle, coe_rootPower, ← pow_mul, mul_comm, pow_mul, hz, one_pow]
 
+/-- The same statement keyed on the modulus rather than its predecessor.  The
+entrance bounds the fresh order directly, so this is the form actually used. -/
+theorem exists_label_of_phaseOfAngle_le (hq : q ≤ 9) (zeta : ℂ)
+    (hz : zeta ^ q = 1) (a : Fin 6 → ZMod q) :
+    ∃ lbl : ProjectiveGroupFinite.BoundedPhaseLabel 6 9,
+      BoundedRepresentation.gateOfLabel lbl = phaseOfAngle zeta hz a := by
+  obtain ⟨m, rfl⟩ : ∃ m, q = m + 1 :=
+    ⟨q - 1, (Nat.succ_pred_eq_of_pos (Nat.pos_of_ne_zero (NeZero.ne q))).symm⟩
+  exact exists_label_of_phaseOfAngle m (by omega) zeta hz a
+
 /-! ## Flipping and scaling the angle
 
 `SixQubitSemanticEntrance.normalizedFiniteAngle` is
@@ -174,5 +184,19 @@ theorem phaseOfAngle_natMul (zeta : ℂ) (hz : zeta ^ q = 1)
     push_cast
     rw [ZMod.natCast_val, ZMod.cast_id]
   rw [hcast, ZMod.val_natCast, mul_comm]
+
+
+/-- **A finite phase has order dividing its modulus.**
+
+Every site is a power of `zeta`, so the `q`-th power of the whole local phase
+is the identity.  This supplies the period hypothesis of
+`BoundedClassPower.BoundedClass.of_pow_coprime`. -/
+theorem phaseOfAngle_pow_eq_one (zeta : ℂ) (hz : zeta ^ q = 1)
+    (a : Fin n → ZMod q) : (phaseOfAngle zeta hz a) ^ q = 1 := by
+  funext j
+  refine Subtype.ext ?_
+  have : ((phaseOfAngle zeta hz a j : unitary ℂ) : ℂ) ^ q = 1 := by
+    rw [phaseOfAngle, coe_rootPower, ← pow_mul, mul_comm, pow_mul, hz, one_pow]
+  simpa [Pi.pow_apply, SubmonoidClass.coe_pow] using this
 
 end MainTheory.FiniteGateAsPhase

@@ -28,8 +28,7 @@ noncomputable def table : PairProvenance.Table where
 
 theorem exactRecord (i : PairProvenance.OuterRecordIndex) :
     table.pairAt (table.recordToPair i) = PairProvenance.outerPair i := by
-  change pairAtId (recordPairId (generatedIndexForOuter i)) =
-    OuterCompleteness.recordFiberPair (PairProvenance.outerRecord i)
+  simp only [PairProvenance.Table.pairAt, table, PairProvenance.outerPair]
   rw [← generatedIndexForOuter_spec i]
   exact exactRecordId (generatedIndexForOuter i)
 
@@ -39,8 +38,7 @@ theorem noGhostIndex (j : PairId) :
   let recordId := MainTheory.Generated.PairProvenance.InverseData.pairWitnessRecord j
   rcases generatedRecord_has_outer recordId with ⟨i, hi⟩
   refine ⟨i, ?_⟩
-  change pairAtId j =
-    OuterCompleteness.recordFiberPair (PairProvenance.outerRecord i)
+  simp only [PairProvenance.Table.pairAt, table, PairProvenance.outerPair]
   rw [hi]
   rw [← MainTheory.Generated.PairProvenance.InverseData.inverseAt j]
   exact exactRecordId recordId

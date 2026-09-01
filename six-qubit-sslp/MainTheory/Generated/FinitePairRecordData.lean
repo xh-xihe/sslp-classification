@@ -61,10 +61,9 @@ structure WitnessSegment (start count : ℕ) (bound : start + count ≤ 11422) w
 def WitnessSegment.append {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 11422}
     {rightBound : start + leftCount + rightCount ≤ 11422}
-    {wholeBound : start + (leftCount + rightCount) ≤ 11422}
     (left : WitnessSegment start leftCount leftBound)
     (right : WitnessSegment (start + leftCount) rightCount rightBound) :
-    WitnessSegment start (leftCount + rightCount) wholeBound where
+    WitnessSegment start (leftCount + rightCount) (by omega) where
   witnesses := Segment.append left.witnesses right.witnesses
   inverseVal := by
     intro i

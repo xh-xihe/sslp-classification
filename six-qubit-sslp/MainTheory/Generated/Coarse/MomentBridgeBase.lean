@@ -22,10 +22,9 @@ structure MomentBlock (start count : ℕ) (bound : start + count ≤ 508) where
 def MomentBlock.append {start leftCount rightCount : ℕ}
     {leftBound : start + leftCount ≤ 508}
     {rightBound : start + leftCount + rightCount ≤ 508}
-    {wholeBound : start + (leftCount + rightCount) ≤ 508}
     (left : MomentBlock start leftCount leftBound)
     (right : MomentBlock (start + leftCount) rightCount rightBound) :
-    MomentBlock start (leftCount + rightCount) wholeBound where
+    MomentBlock start (leftCount + rightCount) (by omega) where
   rowAt := Segment.append left.rowAt right.rowAt
   pairIdExact := by
     intro i

@@ -9,6 +9,7 @@ import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard108
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard109
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard110
 import MainTheory.Generated.PairProvenance.Distinct.Exact.Shard111
+import MainTheory.Generated.PairProvenance.Payload.NodeL00N013
 
 namespace MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N013
 
@@ -16,5 +17,17 @@ open MainTheory.Generated.PairProvenance.Distinct.Base
 
 def block : LeftInverseBlock 6656 512 (by omega) :=
   LeftInverseBlock.append (LeftInverseBlock.append (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard104.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard105.block)) (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard106.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard107.block))) (LeftInverseBlock.append (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard108.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard109.block)) (LeftInverseBlock.append (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard110.block) (MainTheory.Generated.PairProvenance.Distinct.Exact.Shard111.block)))
+
+theorem block_pairs :
+    block.pairs = MainTheory.Generated.PairProvenance.Payload.NodeL00N013.pairs := by
+  simp only [block, LeftInverseBlock.append, MainTheory.Generated.PairProvenance.Payload.NodeL00N013.pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard104.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard105.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard106.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard107.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard108.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard109.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard110.block_pairs,
+    MainTheory.Generated.PairProvenance.Distinct.Exact.Shard111.block_pairs]
 
 end MainTheory.Generated.PairProvenance.Distinct.Exact.NodeL00N013
