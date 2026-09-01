@@ -548,8 +548,13 @@ maximum to weakly increasing angle six-tuples in range, and a sharded coverage
 tree over `Fin 8` discharges those in the kernel:
 `Generated.BinaryBetaSixKernel.Certificate.upper : BetaBound 6 9`, with
 `betaExact` adding attainment, both inside
-`{propext, Classical.choice, Quot.sound}`. The paragraph below is kept because
-it records what the bound is and is not needed for.
+`{propext, Classical.choice, Quot.sound}`. The same route gives
+`BetaExact 4 3` and `BetaExact 5 5`. Of the paper's `eq:small-beta`, that
+leaves `beta_7 = 18`, `beta_8 = 42` and `beta_9 = 120` unproved: the coverage
+tree has to range over `Fin 19` and wider tuples, which is a larger computation
+rather than a different one. At `d >= 3` the relevant constant is `beta_6`, so
+nothing in the six-qubit development waits on them. The paragraph below is kept
+because it records what the bound is and is not needed for.
 
 It is important to be clear about what this does and does not block. The general
 theorem `thm:d3-bound` states `q | d_r(C)` and `q <= beta_r <= beta_n` with

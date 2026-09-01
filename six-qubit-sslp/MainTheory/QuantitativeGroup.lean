@@ -108,6 +108,34 @@ theorem qMin_le_beta {B : ℕ}
     · exact hpos
   exact le_trans (qMin_le C hd g hqpos hlift) hqB
 
+/-- **`eq:qmin-general`.**
+
+The corollary's sharper clause: an element with `t` distinct logical
+eigenvalues obeys `q_min <= beta_{n+t-1}`, and `t <= K`, so this refines
+`qMin_le_beta`. -/
+theorem exists_sectorCount_qMin_le (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
+    (g : IntrinsicGroup C) (hg : g ≠ 1) :
+    ∃ t : ℕ, 2 ≤ t ∧ t ≤ K ∧
+      ∀ B : ℕ, BinaryBeta.BetaBound (n + t - 1) B → qMin C hd g ≤ B := by
+  obtain ⟨v, rfl⟩ := QuotientGroup.mk_surjective g
+  obtain ⟨theta, hexp⟩ :=
+    MainTheory.LocalPhaseAngle.exists_angleVector (v : LocalPhase n)
+  have hpres := SymmetryToEntrance.codePreserving_of_symmetry C.frame
+    (v : LocalPhase n) v.2 theta hexp
+  have hnt := SymmetryToEntrance.projectivelyNontrivialReal_of_class_ne_one
+    C (v : LocalPhase n) v.2 theta hexp hg
+  set R := resolutionOf C theta hpres with hR
+  have ht : 2 ≤ R.sectorCount :=
+    two_le_sectorCount_of_projectively_nontrivial C theta hpres hnt
+  refine ⟨R.sectorCount, ht, sectorCount_le R.link, ?_⟩
+  intro B hbeta
+  obtain ⟨L, _, _, _, _, _, hle⟩ :=
+    ColoredBound.quantitative_colored_finite_lift hbeta R.sectors
+      (R.zDetects hd) ht
+  exact le_trans
+    (qMin_le C hd _ L.order_pos (hasPrimitiveLift_of_rationalLift v hexp hpres L))
+    hle
+
 /-- **`cor:K2-q-bound`, the bound half.**
 
 At `K = 2` the corollary above reads `q <= beta_{n+1}`, and it holds at the

@@ -202,4 +202,5 @@
 'MainTheory.QuantitativeGroup.sectorCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.quantitative_projective_group' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.qMin_le_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.QuantitativeGroup.k2_q_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

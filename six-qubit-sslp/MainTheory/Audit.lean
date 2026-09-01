@@ -259,4 +259,5 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.QuantitativeGroup.sectorCount_le
 #print axioms MainTheory.QuantitativeGroup.quantitative_projective_group
 #print axioms MainTheory.QuantitativeGroup.qMin_le_beta
+#print axioms MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le
 #print axioms MainTheory.QuantitativeGroup.k2_q_bound
