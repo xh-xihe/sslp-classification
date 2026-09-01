@@ -39,6 +39,7 @@ import MainTheory.SSLPCompleteness
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
 import MainTheory.FiniteProjectiveGroup
+import MainTheory.MomentEquivalence
 import MainTheory.SectionThreeNonVacuity
 
 /-!
@@ -228,6 +229,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.FiniteProjectiveGroup.whole_of_finite
 #print axioms MainTheory.FiniteProjectiveGroup.whole
 #print axioms MainTheory.FiniteProjectiveGroup.whole_six_qubit
+#print axioms MainTheory.MomentEquivalence.charOn_stdBasis_eq_iff
+#print axioms MainTheory.MomentEquivalence.charOn_stdBasis_pair_eq_iff
+#print axioms MainTheory.MomentEquivalence.lp_normalization_and_positivity
 #print axioms MainTheory.BetaExists.exists_betaBound
 #print axioms MainTheory.DeterminantalRank.exists_nonsingular_minor
 #print axioms MainTheory.PivotSize.exists_pivot_card_eq_rank_le

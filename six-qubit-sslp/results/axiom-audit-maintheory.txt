@@ -162,6 +162,11 @@
 'MainTheory.FiniteProjectiveGroup.whole_of_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.FiniteProjectiveGroup.whole' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.FiniteProjectiveGroup.whole_six_qubit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.MomentEquivalence.charOn_stdBasis_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.MomentEquivalence.charOn_stdBasis_pair_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.MomentEquivalence.lp_normalization_and_positivity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'MainTheory.BetaExists.exists_betaBound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.DeterminantalRank.exists_nonsingular_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.PivotSize.exists_pivot_card_eq_rank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
