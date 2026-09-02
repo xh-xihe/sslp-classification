@@ -206,10 +206,10 @@ rank.  Mathlib has no lemma for this; the ingredients are
 
 /-- The direction of an affine span transports along an invertible affine
 self-map. -/
-theorem vectorSpan_image_affine (L : Vec6 ≃ₗ[ℚ] Vec6) (c : Vec6)
-    (S : Set Vec6) :
+theorem vectorSpan_image_affine {W : Type*} [AddCommGroup W] [Module ℚ W]
+    (L : W ≃ₗ[ℚ] W) (c : W) (S : Set W) :
     vectorSpan ℚ ((fun v => c + L v) '' S)
-      = Submodule.map (L : Vec6 →ₗ[ℚ] Vec6) (vectorSpan ℚ S) := by
+      = Submodule.map (L : W →ₗ[ℚ] W) (vectorSpan ℚ S) := by
   rw [vectorSpan_def, vectorSpan_def, Submodule.map_span]
   congr 1
   ext w
@@ -224,8 +224,8 @@ theorem vectorSpan_image_affine (L : Vec6 ≃ₗ[ℚ] Vec6) (c : Vec6)
     abel
 
 /-- **The rank of an affine span is an affine invariant.** -/
-theorem finrank_direction_image_affine (L : Vec6 ≃ₗ[ℚ] Vec6) (c : Vec6)
-    (S : Set Vec6) :
+theorem finrank_direction_image_affine {W : Type*} [AddCommGroup W]
+    [Module ℚ W] (L : W ≃ₗ[ℚ] W) (c : W) (S : Set W) :
     Module.finrank ℚ (affineSpan ℚ ((fun v => c + L v) '' S)).direction
       = Module.finrank ℚ (affineSpan ℚ S).direction := by
   rw [direction_affineSpan, direction_affineSpan, vectorSpan_image_affine,
@@ -360,5 +360,73 @@ theorem exists_nonsingular_rows {ι : Type*} [Fintype ι] {r : ℕ}
   have hunit : IsUnit (Matrix.of fun i j => f (v i) j) :=
     (Matrix.linearIndependent_rows_iff_isUnit).1 hind
   exact (Matrix.isUnit_iff_isUnit_det _).1 hunit |>.ne_zero
+
+/-! ## The flip on an arbitrary coordinate subset
+
+The pivot argument compares supports *restricted to the coordinates the angle
+touches*, so the cube flip has to act there and not only on all six
+coordinates.  Nothing about the six is used: the flip by a Boolean vector is
+affine on any index type.
+-/
+
+section Restricted
+
+variable {ι : Type*}
+
+/-- The linear part of a sign flip: negation where the Boolean is true. -/
+def signFlip (g : ι → Bool) : (ι → ℚ) ≃ₗ[ℚ] (ι → ℚ) where
+  toFun v := fun i => if g i then -v i else v i
+  invFun v := fun i => if g i then -v i else v i
+  map_add' u v := by
+    funext i
+    by_cases h : g i
+    · simp [h]; ring
+    · simp [h]
+  map_smul' a v := by funext i; by_cases h : g i <;> simp [h]
+  left_inv v := by funext i; by_cases h : g i <;> simp [h]
+  right_inv v := by funext i; by_cases h : g i <;> simp [h]
+
+/-- The constant part of a sign flip. -/
+def signConst (g : ι → Bool) : ι → ℚ := fun i => if g i then 1 else 0
+
+/-- **The Boolean flip is affine on rational coordinates**, on any index
+type. -/
+theorem bitVec_xor (g b : ι → Bool) :
+    (fun i => if xor (b i) (g i) then (1 : ℚ) else 0)
+      = signConst g + signFlip g (fun i => if b i then (1 : ℚ) else 0) := by
+  funext i
+  by_cases h : g i <;> by_cases hb : b i <;>
+    simp [signConst, signFlip, h, hb]
+
+/-- The rational point of a bit string, restricted to a coordinate subset. -/
+def rqpoint {r : ℕ} (K : Fin r ↪ Fin 6) (s : SS.BitString 6) : Fin r → ℚ :=
+  fun i => if s (K i) then 1 else 0
+
+theorem rqpoint_bxor {r : ℕ} (K : Fin r ↪ Fin 6) (s f : SS.BitString 6) :
+    rqpoint K (SS.bxor s f)
+      = signConst (fun i => f (K i))
+        + signFlip (fun i => f (K i)) (rqpoint K s) := by
+  funext i
+  by_cases h : f (K i) <;> by_cases hs : s (K i) <;>
+    simp [rqpoint, SS.bxor, signConst, signFlip, h, hs]
+
+/-- **A local `X` string fixes the affine rank of a restricted support.** -/
+theorem finrank_direction_rqpoint_bxor {r : ℕ} (K : Fin r ↪ Fin 6)
+    (f : SS.BitString 6) (S : Set (SS.BitString 6)) :
+    Module.finrank ℚ
+        (affineSpan ℚ (rqpoint K '' ((fun s => SS.bxor s f) '' S))).direction
+      = Module.finrank ℚ (affineSpan ℚ (rqpoint K '' S)).direction := by
+  have himg : rqpoint K '' ((fun s => SS.bxor s f) '' S)
+      = (fun v => signConst (fun i => f (K i))
+          + signFlip (fun i => f (K i)) v) '' (rqpoint K '' S) := by
+    ext v
+    constructor
+    · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
+      exact ⟨rqpoint K t, ⟨t, ht, rfl⟩, (rqpoint_bxor K t f).symm⟩
+    · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
+      exact ⟨SS.bxor t f, ⟨t, ht, rfl⟩, rqpoint_bxor K t f⟩
+  rw [himg, finrank_direction_image_affine]
+
+end Restricted
 
 end MainTheory.MaskRankBridge

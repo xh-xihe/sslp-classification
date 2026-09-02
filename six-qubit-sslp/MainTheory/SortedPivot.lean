@@ -385,6 +385,53 @@ theorem nonempty_pivot_of_spanning (S : SortedNormalForm C)
     ((Int.castRingHom ℚ).map_det _).symm] at hdet
   exact_mod_cast hdet
 
+/-! ## Spanning transports across a shift, when both sides contain the origin
+
+`RankTwoGlobal.TwoFiberCertificate.base_supported` puts the zero word in every
+normalized support.  That is what makes the shift harmless here: on each side
+the restricted point set contains the origin, so its affine and linear ranks
+agree, and the affine rank is shift invariant.  Without it the linear rank can
+move by one and the transport fails -- see the module docstring.
+-/
+
+open MainTheory.MaskRankBridge in
+/-- A restricted point set through the origin spans iff its affine direction
+is everything. -/
+theorem span_eq_top_iff_vectorSpan {r : ℕ} (T : Set (Fin r → ℚ))
+    (h0 : (0 : Fin r → ℚ) ∈ T) :
+    Submodule.span ℚ T = ⊤ ↔ vectorSpan ℚ T = ⊤ := by
+  rw [vectorSpan_eq_span_of_zero_mem h0]
+
+open MainTheory.MaskRankBridge in
+/-- **Shifting a support does not change whether its restriction spans**,
+provided both the shifted and the unshifted set contain the zero word. -/
+theorem span_rqpoint_bxor_iff {r : ℕ} (K : Fin r ↪ Fin 6)
+    (f : SS.BitString 6) (T : Set (SS.BitString 6))
+    (hz : (fun _ => false) ∈ T)
+    (hz' : (fun _ => false) ∈ (fun s => SS.bxor s f) '' T) :
+    Submodule.span ℚ (rqpoint K '' ((fun s => SS.bxor s f) '' T)) = ⊤ ↔
+      Submodule.span ℚ (rqpoint K '' T) = ⊤ := by
+  have hzero : ∀ (U : Set (SS.BitString 6)),
+      (fun _ => false) ∈ U → (0 : Fin r → ℚ) ∈ rqpoint K '' U := by
+    intro U hU
+    refine ⟨fun _ => false, hU, ?_⟩
+    funext i
+    simp [rqpoint]
+  have hfin : ∀ (U : Set (SS.BitString 6)), (fun _ => false) ∈ U →
+      (Submodule.span ℚ (rqpoint K '' U) = ⊤ ↔
+        Module.finrank ℚ (affineSpan ℚ (rqpoint K '' U)).direction = r) := by
+    intro U hU
+    rw [direction_affineSpan,
+      vectorSpan_eq_span_of_zero_mem (hzero U hU)]
+    constructor
+    · intro h
+      rw [h]
+      simp
+    · intro h
+      apply Submodule.eq_top_of_finrank_eq
+      simpa using h
+  rw [hfin _ hz', hfin _ hz, finrank_direction_rqpoint_bxor]
+
 end
 
 end MainTheory.SortedPivot
