@@ -602,6 +602,14 @@ Every numbered statement in the paper, with what is proved and what is not.
 "Done" means a kernel-checked Lean theorem inside `{propext, Classical.choice,
 Quot.sound}`; anything else is spelled out.
 
+`python tools/verify.py` checks that claim end to end -- the whole package
+builds with no errors and no warnings, every audited declaration's axiom set is
+inside those three, no `sorry`, `native_decide` or `axiom` declaration occurs
+outside a docstring, and every Lean name this file cites exists.  It exists
+because a hand-rolled grep once reported a broken build as clean: `lake` prints
+failures as `error:` at the start of a line, and the exit code is what settles
+it.
+
 | # | Statement | Status |
 |---|---|---|
 | 2.3 | `lem:phase-sectors` | **Done at arbitrary `K`** (`PhaseSector`, `GeneralSpectral`), with `sectorSupport`, `sectorProbability` and `sectorMean` defined as the paper's `T_alpha`, `p_alpha` and first moment, so `eq:Talpha`, `eq:palpha` and `eq:common-mean` are matched literally rather than in spirit; `SectionTwoGeneral.phaseSectors_mean` supplies the value `mu_j = (1 - lambda_j)/2`. The logical eigenbasis is no longer a hypothesis: `GeneralSpectral.spectralExtractionPrinciple` produces it for all `n`, `K`, `d`, on top of the unitary spectral theorem proved in `MainTheory/UnitarySpectral.lean` -- Mathlib has only the self-adjoint case, and the proof here diverges from it by using `Module.End.exists_eigenvalue` in place of the Rayleigh quotient. |
