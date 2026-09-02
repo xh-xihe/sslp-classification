@@ -432,6 +432,60 @@ theorem span_rqpoint_bxor_iff {r : ℕ} (K : Fin r ↪ Fin 6)
       simpa using h
   rw [hfin _ hz', hfin _ hz, finrank_direction_rqpoint_bxor]
 
+open MainTheory.MaskRankBridge in
+/-- **The whole transport, in one statement.**
+
+The rationalization produces, on the *normalized* side of a cube shift, `r`
+support words whose bit matrix on `r` coordinates is nonsingular.  This turns
+that into the spanning statement `nonempty_pivot_of_spanning` wants, on the
+side the normal form actually lives on.  The two `base_supported` hypotheses
+are what make it work: they put the zero word in both supports, so the shift
+cannot move the rank. -/
+theorem span_rqpoint_of_shifted_nonsingular {r : ℕ} (K : Fin r ↪ Fin 6)
+    (f : SS.BitString 6) (Tset Sset : Set (SS.BitString 6))
+    (hshift : Tset = (fun s => SS.bxor s f) '' Sset)
+    (hzT : (fun _ => false) ∈ Tset) (hzS : (fun _ => false) ∈ Sset)
+    (v : Fin r → SS.BitString 6) (hv : ∀ i, v i ∈ Tset)
+    (hdet : (Matrix.of fun i j => if v i (K j) then (1 : ℤ) else 0).det ≠ 0) :
+    Submodule.span ℚ (rqpoint K '' Sset) = ⊤ := by
+  classical
+  have hdetQ : (Matrix.of fun i j =>
+      rqpoint K (v i) j).det ≠ 0 := by
+    have hcast : (Matrix.of fun i j => rqpoint K (v i) j)
+        = SharpClearing.ratMatrix
+          (Matrix.of fun i j => if v i (K j) then (1 : ℤ) else 0) := by
+      funext i j
+      by_cases h : v i (K j) <;>
+        simp [rqpoint, SharpClearing.ratMatrix, h]
+    rw [hcast, show (SharpClearing.ratMatrix
+        (Matrix.of fun i j => if v i (K j) then (1 : ℤ) else 0)).det
+        = (((Matrix.of fun i j =>
+          if v i (K j) then (1 : ℤ) else 0).det : ℤ) : ℚ) from
+      ((Int.castRingHom ℚ).map_det _).symm]
+    exact_mod_cast hdet
+  have hspanT : Submodule.span ℚ (rqpoint K '' Tset) = ⊤ := by
+    have hsub : Set.range (fun i => rqpoint K (v i))
+        ⊆ rqpoint K '' Tset := by
+      rintro _ ⟨i, rfl⟩
+      exact ⟨v i, hv i, rfl⟩
+    have htop : Submodule.span ℚ
+        (Set.range (fun x : Tset => rqpoint K x.1)) = ⊤ := by
+      refine span_eq_top_of_nonsingular (fun x : Tset => rqpoint K x.1)
+        (fun i => ⟨v i, hv i⟩) ?_
+      simpa using hdetQ
+    have himg : Set.range (fun x : Tset => rqpoint K x.1)
+        = rqpoint K '' Tset := by
+      ext w
+      constructor
+      · rintro ⟨x, rfl⟩
+        exact ⟨x.1, x.2, rfl⟩
+      · rintro ⟨t, ht, rfl⟩
+        exact ⟨⟨t, ht⟩, rfl⟩
+    rwa [himg] at htop
+  have := span_rqpoint_bxor_iff K f Sset hzS (by rw [← hshift]; exact hzT)
+  rw [← hshift] at this
+  exact this.1 hspanT
+
 end
 
 end MainTheory.SortedPivot

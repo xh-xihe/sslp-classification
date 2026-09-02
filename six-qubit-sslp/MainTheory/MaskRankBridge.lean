@@ -429,4 +429,35 @@ theorem finrank_direction_rqpoint_bxor {r : ℕ} (K : Fin r ↪ Fin 6)
 
 end Restricted
 
+/-- **A nonsingular square block makes the family span.**
+
+The converse of `exists_nonsingular_rows`, and the direction the pivot
+construction consumes: the rationalization hands over a nonsingular minor, and
+what the entry needs is a spanning statement. -/
+theorem span_eq_top_of_nonsingular {r : ℕ} {ι : Type*} (f : ι → (Fin r → ℚ))
+    (v : Fin r → ι)
+    (hdet : (Matrix.of fun i j => f (v i) j).det ≠ 0) :
+    Submodule.span ℚ (Set.range f) = ⊤ := by
+  have hunit : IsUnit (Matrix.of fun i j => f (v i) j) :=
+    (Matrix.isUnit_iff_isUnit_det _).2 (isUnit_iff_ne_zero.2 hdet)
+  have hind : LinearIndependent ℚ (fun i : Fin r => f (v i)) :=
+    (Matrix.linearIndependent_rows_iff_isUnit).2 hunit
+  have hcard : Module.finrank ℚ
+      (Submodule.span ℚ (Set.range (fun i : Fin r => f (v i)))) = r := by
+    rw [finrank_span_eq_card hind]
+    simp
+  have hle : Submodule.span ℚ (Set.range (fun i : Fin r => f (v i)))
+      ≤ Submodule.span ℚ (Set.range f) :=
+    Submodule.span_mono (by rintro _ ⟨i, rfl⟩; exact ⟨v i, rfl⟩)
+  have hmono := Submodule.finrank_mono hle
+  rw [hcard] at hmono
+  have hle6 : Module.finrank ℚ (Submodule.span ℚ (Set.range f))
+      ≤ Module.finrank ℚ (Fin r → ℚ) :=
+    Submodule.finrank_le _
+  have hdim : Module.finrank ℚ (Fin r → ℚ) = r := by simp
+  have hfull : Module.finrank ℚ (Submodule.span ℚ (Set.range f)) = r := by
+    omega
+  apply Submodule.eq_top_of_finrank_eq
+  simpa using hfull
+
 end MainTheory.MaskRankBridge

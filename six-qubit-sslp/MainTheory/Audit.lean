@@ -404,5 +404,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedPivot.angle_eq_zero_of_not_mem
 #print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning
 #print axioms MainTheory.SortedPivot.span_rqpoint_bxor_iff
+#print axioms MainTheory.SortedPivot.span_rqpoint_of_shifted_nonsingular
+#print axioms MainTheory.MaskRankBridge.span_eq_top_of_nonsingular
 #print axioms MainTheory.MaskRankBridge.finrank_direction_rqpoint_bxor
 #print axioms MainTheory.MaskRankBridge.bitVec_xor
