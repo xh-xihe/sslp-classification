@@ -287,6 +287,104 @@ theorem Pivot.s0Clause {S : SortedNormalForm C} (P : Pivot S) :
   rw [CoarseFilterSound.S0Clause, hq]
   exact P.rMin_le_rank.trans P.rank_le_maskAffineRank
 
+/-! ## Reducing the construction to one spanning statement
+
+Taking the pivot's coordinate set to be the angle's *own* support makes the
+`sparse` field automatic, and `MaskRankBridge.exists_nonsingular_rows` supplies
+the minor.  What is then left of "construct a `Pivot`" is a single statement
+about the normal form -- that its left support, restricted to the coordinates
+where its angle is nonzero, spans -- and nothing else.  That statement is
+false for a general `SortedNormalForm` (the counterexample above), so it is
+exactly the content the construction has to supply.
+-/
+
+/-- The coordinates where the angle is nonzero. -/
+def angleSupport (S : SortedNormalForm C) : Finset (Fin 6) :=
+  Finset.univ.filter fun j => S.angle j ≠ 0
+
+/-- Its size: the number of coordinates the gate actually touches. -/
+def angleRank (S : SortedNormalForm C) : ℕ := (angleSupport S).card
+
+/-- Those coordinates, indexed. -/
+def angleCoord (S : SortedNormalForm C) : Fin (angleRank S) ↪ Fin 6 :=
+  ((angleSupport S).orderEmbOfFin (k := angleRank S) rfl).toEmbedding
+
+theorem angleCoord_mem (S : SortedNormalForm C) (i : Fin (angleRank S)) :
+    S.angle (angleCoord S i) ≠ 0 := by
+  have hmem := (angleSupport S).orderEmbOfFin_mem (k := angleRank S) rfl i
+  have : (angleCoord S i) ∈ angleSupport S := hmem
+  unfold angleSupport at this
+  exact (Finset.mem_filter.1 this).2
+
+theorem angle_eq_zero_of_not_mem (S : SortedNormalForm C) {j : Fin 6}
+    (h : ∀ i, angleCoord S i ≠ j) : S.angle j = 0 := by
+  by_contra hne
+  have hmem : j ∈ angleSupport S := by simp [angleSupport, hne]
+  have hrange : j ∈ Set.range ((angleSupport S).orderEmbOfFin
+      (k := angleRank S) rfl) := by
+    rw [Finset.range_orderEmbOfFin]
+    exact hmem
+  obtain ⟨i, hi⟩ := hrange
+  exact h i hi
+
+theorem angleRank_le (S : SortedNormalForm C) : angleRank S ≤ 6 := by
+  have := Finset.card_le_univ (angleSupport S)
+  simpa [angleRank] using this
+
+/-- The left support of a normal form, as a finite index type. -/
+abbrev leftSupport (S : SortedNormalForm C) : Type :=
+  {x : SS.BitString 6 // S.frame.vec 0 x ≠ 0}
+
+instance (S : SortedNormalForm C) : Fintype (leftSupport S) := by
+  classical
+  exact Subtype.fintype _
+
+/-- The left support restricted to the coordinates the angle touches. -/
+def restrictedSupport (S : SortedNormalForm C) :
+    leftSupport S → (Fin (angleRank S) → ℚ) :=
+  fun x i => MaskRankBridge.qpoint x.1 (angleCoord S i)
+
+/-- **A `Pivot` exists as soon as the restricted support spans.**
+
+This is the whole remaining obligation of the coarse-filter entry, reduced to
+one statement.  Sparsity is free because the coordinates *are* the angle's
+support; the minor comes from `exists_nonsingular_rows`. -/
+theorem nonempty_pivot_of_spanning (S : SortedNormalForm C)
+    (hpos : 1 ≤ angleRank S)
+    (hspan : Submodule.span ℚ (Set.range (restrictedSupport S)) = ⊤) :
+    Nonempty (Pivot S) := by
+  classical
+  obtain ⟨v, hv⟩ := MaskRankBridge.exists_nonsingular_rows
+    (restrictedSupport S) hspan
+  refine ⟨{
+    rank := angleRank S
+    rank_pos := hpos
+    rank_le := angleRank_le S
+    vertex := fun i => (v i).1
+    vertex_supported := fun i => (v i).2
+    coordinate := angleCoord S
+    matrix := fun i j => if (v i).1 (angleCoord S j) then 1 else 0
+    matrix_eq := fun i j => rfl
+    nonsingular := ?_
+    sparse := fun j hj => angle_eq_zero_of_not_mem S hj }⟩
+  have hcast : (Matrix.of fun i j => restrictedSupport S (v i) j)
+      = SharpClearing.ratMatrix
+        (Matrix.of fun i j =>
+          if (v i).1 (angleCoord S j) then (1 : ℤ) else 0) := by
+    funext i j
+    by_cases h : (v i).1 (angleCoord S j) <;>
+      simp [restrictedSupport, MaskRankBridge.qpoint,
+        SharpClearing.ratMatrix, h]
+  rw [hcast] at hv
+  have hdet := hv
+  rw [show (SharpClearing.ratMatrix
+      (Matrix.of fun i j =>
+        if (v i).1 (angleCoord S j) then (1 : ℤ) else 0)).det
+      = (((Matrix.of fun i j =>
+        if (v i).1 (angleCoord S j) then (1 : ℤ) else 0).det : ℤ) : ℚ) from
+    ((Int.castRingHom ℚ).map_det _).symm] at hdet
+  exact_mod_cast hdet
+
 end
 
 end MainTheory.SortedPivot

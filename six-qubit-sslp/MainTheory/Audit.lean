@@ -401,3 +401,5 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedPivot.Pivot.q_dvd_inverseDenominator
 #print axioms MainTheory.SortedPivot.Pivot.rMin_le_rank
 #print axioms MainTheory.SortedPivot.Pivot.s0Clause
+#print axioms MainTheory.SortedPivot.angle_eq_zero_of_not_mem
+#print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning
