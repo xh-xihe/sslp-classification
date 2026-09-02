@@ -238,6 +238,11 @@ structure TwoFiberCertificate {n d q : ℕ} [NeZero q]
     (G : FiniteGeneratorResolution C q) where
   x0 : SS.BitString n
   y0 : SS.BitString n
+  /-- The shift is by a point of the first logical word's own support.  This is
+  how `finiteGenerator_twoFiber` chooses it, and recording it is what lets a
+  later argument say that the *zero* word lies in the normalized support --
+  which is where a normalized support's affine and linear ranks agree. -/
+  base_supported : G.eigenFrame.vec 0 x0 ≠ 0
   gap : ZMod q
   leftFiber : SS.SSConditionState (Normalize.flip G.angle x0) 0
     (fun s ↦ G.eigenFrame.vec 0 (SS.bxor s x0))
@@ -349,6 +354,7 @@ theorem finiteGenerator_twoFiber {n d q : ℕ} [NeZero q]
   exact ⟨{
     x0 := x0
     y0 := y0
+    base_supported := hx0
     gap := delta
     leftFiber := hleft
     rightFiber := hright
