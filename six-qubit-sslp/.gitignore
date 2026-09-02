@@ -34,3 +34,7 @@ documents/
 formalization/*.fls
 formalization/*.fdb_latexmk
 debug.log
+
+# verification transcripts
+.v.log
+.check-readme-names.lean

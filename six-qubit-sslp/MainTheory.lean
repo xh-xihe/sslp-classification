@@ -67,4 +67,16 @@ import MainTheory.QMinBound
 import MainTheory.FiniteProjectiveGroup
 import MainTheory.MomentEquivalence
 import MainTheory.SectionThreeNonVacuity
+import MainTheory.CodeFiberBridge
+import MainTheory.CoarseFilter
+import MainTheory.FiniteRankPipeline
+import MainTheory.Generated.FinitePairProvenance
+import MainTheory.Generated.FiniteCoarseDirectory
+import MainTheory.Generated.FiniteRankData
+import MainTheory.Generated.FiniteOrbitDistribution
+import MainTheory.Generated.FiniteOrbitCertificate
+import MainTheory.OrderFourNoCompletion
+import MainTheory.OrderSevenNoCompletion
+import MainTheory.OrderRange
+import MainTheory.DirectoryOrbitStatus
 import MainTheory.Audit

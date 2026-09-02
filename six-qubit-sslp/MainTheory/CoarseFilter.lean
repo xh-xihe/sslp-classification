@@ -19,11 +19,13 @@ There are two deliberately separate inputs.
   masks, their common affine rank, and the nonsingular binary system whose
   sharp inverse denominator is divisible by `q`.
 
-Consequently this module does **not** claim that the still-missing
-`BetaBound 6 9` proof follows from a literal table, and it does not identify a
-literal list of 508 rows with the coarse image.  The function-indexed
-`Directory` at the end states the exact coverage and no-ghost obligations a
-generated certificate must discharge in the ordinary Lean kernel.
+Consequently this module does **not** read `BetaBound r (threshold r)` off a
+literal table -- `ThresholdBounds` demands the universal theorems, which
+`Generated.BinaryBetaSixKernel` now supplies up to `beta_6 = 9` -- and it does
+not identify a literal list of 508 rows with the coarse image.  The
+function-indexed `Directory` at the end states the exact coverage and no-ghost
+obligations a generated certificate must discharge in the ordinary Lean
+kernel.
 -/
 
 namespace MainTheory.CoarseFilter

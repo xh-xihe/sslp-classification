@@ -629,17 +629,23 @@ it.
 | 6.1 | `def:six-classification-levels` | **Level (iii) defined** (`Levels`). Levels (i), (ii), (iv) are not, and the module says why for each. |
 | 7.1 | Primitive sorted-vector count | **`P_6(2)` to `P_6(5)` kernel-checked**; `P_6(6)` to `P_6(9)` hit a `stack_space_exception` and are verified in Python instead. Both of the paper's totals, 13,877 and 13,449, are reproduced there. |
 | 7.2 | Maximum support rank | **Convexity core done** (`ActiveFace`). The active set itself is identified by exact LP certificates outside Lean. |
-| I | `six:thm:global-status` | **Blocked on the reduction pipeline.** `beta_6 = 9`, which an earlier draft of this file listed as an input, is now a kernel theorem (`Generated.BinaryBetaSixKernel.Certificate.betaExact`), as are the 51 no-gos, the realizations and cyclicity. What is left is the exhaustiveness of the enumeration itself. |
-| II | `thm:six-66-orbits` | **Blocked.** Formalizing it means formalizing the entire reduction `13,877 -> 66` in Lean. |
-| III | `thm:six-WE-status` | **Done, in full** (`WImages`). All ten realized orbits, single points and interval families alike. |
+| I | `six:thm:global-status` | **Blocked on two filter gates, no longer on the pipeline.** `beta_6 = 9` is a kernel theorem (`Generated.BinaryBetaSixKernel.Certificate.betaExact`), as are the 51 no-gos, the realizations, cyclicity, and now the whole combinatorial reduction (row II). What is left is entering the two *filters* from a code: `CoarseFilter.PrimitiveLiftRealization` and `FiniteRankPipeline.RankRow` are the interfaces, and both are stated but neither is constructed from a `SortedNormalForm`. |
+| II | `thm:six-66-orbits` | **The combinatorial reduction is done end to end; two semantic filter gates are not.** Every count in `13,877 -> 13,449 -> 12,768 -> 11,422 -> 508 -> 291 -> 215 -> 66` is a kernel theorem, and the last step is now assembled rather than left as parts: `Generated.FiniteOrbitCertificate.hasExactlyClasses` says there are exactly 66 labelled classes, `orbit_coverage` that every rank-compatible pair meets one, `no_ghost_key` that none is a directory artefact. Its two nontrivial fields had never been proved -- `Generated.OrbitCertificate.signature_exact` (the 66 stored distance signatures really are the keys' own histograms) and `Generated.OrbitCertificate.witness_valid` (the 215 separately checked cube actions, collected). Entering the chain *from a code* is `CodeFiberBridge`: `recordOf_mem_nonemptyFiber` puts an exact `((6,2,3))` code's normal form into the 12,768-record list, and `code_supports_in_enumerated_fibres` puts its two logical words in that record's two residue fibres. What is missing is the two filters in between -- see row I. |
+| II.b | `thm:six-M3` and its physical companion | **Done** (`OrderRange`). `logicalOrder_mem`: a directory key with an exact normalized distance-three completion has `m` in `{2,3,5}`; `maxLogicalOrder_eq_five` is `M_3(6) = 5`, upper bound and attainment. The two layers this needed did not exist -- logical orders 4 and 7, fifteen of the sixty-six keys, more than all the previously ruled-out orders together, so nothing had prevented a code of logical order four (`OrderFourNoCompletion`, `OrderSevenNoCompletion`). The physical-order companion `main.tex` does not state is `physicalOrder_le_six` and `maxPhysicalOrder_eq_six`: `Q_3(6) = 6`. It is not a corollary of the logical one -- `m = 2` occurs at `q = 2, 4` and `6`. Attainment of every value is exhibited by an actual code (`logicalOrders_attained`, `physicalOrders_attained`). |
+| III | `thm:six-WE-status` | **Done, in full, and now at the directory level.** `WImages` and `WImageNoGo51` give the 51 empty images and the 11 exact nonempty ones -- single points and interval families alike -- and `WImageSettled62` packages them with the audit that 51 + 11 + 4 covers paper IDs 1 through 66 exactly once, which is the theorem's clause (v). What that left open was named in its own docstring: those are statements about *paper representatives* -- an angle vector such as `SixQubit.Orbit45Support.av` and its two residue fibres -- not about the 66 orbits. `DirectoryOrbitStatus` closes it -- `noCompletion_of_mem_noGoKeys`, `hasCompletion_of_mem_realizedKeys` and `settled_or_open` are the same census about the directory keys, each key bound to its paper orbit by an exact mask computation and its stored cube action, with `openKeys_paperIds` identifying the four remaining keys as the paper's boxed `W_1, ..., W_4`. |
 | IV | `thm:unique-C5-LU` | **Blocked.** Needs local-unitary equivalence on projectors; there is no operator layer. Orbit 36's rigidity, its main input, is done. |
 
 Two things block the rest, and only one of them is deep. Cartan's
 closed-subgroup theorem is a genuine Mathlib-scale project -- now needed only
 for `K > 2` and for `d = 2`, since rank two at distance three no longer goes
-through it. The full enumeration pipeline is a large but ordinary engineering
-effort. `beta_6 = 9` used to be listed here; it is now proved. Nothing else in
-`main.tex` is unformalized for want of mathematics.
+through it. What remains of the six-qubit pipeline is no longer the enumeration
+-- that is finished, counts and orbit directory alike -- but the two filters
+between them: the coarse affine-rank filter and the active-face rank filter are
+sound as stated (`CoarseFilter.fullFiberCriterion_of_realization`,
+`FiniteRankPipeline.RankRow.sound_of_valid`), and what is missing is
+constructing their input witness from a code's own normal form. `beta_6 = 9`
+used to be listed here; it is now proved. Nothing else in `main.tex` is
+unformalized for want of mathematics.
 
 ## A note on the negative results
 

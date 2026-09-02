@@ -42,6 +42,12 @@ import MainTheory.QMinBound
 import MainTheory.FiniteProjectiveGroup
 import MainTheory.MomentEquivalence
 import MainTheory.SectionThreeNonVacuity
+import MainTheory.CodeFiberBridge
+import MainTheory.Generated.FiniteOrbitCertificate
+import MainTheory.OrderFourNoCompletion
+import MainTheory.OrderSevenNoCompletion
+import MainTheory.OrderRange
+import MainTheory.DirectoryOrbitStatus
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -319,3 +325,43 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SectionThreeNonVacuity.exists_nontrivial_six_qubit_code
 #print axioms MainTheory.SectionThreeNonVacuity.completeness_applies
 #print axioms MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness
+
+/-! ## Section IV: the semantic bridge into the enumerated fibre pairs -/
+
+#print axioms MainTheory.CodeFiberBridge.recordOf_mem
+#print axioms MainTheory.CodeFiberBridge.support_mask0
+#print axioms MainTheory.CodeFiberBridge.support_mask1
+#print axioms MainTheory.CodeFiberBridge.code_supports_in_enumerated_fibres
+#print axioms MainTheory.CodeFiberBridge.recordOf_hasSecondFiber
+#print axioms MainTheory.CodeFiberBridge.recordOf_mem_nonemptyFiber
+
+/-! ## Section IV: the 215-to-66 orbit directory -/
+
+#print axioms MainTheory.Generated.OrbitCertificate.signature_exact
+#print axioms MainTheory.Generated.OrbitCertificate.witness_valid
+#print axioms MainTheory.Generated.OrbitCertificate.expectedSignatureAt_injective
+#print axioms MainTheory.Generated.FiniteOrbitCertificate.directory_valid
+#print axioms MainTheory.Generated.FiniteOrbitCertificate.orbit_coverage
+#print axioms MainTheory.Generated.FiniteOrbitCertificate.no_ghost_key
+#print axioms MainTheory.Generated.FiniteOrbitCertificate.hasExactlyClasses
+
+/-! ## Section IV: which orders a code can carry -/
+
+#print axioms MainTheory.OrderFourNoCompletion.noCompletion_of_orderFour
+#print axioms MainTheory.OrderSevenNoCompletion.noCompletion_of_orderSeven
+#print axioms MainTheory.OrderRange.logicalOrder_mem
+#print axioms MainTheory.OrderRange.maxLogicalOrder_eq_five
+#print axioms MainTheory.OrderRange.logicalOrders_attained
+#print axioms MainTheory.OrderRange.physicalOrder_le_six
+#print axioms MainTheory.OrderRange.maxPhysicalOrder_eq_six
+#print axioms MainTheory.OrderRange.physicalOrders_attained
+
+/-! ## Section IV: the completion status of all 66 keys -/
+
+#print axioms MainTheory.DirectoryOrbitStatus.noCompletion_of_mem_noGoKeys
+#print axioms MainTheory.DirectoryOrbitStatus.hasCompletion_of_mem_realizedKeys
+#print axioms MainTheory.DirectoryOrbitStatus.settled_or_open
+#print axioms MainTheory.DirectoryOrbitStatus.keys_partition
+#print axioms MainTheory.DirectoryOrbitStatus.openKeys_paperIds
+#print axioms MainTheory.DirectoryOrbitStatus.noGoKeys_paperIds
+#print axioms MainTheory.DirectoryOrbitStatus.realizedKeys_paperIds
