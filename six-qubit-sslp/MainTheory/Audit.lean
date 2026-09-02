@@ -48,6 +48,8 @@ import MainTheory.OrderFourNoCompletion
 import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
+import MainTheory.MaskRankBridge
+import MainTheory.CoarseFilterEntry
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -365,3 +367,11 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.DirectoryOrbitStatus.openKeys_paperIds
 #print axioms MainTheory.DirectoryOrbitStatus.noGoKeys_paperIds
 #print axioms MainTheory.DirectoryOrbitStatus.realizedKeys_paperIds
+
+/-! ## Section IV: entering the coarse affine-rank filter -/
+
+#print axioms MainTheory.MaskRankBridge.maskAffineRank_eq_finrank_span
+#print axioms MainTheory.MaskRankBridge.residueZeroMask_affineRank_eq_span
+#print axioms MainTheory.MaskRankBridge.linearIndependent_point_of_real
+#print axioms MainTheory.MaskRankBridge.le_maskAffineRank_mask0
+#print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0

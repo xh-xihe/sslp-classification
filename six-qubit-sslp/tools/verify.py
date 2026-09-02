@@ -10,6 +10,7 @@ authoritative.
 Runs, and fails on any one of:
 
   1. `lake build` over the whole package -- exit code and error lines.
+     A cold run saturates the machine; see `check_build`.
   2. `lake env lean MainTheory/Audit.lean` -- every audited declaration's axiom
      set must be inside {propext, Classical.choice, Quot.sound}, with no
      sorryAx.
@@ -39,6 +40,11 @@ def run(cmd, **kw):
 
 
 def check_build():
+    # Lake fans out to every core and has no job-count flag in Lake 5.0.0
+    # (`-j` and `--jobs` are both rejected); on this workstation a cold run is
+    # 24 Lean workers holding ~65 GB at once.  The package's own
+    # `weakLeanArgs := #["-j","1"]` caps threads *inside* each worker, which is
+    # the only knob there is.  Run this when the machine is otherwise idle.
     proc = run(['lake', 'build'])
     log = proc.stdout + proc.stderr
     errs = ERROR_LINE.findall(log)

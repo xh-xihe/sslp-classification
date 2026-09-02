@@ -79,4 +79,6 @@ import MainTheory.OrderFourNoCompletion
 import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
+import MainTheory.MaskRankBridge
+import MainTheory.CoarseFilterEntry
 import MainTheory.Audit
