@@ -486,6 +486,49 @@ theorem span_rqpoint_of_shifted_nonsingular {r : ℕ} (K : Fin r ↪ Fin 6)
   rw [← hshift] at this
   exact this.1 hspanT
 
+open MainTheory.MaskRankBridge in
+/-- A coordinate permutation of the words is a relabelling of the coordinate
+embedding, so it does not affect spanning. -/
+theorem rqpoint_permStr {r : ℕ} (K : Fin r ↪ Fin 6)
+    (σ : Equiv.Perm (Fin 6)) (s : SS.BitString 6) :
+    rqpoint K (SixQubit.CodeEquiv.permStr σ s)
+      = rqpoint (K.trans σ.toEmbedding) s := by
+  funext i
+  rfl
+
+open MainTheory.MaskRankBridge in
+/-- **Spanning transports along a coordinate permutation of the words.** -/
+theorem span_rqpoint_permStr {r : ℕ} (K : Fin r ↪ Fin 6)
+    (σ : Equiv.Perm (Fin 6)) (U : Set (SS.BitString 6))
+    (h : Submodule.span ℚ (rqpoint (K.trans σ.symm.toEmbedding) '' U) = ⊤) :
+    Submodule.span ℚ
+      (rqpoint K '' ((fun s => SixQubit.CodeEquiv.permStr σ s) ⁻¹' U)) = ⊤ := by
+  have himg : rqpoint K '' ((fun s => SixQubit.CodeEquiv.permStr σ s) ⁻¹' U)
+      = rqpoint (K.trans σ.symm.toEmbedding) '' U := by
+    ext w
+    constructor
+    · rintro ⟨s, hs, rfl⟩
+      refine ⟨SixQubit.CodeEquiv.permStr σ s, hs, ?_⟩
+      funext i
+      show (if SixQubit.CodeEquiv.permStr σ s (σ.symm (K i)) then (1 : ℚ) else 0)
+        = if s (K i) then 1 else 0
+      simp [SixQubit.CodeEquiv.permStr]
+    · rintro ⟨u, hu, rfl⟩
+      refine ⟨SixQubit.CodeEquiv.permStr σ.symm u, ?_, ?_⟩
+      · show SixQubit.CodeEquiv.permStr σ
+          (SixQubit.CodeEquiv.permStr σ.symm u) ∈ U
+        have : SixQubit.CodeEquiv.permStr σ
+            (SixQubit.CodeEquiv.permStr σ.symm u) = u := by
+          funext i
+          simp [SixQubit.CodeEquiv.permStr]
+        rwa [this]
+      · funext i
+        show (if SixQubit.CodeEquiv.permStr σ.symm u (K i) then (1 : ℚ) else 0)
+          = if u (σ.symm (K i)) then 1 else 0
+        simp [SixQubit.CodeEquiv.permStr]
+  rw [himg]
+  exact h
+
 end
 
 end MainTheory.SortedPivot

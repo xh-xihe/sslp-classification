@@ -460,4 +460,40 @@ theorem span_eq_top_of_nonsingular {r : ℕ} {ι : Type*} (f : ι → (Fin r →
   apply Submodule.eq_top_of_finrank_eq
   simpa using hfull
 
+/-- **Spanning survives restriction to fewer coordinates.**
+
+The pivot's coordinate set is the angle's support, which can be a proper
+subset of the coordinates the rationalization selected: a selected coordinate
+whose angle happens to vanish contributes nothing.  Projecting a spanning set
+onto a sub-block still spans, so the smaller pivot is fine -- and gives a
+sharper bound. -/
+theorem span_rqpoint_comp {r r' : ℕ} (K : Fin r ↪ Fin 6)
+    (ι : Fin r' ↪ Fin r) (T : Set (SS.BitString 6))
+    (h : Submodule.span ℚ (rqpoint K '' T) = ⊤) :
+    Submodule.span ℚ (rqpoint (ι.trans K) '' T) = ⊤ := by
+  classical
+  set L : (Fin r → ℚ) →ₗ[ℚ] (Fin r' → ℚ) := LinearMap.funLeft ℚ ℚ ι with hL
+  have hcomp : ∀ t : SS.BitString 6, L (rqpoint K t) = rqpoint (ι.trans K) t := by
+    intro t
+    funext i
+    rfl
+  have himg : rqpoint (ι.trans K) '' T = L '' (rqpoint K '' T) := by
+    ext w
+    constructor
+    · rintro ⟨t, ht, rfl⟩
+      exact ⟨rqpoint K t, ⟨t, ht, rfl⟩, hcomp t⟩
+    · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
+      exact ⟨t, ht, hcomp t⟩
+  have hsurj : Function.Surjective L := by
+    intro w
+    refine ⟨fun j => if h : ∃ i, ι i = j then w h.choose else 0, ?_⟩
+    funext i
+    have hex : ∃ i', ι i' = ι i := ⟨i, rfl⟩
+    show (if h : ∃ i', ι i' = ι i then w h.choose else 0) = w i
+    rw [dif_pos hex]
+    congr 1
+    exact ι.injective hex.choose_spec
+  rw [himg, ← Submodule.map_span, h, Submodule.map_top,
+    LinearMap.range_eq_top.2 hsurj]
+
 end MainTheory.MaskRankBridge
