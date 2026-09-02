@@ -25,11 +25,31 @@ follow:
 Together they are `CoarseFilterSound.S0Clause`, the hypothesis
 `CoarseFilterUnconditional.keepAt_of_s0_of_feasible` consumes.
 
-What remains is to *construct* a `SortedPivot` alongside
-`D3BoundedNormalForm.exists_sortedNormalForm_le_nine`.  The data is exactly
-what `SixQubitSemanticEntrance.BinarySimplexPivot` already carries for the
-generator the construction passes through; the obstruction is that
-`exists_sortedNormalForm_le_betaN` discards it.
+## Constructing one
+
+`D3BoundedNormalForm.exists_sortedNormalForm_le_nine` throws away the data
+that would build a `Pivot`, so it has to be restated.  That much is plumbing.
+What is *not* plumbing, and is worth recording because it took a wrong turn to
+find:
+
+`exists_sortedNormalForm_of_generator` calls `canonicalTwoFiber` a **second**
+time, so the normal form's left support is the fresh pivot's support shifted
+by `T.x0` -- the pivot lives in the normalized frame, the normal form in the
+original one.  Sparsity survives that shift (`flip (flip a u) v =
+flip a (u xor v)`, and flip, unit multiplication and permutation all preserve
+zeros), so the coordinate set is inherited.  **Nonsingularity does not**: the
+shift complements the `T.x0`-columns, `Y = X D + 1 . 1_delta^T`, and a rank-one
+correction can drop the rank.
+
+It nevertheless works, and the reason is `BinarySimplexPivot.base_supported :
+G.eigenFrame.vec 0 T.x0 != 0`.  That says the *zero word* lies in the shifted
+support, so the shifted support's affine and linear ranks agree, both equal to
+`r`.  A cube shift is affine, so the unshifted support has affine rank `r` too
+(`MaskRankBridge.finrank_direction_image_affine`), hence linear rank at least
+`r`, hence exactly `r` on `r` columns -- and `r` independent rows restricted to
+the pivot coordinates form a nonsingular square matrix.  So a `Pivot` for the
+normal form exists; it is simply not the old minor transported, but a fresh one
+extracted from the shifted support.
 -/
 
 namespace MainTheory.SortedPivot
