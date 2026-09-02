@@ -529,6 +529,56 @@ theorem span_rqpoint_permStr {r : ℕ} (K : Fin r ↪ Fin 6)
   rw [himg]
   exact h
 
+open MainTheory.MaskRankBridge in
+/-- **A `Pivot` from an arbitrary coordinate set.**
+
+`nonempty_pivot_of_spanning` takes the coordinates to be the angle's own
+support, which makes sparsity free.  The construction supplies a different
+set -- the coordinates the rationalization selected, which the angle's support
+may not exhaust -- so it needs the version where the coordinates and the
+sparsity are both given. -/
+theorem nonempty_pivot_of_spanning_at (S : SortedNormalForm C) {r : ℕ}
+    (K : Fin r ↪ Fin 6) (hpos : 1 ≤ r) (hle : r ≤ 6)
+    (hsparse : ∀ j, (∀ i, K i ≠ j) → S.angle j = 0)
+    (hspan : Submodule.span ℚ (rqpoint K ''
+      {s : SS.BitString 6 | S.frame.vec 0 s ≠ 0}) = ⊤) :
+    Nonempty (Pivot S) := by
+  classical
+  have himg : rqpoint K '' {s : SS.BitString 6 | S.frame.vec 0 s ≠ 0}
+      = Set.range (fun x : leftSupport S => rqpoint K x.1) := by
+    ext w
+    constructor
+    · rintro ⟨s, hs, rfl⟩
+      exact ⟨⟨s, hs⟩, rfl⟩
+    · rintro ⟨x, rfl⟩
+      exact ⟨x.1, x.2, rfl⟩
+  rw [himg] at hspan
+  obtain ⟨v, hv⟩ := MaskRankBridge.exists_nonsingular_rows
+    (fun x : leftSupport S => rqpoint K x.1) hspan
+  refine ⟨{
+    rank := r
+    rank_pos := hpos
+    rank_le := hle
+    vertex := fun i => (v i).1
+    vertex_supported := fun i => (v i).2
+    coordinate := K
+    matrix := fun i j => if (v i).1 (K j) then 1 else 0
+    matrix_eq := fun i j => rfl
+    nonsingular := ?_
+    sparse := hsparse }⟩
+  have hcast : (Matrix.of fun i j => rqpoint K (v i).1 j)
+      = SharpClearing.ratMatrix
+        (Matrix.of fun i j => if (v i).1 (K j) then (1 : ℤ) else 0) := by
+    funext i j
+    by_cases h : (v i).1 (K j) <;>
+      simp [rqpoint, SharpClearing.ratMatrix, h]
+  rw [hcast, show (SharpClearing.ratMatrix
+      (Matrix.of fun i j => if (v i).1 (K j) then (1 : ℤ) else 0)).det
+      = (((Matrix.of fun i j =>
+        if (v i).1 (K j) then (1 : ℤ) else 0).det : ℤ) : ℚ) from
+    ((Int.castRingHom ℚ).map_det _).symm] at hv
+  exact_mod_cast hv
+
 end
 
 end MainTheory.SortedPivot

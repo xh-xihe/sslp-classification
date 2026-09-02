@@ -203,7 +203,8 @@ theorem exists_sortedNormalForm_of_generator' {d q : ℕ} [NeZero q]
     (C : CodeSpec.ExactCode n 2 d)
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     ∃ S : SortedNormalForm C,
-      S.q = q ∧ S.source = G.eigenFrame ∧ G.eigenFrame.vec 0 S.x0 ≠ 0 := by
+      S.q = q ∧ S.source = G.eigenFrame ∧ G.eigenFrame.vec 0 S.x0 ≠ 0 ∧
+      ∀ j, G.angle (S.perm.symm j) = 0 → S.angle j = 0 := by
   set T := canonicalTwoFiber G with hT
   have hL : SS.SSConditionState (normalizedFiniteAngle G T) 0
       (normalizedState (d := d) T 0) := T.normalizedLeft
@@ -239,7 +240,13 @@ theorem exists_sortedNormalForm_of_generator' {d q : ℕ} [NeZero q]
     perm := sortingPerm (normalizedFiniteAngle G T)
     source := G.eigenFrame
     source_span := G.span_eq
-    frame_eq := fun k s => rfl }, rfl, rfl, T.base_supported⟩
+    frame_eq := fun k s => rfl }, rfl, rfl, T.base_supported, ?_⟩
+  intro j hj
+  show permAngle (sortingPerm (normalizedFiniteAngle G T))
+      (normalizedFiniteAngle G T) j = 0
+  rw [permAngle]
+  have hz : G.angle ((sortingPerm (normalizedFiniteAngle G T)).symm j) = 0 := hj
+  simp [normalizedFiniteAngle, Normalize.flip, hz]
 
 /-- **Every exact rank-two code of distance at least two with a projectively
 nontrivial diagonal symmetry has the sorted normal form.** -/

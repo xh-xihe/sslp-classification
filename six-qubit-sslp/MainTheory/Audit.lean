@@ -415,3 +415,8 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedPivotConstruction.freshMinor_det_ne_zero
 #print axioms MainTheory.SortedPivotConstruction.zero_mem_normalizedSupport
 #print axioms MainTheory.SortedPivotConstruction.zero_mem_sortedSupport
+#print axioms MainTheory.SortedPivotConstruction.sparseAngle_eq_zero
+#print axioms MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot
+#print axioms MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot_nine
+#print axioms MainTheory.SortedPivotConstruction.exists_normalForm_s0Clause
+#print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning_at
