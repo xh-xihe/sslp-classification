@@ -54,6 +54,7 @@ import MainTheory.CoarseFilterEntry
 import MainTheory.CoarseFilterSound
 import MainTheory.Generated.CoarseRightRowsData
 import MainTheory.CoarseFilterUnconditional
+import MainTheory.SortedPivot
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -392,3 +393,8 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.ThresholdBoundsSmall.betaBound_two
 #print axioms MainTheory.ThresholdBoundsSmall.betaBound_three
 #print axioms MainTheory.ThresholdBoundsSmall.thresholdBounds
+#print axioms MainTheory.SortedPivot.Pivot.rank_le_maskAffineRank
+#print axioms MainTheory.SortedPivot.lcmDen_phase
+#print axioms MainTheory.SortedPivot.Pivot.q_dvd_inverseDenominator
+#print axioms MainTheory.SortedPivot.Pivot.rMin_le_rank
+#print axioms MainTheory.SortedPivot.Pivot.s0Clause
