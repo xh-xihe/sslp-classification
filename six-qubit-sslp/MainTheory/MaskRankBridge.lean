@@ -1,6 +1,8 @@
 import MainTheory.AffineRankCertificate
 import MainTheory.OuterCompleteness
 import MainTheory.CodeAffineSpanBridge
+import Mathlib.LinearAlgebra.Basis.Basic
+import Mathlib.LinearAlgebra.Dimension.Finrank
 
 /-!
 # Affine rank versus linear rank of a residue mask
@@ -280,5 +282,83 @@ theorem finrank_direction_bxor_image (f : SS.BitString 6)
     · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
       exact ⟨SS.bxor t f, ⟨t, ht, rfl⟩, qpoint_bxor t f⟩
   rw [himg, finrank_direction_image_affine]
+
+/-! ## Affine versus linear rank, in general
+
+The mask statements above are the special case of two facts about any set in a
+rational vector space: the affine direction is always inside the linear span,
+and the two coincide exactly when the set passes through the origin.  Mathlib
+has neither.
+-/
+
+section General
+
+variable {V : Type*} [AddCommGroup V] [Module ℚ V]
+
+/-- The direction of an affine span sits inside the linear span. -/
+theorem vectorSpan_le_span (S : Set V) :
+    vectorSpan ℚ S ≤ Submodule.span ℚ S := by
+  rw [vectorSpan_def]
+  refine Submodule.span_le.2 ?_
+  rintro w ⟨a, ha, b, hb, rfl⟩
+  simpa [vsub_eq_sub] using
+    Submodule.sub_mem _ (Submodule.subset_span ha) (Submodule.subset_span hb)
+
+/-- A set through the origin has affine direction equal to its linear span. -/
+theorem vectorSpan_eq_span_of_zero_mem {S : Set V} (h : (0 : V) ∈ S) :
+    vectorSpan ℚ S = Submodule.span ℚ S := by
+  refine le_antisymm (vectorSpan_le_span S) (Submodule.span_le.2 ?_)
+  intro x hx
+  have hmem : x ∈ (S -ᵥ S) := ⟨x, hx, 0, h, by simp⟩
+  rw [vectorSpan_def]
+  exact Submodule.subset_span hmem
+
+/-- Hence the affine rank never exceeds the linear rank. -/
+theorem finrank_vectorSpan_le_finrank_span [Module.Finite ℚ V] (S : Set V) :
+    Module.finrank ℚ (vectorSpan ℚ S)
+      ≤ Module.finrank ℚ (Submodule.span ℚ S) :=
+  Submodule.finrank_mono (vectorSpan_le_span S)
+
+end General
+
+/-! ## Extracting a nonsingular square block
+
+The pivot a normal form needs is `r` support words whose restriction to `r`
+coordinates is invertible.  What the geometry supplies is a *rank* statement,
+so the two have to be connected: a spanning family in `Fin r -> Q` contains
+`r` members forming a nonsingular matrix.  Mathlib has no minor
+characterisation of `Matrix.rank`, so this goes through a basis instead.
+-/
+
+/-- **A spanning family contains a nonsingular square block.** -/
+theorem exists_nonsingular_rows {ι : Type*} [Fintype ι] {r : ℕ}
+    (f : ι → (Fin r → ℚ))
+    (hspan : Submodule.span ℚ (Set.range f) = ⊤) :
+    ∃ v : Fin r → ι, (Matrix.of fun i j => f (v i) j).det ≠ 0 := by
+  classical
+  obtain ⟨b, hbsub, hbspan, hbind⟩ :=
+    exists_linearIndependent ℚ (Set.range f)
+  have hbtop : Submodule.span ℚ b = ⊤ := by rw [hbspan, hspan]
+  have hbfin : b.Finite := (Set.finite_range f).subset hbsub
+  haveI : Fintype b := hbfin.fintype
+  let B : Module.Basis b ℚ (Fin r → ℚ) :=
+    Module.Basis.mk hbind (by rw [Subtype.range_coe_subtype, Set.setOf_mem_eq, hbtop])
+  have hcard : Fintype.card b = r := by
+    have := Module.finrank_eq_card_basis B
+    simpa using this.symm
+  let e : Fin r ≃ b := (Fintype.equivFinOfCardEq hcard).symm
+  have hmem : ∀ i : Fin r, (e i : Fin r → ℚ) ∈ Set.range f :=
+    fun i => hbsub (e i).2
+  choose v hv using hmem
+  refine ⟨v, ?_⟩
+  have hind : LinearIndependent ℚ (fun i : Fin r => f (v i)) := by
+    have : (fun i : Fin r => f (v i)) = fun i : Fin r => ((e i : Fin r → ℚ)) := by
+      funext i
+      exact hv i
+    rw [this]
+    exact hbind.comp e e.injective
+  have hunit : IsUnit (Matrix.of fun i j => f (v i) j) :=
+    (Matrix.linearIndependent_rows_iff_isUnit).1 hind
+  exact (Matrix.isUnit_iff_isUnit_det _).1 hunit |>.ne_zero
 
 end MainTheory.MaskRankBridge

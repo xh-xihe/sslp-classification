@@ -381,6 +381,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MaskRankBridge.le_maskAffineRank_mask0
 #print axioms MainTheory.MaskRankBridge.finrank_direction_image_affine
 #print axioms MainTheory.MaskRankBridge.finrank_direction_bxor_image
+#print axioms MainTheory.MaskRankBridge.vectorSpan_eq_span_of_zero_mem
+#print axioms MainTheory.MaskRankBridge.finrank_vectorSpan_le_finrank_span
+#print axioms MainTheory.MaskRankBridge.exists_nonsingular_rows
 #print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_length
