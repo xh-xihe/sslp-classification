@@ -83,6 +83,26 @@ gives the same `291` as the paper's route through `508`.  Every step of that
 alternative is either proved or independently certified, so the final `66` does
 not rest on the unreconstructed step.
 
+## The gate is now closed, without changing the paper's numbers
+
+The `S_delta` clause does not have to be sound.  The generated directory
+rejects each discarded row by one of two witnesses; **422** rows carry the
+right-hand one -- the 350 above plus 72 that fail both clauses and for which
+the generator happened to store the right-hand witness.  Every one of the 422
+is now certified moment infeasible in Lean by an exact rational separator, the
+Farkas dual of the moment LP
+(`Generated.ExtraMoment.rejectRightPairs_infeasible`), and
+`Generated.CoarseRightRows.rejectRight_mem` checks per row, over all 11,422,
+that a right-rejected row really does carry one of those 422.
+
+`CoarseFilterUnconditional.keepAt_of_s0_of_feasible` is the consequence: a row
+that satisfies the `S_0` clause and admits a common moment point is kept.  A
+code supplies both -- the first through `CoarseFilterEntry`, the second as its
+own two distributions -- so the coarse filter provably never discards a code,
+with no appeal to `q <= beta_r` at the affine rank.
+
+The directory still has 508 outputs.  Nothing the paper reports moves.
+
 ## What this does and does not say
 
 It does **not** say the paper is wrong.  `q <= beta_r` at the affine rank may
@@ -91,8 +111,8 @@ established here is that it does not follow from the linear-rank bound this
 development proves, that 350 pairs turn on it, and that the classification's
 conclusion survives either way.
 
-The practical options are to supply the affine-rank bound, or to route the
-certified pipeline through `858` instead of `508`.  The second needs no new
-mathematics -- only 350 additional moment-infeasibility certificates and a
-regenerated coarse directory -- but it changes a number the paper reports, so
-it is the author's call rather than the formalizer's.
+For the formalization it no longer matters, because the filter's soundness no
+longer goes through it.  For the paper it still does: `six:eq:qbetar` is
+stated without proof and 350 pairs turn on it, so either it wants an argument
+or `six:eq:coarserank` wants a remark that its second clause is an
+optimization whose discards the moment test repeats.

@@ -27,6 +27,9 @@ import re
 import sys
 from fractions import Fraction as F
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import exact_lp
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BETA = {0: 0, 1: 1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 9}
 
@@ -83,50 +86,6 @@ def phi(x):
             [F(b[i] * b[j]) for i in range(6) for j in range(i + 1, 6)])
 
 
-def feasible(A, b):
-    """Exact phase-1 simplex with Bland's rule: is {A z = b, z >= 0} nonempty?"""
-    m, n = len(A), len(A[0])
-    A = [row[:] for row in A]
-    b = b[:]
-    for i in range(m):
-        if b[i] < 0:
-            A[i] = [-v for v in A[i]]
-            b[i] = -b[i]
-    N = n + m
-    T = [A[i] + [F(1) if j == i else F(0) for j in range(m)] + [b[i]]
-         for i in range(m)]
-    basis = [n + i for i in range(m)]
-    z = [F(0)] * (N + 1)
-    for i in range(m):
-        for j in range(N + 1):
-            z[j] += T[i][j]
-    while True:
-        piv = -1
-        for j in range(N):
-            if j in basis:
-                continue
-            if z[j] - (F(1) if j >= n else F(0)) > 0:
-                piv = j
-                break
-        if piv < 0:
-            break
-        ratios = [(T[i][N] / T[i][piv], basis[i], i)
-                  for i in range(m) if T[i][piv] > 0]
-        if not ratios:
-            break
-        _, _, r = min(ratios)
-        pv = T[r][piv]
-        T[r] = [v / pv for v in T[r]]
-        for i in range(m):
-            if i != r and T[i][piv] != 0:
-                f = T[i][piv]
-                T[i] = [a - f * c for a, c in zip(T[i], T[r])]
-        f = z[piv]
-        z = [a - f * c for a, c in zip(z, T[r])]
-        basis[r] = piv
-    return sum(T[i][N] for i in range(m) if basis[i] >= n) == 0
-
-
 def moment_feasible(mask0, mask1):
     """`six:eq:mean` and `six:eq:cov`: do the two moment images have a common
     point?  Equivalently, is the convex hull intersection nonempty -- the exact
@@ -145,7 +104,9 @@ def moment_feasible(mask0, mask1):
     for r in range(21):
         A.append([c0[k][r] for k in range(n0)] + [-c1[k][r] for k in range(n1)])
         rhs.append(F(0))
-    return feasible(A, rhs)
+    status, x, y = exact_lp.solve(A, rhs)
+    exact_lp.check(A, rhs, status, x, y)   # every verdict carries a checked
+    return status == 'feasible'            # primal point or Farkas dual
 
 
 def load_pairs():

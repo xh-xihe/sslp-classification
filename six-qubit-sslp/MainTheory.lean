@@ -81,4 +81,7 @@ import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
 import MainTheory.MaskRankBridge
 import MainTheory.CoarseFilterEntry
+import MainTheory.CoarseFilterSound
+import MainTheory.Generated.CoarseRightRowsData
+import MainTheory.CoarseFilterUnconditional
 import MainTheory.Audit

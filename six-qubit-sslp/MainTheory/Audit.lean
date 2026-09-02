@@ -50,6 +50,9 @@ import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
 import MainTheory.MaskRankBridge
 import MainTheory.CoarseFilterEntry
+import MainTheory.CoarseFilterSound
+import MainTheory.Generated.CoarseRightRowsData
+import MainTheory.CoarseFilterUnconditional
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -375,3 +378,10 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MaskRankBridge.linearIndependent_point_of_real
 #print axioms MainTheory.MaskRankBridge.le_maskAffineRank_mask0
 #print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0
+#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible
+#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_length
+#print axioms MainTheory.Generated.CoarseRightRows.rejectRight_mem
+#print axioms MainTheory.CoarseFilterSound.not_s0Clause_of_rejectLeft
+#print axioms MainTheory.CoarseFilterUnconditional.keepAt_of_s0_of_feasible
+#print axioms MainTheory.CoarseFilterUnconditional.fullFiberCriterion_of_s0_of_feasible
+#print axioms MainTheory.CoarseFilterUnconditional.exists_output_of_s0_of_feasible
