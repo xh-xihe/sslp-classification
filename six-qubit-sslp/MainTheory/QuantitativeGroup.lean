@@ -38,7 +38,7 @@ theorem betaBound_mono {M N B : ℕ} (h : BinaryBeta.BetaBound N B)
 Section II's Theorem 2.4 was proved here as three separate results -- existence
 of a primitive lift (`GeneralLiftOrder.exists_hasPrimitiveLift`), `m | q`
 (`orderOf_dvd_of_hasPrimitiveLift`), and the pivot size
-(`PivotSize.exists_pivot_card_eq_rank_le`) -- so a reader looking for the
+(`PivotSize.exists_pivot_rank_le`) -- so a reader looking for the
 theorem under one name would not find it.  The same defect an independent audit
 found in `thm:rank-two-sslp`, and the same remedy. -/
 
@@ -84,8 +84,8 @@ theorem qualitative_finite_lift (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
       intro h1
       exact hg (orderOf_eq_one_iff.mp h1)
     omega
-  obtain ⟨_, _, _, hrankle⟩ :=
-    PivotSize.exists_pivot_card_eq_rank_le R.sectors
+  obtain ⟨_, _, hrankle⟩ :=
+    PivotSize.exists_pivot_rank_le R.sectors
   refine ⟨⟨L.order, ?_, hlift, hdvd⟩, h2m, R.sectorCount,
     (coloredMatrix R.sectors).rank, ht, htK, hrankle,
     BinaryPivot.binMatrix (ColoredBound.canonicalPivot R.sectors),

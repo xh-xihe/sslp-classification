@@ -177,15 +177,20 @@ theorem exists_pivotData (D : SectorDecomposition n t theta) :
 
 /-- **`eq:qualitative-pivot-size`, with no hypothesis left.**
 
-There is a pivot; its size is the rank of the coloured matrix; and that rank
-is at most `n + t - 1`.  Previously each half was conditional -- one on a
-supplied `PivotData`, the other additionally on its nonsingularity. -/
-theorem exists_pivot_card_eq_rank_le (D : SectorDecomposition n t theta) :
+There is a nonsingular pivot, and the rank of the coloured matrix -- which is
+its size -- is at most `n + t - 1`.
+
+The size clause `s = rank R` is `card_eq_rank` above, and it is stated there
+because that is where it has content: it quantifies over an arbitrary index
+type.  An earlier version of this theorem carried
+`Fintype.card (Fin rank) = rank` inside the existential, where it is
+`Fintype.card_fin` and says nothing whatever about the pivot; an audit called
+that "the weaker of the two dressed as the stronger", and it was right. -/
+theorem exists_pivot_rank_le (D : SectorDecomposition n t theta) :
     ∃ P : PivotData D (Fin (coloredMatrix D).rank),
       (ratPivot P).det ≠ 0 ∧
-      Fintype.card (Fin (coloredMatrix D).rank) = (coloredMatrix D).rank ∧
       (coloredMatrix D).rank ≤ n + t - 1 := by
   obtain ⟨P, hdet⟩ := exists_pivotData D
-  exact ⟨P, hdet, card_eq_rank P hdet, rank_le D⟩
+  exact ⟨P, hdet, rank_le D⟩
 
 end MainTheory.PivotSize

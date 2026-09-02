@@ -84,7 +84,6 @@ theorem ofFreshSparsePhase_sameProjective
       (eigenFrame.vec 0) (eigenFrame.vec 1) theta) :
     CodeSpec.SameProjectiveOnCode C.frame
       (@RankTwoGlobal.finiteGateEnd n F.data.order
-        ⟨F.data.order_pos.ne'⟩
         (D3FreshFiniteGate.standardRoot F.data) F.data.angle)
       (PhaseSectorBridge.realGateEnd theta) := by
   letI : NeZero F.data.order := ⟨F.data.order_pos.ne'⟩

@@ -169,7 +169,7 @@
  Quot.sound]
 'MainTheory.BetaExists.exists_betaBound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.DeterminantalRank.exists_nonsingular_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
-'MainTheory.PivotSize.exists_pivot_card_eq_rank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainTheory.PivotSize.exists_pivot_rank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GeneralLiftOrder.liftSymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GeneralLiftOrder.intrinsicClass_liftSymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.GeneralLiftOrder.sector_in_fibre' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -204,6 +204,10 @@
 'MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'MainTheory.InterchangeTransport.swapFiniteGeneratorResolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MainTheory.InterchangeTransport.swap_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.D3BoundedNormalForm.boundedGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
 'MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN' depends on axioms: [propext,
  Classical.choice,

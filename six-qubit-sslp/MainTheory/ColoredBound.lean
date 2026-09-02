@@ -124,7 +124,7 @@ theorem pivotLift_order_le {B : ℕ}
     (beta : BinaryBeta.BetaBound (n + t - 1) B)
     (D : SectorDecomposition n t theta) (hZ : ZDetects D) (ht : 2 ≤ t) :
     (pivotLift D hZ).order ≤ B := by
-  obtain ⟨P, hratdet, _, hrankle⟩ := PivotSize.exists_pivot_card_eq_rank_le D
+  obtain ⟨P, hratdet, hrankle⟩ := PivotSize.exists_pivot_rank_le D
   exact pivot_order_le beta hZ (canonicalPivot D) (canonicalPivot_det D)
     (rank_pos D hZ ht) hrankle
 

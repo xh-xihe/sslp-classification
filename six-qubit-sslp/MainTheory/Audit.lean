@@ -34,6 +34,7 @@ import MainTheory.GroupOrder
 import MainTheory.NumberOperator
 import MainTheory.SortedNormalForm
 import MainTheory.FlipSemanticTransport
+import MainTheory.InterchangeTransport
 import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
 import MainTheory.PrimitiveReduction
@@ -234,7 +235,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MomentEquivalence.lp_normalization_and_positivity
 #print axioms MainTheory.BetaExists.exists_betaBound
 #print axioms MainTheory.DeterminantalRank.exists_nonsingular_minor
-#print axioms MainTheory.PivotSize.exists_pivot_card_eq_rank_le
+#print axioms MainTheory.PivotSize.exists_pivot_rank_le
 
 /-! ## The paper's rank-two theorem, stated whole -/
 
@@ -266,6 +267,8 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator
 #print axioms MainTheory.FlipSemanticTransport.gate_flip_shift
 #print axioms MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution
+#print axioms MainTheory.InterchangeTransport.swapFiniteGeneratorResolution
+#print axioms MainTheory.InterchangeTransport.swap_ratio
 #print axioms MainTheory.D3BoundedNormalForm.boundedGenerator
 #print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN
 #print axioms MainTheory.D3BoundedNormalForm.d3_bound
