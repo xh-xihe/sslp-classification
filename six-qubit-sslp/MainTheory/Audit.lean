@@ -55,6 +55,7 @@ import MainTheory.CoarseFilterSound
 import MainTheory.Generated.CoarseRightRowsData
 import MainTheory.CoarseFilterUnconditional
 import MainTheory.SortedPivot
+import MainTheory.SortedPivotConstruction
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -408,3 +409,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MaskRankBridge.span_eq_top_of_nonsingular
 #print axioms MainTheory.MaskRankBridge.finrank_direction_rqpoint_bxor
 #print axioms MainTheory.MaskRankBridge.bitVec_xor
+#print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator'
+#print axioms MainTheory.SortedPivotConstruction.freshMinor_det_ne_zero
+#print axioms MainTheory.SortedPivotConstruction.zero_mem_normalizedSupport
+#print axioms MainTheory.SortedPivotConstruction.zero_mem_sortedSupport

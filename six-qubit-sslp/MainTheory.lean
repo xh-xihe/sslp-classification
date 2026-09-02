@@ -86,4 +86,5 @@ import MainTheory.CoarseFilterSound
 import MainTheory.Generated.CoarseRightRowsData
 import MainTheory.CoarseFilterUnconditional
 import MainTheory.SortedPivot
+import MainTheory.SortedPivotConstruction
 import MainTheory.Audit

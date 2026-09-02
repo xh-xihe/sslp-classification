@@ -188,6 +188,59 @@ theorem exists_sortedNormalForm_of_generator {d q : ℕ} [NeZero q]
     source_span := G.span_eq
     frame_eq := fun k s => rfl }, rfl⟩
 
+/-- **The same, remembering where the frame came from.**
+
+`exists_sortedNormalForm_of_generator` throws away the relation between the
+normal form and the generator it was built from, and with it the fact --
+`RankTwoGlobal.TwoFiberCertificate.base_supported` -- that the normalization
+shift is by a point of the first logical word's own support.  Downstream that
+fact is what makes the *zero* word lie in the normalized support, where a
+support's affine and linear ranks agree.  This variant keeps both.
+
+It is stated separately rather than by strengthening the original, so that no
+existing destructuring breaks. -/
+theorem exists_sortedNormalForm_of_generator' {d q : ℕ} [NeZero q]
+    (C : CodeSpec.ExactCode n 2 d)
+    (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
+    ∃ S : SortedNormalForm C,
+      S.q = q ∧ S.source = G.eigenFrame ∧ G.eigenFrame.vec 0 S.x0 ≠ 0 := by
+  set T := canonicalTwoFiber G with hT
+  have hL : SS.SSConditionState (normalizedFiniteAngle G T) 0
+      (normalizedState (d := d) T 0) := T.normalizedLeft
+  have hR : SS.SSConditionState (normalizedFiniteAngle G T)
+      (((q / T.logicalOrder : ℕ) : ZMod q))
+      (normalizedState (d := d) T 1) :=
+    T.normalizedRight
+  refine ⟨{
+    q := q
+    q_ne := inferInstance
+    two_le_q := T.two_le_physicalOrder
+    m := T.logicalOrder
+    two_le_m := T.two_le_logicalOrder
+    m_dvd_q := T.logicalOrder_dvd_physical
+    m_isOrder := ⟨G.intrinsicClass, T.intrinsic_order_eq⟩
+    zeta := G.zeta
+    primitiveRoot := G.primitiveRoot
+    angle := permAngle (sortingPerm (normalizedFiniteAngle G T))
+      (normalizedFiniteAngle G T)
+    sorted := monotone_permAngle_sortingPerm _
+    primitive := primitive_permAngle _ _
+      (D3BoundedOuterRecord.primitive_unit_mul T.unit
+        (Normalize.flip G.angle T.x0)
+        (Normalize.primitive_flip G.angle T.x0 G.primitive))
+    lt_q := fun j => ZMod.val_lt _
+    frame := PermutationFrameBridge.permFrame (normalizedFrame T)
+      (sortingPerm (normalizedFiniteAngle G T))
+    hasDistance := hasDistance_permAct _ (normalizedFrame T).vec
+      T.normalizedHasDistance
+    leftFiber := ssConditionState_permAct _ _ 0 _ hL
+    rightFiber := ssConditionState_permAct _ _ _ _ hR
+    x0 := T.x0
+    perm := sortingPerm (normalizedFiniteAngle G T)
+    source := G.eigenFrame
+    source_span := G.span_eq
+    frame_eq := fun k s => rfl }, rfl, rfl, T.base_supported⟩
+
 /-- **Every exact rank-two code of distance at least two with a projectively
 nontrivial diagonal symmetry has the sorted normal form.** -/
 theorem exists_sortedNormalForm {d : ℕ} (hd : 2 ≤ d)
