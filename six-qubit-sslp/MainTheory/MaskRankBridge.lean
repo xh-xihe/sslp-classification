@@ -192,4 +192,93 @@ theorem le_maskAffineRank_mask0 {r : ℕ} (rec : OuterEnumeration.RawRecord)
   exact card_le_finrank_span_of_subset w hmem
     (linearIndependent_point_of_real w hind)
 
+/-! ## Affine rank is an affine invariant
+
+A local `X` string acts on the Boolean cube as `x ↦ x ⊕ f`, which on rational
+coordinates is the affine involution `v_j ↦ 1 - v_j` on the flipped
+coordinates.  It is not linear, so it can move the *linear* rank of a point
+set by one -- exactly the gap this file is about -- but it fixes the affine
+rank.  Mathlib has no lemma for this; the ingredients are
+`direction_affineSpan`, `vectorSpan_def` and `LinearEquiv.finrank_map_eq`.
+-/
+
+/-- The direction of an affine span transports along an invertible affine
+self-map. -/
+theorem vectorSpan_image_affine (L : Vec6 ≃ₗ[ℚ] Vec6) (c : Vec6)
+    (S : Set Vec6) :
+    vectorSpan ℚ ((fun v => c + L v) '' S)
+      = Submodule.map (L : Vec6 →ₗ[ℚ] Vec6) (vectorSpan ℚ S) := by
+  rw [vectorSpan_def, vectorSpan_def, Submodule.map_span]
+  congr 1
+  ext w
+  constructor
+  · rintro ⟨_, ⟨a, ha, rfl⟩, _, ⟨b, hb, rfl⟩, rfl⟩
+    refine ⟨a - b, ⟨a, ha, b, hb, rfl⟩, ?_⟩
+    simp only [vsub_eq_sub, map_sub, LinearEquiv.coe_coe]
+    abel
+  · rintro ⟨u, ⟨a, ha, b, hb, rfl⟩, rfl⟩
+    refine ⟨c + L a, ⟨a, ha, rfl⟩, c + L b, ⟨b, hb, rfl⟩, ?_⟩
+    simp only [vsub_eq_sub, map_sub, LinearEquiv.coe_coe]
+    abel
+
+/-- **The rank of an affine span is an affine invariant.** -/
+theorem finrank_direction_image_affine (L : Vec6 ≃ₗ[ℚ] Vec6) (c : Vec6)
+    (S : Set Vec6) :
+    Module.finrank ℚ (affineSpan ℚ ((fun v => c + L v) '' S)).direction
+      = Module.finrank ℚ (affineSpan ℚ S).direction := by
+  rw [direction_affineSpan, direction_affineSpan, vectorSpan_image_affine,
+    LinearEquiv.finrank_map_eq]
+
+/-! ## The cube flip, in rational coordinates -/
+
+/-- The rational point of a six-bit string. -/
+def qpoint (s : SS.BitString 6) : Vec6 := fun j => if s j then 1 else 0
+
+theorem qpoint_wordBitString (x : Word6) :
+    qpoint (MainTheory.OuterCompleteness.wordBitString x) = point x := by
+  funext j
+  by_cases h : x.1.testBit j.1 <;>
+    simp [qpoint, point, MainTheory.FinitePipeline.bit,
+      MainTheory.OuterCompleteness.wordBitString, h]
+
+/-- The linear part of the flip by `f`: negation on the flipped
+coordinates. -/
+def flipLin (f : SS.BitString 6) : Vec6 ≃ₗ[ℚ] Vec6 where
+  toFun v := fun j => if f j then -v j else v j
+  invFun v := fun j => if f j then -v j else v j
+  map_add' u v := by
+    funext j
+    by_cases h : f j
+    · simp [h]; ring
+    · simp [h]
+  map_smul' a v := by funext j; by_cases h : f j <;> simp [h]
+  left_inv v := by funext j; by_cases h : f j <;> simp [h]
+  right_inv v := by funext j; by_cases h : f j <;> simp [h]
+
+/-- The constant part of the flip by `f`. -/
+def flipConst (f : SS.BitString 6) : Vec6 := fun j => if f j then 1 else 0
+
+/-- **The cube flip is affine on rational coordinates.** -/
+theorem qpoint_bxor (s f : SS.BitString 6) :
+    qpoint (SS.bxor s f) = flipConst f + flipLin f (qpoint s) := by
+  funext j
+  by_cases h : f j <;> by_cases hs : s j <;>
+    simp [qpoint, flipConst, flipLin, SS.bxor, h, hs]
+
+/-- **A local `X` string does not change the affine rank of a support.** -/
+theorem finrank_direction_bxor_image (f : SS.BitString 6)
+    (S : Set (SS.BitString 6)) :
+    Module.finrank ℚ
+        (affineSpan ℚ (qpoint '' ((fun s => SS.bxor s f) '' S))).direction
+      = Module.finrank ℚ (affineSpan ℚ (qpoint '' S)).direction := by
+  have himg : qpoint '' ((fun s => SS.bxor s f) '' S)
+      = (fun v => flipConst f + flipLin f v) '' (qpoint '' S) := by
+    ext v
+    constructor
+    · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
+      exact ⟨qpoint t, ⟨t, ht, rfl⟩, (qpoint_bxor t f).symm⟩
+    · rintro ⟨_, ⟨t, ht, rfl⟩, rfl⟩
+      exact ⟨SS.bxor t f, ⟨t, ht, rfl⟩, qpoint_bxor t f⟩
+  rw [himg, finrank_direction_image_affine]
+
 end MainTheory.MaskRankBridge

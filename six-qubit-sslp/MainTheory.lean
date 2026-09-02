@@ -80,6 +80,7 @@ import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
 import MainTheory.MaskRankBridge
+import MainTheory.ThresholdBoundsSmall
 import MainTheory.CoarseFilterEntry
 import MainTheory.CoarseFilterSound
 import MainTheory.Generated.CoarseRightRowsData

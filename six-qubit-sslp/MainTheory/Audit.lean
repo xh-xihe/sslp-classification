@@ -49,6 +49,7 @@ import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
 import MainTheory.MaskRankBridge
+import MainTheory.ThresholdBoundsSmall
 import MainTheory.CoarseFilterEntry
 import MainTheory.CoarseFilterSound
 import MainTheory.Generated.CoarseRightRowsData
@@ -377,6 +378,8 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MaskRankBridge.residueZeroMask_affineRank_eq_span
 #print axioms MainTheory.MaskRankBridge.linearIndependent_point_of_real
 #print axioms MainTheory.MaskRankBridge.le_maskAffineRank_mask0
+#print axioms MainTheory.MaskRankBridge.finrank_direction_image_affine
+#print axioms MainTheory.MaskRankBridge.finrank_direction_bxor_image
 #print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_length
@@ -385,3 +388,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.CoarseFilterUnconditional.keepAt_of_s0_of_feasible
 #print axioms MainTheory.CoarseFilterUnconditional.fullFiberCriterion_of_s0_of_feasible
 #print axioms MainTheory.CoarseFilterUnconditional.exists_output_of_s0_of_feasible
+#print axioms MainTheory.ThresholdBoundsSmall.betaBound_one
+#print axioms MainTheory.ThresholdBoundsSmall.betaBound_two
+#print axioms MainTheory.ThresholdBoundsSmall.betaBound_three
+#print axioms MainTheory.ThresholdBoundsSmall.thresholdBounds
