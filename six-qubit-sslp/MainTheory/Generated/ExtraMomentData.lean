@@ -150,4 +150,69 @@ theorem rejectRightPairs_infeasible (p : FiberPair)
   · exact Shard51.pairs_infeasible p hp
   · exact Shard52.pairs_infeasible p hp
 
+/-- **And no real one either.**  A code's probabilities are real,
+not rational, so this is the form the code-level argument needs; a
+rational separator excludes the real fibre LP as well. -/
+theorem rejectRightPairs_realInfeasible (p : FiberPair)
+    (h : p ∈ rejectRightPairs) :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight p,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible p w := by
+  rw [rejectRightPairs, List.mem_flatten] at h
+  obtain ⟨l, hl, hp⟩ := h
+  simp only [shardPairs, List.mem_cons, List.not_mem_nil, or_false] at hl
+  rcases hl with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  · exact Shard00.pairs_realInfeasible p hp
+  · exact Shard01.pairs_realInfeasible p hp
+  · exact Shard02.pairs_realInfeasible p hp
+  · exact Shard03.pairs_realInfeasible p hp
+  · exact Shard04.pairs_realInfeasible p hp
+  · exact Shard05.pairs_realInfeasible p hp
+  · exact Shard06.pairs_realInfeasible p hp
+  · exact Shard07.pairs_realInfeasible p hp
+  · exact Shard08.pairs_realInfeasible p hp
+  · exact Shard09.pairs_realInfeasible p hp
+  · exact Shard10.pairs_realInfeasible p hp
+  · exact Shard11.pairs_realInfeasible p hp
+  · exact Shard12.pairs_realInfeasible p hp
+  · exact Shard13.pairs_realInfeasible p hp
+  · exact Shard14.pairs_realInfeasible p hp
+  · exact Shard15.pairs_realInfeasible p hp
+  · exact Shard16.pairs_realInfeasible p hp
+  · exact Shard17.pairs_realInfeasible p hp
+  · exact Shard18.pairs_realInfeasible p hp
+  · exact Shard19.pairs_realInfeasible p hp
+  · exact Shard20.pairs_realInfeasible p hp
+  · exact Shard21.pairs_realInfeasible p hp
+  · exact Shard22.pairs_realInfeasible p hp
+  · exact Shard23.pairs_realInfeasible p hp
+  · exact Shard24.pairs_realInfeasible p hp
+  · exact Shard25.pairs_realInfeasible p hp
+  · exact Shard26.pairs_realInfeasible p hp
+  · exact Shard27.pairs_realInfeasible p hp
+  · exact Shard28.pairs_realInfeasible p hp
+  · exact Shard29.pairs_realInfeasible p hp
+  · exact Shard30.pairs_realInfeasible p hp
+  · exact Shard31.pairs_realInfeasible p hp
+  · exact Shard32.pairs_realInfeasible p hp
+  · exact Shard33.pairs_realInfeasible p hp
+  · exact Shard34.pairs_realInfeasible p hp
+  · exact Shard35.pairs_realInfeasible p hp
+  · exact Shard36.pairs_realInfeasible p hp
+  · exact Shard37.pairs_realInfeasible p hp
+  · exact Shard38.pairs_realInfeasible p hp
+  · exact Shard39.pairs_realInfeasible p hp
+  · exact Shard40.pairs_realInfeasible p hp
+  · exact Shard41.pairs_realInfeasible p hp
+  · exact Shard42.pairs_realInfeasible p hp
+  · exact Shard43.pairs_realInfeasible p hp
+  · exact Shard44.pairs_realInfeasible p hp
+  · exact Shard45.pairs_realInfeasible p hp
+  · exact Shard46.pairs_realInfeasible p hp
+  · exact Shard47.pairs_realInfeasible p hp
+  · exact Shard48.pairs_realInfeasible p hp
+  · exact Shard49.pairs_realInfeasible p hp
+  · exact Shard50.pairs_realInfeasible p hp
+  · exact Shard51.pairs_realInfeasible p hp
+  · exact Shard52.pairs_realInfeasible p hp
+
 end MainTheory.Generated.ExtraMoment

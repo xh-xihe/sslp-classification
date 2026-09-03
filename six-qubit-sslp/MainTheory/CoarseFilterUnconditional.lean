@@ -17,7 +17,8 @@ neither: it uses the `S_0` clause, which the linear-rank bound does give
 because the zero-residue fibre contains the all-zero word
 (`MaskRankBridge.residueZeroMask_affineRank_eq_span`), together with the fact
 that a code supplies a common moment point and every right-rejected row admits
-none.
+none.  The feasibility is the **real** one: a code's probabilities are real,
+not rational, and a rational separator excludes the real fibre LP anyway.
 
 No number the paper reports changes: the directory still has 508 outputs.
 -/
@@ -36,7 +37,10 @@ open MainTheory.Generated.FinitePairMappingBase
 support; `hf` is the code's own pair of distributions. -/
 theorem keepAt_of_s0_of_feasible (i : PairId)
     (h0 : S0Clause (directory.inputAt i))
-    (hf : ∃ p0 p1, Feasible (directory.inputAt i) p0 p1) :
+    (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight
+        (directory.inputAt i),
+      MainTheory.RealMomentSeparatorBridge.RealFeasible
+        (directory.inputAt i) w) :
     directory.keepAt i = true :=
   MainTheory.CoarseFilterSound.keepAt_of_s0_of_feasible i
     (MainTheory.Generated.CoarseRightRows.rejectRight_mem i) h0 hf
@@ -46,7 +50,10 @@ code could occupy, the criterion holds -- including the clause whose stated
 justification could not be reconstructed. -/
 theorem fullFiberCriterion_of_s0_of_feasible (i : PairId)
     (h0 : S0Clause (directory.inputAt i))
-    (hf : ∃ p0 p1, Feasible (directory.inputAt i) p0 p1) :
+    (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight
+        (directory.inputAt i),
+      MainTheory.RealMomentSeparatorBridge.RealFeasible
+        (directory.inputAt i) w) :
     FullFiberCriterion (directory.inputAt i) :=
   MainTheory.CoarseFilterSound.fullFiberCriterion_of_s0_of_feasible i
     (MainTheory.Generated.CoarseRightRows.rejectRight_mem i) h0 hf
@@ -54,7 +61,10 @@ theorem fullFiberCriterion_of_s0_of_feasible (i : PairId)
 /-- Consequently such a row occurs in the 508-row output directory. -/
 theorem exists_output_of_s0_of_feasible (i : PairId)
     (h0 : S0Clause (directory.inputAt i))
-    (hf : ∃ p0 p1, Feasible (directory.inputAt i) p0 p1) :
+    (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight
+        (directory.inputAt i),
+      MainTheory.RealMomentSeparatorBridge.RealFeasible
+        (directory.inputAt i) w) :
     ∃ j : Fin 508, directory.outputSource j = i :=
   MainTheory.Generated.FiniteCoarseDirectory.kept_covered i
     (keepAt_of_s0_of_feasible i h0 hf)

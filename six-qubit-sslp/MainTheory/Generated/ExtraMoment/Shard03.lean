@@ -2,6 +2,7 @@
 -- Do not edit by hand; regenerate it instead.
 
 import MainTheory.Generated.FinitePairData
+import MainTheory.RealMomentSeparatorBridge
 
 namespace MainTheory.Generated.ExtraMoment.Shard03
 
@@ -33,6 +34,11 @@ theorem pair278_infeasible :
     ¬ ∃ p0 p1, Feasible pair278 p0 p1 :=
   not_feasible_of_separatorData sep278_valid
 
+theorem pair278_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair278,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair278 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep278_valid
+
 def pair280 : FiberPair := ⟨5, 5, 1148681787770142735, 267448320⟩
 
 def sep280 : SeparatorData :=
@@ -55,6 +61,11 @@ theorem sep280_valid : sep280.Valid pair280 := by
 theorem pair280_infeasible :
     ¬ ∃ p0 p1, Feasible pair280 p0 p1 :=
   not_feasible_of_separatorData sep280_valid
+
+theorem pair280_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair280,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair280 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep280_valid
 
 def pair305 : FiberPair := ⟨5, 5, 3462155407881928899, 13563627785948160⟩
 
@@ -79,6 +90,11 @@ theorem pair305_infeasible :
     ¬ ∃ p0 p1, Feasible pair305 p0 p1 :=
   not_feasible_of_separatorData sep305_valid
 
+theorem pair305_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair305,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair305 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep305_valid
+
 def pair309 : FiberPair := ⟨5, 5, 4377502394091307011, 844424930181120⟩
 
 def sep309 : SeparatorData :=
@@ -101,6 +117,11 @@ theorem sep309_valid : sep309.Valid pair309 := by
 theorem pair309_infeasible :
     ¬ ∃ p0 p1, Feasible pair309 p0 p1 :=
   not_feasible_of_separatorData sep309_valid
+
+theorem pair309_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair309,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair309 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep309_valid
 
 def pair367 : FiberPair := ⟨5, 5, 17293840092836659215, 4222124650659840⟩
 
@@ -125,6 +146,11 @@ theorem pair367_infeasible :
     ¬ ∃ p0 p1, Feasible pair367 p0 p1 :=
   not_feasible_of_separatorData sep367_valid
 
+theorem pair367_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair367,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair367 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep367_valid
+
 def pair372 : FiberPair := ⟨5, 5, 18446462598732906495, 4294901760⟩
 
 def sep372 : SeparatorData :=
@@ -147,6 +173,11 @@ theorem sep372_valid : sep372.Valid pair372 := by
 theorem pair372_infeasible :
     ¬ ∃ p0 p1, Feasible pair372 p0 p1 :=
   not_feasible_of_separatorData sep372_valid
+
+theorem pair372_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair372,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair372 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep372_valid
 
 def pair435 : FiberPair := ⟨6, 2, 17527493099535, 4222124650659840⟩
 
@@ -171,6 +202,11 @@ theorem pair435_infeasible :
     ¬ ∃ p0 p1, Feasible pair435 p0 p1 :=
   not_feasible_of_separatorData sep435_valid
 
+theorem pair435_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair435,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair435 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep435_valid
+
 def pair451 : FiberPair := ⟨6, 2, 283022909767681, 1621436603343181440⟩
 
 def sep451 : SeparatorData :=
@@ -194,6 +230,11 @@ theorem pair451_infeasible :
     ¬ ∃ p0 p1, Feasible pair451 p0 p1 :=
   not_feasible_of_separatorData sep451_valid
 
+theorem pair451_realInfeasible :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight pair451,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible pair451 w :=
+  MainTheory.RealMomentSeparatorBridge.not_realFeasible_of_separatorData sep451_valid
+
 /-- The pairs certified in this shard. -/
 def pairs : List FiberPair := [pair278, pair280, pair305, pair309, pair367, pair372, pair435, pair451]
 
@@ -209,5 +250,19 @@ theorem pairs_infeasible (p : FiberPair) (h : p ∈ pairs) :
   · exact pair372_infeasible
   · exact pair435_infeasible
   · exact pair451_infeasible
+
+theorem pairs_realInfeasible (p : FiberPair) (h : p ∈ pairs) :
+    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight p,
+      MainTheory.RealMomentSeparatorBridge.RealFeasible p w := by
+  simp only [pairs, List.mem_cons, List.not_mem_nil, or_false] at h
+  rcases h with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  · exact pair278_realInfeasible
+  · exact pair280_realInfeasible
+  · exact pair305_realInfeasible
+  · exact pair309_realInfeasible
+  · exact pair367_realInfeasible
+  · exact pair372_realInfeasible
+  · exact pair435_realInfeasible
+  · exact pair451_realInfeasible
 
 end MainTheory.Generated.ExtraMoment.Shard03

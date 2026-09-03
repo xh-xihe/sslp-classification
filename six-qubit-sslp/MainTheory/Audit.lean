@@ -387,6 +387,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MaskRankBridge.exists_nonsingular_rows
 #print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible
+#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_realInfeasible
 #print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_length
 #print axioms MainTheory.Generated.CoarseRightRows.rejectRight_mem
 #print axioms MainTheory.CoarseFilterSound.not_s0Clause_of_rejectLeft

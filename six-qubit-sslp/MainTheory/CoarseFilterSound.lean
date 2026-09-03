@@ -1,5 +1,6 @@
 import MainTheory.Generated.FiniteCoarseDirectory
 import MainTheory.Generated.ExtraMomentData
+import MainTheory.RealMomentSeparatorBridge
 
 /-!
 # The coarse filter never discards a code
@@ -21,6 +22,13 @@ number the paper reports.  Each discarded row carries one of two witnesses.
   all: all 422 of them are certified in `Generated.ExtraMomentData`.  A code
   supplies its own common moment point, so a code's row is never
   right-rejected either.
+
+The feasibility here is the **real** one.  `FinitePipeline.Feasible` is over
+`ℚ`, and a code's probabilities are real, so a code does not directly supply a
+rational feasible point -- that would need a rational point of a nonempty
+rational polyhedron, true but not proved here.  It does supply a real one, and
+`RealMomentSeparatorBridge.not_realFeasible_of_separatorData` says a rational
+separator excludes the real fibre LP too, so the descent is never needed.
 
 Hence a code's row is kept, whatever the status of the clause that the right
 witness certifies.
@@ -75,8 +83,10 @@ theorem keepAt_of_s0_of_feasible
         MainTheory.Generated.ExtraMoment.rejectRightPairs)
     (h0 : S0Clause
       (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i))
-    (hf : ∃ p0 p1, Feasible
-      (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i) p0 p1) :
+    (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight
+        (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i),
+      MainTheory.RealMomentSeparatorBridge.RealFeasible
+        (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i) w) :
     MainTheory.Generated.FiniteCoarseDirectory.directory.keepAt i = true := by
   unfold MainTheory.CoarseFilter.Directory.keepAt
   cases hd : MainTheory.Generated.FiniteCoarseDirectory.directory.decisionAt i
@@ -85,7 +95,7 @@ theorem keepAt_of_s0_of_feasible
   | rejectLeft w => exact absurd h0 (not_s0Clause_of_rejectLeft w)
   | rejectRight w =>
       exact absurd hf
-        (MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible _
+        (MainTheory.Generated.ExtraMoment.rejectRightPairs_realInfeasible _
           (henum (by rw [hd]; rfl)))
 
 /-- The same conclusion phrased through the intrinsic criterion: for a row a
@@ -99,8 +109,10 @@ theorem fullFiberCriterion_of_s0_of_feasible
         MainTheory.Generated.ExtraMoment.rejectRightPairs)
     (h0 : S0Clause
       (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i))
-    (hf : ∃ p0 p1, Feasible
-      (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i) p0 p1) :
+    (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight
+        (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i),
+      MainTheory.RealMomentSeparatorBridge.RealFeasible
+        (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i) w) :
     FullFiberCriterion
       (MainTheory.Generated.FiniteCoarseDirectory.directory.inputAt i) :=
   (MainTheory.Generated.FiniteCoarseDirectory.keep_iff_fullFiberCriterion i).1

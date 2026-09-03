@@ -136,6 +136,7 @@ def shard(idx, rows):
         '-- Do not edit by hand; regenerate it instead.',
         '',
         'import MainTheory.Generated.FinitePairData',
+        'import MainTheory.RealMomentSeparatorBridge',
         '',
         'namespace MainTheory.Generated.ExtraMoment.Shard%02d' % idx,
         '',
@@ -171,6 +172,14 @@ def shard(idx, rows):
             '    ¬ ∃ p0 p1, Feasible pair%d p0 p1 :=' % pid,
             '  not_feasible_of_separatorData sep%d_valid' % pid,
             '',
+            'theorem pair%d_realInfeasible :' % pid,
+            '    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight'
+            ' pair%d,' % pid,
+            '      MainTheory.RealMomentSeparatorBridge.RealFeasible pair%d w :='
+            % pid,
+            '  MainTheory.RealMomentSeparatorBridge'
+            '.not_realFeasible_of_separatorData sep%d_valid' % pid,
+            '',
         ]
     ids = [r[0] for r in rows]
     lines += [
@@ -185,6 +194,16 @@ def shard(idx, rows):
     ]
     for i in ids:
         lines.append('  · exact pair%d_infeasible' % i)
+    lines += [
+        '',
+        'theorem pairs_realInfeasible (p : FiberPair) (h : p ∈ pairs) :',
+        '    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight p,',
+        '      MainTheory.RealMomentSeparatorBridge.RealFeasible p w := by',
+        '  simp only [pairs, List.mem_cons, List.not_mem_nil, or_false] at h',
+        '  rcases h with %s' % ' | '.join(['rfl'] * len(ids)),
+    ]
+    for i in ids:
+        lines.append('  · exact pair%d_realInfeasible' % i)
     lines += ['', 'end MainTheory.Generated.ExtraMoment.Shard%02d' % idx, '']
     return NL.join(lines)
 
@@ -246,6 +265,23 @@ def aggregate(nshards, npairs):
     ]
     for i in range(nshards):
         lines.append('  · exact Shard%02d.pairs_infeasible p hp' % i)
+    lines += [
+        '',
+        "/-- **And no real one either.**  A code's probabilities are real,",
+        'not rational, so this is the form the code-level argument needs; a',
+        'rational separator excludes the real fibre LP as well. -/',
+        'theorem rejectRightPairs_realInfeasible (p : FiberPair)',
+        '    (h : p ∈ rejectRightPairs) :',
+        '    ¬ ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight p,',
+        '      MainTheory.RealMomentSeparatorBridge.RealFeasible p w := by',
+        '  rw [rejectRightPairs, List.mem_flatten] at h',
+        '  obtain ⟨l, hl, hp⟩ := h',
+        '  simp only [shardPairs, List.mem_cons, List.not_mem_nil, or_false]'
+        ' at hl',
+        '  rcases hl with %s' % ' | '.join(['rfl'] * nshards),
+    ]
+    for i in range(nshards):
+        lines.append('  · exact Shard%02d.pairs_realInfeasible p hp' % i)
     lines += ['', 'end MainTheory.Generated.ExtraMoment', '']
     return NL.join(lines)
 
