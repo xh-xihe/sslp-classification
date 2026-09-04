@@ -15,13 +15,24 @@ This file gives `W_r` a Lean definition and restates a finished six-qubit result
 in that language, so that the connection between the two halves of the project
 is a theorem rather than a remark.
 
-The other three levels are not defined here.  Level (i) needs the projective
-diagonal group as a group object, which needs the finiteness this development
-does not have; level (ii) needs the Boolean-cube action on labelled fiber data,
-which lives only in the Python tooling; level (iv) needs local unitaries and
-qubit permutations acting on projectors, and no operator layer exists.  Saying
-which of the four are done matters, because `main.tex` is explicit that the four
-do not form a hierarchy and that a count at one level is not a count at another.
+The other three levels are not defined *here*, but each now has a definition
+and a six-qubit theorem elsewhere, and an earlier version of this paragraph was
+wrong on all three counts.  Level (i) has the projective diagonal group as a
+group object, `GlobalClassificationBridge.IntrinsicGroup`, together with the
+finiteness this paragraph once said the development lacked
+(`GeneralFinitenessRank.finite_intrinsicGroup`, at arbitrary rank and the
+paper's own `2 <= d`).  Level (ii) has the Boolean-cube action on labelled
+fibre data in Lean rather than only in the Python tooling (`CubeAction`,
+`SSLPOrbitLevels.RealizationOrbit`).  Level (iv) has local unitaries and qubit
+permutations acting on projectors (`Orbit36LUBridge`).
+`ClassificationLevelsSix` states one theorem per level.
+
+What is still partial is level (iv)'s *reach*: it is stated for codes supported
+on orbit 36's two table fibres, and carrying it to an arbitrary order-five code
+needs a state-level transport this development has only at the level of
+directory keys.  Saying which of the four are done matters, because `main.tex`
+is explicit that the four do not form a hierarchy and that a count at one level
+is not a count at another.
 -/
 
 namespace MainTheory.Levels
