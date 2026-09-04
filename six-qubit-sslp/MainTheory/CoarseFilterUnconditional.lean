@@ -46,8 +46,8 @@ theorem keepAt_of_s0_of_feasible (i : PairId)
     (MainTheory.Generated.CoarseRightRows.rejectRight_mem i) h0 hf
 
 /-- The same, phrased through the intrinsic two-clause criterion: for a row a
-code could occupy, the criterion holds -- including the clause whose stated
-justification could not be reconstructed. -/
+code could occupy, the criterion holds -- including the clause this
+development could not at first enter from its own linear-rank data. -/
 theorem fullFiberCriterion_of_s0_of_feasible (i : PairId)
     (h0 : S0Clause (directory.inputAt i))
     (hf : ∃ w : MainTheory.RealMomentSeparatorBridge.RealWeight

@@ -25,8 +25,18 @@ differences**:
     bitRows vertex i j = if vertex i j then 1 else 0
 
 The linear rank equals the affine rank, or exceeds it by one -- exactly when
-the origin lies outside the support's affine hull.  Two reconstructions of the
-paper's step both land one short of `beta_r`:
+the origin lies outside the support's affine hull.  The paper does not meet
+this gap, because `thm:d3-bound` normalizes it away before the bound is
+applied: a local `X` conjugation on some `x_0` in `T_0` puts `0^n` in `T_0`,
+so the common affine span of `lem:common-affine-span` contains the origin and
+*is* a linear subspace `V`, and `r = dim V` is simultaneously the affine and
+the linear rank.  `six:eq:qbetar` is therefore proved, at the affine rank, and
+nothing below is a criticism of it.
+
+What this development lacked was the same normalization at its own entrance.
+`SixQubitSemanticEntrance.SupportedBitBasis` took raw bit rows with no record
+of which point had been moved to the origin, so two ways of reconstructing the
+step from that data both land one short of `beta_r`:
 
 * at residue zero the conditions `a . x = 0 (mod q)` are homogeneous, so the
   relevant system is the *linear* span and the bound is `q <= beta_(lindim)`;
@@ -81,7 +91,7 @@ die at the very next filter.  Concretely:
 
 gives the same `291` as the paper's route through `508`.  Every step of that
 alternative is either proved or independently certified, so the final `66` does
-not rest on the unreconstructed step.
+not rest on the step this development could not yet enter.
 
 ## The gate is now closed, without changing the paper's numbers
 
@@ -105,14 +115,16 @@ The directory still has 508 outputs.  Nothing the paper reports moves.
 
 ## What this does and does not say
 
-It does **not** say the paper is wrong.  `q <= beta_r` at the affine rank may
-well be provable by an argument not written down at `six:eq:qbetar`; what is
-established here is that it does not follow from the linear-rank bound this
-development proves, that 350 pairs turn on it, and that the classification's
-conclusion survives either way.
+It does **not** say the paper is wrong, and it is not evidence of a gap in
+`six:eq:qbetar`.  That bound is proved, at the affine rank, by the
+normalization step of `thm:d3-bound`.  What is established here is narrower
+and is about this development: the bound does not follow from the linear-rank
+statement the Lean entrance produced, 350 pairs turn on the difference, and
+the classification's conclusion survives either way.
 
-For the formalization it no longer matters, because the filter's soundness no
-longer goes through it.  For the paper it still does: `six:eq:qbetar` is
-stated without proof and 350 pairs turn on it, so either it wants an argument
-or `six:eq:coarserank` wants a remark that its second clause is an
-optimization whose discards the moment test repeats.
+The gap has since been closed on the Lean side by recording the paper's own
+normalization -- `RankTwoGlobal.TwoFiberCertificate.base_supported` says the
+shift is by a point of the first logical word's support, which puts the zero
+word in both normalized supports and makes affine and linear rank agree.  The
+independent moment route below remains as a second, unconditional argument
+that the filter's 508 outputs are sound whatever one assumes about ranks.

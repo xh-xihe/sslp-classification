@@ -17,7 +17,8 @@ orders a diagonal logical operation has.
 
 * **Logical order.**  `logicalOrder_mem`: a key with an exact normalized
   distance-three completion has `m ∈ {2, 3, 5}`, and `maxLogicalOrder_eq_five`
-  says the largest is attained.  This is `thm:six-M3` in the paper.
+  says the largest is attained.  This is the boxed `M_3(6) = 5` of
+  `six:thm:global-status` in the paper.
 * **Physical order.**  `physicalOrder_le_six` and `maxPhysicalOrder_eq_six`:
   the same statement for `q`.  The paper states only the logical half; the
   physical half is its companion, and the two are genuinely different --

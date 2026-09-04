@@ -218,7 +218,7 @@ theorem primitive_nine_list_agrees :
 theorem primitive_nine_exact : (primitiveAngles6 9).length = 2975 :=
   primitive_nine_list_agrees.trans primitive_nine
 
-/- Equation `six:eq:outercount`: the raw sorted outer loop has `13,877`
+/- Equation `six:eq:rawcount`: the raw sorted outer loop has `13,877`
 records when the admissible logical orders are included. -/
 /-- The number of raw records, evaluated without materializing record payloads. -/
 def rawRecordCount : ℕ :=
@@ -233,7 +233,8 @@ theorem rawRecords_length_eq_count : rawRecords.length = rawRecordCount := by
     sorted_five_list_agrees, sorted_six_list_agrees, sorted_seven_list_agrees,
     sorted_eight_list_agrees, sorted_nine_list_agrees, Nat.add_assoc]
 
-/-- Equation `six:eq:outercount`, checked by kernel reduction. -/
+/-- Equation `six:eq:13877` (Lemma `lem:six-raw-outer-count`), checked by
+kernel reduction. -/
 theorem raw_record_count : rawRecordCount = 13877 := by decide
 
 theorem raw_records_exact : rawRecords.length = 13877 :=

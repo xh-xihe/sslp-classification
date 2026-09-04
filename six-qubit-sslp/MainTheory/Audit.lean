@@ -56,6 +56,30 @@ import MainTheory.Generated.CoarseRightRowsData
 import MainTheory.CoarseFilterUnconditional
 import MainTheory.SortedPivot
 import MainTheory.SortedPivotConstruction
+import MainTheory.BinaryBetaTinyLower
+import MainTheory.RankThresholdBridge
+import MainTheory.Generated.RankSymmetry
+import MainTheory.PaperReductionChain
+import MainTheory.ProvedWEUnion
+import MainTheory.OpenOrbitsRealized
+import MainTheory.RealizationOrbits15
+import MainTheory.CodeMomentPoint
+import MainTheory.RealFaceBridge
+import MainTheory.CodeDirectoryEntry
+import MainTheory.CodeMomentFeasible
+import MainTheory.CodeActiveFace
+import MainTheory.CodeRankFilter
+import MainTheory.CodeOrbitKey
+import MainTheory.CodeOrbitStatus
+import MainTheory.PrimitiveMobius
+import MainTheory.Orbit36LUBridge
+import MainTheory.D3CertifiedSpectralOuterEntrance
+import MainTheory.Orbit9IntrinsicRealization
+import MainTheory.SixQubitIntrinsicAttainment
+import MainTheory.IntrinsicProjectiveAbelian
+import MainTheory.UnitPowerSemanticTransport
+import MainTheory.ActiveRankRecordCount
+import MainTheory.SSLPOrbitLevels
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -421,3 +445,46 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot_nine
 #print axioms MainTheory.SortedPivotConstruction.exists_normalForm_s0Clause
 #print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning_at
+#print axioms MainTheory.BinaryBetaTinyLower.betaExact_one
+#print axioms MainTheory.BinaryBetaTinyLower.betaExact_two
+#print axioms MainTheory.BinaryBetaTinyLower.betaExact_three
+#print axioms MainTheory.BinaryBetaTinyLower.rMin_two_eq_three
+#print axioms MainTheory.RankThresholdBridge.beta_eq_threshold
+#print axioms MainTheory.RankThresholdBridge.q_le_beta_of_le_threshold
+#print axioms MainTheory.Generated.RankSymmetry.ranks_equal
+#print axioms MainTheory.PaperReductionChain.six_66_orbits
+#print axioms MainTheory.PaperReductionChain.primitive_sorted_counts
+#print axioms MainTheory.ProvedWEUnion.provedImages_eq
+#print axioms MainTheory.OpenOrbitsRealized.openKeys_hasCompletion
+#print axioms MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys
+#print axioms MainTheory.RealizationOrbits15.realizationKeys_paperIds
+#print axioms MainTheory.RealizationOrbits15.realizationKeys_orderDistribution
+#print axioms MainTheory.RealizationOrbits15.card_realization_orbits
+#print axioms MainTheory.RealizationOrbits15.settled
+#print axioms MainTheory.CodeMomentPoint.exists_realFeasible
+#print axioms MainTheory.RealFaceBridge.realSupport_subset_face
+#print axioms MainTheory.CodeDirectoryEntry.code_enters_coarse_directory
+#print axioms MainTheory.CodeMomentFeasible.code_enters_moment_stage
+#print axioms MainTheory.CodeActiveFace.rank_le_activeMaskRank
+#print axioms MainTheory.CodeRankFilter.compatible_of_pivot_certified
+#print axioms MainTheory.CodeOrbitKey.code_reaches_orbit_key
+#print axioms MainTheory.CodeOrbitStatus.code_logicalOrder_mem
+#print axioms MainTheory.CodeOrbitStatus.code_in_realization_orbit
+#print axioms MainTheory.CodeOrbitStatus.code_logicalOrder_le_five
+#print axioms MainTheory.SortedPivotConstruction.exists_normalForm_pivot_full
+#print axioms MainTheory.PrimitiveMobius.primitiveCount_eq_mobiusCount
+#print axioms MainTheory.PrimitiveMobius.mobius_nine
+#print axioms MainTheory.CodeOrbitStatus.code_orderFive_is_orbit36
+#print axioms MainTheory.Orbit36LUBridge.original_projector_luEquivalent_canonical
+#print axioms MainTheory.D3CertifiedSpectralOuterEntrance.arbitrary_code_enters_outer
+#print axioms MainTheory.D3CertifiedSpectralOuterEntrance.code_with_nontrivial_diagonal_symmetry_enters_outer
+#print axioms MainTheory.Orbit9IntrinsicRealization.exists_exact_six_qubit_intrinsic_order_three
+#print axioms MainTheory.SixQubitIntrinsicAttainment.two_three_five_attained
+#print axioms MainTheory.SixQubitIntrinsicAttainment.two_three_five_subset_attained
+#print axioms MainTheory.IntrinsicProjectiveAbelian.intrinsic_group_abelian
+#print axioms MainTheory.UnitPowerSemanticTransport.unitPower_ratio
+#print axioms MainTheory.ActiveRankRecordCount.compatible_record_count
+#print axioms MainTheory.ActiveRankRecordCount.one_more_record_than_pair
+#print axioms MainTheory.SSLPOrbitLevels.card_realizationOrbit
+#print axioms MainTheory.SSLPOrbitLevels.isRealizationOrbit_iff_mem
+#print axioms MainTheory.SSLPOrbitLevels.realization_or_empty

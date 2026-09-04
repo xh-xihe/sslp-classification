@@ -143,7 +143,9 @@ theorem exists_sortedNormalForm_pivot {B : ℕ}
       (PhaseSectorBridge.realGateEnd theta))
     (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
-    ∃ S : SortedNormalForm C, S.q ≤ B ∧ Nonempty (SortedPivot.Pivot S) := by
+    ∃ S : SortedNormalForm C, S.q ≤ B ∧
+      S.frame.vec 0 (fun _ => false) ≠ 0 ∧
+      Nonempty (SortedPivot.Pivot S) := by
   classical
   letI : NeZero (rationalLift C GeneralFiniteness.two_le_three theta hpres).order :=
     ⟨(rationalLift C GeneralFiniteness.two_le_three theta hpres).order_pos.ne'⟩
@@ -152,7 +154,7 @@ theorem exists_sortedNormalForm_pivot {B : ℕ}
   letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
   obtain ⟨S, hq, hsrc, hbase, hzero⟩ :=
     SortedForm.exists_sortedNormalForm_of_generator' C (boundedGenerator T)
-  refine ⟨S, ?_, ?_⟩
+  refine ⟨S, ?_, zero_mem_sortedSupport S (by rw [hsrc]; exact hbase), ?_⟩
   · rw [hq]
     exact automaticFreshGenerator_order_le beta T
   · set F := frameFreshSparsePhase T with hF
@@ -236,7 +238,9 @@ theorem exists_sortedNormalForm_pivot_nine
       (PhaseSectorBridge.realGateEnd theta))
     (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
-    ∃ S : SortedNormalForm C, S.q ≤ 9 ∧ Nonempty (SortedPivot.Pivot S) :=
+    ∃ S : SortedNormalForm C, S.q ≤ 9 ∧
+      S.frame.vec 0 (fun _ => false) ≠ 0 ∧
+      Nonempty (SortedPivot.Pivot S) :=
   exists_sortedNormalForm_pivot
     MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper C theta hpres hnt
 
@@ -247,8 +251,11 @@ This is the last link of the coarse-filter entry: `CoarseFilterUnconditional`
 already showed that a row satisfying this clause and admitting a common moment
 point is kept, and a code supplies the moment point itself.  So the coarse
 filter provably never discards a code -- with no appeal to `q <= beta_r` at
-the affine rank, the step of `six:eq:qbetar` that could not be
-reconstructed. -/
+the affine rank.  The paper does prove that bound: `thm:d3-bound` normalizes
+by a local `X` conjugation that puts `0^n` in `T_0`, so the common affine span
+is linear and `r` is the affine and the linear rank at once.  What this
+development lacked was that normalization at its own entrance, which
+`RankTwoGlobal.TwoFiberCertificate.base_supported` now records. -/
 theorem exists_normalForm_s0Clause
     (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
@@ -258,8 +265,26 @@ theorem exists_normalForm_s0Clause
     ∃ S : SortedNormalForm C, S.q ≤ 9 ∧
       CoarseFilterSound.S0Clause
         (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S)) := by
-  obtain ⟨S, hq, ⟨P⟩⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
+  obtain ⟨S, hq, _, ⟨P⟩⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
   exact ⟨S, hq, P.s0Clause⟩
+
+/-- **The same, keeping the pivot and the zero-word fact.**
+
+`exists_normalForm_s0Clause` discards both, because the coarse filter needs
+neither.  The *rank* filter needs both: the pivot to bound the active affine
+rank, and `S.frame.vec 0 0 != 0` to put the zero word on the active face. -/
+theorem exists_normalForm_pivot_full
+    (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ (S : SortedNormalForm C) (_ : SortedPivot.Pivot S), S.q ≤ 9 ∧
+      S.frame.vec 0 (fun _ => false) ≠ 0 ∧
+      CoarseFilterSound.S0Clause
+        (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S)) := by
+  obtain ⟨S, hq, hz, ⟨P⟩⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
+  exact ⟨S, P, hq, hz, P.s0Clause⟩
 
 end
 
