@@ -124,4 +124,7 @@ import MainTheory.WImageOrbit1
 import MainTheory.SSLPConverse
 import MainTheory.SSLPPipelineExact
 import MainTheory.SortedVectorMobius
+import MainTheory.BinaryBetaSevenLower
+import MainTheory.BinaryBetaEightLower
+import MainTheory.BinaryBetaNineLower
 import MainTheory.Audit

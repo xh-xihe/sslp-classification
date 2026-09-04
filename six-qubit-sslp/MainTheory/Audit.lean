@@ -93,6 +93,9 @@ import MainTheory.WImageOrbit1
 import MainTheory.SSLPConverse
 import MainTheory.SSLPPipelineExact
 import MainTheory.SortedVectorMobius
+import MainTheory.BinaryBetaSevenLower
+import MainTheory.BinaryBetaEightLower
+import MainTheory.BinaryBetaNineLower
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -541,3 +544,6 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount
 #print axioms MainTheory.SortedVectorMobius.sortedCount_six
 #print axioms MainTheory.SortedVectorMobius.sum_sortedCount_two_to_nine
+#print axioms MainTheory.BinaryBetaSevenLower.betaSevenAttained
+#print axioms MainTheory.BinaryBetaEightLower.betaEightAttained
+#print axioms MainTheory.BinaryBetaNineLower.betaNineAttained
