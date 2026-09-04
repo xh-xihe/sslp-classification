@@ -80,6 +80,12 @@ import MainTheory.IntrinsicProjectiveAbelian
 import MainTheory.UnitPowerSemanticTransport
 import MainTheory.ActiveRankRecordCount
 import MainTheory.SSLPOrbitLevels
+import MainTheory.ClassificationLevelsSix
+import MainTheory.Generated.FiniteOrbitRankBridge
+import MainTheory.GeneralFinitenessRank
+import MainTheory.ProjectiveGroupGeneral
+import MainTheory.RankTwoSSLPCanonical
+import MainTheory.SharpSectorBound
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -488,3 +494,20 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SSLPOrbitLevels.card_realizationOrbit
 #print axioms MainTheory.SSLPOrbitLevels.isRealizationOrbit_iff_mem
 #print axioms MainTheory.SSLPOrbitLevels.realization_or_empty
+#print axioms MainTheory.ClassificationLevelsSix.level_one_intrinsic_group
+#print axioms MainTheory.ClassificationLevelsSix.level_two_realization_orbits
+#print axioms MainTheory.ClassificationLevelsSix.level_three_weight_enumerators
+#print axioms MainTheory.ClassificationLevelsSix.level_four_lu_class
+#print axioms MainTheory.SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent
+#print axioms MainTheory.SSLPOrbitLevels.activeAffineRanks_of_fiberEquivalent
+#print axioms MainTheory.SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent
+#print axioms MainTheory.Generated.FiniteOrbitRankBridge.inputPairIds_eq_rankCompatible
+#print axioms MainTheory.GeneralFinitenessRank.finite_intrinsicGroup
+#print axioms MainTheory.GeneralFinitenessRank.hasBoundedRepresentation_general
+#print axioms MainTheory.ProjectiveGroupGeneral.whole
+#print axioms MainTheory.ProjectiveGroupGeneral.cyclic_of_rank_two
+#print axioms MainTheory.ProjectiveGroupGeneral.k2_bound_and_cyclic
+#print axioms MainTheory.RankTwoSSLPCanonical.rank_two_sslp_canonical
+#print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount
+#print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_of_rationalLift'
+#print axioms MainTheory.SectionTwoGeneral.two_le_sectorCount_of_resolution

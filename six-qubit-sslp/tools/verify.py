@@ -58,22 +58,46 @@ def check_build():
     return ok, detail
 
 
+# Every audit file in the package.  Running only MainTheory/Audit.lean would
+# leave the 592 entries of SixQubit/Audit.lean and the 20 of
+# SixQubit/CodeWrapAudit.lean unchecked: `lake build` compiles them, but
+# `#print axioms` reports through `info`, so a bad footprint there fails
+# nothing.  The README's headline audit count comes from those files, so they
+# have to be in this check.
+AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
+               'SixQubit/CodeWrapAudit.lean')
+
+AXIOM_LINE = re.compile(r"'([^']+)' depends on axioms: \[([^\]]*)\]")
+
+
 def check_axioms():
-    proc = run(['lake', 'env', 'lean', 'MainTheory/Audit.lean'])
-    log = proc.stdout + proc.stderr
-    if proc.returncode != 0:
-        return False, 'audit run failed, exit=%d' % proc.returncode
-    entries = re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]",
-                         log.replace('\n', ' '))
-    bad = [n for n, a in entries
-           if set(x.strip() for x in a.split(',')) - ALLOWED]
-    if 'sorryAx' in log:
-        return False, 'sorryAx present'
-    if not entries:
-        return False, 'no declarations audited -- did Audit.lean change?'
+    total, bad, missing = 0, [], []
+    for path in AUDIT_FILES:
+        if not os.path.exists(os.path.join(ROOT, path)):
+            missing.append(path + ' (absent)')
+            continue
+        proc = run(['lake', 'env', 'lean', path])
+        log = proc.stdout + proc.stderr
+        if proc.returncode != 0:
+            return False, 'audit run failed on %s, exit=%d' % (
+                path, proc.returncode)
+        if 'sorryAx' in log:
+            return False, 'sorryAx present in ' + path
+        entries = AXIOM_LINE.findall(log.replace('\n', ' '))
+        if not entries:
+            missing.append(path + ' (no declarations audited)')
+            continue
+        total += len(entries)
+        bad += [n for n, a in entries
+                if set(x.strip() for x in a.split(',')) - ALLOWED]
+    if missing:
+        return False, 'audit files produced nothing: ' + ', '.join(missing)
     ok = not bad
-    return ok, '%d declarations, %d outside the allowed set%s' % (
-        len(entries), len(bad), (': ' + ', '.join(bad[:5])) if bad else '')
+    detail = '%d declarations over %d audit files, %d outside the allowed set' % (
+        total, len(AUDIT_FILES), len(bad))
+    if bad:
+        detail += ': ' + ', '.join(bad[:5])
+    return ok, detail
 
 
 def check_sources():

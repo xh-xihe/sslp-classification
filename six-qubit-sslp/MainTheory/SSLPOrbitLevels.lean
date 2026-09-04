@@ -1,4 +1,5 @@
 import MainTheory.RealizationOrbits15
+import MainTheory.CubeAction
 
 /-!
 # `def:six-sslp-orbits` and level (ii) of `def:six-classification-levels`
@@ -25,12 +26,11 @@ description.
 construction an ordered normalized pair supported on `F` with the genuine
 `SS.HasDistance _ 3`, which is exactly a member of `K_r`.
 
-What this file does **not** supply is the active-rank data that the
-20260902 `def:six-sslp-orbits` adds to the moment datum.  The rank
-certificates exist (`FiniteRankPipeline.RankRow`) and their content is used
-(`CodeRankFilter`), but nothing attaches them to an orbit datum, so a reader
-comparing the definition clause by clause will find that clause represented
-only by the filter that consumes it.
+The 20260902 definition also carries the feasible degree-two moment geometry
+and the active-rank data.  Both already exist in `CubeAction`, intrinsically
+rather than as certificate fields, and the last section says the sentence that
+makes them *orbit* data rather than pair data: they are invariants of the
+cube action.
 -/
 
 namespace MainTheory.SSLPOrbitLevels
@@ -95,5 +95,58 @@ theorem realization_or_empty (r : MomentOrbit) :
   rcases MainTheory.RealizationOrbits15.settled r with h | h
   · exact Or.inr (not_nonempty_iff.1 h)
   · exact Or.inl h
+
+/-! ## The rest of the orbit datum: moment geometry and active rank
+
+`def:six-sslp-orbits` says a moment orbit is an orbit of the labelled
+full-fibre data *together with its feasible degree-two moment geometry and
+active-rank data*.  Both extra components exist in `CubeAction`, intrinsically
+rather than as stored certificate fields:
+
+* `MomentWitness F` is a real degree-two feasible point of the pair --
+  nonnegative, supported on the two fibres, normalized in each colour, with
+  matching Walsh moments up to weight two -- and `DegreeTwoFeasible` is its
+  nonemptiness;
+* `ActiveMask F c x` says `x` carries positive weight at *some* such witness,
+  and `activeAffineRank F c` is the affine rank of the resulting point set.
+
+What was missing is the sentence that makes them orbit data rather than pair
+data: they are invariants.  `CubeAction.activeAffineRank_actFibers` proves the
+rank half and had no users; the two theorems below say it in the form the
+definition needs. -/
+
+open MainTheory.CubeAction in
+/-- **The moment geometry is a moment-orbit invariant.** -/
+theorem degreeTwoFeasible_of_fiberEquivalent {F G : FiberPair 6}
+    (h : FiberEquivalent F G) : DegreeTwoFeasible F → DegreeTwoFeasible G := by
+  obtain ⟨g, rfl⟩ := h
+  rintro ⟨W⟩
+  exact ⟨pushWitness W g⟩
+
+open MainTheory.CubeAction in
+/-- **The active-rank datum is a moment-orbit invariant**, up to the colour
+interchange the orbit relation allows.
+
+This is the clause of `def:six-sslp-orbits` that distinguishes the moment
+orbit from the bare labelled fibre pair: `r_*` travels with the orbit. -/
+theorem activeAffineRank_of_fiberEquivalent {F G : FiberPair 6}
+    (h : FiberEquivalent F G) :
+    ∃ b : Bool, ∀ c : Bool,
+      activeAffineRank G c = activeAffineRank F (xor c b) := by
+  obtain ⟨g, rfl⟩ := h
+  exact ⟨g.swap, fun c => activeAffineRank_actFibers g F c⟩
+
+open MainTheory.CubeAction in
+/-- The colour-blind reading: equivalent pairs have the same *pair* of active
+affine ranks. -/
+theorem activeAffineRanks_of_fiberEquivalent {F G : FiberPair 6}
+    (h : FiberEquivalent F G) :
+    ({activeAffineRank G false, activeAffineRank G true} : Multiset ℕ)
+      = {activeAffineRank F false, activeAffineRank F true} := by
+  obtain ⟨b, hb⟩ := activeAffineRank_of_fiberEquivalent h
+  cases b
+  · simp [hb false, hb true]
+  · rw [hb false, hb true]
+    exact Multiset.cons_swap _ _ _
 
 end MainTheory.SSLPOrbitLevels

@@ -38,7 +38,7 @@ rediscovering which one it is.
 
 namespace MainTheory.BoundedRepresentation
 
-variable {n d B : ℕ}
+variable {n K d B : ℕ}
 
 open MainTheory.ClassificationLevels
 open MainTheory.GlobalClassificationBridge
@@ -73,7 +73,7 @@ diagonal symmetry whose local phase is named by a bounded label.
 
 This is the transport described above, stated on the original code so that no
 normalization appears in it. -/
-def HasBoundedRepresentation (B : ℕ) (C : CodeSpec.ExactCode n 2 d) : Prop :=
+def HasBoundedRepresentation (B : ℕ) (C : CodeSpec.ExactCode n K d) : Prop :=
   ∀ g : IntrinsicGroup C,
     ∃ (lbl : BoundedPhaseLabel n B)
       (u : diagonalSymmetryGroup (exactCodeProjector C)),
@@ -84,7 +84,7 @@ def HasBoundedRepresentation (B : ℕ) (C : CodeSpec.ExactCode n 2 d) : Prop :=
 
 /-- The action a bounded label induces: the class of its gate when that gate is
 a symmetry of the code, and the identity otherwise. -/
-noncomputable def actionOfLabel (C : CodeSpec.ExactCode n 2 d)
+noncomputable def actionOfLabel (C : CodeSpec.ExactCode n K d)
     (lbl : BoundedPhaseLabel n B) : IntrinsicGroup C := by
   classical
   exact if hm : gateOfLabel lbl ∈ diagonalSymmetryGroup (exactCodeProjector C) then
@@ -94,7 +94,7 @@ noncomputable def actionOfLabel (C : CodeSpec.ExactCode n 2 d)
 /-- **The cover follows.**
 
 The obligation is exactly what makes `actionOfLabel` surjective. -/
-noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode n 2 d}
+noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode n K d}
     (h : HasBoundedRepresentation B C) :
     BoundedLiftCover n B (IntrinsicGroup C) := by
   classical
@@ -110,7 +110,7 @@ noncomputable def coverOfRepresentation {C : CodeSpec.ExactCode n 2 d}
   rw [actionOfLabel, dif_pos hm, hu, hclass]
 
 /-- The intrinsic group is finite. -/
-theorem finite_of_representation {C : CodeSpec.ExactCode n 2 d}
+theorem finite_of_representation {C : CodeSpec.ExactCode n K d}
     (h : HasBoundedRepresentation B C) : Finite (IntrinsicGroup C) :=
   finite_of_boundedLiftCover (coverOfRepresentation h)
 

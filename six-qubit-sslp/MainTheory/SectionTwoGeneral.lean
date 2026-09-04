@@ -82,16 +82,21 @@ theorem phaseSectors_mean (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d)
 
 /-- With a single sector the gate acts on the code by one scalar, so it is
 projectively trivial.  Contrapositively, the paper's hypothesis "the logical
-action is projectively nontrivial" is exactly `2 <= t`. -/
-theorem two_le_sectorCount_of_projectively_nontrivial
-    (C : CodeSpec.ExactCode n K d) (theta : Fin n → ℝ)
-    (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta))
+action is projectively nontrivial" is exactly `2 <= t`.
+
+Stated at an *arbitrary* resolution.  The proof never mentions which one it
+is handed -- it uses only the `sectors` and `link` fields -- so this costs
+nothing, and it lets the canonical resolution be used where the sector count
+has to mean the number of distinct logical eigenvalues rather than the count
+carried by whichever resolution `Classical.choice` produced. -/
+theorem two_le_sectorCount_of_resolution
+    {C : CodeSpec.ExactCode n K d} {theta : Fin n → ℝ}
     (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
-      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
-    2 ≤ (resolutionOf C theta hpres).sectorCount := by
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id)
+    (R : PhaseSectorBridge.LogicalSectorResolution C theta) :
+    2 ≤ R.sectorCount := by
   by_contra hlt
   push_neg at hlt
-  set R := resolutionOf C theta hpres with hR
   have hone : R.sectorCount = 1 := by
     have := R.sectors.sectorCount_pos
     omega
@@ -121,6 +126,16 @@ theorem two_le_sectorCount_of_projectively_nontrivial
       rw [map_add, ha, hb, smul_add]
     · intro a psi _ hpsi
       rw [map_smul, hpsi, smul_comm]
+
+/-- The form the existing call sites use: the same bound at the chosen
+resolution. -/
+theorem two_le_sectorCount_of_projectively_nontrivial
+    (C : CodeSpec.ExactCode n K d) (theta : Fin n → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    2 ≤ (resolutionOf C theta hpres).sectorCount :=
+  two_le_sectorCount_of_resolution hnt _
 
 /-- **`thm:qualitative-finite-lift` at general `(n, K, d)`.**
 

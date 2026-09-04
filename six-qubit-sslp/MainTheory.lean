@@ -111,4 +111,10 @@ import MainTheory.IntrinsicProjectiveAbelian
 import MainTheory.UnitPowerSemanticTransport
 import MainTheory.ActiveRankRecordCount
 import MainTheory.SSLPOrbitLevels
+import MainTheory.ClassificationLevelsSix
+import MainTheory.Generated.FiniteOrbitRankBridge
+import MainTheory.GeneralFinitenessRank
+import MainTheory.ProjectiveGroupGeneral
+import MainTheory.RankTwoSSLPCanonical
+import MainTheory.SharpSectorBound
 import MainTheory.Audit
