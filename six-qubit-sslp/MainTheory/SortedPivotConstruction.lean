@@ -152,7 +152,7 @@ theorem exists_sortedNormalForm_pivot {B : ℕ}
   set G := finiteGenerator C GeneralFiniteness.two_le_three theta hpres hnt with hG
   set T := canonicalTwoFiber G with hT
   letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
-  obtain ⟨S, hq, hsrc, hbase, hzero⟩ :=
+  obtain ⟨S, hq, _, hsrc, hbase, hzero⟩ :=
     SortedForm.exists_sortedNormalForm_of_generator' C (boundedGenerator T)
   refine ⟨S, ?_, zero_mem_sortedSupport S (by rw [hsrc]; exact hbase), ?_⟩
   · rw [hq]

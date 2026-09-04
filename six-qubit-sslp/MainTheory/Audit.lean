@@ -86,6 +86,13 @@ import MainTheory.GeneralFinitenessRank
 import MainTheory.ProjectiveGroupGeneral
 import MainTheory.RankTwoSSLPCanonical
 import MainTheory.SharpSectorBound
+import MainTheory.SupportAffineRank
+import MainTheory.BoundedGeneratorOrder
+import MainTheory.SSLPGeneratorOrder
+import MainTheory.WImageOrbit1
+import MainTheory.SSLPConverse
+import MainTheory.SSLPPipelineExact
+import MainTheory.SortedVectorMobius
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -511,3 +518,26 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount
 #print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_of_rationalLift'
 #print axioms MainTheory.SectionTwoGeneral.two_le_sectorCount_of_resolution
+#print axioms MainTheory.SupportAffineRank.q_le_threshold_supportAffineRank
+#print axioms MainTheory.SupportAffineRank.exists_normalForm_q_le_beta_supportRank
+#print axioms MainTheory.SupportAffineRank.rank_le_supportAffineRank
+#print axioms MainTheory.BoundedGeneratorOrder.logicalOrder_boundedGenerator
+#print axioms MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order
+#print axioms MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator
+#print axioms MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator_six
+#print axioms MainTheory.WImageOrbit1.FII_subset_WImage_orbit1
+#print axioms MainTheory.WImageOrbit1.weight_orbit1Av
+#print axioms MainTheory.SSLPConverse.orderOf_intrinsicClass_resolutionOfPair
+#print axioms MainTheory.SSLPConverse.sslp_converse
+#print axioms MainTheory.SSLPConverse.nontrivial_intrinsicGroup_of_pair
+#print axioms MainTheory.SSLPPipelineExact.code_of_sortedNormalForm
+#print axioms MainTheory.SSLPPipelineExact.pipeline_exact_two
+#print axioms MainTheory.SSLPPipelineExact.pipeline_exact_three
+#print axioms MainTheory.SortedVectorMobius.sortedCount_eq_choose
+#print axioms MainTheory.SortedVectorMobius.sum_primitiveCount_divisors
+#print axioms MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusSum
+#print axioms MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusChoose
+#print axioms MainTheory.SortedVectorMobius.primitiveCount_six_eq_mobiusCount
+#print axioms MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount
+#print axioms MainTheory.SortedVectorMobius.sortedCount_six
+#print axioms MainTheory.SortedVectorMobius.sum_sortedCount_two_to_nine

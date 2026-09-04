@@ -203,7 +203,8 @@ theorem exists_sortedNormalForm_of_generator' {d q : ℕ} [NeZero q]
     (C : CodeSpec.ExactCode n 2 d)
     (G : RankTwoGlobal.FiniteGeneratorResolution C q) :
     ∃ S : SortedNormalForm C,
-      S.q = q ∧ S.source = G.eigenFrame ∧ G.eigenFrame.vec 0 S.x0 ≠ 0 ∧
+      S.q = q ∧ S.m = orderOf G.intrinsicClass ∧
+      S.source = G.eigenFrame ∧ G.eigenFrame.vec 0 S.x0 ≠ 0 ∧
       ∀ j, G.angle (S.perm.symm j) = 0 → S.angle j = 0 := by
   set T := canonicalTwoFiber G with hT
   have hL : SS.SSConditionState (normalizedFiniteAngle G T) 0
@@ -240,7 +241,8 @@ theorem exists_sortedNormalForm_of_generator' {d q : ℕ} [NeZero q]
     perm := sortingPerm (normalizedFiniteAngle G T)
     source := G.eigenFrame
     source_span := G.span_eq
-    frame_eq := fun k s => rfl }, rfl, rfl, T.base_supported, ?_⟩
+    frame_eq := fun k s => rfl }, rfl, T.intrinsic_order_eq.symm, rfl,
+    T.base_supported, ?_⟩
   intro j hj
   show permAngle (sortingPerm (normalizedFiniteAngle G T))
       (normalizedFiniteAngle G T) j = 0

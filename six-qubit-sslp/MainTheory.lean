@@ -117,4 +117,11 @@ import MainTheory.GeneralFinitenessRank
 import MainTheory.ProjectiveGroupGeneral
 import MainTheory.RankTwoSSLPCanonical
 import MainTheory.SharpSectorBound
+import MainTheory.SupportAffineRank
+import MainTheory.BoundedGeneratorOrder
+import MainTheory.SSLPGeneratorOrder
+import MainTheory.WImageOrbit1
+import MainTheory.SSLPConverse
+import MainTheory.SSLPPipelineExact
+import MainTheory.SortedVectorMobius
 import MainTheory.Audit
