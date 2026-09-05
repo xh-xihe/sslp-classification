@@ -1,5 +1,6 @@
 import MainTheory.SortedPivot
 import MainTheory.D3BoundedNormalForm
+import MainTheory.BoundedGeneratorOrder
 
 /-!
 # Building the pivot where the normal form is built
@@ -145,16 +146,38 @@ theorem exists_sortedNormalForm_pivot {B : ℕ}
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     ∃ S : SortedNormalForm C, S.q ≤ B ∧
       S.frame.vec 0 (fun _ => false) ≠ 0 ∧
-      Nonempty (SortedPivot.Pivot S) := by
+      Nonempty (SortedPivot.Pivot S) ∧
+      (∀ v : ClassificationLevels.diagonalSymmetryGroup
+          (GlobalClassificationBridge.exactCodeProjector C),
+        (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+          * ((theta j : ℝ) : ℂ))
+            = (((v : ClassificationLevels.LocalPhase 6) j : ℂ))) →
+        S.m = orderOf (ClassificationLevels.intrinsicClass
+          (GlobalClassificationBridge.exactCodeProjector C) v)) := by
   classical
   letI : NeZero (rationalLift C GeneralFiniteness.two_le_three theta hpres).order :=
     ⟨(rationalLift C GeneralFiniteness.two_le_three theta hpres).order_pos.ne'⟩
   set G := finiteGenerator C GeneralFiniteness.two_le_three theta hpres hnt with hG
   set T := canonicalTwoFiber G with hT
   letI : NeZero (frameFreshSparsePhase T).data.order := frameFreshOrderNeZero T
-  obtain ⟨S, hq, _, hsrc, hbase, hzero⟩ :=
+  obtain ⟨S, hq, hmS, hsrc, hbase, hzero⟩ :=
     SortedForm.exists_sortedNormalForm_of_generator' C (boundedGenerator T)
-  refine ⟨S, ?_, zero_mem_sortedSupport S (by rw [hsrc]; exact hbase), ?_⟩
+  have horder : ∀ v : ClassificationLevels.diagonalSymmetryGroup
+      (GlobalClassificationBridge.exactCodeProjector C),
+      (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+        * ((theta j : ℝ) : ℂ))
+          = (((v : ClassificationLevels.LocalPhase 6) j : ℂ))) →
+      S.m = orderOf (ClassificationLevels.intrinsicClass
+        (GlobalClassificationBridge.exactCodeProjector C) v) := by
+    intro v hexp
+    have hclass := GeneralFiniteness.intrinsicClass_finiteGenerator C v theta hexp
+      hpres hnt
+    set Tb := canonicalTwoFiber (boundedGenerator T) with hTb
+    rw [hmS, Tb.intrinsic_order_eq,
+      MainTheory.BoundedGeneratorOrder.logicalOrder_boundedGenerator T Tb,
+      ← T.intrinsic_order_eq, hG, hclass]
+  refine ⟨S, ?_, zero_mem_sortedSupport S (by rw [hsrc]; exact hbase), ?_,
+    horder⟩
   · rw [hq]
     exact automaticFreshGenerator_order_le beta T
   · set F := frameFreshSparsePhase T with hF
@@ -240,7 +263,14 @@ theorem exists_sortedNormalForm_pivot_nine
       (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
     ∃ S : SortedNormalForm C, S.q ≤ 9 ∧
       S.frame.vec 0 (fun _ => false) ≠ 0 ∧
-      Nonempty (SortedPivot.Pivot S) :=
+      Nonempty (SortedPivot.Pivot S) ∧
+      (∀ v : ClassificationLevels.diagonalSymmetryGroup
+          (GlobalClassificationBridge.exactCodeProjector C),
+        (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+          * ((theta j : ℝ) : ℂ))
+            = (((v : ClassificationLevels.LocalPhase 6) j : ℂ))) →
+        S.m = orderOf (ClassificationLevels.intrinsicClass
+          (GlobalClassificationBridge.exactCodeProjector C) v)) :=
   exists_sortedNormalForm_pivot
     MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper C theta hpres hnt
 
@@ -265,7 +295,7 @@ theorem exists_normalForm_s0Clause
     ∃ S : SortedNormalForm C, S.q ≤ 9 ∧
       CoarseFilterSound.S0Clause
         (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S)) := by
-  obtain ⟨S, hq, _, ⟨P⟩⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
+  obtain ⟨S, hq, _, ⟨P⟩, _⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
   exact ⟨S, hq, P.s0Clause⟩
 
 /-- **The same, keeping the pivot and the zero-word fact.**
@@ -282,9 +312,17 @@ theorem exists_normalForm_pivot_full
     ∃ (S : SortedNormalForm C) (_ : SortedPivot.Pivot S), S.q ≤ 9 ∧
       S.frame.vec 0 (fun _ => false) ≠ 0 ∧
       CoarseFilterSound.S0Clause
-        (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S)) := by
-  obtain ⟨S, hq, hz, ⟨P⟩⟩ := exists_sortedNormalForm_pivot_nine C theta hpres hnt
-  exact ⟨S, P, hq, hz, P.s0Clause⟩
+        (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S)) ∧
+      (∀ v : ClassificationLevels.diagonalSymmetryGroup
+          (GlobalClassificationBridge.exactCodeProjector C),
+        (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+          * ((theta j : ℝ) : ℂ))
+            = (((v : ClassificationLevels.LocalPhase 6) j : ℂ))) →
+        S.m = orderOf (ClassificationLevels.intrinsicClass
+          (GlobalClassificationBridge.exactCodeProjector C) v)) := by
+  obtain ⟨S, hq, hz, ⟨P⟩, hord⟩ :=
+    exists_sortedNormalForm_pivot_nine C theta hpres hnt
+  exact ⟨S, P, hq, hz, P.s0Clause, hord⟩
 
 end
 

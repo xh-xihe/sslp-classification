@@ -127,4 +127,8 @@ import MainTheory.SortedVectorMobius
 import MainTheory.BinaryBetaSevenLower
 import MainTheory.BinaryBetaEightLower
 import MainTheory.BinaryBetaNineLower
+import MainTheory.SpanProjectorBridge
+import MainTheory.NormalFormLUBridge
+import MainTheory.IntrinsicOrderAudit
+import MainTheory.OrderFiveCodeRigidity
 import MainTheory.Audit

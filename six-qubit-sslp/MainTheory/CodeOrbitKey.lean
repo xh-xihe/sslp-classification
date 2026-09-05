@@ -135,8 +135,15 @@ theorem code_reaches_orbit_key (C : CodeSpec.ExactCode 6 2 3)
             (MainTheory.CodeFiberBridge.recordOf S)))
         (MainTheory.Generated.FiniteOrbitBase.keyAt k).q
         (MainTheory.Generated.FiniteOrbitBase.keyAt k).m
-        (MainTheory.Generated.FiniteOrbitBase.keyAt k).fibers := by
-  obtain ⟨S, P, hq9, hzero, hS0⟩ :=
+        (MainTheory.Generated.FiniteOrbitBase.keyAt k).fibers ∧
+      (∀ v : MainTheory.ClassificationLevels.diagonalSymmetryGroup
+          (MainTheory.GlobalClassificationBridge.exactCodeProjector C),
+        (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+          * ((theta j : ℝ) : ℂ))
+            = (((v : MainTheory.ClassificationLevels.LocalPhase 6) j : ℂ))) →
+        S.m = orderOf (MainTheory.ClassificationLevels.intrinsicClass
+          (MainTheory.GlobalClassificationBridge.exactCodeProjector C) v)) := by
+  obtain ⟨S, P, hq9, hzero, hS0, hord⟩ :=
     MainTheory.SortedPivotConstruction.exists_normalForm_pivot_full C theta hpres hnt
   obtain ⟨i, hi⟩ := MainTheory.CodeDirectoryEntry.exists_row_of_normalForm S hq9
   have hkeep := MainTheory.CodeDirectoryEntry.keepAt_of_normalForm S hS0 i hi
@@ -165,7 +172,7 @@ theorem code_reaches_orbit_key (C : CodeSpec.ExactCode 6 2 3)
       hzero
   obtain ⟨i2, hi2⟩ := exists_orbitInput hrr hcompat
   obtain ⟨k, hk⟩ := MainTheory.Generated.FiniteOrbitCertificate.orbit_coverage i2
-  refine ⟨S, k, ?_⟩
+  refine ⟨S, k, ?_, hord⟩
   rw [hi2, hpair] at hk
   exact hk
 

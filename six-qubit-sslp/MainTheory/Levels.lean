@@ -27,10 +27,11 @@ fibre data in Lean rather than only in the Python tooling (`CubeAction`,
 permutations acting on projectors (`Orbit36LUBridge`).
 `ClassificationLevelsSix` states one theorem per level.
 
-What is still partial is level (iv)'s *reach*: it is stated for codes supported
-on orbit 36's two table fibres, and carrying it to an arbitrary order-five code
-needs a state-level transport this development has only at the level of
-directory keys.  Saying which of the four are done matters, because `main.tex`
+Level (iv)'s *reach* -- for a while the last partial one -- is now
+`OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive`, which imposes the
+order-five condition on an actual element of the intrinsic group and pushes the
+code's own states onto orbit 36's table fibres along a cube action.  Saying
+which of the four are done matters, because `main.tex`
 is explicit that the four do not form a hierarchy and that a count at one level
 is not a count at another.
 -/

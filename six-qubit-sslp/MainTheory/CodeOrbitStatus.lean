@@ -29,11 +29,17 @@ open MainTheory.CodeFiberBridge
 
 variable {C : CodeSpec.ExactCode 6 2 3}
 
-/-- A normal form's own fibre pair is completed by the normal form. -/
-theorem hasCompletion_codePair (S : SortedNormalForm C) :
-    HasCompletion (fibersOfPair (recordFiberPair (recordOf S))) := by
-  refine ⟨{ states := ![S.frame.vec 0, S.frame.vec 1]
-          , supported := ?_, normalized := ?_, hasDistance := ?_ }⟩
+/-- **A normal form's own fibre pair is completed by the normal form**, as
+data rather than as an existence statement.
+
+`hasCompletion_codePair` used to build exactly this term and then forget it.
+The forgetting is what blocked the level-(iv) chain: to carry a statement
+about the orbit-36 table fibres back to the code one has to push *these*
+states along the cube action, and `Nonempty` erases which states they were. -/
+noncomputable def completion_codePair (S : SortedNormalForm C) :
+    Completion (fibersOfPair (recordFiberPair (recordOf S))) := by
+  refine { states := ![S.frame.vec 0, S.frame.vec 1]
+          , supported := ?_, normalized := ?_, hasDistance := ?_ }
   · intro k s hs
     obtain ⟨x, rfl⟩ := exists_word_bitString s
     fin_cases k
@@ -53,6 +59,14 @@ theorem hasCompletion_codePair (S : SortedNormalForm C) :
     · simpa using S.frame.orthonormal 1 1
   · exact MainTheory.CodeDirectoryEntry.hasDistance_pair S
 
+@[simp] theorem completion_codePair_states (S : SortedNormalForm C) :
+    (completion_codePair S).states = ![S.frame.vec 0, S.frame.vec 1] := rfl
+
+/-- A normal form's own fibre pair is completed by the normal form. -/
+theorem hasCompletion_codePair (S : SortedNormalForm C) :
+    HasCompletion (fibersOfPair (recordFiberPair (recordOf S))) :=
+  ⟨completion_codePair S⟩
+
 /-- **A code occupies a key, and that key carries the code's own labels.** -/
 theorem exists_key (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ)
     (hpres : CodeSpec.CodePreserving C.frame
@@ -63,9 +77,38 @@ theorem exists_key (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ)
       (MainTheory.Generated.FiniteOrbitBase.keyAt k).q = S.q ∧
       (MainTheory.Generated.FiniteOrbitBase.keyAt k).m = S.m ∧
       HasCompletion (MainTheory.Generated.FiniteOrbitBase.keyAt k).fibers := by
-  obtain ⟨S, k, hk⟩ := MainTheory.CodeOrbitKey.code_reaches_orbit_key C theta hpres hnt
+  obtain ⟨S, k, hk, _⟩ :=
+    MainTheory.CodeOrbitKey.code_reaches_orbit_key C theta hpres hnt
   exact ⟨S, k, hk.1.symm, hk.2.1.symm,
     completion_of_fiberEquivalent (hasCompletion_codePair S) hk.2.2⟩
+
+/-- **The same, keeping the cube action and the element's order.**
+
+`exists_key` throws away the two facts that make the key say anything about
+the code's own states: the cube action carrying the code's fibre pair onto the
+key's, and the identification of the key's `m` with the order of whichever
+diagonal symmetry one started from.  Both are already proved upstream. -/
+theorem exists_key_transport (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ)
+    (hpres : CodeSpec.CodePreserving C.frame
+      (PhaseSectorBridge.realGateEnd theta))
+    (hnt : ¬ CodeSpec.SameProjectiveOnCode C.frame
+      (PhaseSectorBridge.realGateEnd theta) LinearMap.id) :
+    ∃ (S : SortedNormalForm C) (k : Fin 66),
+      (MainTheory.Generated.FiniteOrbitBase.keyAt k).q = S.q ∧
+      (MainTheory.Generated.FiniteOrbitBase.keyAt k).m = S.m ∧
+      MainTheory.CubeAction.FiberEquivalent
+        (fibersOfPair (recordFiberPair (recordOf S)))
+        (MainTheory.Generated.FiniteOrbitBase.keyAt k).fibers ∧
+      (∀ v : MainTheory.ClassificationLevels.diagonalSymmetryGroup
+          (MainTheory.GlobalClassificationBridge.exactCodeProjector C),
+        (∀ j, Complex.exp (2 * (Real.pi : ℂ) * Complex.I
+          * ((theta j : ℝ) : ℂ))
+            = (((v : MainTheory.ClassificationLevels.LocalPhase 6) j : ℂ))) →
+        S.m = orderOf (MainTheory.ClassificationLevels.intrinsicClass
+          (MainTheory.GlobalClassificationBridge.exactCodeProjector C) v)) := by
+  obtain ⟨S, k, hk, hord⟩ :=
+    MainTheory.CodeOrbitKey.code_reaches_orbit_key C theta hpres hnt
+  exact ⟨S, k, hk.1.symm, hk.2.1.symm, hk.2.2, hord⟩
 
 /-- **Result I, at the level of codes.**
 

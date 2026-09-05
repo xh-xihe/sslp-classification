@@ -131,7 +131,7 @@ theorem exists_normalForm_q_le_beta_supportRank
     ∃ S : SortedNormalForm C,
       S.q ≤ CoarseFilter.threshold (supportAffineRank (S.frame.vec 0)) ∧
       S.q ≤ 9 := by
-  obtain ⟨S, P, hq9, hzero, _⟩ :=
+  obtain ⟨S, P, hq9, hzero, _, _⟩ :=
     MainTheory.SortedPivotConstruction.exists_normalForm_pivot_full C theta hpres hnt
   exact ⟨S, q_le_threshold_supportAffineRank P hzero, hq9⟩
 

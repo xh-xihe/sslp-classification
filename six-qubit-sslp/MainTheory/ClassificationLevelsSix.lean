@@ -27,11 +27,12 @@ The levels the paper distinguishes, and what is said about each here:
 * **(iii) weight-enumerator level** -- the eleven exact images and their union;
 * **(iv) local-unitary code level** -- the orbit-36 sector is a single class.
 
-Level (iv) is stated where the rigidity theorem states it, on codes supported
-in orbit 36's two table fibres.  Carrying it to an *arbitrary* order-five code
-needs the state-level transport from that code's fibres to the table's, which
-`CodeOrbitStatus.code_orderFive_is_orbit36` supplies only at the level of
-directory keys; that step is not in this development.
+Level (iv) is stated here on codes supported in orbit 36's two table fibres,
+which is where the rigidity theorem states it.  The transport carrying it to an
+*arbitrary* order-five code -- which this header used to record as absent -- is
+`OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive`: the order-five
+hypothesis is imposed on an actual element of the intrinsic group, and the
+code's own states are pushed along a cube action onto the table fibres.
 -/
 
 namespace MainTheory.ClassificationLevelsSix

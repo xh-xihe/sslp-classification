@@ -96,6 +96,10 @@ import MainTheory.SortedVectorMobius
 import MainTheory.BinaryBetaSevenLower
 import MainTheory.BinaryBetaEightLower
 import MainTheory.BinaryBetaNineLower
+import MainTheory.SpanProjectorBridge
+import MainTheory.NormalFormLUBridge
+import MainTheory.IntrinsicOrderAudit
+import MainTheory.OrderFiveCodeRigidity
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -547,3 +551,15 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.BinaryBetaSevenLower.betaSevenAttained
 #print axioms MainTheory.BinaryBetaEightLower.betaEightAttained
 #print axioms MainTheory.BinaryBetaNineLower.betaNineAttained
+#print axioms MainTheory.SpanProjectorBridge.ofFrame_eq_of_codeSpan_eq
+#print axioms MainTheory.NormalFormLUBridge.equivalent_source_frame
+#print axioms MainTheory.NormalFormLUBridge.luEquivalent_ofFrame_normalForm
+#print axioms MainTheory.CubeCompletionTransport.equivalent_pushPair
+#print axioms MainTheory.CodeOrbitStatus.exists_key_transport
+#print axioms MainTheory.IntrinsicOrderAudit.exists_key_of_element
+#print axioms MainTheory.IntrinsicOrderAudit.orderOf_mem
+#print axioms MainTheory.IntrinsicOrderAudit.orderOf_le_five
+#print axioms MainTheory.IntrinsicOrderAudit.natCard_mem
+#print axioms MainTheory.IntrinsicOrderAudit.natCard_le_five
+#print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive
+#print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive

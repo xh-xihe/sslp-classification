@@ -72,6 +72,29 @@ def pushPair {n : Nat} (g : Parameter n) (p : Fin 2 → SS.State n ℂ) :
     Fin 2 → SS.State n ℂ :=
   fun k => pushState g (p (SixQubit.CodeEquiv.swapIdx g.swap k))
 
+/-- **A cube move is a code equivalence.**
+
+`pushPair` moves supports, norms and the Knill--Laflamme predicate, but nothing
+said the move is one of the paper's own code equivalences.  It is: the cube
+parameter is exactly a local monomial unitary with unit phases -- qubit
+permutation `g.perm.symm`, local `X` string `g.shift` -- together with the
+logical interchange `g.swap`.
+
+The inverse permutation is not a slip.  `pushState` is the *pullback* through
+`pointEquiv`, so it flips first and then permutes back, while `actPoint`
+permutes first and then flips; the local monomial that matches it therefore
+carries `g.perm.symm`. -/
+theorem equivalent_pushPair {n : Nat} (g : Parameter n)
+    (p : Fin 2 → SS.State n ℂ) :
+    SixQubit.CodeEquiv.Equivalent p (pushPair g p) := by
+  refine ⟨⟨g.perm.symm, g.shift, fun _ => 1, fun _ => 1, fun _ => by simp,
+    fun _ => by simp⟩, fun _ => 1, g.swap, fun _ => by simp, ?_⟩
+  intro k
+  funext s
+  simp only [pushPair, SixQubit.CodeEquiv.scal,
+    SixQubit.CodeEquiv.LocalMonomial.act_apply, pushState_apply]
+  simp [pointEquiv]
+
 /-- Push an actual completion through the cube action.  The proof transports
 support, both norm equations, and the genuine distance-three condition. -/
 def pushCompletion {n : Nat} {F : FiberPair n}
