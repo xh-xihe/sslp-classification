@@ -110,6 +110,9 @@ import MainTheory.RankStageDistribution
 import MainTheory.SurvivingLiftOrders
 import MainTheory.StageRecordCounts
 import MainTheory.MomentConvexHull
+import MainTheory.WEStrictInclusion
+import MainTheory.ScaledModulusFibres
+import MainTheory.DisjointFibreOffDiagonal
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -605,3 +608,11 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.MomentConvexHull.momentSet_eq_convexHull
 #print axioms MainTheory.MomentConvexHull.exists_feasible_iff_momentSet_inter
 #print axioms MainTheory.MomentConvexHull.exists_feasible_iff_convexHull_inter
+#print axioms MainTheory.WEStrictInclusion.FI_injective
+#print axioms MainTheory.WEStrictInclusion.FI_half_ssubset
+#print axioms MainTheory.WEStrictInclusion.provedImages_subset_conjectured
+#print axioms MainTheory.ScaledModulusFibres.Sk_scale
+#print axioms MainTheory.ScaledModulusFibres.weight_scale
+#print axioms MainTheory.ScaledModulusFibres.orderOf_intrinsicClass_dvd
+#print axioms MainTheory.DisjointFibreOffDiagonal.offSumOn_zero_of_disjoint
+#print axioms MainTheory.DisjointFibreOffDiagonal.innerC_pauliAct_eq_zero_of_disjoint

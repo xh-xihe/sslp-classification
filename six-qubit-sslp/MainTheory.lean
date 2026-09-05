@@ -141,4 +141,7 @@ import MainTheory.RankStageDistribution
 import MainTheory.SurvivingLiftOrders
 import MainTheory.StageRecordCounts
 import MainTheory.MomentConvexHull
+import MainTheory.WEStrictInclusion
+import MainTheory.ScaledModulusFibres
+import MainTheory.DisjointFibreOffDiagonal
 import MainTheory.Audit
