@@ -113,6 +113,7 @@ import MainTheory.MomentConvexHull
 import MainTheory.WEStrictInclusion
 import MainTheory.ScaledModulusFibres
 import MainTheory.DisjointFibreOffDiagonal
+import MainTheory.PauliKernelTrace
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -616,3 +617,6 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.ScaledModulusFibres.orderOf_intrinsicClass_dvd
 #print axioms MainTheory.DisjointFibreOffDiagonal.offSumOn_zero_of_disjoint
 #print axioms MainTheory.DisjointFibreOffDiagonal.innerC_pauliAct_eq_zero_of_disjoint
+#print axioms MainTheory.PauliKernelTrace.kernelAction_pauliKernel
+#print axioms MainTheory.PauliKernelTrace.trace_pauliKernel_mul_projector
+#print axioms MainTheory.PauliKernelTrace.Aco_eq_sum_normSq_trace
