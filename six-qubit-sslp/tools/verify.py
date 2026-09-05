@@ -67,7 +67,11 @@ def check_build():
 AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean')
 
-AXIOM_LINE = re.compile(r"'([^']+)' depends on axioms: \[([^\]]*)\]")
+# The name is delimited by quotes, but a Lean name may itself end in a
+# prime (`foo'`), so `[^']+` silently fails to match those lines and the
+# declaration is audited but never checked.  Four entries were invisible
+# this way.  Non-greedy up to the literal suffix matches them.
+AXIOM_LINE = re.compile(r"'(.+?)' depends on axioms: \[([^\]]*)\]")
 
 
 def check_axioms():

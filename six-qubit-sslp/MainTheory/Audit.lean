@@ -100,6 +100,16 @@ import MainTheory.SpanProjectorBridge
 import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
+import MainTheory.DeterminantalFactor
+import MainTheory.PaperSmithFactor
+import MainTheory.GatePrimitiveConverse
+import MainTheory.RankTwoGeneratorGeneral
+import MainTheory.ZDetectionHypothesis
+import MainTheory.BetaAtPivotRank
+import MainTheory.RankStageDistribution
+import MainTheory.SurvivingLiftOrders
+import MainTheory.StageRecordCounts
+import MainTheory.MomentConvexHull
 
 /-!
 # Axiom audit for the `main.tex` general theory
@@ -563,3 +573,35 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.IntrinsicOrderAudit.natCard_le_five
 #print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive
 #print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive
+#print axioms MainTheory.DeterminantalFactor.inv_eq_smul_adjugate
+#print axioms MainTheory.DeterminantalFactor.cofactorGcd_dvd_det
+#print axioms MainTheory.DeterminantalFactor.inverseDenominator_dvd_iff
+#print axioms MainTheory.DeterminantalFactor.inverseDenominator_eq_det_div_cofactorGcd
+#print axioms MainTheory.DeterminantalFactor.dvd_lastInvariantFactor
+#print axioms MainTheory.PaperSmithFactor.colouredPivot_order_dvd_lastInvariantFactor
+#print axioms MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor
+#print axioms MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor'
+#print axioms MainTheory.GatePrimitiveConverse.dvd_val_weight
+#print axioms MainTheory.GatePrimitiveConverse.primitive_of_order
+#print axioms MainTheory.GatePrimitiveConverse.primitive_iff_exact_order
+#print axioms MainTheory.RankTwoGeneratorGeneral.intrinsicClass_finiteGenerator'
+#print axioms MainTheory.RankTwoGeneratorGeneral.exists_sortedNormalForm_natCard
+#print axioms MainTheory.ZDetection.zDetectsFrame_of_hasDistance
+#print axioms MainTheory.ZDetection.zDetectsFrame_of_codeSpan_eq
+#print axioms MainTheory.ZDetection.phaseSectors_of_zDetects
+#print axioms MainTheory.ZDetection.quantitative_projective_group_of_zDetects
+#print axioms MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects
+#print axioms MainTheory.ZDetection.cyclic_of_zDetects
+#print axioms MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank
+#print axioms MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank_le
+#print axioms MainTheory.RankStageDistribution.table
+#print axioms MainTheory.RankStageDistribution.eight_two_rank_four
+#print axioms MainTheory.RankStageDistribution.nine_three_rank_five
+#print axioms MainTheory.SurvivingLiftOrders.survivingQ_table
+#print axioms MainTheory.SurvivingLiftOrders.q_eq_m_or_exception
+#print axioms MainTheory.StageRecordCounts.record_level_chain
+#print axioms MainTheory.StageRecordCounts.coarse_two_more_records_than_pairs
+#print axioms MainTheory.StageRecordCounts.feasible_one_more_record_than_pair
+#print axioms MainTheory.MomentConvexHull.momentSet_eq_convexHull
+#print axioms MainTheory.MomentConvexHull.exists_feasible_iff_momentSet_inter
+#print axioms MainTheory.MomentConvexHull.exists_feasible_iff_convexHull_inter

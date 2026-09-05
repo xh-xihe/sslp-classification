@@ -131,4 +131,14 @@ import MainTheory.SpanProjectorBridge
 import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
+import MainTheory.DeterminantalFactor
+import MainTheory.PaperSmithFactor
+import MainTheory.GatePrimitiveConverse
+import MainTheory.RankTwoGeneratorGeneral
+import MainTheory.ZDetectionHypothesis
+import MainTheory.BetaAtPivotRank
+import MainTheory.RankStageDistribution
+import MainTheory.SurvivingLiftOrders
+import MainTheory.StageRecordCounts
+import MainTheory.MomentConvexHull
 import MainTheory.Audit
