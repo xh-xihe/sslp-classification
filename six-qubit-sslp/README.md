@@ -131,14 +131,16 @@ manuscript-wide review and rebuild. Orbit 31's LP affine dimension is proved
 twice, by `SixQubit.Orbit31.momentPolytope_affine_dimension` on the
 thirty-two-coordinate normal form and by
 `Generated.OrbitTableSemantics31.lp_affine_dimension` on the full-fibre
-pipeline polytope. Half of that duplication is now closed:
+pipeline polytope. That duplication is now closed.
 `MainTheory.Orbit31Identification.same_fibre_pair` proves the hand
 certificate's two sixteen-element word sets are exactly the two masks of the
-pipeline pair, so the two arguments constrain the same computational-basis
-supports and orbit 31 is one object rather than two that share a number. What
-is still missing is the affine isomorphism carrying the thirty-two-coordinate
-polytope onto the full-fibre one, which would make the two dimension theorems
-one theorem; the index map is determined but the transport is not written.
+pipeline pair; `matrixZ_col` checks all 736 entries of the hand-written moment
+table against the pipeline's `entryZ` at the corresponding columns; and
+`mem_polytope_iff` identifies the two feasible systems, so the two dimension
+theorems are two readings of one polytope. The column map is not the
+increasing enumeration of each mask -- the hand certificate orders its first
+fibre `0, 48, 40, 24, ...` -- so the two presentations differ by a column
+permutation, and the map is given in the hand certificate's order.
 The detailed ledger takes precedence over older narrative status reports.
 
 Two source corrections were necessary: the Singleton statement now specifies

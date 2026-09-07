@@ -840,6 +840,10 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.Orbit31Identification.fibre0
 #print axioms MainTheory.Orbit31Identification.fibre1
 #print axioms MainTheory.Orbit31Identification.same_fibre_pair
+#print axioms MainTheory.Orbit31Identification.col_injective
+#print axioms MainTheory.Orbit31Identification.inFiber_iff
+#print axioms MainTheory.Orbit31Identification.matrixZ_col
+#print axioms MainTheory.Orbit31Identification.mem_polytope_iff
 #print axioms MainTheory.ParityFour.character_bxor
 #print axioms MainTheory.ParityFour.bxor_eq_false_iff
 #print axioms MainTheory.ParityFour.sum_character
