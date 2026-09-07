@@ -55,6 +55,12 @@ AGGREGATE = [
      '((6,2,3)) completion.'),
 ]
 
+# The manuscript gives these six per-orbit propositions no \label, only a
+# bracketed title, so they are cited by that title.  An earlier version of the
+# label sweep matched only labelled environments and silently skipped them.
+UNTITLED = [(25, 4), (27, 4), (28, 4), (29, 4), (62, 8), (63, 8)]
+
+
 ORDER_LEVEL = [
     ('thm:q4nogo', 'q4_no_go', 4,
      'No exact `((6,2,d))` code with `d >= 3` admits a projective diagonal\n'
@@ -118,6 +124,20 @@ def aggregate_block():
             '    simp only [List.mem_cons, List.not_mem_nil, or_false, not_or]\n'
             '    omega)\n'
             % (label, prose, len(ids), len(ids), name, lean_list(ids)))
+    return '\n'.join(out)
+
+
+def untitled_block():
+    out = []
+    for orbit, order in UNTITLED:
+        out.append(
+            '/-- **"Orbit %d is impossible"**, the manuscript\'s unlabelled\n'
+            'proposition of projective order %d.  It carries no `\\label`, so it is\n'
+            'cited by its title. -/\n'
+            'theorem orbit%d_is_impossible (k : Fin 66) (hk : paperOrbitId k = %d) :\n'
+            '    NoCompletion (keyAt k).fibers :=\n'
+            '  no_completion_of_paperOrbitId k (by rw [hk]; decide)\n'
+            % (orbit, order, orbit, orbit))
     return '\n'.join(out)
 
 
@@ -286,6 +306,7 @@ def main():
               'realizedFinset': '{' + ', '.join(map(str, REALIZED)) + '}'}
     text = (HEADER % fields
             + per_orbit_block()
+            + '\n' + untitled_block()
             + '\n' + aggregate_block()
             + FOOTER_HEAD
             + order_level_block()

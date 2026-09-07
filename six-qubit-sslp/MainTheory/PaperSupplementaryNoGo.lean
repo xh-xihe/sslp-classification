@@ -292,6 +292,48 @@ theorem q7no61 (k : Fin 66) (hk : paperOrbitId k = 61) :
     NoCompletion (keyAt k).fibers :=
   no_completion_of_paperOrbitId k (by rw [hk]; decide)
 
+/-- **"Orbit 25 is impossible"**, the manuscript's unlabelled
+proposition of projective order 4.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit25_is_impossible (k : Fin 66) (hk : paperOrbitId k = 25) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
+/-- **"Orbit 27 is impossible"**, the manuscript's unlabelled
+proposition of projective order 4.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit27_is_impossible (k : Fin 66) (hk : paperOrbitId k = 27) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
+/-- **"Orbit 28 is impossible"**, the manuscript's unlabelled
+proposition of projective order 4.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit28_is_impossible (k : Fin 66) (hk : paperOrbitId k = 28) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
+/-- **"Orbit 29 is impossible"**, the manuscript's unlabelled
+proposition of projective order 4.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit29_is_impossible (k : Fin 66) (hk : paperOrbitId k = 29) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
+/-- **"Orbit 62 is impossible"**, the manuscript's unlabelled
+proposition of projective order 8.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit62_is_impossible (k : Fin 66) (hk : paperOrbitId k = 62) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
+/-- **"Orbit 63 is impossible"**, the manuscript's unlabelled
+proposition of projective order 8.  It carries no `\label`, so it is
+cited by its title. -/
+theorem orbit63_is_impossible (k : Fin 66) (hk : paperOrbitId k = 63) :
+    NoCompletion (keyAt k).fibers :=
+  no_completion_of_paperOrbitId k (by rw [hk]; decide)
+
 /-- **`thm:m2-fourteen-nogos`.**  None of the fourteen rank-compatible order-two moment orbits admits an exact completion.
 
 The 14 orbits really are 14 distinct orbits: `paperOrbitId` is

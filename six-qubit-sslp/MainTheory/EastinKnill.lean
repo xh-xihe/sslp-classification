@@ -2,6 +2,16 @@ import MainTheory.QubitTransversalFinite
 
 /-! # The Eastin--Knill no-universality theorem
 
+This is `main.tex`'s unlabelled Theorem "Eastin--Knill no-go theorem": a
+nontrivial finite-dimensional quantum code that detects every error acting on
+any one physical subsystem admits no universal set of logical unitaries
+implemented entirely by transversal physical unitaries.  The manuscript gives
+that theorem no `\label`, so it is cited here by its title.
+
+`eastin_knill` is the statement at arbitrary finite subsystem dimensions and
+`eastin_knill_exactCode` applies it to this repository's exact qubit codes
+through their genuine Pauli Knill--Laflamme distance predicate.
+
 Universality is stated in the ordinary matrix topology on the faithful
 adjoint action: every projective logical unitary must be approximable by
 implemented transversal logical unitaries.  The physical transversal image

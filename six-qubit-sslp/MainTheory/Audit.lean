@@ -796,6 +796,7 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.UnitaryAdjointRepresentation.finite_adjoint_image_of_bounded_projective_order
 #print axioms MainTheory.DiagonalLogicalOrder.exists_bounded_scalar_power
 #print axioms MainTheory.EastinKnill.eastin_knill
+#print axioms MainTheory.EastinKnill.eastin_knill_exactCode
 #print axioms MainTheory.FiniteMomentLP.polytope_nonempty
 #print axioms MainTheory.FiniteMomentLP.affine_dimension_eq_of_face
 #print axioms MainTheory.FiniteMomentMatrix.entryZ_moment
