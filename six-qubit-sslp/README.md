@@ -131,8 +131,14 @@ manuscript-wide review and rebuild. Orbit 31's LP affine dimension is proved
 twice, by `SixQubit.Orbit31.momentPolytope_affine_dimension` on the
 thirty-two-coordinate normal form and by
 `Generated.OrbitTableSemantics31.lp_affine_dimension` on the full-fibre
-pipeline polytope; the two agree numerically but no Lean theorem identifies
-the two presentations, so they are independent certifications rather than one.
+pipeline polytope. Half of that duplication is now closed:
+`MainTheory.Orbit31Identification.same_fibre_pair` proves the hand
+certificate's two sixteen-element word sets are exactly the two masks of the
+pipeline pair, so the two arguments constrain the same computational-basis
+supports and orbit 31 is one object rather than two that share a number. What
+is still missing is the affine isomorphism carrying the thirty-two-coordinate
+polytope onto the full-fibre one, which would make the two dimension theorems
+one theorem; the index map is determined but the transport is not written.
 The detailed ledger takes precedence over older narrative status reports.
 
 Two source corrections were necessary: the Singleton statement now specifies

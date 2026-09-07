@@ -151,6 +151,7 @@ import MainTheory.FiniteTensorKernel
 import MainTheory.FrameDistanceOne
 import MainTheory.Generated.OrbitTableMultiplicities
 import MainTheory.PhaseSectorMoments
+import MainTheory.Orbit31Identification
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
@@ -836,6 +837,9 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.PhaseSectorMoments.exists_common_mean
 #print axioms MainTheory.PaperGeneralSSLP.general_sslp_normal_form
 #print axioms MainTheory.ConnectedOrthogonality.mem_span_of_inner_eq_zero
+#print axioms MainTheory.Orbit31Identification.fibre0
+#print axioms MainTheory.Orbit31Identification.fibre1
+#print axioms MainTheory.Orbit31Identification.same_fibre_pair
 #print axioms MainTheory.ParityFour.character_bxor
 #print axioms MainTheory.ParityFour.bxor_eq_false_iff
 #print axioms MainTheory.ParityFour.sum_character
