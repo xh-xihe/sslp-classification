@@ -24,6 +24,19 @@ it is assumed, not derived.  `edge_isolation_of_character_rows` therefore
 takes the character equations as hypotheses, and `lem:parity4-edgeisolation`
 stays on the not-formalized list rather than being cited from here.
 
+Where the manuscript's argument actually lives in this repository: it is
+carried out, but inlined.  `SixQubit/Orbit15.lean` derives its twelve edge
+orthogonalities `star (c y_i) * d z_j + ... = 0` by `linear_combination` with
+coefficients plus or minus `1/8` over eight Knill--Laflamme rows, and orbits 14 and 24 do
+the same.  Those coefficients are the inverse character matrix -- `1/8` times
+the transpose, since `W W^T = 8 I` -- so each of those three proofs performs
+exactly the inversion proved here, with the eight rows and the eight
+coefficients written out by hand for that orbit.  What has never existed is
+the top-level statement, and what is still missing for it is the proviso that
+identifies those eight physical Knill--Laflamme rows with the eight
+characters.  Supplying it would replace three hand expansions with one
+theorem; it would not change any certified result.
+
 NOT-FORMALIZED: lem:parity4-edgeisolation
 -/
 

@@ -108,14 +108,28 @@ rather than merely missing, with the reason recorded in the Lean source:
   What remains unproved is the manuscript's proviso -- that the four effective
   parity coordinates are represented by physical single-qubit `Z` characters
   and the flipped coordinate by a physical flip. That proviso is the bridge
-  from the six physical qubits to the four effective coordinates, it is what
-  turns the Knill-Laflamme rows into these characters, and it is assumed.
+  from the six physical qubits to the four effective coordinates, and it is
+  what turns the Knill-Laflamme rows into these characters.
+
+  The manuscript's argument is nonetheless carried out in this repository,
+  inlined. `SixQubit/Orbit15.lean` derives its twelve edge orthogonalities by
+  `linear_combination` with coefficients plus or minus `1/8` over eight
+  Knill-Laflamme rows, and orbits 14 and 24 do the same; those coefficients
+  are the inverse character matrix. So each of those three proofs performs the
+  inversion by hand for its own orbit. Supplying the proviso would replace
+  three hand expansions with one theorem; it would not change any certified
+  result.
 
 `lem:connected-orthogonality` was in this list and is now proved:
 `MainTheory.ConnectedOrthogonality.exists_line` gives the manuscript's line,
 and `frame_forms_ne` the frame consequence -- the latter without the
 manuscript's equal-positive-mass hypothesis, which the inequality does not
-need.
+need. It is proved but not load-bearing: the certified no-gos for orbits 14,
+15 and 24 do not take the manuscript's connectivity route at all.
+`SixQubit/ParityFour.lean` says so in its own header and uses a uniform
+Lagrange/wedge inequality that never mentions the support. Nothing outside the
+axiom audit uses `ConnectedOrthogonality`; it completes the manuscript's
+argument rather than participating in the verified chain.
 
 One further clause is uncovered inside a cited lemma. `lem:o7scalarmoments`
 has four clauses; its three displayed equations are proved, but its closing

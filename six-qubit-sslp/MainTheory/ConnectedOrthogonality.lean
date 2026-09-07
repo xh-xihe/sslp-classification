@@ -14,6 +14,16 @@ Nothing in the repository proved it.  The nearest declaration,
 existence of the line, so it is not a counterpart.  This file proves the
 lemma.
 
+It is proved but not load-bearing, and that should be said plainly.  The
+certified no-gos for orbits 14, 15 and 24 do not take the manuscript's route
+at all: `SixQubit/ParityFour.lean` states outright that "the paper argues
+through connectivity of the positive support", that this is awkward to
+formalize because the support depends on where in the moment cross-polytope
+one sits, and that the route taken there is instead a uniform Lagrange/wedge
+inequality that never mentions the support.  So this lemma completes the
+manuscript's argument rather than participating in the verified chain, and
+nothing outside the axiom audit uses it.
+
 Two choices are worth stating.
 
 * The graph is carried as a relation together with an explicit reachability
