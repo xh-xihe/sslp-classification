@@ -1057,8 +1057,6 @@
  },
  "_no_go": {
   "lean_modules": {
-   "5": "Orbit5",
-   "6": "Orbit6",
    "12": "Orbit12",
    "13": "Orbit13",
    "14": "Orbit14",
@@ -1091,6 +1089,7 @@
    "47": "Orbit47",
    "48": "Orbit48",
    "49": "Orbit49",
+   "5": "Orbit5",
    "50": "Orbit50",
    "51": "Orbit51",
    "52": "Orbit52",
@@ -1101,6 +1100,7 @@
    "57": "Orbit57",
    "58": "Orbit58",
    "59": "Orbit59",
+   "6": "Orbit6",
    "60": "Orbit60",
    "61": "Orbit61",
    "62": "Orbit62",
@@ -1109,5 +1109,16 @@
    "65": "Orbit65",
    "66": "Order9"
   }
+ },
+ "_paper": {
+  "numeric_rows_sha256": "35b80e5ee91a955830291ccfb308d366b67eb060cbbd02a8e18ee306bda2f9f3",
+  "orbit_count": 66,
+  "schema": 1,
+  "sources_sha256": {
+   "documents/20260905/main.tex": "5655f6455269401f56b3c6a7b9106f5919d3e7906f556be61ea2a180955b23c0",
+   "documents/20260905/supplementary.tex": "6d4b4a19c3dce5a1989b78e7e4341a5dedeae35252fd653f07291f4c9d39b9a5"
+  },
+  "table_label": "tab:66orbits",
+  "table_source": "documents/20260905/supplementary.tex"
  }
 }

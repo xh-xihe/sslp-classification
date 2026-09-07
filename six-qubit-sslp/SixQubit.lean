@@ -161,7 +161,10 @@ import SixQubit.Orbit8Real
 import SixQubit.Orbit9Real
 import SixQubit.Orbit7UniversalFinal
 import SixQubit.Orbit9UniversalFinal
+import SixQubit.Orbit9MagnitudeCounts
+import SixQubit.Orbit31MomentPolytope
 import SixQubit.Orbit8UniversalFinal
+import SixQubit.Orbit8RaisingGram
 import SixQubit.Orbit10Real
 import SixQubit.Orbit11Real
 import SixQubit.Orbit16Real

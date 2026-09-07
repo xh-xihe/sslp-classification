@@ -1,0 +1,5 @@
+sources: (True, 'clean'); elapsed=2.4s
+Original tools.verify.check_axioms run intentionally aborted after about 14 minutes before final output; repeated traversal of shared dependency closures replaced by Lean core collector with one shared visited set.
+shared_axiom_union: exit=0; elapsed=56.2s
+finite_lift_imported_signatures: exit=0; elapsed=15.7s
+finite_lift_current_source: exit=0; elapsed=21.1s

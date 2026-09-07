@@ -1,87 +1,160 @@
-"""Build the authoritative orbit data in the manifest from the paper.
+"""Regenerate/check the orbit manifest against both current private manuscripts.
 
-Every later check validates the Lean against THIS file, so it is parsed from
-`six_qubit_sslp.tex` Table tab:66orbits.  The separately reviewed
-``_no_go.lean_modules`` certification inventory is preserved verbatim when the
-paper-derived numeric records are regenerated.
-
-For each orbit the manifest records:
-  q   physical lift order
-  m   projective (logical) order
-  a   the angle vector of the representative
-  d   the residue, defined as q/m
-  ord the additive order of d in Z_q, which MUST equal m
-  n0  size of the residue-0 fiber
-  n1  size of the residue-d fiber
-
-The paper fixes delta = q/m and requires its additive order in Z_q to be
-exactly m; a module using any other residue is proving a no-go for a different
-projective order.  Choosing delta by fiber size alone is what produced four
-wrong-order modules, because the wrong residue can give the same fiber size.
+Only representative data and SHA-256 provenance are written. Missing, duplicate,
+malformed, or inconsistent rows fail before writing. The reviewed no-go module
+mapping is preserved and checked against the complete 66-row table.
 """
-import io
+import argparse
+import hashlib
 import json
 import os
+from pathlib import Path
 import re
 import sys
+import tempfile
 from math import gcd
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.abspath(os.path.join(HERE, '..', '..'))
-sys.path.insert(0, os.path.join(REPO, 'tools', 'core'))
-from orbit import fiber
+REPO = Path(__file__).resolve().parents[2]
+DEFAULT_SOURCE = REPO / 'documents' / '20260905'
+ROW = re.compile(
+    r'^\s*(\d+)\s*&\s*(\d+)\s*&\s*(\d+)\s*&\s*\$\(([0-9,\s]+)\)\$'
+    r'\s*&\s*\$\((\d+),(\d+)\)\$\s*&\s*(\d+)\s*&\s*(\d+)'
+    r'\s*&\s*(\d+)\s*&\s*\\textsf\{([^}]+)\}\s*\\\\\s*$')
 
-tex = io.open(os.path.join(REPO, 'six_qubit_sslp.tex'), encoding='utf-8').read()
 
-rows = {}
-for m in re.finditer(r'^\s*(\d+)\s*&\s*(\d+)\s*&\s*(\d+)\s*&\s*\$\(([0-9,]+)\)\$'
-                     r'\s*&\s*\$\((\d+),(\d+)\)\$', tex, re.M):
-    oid = int(m.group(1))
-    q, mm = int(m.group(2)), int(m.group(3))
-    a = [int(x) for x in m.group(4).split(',')]
-    n0p, n1p = int(m.group(5)), int(m.group(6))
-    rows[oid] = (q, mm, a, n0p, n1p)
+class ManifestError(ValueError):
+    pass
 
-print('parsed %d orbit rows from the paper table' % len(rows))
-missing = [k for k in range(1, 67) if k not in rows]
-if missing:
-    print('  WARNING: orbits absent from the parse: %s' % missing)
 
-man, bad = {}, []
-for oid in sorted(rows):
-    q, mm, a, n0p, n1p = rows[oid]
-    if q % mm != 0:
-        bad.append('orbit %d: q=%d not divisible by m=%d' % (oid, q, mm))
-        continue
-    d = q // mm
-    order = q // gcd(d, q)
-    S0, S1 = fiber(a, q, 0), fiber(a, q, d)
-    entry = dict(q=q, m=mm, a=a, d=d, ord=order, n0=len(S0), n1=len(S1))
-    if order != mm:
-        bad.append('orbit %d: delta=%d has additive order %d, need m=%d'
-                   % (oid, d, order, mm))
-    if {len(S0), len(S1)} != {n0p, n1p} and (len(S0), len(S1)) != (n0p, n1p):
-        bad.append('orbit %d: recomputed fibers (%d,%d) != paper (%d,%d)'
-                   % (oid, len(S0), len(S1), n0p, n1p))
-    man[str(oid)] = entry
+def digest(data):
+    return hashlib.sha256(data).hexdigest()
 
-out = os.path.join(REPO, 'tools', 'manifest.json')
-old = json.loads(io.open(out, encoding='utf-8').read()) if os.path.exists(out) else {}
-inventory = old.get('_no_go')
-if (not isinstance(inventory, dict) or
-        not isinstance(inventory.get('lean_modules'), dict) or
-        len(inventory['lean_modules']) != 51):
-    bad.append('existing manifest lacks the reviewed 51-module _no_go inventory')
-else:
-    man['_no_go'] = inventory
-if bad:
-    print('INTERNAL INCONSISTENCIES (paper vs recomputation):')
-    for b in bad:
-        print('  ' + b)
-    sys.exit(1)
-io.open(out, 'w', encoding='utf-8').write(json.dumps(man, indent=1, sort_keys=True))
-print('wrote %s with %d orbits' %
-      (out, len([k for k in man if str(k).isdigit()])))
-print()
-print('every entry self-consistent: delta = q/m, additive order = m, '
-      'fiber sizes reproduce the paper table')
+
+def fiber_size(angle, modulus, residue):
+    return sum(sum(angle[i] for i in range(6) if bits & (1 << i)) % modulus == residue
+               for bits in range(64))
+
+
+def parse_table(text):
+    text = re.sub(r'(?<!\\)%[^\n]*', '', text)
+    label = r'\label{tab:66orbits}'
+    if text.count(label) != 1:
+        raise ManifestError('expected exactly one table labelled tab:66orbits')
+    position = text.index(label)
+    begin = text.rfind(r'\begin{longtable}', 0, position)
+    end = text.find(r'\end{longtable}', position)
+    if begin < 0 or end < 0:
+        raise ManifestError('tab:66orbits is not a complete longtable')
+    rows = {}
+    for line in text[begin:end].splitlines():
+        if not re.match(r'^\s*\d+\s*&', line):
+            continue
+        match = ROW.fullmatch(line)
+        if not match:
+            raise ManifestError('unparseable numeric row in tab:66orbits')
+        values = match.groups()
+        oid, q, logical_order = map(int, values[:3])
+        if oid in rows:
+            raise ManifestError('duplicate orbit ID %d' % oid)
+        angle = [int(value.strip()) for value in values[3].split(',')]
+        n0, n1 = map(int, values[4:6])
+        if len(angle) != 6 or angle != sorted(angle):
+            raise ManifestError('orbit %d has no sorted six-coordinate angle' % oid)
+        if q < 2 or logical_order < 2 or q % logical_order:
+            raise ManifestError('orbit %d has invalid lift/projective orders' % oid)
+        if any(value < 0 or value >= q for value in angle) or gcd(q, *angle) != 1:
+            raise ManifestError('orbit %d has a nonprimitive or out-of-range angle' % oid)
+        residue = q // logical_order
+        actual = (fiber_size(angle, q, 0), fiber_size(angle, q, residue))
+        if actual != (n0, n1):
+            raise ManifestError('orbit %d ordered fiber sizes disagree: %s != %s' %
+                                (oid, actual, (n0, n1)))
+        status = values[9]
+        if status not in {'open', 'WE', 'rigid', 'no-go', 'realized'}:
+            raise ManifestError('orbit %d has unrecognized status %r' % (oid, status))
+        rows[oid] = (dict(q=q, m=logical_order, a=angle, d=residue,
+                          ord=q // gcd(residue, q), n0=n0, n1=n1), status)
+    if set(rows) != set(range(1, 67)):
+        raise ManifestError('expected IDs 1..66 exactly; missing=%s extra=%s' %
+                            (sorted(set(range(1, 67)) - set(rows)),
+                             sorted(set(rows) - set(range(1, 67)))))
+    return rows
+
+
+def build_manifest(source_dir, existing, repo=REPO):
+    source_dir, repo = Path(source_dir).resolve(), Path(repo).resolve()
+    texts, hashes = {}, {}
+    for filename in ('main.tex', 'supplementary.tex'):
+        path = source_dir / filename
+        if not path.is_file():
+            raise ManifestError('required private manuscript is missing: ' + str(path))
+        data = path.read_bytes()
+        texts[filename] = data.decode('utf-8')
+        try:
+            display = path.relative_to(repo).as_posix()
+        except ValueError:
+            display = filename
+        hashes[display] = digest(data)
+    rows = parse_table(texts['supplementary.tex'])
+    inventory = existing.get('_no_go', {})
+    mapping = inventory.get('lean_modules', {}) if isinstance(inventory, dict) else {}
+    expected_ids = {str(oid) for oid, (_, status) in rows.items() if status == 'no-go'}
+    if len(expected_ids) != 51 or not isinstance(mapping, dict) or set(mapping) != expected_ids:
+        raise ManifestError('reviewed no-go inventory must match all 51 table no-go IDs')
+    for oid, module in mapping.items():
+        if module != ('Order9' if oid == '66' else 'Orbit' + oid):
+            raise ManifestError('unexpected reviewed no-go module for orbit ' + oid)
+    result = {str(oid): row for oid, (row, _) in sorted(rows.items())}
+    result['_no_go'] = inventory
+    result['_paper'] = {
+        'schema': 1,
+        'sources_sha256': hashes,
+        'table_source': next(key for key in hashes if key.endswith('supplementary.tex')),
+        'table_label': 'tab:66orbits',
+        'orbit_count': 66,
+        'numeric_rows_sha256': digest(json.dumps(
+            {key: value for key, value in result.items() if key.isdigit()},
+            sort_keys=True, separators=(',', ':')).encode('utf-8')),
+    }
+    return result
+
+
+def atomic_json(path, value):
+    path = Path(path)
+    with tempfile.NamedTemporaryFile('w', dir=path.parent, prefix=path.name + '.',
+                                     suffix='.tmp', encoding='utf-8', newline='\n',
+                                     delete=False) as handle:
+        temporary = Path(handle.name)
+        json.dump(value, handle, indent=1, sort_keys=True)
+        handle.write('\n')
+    try:
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--source-dir', type=Path, default=DEFAULT_SOURCE)
+    parser.add_argument('--manifest', type=Path, default=REPO / 'tools' / 'manifest.json')
+    parser.add_argument('--check', action='store_true', help='compare without writing')
+    args = parser.parse_args(argv)
+    try:
+        old = json.loads(args.manifest.read_text(encoding='utf-8'))
+        new = build_manifest(args.source_dir, old)
+        if args.check:
+            if old != new:
+                raise ManifestError('manifest data or manuscript hashes differ; review and regenerate')
+            print('PASS: all 66 orbit rows, 51 no-go mappings, and both private-source hashes match')
+        else:
+            atomic_json(args.manifest, new)
+            print('Wrote %s: 66 orbit rows with both private-source SHA-256 hashes' % args.manifest)
+        return 0
+    except (OSError, UnicodeError, ValueError) as exc:
+        print('FAIL: ' + str(exc))
+        return 1
+
+
+if __name__ == '__main__':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    raise SystemExit(main())

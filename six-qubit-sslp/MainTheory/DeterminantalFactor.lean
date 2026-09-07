@@ -7,15 +7,20 @@ import MainTheory.SharpClearing
 `q | d_r(C)`, with `d_r(C)` the last invariant factor of the pivot matrix.
 This repository proves `q | inverseDenominator C` outright, and
 `SharpClearing` proves `inverseDenominator C = w.lastFactor` for a
-`SmithWitness w` -- but nothing builds a `SmithWitness`, so the *identification*
-of that number with the paper's `d_r(C)`, not the bound, was what was missing.
+`SmithWitness w` -- but at the time this file was written nothing built a
+`SmithWitness`, so the *identification* of that number with the paper's
+`d_r(C)`, not the bound, was what was missing.
 
 Building a `SmithWitness` means unimodular `U` and `V` over the integers with
 `U C V` diagonal *and* the divisibility chain, which Mathlib does not provide:
 `Submodule.smithNormalForm` returns bases rather than matrices and does not
 expose the chain.
 
-The identification does not need any of that.  The last invariant factor of a
+`SmithExistence.exists_normalized_smith` has since built one anyway, by
+minimising a measure over genuine positive diagonal reductions, and
+`PivotSmithNormalForm` uses it to state `q | d_r(C)` against an actual normal
+form of each pivot.  So the two routes now agree, and this one remains the
+cheaper: the identification does not need any of that.  The last invariant factor of a
 nonsingular integer matrix has a second classical description, as the ratio of
 the last two *determinantal divisors*
 

@@ -20,23 +20,9 @@ orbit 45's two fibres therefore sits, after the permutation, in orbit 1's --
 and the `A`-enumerator does not notice a permutation
 (`SixQubit.CodeEquiv.Aco_permAct`).
 
-The **other** inclusion of the same remark, `{M(t)}` contained in `W_4`, is
-not reachable this way: orbit 4's angle is `(1,1,1,1,1,1)`, so its fibres are
-the Hamming parity classes, parity is invariant under coordinate permutations
-and shifted uniformly by a cube translation, and orbit 45 is this
-development's only source of an enumerator with `A_3 != 0`, so no cube move
-puts its support inside a parity class.  An exhaustive search over all 720
-qubit permutations, all 64 cube shifts and the logical interchange confirms
-it: of the realized orbits and the four open ones, the only fibre embedding
-that exists at all is the one proved here.
-
-That is a statement about this *route*, not about the inclusion.  An earlier
-version of this paragraph said the `W_4` half was "believed unreachable
-altogether", which is wrong: solving the Knill--Laflamme system numerically
-inside orbit 4's two fibres reaches `M(t)` to machine precision across the
-whole interval, so the inclusion is true and what is missing is an explicit
-algebraic family, exactly as the paper's "explicit exact constructions"
-suggests.  The same search reaches `L(alpha)` in all four open orbits.
+The orbit-four inclusion is now proved by an explicit algebraic parity
+family in `MainTheory.WImageOrbit4M`.  That module also combines both
+constructions into the exact intersection inclusion stated in the paper.
 -/
 
 namespace MainTheory.WImageOrbit1

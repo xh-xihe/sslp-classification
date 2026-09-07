@@ -12,14 +12,18 @@ import MainTheory.D3FreshSparseAssembly
 with `d_r(C)` the last invariant factor of the pivot matrix.  This repository
 proved the divisibility against `SharpClearing.inverseDenominator` and then
 stalled: `sharp_pivot_divisibility_smith` converts the conclusion into the
-paper's `d_s(C)` "for a pivot that carries a witness", and nothing anywhere
-carries one, because a `SmithWitness` asks for unimodular `U` and `V` with
-`U C V` diagonal *and* the divisibility chain, which Mathlib does not build.
+paper's `d_s(C)` "for a pivot that carries a witness", and at that point
+nothing carried one, because a `SmithWitness` asks for unimodular `U` and `V`
+with `U C V` diagonal *and* the divisibility chain, which Mathlib does not
+build.
 
 `DeterminantalFactor` removes the need for a witness by identifying
 `inverseDenominator` with the last invariant factor through the determinantal
 divisors instead of through a Smith form.  This file states the two paper
-divisibilities against that number.
+divisibilities against that number.  `SmithExistence` later supplied the
+witness as well, so `PivotSmithNormalForm` states the same divisibilities
+against an actual normal form; the two agree, since `lastFactor` is
+witness-independent.
 
 Both pivots are covered, exactly as `results` records them: the coloured one
 of `lem:denominator-clearing`, and the sparse one that `thm:d3-bound`'s fresh

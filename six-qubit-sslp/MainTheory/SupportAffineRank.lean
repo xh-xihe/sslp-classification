@@ -20,12 +20,16 @@ supported zero word only `P.rank - 1` difference vectors sit in the affine
 direction and one gets `beta_{r+1}`; with it the `P.rank` vertex points
 themselves do, and one gets `beta_r`.
 
-What is *not* closed is the other clause of the same theorem, `q | d_r(C)` with
-`d_r` the last Smith invariant factor.  The chain
-`q | inverseDenominator P.matrix` (`SortedPivot.Pivot.q_dvd_inverseDenominator`)
-and `inverseDenominator C = w.lastFactor` is complete, but `w` is a
-`SharpClearing.SmithWitness` and nothing in the repository or in Mathlib can
-build one for these matrices; `Clearing.lean` records why.
+The other clause of the same theorem, `q | d_r(C)` with `d_r` the last Smith
+invariant factor, is closed elsewhere and was open when this header was first
+written.  The chain `q | inverseDenominator P.matrix`
+(`SortedPivot.Pivot.q_dvd_inverseDenominator`) and
+`inverseDenominator C = w.lastFactor` was complete, but `w` is a
+`SharpClearing.SmithWitness` and nothing then built one; `Clearing.lean`
+records why Mathlib does not.  `SmithExistence.exists_normalized_smith` now
+builds one for any nonsingular integer matrix, and
+`PivotSmithNormalForm.exists_smithNormalForm_q_dvd_last` states the clause for
+`SortedPivot.Pivot` in the manuscript's own display.
 -/
 
 namespace MainTheory.SupportAffineRank

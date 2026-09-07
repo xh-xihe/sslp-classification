@@ -1,4 +1,7 @@
 import SixQubit.Order9
+import SixQubit.Orbit8RaisingGram
+import SixQubit.Orbit9MagnitudeCounts
+import SixQubit.Orbit31MomentPolytope
 import SixQubit.Orbit26
 import SixQubit.Block33
 import SixQubit.Orbit33
@@ -175,6 +178,7 @@ import SixQubit.Orbit22Real
 import SixQubit.Orbit23Real
 import SixQubit.Orbit45Real
 import SixQubit.Orbit45Final
+import SixQubit.Bridge
 
 open SixQubit
 #print axioms SixQubit.Order9.S0_eq_fiber
@@ -804,3 +808,16 @@ open SixQubit
 #print axioms SixQubit.Orbit36Certified.original_equivalent_canonical
 #print axioms SixQubit.Orbit36Certified.table_representative_rigid
 #print axioms SixQubit.Orbit36Certified.table_representative_attained
+#print axioms SixQubit.Orbit8RaisingGram.raisingGram_eq_normalMatrix
+#print axioms SixQubit.Orbit8RaisingGram.fully_certified
+#print axioms SixQubit.Orbit9Universal.original_magnitude_pattern
+#print axioms SixQubit.Orbit9Universal.eleven_coefficient_pattern
+#print axioms SixQubit.Orbit9Universal.magnitudes_fully_certified
+#print axioms SixQubit.Orbit31.vectorMomentSystem_iff_normalForm
+#print axioms SixQubit.Orbit31.momentMatrix_rank
+#print axioms SixQubit.Orbit31.momentPolytope_iff_normalForm
+#print axioms SixQubit.Orbit31.momentPolytope_affine_dimension
+#print axioms SixQubit.innerC_eq_diagMatElt
+#print axioms SixQubit.innerC_flip_eq_offdiagMatElt
+#print axioms SixQubit.diagMatElt_eq_zero_of_innerC
+#print axioms SixQubit.offdiagMatElt_eq_zero_of_innerC
