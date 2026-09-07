@@ -69,11 +69,9 @@ def ProjectivelyUniversal (G : Subgroup (Matrix.unitaryGroup L ℂ)) : Prop :=
 theorem not_universal_of_finite_projective_image
     (G : Subgroup (Matrix.unitaryGroup L ℂ)) [Finite (G.map adjoint)]
     (i j : L) (hij : i ≠ j) : ¬ ProjectivelyUniversal G := by
-  have hfinite : ((G.map adjoint : Subgroup (Matrix.unitaryGroup (L × L) ℂ)) : Set _).Finite :=
-    Set.toFinite _
+  have hfinite : (SetLike.coe (G.map adjoint)).Finite := Set.toFinite _
   intro h
-  have hsub : Set.range (adjoint (L := L)) ⊆
-      ((G.map adjoint : Subgroup (Matrix.unitaryGroup (L × L) ℂ)) : Set _) := by
+  have hsub : Set.range (adjoint (L := L)) ⊆ SetLike.coe (G.map adjoint) := by
     simpa only [ProjectivelyUniversal, hfinite.isClosed.closure_eq] using h
   exact projective_unitary_image_infinite i j hij (hfinite.subset hsub)
 
