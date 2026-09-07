@@ -236,9 +236,12 @@
    "line": 476,
    "end_line": 481,
    "statement_sha256": "3db4f88b7ac72638c8bb113fa73748b34b174276fb09b4c361820df514df77a2",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.EastinKnill.eastin_knill",
+    "MainTheory.EastinKnill.eastin_knill_exactCode"
+   ],
+   "review": "`eastin_knill` is the theorem itself, at arbitrary (and possibly distinct) finite physical subsystem dimensions. `eastin_knill_exactCode` is not a separate clause but the specialization to this repository's qubit `CodeSpec.ExactCode n K d` through its genuine Pauli KL distance predicate (via `QubitTransversalFinite.detectsLocal_of_hasDistance`); cite it only if the qubit instance is wanted. HYPOTHESIS GAP: None. The hypotheses correspond one-to-one: `hV : V.conjTranspose * V = 1` is only that the encoding is an isometry (part of \"is a code\"); `hK : 2 <= K` is \"nontrivial\"; `hdet : DetectsLocal V` is `forall j (M : Matrix (A j) (A j) C), exists c, V^dag (M on subsystem j) V = c . 1` (MainTheory/FiniteTensorDetection.lean:20), i.e. the KL detection condition for EVERY operator on ANY single subsystem — exactly the manuscript's hypothesis, with no weight, locality, additivity, stabilizer or Z-detection assumption."
   },
   {
    "id": "main.tex:eq:Daq",
@@ -416,9 +419,15 @@
    "line": 660,
    "end_line": 670,
    "statement_sha256": "f0d4ab7ff7c0633348d09dcae520e02590c4cbf01c37daf8ce8b5e0253f622c4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects",
+    "MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm",
+    "MainTheory.IntrinsicAbelian.exactCode_intrinsicGroup_mul_comm",
+    "MainTheory.ProjectiveGroupGeneral.whole",
+    "MainTheory.FiniteProjectiveGroup.whole_of_finite"
+   ],
+   "review": "finite_intrinsicGroup_of_zDetects gives the FINITE clause at exactly the manuscript's hypothesis (`hZ : ZDetectsFrame C.frame`, i.e. one KL row per pure-Z Pauli, nothing else). intrinsicGroup_mul_comm / exactCode_intrinsicGroup_mul_comm give the ABELIAN clause with no hypothesis at all. ProjectiveGroupGeneral.whole packages finite + abelian + the lift clauses under one name but at `hd : 2 ≤ d`. whole_of_finite is the socket taking finiteness as a hypothesis. HYPOTHESIS GAP: None for the two-declaration answer. `ExactCode n K d` carries an arbitrary `d`, and `SS.HasDistance psi d := Detects psi (d-1)`, so at d = 0 or 1 the bundled distance predicate is just orthonormality — the only real hypothesis is `ZDetectsFrame`. The single-name packaging `ProjectiveGroupGeneral.whole` instead assumes `2 ≤ d`, i.e. the full weight-one KL system including X_j and Y_j: strictly stronger than the manuscript, so it alone is only partial."
   },
   {
    "id": "main.tex:eq:all-Z-detection",
@@ -730,9 +739,15 @@
    "line": 894,
    "end_line": 916,
    "statement_sha256": "fdef2f7821d070e9e9b006258cd636bd1637742b8eb804c13d7380c2a3ba1b26",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ZDetection.phaseSectors_of_zDetects",
+    "MainTheory.SectorMeanValue.sectorMean_eq_klScalar",
+    "MainTheory.PhaseSectorFull.phaseSectorFull_package",
+    "MainTheory.SectionTwoGeneral.phaseSectors",
+    "MainTheory.SectionTwoGeneral.phaseSectors_mean"
+   ],
+   "review": "phaseSectors_of_zDetects gives, at exactly the manuscript's hypothesis: p_alpha ≥ 0 (positivity on T_alpha is definitional, `sectorSupport = {x | 0 < sectorProbability}`), sum p_alpha = 1, T_alpha nonempty, T_alpha pairwise disjoint, the phase congruence of lem:phase-sector-support, and `∃ mu, ∀ alpha j, sectorMean alpha j = mu j` — eq:common-mean. sectorMean_eq_klScalar supplies the identification mu_j = (1 - lambda_j)/2 (eq:Nj-detection), also from `hZ` alone. phaseSectorFull_package is the underlying sector-level bundle. The SectionTwoGeneral pair is the same content at `hd : 2 ≤ d`. HYPOTHESIS GAP: None. `phaseSectors_of_zDetects` and `sectorMean_eq_klScalar` take only Z-detection (`ZDetectsFrame` / `ZDetects D`), which is what the manuscript assumes. `SectionTwoGeneral.phaseSectors` and `phaseSectors_mean` carry the extra `2 ≤ d`."
   },
   {
    "id": "main.tex:displaymath@898",
@@ -820,9 +835,15 @@
    "line": 970,
    "end_line": 984,
    "statement_sha256": "f03b7afbd13565094d9f835d939bdcc79e1fc539cbd1f7c9ad7ee54bd8f561bb",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects",
+    "MainTheory.QuantitativeGroup.qualitative_finite_lift",
+    "MainTheory.SectionTwoGeneral.qualitativeFiniteLift_of_nontrivial",
+    "MainTheory.FiniteLift.qualitative_finite_lift",
+    "MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift"
+   ],
+   "review": "quantitative_colored_lift_of_zDetects is the whole theorem at the manuscript's own hypothesis (Z-detection only, no distance): `HasPrimitiveLift C g q` (a diagonal symmetry whose local phase is the finite gate of a primitive a ∈ (ZMod q)^n and whose intrinsic class is g — i.e. D(a;q) preserves the code and induces the same projective action, with exact physical order q), `orderOf g ∣ q` (eq:qualitative-m-divides-q), `2 ≤ orderOf g`, `orderOf g ≤ q`, `2 ≤ q`. QuantitativeGroup.qualitative_finite_lift is the declaration explicitly named for this label and adds eq:qualitative-pivot-size (`s ≤ n + t - 1`, `t ≤ K`, a nonsingular zero-one pivot bounding q_min) — but at `2 ≤ d`. FiniteLift.qualitative_finite_lift is the sector-level core at `ZDetects` only: rational theta' (`L.physical : Fin n → ℚ`), order ≥ 2, `SameProjectiveSectorAction`, primitivity, relative phases cleared. orderOf_dvd_of_hasPrimitiveLift is m | q for ANY primitive lift, not just the constructed one. HYPOTHESIS GAP: None if you take SharpSectorZDetection.quantitative_colored_lift_of_zDetects (or FiniteLift.qualitative_finite_lift at sector level). The label-named QuantitativeGroup.qualitative_finite_lift and SectionTwoGeneral.qualitativeFiniteLift_of_nontrivial both assume `hd : 2 ≤ d`, which is the full weight-one KL system (X_j, Y_j included) rather than the manuscript's P Z_j P = lambda_j P."
   },
   {
    "id": "main.tex:eq:qualitative-m-divides-q",
@@ -1852,9 +1873,18 @@
    "line": 1659,
    "end_line": 1686,
    "statement_sha256": "ceb46962cdf7d5376aea2718576dac4f3620f84f916f5d3e85ed496a50022d3e",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects",
+    "MainTheory.SharpSectorZDetection.exists_minimal_primitiveLift_le_betaOf_sectorCount",
+    "MainTheory.ZDetection.quantitative_projective_group_of_zDetects",
+    "MainTheory.ColoredBound.quantitative_colored_finite_lift",
+    "MainTheory.FiniteLift.quantitative_colored_finite_lift",
+    "MainTheory.FiniteLift.sharp_pivot_divisibility",
+    "MainTheory.PivotSize.exists_pivot_rank_le",
+    "MainTheory.BetaAtPivotRank.betaOf_mono"
+   ],
+   "review": "eq:general-q-bound (m | q, q ≤ beta_{n+ell-1} with ell the ACTUAL logical-eigenvalue count `GeneralSpectral.sectorCount hpres`): SharpSectorZDetection.quantitative_colored_lift_of_zDetects, at Z-detection only, with the beta bound supplied unconditionally by `BetaExists.betaBound_betaOf`. The weaker `q ≤ beta_{n+K-1}` half: ZDetection.quantitative_projective_group_of_zDetects. eq:qmin-general (q_min(Ubar) ≤ beta_{n+ell-1}, with the minimum attained and minimal over all primitive lifts): exists_minimal_primitiveLift_le_betaOf_sectorCount. The sector-level statement of the whole theorem (2 ≤ order, SameProjectiveSectorAction, numerator spec, primitivity, relative-phase clearing, order ≤ B): ColoredBound.quantitative_colored_finite_lift. eq:q-divides-smith (q | d_s(C)): FiniteLift.sharp_pivot_divisibility gives `order ∣ inverseDenominator P.matrix`; sharp_pivot_divisibility_smith converts that to the literal Smith last factor when a SmithWitness is supplied; PivotSize.exists_pivot_rank_le gives s = rank R ≤ n + ell - 1. HYPOTHESIS GAP: None. Every declaration listed takes only `ZDetects` / `ZDetectsFrame` plus projective nontriviality (2 ≤ ell), which is the manuscript's \"hypotheses of Lemma phase-sectors\" plus nontriviality. No distance hypothesis anywhere in the SharpSectorZDetection route."
   },
   {
    "id": "main.tex:eq:general-q-bound",
@@ -1982,9 +2012,16 @@
    "line": 1739,
    "end_line": 1752,
    "statement_sha256": "a1a65b8a5c2faf004f06b0ce9738836d7702a7f6823bafbe30eebe03ce0dd866",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ZDetection.quantitative_projective_group_of_zDetects",
+    "MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects",
+    "MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects",
+    "MainTheory.QuantitativeGroup.quantitative_projective_group",
+    "MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le",
+    "MainTheory.QuantitativeGroup.qMin_le_beta"
+   ],
+   "review": "eq:group-order-bound in full (finite order m ≥ 2, a primitive finite lift, m | q, m ≤ q ≤ beta_{n+K-1}) at exactly the manuscript's \"detects every Z_j\": ZDetection.quantitative_projective_group_of_zDetects. The corollary's opening appeal to structural finiteness of the whole group: ZDetection.finite_intrinsicGroup_of_zDetects. The sharper closing sentence (an element with ell distinct logical eigenvalues admits q ≤ beta_{n+ell-1}): SharpSectorZDetection.quantitative_colored_lift_of_zDetects, and for q_min the same bound in QuantitativeGroup.exists_sectorCount_qMin_le (at 2 ≤ d) / qMin_le_beta. QuantitativeGroup.quantitative_projective_group is the identical statement at `hd : 2 ≤ d`. HYPOTHESIS GAP: None for the ZDetection/SharpSectorZDetection declarations. The QuantitativeGroup versions assume `2 ≤ d` (extra X_j and Y_j KL rows), so they alone would be partial. Note that `2 ≤ orderOf g` in the conclusion is how finiteness of m is expressed: in Mathlib `orderOf g = 0` means infinite order, so `2 ≤ orderOf g` asserts both finiteness and nontriviality."
   },
   {
    "id": "main.tex:eq:group-order-bound",
@@ -2010,9 +2047,16 @@
    "line": 1770,
    "end_line": 1784,
    "statement_sha256": "8c2165a819f2926fa1c3dfbf27c085d5a9b0706dd64793ccc6e6c7cf1cb2a7eb",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ProjectiveGroupGeneral.k2_bound_and_cyclic",
+    "MainTheory.QuantitativeGroup.k2_q_bound",
+    "MainTheory.PaperGeneralSSLP.rank_two_sslp",
+    "MainTheory.SortedForm.exists_sortedNormalForm_le",
+    "MainTheory.ProjectiveGroupGeneral.cyclic_of_rank_two",
+    "MainTheory.RankTwoSSLP.rank_two_sslp"
+   ],
+   "review": "k2_bound_and_cyclic gives both sentences under one name at the manuscript's own `2 ≤ d`: `IsCyclic (IntrinsicProjectiveDiagonalLogicalGroup ...)` ∧ `Finite` ∧ for every g ≠ 1 a primitive lift q with `orderOf g ∣ q`, `orderOf g ≤ q`, `2 ≤ q`, `q ≤ B` where `beta : BetaBound (n+1) B`. k2_q_bound adds the missing eq:K2-q-bound-summary middle term `q_min(Ubar) ≤ q` and `q_min ≤ beta_{n+1}`. cyclic_of_rank_two is the cyclicity sentence alone; cyclic_of_zDetects is the same at Z-detection only, weaker hypothesis than the manuscript's d ≥ 2. exists_sortedNormalForm_le supplies the closing \"is represented by the two-fiber SSLP normal form\" at d ≥ 2 with q ≤ beta_{n+1}; RankTwoSSLP.rank_two_sslp is the packaged cor:rank-two-sslp but only at d = 3. HYPOTHESIS GAP: None — `hd : 2 ≤ d` is the manuscript's own hypothesis for this corollary (\"an exact ((n,2,d)) code with d ≥ 2\")."
   },
   {
    "id": "main.tex:eq:K2-q-bound-summary",
@@ -2038,9 +2082,15 @@
    "line": 1797,
    "end_line": 1835,
    "statement_sha256": "9e44edb248c0fcfb9b8c37f1748b9ca23e118431003b0ffeebfdc69ee47a4593",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SortedForm.d2_sslp_classification",
+    "MainTheory.SSLPCompleteness.completeness_of_nontrivial_two",
+    "MainTheory.SSLPCompleteness.completeness_distance_two",
+    "MainTheory.SSLPConverse.sslp_converse",
+    "MainTheory.SortedForm.SortedNormalForm"
+   ],
+   "review": "Forward direction (every such code occurs in a primitive sector 2 ≤ q ≤ beta_{n+1}, m | q, m > 1, 0 ≤ a_1 ≤ ... ≤ a_n < q, gcd(q,a) = 1, with the two logical words in the fibres 0 and q/m and satisfying the KL equations at weight < d): SortedForm.d2_sslp_classification, which is the label-named declaration; SSLPCompleteness.completeness_of_nontrivial_two states the same at the manuscript's own group-level hypothesis (`∃ g : IntrinsicGroup C, g ≠ 1`) and additionally exposes `S.m_isOrder` (m is the order of an actual group element) and `S.lt_q` (a_j < q) in the conclusion. The record SortedNormalForm carries the remaining clauses: leftFiber/rightFiber (eq:d2-sslp-0, eq:d2-sslp-1 with zero coefficients allowed, since SSConditionState only constrains nonzero amplitudes), source_span + frame_eq + x0 + perm (the \"up to local X conjugation and qubit permutation\" equivalence, recorded explicitly rather than left as \"up to\"), hasDistance (the complete KL equations). Converse: SSLPConverse.sslp_converse — every orthonormal pair of the displayed form with the complete KL equations defines an exact ((n,2,d)) code on that very frame whose projective diagonal group contains an element of order exactly m. HYPOTHESIS GAP: None. `hd0 : 2 ≤ d0`, `hdd : d0 ≤ d` is the manuscript's \"target distance d0 ≥ 2, every code with d ≥ d0\". Nontriviality enters either as `hnt` (a real phase vector acting projectively nontrivially) or, in completeness_of_nontrivial_two, as the group-level `∃ g ≠ 1`; SSLPCompleteness.lean:180-186 records that the two are equivalent and does the translation."
   },
   {
    "id": "main.tex:eq:d2-finite-sectors",
@@ -2096,9 +2146,15 @@
    "line": 1876,
    "end_line": 1907,
    "statement_sha256": "a0d7d7bcdcb9396a94e38e55a2472cee7becc1bca99e7bdbb4da4cf1a42a1af4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.CodeAffineSpanBridge.commonAffineSpan_of_exactCode",
+    "MainTheory.CodeAffineSpanBridge.certificate_of_hasDistance",
+    "MainTheory.AffineSpan.covariance_eq_of_hasDistance",
+    "MainTheory.Covariance.centeredHull_eq_affineSpan",
+    "MainTheory.Covariance.quad_eq_sum_sq"
+   ],
+   "review": "commonAffineSpan_of_exactCode (and its frame-relative form commonAffineSpan_of_exactCodeFrame, which applies to any orthonormal frame spanning the code — i.e. to a supplied logical eigenbasis) returns the whole lemma as CommonAffineSpanCertificate: supports nonempty, p_0/p_1 strictly positive on the ACTUAL nonzero supports and summing to 1, `mean_eq` (eq:two-common-mean), `covariance_eq` (eq:common-covariance), `affineSpan_eq` (eq:same-affine-span, aff(T_0) = aff(T_1) as `affineSpan ℝ (bitPoint '' actualSupport ...)`). AffineSpan.covariance_eq_of_hasDistance is the quantum input (weight-one and weight-two diagonal KL rows give equal first and second moments, hence equal covariance). Covariance.quad_eq_sum_sq is eq:covariance-quadratic; span_eq_of_cov_eq₂ is range Sigma = span(T_k - mu), i.e. the linear form of eq:V-r/eq:affine-V; affineSpan_eq_of_cov_eq₂ adds mu ∈ both affine hulls to give aff(T_0) = mu + V = aff(T_1). HYPOTHESIS GAP: None. `hd : 3 ≤ d` on `ExactCode n 2 d` is the manuscript's \"distance at least three\", and the frame version is stated for an arbitrary orthonormal frame spanning the code — weaker than the manuscript's \"the two logical eigenvectors of a projectively nontrivial diagonal operation\", so nothing extra is assumed. ADVERSARIAL CHECK: The declarations all exist and the hypothesis analysis is right, but two of the clause attributions are false statements about what those theorems say. (1) `MainTheory.Covariance.span_eq_of_cov_eq₂` (MainTheory\\Covariance.lean:212) is NOT 'range Sigma = span(T_k - mu)'; its conclusion is `Submodule.span ℝ (range (pt0 - mu)) = Submodule.span ℝ (range (pt1 - mu))`, i.e. the two centred supports span the same subspace. (2) `Covariance.affineSpan_eq_of_cov_eq₂` (:315) is NOT 'aff(T_0) = mu + V = aff(T_1)'; its conclusion is `affineSpan ℝ (range pt0) = affineSpan ℝ (range pt1)`. In fact `range Sigma` is never formed anywhere in the repository — `cov` (Covariance.lean:36) is a `Fin n → Fin n → ℝ` matrix-shaped functi"
   },
   {
    "id": "main.tex:eq:same-affine-span",
@@ -2422,9 +2478,17 @@
    "line": 2022,
    "end_line": 2050,
    "statement_sha256": "8aa3a6c9405bef8eb3d6d819a986a3eb7e6e87755e88028d2dbdbda3c4470044",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator",
+    "MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order",
+    "MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank",
+    "MainTheory.D3AffineRankBound.fresh_basis_rank_eq_source_affineRank",
+    "MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN",
+    "MainTheory.SSLPCompleteness.completeness_of_nontrivial_three",
+    "MainTheory.SSLPConverse.sslp_converse"
+   ],
+   "review": "d3_sslp_classification_generator is the corollary unfolded and is the closest single match: for `C : ExactCode n 2 3` with a nontrivial intrinsic group it produces q, a primitive root zeta, a sorted primitive angle vector a, a frame F spanning C's code, x0 and perm, with `2 ≤ q`, `q ≤ B` (beta : BetaBound n B, i.e. q ≤ beta_n), `2 ≤ Nat.card (IntrinsicGroup C)` and `Nat.card (IntrinsicGroup C) ∣ q` — m is the order of the WHOLE cyclic group, which is what the corollary means by C_m — plus HasDistance 3 and the two fibre conditions at residues 0 and q/m (eq:d3-sslp-0, eq:d3-sslp-1). exists_sortedNormalForm_le_betaN_order is the same in record form; D3BoundedNormalForm.exists_sortedNormalForm_le_betaN gives the q ≤ beta_n bound for an arbitrary nontrivial element (its S.m is then only some element's order, not the group order); SSLPCompleteness.completeness_of_nontrivial_three states it for every d ≥ d0 ≥ 3 rather than only d = 3. The converse and complete-KL clause (\"unchanged\") is SSLPConverse.sslp_converse. HYPOTHESIS GAP: No hypothesis gap. `ExactCode n 2 3` is exactly \"distance at least three\" — `HasDistance psi d := Detects psi (d-1)` is antitone in d, so a d ≥ 3 code is an `ExactCode n 2 3`, and SSLPCompleteness.weakenDistance (SSLPCompleteness.lean:46) performs that conversion for every d ≥ d0 ≥ 3 while keeping the code's own KL system at weight < d in the conclusion."
   },
   {
    "id": "main.tex:eq:d3-sslp-bound",
@@ -2465,9 +2529,20 @@
    "line": 2070,
    "end_line": 2103,
    "statement_sha256": "45fbb1fa290744e97f67ad216fe75cd54d7589b564a8fed397032cc9bed35e55",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.SSLPCompleteness.outerCutoff",
+    "MainTheory.SSLPCompleteness.completeness_of_nontrivial_two",
+    "MainTheory.SSLPCompleteness.completeness_of_nontrivial_three",
+    "MainTheory.SSLPCompleteness.completeness_six_qubit",
+    "MainTheory.SSLPConverse.sslp_converse",
+    "MainTheory.SSLPPipelineExact.code_of_sortedNormalForm",
+    "MainTheory.SSLPPipelineExact.pipeline_exact_two",
+    "MainTheory.SSLPPipelineExact.pipeline_exact_three",
+    "MainTheory.IntrinsicOrderAudit.orderOf_mem",
+    "MainTheory.IntrinsicOrderAudit.natCard_mem"
+   ],
+   "review": "outerCutoff is eq:Bnd0 (B = B1 when d0<=2, Bn otherwise). completeness_of_nontrivial_two/_three give the covering clause ('the code occurs in the stated finite outer enumeration'): from an exact ((n,2,d)) code with d>=d0 and a nontrivial element of its intrinsic projective diagonal group, they produce a sorted normal form with 2<=q<=outerCutoff, 2<=m, m|q, m the order of an intrinsic-group element, sorted angles < q, Gate.Primitive, and SS.HasDistance _ d. code_of_sortedNormalForm gives the 'no false positives' clause (every retained record is realized by an exact code on its own frame with an order-m nontrivial projective diagonal element). pipeline_exact_two/_three conjoin the two. orderOf_mem / natCard_mem give the intrinsic-group audit, but only at n=6, d=3 (every element has order in {1,2,3,5}; the group has order in {1,2,3,5}). HYPOTHESIS GAP: None of the listed declarations adds a hypothesis the manuscript does not make. completeness_of_nontrivial_* take BinaryBeta.BetaBound (n+1) B1 / BetaBound n Bn, i.e. a certified upper bound for beta, which is the manuscript's own beta and not an extra assumption. What is missing is a clause, not a hypothesis. ADVERSARIAL CHECK: The verdict 'partial' and seven of the eight declarations survive, but the 'no false positives' attribution is wrong. MainTheory.SSLPPipelineExact.code_of_sortedNormalForm (MainTheory/SSLPPipelineExact.lean:40) is stated as `{C : CodeSpec.ExactCode n 2 d} (S : SortedForm.SortedNormalForm C) : exists C' g, ...` — it quantifies over normal forms OF AN ALREADY-EXISTING EXACT CODE, not over records the enumeration retains. SortedNormalForm (MainTheory/SortedNormalForm.lean:39) is indexed by C and even carries the field `m_isOrder : exists g : IntrinsicGroup C, orderOf g = m`, a hypothesis about C. So it cannot be applied to a bare retained record and does not prove 'every retained record is realized'; it presupposes what the converse must produce. The declaration that actually gives the manuscript's "
   },
   {
    "id": "main.tex:eq:Bnd0",
@@ -2660,9 +2735,23 @@
    "line": 2238,
    "end_line": 2261,
    "statement_sha256": "849af8cb13443a144b2f8091ccf609f7efb9021560d1762b02efe1bef4646dd4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ClassificationLevels.SSLPMomentDatum",
+    "MainTheory.ClassificationLevels.SSLPMomentDatum.geometry",
+    "MainTheory.ClassificationLevels.actSSLPDatum",
+    "MainTheory.ClassificationLevels.SSLPMomentEquivalent",
+    "MainTheory.ClassificationLevels.sslpMomentSetoid",
+    "MainTheory.ClassificationLevels.SSLPMomentOrbit",
+    "MainTheory.ClassificationLevels.labels_eq_of_sslpMomentEquivalent",
+    "MainTheory.SSLPOrbitLevels.MomentOrbit",
+    "MainTheory.SSLPOrbitLevels.KSet",
+    "MainTheory.SSLPOrbitLevels.IsRealizationOrbit",
+    "MainTheory.SSLPOrbitLevels.RealizationOrbit",
+    "MainTheory.SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent",
+    "MainTheory.SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent"
+   ],
+   "review": "'orbit of the labeled full-fiber data (q,m;S_0,S_{q/m}) under Boolean-cube isometries and interchange of the two logical colors, labels (q,m) retained' = SSLPMomentDatum + actSSLPDatum + SSLPMomentEquivalent (:277, literally `R.q = S.q AND R.m = S.m AND CubeAction.FiberEquivalent R.fibers S.fibers`) + sslpMomentSetoid/SSLPMomentOrbit as the quotient; labels_eq_of_sslpMomentEquivalent is the 'labels are retained' clause. 'together with its feasible degree-two moment geometry' = SSLPMomentDatum.geometry (:255, derived from the fibres, so a record cannot carry an unrelated polytope) plus degreeTwoFeasible_of_fiberEquivalent (:120) making it orbit data. 'and active-rank data' = activeAffineRank_of_fiberEquivalent (:132), which shows the active affine rank travels with the orbit up to the colour swap. 'K_r' (eq:Kr-definition) = SSLPOrbitLevels.KSet (:56) = CubeCompletionTransport.Completion of the orbit key's fibres, i.e. an ordered normalized pair supported on the two fibres with SS.HasDistance _ 3 (the full weight-at-most-two KL system at six qubits, including the non-diagonal amplitude and phase constraints). 'An SSLP realization orbit is a moment orbit r with K_r nonempty' = IsRealizationOrbit (:59) and the type RealizationOrbit (:66). HYPOTHESIS GAP: None; this is a definition and both notions are defined with the manuscript's own data and group."
   },
   {
    "id": "main.tex:eq:Kr-definition",
@@ -2688,9 +2777,23 @@
    "line": 2266,
    "end_line": 2298,
    "statement_sha256": "eb6036a606f8efa2b9f764767f64675847b4414cfa175a741c4d660e1f232e1a",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup",
+    "MainTheory.ClassificationLevels.IntrinsicEquivalent",
+    "MainTheory.SSLPOrbitLevels.RealizationOrbit",
+    "MainTheory.SSLPOrbitLevels.MomentOrbit",
+    "MainTheory.ClassificationLevels.WeightEnumeratorObject",
+    "MainTheory.ClassificationLevels.weightEnumeratorImage",
+    "MainTheory.ClassificationLevels.WeightEnumeratorEquivalent",
+    "MainTheory.ClassificationLevels.LUEquivalent",
+    "MainTheory.ClassificationLevels.LocalUnitaryCodeClass",
+    "MainTheory.ClassificationLevelsSix.level_one_intrinsic_group",
+    "MainTheory.ClassificationLevelsSix.level_two_realization_orbits",
+    "MainTheory.ClassificationLevelsSix.level_three_weight_enumerators",
+    "MainTheory.ClassificationLevelsSix.level_four_lu_class"
+   ],
+   "review": "(i) intrinsic logical-group level = IntrinsicProjectiveDiagonalLogicalGroup (:214), the quotient of the full diagonal symmetry group of the projector by the projectively trivial subgroup — a genuine quotient group, not the chosen label m; IntrinsicEquivalent (:224) is its equivalence. (ii) SSLP realization-orbit level = SSLPOrbitLevels.RealizationOrbit (:66), with MomentOrbit = Fin 66 (:48) as 'the 66 intermediate candidates'; the 'only the 15 with K_r nonempty belong' clause is ClassificationLevelsSix.level_two_realization_orbits (:74). (iii) weight-enumerator image W_r = WeightEnumeratorObject (:313) / weightEnumeratorImage (:317) / WeightEnumeratorEquivalent (:322). (iv) local-unitary code level = LUEquivalent (:368), the equivalence closure of one-qubit-unitary conjugations and qubit permutations acting on projector kernels (eq:LU-equivalence), quotiented by LocalUnitaryCodeClass (:379). ClassificationLevelsSix.level_one..level_four attach a six-qubit theorem to each level. HYPOTHESIS GAP: None on the definitions themselves."
   },
   {
    "id": "main.tex:eq:Wr-definition",
@@ -2730,9 +2833,17 @@
    "line": 2348,
    "end_line": 2367,
    "statement_sha256": "b53157b1660f846797f0ed41a65e1beec0bd3c2b31edb8db01d4057b9d0cc034",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.six_66_orbits",
+    "MainTheory.PaperReductionChain.orbit_reduction",
+    "MainTheory.Generated.FiniteOrbitCertificate.hasExactlyClasses",
+    "MainTheory.Generated.FiniteOrbitCertificate.directory_valid",
+    "MainTheory.Generated.FiniteOrbitDistribution.orbit_order_distribution",
+    "MainTheory.Generated.FiniteOrbitRankBridge.inputPairIds_eq_rankCompatible",
+    "MainTheory.Generated.FiniteRankOrbitContinuity.orbitInputEntries_eq_compatibleRankEntries"
+   ],
+   "review": "The headline '= 66' is orbit_reduction / hasExactlyClasses: `FiniteOrbitPipeline.HasExactlyClasses directory 66`, which unfolds (FiniteOrbitPipeline.lean:398) to a classify map from the compatible inputs onto Fin 66 that is surjective and satisfies `classify i = classify j <-> LabeledEquivalent ...`, with Fintype.card (Fin 66) = 66. The premise 'quotienting the rank-compatible labeled fiber pairs ... retaining the labels (q,m)' is DistanceSignature.LabeledEquivalent (DistanceSignature.lean:149) = `q = q' AND m = m' AND CubeAction.FiberEquivalent F G`, and CubeAction.Parameter (CubeAction.lean:27) is exactly permutation + XOR translation + colour swap. six_66_orbits states the whole displayed chain 13877 -> 13449 -> 12768 -> 11422 -> 508 -> 291 -> 215 -> 66 as one conjunction. inputPairIds_eq_rankCompatible ties the directory's 215 inputs to the rank filter's own output, so the input set is not a re-transcribed list. The distribution table (m=2..9: 25,11,10,8,4,5,2,1) is a SEPARATE declaration, orbit_order_distribution. HYPOTHESIS GAP: None; the certificate is unconditional (no ThresholdBounds or realization hypothesis enters the count)."
   },
   {
    "id": "main.tex:equation@2354",
@@ -2780,9 +2891,16 @@
    "line": 2418,
    "end_line": 2423,
    "statement_sha256": "0b8f607ac001ca1c619a6eb7e0ac27067311417193b197ea773d7cd8e4e2555d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.raw_outer_count",
+    "MainTheory.OuterEnumeration.raw_records_exact",
+    "MainTheory.OuterEnumeration.rawRecords",
+    "MainTheory.OuterCompleteness.mem_weakAngles6_iff",
+    "MainTheory.OuterCompleteness.weakAngles6_nodup",
+    "MainTheory.SortedVectorMobius.sortedCount_six"
+   ],
+   "review": "raw_outer_count (= raw_records_exact) is the lemma: `OuterEnumeration.rawRecords.length = 13877`. rawRecords (OuterEnumeration.lean:107) is defined exactly as the manuscript's index: q in sixQubitModuli = [2..9], m ranging over `logicalOrders q` (the divisors of q in [2,q], i.e. tau(q)-1 of them), and a weakly increasing six-vector mod q. mem_weakAngles6_iff is the semantic soundness of the generator (membership iff in range and weakly increasing), and weakAngles6_nodup makes the list length a genuine cardinality rather than a multiplicity count. sortedCount_six is eq six:eq:starsbars, `#{0<=a_1<=...<=a_6<q} = C(q+5,6)`, the identity the manuscript's proof uses."
   },
   {
    "id": "main.tex:displaymath@2429",
@@ -2884,9 +3002,12 @@
    "line": 2519,
    "end_line": 2530,
    "statement_sha256": "5d0440d5ae98b52022b91322862be03a539663f65e1fe8b4d118c3889d1c3043",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusChoose",
+    "MainTheory.SortedVectorMobius.primitiveCount_six_eq_mobiusCount"
+   ],
+   "review": "primitiveCount_eq_mobiusChoose is the proposition itself at every length k and every modulus q > 0, with the binomial written out: `(primitiveCount k q : ℤ) = ∑ d ∈ q.divisors, moebius d * ((q/d + k - 1).choose k)`; at k = 6 this is six:eq:primitiveMobius verbatim. primitiveCount_six_eq_mobiusCount is the k = 6 specialization against `PrimitiveMobius.mobiusCount q = ∑ d ∈ q.divisors, moebius d * ((q/d + 5).choose 6)`, i.e. the paper's display symbol for symbol. HYPOTHESIS GAP: only `0 < q`, which the manuscript assumes implicitly."
   },
   {
    "id": "main.tex:six:eq:primitiveMobius",
@@ -2926,9 +3047,16 @@
    "line": 2548,
    "end_line": 2557,
    "statement_sha256": "7db0686ca93320ddd5324c41648fb2a01fd63453d379ad029766000386dfd8cd",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.primitivity_reduction",
+    "MainTheory.OuterEnumeration.primitive_records_exact",
+    "MainTheory.PaperReductionChain.primitive_sorted_counts",
+    "MainTheory.SortedVectorMobius.primitiveCount_six_eq_mobiusCount",
+    "MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusChoose",
+    "MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount"
+   ],
+   "review": "primitivity_reduction (= primitive_records_exact) is the lemma itself: `OuterEnumeration.primitiveRecords.length = 13449`, where primitiveRecords (OuterEnumeration.lean:117) filters the same q/m loop by IsPrimitive (gcd(q,a_1..a_6) = 1), i.e. eq six:eq:primitive. primitive_sorted_counts supplies six:eq:primitivevalues, the eight values (6,27,77,209,428,923,1632,2975) the manuscript's proof multiplies by the logical-order counts. The Mobius proposition underneath (six:eq:primitiveMobius) is primitiveCount_eq_mobiusChoose / primitiveCount_six_eq_mobiusCount, and primitiveAngles6_length_eq_primitiveCount matches the outer loop's own list length against that closed form at each of q = 2..9."
   },
   {
    "id": "main.tex:six:eq:primitiveTotal",
@@ -2954,9 +3082,14 @@
    "line": 2567,
    "end_line": 2571,
    "statement_sha256": "2a9c5057bde295515751ce25f85a6b01d7fe7186d847827bb3f439e7feb954a1",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.nonempty_fiber_reduction",
+    "MainTheory.OuterEnumeration.nonempty_fiber_records_exact",
+    "MainTheory.OuterEnumeration.HasSecondFiber",
+    "MainTheory.OuterEnumeration.mem_reachableResidues_iff"
+   ],
+   "review": "nonempty_fiber_reduction (= nonempty_fiber_records_exact) is the lemma: `OuterEnumeration.nonemptyFiberRecords.length = 12768`, where nonemptyFiberRecords (OuterEnumeration.lean:341) is the primitive loop filtered by HasSecondFiber, i.e. the residue q/m is reachable as a subset sum of the six angles mod q — the manuscript's 'discard records with S_delta empty'. mem_reachableResidues_iff proves the executable reachability evaluator has exactly the inductive subset-sum meaning, so the filter is the mathematical condition and not a heuristic."
   },
   {
    "id": "main.tex:six:eq:nonemptyrecords",
@@ -2982,9 +3115,17 @@
    "line": 2585,
    "end_line": 2589,
    "statement_sha256": "ae4b442dd40b0ef696bf48222090273f2619118c3ce6a7b54801bccdc1c1549f",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.fiber_hashing",
+    "MainTheory.Generated.FinitePairData.pairTable_size",
+    "MainTheory.Generated.FinitePairProvenance.table",
+    "MainTheory.Generated.FinitePairProvenance.validity",
+    "MainTheory.Generated.FinitePairProvenance.deduplicated",
+    "MainTheory.Generated.FinitePairProvenance.exact_image",
+    "MainTheory.PairProvenance.Table.Validity.image_eq_outerImage"
+   ],
+   "review": "fiber_hashing gives the numeral only (`pairTable.size = 11422`, a `decide` on an array literal — on its own it is a fact about a list, not about hashing). The lemma's real content is the provenance table: FinitePairProvenance.table (:24) has pairCount = 11422 and a record-to-pair map out of PairProvenance.OuterRecordIndex = Fin nonemptyFiberRecords.length (i.e. the 12,768 records, PairProvenance.lean:23); `validity` gives exactRecord (every record points at the exact fibre pair computed from it, via OuterCompleteness.recordFiberPair) and noGhostIndex (no table entry without a record); image_eq_outerImage turns those into `table.image = outerImage` (exact_image, :61); `deduplicated` (:58) gives injectivity of pairAt, so the 11,422 index positions are 11,422 DISTINCT payloads. Together: the image of the 12,768 records under the exact fibre-pair map has exactly 11,422 elements."
   },
   {
    "id": "main.tex:displaymath@2595",
@@ -3022,9 +3163,17 @@
    "line": 2614,
    "end_line": 2618,
    "statement_sha256": "10b9b754ace1c16112a8fe236b19417abbce1fc327e77053a5b0d1afaae3e608",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.affine_smith_reduction",
+    "MainTheory.Generated.FinitePairData.coarsePairIds_size",
+    "MainTheory.Generated.FiniteCoarseDirectory.directory",
+    "MainTheory.Generated.FiniteCoarseDirectory.validity",
+    "MainTheory.Generated.FiniteCoarseDirectory.in_output_iff_fullFiberCriterion",
+    "MainTheory.Generated.FiniteCoarseDirectory.outputSource_injective",
+    "MainTheory.CoarseFilter.FullFiberCriterion"
+   ],
+   "review": "affine_smith_reduction gives the numeral only (`coarsePairIds.size = 508`, a decide on an array literal). The lemma's content is the directory: `directory : CoarseFilter.PaperDirectory`, and PaperDirectory is definitionally `Directory 11422 508` (CoarseFilter.lean:411), so the two numerals are in the type; `validity` (:21) discharges the lookup/source obligations; in_output_iff_fullFiberCriterion (:65) says an input is among the 508 outputs IFF it satisfies FullFiberCriterion, which (CoarseFilter.lean:141) is exactly eq six:eq:coarserank, `rMin q <= min (maskAffineRank mask0) (maskAffineRank mask1)` with maskAffineRank the AFFINE rank of the fibre over Q; outputSource_injective (:79) rules out two output rows naming the same input, so the 508 are 508 distinct pairs. inputAt_eq_pairAtId (:34) ties the directory's inputs to the independently provenanced 11,422-pair function. HYPOTHESIS GAP: None for the count. Note that the SOUNDNESS direction (no genuine realization is discarded) is separate and conditional: CoarseFilter.fullFiberCriterion_of_realization (:181) and FiniteCoarseDirectory.realization_retained (:73) require a `ThresholdBounds` witness and a `PrimitiveLiftRealization`. The manuscript's lem:six-affine-smith-reduction states only the count, so that condition is not a gap in this lemma."
   },
   {
    "id": "main.tex:six:eq:mean",
@@ -3161,9 +3310,13 @@
    "line": 2715,
    "end_line": 2719,
    "statement_sha256": "212ee6e6f5f789c248b7aa0592806b6e1cc1bd165fa89b6e475ddd68c1cafd7e",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.moment_lp_reduction",
+    "MainTheory.Generated.FiniteMomentData.momentResults_size",
+    "MainTheory.Generated.FiniteCoarseMomentBridge.output_moment_sound"
+   ],
+   "review": "moment_lp_reduction supplies the lemma's single clause: exactly 291 of the 508 rows are moment-feasible."
   },
   {
    "id": "main.tex:six:eq:phi",
@@ -3297,9 +3450,13 @@
    "line": 2834,
    "end_line": 2850,
    "statement_sha256": "3bbb1d2561e361c5587fa8a3ce41de0f6301e6d010c7a5ea3d98c7fb7f7e621c",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.MomentPolytope.maximum_support_rank_and_threshold",
+    "MainTheory.MomentPolytope.exists_maximum_support_rank",
+    "MainTheory.ActiveFace.maximum_support_rank_from_active_face"
+   ],
+   "review": "maximum_support_rank_and_threshold is the lemma on the concrete six-bit degree-two moment polytope and states both displayed clauses at once: `activeAffineRankLeft = activeAffineRankRight` (six:eq:rstar) and `(∃ p ∈ P, rmin ≤ affineRank (supportPointsLeft p)) ↔ rmin ≤ activeAffineRankLeft P` (six:eq:rankcriterion). exists_maximum_support_rank supplies the 'attained' half of the proof text — one feasible point whose two positive supports are exactly U_0 and U_1 — which is what makes r_* an attained maximum rather than a bound. ActiveFace.maximum_support_rank_from_active_face is the same statement for a general convex nonnegative two-colour polytope carrying ActiveMomentData; the MomentPolytope version is its instance. HYPOTHESIS GAP: only `(momentPolytope x0 x1).Nonempty`, which is the lemma's own 'Assume P(S_0,S_delta) ≠ ∅'. Convexity, nonnegativity and the common-covariance datum are derived (momentPolytope_convex :99, momentPolytope_nonneg :143, covariance_eq :221, activeMomentData :296), not assumed — the manuscript's proof also derives common covariance from equal first and second moments."
   },
   {
    "id": "main.tex:six:eq:rstar",
@@ -3365,9 +3522,13 @@
    "line": 2881,
    "end_line": 2886,
    "statement_sha256": "9201bf26e4e402582a12788a5a5e8082b7930de6dc40f685eed5df4f153c5d26",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.active_rank_reduction",
+    "MainTheory.ActiveRankRecordCount.compatible_record_count",
+    "MainTheory.Generated.FiniteRankData.rank_compatible_count"
+   ],
+   "review": "active_rank_reduction gives the pair-level clause `compatiblePairIds.size = 215`; compatible_record_count gives the second clause, that those 215 pairs are represented by exactly 216 primitive angle records."
   },
   {
    "id": "main.tex:six:eq:215",
@@ -3419,9 +3580,12 @@
    "line": 2932,
    "end_line": 2943,
    "statement_sha256": "d5266f0696f6154bbaf10996e3d595fac92302db59fd966545bb2432892b51ba",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.orbit_reduction",
+    "MainTheory.Generated.FiniteOrbitDistribution.orbit_order_distribution"
+   ],
+   "review": "orbit_reduction gives the count clause (exactly 66 classes); orbit_order_distribution gives the displayed m = 2..9 distribution (25,11,10,8,4,5,2,1)."
   },
   {
    "id": "main.tex:displaymath@2937",
@@ -3511,9 +3675,15 @@
    "line": 3147,
    "end_line": 3165,
    "statement_sha256": "9dcb22632bb53887458f7ed3d17dfa3369eebad938758709798221a1d55a7aa8",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.IntrinsicOrderAudit.orderOf_mem",
+    "MainTheory.IntrinsicOrderAudit.natCard_mem",
+    "MainTheory.GeneralFiniteness.isCyclic",
+    "MainTheory.IntrinsicOrderAudit.orderOf_le_five",
+    "MainTheory.SixQubitIntrinsicAttainment.order_five_attained"
+   ],
+   "review": "orderOf_mem: the manuscript's 'possible projective element orders are {1,2,3,5}', unconditionally for every g in the intrinsic group of every exact ((6,2,3)) code. natCard_mem: the group order itself lies in {1,2,3,5}, so a nontrivial group has order 2, 3 or 5 — the boxed m ∈ {2,3,5}. rank_two_sslp: the C_m half, i.e. IsCyclic and Finite of the intrinsic projective diagonal logical group. orderOf_le_five (and natCard_le_five, IntrinsicOrderAudit.lean:120): the upper half of M_3(6) = 5. order_five_attained: the attainment half, an explicit exact ((6,2,3)) code carrying an intrinsic element of order exactly 5. level_one_intrinsic_group: a single packaged statement of cyclic + finite + order in {2,3,5}, but its third conjunct is the weaker `∃ S : SortedNormalForm C, S.m ∈ {2,3,5}` shape, so it is listed only as the paper-facing wrapper, not as the load-bearing statement. HYPOTHESIS GAP: none — the hypotheses are only `C : CodeSpec.ExactCode 6 2 3` (an orthonormal 2-frame with the genuine `SS.HasDistance _ 3`, i.e. all weight-<=2 Knill-Laflamme conditions) and, where needed, a nonidentity element of the intrinsic group. No gauge, no extra KL rows, no Z-detection."
   },
   {
    "id": "main.tex:eq:six-intrinsic-groups",
@@ -3553,9 +3723,14 @@
    "line": 3179,
    "end_line": 3201,
    "statement_sha256": "c90cc38d4bb7157881c1f0dc27a79406fcb19e65f76d2f941df360a04e080cc3",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys",
+    "MainTheory.RealizationOrbits15.card_realization_orbits",
+    "MainTheory.PaperSupplementaryNoGo.realized_paperOrbitIds",
+    "MainTheory.RealizationOrbits15.realizationKeys_orderDistribution"
+   ],
+   "review": "hasCompletion_iff_mem_realizationKeys: the 'if and only if' itself, both halves (51 no-gos and 15 constructions). card_realization_orbits: 'there are exactly 15 SSLP realization orbits'. realized_paperOrbitIds: the boxed set six:eq:15-sslp-realization-orbits, as `(univ.filter fun k => HasCompletion (keyAt k).fibers).image paperOrbitId = {1,2,3,4,7,8,9,10,11,16,21,22,23,36,45}` — the paper's own orbit numbers (RealizationOrbits15.realizationKeys_paperIds, :45, is the same set via the key list). realizationKeys_orderDistribution: the 11:3:1 table."
   },
   {
    "id": "main.tex:six:eq:15-sslp-realization-orbits",
@@ -3639,9 +3814,12 @@
    "line": 3272,
    "end_line": 3327,
    "statement_sha256": "87a9f913d59fd2984e80c094b7d4787cb90732aacd115d536a34b67b67d573a5",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.WImageSettled62.all_11_realized_WImages",
+    "MainTheory.ProvedWEUnion.provedImages_eq"
+   ],
+   "review": "all_11_realized_WImages inhabits `Realized11Statement` (WImageSettled62.lean:22), which is clauses (i)-(iii) verbatim: W_36 = {R_5^A}; W_7 = L([0,1]); W_8 = L([1/2,1]); W_9 = W_10 = W_16 = W_21 = W_22 = {E_2^A}; W_11 = W_23 = {E_1^A}; W_45 = M([2/3,1]). provedImages_eq gives the boxed union, that the eleven images together are L([0,1]) ∪ M([2/3,1]) ∪ {R_5^A} — its proof uses the three collapsing identities E_1^A = L(1), E_2^A = L(0), E_2^A = M(1) that the manuscript's own proof invokes (ProvedWEUnion.FI_one/FI_zero/FII_one, :29,:34,:39)."
   },
   {
    "id": "main.tex:eq:W36-main",
@@ -3791,9 +3969,14 @@
    "line": 3418,
    "end_line": 3425,
    "statement_sha256": "0e4b324e93a9685da9c14dfefed62c5c2599da9d222eba3e038708252f72d3d9",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive",
+    "MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive",
+    "SixQubit.Orbit36Certified.original_equivalent_canonical",
+    "MainTheory.OrderFiveUniqueCompletion.paperOrbitId_eq_36_of_orderFive_completion"
+   ],
+   "review": "luEquivalent_canonical_of_orderFive gives clauses 1+2 in their operative form: for any `C : ExactCode 6 2 3` and any `g : IntrinsicGroup C` with `orderOf g = 5`, C's projector is LU-equivalent to the canonical orbit-36 projector (its proof runs the code onto directory key 34 = paper orbit 36 via IntrinsicOrderAudit.exists_key_of_element and OrderFiveUniqueCompletion.eq_key34_of_orderFive_completion, then pushes the code's own states onto the orbit-36 table fibres). luEquivalent_of_orderFive gives clause 3, the headline: any two such codes have LU-equivalent projectors, i.e. the projective-C_5 sector is a single class. level_four_lu_class gives clause 2 in the manuscript's eq:LU-equivalence shape, for the two codes stated directly on orbit 36's table fibres. HYPOTHESIS GAP: none — the order-five condition is imposed on an actual element of the intrinsic group, not on a normal form the theorem picks. ADVERSARIAL CHECK: Refuted as 'exact / gap none' on two counts. (a) Clause 1 ('every exact ((6,2,3)) code admitting a projective diagonal element of order five belongs to orbit 36') is an SSLP-orbit-membership statement, and none of the three listed declarations states it. luEquivalent_canonical_of_orderFive (MainTheory/OrderFiveCodeRigidity.lean:58) concludes only `LUEquivalent (ofFrame C.frame) (ofFrame canonicalFrame)`; LUEquivalent (MainTheory/ClassificationLevels.lean:368) is the equivalence closure of arbitrary one-qubit unitaries and qubit permutations, which is strictly coarser than the cube action defining an orbit and does not constrain the code's own support fibres, so it does not imply orbit membership. The orbit-membership fact does exist inside that proof (exists_key_of_element then eq_key34_of_orderFive_completion) but is exposed only as OrderFiveUniqueCompletion.paperOrbitId_eq_36_of_orderFive_completion (MainTheory/OrderFiveUniqueCompletion.lean:200), whose hypothesis is on a *key*, or as CodeOrbitStatus.code_orderFive_is_orbit36 (MainTheory/CodeOrbitStat"
   },
   {
    "id": "main.tex:six:rem:global-family-caveat",
@@ -4954,9 +5137,14 @@
    "line": 981,
    "end_line": 990,
    "statement_sha256": "de82734bb31d0a6ffa5bef2cfbe043f40e49df037f9b07957f34796c74c790e9",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit36.rigid_code",
+    "SixQubit.Orbit36Code.canonical_is_code",
+    "SixQubit.Orbit36Code.c36_normalized",
+    "SixQubit.Orbit36Code.d36_normalized"
+   ],
+   "review": "rigid_code supplies every clause of the theorem in one statement: (i) six probabilities 1/10 and six 1/15 in each word, (ii) full twelve-term support (all 24 amplitudes nonzero), (iii) CodeEquiv.Equivalent to the canonical pair (c36,d36), (iv) the pair is genuinely distance three, (v) the boxed enumerator. canonical_is_code supplies the non-vacuity half of 'orbit 36 contains ONE essential exact code class' (the canonical pair really is an exact ((6,2,3)) code; c36_normalized/d36_normalized/c36_orthogonal_d36 at Orbit36Code.lean:544,553,559 complete it). orbit36_rigidity is the same conclusion with the moment system and 22 KL rows as hypotheses instead of derived. HYPOTHESIS GAP: None. rigid_code assumes only: supp c subseteq Orbit36.S0, supp d subseteq Orbit36.S1, SS.innerC c c = 1, SS.innerC d d = 1, SS.HasDistance ![c,d] 3. No extra KL row, no gauge, no Z-detection, no positivity or genericity assumption. Only the standard representative-fixing: S0/S1 are the concrete orbit-36 fibres rather than 'any pair in the cube orbit of them'."
   },
   {
    "id": "supplementary.tex:eq:o36Ajdef",
@@ -9293,9 +9481,12 @@
    "line": 3960,
    "end_line": 3982,
    "statement_sha256": "2a18e2cc0572bf4b9fe2d1c737569ecfdc24ba2165f518317bb3aa926b8a4eb9",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FlipCharacter.two_edge_actual_support_obstruction",
+    "MainTheory.FlipCharacter.two_edge_flip_obstruction"
+   ],
+   "review": "two_edge_actual_support_obstruction is the manuscript's statement verbatim, phrased on the ACTUAL supports (T_0 = actualSupport c, T_1 = actualSupport d): incidenceSet (actualSupport c) (actualSupport d) e_i = {y,y'} together with y_j != y'_j gives not (HasDistance ![c,d] 3). two_edge_flip_obstruction is the same conclusion with support bounds S0,S1 supplied by hand plus explicit endpoint-nonvanishing. HYPOTHESIS GAP: None; strictly weaker than the manuscript. The manuscript assumes all FOUR endpoint amplitudes c_{y+e_i}, c_{y'+e_i}, d_y, d_{y'} are nonzero; the actual-support version derives the two it needs from y being in the incidence set of the actual supports, and two_edge_flip_obstruction needs only ONE endpoint pair (hcne, hdne) instead of four. Normalization of the logical words is not required either."
   },
   {
    "id": "supplementary.tex:displaymath@3963",
@@ -9735,9 +9926,12 @@
    "line": 4285,
    "end_line": 4289,
    "statement_sha256": "e4683064fd913b08c59f3cca0242d2a14ad2a1961ad52052dc4fc854fc655444",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit64.no_code",
+    "MainTheory.OrderEightNoCompletion.paper64_noCompletion"
+   ],
+   "review": "no_code is the whole proposition: from supp c in S0, supp d in S1, both normalized, and HasDistance ![c,d] 3, derive False. paper64_noCompletion packages the same statement as NoCompletion paper64Fibers, where Completion (MainTheory/CubeCompletionTransport.lean:39) bundles exactly supported + normalized + HasDistance 3. HYPOTHESIS GAP: None. SixQubit.Orbit64.no_code assumes no moment row and no KL row; SixQubit.Orbit64.moments (CodeOrbit64.lean:316) derives the 14-equation MomentSystem from hdist, and the two rows X_1 and X_1Z_2 come from offSumOn_eq_zero_of_hasDistance with (by decide) weight checks."
   },
   {
    "id": "supplementary.tex:eq:q8aB",
@@ -10025,9 +10219,12 @@
    "line": 4471,
    "end_line": 4475,
    "statement_sha256": "c86d7328286e92fc1c0fe6c270a75fc2bf08d4ee6cf11cdff5555364c46ff7d4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit65.no_code",
+    "MainTheory.OrderEightNoCompletion.paper65_noCompletion"
+   ],
+   "review": "no_code gives the whole proposition: supp c in S0, supp d in S1, both normalized, HasDistance ![c,d] 3 |- False. paper65_noCompletion is the packaged NoCompletion paper65Fibers form. HYPOTHESIS GAP: None. No moment row and no KL row is assumed; SixQubit.Orbit65.moments (CodeOrbit65.lean:~487) derives the moment system from hdist and the four rows (ef0 w0, ef0 w1, ef1 w0, ef2 w0) come from offSumOn_eq_zero_of_hasDistance with decidable weight checks."
   },
   {
    "id": "supplementary.tex:thm:q8nogo",
@@ -12786,9 +12983,14 @@
    "line": 6143,
    "end_line": 6154,
    "statement_sha256": "f670d891f5b9182a70d26f75af24248082d353f9ec2530263f94cf16739b7e08",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperSupplementaryNoGo.max_order_le_five",
+    "MainTheory.SixQubitIntrinsicAttainment.two_three_five_attained",
+    "MainTheory.PaperSupplementaryNoGo.complete_order_classification",
+    "MainTheory.OrderRange.maxLogicalOrder_eq_five"
+   ],
+   "review": "No single declaration carries both halves at the code level, so the corollary needs two. UPPER BOUND ('orders 6,7,8,9 are impossible', M_3(6) <= 5): max_order_le_five - for every C : CodeSpec.ExactCode 6 2 3 and every g : IntrinsicGroup C, orderOf g <= 5. complete_order_classification strengthens this to orderOf g in {1,2,3,5} (so it also settles m=4, which the corollary explicitly leaves for sec:q4all). ATTAINMENT ('the orders 2,3,5 are realized by exact six-qubit distance-three codes'): two_three_five_attained - for each m in {2,3,5} there is an ExactCode 6 2 3 with a nonidentity intrinsic element of order exactly m. maxLogicalOrder_eq_five states both halves in one statement, but at the level of the 66-key directory (keyAt k).m rather than of an arbitrary code. HYPOTHESIS GAP: None. max_order_le_five's only hypotheses are a genuine CodeSpec.ExactCode 6 2 3 and an element of its intrinsic group; IntrinsicGroup C is the real object IntrinsicProjectiveDiagonalLogicalGroup (exactCodeProjector C), the quotient of the code's diagonal symmetry subgroup, not an abstract stand-in."
   },
   {
    "id": "supplementary.tex:eq:M36exact",
@@ -13118,9 +13320,13 @@
    "line": 6383,
    "end_line": 6386,
    "statement_sha256": "c7fc0098db33b7dc42900108f43b5b3a6031802160d988147b14fd175eeee860",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit25.no_code",
+    "MainTheory.OrderFourNoCompletion.paper25_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit25_is_impossible"
+   ],
+   "review": "All three give the single clause of the proposition, at three levels. `SixQubit.Orbit25.no_code` is the primitive form: for arbitrary c,d : BitString 6 -> C supported in S0/S1, each normalized (innerC = 1), with `SS.HasDistance ![c,d] 3`, derive False. `paper25_noCompletion : NoCompletion paper25Fibers` packages it as \"no Completion structure exists on the fibre pair (Orbit25.S0, Orbit25.S1)\". `orbit25_is_impossible` restates it on the generated key indexed by the manuscript number (`paperOrbitId k = 25`). HYPOTHESIS GAP: None. `SS.HasDistance psi 3` unfolds to `Detects psi 2`, i.e. the genuine KL condition for every Pauli of weight <= 2 — exactly d >= 3. No KL row is assumed separately (CodeOrbit25.lean derives every row `no_go_of_moments` needs from `hdist` via `SixQubit.offSumOn_eq_zero_of_hasDistance`), no gauge is fixed, no Z-detection is assumed, and orthogonality of the two logical states is proved (`SixQubit.Orbit25.orthogonal`, CodeOrbit25.lean:660), not assumed. The support hypothesis is the weak direction (c vanishes off S0), not equality."
   },
   {
    "id": "supplementary.tex:eq:q4o26records",
@@ -13921,9 +14127,13 @@
    "line": 6974,
    "end_line": 6976,
    "statement_sha256": "c05a0f01e380262eea80056fbfb9a97bc42947f823a6fd86fb3286811bfd7534",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit27.no_code",
+    "MainTheory.OrderFourNoCompletion.paper27_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit27_is_impossible"
+   ],
+   "review": "Same three levels as orbit 25: `no_code` is the code-level statement on the fixed fibre pair, `paper27_noCompletion` the `NoCompletion` packaging, `orbit27_is_impossible` the manuscript-indexed restatement on the generated key. HYPOTHESIS GAP: None. Hypotheses are exactly: supported in S0/S1, both normalized, `SS.HasDistance ![c,d] 3`. Every Knill-Laflamme row used downstream is derived from `hdist`."
   },
   {
    "id": "supplementary.tex:equation@6982",
@@ -14005,9 +14215,13 @@
    "line": 7019,
    "end_line": 7021,
    "statement_sha256": "7e4e53b42ab9cd608f783cedc8d12e42e9774b2a5aed1f0933748d6212e5fc2b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit28.no_code",
+    "MainTheory.OrderFourNoCompletion.paper28_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit28_is_impossible"
+   ],
+   "review": "Same three levels. HYPOTHESIS GAP: None, and notably the reduced support is derived rather than assumed. The manuscript's actual supports T_0, T_1 (six strings each) are a proper subset of the sixteen-element residue fibres; the Lean hypothesis is the full fibre pair (c vanishes off the 16-element S0), and `MomentSystem.tops_zero` proves the six vanishing endpoint probabilities from the moment equations plus nonnegativity. So the Lean hypothesis is weaker than the manuscript's displayed support, not stronger."
   },
   {
    "id": "supplementary.tex:equation@7027",
@@ -14171,9 +14385,13 @@
    "line": 7170,
    "end_line": 7172,
    "statement_sha256": "af906054c5b06a806653bc84760c783160e263f8f481abc747353f861241ee2c",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit29.no_code",
+    "MainTheory.OrderFourNoCompletion.paper29_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit29_is_impossible"
+   ],
+   "review": "Same three levels. HYPOTHESIS GAP: None. The manuscript's eight-dimensional moment polytope and its fifteen-face audit are internal to the proof; the Lean statement quantifies over all c,d on the fibre pair with distance three, so no interior/facet/vertex case is assumed away and no genericity is imposed. The pair structure (both fibres closed under X_5X_6) is a proved property of S0/S1, not a hypothesis."
   },
   {
    "id": "supplementary.tex:eq:q4o30data",
@@ -15861,9 +16079,13 @@
    "line": 8443,
    "end_line": 8445,
    "statement_sha256": "5d36120ca0e4f0e74ceb4a7132dcafbf5e55edbec06f832a54c65efca6ec36be",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit62.no_code",
+    "MainTheory.OrderFourNoCompletion.paper62_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit62_is_impossible"
+   ],
+   "review": "Same three levels. HYPOTHESIS GAP: None; hypotheses are support, normalization and `SS.HasDistance ![c,d] 3`."
   },
   {
    "id": "supplementary.tex:equation@8451",
@@ -15921,9 +16143,13 @@
    "line": 8478,
    "end_line": 8480,
    "statement_sha256": "c1a6f2d02103bd919ead498bf5a75ef1a192c6dbf1feb803df93ddce92992f77",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit63.no_code",
+    "MainTheory.OrderFourNoCompletion.paper63_noCompletion",
+    "MainTheory.PaperSupplementaryNoGo.orbit63_is_impossible"
+   ],
+   "review": "Same three levels. HYPOTHESIS GAP: None. The moment polytope here is one-dimensional, so the probabilities are not pinned; the Lean proof does not assume they are — `MomentSystem.endpoints` derives only the four constant endpoint probabilities (1/4 each) that the two-edge Walsh obstruction needs, exactly as the manuscript describes."
   },
   {
    "id": "supplementary.tex:eq:q4alltenorbits",
@@ -18004,9 +18230,12 @@
    "line": 9766,
    "end_line": 9785,
    "statement_sha256": "839b57b936ca4958fa081fee5a49f70377ace43e074295cf1ae8e3dacc53d37e",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FlipCharacter.full_rank_flip_monomials_zero",
+    "MainTheory.FlipCharacter.full_rank_flip_positive_obstruction"
+   ],
+   "review": "Two clauses, one declaration each. First clause ('if W is nonsingular then every incidence monomial conj(c_{x^(r)}) d_{y^(r)} vanishes'): full_rank_flip_monomials_zero, concluding forall r, star (c (y r XOR e_i)) * d (y r) = 0. Second clause ('consequently, if the diagonal moments force one incidence to have both endpoint probabilities positive, no exact distance-three completion exists'): full_rank_flip_positive_obstruction, concluding not (HasDistance ![c,d] 3) from 0 < normSq(c(y r XOR e_i)) * normSq(d(y r)) for a single r. HYPOTHESIS GAP: None, and slightly weaker than the manuscript in two places: the manuscript picks j_1..j_{N-1} distinct, Lean requires only j k != i (hji) with nonsingularity assumed outright; and the second clause needs positivity at just ONE incidence rather than a global moment argument. Only the honest KL predicate HasDistance ![c,d] 3 and the two support bounds are used."
   },
   {
    "id": "supplementary.tex:eq:m3lift-W",
@@ -19792,9 +20021,12 @@
    "line": 10938,
    "end_line": 10963,
    "statement_sha256": "5c01b4d7e3aa36afcfc5943b9fa4adfc8f0ffc46f927f149b6413b5a3f408df8",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FlipCharacter.matched_ten_monomials_zero",
+    "MainTheory.FlipCharacter.matched_ten_obstruction"
+   ],
+   "review": "Two clauses, one declaration each. First clause ('if det W != 0, the weight-at-most-two cross-KL equations force z_0 = ... = z_9 = 0'): matched_ten_monomials_zero. Second clause ('if in addition |c_{x_r}|^2 = |d_{y_r}|^2 = p_r then no normalized exact code exists'): matched_ten_obstruction, whose hm is exactly eq:m2-matchedprobabilities and whose hnc is the normalization the manuscript contradicts via sum_r p_r = 1. MainTheory.FlipCharacter.full_rank_matched_obstruction (line 32) is the same second clause for an arbitrary matching size N and arbitrary dressing family. HYPOTHESIS GAP: None. The manuscript asks for four DISTINCT coordinates j_1..j_4 != i; Lean takes an arbitrary j : Fin 4 -> Fin n and lets the assumed det W != 0 carry that weight, which is weaker. No support-positivity or interior assumption is added."
   },
   {
    "id": "supplementary.tex:eq:m2-tenmatching",
@@ -21878,9 +22110,12 @@
    "line": 12181,
    "end_line": 12189,
    "statement_sha256": "adb5d801dc44b4da791be6321b1b4b4c7356179a2e5878df9b84575965bac9d9",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ConnectedOrthogonality.exists_line",
+    "MainTheory.ConnectedOrthogonality.frame_forms_ne"
+   ],
+   "review": "Two clauses, one declaration each. Main clause ('there is a line L with all c_x in L and all d_y in L perp'): exists_line, returning a submodule L of finrank 1 with forall x, c x in L and forall y, d y in L perp. Consequence clause ('their frame operators cannot be equal'): frame_forms_ne, exhibiting a test vector v with sum_x |<c x, v>|^2 != sum_y |<d y, v>|^2, i.e. the two frame quadratic forms - hence the two frame operators - differ. MainTheory.ConnectedOrthogonality.mem_span_of_inner_eq_zero (line 63) is the 'in C^2 the orthogonal complement of a nonzero vector is one-dimensional' step of the manuscript's proof. HYPOTHESIS GAP: None; frame_forms_ne is strictly stronger than the manuscript's consequence, since it drops the hypothesis that the two sides carry the same positive total mass (that hypothesis only lets the manuscript display the operators as mu*P_L and mu*P_Lperp; c x0 alone already separates the forms). Nonzero vectors and edgewise orthogonality are assumed exactly as stated. Connectedness is carried as hconn (every left vertex reachable from x0 by steps through a shared right neighbour) plus hcover (every right vertex has a left neighbour) rather than as a SimpleGraph on a sum type - a faithful rendering of 'connected bipartite graph', which is used for nothing else in the manuscript's proof either. The ambient space is any 2-dimensional complex inner product space, of which C^2 is an instance."
   },
   {
    "id": "supplementary.tex:prop:o15-nogo",
