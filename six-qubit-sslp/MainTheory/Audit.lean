@@ -850,6 +850,12 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.ParityFour.sum_character_mul
 #print axioms MainTheory.ParityFour.eq_zero_of_character_sums
 #print axioms MainTheory.ParityFour.edge_isolation_of_character_rows
+#print axioms MainTheory.ParityFour.parity_eq_bdot
+#print axioms MainTheory.ParityFour.bdot_comm
+#print axioms MainTheory.ParityFour.character_bxor_left
+#print axioms MainTheory.ParityFour.sum_bxor_allOnes
+#print axioms MainTheory.ParityFour.eq_zero_of_transversal
+#print axioms MainTheory.ParityFour.eq_zero_of_clear_coordinate
 #print axioms MainTheory.ConnectedOrthogonality.exists_line
 #print axioms MainTheory.ConnectedOrthogonality.frame_forms_ne
 #print axioms MainTheory.PaperSupplementaryImages.o7_weight_image

@@ -97,13 +97,19 @@ rather than merely missing, with the reason recorded in the Lean source:
   that closes a mixed-axis branch the manuscript's route passes over, and the
   orbit-30 argument likewise departs from the manuscript's. The headline no-gos
   they serve, `thm:q4o26nogo` and `thm:q4o30nogo`, are proved.
-* `lem:parity4-edgeisolation` is not proved. Its algebra is:
-  `MainTheory.ParityFour.edge_isolation_of_character_rows` inverts the
-  character system, on the whole four-coordinate cube rather than on one
-  incidence set. What is not proved is the manuscript's proviso, that the four
-  effective parity coordinates are represented by physical single-qubit `Z`
-  characters and the flipped coordinate by a physical flip; that proviso is
-  what turns the Knill-Laflamme rows into those characters, and it is assumed.
+* `lem:parity4-edgeisolation` is not proved. Its algebra now is, in full:
+  `MainTheory.ParityFour.edge_isolation_of_character_rows` inverts the sixteen
+  character sums, and `eq_zero_of_transversal` halves that hypothesis to the
+  eight rows the manuscript actually writes down. That reduction is the
+  manuscript's phrase "the complete character table of a three-dimensional
+  Boolean group": the overlaps live on the even parity class, the all-ones
+  character is identically one there, so a character sum depends only on the
+  class of `z` modulo the all-ones vector and eight rows meet every class.
+  What remains unproved is the manuscript's proviso -- that the four effective
+  parity coordinates are represented by physical single-qubit `Z` characters
+  and the flipped coordinate by a physical flip. That proviso is the bridge
+  from the six physical qubits to the four effective coordinates, it is what
+  turns the Knill-Laflamme rows into these characters, and it is assumed.
 
 `lem:connected-orthogonality` was in this list and is now proved:
 `MainTheory.ConnectedOrthogonality.exists_line` gives the manuscript's line,

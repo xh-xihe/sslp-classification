@@ -120,4 +120,80 @@ theorem edge_isolation_of_character_rows {u : Cube → ℂ}
     u = 0 :=
   funext fun x => eq_zero_of_character_sums h x
 
+
+/-! ## Halving the hypothesis: eight rows, not sixteen
+
+The manuscript's argument does not have sixteen character equations.  For a
+fixed flipped coordinate it has eight -- `1`, `chi_k`, `chi_j` and
+`chi_k chi_j` for `j != k` -- and calls them "the complete character table of a
+three-dimensional Boolean group".  That phrase is the following observation:
+the incidence overlaps live on the even parity class, the all-ones character
+is identically `1` there, so a character sum depends only on the class of `z`
+modulo the all-ones vector, and eight suitably chosen rows meet every class.
+
+`eq_zero_of_transversal` is that step.  It is what closes the gap between the
+sixteen-row inversion above and the eight rows the manuscript writes down. -/
+
+/-- The all-ones vector; `parity` is its character. -/
+def allOnes : Cube := fun _ => true
+
+theorem parity_eq_bdot (x : Cube) : parity x = SS.bdot allOnes x := rfl
+
+theorem bdot_comm (s t : Cube) : SS.bdot s t = SS.bdot t s := by
+  simp [SS.bdot, Bool.and_comm]
+
+theorem character_bxor_left (z w x : Cube) :
+    character (SS.bxor z w) x = character z x * character w x := by
+  simp only [character, bdot_comm (SS.bxor z w) x, bdot_comm z x, bdot_comm w x,
+    SS.bdot_bxor_right]
+  by_cases hz : SS.bdot x z <;> by_cases hw : SS.bdot x w <;> simp [hz, hw]
+
+/-- On a function supported in the even parity class, the character sum is
+unchanged by adding the all-ones vector: `chi_1` is identically `1` there. -/
+theorem sum_bxor_allOnes {u : Cube → ℂ}
+    (hsupp : ∀ x, parity x = true → u x = 0) (z : Cube) :
+    ∑ x, ((character (SS.bxor z allOnes) x : ℝ) : ℂ) * u x
+      = ∑ x, ((character z x : ℝ) : ℂ) * u x := by
+  refine Finset.sum_congr rfl fun x _ => ?_
+  by_cases hx : parity x = true
+  · rw [hsupp x hx, mul_zero, mul_zero]
+  · have hpar : parity x = false := by simpa using hx
+    have hone : character allOnes x = 1 := by
+      have hb : SS.bdot allOnes x = false := by rw [← parity_eq_bdot]; exact hpar
+      simp [character, hb]
+    rw [character_bxor_left, hone, mul_one]
+
+/-- **Eight rows suffice.**
+
+If `u` is supported in the even parity class and `T` meets every class of
+`Cube` modulo the all-ones vector, then the character sums over `T` alone
+force `u = 0`.  A set of eight rows meeting every class is exactly what the
+manuscript's `1`, `chi_k`, `chi_j`, `chi_k chi_j` provide. -/
+theorem eq_zero_of_transversal {u : Cube → ℂ}
+    (hsupp : ∀ x, parity x = true → u x = 0)
+    (T : Set Cube) (hT : ∀ z : Cube, z ∈ T ∨ SS.bxor z allOnes ∈ T)
+    (h : ∀ z ∈ T, ∑ x, ((character z x : ℝ) : ℂ) * u x = 0) :
+    u = 0 := by
+  refine edge_isolation_of_character_rows fun z => ?_
+  rcases hT z with hz | hz
+  · exact h z hz
+  · rw [← sum_bxor_allOnes hsupp z]
+    exact h _ hz
+
+/-- The rows with a fixed coordinate clear form such a transversal: `z` and
+`z + 1` differ in every coordinate, so exactly one of them is clear at `k`. -/
+theorem eq_zero_of_clear_coordinate (k : Fin 4) {u : Cube → ℂ}
+    (hsupp : ∀ x, parity x = true → u x = 0)
+    (h : ∀ z : Cube, z k = false →
+      ∑ x, ((character z x : ℝ) : ℂ) * u x = 0) :
+    u = 0 := by
+  refine eq_zero_of_transversal hsupp {z : Cube | z k = false} ?_ (fun z hz => h z hz)
+  intro z
+  by_cases hk : z k = false
+  · exact Or.inl hk
+  · refine Or.inr ?_
+    have hz : z k = true := by simpa using hk
+    show SS.bxor z allOnes k = false
+    simp [SS.bxor, allOnes, hz]
+
 end MainTheory.ParityFour
