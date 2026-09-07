@@ -187,6 +187,8 @@ import MainTheory.OneHotTensorEmbedding
 import MainTheory.OneHotZDetection
 import MainTheory.OrbitRecordMultiplicity
 import MainTheory.OrbitTablePaperKey
+import MainTheory.ConnectedOrthogonality
+import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
 import MainTheory.PaperSupplementaryImages
 import MainTheory.PaperSupplementaryNoGo

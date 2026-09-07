@@ -339,7 +339,7 @@ existing declaration, and are handled honestly rather than approximated:
   `o9_support_four` below is that chain closed into one unconditional
   statement, which is new.
 
-NOT-FORMALIZED: lem:parity4-edgeisolation lem:connected-orthogonality -/
+NOT-FORMALIZED: lem:parity4-edgeisolation -/
 
 /-- **`lem:o7scalarmoments`, `eq:o7extremenorms`, `eq:o7edgenorms` and
 `eq:o7fractionalmatching`.**

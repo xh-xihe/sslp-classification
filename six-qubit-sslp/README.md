@@ -87,8 +87,8 @@ Newly implemented proof packages include:
 
 Manuscript-to-Lean correspondence is tracked by `tools/verification/label_sweep.py`,
 which sweeps every named result in the two sources for a Lean source citing its
-label. All 30 named results of `main.tex` are cited, and 81 of the 87 in
-`supplementary.tex`. Every one of the six that are not is *declared* absent
+label. All 30 named results of `main.tex` are cited, and 82 of the 87 in
+`supplementary.tex`. Every one of the five that are not is *declared* absent
 rather than merely missing, with the reason recorded in the Lean source:
 
 * `lem:q4o26anchorsingular`, `lem:q4o30threepoints`, `lem:q4o30exceptional`
@@ -97,11 +97,19 @@ rather than merely missing, with the reason recorded in the Lean source:
   that closes a mixed-axis branch the manuscript's route passes over, and the
   orbit-30 argument likewise departs from the manuscript's. The headline no-gos
   they serve, `thm:q4o26nogo` and `thm:q4o30nogo`, are proved.
-* `lem:parity4-edgeisolation` and `lem:connected-orthogonality` are not proved
-  anywhere here. The second is a general statement about connected bipartite
-  graphs carrying nonzero vectors in `C^2`; the nearest existing declaration,
-  `SixQubit.ParityFour.slice_zero`, concludes a mass identity rather than the
-  existence of the line, so it is not a counterpart.
+* `lem:parity4-edgeisolation` is not proved. Its algebra is:
+  `MainTheory.ParityFour.edge_isolation_of_character_rows` inverts the
+  character system, on the whole four-coordinate cube rather than on one
+  incidence set. What is not proved is the manuscript's proviso, that the four
+  effective parity coordinates are represented by physical single-qubit `Z`
+  characters and the flipped coordinate by a physical flip; that proviso is
+  what turns the Knill-Laflamme rows into those characters, and it is assumed.
+
+`lem:connected-orthogonality` was in this list and is now proved:
+`MainTheory.ConnectedOrthogonality.exists_line` gives the manuscript's line,
+and `frame_forms_ne` the frame consequence -- the latter without the
+manuscript's equal-positive-mass hypothesis, which the inequality does not
+need.
 
 One further clause is uncovered inside a cited lemma. `lem:o7scalarmoments`
 has four clauses; its three displayed equations are proved, but its closing
