@@ -1,4 +1,6 @@
 import SixQubit.Common
+import SixQubit.Orbit7Marginal
+import SixQubit.Orbit8OperatorQP
 import SixQubit.Bridge
 import SixQubit.Order9
 import SixQubit.Block26

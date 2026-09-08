@@ -13,6 +13,8 @@ import SixQubit.Orbit40
 import SixQubit.Orbit60
 import SixQubit.Orbit63
 import SixQubit.Orbit28
+import SixQubit.Orbit7Marginal
+import SixQubit.Orbit8OperatorQP
 
 import SixQubit.Orbit39
 import SixQubit.Orbit65
@@ -821,3 +823,9 @@ open SixQubit
 #print axioms SixQubit.innerC_flip_eq_offdiagMatElt
 #print axioms SixQubit.diagMatElt_eq_zero_of_innerC
 #print axioms SixQubit.offdiagMatElt_eq_zero_of_innerC
+#print axioms SixQubit.Orbit7Universal.weight_flip_ne
+#print axioms SixQubit.Orbit7Universal.offdiag_zero
+#print axioms SixQubit.Orbit7Universal.active_marginal_maximally_mixed
+#print axioms SixQubit.Orbit8Universal.Qact_smul
+#print axioms SixQubit.Orbit8Universal.Qact_add
+#print axioms SixQubit.Orbit8Universal.QP_eq

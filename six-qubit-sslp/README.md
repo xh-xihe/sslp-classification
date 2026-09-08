@@ -118,7 +118,7 @@ the eight rows the manuscript writes down, which is its phrase "the complete
 character table of a three-dimensional Boolean group". What was missing was
 the manuscript's proviso, that the four effective parity coordinates are
 represented by physical single-qubit `Z` characters and the flipped coordinate
-by a physical flip. `MainTheory.ParityFourProviso` discharges it by
+by a physical flip. The module `MainTheory/ParityFourProviso.lean` discharges it by
 construction rather than assuming it: the effective coordinates are named by
 an injection `emb : Fin 4 -> Fin 6`, the physical error carrying an effective
 mask is its pushforward `push emb z`, `bdot_push` proves that the physical
@@ -141,11 +141,12 @@ certified result.
 `lem:q4o30mindegree` were in this list as intermediate steps of manuscript
 proof routes the package does not take. They are now proved on the
 manuscript's own displayed equations, so the divergence of routes no longer
-costs any of them: `MainTheory.Orbit26AnchorMatrix.anchor_singular` proves
+costs any of them: `MainTheory.Orbit26.anchor_singular` proves
 both anchor blocks singular, deriving the reduction `eq:q4o26commonM`, the
 cancellation `eq:q4o26FM`, the norm bound `eq:q4o26rnormlarge` and the
 state-interchange symmetry rather than assuming them, and
-`MainTheory.Orbit30SupportGraph` carries the three orbit-30 steps. The
+`MainTheory.Orbit30.Data.q4o30_exceptional` and its neighbours carry the
+three orbit-30 steps. The
 certified orbit-26 and orbit-30 no-gos still run by the repaired route.
 
 `lem:connected-orthogonality` was in this list and is now proved:
@@ -159,12 +160,23 @@ Lagrange/wedge inequality that never mentions the support. Nothing outside the
 axiom audit uses `ConnectedOrthogonality`; it completes the manuscript's
 argument rather than participating in the verified chain.
 
-One further clause is uncovered inside a cited lemma. `lem:o7scalarmoments`
-has four clauses; its three displayed equations are proved, but its closing
-sentence -- every active qubit has maximally mixed one-qubit marginal -- is
-not. The manuscript uses that sentence to identify `A_1` with a squared Bloch
-length; the certified route reaches `A_1` through the shadow/MacWilliams
-squeeze instead, so the clause is never needed here.
+Two clauses that were uncovered inside cited lemmas are now proved.
+`lem:o7scalarmoments` has four clauses; its three displayed equations were
+proved, its closing sentence -- every active qubit has maximally mixed
+one-qubit marginal -- was not. `SixQubit.Orbit7Universal.active_marginal_maximally_mixed` proves it by the
+manuscript's own argument: `eq:o7fractionalmatching` makes both occupations of
+an active qubit `1/2`, so the `Z_i` scalar vanishes, and the two words sit in
+different `ZMod 3` residue shells, so flipping one active coordinate leaves
+the shell and the `X_i` and `Y_i` scalars vanish termwise. `lem:o8ladder` has
+three displays; the two ladder identities were proved and the third, the
+operator equation `eq:o8QP` `QP = rP`, was recorded only as the scalar
+identity the argument uses. `SixQubit.Orbit8Universal.QP_eq` states and
+proves the operator form, from `Q_eigen` and linearity.
+
+Neither clause enters the verified chain: the certified orbit-7 route reaches
+`A_1` through the shadow/MacWilliams squeeze rather than the Bloch-length
+identification, and the certified orbit-8 route runs on `Q_eigen` directly.
+They complete the manuscript's lemmas rather than the no-gos.
 
 The sweep counts a label only when a Lean source carries it, and subtracts
 labels a Lean source lists after a `NOT-FORMALIZED:` marker, so naming a label

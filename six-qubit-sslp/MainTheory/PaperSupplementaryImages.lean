@@ -4,6 +4,8 @@ import MainTheory.ParityFourPolytope
 import MainTheory.CodeOrbitStatus
 import MainTheory.IntrinsicOrderAudit
 import SixQubit.Orbit8RaisingGram
+import SixQubit.Orbit8OperatorQP
+import SixQubit.Orbit7Marginal
 import SixQubit.Orbit9MagnitudeCounts
 import SixQubit.Orbit36
 import SixQubit.Orbit8UniversalLadderClose
@@ -246,12 +248,16 @@ alias o8_support_two := SixQubit.Orbit8Universal.singleton_support_le_two
 /-- **`lem:o8ladder`, `eq:o8ladder01`.**  `R J |0_L> = -b |1_L>`. -/
 alias o8_ladder01 := SixQubit.Orbit8Universal.ladder01
 
-/-- **`lem:o8ladder`, `eq:o8ladder10`.**  `R J |1_L> = b |0_L>`.
-
-The lemma's third display `eq:o8QP`, `Q P = r P`, is not recorded here; the
-package proves the scalar identity `SixQubit.Orbit8Universal.Q_expect_eq` that
-the ladder argument uses, not the operator equation itself. -/
+/-- **`lem:o8ladder`, `eq:o8ladder10`.**  `R J |1_L> = b |0_L>`. -/
 alias o8_ladder10 := SixQubit.Orbit8Universal.ladder10
+
+/-- **`lem:o8ladder`, `eq:o8QP`.**  `Q P = r P`, with `r = 1/6`.
+
+`SixQubit.Orbit8Universal.Q_eigen` is the manuscript's derivation, which
+produces the two eigenvalue equations; `QP_eq` is the operator identity the
+manuscript states, obtained from them by linearity of `Q` and of the
+projector. -/
+alias o8_QP := SixQubit.Orbit8Universal.QP_eq
 
 /-- **`lem:o9pqequal`, first clause of `eq:o9pqdegree`.**  `p_i = q_i`. -/
 alias o9_pq_equal := SixQubit.Orbit9Universal.pq_equal
@@ -265,9 +271,9 @@ from the manuscript's, so the headline no-gos `thm:q4o26nogo` and
 `thm:q4o30nogo` are proved by a different route than the manuscript's.
 
 The manuscript's own intermediate steps are nonetheless carried:
-`lem:q4o26anchorsingular` is `MainTheory.Orbit26AnchorMatrix.anchor_singular`,
+`lem:q4o26anchorsingular` is `MainTheory.Orbit26.anchor_singular`,
 proved from the manuscript's displayed equations, and `lem:q4o30exceptional`
-is `MainTheory.Orbit30SupportGraph.q4o30_exceptional`. -/
+is `MainTheory.Orbit30.Data.q4o30_exceptional`. -/
 
 /-- **`lem:q4o26Jorth`, `eq:q4o26Jorth`.**
 
@@ -320,21 +326,27 @@ theorem q4o31_permanent_triangle (r1 s1 r2 s2 r3 s3 : ℂ)
 
 Located and then adversarially re-checked against the manuscript one by one.
 Two of the manuscript's lemmas turned out not to be provable by any single
-existing declaration, and are handled honestly rather than approximated:
+existing declaration, and were completed rather than approximated:
 
 * `lem:o7scalarmoments` has four clauses.  Its three displayed equations are
   `scalar_normal_form` below.  Its closing sentence -- that every active qubit
-  has maximally mixed one-qubit marginal -- is proved nowhere in this
-  repository, and is not cited as covered.  The manuscript uses that sentence
-  at its own Section on the orbit-7 enumerator to identify `A_1` with the
-  squared Bloch length; the certified route reaches `A_1` instead through the
-  shadow/MacWilliams squeeze in `Orbit7UniversalEnum`, so the clause is not
-  needed here and was never proved.
+  has maximally mixed one-qubit marginal -- had no proof in this repository;
+  `SixQubit.Orbit7Marginal` supplies it, following the manuscript: the `Z_i`
+  scalar vanishes because `eq:o7fractionalmatching` makes both occupations
+  `1/2`, and the `X_i` and `Y_i` scalars vanish because the two words sit in
+  different `ZMod 3` residue shells, so a one-coordinate flip leaves the
+  shell.  The certified route does not need the clause -- it reaches `A_1`
+  through the shadow/MacWilliams squeeze in `Orbit7UniversalEnum` -- so this
+  completes the manuscript's lemma without entering the verified chain.
 * `lem:o9supportfour` had no top-level statement at all.  Its two clauses
   existed only as a three-theorem chain assembled inside other proof bodies,
   each step carrying the previous step's conclusion as a hypothesis.
   `o9_support_four` below is that chain closed into one unconditional
   statement, which is new. -/
+
+/-- **`lem:o7scalarmoments`, closing clause.**  Every active qubit has
+maximally mixed one-qubit marginal, in both logical words. -/
+alias o7_active_marginal := SixQubit.Orbit7Universal.active_marginal_maximally_mixed
 
 /-- **`lem:o7scalarmoments`, `eq:o7extremenorms`, `eq:o7edgenorms` and
 `eq:o7fractionalmatching`.**
