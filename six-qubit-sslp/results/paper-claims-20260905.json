@@ -23,9 +23,17 @@
    "line": 260,
    "end_line": 264,
    "statement_sha256": "28bd21cb95370b2eff6ffe26549d5d29b34fc01d0232ff73980203eab5f1ca33",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.QuantitativeGroup.quantitative_projective_group",
+    "MainTheory.SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount",
+    "MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift",
+    "MainTheory.SectionTwoGeneral.sectorCount_le",
+    "MainTheory.QuantitativeGroup.betaBound_mono",
+    "MainTheory.BetaAtPivotRank.betaOf_mono",
+    "MainTheory.GeneralSpectral.sectorCount"
+   ],
+   "review": "Introduction summary of the uniform finite cutoff. No single declaration states all three clauses. QuantitativeGroup.quantitative_projective_group carries m | q together with the coarse cutoff: for an ExactCode n K d with hd : 2 <= d, any B with BinaryBeta.BetaBound (n+K-1) B, and g != 1 in IntrinsicGroup C, it produces q with HasPrimitiveLift C g q, orderOf g | q, 2 <= orderOf g <= q and q <= B. SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount is the l-indexed clause alone (q and its bound, no divisibility conjunct); its l is GeneralSpectral.sectorCount hpres = Fintype.card (SectorIndex hpres), and SectorIndex is Module.End.Eigenvalues of the gate restricted to the code space, so it is the display's number of distinct eigenvalues. Divisibility at that lift is GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift, which holds of any primitive lift. beta_{n+l-1} <= beta_{n+K-1} is not a stated theorem: it is SectionTwoGeneral.sectorCount_le applied to the link field of GeneralSpectral.logicalSectorResolution, fed to QuantitativeGroup.betaBound_mono in the BetaBound formulation or to BetaAtPivotRank.betaOf_mono in the BetaExists.betaOf formulation. Caveat recorded in SharpSectorBound's own header: the sharp bound is stated at a chosen representative v of the projective class, and nothing asserts that l is an invariant of the class. | ADVERSARIAL CHECK: All six names exist with the claimed statements. QuantitativeGroup.lean:109 has beta : BetaBound (n+K-1) B, hd : 2 <= d, g != 1 |- exists q, HasPrimitiveLift C g q /\\ orderOf g | q /\\ 2 <= orderOf g /\\ orderOf g <= q /\\ 2 <= q /\\ q <= B. SharpSectorBound.lean:71 has beta : BetaBound (n + GeneralSpectral.sectorCount hpres - 1) B |- exists q, HasPrimitiveLift ... /\\ 2 <= q /\\ q <= B, and GeneralSpectralSectors.lean:150 defines sectorCount hpres := Fintype.card (SectorIndex hpres) with SectorIndex := Module.End.Eigenvalues (restrictedGate hpres) (line 27), so the reviewer's identification of l is right. SectionTwoGeneral.lean:207 sectorCount_le is stated at an ExactCodeSectorLink, and PhaseSectorBridge.LogicalSectorResolution (line 67) carries the link field that GeneralSpectral.logicalSectorResolution (line 309) fills with sectorLink, so l <= K is reachable. Only correction: the sharp clause carries no divisibility conjunct, and no single theorem states all three parts of the display; the review now says so."
   },
   {
    "id": "main.tex:displaymath@269",
@@ -35,9 +43,15 @@
    "line": 269,
    "end_line": 271,
    "statement_sha256": "34ac075f32df02f811fe30489d8982dc242b95c2a1f89ad96959d01e25da62a7",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank",
+    "MainTheory.D3AffineRankBound.primitiveLift_at_source_affineRank",
+    "MainTheory.CodeAffineSpanBridge.commonAffineSpan_of_exactCode",
+    "MainTheory.RealSupportAffineRank.supportAffineRank_eq_of_commonAffineSpan",
+    "MainTheory.BetaAtPivotRank.betaOf_mono"
+   ],
+   "review": "The distance-three sharpening q <= beta_r <= beta_n, with r the dimension of the affine span common to the two logical supports. d3_sslp_classification_generator_affineRank states it for CodeSpec.ExactCode n 2 d with hd : 3 <= d and a nontrivial IntrinsicGroup: a sorted primitive normal form S with supportAffineRank (S.frame.vec 0) = supportAffineRank (S.frame.vec 1), S.q <= BetaExists.betaOf (supportAffineRank (S.frame.vec 0)), and that value <= BetaExists.betaOf n; the r there is the affine rank of the normal form's own supports. D3AffineRankBound.primitiveLift_at_source_affineRank is the same chain stated on a primitive lift of the source class, with orderOf G.intrinsicClass | q' adjoined, but only at ExactCode n 2 3 and only given a RankTwoGlobal.FiniteGeneratorResolution and a TwoFiberCertificate. The manuscript's 'equality of the first two binary moments forces a common affine span' is CodeAffineSpanBridge.commonAffineSpan_of_exactCode composed with RealSupportAffineRank.supportAffineRank_eq_of_commonAffineSpan, and beta_r <= beta_n is BetaAtPivotRank.betaOf_mono applied to supportAffineRank_le; both compositions occur in the proof of the first theorem. Everything here is rank two only. | ADVERSARIAL CHECK: All five names exist and say what is claimed. D3AffineNormalForm.lean:119 yields, for ExactCode n 2 d with hd : 3 <= d and a nontrivial IntrinsicGroup, a SortedNormalForm S with supportAffineRank (S.frame.vec 0) = supportAffineRank (S.frame.vec 1), S.q <= BetaExists.betaOf (supportAffineRank (S.frame.vec 0)) and that <= BetaExists.betaOf n. Its proof literally composes CodeAffineSpanBridge.commonAffineSpan_of_exactCode (line 349) with RealSupportAffineRank.supportAffineRank_eq_of_commonAffineSpan (line 65) for the rank equality, and BetaAtPivotRank.betaOf_mono (line 33) with supportAffineRank_le for beta_r <= beta_n, exactly as the review says. D3AffineRankBound.lean:110 primitiveLift_at_source_affineRank exists but is fixed at ExactCode n 2 3 and consumes a FiniteGeneratorResolution plus a TwoFiberCertificate; I added those hypotheses to the review since the original omitted them."
   },
   {
    "id": "main.tex:equation@325",
@@ -47,9 +61,16 @@
    "line": 325,
    "end_line": 329,
    "statement_sha256": "850d5ab5684f31fb1429b2d82321286be131e1e0a97f293bc4a09e777d24d960",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.CodeSpec.ExactCode",
+    "MainTheory.CodeSpec.OrthonormalFrame",
+    "MainTheory.CodeSpec.codeSpan",
+    "MainTheory.GeneralColoredSubspaces.finrank_codeSpan",
+    "MainTheory.ClassificationLevels.CodeProjector.ofFrame",
+    "MainTheory.CodeSpec.projectorKernel"
+   ],
+   "review": "Sets up a quantum code as a K-dimensional subspace of H_n with orthogonal projector P. H_n is the amplitude model SS.State n C = BitString n -> C. CodeSpec.ExactCode n K d presents the code by an OrthonormalFrame n K together with the genuine SS.HasDistance predicate on frame.vec; CodeSpec.codeSpan F is Submodule.span C (Set.range F.vec), and GeneralColoredSubspaces.finrank_codeSpan proves Module.finrank C (codeSpan F) = K, so dim Q = K is a theorem rather than a naming convention. The projector P is ClassificationLevels.CodeProjector.ofFrame, whose kernel is CodeSpec.projectorKernel and whose Hermiticity and idempotence are discharged in the definition. The vacuous K = 0 model is excluded by ExactCode's positiveRank field; CodeSpec.exactCode_rank_zero_isEmpty is the regression guard recording IsEmpty (ExactCode n 0 d). | ADVERSARIAL CHECK: All five names exist. CodeSpec.lean:34 OrthonormalFrame, :40 ExactCode (fields positiveRank, frame, hasDistance : SS.HasDistance frame.vec d), :49 exactCode_rank_zero_isEmpty, :55 projectorKernel, :102 codeSpan := Submodule.span C (Set.range F.vec); GeneralColoredSubspaces.lean:56 finrank_codeSpan : Module.finrank C (codeSpan F) = K; ClassificationLevels.lean:59 CodeProjector.ofFrame with hermitian and idempotent discharged. Two wording corrections applied: the K = 0 model is blocked by the positiveRank field, exactCode_rank_zero_isEmpty being the regression guard that records it; and H_n is modelled as SS.State n C = BitString n -> C, not as a literal tensor power."
   },
   {
    "id": "main.tex:eq:general-KL",
@@ -81,9 +102,17 @@
    "line": 345,
    "end_line": 348,
    "statement_sha256": "dbb67d243b6983311ecd9f9263a00c6a1fbe8b77ea9a4b8724b3e1eb6717bd11",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "SS.KLCondition",
+    "SS.Detects",
+    "SS.HasDistance",
+    "MainTheory.KLTensorSupport.detectedOperators",
+    "MainTheory.KLTensorSupport.pauli_mem_detectedOperators",
+    "MainTheory.KLCodeBridge.projector_compression_iff",
+    "MainTheory.CodeSpec.scalarCompression_of_klCondition"
+   ],
+   "review": "The distance form of the Knill-Laflamme equations, P E P = lambda_E P for every Pauli of weight below d_0. In this repository the frame form is the definition: SS.KLCondition psi P is <psi_j, P psi_k> = c delta_jk for one Pauli, SS.Detects psi w quantifies it over PauliString.wt <= w, and SS.HasDistance psi d := Detects psi (d-1). The projector form is reached in two steps. KLTensorSupport.pauli_mem_detectedOperators takes an ExactCode n K d and a Pauli with wt P < d to pauliKernel P in KLTensorSupport.detectedOperators C.frame, i.e. V^dag (pauliKernel P) V = c . 1; KLCodeBridge.projector_compression_iff then converts that, in both directions, to P_code * M * P_code = c . P_code for the projector CodeProjector.ofFrame. CodeSpec.scalarCompression_of_klCondition is the sesquilinear form of the same statement, valid on the whole codeSpan. No declaration states the manuscript's 'has distance at least d_0 precisely when' as a single iff; distance is defined by the frame form and the projector form is derived from it. | ADVERSARIAL CHECK: Every name exists and is correctly described: SS/HilbertKL.lean:73 KLCondition, :77 Detects, :81 HasDistance psi d := Detects psi (d-1); CodeSpec.lean:163 scalarCompression_of_klCondition; KLCodeBridge.lean:29 projector_compression_iff (P M P = c . P <-> V^dag M V = c . 1). But the proposed set never reaches the display for a Pauli of weight below d: projector_compression_iff is stated for an arbitrary OperatorKernel M, and nothing in the list supplies the Pauli instance. KLTensorSupport.lean:38 pauli_mem_detectedOperators does exactly that (P.wt < d -> pauliKernel P in detectedOperators C.frame, whose membership is V^dag M V = c . 1 by detectedOperators at line 16), so I added it and detectedOperators. I also re-checked the reviewer's negative claim by grepping for a HasDistance/projector iff: there is none, so that part of the review stands."
   },
   {
    "id": "main.tex:eq:quantum-Singleton",
@@ -196,9 +225,15 @@
    "line": 433,
    "end_line": 437,
    "statement_sha256": "2d5b93465c71e456dd533c4a4d04cd58196d567ace23e1db6991ca0efea22fd4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.LocalTensorKernel.tensorKernel",
+    "MainTheory.ClassificationLevels.IsOneQubitUnitary",
+    "MainTheory.LocalTensorKernel.tensorKernel_unitary",
+    "MainTheory.FiniteTensorKernel.tensor",
+    "MainTheory.LocalUnitaryClosure.TensorEquivalent"
+   ],
+   "review": "Defines a single-block transversal unitary as a tensor product of n one-qubit unitaries. LocalTensorKernel.tensorKernel U is that product as an operator kernel on BitString n, entrywise the product over j of U j at the bit indices, with the U(2) side condition ClassificationLevels.IsOneQubitUnitary (star U * U = 1 and U * star U = 1); LocalTensorKernel.tensorKernel_unitary carries that condition from the factors to the product, and tensorKernel_mul / tensorKernel_one give the construction its group structure. FiniteTensorKernel.tensor is the same construction at arbitrary finite subsystem dimensions, and is what TransversalLogicalOrder.transversalLogicalGroup uses. LocalUnitaryClosure.TensorEquivalent is this display combined with one qubit permutation. | ADVERSARIAL CHECK: All four names exist and match. LocalTensorKernel.lean:13 tensorKernel U x y = prod over j of U j (bitIndex (x j)) (bitIndex (y j)); ClassificationLevels.lean:331 IsOneQubitUnitary U := star U * U = 1 /\\ U * star U = 1; FiniteTensorKernel.lean:14 tensor at arbitrary finite subsystem dimensions; LocalUnitaryClosure.lean:18 TensorEquivalent = one tensor product plus one qubit permutation. I checked the review's supporting claims: tensorKernel_mul (line 20) and tensorKernel_one (line 33) exist, and TransversalLogicalOrder.lean:54 transversalLogicalGroup does use FiniteTensorKernel.tensor in its carrier. Added tensorKernel_unitary (LocalTensorKernel.lean:49), which is the U(2) side condition transported to the product."
   },
   {
    "id": "main.tex:eq:code-preserving-unitary",
@@ -210,9 +245,17 @@
    "line": 446,
    "end_line": 449,
    "statement_sha256": "a7eedb8595c38b28519126a67a6b8e720ec6ea47dd7485bd1b972bd5c5066466",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.CodeSpec.CodePreserving",
+    "MainTheory.CodeSpec.codePreserving_iff_frame",
+    "MainTheory.ClassificationLevels.PreservesProjectorRange",
+    "MainTheory.ClassificationLevels.diagonalSymmetryGroup",
+    "MainTheory.SymmetryToEntrance.codePreserving_of_symmetry",
+    "MainTheory.TransversalLogicalOrder.transversalLogicalGroup",
+    "MainTheory.ClassificationLevels.conjugateProjector"
+   ],
+   "review": "Defines what it means for a physical unitary to preserve the code. The repository carries no U P U^dag = P predicate. CodeSpec.CodePreserving F U says only that the endomorphism maps codeSpan F into itself, with no unitarity hypothesis (codePreserving_iff_frame reduces the check to the logical frame); ClassificationLevels.PreservesProjectorRange is the two-sided version, hence equality of the code subspace, but is stated only for a LocalPhase and is the carrier of diagonalSymmetryGroup; SymmetryToEntrance.codePreserving_of_symmetry passes from the second to the first for a diagonal gate. The closest rendering for a transversal unitary is TransversalLogicalOrder.transversalLogicalGroup, whose carrier is {Q | exists U unitary at each site, tensor U * V = V * Q}: the isometry form of this display together with the induced logical unitary of the next sentence. ClassificationLevels.conjugateProjector W P is the literal W P W^*, but it appears only in ElementaryLU as the level-(iv) local-unitary conjugation of projectors, not as a code-preservation condition. | ADVERSARIAL CHECK: All five names exist, and the reviewer's negative claim is correct: I grepped for a U P U^dag = P predicate and found none. ClassificationLevels.lean:351 conjugateProjector W P = W * P.kernel * star W is used only inside ElementaryLU (lines 359, 361) for level-(iv) LU steps. But the proposed set does not cover the display for a general physical unitary: CodeSpec.lean:305 CodePreserving is one-sided (forall phi in codeSpan F, U phi in codeSpan F) for an arbitrary Module.End with no unitarity, and ClassificationLevels.lean:149 PreservesProjectorRange is two-sided but only for a LocalPhase, i.e. diagonal gates. I added TransversalLogicalOrder.lean:54 transversalLogicalGroup, whose carrier condition tensor U * V = V * Q is the code-preservation condition in isometry form for a transversal unitary together with the induced logical unitary, and SymmetryToEntrance.lean:43 codePreserving_of_symmetry, which is the only link between the two predicates in the list."
   },
   {
    "id": "main.tex:eq:Dtheta",
@@ -224,9 +267,17 @@
    "line": 458,
    "end_line": 463,
    "statement_sha256": "d873660385330e89441e28e63b008e999ac462e771a0d25238d19ac8f87aa934",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.RealGate.realGate",
+    "MainTheory.RealGate.angle",
+    "MainTheory.PhaseSectorBridge.realGateEnd",
+    "MainTheory.ClassificationLevels.diagonalValue",
+    "MainTheory.ClassificationLevels.diagonalAction",
+    "MainTheory.LocalPhaseAngle.exists_angleVector",
+    "MainTheory.LocalPhaseAngle.diagonalValue_eq_exp"
+   ],
+   "review": "Defines D(theta), the diagonal transversal gate with arbitrary real angles. RealGate.realGate theta psi is s |-> exp(2 pi i (theta . s)) * psi s, with RealGate.angle theta s the accumulated phase sum_j theta_j s_j, which is the tensor product of diag(1, e^{2 pi i theta_j}) written on amplitudes. PhaseSectorBridge.realGateEnd is the same map as a C-linear Module.End, the form every code-preservation hypothesis in the development uses. ClassificationLevels.diagonalValue / diagonalAction is the equivalent LocalPhase presentation, LocalPhaseAngle.diagonalValue_eq_exp proves the two agree, and LocalPhaseAngle.exists_angleVector produces the angle vector theta for any local phase. | ADVERSARIAL CHECK: All five names exist and are exactly as described. RealGate.lean:37 angle theta s = sum_j theta j * (if s j then 1 else 0); :41 realGate theta psi = fun s => exp(2 pi i (angle theta s)) * psi s; PhaseSectorBridge.lean:46 realGateEnd is that map as a Module.End with map_add' and map_smul' discharged, and it is the form every CodePreserving hypothesis in the development uses. ClassificationLevels.lean:90 diagonalAction u phi = fun x => diagonalValue u x * phi x with diagonalValue at line 86 the product over sites; LocalPhaseAngle.lean:57 exists_angleVector produces theta from any LocalPhase. I added diagonalValue and LocalPhaseAngle.diagonalValue_eq_exp (line 66), which is the theorem identifying the two presentations and was only alluded to."
   },
   {
    "id": "main.tex:theorem@476",
@@ -253,9 +304,17 @@
    "line": 507,
    "end_line": 514,
    "statement_sha256": "85238cd34a8b2a3cf042aa22ed9763f37cd4761d60122a92964beb6aa3e53625",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Gate.diag",
+    "MainTheory.Gate.gate",
+    "SS.weight",
+    "MainTheory.GlobalClassificationBridge.finiteLocalPhase",
+    "MainTheory.GlobalClassificationBridge.diagonalValue_finiteLocalPhase",
+    "MainTheory.D3NormalizedFiniteToReal.canonicalRoot",
+    "MainTheory.D3NormalizedFiniteToReal.canonicalRoot_primitive"
+   ],
+   "review": "Defines the finite root-of-unity representative D(a;q) for a in (Z_q)^n. Gate.diag zeta a s = zeta ^ (SS.weight a s).val is its eigenvalue on the basis string s, SS.weight being the modular subset sum a . x in ZMod q, and Gate.gate is the gate acting on amplitude vectors. GlobalClassificationBridge.finiteLocalPhase zeta hzeta a repackages the same angle vector as a ClassificationLevels.LocalPhase, the form GeneralLiftOrder.HasPrimitiveLift requires, and diagonalValue_finiteLocalPhase proves the two agree so that no phase convention is left implicit. omega_q = exp(2 pi i / q) is D3NormalizedFiniteToReal.canonicalRoot q, with canonicalRoot_primitive proving it a primitive q-th root; a second canonicalRoot exists in MainTheory.LabelledGates and is not the one used here. | ADVERSARIAL CHECK: All four names exist and match. Gate.lean:37 diag zeta a s = zeta ^ (SS.weight a s).val, with SS.weight (SS/Basic.lean:27) the modular subset sum sum_i a i * bit (s i) in ZMod q; Gate.lean:41 gate is the action on amplitude vectors. GlobalClassificationBridge.lean:226 finiteLocalPhase zeta hzeta a = fun j => residueUnitary zeta hzeta (a j), and GeneralLiftOrder.HasPrimitiveLift (line 215) does require the symmetry's LocalPhase to be finiteLocalPhase at the canonical root, as claimed. D3NormalizedFiniteToReal.lean:31 canonicalRoot q = exp(2 pi i / q) with canonicalRoot_primitive at line 34. Added SS.weight and GlobalClassificationBridge.diagonalValue_finiteLocalPhase (line 246), the lemma that pins the phase convention by proving diagonalValue (finiteLocalPhase zeta hzeta a) s = Gate.diag zeta a s. Note there is a second canonicalRoot in MainTheory/LabelledGates.lean; the qualified name given is the right one."
   },
   {
    "id": "main.tex:eq:primitive",
@@ -267,9 +326,14 @@
    "line": 516,
    "end_line": 519,
    "statement_sha256": "9c3126f42463161a74126f45fa0878250c6f9dc5bae244dd87ecde9859077af2",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Gate.Primitive",
+    "MainTheory.Gate.dvd_of_forall_mul_eq_zero",
+    "MainTheory.Gate.pow_eq_one_iff",
+    "MainTheory.GatePrimitiveConverse.primitive_iff_exact_order"
+   ],
+   "review": "Defines primitivity of the angle vector, gcd(q, a_1, ..., a_n) = 1. MainTheory.Gate.Primitive q a states it as a descent -- every d dividing q and dividing every (a j).val equals 1 -- which is the form the proofs consume; the file header quotes the display's gcd form, but no declaration proves the equivalence with a literal Nat.gcd. The manuscript's next sentence, that D(a;q) then has order exactly q, is GatePrimitiveConverse.primitive_iff_exact_order, both directions, stated as Primitive q a <-> for every k, (diag zeta a s ^ k = 1 for all s) <-> q | k. Gate.pow_eq_one_iff is the forward direction and Gate.dvd_of_forall_mul_eq_zero the arithmetic step inside it. | ADVERSARIAL CHECK: Gate.lean:79 Primitive q a := forall d, d | q -> (forall j, d | (a j).val) -> d = 1, which is gcd(q, a_1, ..., a_n) = 1 in descent form; the file header at line 13 quotes the display's gcd condition, so the review's docstring claim holds, though it cites an equation number rather than the label. Gate.lean:101 dvd_of_forall_mul_eq_zero exists and is used at line 132 inside Gate.pow_eq_one_iff, which is in turn one of the two directions of GatePrimitiveConverse.lean:88 primitive_iff_exact_order (Primitive q a <-> forall k, (forall s, diag zeta a s ^ k = 1) <-> q | k), so the chain the review describes is real. One correction: no declaration states an equivalence with a literal Nat.gcd, and primitive_iff_exact_order's own docstring cites the supplementary label six:eq:primitive."
   },
   {
    "id": "main.tex:eq:qmin",
@@ -281,9 +345,16 @@
    "line": 524,
    "end_line": 528,
    "statement_sha256": "2a93618f9f96ab249a3da11454c09b73f478d52d5e466cb08184581799d18b01",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.GeneralLiftOrder.qMin",
+    "MainTheory.GeneralLiftOrder.HasPrimitiveLift",
+    "MainTheory.GeneralLiftOrder.qMin_spec",
+    "MainTheory.GeneralLiftOrder.qMin_le",
+    "MainTheory.GeneralLiftOrder.exists_hasPrimitiveLift",
+    "MainTheory.GeneralLiftOrder.orderOf_dvd_qMin"
+   ],
+   "review": "Defines q_min as the least modulus admitting a primitive representative D(a;q) of the projective class. GeneralLiftOrder.qMin is Nat.find over the predicate fun q => 0 < q /\\ HasPrimitiveLift C g q, where HasPrimitiveLift demands Gate.Primitive q a together with a diagonal symmetry whose LocalPhase is GlobalClassificationBridge.finiteLocalPhase at D3NormalizedFiniteToReal.canonicalRoot q and whose intrinsicClass is g -- eq:Daq plus eq:primitive. qMin_spec is the membership clause and qMin_le the minimality clause, the latter taking 0 < q as a hypothesis; exists_hasPrimitiveLift, with hd : 2 <= d, is the nonemptiness witness that makes the minimum exist. orderOf_dvd_qMin gives m | q_min. | ADVERSARIAL CHECK: All five names exist at GeneralLiftOrder.lean:311, :215, :317, :326, :266. Two corrections to the review: the Nat.find predicate is fun q => 0 < q /\\ HasPrimitiveLift C g q, not HasPrimitiveLift alone, and qMin_le carries a 0 < q hypothesis. The description of HasPrimitiveLift is accurate -- it demands Gate.Primitive q a together with a diagonalSymmetryGroup element whose LocalPhase is finiteLocalPhase at D3NormalizedFiniteToReal.canonicalRoot q and whose intrinsicClass is g, i.e. eq:Daq plus eq:primitive. exists_hasPrimitiveLift (hd : 2 <= d) is indeed the nonemptiness witness passed to Nat.find, and orderOf_dvd_qMin (line 333) exists; I added it to the list since the review names it."
   },
   {
    "id": "main.tex:eq:subset-sum",
@@ -295,9 +366,14 @@
    "line": 532,
    "end_line": 535,
    "statement_sha256": "d991e9567281733c8993c4464a2139eeb2493945ca084493c6c725c7170a95fc",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SS.weight",
+    "MainTheory.OuterEnumeration.subsetSum",
+    "MainTheory.OuterCompleteness.wordBitString",
+    "MainTheory.OuterCompleteness.weight_wordBitString_eq_subsetSum"
+   ],
+   "review": "Notation only: the modular subset sum A_a(x) = sum_j a_j x_j taken mod q; there is nothing to prove. `SS.weight (a : Fin n -> ZMod m) (s : BitString n) = sum_i a i * SS.bit (s i)` (SS/Basic.lean:27) is the general-n rendering, with the reduction carried by the `ZMod m` target rather than by a separate step. `MainTheory.OuterEnumeration.subsetSum` (OuterEnumeration.lean:286) is the executable six-bit form, a natural number built from `mask.testBit`, with no reduction; `MainTheory.OuterCompleteness.weight_wordBitString_eq_subsetSum` proves the two agree after casting the angle entries into `ZMod r.q` (hypothesis `0 < r.q` only), through `OuterCompleteness.wordBitString`, so the executable form is not a separate notion. | ADVERSARIAL CHECK: All three declarations exist and say what the review claims. SS/Basic.lean:27 `def weight (a : Fin n -> ZMod m) (s : BitString n) : ZMod m := sum i, a i * bit (s i)`; OuterEnumeration.lean:286 `def subsetSum (a : Angle6) (mask : Nat) : Nat` (six testBit terms); OuterCompleteness.lean:622 proves the cast identity under `0 < r.q`. Classification 'definition' is right: the display introduces notation, nothing to prove. Only edit: added `OuterCompleteness.wordBitString`, the bridge object the identity is stated through, and made explicit that the mod-q reduction lives in the ZMod type."
   },
   {
    "id": "main.tex:eq:fiber",
@@ -309,9 +385,16 @@
    "line": 537,
    "end_line": 540,
    "statement_sha256": "74c5d2e9bcf50eacf1360858bd3ea4b7071cc7ffe114e3ce1b4fda03f036d109",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SS.Sk",
+    "SS.mem_Sk",
+    "MainTheory.OuterCompleteness.residueFiber",
+    "MainTheory.OuterCompleteness.mem_residueFiber_iff",
+    "MainTheory.OuterCompleteness.gateResidueFiber",
+    "MainTheory.OuterCompleteness.mem_gateResidueFiber_iff"
+   ],
+   "review": "Notation for the residue fiber S_b(a;q) of the modular subset sum. `SS.Sk a bk = {s | SS.weight a s = bk}` (SS/Basic.lean:31) is the general-n set, with `SS.mem_Sk` the membership iff. At n = 6 the enumeration carries the same fiber twice on the 64 words: `OuterCompleteness.residueFiber` on natural residues (`subsetSum r.a x.1 % r.q = residue`, `mem_residueFiber_iff`) and `gateResidueFiber` through the genuine `SS.weight`, the two identified by `mem_gateResidueFiber_iff` for a canonical representative below q. `SS.SSConditionState a bk psi` is not this display: it is the derived support predicate (every nonzero amplitude has weight bk) used by the rank-two results, i.e. supp subset S_b rather than S_b itself. | ADVERSARIAL CHECK: `SS.Sk a bk = {s | weight a s = bk}` (SS/Basic.lean:31) is the display verbatim; `residueFiber` (OuterCompleteness.lean:351), `gateResidueFiber` (:634) and `mem_gateResidueFiber_iff` (:643, extra hypothesis `residue < r.q`) all exist as described. Classification 'definition' is right. Correction to the declarations list: `SS.SSConditionState` is `forall s, psi s <> 0 -> weight a s = bk`, i.e. supported-in-S_b, not the set S_b; it is a downstream predicate, so I moved it out of the list and into the prose, and added the two membership lemmas that make the identifications usable."
   },
   {
    "id": "main.tex:eq:prelim-two-fiber",
@@ -323,9 +406,14 @@
    "line": 544,
    "end_line": 549,
    "statement_sha256": "ea6a45bd656f57138dc959300cc53bac92b9a746aff63f6668252949a34f5ade",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.RankTwoSSLP.two_fibre_normal_form",
+    "MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial",
+    "SS.SSConditionState",
+    "MainTheory.RankTwo.order_of_two_fiber"
+   ],
+   "review": "Claims that a rank-two code carrying a projectively nontrivial diagonal operation of order m can, after an eigenbasis choice and a local X plus unit normalization, be written with |0_L> supported in the residue-0 fiber and |1_L> in the residue-q/m fiber. `RankTwoSSLP.two_fibre_normal_form` (RankTwoSSLP.lean:59) proves this at general n under the paper's own `hd : 2 <= d`, with no finiteness hypothesis; its last two conclusions are the two `SS.SSConditionState` supports at 0 and `((q / m : Nat) : ZMod q)` for the frame `fun s => F.vec k (SS.bxor s x0)` and the angle `fun j => (u : ZMod q) * Normalize.flip a x0 j`, so the eigenbasis is `F` with `codeSpan C.frame = codeSpan F` and the normalizations are exactly x0 and the unit u. The same statement also carries `IsPrimitiveRoot zeta q`, `Gate.Primitive q a`, `2 <= q`, `2 <= m`, `m | q` and `exists g : IntrinsicGroup C, orderOf g = m`, so m is the order of an actual intrinsic-group element. `two_fibre_normal_form_of_nontrivial` restates it from `exists g : IntrinsicGroup C, g <> 1`. The converse is `MainTheory.RankTwo.order_of_two_fiber`, general in n, whose own caveat is that it does not assume the pair orthonormal. | ADVERSARIAL CHECK: Read RankTwoSSLP.lean:59-97 and :105-137. The statement's hypotheses are `hd : 2 <= d`, `hpres`, `hnt` -- no finiteness -- and its last two conjuncts are exactly the two `SS.SSConditionState` supports at residues 0 and (q/m : ZMod q), stated for the X-conjugated frame and the unit-scaled angle, which are the display's 'harmless normalizations'. `RankTwo.order_of_two_fiber` (RankTwo.lean:136) is the converse as claimed. Classification 'assertion' is right. Edits: named the normalization data explicitly and recorded the converse's own stated caveat (it does not assume orthonormality)."
   },
   {
    "id": "main.tex:eq:prelim-moment-LP",
@@ -337,9 +425,19 @@
    "line": 562,
    "end_line": 569,
    "statement_sha256": "57d0117487d5951305a8eaa26a431d4425c0fd86b20eb2a8fc9affc68c0f7e0b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.GeneralSectorMoments.wordMoment_eq",
+    "SixQubit.charOn_eq_of_hasDistance",
+    "SixQubit.occOn_eq_of_hasDistance",
+    "SixQubit.occ2On_eq_of_hasDistance",
+    "MainTheory.MomentModelBridge.WalshMonomial.degreeTwoWalshEqual_iff_monomialEqual",
+    "MainTheory.MomentPolytope.Feasible",
+    "MainTheory.MomentPolytope.moment_row_counts",
+    "MainTheory.RealMomentSeparatorBridge.RealFeasible",
+    "MainTheory.CodeMomentPoint.realFeasible_weightOf"
+   ],
+   "review": "Asserts that at distance three the diagonal Z_i and Z_iZ_j conditions are equivalent to equality of the two fibers' degree-two binary moments phi_2 = (1, x_i, x_i x_j). The display itself is `GeneralSectorMoments.wordMoment_eq`: `wordMoment psi k J = sum_x |psi k x|^2 * prod_{j in J} [x_j]` is equal for all logical vectors whenever `J.card < d`, at general n and K, and at d = 3 the sets J of card 0, 1, 2 are exactly the phi_2 coordinates. Its explicit occupation-number instances are `SixQubit.occOn_eq_of_hasDistance` and `occ2On_eq_of_hasDistance` (general n despite the namespace), obtained from `SixQubit.charOn_eq_of_hasDistance` by the triangular change of basis `charOn_stdBasis` / `charOn_stdBasis_pair`. That the Walsh/Z-Pauli rows and the monomial rows carry the same information is `MomentModelBridge.WalshMonomial.degreeTwoWalshEqual_iff_monomialEqual`, an iff at n = 6. Direction gap: on the Pauli side only detection implies moment equality (`charOn_eq_of_hasDistance` runs on `SS.HasDistance ![c,d] 3`); no declaration states the reverse implication back to the Z_i, Z_iZ_j conditions. The resulting linear feasibility problem is `MomentPolytope.Feasible` -- nonnegativity, two normalizations, six first- and fifteen second-moment equations, counted by `moment_row_counts` -- and `CodeMomentPoint.realFeasible_weightOf` puts a code's squared amplitudes in it, its conclusion `RealMomentSeparatorBridge.RealFeasible` being by definition `MomentPolytope.Feasible`. | ADVERSARIAL CHECK: `GeneralSectorMoments.wordMoment_eq` (:89) is the display itself: `wordMoment psi k J = sum_x |psi k x|^2 * prod_{j in J} [x_j]`, equal across logical vectors whenever |J| < d, at general n and K, so at d = 3 the J of card 0,1,2 are exactly phi_2. occOn/occ2On_eq_of_hasDistance (SixQubit/CodeBridge.lean:369,383) are general-n and derived from `charOn_eq_of_hasDistance` plus the change-of-basis lemmas. `degreeTwoWalshEqual_iff_monomialEqual` (MomentModelBridge.lean:466) is a genuine iff. `MomentPolytope.Feasible` (MomentPolytope.lean:71) has exactly the listed fields; `realFeasible_weightOf` concludes `RealMomentSeparatorBridge.RealFeasible`, which is definitionally `MomentPolytope.Feasible`. Classification 'assertion' is right. Edits: added the intermediate declarations, the RealFeasible link, and a direction gap note -- the Pauli-side implication is proved only from HasDistance."
   },
   {
    "id": "main.tex:eq:sslp-three-layers",
@@ -351,9 +449,18 @@
    "line": 575,
    "end_line": 584,
    "statement_sha256": "4aad49b7f23a5519d6f42b5ea139df90b0108dc5982fdee3f39ce3d2546f5037",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.OuterCompleteness.recordFiberPair",
+    "MainTheory.ClassificationLevels.SSLPMomentDatum",
+    "MainTheory.ClassificationLevels.SSLPMomentDatum.geometry",
+    "MainTheory.ClassificationLevels.SSLPMomentOrbit",
+    "MainTheory.MomentPolytope.momentPolytope",
+    "MainTheory.MomentPolytope.Feasible",
+    "MainTheory.SSLPPipelineExact.pipeline_exact_three",
+    "MainTheory.SSLPPipelineExact.code_of_sortedNormalForm"
+   ],
+   "review": "A schematic naming the three layers (q,m,a) -> fibers -> feasible moment data -> exact codes; nothing is proved in the display. SS arrow: `OuterCompleteness.recordFiberPair` builds the two masks at residues 0 and q/m from a raw record's (q,m,a), through `residueMask`. LP arrow: `ClassificationLevels.SSLPMomentDatum` is the (q,m)-labelled full-fibre datum (with `q_pos`, `m_pos`, `m_dvd_q` so that the step q/m is meaningful), and its `geometry` field is `MomentPolytope.momentPolytope` on the two fibre index types, i.e. `{p | MomentPolytope.Feasible ...}`, derived from the fibres rather than carried alongside them; `SSLPMomentOrbit` is the quotient by `SSLPMomentEquivalent`. KL arrow: `SSLPPipelineExact.pipeline_exact_three` (a code with a nontrivial intrinsic group occurs in the enumeration, inside `outerCutoff`) and `code_of_sortedNormalForm` (a retained record is realized by an exact code on its own frame, with an intrinsic element of order exactly m). Note that `code_of_sortedNormalForm` takes a `SortedForm.SortedNormalForm`, which already carries `hasDistance`: it is the no-false-positives direction, not a rendering of the surrounding prose sentence that LP feasibility alone is insufficient, which no declaration here states. | ADVERSARIAL CHECK: All six named declarations exist: SSLPMomentDatum (ClassificationLevels.lean:236), its `geometry` field (:255, `MomentPolytope.momentPolytope` on the fibre index types), SSLPMomentOrbit (:302), pipeline_exact_three and code_of_sortedNormalForm (SSLPPipelineExact.lean:53,40). Classification 'definition' is the best fit for an arrow schematic. Two corrections: the proposed review's closing clause is backwards -- code_of_sortedNormalForm takes a `SortedForm.SortedNormalForm`, which already carries `hasDistance` (a solved KL system), so it is the no-false-positives direction and not a rendering of 'LP feasibility is not sufficient'; and the SS arrow itself had no declaration, which `OuterCompleteness.recordFiberPair` supplies."
   },
   {
    "id": "main.tex:displaymath@623",
@@ -363,9 +470,15 @@
    "line": 623,
    "end_line": 625,
    "statement_sha256": "a3db7bf604ea6c350b0d8262b7fe69db5b745c5a26e0729f096d0c51144a705d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ClassificationLevels.PreservesProjectorRange",
+    "MainTheory.ClassificationLevels.diagonalSymmetryGroup",
+    "MainTheory.ClassificationLevels.diagonalAction",
+    "MainTheory.CodeSpec.CodePreserving",
+    "MainTheory.PhaseSectorBridge.realGateEnd"
+   ],
+   "review": "Introduces the code-preservation condition D(theta) P D(theta)^dagger = P for a diagonal product operation. `ClassificationLevels.PreservesProjectorRange P u` (ClassificationLevels.lean:149) states it in equality form: `InProjectorRange P phi -> InProjectorRange P (diagonalAction u phi)` and the same for u^{-1}, so it is preservation of the code subspace in both directions rather than mere inclusion; `diagonalSymmetryGroup P` collects such u into a `Subgroup (LocalPhase n)`, `LocalPhase n = Fin n -> unitary C`. The operator-side form actually fed to the rank-two results is `CodeSpec.CodePreserving F (PhaseSectorBridge.realGateEnd theta)`, but that predicate is one-directional -- `forall phi in codeSpan F, U phi in codeSpan F` -- so of the two renderings only the projector-range one has the display's equality on its face. | ADVERSARIAL CHECK: PreservesProjectorRange (ClassificationLevels.lean:149) is two-directional preservation of `InProjectorRange` under `diagonalAction u` and `diagonalAction u^{-1}`, and diagonalSymmetryGroup (:155) is the `Subgroup (LocalPhase n)` it carves out; `LocalPhase n = Fin n -> unitary C` (:83). CodePreserving (CodeSpec.lean:305) and realGateEnd (PhaseSectorBridge.lean:46) exist. Classification 'definition' is right. One sharpening the proposed review left implicit: `CodeSpec.CodePreserving` is inclusion only (`forall phi in codeSpan F, U phi in codeSpan F`), weaker in form than the display's equality, which only the projector-range version states."
   },
   {
    "id": "main.tex:eq:Gdiag",
@@ -377,9 +490,16 @@
    "line": 629,
    "end_line": 637,
    "statement_sha256": "658abb8f9dd821e5a78e1bfc4692135c58f17a1c0d701136a55fc4cc4fd843b1",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup",
+    "MainTheory.ClassificationLevels.diagonalSymmetryGroup",
+    "MainTheory.ClassificationLevels.IsProjectivelyTrivial",
+    "MainTheory.ClassificationLevels.projectivelyTrivialSubgroup",
+    "MainTheory.ClassificationLevels.intrinsicClass",
+    "MainTheory.GlobalClassificationBridge.IntrinsicGroup"
+   ],
+   "review": "Defines the basis-dependent projective group G_diag(P) of code-preserving diagonal restrictions modulo U(1). In Lean it is the quotient group `ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup P = diagonalSymmetryGroup P / projectivelyTrivialSubgroup P` (ClassificationLevels.lean:214), so the mod-U(1) identification is an actual quotient rather than a chosen order label, with `intrinsicClass` the canonical class map. `IsProjectivelyTrivial P u` is `exists lam <> 0, forall phi, InProjectorRange P phi -> diagonalAction u phi = lam . phi`: the common scalar is required only on the code, which is the display's identification of logical unitaries differing by a scalar. `GlobalClassificationBridge.IntrinsicGroup C` is the same group attached to an exact code through `exactCodeProjector C`, and the projective logical order of the following sentence is `orderOf` of an element of it. | ADVERSARIAL CHECK: IntrinsicProjectiveDiagonalLogicalGroup (ClassificationLevels.lean:214) is literally `diagonalSymmetryGroup P / projectivelyTrivialSubgroup P`; IsProjectivelyTrivial (:174) is `exists lam <> 0, forall phi in the projector range, diagonalAction u phi = lam . phi`; projectivelyTrivialSubgroup (:180) exists with all three closure proofs; GlobalClassificationBridge.IntrinsicGroup (:63) is the same object at `exactCodeProjector C`. Classification 'definition' is right. Edit: made explicit that the scalar is required only on the projector range, which is the display's 'differ by a common scalar' on the logical restriction."
   },
   {
    "id": "main.tex:eq:number-operator",
@@ -391,9 +511,13 @@
    "line": 642,
    "end_line": 645,
    "statement_sha256": "7a0ef2c50605f1850f75f90409d08738d1d6552d3c223ac45f0f4623881b9d53",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.NumberOperator.numberOp",
+    "MainTheory.NumberOperator.zPauli",
+    "MainTheory.NumberOperator.numberOp_apply"
+   ],
+   "review": "Introduces N_j := (I - Z_j)/2; nothing to prove. `NumberOperator.numberOp j psi = fun s => (psi s - SS.pauliAct (zPauli j) psi s) / 2` (NumberOperator.lean:32) is the formula written as the paper writes it, with `zPauli j = <fun _ => false, SS.stdBasis j>` the single-site Z Pauli string. `numberOp_apply` proves `numberOp j psi s = if s j then psi s else 0`, i.e. that the object so defined really is the occupation-number operator, which is the sentence following the display that N_j has eigenvalue x_j on |x>. | ADVERSARIAL CHECK: NumberOperator.lean:32 `numberOp j psi = fun s => (psi s - SS.pauliAct (zPauli j) psi s) / 2` is the display literally; zPauli (:29) is the single-site Z Pauli string `<fun _ => false, SS.stdBasis j>`; numberOp_apply (:37) proves `= if s j then psi s else 0`, which is the following sentence about the eigenvalue x_j. Classification 'definition' is right. No changes beyond wording."
   },
   {
    "id": "main.tex:eq:Nj-detection",
@@ -405,9 +529,16 @@
    "line": 648,
    "end_line": 653,
    "statement_sha256": "1cf3eb4edf5631a009e28125bfc9f929290bb88eddd70f3541192817eb9bffb9",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.NumberOperator.codeProj_numberOp_codeProj",
+    "MainTheory.NumberOperator.innerC_numberOp",
+    "MainTheory.NumberOperator.codeProj",
+    "MainTheory.SectorMeanValue.klScalar",
+    "MainTheory.SectorMeanValue.klScalar_spec",
+    "MainTheory.PhaseSectorFull.ZDetects"
+   ],
+   "review": "The display's equation. `NumberOperator.codeProj_numberOp_codeProj` (NumberOperator.lean:109) is P N_j P = mu_j P itself: `codeProj D (numberOp j (codeProj D psi)) = fun x => ((1 - klScalar D hZ j)/2) * codeProj D psi x`, on the whole state space and not merely on the sector vectors, with `codeProj` the orthogonal projector onto the span of the sector vectors of a `PhaseSectorFull.SectorDecomposition`. `innerC_numberOp` is the matrix-element form <psi_u| N_j |psi_v> = (if u = v then (1 - klScalar D hZ j)/2 else 0), the off-diagonal vanishing being what makes this detection rather than a mean value. Note that `SectorMeanValue.klScalar` is the paper's lambda_j -- `klScalar_spec` gives <psi_u| Z_j |psi_v> = if u = v then klScalar else 0 -- so the paper's mu_j is (1 - klScalar)/2, not klScalar. Direction gap: `PhaseSectorFull.ZDetects D` is a hypothesis of both results, so only detection implies the identity; the converse half of the display's 'equivalent' is not stated in the repository, though it is immediate from Z_j = I - 2 N_j. | ADVERSARIAL CHECK: codeProj_numberOp_codeProj (NumberOperator.lean:109) is the display's operator identity on the whole state space, and innerC_numberOp (:71) is the matrix-element form with the delta_uv. Both run on a `PhaseSectorFull.SectorDecomposition` with `ZDetects D`. Classification 'assertion' is right. Two corrections to the proposed review: `SectorMeanValue.klScalar` is lambda_j, not mu_j (klScalar_spec gives <psi_u| Z_j |psi_v> = if u = v then klScalar else 0), with mu_j = (1 - klScalar)/2; and the display's 'equivalent' is one-directional in Lean -- ZDetects is a hypothesis, the converse is not stated anywhere."
   },
   {
    "id": "main.tex:thm:finite-projective-group",
@@ -597,9 +728,17 @@
    "line": 758,
    "end_line": 799,
    "statement_sha256": "6c316e220729956e0061cfddc8bdf7f31015af8d7003f9518375a8049d80d9a0",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.EastinKnill.eastin_knill",
+    "MainTheory.EastinKnill.eastin_knill_exactCode",
+    "MainTheory.FiniteProjectiveGroup.whole",
+    "MainTheory.FiniteProjectiveGroup.whole_of_finite",
+    "MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm",
+    "MainTheory.ClassificationLevels.IsProjectivelyTrivial",
+    "MainTheory.ClassificationLevels.projectivelyTrivialSubgroup"
+   ],
+   "review": "Compares the scope of Eastin--Knill with thm:finite-projective-group and argues the fixed-basis qualification is essential. Both endpoints exist. `EastinKnill.eastin_knill` (EastinKnill.lean:82) denies `ProjectivelyUniversal (transversalLogicalGroup V)` for an isometric encoding with `2 <= K` and `DetectsLocal V`, at arbitrary, possibly distinct, finite subsystem dimensions, with `eastin_knill_exactCode` its qubit instance. `FiniteProjectiveGroup.whole` gives finiteness, commutativity, primitive finite root-of-unity lifts and `orderOf g | q` at K = 2, d = 3; `whole_of_finite` is the same at general rank with finiteness hypothesized, and the abelian clause is `IntrinsicAbelian.intrinsicGroup_mul_comm`, which needs no hypothesis. The remark's own mathematical content is not rendered: nothing in MainTheory/, SixQubit/ or SS/ states the X-basis counterexample Span{|+++>, |--->} or the continuous family (x)_j exp(i t_j X_j) -- there is no plus-state, X-basis or Hadamard object in the repository at all -- and there is no identity-component or diagonal-Hamiltonian argument, the repository's finiteness (`GeneralFiniteness.finite_intrinsicGroup`, K = 2, d = 3) running on the distance-three rationalization instead of the paper's compact-Lie-group route. `ClassificationLevels.IsProjectivelyTrivial` and `projectivelyTrivialSubgroup` are the closest objects to 'that component acts on the code by scalar phases and therefore disappears in PU(K)', but only as the subgroup that is quotiented out, not as a statement about a continuous identity component. | ADVERSARIAL CHECK: Every named declaration exists and is correctly described: eastin_knill (EastinKnill.lean:82) and eastin_knill_exactCode (:94), FiniteProjectiveGroup.whole (:70, K = 2 and d = 3) and whole_of_finite (:55, general rank from finiteness), IntrinsicAbelian.intrinsicGroup_mul_comm (:30), IsProjectivelyTrivial (ClassificationLevels.lean:174). But they render only the two endpoints being compared, not the remark's own content, which is why this is insufficient rather than confirmed: I searched MainTheory/, SixQubit/ and SS/ for any plus-state, X-basis, or Hadamard object and for any identity-component argument and found none; the repository's finiteness (GeneralFiniteness.finite_intrinsicGroup, K = 2, d = 3) comes from the distance-three rationalization, explicitly not from the compact-Lie-group route the remark's mechanism paragraph describes. Classification 'assertion' is right. Added projectivelyTrivialSubgroup, which with IsProjectivelyTrivial is the only rendering of 'acts by scalar phases and therefore disappears in PU(K)'."
   },
   {
    "id": "main.tex:displaymath@780",
@@ -609,9 +748,9 @@
    "line": 780,
    "end_line": 782,
    "statement_sha256": "31fa3edd2ed6f7e818ea942fe6d0136a2d8548d570b8bd6397e6d2d73e59c349",
-   "status": "unreviewed",
+   "status": "partial",
    "lean_declarations": [],
-   "review": ""
+   "review": "Introduces the three-qubit example subspace Q = Span{|+++>,|--->} used to show that the fixed-basis qualification on thm:finite-projective-group cannot be dropped. Nothing in MainTheory/, SS/ or SixQubit/ constructs it: there is no plus/minus or Hadamard basis (`SS.pauliX` is a `PauliString` constructor, not a state), no three-qubit `CodeSpec.ExactCode` (the only explicit small code is `MainTheory.FiveQubitRationalization.code` at (5,2,2)), and no normalization constant for such a state. Declarations list is empty; the counterexample is unformalized. | ADVERSARIAL CHECK: Checked the negative claim rather than taking it on trust. Grepped MainTheory/, SS/, SixQubit/ for GHZ/plus-state/Hadamard/three-qubit vocabulary and for `ExactCode 3 ...`: no hits. `SS/Pauli.lean:134` `SS.pauliX` is indeed a `PauliString n` constructor (x-bit `stdBasis i`, z-bit all false), not a state or a basis change. The only concrete small-n code object in the repository is `MainTheory.FiveQubitRationalization.code : CodeSpec.ExactCode 5 2 2`. Empty declarations list is the correct answer, and `definition` is the right kind: the display only names the example subspace; the claims about it (PZ_jP=0, preservation) live in the surrounding prose."
   },
   {
    "id": "main.tex:displaymath@785",
@@ -621,9 +760,9 @@
    "line": 785,
    "end_line": 787,
    "statement_sha256": "6360c779d087c90a878b52e930826b3b34cc5cc90b040e1bdf3d3d39a7a7092f",
-   "status": "unreviewed",
+   "status": "partial",
    "lean_declarations": [],
-   "review": ""
+   "review": "Introduces the continuous transversal family of local X rotations that preserves the previous display's example and generally acts nontrivially on the logical space. The repository contains no trigonometric or rotation construction at all (no `Real.cos`/`Real.sin` in MainTheory/, SS/, SixQubit/); its only continuous transversal family is the computational-basis diagonal one, `MainTheory.RealGate.realGate` with its endomorphism form `MainTheory.PhaseSectorBridge.realGateEnd`, which is exactly the gate the display is contrasted with. Declarations list is empty. | ADVERSARIAL CHECK: Verified the strongest form of the negative claim: `Real.cos` and `Real.sin` do not occur anywhere in MainTheory/, SS/ or SixQubit/, and no declaration mentions rotation of a qubit, so no local X rotation family can be present. The contrast the review draws is accurate: `MainTheory.RealGate.realGate` (RealGate.lean:41) is `psi s |-> exp(2*pi*i*(angle theta s)) * psi s`, a computational-basis diagonal gate, and `MainTheory.PhaseSectorBridge.realGateEnd` (PhaseSectorBridge.lean:46) is its endomorphism packaging (`realGateEnd_apply` is `rfl`). Both exist, but neither renders this display, so keeping them out of the declarations list is right. `definition` is the right kind."
   },
   {
    "id": "main.tex:lem:phase-sector-support",
@@ -1633,9 +1772,18 @@
    "line": 1432,
    "end_line": 1435,
    "statement_sha256": "f2704f9202a13c815778794aa1fab165bf296db7a92dcd82f15d638cbc16e630",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.GeneralColoredTheory.probability",
+    "MainTheory.GeneralColoredTheory.probability_eq_projector",
+    "MainTheory.GeneralSectorMoments.sectorProbability",
+    "MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_finrank",
+    "MainTheory.GeneralColoredTheory.probability_nonneg",
+    "MainTheory.GeneralColoredTheory.probability_sum_eq_one",
+    "MainTheory.GeneralColoredTheory.probability_eq_zero_outside_fiber",
+    "MainTheory.PhaseSectorFull.sectorProbability"
+   ],
+   "review": "Definitional display: p_alpha(x) is the diagonal of the sector projector divided by its rank. `GeneralColoredTheory.probability` is that definition on the colored normal form (it unfolds to `GeneralSectorMoments.sectorProbability`, the normalized sum of `Complex.normSq` over the sector's frame vectors), and `probability_eq_projector` identifies it with `CodeSpec.projectorKernel (ColoredFrame.sectorFrame S alpha) x x / (S.rank alpha)`; `ColoredFrame.sectorSpace_finrank` says the divisor `S.rank alpha` is the manuscript's k_alpha = dim E_alpha. The surrounding sentence -- a probability distribution supported on the corresponding full fiber -- is `probability_nonneg`, `probability_sum_eq_one` and `probability_eq_zero_outside_fiber` (vanishing off `SS.Sk S.angle (scaledColor q (S.color alpha))`). `PhaseSectorFull.sectorProbability` is the same quantity on a bare `SectorDecomposition`. | ADVERSARIAL CHECK: Read every statement. `GeneralColoredTheory.probability` (GeneralColoredTheory.lean:16) is literally `GeneralSectorMoments.sectorProbability S.frame S.rank S.reindex alpha x`, and `sectorProbability` (GeneralSectorMoments.lean:123) is `(sum over r of normSq (F.vec (e.symm <alpha,r>) x)) / rank alpha`. `probability_eq_projector` (line 19) states exactly `(probability S alpha x : C) = CodeSpec.projectorKernel (ColoredFrame.sectorFrame S alpha) x x / (S.rank alpha : C)`. `sectorSpace_finrank` (GeneralColoredSubspaces.lean:92, inside `namespace ColoredFrame` nested in `MainTheory.GeneralColoredSubspaces`) is `finrank C (sectorSpace S alpha) = S.rank alpha`, so the divisor is dim E_alpha. The three supporting lemmas exist at lines 24, 28, 31 and say nonnegativity, total mass one, and vanishing off `SS.Sk S.angle (scaledColor q (S.color alpha))`. `PhaseSectorFull.sectorProbability` (PhaseSectorFull.lean:75) is `sectorProjectorDiag / rank` on a bare `SectorDecomposition`. Kind `definition` is right: the display is a `:=`."
   },
   {
    "id": "main.tex:eq:general-sector-moments",
@@ -1647,9 +1795,14 @@
    "line": 1439,
    "end_line": 1442,
    "statement_sha256": "791697d8815db2be2a156e0ed96f272a596cc7e96ee579e6e60d70e2d63cc8e2",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.GeneralColoredTheory.all_binary_moments_eq",
+    "MainTheory.GeneralSectorMoments.sector_moment_eq",
+    "MainTheory.GeneralSectorMoments.binaryMonomial",
+    "MainTheory.GeneralSectorMoments.wordMoment_eq"
+   ],
+   "review": "The claim is that the binary moment sum_x p_alpha(x) prod_{j in J} x_j is the same in every sector for every |J| < d_0. `all_binary_moments_eq` states exactly that on the colored normal form, under `SS.HasDistance S.frame.vec d` and `J.card < d`, with the monomial written out as the product of indicator factors; it is `sector_moment_eq` at arbitrary (n,K,t) with `hpos : forall alpha, 0 < rank alpha`, which reduces through `wordMoment_eq` to the pure-Z Knill--Laflamme rows via a character expansion over the cube of J. Sectors of dimension greater than one are allowed, as the manuscript requires; `binaryMonomial` is the monomial itself. | ADVERSARIAL CHECK: All four read. `all_binary_moments_eq` (GeneralColoredTheory.lean:44) takes `hd : SS.HasDistance S.frame.vec d` and `hJ : J.card < d` and concludes the sums over x of `probability S alpha x * prod_{j in J} (if x j then 1 else 0)` agree for any alpha, beta -- the display's independence claim, with the monomial written out. It is `GeneralSectorMoments.sector_moment_eq` (line 168) applied with `S.rank_pos`; that theorem is at arbitrary n, K, t with `hpos : forall alpha, 0 < rank alpha` and uses `binaryMonomial` (line 24). Its proof routes each sector's moment to `wordMoment F.vec k J` via `wordMoment_eq` (line 89), which is proved by the `monomial_fourier` character expansion over `cube J` plus `word_character_eq`, whose input is the KL condition for the pure-Z Pauli `<fun _ => false, z>` of weight at most `J.card`. So the review's description of the mechanism is accurate, and sectors of rank > 1 are genuinely allowed. `assertion` is the right kind: the load-bearing content is the alpha-independence."
   },
   {
    "id": "main.tex:cor:rank-two-sslp",
@@ -1753,9 +1906,16 @@
    "line": 1531,
    "end_line": 1539,
    "statement_sha256": "5f1e47b48cb2d4532b3c3d151d9fb8f4911c9b5f4370db621010d26125b8889f",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperGeneralSSLP.general_sslp_normal_form",
+    "MainTheory.GeneralColoredExistence.general_colored_sslp_normal_form",
+    "MainTheory.GeneralColoredTheory.all_binary_moments_eq",
+    "MainTheory.GeneralColoredConverse.ColoredFrame.sslp_converse",
+    "MainTheory.PaperGeneralSSLP.rank_two_sslp",
+    "MainTheory.PaperGeneralSSLP.rank_two_sslp_converse"
+   ],
+   "review": "Boxed schematic asserting the staged SS -> LP -> KL normal form at arbitrary K. No single declaration carries the box; the three layers are `general_sslp_normal_form` (the colored subset-sum fibers, with `T.intrinsic = g` keeping the original projective class, proved by `GeneralColoredExistence.general_colored_sslp_normal_form`), `all_binary_moments_eq` (the diagonal-moment layer at every |J| < d), and `ColoredFrame.sslp_converse` (full KL completion returns an exact code on the same frame whose projective order is exactly m); the sentence's cor:rank-two-sslp reference is `rank_two_sslp` with `rank_two_sslp_converse`. The composition is available -- the colored frame `general_sslp_normal_form` produces is the input the other two take -- but is not stated as one theorem. No declaration renders the accompanying negative remark that LP feasibility alone need not produce a code. | ADVERSARIAL CHECK: All six exist and were read. `general_sslp_normal_form` (PaperGeneralSSLP.lean:72) produces q, m, t, a `FiniteSectors` T and a `ColoredFrame` S with `T.intrinsic = g`, `m = orderOf g`, the fiber containments `sectorSpace S alpha <= fiberSubspace S.angle (scaledColor q (S.color alpha))`, `iSup sectorSpace = codeSpan`, and `HasDistance S.frame.vec d`; it is `GeneralColoredExistence.general_colored_sslp_normal_form` (line 93) plus `sectorSpace_finrank`/`sectorSpace_le_fiber`/`iSup_sectorSpace`. `ColoredFrame.sslp_converse` (GeneralColoredConverse.lean:200) returns a `CodeSpec.ExactCode n K d` on the same frame with a diagonal symmetry whose intrinsic class has order exactly m and is nontrivial. `rank_two_sslp` (line 115) and `rank_two_sslp_converse` (line 142) are the cor:rank-two-sslp pair. The claim that no single declaration carries the box is right; I also checked `SSLPPipelineExact.pipeline_exact_two`/`pipeline_exact_three`, which are the two-sided enumeration statement at K=2, not the arbitrary-K schematic. The negative remark (LP feasibility alone need not produce a code) has no declaration: grep for lossless/prefilter/feasible turns up only docstrings. `assertion` is right."
   },
   {
    "id": "main.tex:displaymath@1560",
@@ -1765,9 +1925,17 @@
    "line": 1560,
    "end_line": 1566,
    "statement_sha256": "202c112d6dcacc7bbd29114949f0f3f4c64fd483de9efb43a1b938919f7133ef",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.QuantitativeGroup.quantitative_projective_group",
+    "MainTheory.QuantitativeGroup.qMin_le_beta",
+    "MainTheory.QuantitativeGroup.k2_q_bound",
+    "MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN",
+    "MainTheory.D3BoundedNormalForm.d3_bound",
+    "MainTheory.SupportAffineRank.exists_normalForm_q_le_beta_supportRank",
+    "MainTheory.SupportAffineRank.q_le_threshold_supportAffineRank"
+   ],
+   "review": "Roadmap display listing the three cutoffs the section proves. `quantitative_projective_group` and `qMin_le_beta` give the general q <= beta_{n+K-1} from a `BinaryBeta.BetaBound (n+K-1) B` hypothesis; `k2_q_bound` is the K=2 specialization at beta_{n+1} (at the manuscript's own d >= 2); `exists_sortedNormalForm_le_betaN` and `d3_bound` give beta_n, stated for `CodeSpec.ExactCode n 2 3` rather than for all d >= 3. The trailing affine-rank clause q <= beta_r is `SupportAffineRank.exists_normalForm_q_le_beta_supportRank`, stated only at `ExactCode 6 2 3`, whose `supportAffineRank` is the finrank of the affine span's direction and which bounds q by the numeral table `CoarseFilter.threshold` rather than by a `BetaBound` directly; `q_le_threshold_supportAffineRank` is the pivot-level step behind it. | ADVERSARIAL CHECK: All seven read. `quantitative_projective_group` (QuantitativeGroup.lean:109) takes `beta : BinaryBeta.BetaBound (n + K - 1) B` and gives `q <= B` with `orderOf g | q`; `qMin_le_beta` (line 152) transfers it to `qMin`; `k2_q_bound` (line 201) takes `BetaBound (n+1) B` on `ExactCode n 2 d` at `hd : 2 <= d`. `exists_sortedNormalForm_le_betaN` (D3BoundedNormalForm.lean:82) and `d3_bound` (line 116) both take `BetaBound n B` and are stated for `CodeSpec.ExactCode n 2 3`, which the review reports honestly rather than as d >= 3. `SupportAffineRank.exists_normalForm_q_le_beta_supportRank` (line 129) is at `ExactCode 6 2 3` and gives `S.q <= CoarseFilter.threshold (supportAffineRank (S.frame.vec 0))` together with `S.q <= 9`; `supportAffineRank` (line 52) is genuinely `finrank Q (affineSpan Q (supportPointSet c)).direction`, and `CoarseFilter.threshold` (CoarseFilter.lean:42) is the numeral table 1,1,2,3,5,9 rather than a `BetaBound` argument -- exactly as the review says. `assertion` is right: the three inequalities are claims proved later in the section."
   },
   {
    "id": "main.tex:eq:snf",
@@ -1854,9 +2022,18 @@
    "line": 1606,
    "end_line": 1612,
    "statement_sha256": "e7bef8417df427bb8fb9ad899f57f771755bf39d3a326dff82d6fdb677c5f9c3",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.BinaryBeta.BetaBound",
+    "MainTheory.BinaryBeta.BetaAttained",
+    "MainTheory.BinaryBeta.BetaExact",
+    "MainTheory.BetaExists.betaAt",
+    "MainTheory.BetaExists.betaOf",
+    "MainTheory.BetaExists.betaBound_betaOf",
+    "MainTheory.SharpClearing.inverseDenominator",
+    "MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor"
+   ],
+   "review": "Defines beta_nu as the maximum of the last Smith invariant d_s(C) over nonsingular binary matrices of every size at most nu. The repository deliberately avoids a single numeral-valued beta: `BinaryBeta.BetaBound N B` and `BetaAttained N B` are the upper and lower halves as predicates (packaged as `BetaExact N B`), with d_s(C) rendered as `SharpClearing.inverseDenominator` -- the lcm of the denominators of the rational inverse -- and identified with the final Smith factor of any `SmithWitness` by `inverseDenominator_eq_smithLastFactor`. `BetaExists.betaOf N` is the literal supremum, `sup_{s <= N} betaAt s` with `betaAt s` the sup of `inverseDenominator` over zero-one s x s matrices, and satisfies `betaBound_betaOf`; it differs from the display only by also ranging over s = 0 and over singular C, both of which contribute the value 1. | ADVERSARIAL CHECK: All eight read. `BetaBound N B` (BinaryBeta.lean:30) quantifies over `1 <= s <= N` and zero-one `C : Matrix (Fin s) (Fin s) Z` with `C.det != 0`, concluding `inverseDenominator C <= B` -- the display's max as an upper-bound predicate; `BetaAttained` (line 36) is the matching existential and `BetaExact` (line 44) the structure pairing them. `SharpClearing.inverseDenominator` (line 41) is `Denominator.lcmDen (inverseEntries C)`, the lcm of denominators of Mathlib's rational inverse, and `inverseDenominator_eq_smithLastFactor` (line 525) proves it equals `w.lastFactor` for any `SmithWitness C`, which is the display's d_s(C). `BetaExists.betaAt s` (line 45) is the sup over `Matrix (Fin s) (Fin s) Bool`, `betaOf N` (line 57) the sup over `Finset.range (N+1)`, and `betaBound_betaOf` (line 65) gives `BetaBound N (betaOf N)`. The review's caveat is right: betaOf also ranges over s = 0 and over singular C, where the empty/zero inverse makes `inverseDenominator = 1` (`inverseDenominator_pos` plus `lcmDen` of an all-integer family). `definition` is the right kind."
   },
   {
    "id": "main.tex:eq:small-beta",
@@ -1880,9 +2057,15 @@
    "line": 1632,
    "end_line": 1634,
    "statement_sha256": "c6f516c2ad16e546a3056c9dd6caae4242acc94e3ba28c17606ac2f9ce23da6b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FiniteLift.SupportIndex",
+    "MainTheory.FiniteLift.supportIndexFintype",
+    "MainTheory.PhaseSectorFull.sectorSupport",
+    "MainTheory.FiniteLift.coloredMatrix",
+    "MainTheory.BinaryPivot.binaryColoredMatrixZ"
+   ],
+   "review": "Definitional display naming M, the total number of phase equations, one per support point of each sector. There is no Lean constant named M: the row count is carried by the index type of the augmented matrix, `Sigma (FiniteLift.SupportIndex D)`, where `SupportIndex D alpha` is the subtype of `PhaseSectorFull.sectorSupport D alpha` (the manuscript's T_alpha) and `FiniteLift.supportIndexFintype` is the named enumeration making its cardinality well defined; M is `Fintype.card` of that sigma type and the display's sum is its `Fintype.card_sigma` unfolding. `FiniteLift.coloredMatrix` and `BinaryPivot.binaryColoredMatrixZ` are the M-rowed matrices indexed by it. | ADVERSARIAL CHECK: Verified the negative half: no constant named M or anything like `supportCount`/`rowCount`/`Fintype.card (Sigma (SupportIndex ...))` exists (the only `Fintype.card (Sigma _)` abbreviation, `OneHotTensorEmbedding.size`, belongs to the one-hot tensor embedding and is unrelated). `SupportIndex D alpha` (FiniteLift.lean:92) is `{x : SS.BitString n // x in sectorSupport D alpha}` with `sectorSupport` from `MainTheory.PhaseSectorFull` (PhaseSectorFull.lean:80), the manuscript's T_alpha. `coloredMatrix` (FiniteLift.lean:128) and `BinaryPivot.binaryColoredMatrixZ` (BinaryPivot.lean:132) are both `Matrix (Sigma (SupportIndex D)) (Sum (Fin n) (Color D)) _`, so their row index type is the display's M. I added `supportIndexFintype` (FiniteLift.lean:99), the named `Fintype` instance that makes that cardinality well defined -- the file's own docstring notes it is there to keep one coherent enumeration. `definition` is right."
   },
   {
    "id": "main.tex:displaymath@1640",
@@ -1892,9 +2075,13 @@
    "line": 1640,
    "end_line": 1642,
    "statement_sha256": "04d0277efea3e446e38e9491133ce02c742ab3c8ee3d8ea3b547cf91990bb8ad",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FiniteLift.realUnknown",
+    "MainTheory.FiniteLift.color_dot_realUnknown",
+    "MainTheory.FiniteLift.baseSector"
+   ],
+   "review": "Definitional display of the unknown vector: the physical angles followed by the negated relative sector phases. `FiniteLift.realUnknown D : Sum (Fin n) (Color D) -> R` is exactly that, sending `Sum.inl j` to `theta j` and `Sum.inr g` to `-(D.phase g.1 - D.phase (baseSector D))`, with `Color D` the ell - 1 nonreference sectors. Lean subtracts the reference sector's phase explicitly where the manuscript normalizes phi_1 away by giving the rows for x in T_1 a zero colour block (`colorRow_base`); `color_dot_realUnknown` is the resulting colour-block dot product. | ADVERSARIAL CHECK: Read all three. `realUnknown` (FiniteLift.lean:230) is `Sum (Fin n) (Color D) -> R` with `Sum.inl j |-> theta j` and `Sum.inr g |-> -(D.phase g.1 - D.phase (baseSector D))` -- literally the display, with `Color D = {alpha // alpha != baseSector D}` supplying the ell - 1 relative-phase coordinates. `baseSector D` (line 84) is sector 0. `color_dot_realUnknown` (line 235) proves the colour-block dot product equals `-(D.phase alpha - D.phase (baseSector D))`, and `colorRow_base` (line 213) is the zero colour block on the reference sector, which is the review's point about how Lean normalizes phi_1 away. `definition` is right."
   },
   {
    "id": "main.tex:eq:Ru=h",
@@ -1906,9 +2093,19 @@
    "line": 1644,
    "end_line": 1651,
    "statement_sha256": "6b190164b58c3b01d4526b296cddd2a282a00d6c30a5bf4befbb024b85ca458c",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.FiniteLift.coloredMatrix",
+    "MainTheory.FiniteLift.coloredMatrixZ",
+    "MainTheory.FiniteLift.coloredRhs",
+    "MainTheory.FiniteLift.coloredMatrix_realSolution",
+    "MainTheory.ColoredSystem.augmentedMatrix",
+    "MainTheory.PivotSize.card_color",
+    "MainTheory.BinaryPivot.binaryColoredMatrixZ",
+    "MainTheory.BinaryPivot.isZeroOne_binaryColoredMatrixZ",
+    "MainTheory.BinaryPivot.coloredMatrixZ_eq"
+   ],
+   "review": "The step turning the phase equations into the consistent binary system Ru = h. `FiniteLift.coloredMatrix` (integer form `coloredMatrixZ`, both built from `ColoredSystem.augmentedMatrix`) is R, with rows indexed by `Sigma (SupportIndex D)` and columns by `Sum (Fin n) (Color D)`, i.e. n + ell - 1 columns since `PivotSize.card_color` gives `Fintype.card (Color D) = t - 1`; `coloredRhs` is the integral h and `coloredMatrix_realSolution` is the consistency claim, exhibiting `realUnknown` as a solution. The display's {0,1} entries need the manuscript's local X normalization, which Lean performs on the matrix instead: its physical rows are x - x_0 with entries in {-1,0,1}, and `BinaryPivot.binaryColoredMatrixZ` (rows `xor (x j) (basePoint D j)`) is the zero-one partner (`isZeroOne_binaryColoredMatrixZ`) related to it by a +-1 diagonal (`coloredMatrixZ_eq`), which is the form `BinaryBeta.BetaBound` accepts. | ADVERSARIAL CHECK: All nine read and each says what the review claims. `coloredMatrix` (FiniteLift.lean:128) and `coloredMatrixZ` (line 637) are `ColoredSystem.augmentedMatrix (physicalRow D) (colorRow D)` over Q and Z respectively, rows `Sigma (SupportIndex D)`, columns `Sum (Fin n) (Color D)`; `PivotSize.card_color` (PivotSize.lean:27) gives `Fintype.card (Color D) = t - 1`, so n + ell - 1 columns. `coloredRhs` (FiniteLift.lean:284) is `Sigma (SupportIndex D) -> Z`, built by subtracting the reference row's `phaseInteger`. `coloredMatrix_realSolution` (line 296) is the consistency claim: the real cast of `coloredMatrix` applied to `realUnknown D` equals the cast of `coloredRhsQ`. `physicalRow` is `bitQ x - bitQ (basePoint D)` (entries -1,0,1), and `binaryRowZ` (BinaryPivot.lean:127) is `xor (x j) (basePoint D j)` -- the local-X-flipped zero-one row -- with `isZeroOne_binaryColoredMatrixZ` (line 136) and `coloredMatrixZ_eq` (line 153) `coloredMatrixZ = binaryColoredMatrixZ * signColumn D c`, `signColumn` being +-1 (`isSign_signColumn`). `BetaBound` does quantify over `IsZeroOne` matrices, so the last clause is right. `step` is a defensible kind: the display is derived from the phase equations and consumed by the pivot argument in the same proof."
   },
   {
    "id": "main.tex:thm:colored-finite-lift",
@@ -2206,9 +2403,18 @@
    "line": 1866,
    "end_line": 1873,
    "statement_sha256": "f988a2d3fa72366e8decc2eaad0ef4cb28d080e4eaf74f43be534353077c6f4c",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.CodeAffineSpanBridge.actualSupport",
+    "MainTheory.CodeAffineSpanBridge.SupportIndex",
+    "MainTheory.CodeAffineSpanBridge.supportProbability",
+    "MainTheory.CodeAffineSpanBridge.supportProbability_pos",
+    "MainTheory.CodeAffineSpanBridge.sum_supportProbability_eq_one",
+    "MainTheory.CodeAffineSpanBridge.supportPoint",
+    "MainTheory.CodeAffineSpanBridge.CommonAffineSpanCertificate",
+    "MainTheory.RankTwoGlobal.FiniteGeneratorResolution.eigenFrame"
+   ],
+   "review": "Notation only: the two logical eigenvectors are expanded over their actual nonzero supports T_0, T_1 and the strictly positive weights p_0(x) = |c_x|^2, p_1(y) = |d_y|^2 are named. In Lean a state is its amplitude vector (SS.State n C); CodeAffineSpanBridge.actualSupport psi is the set {x | psi x != 0}, SupportIndex psi is its subtype, and supportProbability psi x = Complex.normSq (psi x) is the weight, strictly positive by supportProbability_pos and summing to one by sum_supportProbability_eq_one (from the normalization SS.innerC psi psi = 1). CommonAffineSpanCertificate carries exactly these as fields for a pair of states; supportPoint is the real cube embedding of a support index, used only by the affine-span statements downstream. The eigenvector setting of the surrounding sentence is the eigenFrame/eigen/projectively_nontrivial fields of RankTwoGlobal.FiniteGeneratorResolution. | ADVERSARIAL CHECK: All eight names exist with the claimed statements (MainTheory/CodeAffineSpanBridge.lean:30, 47, 59, 63, 88, 123, 281; MainTheory/RankTwoGlobal.lean:76). supportProbability is literally Complex.normSq (psi x.1), i.e. |c_x|^2, and it is defined only on SupportIndex, matching 'x in T_0'. Classification 'definition' is right: the display only introduces notation. Declarations list unchanged except for adding SupportIndex, the rendering of the index set T_0/T_1 itself."
   },
   {
    "id": "main.tex:lem:common-affine-span",
@@ -2570,9 +2776,16 @@
    "line": 2017,
    "end_line": 2019,
    "statement_sha256": "ee777989d6a4c3d9cf22c799afd502a3d4bb1c540f90b569f4861bbfce1cf73a",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.CodeAffineSpanBridge.commonAffineSpan_actualSupport_of_hasDistance",
+    "MainTheory.Covariance.affineSpan_eq_of_cov_eq₂",
+    "MainTheory.D3FreshSparseAssembly.angle_eq_on_common_actualSupports",
+    "MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank",
+    "MainTheory.SectionTwoGeneral.sectorCount_eq_two",
+    "MainTheory.BetaAtPivotRank.betaOf_mono"
+   ],
+   "review": "The remark asserts three things: at distance at least three the common covariance puts both actual supports in one affine subspace; agreement of the rationalized phase on a basis of that subspace already preserves the phases on both logical supports; hence no colour coordinate, and n rather than n+1 variables. The geometry is Covariance.affineSpan_eq_of_cov_eq₂, transported to the actual supports by CodeAffineSpanBridge.commonAffineSpan_actualSupport_of_hasDistance. The phase-agreement sentence is D3FreshSparseAssembly.angle_eq_on_common_actualSupports, which proves the new angle agrees with theta on both actualSupport c and actualSupport d, the second by pushing a right-support point through the certificate's affineSpan_eq into the left basis span. The consequence for the variable count is D3AffineRankBound.d3_bound_same_class_at_affineRank: equal supportAffineRank for the two logical words and a primitive lift of the same class with orderOf g | q and q <= betaOf (supportAffineRank) <= betaOf n, with no colour coordinate; BetaAtPivotRank.betaOf_mono is the beta_r <= beta_n step. SectionTwoGeneral.sectorCount_eq_two is the K=2 sector count behind the n+1 unknowns of the first-moment route. | ADVERSARIAL CHECK: All five proposed names exist and say what the review claims (Covariance.lean:315, CodeAffineSpanBridge.lean:270, D3AffineRankBound.lean:162, SectionTwoGeneral.lean:227, BetaAtPivotRank.lean:33). Insufficient rather than confirmed because the remark's second sentence -- agreement on a basis of the common subspace preserves the phases on BOTH logical supports -- has its own dedicated theorem, MainTheory.D3FreshSparseAssembly.angle_eq_on_common_actualSupports (MainTheory/D3FreshSparseAssembly.lean:164, docstring 'main.tex equation eq:phase-agreement-on-support, for the actual nonzero supports'), and the proposed list omits it; none of the five named declarations state phase agreement. Classification 'assertion' is acceptable."
   },
   {
    "id": "main.tex:thm:d3-sslp-classification",
@@ -2707,9 +2920,17 @@
    "line": 2145,
    "end_line": 2148,
    "statement_sha256": "c25735e4294e3135b8aac5812db78eb751a0424416ee00f8cb11e2e3be414413",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift",
+    "MainTheory.ProjectiveGroupGeneral.whole",
+    "MainTheory.QuantitativeGroup.quantitative_projective_group",
+    "MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le",
+    "MainTheory.QuantitativeGroup.k2_q_bound",
+    "MainTheory.QMinBound.d3_bound_same_class",
+    "MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects"
+   ],
+   "review": "The display says m | q holds in every row of the summary table. GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift proves it once and for all: orderOf g divides the modulus of ANY primitive finite lift (HasPrimitiveLift C g q), not only of the constructed one, at arbitrary n, K, d. ProjectiveGroupGeneral.whole states that clause for arbitrary rank K at the paper's d >= 2 as its fourth conjunct. Each table row carries it as its own conjunct: the general-K row is QuantitativeGroup.quantitative_projective_group (m | q, m <= q <= beta_{n+K-1}, no separate Z-detection hypothesis at d >= 2), refined to the actual eigenvalue count l by exists_sectorCount_qMin_le; the K=2, d>=2 row is QuantitativeGroup.k2_q_bound; the K=2, d>=3 row is QMinBound.d3_bound_same_class, stated for C : ExactCode n 2 3. SharpSectorZDetection.quantitative_colored_lift_of_zDetects is the same general-K conclusion phrased with betaOf (n + sectorCount - 1), under an explicit ZDetection.ZDetectsFrame hypothesis. | ADVERSARIAL CHECK: All five proposed names exist and each really carries the m | q conjunct (GeneralLiftOrder.lean:228, ProjectiveGroupGeneral.lean:37, SharpSectorZDetection.lean:61, QuantitativeGroup.lean:201, QMinBound.lean:101). Two corrections folded into the review and list: (a) the first table row is better rendered by QuantitativeGroup.quantitative_projective_group (QuantitativeGroup.lean:109) and exists_sectorCount_qMin_le, which need no ZDetectsFrame hypothesis, whereas quantitative_colored_lift_of_zDetects assumes one that the paper's row does not; (b) d3_bound_same_class is stated at ExactCode n 2 3, i.e. distance exactly three, not 'd >= 3' as the review said. Classification 'assertion' is right."
   },
   {
    "id": "main.tex:eq:6qubit-d2-bound",
@@ -2721,9 +2942,15 @@
    "line": 2152,
    "end_line": 2156,
    "statement_sha256": "dbc53f8c5839b390adc25b8a41fcb4ac1f9ff7bb44a73e8566c41973f07a39d6",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.QuantitativeGroup.k2_q_bound",
+    "MainTheory.QuantitativeGroup.qMin_le_beta",
+    "MainTheory.BetaExists.betaBound_betaOf",
+    "MainTheory.ProjectiveGroupGeneral.k2_bound_and_cyclic",
+    "MainTheory.BinaryBetaSevenLower.betaSevenAttained"
+   ],
+   "review": "The n=6, K=2, d>=2 specialization q_min <= beta_7 = 18. The schematic half is proved: QuantitativeGroup.k2_q_bound gives qMin C hd g <= B for g != 1 from any BinaryBeta.BetaBound (n+1) B, which at n=6 is a BetaBound 7 B (qMin_le_beta is the same bound stated at general K), and BetaExists.betaBound_betaOf supplies B = betaOf 7 unconditionally as a supremum over finitely many zero-one matrices. The numeral is not proved: only BinaryBetaSevenLower.betaSevenAttained (BetaAttained 7 18, i.e. 18 <= beta_7) exists, and that file states that the upper half BetaBound 7 18 is deliberately not claimed, so the displayed value beta_7 = 18 is unproved in this repository and no declaration renders q_min <= 18. | ADVERSARIAL CHECK: All four proposed names exist (QuantitativeGroup.lean:201, ProjectiveGroupGeneral.lean:59, BetaExists.lean:65, BinaryBetaSevenLower.lean:153), and the review's honest caveat is correct: BinaryBetaSevenLower.lean's header says 'The upper half, BetaBound 7 18, ... is deliberately not claimed', and grepping for BetaBound 7 / BetaExact 7 finds no such theorem. Insufficient because the declarations therefore do not cover the whole display -- the numeral 18 is missing. One correction: ProjectiveGroupGeneral.k2_bound_and_cyclic does not give the 'same conclusion'; its bound is q <= B for a constructed primitive lift plus cyclicity, not qMin <= B, so QuantitativeGroup.qMin_le_beta is the right companion. Classification 'assertion' is right."
   },
   {
    "id": "main.tex:eq:6qubit-d3-bound",
@@ -2735,9 +2962,15 @@
    "line": 2158,
    "end_line": 2163,
    "statement_sha256": "bb3a0992cea4b4516cffdefcc533ceb9ade8380f2bc17dc9db18f5f9e7a7f21d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.QMinBound.qMin_le_nine",
+    "MainTheory.QMinBound.d3_bound_nine",
+    "MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper",
+    "MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact",
+    "MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness"
+   ],
+   "review": "The boxed six-qubit distance-three cutoff q_min <= beta_6 = 9 is QMinBound.qMin_le_nine : qMin C GeneralFiniteness.two_le_three g <= 9, stated for every g : IntrinsicGroup C of an arbitrary CodeSpec.ExactCode 6 2 3 with no further hypothesis; qMin is Nat.find over primitive lifts (GeneralLiftOrder.qMin), so it is the paper's q_min. QMinBound.d3_bound_nine adds the primitive lift itself together with orderOf g | q. The numeral is the kernel certificate Generated.BinaryBetaSixKernel.Certificate.upper : BetaBound 6 9, with the equality beta_6 = 9 supplied by Certificate.betaExact : BetaExact 6 9 (upper plus BinaryBetaSixLower.betaSixAttained). SectionThreeNonVacuity.qMin_and_order_on_witness exhibits an actual code and a nontrivial class where the bound is not vacuous. | ADVERSARIAL CHECK: qMin_le_nine (QMinBound.lean:84) and d3_bound_nine (QMinBound.lean:112) exist exactly as described, both unconditional at ExactCode 6 2 3; Certificate.upper : BetaBound 6 9 exists (MainTheory/Generated/BinaryBetaSixKernel/Certificate.lean:45); qMin_and_order_on_witness (SectionThreeNonVacuity.lean:67) returns g != 1, orderOf g = 2, qMin <= 9 and orderOf g <= 9. Only correction: the display asserts beta_6 = 9, an equality, which needs both halves, so Certificate.betaExact : BetaExact 6 9 is added -- upper alone gives only the inequality half. Classification 'assertion' is right."
   },
   {
    "id": "main.tex:eq:m-leq9",
@@ -2749,9 +2982,13 @@
    "line": 2166,
    "end_line": 2169,
    "statement_sha256": "cc21913b45f5bd51dba96e0f7b3bf848e89c937c87e0a5b928f54d066af63cad",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SSLPCompleteness.orderOf_le_nine",
+    "MainTheory.QMinBound.d3_bound_nine",
+    "MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness"
+   ],
+   "review": "Every projective diagonal logical element of an exact ((6,2,3)) code has order at most nine: SSLPCompleteness.orderOf_le_nine (C : CodeSpec.ExactCode 6 2 3) (g : IntrinsicGroup C) : orderOf g <= 9, with no further hypothesis. Its proof goes through BoundedRepresentationCertified.hasBoundedRepresentation_unconditional -- the class has a labelled representative of modulus lbl.1.val + 1 <= 9 whose power is the identity, so orderOf g divides it -- not through the numeral route. QMinBound.d3_bound_nine is the divisibility form (a primitive lift with orderOf g | q and q <= 9) and SectionThreeNonVacuity.qMin_and_order_on_witness records orderOf g <= 9 on an actual code whose nontrivial class has order exactly two. | ADVERSARIAL CHECK: orderOf_le_nine exists at MainTheory/SSLPCompleteness.lean:246 with exactly that statement and exactly that proof (hasBoundedRepresentation_unconditional, then orderOf_dvd_of_pow_eq_one and lbl.1.isLt). d3_bound_nine and qMin_and_order_on_witness verified above. Classification 'assertion' is right -- the display is the paper's standalone consequence 'every projective diagonal logical element on an exact ((6,2,3)) code has order m <= 9'. Declarations unchanged."
   },
   {
    "id": "main.tex:six:eq:qcutoff",
@@ -2763,9 +3000,15 @@
    "line": 2179,
    "end_line": 2184,
    "statement_sha256": "fc491771ed91c4492aa43101594214e76c31797ad389e426d0da5097794c9aa8",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SSLPCompleteness.completeness_six_qubit",
+    "MainTheory.SSLPCompleteness.completeness_of_nontrivial_three",
+    "MainTheory.SixQubitSemanticEntrance.D3FiniteResolution.order_bounds",
+    "MainTheory.Generated.BinaryBetaSixKernel.Certificate.upper",
+    "MainTheory.SectionThreeNonVacuity.completeness_applies"
+   ],
+   "review": "The exhaustive six-qubit cutoff m | q with 2 <= q <= beta_6 = 9, which is what makes the finite enumeration of the following section complete. SSLPCompleteness.completeness_six_qubit produces a sorted normal form S with 2 <= S.q, S.q <= 9, 2 <= S.m and S.m | S.q for an ExactCode 6 2 d at target distance d0 >= 3 -- free of any BetaBound hypothesis, which is discharged internally by Generated.BinaryBetaSixKernel.Certificate.upper, but taking a real phase vector already known to preserve the code and to act projectively nontrivially; completeness_of_nontrivial_three is the same conclusion under the paper's own hypothesis that the intrinsic group is nontrivial. SixQubitSemanticEntrance.D3FiniteResolution.order_bounds is the same four conjuncts (2 <= q, 2 <= logicalOrder, logicalOrder | q, q <= 9) for a resolved sparse generator, with BetaBound 6 9 as an explicit argument. SectionThreeNonVacuity.completeness_applies instantiates the cutoff on an actual code. | ADVERSARIAL CHECK: completeness_six_qubit (SSLPCompleteness.lean:157) and D3FiniteResolution.order_bounds (SixQubitSemanticEntrance.lean:584) exist and carry exactly the display's four conjuncts; Certificate.upper discharges order_bounds' hypothesis. One correction to the review's wording: completeness_six_qubit is not 'unconditional' -- it takes theta, hpres : CodePreserving, and hnt : not SameProjectiveOnCode. 'Unconditional' is true only of the beta input. completeness_of_nontrivial_three and completeness_applies added so the group-theoretic hypothesis form and the non-vacuity instance are named. Classification 'assertion' is right."
   },
   {
    "id": "main.tex:displaymath@2186",
@@ -2775,9 +3018,14 @@
    "line": 2186,
    "end_line": 2188,
    "statement_sha256": "9092fe481db448055c2b7cba316ba66963655a03a539f1f3bdc58a1d43cd9240",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.D3NormalizedFiniteToReal.canonicalRoot",
+    "MainTheory.D3NormalizedFiniteToReal.canonicalRoot_primitive",
+    "MainTheory.LabelledGates.canonicalRoot",
+    "MainTheory.LabelledGates.canonicalRoot_isPrimitiveRoot"
+   ],
+   "review": "Notation for the standard primitive q-th root of unity. D3NormalizedFiniteToReal.canonicalRoot q is Complex.exp (2 * (Real.pi : C) * Complex.I / (q : C)), exactly the displayed formula, and canonicalRoot_primitive q proves IsPrimitiveRoot (canonicalRoot q) q under NeZero q. LabelledGates.canonicalRoot is the same definition on the labelled-gate side, with canonicalRoot_isPrimitiveRoot at 0 < q; LabelledGates.circlePhase_eq_canonicalRoot_pow is the bridge that identifies the two conventions. Both are used as the root supplied to GeneralLiftOrder.HasPrimitiveLift. | ADVERSARIAL CHECK: Both definitions exist and are literally e^{2 pi i / q} (D3NormalizedFiniteToReal.lean:31, LabelledGates.lean:116), and both primitivity lemmas exist (lines 34 and 127 respectively) with the hypotheses the review states. Classification 'definition' is right -- the display introduces notation only. Declarations unchanged."
   },
   {
    "id": "main.tex:six:eq:Daq",
@@ -2789,9 +3037,16 @@
    "line": 2190,
    "end_line": 2195,
    "statement_sha256": "878425bee5867ac61452c79ee4d9ce010d8bee1ed4552b48dd6dcda08167ac16",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Gate.diag",
+    "MainTheory.Gate.gate",
+    "MainTheory.ClassificationLevels.diagonalValue",
+    "MainTheory.GlobalClassificationBridge.finiteLocalPhase",
+    "MainTheory.GlobalClassificationBridge.diagonalValue_finiteLocalPhase",
+    "MainTheory.ClassificationLevels.diagonalAction"
+   ],
+   "review": "The tensor-product diagonal gate D(a;q) = (x)_j diag(1, omega_q^{a_j}). Its literal tensor form is ClassificationLevels.diagonalValue u x = prod_j (if x j then (u j : C) else 1) on a LocalPhase, whose per-qubit factors are GlobalClassificationBridge.finiteLocalPhase zeta hzeta a = fun j => residueUnitary zeta hzeta (a j), i.e. zeta^{a_j}. Gate.diag zeta a s = zeta ^ (SS.weight a s).val is the same eigenvalue in subset-sum form and Gate.gate is its action on amplitude vectors; diagonalValue_finiteLocalPhase proves the two agree, and diagonalAction_finiteLocalPhase does the same for the actions. All are stated for arbitrary n, so n = 6 is an instance. | ADVERSARIAL CHECK: Every name exists with the stated definition (Gate.lean:37 and :41, ClassificationLevels.lean:86 and :91, GlobalClassificationBridge.lean:226 and :246). diagonalValue is the literal product over sites of diag(1, u_j) entries, so it, not Gate.diag, is what renders the tensor product in the display; the two are identified by diagonalValue_finiteLocalPhase. Classification 'definition' is right. diagonalAction added; order of the list adjusted so the tensor-form declaration leads."
   },
   {
    "id": "main.tex:six:eq:primitive",
@@ -2803,9 +3058,17 @@
    "line": 2197,
    "end_line": 2200,
    "statement_sha256": "6e0e9c2c1fc79396ea4dcbd7901789d17e23441271a3d8e56430852ed8d8c904",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Gate.Primitive",
+    "MainTheory.GatePrimitiveConverse.primitive_iff_exact_order",
+    "MainTheory.Gate.pow_eq_one_iff",
+    "MainTheory.GatePrimitiveConverse.primitive_of_order",
+    "MainTheory.OuterEnumeration.angleGCD",
+    "MainTheory.OuterCompleteness.angleGCD_eq_one_iff_gatePrimitive",
+    "MainTheory.OuterCompleteness.dvd_angleGCD_iff"
+   ],
+   "review": "The claim that D(a;q) has exact physical order q precisely when gcd(q, a_1, ..., a_6) = 1 is a biconditional and both directions are proved. GatePrimitiveConverse.primitive_iff_exact_order (zeta primitive q-th root) states Gate.Primitive q a <-> for all k, (for all s, diag zeta a s ^ k = 1) <-> q | k; its forward half is Gate.pow_eq_one_iff and its converse half GatePrimitiveConverse.primitive_of_order, the direction the primitivity reduction uses. Gate.Primitive is the descent form (no d dividing q divides every (a j).val); its identification with the literal nested gcd of the display is OuterEnumeration.angleGCD q a = Nat.gcd q (Nat.gcd (a 0) ...) together with OuterCompleteness.angleGCD_eq_one_iff_gatePrimitive, which needs the range hypothesis a i < q so that the cast into ZMod q keeps its representative, and OuterCompleteness.dvd_angleGCD_iff which splits the nested gcd. | ADVERSARIAL CHECK: All five proposed names exist with the claimed statements (Gate.lean:79 and :127, GatePrimitiveConverse.lean:88, OuterEnumeration.lean:47, OuterCompleteness.lean:241). Two additions: primitive_of_order (GatePrimitiveConverse.lean:59), named in the review's prose but missing from the list, and dvd_angleGCD_iff, which is what makes angleGCD the display's gcd(q, a_1, ..., a_6). One correction: angleGCD_eq_one_iff_gatePrimitive carries the hypothesis ha : for all i, a i < q, which the review did not mention. Classification 'assertion' is defensible -- the surrounding sentence turns the display into an iff about exact order; 'definition' would also be arguable since the display alone is the primitivity condition."
   },
   {
    "id": "main.tex:six:eq:fibers",
@@ -2817,9 +3080,15 @@
    "line": 2202,
    "end_line": 2209,
    "statement_sha256": "cabf03d03d1f36c296c99525abdeb6c29d80291a3eeb0b13dbf2575ebf74b010",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SS.weight",
+    "SS.Sk",
+    "MainTheory.OuterEnumeration.subsetSum",
+    "MainTheory.OuterCompleteness.residueFiber",
+    "MainTheory.OuterCompleteness.weight_wordBitString_eq_subsetSum"
+   ],
+   "review": "Introduces the subset-sum A_a(x) = sum_j a_j x_j and its residue fibre S_b(a;q) inside the Boolean cube. `SS.weight a s = sum_i a i * bit (s i)` in `ZMod m` is A_a, and `SS.Sk a bk = { s | weight a s = bk }` is the fibre as a `Set (BitString n)`. The enumeration's executable natural-number counterpart is `MainTheory.OuterEnumeration.subsetSum`, a six-term testBit sum over a mask, and `MainTheory.OuterCompleteness.residueFiber r residue` is the `Finset` of the 64 words (`FinitePipeline.Word6 = Fin 64`) with that residue mod q. `MainTheory.OuterCompleteness.weight_wordBitString_eq_subsetSum` proves `SS.weight (fun i => (r.a i : ZMod r.q)) (wordBitString x) = (subsetSum r.a x.1 : ZMod r.q)`, so the pipeline's masks are the display's fibres. | ADVERSARIAL CHECK: All five names exist with the claimed statements (SS/Basic.lean:27,31; OuterEnumeration.lean:286; OuterCompleteness.lean:351,622). Word6 is `Fin 64` (FinitePipeline.lean:23), so the reviewer's '64 six-bit words' is right. Classification 'definition' is right: the display only introduces A_a and S_b."
   },
   {
    "id": "main.tex:six:eq:sslp0",
@@ -2832,9 +3101,17 @@
    "line": 2213,
    "end_line": 2224,
    "statement_sha256": "a7d31c26f7d2857ea7e2f69903e2091e15796a3eb4265d4070a06e0e869e74aa",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SortedForm.SortedNormalForm",
+    "MainTheory.SortedForm.exists_sortedNormalForm",
+    "MainTheory.SortedForm.exists_sortedNormalForm_of_generator",
+    "MainTheory.SortedForm.SortedNormalForm.gate_right",
+    "MainTheory.SortedForm.SortedNormalForm.gate_left",
+    "MainTheory.SortedForm.SortedNormalForm.val_rightResidue",
+    "SS.SSConditionState"
+   ],
+   "review": "States that after local X conjugation, qubit permutation, global phase, logical interchange and replacement of the generator by a coprime power, every code in the sector has a logical eigenbasis with the first word supported in the residue-0 fibre and the second in the residue-delta fibre, delta = q/m. The record is `MainTheory.SortedForm.SortedNormalForm`, whose `leftFiber` and `rightFiber` fields are `SS.SSConditionState angle 0 (frame.vec 0)` and `SS.SSConditionState angle (((q/m : Nat)) : ZMod q) (frame.vec 1)`, and whose `x0`, `perm`, `source`, `source_span`, `frame_eq` fields carry the explicit equivalence back to C (a local X string and a qubit permutation, with equal code spans). Existence is `MainTheory.SortedForm.exists_sortedNormalForm` (rank two, distance at least two, a real diagonal gate that preserves the code and is projectively nontrivial), built through `exists_sortedNormalForm_of_generator`, whose `canonicalTwoFiber` supplies the unit (coprime power) and the flip. `gate_left` and `gate_right` with `val_rightResidue` turn the two fibre conditions into the operator statement that D(a;q) fixes the first word and scales the second by zeta^(q/m). Because `SS.SSConditionState` says only that a nonzero amplitude forces the subset sum, the manuscript's remark that zero coefficients are allowed is respected. | ADVERSARIAL CHECK: Every named declaration exists with the claimed statement (SortedNormalForm.lean:39, 88, 117, 127, 255; SS/DiagonalAction.lean:17). Classification 'assertion' is right -- the surrounding sentence claims every code in the sector has such an eigenbasis. Added `gate_left` and `exists_sortedNormalForm_of_generator`, since the display names both logical words and the coprime-power step lives in the generator-level existence proof."
   },
   {
    "id": "main.tex:six:eq:sorted",
@@ -2846,9 +3123,16 @@
    "line": 2226,
    "end_line": 2229,
    "statement_sha256": "6d3c7b31b226048fbe07ee0b132322458f6c1e574ebb35799c63534280106e32",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.SortedForm.SortedNormalForm",
+    "MainTheory.SortedForm.monotone_permAngle_sortingPerm",
+    "MainTheory.OuterCompleteness.IsCanonicalAngle6",
+    "MainTheory.OuterCompleteness.mem_weakAngles6_iff",
+    "MainTheory.SortedVectorMobius.sortedVec",
+    "MainTheory.OuterEnumeration.weakAngles6"
+   ],
+   "review": "The angle-vector normalization 0 <= a_1 <= ... <= a_6 < q. On the semantic side it is the `sorted` (`Monotone fun j => (angle j).val`) and `lt_q` (`(angle j).val < q`) pair of fields of `MainTheory.SortedForm.SortedNormalForm`, discharged by `MainTheory.SortedForm.monotone_permAngle_sortingPerm` together with `ZMod.val_lt`. On the enumeration side the same condition is `MainTheory.OuterCompleteness.IsCanonicalAngle6 q a := (forall i, a i < q) and Monotone a`, and `MainTheory.OuterCompleteness.mem_weakAngles6_iff` shows the outer list `MainTheory.OuterEnumeration.weakAngles6 q` is exactly that set. `MainTheory.SortedVectorMobius.sortedVec k m` is the same set as a `Finset (Fin k -> Fin m)`, used at k = 6, m = q for the counting arguments. | ADVERSARIAL CHECK: All names check out (SortedNormalForm.lean:39,140; OuterCompleteness.lean:23,91; SortedVectorMobius.lean:45; OuterEnumeration.lean:44); `sortedVec`'s docstring itself points at the paper's canonical-angle display. Classification 'definition' is right. Added `IsCanonicalAngle6` and `mem_weakAngles6_iff`, which state the display literally, rather than leaving `weakAngles6` (a nested-range generator) to stand for it alone."
   },
   {
    "id": "main.tex:def:six-sslp-orbits",
@@ -2952,9 +3236,16 @@
    "line": 2327,
    "end_line": 2330,
    "statement_sha256": "ede941dac8f8a0e6dc6548185d32b94314a86fbaa003173ae0967af94f0fb07e",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.WImageSettled62.openOrbitIds",
+    "MainTheory.WImageSettled62.statusOrbitIds_cover",
+    "MainTheory.WImageSettled62.statusOrbitIds_nodup",
+    "MainTheory.WImageSettled62.all_62_settled_WImages",
+    "MainTheory.DirectoryOrbitStatus.openKeys_paperIds",
+    "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion"
+   ],
+   "review": "The boxed datum is the list of the four paper orbit numbers whose weight-enumerator images are still open. `MainTheory.WImageSettled62.openOrbitIds` is literally `[1, 2, 3, 4]`; `MainTheory.DirectoryOrbitStatus.openKeys_paperIds` proves the four generated keys `[0,1,2,3]` carry exactly those paper IDs. `statusOrbitIds_cover` (the 51 no-go plus 11 realized plus these 4 have `toFinset = Finset.Icc 1 66`) with `statusOrbitIds_nodup` gives the exactly-once partition of paper IDs 1..66, and the 62 settled images are packaged in `all_62_settled_WImages`. That the four open images are nonempty is `MainTheory.OpenOrbitsRealized.openKeys_hasCompletion`, which gives `HasCompletion (keyAt k).fibers` for k = 0,1,2,3, i.e. an exact normalized distance-three completion supported on each of the four fibre pairs. | ADVERSARIAL CHECK: All the reviewer's names exist (WImageSettled62.lean:85,91,102,109; OpenOrbitsRealized.lean:195) and say what was claimed. Classification 'data' is right. Replaced `openOrbitIds_length` by `statusOrbitIds_nodup`, which is what actually delivers the 'exactly once' clause, and added `DirectoryOrbitStatus.openKeys_paperIds`, the generated-directory side of the same datum."
   },
   {
    "id": "main.tex:thm:six-66-orbits",
@@ -3016,9 +3307,19 @@
    "line": 2372,
    "end_line": 2400,
    "statement_sha256": "bae1737f64a6b7a41a46f30d24254be947e13cec3e2b7b7a30cccc6ee52fad9d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.six_66_orbits",
+    "MainTheory.PaperReductionChain.raw_outer_count",
+    "MainTheory.PaperReductionChain.primitivity_reduction",
+    "MainTheory.PaperReductionChain.nonempty_fiber_reduction",
+    "MainTheory.PaperReductionChain.fiber_hashing",
+    "MainTheory.PaperReductionChain.affine_smith_reduction",
+    "MainTheory.PaperReductionChain.moment_lp_reduction",
+    "MainTheory.PaperReductionChain.active_rank_reduction",
+    "MainTheory.PaperReductionChain.orbit_reduction"
+   ],
+   "review": "The figure is the funnel 13877 -> 13449 -> 12768 -> 11422 -> 508 -> 291 -> 215 -> 66 across the SS, LP and orbit stages. Each stage count is one theorem in `MainTheory.PaperReductionChain`: `raw_outer_count` (rawRecords.length = 13877), `primitivity_reduction` (13449), `nonempty_fiber_reduction` (12768), `fiber_hashing` (pairTable.size = 11422), `affine_smith_reduction` (coarsePairIds.size = 508), `moment_lp_reduction` (291 feasible momentResults), `active_rank_reduction` (compatiblePairIds.size = 215), and `orbit_reduction`, which is `FiniteOrbitPipeline.HasExactlyClasses directory 66` -- the two-sided statement that every input is covered and no representative is a ghost. `six_66_orbits` is their conjunction. | ADVERSARIAL CHECK: Every name exists in MainTheory/PaperReductionChain.lean (37, 70, 81, 97, 108, 120, 134, 146, 153) with the stated numbers; the file's own docstring is written against this funnel. Classification 'data' is acceptable for a figure that restates counts proved in the subsection. Dropped `MainTheory.ActiveRankRecordCount.compatible_record_count`: it exists and proves 216 records for the 215 pairs, but the figure and its caption carry no 216 -- that clause belongs to lem:six-active-rank-reduction, a different display."
   },
   {
    "id": "main.tex:lem:six-raw-outer-count",
@@ -3129,9 +3430,18 @@
    "line": 2503,
    "end_line": 2509,
    "statement_sha256": "8f96f66fb53bfc7abdecd3cf696abfde055a13c213634f2bcc32f12ccae9de4d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.OuterEnumeration.rawRecords",
+    "MainTheory.PaperReductionChain.raw_outer_count",
+    "MainTheory.OuterEnumeration.weakAngles6",
+    "MainTheory.PaperReductionChain.primitivity_reduction",
+    "MainTheory.PaperReductionChain.nonempty_fiber_reduction",
+    "MainTheory.PaperReductionChain.fiber_hashing",
+    "MainTheory.PaperReductionChain.affine_smith_reduction",
+    "MainTheory.PaperReductionChain.moment_lp_reduction"
+   ],
+   "review": "A scoping remark: the 13,877 is the unfiltered outer loop, still containing the all-zero angle vector, nonprimitive vectors, empty second fibres, duplicate fibre pairs, low-affine-rank fibres, LP-infeasible pairs and equivalent cases, and is an upper count for a discrete loop rather than a count of Knill-Laflamme solves. `MainTheory.OuterEnumeration.rawRecords` is that unfiltered list -- moduli 2..9 crossed with the nontrivial divisors m and all of `weakAngles6 q`, with no primitivity or fibre test -- and `raw_outer_count` gives its length 13877. The remark's individual clauses are not stated in Lean; what the development has is the drop at each named filter (`primitivity_reduction` 13449, `nonempty_fiber_reduction` 12768, `fiber_hashing` 11422, `affine_smith_reduction` 508, `moment_lp_reduction` 291), which is the arithmetic behind the list. No declaration says the all-zero angle vector belongs to `rawRecords`, and the editorial half about nonlinear solves has no Lean counterpart. | ADVERSARIAL CHECK: The three named declarations exist and are relevant (OuterEnumeration.lean:109, 44; PaperReductionChain.lean:37), and the reviewer's description of `rawRecords` and `weakAngles6` is accurate. But they do not carry the display: nothing in the repository states membership of the all-zero vector (grep for all-zero hits only the all-zero Boolean *word* in MaskRankBridge/CoarseFilterEntry, not the angle vector), and the per-family clauses are only implicit in the count drops, which I added. Classification 'definition' is defensible for a terminology-scoping remark, though the first sentence is really a checkable claim about `rawRecords`."
   },
   {
    "id": "main.tex:proposition@2519",
@@ -3175,9 +3485,15 @@
    "line": 2541,
    "end_line": 2546,
    "statement_sha256": "f479e56532a3a91cc572e8f9eef72ef10c86f93fdbacf39f15ff4757e87d19df",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.primitive_sorted_counts",
+    "MainTheory.OuterEnumeration.primitive_two",
+    "MainTheory.OuterEnumeration.primitive_nine_exact",
+    "MainTheory.PrimitiveMobius.primitiveCount_eq_mobiusCount",
+    "MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount"
+   ],
+   "review": "The eight primitive sorted-vector counts (P_6(2), ..., P_6(9)) = (6, 27, 77, 209, 428, 923, 1632, 2975). `MainTheory.PaperReductionChain.primitive_sorted_counts` is exactly that tuple on `(OuterEnumeration.primitiveAngles6 q).length`, discharged by the eight kernel enumerations `MainTheory.OuterEnumeration.primitive_two`, `primitive_three`, `primitive_four`, `primitive_five`, `primitive_six_exact`, `primitive_seven_exact`, `primitive_eight_exact`, `primitive_nine_exact`. `MainTheory.PrimitiveMobius.primitiveCount_eq_mobiusCount` matches the same eight lengths against the Mobius closed form at each modulus, and `MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount` matches them against the Finset cardinality `primitiveCount 6 q = (primitiveVec 6 q).card`. | ADVERSARIAL CHECK: Checked the tuple in PaperReductionChain.lean:49 value by value against the display; the eight enumeration lemmas exist (OuterEnumeration.lean:156, 161, ..., 218), as do PrimitiveMobius.lean:154 and SortedVectorMobius.lean:383. Classification 'data' is right. The reviewer's ellipsis 'primitive_two ... primitive_nine_exact' hides that the middle four are the `_exact` variants; I spelled the names out."
   },
   {
    "id": "main.tex:lem:six-primitivity-reduction",
@@ -3583,9 +3899,14 @@
    "line": 2826,
    "end_line": 2828,
    "statement_sha256": "366f5114c0cc7de65ad0732d34ca96309a7ac97e9256094937c06e153bf7dac2",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.MomentPolytope.momentPolytope",
+    "MainTheory.MomentPolytope.Feasible",
+    "MainTheory.MomentPolytope.moment_row_counts",
+    "MainTheory.FiniteMomentLP.polytope"
+   ],
+   "review": "Notation only: P(S_0, S_delta) names the feasible polytope of the LP normalization, moment and positivity equations for a fibre pair. `MainTheory.MomentPolytope.momentPolytope x0 x1 = {p | Feasible x0 x1 p}` over the two concatenated colour blocks is that set, and `MainTheory.MomentPolytope.Feasible` is its constraint list field for field: nonnegativity, the two normalizations, six first-moment equations and fifteen square-free second-moment equations -- the 6 + 15 = 21 coordinates of the manuscript's phi, with the row counts checked in `moment_row_counts`. The pipeline's per-pair version is `MainTheory.FiniteMomentLP.polytope`, the real feasible set of the generated rational matrix indexed by `LabeledWord = Bool x Word6`, i.e. the two colours over the 64-word cube. | ADVERSARIAL CHECK: All three original names exist (MomentPolytope.lean:71, 82; FiniteMomentLP.lean:103) and the constraint list matches the manuscript's six:eq:lpnormal--six:eq:lppos, which I read in documents/20260822/main.tex:2000ff. Classification 'definition' is right. Two corrections: the index of `FiniteMomentLP.polytope` is `Bool x Word6` (128 labeled words), not a 'labeled 64-word index'; and I added `moment_row_counts`, which is what pins the 6 and 15."
   },
   {
    "id": "main.tex:lemma@2834",
@@ -3648,9 +3969,14 @@
    "line": 2869,
    "end_line": 2874,
    "statement_sha256": "fc38e42589f3be6bca65158d23cae0e3153bc242ffcf36a99878fff37f55f300",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ExactLP.ForcedZeroCertificate",
+    "MainTheory.ExactLP.basisVector",
+    "MainTheory.ExactLP.Feasible",
+    "MainTheory.ExactLP.ActiveCertificate"
+   ],
+   "review": "Introduces the exact dual certificate the script reconstructs for a forced-zero variable: a rational y with A^T y <= -e_i componentwise and b^T y = 0. This is the field-for-field content of `MainTheory.ExactLP.ForcedZeroCertificate A b i`: `dual : r -> Q`, `column_bound : forall j, (A.transpose.mulVec dual) j <= -(basisVector i j)` with `MainTheory.ExactLP.basisVector i j = if j = i then 1 else 0`, and `rhs_zero : dotProduct dual b = 0`. The primal side it is tested against is `MainTheory.ExactLP.Feasible A b p := A.mulVec p = b and forall j, 0 <= p j`, and the positive-optimum alternative in the same paragraph is `MainTheory.ExactLP.ActiveCertificate` (a feasible point with `0 < point i`). | ADVERSARIAL CHECK: ExactLP.lean:20, 70, 75 confirm all three names and the exact shape of the two conditions; the structure's docstring cites the manuscript's equation by number rather than by the label six:eq:forcedzero, which is the only slack in the original review. Classification 'definition' is right -- the display states the certificate's defining conditions; its consequence is the next display. Added `ActiveCertificate`, the other half of the same test described in the surrounding sentence."
   },
   {
    "id": "main.tex:displaymath@2876",
@@ -3660,9 +3986,12 @@
    "line": 2876,
    "end_line": 2878,
    "statement_sha256": "236b0341bd26a2b89c9f3c38203d5f1ef2c72b19bf9d9fd514640ebf8da3f938",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ExactLP.coordinate_eq_zero_of_certificate",
+    "MainTheory.ExactLP.active_not_forced_zero"
+   ],
+   "review": "The one-line derivation 0 = b^T y = p^T A^T y <= -p_i, used only to conclude p_i = 0 for every feasible p. `MainTheory.ExactLP.coordinate_eq_zero_of_certificate` runs exactly this chain: `dotProduct dual b = dotProduct (A.transpose.mulVec dual) p` by rewriting b as `A.mulVec p` and transposing, then `dotProduct (A.transpose.mulVec dual) p <= -p i` from `column_bound` and nonnegativity, then `rhs_zero` and `0 <= p i` give `p i = 0`. `MainTheory.ExactLP.active_not_forced_zero` records the corollary that a forced-zero dual and a positive primal witness cannot coexist. | ADVERSARIAL CHECK: Read the proof at ExactLP.lean:83-111; it is line for line the display's chain, and active_not_forced_zero at 125 is as described. Classification 'step' is right: the display is an intermediate inequality derived and used only in that paragraph."
   },
   {
    "id": "main.tex:lem:six-active-rank-reduction",
@@ -3718,9 +4047,14 @@
    "line": 2917,
    "end_line": 2924,
    "statement_sha256": "1c7cdf6a79f2bae9b7ce126e71cc3fc2aa091694de7702891849e8827286844b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.LPDimension.dimension_eq_active_card_sub_rank",
+    "MainTheory.LPDimension.finrank_eq_active_card_sub_rank",
+    "MainTheory.FiniteMomentLP.affine_dimension_eq_of_face",
+    "MainTheory.Generated.OrbitTableSemantics01.lp_affine_dimension"
+   ],
+   "review": "The relative dimension of the feasible moment polytope equals the number of active moment variables in the two colours minus the rank of the moment matrix on them. MainTheory.LPDimension.dimension_eq_active_card_sub_rank (docstring: \"Equation six:eq:lpdim\") proves finrank R (affineSpan (feasibleSet A b)).direction = (activeVariables A b).card - (A.submatrix id ↑).rank for any nonempty nonnegative feasible set, with the active set taken intrinsically (mem_activeVariables: j is active iff some feasible point is positive at j); finrank_eq_active_card_sub_rank is the same identity from a supplied active set plus a positive witness. MainTheory.FiniteMomentLP.affine_dimension_eq_of_face instantiates it for the pipeline's moment LP: the column type is LabeledWord = Bool x Word6 and InActive splits on the label into face.active0 and face.active1, so the count n is the paper's |U_0|+|U_1| and (FiniteMomentMatrix.matrix columns).rank is rank A_U. Six orbits carry the resulting number as a generated theorem, e.g. Generated.OrbitTableSemantics01.lp_affine_dimension = 41 (also OrbitTableSemantics02/05/10/31/66); d_LP for the remaining orbits is not in Lean. | ADVERSARIAL CHECK: All three declarations exist and were read. dimension_eq_active_card_sub_rank is at MainTheory/LPActiveDimension.lean:115 and its docstring literally names `six:eq:lpdim`; finrank_eq_active_card_sub_rank is at :69; affine_dimension_eq_of_face is at MainTheory/FiniteMomentLPDimension.lean:72 and its proof rewrites with dimension_eq_active_card_sub_rank. I checked the reviewer's claim that n = |U_0|+|U_1|: the column type is LabeledWord = Bool x Word6 (MainTheory/FiniteMomentMatrix.lean:10) and InActive (MainTheory/FiniteMomentLP.lean:107) selects face.active0 on label false and face.active1 on label true, so the single active Finset is the disjoint union of the two colours. Classification 'assertion' is right: the display is an equality that is proved, not a bare notation. Added one generated instance, which the reviewer omitted."
   },
   {
    "id": "main.tex:lem:six-orbit-reduction",
@@ -3803,9 +4137,12 @@
    "line": 3016,
    "end_line": 3019,
    "statement_sha256": "8d062b9bcc97f2d00f007d20fd504ec6e917c8926316be07adc483a838636645",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Generated.FiniteOrbitDistribution.orbit_order_distribution",
+    "MainTheory.Generated.FiniteOrbitDistribution.labeled_pair_order_distribution"
+   ],
+   "review": "The datum is that all eight targeted logical orders m = 2,...,9 still occur after the exact diagonal SSLP layer. orbit_order_distribution is the eightfold conjunction orbitCountAtM m = 25,11,10,8,4,5,2,1 for m = 2,...,9, all nonzero, counted on the .m field (targeted order, not q) of the 66 generated keys FiniteOrbitBase.keyAt; the counts sum to 66, and the twelve orbits at m = 6,7,8,9 and ten at m = 4 quoted in the surrounding text are 4+5+2+1 and 10 here. labeled_pair_order_distribution is the same count one reduction earlier, (73,36,31,30,13,18,9,5) summing to 215, on the rank-compatible input pairs. Neither theorem asserts that orders outside 2,...,9 are absent; the display does not claim that either. | ADVERSARIAL CHECK: Both declarations exist (MainTheory/Generated/FiniteOrbitDistribution.lean:170 and :145) and were read, together with the counting function orbitCountAtM (:111), which counts the .m field of the 66 keys FiniteOrbitBase.keyAt in two blocks of 33. OrbitKey's fields are q, m, mask0, mask1 (MainTheory/FiniteOrbitPipeline.lean:89), so .m is the targeted logical order, as the reviewer says. Arithmetic cross-checks: 25+11+10+8+4+5+2+1 = 66 and 73+36+31+30+13+18+9+5 = 215, and the m=6..9 counts sum to 12 and the m=4 count is 10, matching the prose around the display. Classification 'data' is defensible: the display is a bare list of orders, and the claim that each occurs is the conjunction of eight nonzero counts."
   },
   {
    "id": "main.tex:remark@3028",
@@ -3815,9 +4152,19 @@
    "line": 3028,
    "end_line": 3037,
    "statement_sha256": "601b5819b8adcd9bbf4ad0a74a889eff874a6142dd7e26e58d78d284e8019f9b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.PaperReductionChain.orbit_reduction",
+    "MainTheory.PaperReductionChain.six_66_orbits",
+    "MainTheory.DistanceSignature.LabeledEquivalent",
+    "MainTheory.ClassificationLevels.labels_eq_of_sslpMomentEquivalent",
+    "MainTheory.SSLPOrbitLevels.card_realizationOrbit",
+    "MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys",
+    "MainTheory.OpenOrbitsRealized.key00_hasCompletion",
+    "MainTheory.OpenOrbitsRealized.key01_hasCompletion",
+    "MainTheory.ProvedWEUnion.five_orbits_share_E2A"
+   ],
+   "review": "Three clauses, two of them theorems. (1) The 66 are moment-skeleton classes with (q,m) retained: orbit_reduction / six_66_orbits give HasExactlyClasses directory 66, and that predicate is stated through DistanceSignature.LabeledEquivalent q m F q' m' G := q = q' AND m = m' AND FiberEquivalent F G, so the labels are part of the equivalence; ClassificationLevels.labels_eq_of_sslpMomentEquivalent is the same fact at the abstract level (ii). (2) The full Knill-Laflamme stage leaves fifteen: card_realizationOrbit = 15 with hasCompletion_iff_mem_realizationKeys. (3) The fifteen are not fifteen inequivalent codes. Only its first half has a Lean instance: OpenOrbitsRealized.key00_hasCompletion and key01_hasCompletion realize two distinct directory keys with the same certified code SixQubit.Orbit11Real (words interchanged for key01), which is a support choice identifying different full-fibre classes, and ProvedWEUnion.five_orbits_share_E2A is the analogous collapse at the enumerator level. The clause that one exact code can appear under several targeted elements of a larger cyclic group, and the closing sentence about amplitudes and intrinsic projector lattices, have no Lean statement. | ADVERSARIAL CHECK: Every named declaration exists and says what the review claims: orbit_reduction and six_66_orbits (MainTheory/PaperReductionChain.lean:146, :153), card_realizationOrbit = 15 (MainTheory/SSLPOrbitLevels.lean:74), hasCompletion_iff_mem_realizationKeys (MainTheory/RealizationOrbits15.lean:75), key00_hasCompletion / key01_hasCompletion (MainTheory/OpenOrbitsRealized.lean:75, :108 - both built from SixQubit.Orbit11Real, the second with the two logical words interchanged, exactly as the review says), five_orbits_share_E2A (MainTheory/ProvedWEUnion.lean:106). I verified the 'labels retained' clause independently: HasExactlyClasses is stated through DistanceSignature.LabeledEquivalent, which is q = q' AND m = m' AND FiberEquivalent, so the equivalence cannot move the labels; that definition should be named and was not. Verdict is insufficient rather than confirmed because the remark's second half is only partly formalized: nothing in the repository states that one exact code can appear under several targeted elements of a larger cyclic group, and nothing states the final sentence about amplitudes and intrinsic projector lattices."
   },
   {
    "id": "main.tex:six:thm:global-status",
@@ -3944,9 +4291,18 @@
    "line": 3217,
    "end_line": 3234,
    "statement_sha256": "8b8e9732fc6e3178f8b6b976a31a3c33e00e92c17f15668d48f028629f6b5482",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.WImages.FI",
+    "MainTheory.WImages.FII",
+    "MainTheory.WImages.E1A",
+    "MainTheory.Levels.E2A",
+    "MainTheory.WImages.R5A",
+    "MainTheory.ProvedWEUnion.FI_one",
+    "MainTheory.ProvedWEUnion.FI_zero",
+    "MainTheory.ProvedWEUnion.FII_one"
+   ],
+   "review": "Abbreviations for the two one-parameter normalized enumerator families and three named points. WImages.FI is L(alpha) = ![1, a, 1-a, 0, 11+4a, 16-a, 3-3a] and WImages.FII is M(t) = ![1, 0, t, 1-t, 12-t, 15+t, 3], both maps R -> (Fin 7 -> R) with no range restriction; WImages.E1A, Levels.E2A and WImages.R5A (declared in MainTheory/WImageOrbit36.lean but in the WImages namespace) carry the three literal vectors, R5A with the stated 25-denominators. The two coincidences asserted inside the display are separate theorems: ProvedWEUnion.FI_one (E_1^A = L(1)), FI_zero (E_2^A = L(0)) and FII_one (E_2^A = M(1)). | ADVERSARIAL CHECK: Every constant and coincidence checked against the Lean source coefficient by coefficient. WImages.FI (MainTheory/WImages.lean:250) = ![1, a, 1-a, 0, 11+4*a, 16-a, 3-3*a]; WImages.FII (:254) = ![1, 0, t, 1-t, 12-t, 15+t, 3]; WImages.E1A (:41) = ![1,1,0,0,15,15,0]; Levels.E2A (MainTheory/Levels.lean:101) = ![1,0,1,0,11,16,3]; R5A = ![1,0,21/25,0,291/25,384/25,79/25]. R5A is declared in MainTheory/WImageOrbit36.lean:17 but inside namespace MainTheory.WImages, so the fully qualified name the reviewer gave is correct. FI_one, FI_zero, FII_one are at MainTheory/ProvedWEUnion.lean:29, :34, :39 with exactly the stated statements. Classification 'definition' matches the display's own 'For compactness define'."
   },
   {
    "id": "main.tex:eq:global-W-set",
@@ -3958,9 +4314,13 @@
    "line": 3236,
    "end_line": 3244,
    "statement_sha256": "9980f20b6cbf06a108cc5ffd44a25465404fdc665ad0251273eff7fde22512f5",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.CodeSpec.ExactCode",
+    "MainTheory.CodeSpec.AWeight",
+    "MainTheory.PauliKernelTrace.Aco_eq_sum_normSq_trace"
+   ],
+   "review": "Defines the global A-enumerator set of all exact ((6,2,3)) codes, with no transversal-gate assumption. No Lean def forms this set. Its ingredients exist: CodeSpec.ExactCode 6 2 3 is the display's code notion (positive logical rank, orthonormal frame, HasDistance 3), CodeSpec.AWeight F w = Aco F.vec w / K^2 is the normalization that makes A_0 = 1, and PauliKernelTrace.Aco_eq_sum_normSq_trace identifies Aco_j with the sum of |Tr(E P)|^2 over weight-j Paulis for the frame projector P, which is the display's coordinate. CodeSpec.RestrictedAImage (MainTheory/CodeSpec.lean:389) has the right shape -- { A | exists C : ExactCode n K d, admissible C and forall w, A w = AWeight C.frame w } -- but it is parameterized by a predicate, its own docstring warns that an arbitrary predicate does not define a paper image, and a repository-wide grep finds no use of it; it is not the display. Levels.WImage is a different, orbit-restricted set (it fixes the two logical words' residue fibres) and no Lean theorem relates it to this one. | ADVERSARIAL CHECK: The reviewer's central factual claim is correct and I reproduced it: a repository-wide grep for RestrictedAImage matches only its own definition line (MainTheory/CodeSpec.lean:389), it is parameterized by an `admissible` predicate, and its docstring warns that an arbitrary predicate does not define a paper image. So it does not render the display, and neither does Levels.WImage, which is a different set constrained to an orbit's residue fibres with no Lean theorem relating the two. That leaves the pairing without a declaration that carries the display, hence insufficient rather than confirmed. Since the display is a definition assembled from two ingredients that ARE in Lean, an empty list would lose information: I dropped RestrictedAImage and Levels.WImage from the list, kept AWeight (Aco / K^2, so A_0 = 1), and added CodeSpec.ExactCode (the display's 'exact ((6,2,3)) code' at n,K,d = 6,2,3) and PauliKernelTrace.Aco_eq_sum_normSq_trace, which is the display's A_j(P) as a sum of |Tr(E P)|^2 over weight-j Paulis with P = CodeProjector.ofFrame F. Classification 'definition' is right."
   },
   {
    "id": "main.tex:eq:global-WE-conjecture",
@@ -3972,9 +4332,13 @@
    "line": 3253,
    "end_line": 3263,
    "statement_sha256": "06cf3d0ad30e4cda674a33afeb4b338de130556b46edebc740b4f67747f138f2",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.WEStrictInclusion.conjecturedImages",
+    "MainTheory.WEStrictInclusion.provedImages_subset_conjectured",
+    "MainTheory.ProvedWEUnion.provedImages_eq"
+   ],
+   "review": "The boxed global conjecture. Only its right-hand side is a Lean object: WEStrictInclusion.conjecturedImages := FI '' Icc 0 1 union FII '' Icc (3/5) 1 union {R5A}. The conjectured equality itself is not stated anywhere -- the left-hand side, the A-enumerator set of all exact ((6,2,3)) codes, has no Lean definition (see main.tex:eq:global-W-set). What is proved is one containment, WEStrictInclusion.provedImages_subset_conjectured: the union of the eleven exact orbit images (ProvedWEUnion.provedImages_eq, which reaches M only on [2/3,1]) lies inside that right-hand side, the only gap being the M-parameter range 3/5 versus 2/3. This matches the module header, which records that the conjecture concerns all exact codes including the projectively trivial sector. | ADVERSARIAL CHECK: All three declarations exist and were read: WEStrictInclusion.conjecturedImages (MainTheory/WEStrictInclusion.lean:55) is literally FI '' Icc 0 1 union FII '' Icc (3/5) 1 union {WImages.R5A}, the display's right-hand side; provedImages_subset_conjectured (:59) proves ProvedWEUnion.provedImages is contained in it, and its proof widens 2/3 to 3/5 exactly as the review says; ProvedWEUnion.provedImages_eq (MainTheory/ProvedWEUnion.lean:73) equals FI '' Icc 0 1 union FII '' Icc (2/3) 1 union {R5A}. The review's content is accurate, but the display is the boxed equality with the global set on the left, and neither that set nor the equality exists in Lean, so the pairing cannot carry the display. Not 'wrong': nothing named is false or absent. The ledger already records the analogous orbit-level conjecture (main.tex:eq:W23-conjecture) with status conjecture; this entry belongs in the same column."
   },
   {
    "id": "main.tex:thm:six-WE-status",
@@ -4071,9 +4435,19 @@
    "line": 3341,
    "end_line": 3394,
    "statement_sha256": "d07650470f436d6a552227719a6411dd88b5f9fa5aad3fbab75b424da0976466",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.WImageOpenL.FI_subset_orbit1",
+    "MainTheory.WImageOpenL.FI_subset_orbit2",
+    "MainTheory.WImageOpenL.FI_subset_orbit3",
+    "MainTheory.WImageOpenL.FI_subset_orbit4",
+    "MainTheory.WImageOrbit1.FII_subset_WImage_orbit1",
+    "MainTheory.WImageOrbit4M.FII_subset_WImage_orbit4",
+    "MainTheory.WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4",
+    "MainTheory.DirectoryOrbitStatus.openKeys_paperIds",
+    "MainTheory.RealizationOrbits15.hasCompletion_of_mem_realizationKeys"
+   ],
+   "review": "The remark gives the four open orbits' representatives, two proved inclusions, two conjectured equalities, and a prose status report. Proved: WImageOpenL.FI_subset_orbit1 through _orbit4 give FI '' Icc 0 1 subset Levels.WImage SixQubit.OpenLOrbit_r.angle 0 1 for r = 1,2,3,4 (eq:four-open-L-inclusion), and WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4 gives FII '' Icc (2/3) 1 subset W_1 intersect W_4 with the paper's 2/3 endpoint (eq:four-open-M-inclusion), from the two component inclusions. DirectoryOrbitStatus.openKeys_paperIds identifies the four as directory keys 0..3 = paper orbits 1-4, and hasCompletion_of_mem_realizationKeys is why they are realization orbits at all. Not formalized: eq:W23-conjecture and eq:W14-conjecture -- every Lean statement about these four WImage sets is an inclusion, never an equation -- and the prose status claims about the partial converse analyses (orbit 2's Gram-degeneracy lemma, orbit 3's charged-shortening or rank-collapse lemma, orbit 4's parity dichotomy). Of the last, only fragments exist: MainTheory.ParityFour.edge_isolation and the ParityFour* modules formalize supplementary parity-four lemmas, but no orbit-4 dichotomy theorem. | ADVERSARIAL CHECK: All named declarations exist and were read: WImageOpenL.FI_subset_orbit1..4 (MainTheory/WImageOpenL.lean:11-25) are FI '' Icc 0 1 subset Levels.WImage SixQubit.OpenLOrbit_r.angle 0 1 for r = 1..4; WImageOrbit1.FII_subset_WImage_orbit1 (:74) and WImageOrbit4M.FII_subset_WImage_orbit4 (:24) and their intersection form (:29) are FII '' Icc (2/3) 1 subset W_1 (in the constant orbit1Av) intersect W_4 (in OpenMParity.angle). I confirmed the review's negative claim by grep: every Lean statement about these four WImage sets is an inclusion, never an equation, so eq:W23-conjecture and eq:W14-conjecture have no counterpart -- consistent with the ledger, which already files those two labels separately with status conjecture and no declarations. Verdict is insufficient because the remark also asserts, in prose, the partial converse status of orbits 1-4 (a Gram-degeneracy lemma for orbit 2, charged shortening or rank collapse for orbit 3, a parity-code dichotomy for orbit 4); no dichotomy or converse theorem for these orbits exists (grep for dichotomy finds only orbits 5 and 7), though part of the parity-four machinery the remark alludes to is formalized. I replaced hasCompletion_of_mem_realizationKeys's role by adding DirectoryOrbitStatus.openKeys_paperIds, which is what identifies these four as directory keys 0..3 = paper orbits 1-4."
   },
   {
    "id": "main.tex:eq:four-open-representatives",
@@ -4085,9 +4459,18 @@
    "line": 3345,
    "end_line": 3354,
    "statement_sha256": "e2882b0cd8be85021276906b084e35ae7b7b324b722f8709a132985fe1eae3f6",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.OpenLOrbit1.angle",
+    "SixQubit.OpenLOrbit2.angle",
+    "SixQubit.OpenLOrbit3.angle",
+    "SixQubit.OpenLOrbit4.angle",
+    "MainTheory.WImageOrbit1.orbit1Av",
+    "SixQubit.OpenMParity.angle",
+    "MainTheory.Generated.FiniteOrbitBase.key00",
+    "MainTheory.DirectoryOrbitStatus.openKeys_paperIds"
+   ],
+   "review": "The four angle vectors of the open orbits, at q = m = 2. They appear literally as SixQubit.OpenLOrbit1.angle = ![0,0,0,1,1,1], OpenLOrbit2.angle = ![0,0,1,1,1,1], OpenLOrbit3.angle = ![0,1,1,1,1,1] and OpenLOrbit4.angle = ![1,1,1,1,1,1] (SixQubit/Generated/OpenLFamilies/Orbit1Data.lean:11 and its Orbit2/3/4 companions), with WImageOrbit1.orbit1Av and OpenMParity.angle repeating a_1 and a_4 in the W_1 and W_4 statements. The same four orbits enter the directory as FiniteOrbitBase.key00..key03, each of the form <2, 2, mask0, mask1>, so q = m = 2; recomputing the masks from the angles under the pipeline's testBit convention reproduces them exactly, with a_2 and a_4 carrying the two residues in the opposite order (key01 and key03), which is also why key01 is realized by the same code as key00 with the two logical words interchanged. DirectoryOrbitStatus.openKeys_paperIds records that keys 0..3 are the paper's orbits 1..4. | ADVERSARIAL CHECK: Every constant read and matched: SixQubit.OpenLOrbit1.angle = ![0,0,0,1,1,1], OpenLOrbit2.angle = ![0,0,1,1,1,1], OpenLOrbit3.angle = ![0,1,1,1,1,1], OpenLOrbit4.angle = ![1,1,1,1,1,1] (SixQubit/Generated/OpenLFamilies/Orbit1Data.lean:11 and the Orbit2/3/4Data companions -- the reviewer's single path 'Orbit_iData.lean' is a shorthand for four files, the only inaccuracy I found); MainTheory.WImageOrbit1.orbit1Av = ![0,0,0,1,1,1] (:34) and SixQubit.OpenMParity.angle = ![1,1,1,1,1,1] (SixQubit/Generated/OpenMParity/Data.lean:12). FiniteOrbitBase.key00..key03 are all of the form <2,2,mask0,mask1>, so q = m = 2. I independently recomputed the residue fibres of a_1..a_4 in ZMod 2 under the LSB testBit convention of FiniteOrbitPipeline.wordBits and reproduced the reviewer's finding exactly: a_1 -> key00 and a_3 -> key02 with residue 0 in mask0, a_2 -> key01 and a_4 -> key03 with the two residues in the opposite order. DirectoryOrbitStatus.openKeys_paperIds (MainTheory/DirectoryOrbitStatus.lean:1028) is openKeys.map paperOrbitId = [1,2,3,4]. Classification 'data' is right."
   },
   {
    "id": "main.tex:eq:four-open-L-inclusion",
@@ -4170,9 +4553,15 @@
    "line": 3438,
    "end_line": 3447,
    "statement_sha256": "49016ee63a5a3d052f47f83f378fe1155dc286139682481aeb3a2a60d694f237",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.OrderFiveOrbitMembership.unique_C5_LU",
+    "MainTheory.ClassificationLevelsSix.level_four_lu_class",
+    "MainTheory.Orbit36LUBridge.original_projector_luEquivalent_canonical",
+    "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive",
+    "MainTheory.ProvedWEUnion.five_orbits_share_E2A"
+   ],
+   "review": "A caveat remark: knowing W_r does not determine the amplitude variety or its local-unitary quotient, and orbit 36 is the only sector settled at that finer level. Only the last clause is formalized. ClassificationLevelsSix.level_four_lu_class (level (iv) of def:six-classification-levels) shows any two exact distance-three codes supported on orbit 36's two table fibres have LUEquivalent projectors, via Orbit36LUBridge.original_projector_luEquivalent_canonical; OrderFiveCodeRigidity.luEquivalent_of_orderFive transports this to arbitrary ExactCode 6 2 3 with an intrinsic element of order five, and OrderFiveOrbitMembership.unique_C5_LU packages orbit membership, group order five and the LU class together. The negative clauses -- connected components, accidental symmetry enlargement, and local-unitary equivalence inside and across the other nonempty orbits -- have no Lean statement; the nearest formalized instance of enumerators failing to separate orbits is ProvedWEUnion.five_orbits_share_E2A, five distinct orbits with the single image {E_2^A}. | ADVERSARIAL CHECK: All four declarations exist and say what the review claims: ClassificationLevelsSix.level_four_lu_class (MainTheory/ClassificationLevelsSix.lean:101) takes two normalized distance-three pairs supported on Orbit36Transport.originalS0/S1 and returns LUEquivalent of the two frame projectors, via Orbit36LUBridge.original_projector_luEquivalent_canonical (MainTheory/Orbit36LUBridge.lean:64); OrderFiveCodeRigidity.luEquivalent_of_orderFive (:138) does the same for any two ExactCode 6 2 3 with an intrinsic element of order five; five_orbits_share_E2A is as described. Verdict is insufficient rather than confirmed because the remark's actual assertions are negative -- that W_r does not determine the amplitude variety or its LU quotient, and that connected components, accidental symmetry enlargement and LU equivalence across the nonempty orbits remain open -- and none of those is a Lean statement; the declarations carry only the one positive clause about orbit 36. Added OrderFiveOrbitMembership.unique_C5_LU, the theorem immediately preceding the remark, which is the sharpest form of 'orbit 36 is the only sector settled at this finer level'."
   },
   {
    "id": "supplementary.tex:displaymath@73",
@@ -6148,7 +6537,7 @@
    "lean_declarations": [
     "MainTheory.PaperSupplementaryImages.o7_boundary_reduction",
     "SixQubit.Orbit7Universal.boundary_reduction",
-    "SixQubit.Orbit7UniversalScalar.edgePairs_eq"
+    "SixQubit.Orbit7Universal.edgePairs_eq"
    ],
    "review": "the display is the right-hand alternative of the lemma's disjunction | R's recorded declaration: YES. o7_boundary_reduction is an alias for SixQubit.Orbit7Universal.boundary_reduction (Orbit7BoundaryIsolated.lean:283), whose conclusion is `TargetStar c d OR (forall e in edgePairs, xcoord c d e <> 0)`; the second disjunct IS eq:o7fullxsupport, and `edgePairs = tenEdges` (edgePairs_eq, by decide) is the ten edges of K_5, so 'for every e in binom(V,2)' is faithful. The display is of course only asserted as an alternative, never standalone -- that is the manuscript's own reading. Hypotheses are weaker than the manuscript's: the Lean statement fixes no gauge (the manuscript states the lemma after the basis/phase choice u = (1,0)/sqrt 6)."
   },

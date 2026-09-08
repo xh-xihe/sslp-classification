@@ -27,20 +27,28 @@ AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean',
                'SixQubit/Orbit7CollinearAxiomCheck.lean')
 
+# Lean identifiers admit far more than ASCII: subscripts (`cov_eq₂`), Greek
+# letters, primes.  Narrowing this to `[A-Za-z0-9_]` produces false misses, so
+# the continuation class is everything outside the delimiters a declaration
+# head can end on.
+HEAD = '[A-Za-z_À-￿]'
+TAIL = '[A-Za-z0-9_.\'!?À-￿]*'
+IDENT = '(' + HEAD + TAIL + ')'
+
 DECL = re.compile(
     r'^\s*(?:@\[[^\]]*\]\s*)*'
     r'(?:private\s+|protected\s+|noncomputable\s+|partial\s+|unsafe\s+)*'
     r'(?:theorem|lemma|def|abbrev|structure|inductive|instance|alias|class)\s+'
-    r'([A-Za-z_][A-Za-z0-9_.\'!?]*)')
+    + IDENT)
 STRUCTURE = re.compile(
     r'^\s*(?:@\[[^\]]*\]\s*)*'
     r'(?:private\s+|protected\s+|noncomputable\s+)*'
-    r'(?:structure|class)\s+([A-Za-z_][A-Za-z0-9_.\'!?]*)')
-FIELD = re.compile(r'^\s{2,}([a-zA-Z_][A-Za-z0-9_\'!?]*)\s*(?:\{[^}]*\}\s*)?'
+    r'(?:structure|class)\s+' + IDENT)
+FIELD = re.compile(r'^\s{2,}' + IDENT + r'\s*(?:\{[^}]*\}\s*)?'
                    r'(?:\([^)]*\)\s*)*:')
-NAMESPACE = re.compile(r'^\s*namespace\s+([A-Za-z_][A-Za-z0-9_.\']*)')
-END = re.compile(r'^\s*end\s+([A-Za-z_][A-Za-z0-9_.\']*)\s*$')
-PRINT = re.compile(r'^\s*#print\s+axioms\s+([A-Za-z_][A-Za-z0-9_.\'!?]*)')
+NAMESPACE = re.compile(r'^\s*namespace\s+' + IDENT)
+END = re.compile(r'^\s*end\s+' + IDENT + r'\s*$')
+PRINT = re.compile(r'^\s*#print\s+axioms\s+' + IDENT)
 
 
 def lean_sources():
@@ -103,37 +111,58 @@ def audited_names():
     return out
 
 
+def ledger_names():
+    """Every declaration the claims ledger says a reviewed claim rests on."""
+    import glob
+    import json
+    out = []
+    for path in sorted(glob.glob(os.path.join(ROOT, 'results', 'paper-claims-*.json'))):
+        try:
+            ledger = json.loads(io.open(path, encoding='utf-8').read())
+        except (OSError, ValueError):
+            continue
+        relative = os.path.relpath(path, ROOT).replace(os.sep, '/')
+        for entry in ledger.get('claims', []):
+            for name in entry.get('lean_declarations', []):
+                out.append((relative, entry['id'], name))
+    return out
+
+
+def resolve(name, declared, suffixes):
+    if name in declared:
+        return True
+    # a shorter path is accepted when some declared name ends with it, which is
+    # how a file inside the namespace may refer to its own declarations.
+    return name.rsplit('.', 1)[-1] in suffixes and any(
+        d.endswith('.' + name) for d in declared)
+
+
 def main():
     declared = declarations()
+    suffixes = set(name.rsplit('.', 1)[-1] for name in declared)
     by_base = {}
     for name in declared:
         by_base.setdefault(name.rsplit('.', 1)[-1], []).append(name)
 
-    audited = audited_names()
-    missing = []
-    for relative, number, name in audited:
-        if name in declared:
-            continue
-        # an audit file may name a declaration through a shorter path when the
-        # file itself is inside that namespace; accept any declared name whose
-        # tail matches the audited one.
-        if any(d == name or d.endswith('.' + name) for d in declared):
-            continue
-        missing.append((relative, number, name))
-
     sys.stdout.write('declarations found in %s: %d\n'
                      % (', '.join(LEAN_DIRS), len(declared)))
-    sys.stdout.write('#print axioms names audited: %d\n' % len(audited))
-    if not missing:
-        sys.stdout.write('all audited names resolve\n')
+
+    failures = 0
+    for label, entries in (('#print axioms', audited_names()),
+                           ('claims-ledger', ledger_names())):
+        missing = [e for e in entries if not resolve(e[2], declared, suffixes)]
+        sys.stdout.write('%s names checked: %d, unresolved: %d\n'
+                         % (label, len(entries), len(missing)))
+        for where, which, name in missing:
+            base = name.rsplit('.', 1)[-1]
+            sys.stdout.write('  %s  %s  %s\n' % (where, which, name))
+            for candidate in by_base.get(base, [])[:3]:
+                sys.stdout.write('      same basename: %s\n' % candidate)
+        failures += len(missing)
+
+    if not failures:
+        sys.stdout.write('all audited and ledger-cited names resolve\n')
         return 0
-    sys.stdout.write('UNRESOLVED: %d\n' % len(missing))
-    for relative, number, name in missing:
-        base = name.rsplit('.', 1)[-1]
-        near = by_base.get(base, [])
-        sys.stdout.write('  %s:%d %s\n' % (relative, number, name))
-        for candidate in near[:3]:
-            sys.stdout.write('      same basename: %s\n' % candidate)
     return 1
 
 
