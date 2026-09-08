@@ -108,32 +108,34 @@ Newly implemented proof packages include:
 
 Manuscript-to-Lean correspondence is tracked by `tools/verification/label_sweep.py`,
 which sweeps every named result in the two sources for a Lean source citing its
-label. All 33 named results of `main.tex` are cited, and 92 of the 93 in
-`supplementary.tex`. The one that is not is *declared* absent rather than
-merely missing, with the reason recorded in the Lean source:
+label. All 33 named results of `main.tex` and all 93 of `supplementary.tex`
+are cited by a kernel-checked Lean statement.
 
-* `lem:parity4-edgeisolation` is not proved. Its algebra now is, in full:
-  `MainTheory.ParityFour.edge_isolation_of_character_rows` inverts the sixteen
-  character sums, and `eq_zero_of_transversal` halves that hypothesis to the
-  eight rows the manuscript actually writes down. That reduction is the
-  manuscript's phrase "the complete character table of a three-dimensional
-  Boolean group": the overlaps live on the even parity class, the all-ones
-  character is identically one there, so a character sum depends only on the
-  class of `z` modulo the all-ones vector and eight rows meet every class.
-  What remains unproved is the manuscript's proviso -- that the four effective
-  parity coordinates are represented by physical single-qubit `Z` characters
-  and the flipped coordinate by a physical flip. That proviso is the bridge
-  from the six physical qubits to the four effective coordinates, and it is
-  what turns the Knill-Laflamme rows into these characters.
+`lem:parity4-edgeisolation` was the last one absent and is now proved. Its
+algebra was already there: `edge_isolation_of_character_rows` inverts the
+sixteen character sums, and `eq_zero_of_transversal` halves that hypothesis to
+the eight rows the manuscript writes down, which is its phrase "the complete
+character table of a three-dimensional Boolean group". What was missing was
+the manuscript's proviso, that the four effective parity coordinates are
+represented by physical single-qubit `Z` characters and the flipped coordinate
+by a physical flip. `MainTheory.ParityFourProviso` discharges it by
+construction rather than assuming it: the effective coordinates are named by
+an injection `emb : Fin 4 -> Fin 6`, the physical error carrying an effective
+mask is its pushforward `push emb z`, `bdot_push` proves that the physical
+dressing computes the effective character, `proj_bxor_push` that the physical
+single-qubit flip induces the effective one, and `row_eq_character_sum` that
+the Knill-Laflamme row is the effective character sum times a sign -- the
+manuscript's "up to row phases". `edgeMasks_eq` identifies the manuscript's
+eight errors `X_k`, `Y_k`, `Z_jX_k`, `Z_jY_k` with the masks of weight at most
+one away from `k`, and `edgeMasks_transversal` proves those eight meet every
+class modulo the all-ones vector. `edge_isolation` is the lemma.
 
-  The manuscript's argument is nonetheless carried out in this repository,
-  inlined. `SixQubit/Orbit15.lean` derives its twelve edge orthogonalities by
-  `linear_combination` with coefficients plus or minus `1/8` over eight
-  Knill-Laflamme rows, and orbits 14 and 24 do the same; those coefficients
-  are the inverse character matrix. So each of those three proofs performs the
-  inversion by hand for its own orbit. Supplying the proviso would replace
-  three hand expansions with one theorem; it would not change any certified
-  result.
+The certified no-gos for orbits 14, 15 and 24 do not route through it. They
+carry out the same inversion inline -- `SixQubit/Orbit15.lean` derives its
+twelve edge orthogonalities by `linear_combination` with coefficients plus or
+minus `1/8` over eight Knill-Laflamme rows, which is the inverse character
+matrix written out by hand for that orbit -- so the top-level lemma changes no
+certified result.
 
 `lem:q4o26anchorsingular`, `lem:q4o30threepoints`, `lem:q4o30exceptional` and
 `lem:q4o30mindegree` were in this list as intermediate steps of manuscript

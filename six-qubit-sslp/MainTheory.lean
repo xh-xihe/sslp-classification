@@ -195,6 +195,7 @@ import MainTheory.Orbit26AnchorSingular
 import MainTheory.Orbit26AnchorMatrix
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
+import MainTheory.ParityFourProviso
 import MainTheory.PaperGeneralSSLP
 import MainTheory.PaperSupplementaryImages
 import MainTheory.PaperSupplementaryNoGo

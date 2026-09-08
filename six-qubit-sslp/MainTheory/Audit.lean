@@ -159,6 +159,7 @@ import MainTheory.Orbit26AnchorSingular
 import MainTheory.Orbit26AnchorMatrix
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
+import MainTheory.ParityFourProviso
 import MainTheory.PaperGeneralSSLP
 import MainTheory.PaperSupplementaryImages
 import MainTheory.PaperSupplementaryNoGo
@@ -664,6 +665,13 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.Orbit26.C3_not_isUnit
 #print axioms MainTheory.Orbit26.D3_not_isUnit
 #print axioms MainTheory.Orbit26.anchor_singular
+#print axioms MainTheory.ParityFour.push_emb
+#print axioms MainTheory.ParityFour.bdot_push
+#print axioms MainTheory.ParityFour.proj_bxor_push
+#print axioms MainTheory.ParityFour.row_eq_character_sum
+#print axioms MainTheory.ParityFour.edgeMasks_eq
+#print axioms MainTheory.ParityFour.edgeMasks_transversal
+#print axioms MainTheory.ParityFour.edge_isolation
 #print axioms MainTheory.DeterminantalFactor.inv_eq_smul_adjugate
 #print axioms MainTheory.DeterminantalFactor.cofactorGcd_dvd_det
 #print axioms MainTheory.DeterminantalFactor.inverseDenominator_dvd_iff

@@ -334,9 +334,7 @@ existing declaration, and are handled honestly rather than approximated:
   existed only as a three-theorem chain assembled inside other proof bodies,
   each step carrying the previous step's conclusion as a hypothesis.
   `o9_support_four` below is that chain closed into one unconditional
-  statement, which is new.
-
-NOT-FORMALIZED: lem:parity4-edgeisolation -/
+  statement, which is new. -/
 
 /-- **`lem:o7scalarmoments`, `eq:o7extremenorms`, `eq:o7edgenorms` and
 `eq:o7fractionalmatching`.**
