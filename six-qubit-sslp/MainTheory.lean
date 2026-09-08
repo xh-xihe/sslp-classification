@@ -62,6 +62,7 @@ import MainTheory.FlipSemanticTransport
 import MainTheory.InterchangeTransport
 import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
+import MainTheory.SharpOuterCutoff
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
 import MainTheory.FiniteProjectiveGroup

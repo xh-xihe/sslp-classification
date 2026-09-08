@@ -2584,17 +2584,17 @@
    "line": 2022,
    "end_line": 2050,
    "statement_sha256": "8aa3a6c9405bef8eb3d6d819a986a3eb7e6e87755e88028d2dbdbda3c4470044",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank",
     "MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator",
     "MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order",
     "MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank",
     "MainTheory.D3AffineRankBound.fresh_basis_rank_eq_source_affineRank",
-    "MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN",
     "MainTheory.SSLPCompleteness.completeness_of_nontrivial_three",
     "MainTheory.SSLPConverse.sslp_converse"
    ],
-   "review": "d3_sslp_classification_generator is the corollary unfolded and is the closest single match: for `C : ExactCode n 2 3` with a nontrivial intrinsic group it produces q, a primitive root zeta, a sorted primitive angle vector a, a frame F spanning C's code, x0 and perm, with `2 ≤ q`, `q ≤ B` (beta : BetaBound n B, i.e. q ≤ beta_n), `2 ≤ Nat.card (IntrinsicGroup C)` and `Nat.card (IntrinsicGroup C) ∣ q` — m is the order of the WHOLE cyclic group, which is what the corollary means by C_m — plus HasDistance 3 and the two fibre conditions at residues 0 and q/m (eq:d3-sslp-0, eq:d3-sslp-1). exists_sortedNormalForm_le_betaN_order is the same in record form; D3BoundedNormalForm.exists_sortedNormalForm_le_betaN gives the q ≤ beta_n bound for an arbitrary nontrivial element (its S.m is then only some element's order, not the group order); SSLPCompleteness.completeness_of_nontrivial_three states it for every d ≥ d0 ≥ 3 rather than only d = 3. The converse and complete-KL clause (\"unchanged\") is SSLPConverse.sslp_converse. HYPOTHESIS GAP: No hypothesis gap. `ExactCode n 2 3` is exactly \"distance at least three\" — `HasDistance psi d := Detects psi (d-1)` is antitone in d, so a d ≥ 3 code is an `ExactCode n 2 3`, and SSLPCompleteness.weakenDistance (SSLPCompleteness.lean:46) performs that conversion for every d ≥ d0 ≥ 3 while keeping the code's own KL system at weight < d in the conclusion."
+   "review": "The corollary in full. d3_sslp_classification_generator_affineRank is the statement the corollary makes: one SortedNormalForm S of C with S.m = Nat.card (IntrinsicGroup C) -- the whole cyclic group order, which is what the corollary means by a generator -- with S.m | S.q as a structure field, equal affine ranks of the two ACTUAL supports, S.q <= betaOf r <= betaOf n at that common rank r, and an r-by-r binary nonsingular pivot whose last invariant factor is divisible by q. The two fibre conditions eq:d3-sslp-0 and eq:d3-sslp-1 are the leftFiber and rightFiber fields of SortedNormalForm and Gate.Primitive is its primitive field, so the logical eigenbasis clause is carried too. The earlier partial verdict was correct at the time and rested on beta_r never appearing; that is what the affine-rank theorem supplies. The previously recorded gap \"only the linear-rank version is proved\" is closed by fresh_basis_rank_eq_source_affineRank together with normalized_supportAffineRank. sslp_converse is the converse clause."
   },
   {
    "id": "main.tex:eq:d3-sslp-bound",
@@ -2606,14 +2606,14 @@
    "line": 2028,
    "end_line": 2033,
    "statement_sha256": "cbb6397da25dcd481eaab77841bd1eaa729922b1939e1490f761cd156d5dcfb3",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank",
     "MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator",
-    "MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order",
     "MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank",
     "MainTheory.RealSupportAffineRank.supportAffineRank"
    ],
-   "review": "m | q: covered by d3_sslp_classification_generator (Nat.card (IntrinsicGroup C) | q). q <= beta_n: covered by the same (q <= B with beta : BetaBound n B). q <= beta_r <= beta_n at the common affine rank r, FOR THE GENERATOR normal form: NOT covered by any recorded declaration | R's recorded declarations: PARTIAL. d3_sslp_classification_generator has m = Nat.card (IntrinsicGroup C) (the WHOLE group's order, which is what the corollary's C_m means) and `Nat.card (IntrinsicGroup C) | q` and `q <= B`, but its bound is beta_n only -- the intermediate beta_r never appears. d3_bound_same_class_at_affineRank does produce, for ONE q, `supportAffineRank (F.vec 0) = supportAffineRank (F.vec 1)` (r is the common affine dimension of the two actual supports), `q <= BetaExists.betaOf (supportAffineRank (F.vec 0))` and `betaOf r <= betaOf n`; but its divisibility clause is `orderOf (intrinsicClass ... v) | q` for an ARBITRARY nontrivial class v, i.e. some element's order, not the group order, and it is a different q from a different statement. No recorded declaration conjoins 'm = |G_diag|' with 'q <= beta_r <= beta_n' for one normal form. MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank (D3AffineNormalForm.lean:119) is exactly the display: one SortedNormalForm S with S.m = Nat.card (IntrinsicGroup C), S.m | S.q (structure field m_dvd_q), equal affine ranks of the two supports, S.q <= betaOf r <= betaOf n, plus the r-by-r binary nonsingular pivot. It is NOT in R's recorded list and should be added. (Note: the affine-rank version is genuinely proved here -- the older 'linear rank only' gap is closed by fresh_basis_rank_eq_source_affineRank and normalized_supportAffineRank.)"
+   "review": "m | q and q <= beta_r <= beta_n at the common affine rank, all for ONE normal form. d3_sslp_classification_generator gives m | q and q <= beta_n but never mentions the intermediate beta_r; d3_bound_same_class_at_affineRank gives the beta_r chain but its divisibility is for an arbitrary nontrivial class, i.e. some element's order rather than the group order, and for a different q. d3_sslp_classification_generator_affineRank conjoins them on a single S: S.m = Nat.card (IntrinsicGroup C), S.m | S.q from the m_dvd_q field, supportAffineRank (S.frame.vec 0) = supportAffineRank (S.frame.vec 1) = r, and S.q <= betaOf r <= betaOf n. That is the display."
   },
   {
    "id": "main.tex:eq:d3-sslp-0",
@@ -2646,17 +2646,18 @@
    "status": "partial",
    "lean_declarations": [
     "MainTheory.SSLPCompleteness.outerCutoff",
+    "MainTheory.SharpOuterCutoff.outerCutoff_betaOf",
     "MainTheory.SSLPCompleteness.completeness_of_nontrivial_two",
     "MainTheory.SSLPCompleteness.completeness_of_nontrivial_three",
+    "MainTheory.SharpOuterCutoff.completeness_three_sharp",
     "MainTheory.SSLPCompleteness.completeness_six_qubit",
     "MainTheory.SSLPConverse.sslp_converse",
-    "MainTheory.SSLPPipelineExact.code_of_sortedNormalForm",
     "MainTheory.SSLPPipelineExact.pipeline_exact_two",
     "MainTheory.SSLPPipelineExact.pipeline_exact_three",
     "MainTheory.IntrinsicOrderAudit.orderOf_mem",
     "MainTheory.IntrinsicOrderAudit.natCard_mem"
    ],
-   "review": "outerCutoff is eq:Bnd0 (B = B1 when d0<=2, Bn otherwise). completeness_of_nontrivial_two/_three give the covering clause ('the code occurs in the stated finite outer enumeration'): from an exact ((n,2,d)) code with d>=d0 and a nontrivial element of its intrinsic projective diagonal group, they produce a sorted normal form with 2<=q<=outerCutoff, 2<=m, m|q, m the order of an intrinsic-group element, sorted angles < q, Gate.Primitive, and SS.HasDistance _ d. code_of_sortedNormalForm gives the 'no false positives' clause (every retained record is realized by an exact code on its own frame with an order-m nontrivial projective diagonal element). pipeline_exact_two/_three conjoin the two. orderOf_mem / natCard_mem give the intrinsic-group audit, but only at n=6, d=3 (every element has order in {1,2,3,5}; the group has order in {1,2,3,5}). HYPOTHESIS GAP: None of the listed declarations adds a hypothesis the manuscript does not make. completeness_of_nontrivial_* take BinaryBeta.BetaBound (n+1) B1 / BetaBound n Bn, i.e. a certified upper bound for beta, which is the manuscript's own beta and not an extra assumption. What is missing is a clause, not a hypothesis. ADVERSARIAL CHECK: The verdict 'partial' and seven of the eight declarations survive, but the 'no false positives' attribution is wrong. MainTheory.SSLPPipelineExact.code_of_sortedNormalForm (MainTheory/SSLPPipelineExact.lean:40) is stated as `{C : CodeSpec.ExactCode n 2 d} (S : SortedForm.SortedNormalForm C) : exists C' g, ...` — it quantifies over normal forms OF AN ALREADY-EXISTING EXACT CODE, not over records the enumeration retains. SortedNormalForm (MainTheory/SortedNormalForm.lean:39) is indexed by C and even carries the field `m_isOrder : exists g : IntrinsicGroup C, orderOf g = m`, a hypothesis about C. So it cannot be applied to a bare retained record and does not prove 'every retained record is realized'; it presupposes what the converse must produce. The declaration that actually gives the manuscript's "
+   "review": "PARTIAL, and the gap is one clause of the theorem, not a hypothesis. COVERED: the cutoff eq:Bnd0 is outerCutoff, sharpened by outerCutoff_betaOf; the covering clause (\"the code occurs in the stated finite outer enumeration\") is completeness_of_nontrivial_two/_three, which from an exact ((n,2,d)) code with d >= d0 and a nontrivial intrinsic element produce a sorted normal form with 2 <= q <= outerCutoff, 2 <= m, m | q, m the order of an intrinsic-group element, sorted angles below q, Gate.Primitive and HasDistance _ d, with completeness_three_sharp giving the same at q <= beta_n; the no-false-positives clause is SSLPConverse.sslp_converse, which takes a BARE primitive sector (q, m, a) plus an orthonormal pair on the residue fibres satisfying the complete KL system and returns an exact code on that very frame with an intrinsic element of order m; the finite intrinsic-group audit at n = 6, d = 3 is orderOf_mem and natCard_mem. NOT COVERED: the last sentence of the proof, that the final group audit and equivalence quotient \"return precisely the selected intrinsic classification data\". Sixty-six keys are orbits of labelled Boolean support pairs under CubeAction.Parameter 6 and one key carries a whole family of amplitude tuples, so \"same key\" is strictly weaker than \"equivalent code\" until a rigidity theorem collapses that family; exactly one orbit, 36, has one (OrderFiveOrbitMembership.unique_C5_LU). CORRECTION to the previous review: SSLPPipelineExact.code_of_sortedNormalForm was attributed the no-false-positives clause and does not carry it -- it quantifies over SortedNormalForm C for an already-existing exact code C, and that structure even carries the field m_isOrder about C, so it cannot be applied to a bare retained record and presupposes what the converse must produce. It is dropped from the list in favour of sslp_converse."
   },
   {
    "id": "main.tex:eq:Bnd0",
@@ -2668,13 +2669,16 @@
    "line": 2074,
    "end_line": 2082,
    "statement_sha256": "14b884569ee9c22dd05d367480c0cc853ab4114a942fd647fec76700f24c4ba4",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.SharpOuterCutoff.outerCutoff_betaOf",
+    "MainTheory.SharpOuterCutoff.completeness_three_sharp",
     "MainTheory.SSLPCompleteness.outerCutoff",
     "MainTheory.SSLPCompleteness.outerCutoff_two",
-    "MainTheory.SSLPCompleteness.outerCutoff_of_three_le"
+    "MainTheory.SSLPCompleteness.outerCutoff_of_three_le",
+    "MainTheory.BetaExists.betaBound_betaOf"
    ],
-   "review": "PROVED/RENDERED: the case split itself — `outerCutoff B1 Bn d0 := if d0 ≤ 2 then B1 else Bn` (MainTheory/SSLPCompleteness.lean:87), with `outerCutoff_two` and `outerCutoff_of_three_le` selecting the two branches exactly as the display does. NOT RENDERED: the identification of the two branch values with beta_{n+1} and beta_n. | The display *defines* B_{n,d0} to be the sharp constants beta_{n+1} / beta_n. In Lean B1 and Bn are free naturals; the only tie to beta is the hypothesis `BinaryBeta.BetaBound (n+1) B1` / `BetaBound n Bn` on the completeness theorems, and BetaBound N B (MainTheory/BinaryBeta.lean:30) is an UPPER BOUND (`inverseDenominator C ≤ B`), not equality with the sharp value. So Lean's cutoff may be strictly larger than the manuscript's, which is harmless for a covering statement but is not the display. The exact quantity does exist in the repository — `BetaExists.betaOf N` (MainTheory/BetaExists.lean:57) is literally sup over sizes ≤ N of the largest zero-one inverse denominator, with `betaBound_betaOf` — so `outerCutoff (betaOf (n+1)) (betaOf n) d0` would be eq:Bnd0 verbatim, but no recorded declaration makes that instantiation. (completeness_six_qubit instead hard-wires the certified bound 9 = beta_6.)"
+   "review": "The display defines B_{n,d0} to be beta_{n+1} at d0 = 2 and beta_n at d0 >= 3. outerCutoff renders the case split, and outerCutoff_two / outerCutoff_of_three_le select the two branches, but with the branch values left as free naturals bounded only by BetaBound, which is an upper bound rather than equality with the sharp constant -- so on its own the Lean cutoff may be strictly larger than the manuscript's. outerCutoff_betaOf instantiates both branches at BetaExists.betaOf, which is literally the supremum over sizes at most N of the largest zero-one inverse denominator, and records that both are genuine BetaBounds via betaBound_betaOf. completeness_three_sharp then states the completeness conclusion with S.q <= betaOf n rather than with a free parameter, which is the display used where the theorem uses it."
   },
   {
    "id": "main.tex:eq:finite-outer-index",
@@ -2903,7 +2907,7 @@
    "line": 2266,
    "end_line": 2298,
    "statement_sha256": "eb6036a606f8efa2b9f764767f64675847b4414cfa175a741c4d660e1f232e1a",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
     "MainTheory.ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup",
     "MainTheory.ClassificationLevels.IntrinsicEquivalent",
@@ -2919,7 +2923,7 @@
     "MainTheory.ClassificationLevelsSix.level_three_weight_enumerators",
     "MainTheory.ClassificationLevelsSix.level_four_lu_class"
    ],
-   "review": "(i) intrinsic logical-group level = IntrinsicProjectiveDiagonalLogicalGroup (:214), the quotient of the full diagonal symmetry group of the projector by the projectively trivial subgroup — a genuine quotient group, not the chosen label m; IntrinsicEquivalent (:224) is its equivalence. (ii) SSLP realization-orbit level = SSLPOrbitLevels.RealizationOrbit (:66), with MomentOrbit = Fin 66 (:48) as 'the 66 intermediate candidates'; the 'only the 15 with K_r nonempty belong' clause is ClassificationLevelsSix.level_two_realization_orbits (:74). (iii) weight-enumerator image W_r = WeightEnumeratorObject (:313) / weightEnumeratorImage (:317) / WeightEnumeratorEquivalent (:322). (iv) local-unitary code level = LUEquivalent (:368), the equivalence closure of one-qubit-unitary conjugations and qubit permutations acting on projector kernels (eq:LU-equivalence), quotiented by LocalUnitaryCodeClass (:379). ClassificationLevelsSix.level_one..level_four attach a six-qubit theorem to each level. HYPOTHESIS GAP: None on the definitions themselves."
+   "review": "The claim is a definition of four levels (the label is legacy; the environment title is \"Four classification levels\"), and every clause has a Lean object. (i) IntrinsicProjectiveDiagonalLogicalGroup is the quotient of the full diagonal symmetry group of the projector by the projectively trivial subgroup -- a genuine quotient group, not the chosen label m -- with IntrinsicEquivalent its equivalence. (ii) RealizationOrbit, with MomentOrbit = Fin 66 as the intermediate candidates; the \"only the 15 with K_r nonempty belong\" clause is level_two_realization_orbits, which proves Nat.card RealizationOrbit = 15 and that every moment orbit either is a realization orbit or has empty K_r. (iii) WeightEnumeratorObject / weightEnumeratorImage / WeightEnumeratorEquivalent for eq:Wr-definition. (iv) LUEquivalent, the equivalence closure of one-qubit-unitary conjugations and qubit permutations on projector kernels (eq:LU-equivalence), quotiented by LocalUnitaryCodeClass. level_one .. level_four attach a six-qubit theorem to each level, so none of the four is a definition without a user. The surrounding prose about the levels not forming a hierarchy is commentary, not an assertion, and is not claimed here."
   },
   {
    "id": "main.tex:eq:Wr-definition",

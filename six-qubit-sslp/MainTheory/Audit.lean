@@ -37,6 +37,7 @@ import MainTheory.FlipSemanticTransport
 import MainTheory.InterchangeTransport
 import MainTheory.D3BoundedNormalForm
 import MainTheory.SSLPCompleteness
+import MainTheory.SharpOuterCutoff
 import MainTheory.PrimitiveReduction
 import MainTheory.QMinBound
 import MainTheory.FiniteProjectiveGroup
@@ -1036,3 +1037,5 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full
 #print axioms MainTheory.PaperSupplementaryImages.m36_range
 #print axioms MainTheory.PaperSupplementaryImages.m2_current_status_full
+#print axioms MainTheory.SharpOuterCutoff.outerCutoff_betaOf
+#print axioms MainTheory.SharpOuterCutoff.completeness_three_sharp

@@ -28,19 +28,31 @@ not automatically mathematical gaps: many need an existing proof mapped and
 checked against their precise statement.
 
 The count is worth breaking down, because the bare number invites the wrong
-reading. Of 1597 claims, 152 are recorded (145 covered, 7 partial) and one is
-the manuscript's own conjecture. Of the 1444 still unreviewed:
+reading. Of 1597 claims, 262 are recorded (260 covered, 2 partial) and one is
+the manuscript's own conjecture. Of the 1334 still unreviewed:
 
-* 105 are displays sitting inside a result that IS recorded. These need
-  individual judgement rather than inheritance from the parent -- for
-  instance `thm:o7weightimage` contains both the A-enumerator image and the
-  B-enumerators, and the recorded declaration proves only the first.
+* 1 is a display sitting inside a result that IS recorded. Such displays need
+  individual judgement rather than inheritance from the parent -- for instance
+  `thm:o7weightimage` contains both the A-enumerator image and the
+  B-enumerators -- and all but one of them have now been reviewed.
 * 491 are displays inside `proof` environments -- intermediate steps of an
   argument whose conclusion is what the recorded entry tracks.
-* 848 are displays elsewhere. Sampling them shows parameter definitions
+* 842 are displays elsewhere. Sampling them shows parameter definitions
   (`lambda_0 = 1/8 - a - b - c`), notation (`P-tilde = Y^{ot 6} P-bar
   Y^{ot 6}`), per-orbit data (`a = (1,1,2,2,2,3)`) and intermediate systems
   inside an orbit argument.
+
+Only two recorded claims are still partial, and both are named in the source:
+`eq:small-beta`, the universal upper bounds 18, 42 and 120 for beta at sizes
+7, 8 and 9, which no certificate in the repository establishes and which the
+six-qubit distance-three classification does not use; and
+`thm:sslp-completeness`, whose covering clause, cutoff, converse and
+intrinsic-group audit are all proved but whose closing sentence -- that the
+final group audit and equivalence quotient "return precisely the selected
+intrinsic classification data" -- is not. Sixty-six keys are orbits of
+labelled Boolean support pairs and one key carries a whole family of
+amplitude tuples, so "same key" is weaker than "equivalent code" until a
+rigidity theorem collapses that family; exactly one orbit, 36, has one.
 
 Requiring a separate Lean declaration for each such display would be a
 category error: the standard is that the *result* is proved, and the named
