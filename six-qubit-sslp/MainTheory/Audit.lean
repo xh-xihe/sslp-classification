@@ -1,4 +1,8 @@
 import MainTheory.Rationalize
+import MainTheory.TransversalFixedBasis
+import MainTheory.CodePreservingUnitary
+import MainTheory.ProjectorCompression
+import MainTheory.GlobalWeightSet
 import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.Covariance
@@ -1038,3 +1042,21 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.PaperSupplementaryImages.m2_current_status_full
 #print axioms MainTheory.SharpOuterCutoff.outerCutoff_betaOf
 #print axioms MainTheory.SharpOuterCutoff.completeness_three_sharp
+#print axioms MainTheory.TransversalFixedBasis.inner_plus_plus
+#print axioms MainTheory.TransversalFixedBasis.inner_minus_minus
+#print axioms MainTheory.TransversalFixedBasis.inner_plus_minus
+#print axioms MainTheory.TransversalFixedBasis.kl_Zop
+#print axioms MainTheory.TransversalFixedBasis.rotOf_unitary
+#print axioms MainTheory.TransversalFixedBasis.rot_unitary
+#print axioms MainTheory.TransversalFixedBasis.localAct_plus3
+#print axioms MainTheory.TransversalFixedBasis.localAct_minus3
+#print axioms MainTheory.TransversalFixedBasis.fixed_basis_essential
+#print axioms MainTheory.CodePreservingUnitary.preservesProjector_one
+#print axioms MainTheory.CodePreservingUnitary.preservesProjector_mul
+#print axioms MainTheory.CodePreservingUnitary.commute_of_preservesProjector
+#print axioms MainTheory.CodePreservingUnitary.mapsTo_of_preservesProjector
+#print axioms MainTheory.ProjectorCompression.pauli_compression
+#print axioms MainTheory.ProjectorCompression.tensor_compression
+#print axioms MainTheory.GlobalWeightSet.aweight_eq
+#print axioms MainTheory.GlobalWeightSet.R5A_mem_globalWSet
+#print axioms MainTheory.GlobalWeightSet.globalWSet_nonempty

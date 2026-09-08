@@ -1,4 +1,8 @@
 import MainTheory.Rationalize
+import MainTheory.TransversalFixedBasis
+import MainTheory.CodePreservingUnitary
+import MainTheory.ProjectorCompression
+import MainTheory.GlobalWeightSet
 import MainTheory.Denominator
 import MainTheory.Clearing
 import MainTheory.SharpClearing

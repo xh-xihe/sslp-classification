@@ -102,17 +102,18 @@
    "line": 345,
    "end_line": 348,
    "statement_sha256": "dbb67d243b6983311ecd9f9263a00c6a1fbe8b77ea9a4b8724b3e1eb6717bd11",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.ProjectorCompression.pauli_compression",
+    "MainTheory.ProjectorCompression.tensor_compression",
     "SS.KLCondition",
     "SS.Detects",
     "SS.HasDistance",
-    "MainTheory.KLTensorSupport.detectedOperators",
     "MainTheory.KLTensorSupport.pauli_mem_detectedOperators",
     "MainTheory.KLCodeBridge.projector_compression_iff",
     "MainTheory.CodeSpec.scalarCompression_of_klCondition"
    ],
-   "review": "The distance form of the Knill-Laflamme equations, P E P = lambda_E P for every Pauli of weight below d_0. In this repository the frame form is the definition: SS.KLCondition psi P is <psi_j, P psi_k> = c delta_jk for one Pauli, SS.Detects psi w quantifies it over PauliString.wt <= w, and SS.HasDistance psi d := Detects psi (d-1). The projector form is reached in two steps. KLTensorSupport.pauli_mem_detectedOperators takes an ExactCode n K d and a Pauli with wt P < d to pauliKernel P in KLTensorSupport.detectedOperators C.frame, i.e. V^dag (pauliKernel P) V = c . 1; KLCodeBridge.projector_compression_iff then converts that, in both directions, to P_code * M * P_code = c . P_code for the projector CodeProjector.ofFrame. CodeSpec.scalarCompression_of_klCondition is the sesquilinear form of the same statement, valid on the whole codeSpan. No declaration states the manuscript's 'has distance at least d_0 precisely when' as a single iff; distance is defined by the frame form and the projector form is derived from it. | ADVERSARIAL CHECK: Every name exists and is correctly described: SS/HilbertKL.lean:73 KLCondition, :77 Detects, :81 HasDistance psi d := Detects psi (d-1); CodeSpec.lean:163 scalarCompression_of_klCondition; KLCodeBridge.lean:29 projector_compression_iff (P M P = c . P <-> V^dag M V = c . 1). But the proposed set never reaches the display for a Pauli of weight below d: projector_compression_iff is stated for an arbitrary OperatorKernel M, and nothing in the list supplies the Pauli instance. KLTensorSupport.lean:38 pauli_mem_detectedOperators does exactly that (P.wt < d -> pauliKernel P in detectedOperators C.frame, whose membership is V^dag M V = c . 1 by detectedOperators at line 16), so I added it and detectedOperators. I also re-checked the reviewer's negative claim by grepping for a HasDistance/projector iff: there is none, so that part of the review stands."
+   "review": "The distance form P E P = lambda_E P for every Pauli of weight below d. The frame form is the repository definition (KLCondition, quantified by Detects and HasDistance), and the previous review was right that nothing reached the projector form at a Pauli: projector_compression_iff is stated for an arbitrary operator kernel M and pauli_mem_detectedOperators was used only inside the tensor-support argument. pauli_compression composes them, and tensor_compression records the same for any operator supported on fewer than d sites whose factors need not be Pauli matrices, which is the form the Eastin-Knill argument consumes. scalarCompression_of_klCondition is the basis-independent frame-level statement."
   },
   {
    "id": "main.tex:eq:quantum-Singleton",
@@ -245,17 +246,18 @@
    "line": 446,
    "end_line": 449,
    "statement_sha256": "a7eedb8595c38b28519126a67a6b8e720ec6ea47dd7485bd1b972bd5c5066466",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.CodeSpec.CodePreserving",
-    "MainTheory.CodeSpec.codePreserving_iff_frame",
-    "MainTheory.ClassificationLevels.PreservesProjectorRange",
-    "MainTheory.ClassificationLevels.diagonalSymmetryGroup",
-    "MainTheory.SymmetryToEntrance.codePreserving_of_symmetry",
-    "MainTheory.TransversalLogicalOrder.transversalLogicalGroup",
-    "MainTheory.ClassificationLevels.conjugateProjector"
+    "MainTheory.CodePreservingUnitary.PreservesProjector",
+    "MainTheory.CodePreservingUnitary.preservesProjector_iff",
+    "MainTheory.CodePreservingUnitary.preservesProjector_one",
+    "MainTheory.CodePreservingUnitary.preservesProjector_mul",
+    "MainTheory.CodePreservingUnitary.commute_of_preservesProjector",
+    "MainTheory.CodePreservingUnitary.mapsTo_of_preservesProjector",
+    "MainTheory.ClassificationLevels.conjugateProjector",
+    "MainTheory.CodeSpec.CodePreserving"
    ],
-   "review": "Defines what it means for a physical unitary to preserve the code. The repository carries no U P U^dag = P predicate. CodeSpec.CodePreserving F U says only that the endomorphism maps codeSpan F into itself, with no unitarity hypothesis (codePreserving_iff_frame reduces the check to the logical frame); ClassificationLevels.PreservesProjectorRange is the two-sided version, hence equality of the code subspace, but is stated only for a LocalPhase and is the carrier of diagonalSymmetryGroup; SymmetryToEntrance.codePreserving_of_symmetry passes from the second to the first for a diagonal gate. The closest rendering for a transversal unitary is TransversalLogicalOrder.transversalLogicalGroup, whose carrier is {Q | exists U unitary at each site, tensor U * V = V * Q}: the isometry form of this display together with the induced logical unitary of the next sentence. ClassificationLevels.conjugateProjector W P is the literal W P W^*, but it appears only in ElementaryLU as the level-(iv) local-unitary conjugation of projectors, not as a code-preservation condition. | ADVERSARIAL CHECK: All five names exist, and the reviewer's negative claim is correct: I grepped for a U P U^dag = P predicate and found none. ClassificationLevels.lean:351 conjugateProjector W P = W * P.kernel * star W is used only inside ElementaryLU (lines 359, 361) for level-(iv) LU steps. But the proposed set does not cover the display for a general physical unitary: CodeSpec.lean:305 CodePreserving is one-sided (forall phi in codeSpan F, U phi in codeSpan F) for an arbitrary Module.End with no unitarity, and ClassificationLevels.lean:149 PreservesProjectorRange is two-sided but only for a LocalPhase, i.e. diagonal gates. I added TransversalLogicalOrder.lean:54 transversalLogicalGroup, whose carrier condition tensor U * V = V * Q is the code-preservation condition in isometry form for a transversal unitary together with the induced logical unitary, and SymmetryToEntrance.lean:43 codePreserving_of_symmetry, which is the only link between the two predicates in the list."
+   "review": "U P U^dagger = P. The previous review was right that the repository carried no such predicate: CodeSpec.CodePreserving F U says only that the endomorphism maps codeSpan F into itself and has no unitarity hypothesis, and conjugateProjector built W P W^dagger but was used only inside ElementaryLU. PreservesProjector is the predicate, preservesProjector_iff unfolds it to the display, preservesProjector_one and _mul record that such operators contain the identity and are closed under composition, and mapsTo_of_preservesProjector is the display's next sentence -- a code-preserving isometry maps the code space into itself, which is what \"induces a logical unitary\" asserts. The converse direction, that preserving the code space forces the projector identity, is not claimed."
   },
   {
    "id": "main.tex:eq:Dtheta",
@@ -728,7 +730,7 @@
    "line": 758,
    "end_line": 799,
    "statement_sha256": "6c316e220729956e0061cfddc8bdf7f31015af8d7003f9518375a8049d80d9a0",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
     "MainTheory.EastinKnill.eastin_knill",
     "MainTheory.EastinKnill.eastin_knill_exactCode",
@@ -736,9 +738,10 @@
     "MainTheory.FiniteProjectiveGroup.whole_of_finite",
     "MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm",
     "MainTheory.ClassificationLevels.IsProjectivelyTrivial",
-    "MainTheory.ClassificationLevels.projectivelyTrivialSubgroup"
+    "MainTheory.ClassificationLevels.projectivelyTrivialSubgroup",
+    "MainTheory.TransversalFixedBasis.fixed_basis_essential"
    ],
-   "review": "Compares the scope of Eastin--Knill with thm:finite-projective-group and argues the fixed-basis qualification is essential. Both endpoints exist. `EastinKnill.eastin_knill` (EastinKnill.lean:82) denies `ProjectivelyUniversal (transversalLogicalGroup V)` for an isometric encoding with `2 <= K` and `DetectsLocal V`, at arbitrary, possibly distinct, finite subsystem dimensions, with `eastin_knill_exactCode` its qubit instance. `FiniteProjectiveGroup.whole` gives finiteness, commutativity, primitive finite root-of-unity lifts and `orderOf g | q` at K = 2, d = 3; `whole_of_finite` is the same at general rank with finiteness hypothesized, and the abelian clause is `IntrinsicAbelian.intrinsicGroup_mul_comm`, which needs no hypothesis. The remark's own mathematical content is not rendered: nothing in MainTheory/, SixQubit/ or SS/ states the X-basis counterexample Span{|+++>, |--->} or the continuous family (x)_j exp(i t_j X_j) -- there is no plus-state, X-basis or Hadamard object in the repository at all -- and there is no identity-component or diagonal-Hamiltonian argument, the repository's finiteness (`GeneralFiniteness.finite_intrinsicGroup`, K = 2, d = 3) running on the distance-three rationalization instead of the paper's compact-Lie-group route. `ClassificationLevels.IsProjectivelyTrivial` and `projectivelyTrivialSubgroup` are the closest objects to 'that component acts on the code by scalar phases and therefore disappears in PU(K)', but only as the subgroup that is quotiented out, not as a statement about a continuous identity component. | ADVERSARIAL CHECK: Every named declaration exists and is correctly described: eastin_knill (EastinKnill.lean:82) and eastin_knill_exactCode (:94), FiniteProjectiveGroup.whole (:70, K = 2 and d = 3) and whole_of_finite (:55, general rank from finiteness), IntrinsicAbelian.intrinsicGroup_mul_comm (:30), IsProjectivelyTrivial (ClassificationLevels.lean:174). But they render only the two endpoints being compared, not the remark's own content, which is why this is insufficient rather than confirmed: I searched MainTheory/, SixQubit/ and SS/ for any plus-state, X-basis, or Hadamard object and for any identity-component argument and found none; the repository's finiteness (GeneralFiniteness.finite_intrinsicGroup, K = 2, d = 3) comes from the distance-three rationalization, explicitly not from the compact-Lie-group route the remark's mechanism paragraph describes. Classification 'assertion' is right. Added projectivelyTrivialSubgroup, which with IsProjectivelyTrivial is the only rendering of 'acts by scalar phases and therefore disappears in PU(K)'."
+   "review": "The scope comparison with Eastin-Knill. Both endpoints existed: eastin_knill and eastin_knill_exactCode deny projective universality of the transversal group, and FiniteProjectiveGroup.whole together with IntrinsicAbelian.intrinsicGroup_mul_comm give the remark's stronger conclusion that the whole projective diagonal image is finite abelian; IsProjectivelyTrivial and projectivelyTrivialSubgroup are the \"only projective\" caveat, the continuous physical component acting by scalar phases. What was missing was the remark's own evidence that the fixed-basis qualification is essential, which is now TransversalFixedBasis.fixed_basis_essential."
   },
   {
    "id": "main.tex:displaymath@780",
@@ -748,9 +751,17 @@
    "line": 780,
    "end_line": 782,
    "statement_sha256": "31fa3edd2ed6f7e818ea942fe6d0136a2d8548d570b8bd6397e6d2d73e59c349",
-   "status": "partial",
-   "lean_declarations": [],
-   "review": "Introduces the three-qubit example subspace Q = Span{|+++>,|--->} used to show that the fixed-basis qualification on thm:finite-projective-group cannot be dropped. Nothing in MainTheory/, SS/ or SixQubit/ constructs it: there is no plus/minus or Hadamard basis (`SS.pauliX` is a `PauliString` constructor, not a state), no three-qubit `CodeSpec.ExactCode` (the only explicit small code is `MainTheory.FiveQubitRationalization.code` at (5,2,2)), and no normalization constant for such a state. Declarations list is empty; the counterexample is unformalized. | ADVERSARIAL CHECK: Checked the negative claim rather than taking it on trust. Grepped MainTheory/, SS/, SixQubit/ for GHZ/plus-state/Hadamard/three-qubit vocabulary and for `ExactCode 3 ...`: no hits. `SS/Pauli.lean:134` `SS.pauliX` is indeed a `PauliString n` constructor (x-bit `stdBasis i`, z-bit all false), not a state or a basis change. The only concrete small-n code object in the repository is `MainTheory.FiveQubitRationalization.code : CodeSpec.ExactCode 5 2 2`. Empty declarations list is the correct answer, and `definition` is the right kind: the display only names the example subspace; the claims about it (PZ_jP=0, preservation) live in the surrounding prose."
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.TransversalFixedBasis.plus3",
+    "MainTheory.TransversalFixedBasis.minus3",
+    "MainTheory.TransversalFixedBasis.frame3",
+    "MainTheory.TransversalFixedBasis.inner_plus_plus",
+    "MainTheory.TransversalFixedBasis.inner_minus_minus",
+    "MainTheory.TransversalFixedBasis.inner_plus_minus",
+    "MainTheory.TransversalFixedBasis.kl_Zop"
+   ],
+   "review": "The three-qubit example Q = Span{|+++>, |--->} used to show that the fixed-basis qualification on thm:finite-projective-group cannot be dropped. The previous review was right that nothing in MainTheory, SS or SixQubit constructed it. plus3 and minus3 are the two amplitude vectors, frame3 the pair; inner_plus_plus, inner_minus_minus and inner_plus_minus show they are orthonormal, so Q really is two-dimensional; and kl_Zop is the display's stated property P Z_j P = 0, proved as SS.KLCondition frame3 (Zop j) with scalar 0 for each of the three computational-basis Z_j. Each of the four matrix elements is a signed count over the eight strings, and the counts are kernel decisions."
   },
   {
    "id": "main.tex:displaymath@785",
@@ -760,9 +771,18 @@
    "line": 785,
    "end_line": 787,
    "statement_sha256": "6360c779d087c90a878b52e930826b3b34cc5cc90b040e1bdf3d3d39a7a7092f",
-   "status": "partial",
-   "lean_declarations": [],
-   "review": "Introduces the continuous transversal family of local X rotations that preserves the previous display's example and generally acts nontrivially on the logical space. The repository contains no trigonometric or rotation construction at all (no `Real.cos`/`Real.sin` in MainTheory/, SS/, SixQubit/); its only continuous transversal family is the computational-basis diagonal one, `MainTheory.RealGate.realGate` with its endomorphism form `MainTheory.PhaseSectorBridge.realGateEnd`, which is exactly the gate the display is contrasted with. Declarations list is empty. | ADVERSARIAL CHECK: Verified the strongest form of the negative claim: `Real.cos` and `Real.sin` do not occur anywhere in MainTheory/, SS/ or SixQubit/, and no declaration mentions rotation of a qubit, so no local X rotation family can be present. The contrast the review draws is accurate: `MainTheory.RealGate.realGate` (RealGate.lean:41) is `psi s |-> exp(2*pi*i*(angle theta s)) * psi s`, a computational-basis diagonal gate, and `MainTheory.PhaseSectorBridge.realGateEnd` (PhaseSectorBridge.lean:46) is its endomorphism packaging (`realGateEnd_apply` is `rfl`). Both exist, but neither renders this display, so keeping them out of the declarations list is right. `definition` is the right kind."
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.TransversalFixedBasis.rot",
+    "MainTheory.TransversalFixedBasis.rotOf",
+    "MainTheory.TransversalFixedBasis.rotOf_unitary",
+    "MainTheory.TransversalFixedBasis.rot_unitary",
+    "MainTheory.TransversalFixedBasis.localAct",
+    "MainTheory.TransversalFixedBasis.localAct_plus3",
+    "MainTheory.TransversalFixedBasis.localAct_minus3",
+    "MainTheory.TransversalFixedBasis.fixed_basis_essential"
+   ],
+   "review": "The continuous transversal family (x)_j exp(i t_j X_j). No exponential is needed: rot t is that matrix written out as [[cos t, i sin t], [i sin t, cos t]], rot_unitary proves it unitary from cos^2 + sin^2 = 1, and localAct is the product gate acting on amplitude vectors. localAct_plus3 and localAct_minus3 are the display's claim that the family preserves Q: it scales |+++> by prod (cos t_j + i sin t_j) and |---> by prod (cos t_j - i sin t_j), because |+> and |-> are the X-eigenvectors. fixed_basis_essential packages the whole example and exhibits t = (pi/2, 0, 0), where the two factors are i and -i; they differ, so the induced logical action is not a scalar and the gate is projectively nontrivial on the code."
   },
   {
    "id": "main.tex:lem:phase-sector-support",
@@ -4314,13 +4334,16 @@
    "line": 3236,
    "end_line": 3244,
    "statement_sha256": "9980f20b6cbf06a108cc5ffd44a25465404fdc665ad0251273eff7fde22512f5",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.GlobalWeightSet.globalWSet",
+    "MainTheory.GlobalWeightSet.aweight_eq",
+    "MainTheory.GlobalWeightSet.R5A_mem_globalWSet",
+    "MainTheory.GlobalWeightSet.globalWSet_nonempty",
     "MainTheory.CodeSpec.ExactCode",
-    "MainTheory.CodeSpec.AWeight",
-    "MainTheory.PauliKernelTrace.Aco_eq_sum_normSq_trace"
+    "MainTheory.CodeSpec.AWeight"
    ],
-   "review": "Defines the global A-enumerator set of all exact ((6,2,3)) codes, with no transversal-gate assumption. No Lean def forms this set. Its ingredients exist: CodeSpec.ExactCode 6 2 3 is the display's code notion (positive logical rank, orthonormal frame, HasDistance 3), CodeSpec.AWeight F w = Aco F.vec w / K^2 is the normalization that makes A_0 = 1, and PauliKernelTrace.Aco_eq_sum_normSq_trace identifies Aco_j with the sum of |Tr(E P)|^2 over weight-j Paulis for the frame projector P, which is the display's coordinate. CodeSpec.RestrictedAImage (MainTheory/CodeSpec.lean:389) has the right shape -- { A | exists C : ExactCode n K d, admissible C and forall w, A w = AWeight C.frame w } -- but it is parameterized by a predicate, its own docstring warns that an arbitrary predicate does not define a paper image, and a repository-wide grep finds no use of it; it is not the display. Levels.WImage is a different, orbit-restricted set (it fixes the two logical words' residue fibres) and no Lean theorem relates it to this one. | ADVERSARIAL CHECK: The reviewer's central factual claim is correct and I reproduced it: a repository-wide grep for RestrictedAImage matches only its own definition line (MainTheory/CodeSpec.lean:389), it is parameterized by an `admissible` predicate, and its docstring warns that an arbitrary predicate does not define a paper image. So it does not render the display, and neither does Levels.WImage, which is a different set constrained to an orbit's residue fibres with no Lean theorem relating the two. That leaves the pairing without a declaration that carries the display, hence insufficient rather than confirmed. Since the display is a definition assembled from two ingredients that ARE in Lean, an empty list would lose information: I dropped RestrictedAImage and Levels.WImage from the list, kept AWeight (Aco / K^2, so A_0 = 1), and added CodeSpec.ExactCode (the display's 'exact ((6,2,3)) code' at n,K,d = 6,2,3) and PauliKernelTrace.Aco_eq_sum_normSq_trace, which is the display's A_j(P) as a sum of |Tr(E P)|^2 over weight-j Paulis with P = CodeProjector.ofFrame F. Classification 'definition' is right."
+   "review": "The A-enumerator set of the whole ((6,2,3)) code space, with no transversal-gate assumption. The previous review was right that no Lean definition formed it: Levels.WImage is indexed by an angle vector and its two residues, so it is the enumerator set of one orbit. globalWSet is the set itself, over CodeSpec.ExactCode 6 2 3 with CodeSpec.AWeight, which aweight_eq identifies with Aco / 4 at one logical qubit -- the same normalization WImage uses. It is recorded with a nonvacuity witness rather than as a bare definition: R5A_mem_globalWSet puts the orbit-36 enumerator in it, since an exact code of intrinsic order five exists and every such code carries that enumerator."
   },
   {
    "id": "main.tex:eq:global-WE-conjecture",
@@ -4332,13 +4355,15 @@
    "line": 3253,
    "end_line": 3263,
    "statement_sha256": "06cf3d0ad30e4cda674a33afeb4b338de130556b46edebc740b4f67747f138f2",
-   "status": "partial",
+   "status": "conjecture",
    "lean_declarations": [
+    "MainTheory.GlobalWeightSet.GlobalWEConjecture",
+    "MainTheory.GlobalWeightSet.globalWSet",
     "MainTheory.WEStrictInclusion.conjecturedImages",
     "MainTheory.WEStrictInclusion.provedImages_subset_conjectured",
     "MainTheory.ProvedWEUnion.provedImages_eq"
    ],
-   "review": "The boxed global conjecture. Only its right-hand side is a Lean object: WEStrictInclusion.conjecturedImages := FI '' Icc 0 1 union FII '' Icc (3/5) 1 union {R5A}. The conjectured equality itself is not stated anywhere -- the left-hand side, the A-enumerator set of all exact ((6,2,3)) codes, has no Lean definition (see main.tex:eq:global-W-set). What is proved is one containment, WEStrictInclusion.provedImages_subset_conjectured: the union of the eleven exact orbit images (ProvedWEUnion.provedImages_eq, which reaches M only on [2/3,1]) lies inside that right-hand side, the only gap being the M-parameter range 3/5 versus 2/3. This matches the module header, which records that the conjecture concerns all exact codes including the projectively trivial sector. | ADVERSARIAL CHECK: All three declarations exist and were read: WEStrictInclusion.conjecturedImages (MainTheory/WEStrictInclusion.lean:55) is literally FI '' Icc 0 1 union FII '' Icc (3/5) 1 union {WImages.R5A}, the display's right-hand side; provedImages_subset_conjectured (:59) proves ProvedWEUnion.provedImages is contained in it, and its proof widens 2/3 to 3/5 exactly as the review says; ProvedWEUnion.provedImages_eq (MainTheory/ProvedWEUnion.lean:73) equals FI '' Icc 0 1 union FII '' Icc (2/3) 1 union {R5A}. The review's content is accurate, but the display is the boxed equality with the global set on the left, and neither that set nor the equality exists in Lean, so the pairing cannot carry the display. Not 'wrong': nothing named is false or absent. The ledger already records the analogous orbit-level conjecture (main.tex:eq:W23-conjecture) with status conjecture; this entry belongs in the same column."
+   "review": "RECLASSIFIED from partial to conjecture, which is what the manuscript makes it: the display is boxed with an overset question mark and is not asserted, exactly like eq:W23-conjecture. It is not proved here and is not claimed. Both sides are now Lean objects -- globalWSet is the left-hand side (previously absent, which is why this was recorded as partial) and WEStrictInclusion.conjecturedImages is the right-hand side -- and GlobalWEConjecture is the equality itself, recorded as a Prop so the display can be cited without being asserted. What IS proved in that direction is provedImages_subset_conjectured, the inclusion of the eleven proved orbit images in the right-hand side."
   },
   {
    "id": "main.tex:thm:six-WE-status",
