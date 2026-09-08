@@ -2291,9 +2291,14 @@
    "line": 1897,
    "end_line": 1901,
    "statement_sha256": "3511fdf3ebb4850886bdab50886b7e6785a50bb0d66f72b29b61c2cd20f343ff",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": "NOT COVERED by the parent result’s declarations. V := range Sigma, r := dim V | No recorded declaration (nor anything else in the repository) ever forms the range of the covariance matrix. MainTheory/Covariance.lean works throughout with `Submodule.span R (Set.range fun k => pt k - mu)`, the span of the centred support; its module docstring asserts 'the range of Sigma is the span of the centred support' in PROSE only - there is no `LinearMap.range`, `mulVec` or `Matrix.rank` applied to `cov` anywhere in that file or the repo. So the object V of this display is not defined in Lean, and neither is r = dim V in the display's sense. The nearest substitute is a definition, not a theorem: RealSupportAffineRank.supportAffineRank c := finrank R (affineSpan R (bitPoint '' actualSupport c)).direction, i.e. r read off the affine span rather than off Sigma; the equality of the two readings is exactly the unproved identification."
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.CovarianceRange.range_cov_eq_span",
+    "MainTheory.CovarianceRange.cov_eq_mul_transpose",
+    "MainTheory.CovarianceRange.span_col_sqrtFactor",
+    "MainTheory.CovarianceRange.affineSpan_eq_mu_add_range"
+   ],
+   "review": "V := range Sigma and r := dim V are now defined and identified. range_cov_eq_span proves LinearMap.range (mulVecLin (cov p pt mu)) = Submodule.span R (range fun k => pt k - mu) for strictly positive weights, so the manuscript V and the centred-support span the repository works with are one subspace and r has one meaning. Route: the factorisation Sigma = A A^T with A i k = sqrt(p k) (pt k i - mu i); range (A A^T) <= range A is immediate and rank (A A^T) = rank A is Mathlib rank_self_mul_conjTranspose, so the two agree by dimension. Previously this was asserted only in the prose of Covariance.lean."
   },
   {
    "id": "main.tex:eq:affine-V",
@@ -2305,12 +2310,16 @@
    "line": 1903,
    "end_line": 1906,
    "statement_sha256": "474a446d2406af10a8ed1e564c60334b48dd49da24e438f0dc81025876b0e02c",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.CovarianceRange.range_cov_eq_span",
+    "MainTheory.CovarianceRange.cov_eq_mul_transpose",
+    "MainTheory.CovarianceRange.span_col_sqrtFactor",
+    "MainTheory.CovarianceRange.affineSpan_eq_mu_add_range",
     "MainTheory.Covariance.centeredHull_eq_affineSpan",
-    "MainTheory.CodeAffineSpanBridge.certificate_of_hasDistance"
+    "MainTheory.CodeAffineSpanBridge.commonAffineSpan_of_exactCode"
    ],
-   "review": "PROVED: aff(T_0) = aff(T_1) (certificate_of_hasDistance / affineSpan_eq), and 'aff(T_k) = mu + W_k' with W_k := Submodule.span R (T_k - mu) (Covariance.centeredHull_eq_affineSpan, whose hypothesis mu in aff(T_k) is Covariance.weightedMean_mem_affineSpan). NOT PROVED: that this W equals V = range Sigma, which is what the display's middle term denotes. | The chain mu + V = aff(T_0) = aff(T_1) holds in Lean only with V reinterpreted as the centred-support span, never as range Sigma (see eq:V-r). Covariance.quad_eq_sum_sq (recorded) is the ingredient that would make the identification work - it is eq:covariance-quadratic of the PROOF, not this display - but the step from it to `range Sigma = span(T_k - mu)` is not carried out anywhere. Also note centeredHull_eq_affineSpan and span_eq_of_cov_eq2 are stated for `Set.range pt`, bridged to `bitPoint '' actualSupport` by range_supportPoint."
+   "review": "mu + V = aff(T_0) = aff(T_1). affineSpan_eq_mu_add_range gives (affineSpan R (range pt)).direction = range (mulVecLin (cov p pt mu)) when mu lies in the affine span, so the middle term is now the manuscript V rather than a reinterpretation as the centred-support span; the two are identified by range_cov_eq_span. The outer equality aff(T_0) = aff(T_1) is commonAffineSpan_of_exactCode."
   },
   {
    "id": "main.tex:displaymath@1911",
@@ -9555,9 +9564,14 @@
    "line": 3777,
    "end_line": 3782,
    "statement_sha256": "85384968aeb987d517327eff136a2694e0a35c906d1ce852caf0b16e8e644787",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": "NOT COVERED by the parent result’s declarations.  | Nothing in the recorded list touches the B-enumerators. Levels.WImage is a set of A-vectors only (`∀ j, A j = Aco ![c,d] j / 4`, MainTheory/Levels.lean:90); o45_weight_image says nothing about Bco/BWeight. A grep over MainTheory/ and SixQubit/ finds no orbit-45 B-image declaration and no `B`-side analogue of FII anywhere in MainTheory/WImages.lean. The ingredient for closing the gap exists — `SixQubit.BEnumerator.bco_transform_six` (SixQubit/BEnumerator.lean:143) is the complete six-qubit quantum MacWilliams transform, all seven rows derived from subset duality — and applying it to FII t does give (1,0,t,22+2t,39-4t,42-2t,24+3t), but no declaration states that, so this is the same failure mode already recorded for eq:o7Bimage under thm:o7weightimage."
+   "status": "covered",
+   "lean_declarations": [
+    "SixQubit.Orbit45Final.fully_certified",
+    "SixQubit.Orbit45Family.IsFamilyB",
+    "SixQubit.Orbit45Family.universal_family",
+    "SixQubit.Orbit45Attain.interval_attainment_full_fibres"
+   ],
+   "review": "The B-enumerator display, in both directions. SixQubit.Orbit45Family.IsFamilyB (Orbit45Family.lean:466) is Bco psi = 4 * (1, 0, t, 22+2t, 39-4t, 42-2t, 24+3t), the display exactly, at the same normalisation factor 4 that IsFamilyA uses for eq:o45-A-image and that Levels.WImage uses (A j = Aco / 4). Orbit45Final.fully_certified carries IsFamilyB in BOTH clauses: the universal converse for any normalized distance-three code on the two complete fibres, and pointwise attainment for every t in [2/3, 1]. CORRECTION: an earlier adversarial pass recorded this as not covered, reporting that a grep over MainTheory/ and SixQubit/ found no orbit-45 B-image declaration. That was a false negative -- it is in SixQubit/Orbit45Family.lean. The pass was right that nothing in the PREVIOUSLY recorded declaration list touched the B side, and wrong to generalise that to the repository."
   },
   {
    "id": "supplementary.tex:cor:m2-current-status",

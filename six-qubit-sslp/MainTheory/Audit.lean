@@ -152,6 +152,7 @@ import MainTheory.FrameDistanceOne
 import MainTheory.Generated.OrbitTableMultiplicities
 import MainTheory.PhaseSectorMoments
 import MainTheory.Orbit31Identification
+import MainTheory.CovarianceRange
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
@@ -837,6 +838,10 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.PhaseSectorMoments.exists_common_mean
 #print axioms MainTheory.PaperGeneralSSLP.general_sslp_normal_form
 #print axioms MainTheory.ConnectedOrthogonality.mem_span_of_inner_eq_zero
+#print axioms MainTheory.CovarianceRange.cov_eq_mul_transpose
+#print axioms MainTheory.CovarianceRange.span_col_sqrtFactor
+#print axioms MainTheory.CovarianceRange.range_cov_eq_span
+#print axioms MainTheory.CovarianceRange.affineSpan_eq_mu_add_range
 #print axioms MainTheory.Orbit31Identification.fibre0
 #print axioms MainTheory.Orbit31Identification.fibre1
 #print axioms MainTheory.Orbit31Identification.same_fibre_pair
