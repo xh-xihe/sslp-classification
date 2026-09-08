@@ -261,15 +261,13 @@ alias o9_pq_equal := SixQubit.Orbit9Universal.pq_equal
 Only the steps the package actually takes are recorded.  The orbit-26 argument
 in `SixQubit.Block26` is a *repaired* one -- it closes a mixed-axis branch the
 manuscript's route passes over -- and the orbit-30 argument likewise departs
-from the manuscript's, so four of the manuscript's intermediate steps have no
-counterpart here.  The headline no-gos `thm:q4o26nogo` and `thm:q4o30nogo` are
-proved, by a different route.
+from the manuscript's, so the headline no-gos `thm:q4o26nogo` and
+`thm:q4o30nogo` are proved by a different route than the manuscript's.
 
-The four are listed below after the marker that the label sweep in
-`tools/verification` subtracts, so that naming them here as *absent* does not
-make the sweep count them as present.
-
-NOT-FORMALIZED: lem:q4o26anchorsingular -/
+The manuscript's own intermediate steps are nonetheless carried:
+`lem:q4o26anchorsingular` is `MainTheory.Orbit26AnchorMatrix.anchor_singular`,
+proved from the manuscript's displayed equations, and `lem:q4o30exceptional`
+is `MainTheory.Orbit30SupportGraph.q4o30_exceptional`. -/
 
 /-- **`lem:q4o26Jorth`, `eq:q4o26Jorth`.**
 

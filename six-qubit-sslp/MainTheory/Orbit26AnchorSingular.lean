@@ -29,26 +29,30 @@ Both places where `SixQubit.Block26.axis_lemma` -- the manuscript's
 is invertible and a generic row is chosen, and `core_rank_one` is the branch
 where `D_3` has rank one and the row is the unit vector spanning its columns.
 
-## What this file does NOT prove
+## Where the rest of the lemma lives
 
-`lem:q4o26anchorsingular` itself is not proved here, and stays on the
-not-formalized list.  Three things are missing between these cores and the
-lemma:
+`lem:q4o26anchorsingular` itself is proved in
+`MainTheory.Orbit26AnchorMatrix`, which supplies the three steps between these
+cores and the lemma:
 
-* the `2 x 2` matrix reduction -- solving `eq:q4o26anchormatrix` for
-  `D_g = -M conj(C_g)` with `M = (C_3^dagger)^{-1} D_3^T` when `C_3` is
-  invertible, substituting into `eq:q4o26outermatrix` to get `F_gh M^T = 0`,
-  and cancelling `M^T`;
-* the norm bookkeeping of `eq:q4o26rnormlarge`, which turns
-  `eq:q4o26matrixmoment` for the anchor group into the strict bound
-  `sum_g ||r_g||^2 > 1/2` feeding `core_rank_one`, together with the per-group
-  bound `1/4` and the per-axis bound `3/8` from the hexagon inequalities;
+* the `2 x 2` matrix reduction -- `anchor_solve` solves `eq:q4o26anchormatrix`
+  for `D_g = -M conj(C_g)` with `M = (C_3^dagger)^{-1} D_3^T` when `C_3` is
+  invertible, and `F_mul_transpose` substitutes it into
+  `eq:q4o26outermatrix` to get `eq:q4o26FM`, `F_gh M^T = 0`.  `M^T` is
+  cancelled two ways, matching the manuscript's two branches:
+  `F_eq_zero_of_isUnit` when `D_3` is invertible, and
+  `F_mulVec_eq_zero_of_rankOne` when it has rank one;
+* the norm bookkeeping -- `sum_rowNormSq_gt` turns `eq:q4o26matrixmoment` for
+  the anchor group into the strict bound `sum_g ||r_g||^2 > 1/2` of
+  `eq:q4o26rnormlarge` that `core_rank_one` consumes;
 * the closing sentence "the equations are symmetric under interchanging the two
-  logical states", which is how the manuscript gets `D_3` singular from the
-  argument that gives `C_3` singular.
+  logical states" -- `anchor_swap` and `outer_swap` prove that
+  `eq:q4o26anchormatrix` and `eq:q4o26outermatrix` really are carried to
+  themselves by the exchange, so the `D_3` half is the `C_3` argument applied
+  to the interchanged data rather than a second argument.
 
-What is here is the mathematics those steps feed into, stated so that supplying
-them is bookkeeping rather than a new idea.
+What that file assumes are the manuscript's own displayed equations and its
+trace and hexagon probability data; every step taken with them is proved.
 -/
 
 namespace MainTheory.Orbit26

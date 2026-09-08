@@ -131,6 +131,7 @@ import MainTheory.SpanProjectorBridge
 import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
+import MainTheory.OrderFiveOrbitMembership
 import MainTheory.DeterminantalFactor
 import MainTheory.PaperSmithFactor
 import MainTheory.GatePrimitiveConverse
@@ -191,6 +192,7 @@ import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
 import MainTheory.Orbit30SupportGraph
 import MainTheory.Orbit26AnchorSingular
+import MainTheory.Orbit26AnchorMatrix
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP

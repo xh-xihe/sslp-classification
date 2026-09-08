@@ -68,8 +68,7 @@ def check_names(names, runner=subprocess.run, root=ROOT) -> int:
             text = output.rstrip() or '(no diagnostics)'
             sys.stdout.write(text.encode(sys.stdout.encoding or 'utf-8',
                                          'replace').decode(sys.stdout.encoding
-                                                           or 'utf-8') + '
-')
+                                                           or 'utf-8') + chr(10))
             return 1
         print('all present')
         return 0

@@ -100,6 +100,7 @@ import MainTheory.SpanProjectorBridge
 import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
+import MainTheory.OrderFiveOrbitMembership
 import MainTheory.DeterminantalFactor
 import MainTheory.PaperSmithFactor
 import MainTheory.GatePrimitiveConverse
@@ -155,6 +156,7 @@ import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
 import MainTheory.Orbit30SupportGraph
 import MainTheory.Orbit26AnchorSingular
+import MainTheory.Orbit26AnchorMatrix
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
@@ -647,6 +649,21 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.IntrinsicOrderAudit.natCard_le_five
 #print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive
 #print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive
+#print axioms MainTheory.OrderFiveOrbitMembership.natCard_eq_five_of_orderFive
+#print axioms MainTheory.OrderFiveOrbitMembership.orbit36_of_orderFive
+#print axioms MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36
+#print axioms MainTheory.OrderFiveOrbitMembership.unique_C5_LU
+#print axioms MainTheory.OrderFiveOrbitMembership.unique_C5_LU_of_natCard
+#print axioms MainTheory.Orbit26.anchor_solve
+#print axioms MainTheory.Orbit26.F_mul_transpose
+#print axioms MainTheory.Orbit26.F_eq_zero_of_isUnit
+#print axioms MainTheory.Orbit26.F_mulVec_eq_zero_of_rankOne
+#print axioms MainTheory.Orbit26.sum_rowNormSq_gt
+#print axioms MainTheory.Orbit26.anchor_swap
+#print axioms MainTheory.Orbit26.outer_swap
+#print axioms MainTheory.Orbit26.C3_not_isUnit
+#print axioms MainTheory.Orbit26.D3_not_isUnit
+#print axioms MainTheory.Orbit26.anchor_singular
 #print axioms MainTheory.DeterminantalFactor.inv_eq_smul_adjugate
 #print axioms MainTheory.DeterminantalFactor.cofactorGcd_dvd_det
 #print axioms MainTheory.DeterminantalFactor.inverseDenominator_dvd_iff

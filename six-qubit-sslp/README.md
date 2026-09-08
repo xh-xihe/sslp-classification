@@ -108,16 +108,10 @@ Newly implemented proof packages include:
 
 Manuscript-to-Lean correspondence is tracked by `tools/verification/label_sweep.py`,
 which sweeps every named result in the two sources for a Lean source citing its
-label. All 30 named results of `main.tex` are cited, and 82 of the 87 in
-`supplementary.tex`. Every one of the five that are not is *declared* absent
-rather than merely missing, with the reason recorded in the Lean source:
+label. All 33 named results of `main.tex` are cited, and 92 of the 93 in
+`supplementary.tex`. The one that is not is *declared* absent rather than
+merely missing, with the reason recorded in the Lean source:
 
-* `lem:q4o26anchorsingular`, `lem:q4o30threepoints`, `lem:q4o30exceptional`
-  and `lem:q4o30mindegree` are intermediate steps of manuscript proof routes
-  the package does not take. The certified orbit-26 argument is a repaired one
-  that closes a mixed-axis branch the manuscript's route passes over, and the
-  orbit-30 argument likewise departs from the manuscript's. The headline no-gos
-  they serve, `thm:q4o26nogo` and `thm:q4o30nogo`, are proved.
 * `lem:parity4-edgeisolation` is not proved. Its algebra now is, in full:
   `MainTheory.ParityFour.edge_isolation_of_character_rows` inverts the sixteen
   character sums, and `eq_zero_of_transversal` halves that hypothesis to the
@@ -140,6 +134,17 @@ rather than merely missing, with the reason recorded in the Lean source:
   inversion by hand for its own orbit. Supplying the proviso would replace
   three hand expansions with one theorem; it would not change any certified
   result.
+
+`lem:q4o26anchorsingular`, `lem:q4o30threepoints`, `lem:q4o30exceptional` and
+`lem:q4o30mindegree` were in this list as intermediate steps of manuscript
+proof routes the package does not take. They are now proved on the
+manuscript's own displayed equations, so the divergence of routes no longer
+costs any of them: `MainTheory.Orbit26AnchorMatrix.anchor_singular` proves
+both anchor blocks singular, deriving the reduction `eq:q4o26commonM`, the
+cancellation `eq:q4o26FM`, the norm bound `eq:q4o26rnormlarge` and the
+state-interchange symmetry rather than assuming them, and
+`MainTheory.Orbit30SupportGraph` carries the three orbit-30 steps. The
+certified orbit-26 and orbit-30 no-gos still run by the repaired route.
 
 `lem:connected-orthogonality` was in this list and is now proved:
 `MainTheory.ConnectedOrthogonality.exists_line` gives the manuscript's line,
