@@ -22448,9 +22448,12 @@
    "line": 12146,
    "end_line": 12150,
    "statement_sha256": "ae2ee22b1405168c31b63c572b45b3a6a6b4c46cf3f6892303cef59657d9d7d0",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ParityFour.edge_isolation",
+    "MainTheory.ParityFour.edge_isolation_of_character_rows"
+   ],
+   "review": "The conclusion of lem:parity4-edgeisolation, c_x^dagger d_y = 0 whenever d_H(x,y) = 1. edge_isolation proves it in the form the incidence set gives: for the flipped coordinate k, every overlap carried by an even effective string vanishes, and for a two-dimensional spinor the overlap at x is exactly c_x^dagger d_{x+e_k}. The representation proviso the manuscript states alongside is discharged by construction there rather than assumed."
   },
   {
    "id": "supplementary.tex:eq:parity4-edgeerrors",

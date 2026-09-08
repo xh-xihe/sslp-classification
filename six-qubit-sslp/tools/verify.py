@@ -172,6 +172,8 @@ def checks(source_dir=None):
         'moments': lambda: script_check('moments', 'verification/momentgate.py'),
         'moments-selftest': lambda: script_check('moments-selftest', 'verification/momentgate.py', '--selftest'),
         'readme': check_names,
+        'audit-names': lambda: recorded_command('audit-names',
+            [sys.executable, 'tools/verification/check_audit_names.py']),
     }
 
 

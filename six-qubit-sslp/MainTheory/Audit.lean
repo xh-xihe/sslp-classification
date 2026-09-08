@@ -943,7 +943,6 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.PaperSupplementaryImages.m2_current_status
 #print axioms MainTheory.PaperSupplementaryImages.o9_magnitudes
 #print axioms MainTheory.PaperSupplementaryImages.o8_raising_gram
-#print axioms MainTheory.PaperSupplementaryNoGo.here
 #print axioms MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective
 #print axioms MainTheory.PaperSupplementaryNoGo.paperOrbitId_range
 #print axioms MainTheory.PaperSupplementaryNoGo.exists_key_of_paperOrbitId

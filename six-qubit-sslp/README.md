@@ -241,6 +241,8 @@ Use partial diagnostics explicitly:
 
 ```text
 python tools/verify.py --only axioms sources generated paper gate gate-selftest moments moments-selftest
+python tools/verify.py --only audit-names
+python tools/verification/preflight_merge.py MainTheory.SomeNewModule -o _pf.lean
 python tools/paper_claims.py check
 python tools/paper_claims.py check --require-complete
 python tools/build_lean.py --plan
@@ -259,6 +261,14 @@ The axiom audit reads the current imports and declarations in
 together with explicitly covered claim roots. That last file is an audit file
 whose entries were previously collected by nothing.
 It rejects absent kernel declarations and any unexpected transitive axiom.
+That rejection only happens once the serial build reaches those files, which
+is hours in, so `tools/verification/check_audit_names.py` resolves every
+`#print axioms` name against the declarations the sources actually introduce
+first, in about a second. It is a source-level check and therefore weaker than
+elaboration -- it does not know about `export` or macro-generated names -- so a
+reported miss is a prompt to look. It found one: a line naming
+`MainTheory.PaperSupplementaryNoGo.here`, a word scraped out of that module's
+own docstring rather than a declaration, which would have failed the build.
 The root count is computed from those current files rather than maintained as
 a manually updated number in this README. Axiom cleanliness does not by
 itself show that a theorem matches the manuscript's hypotheses and conclusion.
