@@ -76,6 +76,7 @@ import MainTheory.Generated.FiniteRankData
 import MainTheory.Generated.FiniteOrbitDistribution
 import MainTheory.Generated.FiniteOrbitCertificate
 import MainTheory.OrderFourNoCompletion
+import MainTheory.OrbitRepresentative
 import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
@@ -132,6 +133,7 @@ import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
 import MainTheory.OrderFiveOrbitMembership
+import MainTheory.OrderFiveEnumerator
 import MainTheory.DeterminantalFactor
 import MainTheory.PaperSmithFactor
 import MainTheory.GatePrimitiveConverse

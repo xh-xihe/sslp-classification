@@ -2,6 +2,9 @@ import MainTheory.WImageSettled62
 import MainTheory.ParityFourConnectivity
 import MainTheory.ParityFourPolytope
 import MainTheory.CodeOrbitStatus
+import MainTheory.OrbitRepresentative
+import MainTheory.OrderFiveEnumerator
+import MainTheory.SixQubitIntrinsicAttainment
 import MainTheory.IntrinsicOrderAudit
 import SixQubit.Orbit8RaisingGram
 import SixQubit.Orbit8OperatorQP
@@ -465,5 +468,69 @@ theorem m2_current_status :
   rw [MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys k]
   revert k
   decide
+
+
+/-! ## Orbit representatives, the two-sided order range, and the order-two status -/
+
+/-- **`thm:q4o26nogo`'s orbit representative**, `(q, m, a) = (4, 4, (0,1,1,2,2,3))`. -/
+alias q4o26_representative := MainTheory.OrbitRepresentative.orbit26_representative
+
+/-- **`thm:q4o30nogo`'s orbit representative**, `(q, m, a) = (4, 4, (1,1,1,1,2,3))`. -/
+alias q4o30_representative := MainTheory.OrbitRepresentative.orbit30_representative
+
+/-- **`thm:q4o31nogo`'s orbit representative**, `(q, m, a) = (4, 4, (1,1,1,2,2,2))`. -/
+alias q4o31_representative := MainTheory.OrbitRepresentative.orbit31_representative
+
+/-- **`thm:q4o32nogo`'s orbit representative**, `(q, m, a) = (4, 4, (1,1,2,2,2,3))`. -/
+alias q4o32_representative := MainTheory.OrbitRepresentative.orbit32_representative
+
+/-- **`cor:m5-unique-unconditional`**, all three clauses: orbit-36 membership
+as a cube-group element, the enumerator value, and the local-unitary class. -/
+alias m5_unique_full := MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full
+
+/-- **`cor:q8range`, `eq:M36range`.**  `5 <= M_3(6) <= 7`, both sides at the
+level of codes.
+
+The upper clause is `q8_range`.  The lower one is an attainment statement and
+cannot follow from an upper bound on every element; it is
+`SixQubitIntrinsicAttainment.order_five_attained`, a genuine exact
+`((6,2,3))` code carrying an intrinsic element of order exactly five. -/
+theorem m36_range :
+    (∃ C : CodeSpec.ExactCode 6 2 3,
+        ∃ g : GlobalClassificationBridge.IntrinsicGroup C, g ≠ 1 ∧ orderOf g = 5) ∧
+      ∀ (C : CodeSpec.ExactCode 6 2 3)
+        (g : GlobalClassificationBridge.IntrinsicGroup C), orderOf g ≤ 7 :=
+  ⟨MainTheory.SixQubitIntrinsicAttainment.order_five_attained, q8_range⟩
+
+/-- **`cor:m2-current-status`**, all three clauses.
+
+Clauses (i) and (iii) are `m2_current_status`: the projective-order-two sector
+is exactly the twenty-five listed orbits, and inside it a key admits an exact
+completion exactly when its number is one of eleven, so fourteen have empty
+image and only `1, 2, 3, 4` are unresolved.  Clause (ii), the seven determined
+images, is `m2_five_stabilizer_orbits` together with `o21_enumerator` and
+`o45_weight_image`.  Nothing here is new; the corollary simply had no single
+statement. -/
+theorem m2_current_status_full :
+    ((Finset.univ.filter fun k : Fin 66 =>
+        (MainTheory.Generated.FiniteOrbitBase.keyAt k).m = 2).image
+          MainTheory.Generated.FiniteOrbitBase.paperOrbitId
+      = ({1, 2, 3, 4, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+          24, 41, 42, 43, 44, 45, 46} : Finset ℕ) ∧
+      ∀ k : Fin 66, (MainTheory.Generated.FiniteOrbitBase.keyAt k).m = 2 →
+        (MainTheory.CubeCompletionTransport.HasCompletion
+            (MainTheory.Generated.FiniteOrbitBase.keyAt k).fibers ↔
+          MainTheory.Generated.FiniteOrbitBase.paperOrbitId k ∈
+            ([1, 2, 3, 4, 10, 11, 16, 21, 22, 23, 45] : List ℕ))) ∧
+    (Levels.WImage SixQubit.Orbit10Real.av 0 2 = {Levels.E2A} ∧
+      Levels.WImage SixQubit.Orbit16Real.av 0 2 = {Levels.E2A} ∧
+      Levels.WImage SixQubit.Orbit22Real.av 0 2 = {Levels.E2A} ∧
+      Levels.WImage SixQubit.Orbit11Real.av 0 2 = {WImages.E1A} ∧
+      Levels.WImage SixQubit.Orbit23Real.av 0 2 = {WImages.E1A}) ∧
+    Levels.WImage SixQubit.Orbit21Cert.av 0 2 = {Levels.E2A} ∧
+    Levels.WImage SixQubit.Orbit45Support.av 0 3
+      = WImages.FII '' Set.Icc (2 / 3) 1 :=
+  ⟨m2_current_status, m2_five_stabilizer_orbits, o21_enumerator,
+    o45_weight_image⟩
 
 end MainTheory.PaperSupplementaryImages

@@ -45,6 +45,7 @@ import MainTheory.SectionThreeNonVacuity
 import MainTheory.CodeFiberBridge
 import MainTheory.Generated.FiniteOrbitCertificate
 import MainTheory.OrderFourNoCompletion
+import MainTheory.OrbitRepresentative
 import MainTheory.OrderSevenNoCompletion
 import MainTheory.OrderRange
 import MainTheory.DirectoryOrbitStatus
@@ -101,6 +102,7 @@ import MainTheory.NormalFormLUBridge
 import MainTheory.IntrinsicOrderAudit
 import MainTheory.OrderFiveCodeRigidity
 import MainTheory.OrderFiveOrbitMembership
+import MainTheory.OrderFiveEnumerator
 import MainTheory.DeterminantalFactor
 import MainTheory.PaperSmithFactor
 import MainTheory.GatePrimitiveConverse
@@ -1018,3 +1020,19 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.QubitTransversalFinite.finite_projective_transversal_image
 #print axioms MainTheory.TransversalLogicalOrder.finite_projective_transversal_image
 #print axioms MainTheory.UnitaryMatrixDiagonalization.exists_unitary_diagonalization
+#print axioms MainTheory.OrbitRepresentative.orbit25_representative
+#print axioms MainTheory.OrbitRepresentative.orbit26_representative
+#print axioms MainTheory.OrbitRepresentative.orbit27_representative
+#print axioms MainTheory.OrbitRepresentative.orbit28_representative
+#print axioms MainTheory.OrbitRepresentative.orbit29_representative
+#print axioms MainTheory.OrbitRepresentative.orbit30_representative
+#print axioms MainTheory.OrbitRepresentative.orbit31_representative
+#print axioms MainTheory.OrbitRepresentative.orbit32_representative
+#print axioms MainTheory.OrbitRepresentative.orbit62_representative
+#print axioms MainTheory.OrbitRepresentative.orbit63_representative
+#print axioms MainTheory.OrderFiveEnumerator.exists_table_witness
+#print axioms MainTheory.OrderFiveEnumerator.canonical_enumerator
+#print axioms MainTheory.OrderFiveEnumerator.orderFive_enumerator
+#print axioms MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full
+#print axioms MainTheory.PaperSupplementaryImages.m36_range
+#print axioms MainTheory.PaperSupplementaryImages.m2_current_status_full

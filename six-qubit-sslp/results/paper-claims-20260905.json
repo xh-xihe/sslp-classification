@@ -4145,14 +4145,16 @@
    "line": 3418,
    "end_line": 3425,
    "statement_sha256": "0e4b324e93a9685da9c14dfefed62c5c2599da9d222eba3e038708252f72d3d9",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive",
+    "MainTheory.OrderFiveOrbitMembership.unique_C5_LU",
+    "MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36",
+    "MainTheory.OrderFiveOrbitMembership.orbit36_of_orderFive",
+    "MainTheory.OrderFiveOrbitMembership.natCard_eq_five_of_orderFive",
     "MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive",
-    "SixQubit.Orbit36Certified.original_equivalent_canonical",
-    "MainTheory.OrderFiveUniqueCompletion.paperOrbitId_eq_36_of_orderFive_completion"
+    "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive"
    ],
-   "review": "luEquivalent_canonical_of_orderFive gives clauses 1+2 in their operative form: for any `C : ExactCode 6 2 3` and any `g : IntrinsicGroup C` with `orderOf g = 5`, C's projector is LU-equivalent to the canonical orbit-36 projector (its proof runs the code onto directory key 34 = paper orbit 36 via IntrinsicOrderAudit.exists_key_of_element and OrderFiveUniqueCompletion.eq_key34_of_orderFive_completion, then pushes the code's own states onto the orbit-36 table fibres). luEquivalent_of_orderFive gives clause 3, the headline: any two such codes have LU-equivalent projectors, i.e. the projective-C_5 sector is a single class. level_four_lu_class gives clause 2 in the manuscript's eq:LU-equivalence shape, for the two codes stated directly on orbit 36's table fibres. HYPOTHESIS GAP: none — the order-five condition is imposed on an actual element of the intrinsic group, not on a normal form the theorem picks. ADVERSARIAL CHECK: Refuted as 'exact / gap none' on two counts. (a) Clause 1 ('every exact ((6,2,3)) code admitting a projective diagonal element of order five belongs to orbit 36') is an SSLP-orbit-membership statement, and none of the three listed declarations states it. luEquivalent_canonical_of_orderFive (MainTheory/OrderFiveCodeRigidity.lean:58) concludes only `LUEquivalent (ofFrame C.frame) (ofFrame canonicalFrame)`; LUEquivalent (MainTheory/ClassificationLevels.lean:368) is the equivalence closure of arbitrary one-qubit unitaries and qubit permutations, which is strictly coarser than the cube action defining an orbit and does not constrain the code's own support fibres, so it does not imply orbit membership. The orbit-membership fact does exist inside that proof (exists_key_of_element then eq_key34_of_orderFive_completion) but is exposed only as OrderFiveUniqueCompletion.paperOrbitId_eq_36_of_orderFive_completion (MainTheory/OrderFiveUniqueCompletion.lean:200), whose hypothesis is on a *key*, or as CodeOrbitStatus.code_orderFive_is_orbit36 (MainTheory/CodeOrbitStat"
+   "review": "Both clauses. Clause 2 (rigidity) was already luEquivalent_canonical_of_orderFive. Clause 1 (orbit membership) was previously judged uncovered, correctly: LUEquivalent is the equivalence closure of one-qubit unitaries and qubit permutations, strictly coarser than the cube action defining an SSLP orbit, and it constrains nothing about the code support fibres. exists_cubeParameter_orbit36 now states membership in the literal form: for C with an intrinsic element of order five there are a sorted normal form S and a single cube parameter gamma with actFibers gamma (fibersOfPair (recordFiberPair (recordOf S))) = (keyAt 34).fibers, and paperOrbitId 34 = 36. The normal form is tied to C by its own source_span and frame_eq fields, a local X string and a qubit permutation, so this is a statement about C. unique_C5_LU conjoins both clauses and adds Nat.card (IntrinsicGroup C) = 5."
   },
   {
    "id": "main.tex:six:rem:global-family-caveat",
@@ -5631,11 +5633,14 @@
    "line": 1210,
    "end_line": 1231,
    "statement_sha256": "9203c2df22f01abf91dae543cf7eabe7f28a084ab7d84399a5122bd72e10413e",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryImages.o7_scalar_moments"
+    "MainTheory.PaperSupplementaryImages.o7_scalar_moments",
+    "MainTheory.PaperSupplementaryImages.o7_active_marginal",
+    "SixQubit.Orbit7Universal.active_marginal_maximally_mixed",
+    "SixQubit.Orbit7Universal.weight_flip_ne"
    ],
-   "review": "PARTIAL. The three displayed equations are proved: the two extreme masses are 1/6, the edge masses agree, and the edge weights form a fractional perfect matching of K_5 with vertex degree 1/3 and total 5/6. The lemma fourth clause -- every active qubit has maximally mixed one-qubit marginal -- is proved nowhere here; the manuscript uses it to identify A_1 with a squared Bloch length, while the certified route reaches A_1 through the shadow/MacWilliams squeeze."
+   "review": "All four clauses. The three displayed equations are scalar_normal_form (o7_scalar_moments). The closing sentence, that every active qubit has maximally mixed one-qubit marginal, is active_marginal_maximally_mixed, following the manuscript in both halves: the Z_i scalar vanishes because eq:o7fractionalmatching read at one vertex makes both occupations 1/2 (occOn S0 c = totalA - degreeA = 5/6 - 1/3, occOn S2 d = degreeB + vMass = 1/3 + 1/6), and the X_i and Y_i scalars vanish because the two words sit in different ZMod 3 residue shells, so a one-coordinate flip leaves the shell and every off-diagonal term of the marginal has a vanishing factor (weight_flip_ne, a finite check). That is the manuscript \"global order-three symmetry\". The clause is not needed by the certified route, which reaches A_1 through the shadow/MacWilliams squeeze in Orbit7UniversalEnum, so it completes the lemma without entering the verified chain."
   },
   {
    "id": "supplementary.tex:eq:o7extremenorms",
@@ -7266,12 +7271,15 @@
    "line": 2205,
    "end_line": 2212,
    "statement_sha256": "7e9a239f7acf7ee2327d75c7b87f334251006301d87764406cafccd8bd73a9fa",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
     "MainTheory.PaperSupplementaryImages.o8_ladder01",
-    "MainTheory.PaperSupplementaryImages.o8_ladder10"
+    "MainTheory.PaperSupplementaryImages.o8_ladder10",
+    "MainTheory.PaperSupplementaryImages.o8_QP",
+    "SixQubit.Orbit8Universal.QP_eq",
+    "SixQubit.Orbit8Universal.Q_eigen"
    ],
-   "review": "PROVED: eq:o8ladder01 (R J |0_L> = -b |1_L>) by o8_ladder01 = SixQubit.Orbit8Universal.ladder01 (`raise (u d) (spinJ c) = fun x => -(star (ball c)) * d x`); eq:o8ladder10 (R J |1_L> = b |0_L>) by o8_ladder10 = Orbit8Universal.ladder10. NOT PROVED: eq:o8QP, the operator equation Q P = r P. | The single ledger claim spans all three labels, so it can only be partial. Nothing in the repository states Q P = r P. The closest is SixQubit.Orbit8Universal.Q_expect_eq (Orbit8UniversalQ.lean:267), which gives only the DIAGONAL scalar identity <0_L|Q|0_L> = <1_L|Q|1_L> - it is what the ladder argument actually consumes (via ladder_norm inside ladder10). The operator statement additionally needs the off-diagonal <0_L|Q|1_L> = 0 and that Q preserves the code space; neither is recorded. PaperSupplementaryImages' own docstring on o8_ladder10 admits this explicitly."
+   "review": "All three displays of lem:o8ladder. eq:o8ladder01 and eq:o8ladder10 are ladder01 and ladder10 as before. eq:o8QP, the operator equation Q P = r P with r = 1/6, was previously uncovered: the repository stated only the scalar identity Q_expect_eq that the ladder argument consumes. Q_eigen is the manuscript own derivation and produces the two eigenvalue equations Qact (u d) c = (1/6) c and Qact (u d) d = (1/6) d; QP_eq turns them into the operator identity by linearity of Q (Qact_add, Qact_smul) applied to the projector codeProj of the logical pair, i.e. the identity evaluated at an arbitrary vector."
   },
   {
    "id": "supplementary.tex:displaymath@2224",
@@ -9583,11 +9591,15 @@
    "line": 3798,
    "end_line": 3810,
    "statement_sha256": "d0b1a4a31f4ea59c26e16ba1f0a6235e88271b8c8664e3606329c30905a85e30",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryImages.m2_current_status"
+    "MainTheory.PaperSupplementaryImages.m2_current_status_full",
+    "MainTheory.PaperSupplementaryImages.m2_current_status",
+    "MainTheory.PaperSupplementaryImages.m2_five_stabilizer_orbits",
+    "MainTheory.PaperSupplementaryImages.o21_enumerator",
+    "MainTheory.PaperSupplementaryImages.o45_weight_image"
    ],
-   "review": "PARTIAL. Clauses (i) and (iii): the projective-order-two sector is exactly the twenty-five listed manuscript orbits, and within it a key admits an exact completion exactly when its number is one of eleven, so fourteen have empty image and only 1, 2, 3, 4 are unresolved. The sector is cut by the key own m, not by the angle modulus q that the existing no-go aggregates group on. Clause (ii), the seven determined images, is m2_five_stabilizer_orbits with o21_enumerator and o45_weight_image."
+   "review": "All three clauses, now in one statement. Clauses (i) and (iii) are m2_current_status: the projective-order-two sector is exactly the twenty-five listed manuscript orbits, cut by the key own m rather than by the angle modulus q, and inside it a key admits an exact completion exactly when its number is one of eleven, so fourteen have empty image and only 1, 2, 3 and 4 are unresolved. Clause (ii), the seven determined images for orbits 10, 11, 16, 21, 22, 23 and 45, is m2_five_stabilizer_orbits together with o21_enumerator and o45_weight_image. Nothing here is new mathematics; the corollary simply had no single declaration, which is why it was recorded as partial."
   },
   {
    "id": "supplementary.tex:eq:fullKL",
@@ -10544,13 +10556,13 @@
    "line": 4507,
    "end_line": 4510,
    "statement_sha256": "147553878288fc8ba8cdd5f198bbc33162f0697eb590d2974f51cc94b8eb4745",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.PaperSupplementaryImages.m36_range",
     "MainTheory.PaperSupplementaryImages.q8_range",
-    "MainTheory.SixQubitIntrinsicAttainment.order_five_attained",
-    "MainTheory.SixQubitIntrinsicAttainment.two_three_five_attained"
+    "MainTheory.SixQubitIntrinsicAttainment.order_five_attained"
    ],
-   "review": "PROVED: the upper clause M_3(6) ≤ 7 — q8_range (MainTheory/PaperSupplementaryImages.lean:110) gives `orderOf g ≤ 7` for every element g of the intrinsic group of an exact ((6,2,3)) code. NOT PROVED by any recorded declaration: the lower clause 5 ≤ M_3(6), which is an attainment/existence statement and cannot follow from an upper bound on every element. | The display is a two-sided range and only one side is a consequence of the recorded declaration. The missing side does exist elsewhere: `OrderRange.maxLogicalOrder_eq_five` (MainTheory/OrderRange.lean:213) supplies `∃ k : Fin 66, HasCompletion (keyAt k).fibers ∧ (keyAt k).m = 5` (witness k = 34, via OrderFiveUniqueCompletion.directoryKey34_hasCompletion), and `logicalOrders_attained` (:225) gives the corollary's neighbouring sentence that orders 2, 3 and 5 are all realized. Both are stated at the level of the 66-key directory (an exact normalized distance-three pair supported in the key's fibres), not as an ExactCode with an intrinsic-group element of order exactly 5, so even the better declarations reach the lower clause at one remove. Separately, note that q8_range is a deliberate weakening: it is proved by discarding cases from IntrinsicOrderAudit.orderOf_mem (order ∈ {1,2,3,5}), so the repository actually proves ≤ 5, and the corollary's \"m ∈ {4,6,7} not yet decided\" staging language has no Lean counterpart. | ADVERSARIAL CHECK: The 'partial' verdict is right about the recorded declaration — q8_range (MainTheory/PaperSupplementaryImages.lean:110) gives only `orderOf g ≤ 7` — but the prior answer stopped there, whereas the review rule says to name a declaration elsewhere in the repository that supplies the missing clause, and one exists. `MainTheory.SixQubitIntrinsicAttainment.order_five_attained` (MainTheory/SixQubitIntrinsicAttainment.lean:45, via WImageIntrinsicBridge.exists_exact_six_qubit_intrinsic_order_five :194) proves unconditionally `∃ C : ExactCode 6 2 3, ∃ g : IntrinsicGroup C, g ≠ 1 ∧ orderOf g = 5`, "
+   "review": "The two-sided range, both sides at the level of codes. Upper clause M_3(6) <= 7 is q8_range, which bounds orderOf g for every element g of the intrinsic group of an exact ((6,2,3)) code; note this is a deliberate weakening, since IntrinsicOrderAudit.orderOf_mem proves order in {1,2,3,5} and hence <= 5. Lower clause 5 <= M_3(6) is an attainment statement and cannot follow from an upper bound; it is order_five_attained, which exhibits an actual ExactCode 6 2 3 together with a nonidentity intrinsic element of order exactly five. m36_range conjoins the two, which is the display. The corollary staging language about m in {4,6,7} not yet being decided has no Lean counterpart and is not claimed."
   },
   {
    "id": "supplementary.tex:remark@4513",
@@ -13948,9 +13960,19 @@
    "line": 6650,
    "end_line": 6653,
    "statement_sha256": "e9f1cbebfe58eea9df9e1227d0bf150504ea098a992bdbef90e0dc9441ec4b0e",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit26.anchor_singular",
+    "MainTheory.Orbit26.C3_not_isUnit",
+    "MainTheory.Orbit26.D3_not_isUnit",
+    "MainTheory.Orbit26.anchor_solve",
+    "MainTheory.Orbit26.F_mul_transpose",
+    "MainTheory.Orbit26.sum_rowNormSq_gt",
+    "MainTheory.Orbit26.anchor_swap",
+    "MainTheory.Orbit26.outer_swap",
+    "SixQubit.Block26.axis_lemma"
+   ],
+   "review": "Both anchor blocks singular. The hypotheses are the manuscript own displayed equations for orbit 26 read on both logical states -- eq:q4o26anchormatrix, eq:q4o26outermatrix, the anchor form of eq:q4o26matrixmoment, eq:q4o26D3rankone, and the trace and hexagon probability data -- and every step taken with them is proved rather than assumed: anchor_solve is eq:q4o26commonM, F_mul_transpose is eq:q4o26FM, F_eq_zero_of_isUnit and F_mulVec_eq_zero_of_rankOne are the two cancellations of M^T matching the manuscript two branches (the rank-one one via F D_3 D_3^dagger = 0 rather than rank theory), sum_rowNormSq_gt is the strict bound eq:q4o26rnormlarge, and anchor_swap and outer_swap prove that the state interchange really does carry eq:q4o26anchormatrix and eq:q4o26outermatrix to themselves, so the D_3 half is the C_3 argument applied to interchanged data. axis_lemma is lem:q4o26Jorth, consumed in both branches."
   },
   {
    "id": "supplementary.tex:eq:q4o26commonM",
@@ -14328,13 +14350,13 @@
    "line": 6908,
    "end_line": 6910,
    "statement_sha256": "4d1b21307440c6d84c8945a9f67b5efbbd5143dd079aec7fb7a3765a6128da0e",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryNoGo.q4o26nogo",
-    "MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective",
-    "MainTheory.PaperSupplementaryNoGo.paperOrbitId_range"
+    "MainTheory.OrbitRepresentative.orbit26_representative",
+    "MainTheory.PaperSupplementaryImages.q4o26_representative",
+    "MainTheory.PaperSupplementaryNoGo.q4o26nogo"
    ],
-   "review": "the no-go conclusion is proved for manuscript orbit 26; the identification of that orbit with (q,m,a) = (4,4,(0,1,1,2,2,3)) is not stated | q4o26nogo is 'for k : Fin 66 with paperOrbitId k = 26, NoCompletion (keyAt k).fibers' -- indexed by manuscript number only. The display's data is the orbit representative: q = 4 and m = 4 do hold for that key (key25 = <4, 4, mask0, mask1> and paperOrbitId 25 = 26), but the recorded declarations never mention q, m or the angle vector, and the OrbitKey type carries fibre bitmasks rather than an angle vector at all. The bridge to a = (0,1,1,2,2,3) is in OrderFourNoCompletion: paper26Fibers is built from SixQubit.Orbit26.S0/S1, SixQubit.Orbit26.av = ![0,1,1,2,2,3] with S0_eq_fiber/S1_eq_fiber, paper26_noCompletion is the no-go at that angle vector, and paper26_equivalent_key25 plus keyAt25_eq/paperOrbitId25_eq identify it with manuscript orbit 26. None of those is in the recorded list."
+   "review": "The orbit representative (q,m,a) = (4,4,(0,1,1,2,2,3)). This display was previously uncovered because no declaration linked an orbit key to an angle vector: the key stores only (q, m, mask0, mask1). orbit26_representative supplies it -- for every k with paperOrbitId k = 26 the key has q = 4 and m = 4 and its fibre pair is cube-equivalent to angleFiberPair ![0,1,1,2,2,3] 1, the residue fibre pair of the displayed angle vector at residues 0 and q/m = 1. It composes SixQubit.Orbit26.S0_eq_fiber/S1_eq_fiber with OrderFourNoCompletion.paper26_equivalent_key25, both of which already existed. q4o26nogo is the no-go itself."
   },
   {
    "id": "supplementary.tex:equation@6927",
@@ -15370,14 +15392,13 @@
    "line": 7661,
    "end_line": 7663,
    "statement_sha256": "cbd9e0cb4bd9599f64e3dde1e89aa94b1cdeea1a96c846706902f58bc939f27a",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryNoGo.q4o30nogo",
-    "MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective",
-    "MainTheory.Generated.FiniteOrbitBase.keyAt",
-    "MainTheory.Generated.FiniteOrbitBase.paperOrbitId"
+    "MainTheory.OrbitRepresentative.orbit30_representative",
+    "MainTheory.PaperSupplementaryImages.q4o30_representative",
+    "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
    ],
-   "review": "q = 4 and m = 4: covered (fields of keyAt 29 together with paperOrbitId 29 = 30, both by decide). a = (1,1,1,1,2,3): NOT covered -- no Lean declaration links any orbit key to an angle vector | R's recorded declarations: PARTIAL. q4o30nogo is stated as `(k : Fin 66) (hk : paperOrbitId k = 30) : NoCompletion (keyAt k).fibers`, so the orbit is named by the paperOrbitId LABEL, not by the triple (q,m,a). Following the tables: paperOrbitId index 29 = 30, and keyAt 29 = key29 = <4, 4, 78274681211224065, 9223654706208336000> (FiniteOrbitBase.lean:594), so q = 4 and m = 4 are literally the key's first two fields and are decidable. The angle vector a = (1,1,1,1,2,3) appears NOWHERE in the repository: OrbitKey carries (q, m, mask0, mask1) only, the generated inputs are FiberPairs of masks, and I found no declaration of the form 'the fibres of angle vector a at residues 0 and q/m are (cube-equivalent to) key k'. So the manuscript's choice of representative is an unverified labelling step. FYI (computed outside Lean, not a Lean fact): the q=4 fibres of a=(1,1,1,1,2,3) at residues 0 and 1 do map onto key29's two masks under the cube isometry 'swap qubits 4 and 5, then XOR by 15', so the manuscript's representative is correct -- it is simply not formalized. paperOrbitId_injective only makes 'manuscript orbit N' denote a single key; it does not tie that key to (q,m,a)."
+   "review": "The orbit representative (q,m,a) = (4,4,(1,1,1,1,2,3)), by the same composition as for orbit 26: SixQubit.Orbit30.S0_eq_fiber/S1_eq_fiber identify the paper support pair with the residue fibres of the displayed angle vector, and OrderFourNoCompletion.paper30_equivalent_key29 carries that pair onto directory key 29, whose paperOrbitId is 30. q4o30nogo is the no-go itself."
   },
   {
    "id": "supplementary.tex:remark@7677",
@@ -15985,12 +16006,13 @@
    "line": 8119,
    "end_line": 8121,
    "statement_sha256": "1603c86ad3c67cb66b87dc2fa08e52970af9536b3b4bc4fcc394f1d32283ae0d",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryNoGo.q4o31nogo",
-    "MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective"
+    "MainTheory.OrbitRepresentative.orbit31_representative",
+    "MainTheory.PaperSupplementaryImages.q4o31_representative",
+    "MainTheory.PaperSupplementaryNoGo.q4o31nogo"
    ],
-   "review": "PROVED (indirectly): (q,m) = (4,4) - q4o31nogo is stated for the key k with paperOrbitId k = 31, paperOrbitId_injective makes that k unique, and it is k = 26 with keyAt 26 = key26 = <4, 4, mask0, mask1>, so q = 4 and m = 4 are recoverable by unfolding. NOT PROVED by any recorded declaration: a = (1,1,1,2,2,2). The orbit key stores only (q, m, mask0, mask1); the angle vector never appears in q4o31nogo, hasCompletion_iff_paperOrbitId or paperOrbitId_injective. | The identification of manuscript orbit 31 with the angle vector IS in the repository, just not among the recorded declarations: SixQubit.Orbit31.av := ![1,1,1,2,2,2] : Fin 6 -> ZMod 4 with S0_eq_fiber / S1_eq_fiber proving that Orbit31.S0, S1 are exactly the residue-0 and residue-1 fibres of that angle vector (kernel `decide`); OrderFourNoCompletion.paper31_noCompletion proves NoCompletion for those fibres directly - that is the theorem at the manuscript's own (q,m,a); paper31_equivalent_key26 and paperOrbitId26_eq then transport it to the recorded key form. Recording paper31_noCompletion alongside q4o31nogo would close the gap. Note also that generated `paperOrbitId` is a manifest lookup table whose own docstring says the data definition alone is not an identification proof."
+   "review": "The orbit representative (q,m,a) = (4,4,(1,1,1,2,2,2)). Previously the review noted that (q,m) = (4,4) was recoverable by unfolding keyAt 26 but that a = (1,1,1,2,2,2) was not stated anywhere. orbit31_representative states it, by composing SixQubit.Orbit31.S0_eq_fiber/S1_eq_fiber with paper31_equivalent_key26."
   },
   {
    "id": "supplementary.tex:remark@8136",
@@ -16288,13 +16310,13 @@
    "line": 8373,
    "end_line": 8375,
    "statement_sha256": "8dc07b4911eacca722332d98b77f586e1be79c4bc13db897967cace002fab0d7",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryNoGo.q4o32nogo",
-    "MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective",
-    "MainTheory.PaperSupplementaryNoGo.hasCompletion_iff_paperOrbitId"
+    "MainTheory.OrbitRepresentative.orbit32_representative",
+    "MainTheory.PaperSupplementaryImages.q4o32_representative",
+    "MainTheory.PaperSupplementaryNoGo.q4o32nogo"
    ],
-   "review": "Proved: the no-go itself — `q4o32nogo (k) (hk : paperOrbitId k = 32) : NoCompletion (keyAt k).fibers`, with `paperOrbitId_injective` making 'orbit 32' denote at most one key. NOT supplied by any recorded declaration: the display's actual content, the identification of that orbit's representative as (q,m,a) = (4,4,(1,1,2,2,2,3)); the recorded statements never mention q, m or the angle vector. | The identification does exist in the repository, just not in this ledger entry: `SixQubit.Orbit32.av : Fin 6 → ZMod 4 := ![1,1,2,2,2,3]` with `S0_eq_fiber`/`S1_eq_fiber` at residues 0 and 1; `OrderFourNoCompletion.paper32_noCompletion : NoCompletion paper32Fibers` proves the no-go directly on those fibres; `paper32_equivalent_key27` carries the labels `4 4` (q = m = 4) and transports it to `Base.key27`; `paperOrbitId27_eq : paperOrbitId 27 = 32` closes the loop. Adding those would make this display covered. Separate minor point: non-vacuity of the `paperOrbitId k = 32` quantification rests on `PaperSupplementaryNoGo.paperOrbitId_range` / `exists_key_of_paperOrbitId`, which is also not in the recorded list (injectivity alone gives 'at most one', not 'at least one')."
+   "review": "The orbit representative (q,m,a) = (4,4,(1,1,2,2,2,3)), by composing SixQubit.Orbit32.S0_eq_fiber/S1_eq_fiber with paper32_equivalent_key27, whose paperOrbitId is 32. q4o32nogo is the no-go itself."
   },
   {
    "id": "supplementary.tex:remark@8378",
@@ -17502,11 +17524,15 @@
    "line": 9090,
    "end_line": 9096,
    "statement_sha256": "f62fb83e39d8552e3fc1d7c3cd35156cced26d78e899a5b4b17d47f902a7aab8",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
-    "MainTheory.PaperSupplementaryImages.m5_unique_unconditional"
+    "MainTheory.OrderFiveEnumerator.orderFive_enumerator",
+    "MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full",
+    "MainTheory.OrderFiveEnumerator.canonical_enumerator",
+    "MainTheory.PaperSupplementaryImages.m5_unique_full",
+    "MainTheory.WImages.WImage_orbit36"
    ],
-   "review": "the enumerator VALUE A = (1,0,21/25,0,291/25,384/25,79/25) is proved for the orbit-36 fibre pair (WImages.WImage_orbit36 = {R5A}); the display's actual claim -- that EVERY ((6,2,3)) code of projective diagonal logical order five has this A -- is not stated anywhere | R's recorded declaration: NO for this display. m5_unique_unconditional concludes only `exists S k, (keyAt k).m = S.m AND (S.m = 5 -> paperOrbitId k = 36)` -- the corollary's FIRST sentence (orbit 36 is the only order-five moment orbit), with no enumerator at all. The value in the display is `MainTheory.WImages.R5A = ![1, 0, 21/25, 0, 291/25, 384/25, 79/25]` and `WImage_orbit36 : Levels.WImage SixQubit.Orbit36Transport.originalAv 0 1 = {R5A}` (WImageOrbit36.lean:26) proves it for every exact normalized distance-three pair supported on orbit 36's two table fibres. WHAT IS MISSING: the composition from an arbitrary order-five code to those fibres. code_orderFive_is_orbit36 lands on a key (key34 via paperOrbitId = 36) through fibre-equivalence, but no declaration transports the code's own frame into Orbit36Transport's fibres at the enumerator level (which would need the Aco-invariance of the cube action, SixQubit.CodeEquiv.Aco_permAct / Aco_flipAct), so 'every such code has this A' is unproved as stated. The corollary's last clause ('belongs, up to the lift-aware normal form, to the rigid orbit-36 class') is the LU-rigidity half in ClassificationLevelsSix/Orbit36LUBridge, also not in the recorded list."
+   "review": "The enumerator A = (1, 0, 21/25, 0, 291/25, 384/25, 79/25) for EVERY exact ((6,2,3)) code of projective diagonal logical order five, which is the display and was previously uncovered: WImage_orbit36 proves the value only for a pair supported on the two table fibres, and nothing transported it to an arbitrary code. orderFive_enumerator supplies the transport, and it is local-unitary invariance of the enumerator rather than a cube action: LocalUnitaryEnumerators.Aco_luEquivalent was already proved and unused for this. Both an arbitrary order-five code (via luEquivalent_canonical_of_orderFive) and the attainment witness on the table fibres (via Orbit36LUBridge.original_projector_luEquivalent_canonical) are LU-equivalent to the canonical orbit-36 projector, so their Aco coefficients agree, and WImage_orbit36 evaluates the witness. m5_unique_unconditional_full is the whole corollary: orbit-36 membership as a cube parameter, the enumerator, and the LU class."
   },
   {
    "id": "supplementary.tex:prop:o5-nogo",
@@ -22395,9 +22421,18 @@
    "line": 12141,
    "end_line": 12154,
    "statement_sha256": "119786edde55b8efb068870db91502aa4a8aa4b62cc7c58b3312e03274f89ff4",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ParityFour.edge_isolation",
+    "MainTheory.ParityFour.row_eq_character_sum",
+    "MainTheory.ParityFour.bdot_push",
+    "MainTheory.ParityFour.proj_bxor_push",
+    "MainTheory.ParityFour.edgeMasks_eq",
+    "MainTheory.ParityFour.edgeMasks_transversal",
+    "MainTheory.ParityFour.edge_isolation_of_character_rows",
+    "MainTheory.ParityFour.eq_zero_of_transversal"
+   ],
+   "review": "Edge isolation, with the manuscript representation proviso discharged by construction rather than assumed. The four effective parity coordinates are named by an injection emb : Fin 4 -> Fin 6 and the physical error carrying an effective mask is its pushforward push emb z; bdot_push proves that the physical Z dressing computes the effective character, proj_bxor_push that the physical single-qubit flip induces the effective coordinate flip, and row_eq_character_sum that the off-diagonal KL row on the incidence set is exactly the effective character sum times chi_z(e_k) -- the manuscript \"up to row phases\", a sign, so vanishing is unaffected. edgeMasks_eq identifies eq:parity4-edgeerrors (X_k, Y_k, Z_jX_k, Z_jY_k) with the masks of weight at most one away from k, and edgeMasks_transversal proves those eight meet every class modulo the all-ones vector, which is the manuscript \"complete character table of a three-dimensional Boolean group\". The remaining hypotheses are the manuscript own inputs: the KL equations for those eight physical errors, and that flipping coordinate k carries the incidence set into the even parity class. The certified no-gos for orbits 14, 15 and 24 do not route through this lemma; they carry out the same inversion inline."
   },
   {
    "id": "supplementary.tex:eq:parity4-edgeorthogonality",
