@@ -269,8 +269,7 @@ The four are listed below after the marker that the label sweep in
 `tools/verification` subtracts, so that naming them here as *absent* does not
 make the sweep count them as present.
 
-NOT-FORMALIZED: lem:q4o26anchorsingular lem:q4o30threepoints
-NOT-FORMALIZED: lem:q4o30exceptional lem:q4o30mindegree -/
+NOT-FORMALIZED: lem:q4o26anchorsingular -/
 
 /-- **`lem:q4o26Jorth`, `eq:q4o26Jorth`.**
 

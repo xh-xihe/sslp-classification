@@ -153,6 +153,7 @@ import MainTheory.Generated.OrbitTableMultiplicities
 import MainTheory.PhaseSectorMoments
 import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
+import MainTheory.Orbit30SupportGraph
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
@@ -841,6 +842,20 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.CovarianceRange.cov_eq_mul_transpose
 #print axioms MainTheory.CovarianceRange.span_col_sqrtFactor
 #print axioms MainTheory.CovarianceRange.range_cov_eq_span
+#print axioms MainTheory.Orbit30.triangle_contradiction
+#print axioms MainTheory.Orbit30.Data.total_weight
+#print axioms MainTheory.Orbit30.Data.rowSupport_card_ne_one
+#print axioms MainTheory.Orbit30.Data.two_le_nbhd_card
+#print axioms MainTheory.Orbit30.Data.split_identity
+#print axioms MainTheory.Orbit30.Data.row_over_A
+#print axioms MainTheory.Orbit30.Data.card_A_ne_zero
+#print axioms MainTheory.Orbit30.Data.card_A_ne_one
+#print axioms MainTheory.Orbit30.Data.card_A_ne_two
+#print axioms MainTheory.Orbit30.Data.three_le_card_A
+#print axioms MainTheory.Orbit30.Data.exists_internal_edge
+#print axioms MainTheory.Orbit30.Data.card_A_ne_three
+#print axioms MainTheory.Orbit30.Data.q4o30_exceptional
+#print axioms MainTheory.Orbit30.Data.four_le_card_A
 #print axioms MainTheory.CovarianceRange.affineSpan_eq_mu_add_range
 #print axioms MainTheory.Orbit31Identification.fibre0
 #print axioms MainTheory.Orbit31Identification.fibre1

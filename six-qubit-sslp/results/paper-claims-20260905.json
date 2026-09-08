@@ -14964,9 +14964,14 @@
    "line": 7375,
    "end_line": 7378,
    "statement_sha256": "939c43497fc4cf247a4f85261d366f709536a18e168ea6f22f7e1a0d0f30d3c5",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit30.Data.three_le_card_A",
+    "MainTheory.Orbit30.Data.card_A_ne_zero",
+    "MainTheory.Orbit30.Data.card_A_ne_one",
+    "MainTheory.Orbit30.Data.card_A_ne_two"
+   ],
+   "review": "At least three point amplitudes are active. |A| = 0 contradicts R = 3/8; |A| = 1 makes the row at a neighbour of the single active point have exactly one nonzero term; |A| = 2 splits on whether the edge ab is present -- present gives the same one-term contradiction at a, absent makes the split identity SAA - SII = (|A|-1)/4 read 0 - SII = 1/4 with SII nonnegative."
   },
   {
    "id": "supplementary.tex:eq:q4o30twopointmag",
@@ -15016,9 +15021,14 @@
    "line": 7418,
    "end_line": 7422,
    "statement_sha256": "ed8a26a5230245fb0a98926cd2a8f34a432f87f78629ab044a8753ab0cbaf977",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit30.Data.q4o30_exceptional",
+    "MainTheory.Orbit30.Data.card_A_ne_three",
+    "MainTheory.Orbit30.Data.exists_internal_edge",
+    "MainTheory.Orbit30.triangle_contradiction"
+   ],
+   "review": "The inactive-inactive edge branch is impossible. Proved in the stronger form card_A_ne_three: under the synchronised weight-one interface the active set cannot have exactly three elements at all, since the split identity gives SAA - SII = 1/2 so the graph induced on A is nonempty whether or not the inactive-inactive edge is present, the induced degree cannot be one so the induced graph is the full triangle, and triangle_contradiction shows the three triangle rows are inconsistent. The manuscript states the weaker conclusion because eq:q4o30globalsync is not yet available in general at that point of its argument; this file assumes the synchronised rows throughout, which is recorded in its header."
   },
   {
    "id": "supplementary.tex:align@7430",
@@ -15100,9 +15110,13 @@
    "line": 7476,
    "end_line": 7480,
    "statement_sha256": "ae87454d359cf49953bff177218083e2dff63bb919d0af560285e46bf0407ab1",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit30.Data.two_le_nbhd_card",
+    "MainTheory.Orbit30.Data.nbhd_nonempty",
+    "MainTheory.Orbit30.Data.rowSupport_card_ne_one"
+   ],
+   "review": "On the regular branch the support graph has minimum degree at least two. Degree zero contradicts D_i = r_i + 1/8 > 0; a unique neighbour j splits on whether j is active -- active gives a row with exactly one nonzero term, inactive makes regularity force i active and then w_ij = D_i = r_i + 1/8 > 1/8 while D_j = 1/8 bounds w_ij from above."
   },
   {
    "id": "supplementary.tex:equation@7487",

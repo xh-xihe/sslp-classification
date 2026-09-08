@@ -189,6 +189,7 @@ import MainTheory.OrbitRecordMultiplicity
 import MainTheory.OrbitTablePaperKey
 import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
+import MainTheory.Orbit30SupportGraph
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
