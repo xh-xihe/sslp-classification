@@ -154,6 +154,7 @@ import MainTheory.PhaseSectorMoments
 import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
 import MainTheory.Orbit30SupportGraph
+import MainTheory.Orbit26AnchorSingular
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
@@ -843,6 +844,12 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.CovarianceRange.span_col_sqrtFactor
 #print axioms MainTheory.CovarianceRange.range_cov_eq_span
 #print axioms MainTheory.Orbit30.triangle_contradiction
+#print axioms MainTheory.Orbit26.bad_subsingleton
+#print axioms MainTheory.Orbit26.exists_generic
+#print axioms MainTheory.Orbit26.exists_nonzero_col
+#print axioms MainTheory.Orbit26.finish_of_rows
+#print axioms MainTheory.Orbit26.core
+#print axioms MainTheory.Orbit26.core_rank_one
 #print axioms MainTheory.Orbit30.Data.total_weight
 #print axioms MainTheory.Orbit30.Data.rowSupport_card_ne_one
 #print axioms MainTheory.Orbit30.Data.two_le_nbhd_card

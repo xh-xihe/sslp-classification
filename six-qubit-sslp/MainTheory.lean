@@ -190,6 +190,7 @@ import MainTheory.OrbitTablePaperKey
 import MainTheory.Orbit31Identification
 import MainTheory.CovarianceRange
 import MainTheory.Orbit30SupportGraph
+import MainTheory.Orbit26AnchorSingular
 import MainTheory.ConnectedOrthogonality
 import MainTheory.ParityFourEdgeIsolation
 import MainTheory.PaperGeneralSSLP
