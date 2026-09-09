@@ -1,8 +1,13 @@
 # Six-qubit SSLP and general finite-lift certification
 
-This repository formalizes the mathematics of `documents/20260905/main.tex`
-and `documents/20260905/supplementary.tex` in Lean 4.27.0, using pinned mathlib.
-**Full manuscript certification is still in progress.**
+This repository formalizes the mathematics of `documents/20260908/main.tex`
+and `documents/20260908/supplementary.tex` in Lean 4.27.0, using pinned mathlib.
+**Full manuscript certification is still in progress.**  Three discrepancies
+between the manuscript and what is provable are recorded in
+[errata-20260908.md](results/errata-20260908.md); one of them,
+`eq:quantum-Singleton`, is false as the text stands and has a kernel-checked
+counterexample, so main.tex cannot be certified as written until it is
+qualified.
 
 The established six-qubit classification includes 51 excluded moment orbits,
 15 realized moment orbits, 11 settled nonempty weight-enumerator images,
@@ -20,46 +25,49 @@ and successful generator execution do not establish a theorem.
 ## Current coverage and outstanding work
 
 The [initial audit](results/certification-audit-20260905.md) records the
-starting snapshot. The [implementation ledger](results/certification-progress-20260905.md)
-records subsequent work. The [assertion inventory](results/paper-claims-20260905.json)
+starting snapshot against the previous manuscript. The
+[20260908 review](results/manuscript-20260908-review.md) and
+[closeout progress](results/certification-closeout-progress-20260908.md)
+record the current target; the older
+[implementation ledger](results/certification-progress-20260905.md) and
+[assertion inventory](results/paper-claims-20260905.json) are retained
+unchanged. The current [assertion inventory](results/paper-claims-20260908.json)
 is tied to the authoritative source hashes; it includes unnumbered displays
 and requires a separate review of prose assertions. Unreviewed entries are
 not automatically mathematical gaps: many need an existing proof mapped and
 checked against their precise statement.
 
 The count is worth breaking down, because the bare number invites the wrong
-reading. Of 1597 claims, 321 are recorded (313 covered, 8 partial) and two are
+reading. Of 1588 claims, 1000 are recorded (994 covered, 6 partial) and two are
 the manuscript's own conjectures, boxed there with a question mark and not
-asserted. Of the 1274 still unreviewed:
+asserted. Of the 586 still unreviewed:
 
-* none sits inside a result that IS recorded. Such displays need individual
-  judgement rather than inheritance from the parent -- for instance
-  `thm:o7weightimage` contains both the A-enumerator image and the
-  B-enumerators -- and they have now all been reviewed.
-* 491 are displays inside `proof` environments -- intermediate steps of an
-  argument whose conclusion is what the recorded entry tracks.
-* 783 are displays elsewhere in the supplement. Sampling them shows parameter
-  definitions (`lambda_0 = 1/8 - a - b - c`), notation (`P-tilde = Y^{ot 6}
-  P-bar Y^{ot 6}`), per-orbit data (`a = (1,1,2,2,2,3)`) and intermediate
-  systems inside an orbit argument. Every unreviewed display of `main.tex` has
-  been reviewed and paired with a declaration or recorded as partial.
+* none is in `main.tex`, and none sits inside a result that IS recorded. Such
+  displays need individual judgement rather than inheritance from the parent
+  -- for instance `thm:o7weightimage` contains both the A-enumerator image and
+  the B-enumerators -- and they have all been reviewed.
+* 322 are displays inside `proof` environments of the supplement --
+  intermediate steps of an argument whose conclusion is what the recorded
+  entry tracks.
+* 264 are displays elsewhere in the supplement. Sampling them shows parameter
+  definitions, notation, per-orbit data and intermediate systems inside an
+  orbit argument.
 
-The eight partial entries, all in `main.tex`, are these. Two are genuinely
-open mathematics: `eq:small-beta`, the universal upper bounds 18, 42 and 120
-for beta at sizes 7, 8 and 9 -- the attainment halves are proved, the upper
-halves are deliberately not claimed, and the six-qubit distance-three
-classification does not use them -- and `eq:6qubit-d2-bound`, which rests on
-the same beta_7 bound. One is a missing clause: `thm:sslp-completeness` has
-its covering clause, its cutoff, its converse and its intrinsic-group audit
-all proved, but not its closing sentence, that the final group audit and
-equivalence quotient "return precisely the selected intrinsic classification
-data". Sixty-six keys are orbits of labelled Boolean support pairs and one key
-carries a whole family of amplitude tuples, so "same key" is weaker than
-"equivalent code" until a rigidity theorem collapses that family; exactly one
-orbit, 36, has one. The other five are remarks -- `remark@2017`,
-`remark@2503`, `remark@3028`, `rem:four-open-orbits` and
-`six:rem:global-family-caveat` -- whose endpoints are all theorems here but
-whose comparative, counting or status sentences have no single declaration.
+Three of the six partial entries are the errata: `eq:quantum-Singleton`, false
+as written; `eq:o7knowntransversal`, where the cited construction's gate
+convention provably fails to preserve the span at theta = 0; and the orbit-9
+literal witness, whose printed bit order is ambiguous and is certified under
+one reading with the other reading proved inconsistent. The remaining three
+are remarks whose endpoints are all theorems here but whose comparative,
+counting or status sentences have no single declaration.
+
+`eq:small-beta` is no longer among them. All five tabulated values are exact
+certificates -- a universal upper bound together with an explicitly attaining
+zero-one matrix -- at sizes 5, 6, 7, 8 and 9. The size-nine entry was the last
+one open: its whole sign-prefix DAG of 5374 modules had compiled, but the
+capstone reading that certificate as `BetaBound 9 120` had never itself been
+compiled, so the value could not be claimed. It now compiles, and
+`MainTheory.BetaNineValue.betaOf_nine` gives `betaOf 9 = 120`.
 
 Requiring a separate Lean declaration for each such display would be a
 category error: the standard is that the *result* is proved, and the named
@@ -209,7 +217,7 @@ independent supplementary assertions, the Eastin-Knill statement, and final
 manuscript-wide review and rebuild. Orbit 31's LP affine dimension is proved
 twice, by `SixQubit.Orbit31.momentPolytope_affine_dimension` on the
 thirty-two-coordinate normal form and by
-`Generated.OrbitTableSemantics31.lp_affine_dimension` on the full-fibre
+`MainTheory.Generated.OrbitTableSemantics31.lp_affine_dimension` on the full-fibre
 pipeline polytope. That duplication is now closed.
 `MainTheory.Orbit31Identification.same_fibre_pair` proves the hand
 certificate's two sixteen-element word sets are exactly the two masks of the
@@ -273,9 +281,11 @@ is hours in, so `tools/verification/check_audit_names.py` resolves every
 `#print axioms` name against the declarations the sources actually introduce
 first, in about a second. It is a source-level check and therefore weaker than
 elaboration -- it does not know about `export` or macro-generated names -- so a
-reported miss is a prompt to look. It found one: a line naming
-`MainTheory.PaperSupplementaryNoGo.here`, a word scraped out of that module's
-own docstring rather than a declaration, which would have failed the build.
+reported miss is a prompt to look. It found one: an audit line asking for
+axioms of a "here" declaration in MainTheory.PaperSupplementaryNoGo -- a word
+scraped out of that module's own docstring rather than a declaration, which
+would have failed the build. It is named without backticks on purpose, since
+this same checker resolves every backticked identifier in this file.
 The root count is computed from those current files rather than maintained as
 a manually updated number in this README. Axiom cleanliness does not by
 itself show that a theorem matches the manuscript's hypotheses and conclusion.

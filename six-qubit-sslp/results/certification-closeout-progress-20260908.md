@@ -80,6 +80,64 @@ No development `.olean` has been adopted as a production content-fingerprinted b
   exactly propext, Quot.sound and Classical.choice. This remains development evidence and
   does not replace the final source-fingerprinted build or the outstanding claim reviews.
 
+## Independent review, 2026-09-09
+
+An independent pass over the accumulated work, checking rather than accepting
+the record above. Everything below was measured.
+
+Confirmed: label sweep 33/33 and 93/93 against the new manuscript; the ledger
+validates against the current TeX hashes; 14177 Lean sources carry no
+forbidden token; every audited `#print axioms` name and every ledger-cited
+declaration resolves; only six modules lacked an olean and all six were
+orphans; the gates `sources`, `generated`, `paper`, `table-kernel`,
+`table-kernel-selftest`, `gate`, `gate-selftest`, `moments`,
+`moments-selftest` and `audit-names` pass; the tool suite passes. The
+verification harness was strengthened over the period, not relaxed.
+
+Four defects were found and fixed.
+
+- `tools/run.py` put only `core/` and `orbits/` on `sys.path`, not
+  `verification/`. `orbit_table_kernel.py` imports `mkmanifest` directly, so
+  both table-kernel gates died with ModuleNotFoundError through `verify.py`
+  while passing standalone. Any full acceptance run would have failed there.
+- The axiom gate could not execute. Its harness is built from
+  `MainTheory/Audit.lean`'s own imports, and 957 of the 1843 declarations
+  cited by covered claims lived in modules unreachable from it, so they would
+  be reported as missing kernel declarations. The 254 modules owning them are
+  now imported; the audit closure went 6614 -> 12615 of 14177.
+- The same harness overflowed the code generator once the root inventory
+  passed a few thousand names. It now emits one array literal per 200 roots
+  joined by `++` under a raised recursion depth. `verify.py --only axioms`
+  then passed: 2891 declarations, axiom union exactly propext,
+  Classical.choice and Quot.sound.
+- `MainTheory/OrderFour26DiagonalRows0..3` did not compile at all, failing
+  with "ring failed". The cause was not mathematical: `norm_num` left some
+  indices as `bottom 2` and others as `bottom ⟨2, ⋯⟩`, which `ring` treats as
+  different atoms. Adding `Fin.reduceFinMk` to the following `simp only` fixed
+  all sixteen sites. This mattered because the build plan comes from the
+  lakefile globs, so a broken module fails the full build whether or not
+  anything imports it. No ledger claim cited any declaration in them, so no
+  coverage claim rested on broken work.
+
+`beta_9 = 120` is now proved, which closes `eq:small-beta`. Its whole
+size-nine sign-prefix DAG of 5374 modules had already compiled; only the
+capstone reading that certificate as `BetaBound 9 120` had never been
+compiled, which is why the value could not be claimed. `betaNineBound`,
+`betaNineExact : BetaExact 9 120` and the new `BetaNineValue.betaOf_nine`
+compile with the standard three axioms, over a closure with nothing stale or
+mismatched. The ledger is 994 covered, 6 partial, 2 conjecture, 586
+unreviewed.
+
+Whole-root imports are deliberately not done, superseding the item below. The
+build plan already covers all 14177 modules from the lakefile globs regardless
+of what the roots import, and the axiom gate is built from the audit files,
+whose closure now contains every declaration any covered claim cites. Making
+the roots import everything would add only a coherence check, at the cost of a
+Lean process loading about 14000 oleans.
+
+A full source-fingerprinted build over all 14178 planned modules started on
+2026-09-09 with the tree frozen at that commit.
+
 ## Still in progress
 
 - Universal beta bounds at 8 and 9 are **not yet claimed complete**. Their complete sign-prefix
