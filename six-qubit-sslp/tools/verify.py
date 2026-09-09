@@ -67,10 +67,10 @@ def axiom_inventory(root=ROOT):
         module_imports.extend(imports(source))
     if len(set(roots)) != len(roots):
         raise ValueError('duplicate declarations in the audit inventory')
-    ledger = Path(root) / 'results/paper-claims-20260905.json'
+    ledger = Path(root) / 'results/paper-claims-20260908.json'
     if ledger.exists():
         data = ledger.read_bytes()
-        source_hashes['results/paper-claims-20260905.json'] = hashlib.sha256(data).hexdigest()
+        source_hashes['results/paper-claims-20260908.json'] = hashlib.sha256(data).hexdigest()
         for claim in json.loads(data)['claims']:
             if claim['status'] == 'covered':
                 for declaration in claim['lean_declarations']:
@@ -157,14 +157,20 @@ def script_check(name, script, *arguments):
 
 def checks(source_dir=None):
     paper_args = ['--check']
+    table_args = []
     if source_dir:
         paper_args += ['--source-dir', str(source_dir)]
+        table_args += ['--source-dir', str(source_dir)]
     return {
         'build': check_build,
         'axioms': check_axioms,
         'sources': check_sources,
         'generated': lambda: script_check('generated', 'verification/generated_manifests.py'),
         'paper': lambda: script_check('paper', 'verification/mkmanifest.py', *paper_args),
+        'table-kernel': lambda: script_check('table-kernel',
+            'verification/orbit_table_kernel.py', *table_args),
+        'table-kernel-selftest': lambda: script_check('table-kernel-selftest',
+            'verification/orbit_table_kernel.py', '--selftest', *table_args),
         'claims': lambda: recorded_command('claims',
             [sys.executable, 'tools/paper_claims.py', 'check', '--require-complete']),
         'gate': lambda: script_check('gate', 'verification/gate.py'),

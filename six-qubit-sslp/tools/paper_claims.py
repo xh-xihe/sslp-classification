@@ -15,8 +15,8 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCES = ('documents/20260905/main.tex', 'documents/20260905/supplementary.tex')
-LEDGER = ROOT / 'results/paper-claims-20260905.json'
+SOURCES = ('documents/20260908/main.tex', 'documents/20260908/supplementary.tex')
+LEDGER = ROOT / 'results/paper-claims-20260908.json'
 KINDS = {'theorem', 'lemma', 'proposition', 'corollary', 'definition', 'example',
          'remark', 'conjecture', 'equation', 'align', 'gather', 'multline',
          'eqnarray', 'table', 'longtable', 'displaymath'}

@@ -15,7 +15,7 @@ import tempfile
 from math import gcd
 
 REPO = Path(__file__).resolve().parents[2]
-DEFAULT_SOURCE = REPO / 'documents' / '20260905'
+DEFAULT_SOURCE = REPO / 'documents' / '20260908'
 ROW = re.compile(
     r'^\s*(\d+)\s*&\s*(\d+)\s*&\s*(\d+)\s*&\s*\$\(([0-9,\s]+)\)\$'
     r'\s*&\s*\$\((\d+),(\d+)\)\$\s*&\s*(\d+)\s*&\s*(\d+)'
@@ -58,10 +58,13 @@ def parse_table(text):
             raise ManifestError('duplicate orbit ID %d' % oid)
         angle = [int(value.strip()) for value in values[3].split(',')]
         n0, n1 = map(int, values[4:6])
+        r_star, lp_dimension, multiplicity = map(int, values[6:9])
         if len(angle) != 6 or angle != sorted(angle):
             raise ManifestError('orbit %d has no sorted six-coordinate angle' % oid)
         if q < 2 or logical_order < 2 or q % logical_order:
             raise ManifestError('orbit %d has invalid lift/projective orders' % oid)
+        if not 0 <= r_star <= 6 or lp_dimension > n0 + n1 or multiplicity < 1:
+            raise ManifestError('orbit %d has invalid rank/dimension/multiplicity columns' % oid)
         if any(value < 0 or value >= q for value in angle) or gcd(q, *angle) != 1:
             raise ManifestError('orbit %d has a nonprimitive or out-of-range angle' % oid)
         residue = q // logical_order
@@ -73,7 +76,9 @@ def parse_table(text):
         if status not in {'open', 'WE', 'rigid', 'no-go', 'realized'}:
             raise ManifestError('orbit %d has unrecognized status %r' % (oid, status))
         rows[oid] = (dict(q=q, m=logical_order, a=angle, d=residue,
-                          ord=q // gcd(residue, q), n0=n0, n1=n1), status)
+                          ord=q // gcd(residue, q), n0=n0, n1=n1,
+                          r_star=r_star, lp_dimension=lp_dimension,
+                          multiplicity=multiplicity), status)
     if set(rows) != set(range(1, 67)):
         raise ManifestError('expected IDs 1..66 exactly; missing=%s extra=%s' %
                             (sorted(set(range(1, 67)) - set(rows)),

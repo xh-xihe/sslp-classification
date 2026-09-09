@@ -53,7 +53,7 @@ theorem exists_unique_row (k : KeyId) :
 /-- Restated on the key rather than on the row. -/
 theorem multiplicity_eq_paperMultiplicity (k : KeyId) :
     ∃ i : Fin 66, OrbitTableRecords.paperKey i = k ∧
-      multiplicity k = OrbitTableRecords.paperMultiplicity i := by
+      MainTheory.OrbitRecordMultiplicity.multiplicity k = OrbitTableRecords.paperMultiplicity i := by
   obtain ⟨i, hi⟩ := paperKey_surjective k
   exact ⟨i, hi, hi ▸ OrbitTableMultiplicities.all_multiplicities i⟩
 

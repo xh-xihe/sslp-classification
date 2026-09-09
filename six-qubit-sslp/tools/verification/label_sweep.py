@@ -36,8 +36,8 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 LEAN_DIRS = ('MainTheory', 'SixQubit', 'SS')
-DEFAULT_SOURCES = ('documents/20260905/main.tex',
-                   'documents/20260905/supplementary.tex')
+DEFAULT_SOURCES = ('documents/20260908/main.tex',
+                   'documents/20260908/supplementary.tex')
 KINDS = 'theorem|lemma|corollary|proposition|definition|conjecture'
 B = chr(92)
 ENV = re.compile(B + B + r'begin\{(' + KINDS + r')\}'

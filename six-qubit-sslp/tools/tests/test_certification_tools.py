@@ -6,6 +6,7 @@ CERTIFICATION_LEAN_TESTS=1, using only Lean itself and disposable source files.
 """
 from contextlib import redirect_stdout
 import hashlib
+import gzip
 import importlib.util
 import io
 import json
@@ -108,12 +109,17 @@ class AxiomAudit(WorkspaceTest):
 
     def test_no_success_marker_and_wrong_count_are_rejected(self):
         self.assertFalse(self.check_with_output('')[0])
-        self.assertFalse(self.check_with_output('CERTIFICATION_AXIOMS_OK roots=2 axioms=[propext]')[0])
+        count = len(verify.axiom_inventory(self.root)[0])
+        self.assertFalse(self.check_with_output(
+            f'CERTIFICATION_AXIOMS_OK roots={count - 1} axioms=[propext]')[0])
 
     def test_unexpected_axiom_and_nonzero_exit_are_rejected(self):
-        self.assertFalse(self.check_with_output('CERTIFICATION_AXIOMS_OK roots=3 axioms=[sorryAx]')[0])
-        self.assertFalse(self.check_with_output('CERTIFICATION_AXIOMS_OK roots=3 axioms=[propext]', 1)[0])
-        self.assertTrue(self.check_with_output('CERTIFICATION_AXIOMS_OK roots=3 axioms=[propext]')[0])
+        count = len(verify.axiom_inventory(self.root)[0])
+        self.assertFalse(self.check_with_output(
+            f'CERTIFICATION_AXIOMS_OK roots={count} axioms=[sorryAx]')[0])
+        marker = f'CERTIFICATION_AXIOMS_OK roots={count} axioms=[propext]'
+        self.assertFalse(self.check_with_output(marker, 1)[0])
+        self.assertTrue(self.check_with_output(marker)[0])
 
 
 class PaperManifest(WorkspaceTest):
@@ -131,6 +137,20 @@ class PaperManifest(WorkspaceTest):
         self.assertEqual(len(manifest.parse_table(table)), 66)
         with self.assertRaisesRegex(manifest.ManifestError, 'ordered fiber'):
             manifest.parse_table(table.replace('$(22,21)$', '$(21,22)$', 1))
+
+    def test_all_statistical_columns_are_preserved_and_change_the_manifest(self):
+        table = self.table()
+        original = manifest.parse_table(table)
+        self.assertEqual({key: original[1][0][key] for key in
+                          ('r_star', 'lp_dimension', 'multiplicity')},
+                         {'r_star': 6, 'lp_dimension': 1, 'multiplicity': 1})
+        for before, after, key, value in (
+                ('& 6 & 1 & 1 &', '& 5 & 1 & 1 &', 'r_star', 5),
+                ('& 6 & 1 & 1 &', '& 6 & 2 & 1 &', 'lp_dimension', 2),
+                ('& 6 & 1 & 1 &', '& 6 & 1 & 2 &', 'multiplicity', 2)):
+            changed = manifest.parse_table(table.replace(before, after, 1))
+            self.assertNotEqual(original, changed)
+            self.assertEqual(changed[1][0][key], value)
 
     def test_missing_duplicate_and_malformed_rows_fail(self):
         lines = self.table().splitlines()
@@ -183,6 +203,56 @@ class GeneratedManifest(WorkspaceTest):
                    'MainTheory.Generated.Fixture.B\nMainTheory.Generated.Fixture.A\n')
         with self.assertRaisesRegex(ValueError, 'topological'):
             generated.check_directory(self.root, self.relative)
+
+
+class SignGeneratedManifest(WorkspaceTest):
+    def setUp(self):
+        super().setUp()
+        prefix = 'MainTheory.Generated.SignBeta1'
+        raw = json.dumps({'sign_order': 2, 'levels': [[{}], [{}]]}).encode()
+        path = self.root / 'results/sign-beta-proposals/beta1.json.gz'
+        path.parent.mkdir(parents=True)
+        path.write_bytes(gzip.compress(raw, mtime=0))
+        self.entries = []
+        for depth in (1, 2):
+            for kind in ('Data', 'Proof'):
+                node = f'{prefix}.{kind}.N{depth:02d}_0000'
+                module = f'{prefix}.{kind}.G{depth:02d}_0000'
+                source = f'namespace {node}\nend {node}\n'
+                lean_path = self.write(module.replace('.', '/') + '.lean', source)
+                self.entries.append(dict(module=module, nodes=[node], imports=[],
+                    sha256=build_lean.file_hash(lean_path)))
+        self.manifest = dict(schema=1, proposal_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                             modules=self.entries)
+        self.save_manifest()
+
+    def save_manifest(self):
+        self.write('MainTheory/Generated/SignBeta1/manifest.json', json.dumps(self.manifest))
+
+    def test_proposal_and_source_changes_are_rejected(self):
+        self.assertEqual(generated.check_sign_family(self.root, 1), 4)
+        source = self.root / 'MainTheory/Generated/SignBeta1/Proof/G01_0000.lean'
+        source.write_text(source.read_text() + '-- changed\n')
+        with self.assertRaisesRegex(ValueError, 'source SHA-256'):
+            generated.check_sign_family(self.root, 1)
+
+    def test_omitted_proposal_node_is_rejected(self):
+        self.manifest['modules'] = self.entries[:-1]
+        self.save_manifest()
+        with self.assertRaisesRegex(ValueError, 'node coverage'):
+            generated.check_sign_family(self.root, 1)
+
+    def test_relabelled_node_is_rejected_even_with_matching_hash(self):
+        entry = self.entries[-1]
+        old = entry['nodes'][0]
+        new = old.replace('N02', 'N03')
+        source = f'namespace {new}\nend {new}\n'
+        lean_path = self.write(entry['module'].replace('.', '/') + '.lean', source)
+        entry['nodes'] = [new]
+        entry['sha256'] = build_lean.file_hash(lean_path)
+        self.save_manifest()
+        with self.assertRaisesRegex(ValueError, 'node coverage'):
+            generated.check_sign_family(self.root, 1)
 
 
 class SerialBuild(WorkspaceTest):
@@ -302,6 +372,35 @@ class LeanNegativeControls(WorkspaceTest):
             ['TestKernelDecision'])
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         self.assertIn('CERTIFICATION_AXIOMS_OK roots=1', proc.stdout + proc.stderr)
+
+
+@unittest.skipUnless(os.environ.get('CERTIFICATION_LEAN_TESTS') == '1', 'opt-in Lean certificate controls')
+class QuadraticPruneNegativeControls(WorkspaceTest):
+    def execute(self, statement):
+        path = self.write('QuadraticControl.lean',
+            'import MainTheory.SignQuadraticChunkPrune\n'
+            'set_option maxRecDepth 100000\n'
+            'open MainTheory.SignQuadraticMinimum MainTheory.SignQuadraticChunkPrune\n'
+            + statement + '\n')
+        return subprocess.run(['lake', 'env', 'lean', '-j', '1', '-DwarningAsError=true', str(path)],
+            cwd=REPO, capture_output=True, text=True, encoding='utf-8', errors='replace')
+
+    def test_correct_restricted_minimum(self):
+        proc = self.execute('example : restrictedMinimum 1 0 0 !![1] ![none] = 1 := by decide +kernel')
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+
+    def test_overstated_quadratic_lower_bound_is_rejected(self):
+        proc = self.execute('example : 2 ≤ restrictedMinimum 1 0 0 !![1] ![none] := by decide +kernel')
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn('false', (proc.stdout + proc.stderr).lower())
+        self.assertNotIn('does not exist', proc.stdout + proc.stderr)
+
+    def test_wrong_chunk_fixed_bits_are_rejected(self):
+        proc = self.execute('example : Matches (fixedHighBits (N := 10) 3 (8 : Fin 1024)) '
+            '(MainTheory.SignRowEnumeration.row (N := 10) (0 : Fin 1024)) := by decide +kernel')
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn('false', (proc.stdout + proc.stderr).lower())
+        self.assertNotIn('does not exist', proc.stdout + proc.stderr)
 
 
 if __name__ == '__main__':

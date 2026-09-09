@@ -28,7 +28,8 @@ theorem assignedCount_eq_paperMultiplicity (i : Fin 66) :
 
 /-- The manuscript multiplicities count actual surviving records modulo labelled cube equivalence. -/
 theorem all_multiplicities (i : Fin 66) :
-    multiplicity (OrbitTableRecords.paperKey i) = OrbitTableRecords.paperMultiplicity i := by
+    MainTheory.OrbitRecordMultiplicity.multiplicity (OrbitTableRecords.paperKey i) =
+      OrbitTableRecords.paperMultiplicity i := by
   rw [multiplicity_eq_assignedCount, assignedCount_eq_paperMultiplicity]
 
 end MainTheory.Generated.OrbitTableMultiplicities
