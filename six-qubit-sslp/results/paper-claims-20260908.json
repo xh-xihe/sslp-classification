@@ -1874,14 +1874,20 @@
    "line": 1432,
    "end_line": 1443,
    "statement_sha256": "e2ff76b2c1c5caa1e66aa3c981ff5a570f573f8a90dfd23a340c6bf9f40bef89",
-   "status": "partial",
+   "status": "covered",
    "lean_declarations": [
+    "MainTheory.Generated.BinaryBetaSmall.Size4.Certificate.betaExact",
+    "MainTheory.Generated.BinaryBetaFiveFast.Certificate.betaExact",
+    "MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact",
     "MainTheory.BinaryBetaSeven.betaSevenExact",
-    "MainTheory.BinaryBetaEight.betaEightBound",
     "MainTheory.BinaryBetaEight.betaEightExact",
-    "MainTheory.BetaEightValue.betaOf_eight"
+    "MainTheory.BinaryBetaEight.betaEightBound",
+    "MainTheory.BinaryBetaNine.betaNineBound",
+    "MainTheory.BinaryBetaNine.betaNineExact",
+    "MainTheory.BetaEightValue.betaOf_eight",
+    "MainTheory.BetaNineValue.betaOf_nine"
    ],
-   "review": "Universal exact beta certificates through size eight are proved. The complete size-eight DAG (1466 modules), upper bound, explicit attainment, BetaExact 8 42 and betaOf 8 = 42 passed development compilation and standard-three-axiom audits on 2026-09-08. Size seven similarly passed (197 modules). The size-nine attainment is proved, but its universal upper bound 120 remains under kernel verification; this combined display remains partial. Final source-fingerprinted full-build acceptance is separately outstanding."
+   "review": "All five tabulated values are now exact certificates, each a universal upper bound together with an explicitly attaining zero-one matrix: BetaExact 5 5 and BetaExact 6 9 from the generated five- and six-size certificates, betaSevenExact (BetaExact 7 18, 197-module sign-prefix DAG), betaEightExact (BetaExact 8 42, 1466 modules) and betaNineExact (BetaExact 9 120, 5374 modules). BetaExact 4 3 is recorded alongside for the same construction at the smaller size. The size-nine entry was the last one open: its whole sign-prefix DAG had compiled but the capstone reading the DAG certificate as BetaBound 9 120 had never itself been compiled, so the value could not be claimed. betaNineBound and betaNineExact now compile with axiom footprint exactly propext, Classical.choice and Quot.sound, and BetaNineValue.betaOf_nine converts the certificate into betaOf 9 = 120 for the finite-supremum definition, as BetaEightValue.betaOf_eight does at size eight. Final source-fingerprinted full-build acceptance remains separately outstanding for the repository as a whole."
   },
   {
    "id": "main.tex:displaymath@1455",

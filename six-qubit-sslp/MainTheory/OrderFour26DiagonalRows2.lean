@@ -43,7 +43,7 @@ theorem equation (c d : SS.State 6 ℂ)
     (fun i => (coeffQ i : ℂ)) (fun j => (tx j : ℂ)) (fun j => (ty j : ℂ)) cx cy
   simp only [incidenceMonomial,flips.1,flips.2] at h
   norm_num [tx,ty,fx,fy,Fin.sum_univ_succ,Fin.succ] at h
-  simp only [starRingEnd_apply] at h
+  simp only [starRingEnd_apply, Fin.reduceFinMk] at h ⊢
   linear_combination h
 end Entry00
 
@@ -79,7 +79,7 @@ theorem equation (c d : SS.State 6 ℂ)
     (fun i => (coeffQ i : ℂ)) (fun j => (tx j : ℂ)) (fun j => (ty j : ℂ)) cx cy
   simp only [incidenceMonomial,flips.1,flips.2] at h
   norm_num [tx,ty,fx,fy,Fin.sum_univ_succ,Fin.succ] at h
-  simp only [starRingEnd_apply] at h
+  simp only [starRingEnd_apply, Fin.reduceFinMk] at h ⊢
   linear_combination h
 end Entry01
 
@@ -115,7 +115,7 @@ theorem equation (c d : SS.State 6 ℂ)
     (fun i => (coeffQ i : ℂ)) (fun j => (tx j : ℂ)) (fun j => (ty j : ℂ)) cx cy
   simp only [incidenceMonomial,flips.1,flips.2] at h
   norm_num [tx,ty,fx,fy,Fin.sum_univ_succ,Fin.succ] at h
-  simp only [starRingEnd_apply] at h
+  simp only [starRingEnd_apply, Fin.reduceFinMk] at h ⊢
   linear_combination h
 end Entry10
 
@@ -151,7 +151,7 @@ theorem equation (c d : SS.State 6 ℂ)
     (fun i => (coeffQ i : ℂ)) (fun j => (tx j : ℂ)) (fun j => (ty j : ℂ)) cx cy
   simp only [incidenceMonomial,flips.1,flips.2] at h
   norm_num [tx,ty,fx,fy,Fin.sum_univ_succ,Fin.succ] at h
-  simp only [starRingEnd_apply] at h
+  simp only [starRingEnd_apply, Fin.reduceFinMk] at h ⊢
   linear_combination h
 end Entry11
 

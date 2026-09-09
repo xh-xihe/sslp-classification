@@ -196,6 +196,13 @@ import MainTheory.TransversalLogicalOrder
 import MainTheory.UnitaryMatrixDiagonalization
 
 
+import MainTheory.BetaNineValue
+import MainTheory.BinaryBetaNine
+import MainTheory.OrderFour26DiagonalRows0
+import MainTheory.OrderFour26DiagonalRows1
+import MainTheory.OrderFour26DiagonalRows2
+import MainTheory.OrderFour26DiagonalRows3
+import MainTheory.OrderFour26MomentRegion
 -- Modules owning declarations that covered claims in
 -- results/paper-claims-20260908.json rest on.  verify.py builds the axiom
 -- harness from THIS file's imports, so a cited declaration whose module is
@@ -1320,3 +1327,6 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.GlobalWeightSet.aweight_eq
 #print axioms MainTheory.GlobalWeightSet.R5A_mem_globalWSet
 #print axioms MainTheory.GlobalWeightSet.globalWSet_nonempty
+#print axioms MainTheory.BinaryBetaNine.betaNineBound
+#print axioms MainTheory.BinaryBetaNine.betaNineExact
+#print axioms MainTheory.BetaNineValue.betaOf_nine
