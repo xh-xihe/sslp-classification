@@ -79,12 +79,25 @@ def axiom_inventory(root=ROOT):
     return roots, sorted(set(module_imports)), source_hashes
 
 
+ROOT_CHUNK = 200
+
+
 def render_axiom_harness(roots, module_imports):
     # Use the current audit source imports, not a possibly older Audit.olean.
     header = ''.join('import %s\n' % name for name in module_imports)
-    header += 'import Lean.Util.CollectAxioms\n\nrun_cmd do\n'
-    header += '  let roots : Array Lean.Name := #[\n'
-    header += ',\n'.join('    `' + name for name in roots) + '\n  ]\n'
+    header += 'import Lean.Util.CollectAxioms\n\n'
+    # One array literal per couple of hundred roots.  A single literal over the
+    # whole inventory overflows the code generator's recursion limit once the
+    # ledger grows past a few thousand covered declarations, which is a limit
+    # of the harness and not of the proofs; chunking keeps each literal small
+    # and the `++` chain shallow.  The raised recursion depth covers the rest.
+    header += 'set_option maxRecDepth 100000 in\nrun_cmd do\n'
+    chunks = [roots[i:i + ROOT_CHUNK] for i in range(0, len(roots), ROOT_CHUNK)]
+    header += '  let roots : Array Lean.Name :=\n'
+    rendered = []
+    for chunk in chunks:
+        rendered.append('    #[' + ', '.join('`' + name for name in chunk) + ']')
+    header += ' ++\n'.join(rendered) + '\n'
     return header + '''  let env <- Lean.getEnv
   for root in roots do
     if (env.checked.get.find? root).isNone then
