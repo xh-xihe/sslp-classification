@@ -38,31 +38,40 @@ not automatically mathematical gaps: many need an existing proof mapped and
 checked against their precise statement.
 
 The count is worth breaking down, because the bare number invites the wrong
-reading. Of 1588 claims, 1000 are recorded (994 covered, 6 partial) and two are
-the manuscript's own conjectures, boxed there with a question mark and not
-asserted. Of the 586 still unreviewed:
+reading. Of 1588 claims, 1264 are recorded (1133 covered, 131 partial) and two
+are the manuscript's own conjectures, boxed there with a question mark and not
+asserted. The 322 still unreviewed are all displays inside `proof`
+environments of the supplement -- intermediate steps of an argument whose
+conclusion is what the recorded entry tracks. Nothing in `main.tex` is
+unreviewed, and no unreviewed display sits inside a result that IS recorded;
+such displays need individual judgement rather than inheritance from the
+parent -- for instance `thm:o7weightimage` contains both the A-enumerator
+image and the B-enumerators -- and they have all been reviewed.
 
-* none is in `main.tex`, and none sits inside a result that IS recorded. Such
-  displays need individual judgement rather than inheritance from the parent
-  -- for instance `thm:o7weightimage` contains both the A-enumerator image and
-  the B-enumerators -- and they have all been reviewed.
-* 322 are displays inside `proof` environments of the supplement --
-  intermediate steps of an argument whose conclusion is what the recorded
-  entry tracks.
-* 264 are displays elsewhere in the supplement. Sampling them shows parameter
-  definitions, notation, per-orbit data and intermediate systems inside an
-  orbit argument.
-
-Three of the six partial entries are the errata: `eq:quantum-Singleton`, false
-as written; `eq:o7knowntransversal`, where the cited construction's gate
+The 131 partial entries are not 131 gaps in the mathematics, and the number
+rose because review happened rather than because anything broke. Six are named
+results. Three of those six are the errata: `eq:quantum-Singleton`, false as
+written; `eq:o7knowntransversal`, where the cited construction's gate
 convention provably fails to preserve the span at theta = 0; and the orbit-9
 literal witness, whose printed bit order is ambiguous and is certified under
-one reading with the other reading proved inconsistent. The remaining three
-are remarks whose endpoints are all theorems here but whose comparative,
-counting or status sentences have no single declaration.
+one reading with the other reading proved inconsistent. The other three are
+remarks whose endpoints are all theorems here but whose comparative, counting
+or status sentences have no single declaration.
 
-`eq:small-beta` is no longer among them. All five tabulated values are exact
-certificates -- a universal upper bound together with an explicitly attaining
+The remaining 125 are supplement displays that were `unreviewed` until they
+were examined one by one, each by a reader who proposed a declaration and an
+adversarial checker who tried to refute the pairing. They are recorded partial
+under a deliberately strict rule: a checked declaration has to carry the
+*whole* display, so a display whose Lean counterpart covers only part of it,
+or which is a step of a manuscript route this development does not take, is
+partial and says so in its review rather than being counted as covered. Of the
+264 displays in that pass, 173 pairings survived refutation, 87 were judged to
+cover only part, and four proposals were refuted outright -- three of them
+because the reader had wrongly reported nothing covered the display and the
+checker found the declaration.
+
+`eq:small-beta` is no longer among the partials. All five tabulated
+values are exact certificates -- a universal upper bound together with an explicitly attaining
 zero-one matrix -- at sizes 5, 6, 7, 8 and 9. The size-nine entry was the last
 one open: its whole sign-prefix DAG of 5374 modules had compiled, but the
 capstone reading that certificate as `BetaBound 9 120` had never itself been

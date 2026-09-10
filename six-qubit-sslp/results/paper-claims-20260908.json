@@ -16540,9 +16540,12 @@
    "line": 6657,
    "end_line": 6663,
    "statement_sha256": "0e0c956f786ccf3ea2d628b846e25698fc683e9ca8fb87623bcb6b6a67959b24",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit26.anchor_solve",
+    "MainTheory.Orbit26.C3_not_isUnit"
+   ],
+   "review": "eq:q4o26commonM verbatim. anchor_solve takes IsUnit C3.det and the anchor equation C3^dagger D_g + (C_g^dagger D_3)^T = 0 and concludes D_g = -(((C3^dagger)^{-1} * D_3^T) * conj C_g), which is the display with M as the manuscript defines it. C3_not_isUnit applies it uniformly to the three nonanchor groups."
   },
   {
    "id": "supplementary.tex:eq:q4o26FM",
@@ -16554,9 +16557,12 @@
    "line": 6665,
    "end_line": 6673,
    "statement_sha256": "8a5ef043fd881c24ee34b07f97cf33269f29c2a4fe8c1ac4d174760a2abfbebd",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit26.F_mul_transpose",
+    "MainTheory.Orbit26.Fmat"
+   ],
+   "review": "eq:q4o26FM verbatim. Fmat A B is A * J * B^T + B * J * A^T, so Fmat (conj C_g) (conj C_h) is the display's F_{gh}, and F_mul_transpose proves Fmat (conj C_g) (conj C_h) * M^T = 0 from the two substituted forms of eq:q4o26commonM and eq:q4o26outermatrix."
   },
   {
    "id": "supplementary.tex:equation@6677",
@@ -16580,9 +16586,13 @@
    "line": 6692,
    "end_line": 6696,
    "statement_sha256": "4b70751dbe4c2296cd0dc3c53d971eec2b4c91ecee424987f0b9e082673efa76",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.Orbit26.F_mulVec_eq_zero_of_rankOne",
+    "MainTheory.Orbit26.sum_rowNormSq_gt",
+    "MainTheory.Orbit26.anchor_singular"
+   ],
+   "review": "The display appears verbatim in the development, but as an INPUT and not as a conclusion. It is the hypothesis hD3 : D3 * D3^dagger = (1/4) . vecMulVec d (star d) of F_mulVec_eq_zero_of_rankOne and sum_rowNormSq_gt, and the rankOneD field of anchor_singular, which supplies it exactly when D_3 is singular. What is not proved is the manuscript's derivation of it, that the anchor group's total top probability 1/4 together with rank D_3 = 1 forces that outer product; the rank-zero case is excluded there by the same probability, and the trace data is taken as given here. Recorded partial for that reason."
   },
   {
    "id": "supplementary.tex:equation@6699",
@@ -16606,9 +16616,14 @@
    "line": 6704,
    "end_line": 6717,
    "statement_sha256": "7a69beb41e8e181d307a9a0d2d31a12adc3ebc9365978dae18c7a823ff7f051d",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit26.sum_rowNormSq_gt",
+    "MainTheory.Orbit26.rowNormSq_eq",
+    "MainTheory.Orbit26.qform_outer",
+    "MainTheory.Orbit26.rowNormSq_pos"
+   ],
+   "review": "The displayed chain and its strict conclusion. rowNormSq_eq is the first equality, that the squared norm of the row d^T conj(A) is the quadratic form of A A^dagger at d; qform_outer evaluates the rank-one term at a unit vector; rowNormSq_pos is why the inequality is strict, the row d^T conj(C_3) being nonzero when C_3 is invertible. sum_rowNormSq_gt conjoins them into 1/2 < sum of the three squared row norms. The middle equality of the display is the anchor-group form of eq:q4o26matrixmoment, which enters as the hypothesis hmom -- the same standing convention under which lem:q4o26anchorsingular itself is recorded, its inputs being the manuscript's own displayed equations."
   },
   {
    "id": "supplementary.tex:equation@6721",
@@ -17822,9 +17837,13 @@
    "line": 7392,
    "end_line": 7395,
    "statement_sha256": "4014c8fb39ee789af6360931db98f417d8d5141963c0ccd4d813fc8b6ed33dfc",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.Orbit30.Data.split_identity",
+    "MainTheory.Orbit30.Data.four_le_card_A",
+    "MainTheory.Orbit30.Data.q4o30_exceptional"
+   ],
+   "review": "No declaration states r_a w_ak = r_b w_bk. This is a step of the manuscript's route that the development does not take: MainTheory/Orbit30SupportGraph.lean reaches the same conclusions through the synchronised weight-one rows and the support graph -- split_identity, the triangle contradiction, and card_A_ne_three -- rather than through two-point magnitude relations. q4o30_exceptional is lem:q4o30exceptional as the manuscript states it and four_le_card_A the stronger form actually proved, so the conclusions this step serves are covered while the step itself is not. Recorded partial rather than covered for exactly that reason."
   },
   {
    "id": "supplementary.tex:equation@7398",
@@ -17891,9 +17910,12 @@
    "line": 7434,
    "end_line": 7437,
    "statement_sha256": "b8627cc61a859b94eb196de405897df3782a085ce08ffb51f3f3dddd819fb939",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit30.Data.split_identity",
+    "MainTheory.Orbit30.Data.exists_internal_edge"
+   ],
+   "review": "split_identity proves S_AA - S_II = (|A| - 1)/4 where S_AA and S_II are sums over ORDERED pairs, so S_AA = 2 W_AA and, for the two-element inactive complement, S_II = 2 w_rs. At |A| = 3 the identity therefore reads 2(W_AA - w_rs) = 1/2, which is the display W_AA - w_rs = 1/4. exists_internal_edge is the use the manuscript makes of it, that the induced graph on A is nonempty."
   },
   {
    "id": "supplementary.tex:eq:q4o30triangle1",
@@ -17907,9 +17929,13 @@
    "line": 7448,
    "end_line": 7455,
    "statement_sha256": "1fe9542ae3d02aca19e80a69c28baf9545ee7d68b404723b48cf50666ce013e5",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.Orbit30.triangle_contradiction",
+    "MainTheory.Orbit30.Data.row_over_A",
+    "MainTheory.Orbit30.Data.card_A_ne_three"
+   ],
+   "review": "All three displayed equations, verbatim. triangle_contradiction takes b1 c01 + b2 c02 = 0, b0 c01 + b2 c12 = 0 and b0 c02 + b1 c12 = 0 as its hypotheses e1, e2, e3 and derives False from them, by linear_combination b0 e1 + b1 e2 - b2 e3 giving 2 b0 b1 c01 = 0. They are not assumed at the point of use: card_A_ne_three obtains each of the three from row_over_A, the synchronised weight-one row restricted to the active set, at the three vertices of the triangle."
   },
   {
    "id": "supplementary.tex:eq:q4o30regular",
@@ -26136,9 +26162,13 @@
    "line": 12158,
    "end_line": 12162,
    "statement_sha256": "89afaeef1a9365d40025466cafccfb8d1114bb00b3af57f4c7d57930c3ff287b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ParityFour.edgeMasks_eq",
+    "MainTheory.ParityFour.edge_isolation",
+    "MainTheory.ParityFour.push"
+   ],
+   "review": "The four families of physical errors X_k, Y_k, Z_jX_k and Z_jY_k. edgeMasks_eq proves that the effective masks z with hamming weight at most one away from coordinate k are exactly the displayed list: the zero mask is X_k, single k is Y_k, single j is Z_jX_k and the pair is Z_jY_k. The physical error carrying an effective mask is its pushforward push emb z, so these are physical Paulis and not merely effective labels, and edge_isolation is the lemma that consumes exactly these eight."
   },
   {
    "id": "supplementary.tex:eq:parity4-edgerows",
@@ -26150,9 +26180,13 @@
    "line": 12164,
    "end_line": 12168,
    "statement_sha256": "941debcdc6dd22cf117df1b7d29db95b03035d8f151358cbfe662020d18fdfe8",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "covered",
+   "lean_declarations": [
+    "MainTheory.ParityFour.row_eq_character_sum",
+    "MainTheory.ParityFour.bdot_push",
+    "MainTheory.ParityFour.proj_bxor_push"
+   ],
+   "review": "The claim that those errors give the rows 1, chi_k, chi_j and chi_k chi_j up to row phases. bdot_push proves the physical Z dressing computes the effective character, proj_bxor_push that the physical single-qubit flip induces the effective coordinate flip, and row_eq_character_sum that the off-diagonal Knill-Laflamme row on the incidence set is exactly the effective character sum times chi_z(e_k). That factor is the display's \"up to row phases\", and being a sign it does not affect vanishing."
   },
   {
    "id": "supplementary.tex:eq:parity4-edgedet",
@@ -26164,9 +26198,14 @@
    "line": 12172,
    "end_line": 12175,
    "statement_sha256": "ecc5d5622299cce5e3c148e2091faff79d34b9a387d209d1bdb211010fe1f74b",
-   "status": "unreviewed",
-   "lean_declarations": [],
-   "review": ""
+   "status": "partial",
+   "lean_declarations": [
+    "MainTheory.ParityFour.edgeMasks_transversal",
+    "MainTheory.ParityFour.eq_zero_of_transversal",
+    "MainTheory.ParityFour.edge_isolation_of_character_rows",
+    "MainTheory.ParityFour.edge_isolation"
+   ],
+   "review": "The determinant |det W_k| = 4096 is not computed anywhere. The development reaches the same conclusion by a different and weaker-hypothesis route: edge_isolation_of_character_rows inverts the character sums directly, and edgeMasks_transversal proves that the manuscript's eight rows meet every class of the cube modulo the all-ones vector, which is what its phrase about the complete character table of a three-dimensional Boolean group amounts to; eq_zero_of_transversal then gives the vanishing without any determinant. So the display's consequence, that every incidence overlap is zero, is edge_isolation, while the displayed numerical determinant itself has no Lean counterpart."
   },
   {
    "id": "supplementary.tex:lem:connected-orthogonality",
