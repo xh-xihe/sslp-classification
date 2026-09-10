@@ -40,6 +40,85 @@ def candidates(readme: str):
     return sorted(names)
 
 
+def owning_modules(root=ROOT):
+    """Fully qualified declaration name -> the module that declares it.
+
+    Same source scan as tools/verification/check_audit_names.py, which this
+    reuses rather than reimplements, but keeping the file it came from.
+    """
+    sys.path.insert(0, os.path.join(root, 'tools', 'verification'))
+    import check_audit_names as audit
+    owner = {}
+    for path in audit.lean_sources():
+        module = os.path.relpath(path, root).replace(os.sep, '/')[:-5].replace('/', '.')
+        stack, structure = [], None
+        for line in io.open(path, encoding='utf-8', errors='replace'):
+            m = audit.NAMESPACE.match(line)
+            if m:
+                stack.append(m.group(1)); structure = None; continue
+            m = audit.END.match(line)
+            if m and stack and stack[-1] == m.group(1):
+                stack.pop(); structure = None; continue
+            m = audit.DECL.match(line)
+            if m:
+                prefix = '.'.join(stack)
+                full = prefix + '.' + m.group(1) if prefix else m.group(1)
+                owner.setdefault(full, module)
+                structure = full if audit.STRUCTURE.match(line) else None
+                continue
+            if structure is not None:
+                if line.strip() and not line.startswith((' ', '\t')):
+                    structure = None; continue
+                f = audit.FIELD.match(line)
+                if f:
+                    owner.setdefault(structure + '.' + f.group(1), module)
+    return owner
+
+
+def diagnose(output, root=ROOT):
+    """Say WHY the harness could not see a name.
+
+    An unknown identifier has two very different causes and the raw Lean
+    diagnostics do not distinguish them: the declaration may genuinely not
+    exist, or it may exist in a module the harness does not import -- and the
+    second is repaired by an import line, not by mathematics.  A third cause
+    is a stale olean, since `lake env lean` never rebuilds; when the harness
+    can see almost nothing at all, that is what it usually means.
+    """
+    unknown = re.findall(r'Unknown identifier `([^`]+)`', output)
+    if not unknown:
+        return ''
+    owner = owning_modules(root)
+    by_module, absent = {}, []
+    for name in sorted(set(unknown)):
+        module = owner.get(name)
+        if module is None:
+            absent.append(name)
+        else:
+            by_module.setdefault(module, []).append(name)
+    report = ['', '%d unknown identifier(s); by cause:' % len(set(unknown))]
+    if by_module:
+        report.append('')
+        report.append('  DECLARED IN SOURCE BUT OUTSIDE THE HARNESS CLOSURE '
+                      '(%d names in %d modules).' % (sum(len(v) for v in by_module.values()),
+                                                     len(by_module)))
+        report.append('  The harness imports MainTheory and SixQubit.Audit only. Either add')
+        report.append('  these to a module inside that closure, or -- if the closure looks')
+        report.append('  right -- the oleans are stale: `lake env lean` does not rebuild, so')
+        report.append('  a root olean older than its source silently hides its own imports.')
+        for module in sorted(by_module):
+            report.append('    %-52s %d' % (module, len(by_module[module])))
+    if absent:
+        report.append('')
+        report.append('  NOT DECLARED ANYWHERE IN THE SOURCES (%d). These are real drift:'
+                      % len(absent))
+        for name in absent[:40]:
+            report.append('    %s' % name)
+        if len(absent) > 40:
+            report.append('    ... and %d more' % (len(absent) - 40))
+    return '\n'.join(report) + '\n'
+
+
 def check_names(names, runner=subprocess.run, root=ROOT) -> int:
     """Fail on every Lean failure, including errors unrelated to name lookup."""
     work = Path(root) / 'tmp' / 'verification'
@@ -49,6 +128,10 @@ def check_names(names, runner=subprocess.run, root=ROOT) -> int:
                                      delete=False) as handle:
         scratch = Path(handle.name)
         handle.write('import MainTheory\nimport SixQubit.Audit\n')
+        # The default cap of 100 truncates the diagnosis of a systematic
+        # failure -- a stale root olean, or a batch of names in one unimported
+        # module -- into an arbitrary alphabetical prefix of it.
+        handle.write('set_option maxErrors 100000\n')
         handle.write('open MainTheory SixQubit\n')
         for name in names:
             handle.write('#check @%s\n' % name)
@@ -66,6 +149,10 @@ def check_names(names, runner=subprocess.run, root=ROOT) -> int:
             # unicode, and printing it raw crashes the reporter before
             # the caller ever sees the failure.
             text = output.rstrip() or '(no diagnostics)'
+            try:
+                text += chr(10) + diagnose(output, root)
+            except Exception as exc:              # a diagnosis must never mask the failure
+                text += chr(10) + '(diagnosis unavailable: %s)' % exc
             sys.stdout.write(text.encode(sys.stdout.encoding or 'utf-8',
                                          'replace').decode(sys.stdout.encoding
                                                            or 'utf-8') + chr(10))
