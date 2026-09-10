@@ -46,28 +46,41 @@ the Lean declarations that render or prove it, and then by an adversarial
 checker who read those declarations and tried to refute the pairing.
 
 The 320 partial entries are not 320 gaps in the mathematics, and the number
-rose because review happened rather than because anything broke. They fall into
-three groups.
+rose because review happened rather than because anything broke. Sorted by the
+environment each entry came from, they fall out like this.
 
-* Six are named results. Three of those are the errata: `eq:quantum-Singleton`,
-  false as written; `eq:o7knowntransversal`, where the cited construction's
-  gate convention provably fails to preserve the span at theta = 0; and the
-  orbit-9 literal witness, whose printed bit order is ambiguous and is
-  certified under one reading with the other reading proved inconsistent. The
-  other three are remarks whose endpoints are all theorems here but whose
-  comparative, counting or status sentences have no single declaration.
-* About 125 are supplement displays outside any proof whose Lean counterpart
-  covers only part of what is displayed.
-* The rest are displays inside supplement proofs, and most of those are
-  partial for one specific reason worth stating plainly: they are steps of a
-  manuscript argument that this development does not take. Several orbit
-  no-gos here are deliberately repaired routes -- orbit 26 closes a mixed-axis
-  branch the manuscript passes over, orbit 30 replaces a two-point magnitude
-  argument with a support-graph one -- so the *conclusion* of such a proof is
-  covered by a named theorem while a particular intermediate line of the
-  manuscript's own route has no counterpart. Those entries name the theorem
-  that carries the conclusion and say explicitly that the step itself is not
-  proved.
+* **No stated result is partial.** Every theorem, lemma, proposition,
+  corollary, definition and worked example in either manuscript is covered:
+  32 theorems, 37 lemmas, 40 propositions, 15 corollaries, two definitions,
+  one example and one long table, 128 in all, with no partial and no
+  unreviewed among them. The 126 of those that are theorems, lemmas,
+  propositions, corollaries or definitions are exactly the named results
+  `label_sweep.py` sweeps further down, counted a second and independent way.
+* **Nine partial entries carry a result name**: five of the fifteen remarks
+  and four of the five tables. The remarks' endpoints are all theorems here,
+  but their comparative, counting or status sentences have no single
+  declaration to point at. The tables record audits -- a face enumeration of
+  the orbit-29 simplex, orbit-31 support orbits, angle and fibre-pair counts
+  -- that this development either reaches by another means or does not
+  perform.
+* **The remaining 311 are displayed equations**, and three of those are the
+  errata: `eq:quantum-Singleton`, false as written; `eq:o7knowntransversal`,
+  where the cited construction's gate convention provably fails to preserve
+  the span at theta = 0; and the orbit-9 literal witness, an unlabelled
+  display whose printed bit order is ambiguous, certified under one reading
+  with the other reading proved inconsistent.
+
+Among those 311 displays, a large group is partial for one specific reason
+worth stating plainly: they are steps of a manuscript argument that this
+development does not take. Several orbit no-gos here are deliberately repaired
+routes -- orbit 26 closes a mixed-axis branch the manuscript passes over,
+orbit 30 replaces a two-point magnitude argument with a support-graph one --
+so the *conclusion* of such a proof is covered by a named theorem while a
+particular intermediate line of the manuscript's own route has no counterpart.
+Those entries name the theorem that carries the conclusion and say explicitly
+that the step itself is not proved. The rest are displays whose Lean
+counterpart covers only part of what is displayed, and local notation that no
+declaration introduces because the repaired route never forms it.
 
 A partial entry is therefore an honest record with a declaration and a reason,
 not a silence. The rule applied throughout is that a checked declaration has to
