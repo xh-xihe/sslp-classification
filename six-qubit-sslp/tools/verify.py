@@ -193,6 +193,12 @@ def checks(source_dir=None):
         'readme': check_names,
         'audit-names': lambda: recorded_command('audit-names',
             [sys.executable, 'tools/verification/check_audit_names.py']),
+        # The named-results document is generated from the ledger.  Checking it
+        # here is what stops it drifting: a result added to a manuscript, or a
+        # declaration swapped in a review, changes the ledger and this fails
+        # until the document is regenerated.
+        'named-results': lambda: recorded_command('named-results',
+            [sys.executable, 'tools/named_results_doc.py', '--check']),
     }
 
 
