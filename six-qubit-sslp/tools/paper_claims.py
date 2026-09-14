@@ -135,12 +135,32 @@ def validate(ledger, require_complete=False):
             raise ValueError(f"missing statement review in {entry['id']}")
         if status == 'covered' and not entry['lean_declarations']:
             raise ValueError(f"covered assertion has no kernel declarations: {entry['id']}")
-        if require_complete and status in {'unreviewed', 'partial'}:
-            raise ValueError(f"incomplete assertion: {entry['id']}")
-    if require_complete:
-        for relative, review in ledger['prose_review'].items():
-            if review['status'] != 'covered' or not review['review'].strip():
-                raise ValueError(f'unreviewed prose assertions: {relative}')
+    if not require_complete:
+        return
+    # Completeness is reported in full rather than at the first offender.  The
+    # integrity errors above are faults and stop immediately; these are a
+    # remaining workload, and a gate that names one of 320 reads as though one
+    # assertion were all that stands in the way.
+    incomplete = [e['id'] for e in ledger['claims']
+                  if e['status'] in {'unreviewed', 'partial'}]
+    prose = [relative for relative, review in ledger['prose_review'].items()
+             if review['status'] != 'covered' or not review['review'].strip()]
+    if not incomplete and not prose:
+        return
+    counts = Counter(e['status'] for e in ledger['claims']
+                     if e['status'] in {'unreviewed', 'partial'})
+    parts = []
+    if incomplete:
+        parts.append('%d incomplete assertions (%s)'
+                     % (len(incomplete),
+                        ', '.join('%s=%d' % kv for kv in sorted(counts.items()))))
+    if prose:
+        parts.append('%d prose reviews not complete (%s)'
+                     % (len(prose), ', '.join(Path(p).name for p in prose)))
+    head = ', '.join(incomplete[:5])
+    if len(incomplete) > 5:
+        head += ', ...'
+    raise ValueError('; '.join(parts) + (f'; first: {head}' if incomplete else ''))
 
 
 def main():

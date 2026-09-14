@@ -138,21 +138,71 @@ Lean process loading about 14000 oleans.
 A full source-fingerprinted build over all 14178 planned modules started on
 2026-09-09 with the tree frozen at that commit.
 
-## Still in progress
+## Acceptance, 2026-09-14
 
-- Universal beta bounds at 8 and 9 are **not yet claimed complete**. Their complete sign-prefix
-  proposals and regenerated DAG certificates exist; development builds use four and eight
-  single-thread Lean processes respectively. The original serial full build remains uninterrupted.
-- The ledger has 588 covered assertions, 4 partial assertions, 2 explicit conjectures and
-  1003 unreviewed assertions. The main text has no remaining unreviewed display entries;
-  the four partial entries and both full-prose reviews remain open. The reviewed table and
-  newly connected main-text displays are recorded explicitly; the remaining prose and
-  intermediate formulas must not be silently relabelled as covered.
-- The physical argument proves finite components and scalar connected action directly. The
-  separate prose route through a closed Lie subgroup theorem and an identity-component torus
-  isomorphism has not been certified by these new modules.
-- Final root imports, axiom-union closure, full source-fingerprinted build, all acceptance gates,
-  final documentation and repository publication remain outstanding.
+The full source-fingerprinted build finished and the whole gate was run against
+it. Fourteen of the fifteen checks pass:
+
+```
+build                   PASS  0 serially rebuilt, 14178 content-validated cached modules
+axioms                  PASS  3529 declarations; union = Classical.choice, Quot.sound, propext
+sources                 PASS  14178 Lean sources clean
+generated               PASS  coverage, SHA-256 and build order over 8990 generated files
+paper                   PASS  66 orbit rows, 51 no-go mappings, both private-source hashes
+table-kernel            PASS  66 rows match full-fibre kernel semantics
+table-kernel-selftest   PASS  all three numeric-column mutations rejected
+claims                  FAIL  320 incomplete assertions; 2 prose reviews not complete
+gate                    PASS  every module matches the manifest and its headline ordering
+gate-selftest           PASS  caught 3, missed 0
+moments                 PASS
+moments-selftest        PASS  every injected corruption rejected
+readme                  PASS  all 2950 cited identifiers present
+audit-names             PASS  all audited and ledger-cited names resolve
+named-results           PASS  document current against the ledger
+```
+
+The build itself was `PASS: 7612 serially rebuilt, 6566 content-validated cached
+modules`, zero errors and zero warnings, over 14,178 modules.
+
+Two of these were never conclusive before and are now.
+
+`axioms` could not run at all while any declaration a covered claim cites lived
+outside the audit files' import closure; fifteen such declarations sat in seven
+modules. `readme` was failing with what looked like widespread documentation
+drift, and was not: `.lake/build/lib/lean/MainTheory.olean` was four days older
+than `MainTheory.lean`, and `lake env lean` never rebuilds, so a stale root
+olean silently hid its own imports. Adding the seven imports to
+`MainTheory/Audit.lean` repaired both closures at once, because the root module
+imports the audit file. The audit-closure debt is now zero.
+
+The one failure is the honest one. `claims --require-complete` refuses while any
+assertion is `partial` and while either prose review is open, and 320 displays
+are partial. Its message previously named only the first offender, which read as
+though a single assertion stood in the way; it now reports the full count and
+the open prose reviews.
+
+## Still outstanding
+
+- **The three errata.** `eq:quantum-Singleton` is false as written and has a
+  kernel-checked counterexample; `eq:o7knowntransversal` names a cited
+  construction whose gate convention provably fails to preserve the span at
+  theta = 0; the orbit-9 literal witness has an ambiguous printed bit order.
+  These are author decisions on the text, not Lean work. The first is why
+  `claims` names `main.tex:eq:quantum-Singleton` first.
+- **Both prose reviews.** Running text is where an unformalized claim can hide,
+  because nothing in the pipeline forces those sentences to be looked at. The
+  review in progress has already found assertions no theorem carries, including
+  the minimality claim in the abstract.
+- **320 partial displays.** Not 320 gaps: five remarks and four tables carry a
+  result name, the rest are displays, and a large group of those are steps of a
+  manuscript route this development deliberately does not take. Every one has a
+  declaration and a written reason. See `results/named-results-20260908.md`.
+- **Two tables are close to closable.** `tab:angle-record-counts` and
+  `tab:fiber-pair-counts` have most entries proved and lack only per-(q,m)
+  splits of one or two columns. The cheap route is to reduce the survivor list
+  to a literal once and bucket the small result, rather than to run one
+  sharded `decide` per row.
+- Universal beta bounds at 8 and 9 beyond what is already recorded.
 
 ## Build and source notes
 
