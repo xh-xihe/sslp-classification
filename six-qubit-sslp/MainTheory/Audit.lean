@@ -198,6 +198,13 @@ import MainTheory.UnitaryMatrixDiagonalization
 
 import MainTheory.BetaNineValue
 import MainTheory.BinaryBetaNine
+import MainTheory.BetaEightValue
+import MainTheory.BinaryBetaEight
+import MainTheory.SixQubitIntrinsicOrderSet
+import MainTheory.Orbit9LiteralBitConvention
+import MainTheory.Orbit9LiteralWitness
+import MainTheory.SingletonRankOneCounterexample
+import MainTheory.SixthRootCoefficients
 import MainTheory.OrderFour26DiagonalRows0
 import MainTheory.OrderFour26DiagonalRows1
 import MainTheory.OrderFour26DiagonalRows2
@@ -1330,3 +1337,8 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.BinaryBetaNine.betaNineBound
 #print axioms MainTheory.BinaryBetaNine.betaNineExact
 #print axioms MainTheory.BetaNineValue.betaOf_nine
+#print axioms MainTheory.BinaryBetaEight.betaEightBound
+#print axioms MainTheory.BinaryBetaEight.betaEightExact
+#print axioms MainTheory.BetaEightValue.betaOf_eight
+#print axioms MainTheory.SixQubitIntrinsicOrderSet.including_identity
+#print axioms MainTheory.SixQubitIntrinsicOrderSet.nontrivial_exact
