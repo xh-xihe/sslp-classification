@@ -199,6 +199,11 @@ def checks(source_dir=None):
         # until the document is regenerated.
         'named-results': lambda: recorded_command('named-results',
             [sys.executable, 'tools/named_results_doc.py', '--check']),
+        # The prose-review document is generated from its own record, and the
+        # generator refuses if that record ever carries verbatim manuscript
+        # text.  Checking it here keeps both properties from rotting.
+        'prose-review': lambda: recorded_command('prose-review',
+            [sys.executable, 'tools/prose_review_doc.py', '--check']),
     }
 
 

@@ -6,12 +6,12 @@
  },
  "prose_review": {
   "documents/20260908/main.tex": {
-   "status": "unreviewed",
-   "review": ""
+   "status": "partial",
+   "review": "239 prose assertions reviewed, one chunk at a time, each chunk read by one agent and then re-read by an adversarial checker that tried to refute both the gaps and the pairings and reported what the reader had missed. 89 are carried by a Lean declaration that states the assertion itself, 87 restate or preview a display or named result the ledger already holds, 32 assert nothing certifiable (motivation, attribution, roadmap), and 31 are gaps: 1 high, 6 medium, 24 low. Status is partial, not covered, because of the 31. The high one is the minimality claim at line 283, repeated in the abstract at line 88 -- that six qubits is the smallest length admitting this distance-three realization. Nothing in the development addresses n < 6; every declaration in the order-five story is fixed at ExactCode 6 2 3. It is a headline claim of the abstract and it is not proved here. The medium ones are the non-Clifford claim at 282 (the notion is not formalized at all: Clifford occurs only in four Lean comments, one of which says the development does not have a diagonal Clifford), the insufficiency half of 'LP feasibility is necessary but not sufficient' at 587 and 1344, the strictly-larger-lift-order claim at 1363, the polynomial/semialgebraic framing at 1712, and an exhaustiveness claim at 3146 that the first reader missed entirely. Full record with reasoning: results/prose-review-20260908.md and its JSON."
   },
   "documents/20260908/supplementary.tex": {
-   "status": "unreviewed",
-   "review": ""
+   "status": "partial",
+   "review": "889 prose assertions reviewed by the same two-pass method. 307 are carried by a Lean declaration, 342 restate a tracked display or named result, 89 assert nothing certifiable, and 151 are gaps: 1 high, 42 medium, 108 low. Status is partial for that reason. The high one is not a missing proof but a contradiction, and it is a fourth erratum: line 3838 says that at the existence AND weight-enumerator-image level the only unresolved moment orbits are 1, 2, 3, 4. The enumerator half is right. The existence half is disproved by this repository: OpenOrbitsRealized.openKeys_hasCompletion proves HasCompletion for keys 0 through 3, DirectoryOrbitStatus.openKeys_paperIds proves those keys are paper orbits 1-4, and CubeCompletionTransport.Completion is an actual normalized distance-three code inside the key's two fibres -- so all four are resolved at the existence level. PaperSupplementaryImages.m2_current_status independently places paper orbits 1-4 on the realized side of the theorem carrying cor:m2-current-status. The sentence appears stale relative to main.tex's thm:six-15-sslp-realization-orbits; the same framing recurs at 3847 and 3934. Unlike the other errata this one understates the result rather than overstating it, but it still contradicts the certified development and needs an author decision. The 42 medium gaps are concentrated in construction and provenance sentences -- that a cited construction lies in a given orbit, that a named code has a logical Pauli of some weight -- where the development certifies the resulting object's properties but not the construction narrative. Full record: results/prose-review-20260908.md and its JSON."
   }
  },
  "claims": [

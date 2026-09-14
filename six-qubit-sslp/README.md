@@ -2,12 +2,14 @@
 
 This repository formalizes the mathematics of `documents/20260908/main.tex`
 and `documents/20260908/supplementary.tex` in Lean 4.27.0, using pinned mathlib.
-**Full manuscript certification is still in progress.**  Three discrepancies
+**Full manuscript certification is still in progress.**  Four discrepancies
 between the manuscript and what is provable are recorded in
-[errata-20260908.md](results/errata-20260908.md); one of them,
+[errata-20260908.md](results/errata-20260908.md). One of them,
 `eq:quantum-Singleton`, is false as the text stands and has a kernel-checked
 counterexample, so main.tex cannot be certified as written until it is
-qualified.
+qualified. The fourth points the other way: `supplementary.tex` records orbits
+1--4 as unresolved at the existence level, and this development proves they are
+realized.
 
 The established six-qubit classification includes 51 excluded moment orbits,
 15 realized moment orbits, 11 settled nonempty weight-enumerator images,
@@ -36,6 +38,22 @@ is tied to the authoritative source hashes; it includes unnumbered displays
 and requires a separate review of prose assertions. Unreviewed entries are
 not automatically mathematical gaps: many need an existing proof mapped and
 checked against their precise statement.
+
+Running text is reviewed separately, because the ledger tracks displays and
+named results and a sentence in a paragraph is where an unformalized claim can
+sit indefinitely. That review is now done: 1128 prose assertions, each chunk
+read by one agent and re-read by an adversarial checker. 396 are carried by a
+declaration, 429 restate something the ledger already holds, 121 assert nothing
+certifiable, and 182 are gaps. Two are high severity. One is the minimality
+claim in the abstract of `main.tex` -- that six qubits is the smallest length
+admitting this distance-three realization -- which nothing here proves, since
+every declaration in the order-five story is fixed at `ExactCode 6 2 3`. The
+other is a fourth erratum, and it points the other way: `supplementary.tex`
+records orbits 1--4 as unresolved at the existence level, and this development
+proves they are realized. The
+[prose review](results/prose-review-20260908.md) lists every gap; it carries no
+manuscript text, and its generator refuses to run if the underlying record ever
+does.
 
 That inventory is 1.6 MB of JSON, which is the right shape to check against
 and the wrong shape to read. The
