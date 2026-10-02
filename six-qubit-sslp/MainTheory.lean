@@ -214,3 +214,4 @@ import MainTheory.MinimumLengthOrderFive
 import MainTheory.PaperGeneralSSLPConverse
 import MainTheory.PaperColoredFiniteLift
 import MainTheory.Audit
+import MainTheory.QECCSmithBridge
