@@ -62,6 +62,7 @@ class ReadmeFailures(WorkspaceTest):
         self.write('MainTheory.lean', 'import MainTheory.Audit\nimport MainTheory.NewProof\n')
         self.write('MainTheory/Audit.lean', 'import MainTheory.NewProof\nimport MainTheory.Audited\n')
         self.write('SixQubit/Audit.lean', 'import SixQubit.Example\n')
+        self.write('QECC/Audit.lean', 'import QECC\n')
 
     def test_current_source_imports_bypass_stale_umbrella(self):
         self.write('.lake/build/lib/lean/MainTheory.olean', 'stale umbrella placeholder')
@@ -70,6 +71,8 @@ class ReadmeFailures(WorkspaceTest):
             self.assertIn('import MainTheory.NewProof\n', source)
             self.assertIn('import MainTheory.Audited\n', source)
             self.assertIn('import SixQubit.Example\n', source)
+            self.assertIn('import QECC\n', source)
+            self.assertNotIn('import QECC.Audit\n', source)
             self.assertEqual(source.count('import MainTheory.NewProof\n'), 1)
             self.assertNotIn('import MainTheory\n', source)
             self.assertNotIn('import MainTheory.Audit\n', source)
@@ -279,22 +282,60 @@ class SignGeneratedManifest(WorkspaceTest):
 
 
 class SerialBuild(WorkspaceTest):
-    def test_unused_tooling_package_needs_no_build_artifacts(self):
+    def fixture_package(self):
         self.write('lean-toolchain', 'fixture')
         self.write('lakefile.lean', 'fixture')
         self.write('lake-manifest.json', json.dumps({'packages': [
             {'name': 'Cli', 'type': 'path'}, {'name': 'Mathlib', 'type': 'path'}]}))
         self.write('toolchain/bin/' + ('lean.exe' if os.name == 'nt' else 'lean'), 'compiler')
         self.write('toolchain/lib/lean/Lean.olean', 'Lean')
-        mathlib = self.write('.lake/packages/Mathlib/.lake/build/lib/lean/Mathlib.olean', 'Mathlib')
-        runner = lambda command, **kwargs: subprocess.CompletedProcess(
-            command, 0, str(self.root / 'toolchain') + '\n', '')
+        return self.write('.lake/packages/Mathlib/.lake/build/lib/lean/Mathlib.olean', 'Mathlib')
+
+    def fake_lake(self, lean_path):
+        """Answer `lake env lean --print-prefix` and the compile-environment query."""
+        def runner(command, **kwargs):
+            if '-c' in command:
+                environment = {'LEAN_PATH': lean_path, 'LEAN_SRC_PATH': None,
+                               'LEAN_SYSROOT': str(self.root / 'toolchain'), 'LEAN_GITHASH': 'abc'}
+                return subprocess.CompletedProcess(command, 0, json.dumps(environment) + '\n', '')
+            return subprocess.CompletedProcess(command, 0, str(self.root / 'toolchain') + '\n', '')
+        return runner
+
+    def test_unused_tooling_package_needs_no_build_artifacts(self):
+        mathlib = self.fixture_package()
+        runner = self.fake_lake(str(self.root / '.lake/build/lib/lean'))
         first, _, _ = build_lean.external_context(self.root, runner, ['Mathlib'])
         mathlib.write_text('modified artifact')
         second, _, _ = build_lean.external_context(self.root, runner, ['Mathlib'])
         self.assertNotEqual(first, second)
         with self.assertRaisesRegex(build_lean.BuildError, 'missing prebuilt external import: Cli'):
             build_lean.external_context(self.root, runner, ['Cli'])
+
+    def test_declaring_another_library_keeps_the_context(self):
+        self.fixture_package()
+        runner = self.fake_lake(str(self.root / '.lake/build/lib/lean'))
+        first, _, _ = build_lean.external_context(self.root, runner, ['Mathlib'])
+        self.write('lakefile.lean', 'fixture\nlean_lib Another where\n')
+        second, _, _ = build_lean.external_context(self.root, runner, ['Mathlib'])
+        self.assertEqual(first, second)
+
+    def test_changed_compile_environment_changes_the_context(self):
+        self.fixture_package()
+        first, _, _ = build_lean.external_context(
+            self.root, self.fake_lake(str(self.root / '.lake/build/lib/lean')), ['Mathlib'])
+        second, _, _ = build_lean.external_context(
+            self.root, self.fake_lake(str(self.root / 'elsewhere/lib/lean')), ['Mathlib'])
+        self.assertNotEqual(first, second)
+
+    def test_compile_flags_change_the_driver_fingerprint(self):
+        before = build_lean.driver_fingerprint()
+        flags = build_lean.LEAN_FLAGS
+        try:
+            build_lean.LEAN_FLAGS = flags + ['-DmaxHeartbeats=1']
+            self.assertNotEqual(before, build_lean.driver_fingerprint())
+        finally:
+            build_lean.LEAN_FLAGS = flags
+        self.assertEqual(before, build_lean.driver_fingerprint())
 
     def test_malformed_stamp_is_never_adopted(self):
         path = build_lean.stamp_path(self.root, 'SS.Fixture')
@@ -424,6 +465,73 @@ class QuadraticPruneNegativeControls(WorkspaceTest):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn('false', (proc.stdout + proc.stderr).lower())
         self.assertNotIn('does not exist', proc.stdout + proc.stderr)
+
+
+class ContextMigration(WorkspaceTest):
+    """migrate_build_context accepts only stamps it can reproduce, and fails closed."""
+
+    CONFIGURATION = {'lean-toolchain': 't', 'lake-manifest.json': 'm',
+                     'source_lexer': 's', 'lean_executable': 'e'}
+    INVENTORY = {'toolchain/Lean.olean': 'x'}
+
+    def setUp(self):
+        super().setUp()
+        global migrate_tool
+        migrate_tool = load('migrate_build_context', 'tools/migrate_build_context.py')
+        self.lakefile = self.write('old/lakefile.lean', 'old lakefile')
+        self.driver = self.write('old/build_lean.py', 'old driver')
+        self.old, _ = migrate_tool.v1_context(self.CONFIGURATION, self.INVENTORY,
+                                              self.lakefile, self.driver)
+        self.write('SS/A.lean', 'def a := 1\n')
+        self.write('SS/B.lean', 'import SS.A\ndef b := 2\n')
+        key_a = self.stamp('SS.A', {}, self.old)
+        self.stamp('SS.B', {'SS.A': key_a}, self.old)
+
+    def stamp(self, module, dependency_keys, context):
+        source = self.root / (module.replace('.', '/') + '.lean')
+        relative = '.lake/build/lib/lean/' + module.replace('.', '/') + '.olean'
+        olean = self.write(relative, 'olean of ' + module)
+        outputs = {relative: build_lean.file_hash(olean)}
+        fp = build_lean.fingerprint(build_lean.file_hash(source), dependency_keys, context)
+        key = build_lean.value_hash({'fingerprint': fp, 'outputs': outputs})
+        build_lean.atomic_json(build_lean.stamp_path(self.root, module),
+                               {'schema': build_lean.SCHEMA, 'fingerprint': fp, 'outputs': outputs,
+                                'source_sha256': build_lean.file_hash(source), 'key': key})
+        return key
+
+    def run_migration(self, lakefile=None):
+        current = (lambda *a, **k: ('new-context', self.CONFIGURATION, self.INVENTORY))
+        with patch.object(migrate_tool.B, 'external_context', current):
+            return migrate_tool.migrate(self.root, [(lakefile or self.lakefile, self.driver)], False)
+
+    def current_fingerprint(self, module, dependency_keys):
+        source = self.root / (module.replace('.', '/') + '.lean')
+        return build_lean.fingerprint(build_lean.file_hash(source), dependency_keys, 'new-context')
+
+    def test_reproducible_stamps_are_rekeyed_and_then_validate(self):
+        report = self.run_migration()
+        self.assertEqual((report['migrated'], report['rejected'], report['blocked_by_rejected']), (2, {}, {}))
+        a = build_lean.valid_cache(self.root, 'SS.A', self.current_fingerprint('SS.A', {}))
+        self.assertIsNotNone(a)
+        self.assertIsNotNone(build_lean.valid_cache(
+            self.root, 'SS.B', self.current_fingerprint('SS.B', {'SS.A': a['key']})))
+        again = self.run_migration()
+        self.assertEqual((again['already_current'], again['migrated']), (2, 0))
+
+    def test_changed_output_is_rejected_and_its_dependents_blocked(self):
+        self.write('.lake/build/lib/lean/SS/A.olean', 'tampered')
+        report = self.run_migration()
+        self.assertEqual(report['migrated'], 0)
+        self.assertIn('outputs differ', report['rejected']['SS.A'])
+        self.assertEqual(report['blocked_by_rejected'], {'SS.B': 'SS.A'})
+
+    def test_wrong_previous_configuration_accepts_nothing(self):
+        other = self.write('old/other-lakefile.lean', 'another lakefile')
+        report = self.run_migration(other)
+        self.assertEqual(report['migrated'], 0)
+        self.assertIn('SS.A', report['rejected'])
+        self.assertIn('SS.B', report['blocked_by_rejected'])
+        self.assertIsNone(build_lean.valid_cache(self.root, 'SS.A', self.current_fingerprint('SS.A', {})))
 
 
 if __name__ == '__main__':

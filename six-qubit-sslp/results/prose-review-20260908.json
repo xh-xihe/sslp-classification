@@ -5154,10 +5154,10 @@
    "label": null,
    "declarations": [
     "SixQubit.Orbit7Universal.uniform_acoor_line_impossible",
-    "SixQubit.Orbit7Universal.physical_affineH_exists",
+    "SixQubit.Orbit7Universal.physical_affine_tangent_data",
     "SixQubit.Orbit7Universal.exceptional_equal_values_impossible"
    ],
-   "reason": "uniform_acoor_line_impossible is exactly this claim: if every edge satisfies ycoord = T * xcoord for one common T then all ten a-spinors lie on one line, sumA factors as K*w*w^dagger, and independent_frame_not_rank_one contradicts sumA = 2U + 3W whenever anchorD (the c<1 condition) is nonzero. physical_affineH_exists is the h_i form of the same step; its docstring reads \"the first coordinates of the five pair-sum vectors cannot all vanish ... the covariant replacement for the manuscript's rank-two frame argument\" (it is `private` but present in SixQubit/Orbit7Affine.lean). The identical assertion recurs at line 1854 (the T=N case, closed by exceptional_equal_values_impossible) and line 1899 (the c=0 case); reported once here.",
+   "reason": "uniform_acoor_line_impossible is exactly this claim: if every edge satisfies ycoord = T * xcoord for one common T then all ten a-spinors lie on one line, sumA factors as K*w*w^dagger, and independent_frame_not_rank_one contradicts sumA = 2U + 3W whenever anchorD (the c<1 condition) is nonzero. physical_affineH_exists is the h_i form of the same step; its docstring reads \"the first coordinates of the five pair-sum vectors cannot all vanish ... the covariant replacement for the manuscript's rank-two frame argument\" (it is `private` but present in SixQubit/Orbit7Affine.lean). The identical assertion recurs at line 1854 (the T=N case, closed by exceptional_equal_values_impossible) and line 1899 (the c=0 case); reported once here. The private helper is cited through physical_affine_tangent_data, whose proof invokes it: private names are not addressable in the kernel environment the axiom gate reads.",
    "severity": null,
    "origin": "reader"
   },
@@ -5170,11 +5170,10 @@
    "corrected": false,
    "label": null,
    "declarations": [
-    "SixQubit.Orbit7Universal.physical_affine_slope_ne",
-    "SixQubit.Orbit7Universal.AffineTangentData",
-    "SixQubit.Orbit7Universal.physical_affine_tangent_data"
+    "SixQubit.Orbit7Universal.physical_affine_tangent_data",
+    "SixQubit.Orbit7Universal.AffineTangentData"
    ],
-   "reason": "physical_affine_slope_ne assumes mu = 0 and, exactly as the prose does, propagates it to zcoord e = const * xcoord e on every edge, then contradicts the two global frame identities (the covariant forms of sum |x_e|^2 and sum conj(x_e) z_e that the manuscript displays as eq:o7globalxz). mu_ne : mu <> 0 is a field of the AffineTangentData structure, and physical_affine_tangent_data returns that structure from genuine KL hypotheses, so nonvanishing of the slope is a conclusion, not an assumption, everywhere downstream.",
+   "reason": "physical_affine_slope_ne assumes mu = 0 and, exactly as the prose does, propagates it to zcoord e = const * xcoord e on every edge, then contradicts the two global frame identities (the covariant forms of sum |x_e|^2 and sum conj(x_e) z_e that the manuscript displays as eq:o7globalxz). mu_ne : mu <> 0 is a field of the AffineTangentData structure, and physical_affine_tangent_data returns that structure from genuine KL hypotheses, so nonvanishing of the slope is a conclusion, not an assumption, everywhere downstream. The private helper is cited through physical_affine_tangent_data, whose proof invokes it: private names are not addressable in the kernel environment the axiom gate reads.",
    "severity": null,
    "origin": "reader"
   },

@@ -8,6 +8,17 @@ have review records, while remaining displays and prose still need review.
 See the [new named-results map](results/named-results-20260924.md) and
 [current errata dispositions](results/errata-20260924.json).
 
+The newest manuscript is `documents/20260929/`. Its supplementary materials
+are byte-identical to 20260924, and its main text changes only Sections II and
+III, which were rewritten against Bei Zeng's Lean formalization of Section III.
+That formalization is included as the [`QECC`](QECC/README.md) library, ported
+from Lean 4.28 to this repository's Lean 4.27 without changing any statement
+or proof. Its main theorems, such as
+`QECC.CodeProjector.general_physicalOrder_bound` and
+`QECC.CodeProjector.distanceThree_physicalOrder_bound`, depend only on the
+standard three axioms. The claims ledger has not yet been migrated to
+20260929, so no 20260929 label is recorded as covered.
+
 The latest proof increment connects the same physical colored lift, solved
 binary pivot and actual Smith factor in
 [`PaperColoredFiniteLift`](MainTheory/PaperColoredFiniteLift.lean).
@@ -387,6 +398,8 @@ draft or silently refresh away a changed assertion's review.
   finite certificate modules.
 - `MainTheory/`: arbitrary-length lifting, intrinsic groups, normalization,
   semantic bridges, enumeration and manuscript-facing statements.
+- `QECC/`: Section III of the 20260929 manuscript (finite diagonal logical
+  groups, SSLP normal form, physical-order bounds), from Bei Zeng's LeanSecIII.
 - `tools/`: untrusted candidate generators and acceptance/checking wrappers.
 - `results/`: audit and implementation records. The
   [previous README](results/readme-history-before-20260905.md) is retained as

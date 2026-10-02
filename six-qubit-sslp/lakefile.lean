@@ -28,3 +28,11 @@ all `n`, `K` and `d`, as opposed to the six-qubit enumeration in `SixQubit`. -/
 @[default_target]
 lean_lib MainTheory where
   globs := #[.andSubmodules `MainTheory]
+
+/-- Section III of the 20260929 manuscript: finite diagonal logical groups, the
+SSLP normal form and the physical-order bounds. Bei Zeng's LeanSecIII package,
+ported to this toolchain without changing any statement or proof; see
+`QECC/README.md`. -/
+@[default_target]
+lean_lib QECC where
+  globs := #[.andSubmodules `QECC]

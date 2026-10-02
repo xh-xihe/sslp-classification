@@ -23,10 +23,11 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit')
+LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC')
 AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean',
-               'SixQubit/Orbit7CollinearAxiomCheck.lean')
+               'SixQubit/Orbit7CollinearAxiomCheck.lean',
+               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean')
 
 # Lean identifiers admit far more than ASCII: subscripts (`cov_eq₂`), Greek
 # letters, primes.  Narrowing this to `[A-Za-z0-9_]` produces false misses, so

@@ -12,10 +12,15 @@ import sympy as s
 ROOT = Path(__file__).resolve().parents[2]
 
 class DisplayedBasisReview(unittest.TestCase):
-    def test_expanded_paper_formulas_match_every_coordinate(self):
+    def test_export_is_bound_to_the_reviewed_manuscript(self):
         data = json.loads((ROOT/'results/sslp-explorer/class36-20260924.json').read_text())
         paper = ROOT/'documents/20260924/main.tex'
+        if not paper.exists():
+            self.skipTest('documents/ holds the unpublished manuscript and is not in a checkout')
         self.assertEqual(hashlib.sha256(paper.read_bytes()).hexdigest(), data['paper']['sources_sha256']['documents/20260924/main.tex'])
+
+    def test_expanded_paper_formulas_match_every_coordinate(self):
+        data = json.loads((ROOT/'results/sslp-explorer/class36-20260924.json').read_text())
         omega = (-1+s.I*s.sqrt(3))/2
         edge = {'1100':1,'0011':1,'1010':omega,'0101':omega,'1001':omega**2,'0110':omega**2}
         psi0 = {'000000':1/s.sqrt(10),'000011':1/s.sqrt(10)}

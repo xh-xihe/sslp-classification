@@ -21,10 +21,11 @@ DEFAULT_PAPER_VERSION = '20260908'
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
-LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit')
+LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC')
 AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean',
-               'SixQubit/Orbit7CollinearAxiomCheck.lean')
+               'SixQubit/Orbit7CollinearAxiomCheck.lean',
+               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean')
 REPORT_DIR = ROOT / 'tmp' / 'verification'
 FORBIDDEN = re.compile(
     r'(?<![\w])(?:sorry|admit|sorryAx|axiom|native_decide|ofReduceBool|ofReduceNat|'

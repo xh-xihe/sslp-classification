@@ -33,7 +33,8 @@ SKIP_PREFIX = ('six:', 'thm:', 'eq:', 'lem:', 'cor:', 'def:', 'sec:', 'tab:')
 
 def live_entry_imports(root=ROOT):
     """Read import-only entry points from source, so stale umbrella oleans cannot hide new proofs."""
-    entries = ('MainTheory.lean', 'MainTheory/Audit.lean', 'SixQubit/Audit.lean')
+    entries = ('MainTheory.lean', 'MainTheory/Audit.lean', 'SixQubit/Audit.lean',
+               'QECC/Audit.lean')
     wrappers = {name[:-5].replace('/', '.') for name in entries}
     modules = {module for relative in entries
                for module in imports((Path(root) / relative).read_text(encoding='utf-8'))}

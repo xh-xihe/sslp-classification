@@ -10,8 +10,14 @@ validated merely because an .olean exists.
 `--plan` is read-only and reports topology/initial stamp coverage; it performs no
 Lean invocation or expensive external artifact hashing. The first real run must
 validate all requested unstamped sources. `--module X` includes X's entire local
-import closure; the default includes all three live libraries and root modules.
+import closure; the default includes every live library and its root module.
 External packages must already be fetched/built for the pinned toolchain.
+
+The build context in every stamp hashes what decides how a module compiles: the
+toolchain and manifest, the environment `lake env` gives the compiler, and the
+parts of this driver that run and record a compilation. It does not hash
+lakefile.lean or this file byte for byte, so declaring another library does not
+invalidate every existing stamp.
 """
 import argparse
 from contextlib import contextmanager
@@ -29,7 +35,7 @@ import uuid
 from lean_source import imports, MODULE_NAME
 
 ROOT = Path(__file__).resolve().parent.parent
-LIVE_DIRS = ('SS', 'SixQubit', 'MainTheory')
+LIVE_DIRS = ('SS', 'SixQubit', 'MainTheory', 'QECC')
 SCHEMA = 1
 LEAN_FLAGS = ['-j', '1', '-DwarningAsError=true']
 OUTPUT_SUFFIXES = ('.olean', '.olean.private', '.olean.server', '.ir', '.ilean')
@@ -145,6 +151,63 @@ def valid_cache(root, module, expected):
         return None
 
 
+COMPILE_ENVIRONMENT = ('LEAN_PATH', 'LEAN_SRC_PATH', 'LEAN_SYSROOT', 'LEAN_GITHASH')
+PATH_VARIABLES = ('LEAN_PATH', 'LEAN_SRC_PATH', 'LEAN_SYSROOT')
+
+
+def compile_environment(root, prefix, runner=subprocess.run):
+    """The variables `lake env` gives the compiler, with this machine's prefixes abstracted.
+
+    Modules are compiled as `lake env lean ...`, and Lake adds no lakefile
+    options to `lake env`, so this environment is what reaches the compiler from
+    lakefile.lean. Declaring another lean_lib leaves it unchanged; changing a
+    dependency, the toolchain or the package layout changes it. Absolute entries
+    under the repository or the toolchain are rewritten relative to them, so
+    moving the checkout does not invalidate anything either.
+    """
+    code = 'import json, os; print(json.dumps({k: os.environ.get(k) for k in %r}))' % (
+        COMPILE_ENVIRONMENT,)
+    proc = runner(['lake', 'env', sys.executable, '-c', code], cwd=root,
+                  capture_output=True, text=True, encoding='utf-8', errors='replace')
+    if proc.returncode:
+        raise BuildError('cannot read the lake environment: ' + proc.stdout + proc.stderr)
+    try:
+        values = json.loads(proc.stdout.strip().splitlines()[-1])
+    except (IndexError, ValueError) as exc:
+        raise BuildError('unreadable lake environment: ' + proc.stdout) from exc
+    anchors = ((Path(root).resolve(), '<root>'), (Path(prefix).resolve(), '<toolchain>'))
+
+    def portable(entry):
+        if not entry or not Path(entry).is_absolute():
+            return entry
+        path = Path(entry).resolve()
+        for base, label in anchors:
+            try:
+                return label + '/' + path.relative_to(base).as_posix()
+            except ValueError:
+                pass
+        return path.as_posix()
+
+    return {name: (os.pathsep.join(portable(e) for e in value.split(os.pathsep))
+                   if name in PATH_VARIABLES and value is not None else value)
+            for name, value in values.items()}
+
+
+def driver_fingerprint():
+    """Hash the parts of this driver that decide how a module is compiled and recorded.
+
+    Hashing this whole file meant that registering a library in LIVE_DIRS, or
+    editing any comment, invalidated every stamp. What reaches a stamp is the
+    compile command, its flags, the recorded outputs and the hashing that names
+    them; a change to any of these still invalidates everything.
+    """
+    import inspect
+    code = {function.__name__: inspect.getsource(function)
+            for function in (compile_module, fingerprint, valid_cache, value_hash, file_hash)}
+    return value_hash({'schema': SCHEMA, 'lean_flags': LEAN_FLAGS,
+                       'output_suffixes': OUTPUT_SUFFIXES, 'code': code})
+
+
 def external_context(root, runner=subprocess.run, required_imports=()):
     """Hash configuration and actual external compiled artifacts, not mtimes.
 
@@ -161,8 +224,9 @@ def external_context(root, runner=subprocess.run, required_imports=()):
     if not (prefix / 'lib/lean').is_dir():
         raise BuildError('Lean returned no usable toolchain prefix')
     configuration = {name: file_hash(root / name)
-                     for name in ('lean-toolchain', 'lake-manifest.json', 'lakefile.lean')}
-    configuration['driver'] = file_hash(Path(__file__))
+                     for name in ('lean-toolchain', 'lake-manifest.json')}
+    configuration['compile_environment'] = value_hash(compile_environment(root, prefix, runner))
+    configuration['driver'] = driver_fingerprint()
     configuration['source_lexer'] = file_hash(Path(__file__).with_name('lean_source.py'))
     lean_executable = prefix / 'bin' / ('lean.exe' if os.name == 'nt' else 'lean')
     configuration['lean_executable'] = file_hash(lean_executable)

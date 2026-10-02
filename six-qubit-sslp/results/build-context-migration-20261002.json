@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "date": "2026-10-02",
+  "purpose": "Re-key build stamps after two configuration changes that cannot affect how any existing module compiles, instead of rebuilding about 178 CPU-hours of modules.",
+  "changes_judged_compile_neutral": {
+    "lakefile.lean": "Only an added `lean_lib QECC` declaration. Package-level settings are unchanged, and tools/build_lean.py compiles through `lake env lean`, to which Lake adds no lakefile options.",
+    "tools/build_lean.py": "Only LIVE_DIRS extended by \"QECC\", then the context formula itself: LEAN_FLAGS, SCHEMA, the compile command and output recording are unchanged.",
+    "evidence": [
+      "`lake env printenv LEAN_PATH` is byte-identical before and after the lean_lib declaration.",
+      "The context recomputed for the intermediate configuration equals the one the builder recorded for it (aefc914714fc7cb3), so the v1 formula was reproduced exactly.",
+      "Every stamp written under either previous configuration was reproduced: fingerprint from its current source and its dependencies' keys, key from fingerprint and outputs, every output present with its recorded hash.",
+      "The 26 modules rebuilt under the intermediate configuration have dependents still stamped under the original one, and all of those dependents were reproduced using keys computed from the rebuilt outputs. Their outputs are therefore identical to the originals."
+    ],
+    "judged_by": "Claude (session 01KG7zdXvetjqgkeErsh2kLe), on the user's instruction"
+  },
+  "current_context": "28d6b80dd7a7e84d7bdcc07a59cab2e88cbed3a58a033b0b17e368f1a9e072e0",
+  "current_configuration": {
+    "compile_environment": "95dbb2681037a0e773c89e94642690ddc00a6e737ff116e6862b005234c005bc",
+    "driver": "032fc58368ac32fd833c0922d5b6bfe76df24cd8a4d86f34a03d8943ec53cff0",
+    "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+    "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+    "lean_executable": "ae20fac75dfa9d92866f9c08acdff978c0f06020ab8c4ee4fc9af9505238cf81",
+    "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa"
+  },
+  "previous": [
+    {
+      "context": "ef7f64c6c7ae60c2b79073970d4bbc98f480b16eff48cf9d6d8c132aebb4b841",
+      "lakefile": "lakefile.lean at 1268bade (before the QECC library was declared)",
+      "driver": "tools/build_lean.py at 1268bade (whole-file context formula, LIVE_DIRS without QECC)",
+      "configuration_sha256": {
+        "driver": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+        "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+        "lakefile.lean": "a98295c1b60f4a66121ad0cf9753f52df8a680c663671fe268b2455fe52c2ade",
+        "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+        "lean_executable": "ae20fac75dfa9d92866f9c08acdff978c0f06020ab8c4ee4fc9af9505238cf81",
+        "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa"
+      },
+      "stamps_accepted": 14164
+    },
+    {
+      "context": "aefc914714fc7cb37ee011ea9dd044d8892bdb23d58820612f1c6f8fdba59a6d",
+      "lakefile": "lakefile.lean at 1268bade plus the eight-line `lean_lib QECC` block",
+      "driver": "tools/build_lean.py at 1268bade with LIVE_DIRS extended by \"QECC\"",
+      "configuration_sha256": {
+        "driver": "569f9ba94bdbef65114bb751d047789c9de5e2143906b14e998e5c03cc0e186c",
+        "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+        "lakefile.lean": "3469d7c3220ff3d22706a75ce0b000560e4a32cfb4f53b9bd38497d8ea7bd8ea",
+        "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+        "lean_executable": "ae20fac75dfa9d92866f9c08acdff978c0f06020ab8c4ee4fc9af9505238cf81",
+        "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa"
+      },
+      "stamps_accepted": 78
+    }
+  ],
+  "modules": 14243,
+  "migrated": 14242,
+  "already_current": 0,
+  "rejected": {
+    "MainTheory.ProseCitationAudit": "no stamp"
+  },
+  "blocked_by_rejected": {},
+  "confirmed_by": "tools/build_lean.py, full run under the new formula, 2026-10-02 03:07: PASS: 1 serially rebuilt (MainTheory.ProseCitationAudit, never built before), 14242 content-validated cached modules"
+}
