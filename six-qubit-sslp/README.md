@@ -1,23 +1,27 @@
 # Six-qubit SSLP and general finite-lift certification
 
-The latest manuscript target is `documents/20260924/`. Its version-bound
-[acceptance entry point and first review](notes/paper-acceptance-20260924.md)
-are available with `python tools/verify.py --paper-version 20260924`.
-The new release is not fully certified: its first 19 priority named statements
-have review records, while remaining displays and prose still need review.
-See the [new named-results map](results/named-results-20260924.md) and
-[current errata dispositions](results/errata-20260924.json).
-
-The newest manuscript is `documents/20260929/`. Its supplementary materials
-are byte-identical to 20260924, and its main text changes only Sections II and
-III, which were rewritten against Bei Zeng's Lean formalization of Section III.
-That formalization is included as the [`QECC`](QECC/README.md) library, ported
-from Lean 4.28 to this repository's Lean 4.27 without changing any statement
-or proof. Its main theorems, such as
+The latest manuscript target is `documents/20260929/`. Its supplementary
+materials are byte-identical to 20260924. Its main text rewrites Section III
+against Bei Zeng's Lean formalization of that section, which is included as the
+[`QECC`](QECC/README.md) library, ported from Lean 4.28 to this repository's
+Lean 4.27 without changing any statement or proof. Its main theorems, such as
 `QECC.CodeProjector.general_physicalOrder_bound` and
 `QECC.CodeProjector.distanceThree_physicalOrder_bound`, depend only on the
-standard three axioms. The claims ledger has not yet been migrated to
-20260929, so no 20260929 label is recorded as covered.
+standard three axioms. The [acceptance notes](notes/paper-acceptance-20260929.md)
+record a two-agent review of all of Section III and of everything else that
+changed since 20260924. The ledger has 103 entries covered and 58 partial; the
+unchanged rest of both documents is not yet reviewed for this version.
+`python tools/verify.py --paper-version 20260929 --only release audit-names named-results axioms`
+passes. The claims, prose and errata gates fail, because the review is
+incomplete and eight errata stand. See the
+[named-results map](results/named-results-20260929.md), the
+[prose review](results/prose-review-20260929.md) and the
+[errata dispositions](results/errata-20260929.json).
+
+The previous target, `documents/20260924/`, keeps its own
+[acceptance notes](notes/paper-acceptance-20260924.md),
+[named-results map](results/named-results-20260924.md) and
+[errata dispositions](results/errata-20260924.json).
 
 The latest proof increment connects the same physical colored lift, solved
 binary pivot and actual Smith factor in
@@ -44,7 +48,8 @@ See the [scope and verification record](results/minimum-length-20260924/README.m
 The established baseline and coverage counts below concern
 `documents/20260908/main.tex` and `documents/20260908/supplementary.tex`,
 formalized in Lean 4.27.0 with pinned mathlib. The historical default command
-continues to select 20260908; its reviews do not automatically cover 20260924.
+continues to select 20260908; its reviews do not automatically cover 20260924
+or 20260929.
 **Full manuscript certification is still in progress.**  Four discrepancies
 between the manuscript and what is provable are recorded in
 [errata-20260908.md](results/errata-20260908.md). One of them,
