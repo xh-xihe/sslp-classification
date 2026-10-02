@@ -6,10 +6,10 @@
   "documents/20260929/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
  },
  "status": "partial",
- "method": "Two-agent semantic review on 2026-10-02 of the 20260929 sources against the QECC library (Bei Zeng's formalization of Section III) and the existing MainTheory, SixQubit and SS libraries. Section III (main.tex lines 606-2074) was split into seven chunks. For each chunk one agent reviewed every ledger entry and classified every mathematically substantive assertion of the running prose, including assertions inside proofs; a second agent re-read the same range and the cited declarations, tried to refute each judgement in both directions, and added what the first had missed; a third agent decided the entries on which the two disagreed. The same two-agent process re-reviewed the passages of main.tex outside Section III that changed since 20260924 (abstract, introduction, parts of Section II, the opening of Section IV), the 16 entries outside Section III that had a 20260924 review, the supplement's references into main.tex, the four recorded errata and four of the six 20260924 prose assertions (the other two lie in Section III and were re-reviewed there). A consistency reviewer then compared all chunks and found six cross-chunk contradictions, in four groups; each group was re-judged under one stated rule by a resolver and an adversarial verifier. No agent ran Lean; declarations were read from source, and names were then checked mechanically against the repository sources and by the kernel axiom gate. Reviews and reasons are written in our own words; no manuscript text is reproduced.",
+ "method": "Two-agent semantic review on 2026-10-02 of the 20260929 sources against the QECC library (Bei Zeng's formalization of Section III) and the existing MainTheory, SixQubit and SS libraries. Section III (main.tex lines 606-2074) was split into seven chunks. For each chunk one agent reviewed every ledger entry and classified every mathematically substantive assertion of the running prose, including assertions inside proofs; a second agent re-read the same range and the cited declarations, tried to refute each judgement in both directions, and added what the first had missed; a third agent decided the entries on which the two disagreed. The same two-agent process re-reviewed the passages of main.tex outside Section III that changed since 20260924 (abstract, introduction, parts of Section II, the opening of Section IV), the 16 entries outside Section III that had a 20260924 review, the supplement's references into main.tex, the four recorded errata and four of the six 20260924 prose assertions (the other two lie in Section III and were re-reviewed there). A consistency reviewer then compared all chunks and found six cross-chunk contradictions, in four groups; each group was re-judged under one stated rule by a resolver and an adversarial verifier. No agent ran Lean; declarations were read from source, and names were then checked mechanically against the repository sources and by the kernel axiom gate. Later on 2026-10-02, after MainTheory.QECCSmithBridge proved that the QECC cokernel-exponent finalSmithInvariant is the last Smith factor and smithBeta is beta_nu, the entries and prose items that had depended on that identification were re-judged by a resolver and two adversarial verifiers with different lenses. Reviews and reasons are written in our own words; no manuscript text is reproduced.",
  "counts": {
-  "main.tex:covered": 105,
-  "main.tex:gap": 33,
+  "main.tex:covered": 106,
+  "main.tex:gap": 32,
   "main.tex:nonmath": 29,
   "main.tex:tracked": 118,
   "supplementary.tex:covered": 1,
@@ -19,7 +19,7 @@
  "gap_severity": {
   "main.tex:high": 3,
   "main.tex:low": 21,
-  "main.tex:medium": 9,
+  "main.tex:medium": 8,
   "supplementary.tex:low": 1,
   "supplementary.tex:medium": 1
  },
@@ -1623,9 +1623,13 @@
     "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
     "MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank",
     "QECC.CodeProjector.general_physicalOrder_bound",
-    "QECC.CodeProjector.distanceThree_physicalOrder_bound"
+    "QECC.CodeProjector.GeneralPhysicalOrderBoundConclusion",
+    "QECC.CodeProjector.SmithBoundedPhysicalRepresentative",
+    "QECC.CodeProjector.distanceThree_physicalOrder_bound",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf",
+    "MainTheory.QECCSmithBridge.smithBeta_betaExact"
    ],
-   "reason": "Previews the uniform bounds on q_min proved in Section III.C: thm:colored-finite-lift gives the bound in n and K, and cor:d3-physical-order-bound the distance-three refinement. The remark that per-code finiteness gives no uniform bound describes what Section III.A provides and is not a separate theorem. MainTheory's colored lift bounds qmin by betaOf(n+ell-1) <= betaOf(n+K-1), which is beta_{n+K-1} through the Smith-witness bridge and betaOf_eq_of_exact. QECC bounds minimalPhysicalOrder U by smithBeta(n+K-1). That is a uniform bound in (n, K) even though smithBeta is not identified with beta."
+   "reason": "Previews the uniform bounds on q_min proved in Section III.C: thm:colored-finite-lift gives the bound in n and K, and cor:d3-physical-order-bound the distance-three refinement. The remark that per-code finiteness gives no uniform bound describes what Section III.A provides and is not a separate theorem. MainTheory's colored lift bounds qmin by betaOf(n+ell-1) <= betaOf(n+K-1). QECC bounds minimalPhysicalOrder U by smithBeta(n+K-1). Here n+K-1 >= 1: in GeneralPhysicalOrderBoundConclusion, the bounded field's size satisfies 1 <= size <= n+sectorCount-1 (size_pos and size_le of SmithBoundedPhysicalRepresentative), and sectorCount_le_rank gives sectorCount <= K. So MainTheory.QECCSmithBridge.smithBeta_eq_betaOf makes QECC's constant the same betaOf(n+K-1), and smithBeta_betaExact identifies that constant with beta_{n+K-1}."
   },
   {
    "source": "main.tex",
@@ -3089,19 +3093,25 @@
    "chunk": "III-5",
    "line": 1580,
    "end_line": 1581,
-   "kind": "gap",
+   "kind": "covered",
    "original_kind": "gap",
    "corrected": true,
-   "origin": "resolver",
+   "origin": "bridge re-review",
    "label": "d_s(C) equals the cokernel exponent",
-   "severity": "medium",
+   "severity": null,
    "declarations": [
-    "QECC.NonsingularBinaryMatrix.finalSmithInvariant",
+    "QECC.NonsingularBinaryMatrix.Cokernel",
+    "QECC.NonsingularBinaryMatrix.imageLattice",
     "QECC.NonsingularBinaryMatrix.cokernelFinite",
-    "QECC.smithBeta",
+    "QECC.NonsingularBinaryMatrix.finalSmithInvariant",
+    "MainTheory.QECCSmithBridge.finalSmithInvariant_eq_lastFactor",
+    "MainTheory.QECCSmithBridge.nonempty_smithWitness",
+    "MainTheory.QECCSmithBridge.finalSmithInvariant_eq_inverseDenominator",
+    "MainTheory.SharpClearing.SmithWitness",
+    "MainTheory.SharpClearing.SmithWitness.lastFactor",
     "MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor"
    ],
-   "reason": "The sentence identifies the last Smith factor with the exponent of Z^s/CZ^s. QECC proves that cokernel finite and defines finalSmithInvariant as its exponent, and MainTheory proves that every Smith witness's last factor equals inverseDenominator. No declaration in QECC, MainTheory, SS, SixQubit or Mathlib relates the cokernel exponent to either. The two libraries do not import each other, and QECC has no minimality lemma for its exponent among clearing multipliers. In Mathlib, Submodule.quotientEquivPiZMod uses abstract Smith-basis coefficients, not a given matrix's factors. Both divisibilities could be assembled from the two clearing lemmas with Mathlib's nonsingular inverse, cast injectivity and quotient reasoning, but none of this is stated. Without the identity, QECC's finalSmithInvariant and smithBeta are not the manuscript's d_s(C) and beta, and every ledger clause carried only through them is uncarried."
+   "reason": "QECC.NonsingularBinaryMatrix.Cokernel is the quotient of the integer vectors Z^s by the image lattice of the matrix (imageLattice, the range of its integer mulVec map). cokernelFinite proves this quotient finite, and finalSmithInvariant is defined as its additive exponent. MainTheory.QECCSmithBridge.finalSmithInvariant_eq_lastFactor proves that, for s >= 1, this exponent equals the last factor of every SmithWitness of the matrix, and nonempty_smithWitness supplies a witness, so the identity is not vacuous. MainTheory.SharpClearing.SmithWitness is the decomposition of eq:snf. It has integral U and V with integral two-sided inverses (so determinant +1 or -1), positive diagonal factors in a divisibility chain along the order of Fin s, and U C V equal to the diagonal. Conversely, an integer matrix of determinant +1 or -1 has the integral inverse given by plus or minus its adjugate (Mathlib's Matrix.mul_adjugate and Matrix.adjugate_mul), so every decomposition allowed by eq:snf is a SmithWitness. SmithWitness.lastFactor is the factor at the last index, d_s(C). The proof composes finalSmithInvariant_eq_inverseDenominator (mutual divisibility of the exponent and the sharp inverse denominator) with inverseDenominator_eq_smithLastFactor. The restriction s >= 1 is the one already built into the notation d_s(C)."
   },
   {
    "source": "main.tex",
@@ -3176,14 +3186,17 @@
    "declarations": [
     "MainTheory.SharpClearing.universallyClears_iff_dvd",
     "MainTheory.SharpClearing.inverseDenominator_universallyClears",
-    "MainTheory.BetaExists.betaBound_betaOf",
-    "MainTheory.BinaryBeta.BetaExact",
-    "MainTheory.BetaExactValue.betaOf_eq_of_exact",
     "MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor",
     "MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det",
+    "MainTheory.BetaExists.betaBound_betaOf",
+    "MainTheory.BinaryBeta.BetaExact",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf",
+    "MainTheory.QECCSmithBridge.smithBeta_betaExact",
+    "MainTheory.QECCSmithBridge.finalSmithInvariant_eq_lastFactor",
+    "QECC.NonsingularBinaryMatrix.exists_integral_finalSmithInvariant_smul",
     "QECC.finalSmithInvariant_le_smithBeta"
    ],
-   "reason": "inverseDenominator C clears every integral system for C (inverseDenominator_universallyClears). By universallyClears_iff_dvd, every other clearing multiplier is a multiple of it. betaBound_betaOf bounds it by betaOf nu for every nonsingular zero-one matrix of size 1..nu. For nu >= 1, betaOf nu = beta_nu: the witness bridge (nonempty_smithWitness_of_det, inverseDenominator_eq_smithLastFactor) makes beta_nu a BetaExact certificate, and betaOf_eq_of_exact applies. QECC's finalSmithInvariant_le_smithBeta instead bounds the cokernel exponent, which no declaration identifies with d_s(C)."
+   "reason": "inverseDenominator C clears every integral system for C (inverseDenominator_universallyClears), and by universallyClears_iff_dvd every other positive clearing multiplier is a multiple of it. inverseDenominator_eq_smithLastFactor at a witness from nonempty_smithWitness_of_det identifies it with d_s(C). betaBound_betaOf bounds it by betaOf nu for every nonsingular zero-one matrix of size 1..nu. For nu >= 1, MainTheory.QECCSmithBridge.smithBeta_eq_betaOf with smithBeta_betaExact identifies betaOf nu with beta_nu. QECC now gives the same statement directly. NonsingularBinaryMatrix.exists_integral_finalSmithInvariant_smul clears C z = h with finalSmithInvariant, and finalSmithInvariant_le_smithBeta bounds that by smithBeta nu for sizes 1..nu. The bridge (finalSmithInvariant_eq_lastFactor, smithBeta_betaExact) makes these d_s(C) and beta_nu."
   },
   {
    "source": "main.tex",
@@ -3800,12 +3813,16 @@
    "severity": null,
    "declarations": [
     "QECC.CodeProjector.general_physicalOrder_bound",
+    "QECC.CodeProjector.GeneralPhysicalOrderBoundConclusion",
+    "QECC.CodeProjector.SmithBoundedPhysicalRepresentative",
     "QECC.CodeProjector.detectsSingleZ_of_hasDistanceAtLeast_two",
     "QECC.CodeProjector.detectsNumberOps_of_detectsSingleZ",
     "MainTheory.ZDetection.zDetectsFrame_of_hasDistance",
-    "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects"
+    "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf",
+    "MainTheory.QECCSmithBridge.smithBeta_betaExact"
    ],
-   "reason": "Distance at least two gives the detection hypothesis (detectsSingleZ_of_hasDistanceAtLeast_two, then detectsNumberOps_of_detectsSingleZ). Every nonzero class then has a reduced representative of order at most smithBeta(n+K-1), and the minimum order obeys the same bound. That constant depends only on n and K, so finiteness needs no identification of smithBeta with beta. On the MainTheory side, zDetectsFrame_of_hasDistance supplies the Z-detection hypothesis from d >= 2, and the colored lift gives the manuscript's own bound betaOf(n+K-1) = beta_{n+K-1}. The mention of the SSLP normal form is roadmap."
+   "reason": "Distance at least two gives the detection hypothesis (detectsSingleZ_of_hasDistanceAtLeast_two, then detectsNumberOps_of_detectsSingleZ). general_physicalOrder_bound then gives every nonzero class a reduced representative of order at most smithBeta(n+K-1), and the minimum order obeys the same bound. That constant depends only on n and K. Since n+K-1 >= 1 there (size_pos and size_le of the bounded representative with sectorCount_le_rank), MainTheory.QECCSmithBridge.smithBeta_eq_betaOf and smithBeta_betaExact identify it with betaOf(n+K-1) = beta_{n+K-1}. On the MainTheory side, zDetectsFrame_of_hasDistance supplies the Z-detection hypothesis from d >= 2, and the colored lift gives the same bound betaOf(n+K-1). The mention of the SSLP normal form is roadmap."
   },
   {
    "source": "main.tex",
@@ -3870,9 +3887,11 @@
     "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
     "MainTheory.BetaExactValue.betaOf_eq_of_exact",
     "MainTheory.BinaryBetaSeven.betaSevenExact",
-    "MainTheory.SixQubitDistanceTwoBound.qMin_le_eighteen"
+    "MainTheory.SixQubitDistanceTwoBound.qMin_le_eighteen",
+    "QECC.CodeProjector.general_physicalOrder_bound",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf"
    ],
-   "reason": "At n = 6 and K = 2, the coloured lift has order at most betaOf(n + K - 1) = betaOf 7, and betaOf_eq_of_exact applied to betaSevenExact gives betaOf 7 = 18; this uses Z detection only. qMin_le_eighteen states the bound directly for six-qubit rank-two codes of distance at least two. QECC alone cannot give 18, because smithBeta 7 is not evaluated."
+   "reason": "At n = 6 and K = 2, the coloured lift has order at most betaOf(n + K - 1) = betaOf 7, and betaOf_eq_of_exact applied to betaSevenExact gives betaOf 7 = 18; this uses Z detection only. qMin_le_eighteen states the bound directly for six-qubit rank-two codes of distance at least two. QECC now reaches 18 as well: general_physicalOrder_bound bounds the representative's order by smithBeta 7 under number-operator detection, and MainTheory.QECCSmithBridge.smithBeta_eq_betaOf turns smithBeta 7 into betaOf 7 = 18."
   },
   {
    "source": "main.tex",
@@ -4284,9 +4303,10 @@
     "MainTheory.SharpClearing.SmithWitness.lastFactor_pos",
     "MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor",
     "MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det",
-    "QECC.BinaryPivotSolution.exists_integral_finalSmithInvariant_smul_solution"
+    "QECC.BinaryPivotSolution.exists_integral_finalSmithInvariant_smul_solution",
+    "MainTheory.QECCSmithBridge.finalSmithInvariant_eq_lastFactor"
    ],
-   "reason": "Instantiate D3SparseRationalization.Data at the manuscript's (B, I, h), with a Smith witness W of its zero-one minor from nonempty_smithWitness_of_det. selectedSolution_smith_integral makes W.lastFactor times theta'_I integral. Data.lcmDen_full_dvd_inverseDenominator gives lcmDen theta' | inverseDenominator C, where theta' is the zero-extended solution and lcmDen theta' is Data.order; inverseDenominator_eq_smithLastFactor rewrites the right side to W.lastFactor, the same for every witness, that is d_r(C). For each coordinate, lcmDen_clears and Nat.dvd_trans give (theta'_j).den | d_r(C), and clears_iff with lastFactor_pos makes d_r(C) theta'_j an integer. QECC's lemma states the same for the integer-cokernel exponent, which no declaration identifies with d_r(C)."
+   "reason": "Instantiate D3SparseRationalization.Data at the manuscript's (B, I, h), with a Smith witness W of its zero-one minor from nonempty_smithWitness_of_det. selectedSolution_smith_integral makes W.lastFactor times theta'_I integral. Data.lcmDen_full_dvd_inverseDenominator gives lcmDen theta' | inverseDenominator C, where theta' is the zero-extended solution and lcmDen theta' is Data.order. inverseDenominator_eq_smithLastFactor rewrites the right side to W.lastFactor, which is the same for every witness and is d_r(C). For each coordinate, lcmDen_clears and Nat.dvd_trans give (theta'_j).den | d_r(C), and clears_iff with lastFactor_pos makes d_r(C) theta'_j an integer. With the bridge, QECC's BinaryPivotSolution lemma states the same for the last Smith factor of a positive-size pivot minor (finalSmithInvariant_eq_lastFactor). It is supporting only, since QECC applies it to an internally chosen representative's system."
   },
   {
    "source": "main.tex",
@@ -4434,12 +4454,14 @@
     "MainTheory.SortedForm.SortedNormalForm",
     "MainTheory.SSLPCompleteness.weakenDistance",
     "MainTheory.BetaExists.betaBound_betaOf",
-    "MainTheory.BetaExactValue.betaOf_eq_of_exact",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf",
+    "MainTheory.QECCSmithBridge.smithBeta_betaExact",
     "MainTheory.SSLPConverse.sslp_converse",
     "MainTheory.SSLPConverse.orderOf_intrinsicClass_resolutionOfPair",
-    "QECC.CodeProjector.rankTwo_physicalOrder_cutoff"
+    "QECC.CodeProjector.rankTwo_physicalOrder_cutoff",
+    "QECC.smithBeta_zero"
    ],
-   "reason": "Completeness half: completeness_of_nontrivial_two (with B1 = betaOf(n+1), a bound by betaBound_betaOf) and completeness_three_sharp cover every rank-two code of distance d >= d_0 with a nontrivial intrinsic diagonal group. Each such code gets a SortedNormalForm with q at most betaOf(n+1) or betaOf n, m | q, m >= 2, sorted primitive angles below q, the frame in fibres 0 and q/m, distance d, and an X string and permutation back to the code. Distance d >= d_0 implies the weight-below-d_0 conditions, as weakenDistance shows. betaOf N = beta_N for N >= 1, through the BetaExact certificate built from the Smith-witness bridge and betaOf_eq_of_exact. Converse half: sslp_converse builds an exact ((n,2,d_0)) code on any orthonormal fibre-form pair satisfying the Knill-Laflamme conditions, and orderOf_intrinsicClass_resolutionOfPair shows the class of D(a;q) on that code has order exactly m. QECC's cutoff uses smithBeta, which no declaration identifies with beta, and is not the carrier."
+   "reason": "Completeness half: completeness_of_nontrivial_two (with B1 = betaOf(n+1), a bound by betaBound_betaOf) and completeness_three_sharp cover every rank-two code of distance d >= d_0 with a nontrivial intrinsic diagonal group. Each such code gets a SortedNormalForm with q at most betaOf(n+1) or betaOf n, m | q, m >= 2, sorted primitive angles below q, the frame in fibres 0 and q/m, distance d, and an X string and permutation back to the code. Distance d >= d_0 implies the weight-below-d_0 conditions, as weakenDistance shows. For N >= 1, MainTheory.QECCSmithBridge.smithBeta_eq_betaOf with smithBeta_betaExact identifies betaOf N with beta_N. Converse half: sslp_converse builds an exact ((n,2,d_0)) code on any orthonormal fibre-form pair satisfying the Knill-Laflamme conditions, and orderOf_intrinsicClass_resolutionOfPair shows the class of D(a;q) on that code has order exactly m. QECC's rankTwo_physicalOrder_cutoff, through the bridge, reads as the cutoff beta_{n+1} or beta_n. In the distance-three branch n >= 1 because 2 <= q <= smithBeta n and smithBeta 0 = 0 (QECC.smithBeta_zero). It states only the cutoff, not that every code appears in the enumeration, so it is supporting."
   },
   {
    "source": "main.tex",
@@ -4523,9 +4545,11 @@
     "MainTheory.QMinBound.d3_bound_nine",
     "MainTheory.SmallBetaValues.betaOf_six",
     "MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor",
-    "QECC.CodeProjector.distanceThree_physicalOrder_bound"
+    "QECC.CodeProjector.distanceThree_physicalOrder_bound",
+    "QECC.CodeProjector.DistanceThreePhysicalOrderBoundConclusion",
+    "MainTheory.QECCSmithBridge.smithBeta_eq_betaOf"
    ],
-   "reason": "Reworded lead-in to six:eq:qcutoff: the distance-three corollary together with beta_6 = 9 gives the exhaustive cutoff m | q, 2 <= q <= 9. d3_bound_nine states the conclusion for every element g of the intrinsic group of every ExactCode 6 2 3: a primitive lift D(a;q) with 0 < q <= 9 and orderOf g dividing q. For nontrivial g this forces q >= 2. The value 9 is betaOf_six; MainTheory's beta is built from inverse denominators, which inverseDenominator_eq_smithLastFactor identifies with the last Smith factor of each nonsingular matrix. The stated route through QECC's corollary is not closed numerically: distanceThree_physicalOrder_bound gives q <= smithBeta 6, but QECC proves no value of smithBeta, and no bridge to betaOf exists."
+   "reason": "Reworded lead-in to six:eq:qcutoff: the distance-three corollary together with beta_6 = 9 gives the exhaustive cutoff m | q, 2 <= q <= 9. d3_bound_nine states the conclusion for every element g of the intrinsic group of every ExactCode 6 2 3: a primitive lift D(a;q) with 0 < q <= 9 and orderOf g dividing q, which forces q >= 2 for nontrivial g. The value 9 is betaOf_six. MainTheory's beta is built from inverse denominators, which inverseDenominator_eq_smithLastFactor identifies with the last Smith factor of each nonsingular matrix. The stated route through QECC's corollary now closes as well: distanceThree_physicalOrder_bound at n = 6 gives m | q, 2 <= q and q <= smithBeta 6 (physicalOrder_le_beta_n), and MainTheory.QECCSmithBridge.smithBeta_eq_betaOf with betaOf_six gives smithBeta 6 = 9."
   },
   {
    "source": "main.tex",

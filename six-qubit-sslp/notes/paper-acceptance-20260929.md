@@ -15,7 +15,7 @@ python tools/verify.py --paper-version 20260929 --only release audit-names named
 python tools/verify.py --paper-version 20260929 --only claims prose-review errata
 ```
 
-The fourth command passes. Its axiom gate takes 1849 roots: the audit files,
+The fourth command passes. Its axiom gate takes 1859 roots: the audit files,
 including the seventeen QECC main declarations, plus every declaration a
 covered ledger entry or a covered prose assertion cites. All of them exist in
 the kernel environment, and their union of axioms is `propext`,
@@ -77,20 +77,25 @@ Seven of the eleven named results of Section III are covered:
 
 ### Two structural findings
 
-**The two libraries encode d_s(C) differently, and nothing bridges them.**
+**The two libraries encoded d_s(C) differently; this is now bridged.**
 MainTheory works with an actual Smith witness. It proves that every witness
-of a matrix has the same last factor, and the composition
-`nonempty_smithWitness_of_det`, `inverseDenominator_eq_smithLastFactor`,
-`betaOf_eq_of_exact` gives `betaOf N = beta_N` for N >= 1. QECC instead
-defines `finalSmithInvariant` as the exponent of the integer cokernel, and
+of a matrix has the same last factor, and builds `betaOf` on it. QECC defines
+`finalSmithInvariant` as the exponent of the integer cokernel, and
 `smithBeta` as its maximum. The manuscript asserts that the two coincide (the
-sentence near main.tex line 1580). No declaration in QECC, MainTheory, SS,
-SixQubit or Mathlib proves it. Clauses that are carried only through the QECC
-objects are therefore partial. This affects the d_r(C) and beta_r clauses of
+sentence near main.tex line 1580). When the review began, no declaration
+proved that. [`MainTheory.QECCSmithBridge`](../MainTheory/QECCSmithBridge.lean)
+now does:
+- `finalSmithInvariant_eq_lastFactor`: the cokernel exponent is the last
+  factor of every Smith witness;
+- `smithBeta_betaExact` and `smithBeta_eq_betaOf`: for nu >= 1, `smithBeta nu`
+  is the exact beta_nu and equals `betaOf nu`.
+
+All three use only the standard axioms. The affected entries and prose items
+were re-judged with the bridge. The sentence at line 1580 is now covered.
 `cor:d3-physical-order-bound`, `eq:d3-full-bound`, `eq:d3-qmin` and the
-display at line 2022. Where MainTheory carries the same clause, the entry is
-covered through MainTheory. A Lean lemma equating the cokernel exponent with
-the last Smith factor would close all of these at once.
+displays at lines 1703 and 2022 remain partial. Their Smith and beta clauses
+are now the manuscript's, but QECC states them for the supports of an
+internally chosen representative (next finding).
 
 **Several QECC quantities belong to a representative chosen inside a
 proof.** QECC's sector count ell, its supports T_k and its affine dimension r
@@ -99,7 +104,9 @@ gate D(theta) the paper starts from, and no invariance lemma relates the two.
 Where MainTheory states the result for the given gate (for example
 `PaperColoredFiniteLift.colored_finite_lift_of_zDetects`, which uses the given
 gate's eigenvalue count), the clause is covered through it. Otherwise it is
-partial.
+partial. For the distance-three entries above, this and the missing rank-one
+identity between projector-diagonal supports and eigenvector supports are now
+the only reasons left.
 
 ### Entries that were covered for 20260924 and are partial now
 
@@ -122,7 +129,7 @@ Neither is a doubt about the mathematics. Each needs one bridging declaration.
 ## Prose
 
 The [prose review](../results/prose-review-20260929.md) records 291
-assertions: 106 covered, 121 tracked, 35 gaps and 29 nonmath. Three gaps are
+assertions: 107 covered, 121 tracked, 34 gaps and 29 nonmath. Three gaps are
 high:
 
 - The reduction to a finite enumeration that the abstract (line 76) and the
@@ -158,10 +165,10 @@ applies; no TeX was edited.
 
 ## Next work
 
-- A Lean lemma equating QECC's cokernel exponent with MainTheory's last Smith
-  factor. This closes the d_r(C) and beta clauses listed above.
 - Invariance of QECC's ell, T_k and r under change of reduced representative,
-  or given-gate versions of the distance-three statements.
+  or given-gate versions of the distance-three statements, together with the
+  rank-one support identity. With the Smith bridge in place, this is what
+  `cor:d3-physical-order-bound` and its displays still need.
 - The two six-qubit bridges: the 66 directory keys against
   `def:six-sslp-orbits` as worded, and representative independence of
   `Levels.WImage`.
