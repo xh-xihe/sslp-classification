@@ -1,0 +1,142 @@
+{
+  "schema": "sslp.model-backend-validation.v1",
+  "checked_at_utc": "2026-09-25T05:30:50.495129+00:00",
+  "scope": "local backend and CLI; hosted site unchanged",
+  "default_provider": "local-qwen",
+  "model": "qwen3:14b",
+  "model_revision_observed": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "ollama_version": "0.33.1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "memory_total_mib": 16380
+  },
+  "tests": {
+    "new_boundary_and_adapter_tests": 17,
+    "existing_backend_and_manuscript_tests": 18,
+    "failed": 0,
+    "source_compile": "passed",
+    "existing_site_export_integrity": "passed",
+    "research_export_integrity": "passed",
+    "actual_tool_reports_recomputed": "passed"
+  },
+  "live_runs": {
+    "negative": {
+      "status": "answered",
+      "seconds": 21.296,
+      "tool_calls": 4,
+      "adapter": "ollama",
+      "transcript": "negative-run.json"
+    },
+    "kernel": {
+      "status": "answered",
+      "seconds": 162.094,
+      "tool_calls": 2,
+      "adapter": "ollama",
+      "transcript": "kernel-run.json"
+    },
+    "compatible": {
+      "status": "answered",
+      "seconds": 43.172,
+      "tool_calls": 1,
+      "adapter": "chat_completions",
+      "transcript": "compatible-run.json"
+    }
+  },
+  "negative_check": {
+    "canonical_kl_passed": 154,
+    "modified_kl_passed": 134,
+    "modified_kl_failed": 20,
+    "first_failure": {
+      "x_mask": 33,
+      "z_mask": 0,
+      "pauli": "X1X6",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            12,
+            0,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            12,
+            0,
+            0,
+            0,
+            -12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 120,
+      "passed": false
+    },
+    "kernel_status": "not_run"
+  },
+  "fresh_kernel": {
+    "status": "passed",
+    "certificate_sha256": "7b1c13c465bac8ddd8c3342cd3899e1b8a4de502451ed79332dae0a005452d35",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "roots": 7,
+    "seconds": 130.531,
+    "rebuilt": 0,
+    "content_validated_reused": 11,
+    "scope": "supplied amplitudes equal canonical pair; normalization, orthogonality, distance at least 3, physical phase layer on every logical superposition (gate theorem assumes zeta^5=1)",
+    "independent_machine": false
+  },
+  "bundle": {
+    "path": "class36-fresh-kernel-bundle.zip",
+    "integrity_check": "passed",
+    "sha256": "73b927c5e232c42237349d3288368f4fe24421981997ee422b693f70e124cfbf"
+  },
+  "source_sha256": {
+    "tools/explorer/providers.py": "89f7574f44c52c19f17ea5511bf0f759f24033a243d9ec19cb05131321ec93b3",
+    "tools/explorer/agent.py": "654f34d56ec62faaa2f28e9ae3acff8225241b0691269a52f2c212a9cabe33ee",
+    "tools/sslp_agent.py": "204fea7a6bda9a72e8ed5712d153697d4f4c21dddf0314117d1317c8bb6ea8bf",
+    "tools/explorer/models.example.json": "74af092cc07a0503eb1e6497fddce68ef894a3742312e4dc5e61ca7d1cdd61dd",
+    "tools/tests/test_explorer_agent.py": "5da64e4e3a178ea517c47ed4c96fabe06f702e72bfd1d0a6b4caa6270f438bdb"
+  },
+  "limitations": [
+    "closed remote provider configured only as a disabled slot; no paid or remote model call made",
+    "local-fast profile available but not benchmarked in this run",
+    "no hosted web integration or HTTP job service yet",
+    "no whole-job cancellation or OS resource sandbox added",
+    "certificate timeout excludes dependency validation",
+    "first negative-run model explanation omitted requested inline citations; complete tool trace is present",
+    "model wording needs evaluation: the Chinese kernel answer translated gate order as sequence rather than finite order",
+    "no arbitrary generated Lean source execution",
+    "no full-manuscript certification claim"
+  ]
+}

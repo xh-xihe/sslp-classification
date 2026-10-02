@@ -1,0 +1,26 @@
+{
+  "schema": "sslp.evidence.v1",
+  "scope": "single_instance",
+  "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+  "exact_passed": true,
+  "exact_report_sha256": "f1c5e3fe0e9982ca193142b7d2bb8f78c0970c607e73fe9819c0ba6a5b957e73",
+  "tooling_sha256": {
+    "tools/sslp_explorer.py": "07abb326b3e489d7fa0f70b910c4920ad6a7f5791f18f6db52999d5201f0f980",
+    "tools/explorer/__init__.py": "d0f29faf52849eacc4292b90cd25aa583c7bf253a2dc4f1cca17e5f2b97c4814",
+    "tools/explorer/class36.py": "f2ba17f6550cc069dc3034a8dc0683c406781b0a91bbda1f9afebf778f460bb3",
+    "tools/explorer/research.py": "7541e013f99435498b1ef7a6accb1d7db6069eb5ad7a2d39f0d865d91a93fd4e",
+    "tools/generators/gen36code.py": "b5e1de95df9ccc9e6bb6900bdd0b9cf30cb1082dcec506fbb59ff40dc41b8be4",
+    "tools/core/orbit.py": "6fa922046c552d6c3496044978e6c029ae1372184953856bd04b225788817a27",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/lean_source.py": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52"
+  },
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "manuscript_correspondence": "requires separate semantic review; source hashes are provenance only",
+  "kernel": {
+    "status": "failed",
+    "error": "cannot resolve pinned Lean toolchain: info: mathlib: cloning https://github.com/leanprover-community/mathlib4\nerror: external command 'git' exited with code 128\n"
+  },
+  "full_manuscript_certified": false,
+  "passed_requested_checks": false
+}

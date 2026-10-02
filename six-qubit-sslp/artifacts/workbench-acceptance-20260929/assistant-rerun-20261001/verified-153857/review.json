@@ -1,0 +1,11 @@
+{
+  "review": "Final two model explanations inspected against actual tool results; no formal proof of model prose.",
+  "model": "qwen3:14b",
+  "system": "Windows",
+  "regression_tests": 33,
+  "source_sha256": {
+    "tools/explorer/agent.py": "4d294ca599707fea45aea12d5b73c4b81da736c8bc763f19a8ec14016d5bd11b",
+    "tools/explorer/providers.py": "71abd09d864c83c1c86ff47de0e83b4e37762fe2e1575595ebcc22ed605f2eeb",
+    "tools/tests/test_explorer_agent.py": "24c439a97020fa5d0b2e7ae2e4d81d73c9463754b7cb9d0fc2f7b72bdfb7f70d"
+  }
+}

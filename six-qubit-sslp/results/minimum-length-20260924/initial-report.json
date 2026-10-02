@@ -1,0 +1,55 @@
+{
+  "paper_version": "20260924",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "release",
+      "passed": true,
+      "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+      "seconds": 0.0
+    },
+    {
+      "check": "axioms",
+      "passed": true,
+      "detail": "1470 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260924\\axioms.log",
+      "seconds": 148.594
+    },
+    {
+      "check": "audit-names",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+      "seconds": 9.75
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+      "seconds": 0.75
+    },
+    {
+      "check": "readme",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\readme-names.log;     PhaseSectorFull.sectorMean (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha j = mu j\n@ZDetection.quantitative_projective_group_of_zDetects : ? {n K d B : ?},\n  BinaryBeta.BetaBound (n + K - 1) B \ufffd\ufffd\n    ? (C : CodeSpec.ExactCode n K d),\n      ZDetection.ZDetectsFrame C.frame \ufffd\ufffd\n        ? (g : GlobalClassificationBridge.IntrinsicGroup C),\n          g \ufffd\ufffd 1 \ufffd\ufffd\n            ? q, GeneralLiftOrder.HasPrimitiveLift C g q \ufffd\ufffd orderOf g \ufffdO q \ufffd\ufffd 2 \ufffd\ufffd orderOf g \ufffd\ufffd orderOf g \ufffd\ufffd q \ufffd\ufffd 2 \ufffd\ufffd q \ufffd\ufffd q \ufffd\ufffd B\nOrbit31.momentPolytope_affine_dimension : Module.finrank ? ?(affineSpan ? Orbit31.momentPolytope).direction = 9\nOrbit36Certified.original_equivalent_canonical : ? (c d : SS.State 6 ?),\n  (? x ? Orbit36Transport.originalS0, c x = 0) \ufffd\ufffd\n    (? y ? Orbit36Transport.originalS1, d y = 0) \ufffd\ufffd\n      SS.innerC c c = 1 \ufffd\ufffd\n        SS.innerC d d = 1 \ufffd\ufffd SS.HasDistance ![c, d] 3 \ufffd\ufffd CodeEquiv.Equivalent ![c, d] ![Orbit36Code.c36, Orbit36Code.d36]\nOrbit7Universal.active_marginal_maximally_mixed : ? (c d : SS.State 6 ?),\n  (? (x : SS.BitString 6), SS.weight Orbit7Universal.uniformAv x \ufffd\ufffd 0 \ufffd\ufffd c x = 0) \ufffd\ufffd\n    (? (x : SS.BitString 6), SS.weight Orbit7Universal.uniformAv x \ufffd\ufffd 2 \ufffd\ufffd d x = 0) \ufffd\ufffd\n      SS.innerC c c = 1 \ufffd\ufffd\n        SS.innerC d d = 1 \ufffd\ufffd\n          SS.HasDistance ![c, d] 3 \ufffd\ufffd\n            ? (i : Fin 5),\n              Orbit7Universal.oneMarginal c i.succ = (1 / 2) ? 1 \ufffd\ufffd Orbit7Universal.oneMarginal d i.succ = (1 / 2) ? 1\nOrbit8Universal.QP_eq : ? (c d : SS.BitString 6 \ufffd\ufffd ?),\n  (? (x : SS.BitString 6), SS.weight Orbit8Universal.av x \ufffd\ufffd 0 \ufffd\ufffd c x = 0) \ufffd\ufffd\n    (? (x : SS.BitString 6), SS.weight Orbit8Universal.av x \ufffd\ufffd 1 \ufffd\ufffd d x = 0) \ufffd\ufffd\n      SS.innerC c c = 1 \ufffd\ufffd\n        SS.innerC d d = 1 \ufffd\ufffd\n          SS.HasDistance ![c, d] 3 \ufffd\ufffd\n            ? (f : SS.BitString 6 \ufffd\ufffd ?),\n              Orbit8Universal.Qact (Orbit8Universal.u d) (Orbit8Universal.codeProj c d f) = fun x =>\n                1 / 6 * Orbit8Universal.codeProj c d f x\n\n9 unknown identifier(s); by cause:\n\n  DECLARED IN SOURCE BUT OUTSIDE THE HARNESS CLOSURE (9 names in 3 modules).\n  The harness imports MainTheory and SixQubit.Audit only. Either add\n  these to a module inside that closure, or -- if the closure looks\n  right -- the oleans are stale: `lake env lean` does not rebuild, so\n  a root olean older than its source silently hides its own imports.\n    MainTheory.AncillaGatePadding                        3\n    MainTheory.AncillaPadding                            3\n    MainTheory.MinimumLengthOrderFive                    3",
+      "seconds": 65.125
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1636 incomplete assertions (partial=6, unreviewed=1630); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+      "seconds": 0.844
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.047
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+      "seconds": 0.0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "case": "six-qubit-generic",
+    "exit_code": 0
+  },
+  {
+    "case": "three-logical-complex",
+    "exit_code": 0
+  },
+  {
+    "case": "rank-one",
+    "exit_code": 0
+  }
+]

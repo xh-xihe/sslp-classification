@@ -1,0 +1,56 @@
+{
+  "paper_version": "20260924",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "release",
+      "passed": true,
+      "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+      "seconds": 0.0
+    },
+    {
+      "check": "axioms",
+      "passed": true,
+      "detail": "1470 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260924\\axioms.log",
+      "seconds": 148.594
+    },
+    {
+      "check": "audit-names",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+      "seconds": 9.75
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+      "seconds": 0.75
+    },
+    {
+      "check": "readme",
+      "passed": true,
+      "detail": "91 identifiers checked by Lean using current source imports; see readme-recheck.json",
+      "provenance": "Separate successful recheck following the checker fix"
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1636 incomplete assertions (partial=6, unreviewed=1630); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+      "seconds": 0.844
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.047
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+      "seconds": 0.0
+    }
+  ],
+  "method": "Initial partial acceptance run, with the readme check resolved by its separate actual Lean recheck; the original run is preserved in initial-report.json."
+}

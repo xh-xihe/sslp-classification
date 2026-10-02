@@ -1,0 +1,513 @@
+{
+  "schema": "sslp.agent-run.v1",
+  "status": "answered",
+  "error": null,
+  "provider": {
+    "id": "local-qwen",
+    "adapter": "ollama",
+    "model": "qwen3:14b",
+    "model_class": "open_weights",
+    "enabled": true,
+    "configured_revision": null,
+    "timeout_seconds": 120,
+    "max_output_tokens": 1600
+  },
+  "probe": {
+    "status": "available",
+    "provider": {
+      "id": "local-qwen",
+      "adapter": "ollama",
+      "model": "qwen3:14b",
+      "model_class": "open_weights",
+      "enabled": true,
+      "configured_revision": null,
+      "timeout_seconds": 120,
+      "max_output_tokens": 1600
+    },
+    "server_version": "0.35.0",
+    "observed_revision": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+  },
+  "prompt_version": "sslp.assistant.class36.v5-en",
+  "system_prompt_sha256": "9626d785063482033e591b549c900543c71c666fe88705630f4509d2f5b4b079",
+  "question": "Read the current input using get_case, then run check_exact on current.\n\nReport normalization and orthogonality, the number of passing Pauli\nchecks, and the requested gate support condition.\n\nCite actual tool records. State explicitly whether Lean ran.\nDo not run Lean.",
+  "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+  "answer": {
+    "text": "The current input has passed normalization and orthogonality checks, and all 154 Pauli checks have been passed, with no failures reported [tool:t2]. The gate support matches the requested residues, and the requested checks have been passed [tool:t2]. The exact arithmetic used for these checks is not a Lean kernel certification, and the scope of this verification is limited to the current input only [tool:t2]. Lean was not run for this verification [tool:t1].",
+    "kind": "untrusted_model_explanation",
+    "citations": {
+      "status": "present",
+      "cited_tools": [
+        "t1",
+        "t2"
+      ],
+      "unknown_or_failed_tools": [],
+      "scope": "reference existence only; no semantic verification of model prose"
+    }
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "round": 1,
+      "name": "get_case",
+      "arguments": {},
+      "output": {
+        "ok": true,
+        "reference": "t1",
+        "result": {
+          "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+          "n": 6,
+          "k": 2,
+          "gate": {
+            "q": 5,
+            "angles": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              3
+            ],
+            "logical_residues": [
+              0,
+              4
+            ]
+          },
+          "words": [
+            [
+              {
+                "bits": "000000",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111010",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "011110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110001",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001101",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000011",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            [
+              {
+                "bits": "111100",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110010",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001110",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "100001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "010001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "001001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000101",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111111",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          ],
+          "conventions": {
+            "qubit_labels": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bitstring": "leftmost character is qubit 1; integer mask bit 0 is qubit 1",
+            "pauli": "i^popcount(x&z) X^x Z^z",
+            "phase_gate": "diag(1, exp(2*pi*i*a/q))",
+            "logical_basis": [
+              "psi_0",
+              "psi_1"
+            ]
+          },
+          "kernel_status": "not_run"
+        }
+      }
+    },
+    {
+      "id": "t2",
+      "round": 1,
+      "name": "check_exact",
+      "arguments": {
+        "target": "current"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t2",
+        "result": {
+          "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 154,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    }
+  ],
+  "model_invocations": [
+    {
+      "round": 1,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 1071,
+        "output_tokens": 36
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 7.093
+    },
+    {
+      "round": 2,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2471,
+        "output_tokens": 84
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 4.656
+    },
+    {
+      "round": 3,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2600,
+        "output_tokens": 100
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 5.563
+    }
+  ],
+  "explanation_feedback": [
+    {
+      "round": 2,
+      "issues": [
+        "Cite successful tool records using [tool:tN]."
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+      "exact": {
+        "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 154,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ],
+  "full_manuscript_certified": false,
+  "candidate_input_sha256": null,
+  "budget": {
+    "max_rounds": 6,
+    "max_tools": 10,
+    "allow_lean": false,
+    "lean_certificate_timeout_seconds": 180
+  },
+  "seconds": 17.625
+}

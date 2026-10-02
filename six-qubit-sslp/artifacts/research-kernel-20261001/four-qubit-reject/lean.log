@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\artifacts\research-kernel-20261001\four-qubit-reject\Certificate.lean:25:95: error: Tactic `decide` proved that the proposition
+  ∀ m < 16,
+    ∀ z < 16,
+      { x := nbit m, z := nbit z }.wt ≤ 1 →
+        ∀ (j k : Fin 2),
+          zmat (coeff j) (coeff k) (supports k) (nbit m) (nbit z) =
+            if j = k then zmat (coeff 0) (coeff 0) (supports 0) (nbit m) (nbit z) else ZQ.zero
+is false
+D:\UTD\Project_purdue\Lean_certification\artifacts\research-kernel-20261001\four-qubit-reject\Certificate.lean:46:0: error: Unexpected axiom: sorryAx

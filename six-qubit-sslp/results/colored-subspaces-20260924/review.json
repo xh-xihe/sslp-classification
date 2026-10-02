@@ -1,0 +1,64 @@
+{
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "scope": "General SSLP theorem and three nested displays; arbitrary-subspace converse paragraph only",
+  "reviews": {
+    "main.tex:thm:general-sslp-normal-form": {
+      "status": "covered",
+      "reason": "The existing forward theorem retains the original projective class and the actual local-X/physical-permutation frame transport, sorted primitive angles, colors, multiplicities, fibers and distance. The new paper-facing converse takes arbitrary subspaces with the manuscript dimensions and full computational-basis fiber containments. Euclidean orthonormal bases are transported back to the original state type; each chosen sector spans exactly the supplied subspace. Distinct colors imply orthogonality and independence, not additional assumptions. The assembled frame spans their supremum, has dimension K, and satisfies the full KL predicate from basis-independent scalar compression for all Pauli weights strictly below d. The d=0 boundary follows from the identity Pauli and frame orthonormality, avoiding a hidden positive-distance restriction. The final ExactCode retains that same span, the literal finite diagonal gate with angle a, and an intrinsic class of exact order m. The zero color is a designated finite index; including it in the gcd does not change the gcd of the other colors. No supplied frame or assumed directness remains.",
+      "lean_declarations": [
+        "MainTheory.PaperGeneralSSLP.general_sslp_normal_form",
+        "MainTheory.PaperGeneralSSLP.general_sslp_converse",
+        "MainTheory.SubspaceCode.codeSpan_frame",
+        "MainTheory.SubspaceCode.hasDistance_iff",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_eq",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sslp_converse"
+      ],
+      "statement_sha256": "371a95bef4eeba2e1ce4cd3b2c6b7f736079318773e2f836a32f3d8e3f8bd40c"
+    },
+    "main.tex:eq:general-sslp-outer-data": {
+      "status": "covered",
+      "reason": "The forward conclusion includes 2<=q, m dividing q, sorted ZMod representatives and primitive angle. ZMod representatives have values in [0,q), and primitive_iff_gcd_eq_one identifies Gate.Primitive with the displayed gcd. The new converse accepts the literal gcd condition.",
+      "lean_declarations": [
+        "MainTheory.PaperGeneralSSLP.general_sslp_normal_form",
+        "MainTheory.ColoredResidueArithmetic.primitive_iff_gcd_eq_one"
+      ],
+      "statement_sha256": "310980df44ed4aa0d0a1a277a0e3eaa785bcd5ea30e0e04ef47854264809d2bb"
+    },
+    "main.tex:eq:general-sslp-colors": {
+      "status": "covered",
+      "reason": "ColoredFrame has positive multiplicities, a zero base color and injective color labels. The forward conclusion and sum_rank give their sum K. The arithmetic equivalence gives the displayed gcd with m; the designated zero contributes nothing. The converse accepts these same data.",
+      "lean_declarations": [
+        "MainTheory.PaperGeneralSSLP.general_sslp_normal_form",
+        "MainTheory.GeneralColoredConverse.ColoredFrame.sum_rank",
+        "MainTheory.ColoredResidueArithmetic.primitive_iff_gcd_eq_one"
+      ],
+      "statement_sha256": "1e41f1fec3e8703822c0035c6e57314b261115ee938cc23dc12283e221a41c18"
+    },
+    "main.tex:eq:general-colored-fibers": {
+      "status": "covered",
+      "reason": "The forward sector spaces have the declared dimensions and lie in the full computational-basis fiber spans. The new converse accepts arbitrary subspaces satisfying exactly those properties, and sectorSpace_eq identifies every reconstructed sector with its original input subspace.",
+      "lean_declarations": [
+        "MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_finrank",
+        "MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_le_computational_span",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq"
+      ],
+      "statement_sha256": "99e8ad09ec7e514c0e1c3e22c89483750b259c68f45fa65e745587733eb7ea98"
+    }
+  },
+  "lean_sources_sha256": {
+    "MainTheory/SubspaceCode.lean": "5d5578287da1b6bf1b68d5ca041183e0e2b310a1f321bda8dde67b550b3456d4",
+    "MainTheory/GeneralColoredSubspaceConverse.lean": "7b6a129bc37fde541196a3496fc3bbc31853a6ccd82906bc0ec87a0244d91ef0",
+    "MainTheory/PaperGeneralSSLPConverse.lean": "16700162da081e0a63007a860a542fc267cb3d42d996fd9bad18868888009c34"
+  },
+  "claims_counts": {
+    "unreviewed": 1627,
+    "partial": 5,
+    "covered": 20
+  }
+}

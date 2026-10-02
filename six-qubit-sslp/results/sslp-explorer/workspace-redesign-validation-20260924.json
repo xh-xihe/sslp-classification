@@ -1,0 +1,53 @@
+{
+  "schema": "sslp.workspace-redesign-validation.v1",
+  "checked_at_utc": "2026-09-25 04:21:26 UTC",
+  "manuscript_version": "20260924",
+  "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+  "version_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c~appgver_e19f99ea1d8c81919987c8489bff1da5",
+  "version_number": 4,
+  "deployment_id": "appgdep_6ab5f6b3008881919b8ad7e6ba83be58",
+  "deployment_status": "succeeded",
+  "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+  "access": "owner_private_unchanged",
+  "source_commit_sha": "55d97638dbdf560f182fe983b1187dbec5174a8a",
+  "changes": [
+    "white and charcoal palette with limited blue accents",
+    "one four-tab workspace, no permanent sidebar or repeated hero panels",
+    "experiment import/export/history in native modal dialog",
+    "circuit primary, physical parameters alongside; logical input expandable",
+    "support explorer collapsed, nonzero support first with optional 64-state view",
+    "22 moment constraints available on demand",
+    "KL matrices shown only after a valid run; matrix contribution tracing expandable",
+    "compact claim navigation and expandable verification downloads",
+    "new brand-matched social preview"
+  ],
+  "validation": {
+    "javascript_tests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "typescript": "passed",
+    "production_build": "passed",
+    "symbolic_manuscript_transcription": "passed",
+    "existing_bundle_binding_check": "passed",
+    "research_export_integrity": "passed",
+    "local_http_status": 200,
+    "local_metadata_and_download_hashes": "passed",
+    "archive_integrity": "passed",
+    "browser_visual_and_click_tests": "not performed: no browser available",
+    "deployed_http_content_check": "not repeated; previous private-site authentication check was blocked",
+    "deployment_status_verified_by_connector": true,
+    "dependency_changes": false,
+    "fresh_lean_run": false
+  },
+  "unchanged_evidence": {
+    "certificate_sha256": "7b1c13c465bac8ddd8c3342cd3899e1b8a4de502451ed79332dae0a005452d35",
+    "bundle_sha256": "88623d7bc2b7824adab97c24dafacbb7acd5c2b28d4e9e444d09e0812c6a8d92"
+  },
+  "boundaries": [
+    "no hosted Lean executor",
+    "no elementary-gate encoder",
+    "no new mathematical certification from this UI update",
+    "no full-manuscript certification claim"
+  ]
+}

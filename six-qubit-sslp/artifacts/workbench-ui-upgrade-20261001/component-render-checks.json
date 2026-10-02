@@ -1,0 +1,185 @@
+{
+  "scope": "Static React render checks only, not browser interaction or visual QA",
+  "records": [
+    {
+      "case": "four-qubit",
+      "module": "overview",
+      "html_bytes": 8229,
+      "status": "passed"
+    },
+    {
+      "case": "four-qubit",
+      "module": "code",
+      "html_bytes": 2106,
+      "status": "passed"
+    },
+    {
+      "case": "four-qubit",
+      "module": "circuit",
+      "html_bytes": 10470,
+      "status": "passed"
+    },
+    {
+      "case": "four-qubit",
+      "module": "checks",
+      "html_bytes": 7432,
+      "status": "passed"
+    },
+    {
+      "case": "four-qubit",
+      "module": "certificates",
+      "html_bytes": 6390,
+      "status": "passed"
+    },
+    {
+      "case": "four-qubit",
+      "module": "assistant",
+      "html_bytes": 3668,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "overview",
+      "html_bytes": 8229,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "code",
+      "html_bytes": 2106,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "circuit",
+      "html_bytes": 10028,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "checks",
+      "html_bytes": 7543,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "certificates",
+      "html_bytes": 6390,
+      "status": "passed"
+    },
+    {
+      "case": "negative",
+      "module": "assistant",
+      "html_bytes": 3668,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "overview",
+      "html_bytes": 13510,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "code",
+      "html_bytes": 6010,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "circuit",
+      "html_bytes": 29058,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "checks",
+      "html_bytes": 56794,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "certificates",
+      "html_bytes": 6441,
+      "status": "passed"
+    },
+    {
+      "case": "six-qubit",
+      "module": "assistant",
+      "html_bytes": 3668,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "overview",
+      "html_bytes": 7504,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "code",
+      "html_bytes": 1642,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "circuit",
+      "html_bytes": 13427,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "checks",
+      "html_bytes": 4263,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "certificates",
+      "html_bytes": 6391,
+      "status": "passed"
+    },
+    {
+      "case": "rank-one",
+      "module": "assistant",
+      "html_bytes": 3668,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "overview",
+      "html_bytes": 7893,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "code",
+      "html_bytes": 1799,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "circuit",
+      "html_bytes": 8658,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "checks",
+      "html_bytes": 3656,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "certificates",
+      "html_bytes": 6391,
+      "status": "passed"
+    },
+    {
+      "case": "complex-k3",
+      "module": "assistant",
+      "html_bytes": 3668,
+      "status": "passed"
+    }
+  ]
+}

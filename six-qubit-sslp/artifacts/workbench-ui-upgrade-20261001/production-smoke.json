@@ -1,0 +1,50 @@
+{
+  "status": 200,
+  "english_title": true,
+  "assets": [
+    {
+      "path": "/_next/static/chunks/framework-2k-VFE-j.js",
+      "status": 200,
+      "bytes": 219348,
+      "sha256": "64b19b6b695d4a29b12f2cfda47d7ad2ee8b4c0ba092ee3b1c431cd906d7d623"
+    },
+    {
+      "path": "/_next/static/chunks/index-D1D2oxhT.js",
+      "status": 200,
+      "bytes": 109778,
+      "sha256": "158c87528f7efabd7a7f8a5992eb33b028db6736d6747d9e4c593d685fabb87b"
+    },
+    {
+      "path": "/_next/static/chunks/layout-segment-context-BseBkAsz.js",
+      "status": 200,
+      "bytes": 496,
+      "sha256": "566e6cf6b8a5d97cb248d59220f9ea5651b8348b56cc1b4dcf32bef99a84f65a"
+    },
+    {
+      "path": "/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+      "status": 200,
+      "bytes": 716,
+      "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+    },
+    {
+      "path": "/_next/static/chunks/vinext-CeefA6Ts.js",
+      "status": 200,
+      "bytes": 111616,
+      "sha256": "f6ec6230da3d8d6b07478704b7f55cf4f225f44c328b028e1e3ee32c4a829e7e"
+    },
+    {
+      "path": "/_next/static/chunks/workbench-BSee796w.js",
+      "status": 200,
+      "bytes": 140138,
+      "sha256": "21dbbf49865b7b1977342aecd8981cb1643f89e44033108d49616523d9312071"
+    },
+    {
+      "path": "/_next/static/css/index.BDNBpiVD.css",
+      "status": 200,
+      "bytes": 89737,
+      "sha256": "111b624f7cf4245c15d3ef61521365a3161209cbfd1c1eaa372129237754bbf1"
+    }
+  ],
+  "source_build_hosting_and_migrations_match": true,
+  "scope": "HTTP/assets check, not browser click-through"
+}

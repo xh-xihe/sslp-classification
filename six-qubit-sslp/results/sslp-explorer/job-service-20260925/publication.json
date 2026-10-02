@@ -1,0 +1,10 @@
+{
+  "site_url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+  "access": "owner_private",
+  "version_number": 5,
+  "source_commit": "11132edf9aabe37c3d3bdbf846345d416001665e",
+  "deployment_id": "appgdep_6ab60e8249f88191a9b78fa7f3389cd4",
+  "status": "succeeded",
+  "local_companion_url": "http://127.0.0.1:8766/connect",
+  "browser_interaction_tested": false
+}

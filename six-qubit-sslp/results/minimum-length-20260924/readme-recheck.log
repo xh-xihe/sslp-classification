@@ -1,0 +1,525 @@
+Lean.CollectAxioms.collect : Lean.Name → Lean.CollectAxioms.M Unit
+@AncillaGatePadding.intertwining_padFrame : ∀ {n K : ℕ} (F : CodeSpec.OrthonormalFrame n K)
+  (U : Fin n → Matrix (Fin 2) (Fin 2) ℂ) (Q : Matrix (Fin K) (Fin K) ℂ),
+  LocalTensorKernel.tensorKernel U * PauliKernelBTrace.frameMatrix F = PauliKernelBTrace.frameMatrix F * Q →
+    ∀ (m : ℕ),
+      LocalTensorKernel.tensorKernel (AncillaGatePadding.padLocal U m) *
+          PauliKernelBTrace.frameMatrix (AncillaPadding.padFrame F m) =
+        PauliKernelBTrace.frameMatrix (AncillaPadding.padFrame F m) * Q
+@AncillaGatePadding.padLocal_unitary : ∀ {n : ℕ} (U : Fin n → Matrix (Fin 2) (Fin 2) ℂ),
+  (∀ (j : Fin n), ClassificationLevels.IsOneQubitUnitary (U j)) →
+    ∀ (m : ℕ) (j : Fin (n + m)), ClassificationLevels.IsOneQubitUnitary (AncillaGatePadding.padLocal U m j)
+@AncillaGatePadding.projector_padFrame : ∀ {n K : ℕ} (F : CodeSpec.OrthonormalFrame n K) (m : ℕ) (x x' : SS.BitString n)
+  (y y' : SS.BitString m),
+  (ClassificationLevels.CodeProjector.ofFrame (AncillaPadding.padFrame F m)).kernel (Fin.append x y)
+      (Fin.append x' y') =
+    (ClassificationLevels.CodeProjector.ofFrame F).kernel x x' *
+      if (y = fun x => false) ∧ y' = fun x => false then 1 else 0
+@AncillaPadding.AWeight_padFrame_one : ∀ {n K : ℕ} (F : CodeSpec.OrthonormalFrame n K),
+  0 < K → ∀ (m : ℕ), CodeSpec.AWeight (AncillaPadding.padFrame F m) 1 = CodeSpec.AWeight F 1 + ↑m
+@AncillaPadding.AWeight_padFrame_one_pos : ∀ {n K : ℕ} (F : CodeSpec.OrthonormalFrame n K),
+  0 < K → ∀ {m : ℕ}, 0 < m → 0 < CodeSpec.AWeight (AncillaPadding.padFrame F m) 1
+@AncillaPadding.hasDistance_padFrame : ∀ {n K d : ℕ} (F : CodeSpec.OrthonormalFrame n K),
+  SS.HasDistance F.vec d → ∀ (m : ℕ), SS.HasDistance (AncillaPadding.padFrame F m).vec d
+@BetaAtPivotRank.betaOf_mono : ∀ {r N : ℕ}, r ≤ N → BetaExists.betaOf r ≤ BetaExists.betaOf N
+BetaExists.betaBound_betaOf : ∀ (N : ℕ), BinaryBeta.BetaBound N (BetaExists.betaOf N)
+BetaNineValue.betaOf_nine : BetaExists.betaOf 9 = 120
+@ClassificationLevels.IntrinsicEquivalent : {n : ℕ} →
+  (P : ClassificationLevels.CodeProjector n) →
+    ↥(ClassificationLevels.diagonalSymmetryGroup P) → ↥(ClassificationLevels.diagonalSymmetryGroup P) → Prop
+@ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup : {n : ℕ} → ClassificationLevels.CodeProjector n → Type
+@ClassificationLevels.LUEquivalent : {n : ℕ} →
+  ClassificationLevels.CodeProjector n → ClassificationLevels.CodeProjector n → Prop
+ClassificationLevels.LocalUnitaryCodeClass : ℕ → Type
+ClassificationLevels.SSLPMomentDatum : Type
+ClassificationLevels.SSLPMomentDatum.geometry : (R : ClassificationLevels.SSLPMomentDatum) →
+  Set (R.LeftIndex ⊕ R.RightIndex → ℝ)
+ClassificationLevels.SSLPMomentEquivalent : ClassificationLevels.SSLPMomentDatum →
+  ClassificationLevels.SSLPMomentDatum → Prop
+ClassificationLevels.SSLPMomentOrbit : Type
+ClassificationLevels.WeightEnumeratorEquivalent : ClassificationLevels.WeightEnumeratorObject →
+  ClassificationLevels.WeightEnumeratorObject → Prop
+ClassificationLevels.WeightEnumeratorObject : Type
+ClassificationLevels.actSSLPDatum : CubeAction.Parameter 6 →
+  ClassificationLevels.SSLPMomentDatum → ClassificationLevels.SSLPMomentDatum
+@ClassificationLevels.labels_eq_of_sslpMomentEquivalent : ∀ {R S : ClassificationLevels.SSLPMomentDatum},
+  ClassificationLevels.SSLPMomentEquivalent R S → R.q = S.q ∧ R.m = S.m
+ClassificationLevels.sslpMomentSetoid : Setoid ClassificationLevels.SSLPMomentDatum
+@ClassificationLevels.weightEnumeratorImage : {q : ℕ} →
+  [NeZero q] → (Fin 6 → ZMod q) → ZMod q → ZMod q → ClassificationLevels.WeightEnumeratorObject
+ClassificationLevelsSix.level_four_lu_class : ∀ (c d c' d' : SS.State 6 ℂ)
+  (hc : ∀ x ∉ Orbit36Transport.originalS0, c x = 0) (hd : ∀ y ∉ Orbit36Transport.originalS1, d y = 0)
+  (hnc : SS.innerC c c = 1) (hnd : SS.innerC d d = 1),
+  SS.HasDistance ![c, d] 3 →
+    ∀ (hc' : ∀ x ∉ Orbit36Transport.originalS0, c' x = 0) (hd' : ∀ y ∉ Orbit36Transport.originalS1, d' y = 0)
+      (hnc' : SS.innerC c' c' = 1) (hnd' : SS.innerC d' d' = 1),
+      SS.HasDistance ![c', d'] 3 →
+        ClassificationLevels.LUEquivalent
+          (ClassificationLevels.CodeProjector.ofFrame (Orbit36LUBridge.originalFrame c d hc hd hnc hnd))
+          (ClassificationLevels.CodeProjector.ofFrame (Orbit36LUBridge.originalFrame c' d' hc' hd' hnc' hnd'))
+ClassificationLevelsSix.level_one_intrinsic_group : ∀ (C : CodeSpec.ExactCode 6 2 3) (theta : Fin 6 → ℝ),
+  CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta) →
+    ¬CodeSpec.SameProjectiveOnCode C.frame (PhaseSectorBridge.realGateEnd theta) LinearMap.id →
+      IsCyclic
+          (ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup
+            (ClassificationLevels.CodeProjector.ofFrame C.frame)) ∧
+        Finite (GlobalClassificationBridge.IntrinsicGroup C) ∧ ∃ S, S.m = 2 ∨ S.m = 3 ∨ S.m = 5
+ClassificationLevelsSix.level_three_weight_enumerators : ProvedWEUnion.provedImages =
+  WImages.FI '' Set.Icc 0 1 ∪ WImages.FII '' Set.Icc (2 / 3) 1 ∪ {WImages.R5A}
+ClassificationLevelsSix.level_two_realization_orbits : Nat.card SSLPOrbitLevels.RealizationOrbit = 15 ∧
+  ∀ (r : SSLPOrbitLevels.MomentOrbit), SSLPOrbitLevels.IsRealizationOrbit r ∨ IsEmpty (SSLPOrbitLevels.KSet r)
+@ColoredBound.quantitative_colored_finite_lift : ∀ {n t : ℕ} {theta : Fin n → ℝ} {B : ℕ},
+  BinaryBeta.BetaBound (n + t - 1) B →
+    ∀ (D : PhaseSectorFull.SectorDecomposition n t theta),
+      PhaseSectorFull.ZDetects D →
+        2 ≤ t →
+          ∃ L,
+            2 ≤ L.order ∧
+              (FiniteLift.SameProjectiveSectorAction D fun j => ↑(L.physical j)) ∧
+                (∀ (j : Fin n), ↑L.order * L.physical j = ↑(L.numerator j)) ∧
+                  (∀ (e : ℕ), e ∣ L.order → (∀ (j : Fin n), ↑e ∣ L.numerator j) → e = 1) ∧
+                    (∀ (alpha : Fin t), ∃ b, ↑L.order * (D.phase alpha - D.phase (FiniteLift.baseSector D)) = ↑b) ∧
+                      L.order ≤ B
+@ConnectedOrthogonality.exists_line : ∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace ℂ E]
+  {V : Type u_2} {W : Type u_3} [FiniteDimensional ℂ E],
+  Module.finrank ℂ E = 2 →
+    ∀ (c : V → E) (d : W → E) (adj : V → W → Prop),
+      (∀ (x : V), c x ≠ 0) →
+        (∀ (y : W), d y ≠ 0) →
+          (∀ (x : V) (y : W), adj x y → inner ℂ (c x) (d y) = 0) →
+            ∀ (x0 : V),
+              (∀ (x : V), Relation.ReflTransGen (fun a b => ∃ y, adj a y ∧ adj b y) x0 x) →
+                (∀ (y : W), ∃ x, adj x y) → ∃ L, Module.finrank ℂ ↥L = 1 ∧ (∀ (x : V), c x ∈ L) ∧ ∀ (y : W), d y ∈ Lᗮ
+@FiniteLift.quantitative_colored_finite_lift : ∀ {n t : ℕ} {theta : Fin n → ℝ} {s : Type u_1} [inst : Fintype s]
+  [inst_1 : DecidableEq s] (D : PhaseSectorFull.SectorDecomposition n t theta) (hZ : PhaseSectorFull.ZDetects D),
+  2 ≤ t →
+    ∀ (P : FiniteLift.PivotData D s) (hdet : P.matrix.det ≠ 0),
+      have L := P.rationalLift hdet hZ;
+      2 ≤ L.order ∧
+        (FiniteLift.SameProjectiveSectorAction D fun j => ↑(L.physical j)) ∧
+          (∀ (j : Fin n), ↑L.order * L.physical j = ↑(L.numerator j)) ∧
+            (∀ (d : ℕ), d ∣ L.order → (∀ (j : Fin n), ↑d ∣ L.numerator j) → d = 1) ∧
+              (∀ (alpha : Fin t) (x : FiniteLift.SupportIndex D alpha),
+                  ∃ k,
+                    RealGate.angle (fun j => ↑(L.physical j)) ↑x -
+                          RealGate.angle (fun j => ↑(L.physical j)) (FiniteLift.basePoint D) -
+                        (D.phase alpha - D.phase (FiniteLift.baseSector D)) =
+                      ↑k) ∧
+                (∀ (alpha : Fin t), ∃ b, ↑L.order * (D.phase alpha - D.phase (FiniteLift.baseSector D)) = ↑b) ∧
+                  L.order ∣ SharpClearing.inverseDenominator P.matrix
+@FiniteLift.sharp_pivot_divisibility : ∀ {n t : ℕ} {theta : Fin n → ℝ} {s : Type u_1} [inst : Fintype s]
+  [inst_1 : DecidableEq s] {D : PhaseSectorFull.SectorDecomposition n t theta} (P : FiniteLift.PivotData D s)
+  (hdet : P.matrix.det ≠ 0) (hZ : PhaseSectorFull.ZDetects D),
+  (P.rationalLift hdet hZ).order ∣ SharpClearing.inverseDenominator P.matrix
+@GeneralColoredConverse.ColoredFrame.sslp_converse : ∀ {n K d q m t : ℕ} [inst : NeZero q] [inst_1 : NeZero m]
+  (S : GeneralColoredConverse.ColoredFrame n K q m t),
+  SS.HasDistance S.frame.vec d →
+    2 ≤ m →
+      ∃ C u,
+        C.frame = S.frame ∧
+          ↑u = GlobalClassificationBridge.finiteLocalPhase (D3NormalizedFiniteToReal.canonicalRoot q) ⋯ S.angle ∧
+            orderOf (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) u) = m ∧
+              ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) u ≠ 1
+@GeneralColoredExistence.general_colored_sslp_normal_form : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  2 ≤ d →
+    ∀ (g : GlobalClassificationBridge.IntrinsicGroup C),
+      g ≠ 1 →
+        ∃ q m t,
+          ∃ (hq : NeZero q) (hm : NeZero m),
+            ∃ T S x0 sigma,
+              T.intrinsic = g ∧
+                m = orderOf g ∧
+                  2 ≤ m ∧
+                    2 ≤ q ∧
+                      S.rank = T.rank ∧
+                        S.reindex ≍ T.reindex ∧
+                          S.base = T.base ∧
+                            ↑S.base = 0 ∧
+                              S.angle = PermutationSemanticTransport.permAngle sigma (Normalize.flip T.angle x0) ∧
+                                (∀ (j : Fin K) (s : SS.BitString n),
+                                    S.frame.vec j s = T.frame.vec j (SS.bxor (CodeEquiv.permStr sigma s) x0)) ∧
+                                  (∀ (alpha : Fin t),
+                                      ColoredResidueArithmetic.scaledColor q (S.color alpha) = T.delta alpha) ∧
+                                    SS.HasDistance S.frame.vec d
+@GeneralColoredSubspaces.ColoredFrame.rank_sum_and_dimensions : ∀ {n K q m t : ℕ} [inst : NeZero q] [inst_1 : NeZero m]
+  (S : GeneralColoredConverse.ColoredFrame n K q m t),
+  ∑ alpha, S.rank alpha = K ∧
+    (∀ (alpha : Fin t), Module.finrank ℂ ↥(GeneralColoredSubspaces.ColoredFrame.sectorSpace S alpha) = S.rank alpha) ∧
+      Module.finrank ℂ ↥(CodeSpec.codeSpan S.frame) = K
+@GeneralFiniteness.isCyclic : ∀ {n : ℕ} (C : CodeSpec.ExactCode n 2 3),
+  IsCyclic
+    (ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup (ClassificationLevels.CodeProjector.ofFrame C.frame))
+Generated.OrbitTableSemantics31.lp_affine_dimension : Module.finrank ℝ
+    ↥(affineSpan ℝ (FiniteMomentLP.polytope Generated.FiniteRankDataShard67.pair67)).direction =
+  9
+@IntrinsicAbelian.intrinsicGroup_mul_comm : ∀ {n : ℕ} (P : ClassificationLevels.CodeProjector n)
+  (g h : ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup P), g * h = h * g
+IntrinsicOrderAudit.natCard_mem : ∀ (C : CodeSpec.ExactCode 6 2 3),
+  Nat.card (GlobalClassificationBridge.IntrinsicGroup C) = 1 ∨
+    Nat.card (GlobalClassificationBridge.IntrinsicGroup C) = 2 ∨
+      Nat.card (GlobalClassificationBridge.IntrinsicGroup C) = 3 ∨
+        Nat.card (GlobalClassificationBridge.IntrinsicGroup C) = 5
+IntrinsicOrderAudit.orderOf_le_five : ∀ (C : CodeSpec.ExactCode 6 2 3)
+  (g : GlobalClassificationBridge.IntrinsicGroup C), orderOf g ≤ 5
+MinimumLengthOrderFive.canonical_attains : ∃ U Q,
+  (∀ (j : Fin 6), ClassificationLevels.IsOneQubitUnitary (U j)) ∧
+    LocalTensorKernel.tensorKernel U * PauliKernelBTrace.frameMatrix MinimumLengthOrderFive.canonicalCode.frame =
+        PauliKernelBTrace.frameMatrix MinimumLengthOrderFive.canonicalCode.frame * ↑Q ∧
+      orderOf (UnitaryAdjointRepresentation.adjoint Q) = 5
+@MinimumLengthOrderFive.minimum_length : ∀ {n d : ℕ} (C : CodeSpec.ExactCode n 2 d),
+  3 ≤ d →
+    ∀ (U : Fin n → Matrix (Fin 2) (Fin 2) ℂ),
+      (∀ (j : Fin n), ClassificationLevels.IsOneQubitUnitary (U j)) →
+        ∀ (Q : ↥(Matrix.unitaryGroup (Fin 2) ℂ)),
+          LocalTensorKernel.tensorKernel U * PauliKernelBTrace.frameMatrix C.frame =
+              PauliKernelBTrace.frameMatrix C.frame * ↑Q →
+            orderOf (UnitaryAdjointRepresentation.adjoint Q) = 5 → 6 ≤ n
+@MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three : ∀ {d : ℕ} (C : CodeSpec.ExactCode 6 2 d),
+  3 ≤ d →
+    ∀ (U : Fin 6 → Matrix (Fin 2) (Fin 2) ℂ),
+      (∀ (j : Fin 6), ClassificationLevels.IsOneQubitUnitary (U j)) →
+        ∀ (Q : ↥(Matrix.unitaryGroup (Fin 2) ℂ)),
+          LocalTensorKernel.tensorKernel U * PauliKernelBTrace.frameMatrix C.frame =
+              PauliKernelBTrace.frameMatrix C.frame * ↑Q →
+            orderOf (UnitaryAdjointRepresentation.adjoint Q) = 5 →
+              ClassificationLevels.LUEquivalent (ClassificationLevels.CodeProjector.ofFrame C.frame)
+                (ClassificationLevels.CodeProjector.ofFrame Orbit36LUBridge.canonicalFrame)
+OpenOrbitsRealized.openKeys_hasCompletion : CubeCompletionTransport.HasCompletion
+    (Generated.FiniteOrbitBase.keyAt 0).fibers ∧
+  CubeCompletionTransport.HasCompletion (Generated.FiniteOrbitBase.keyAt 1).fibers ∧
+    CubeCompletionTransport.HasCompletion (Generated.FiniteOrbitBase.keyAt 2).fibers ∧
+      CubeCompletionTransport.HasCompletion (Generated.FiniteOrbitBase.keyAt 3).fibers
+@Orbit26.anchor_singular : ∀ {C D : Fin 3 → Orbit26.M2} {C3 D3 : Orbit26.M2},
+  (∀ (g : Fin 3), Matrix.conjTranspose C3 * D g + (Matrix.conjTranspose (C g) * D3).transpose = 0) →
+    (∀ (g h : Fin 3),
+        g ≠ h →
+          Orbit26.cj (C g) * Orbit26.Jmat * Matrix.transpose (D h) +
+              Orbit26.cj (C h) * Orbit26.Jmat * Matrix.transpose (D g) =
+            0) →
+      ∑ g, C g * Matrix.conjTranspose (C g) = C3 * Matrix.conjTranspose C3 + 2 • (D3 * Matrix.conjTranspose D3) →
+        ∑ g, D g * Matrix.conjTranspose (D g) = D3 * Matrix.conjTranspose D3 + 2 • (C3 * Matrix.conjTranspose C3) →
+          (∀ (g : Fin 3), C g ≠ 0) →
+            (∀ (g : Fin 3), D g ≠ 0) →
+              (∃ g, ¬(C g 0 0 = 0 ∧ C g 1 0 = 0) ∧ ¬(C g 0 1 = 0 ∧ C g 1 1 = 0)) →
+                (∃ g, ¬(D g 0 0 = 0 ∧ D g 1 0 = 0) ∧ ¬(D g 0 1 = 0 ∧ D g 1 1 = 0)) →
+                  (¬IsUnit (Matrix.det D3) →
+                      ∃ d,
+                        ∑ i, Complex.normSq (d i) = 1 ∧
+                          D3 * Matrix.conjTranspose D3 = (1 / 4) • Matrix.vecMulVec d (star d)) →
+                    (¬IsUnit (Matrix.det C3) →
+                        ∃ d,
+                          ∑ i, Complex.normSq (d i) = 1 ∧
+                            C3 * Matrix.conjTranspose C3 = (1 / 4) • Matrix.vecMulVec d (star d)) →
+                      (∀ (w : Fin 2 → ℂ),
+                          ∑ i, Complex.normSq (w i) = 1 →
+                            ∀ (g : Fin 3),
+                              Complex.normSq (Matrix.vecMul w (Orbit26.cj (C g)) 0) +
+                                  Complex.normSq (Matrix.vecMul w (Orbit26.cj (C g)) 1) ≤
+                                1 / 4) →
+                        (∀ (w : Fin 2 → ℂ),
+                            ∑ i, Complex.normSq (w i) = 1 →
+                              ∀ (g : Fin 3),
+                                Complex.normSq (Matrix.vecMul w (Orbit26.cj (D g)) 0) +
+                                    Complex.normSq (Matrix.vecMul w (Orbit26.cj (D g)) 1) ≤
+                                  1 / 4) →
+                          (∀ (w : Fin 2 → ℂ),
+                              ∑ i, Complex.normSq (w i) = 1 →
+                                ∀ (j : Fin 2),
+                                  Complex.normSq (Matrix.vecMul w (Orbit26.cj (C 0)) j) +
+                                        Complex.normSq (Matrix.vecMul w (Orbit26.cj (C 1)) j) +
+                                      Complex.normSq (Matrix.vecMul w (Orbit26.cj (C 2)) j) ≤
+                                    3 / 8) →
+                            (∀ (w : Fin 2 → ℂ),
+                                ∑ i, Complex.normSq (w i) = 1 →
+                                  ∀ (j : Fin 2),
+                                    Complex.normSq (Matrix.vecMul w (Orbit26.cj (D 0)) j) +
+                                          Complex.normSq (Matrix.vecMul w (Orbit26.cj (D 1)) j) +
+                                        Complex.normSq (Matrix.vecMul w (Orbit26.cj (D 2)) j) ≤
+                                      3 / 8) →
+                              ¬IsUnit (Matrix.det C3) ∧ ¬IsUnit (Matrix.det D3)
+Orbit30.Data.q4o30_exceptional : ∀ (d : Orbit30.Data),
+  d.A.card = 3 → ∀ {rr ss : Fin 5}, rr ∉ d.A → ss ∉ d.A → ¬d.Edge rr ss
+Orbit31Identification.same_fibre_pair : (∀ (w : FinitePipeline.Word6),
+    FinitePipeline.InMask Generated.FiniteRankDataShard67.pair67.mask0 w ↔
+      OuterCompleteness.wordBitString w ∈ Orbit31.S0) ∧
+  (∀ (w : FinitePipeline.Word6),
+      FinitePipeline.InMask Generated.FiniteRankDataShard67.pair67.mask1 w ↔
+        OuterCompleteness.wordBitString w ∈ Orbit31.S1) ∧
+    Generated.FiniteRankDataShard67.pair67.mask0 ≠ Generated.FiniteRankDataShard67.pair67.mask1
+OrderFiveCodeRigidity.luEquivalent_of_orderFive : ∀ (C C' : CodeSpec.ExactCode 6 2 3)
+  (g : GlobalClassificationBridge.IntrinsicGroup C),
+  orderOf g = 5 →
+    ∀ (g' : GlobalClassificationBridge.IntrinsicGroup C'),
+      orderOf g' = 5 →
+        ClassificationLevels.LUEquivalent (ClassificationLevels.CodeProjector.ofFrame C.frame)
+          (ClassificationLevels.CodeProjector.ofFrame C'.frame)
+OrderFiveOrbitMembership.exists_cubeParameter_orbit36 : ∀ (C : CodeSpec.ExactCode 6 2 3)
+  (g : GlobalClassificationBridge.IntrinsicGroup C),
+  orderOf g = 5 →
+    ∃ S gamma,
+      CubeAction.actFibers gamma
+            (FiniteOrbitPipeline.fibersOfPair (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S))) =
+          (Generated.FiniteOrbitBase.keyAt 34).fibers ∧
+        Generated.FiniteOrbitBase.paperOrbitId 34 = 36
+OrderFiveOrbitMembership.unique_C5_LU : ∀ (C : CodeSpec.ExactCode 6 2 3)
+  (g : GlobalClassificationBridge.IntrinsicGroup C),
+  orderOf g = 5 →
+    Nat.card (GlobalClassificationBridge.IntrinsicGroup C) = 5 ∧
+      (∃ S gamma,
+          CubeAction.actFibers gamma
+                (FiniteOrbitPipeline.fibersOfPair (OuterCompleteness.recordFiberPair (CodeFiberBridge.recordOf S))) =
+              (Generated.FiniteOrbitBase.keyAt 34).fibers ∧
+            Generated.FiniteOrbitBase.paperOrbitId 34 = 36) ∧
+        ClassificationLevels.LUEquivalent (ClassificationLevels.CodeProjector.ofFrame C.frame)
+          (ClassificationLevels.CodeProjector.ofFrame Orbit36LUBridge.canonicalFrame)
+@PaperGeneralSSLP.general_sslp_normal_form : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  2 ≤ d →
+    ∀ (g : GlobalClassificationBridge.IntrinsicGroup C),
+      g ≠ 1 →
+        ∃ q m t,
+          ∃ (hq : NeZero q) (hm : NeZero m),
+            ∃ T S x0 sigma,
+              T.intrinsic = g ∧
+                m = orderOf g ∧
+                  2 ≤ m ∧
+                    2 ≤ q ∧
+                      m ∣ q ∧
+                        (∀ (j : Fin K) (s : SS.BitString n),
+                            S.frame.vec j s = T.frame.vec j (SS.bxor (CodeEquiv.permStr sigma s) x0)) ∧
+                          S.angle = PermutationSemanticTransport.permAngle sigma (Normalize.flip T.angle x0) ∧
+                            (Monotone fun j => (S.angle j).val) ∧
+                              Gate.Primitive q S.angle ∧
+                                S.color S.base = 0 ∧
+                                  Function.Injective S.color ∧
+                                    Gate.Primitive m S.color ∧
+                                      ∑ alpha, S.rank alpha = K ∧
+                                        (∀ (alpha : Fin t),
+                                            Module.finrank ℂ
+                                                ↥(GeneralColoredSubspaces.ColoredFrame.sectorSpace S alpha) =
+                                              S.rank alpha) ∧
+                                          (∀ (alpha : Fin t),
+                                              GeneralColoredSubspaces.ColoredFrame.sectorSpace S alpha ≤
+                                                GeneralColoredSubspaces.fiberSubspace S.angle
+                                                  (ColoredResidueArithmetic.scaledColor q (S.color alpha))) ∧
+                                            ⨆ alpha, GeneralColoredSubspaces.ColoredFrame.sectorSpace S alpha =
+                                                CodeSpec.codeSpan S.frame ∧
+                                              SS.HasDistance S.frame.vec d
+@PaperGeneralSSLP.rank_two_sslp : ∀ {n d : ℕ} (C : CodeSpec.ExactCode n 2 d),
+  2 ≤ d →
+    (∃ g, g ≠ 1) →
+      IsCyclic
+          (ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup
+            (ClassificationLevels.CodeProjector.ofFrame C.frame)) ∧
+        Finite (GlobalClassificationBridge.IntrinsicGroup C) ∧
+          ∃ S,
+            S.m = Nat.card (GlobalClassificationBridge.IntrinsicGroup C) ∧
+              2 ≤ S.q ∧
+                2 ≤ S.m ∧
+                  S.m ∣ S.q ∧
+                    (Monotone fun j => (S.angle j).val) ∧
+                      (∀ (j : Fin n), (S.angle j).val < S.q) ∧
+                        Gate.Primitive S.q S.angle ∧
+                          SS.SSConditionState S.angle 0 (S.frame.vec 0) ∧
+                            SS.SSConditionState S.angle (↑(S.q / S.m)) (S.frame.vec 1) ∧
+                              SS.HasDistance S.frame.vec d ∧
+                                CodeSpec.codeSpan C.frame = CodeSpec.codeSpan S.source ∧
+                                  ∀ (k : Fin 2) (s : SS.BitString n),
+                                    S.frame.vec k s = S.source.vec k (SS.bxor (CodeEquiv.permStr S.perm s) S.x0)
+@PaperGeneralSSLP.rank_two_sslp_converse : ∀ {n d q m : ℕ} [NeZero q] {zeta : ℂ},
+  IsPrimitiveRoot zeta q →
+    ∀ {a : Fin n → ZMod q},
+      Gate.Primitive q a →
+        m ∣ q →
+          2 ≤ m →
+            ∀ (F : CodeSpec.OrthonormalFrame n 2),
+              SS.HasDistance F.vec d →
+                SS.SSConditionState a 0 (F.vec 0) →
+                  SS.SSConditionState a (↑(q / m)) (F.vec 1) → ∃ C g, C.frame = F ∧ orderOf g = m ∧ g ≠ 1
+PaperSupplementaryImages.o45_weight_image : Levels.WImage Orbit45Support.av 0 3 = WImages.FII '' Set.Icc (2 / 3) 1
+@PhaseSectorFull.phaseSectorFull_package : ∀ {n t : ℕ} {theta : Fin n → ℝ}
+  (D : PhaseSectorFull.SectorDecomposition n t theta),
+  PhaseSectorFull.ZDetects D →
+    (∀ (alpha : Fin t) (x : SS.BitString n), 0 ≤ PhaseSectorFull.sectorProbability D alpha x) ∧
+      (∀ (alpha : Fin t), ∑ x, PhaseSectorFull.sectorProbability D alpha x = 1) ∧
+        (∀ (alpha : Fin t), (PhaseSectorFull.sectorSupport D alpha).Nonempty) ∧
+          (∀ (alpha beta : Fin t),
+              alpha ≠ beta → Disjoint (PhaseSectorFull.sectorSupport D alpha) (PhaseSectorFull.sectorSupport D beta)) ∧
+            (∀ (alpha : Fin t),
+                ∀ x ∈ PhaseSectorFull.sectorSupport D alpha, ∃ k, RealGate.angle theta x - D.phase alpha = ↑k) ∧
+              ∃ mu, ∀ (alpha : Fin t) (j : Fin n), PhaseSectorFull.sectorMean D alpha j = mu j
+@PivotSize.exists_pivot_rank_le : ∀ {n t : ℕ} {theta : Fin n → ℝ} (D : PhaseSectorFull.SectorDecomposition n t theta),
+  ∃ P, (PivotSize.ratPivot P).det ≠ 0 ∧ (FiniteLift.coloredMatrix D).rank ≤ n + t - 1
+@PivotSmithNormalForm.clearing_smithLastFactor : ∀ {s : Type u_1} [inst : Fintype s] [inst_1 : DecidableEq s]
+  [inst_2 : LinearOrder s] [inst_3 : Nonempty s] (C : Matrix s s ℤ),
+  C.det ≠ 0 →
+    ∀ (h : s → ℤ) (z : s → ℚ),
+      ((SharpClearing.ratMatrix C).mulVec z = fun i => ↑(h i)) →
+        ∀ (w : SharpClearing.SmithWitness C),
+          (∃ k, ∀ (i : s), ↑w.lastFactor * z i = ↑(k i)) ∧ Denominator.lcmDen z ∣ w.lastFactor
+@PivotSmithNormalForm.nonempty_smithWitness_of_det : ∀ {s : Type u_1} [inst : Fintype s] [inst_1 : DecidableEq s]
+  [inst_2 : LinearOrder s] [LocallyFiniteOrderBot s] (C : Matrix s s ℤ),
+  C.det ≠ 0 → Nonempty (SharpClearing.SmithWitness C)
+ProvedWEUnion.provedImages_eq : ProvedWEUnion.provedImages =
+  WImages.FI '' Set.Icc 0 1 ∪ WImages.FII '' Set.Icc (2 / 3) 1 ∪ {WImages.R5A}
+@QuantumSingleton.quantum_singleton : ∀ {n K d : ℕ} (Q : CodeSpec.ExactCode n K d),
+  2 ≤ K → 2 * (d - 1) ≤ n ∧ K ≤ 2 ^ (n - 2 * (d - 1))
+RealizationOrbits15.card_realization_orbits : {k |
+      CubeCompletionTransport.HasCompletion (Generated.FiniteOrbitBase.keyAt k).fibers}.card =
+  15
+RealizationOrbits15.hasCompletion_iff_mem_realizationKeys : ∀ (k : Fin 66),
+  CubeCompletionTransport.HasCompletion (Generated.FiniteOrbitBase.keyAt k).fibers ↔
+    k ∈ RealizationOrbits15.realizationKeys
+RealizationOrbits15.realizationKeys_orderDistribution : (List.filter
+        (fun k => decide ((Generated.FiniteOrbitBase.keyAt k).m = 2)) RealizationOrbits15.realizationKeys).length =
+    11 ∧
+  (List.filter (fun k => decide ((Generated.FiniteOrbitBase.keyAt k).m = 3))
+          RealizationOrbits15.realizationKeys).length =
+      3 ∧
+    (List.filter (fun k => decide ((Generated.FiniteOrbitBase.keyAt k).m = 5))
+          RealizationOrbits15.realizationKeys).length =
+      1
+RealizationOrbits15.realizationKeys_paperIds : (List.map Generated.FiniteOrbitBase.paperOrbitId
+      RealizationOrbits15.realizationKeys).toFinset =
+  {1, 2, 3, 4, 7, 8, 9, 10, 11, 16, 21, 22, 23, 36, 45}
+SSLPOrbitLevels.IsRealizationOrbit : SSLPOrbitLevels.MomentOrbit → Prop
+SSLPOrbitLevels.KSet : SSLPOrbitLevels.MomentOrbit → Type
+SSLPOrbitLevels.MomentOrbit : Type
+SSLPOrbitLevels.RealizationOrbit : Type
+@SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent : ∀ {F G : CubeAction.FiberPair 6},
+  CubeAction.FiberEquivalent F G →
+    ∃ b, ∀ (c : Bool), CubeAction.activeAffineRank G c = CubeAction.activeAffineRank F (c ^^ b)
+@SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent : ∀ {F G : CubeAction.FiberPair 6},
+  CubeAction.FiberEquivalent F G → CubeAction.DegreeTwoFeasible F → CubeAction.DegreeTwoFeasible G
+@SectionTwoGeneral.phaseSectors : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  2 ≤ d →
+    ∀ (theta : Fin n → ℝ) (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta)),
+      (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount) (x : SS.BitString n),
+          0 ≤ PhaseSectorFull.sectorProbability (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha x) ∧
+        (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+            ∑ x, PhaseSectorFull.sectorProbability (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha x = 1) ∧
+          (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+              (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha).Nonempty) ∧
+            (∀ (alpha beta : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+                alpha ≠ beta →
+                  Disjoint (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha)
+                    (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors beta)) ∧
+              (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+                  ∀ x ∈ PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha,
+                    ∃ k,
+                      RealGate.angle theta x - (SectionTwoGeneral.resolutionOf C theta hpres).sectors.phase alpha =
+                        ↑k) ∧
+                ∃ mu,
+                  ∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount) (j : Fin n),
+                    PhaseSectorFull.sectorMean (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha j = mu j
+@SectionTwoGeneral.phaseSectors_mean : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d) (hd : 2 ≤ d) (theta : Fin n → ℝ)
+  (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta))
+  (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount) (j : Fin n),
+  ↑(PhaseSectorFull.sectorMean (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha j) =
+    (1 - SectorMeanValue.klScalar (SectionTwoGeneral.resolutionOf C theta hpres).sectors ⋯ j) / 2
+@SectorMeanValue.sectorMean_eq_klScalar : ∀ {n t : ℕ} {theta : Fin n → ℝ}
+  (D : PhaseSectorFull.SectorDecomposition n t theta) (hZ : PhaseSectorFull.ZDetects D) (alpha : Fin t) (j : Fin n),
+  ↑(PhaseSectorFull.sectorMean D alpha j) = (1 - SectorMeanValue.klScalar D hZ j) / 2
+@SharpSectorZDetection.exists_minimal_primitiveLift_le_betaOf_sectorCount : ∀ {n K d : ℕ}
+  (C : CodeSpec.ExactCode n K d),
+  ZDetection.ZDetectsFrame C.frame →
+    ∀ (v : ↥(ClassificationLevels.diagonalSymmetryGroup (GlobalClassificationBridge.exactCodeProjector C)))
+      (theta : Fin n → ℝ),
+      (∀ (j : Fin n), Complex.exp (2 * ↑Real.pi * Complex.I * ↑(theta j)) = ↑(↑v j)) →
+        ∀ (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta)),
+          ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v ≠ 1 →
+            ∃ qmin,
+              GeneralLiftOrder.HasPrimitiveLift C
+                  (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) qmin ∧
+                (∀ (q : ℕ),
+                    GeneralLiftOrder.HasPrimitiveLift C
+                        (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) q →
+                      qmin ≤ q) ∧
+                  orderOf (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ∣
+                      qmin ∧
+                    2 ≤
+                        orderOf
+                          (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ∧
+                      orderOf
+                            (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ≤
+                          qmin ∧
+                        2 ≤ qmin ∧ qmin ≤ BetaExists.betaOf (n + GeneralSpectral.sectorCount hpres - 1)
+@SharpSectorZDetection.quantitative_colored_lift_of_zDetects : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  ZDetection.ZDetectsFrame C.frame →
+    ∀ (v : ↥(ClassificationLevels.diagonalSymmetryGroup (GlobalClassificationBridge.exactCodeProjector C)))
+      (theta : Fin n → ℝ),
+      (∀ (j : Fin n), Complex.exp (2 * ↑Real.pi * Complex.I * ↑(theta j)) = ↑(↑v j)) →
+        ∀ (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta)),
+          ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v ≠ 1 →
+            ∃ q,
+              GeneralLiftOrder.HasPrimitiveLift C
+                  (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) q ∧
+                orderOf (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ∣ q ∧
+                  2 ≤
+                      orderOf
+                        (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ∧
+                    orderOf (ClassificationLevels.intrinsicClass (GlobalClassificationBridge.exactCodeProjector C) v) ≤
+                        q ∧
+                      2 ≤ q ∧ q ≤ BetaExists.betaOf (n + GeneralSpectral.sectorCount hpres - 1)
+SingletonRankOneCounterexample.violates_unrestricted_singleton : ∃ _Q, ¬1 ≤ 2 ^ (3 - 2 * (3 - 1))
+SixQubitIntrinsicAttainment.order_five_attained : SixQubitIntrinsicAttainment.AttainedIntrinsicOrder 5
+SixQubitIntrinsicOrderSet.including_identity : {m | ∃ C g, orderOf g = m} = {1, 2, 3, 5}
+WImageOpenL.FI_subset_orbit1 : WImages.FI '' Set.Icc 0 1 ⊆ Levels.WImage OpenLOrbit1.angle 0 1
+WImageOpenL.FI_subset_orbit2 : WImages.FI '' Set.Icc 0 1 ⊆ Levels.WImage OpenLOrbit2.angle 0 1
+WImageOpenL.FI_subset_orbit3 : WImages.FI '' Set.Icc 0 1 ⊆ Levels.WImage OpenLOrbit3.angle 0 1
+WImageOpenL.FI_subset_orbit4 : WImages.FI '' Set.Icc 0 1 ⊆ Levels.WImage OpenLOrbit4.angle 0 1
+WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4 : WImages.FII '' Set.Icc (2 / 3) 1 ⊆
+  Levels.WImage WImageOrbit1.orbit1Av 0 1 ∩ Levels.WImage OpenMParity.angle 0 1
+WImageSettled62.all_11_realized_WImages : WImageSettled62.Realized11Statement
+@ZDetection.finite_intrinsicGroup_of_zDetects : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  ZDetection.ZDetectsFrame C.frame → Finite (GlobalClassificationBridge.IntrinsicGroup C)
+@ZDetection.phaseSectors_of_zDetects : ∀ {n K d : ℕ} (C : CodeSpec.ExactCode n K d),
+  ZDetection.ZDetectsFrame C.frame →
+    ∀ (theta : Fin n → ℝ) (hpres : CodeSpec.CodePreserving C.frame (PhaseSectorBridge.realGateEnd theta)),
+      (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount) (x : SS.BitString n),
+          0 ≤ PhaseSectorFull.sectorProbability (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha x) ∧
+        (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+            ∑ x, PhaseSectorFull.sectorProbability (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha x = 1) ∧
+          (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+              (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha).Nonempty) ∧
+            (∀ (alpha beta : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+                alpha ≠ beta →
+                  Disjoint (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha)
+                    (PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors beta)) ∧
+              (∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount),
+                  ∀ x ∈ PhaseSectorFull.sectorSupport (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha,
+                    ∃ k,
+                      RealGate.angle theta x - (SectionTwoGeneral.resolutionOf C theta hpres).sectors.phase alpha =
+                        ↑k) ∧
+                ∃ mu,
+                  ∀ (alpha : Fin (SectionTwoGeneral.resolutionOf C theta hpres).sectorCount) (j : Fin n),
+                    PhaseSectorFull.sectorMean (SectionTwoGeneral.resolutionOf C theta hpres).sectors alpha j = mu j
+@ZDetection.quantitative_projective_group_of_zDetects : ∀ {n K d B : ℕ},
+  BinaryBeta.BetaBound (n + K - 1) B →
+    ∀ (C : CodeSpec.ExactCode n K d),
+      ZDetection.ZDetectsFrame C.frame →
+        ∀ (g : GlobalClassificationBridge.IntrinsicGroup C),
+          g ≠ 1 →
+            ∃ q, GeneralLiftOrder.HasPrimitiveLift C g q ∧ orderOf g ∣ q ∧ 2 ≤ orderOf g ∧ orderOf g ≤ q ∧ 2 ≤ q ∧ q ≤ B
+Orbit31.momentPolytope_affine_dimension : Module.finrank ℝ ↥(affineSpan ℝ Orbit31.momentPolytope).direction = 9
+Orbit36Certified.original_equivalent_canonical : ∀ (c d : SS.State 6 ℂ),
+  (∀ x ∉ Orbit36Transport.originalS0, c x = 0) →
+    (∀ y ∉ Orbit36Transport.originalS1, d y = 0) →
+      SS.innerC c c = 1 →
+        SS.innerC d d = 1 → SS.HasDistance ![c, d] 3 → CodeEquiv.Equivalent ![c, d] ![Orbit36Code.c36, Orbit36Code.d36]
+Orbit7Universal.active_marginal_maximally_mixed : ∀ (c d : SS.State 6 ℂ),
+  (∀ (x : SS.BitString 6), SS.weight Orbit7Universal.uniformAv x ≠ 0 → c x = 0) →
+    (∀ (x : SS.BitString 6), SS.weight Orbit7Universal.uniformAv x ≠ 2 → d x = 0) →
+      SS.innerC c c = 1 →
+        SS.innerC d d = 1 →
+          SS.HasDistance ![c, d] 3 →
+            ∀ (i : Fin 5),
+              Orbit7Universal.oneMarginal c i.succ = (1 / 2) • 1 ∧ Orbit7Universal.oneMarginal d i.succ = (1 / 2) • 1
+Orbit8Universal.QP_eq : ∀ (c d : SS.BitString 6 → ℂ),
+  (∀ (x : SS.BitString 6), SS.weight Orbit8Universal.av x ≠ 0 → c x = 0) →
+    (∀ (x : SS.BitString 6), SS.weight Orbit8Universal.av x ≠ 1 → d x = 0) →
+      SS.innerC c c = 1 →
+        SS.innerC d d = 1 →
+          SS.HasDistance ![c, d] 3 →
+            ∀ (f : SS.BitString 6 → ℂ),
+              Orbit8Universal.Qact (Orbit8Universal.u d) (Orbit8Universal.codeProj c d f) = fun x =>
+                1 / 6 * Orbit8Universal.codeProj c d f x

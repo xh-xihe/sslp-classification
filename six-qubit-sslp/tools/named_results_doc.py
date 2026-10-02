@@ -25,10 +25,14 @@ Usage:
     python tools/named_results_doc.py --check    # fail if it is out of date
 """
 import io
+import argparse
 import json
 import os
 import re
 import sys
+from collections import Counter
+import paper_claims
+import paper_release
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, 'results', 'paper-claims-20260908.json')
@@ -286,24 +290,62 @@ def render(ledger):
     return '\n'.join(out) + '\n'
 
 
-def main():
-    check = '--check' in sys.argv[1:]
-    text = render(load())
+def render_version(ledger, version):
+    """Render all named environments without importing historical conclusions."""
+    kinds = NAMED_KINDS + ('conjecture',)
+    rows = [e for e in ledger['claims'] if e['kind'].rstrip('*') in kinds]
+    counts = Counter(e['status'] for e in rows)
+    lines = [f'# Named results of the {version} manuscripts', '',
+             f'Generated from `results/paper-claims-{version}.json`; no manuscript text is reproduced.', '',
+             'Statuses are semantic-review judgements. Kernel execution and whole-manuscript acceptance',
+             'are separate checks. Partial entries list related declarations and the uncovered clauses.',
+             'Unreviewed entries have no accepted correspondence; a missing correspondence is not',
+             'by itself evidence that no proof exists. Conjectures are not proved results.', '',
+             f'Named environments: {len(rows)}. ' + ', '.join(f'{k}={v}' for k,v in sorted(counts.items())), '',
+             'To regenerate: `python tools/named_results_doc.py --paper-version ' + version + '`.', '']
+    for source in ('main.tex', 'supplementary.tex'):
+        lines += [f'## {source}', '']
+        for row in rows:
+            if row['source'].endswith('/' + source):
+                lines += [f"### `{row['id']}` — {row['status']}", '',
+                          f"{row['kind']}, line {row['line']}.", '']
+                lines += [f'- `{d}`' for d in row['lean_declarations']]
+                lines += ['', row['review'] or '_No review recorded._', '']
+    lines += ['## Scope', '', 'Displayed equations and running prose require their own review.',
+              f'See `results/prose-review-{version}.md` and `results/errata-{version}.json`.', '']
+    return '\n'.join(lines)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--paper-version', default=paper_release.DEFAULT_VERSION, type=paper_release.version)
+    parser.add_argument('--check', action='store_true')
+    args = parser.parse_args(argv)
+    p = paper_release.paths(args.paper_version, ROOT)
+    ledger = json.loads(p['ledger'].read_text(encoding='utf-8'))
+    paper_claims.validate(ledger, sources=paper_claims.sources_for_version(args.paper_version))
+    text = render(ledger) if args.paper_version == paper_release.DEFAULT_VERSION else render_version(ledger, args.paper_version)
+    output = p['named']
+    check = args.check
     if check:
-        if not os.path.exists(OUTPUT):
-            sys.stderr.write('FAIL: %s does not exist; run the generator.\n' % OUTPUT)
+        if not output.exists():
+            sys.stderr.write('FAIL: %s does not exist; run the generator.\n' % output)
             return 1
-        current = io.open(OUTPUT, encoding='utf-8').read()
+        current = output.read_text(encoding='utf-8')
         if current != text:
             sys.stderr.write('FAIL: %s is stale; regenerate with '
-                             'python tools/named_results_doc.py\n' % OUTPUT)
+                             'python tools/named_results_doc.py --paper-version %s\n' % (output, args.paper_version))
             return 1
         sys.stdout.write('named-results document is current\n')
         return 0
-    io.open(OUTPUT, 'w', encoding='utf-8', newline='\n').write(text)
-    sys.stdout.write('wrote %s (%d bytes)\n' % (OUTPUT, len(text.encode('utf-8'))))
+    output.write_text(text, encoding='utf-8', newline='\n')
+    sys.stdout.write('wrote %s (%d bytes)\n' % (output, len(text.encode('utf-8'))))
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except (OSError, ValueError, KeyError) as exc:
+        sys.stderr.write('FAIL: ' + str(exc) + '\n')
+        sys.exit(1)

@@ -17,16 +17,27 @@ It writes a scratch Lean file of `#check`s and runs it; a nonzero exit means
 the documentation cites something that is not there.
 """
 import io
+import argparse
 import os
 import re
 import subprocess
 import sys
 from pathlib import Path
 import tempfile
+from lean_source import imports
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_SUFFIX = ('.lean', '.tex', '.py', '.sh', '.json', '.txt', '.md', '.tsv')
 SKIP_PREFIX = ('six:', 'thm:', 'eq:', 'lem:', 'cor:', 'def:', 'sec:', 'tab:')
+
+
+def live_entry_imports(root=ROOT):
+    """Read import-only entry points from source, so stale umbrella oleans cannot hide new proofs."""
+    entries = ('MainTheory.lean', 'MainTheory/Audit.lean', 'SixQubit/Audit.lean')
+    wrappers = {name[:-5].replace('/', '.') for name in entries}
+    modules = {module for relative in entries
+               for module in imports((Path(root) / relative).read_text(encoding='utf-8'))}
+    return sorted(modules - wrappers)
 
 
 def candidates(readme: str):
@@ -102,10 +113,9 @@ def diagnose(output, root=ROOT):
         report.append('  DECLARED IN SOURCE BUT OUTSIDE THE HARNESS CLOSURE '
                       '(%d names in %d modules).' % (sum(len(v) for v in by_module.values()),
                                                      len(by_module)))
-        report.append('  The harness imports MainTheory and SixQubit.Audit only. Either add')
-        report.append('  these to a module inside that closure, or -- if the closure looks')
-        report.append('  right -- the oleans are stale: `lake env lean` does not rebuild, so')
-        report.append('  a root olean older than its source silently hides its own imports.')
+        report.append('  The harness reads the current entry-point imports from source.')
+        report.append('  Check that these modules belong to that closure and that their')
+        report.append('  dependency oleans were content-validated: `lake env lean` does not rebuild.')
         for module in sorted(by_module):
             report.append('    %-52s %d' % (module, len(by_module[module])))
     if absent:
@@ -119,15 +129,18 @@ def diagnose(output, root=ROOT):
     return '\n'.join(report) + '\n'
 
 
-def check_names(names, runner=subprocess.run, root=ROOT) -> int:
+def check_names(names, runner=subprocess.run, root=ROOT, paper_version=None) -> int:
     """Fail on every Lean failure, including errors unrelated to name lookup."""
     work = Path(root) / 'tmp' / 'verification'
+    if paper_version:
+        work = work / paper_version
+    module_imports = live_entry_imports(root)
     work.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(mode='w', suffix='.lean', prefix='readme-',
                                      dir=work, encoding='utf-8', newline='\n',
                                      delete=False) as handle:
         scratch = Path(handle.name)
-        handle.write('import MainTheory\nimport SixQubit.Audit\n')
+        handle.write(''.join('import %s\n' % module for module in module_imports))
         # The default cap of 100 truncates the diagnosis of a systematic
         # failure -- a stale root olean, or a batch of names in one unimported
         # module -- into an arbitrary alphabetical prefix of it.
@@ -163,14 +176,18 @@ def check_names(names, runner=subprocess.run, root=ROOT) -> int:
         scratch.unlink(missing_ok=True)
 
 
-def ledger_declarations(root=ROOT):
+def ledger_declarations(root=ROOT, paper_version=None):
     """Declarations the claims ledger says are covered.  These are the names a
     reader is invited to check, so they are part of the documentation of
     record."""
     import glob
     import json
     names = set()
-    for path in sorted(glob.glob(os.path.join(root, 'results', 'paper-claims-*.json'))):
+    if paper_version is not None and not re.fullmatch(r'[0-9]{8}', paper_version):
+        raise ValueError('paper version must be an eight-digit date')
+    paths = ([os.path.join(root, 'results', f'paper-claims-{paper_version}.json')]
+             if paper_version else sorted(glob.glob(os.path.join(root, 'results', 'paper-claims-*.json'))))
+    for path in paths:
         with io.open(path, encoding='utf-8') as handle:
             for claim in json.load(handle).get('claims', []):
                 if claim.get('status') in ('covered', 'partial'):
@@ -178,10 +195,13 @@ def ledger_declarations(root=ROOT):
     return names
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--paper-version')
+    args = parser.parse_args(argv)
     readme = io.open(os.path.join(ROOT, 'README.md'), encoding='utf-8').read()
     from_readme = set(candidates(readme))
-    from_ledger = ledger_declarations()
+    from_ledger = ledger_declarations(paper_version=args.paper_version)
     if not from_ledger:
         print('FAIL: the claims ledger names no declarations, so this check '
               'would verify only whatever the README happens to cite; refusing '
@@ -190,7 +210,7 @@ def main() -> int:
     names = sorted(from_readme | from_ledger)
     print('%d identifiers: %d from README.md, %d from the claims ledger'
           % (len(names), len(from_readme), len(from_ledger)))
-    return check_names(names)
+    return check_names(names, paper_version=args.paper_version)
 
 
 if __name__ == '__main__':

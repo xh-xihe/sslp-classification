@@ -1,0 +1,11 @@
+{
+  "schema": "sslp.service-validation.v1",
+  "jobs": [
+    {
+      "kind": "agent",
+      "id": "c27fb698b8e94dc7918e06047c9dc0d1",
+      "state": "completed",
+      "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb"
+    }
+  ]
+}

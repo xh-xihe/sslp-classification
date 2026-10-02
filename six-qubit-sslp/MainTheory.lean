@@ -210,4 +210,7 @@ import MainTheory.PivotSmithNormalForm
 import MainTheory.QubitTransversalFinite
 import MainTheory.TransversalLogicalOrder
 import MainTheory.UnitaryMatrixDiagonalization
+import MainTheory.MinimumLengthOrderFive
+import MainTheory.PaperGeneralSSLPConverse
+import MainTheory.PaperColoredFiniteLift
 import MainTheory.Audit

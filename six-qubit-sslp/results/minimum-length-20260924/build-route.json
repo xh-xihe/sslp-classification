@@ -1,0 +1,12 @@
+{
+  "initial_targets": [
+    "MainTheory",
+    "SixQubit.CodeWrapAudit",
+    "SixQubit.Orbit7CollinearAxiomCheck"
+  ],
+  "initial_run": "Intentionally interrupted while compiling MainTheory.Audit; the five new proof modules had already been serially rebuilt and stamped. The previous Audit outputs were preserved.",
+  "reason": "The previous individual-print Audit compile certificate records 1886.172 seconds. The existing shared-state axiom audit checks the current source inventory without repeating traversal per root.",
+  "final_build": "tmp/build-minimum-length-audit-dependencies.py calls tools.build_lean.main for every current import of the audit inventory; it does not compile the #print-only Audit wrapper.",
+  "final_axiom_audit": "tools/verify.py --paper-version 20260924 --only release axioms audit-names named-results readme claims prose-review errata",
+  "full_release_acceptance": false
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "sslp.direct-job-result.v1",
+  "kind": "exact",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "verification": [
+    {
+      "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+      "exact": {
+        "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 154,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ]
+}

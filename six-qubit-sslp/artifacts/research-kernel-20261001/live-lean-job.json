@@ -1,0 +1,21 @@
+{
+  "id": "f76d6b63ff274ee49f0ea1acf9746c55",
+  "kind": "lean",
+  "state": "completed",
+  "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+  "provider": null,
+  "created_at": 1790891561.3430645,
+  "started_at": 1790891561.3430645,
+  "finished_at": 1790891635.1800385,
+  "cancel_requested": false,
+  "error": null,
+  "progress": {
+    "phase": "finished"
+  },
+  "artifacts": [
+    "report.json",
+    "Certificate.lean",
+    "evidence.json",
+    "verification.zip"
+  ]
+}

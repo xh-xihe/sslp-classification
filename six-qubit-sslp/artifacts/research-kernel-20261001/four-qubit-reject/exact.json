@@ -1,0 +1,717 @@
+{
+  "schema": "sslp.exact-check.v1",
+  "input_sha256": "a77ae7632c61156f38c69a9b9ad64e7ed1d287a15b60ec00c28289b0fd40ab1c",
+  "method": "exact integer arithmetic in Z[sqrt(2),sqrt(3),i]",
+  "scope": "supplied input only; target distance at least 2",
+  "kernel_status": "not_run",
+  "n": 4,
+  "k": 2,
+  "target_distance": 2,
+  "passed": false,
+  "normalization_and_orthogonality": true,
+  "support_matches_gate": true,
+  "pauli_count": 13,
+  "kl": [
+    {
+      "x_mask": 0,
+      "z_mask": 0,
+      "pauli": "I",
+      "matrix_coordinates": [
+        [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 0,
+      "z_mask": 1,
+      "pauli": "Z1",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": false
+    },
+    {
+      "x_mask": 0,
+      "z_mask": 2,
+      "pauli": "Z2",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": false
+    },
+    {
+      "x_mask": 0,
+      "z_mask": 4,
+      "pauli": "Z3",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": false
+    },
+    {
+      "x_mask": 0,
+      "z_mask": 8,
+      "pauli": "Z4",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": false
+    },
+    {
+      "x_mask": 1,
+      "z_mask": 0,
+      "pauli": "X1",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 1,
+      "z_mask": 1,
+      "pauli": "Y1",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 2,
+      "z_mask": 0,
+      "pauli": "X2",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 2,
+      "z_mask": 2,
+      "pauli": "Y2",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 4,
+      "z_mask": 0,
+      "pauli": "X3",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 4,
+      "z_mask": 4,
+      "pauli": "Y3",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 8,
+      "z_mask": 0,
+      "pauli": "X4",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    },
+    {
+      "x_mask": 8,
+      "z_mask": 8,
+      "pauli": "Y4",
+      "matrix_coordinates": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "matrix_denominator": 2,
+      "passed": true
+    }
+  ],
+  "support_residues": [
+    [
+      0
+    ],
+    [
+      2
+    ]
+  ],
+  "logical_residues": [
+    0,
+    2
+  ]
+}

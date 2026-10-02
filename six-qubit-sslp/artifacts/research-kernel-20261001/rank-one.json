@@ -1,0 +1,28 @@
+{
+  "schema": "sslp.research-code.v1",
+  "n": 1,
+  "k": 1,
+  "distance": 2,
+  "denominator": 3,
+  "q": 64,
+  "angles": [
+    63
+  ],
+  "words": [
+    [
+      {
+        "bits": "1",
+        "coordinates": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  ]
+}

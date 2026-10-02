@@ -1,0 +1,92 @@
+{
+  "compared_at_utc": "2026-09-26T22:58:05.070691+00:00",
+  "remote": "https://github.com/xh-xihe/dyadic-lifts.git",
+  "local_head": "d749a8f2e8ba68837f00cfcbbd47bd5a370a9419",
+  "local_branch": "master",
+  "observed_remote_heads": {
+    "sixqubit-classification": "7ac9a049a8cfb997427a24cb33547fb0592fc170",
+    "main": "8eb16e2f31b512b3bebc8d8a276bd2efd720d706",
+    "dev-zc": "52e43c8d36f5c1317cd1ec380e380e5e8ad879d3"
+  },
+  "commits": {
+    "sixqubit-classification": "7ac9a049a8cfb997427a24cb33547fb0592fc170 2026-09-14 Finish the prose review; fourth erratum recorded",
+    "main": "8eb16e2f31b512b3bebc8d8a276bd2efd720d706 2026-08-15 Restore a repo-wide .gitattributes",
+    "dev-zc": "52e43c8d36f5c1317cd1ec380e380e5e8ad879d3 2026-08-26 six-qubit-sslp: bound finite-check memory"
+  },
+  "method": "Read-only git ls-remote followed by fetch --no-tags; compare Git tree and blob identities. The branch snapshots are the heads observed during this session, not a claim about future heads.",
+  "proof_subtree": "six-qubit-sslp",
+  "proof_trees": {
+    "MainTheory": {
+      "local_head_tree": "eb76a794ac46e2e03feff343fafc2e20a76cade8",
+      "github_tree": "eb76a794ac46e2e03feff343fafc2e20a76cade8",
+      "identical": true
+    },
+    "SixQubit": {
+      "local_head_tree": "bf5b1e95862b8f657b8aded4f81fd9ab45c3f538",
+      "github_tree": "bf5b1e95862b8f657b8aded4f81fd9ab45c3f538",
+      "identical": true
+    },
+    "SS": {
+      "local_head_tree": "0a603bc79e5f7b6fdeb3e33f0f052c7a1c7be8ad",
+      "github_tree": "0a603bc79e5f7b6fdeb3e33f0f052c7a1c7be8ad",
+      "identical": true
+    }
+  },
+  "reused_sources": {
+    "MainTheory/ColoredBound.lean": {
+      "github_blob": "f18af0ae7d360f572b840183ecf2f4c841f4c89f",
+      "local_head_blob": "f18af0ae7d360f572b840183ecf2f4c841f4c89f",
+      "working_sha256": "b6abd08b6600ef6216d8e2ca60da31b94a94cb92c709134a2e1796763d755dfc",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/ColoredBound.lean"
+    },
+    "MainTheory/BinaryPivot.lean": {
+      "github_blob": "179a7ea4d25fbccc3a1519320c9d41233e0c2e53",
+      "local_head_blob": "179a7ea4d25fbccc3a1519320c9d41233e0c2e53",
+      "working_sha256": "c2110962030f2145d4b13a60128c508e8b8fc94d6cecf7170de5df960da407f6",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/BinaryPivot.lean"
+    },
+    "MainTheory/FiniteLift.lean": {
+      "github_blob": "199b9bafb92e2559ad99cc64fef708c80d7dc7df",
+      "local_head_blob": "199b9bafb92e2559ad99cc64fef708c80d7dc7df",
+      "working_sha256": "cb5c2065b17583217ebd2edc5ecd0317c37205c8152c8e7f65f3597a485704c1",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/FiniteLift.lean"
+    },
+    "MainTheory/PivotSmithNormalForm.lean": {
+      "github_blob": "8a4cf32b4c9787fb58ff78a662028ca728d0e584",
+      "local_head_blob": "8a4cf32b4c9787fb58ff78a662028ca728d0e584",
+      "working_sha256": "8de14d2611ce26b22593ae4b57af9baa36e8203b7503b6aaf2b17624d022a7b4",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/PivotSmithNormalForm.lean"
+    },
+    "MainTheory/SharpSectorBound.lean": {
+      "github_blob": "aec5eb074c263c129ef01b43f7cc901d4497537f",
+      "local_head_blob": "aec5eb074c263c129ef01b43f7cc901d4497537f",
+      "working_sha256": "4088e35eb70f1ca38a1c91a3d5eb14f238b90b8f55f17e5d94e355fb4d23346f",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/SharpSectorBound.lean"
+    },
+    "MainTheory/SharpSectorZDetection.lean": {
+      "github_blob": "49b9a7b4e128d847802fc30c6c18db8f3ef4b7b1",
+      "local_head_blob": "49b9a7b4e128d847802fc30c6c18db8f3ef4b7b1",
+      "working_sha256": "44cc7a5d0a76c9977884aa334516d32d1ee4058d64b3d303ba9c8ca4f2452d14",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/SharpSectorZDetection.lean"
+    },
+    "MainTheory/GeneralLiftOrder.lean": {
+      "github_blob": "abebf7b813445f9196a64b249805652ecd75cb83",
+      "local_head_blob": "abebf7b813445f9196a64b249805652ecd75cb83",
+      "working_sha256": "91734761304d61ceff31416e2d64a3a340d9ec44ea308d3adac029dc3e28d2d1",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/GeneralLiftOrder.lean"
+    },
+    "MainTheory/GeneralSpectralSectors.lean": {
+      "github_blob": "579375311de29db236f366c9385b8bbe9c298bdc",
+      "local_head_blob": "579375311de29db236f366c9385b8bbe9c298bdc",
+      "working_sha256": "0a5ccae285f9b09b60cac62a64f460e10195ad5cc18bcce662992b502a770b07",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/GeneralSpectralSectors.lean"
+    },
+    "MainTheory/BetaAtPivotRank.lean": {
+      "github_blob": "052afaa1fe54a8c52955c96aab94fcf591148639",
+      "local_head_blob": "052afaa1fe54a8c52955c96aab94fcf591148639",
+      "working_sha256": "8cd030ee0459196068585c2b3a9d5617425cd805e63cfaf1e5d8e741e0b1a185",
+      "url": "https://github.com/xh-xihe/dyadic-lifts/blob/7ac9a049a8cfb997427a24cb33547fb0592fc170/six-qubit-sslp/MainTheory/BetaAtPivotRank.lean"
+    }
+  },
+  "note": "The committed proof baselines match exactly despite different repository layouts and commit histories. Uncommitted 20260924 proof increments are additional local work. No merge, checkout, commit or push was performed."
+}

@@ -17,6 +17,7 @@ import sys
 import time
 
 from lean_source import audit_names, code_only, imports
+DEFAULT_PAPER_VERSION = '20260908'
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
@@ -54,7 +55,8 @@ def check_build():
     return recorded_command('build', [sys.executable, 'tools/build_lean.py'])
 
 
-def axiom_inventory(root=ROOT):
+def axiom_inventory(root=ROOT, paper_version=DEFAULT_PAPER_VERSION):
+    import paper_release
     roots, module_imports, source_hashes = [], [], {}
     for relative in AUDIT_FILES:
         data = (Path(root) / relative).read_bytes()
@@ -67,15 +69,27 @@ def axiom_inventory(root=ROOT):
         module_imports.extend(imports(source))
     if len(set(roots)) != len(roots):
         raise ValueError('duplicate declarations in the audit inventory')
-    ledger = Path(root) / 'results/paper-claims-20260908.json'
+    ledger = paper_release.paths(paper_version, root)['ledger']
     if ledger.exists():
         data = ledger.read_bytes()
-        source_hashes['results/paper-claims-20260908.json'] = hashlib.sha256(data).hexdigest()
+        source_hashes[ledger.relative_to(root).as_posix()] = hashlib.sha256(data).hexdigest()
         for claim in json.loads(data)['claims']:
             if claim['status'] == 'covered':
                 for declaration in claim['lean_declarations']:
                     if declaration not in roots:
                         roots.append(declaration)
+    else:
+        raise ValueError('missing selected release ledger: ' + str(ledger))
+    prose = paper_release.paths(paper_version, root)['prose']
+    data = prose.read_bytes()
+    source_hashes[prose.relative_to(root).as_posix()] = hashlib.sha256(data).hexdigest()
+    for row in json.loads(data)['assertions']:
+        if row['kind'] == 'covered':
+            if not row.get('declarations'):
+                raise ValueError('covered prose assertion has no kernel declarations')
+            for declaration in row['declarations']:
+                if declaration not in roots:
+                    roots.append(declaration)
     return roots, sorted(set(module_imports)), source_hashes
 
 
@@ -112,9 +126,9 @@ def render_axiom_harness(roots, module_imports):
 '''
 
 
-def check_axioms():
+def check_axioms(paper_version=DEFAULT_PAPER_VERSION):
     try:
-        roots, module_imports, source_hashes = axiom_inventory()
+        roots, module_imports, source_hashes = axiom_inventory(paper_version=paper_version)
     except (OSError, UnicodeError, ValueError) as exc:
         return False, str(exc)
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -134,14 +148,15 @@ def check_axioms():
     ok = proc.returncode == 0 and valid
     (REPORT_DIR / 'axioms.json').write_text(json.dumps({
         'method': 'Lean.CollectAxioms.collect with shared visited state',
+        'paper_version': paper_version,
         'audit_sources_sha256': source_hashes, 'roots': roots,
         'axiom_union': sorted(footprint) if footprint is not None else None,
         'exit_code': proc.returncode, 'passed': ok,
     }, indent=2) + '\n', encoding='utf-8')
     if not ok:
         return False, 'axiom audit failed, exit=%d; %s' % (proc.returncode, output[-2500:])
-    return True, '%d declarations; union=%s; log=tmp/verification/axioms.log' % (
-        len(roots), ', '.join(sorted(footprint)))
+    return True, '%d declarations; union=%s; log=%s' % (
+        len(roots), ', '.join(sorted(footprint)), (REPORT_DIR / 'axioms.log').relative_to(ROOT))
 
 
 def check_sources():
@@ -160,82 +175,102 @@ def check_sources():
     return not findings, ('%d Lean sources clean' % count if not findings else '\n'.join(findings))
 
 
-def check_names():
-    return recorded_command('readme-names', [sys.executable, 'tools/check-readme-names.py'])
+def check_names(paper_version=DEFAULT_PAPER_VERSION):
+    return recorded_command('readme-names', [sys.executable, 'tools/check-readme-names.py',
+                                           '--paper-version', paper_version])
 
 
 def script_check(name, script, *arguments):
     return recorded_command(name, [sys.executable, 'tools/run.py', script, *arguments])
 
 
-def checks(source_dir=None):
-    paper_args = ['--check']
-    table_args = []
-    if source_dir:
-        paper_args += ['--source-dir', str(source_dir)]
-        table_args += ['--source-dir', str(source_dir)]
+def check_release(paper_version, source_dir=None):
+    import paper_release
+    report = paper_release.binding(paper_version, ROOT, source_dir)
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    (REPORT_DIR / 'release.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+    return True, 'version-bound manuscripts, review records and orbit data; review completeness checked separately'
+
+
+def checks(source_dir=None, paper_version=DEFAULT_PAPER_VERSION):
+    import paper_release
+    release = paper_release.paths(paper_version, ROOT)
+    common = ['--source-dir', str(source_dir or release['source_dir']),
+              '--manifest', str(release['manifest'])]
+    version_args = ['--paper-version', paper_version]
     return {
+        'release': lambda: check_release(paper_version, source_dir),
         'build': check_build,
-        'axioms': check_axioms,
+        'axioms': lambda: check_axioms(paper_version),
         'sources': check_sources,
         'generated': lambda: script_check('generated', 'verification/generated_manifests.py'),
-        'paper': lambda: script_check('paper', 'verification/mkmanifest.py', *paper_args),
+        'paper': lambda: script_check('paper', 'verification/mkmanifest.py', '--check', *common),
         'table-kernel': lambda: script_check('table-kernel',
-            'verification/orbit_table_kernel.py', *table_args),
+            'verification/orbit_table_kernel.py', *common,
+            '--output-dir', str(REPORT_DIR / 'orbit-table-kernel')),
         'table-kernel-selftest': lambda: script_check('table-kernel-selftest',
-            'verification/orbit_table_kernel.py', '--selftest', *table_args),
+            'verification/orbit_table_kernel.py', '--selftest', *common,
+            '--output-dir', str(REPORT_DIR / 'orbit-table-kernel')),
         'claims': lambda: recorded_command('claims',
-            [sys.executable, 'tools/paper_claims.py', 'check', '--require-complete']),
+            [sys.executable, 'tools/paper_claims.py', 'check', '--require-complete', *version_args]),
         'gate': lambda: script_check('gate', 'verification/gate.py'),
         'gate-selftest': lambda: script_check('gate-selftest', 'verification/gate.py', '--selftest'),
         'moments': lambda: script_check('moments', 'verification/momentgate.py'),
         'moments-selftest': lambda: script_check('moments-selftest', 'verification/momentgate.py', '--selftest'),
-        'readme': check_names,
+        'readme': lambda: check_names(paper_version),
         'audit-names': lambda: recorded_command('audit-names',
-            [sys.executable, 'tools/verification/check_audit_names.py']),
+            [sys.executable, 'tools/verification/check_audit_names.py', *version_args]),
         # The named-results document is generated from the ledger.  Checking it
         # here is what stops it drifting: a result added to a manuscript, or a
         # declaration swapped in a review, changes the ledger and this fails
         # until the document is regenerated.
         'named-results': lambda: recorded_command('named-results',
-            [sys.executable, 'tools/named_results_doc.py', '--check']),
+            [sys.executable, 'tools/named_results_doc.py', '--check', *version_args]),
         # The prose-review document is generated from its own record, and the
         # generator refuses if that record ever carries verbatim manuscript
         # text.  Checking it here keeps both properties from rotting.
         'prose-review': lambda: recorded_command('prose-review',
-            [sys.executable, 'tools/prose_review_doc.py', '--check']),
+            [sys.executable, 'tools/prose_review_doc.py', '--check', '--require-complete', *version_args]),
+        'errata': lambda: paper_release.check_errata(paper_version, ROOT),
     }
 
 
 def main(argv=None):
+    import paper_release
+    global REPORT_DIR
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--only', nargs='+', choices=list(checks()),
                         help='run only these explicitly partial diagnostics')
     parser.add_argument('--source-dir', type=Path,
                         help='private directory containing main.tex and supplementary.tex')
+    parser.add_argument('--paper-version', default=paper_release.DEFAULT_VERSION,
+                        type=paper_release.version, help='manuscript date; historical default 20260908')
     args = parser.parse_args(argv)
-    selected = checks(args.source_dir)
+    REPORT_DIR = ROOT / 'tmp' / 'verification' / args.paper_version
+    selected = checks(args.source_dir, args.paper_version)
     if args.only:
         selected = {name: selected[name] for name in dict.fromkeys(args.only)}
         print('PARTIAL verification: ' + ', '.join(selected), flush=True)
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    print('Paper version: ' + args.paper_version, flush=True)
     outcomes = []
     for name, function in selected.items():
         print('START ' + name, flush=True)
         start = time.monotonic()
         try:
             ok, detail = function()
-        except (OSError, UnicodeError, ValueError) as exc:
+        except (OSError, UnicodeError, ValueError, KeyError, TypeError) as exc:
             ok, detail = False, str(exc)
         elapsed = time.monotonic() - start
         outcomes.append(dict(check=name, passed=ok, detail=detail, seconds=round(elapsed, 3)))
         print('[%s] %s (%.1fs): %s' % ('PASS' if ok else 'FAIL', name, elapsed, detail), flush=True)
         # Auditing imports after a failed build can report an older cached environment.
-        if name == 'build' and not ok:
-            print('Stopping: the requested build did not validate current sources.', flush=True)
+        if name in {'release', 'build'} and not ok:
+            print('Stopping: release binding or source build failed.', flush=True)
             break
     all_passed = len(outcomes) == len(selected) and all(row['passed'] for row in outcomes)
-    report = {'full_suite': args.only is None, 'passed': all_passed, 'checks': outcomes}
+    report = {'paper_version': args.paper_version, 'full_suite': args.only is None,
+              'passed': all_passed, 'checks': outcomes}
     (REPORT_DIR / 'report.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     return 0 if all_passed else 1
 

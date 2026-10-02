@@ -1,0 +1,77 @@
+{
+  "schema": "sslp.evidence.v1",
+  "scope": "single_instance",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "exact_passed": true,
+  "exact_report_sha256": "51112f8d4d0bd91cc4193b63f070b93c7564b43e1c766dff0e3cad77d67eb178",
+  "tooling_sha256": {
+    "tools/sslp_explorer.py": "f14ed6fe4d03aa0dd4538c2b3c04c88813b9890713ca627d5b3a4d11ce6b8e54",
+    "tools/explorer/__init__.py": "d0f29faf52849eacc4292b90cd25aa583c7bf253a2dc4f1cca17e5f2b97c4814",
+    "tools/explorer/class36.py": "f2ba17f6550cc069dc3034a8dc0683c406781b0a91bbda1f9afebf778f460bb3",
+    "tools/generators/gen36code.py": "b5e1de95df9ccc9e6bb6900bdd0b9cf30cb1082dcec506fbb59ff40dc41b8be4",
+    "tools/core/orbit.py": "6fa922046c552d6c3496044978e6c029ae1372184953856bd04b225788817a27",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/lean_source.py": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+    "tools/verify.py": "0b40693ddae9f7d30fd81441772fa8627e0a2621425d85e203c15398e6dad093"
+  },
+  "python_version": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
+  "manuscript_correspondence": "requires separate semantic review; source hashes are provenance only",
+  "kernel": {
+    "status": "passed",
+    "scope": "supplied amplitudes equal canonical pair; normalization, orthogonality, distance at least 3, physical phase layer on every logical superposition (gate theorem assumes zeta^5=1)",
+    "not_certified": [
+      "gate-level encoder",
+      "classification exhaustiveness",
+      "full manuscript",
+      "minimal physical or logical gate order"
+    ],
+    "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+    "certificate_sha256": "0c9614215a99583909f68f48661d992d7d4a662717e6e16f2648606c72f0cede",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "exit_code": 0,
+    "seconds": 105.531,
+    "dependency_context_sha256": "1c967096a26536f0748f0430472cbfe50ac92f784646240fd83f2ca9ff435f8d",
+    "dependency_modules": {
+      "SS.BitString": "7f613f429f148b7bfcaf84dc3dcf3c3b67aab933d822f9765f0ad94ff926efca",
+      "SS.Basic": "9814d0f1a94b814f4fd4788dd0e8c51f5bff4a6554cd2454cdfdd77fba6f16fd",
+      "SS.ResidueShiftScreen": "5d0c932252178f7585c031abbf70ae63b83101dbce70e77088c4ce9edfa33b2d",
+      "SS.Pauli": "2986c705292745bba373db5b4894829b704453a4201fc9db039c2453852bad7a",
+      "SS.FullKL": "94a38d206712633a089715b92c172bf03bc4b3159f246854186a0b6ab7d467fa",
+      "SS.DiagonalAction": "573bf79126acccf60e2747439e5a5d872651406071dc782e59883b760ea45963",
+      "SS.HilbertKL": "eebe78c3263459a3042768c3922e9cc4f9acae3f32563f0d36f30ecded62c086",
+      "SS.QSqrt23i": "df76dba9979f609448a403c32eed783c0890404c9a17232249e0e881fd5875cc",
+      "SS.QSqrt235i": "c424652f5a323084718f481174d126e5b8a4e366304dbb18c0aeafdf2fcb80fd",
+      "SS.QSqrt235iC": "9a8e592865921a1c0b6a68c00525b9e0cd322666983af34659dfcd31cc77a180",
+      "SixQubit.Orbit36Code": "60cda99b2251452d15ec88d73fae03f647f1dc8dfb18159092429f96d0673bce"
+    },
+    "source_sha256": {
+      "SS.BitString": "0b085ba950691abd1e25ae9b1fba1fa7cc46e950446a5805b378a4791af68c00",
+      "SS.Basic": "308da62298e982f331228ea59b84595c38cd1125a308e9ed8ccc77b1be2d8dee",
+      "SS.ResidueShiftScreen": "3d681db1ae58e53b94717e3d38ce7466991055b57f9b0b96bcbaa3f047b29379",
+      "SS.Pauli": "0a19e396dabb33d630a9ee174a2cfe285f10fc1a39d2a3178e2eb1fb4e24c0a8",
+      "SS.FullKL": "5a1ee67e17ce67b1d913aee26a207ad4c2dae5d94b32c0acbf7ef909af849ac2",
+      "SS.DiagonalAction": "f0e6f729c38ac26eb2c9b775725dbc97608e2bc5c60793ee297aac06b235b5fb",
+      "SS.HilbertKL": "14091efbb1cf161f3c30bb89b73ab79678080ae2e41bfeffdee9a418028c45f7",
+      "SS.QSqrt23i": "0ca40f70400c2019f19f654dd1460f8b6630b1123350adfd5a4078c41531044b",
+      "SS.QSqrt235i": "bb6029c35871edcf0644972bc702979b13e6ddc224188780ed6341065d0dab50",
+      "SS.QSqrt235iC": "95cd038103991d8cc820229fb1d235945d9650fcc4fa620a55e6c3f465153179",
+      "SixQubit.Orbit36Code": "27ad8f448f7601861bc0cf2c0edd5abaacbd26a4abc80d11adbc3c6cc4798201"
+    },
+    "configuration_sha256": {
+      "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+      "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+      "lakefile.lean": "a98295c1b60f4a66121ad0cf9753f52df8a680c663671fe268b2455fe52c2ade",
+      "driver": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+      "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+      "lean_executable": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c"
+    },
+    "rebuilt": 11,
+    "content_validated_reused": 0
+  },
+  "full_manuscript_certified": false,
+  "passed_requested_checks": true
+}

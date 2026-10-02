@@ -1,0 +1,718 @@
+{
+  "schema": "sslp.agent-run.v1",
+  "status": "answered",
+  "error": null,
+  "provider": {
+    "id": "local-qwen",
+    "adapter": "ollama",
+    "model": "qwen3:14b",
+    "model_class": "open_weights",
+    "enabled": true,
+    "configured_revision": null,
+    "timeout_seconds": 120,
+    "max_output_tokens": 1600
+  },
+  "probe": {
+    "status": "available",
+    "provider": {
+      "id": "local-qwen",
+      "adapter": "ollama",
+      "model": "qwen3:14b",
+      "model_class": "open_weights",
+      "enabled": true,
+      "configured_revision": null,
+      "timeout_seconds": 120,
+      "max_output_tokens": 1600
+    },
+    "server_version": "0.33.1",
+    "observed_revision": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+  },
+  "prompt_version": "sslp.assistant.class36.v1",
+  "system_prompt_sha256": "e6b3b4030a0d25c5c4fd8f652c2613c9d8233ff6b94c4510a4dce8ccb6fa7d0c",
+  "question": "先用工具检查当前案例的精确 KL 条件。然后把逻辑码字 psi_0 中 |000000> 的振幅乘以 -1，其他振幅和门参数不变，构造 candidate 并检查它。简洁报告原始案例和候选各通过多少个 Pauli 条件、候选第一个失败 Pauli 的 x_mask、z_mask 及完整精确矩阵坐标（分母 120）。说明这次是否执行了 Lean 内核检查。必须依据实际工具结果，不能只作理论推测。\n",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "answer": {
+    "text": "原始案例通过了所有 154 个 Pauli 条件，没有失败的 Pauli 条件。候选案例通过了 134 个 Pauli 条件，失败了 20 个 Pauli 条件。候选案例第一个失败的 Pauli 的 x_mask 是 33，z_mask 是 0，其完整精确矩阵坐标为 [[[0, 0, 0, 0, 0, 0, 0, 0], [12, 0, 0, 0, 12, 0, 0, 0]], [[12, 0, 0, 0, -12, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]]，分母为 120。这次检查没有执行 Lean 内核检查。",
+    "kind": "untrusted_model_explanation"
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "round": 1,
+      "name": "get_case",
+      "arguments": {},
+      "output": {
+        "ok": true,
+        "reference": "t1",
+        "result": {
+          "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+          "n": 6,
+          "k": 2,
+          "gate": {
+            "q": 5,
+            "angles": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              3
+            ],
+            "logical_residues": [
+              0,
+              4
+            ]
+          },
+          "words": [
+            [
+              {
+                "bits": "000000",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111010",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "011110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110001",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001101",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000011",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            [
+              {
+                "bits": "111100",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110010",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001110",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "100001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "010001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "001001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000101",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111111",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          ],
+          "conventions": {
+            "qubit_labels": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bitstring": "leftmost character is qubit 1; integer mask bit 0 is qubit 1",
+            "pauli": "i^popcount(x&z) X^x Z^z",
+            "phase_gate": "diag(1, exp(2*pi*i*a/q))",
+            "logical_basis": [
+              "psi_0",
+              "psi_1"
+            ]
+          },
+          "kernel_status": "not_run"
+        }
+      }
+    },
+    {
+      "id": "t2",
+      "round": 2,
+      "name": "check_exact",
+      "arguments": {
+        "target": "current"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t2",
+        "result": {
+          "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 154,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    },
+    {
+      "id": "t3",
+      "round": 3,
+      "name": "make_candidate",
+      "arguments": {
+        "angles": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          3
+        ],
+        "phase_changes": [
+          {
+            "bits": "000000",
+            "quarter_turns": 1,
+            "word": 0
+          }
+        ]
+      },
+      "output": {
+        "ok": true,
+        "reference": "t3",
+        "result": {
+          "target": "candidate",
+          "input_sha256": "ced7fe56b2a94d1f98fcf052f8ed26cdb6e35f9a32becf70f257c50067e4a4cd",
+          "gate": {
+            "q": 5,
+            "angles": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              3
+            ],
+            "logical_residues": [
+              0,
+              4
+            ]
+          },
+          "support_residues": [
+            [
+              0
+            ],
+            [
+              4
+            ]
+          ],
+          "phase_changes": [
+            {
+              "bits": "000000",
+              "quarter_turns": 1,
+              "word": 0
+            }
+          ],
+          "kernel_status": "not_run",
+          "notice": "candidate copied from current; no certification inherited"
+        }
+      }
+    },
+    {
+      "id": "t4",
+      "round": 4,
+      "name": "check_exact",
+      "arguments": {
+        "target": "candidate"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t4",
+        "result": {
+          "input_sha256": "ced7fe56b2a94d1f98fcf052f8ed26cdb6e35f9a32becf70f257c50067e4a4cd",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": false,
+          "pauli_count": 154,
+          "failed_pauli_count": 20,
+          "first_failure": {
+            "x_mask": 33,
+            "z_mask": 0,
+            "pauli": "X1X6",
+            "matrix_coordinates": [
+              [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  12,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  -12,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            ],
+            "matrix_denominator": 120,
+            "passed": false
+          },
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": false,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    }
+  ],
+  "model_invocations": [
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 866,
+        "output_tokens": 16
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 5.156
+    },
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2062,
+        "output_tokens": 20
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 1.797
+    },
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2278,
+        "output_tokens": 65
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 3.188
+    },
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2530,
+        "output_tokens": 19
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 1.14
+    },
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2887,
+        "output_tokens": 203
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 9.656
+    }
+  ],
+  "verification": [
+    {
+      "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+      "exact": {
+        "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 154,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    },
+    {
+      "input_sha256": "ced7fe56b2a94d1f98fcf052f8ed26cdb6e35f9a32becf70f257c50067e4a4cd",
+      "exact": {
+        "input_sha256": "ced7fe56b2a94d1f98fcf052f8ed26cdb6e35f9a32becf70f257c50067e4a4cd",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": false,
+        "pauli_count": 154,
+        "failed_pauli_count": 20,
+        "first_failure": {
+          "x_mask": 33,
+          "z_mask": 0,
+          "pauli": "X1X6",
+          "matrix_coordinates": [
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                12,
+                0,
+                0,
+                0,
+                12,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                12,
+                0,
+                0,
+                0,
+                -12,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          "matrix_denominator": 120,
+          "passed": false
+        },
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": false,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ],
+  "full_manuscript_certified": false,
+  "candidate_input_sha256": "ced7fe56b2a94d1f98fcf052f8ed26cdb6e35f9a32becf70f257c50067e4a4cd",
+  "budget": {
+    "max_rounds": 6,
+    "max_tools": 10,
+    "allow_lean": false,
+    "lean_certificate_timeout_seconds": 180
+  },
+  "seconds": 21.296
+}

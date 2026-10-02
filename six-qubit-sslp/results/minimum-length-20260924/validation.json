@@ -1,0 +1,128 @@
+{
+  "validated_at_utc": "2026-09-26T22:10:46.618094+00:00",
+  "platform": "Windows; native PowerShell, lake and Lean; no WSL",
+  "paper_version": "20260924",
+  "proof_increment_passed": true,
+  "full_manuscript_certification": false,
+  "source_hashes": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "build": {
+    "scope": "Entire import dependency closure of the current audit inventories",
+    "modules": 14089,
+    "rebuilt": 0,
+    "reused": 14089,
+    "context": "ef7f64c6c7ae60c2b79073970d4bbc98f480b16eff48cf9d6d8c132aebb4b841",
+    "note": "The five new modules were serially rebuilt and stamped in the initial run. The final run validated all current audit dependencies without changing any artifact; the concurrent shared-state audit therefore read the same artifacts. The individual-print wrapper build was intentionally interrupted; see build-route.json."
+  },
+  "axioms": {
+    "roots": 1470,
+    "allowed_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "passed": true
+  },
+  "acceptance_checks": {
+    "paper_version": "20260924",
+    "full_suite": false,
+    "passed": false,
+    "checks": [
+      {
+        "check": "release",
+        "passed": true,
+        "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+        "seconds": 0.0
+      },
+      {
+        "check": "axioms",
+        "passed": true,
+        "detail": "1470 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260924\\axioms.log",
+        "seconds": 148.594
+      },
+      {
+        "check": "audit-names",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+        "seconds": 9.75
+      },
+      {
+        "check": "named-results",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+        "seconds": 0.75
+      },
+      {
+        "check": "readme",
+        "passed": true,
+        "detail": "91 identifiers checked by Lean using current source imports; see readme-recheck.json",
+        "provenance": "Separate successful recheck following the checker fix"
+      },
+      {
+        "check": "claims",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1636 incomplete assertions (partial=6, unreviewed=1630); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+        "seconds": 0.844
+      },
+      {
+        "check": "prose-review",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+        "seconds": 0.047
+      },
+      {
+        "check": "errata",
+        "passed": false,
+        "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+        "seconds": 0.0
+      }
+    ],
+    "method": "Initial partial acceptance run, with the readme check resolved by its separate actual Lean recheck; the original run is preserved in initial-report.json."
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tools/tests -v",
+    "exit_code": 0,
+    "tests_run": 100,
+    "passed": 92,
+    "skipped": 8,
+    "skip_reason": "Opt-in small Lean controls were not enabled; the full actual axiom audit was executed separately.",
+    "new_regression": "ReadmeFailures.test_current_source_imports_bypass_stale_umbrella",
+    "tests_source_sha256": "bd1e0d15def2ba7a69113c651fc766f341f687e9009489143f3a23ea486901fa"
+  },
+  "tooling_sources_sha256": {
+    "tools/check-readme-names.py": "a50a0c23c40c8d3129245c4df53204f7cdfbe1aaac4b8049093760f3ad28a365",
+    "tools/tests/test_certification_tools.py": "bd1e0d15def2ba7a69113c651fc766f341f687e9009489143f3a23ea486901fa",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52"
+  },
+  "ledger_counts": {
+    "unreviewed": 1630,
+    "partial": 6,
+    "covered": 16
+  },
+  "unchanged_manuscripts": true,
+  "artifacts": {
+    "audit-dependencies.json": "d1fb2067f8e5bf2d3437d8082a71ccf7186ba069a7815d7b7076c3306c0d8811",
+    "audit-names.log": "4d6e8042ba1d2474c0d1b9716d6aae84a12bbca3f2b1102c6ae943d69eef38f8",
+    "axiom-union.lean": "5b87bcf713375ee17869da69c6e89a9ca9a70a354621f689300a0de371788177",
+    "axioms.json": "1cd0c01aaf2a65fcd3fe37ff4b97cd14e12a4d7d8d756d6ceb85fac6ae7a67f0",
+    "axioms.log": "c84434c3102d6f7eb455636444ba2fe0cd686025fe9b029f6b2373c6794813aa",
+    "build-audit-dependencies.py": "20cf81622298b3acc8e1c3a543843f6c6eb25e3ec19ea4f4b4edce8d57b21b1e",
+    "build-route.json": "aa776de009db502e4506708256b7fdb4dc295e68aae535d3231cecfb3343f4a1",
+    "build.json": "03e9476f7826a5d3bfb9fcd40d860a3a64e3ad3d2aaea9f8f9997d1a19dc7d8a",
+    "claims.log": "57856fe334ddca518496a2b8d9dd232184e0b0799c53629d3f1551a7c2390ab0",
+    "initial-report.json": "f185649b4d5b7eea859c0085e21dd650fc3ba73eee40ac3f09d80ac28a7be615",
+    "module-certificates.json": "56e39d15a414fc5aa0b071ee84fc7a9aac8f6a4efd97f7d1ca061702bb7a09af",
+    "named-results.log": "a967dbb7acc00b9ed5e6fa003e81078c6d309d596f11265a5b2e389d2590e5e7",
+    "prose-review.log": "31c28e3b5b9eb2344cc2b28d575d6528e1a154fe74ca1b9272eceab76e9c2a48",
+    "readme-recheck.json": "ba5700709672c4075f404fd37d173cac77d7b2c5740129b9aa09874bc589647c",
+    "readme-recheck.log": "ebb766d4c8a4606d764e64e118aaa3f58577762c5fdd316bdafe273f231a8bad",
+    "release.json": "bb4510c4e2eb7c7076e517cb6545800f6284f7a0c74e28b5430f832056609908",
+    "report.json": "36f86edd511f5d63716648f471d4056f607180508db9fd5ef713d39813e21777",
+    "review.json": "c67a928a004b8c6f018cc72de7cfa5f53a5755de8ed588f4b97a8fe0de175c30",
+    "source-check.json": "fb107409a700ff9abad7542881eae16b4d434ab21c8e630c59a8131b04a17d57",
+    "tests.json": "0f0f8024a6b64f7a7ad9dfa70166ba8797d5227c5a5f143f51b40fc3ad10b7b8"
+  }
+}

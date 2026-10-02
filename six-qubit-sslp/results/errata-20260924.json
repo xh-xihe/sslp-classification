@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "status": "partial",
+  "issues": [
+    {
+      "id": "singleton-rank-one",
+      "status": "present",
+      "locator": "main.tex:eq:quantum-Singleton",
+      "reason": "The K>=2 scope restriction is still absent. Keep the author-requested record-only disposition.",
+      "declarations": [
+        "MainTheory.SingletonRankOneCounterexample.violates_unrestricted_singleton"
+      ]
+    },
+    {
+      "id": "open-orbits-existence",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:cor:m2-current-status",
+      "reason": "The revised source confines unresolved status to weight-enumerator images and explicitly acknowledges physical realizations at lines 61, 893 and 5686.",
+      "declarations": [
+        "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion"
+      ]
+    },
+    {
+      "id": "orbit7-cited-gate",
+      "status": "present",
+      "locator": "supplementary.tex:eq:o7knowntransversal",
+      "reason": "The displayed YHS tensor power remains unchanged. The recorded literal-convention span-preservation counterexample at theta=0 still applies; replacing S by S-adjoint remains an author-facing proposed correction.",
+      "declarations": [
+        "MainTheory.CitedAncillaFamily.paper_gate_fails_at_zero"
+      ]
+    },
+    {
+      "id": "orbit9-bit-convention",
+      "status": "needs_clarification",
+      "locator": "supplementary.tex:align*@4122",
+      "reason": "The original literal list still contains 000111 with the same bottom-word phase. Its integer interpretation and coordinate-one-on-the-left interpretation differ. No explicit resolution of the per-list bit convention was found in this targeted review.",
+      "declarations": [
+        "MainTheory.Orbit9LiteralBitConvention.left_word_not_original_fiber"
+      ]
+    }
+  ]
+}

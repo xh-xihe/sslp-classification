@@ -1,0 +1,394 @@
+{
+  "schema": "sslp.code-instance.v1",
+  "id": "class36-agent-candidate",
+  "paper": {
+    "version": "20260924",
+    "sources_sha256": {
+      "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+      "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+    },
+    "labels": [
+      "eq:six-C5-code0",
+      "eq:six-C5-code1",
+      "eq:six-C5-logical-action"
+    ]
+  },
+  "n": 6,
+  "k": 2,
+  "distance_lower_bound": 3,
+  "orbit": {
+    "id": 36,
+    "gauge": "symmetric",
+    "table_angles": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      4
+    ]
+  },
+  "conventions": {
+    "qubit_labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "bitstring": "leftmost character is qubit 1; integer mask bit 0 is qubit 1",
+    "pauli": "i^popcount(x&z) X^x Z^z",
+    "phase_gate": "diag(1, exp(2*pi*i*a/q))",
+    "logical_basis": [
+      "psi_0",
+      "psi_1"
+    ]
+  },
+  "amplitude_encoding": {
+    "basis": [
+      "1",
+      "sqrt(2)",
+      "sqrt(3)",
+      "sqrt(6)",
+      "i",
+      "i*sqrt(2)",
+      "i*sqrt(3)",
+      "i*sqrt(6)"
+    ],
+    "common_scale": "1/(2*sqrt(30))"
+  },
+  "gate": {
+    "q": 5,
+    "angles": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3
+    ],
+    "logical_residues": [
+      0,
+      4
+    ]
+  },
+  "words": [
+    [
+      {
+        "bits": "000000",
+        "coordinates": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "111010",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "110110",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "101110",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "011110",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "110001",
+        "coordinates": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "101001",
+        "coordinates": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "bits": "011001",
+        "coordinates": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "bits": "100101",
+        "coordinates": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "bits": "010101",
+        "coordinates": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "bits": "001101",
+        "coordinates": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "000011",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "bits": "111100",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "110010",
+        "coordinates": [
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "101010",
+        "coordinates": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "bits": "011010",
+        "coordinates": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "bits": "100110",
+        "coordinates": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "bits": "010110",
+        "coordinates": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "bits": "001110",
+        "coordinates": [
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "100001",
+        "coordinates": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "010001",
+        "coordinates": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "001001",
+        "coordinates": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "000101",
+        "coordinates": [
+          0,
+          0,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "bits": "111111",
+        "coordinates": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  ]
+}

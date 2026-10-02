@@ -1,0 +1,124 @@
+{
+  "schema": "sslp.reproduction-doctor.v1",
+  "ready": true,
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python_executable": "/tmp/sslp-linux-20260926/venv/bin/python",
+  "toolchain": "leanprover/lean4:v4.27.0",
+  "checks": [
+    {
+      "check": "python",
+      "okay": true,
+      "detail": "3.12.3",
+      "remedy": null
+    },
+    {
+      "check": "sympy",
+      "okay": true,
+      "detail": "1.14.0",
+      "remedy": null
+    },
+    {
+      "check": "mpmath",
+      "okay": true,
+      "detail": "1.3.0",
+      "remedy": null
+    },
+    {
+      "check": "git",
+      "okay": true,
+      "detail": "/usr/bin/git",
+      "remedy": null
+    },
+    {
+      "check": "lake",
+      "okay": true,
+      "detail": "/tmp/sslp-linux-20260926/elan/bin/lake",
+      "remedy": null
+    },
+    {
+      "check": "elan",
+      "okay": true,
+      "detail": "/tmp/sslp-linux-20260926/elan/bin/elan",
+      "remedy": null
+    },
+    {
+      "check": "installed_pinned_lean",
+      "okay": true,
+      "detail": "/tmp/sslp-linux-20260926/elan/toolchains/leanprover--lean4---v4.27.0/bin/lean",
+      "remedy": null
+    },
+    {
+      "check": "lean_version",
+      "okay": true,
+      "detail": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+      "remedy": null
+    },
+    {
+      "check": "dependency:mathlib",
+      "okay": true,
+      "detail": "fc278a179e431ed10630af63fc05481680c0c7bd",
+      "remedy": null
+    },
+    {
+      "check": "dependency:plausible",
+      "okay": true,
+      "detail": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+      "remedy": null
+    },
+    {
+      "check": "dependency:LeanSearchClient",
+      "okay": true,
+      "detail": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+      "remedy": null
+    },
+    {
+      "check": "dependency:importGraph",
+      "okay": true,
+      "detail": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+      "remedy": null
+    },
+    {
+      "check": "dependency:proofwidgets",
+      "okay": true,
+      "detail": "c04225ee7c0585effbd933662b3151f01b600e40",
+      "remedy": null
+    },
+    {
+      "check": "dependency:aesop",
+      "okay": true,
+      "detail": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+      "remedy": null
+    },
+    {
+      "check": "dependency:Qq",
+      "okay": true,
+      "detail": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+      "remedy": null
+    },
+    {
+      "check": "dependency:batteries",
+      "okay": true,
+      "detail": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+      "remedy": null
+    },
+    {
+      "check": "dependency:Cli",
+      "okay": true,
+      "detail": "55c37290ff6186e2e965d68cf853a57c0702db82",
+      "remedy": null
+    },
+    {
+      "check": "mathlib_artifacts",
+      "okay": true,
+      "detail": "presence check only; verifier hashes actual artifacts",
+      "remedy": null
+    },
+    {
+      "check": "build_lock",
+      "okay": true,
+      "detail": "absent",
+      "remedy": null
+    }
+  ],
+  "note": "Readiness only, not kernel certification or proof of artifact integrity."
+}

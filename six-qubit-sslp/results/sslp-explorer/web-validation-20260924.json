@@ -1,0 +1,41 @@
+{
+  "schema": "sslp.web-validation.v1",
+  "date": "2026-09-24",
+  "site": "apps/sslp-explorer",
+  "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+  "version_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c~appgver_c7fb7807af588191bc213a0666768a0e",
+  "version_number": 2,
+  "deployment_id": "appgdep_6ab5a86d97cc8191a2185bc6822f99a7",
+  "deployment_status": "succeeded",
+  "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+  "access": "owner_private",
+  "source_commit_sha": "cd950246edb42bc9382b7559ad4f2896bc1284f4",
+  "validation": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "javascript_tests": {
+      "passed": 7,
+      "failed": 0
+    },
+    "symbolic_manuscript_transcription": {
+      "passed": 1,
+      "failed": 0
+    },
+    "exact_pauli_rows_compared": 154,
+    "snapshot_input_proof_tool_manuscript_bindings": "passed",
+    "download_byte_integrity": "passed",
+    "git_download_byte_integrity": "passed",
+    "http_local_status": 200,
+    "metadata_origin": "verified against final deployment URL",
+    "dependency_audit_vulnerabilities": 0,
+    "browser_ui_validation": "not performed: browser runtime returned no available browser",
+    "fresh_lean_run_this_milestone": false
+  },
+  "proof_scope": "Existing canonical case evidence only; not a manuscript-wide or freshly executed browser Lean certificate.",
+  "not_implemented": [
+    "hosted Lean jobs",
+    "gate-level encoder",
+    "full manuscript migration and acceptance",
+    "independent-machine verification"
+  ]
+}

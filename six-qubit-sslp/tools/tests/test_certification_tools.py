@@ -57,6 +57,27 @@ class WorkspaceTest(unittest.TestCase):
 
 
 class ReadmeFailures(WorkspaceTest):
+    def setUp(self):
+        super().setUp()
+        self.write('MainTheory.lean', 'import MainTheory.Audit\nimport MainTheory.NewProof\n')
+        self.write('MainTheory/Audit.lean', 'import MainTheory.NewProof\nimport MainTheory.Audited\n')
+        self.write('SixQubit/Audit.lean', 'import SixQubit.Example\n')
+
+    def test_current_source_imports_bypass_stale_umbrella(self):
+        self.write('.lake/build/lib/lean/MainTheory.olean', 'stale umbrella placeholder')
+        def inspect(args, **kwargs):
+            source = Path(args[-1]).read_text(encoding='utf-8')
+            self.assertIn('import MainTheory.NewProof\n', source)
+            self.assertIn('import MainTheory.Audited\n', source)
+            self.assertIn('import SixQubit.Example\n', source)
+            self.assertEqual(source.count('import MainTheory.NewProof\n'), 1)
+            self.assertNotIn('import MainTheory\n', source)
+            self.assertNotIn('import MainTheory.Audit\n', source)
+            self.assertIn('#check @MainTheory.newTheorem\n', source)
+            return subprocess.CompletedProcess(args, 0, '', '')
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(readme.check_names(['MainTheory.newTheorem'], inspect, self.root), 0)
+
     def test_failure_without_unknown_word_is_rejected_and_logged(self):
         error = 'error: input file could not be opened\n'
         def fail(*args, **kwargs):
@@ -89,6 +110,8 @@ class AxiomAudit(WorkspaceTest):
         super().setUp()
         for index, relative in enumerate(verify.AUDIT_FILES):
             self.write(relative, 'import Lean\n#print axioms Test.root%d\n' % index)
+        self.write('results/paper-claims-20260908.json', json.dumps({'claims': []}))
+        self.write('results/prose-review-20260908.json', json.dumps({'assertions': []}))
 
     def test_empty_audit_file_fails_closed(self):
         self.write(verify.AUDIT_FILES[1], 'import Lean\n')

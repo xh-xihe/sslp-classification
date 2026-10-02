@@ -1,0 +1,11 @@
+{
+  "command": "python tools/check-readme-names.py --paper-version 20260924",
+  "exit_code": 0,
+  "passed": true,
+  "identifiers": 91,
+  "readme_identifiers": 10,
+  "ledger_identifiers": 81,
+  "tool_sha256": "a50a0c23c40c8d3129245c4df53204f7cdfbe1aaac4b8049093760f3ad28a365",
+  "lean_log_sha256": "ebb766d4c8a4606d764e64e118aaa3f58577762c5fdd316bdafe273f231a8bad",
+  "reason": "Initial name check missed nine newly compiled declarations because it imported a stale umbrella olean. The checker now reads the current entry-point source imports. The actual Lean recheck passed; the earlier failure remains in initial-report.json."
+}

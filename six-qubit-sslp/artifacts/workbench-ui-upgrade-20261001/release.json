@@ -1,0 +1,61 @@
+{
+  "schema": "sslp.ui-upgrade.v1",
+  "completed_client_date": "2026-10-02",
+  "recorded_at": "2026-10-02T05:02:32.618672+00:00",
+  "baseline": "artifacts\\workbench-ui-baseline-20261001",
+  "frontend_commit": "f317bd21f1931bc289e233522720094b128f9137",
+  "deployment": {
+    "id": "appgdep_6abf39bea4688191aceb4662b78797ac",
+    "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+    "title": "SSLP Workbench",
+    "version_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c~appgver_7304925701248191982cbc4e2589fd49",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ab5a69b70a0819191ccacb377d3ca8c",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-02T04:57:41.139030+00:00",
+    "frontend_commit": "f317bd21f1931bc289e233522720094b128f9137",
+    "access_review": {
+      "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+      "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+      "version_number": 10,
+      "audience": "custom",
+      "owner_only": true,
+      "screenshot_changed": true
+    }
+  },
+  "validation": {
+    "frontend_tests": 33,
+    "typescript": "passed",
+    "production_build": "passed",
+    "static_component_renders": 30,
+    "http_asset_checks": 7,
+    "pearl_desktop_deployment_screenshot": "reviewed",
+    "browser_click_through": "not available: browser inventory empty",
+    "midnight_and_mobile_visual_acceptance": "not run"
+  },
+  "agent_settings_unchanged": true,
+  "lean_and_manuscripts_changed": false,
+  "sources_sha256": {
+    "app/assistant.tsx": "0df7e12f288bf72006c680e75b1cab12fd53986431e084a4efc7cc1f3e3e6d78",
+    "app/layout.tsx": "125922cfa30424036dc81986369cb53ea954506697c330ff3cbe1b12d3b3dda9",
+    "app/workbench-panels.tsx": "5bfc2936499e4cf51417577f17d8aa6cc6988aef0fa815b6f45a714dc8c728ed",
+    "app/workbench.tsx": "6f9a61fc4d57437eba7a5a9dbe323fa9472f6d07ad78599a684cd57ac9a20938",
+    "app/icons.tsx": "2cffd309659b2b2994bb7f9394834fa1781c3d28f4103fd1fa0c47de09ca6550",
+    "app/lib/workspace-view.ts": "8db486c737577d0a26c652ab9fc2bc7c576fc7c151c5f3fb0e8daa4a281c9c46",
+    "app/studio.css": "a53d125671a053cddbd0e710a0ee703d3f421204ff2dd6dfd894afafb2c3a9a6",
+    "app/workspace-visuals.tsx": "c0d529d017a323ef0cc95cafbeda3c69b3fb67ec0a232c7516c568645f5dff43",
+    "tests/workspace-view.test.mjs": "89aff9cd7006a1d4607496bd5feab9a60d5a16b6595c7d7290961381421c875d"
+  },
+  "evidence_sha256": {
+    "component-render-checks.json": "8544dbe66dac3de234f66e030fc29204738e3e8187be160e348e35bbb36eb9e2",
+    "production-smoke.json": "066ea858cbc1e51dd81ca64461d144270687afaaa1621d27f9dac771c99ab8fb",
+    "deployment.json": "0b830b38c3b249683b06ce399c20af22374ae0e1bb448f640f423e7d5360f61e",
+    "deployed-screenshot.png": "dfdc6f0ce7efc84139c2fcec276e6632329b5056fd04a5ec77e7e440a9f46ed5"
+  },
+  "deployment_archive_sha256": "9c37226f32e1765fd0fce171bd28b4872d04c2aec5246ea8e14982aa22d49976"
+}

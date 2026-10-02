@@ -1,0 +1,16 @@
+{
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "inputs_sha256": {
+    "results/paper-claims-20260924.json": "c78a7570bd8dd9ac47b2cc9f1ee7a33416f473aab4575deb18b0701a3096eb55",
+    "results/orbit-manifest-20260924.json": "adff3afc496dde3710a72b4dad61f2230b2286d04c4b983db1b6f238be4e2310",
+    "results/prose-review-20260924.json": "495b3c6f8657d965ef98457144d8c62b11d93b4460c06d9705bece7695c9caac",
+    "results/named-results-20260924.md": "2d5aa8699a7427c71e877705539d47d93f596f8130c3d3c689dad1f25c545466",
+    "results/prose-review-20260924.md": "90642796d361959af3652630a9cbc729b854db81be97d930e447e69f744b13c7",
+    "results/errata-20260924.json": "648ac210f6455a678e15eefdc6913870760df6191c27849a1afabc44356ff05b"
+  },
+  "shared_orbit_data_equal": true
+}

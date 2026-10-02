@@ -1,0 +1,117 @@
+{
+  "schema": "sslp.manual-acceptance-expectations.v1",
+  "scope": "Fixture computations only; not hosted UI acceptance or Lean execution",
+  "four_qubit_pass": {
+    "normalized": true,
+    "kl_passed": true,
+    "passed_paulis": 13,
+    "total_paulis": 13,
+    "diagonal_action": true,
+    "residues": [
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ],
+    "kernel_status": "not_run",
+    "first_failure": null
+  },
+  "four_qubit_fail": {
+    "normalized": true,
+    "kl_passed": false,
+    "passed_paulis": 9,
+    "total_paulis": 13,
+    "diagonal_action": true,
+    "residues": [
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ],
+    "kernel_status": "not_run",
+    "first_failure": {
+      "pauli": "Z1",
+      "matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ]
+    }
+  },
+  "unsupported_import_error": "Qubit count must be an integer from 1 to 6.",
+  "class36": {
+    "normalized": true,
+    "kl_passed": true,
+    "passed_paulis": 154,
+    "total_paulis": 154,
+    "diagonal_action": true,
+    "residues": [
+      [
+        0
+      ],
+      [
+        4
+      ]
+    ],
+    "kernel_status": "not_run",
+    "first_failure": null
+  },
+  "class36_first_amplitude_sign_flip": {
+    "bits": "000000",
+    "normalized": true,
+    "kl_passed": false,
+    "passed_paulis": 136,
+    "total_paulis": 154,
+    "diagonal_action": true,
+    "residues": [
+      [
+        0
+      ],
+      [
+        4
+      ]
+    ],
+    "kernel_status": "not_run",
+    "first_failure": {
+      "pauli": "X1X6",
+      "matrix": [
+        [
+          "0",
+          "(1)/5"
+        ],
+        [
+          "(1)/5",
+          "0"
+        ]
+      ]
+    }
+  },
+  "class36_q5_exponent_changed_to_one": {
+    "normalized": true,
+    "kl_passed": true,
+    "passed_paulis": 154,
+    "total_paulis": 154,
+    "diagonal_action": false,
+    "residues": [
+      [
+        0,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "kernel_status": "not_run",
+    "first_failure": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "MainTheory.BinaryPivotLift": {
+    "fingerprint": "8a16e5210f2b38ea9ad9130b1076254f08d6b7e9250d37cb9187ce3689ac2394",
+    "key": "a05189dc58427835b969d6b63ff4629d748b14b0a428521c568f86e31efeea86",
+    "outputs": {
+      ".lake/build/ir/MainTheory/BinaryPivotLift.c": "b2059ea20f984b70a5a62709560af22300e723f38b50b9d6dfd9076ef4092c66",
+      ".lake/build/lib/lean/MainTheory/BinaryPivotLift.ilean": "9bb12b84ed2204ba6987337fe0ef43eb8b37594da8689cd5e25f3c4a7f349374",
+      ".lake/build/lib/lean/MainTheory/BinaryPivotLift.olean": "3a636f03ec08dd96c3788504edc2986be07c296862486827fde7940a9cabbddd"
+    },
+    "schema": 1,
+    "seconds": 21.719,
+    "source_sha256": "6b31ebe9cf4c3bb6eddaf3cf7dcab071178e8ad9fdb6be7fb7eeb3e2676ae730"
+  },
+  "MainTheory.PaperColoredFiniteLift": {
+    "fingerprint": "adfacb60cbc54df01d2da278991a45d0a240339735066e5356a06ef849f1383a",
+    "key": "149ce87f74e505078e0fad76df87f3b9a0b97d1f87b77512eb22f240b18dca4d",
+    "outputs": {
+      ".lake/build/ir/MainTheory/PaperColoredFiniteLift.c": "d4f6ffb237bad945b36acd669f9ef28187463eabb16607466ee961240aaae91b",
+      ".lake/build/lib/lean/MainTheory/PaperColoredFiniteLift.ilean": "30fcb29a11473bd2e32c0015654080c0227085ba50c233e2f8266fe184693c7f",
+      ".lake/build/lib/lean/MainTheory/PaperColoredFiniteLift.olean": "c77bc803005b420b15d03751adb76d8a2e3a30c562e7a2ce464f3c7b912a0ef0"
+    },
+    "schema": 1,
+    "seconds": 22.734,
+    "source_sha256": "c5037a2b6242cdbef7883584a543b5bb5128ba2897bae444806b7b4a770fc637"
+  }
+}

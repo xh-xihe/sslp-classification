@@ -1,7 +1,39 @@
 # Six-qubit SSLP and general finite-lift certification
 
-This repository formalizes the mathematics of `documents/20260908/main.tex`
-and `documents/20260908/supplementary.tex` in Lean 4.27.0, using pinned mathlib.
+The latest manuscript target is `documents/20260924/`. Its version-bound
+[acceptance entry point and first review](notes/paper-acceptance-20260924.md)
+are available with `python tools/verify.py --paper-version 20260924`.
+The new release is not fully certified: its first 19 priority named statements
+have review records, while remaining displays and prose still need review.
+See the [new named-results map](results/named-results-20260924.md) and
+[current errata dispositions](results/errata-20260924.json).
+
+The latest proof increment connects the same physical colored lift, solved
+binary pivot and actual Smith factor in
+[`PaperColoredFiniteLift`](MainTheory/PaperColoredFiniteLift.lean).
+It requires only single-site Z detection and uses the original operation's
+actual eigenvalue count. The existing GitHub proof trees were checked against
+the local committed baseline and nine supporting modules were reused.
+See the [comparison, review and validation record](results/colored-lift-smith-20260924/README.md).
+
+The preceding proof increment closes the general SSLP converse for arbitrary
+input subspaces. The [paper-facing theorem](MainTheory/PaperGeneralSSLPConverse.lean)
+constructs orthonormal frames, proves that their span is exactly the supplied
+direct sum, and retains the target KL distance and exact logical order of the
+displayed gate. No chosen basis or assumed independence is required from the
+caller. See the [review and validation record](results/colored-subspaces-20260924/README.md).
+
+An earlier proof increment closes both minimum-length corollaries: arbitrary
+transversal logical order-five gates require at least six qubits, the canonical
+class-36 code attains six, and the six-qubit code is unique up to LU/permutation.
+The [matrix-level proof](MainTheory/MinimumLengthOrderFive.lean) includes genuine
+KL-preserving ancilla padding and the exact weight-one enumerator identity.
+See the [scope and verification record](results/minimum-length-20260924/README.md).
+
+The established baseline and coverage counts below concern
+`documents/20260908/main.tex` and `documents/20260908/supplementary.tex`,
+formalized in Lean 4.27.0 with pinned mathlib. The historical default command
+continues to select 20260908; its reviews do not automatically cover 20260924.
 **Full manuscript certification is still in progress.**  Four discrepancies
 between the manuscript and what is provable are recorded in
 [errata-20260908.md](results/errata-20260908.md). One of them,

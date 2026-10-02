@@ -1,0 +1,16 @@
+[
+  {
+    "case": "baseline",
+    "job_id": "11dbd1cf882143b694d029c7ca7ab071",
+    "seconds": 17.625,
+    "structured_assertions": "passed",
+    "model_prose_semantically_verified": false
+  },
+  {
+    "case": "sign-flip",
+    "job_id": "09449356b416429bae10b2f5d45ade09",
+    "seconds": 28.984,
+    "structured_assertions": "passed",
+    "model_prose_semantically_verified": false
+  }
+]

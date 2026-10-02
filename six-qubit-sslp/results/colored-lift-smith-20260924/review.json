@@ -1,0 +1,66 @@
+{
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "scope": "Colored finite-lift theorem, three nested bounds and the binary pivot equation; not full prose review",
+  "reviews": {
+    "main.tex:thm:colored-finite-lift": {
+      "status": "covered",
+      "reason": "The single combined theorem assumes only single-site Z detection, an actual diagonal symmetry, its real-angle representative and nontrivial intrinsic class. Its spectral resolution is the canonical one, so ell is the actual number of distinct logical eigenvalues, not an unrelated existential sector count. It chooses one nonsingular pivot P of the colored matrix and uses L=P.rationalLift throughout. Its zero-one partner uses the same rows and columns. The literal binary solution solves the selected integral-right-hand-side system, and undoing column signs and extending by zero gives exactly L.augmented. An actual normalized Smith witness W is constructed for that binary matrix, with L.order dividing W.lastFactor. The same L gives the primitive modular angle and actual symmetry in the original intrinsic class; its projective order divides L.order. The bound s<=n+ell-1, the Smith-factor beta bound and ell<=K all occur in the same conclusion. An attained minimum over HasPrimitiveLift is bounded by this very L.order and hence beta_(n+ell-1). There is no supplied pivot/Smith witness, stronger distance assumption, or separately chosen physical lift. The root uses the existing repository constructions rather than re-proving Smith existence or rationalization.",
+      "lean_declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
+        "MainTheory.BinaryPivotLift.binarySolution_solves",
+        "MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution",
+        "MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor",
+        "MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det"
+      ],
+      "statement_sha256": "5a2d22d109fddf02c646ede1f3fab883a47b53a57cbd91191da395e2e6d3dba2"
+    },
+    "main.tex:eq:general-q-bound": {
+      "status": "covered",
+      "reason": "The same representative has m dividing q, q<=beta_(n+ell-1), and beta_(n+ell-1)<=beta_(n+K-1); ell is the actual spectral count of the input operation.",
+      "lean_declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects"
+      ],
+      "statement_sha256": "1b76b83c718ffc0b440df94a589c5de4fa9c85dfea82c5c23f78f688e3373558"
+    },
+    "main.tex:eq:q-divides-smith": {
+      "status": "covered",
+      "reason": "The combined witness includes s equal to the colored-matrix rank, s<=n+ell-1, an invertible zero-one matrix and its actual Smith decomposition W. Its physical lift has q dividing W.lastFactor. The supporting theorem proves this for every Smith witness of the same binary matrix, not just a specially chosen last factor.",
+      "lean_declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
+        "MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor"
+      ],
+      "statement_sha256": "398a94d046dfeb8ad390a658fcc4170a5f425c6e438502bfde512b1765b8645b"
+    },
+    "main.tex:eq:qmin-general": {
+      "status": "covered",
+      "reason": "An attained minimum is taken over precisely HasPrimitiveLift for the original intrinsic class. Its universal minimality and bound by the constructed q are explicit, followed by the beta bound with the original gate spectral count. No d>=2 premise is added.",
+      "lean_declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects"
+      ],
+      "statement_sha256": "0049ae556f4d018268cbfe8aedf44895699bddc78423ef3a89dd58e8d0d179e2"
+    },
+    "main.tex:eq:pivot-solve": {
+      "status": "covered",
+      "reason": "binarySolution is the exact rational inverse of the selected zero-one matrix applied to the selected integral right-hand side, and binarySolution_solves proves the literal matrix equation. The next bridge identifies its sign-restored zero extension with the actual rational lift used in the paper-facing theorem. The zero-one partner is precisely the local-X-normalized support matrix; the signs undo that normalization.",
+      "lean_declarations": [
+        "MainTheory.BinaryPivotLift.binarySolution_solves",
+        "MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution",
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects"
+      ],
+      "statement_sha256": "a8dc675fc6a209fa3d139387e2f9d234cfda2ef4b4c3b4049c42ec881175b4f5"
+    }
+  },
+  "lean_sources_sha256": {
+    "MainTheory/BinaryPivotLift.lean": "6b31ebe9cf4c3bb6eddaf3cf7dcab071178e8ad9fdb6be7fb7eeb3e2676ae730",
+    "MainTheory/PaperColoredFiniteLift.lean": "c5037a2b6242cdbef7883584a543b5bb5128ba2897bae444806b7b4a770fc637"
+  },
+  "claims_counts": {
+    "unreviewed": 1623,
+    "partial": 4,
+    "covered": 25
+  }
+}

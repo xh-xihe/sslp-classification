@@ -1,0 +1,55 @@
+{
+  "paper_version": "20260924",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "release",
+      "passed": true,
+      "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+      "seconds": 0.0
+    },
+    {
+      "check": "axioms",
+      "passed": true,
+      "detail": "1452 declarations; union=Classical.choice, Quot.sound, propext; log=tmp/verification/axioms.log",
+      "seconds": 133.203
+    },
+    {
+      "check": "table-kernel-selftest",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\table-kernel-selftest.log; PASS: current 66 rows match full-fibre kernel semantics; all three numeric-column mutations rejected",
+      "seconds": 135.703
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1640 incomplete assertions (partial=8, unreviewed=1632); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+      "seconds": 0.75
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+      "seconds": 0.734
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.11
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+      "seconds": 0.0
+    },
+    {
+      "check": "audit-names",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+      "seconds": 10.015
+    }
+  ]
+}

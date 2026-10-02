@@ -1,0 +1,19 @@
+{
+  "id": "c27fb698b8e94dc7918e06047c9dc0d1",
+  "kind": "agent",
+  "state": "completed",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "provider": "local-qwen",
+  "created_at": 1790315899.1666,
+  "started_at": 1790315899.1676044,
+  "finished_at": 1790315916.5032637,
+  "cancel_requested": false,
+  "error": null,
+  "progress": {
+    "phase": "finished"
+  },
+  "artifacts": [
+    "report.json",
+    "candidate.json"
+  ]
+}

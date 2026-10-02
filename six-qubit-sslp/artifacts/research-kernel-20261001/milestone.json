@@ -1,0 +1,71 @@
+{
+  "schema": "sslp.research-milestone.v1",
+  "recorded_at": "2026-10-01T22:02:31.589832+00:00",
+  "scope": "Bounded input-derived exact-code certification and workbench/assistant integration",
+  "baseline": "artifacts/workbench-release-20261001/acceptance.json",
+  "site": {
+    "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+    "frontend_commit": "123948bbb0715168aebe196b2d82dcd742e7fba3",
+    "deployment": "appgdep_6abed5efd0d4819189d42f8b577ff8dc",
+    "status": "succeeded",
+    "audience": "owner-only"
+  },
+  "checks": {
+    "positive_kernel": "passed",
+    "negative_kernel": "rejected",
+    "live_candidate_kernel": "passed",
+    "bundle_replay": "passed",
+    "replay_local_modules_rebuilt": 12,
+    "additional_kernel_cases": [
+      "six-qubit-generic",
+      "three-logical-complex",
+      "rank-one"
+    ],
+    "local_qwen_tools": "passed inspected four-qubit run",
+    "python_regressions": 62,
+    "frontend_tests": 30,
+    "typescript": "passed",
+    "production_build": "passed",
+    "browser_click_through": "not run: browser unavailable"
+  },
+  "replay_environment": "Separate directory on the same native Windows machine; pinned external dependencies shared via junction and content-validated. Not a second-machine test.",
+  "full_manuscript_certified": false,
+  "parent_github_pushed": false,
+  "records_sha256": {
+    "four-qubit-pass/evidence.json": "16c6becde5c0255d91196d8f2ce0690effa83931091c6455bdc8ee64e5e88104",
+    "four-qubit-pass/Certificate.lean": "4650b652d2d0f777dffca000e783afad4e42a009093ed6c25f0aa755f1628e94",
+    "four-qubit-reject/evidence.json": "b3f3cf07fb17f9d9b4580c77404cb8b84aa09acae5ce178ce341ca89c65fa38f",
+    "four-qubit-reject/lean.log": "85fbf8528659374a27b44bf246512ff6efaae880b349045bc9023088dfa4a1b1",
+    "four-qubit-bundle.zip": "44f9c8a17c451a1be046beb85c230d263fd025454f2198cef2b1bed53832b02f",
+    "four-qubit-bundle/replay-run/evidence.json": "00afd459b05f7226a2f28503176efd0196e48d8bfc359099699bbad8187ea93f",
+    "live-lean-job.json": "73a3d8ac24158049ef999592c17b2b48e3c50649ed1879d9cade9f81127b2710",
+    "live-lean-report.json": "fb79b465a56bc973148eb3767ce69eb6f0356bd2efbf9b42a928bdf39e3ceccd",
+    "assistant-request.json": "bcb42c2a7425f30e5db89b58e9e75b25173ad7e70b09ee2c358294db18154fd8",
+    "assistant-report.json": "3b6ab234c0c6c151ad7817c311c3bd45f3fd943a22fc502353d4d04c5fd056a5",
+    "assistant-job.json": "7e51ba3aaba4b9ec07bed6eb1b348f4636f58196831a1af6dba6fa8ca74fe7c3",
+    "assistant-candidate.json": "2e2d4b5c4ade2d8b82d4341992b65c140a3fc4127e7453091688a0919c40f87d",
+    "additional-kernel-checks.json": "5866de517e8b2f0349c9c35f8c05dd540659026de87628477a15990c575f2173",
+    "six-qubit-generic.lean": "991830e07dee5dfea4aea861ff08152e68f668aae1fb9481323a74cb2441be2c",
+    "six-qubit-generic.log": "8e4f1223e9bb07fe7b13cc8ea7e2b1c424c83e0d6a69e6c15715856ce92e8b77",
+    "three-logical-complex.lean": "10f90aad74397e85676f6f8b3bcd48df00434d00e19097fca8ab0037a0620a5b",
+    "three-logical-complex.log": "8e4f1223e9bb07fe7b13cc8ea7e2b1c424c83e0d6a69e6c15715856ce92e8b77",
+    "rank-one.lean": "3fe46020eadb2710aee6ea7ffe13724120fd84ac2a4d075a6813d10ed539818a",
+    "rank-one.log": "8e4f1223e9bb07fe7b13cc8ea7e2b1c424c83e0d6a69e6c15715856ce92e8b77"
+  },
+  "sources_sha256": {
+    "SS/ExactAmplitude.lean": "0fea4157ba154d84a275b86d66d77914290db8bec1ea0c20dbe710c3b7d68eb8",
+    "SS/ExactCode.lean": "b89bc1447475086059c53d6fb5543179f58c33b8fe716d3b908be4b339c264dd",
+    "tools/explorer/research.py": "7541e013f99435498b1ef7a6accb1d7db6069eb5ad7a2d39f0d865d91a93fd4e",
+    "tools/sslp_explorer.py": "07abb326b3e489d7fa0f70b910c4920ad6a7f5791f18f6db52999d5201f0f980",
+    "tools/explorer/agent.py": "d1fdb4ebcab5ac95e1526d066abc6382b16130892cccbeafdffdca018ca7e712",
+    "tools/explorer/jobs.py": "39a75649fa81fd8a3d17b3778a3b636f9d1ce4f67d01a8ae0b8fdc27cabd49c2",
+    "tools/sslp_agent.py": "277350b3dbe1d44c7b5533b49afb40bc576326973cd6e7eb387a417e22b7780f",
+    "tools/sslp_service.py": "848676a6d04f5dcb40eee4c70ca9c62c9a1a2f1527cdf11f1070e051c7916412",
+    "tools/sslp_worker.py": "648753560848bc571de9b86f8c1b2232076a72fa6d801ff9bc1e383959249297",
+    "tools/tests/test_explorer_research.py": "02ebc7e815f6de90fa93d0b97a5bef1be41e51374b9a32af3ad005478a7be563",
+    "tools/tests/test_explorer_jobs.py": "61e4f11af293a52035fd964a128bb8f0ca953090ab93e77922a79a9f71ef69d3",
+    "tools/explorer/README.md": "202e9cc0a4192a0554d4a63fdefb3c4b57d17da21930308b749ed599dcbf7132",
+    "tools/explorer/AGENT.md": "76345fbd2e7c3aabb64c13a87f53c3d7eb668e74b8d042f923ca6dcda8a38aa6",
+    "notes/workbench-20260928.md": "2013aa8bd3175d0ae6ead7c8e94fc5d93fb58d5f9e4cb67560ca85b80b7fe538"
+  }
+}

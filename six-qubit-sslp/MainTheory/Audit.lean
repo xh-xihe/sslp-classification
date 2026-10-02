@@ -1,4 +1,7 @@
 import MainTheory.Rationalize
+import MainTheory.MinimumLengthOrderFive
+import MainTheory.PaperGeneralSSLPConverse
+import MainTheory.PaperColoredFiniteLift
 import MainTheory.TransversalFixedBasis
 import MainTheory.CodePreservingUnitary
 import MainTheory.ProjectorCompression
@@ -1342,3 +1345,48 @@ operation, with the spectral data produced rather than assumed. -/
 #print axioms MainTheory.BetaEightValue.betaOf_eight
 #print axioms MainTheory.SixQubitIntrinsicOrderSet.including_identity
 #print axioms MainTheory.SixQubitIntrinsicOrderSet.nontrivial_exact
+#print axioms MainTheory.AncillaPadding.compression_snocPauli
+#print axioms MainTheory.AncillaPadding.detects_appendZero
+#print axioms MainTheory.AncillaPadding.hasDistance_padFrame
+#print axioms MainTheory.AncillaPadding.Aco_appendZero_succ
+#print axioms MainTheory.AncillaPadding.Aco_appendZero_zero
+#print axioms MainTheory.AncillaPadding.AWeight_padFrame_one
+#print axioms MainTheory.AncillaPadding.AWeight_padFrame_one_pos
+#print axioms MainTheory.AncillaGatePadding.projector_appendFrame
+#print axioms MainTheory.AncillaGatePadding.projector_padFrame
+#print axioms MainTheory.AncillaGatePadding.intertwining_padFrame
+#print axioms MainTheory.AncillaGatePadding.padLocal_unitary
+#print axioms MainTheory.TransversalDiagonalization.exists_diagonal_normal_form
+#print axioms MainTheory.DiagonalLogicalMatrixBridge.projectivelyTrivial_iff_scalar
+#print axioms MainTheory.DiagonalLogicalMatrixBridge.exists_intrinsic_order_five
+#print axioms MainTheory.MinimumLengthOrderFive.six_qubit_AWeight_one_zero
+#print axioms MainTheory.MinimumLengthOrderFive.minimum_length
+#print axioms MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three
+#print axioms MainTheory.MinimumLengthOrderFive.canonical_attains
+
+-- Arbitrary subspaces, their exact direct sum, and the general SSLP converse.
+#print axioms MainTheory.SubspaceCode.finrank_euclideanSpace
+#print axioms MainTheory.SubspaceCode.frame
+#print axioms MainTheory.SubspaceCode.frame_mem
+#print axioms MainTheory.SubspaceCode.codeSpan_frame
+#print axioms MainTheory.SubspaceCode.hasDistance_iff
+#print axioms MainTheory.SubspaceCode.frame_hasDistance
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.orthogonal
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_sectorFrame
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sigma_orthonormal
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_eq
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.finrank_sum
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.frame_hasDistance
+#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sslp_converse
+#print axioms MainTheory.PaperGeneralSSLP.general_sslp_converse
+
+-- The same binary system, Smith witness and physical colored lift.
+#print axioms MainTheory.BinaryPivotLift.binary_det_ne_zero
+#print axioms MainTheory.BinaryPivotLift.binarySolution_solves
+#print axioms MainTheory.BinaryPivotLift.sign_selectedSolution_eq_binarySolution
+#print axioms MainTheory.BinaryPivotLift.selectedSolution_eq_sign_binarySolution
+#print axioms MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution
+#print axioms MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor
+#print axioms MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects

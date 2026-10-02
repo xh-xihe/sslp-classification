@@ -17,6 +17,7 @@ Usage:  python tools/verification/check_audit_names.py
 Exit code 1 if any name is unresolved.
 """
 import io
+import argparse
 import os
 import re
 import sys
@@ -111,15 +112,21 @@ def audited_names():
     return out
 
 
-def ledger_names():
+def ledger_names(paper_version=None):
     """Every declaration the claims ledger says a reviewed claim rests on."""
     import glob
     import json
     out = []
-    for path in sorted(glob.glob(os.path.join(ROOT, 'results', 'paper-claims-*.json'))):
+    if paper_version is not None and not re.fullmatch(r'[0-9]{8}', paper_version):
+        raise ValueError('paper version must be an eight-digit date')
+    paths = ([os.path.join(ROOT, 'results', f'paper-claims-{paper_version}.json')]
+             if paper_version else sorted(glob.glob(os.path.join(ROOT, 'results', 'paper-claims-*.json'))))
+    for path in paths:
         try:
             ledger = json.loads(io.open(path, encoding='utf-8').read())
         except (OSError, ValueError):
+            if paper_version:
+                raise
             continue
         relative = os.path.relpath(path, ROOT).replace(os.sep, '/')
         for entry in ledger.get('claims', []):
@@ -137,7 +144,11 @@ def resolve(name, declared, suffixes):
         d.endswith('.' + name) for d in declared)
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--paper-version')
+    args = parser.parse_args(argv)
+    cited = ledger_names(args.paper_version)
     declared = declarations()
     suffixes = set(name.rsplit('.', 1)[-1] for name in declared)
     by_base = {}
@@ -149,7 +160,7 @@ def main():
 
     failures = 0
     for label, entries in (('#print axioms', audited_names()),
-                           ('claims-ledger', ledger_names())):
+                           ('claims-ledger', cited)):
         missing = [e for e in entries if not resolve(e[2], declared, suffixes)]
         sys.stdout.write('%s names checked: %d, unresolved: %d\n'
                          % (label, len(entries), len(missing)))

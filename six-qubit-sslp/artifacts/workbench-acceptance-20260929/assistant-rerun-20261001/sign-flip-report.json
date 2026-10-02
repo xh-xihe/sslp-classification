@@ -1,0 +1,789 @@
+{
+  "schema": "sslp.agent-run.v1",
+  "status": "answered",
+  "error": null,
+  "provider": {
+    "id": "local-qwen",
+    "adapter": "ollama",
+    "model": "qwen3:14b",
+    "model_class": "open_weights",
+    "enabled": true,
+    "configured_revision": null,
+    "timeout_seconds": 120,
+    "max_output_tokens": 1600
+  },
+  "probe": {
+    "status": "available",
+    "provider": {
+      "id": "local-qwen",
+      "adapter": "ollama",
+      "model": "qwen3:14b",
+      "model_class": "open_weights",
+      "enabled": true,
+      "configured_revision": null,
+      "timeout_seconds": 120,
+      "max_output_tokens": 1600
+    },
+    "server_version": "0.35.0",
+    "observed_revision": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+  },
+  "prompt_version": "sslp.assistant.class36.v4-en",
+  "system_prompt_sha256": "6593144e009cd7db6e72d28c3ae4659dcdd113d7a252f99af46c92beddab6845",
+  "question": "Read the current input.\n\nCreate a candidate by negating only the amplitude of |000000> in psi_0. Keep every other amplitude and all physical gate exponents unchanged.\n\nRun exact checks on both current and candidate. Inspect the first failing Pauli matrix for candidate.\n\nCompare the results and explain the KL failure. Cite actual tool records. Do not run Lean.",
+  "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+  "answer": {
+    "text": "The original input (current) passed all exact checks, including the KL conditions and normalization, as confirmed by [tool:t3]. However, the candidate, which was created by negating only the amplitude of |000000> in psi_0, failed the KL conditions, as shown by [tool:t4]. Specifically, the first failing Pauli matrix for the candidate is $X_1X_6$, as identified by [tool:t5]. The failure is due to a mismatch in the matrix coordinates and the denominator, which indicates that the candidate does not satisfy the required Pauli compression conditions. This highlights the sensitivity of the KL conditions to changes in the amplitudes of the logical states.",
+    "kind": "untrusted_model_explanation",
+    "citations": {
+      "status": "present",
+      "cited_tools": [
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "unknown_or_failed_tools": [],
+      "scope": "reference existence only; no semantic verification of model prose"
+    }
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "round": 1,
+      "name": "get_case",
+      "arguments": {},
+      "output": {
+        "ok": true,
+        "reference": "t1",
+        "result": {
+          "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+          "n": 6,
+          "k": 2,
+          "gate": {
+            "q": 5,
+            "angles": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              3
+            ],
+            "logical_residues": [
+              0,
+              4
+            ]
+          },
+          "words": [
+            [
+              {
+                "bits": "000000",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111010",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "011110",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110001",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011001",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010101",
+                "coordinates": [
+                  0,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001101",
+                "coordinates": [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000011",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            [
+              {
+                "bits": "111100",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "110010",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "101010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "011010",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "100110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "bits": "010110",
+                "coordinates": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              {
+                "bits": "001110",
+                "coordinates": [
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "100001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "010001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "001001",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "000101",
+                "coordinates": [
+                  0,
+                  0,
+                  -2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "111111",
+                "coordinates": [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          ],
+          "conventions": {
+            "qubit_labels": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bitstring": "leftmost character is qubit 1; integer mask bit 0 is qubit 1",
+            "pauli": "i^popcount(x&z) X^x Z^z",
+            "phase_gate": "diag(1, exp(2*pi*i*a/q))",
+            "logical_basis": [
+              "psi_0",
+              "psi_1"
+            ]
+          },
+          "kernel_status": "not_run"
+        }
+      }
+    },
+    {
+      "id": "t2",
+      "round": 2,
+      "name": "make_candidate",
+      "arguments": {
+        "phase_changes": [
+          {
+            "bits": "000000",
+            "quarter_turns": 2,
+            "word": 0
+          }
+        ]
+      },
+      "output": {
+        "ok": true,
+        "reference": "t2",
+        "result": {
+          "target": "candidate",
+          "input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+          "gate": {
+            "q": 5,
+            "angles": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              3
+            ],
+            "logical_residues": [
+              0,
+              4
+            ]
+          },
+          "support_residues": [
+            [
+              0
+            ],
+            [
+              4
+            ]
+          ],
+          "phase_changes": [
+            {
+              "bits": "000000",
+              "quarter_turns": 2,
+              "word": 0
+            }
+          ],
+          "kernel_status": "not_run",
+          "notice": "candidate copied from current; no certification inherited"
+        }
+      }
+    },
+    {
+      "id": "t3",
+      "round": 3,
+      "name": "check_exact",
+      "arguments": {
+        "target": "current"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t3",
+        "result": {
+          "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 154,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    },
+    {
+      "id": "t4",
+      "round": 3,
+      "name": "check_exact",
+      "arguments": {
+        "target": "candidate"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t4",
+        "result": {
+          "input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": false,
+          "pauli_count": 154,
+          "failed_pauli_count": 18,
+          "first_failure": {
+            "x_mask": 33,
+            "z_mask": 0,
+            "pauli": "X1X6",
+            "matrix_coordinates": [
+              [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  24,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              [
+                [
+                  24,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            ],
+            "matrix_denominator": 120,
+            "passed": false
+          },
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": false,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    },
+    {
+      "id": "t5",
+      "round": 3,
+      "name": "inspect_pauli",
+      "arguments": {
+        "target": "candidate"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t5",
+        "result": {
+          "input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "selection": "first_failure",
+          "found": true,
+          "x_mask": 33,
+          "z_mask": 0,
+          "pauli": "X1X6",
+          "matrix_coordinates": [
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          "matrix_denominator": 120,
+          "passed": false
+        }
+      }
+    }
+  ],
+  "model_invocations": [
+    {
+      "round": 1,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 1041,
+        "output_tokens": 16
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 0.938
+    },
+    {
+      "round": 2,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2235,
+        "output_tokens": 44
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 2.703
+    },
+    {
+      "round": 3,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2478,
+        "output_tokens": 62
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 2.906
+    },
+    {
+      "round": 4,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 3325,
+        "output_tokens": 146
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 7.062
+    }
+  ],
+  "verification": [
+    {
+      "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+      "exact": {
+        "input_sha256": "668c069a091e54e008405755efdcd651fc66db8fcb20a462b5f39cca55506059",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 154,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    },
+    {
+      "input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+      "exact": {
+        "input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": false,
+        "pauli_count": 154,
+        "failed_pauli_count": 18,
+        "first_failure": {
+          "x_mask": 33,
+          "z_mask": 0,
+          "pauli": "X1X6",
+          "matrix_coordinates": [
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          "matrix_denominator": 120,
+          "passed": false
+        },
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": false,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ],
+  "full_manuscript_certified": false,
+  "candidate_input_sha256": "c2d91a161512128fb491f3fb2332782e9fc1051ed0f3e06ff643f8003f6d41d6",
+  "budget": {
+    "max_rounds": 6,
+    "max_tools": 10,
+    "allow_lean": false,
+    "lean_certificate_timeout_seconds": 180
+  },
+  "seconds": 14.031
+}

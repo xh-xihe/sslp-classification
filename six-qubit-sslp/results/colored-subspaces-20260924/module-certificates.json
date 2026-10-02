@@ -1,0 +1,38 @@
+{
+  "MainTheory.SubspaceCode": {
+    "fingerprint": "316c858b66556af37c2ac28d5bb71f71e782cb85c27a04f682ddb31c8563877f",
+    "key": "aac15d4dfa2bd964d03846c78fe99f578d3cb2104626c5e12a1053e6136f46c1",
+    "outputs": {
+      ".lake/build/ir/MainTheory/SubspaceCode.c": "f4872d748356451ae9c3567bbb7049537e1edf31c70b042882bd7fb699b5171e",
+      ".lake/build/lib/lean/MainTheory/SubspaceCode.ilean": "1641236b6e3b365884ee550f6fcc476237f198c58847e32ceb7bf7a7daf2fa5c",
+      ".lake/build/lib/lean/MainTheory/SubspaceCode.olean": "c5237d241c35038d8f09d630fbe44ddf728edb1e33d458907f50f9d0c05d947f"
+    },
+    "schema": 1,
+    "seconds": 27.046,
+    "source_sha256": "5d5578287da1b6bf1b68d5ca041183e0e2b310a1f321bda8dde67b550b3456d4"
+  },
+  "MainTheory.GeneralColoredSubspaceConverse": {
+    "fingerprint": "7adaa11cec5810879f5fff33e6479cf41183f0d1001a773964c96ac3f0304de8",
+    "key": "35916d6d53b031acbe751916296bce4919697f39b9550ffad2e91b786225552e",
+    "outputs": {
+      ".lake/build/ir/MainTheory/GeneralColoredSubspaceConverse.c": "a58139043c4a8eaae8d793e5ab4c538afca482fd3048f7205ec8dcb899456b90",
+      ".lake/build/lib/lean/MainTheory/GeneralColoredSubspaceConverse.ilean": "98e8c3dfeb839530fd78c65d6d053253bd262fa4898e8dde6ced9c2801a68e9e",
+      ".lake/build/lib/lean/MainTheory/GeneralColoredSubspaceConverse.olean": "7331ebef148d71bc42bd5bf0e951c3b4a7ce205670ed394b451965318d67606a"
+    },
+    "schema": 1,
+    "seconds": 27.828,
+    "source_sha256": "7b6a129bc37fde541196a3496fc3bbc31853a6ccd82906bc0ec87a0244d91ef0"
+  },
+  "MainTheory.PaperGeneralSSLPConverse": {
+    "fingerprint": "79c3e6de1a2ad9be609b7b9a763f9e4b8d45b7d7a1b821dec6313e50d70d7dc3",
+    "key": "e7a5e5cc5bfa80e0b2756b9e5f6d715248b1b85388da551a4286b4e8ce3aec36",
+    "outputs": {
+      ".lake/build/ir/MainTheory/PaperGeneralSSLPConverse.c": "22a3ae0d0338d3cfd01076c0d50ff412108c81c6e7c4756684b67436c9d454d5",
+      ".lake/build/lib/lean/MainTheory/PaperGeneralSSLPConverse.ilean": "6ec8290c0612538b935aa5b402406100e2824aea7b9e3952f4a824eac0ea3df8",
+      ".lake/build/lib/lean/MainTheory/PaperGeneralSSLPConverse.olean": "a7df7dc1f91bf5ab531c02152e4e49652e9d6bb3bef6b68d9c0bd3b2cec20501"
+    },
+    "schema": 1,
+    "seconds": 29.0,
+    "source_sha256": "16700162da081e0a63007a860a542fc267cb3d42d996fd9bad18868888009c34"
+  }
+}

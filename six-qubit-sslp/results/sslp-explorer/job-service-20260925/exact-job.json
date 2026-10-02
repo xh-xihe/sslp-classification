@@ -1,0 +1,18 @@
+{
+  "id": "ea0b7d028d9a42df8984ba4258049337",
+  "kind": "exact",
+  "state": "completed",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "provider": null,
+  "created_at": 1790315710.4973707,
+  "started_at": 1790315710.4973707,
+  "finished_at": 1790315710.9574764,
+  "cancel_requested": false,
+  "error": null,
+  "progress": {
+    "phase": "finished"
+  },
+  "artifacts": [
+    "report.json"
+  ]
+}

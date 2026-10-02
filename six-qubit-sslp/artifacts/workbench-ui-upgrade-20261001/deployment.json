@@ -1,0 +1,24 @@
+{
+  "id": "appgdep_6abf39bea4688191aceb4662b78797ac",
+  "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+  "title": "SSLP Workbench",
+  "version_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c~appgver_7304925701248191982cbc4e2589fd49",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6ab5a69b70a0819191ccacb377d3ca8c",
+  "failure_message": null,
+  "env_set_revision": 0,
+  "updated_at": "2026-10-02T04:57:41.139030+00:00",
+  "frontend_commit": "f317bd21f1931bc289e233522720094b128f9137",
+  "access_review": {
+    "project_id": "appgprj_6ab5a69b70a0819191ccacb377d3ca8c",
+    "url": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+    "version_number": 10,
+    "audience": "custom",
+    "owner_only": true,
+    "screenshot_changed": true
+  }
+}

@@ -16,10 +16,12 @@ Usage:
     python tools/prose_review_doc.py --check    # fail if it is out of date
 """
 import io
+import argparse
 import json
 import os
 import sys
 from collections import Counter, defaultdict
+import paper_release
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RECORD = os.path.join(ROOT, 'results', 'prose-review-20260908.json')
@@ -158,27 +160,58 @@ def render(record):
     return '\n'.join(out) + '\n'
 
 
-def main():
-    with io.open(RECORD, encoding='utf-8') as handle:
+def render_version(record, version):
+    lines = [f'# Prose review of the {version} manuscripts', '',
+             f"Review status: **{record['status']}**.", '', record['method'], '',
+             'This is a version-bound review record, not a successful kernel run.',
+             'No previous-version coverage is transferred. No manuscript text is reproduced.', '',
+             f'Generated from `results/prose-review-{version}.json`.', '']
+    for row in record['assertions']:
+        lines += [f"## {row['source']}:{row['line']} — {row['kind']}", '', row['reason'], '']
+        lines += [f'- `{d}`' for d in row.get('declarations', [])]
+        lines += ['']
+    lines += ['## Remaining review', '', record.get('remaining', 'Complete the source-wide prose review.'), '']
+    return '\n'.join(lines)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--paper-version', default=paper_release.DEFAULT_VERSION, type=paper_release.version)
+    parser.add_argument('--check', action='store_true')
+    parser.add_argument('--require-complete', action='store_true')
+    args = parser.parse_args(argv)
+    p = paper_release.paths(args.paper_version, ROOT)
+    with io.open(p['prose'], encoding='utf-8') as handle:
         record = json.load(handle)
     if any('quote' in a for a in record['assertions']):
         sys.stderr.write('FAIL: the published record contains verbatim manuscript text.\n')
         return 1
-    text = render(record)
-    if '--check' in sys.argv[1:]:
-        if not os.path.exists(OUTPUT):
-            sys.stderr.write('FAIL: %s does not exist; run the generator.\n' % OUTPUT)
+    if args.paper_version != paper_release.DEFAULT_VERSION:
+        paper_release.validate_review(record, args.paper_version, ROOT, args.require_complete)
+        text = render_version(record, args.paper_version)
+    else:
+        if args.require_complete and any(a['kind'] == 'gap' for a in record['assertions']):
+            raise ValueError('historical prose review still contains gaps')
+        text = render(record)
+    output = p['prose_doc']
+    if args.check:
+        if not output.exists():
+            sys.stderr.write('FAIL: %s does not exist; run the generator.\n' % output)
             return 1
-        if io.open(OUTPUT, encoding='utf-8').read() != text:
+        if output.read_text(encoding='utf-8') != text:
             sys.stderr.write('FAIL: %s is stale; regenerate with '
-                             'python tools/prose_review_doc.py\n' % OUTPUT)
+                             'python tools/prose_review_doc.py --paper-version %s\n' % (output, args.paper_version))
             return 1
         sys.stdout.write('prose-review document is current\n')
         return 0
-    io.open(OUTPUT, 'w', encoding='utf-8', newline='\n').write(text)
-    sys.stdout.write('wrote %s (%d bytes)\n' % (OUTPUT, len(text.encode('utf-8'))))
+    output.write_text(text, encoding='utf-8', newline='\n')
+    sys.stdout.write('wrote %s (%d bytes)\n' % (output, len(text.encode('utf-8'))))
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except (OSError, ValueError, KeyError) as exc:
+        sys.stderr.write('FAIL: ' + str(exc) + '\n')
+        sys.exit(1)

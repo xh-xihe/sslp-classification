@@ -1,0 +1,117 @@
+{
+  "schema": "sslp.ui-agent-baseline.v1",
+  "created_at": "2026-10-02T04:17:05.623707+00:00",
+  "frontend_commit": "123948bbb0715168aebe196b2d82dcd742e7fba3",
+  "site": "https://sslp-explorer-class36.xh-xihe.chatgpt.site",
+  "agent_configuration": {
+    "schema": "sslp.model-providers.v1",
+    "default_provider": "local-qwen",
+    "providers": [
+      {
+        "id": "local-qwen",
+        "adapter": "ollama",
+        "model": "qwen3:14b",
+        "model_class": "open_weights",
+        "base_url": "http://127.0.0.1:11434",
+        "timeout_seconds": 120,
+        "max_output_tokens": 1600,
+        "context_tokens": 8192
+      },
+      {
+        "id": "local-fast",
+        "adapter": "ollama",
+        "model": "qwen3:1.7b",
+        "model_class": "open_weights",
+        "base_url": "http://127.0.0.1:11434",
+        "timeout_seconds": 90,
+        "max_output_tokens": 1200,
+        "context_tokens": 8192
+      },
+      {
+        "id": "closed-compatible",
+        "adapter": "chat_completions",
+        "model": "configure-model-name",
+        "model_class": "closed",
+        "base_url": "https://api.example.invalid/v1",
+        "api_key_env": "SSLP_CLOSED_API_KEY",
+        "enabled": false
+      }
+    ]
+  },
+  "service_public_settings": {
+    "schema": "sslp.job-api.v1",
+    "default_provider": "local-qwen",
+    "providers": [
+      {
+        "id": "local-qwen",
+        "adapter": "ollama",
+        "model": "qwen3:14b",
+        "model_class": "open_weights",
+        "enabled": true,
+        "configured_revision": null,
+        "timeout_seconds": 120,
+        "max_output_tokens": 1600
+      },
+      {
+        "id": "local-fast",
+        "adapter": "ollama",
+        "model": "qwen3:1.7b",
+        "model_class": "open_weights",
+        "enabled": true,
+        "configured_revision": null,
+        "timeout_seconds": 90,
+        "max_output_tokens": 1200
+      },
+      {
+        "id": "closed-compatible",
+        "adapter": "chat_completions",
+        "model": "configure-model-name",
+        "model_class": "closed",
+        "enabled": false,
+        "configured_revision": null,
+        "timeout_seconds": 120,
+        "max_output_tokens": 1600
+      }
+    ],
+    "limits": {
+      "concurrent": 1,
+      "pending": 4,
+      "wall_seconds": 600,
+      "worker_memory_mib": 6144
+    },
+    "capabilities": {
+      "research_code_v1": {
+        "exact": true,
+        "lean": true,
+        "assistant": true
+      }
+    },
+    "available": true
+  },
+  "sources_sha256": {
+    "tools/explorer/agent.py": "d1fdb4ebcab5ac95e1526d066abc6382b16130892cccbeafdffdca018ca7e712",
+    "tools/explorer/jobs.py": "39a75649fa81fd8a3d17b3778a3b636f9d1ce4f67d01a8ae0b8fdc27cabd49c2",
+    "tools/explorer/providers.py": "71abd09d864c83c1c86ff47de0e83b4e37762fe2e1575595ebcc22ed605f2eeb",
+    "tools/explorer/process_control.py": "288430f732cf7ba11fc42a8584990d512c68aabc523a266c7975a4578466c1ba",
+    "tools/explorer/models.example.json": "74af092cc07a0503eb1e6497fddce68ef894a3742312e4dc5e61ca7d1cdd61dd",
+    "tools/explorer/research.py": "7541e013f99435498b1ef7a6accb1d7db6069eb5ad7a2d39f0d865d91a93fd4e",
+    "tools/explorer/class36.py": "f2ba17f6550cc069dc3034a8dc0683c406781b0a91bbda1f9afebf778f460bb3",
+    "tools/explorer/__init__.py": "d0f29faf52849eacc4292b90cd25aa583c7bf253a2dc4f1cca17e5f2b97c4814",
+    "tools/explorer/README.md": "202e9cc0a4192a0554d4a63fdefb3c4b57d17da21930308b749ed599dcbf7132",
+    "tools/explorer/AGENT.md": "76345fbd2e7c3aabb64c13a87f53c3d7eb668e74b8d042f923ca6dcda8a38aa6",
+    "tools/explorer/REPRODUCE.md": "7e7f8f42f0d58f47aa9f404056c760e4c5367ef0197f47a6922dd90ea0d0c374",
+    "tools/sslp_agent.py": "277350b3dbe1d44c7b5533b49afb40bc576326973cd6e7eb387a417e22b7780f",
+    "tools/sslp_service.py": "848676a6d04f5dcb40eee4c70ca9c62c9a1a2f1527cdf11f1070e051c7916412",
+    "tools/sslp_worker.py": "648753560848bc571de9b86f8c1b2232076a72fa6d801ff9bc1e383959249297",
+    "tools/sslp_explorer.py": "07abb326b3e489d7fa0f70b910c4920ad6a7f5791f18f6db52999d5201f0f980",
+    "SS/ExactAmplitude.lean": "0fea4157ba154d84a275b86d66d77914290db8bec1ea0c20dbe710c3b7d68eb8",
+    "SS/ExactCode.lean": "b89bc1447475086059c53d6fb5543179f58c33b8fe716d3b908be4b339c264dd",
+    "artifacts/research-kernel-20261001/milestone.json": "3e5aeaeac0a2b6344c406ae131aa8e4a75064ee0e038f464baebd27f6e48fb6c"
+  },
+  "archives_sha256": {
+    "agent-settings-and-sources.zip": "74f2f3b54cad72c6be45d1e83a951cf92626ba40c1a07c817373d309fb970d0b",
+    "frontend-source.zip": "56b461e9ff66052cae993975934c923a2cc2f5d875a54dd61760264fd8a3c93e"
+  },
+  "restore": "Extract frontend-source.zip to a separate working directory, and agent-settings-and-sources.zip to a separate repository checkout. Compare hashes before restoring. Keep current credentials and job history outside the archive.",
+  "private_credentials_archived": false
+}

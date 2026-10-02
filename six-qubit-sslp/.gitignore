@@ -38,3 +38,7 @@ debug.log
 # verification transcripts
 .v.log
 .check-readme-names.lean
+
+# The research workbench front end is its own git repository (it is deployed
+# from there, with its own history), so it is not tracked here.
+apps/

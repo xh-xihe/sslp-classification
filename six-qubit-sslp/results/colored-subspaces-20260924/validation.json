@@ -1,0 +1,117 @@
+{
+  "validated_at_utc": "2026-09-26T22:40:36.408291+00:00",
+  "platform": "Windows; native PowerShell, lake and Lean; no WSL",
+  "paper_version": "20260924",
+  "proof_increment_passed": true,
+  "full_manuscript_certification": false,
+  "source_hashes": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "build": {
+    "scope": "Complete current audit import dependency closure; content-validated reuse",
+    "modules": 14092,
+    "rebuilt": 3,
+    "reused": 14089,
+    "context": "ef7f64c6c7ae60c2b79073970d4bbc98f480b16eff48cf9d6d8c132aebb4b841",
+    "note": "The three new leaf modules were compiled by the serial source driver before the shared-state kernel audit. Individual-print audit wrappers were not built."
+  },
+  "axioms": {
+    "roots": 1490,
+    "allowed_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "passed": true
+  },
+  "acceptance_checks": {
+    "paper_version": "20260924",
+    "full_suite": false,
+    "passed": false,
+    "checks": [
+      {
+        "check": "release",
+        "passed": true,
+        "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+        "seconds": 0.015
+      },
+      {
+        "check": "axioms",
+        "passed": true,
+        "detail": "1490 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260924\\axioms.log",
+        "seconds": 210.922
+      },
+      {
+        "check": "audit-names",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+        "seconds": 10.016
+      },
+      {
+        "check": "named-results",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+        "seconds": 0.75
+      },
+      {
+        "check": "readme",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\readme-names.log; all present",
+        "seconds": 55.953
+      },
+      {
+        "check": "claims",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1632 incomplete assertions (partial=5, unreviewed=1627); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+        "seconds": 0.734
+      },
+      {
+        "check": "prose-review",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+        "seconds": 0.063
+      },
+      {
+        "check": "errata",
+        "passed": false,
+        "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+        "seconds": 0.0
+      }
+    ]
+  },
+  "source_sweep_passed": true,
+  "tooling_sources_sha256": {
+    "tools/check-readme-names.py": "a50a0c23c40c8d3129245c4df53204f7cdfbe1aaac4b8049093760f3ad28a365",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52",
+    "tools/paper_claims.py": "4ed8d527294f1e7e05292d780a18afd90885dce21d7ab141301baa7361d1966a",
+    "tools/paper_release.py": "b4edfc90cf43aaf667a9c44ec88cbf5ddb46319f4aeaf8cb7d3a341958aacee0"
+  },
+  "ledger_counts": {
+    "unreviewed": 1627,
+    "partial": 5,
+    "covered": 20
+  },
+  "unchanged_manuscripts": true,
+  "artifacts": {
+    "archive-validation.py": "22627d972724a1a00909f49f4f390df192cf6a4d34d5c778356285fe495ebf0d",
+    "audit-names.log": "825210263de10f2947f704bf9511866f85e6b27cb052055adcf6eb633093445e",
+    "axiom-union.lean": "63d9a3bed041492da2425e6bf5cb80cfe13ee60309b983b701dae6f834e5e870",
+    "axioms.json": "57b5d1833a5a7851887ff16e096d68cd222a7e031b5bd1b3fbbfae1e0b166a00",
+    "axioms.log": "c129566f651efc18fae0560e0655059f4aacef5fdb9d53bc6c6db49e1fb7cb27",
+    "build-audit-dependencies.py": "0b91973301789c8809a5d45eb323098266a07d58f94415e22db649253a07156d",
+    "build.json": "177ed34e3879b7b37a1d500d852f1dbce55d498371377ac1619c1991066bf9bd",
+    "build.log": "0934bfe1019a086b12682aa4e8b0dfc473551e8bca5c50be15fbaa90f229c450",
+    "claims.log": "ae77c0a79e9ae9b8e1d074ee17d93eaed5014c6eb7a5fa0fccb8face9c166059",
+    "module-certificates.json": "59bace76d1ad45febd46519ceed24424c028d2ff0aed61e8767160dac2299e2f",
+    "named-results.log": "a967dbb7acc00b9ed5e6fa003e81078c6d309d596f11265a5b2e389d2590e5e7",
+    "prose-review.log": "31c28e3b5b9eb2344cc2b28d575d6528e1a154fe74ca1b9272eceab76e9c2a48",
+    "readme-names.log": "979601aa728f7b58079dd2e12ced803d484f9ee1ccafb918391d8b0336ee53cd",
+    "release.json": "13fc9561056d5a706e75bcd8b460fe04fc1716e94a9591e1d37ebd28569f7312",
+    "report.json": "1aae0e433faf787c10e17d63de48c8e279e415a6d55b78bafd70bb6ffab3df5a",
+    "review.json": "60f055c3277bfc115cff2456a950180731bab6bcde56a885ef57dfc0a4d990d6",
+    "review.py": "172c1284d2c19eb0c1fde740b0ce36195440cec76a016ceed73ba8d89f43ddc1",
+    "source-sweep.json": "893d431f01d1d796adaa3ddfe26cd774d1f69a14d47c57c5d4b91783c6592b21"
+  }
+}

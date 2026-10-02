@@ -4,7 +4,8 @@
 This is a review ledger, not a proof checker. Coverage requires an explicit
 statement review, named kernel declarations, the independent axiom gate, and
 the full source build. Unlabelled prose requires a separate human/agent review.
-Refreshing after a changed assertion invalidates that assertion's review.
+Changing either manuscript invalidates semantic reviews for the release,
+including unchanged statements whose definitions or context may have changed.
 """
 import argparse
 from collections import Counter
@@ -101,19 +102,31 @@ def inventory(relative):
     return digest(data), entries
 
 
-def snapshot(previous=None):
+def sources_for_version(version):
+    if not re.fullmatch(r'\d{8}', version):
+        raise ValueError('paper version must be an eight-digit date')
+    return tuple(f'documents/{version}/{name}.tex' for name in ('main', 'supplementary'))
+
+
+def snapshot(previous=None, sources=None):
     old = {entry['id']: entry for entry in (previous or {}).get('claims', [])}
     result = {'schema': 1, 'sources': {}, 'prose_review': {}, 'claims': []}
-    for relative in SOURCES:
-        sha, entries = inventory(relative)
+    inventories = {relative: inventory(relative) for relative in (SOURCES if sources is None else sources)}
+    # Hypotheses can change outside a theorem's span or in the other document.
+    # A changed manuscript therefore invalidates the release's semantic reviews,
+    # even when an individual displayed statement is byte-identical.
+    same_context = (previous or {}).get('sources', {}) == {
+        relative: data[0] for relative, data in inventories.items()}
+    for relative, (sha, entries) in inventories.items():
         result['sources'][relative] = sha
         result['prose_review'][relative] = {'status': 'unreviewed', 'review': ''}
-        if (previous or {}).get('sources', {}).get(relative) == sha:
+        if same_context:
             result['prose_review'][relative] = previous.get('prose_review', {}).get(
                 relative, result['prose_review'][relative])
         for entry in entries:
             before = old.get(entry['id'])
-            if before and before['statement_sha256'] == entry['statement_sha256']:
+            if (same_context and before and before['source'] == relative and
+                    before['statement_sha256'] == entry['statement_sha256']):
                 for key in ('status', 'lean_declarations', 'review'):
                     entry[key] = before[key]
             result['claims'].append(entry)
@@ -123,8 +136,8 @@ def snapshot(previous=None):
     return result
 
 
-def validate(ledger, require_complete=False):
-    current = snapshot(ledger)
+def validate(ledger, require_complete=False, sources=None):
+    current = snapshot(ledger, sources)
     if current != ledger:
         raise ValueError('manuscript/ledger drift: run refresh and review changed assertions')
     for entry in ledger['claims']:
@@ -167,17 +180,23 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=('refresh', 'check', 'summary'))
     parser.add_argument('--require-complete', action='store_true')
+    parser.add_argument('--paper-version', default='20260908',
+                        help='explicit manuscript date; historical default remains 20260908')
     args = parser.parse_args()
     try:
-        previous = json.loads(LEDGER.read_text(encoding='utf-8')) if LEDGER.exists() else None
+        sources = sources_for_version(args.paper_version)
+        ledger_path = ROOT / f'results/paper-claims-{args.paper_version}.json'
+        previous = json.loads(ledger_path.read_text(encoding='utf-8')) if ledger_path.exists() else None
         if args.command == 'refresh':
-            ledger = snapshot(previous)
-            LEDGER.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            ledger = snapshot(previous, sources)
+            ledger_path.parent.mkdir(parents=True, exist_ok=True)
+            ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         else:
             if previous is None:
                 raise ValueError('missing ledger; run refresh')
             ledger = previous
-        validate(ledger, args.require_complete)
+        validate(ledger, args.require_complete, sources)
+        print('Paper version: ' + args.paper_version)
         counts = Counter(entry['status'] for entry in ledger['claims'])
         print(f"Paper assertion inventory: {len(ledger['claims'])}; " +
               ', '.join(f'{key}={value}' for key, value in sorted(counts.items())))

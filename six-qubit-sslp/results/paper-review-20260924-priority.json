@@ -1,0 +1,243 @@
+{
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "scope": "19 priority named statements plus Singleton display; follow-up reviews in results/minimum-length-20260924, results/colored-subspaces-20260924 and results/colored-lift-smith-20260924; kernel validation recorded separately",
+  "reviews": {
+    "main.tex:thm:finite-projective-group": {
+      "status": "covered",
+      "reason": "The hypotheses are detection of each pure Z operator, not all weight-one errors. ZDetectionHypothesis supplies finite_intrinsicGroup_of_zDetects and the nonidentity primitive-lift package under exactly this hypothesis; BetaExists supplies its finite bound. The abelian quotient holds independently. The lift package carries m dividing q, and HasPrimitiveLift retains a primitive numerator and the physical representative. The older whole_of_finite requires d >= 2 and is deliberately not used as the sole justification.",
+      "lean_declarations": [
+        "MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects",
+        "MainTheory.ZDetection.quantitative_projective_group_of_zDetects",
+        "MainTheory.BetaExists.betaBound_betaOf",
+        "MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm"
+      ],
+      "statement_sha256": "4336b1c80ecc6680089dde2c9ccd36fac196e422fb29134785a1085fcd8c6190"
+    },
+    "main.tex:thm:general-sslp-normal-form": {
+      "status": "covered",
+      "reason": "The existing forward theorem retains the original projective class and the actual local-X/physical-permutation frame transport, sorted primitive angles, colors, multiplicities, fibers and distance. The new paper-facing converse takes arbitrary subspaces with the manuscript dimensions and full computational-basis fiber containments. Euclidean orthonormal bases are transported back to the original state type; each chosen sector spans exactly the supplied subspace. Distinct colors imply orthogonality and independence, not additional assumptions. The assembled frame spans their supremum, has dimension K, and satisfies the full KL predicate from basis-independent scalar compression for all Pauli weights strictly below d. The d=0 boundary follows from the identity Pauli and frame orthonormality, avoiding a hidden positive-distance restriction. The final ExactCode retains that same span, the literal finite diagonal gate with angle a, and an intrinsic class of exact order m. The zero color is a designated finite index; including it in the gcd does not change the gcd of the other colors. No supplied frame or assumed directness remains.",
+      "lean_declarations": [
+        "MainTheory.PaperGeneralSSLP.general_sslp_normal_form",
+        "MainTheory.PaperGeneralSSLP.general_sslp_converse",
+        "MainTheory.SubspaceCode.codeSpan_frame",
+        "MainTheory.SubspaceCode.hasDistance_iff",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_eq",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sslp_converse"
+      ],
+      "statement_sha256": "371a95bef4eeba2e1ce4cd3b2c6b7f736079318773e2f836a32f3d8e3f8bd40c"
+    },
+    "main.tex:cor:rank-two-sslp": {
+      "status": "covered",
+      "reason": "rank_two_sslp assumes precisely a nontrivial intrinsic diagonal group and d >= 2. It gives cyclicity, finiteness and a sorted normal form with m equal to the full group cardinality, both residues, primitivity, and explicit X/permutation transport of the code. rank_two_sslp_converse supplies the reverse implication for the actual orthonormal supported pair at arbitrary length. This normal form selects the generator after the allowed unit-power normalization; zero amplitudes are allowed by the support predicate.",
+      "lean_declarations": [
+        "MainTheory.PaperGeneralSSLP.rank_two_sslp",
+        "MainTheory.PaperGeneralSSLP.rank_two_sslp_converse"
+      ],
+      "statement_sha256": "8afd5920343787331df6622096afb7880d86a778db33f04abe9ae82a89624b3f"
+    },
+    "main.tex:lem:phase-sectors": {
+      "status": "covered",
+      "reason": "phaseSectors_of_zDetects and PhaseSectorFull use Z detection alone. sectorProbability is the diagonal sector projector divided by positive rank; its support is the strictly-positive locus. The package proves total mass one and common first moments. SectorMeanValue.sectorMean_eq_klScalar identifies that mean with (1-lambda_j)/2. No X/Y detection or distance assumption is imported from the stronger SectionTwoGeneral variants.",
+      "lean_declarations": [
+        "MainTheory.ZDetection.phaseSectors_of_zDetects",
+        "MainTheory.SectorMeanValue.sectorMean_eq_klScalar",
+        "MainTheory.PhaseSectorFull.phaseSectorFull_package",
+        "MainTheory.SectionTwoGeneral.phaseSectors",
+        "MainTheory.SectionTwoGeneral.phaseSectors_mean"
+      ],
+      "statement_sha256": "d5ca1a1896089780dcf2a50ae92217e7b1a6bae7293dcbbff9481b73b5bf0824"
+    },
+    "main.tex:lem:denominator-clearing": {
+      "status": "covered",
+      "reason": "The preceding paragraph fixes an invertible integer pivot and its final Smith factor. clearing_smithLastFactor proves both integral scaled coordinates and divisibility of their least common denominator. nonempty_smithWitness_of_det supplies the witness from nonsingularity, with inverseDenominator_eq_smithLastFactor identifying the factor independently of the witness. This covers the added least-common-denominator sentence as well as the display.",
+      "lean_declarations": [
+        "MainTheory.PivotSmithNormalForm.clearing_smithLastFactor",
+        "MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det"
+      ],
+      "statement_sha256": "2c84990ace98cebd61ca5e663829e14ce3988031e74d4a052bfc917ee9dfc48e"
+    },
+    "main.tex:thm:colored-finite-lift": {
+      "status": "covered",
+      "reason": "The single combined theorem assumes only single-site Z detection, an actual diagonal symmetry, its real-angle representative and nontrivial intrinsic class. Its spectral resolution is the canonical one, so ell is the actual number of distinct logical eigenvalues, not an unrelated existential sector count. It chooses one nonsingular pivot P of the colored matrix and uses L=P.rationalLift throughout. Its zero-one partner uses the same rows and columns. The literal binary solution solves the selected integral-right-hand-side system, and undoing column signs and extending by zero gives exactly L.augmented. An actual normalized Smith witness W is constructed for that binary matrix, with L.order dividing W.lastFactor. The same L gives the primitive modular angle and actual symmetry in the original intrinsic class; its projective order divides L.order. The bound s<=n+ell-1, the Smith-factor beta bound and ell<=K all occur in the same conclusion. An attained minimum over HasPrimitiveLift is bounded by this very L.order and hence beta_(n+ell-1). There is no supplied pivot/Smith witness, stronger distance assumption, or separately chosen physical lift. The root uses the existing repository constructions rather than re-proving Smith existence or rationalization.",
+      "lean_declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
+        "MainTheory.BinaryPivotLift.binarySolution_solves",
+        "MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution",
+        "MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor",
+        "MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det"
+      ],
+      "statement_sha256": "5a2d22d109fddf02c646ede1f3fab883a47b53a57cbd91191da395e2e6d3dba2"
+    },
+    "main.tex:def:six-sslp-orbits": {
+      "status": "partial",
+      "reason": "SSLPMomentDatum/SSLPMomentEquivalent retain q,m and full fibers under the cube action; SSLPOrbitLevels.KSet is an actual normalized KL completion. The new support-dimension-bound clause is more specific than the previous geometry/active-rank wording. Its existential choice of feasible supports with a common shifted span and q <= beta_rho must be connected to the precise acceptance predicate used by the 66-key enumeration. The older quotient definitions alone do not certify that new clause.",
+      "lean_declarations": [
+        "MainTheory.ClassificationLevels.SSLPMomentDatum",
+        "MainTheory.ClassificationLevels.SSLPMomentDatum.geometry",
+        "MainTheory.ClassificationLevels.actSSLPDatum",
+        "MainTheory.ClassificationLevels.SSLPMomentEquivalent",
+        "MainTheory.ClassificationLevels.sslpMomentSetoid",
+        "MainTheory.ClassificationLevels.SSLPMomentOrbit",
+        "MainTheory.ClassificationLevels.labels_eq_of_sslpMomentEquivalent",
+        "MainTheory.SSLPOrbitLevels.MomentOrbit",
+        "MainTheory.SSLPOrbitLevels.KSet",
+        "MainTheory.SSLPOrbitLevels.IsRealizationOrbit",
+        "MainTheory.SSLPOrbitLevels.RealizationOrbit",
+        "MainTheory.SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent",
+        "MainTheory.SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent"
+      ],
+      "statement_sha256": "9b03253f2da1267a9ca9521f30ae072a9935493571f3b80cdcb69e2544f5ca5b"
+    },
+    "main.tex:def:six-classification-levels": {
+      "status": "partial",
+      "reason": "The intrinsic group, realization objects, enumerator images and LU quotient are defined. The updated text also refers explicitly to the more restrictive bit-flip/diagonal/permutation relation and to the B-enumerator transform. The former has CodeEquiv semantics and the latter MacWilliams theorems, but their exact links to this version of eq:LU-equivalence and the stated four-level objects are not fully checked in this pass. The four level_* wrappers alone do not cover these additions.",
+      "lean_declarations": [
+        "MainTheory.ClassificationLevels.IntrinsicProjectiveDiagonalLogicalGroup",
+        "MainTheory.ClassificationLevels.IntrinsicEquivalent",
+        "MainTheory.SSLPOrbitLevels.RealizationOrbit",
+        "MainTheory.SSLPOrbitLevels.MomentOrbit",
+        "MainTheory.ClassificationLevels.WeightEnumeratorObject",
+        "MainTheory.ClassificationLevels.weightEnumeratorImage",
+        "MainTheory.ClassificationLevels.WeightEnumeratorEquivalent",
+        "MainTheory.ClassificationLevels.LUEquivalent",
+        "MainTheory.ClassificationLevels.LocalUnitaryCodeClass",
+        "MainTheory.ClassificationLevelsSix.level_one_intrinsic_group",
+        "MainTheory.ClassificationLevelsSix.level_two_realization_orbits",
+        "MainTheory.ClassificationLevelsSix.level_three_weight_enumerators",
+        "MainTheory.ClassificationLevelsSix.level_four_lu_class"
+      ],
+      "statement_sha256": "92f44a6f4ab8328f9cc8893a237136dcd3c49130af1a7d5eccc6b665f5c71c38"
+    },
+    "main.tex:thm:six-15-sslp-realization-orbits": {
+      "status": "covered",
+      "reason": "The 66-key semantic completion predicate is normalized full distance-three KL on the actual fibers. hasCompletion_iff_mem_realizationKeys supplies both implications; realizationKeys_paperIds identifies the displayed paper IDs; card_realization_orbits and realizationKeys_orderDistribution give 15 and 11:3:1. The renamed candidate-class terminology does not assert LU classification. This checks the named conclusion on the enumerated keys; the separate general definition/support-bound correspondence remains recorded under def:six-sslp-orbits.",
+      "lean_declarations": [
+        "MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys",
+        "MainTheory.RealizationOrbits15.card_realization_orbits",
+        "MainTheory.RealizationOrbits15.realizationKeys_paperIds",
+        "MainTheory.RealizationOrbits15.realizationKeys_orderDistribution"
+      ],
+      "statement_sha256": "ac780ae6e92a8245388c538dd69775c3236c94b31eaecc40b3092616e047fccb"
+    },
+    "main.tex:thm:six-WE-status": {
+      "status": "covered",
+      "reason": "Realized11Statement explicitly contains each of the eleven displayed exact WImage equalities at the paper representatives. FI and FII unfold to the displayed L and M vectors; provedImages_eq proves their union. OpenOrbitsRealized proves nonemptiness for keys 0..3, while the text correctly leaves equality descriptions of those four sets open. No global enumerator conjecture or LU classification is being asserted or marked proved.",
+      "lean_declarations": [
+        "MainTheory.WImageSettled62.all_11_realized_WImages",
+        "MainTheory.ProvedWEUnion.provedImages_eq",
+        "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion"
+      ],
+      "statement_sha256": "5b70be559386ce911908f6df1db25e0494b1bd9740002822dac2e45304c2d500"
+    },
+    "main.tex:thm:unique-C5-LU": {
+      "status": "covered",
+      "reason": "exists_cubeParameter_orbit36 proves membership of the source code normal form in paper class 36. original_equivalent_canonical supplies the stronger amplitude-level CodeEquiv.Equivalent on the actual representative; its generators are physical permutations, bit flips and diagonal unitaries, together with logical phases/interchange that leave the projector unchanged. unique_C5_LU and luEquivalent_of_orderFive supply the resulting LU projector statement. The code is six-qubit throughout; this does not imply a length lower bound.",
+      "lean_declarations": [
+        "MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36",
+        "MainTheory.OrderFiveOrbitMembership.unique_C5_LU",
+        "SixQubit.Orbit36Certified.original_equivalent_canonical",
+        "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive"
+      ],
+      "statement_sha256": "92eda346e4b9e28604e68e24666cb210e02c5b22c4251402b777c643abecf4ae"
+    },
+    "supplementary.tex:thm:o45-weightimage": {
+      "status": "partial",
+      "reason": "PaperSupplementaryImages.o45_weight_image proves the exact A-enumerator interval. The revised theorem now also includes a B-enumerator vector and the beta/gamma/sigma triangle parametrization. The old single declaration does not state those clauses. Their MacWilliams and full moment/phase parametrization bridges require separate checking before this expanded named theorem can be covered.",
+      "lean_declarations": [
+        "MainTheory.PaperSupplementaryImages.o45_weight_image"
+      ],
+      "statement_sha256": "54161edebad197df9c7bd6d033b5b4d37319a7c9251dff5502e961bc0875baee"
+    },
+    "supplementary.tex:q2fam:thm:inclusions": {
+      "status": "covered",
+      "reason": "The four FI inclusions target the literal mod-two angles 000111, 001111, 011111 and 111111, residues 0 and 1, matching q2fam:eq:records. Their proofs use ParityCircleImage and exact supported normalized distance-three words. WImageOrbit4M supplies the complete FII intersection for classes 1 and 4. Closed Icc intervals include both endpoints. These statements prove the inclusions and attainment by an alternative certified construction; they do not certify every step of the subsequent split-qubit narrative.",
+      "lean_declarations": [
+        "MainTheory.WImageOpenL.FI_subset_orbit1",
+        "MainTheory.WImageOpenL.FI_subset_orbit2",
+        "MainTheory.WImageOpenL.FI_subset_orbit3",
+        "MainTheory.WImageOpenL.FI_subset_orbit4",
+        "MainTheory.WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4"
+      ],
+      "statement_sha256": "5617d1a1488d22df532fa2a17d8c908ed0974fbec33fae0c03835dcef87ef1c0"
+    },
+    "supplementary.tex:thm:main-result-I": {
+      "status": "covered",
+      "reason": "IntrinsicOrderAudit.natCard_mem and GeneralFiniteness.isCyclic classify each nontrivial intrinsic diagonal group. SixQubitIntrinsicOrderSet.including_identity states equality of attained element orders with {1,2,3,5}, including all lower-bound witnesses, not only a restriction. orderOf_le_five and order_five_attained establish the maximum. All refer to actual ExactCode 6 2 3 projectors and their intrinsic groups.",
+      "lean_declarations": [
+        "MainTheory.IntrinsicOrderAudit.natCard_mem",
+        "MainTheory.GeneralFiniteness.isCyclic",
+        "MainTheory.SixQubitIntrinsicOrderSet.including_identity",
+        "MainTheory.IntrinsicOrderAudit.orderOf_le_five",
+        "MainTheory.SixQubitIntrinsicAttainment.order_five_attained"
+      ],
+      "statement_sha256": "b4dfd307b3edf5ca41e88e4bc7647335720c7e993f3bc835fd432dcc8c8a39e9"
+    },
+    "supplementary.tex:thm:main-result-II": {
+      "status": "covered",
+      "reason": "The 66-key semantic completion predicate is normalized full distance-three KL on the actual fibers. hasCompletion_iff_mem_realizationKeys supplies both implications; realizationKeys_paperIds identifies the displayed paper IDs; card_realization_orbits and realizationKeys_orderDistribution give 15 and 11:3:1. The renamed candidate-class terminology does not assert LU classification. This checks the named conclusion on the enumerated keys; the separate general definition/support-bound correspondence remains recorded under def:six-sslp-orbits.",
+      "lean_declarations": [
+        "MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys",
+        "MainTheory.RealizationOrbits15.card_realization_orbits",
+        "MainTheory.RealizationOrbits15.realizationKeys_paperIds",
+        "MainTheory.RealizationOrbits15.realizationKeys_orderDistribution"
+      ],
+      "statement_sha256": "772ac61aa41758d6fe141b0c89286da44d0ae24ffafdd2922db4388ff9be7f8b"
+    },
+    "supplementary.tex:thm:main-result-III": {
+      "status": "covered",
+      "reason": "Realized11Statement explicitly contains each of the eleven displayed exact WImage equalities at the paper representatives. FI and FII unfold to the displayed L and M vectors; provedImages_eq proves their union. OpenOrbitsRealized proves nonemptiness for keys 0..3, while the text correctly leaves equality descriptions of those four sets open. No global enumerator conjecture or LU classification is being asserted or marked proved.",
+      "lean_declarations": [
+        "MainTheory.WImageSettled62.all_11_realized_WImages",
+        "MainTheory.ProvedWEUnion.provedImages_eq",
+        "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion"
+      ],
+      "statement_sha256": "cefcdfcf715ae3065da205a5dbc416944848d74a53efd2d473892022cf237af8"
+    },
+    "supplementary.tex:thm:main-result-IV": {
+      "status": "covered",
+      "reason": "exists_cubeParameter_orbit36 proves membership of the source code normal form in paper class 36. original_equivalent_canonical supplies the stronger amplitude-level CodeEquiv.Equivalent on the actual representative; its generators are physical permutations, bit flips and diagonal unitaries, together with logical phases/interchange that leave the projector unchanged. unique_C5_LU and luEquivalent_of_orderFive supply the resulting LU projector statement. The code is six-qubit throughout; this does not imply a length lower bound.",
+      "lean_declarations": [
+        "MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36",
+        "MainTheory.OrderFiveOrbitMembership.unique_C5_LU",
+        "SixQubit.Orbit36Certified.original_equivalent_canonical",
+        "MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive"
+      ],
+      "statement_sha256": "96af2e5596240c5dc4e3555ce196edb30598e38acf9222da99c4cf8b132b9b80"
+    },
+    "main.tex:cor:six-C5-minimum-length": {
+      "status": "covered",
+      "reason": "All three clauses now have actual matrix-level theorems. minimum_length quantifies over arbitrary n, ExactCode n 2 d with d >= 3, arbitrary local U(2) matrices and their literal tensor-kernel action on the orthonormal encoding. Projective order five is orderOf of the faithful adjoint representation of the logical unitary; its kernel consists exactly of scalar matrices. KL-preserving ancilla padding and the exact A1 recurrence give positive A1 when n < 6. The local eigenbasis construction preserves the full distance and LU class and changes the logical matrix only by a unit scalar; the quotient/matrix bridge supplies an actual intrinsic element of order five. Six-qubit rigidity therefore forces A1 = 0. canonical_attains uses the explicit c36,d36 states, with the same logical matrix/projective-order interface; six_qubit_lu_unique_of_distance_ge_three supplies uniqueness under the actual LU relation including physical permutations. This does not certify the following full-transversal-group/Clifford prose consequence or the unqualified Singleton display.",
+      "lean_declarations": [
+        "MainTheory.MinimumLengthOrderFive.minimum_length",
+        "MainTheory.MinimumLengthOrderFive.canonical_attains",
+        "MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three"
+      ],
+      "statement_sha256": "72ce04092cc48bfde4699a4439c9c175271be62d97746d5a351a432c0a072990"
+    },
+    "supplementary.tex:cor:main-order-five-minimum-length": {
+      "status": "covered",
+      "reason": "All three clauses now have actual matrix-level theorems. minimum_length quantifies over arbitrary n, ExactCode n 2 d with d >= 3, arbitrary local U(2) matrices and their literal tensor-kernel action on the orthonormal encoding. Projective order five is orderOf of the faithful adjoint representation of the logical unitary; its kernel consists exactly of scalar matrices. KL-preserving ancilla padding and the exact A1 recurrence give positive A1 when n < 6. The local eigenbasis construction preserves the full distance and LU class and changes the logical matrix only by a unit scalar; the quotient/matrix bridge supplies an actual intrinsic element of order five. Six-qubit rigidity therefore forces A1 = 0. canonical_attains uses the explicit c36,d36 states, with the same logical matrix/projective-order interface; six_qubit_lu_unique_of_distance_ge_three supplies uniqueness under the actual LU relation including physical permutations. This does not certify the following full-transversal-group/Clifford prose consequence or the unqualified Singleton display.",
+      "lean_declarations": [
+        "MainTheory.MinimumLengthOrderFive.minimum_length",
+        "MainTheory.MinimumLengthOrderFive.canonical_attains",
+        "MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three"
+      ],
+      "statement_sha256": "57129229b2beb8de89e63aa4b93db44d341c82c53a76ba11528ba8d729f98262"
+    },
+    "main.tex:eq:quantum-Singleton": {
+      "status": "partial",
+      "reason": "The latest preceding sentence still has no K>=2 restriction. The rank-one ExactCode 3 1 3 counterexample continues to contradict the integer-exponent inequality. Keep the author decision to record an erratum without editing TeX. The qualified quantum_singleton theorem is not a proof of the unqualified display.",
+      "lean_declarations": [
+        "MainTheory.SingletonRankOneCounterexample.violates_unrestricted_singleton",
+        "MainTheory.QuantumSingleton.quantum_singleton"
+      ],
+      "statement_sha256": "1e4f7e5c56b33e1c55971f3343a350324261d16289fb95e823d01902044d14df"
+    }
+  }
+}

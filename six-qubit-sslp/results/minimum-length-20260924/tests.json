@@ -1,0 +1,10 @@
+{
+  "command": "python -m unittest discover -s tools/tests -v",
+  "exit_code": 0,
+  "tests_run": 100,
+  "passed": 92,
+  "skipped": 8,
+  "skip_reason": "Opt-in small Lean controls were not enabled; the full actual axiom audit was executed separately.",
+  "new_regression": "ReadmeFailures.test_current_source_imports_bypass_stale_umbrella",
+  "tests_source_sha256": "bd1e0d15def2ba7a69113c651fc766f341f687e9009489143f3a23ea486901fa"
+}

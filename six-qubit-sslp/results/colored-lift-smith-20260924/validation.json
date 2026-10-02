@@ -1,0 +1,121 @@
+{
+  "validated_at_utc": "2026-09-26T23:07:12.422997+00:00",
+  "platform": "Windows; native PowerShell, lake and Lean; no WSL",
+  "paper_version": "20260924",
+  "proof_increment_passed": true,
+  "full_manuscript_certification": false,
+  "source_hashes": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "build": {
+    "scope": "Complete current audit import dependency closure; content-validated reuse",
+    "modules": 14094,
+    "rebuilt": 2,
+    "reused": 14092,
+    "context": "ef7f64c6c7ae60c2b79073970d4bbc98f480b16eff48cf9d6d8c132aebb4b841",
+    "note": "The two new leaf modules were compiled by the serial source driver before the shared-state kernel audit. Individual-print audit wrappers were not built."
+  },
+  "axioms": {
+    "roots": 1497,
+    "allowed_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "passed": true
+  },
+  "acceptance_checks": {
+    "paper_version": "20260924",
+    "full_suite": false,
+    "passed": false,
+    "checks": [
+      {
+        "check": "release",
+        "passed": true,
+        "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+        "seconds": 0.0
+      },
+      {
+        "check": "axioms",
+        "passed": true,
+        "detail": "1497 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260924\\axioms.log",
+        "seconds": 133.718
+      },
+      {
+        "check": "audit-names",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\audit-names.log; all audited and ledger-cited names resolve",
+        "seconds": 7.797
+      },
+      {
+        "check": "named-results",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\named-results.log; named-results document is current",
+        "seconds": 0.735
+      },
+      {
+        "check": "readme",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20260924\\readme-names.log; all present",
+        "seconds": 41.718
+      },
+      {
+        "check": "claims",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\claims.log; FAIL: 1627 incomplete assertions (partial=4, unreviewed=1623); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@244, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+        "seconds": 0.75
+      },
+      {
+        "check": "prose-review",
+        "passed": false,
+        "detail": "exit=1; log=tmp\\verification\\20260924\\prose-review.log; FAIL: selected release prose review is not complete",
+        "seconds": 0.047
+      },
+      {
+        "check": "errata",
+        "passed": false,
+        "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention",
+        "seconds": 0.0
+      }
+    ]
+  },
+  "source_sweep_passed": true,
+  "tooling_sources_sha256": {
+    "tools/check-readme-names.py": "a50a0c23c40c8d3129245c4df53204f7cdfbe1aaac4b8049093760f3ad28a365",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52",
+    "tools/paper_claims.py": "4ed8d527294f1e7e05292d780a18afd90885dce21d7ab141301baa7361d1966a",
+    "tools/paper_release.py": "b4edfc90cf43aaf667a9c44ec88cbf5ddb46319f4aeaf8cb7d3a341958aacee0"
+  },
+  "ledger_counts": {
+    "unreviewed": 1623,
+    "partial": 4,
+    "covered": 25
+  },
+  "unchanged_manuscripts": true,
+  "github_baseline": "7ac9a049a8cfb997427a24cb33547fb0592fc170",
+  "github_reused_sources": 9,
+  "artifacts": {
+    "archive-validation.py": "cf9f991c18731458479e9e0900e967bcbd2c09ff1e6af7c1c020afcf7cb416a2",
+    "audit-names.log": "ce4c3671acb0f32b8ddf18508d175c4c899155a6281293335405956ef8a64f0b",
+    "axiom-union.lean": "9ac92e66452b460a58a312aaeff62cf24494520df99954348e4eb5057fffe8f3",
+    "axioms.json": "c56b6717ea5aa9012c59d3c31939495a1553625cc5b99d52b6ee9c7e43f4d06b",
+    "axioms.log": "5f5327169e16b1a357fddf13409d161f4c9f8f40721a3cb1095641e013227ae9",
+    "build-audit-dependencies.py": "0a3f35f250831aa8262d0d74ec00b317be9cd066727f6e41558306b7fcc23aa9",
+    "build.json": "9ca0cce993c1a3838031cf73c2059570ea1474b0491277fb17008ee8fa4e109b",
+    "build.log": "fcb4dc7c2ac83f82dcdd855853f4d3cf2055fbcb963ea1351450c04b84b054ef",
+    "claims.log": "f7411443d2bef26e633a0449c9a0b8d729fe8d0f24b9556337d69788ab2f113f",
+    "github-comparison.json": "63cf950447b1ea526f75336f11131c1a4e8f04b165b9965ce4917f83394c509a",
+    "github-comparison.py": "8fa917637c4d947155ecc7c7c50784f57dfd1887a3684889e7cfbbbf8a43e0ff",
+    "module-certificates.json": "6007c80dbc9f71dcfe5e853b263a9708a314f584bc1cb3bc953183da31d2f4c8",
+    "named-results.log": "a967dbb7acc00b9ed5e6fa003e81078c6d309d596f11265a5b2e389d2590e5e7",
+    "prose-review.log": "31c28e3b5b9eb2344cc2b28d575d6528e1a154fe74ca1b9272eceab76e9c2a48",
+    "readme-names.log": "62fa1e96ce4ba904e0defdbc323dda387bb0d36378d65848bf6432543315be6f",
+    "release.json": "b358adbcbcbde198cd52cf38bdbcd194d5c1cd85e8bd3f625dc1a3273f0a7a38",
+    "report.json": "73c7543a08bb7607f6bb8a5523cdac68edbe2f1ffe21beeec56b6ee15b634718",
+    "review.json": "9408928e7a33519192e33ad1e71e45fa18582711f57ac105a3c074ad944a001a",
+    "review.py": "30d49872156690fb92c16b378ff11bb77438ea680b659b9ac01f617477d32ddf",
+    "source-sweep.json": "931585786513d7a046a4ee12ce990b646c01207ff1f8c8543e49fb0f74d78f6b"
+  }
+}

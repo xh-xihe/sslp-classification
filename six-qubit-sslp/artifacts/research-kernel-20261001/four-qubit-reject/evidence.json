@@ -1,0 +1,76 @@
+{
+  "schema": "sslp.evidence.v1",
+  "scope": "single_instance",
+  "input_sha256": "a77ae7632c61156f38c69a9b9ad64e7ed1d287a15b60ec00c28289b0fd40ab1c",
+  "exact_passed": false,
+  "exact_report_sha256": "bf3dfb076162da224f4f101a9e25e7252f3922ad301187a6908686fdfb7ed2de",
+  "tooling_sha256": {
+    "tools/sslp_explorer.py": "07abb326b3e489d7fa0f70b910c4920ad6a7f5791f18f6db52999d5201f0f980",
+    "tools/explorer/__init__.py": "d0f29faf52849eacc4292b90cd25aa583c7bf253a2dc4f1cca17e5f2b97c4814",
+    "tools/explorer/class36.py": "f2ba17f6550cc069dc3034a8dc0683c406781b0a91bbda1f9afebf778f460bb3",
+    "tools/explorer/research.py": "7541e013f99435498b1ef7a6accb1d7db6069eb5ad7a2d39f0d865d91a93fd4e",
+    "tools/generators/gen36code.py": "b5e1de95df9ccc9e6bb6900bdd0b9cf30cb1082dcec506fbb59ff40dc41b8be4",
+    "tools/core/orbit.py": "6fa922046c552d6c3496044978e6c029ae1372184953856bd04b225788817a27",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/lean_source.py": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52"
+  },
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "manuscript_correspondence": "requires separate semantic review; source hashes are provenance only",
+  "kernel": {
+    "status": "failed",
+    "scope": "supplied codewords: normalization, orthogonality, requested Pauli-distance lower bound; supplied diagonal physical phase layer on every logical superposition, assuming zeta^q=1; K=1 is a rank-one KL statement, not nontrivial logical information",
+    "not_certified": [
+      "gate-level encoder",
+      "classification exhaustiveness",
+      "full manuscript",
+      "minimal physical or logical gate order"
+    ],
+    "input_sha256": "a77ae7632c61156f38c69a9b9ad64e7ed1d287a15b60ec00c28289b0fd40ab1c",
+    "certificate_sha256": "80dfa3141519f64d85c0eb314b86dfa4f7804301d8bf4511b3ec618c3183c090",
+    "axioms": null,
+    "exit_code": 1,
+    "seconds": 67.375,
+    "dependency_context_sha256": "ef7f64c6c7ae60c2b79073970d4bbc98f480b16eff48cf9d6d8c132aebb4b841",
+    "dependency_modules": {
+      "SS.QSqrt23i": "973cf965986c7a8920755fb7727fbcdc1e5e6e91a4389eb22e45deb5db6bcd01",
+      "SS.QSqrt235i": "4433cfe018d84e6bac597c1d73c2b8e93e61a9600fa3173e8423aa96162baa83",
+      "SS.BitString": "44be6b1f8c8b3f79ba9f9a19d9cf8fff0863ce8e7e4b1fb985accd280ed3f810",
+      "SS.Basic": "39be49ebd90f78fa6b5145014eaa9a1febe66950aa30d21b7c590adad32cceb7",
+      "SS.ResidueShiftScreen": "c35cd172d9e123604c06e4b2ac93572de9cb6b77bb93c0823b153b9d31bd171d",
+      "SS.Pauli": "c46064c200c5b11a9e65db3cf983e9e06a26f7c22a6344e087341983a22d685b",
+      "SS.FullKL": "1a3622e481db24ff089db036619092aa9522ceb6781559c9fa678816b60da928",
+      "SS.DiagonalAction": "2490da8903acc4d5ce8657f12f014b5cb5a973fdfa47024521274ffe457897a2",
+      "SS.HilbertKL": "573e712a332d7b689844372144d0a1aac8cb44aee552c71970364986f3da0550",
+      "SS.QSqrt235iC": "2397c1a15475f9f3a1c5e09d59bcaa5b5286dc9aa81c0fafe5f2bc4abe62c606",
+      "SS.ExactAmplitude": "d3c0a6b315b2aad9efc66c28d5caab8e5f3d8664705c6055a9c348f9411b28c1",
+      "SS.ExactCode": "f6ed8cc68dd412168412d5eafb3e2a79a5a14e530ef96ff0c4238c06bc2abf19"
+    },
+    "source_sha256": {
+      "SS.QSqrt23i": "0ca40f70400c2019f19f654dd1460f8b6630b1123350adfd5a4078c41531044b",
+      "SS.QSqrt235i": "bb6029c35871edcf0644972bc702979b13e6ddc224188780ed6341065d0dab50",
+      "SS.BitString": "0b085ba950691abd1e25ae9b1fba1fa7cc46e950446a5805b378a4791af68c00",
+      "SS.Basic": "308da62298e982f331228ea59b84595c38cd1125a308e9ed8ccc77b1be2d8dee",
+      "SS.ResidueShiftScreen": "3d681db1ae58e53b94717e3d38ce7466991055b57f9b0b96bcbaa3f047b29379",
+      "SS.Pauli": "0a19e396dabb33d630a9ee174a2cfe285f10fc1a39d2a3178e2eb1fb4e24c0a8",
+      "SS.FullKL": "5a1ee67e17ce67b1d913aee26a207ad4c2dae5d94b32c0acbf7ef909af849ac2",
+      "SS.DiagonalAction": "f0e6f729c38ac26eb2c9b775725dbc97608e2bc5c60793ee297aac06b235b5fb",
+      "SS.HilbertKL": "14091efbb1cf161f3c30bb89b73ab79678080ae2e41bfeffdee9a418028c45f7",
+      "SS.QSqrt235iC": "95cd038103991d8cc820229fb1d235945d9650fcc4fa620a55e6c3f465153179",
+      "SS.ExactAmplitude": "0fea4157ba154d84a275b86d66d77914290db8bec1ea0c20dbe710c3b7d68eb8",
+      "SS.ExactCode": "b89bc1447475086059c53d6fb5543179f58c33b8fe716d3b908be4b339c264dd"
+    },
+    "configuration_sha256": {
+      "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+      "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+      "lakefile.lean": "a98295c1b60f4a66121ad0cf9753f52df8a680c663671fe268b2455fe52c2ade",
+      "driver": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+      "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+      "lean_executable": "ae20fac75dfa9d92866f9c08acdff978c0f06020ab8c4ee4fc9af9505238cf81"
+    },
+    "rebuilt": 0,
+    "content_validated_reused": 12
+  },
+  "full_manuscript_certified": false,
+  "passed_requested_checks": false
+}

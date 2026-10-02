@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "mode": "existing Windows content-validated cache",
+  "targets": [
+    "MainTheory.Audit",
+    "SixQubit.Audit",
+    "SixQubit.CodeWrapAudit",
+    "SixQubit.Orbit7CollinearAxiomCheck"
+  ],
+  "modules": 14088,
+  "rebuilt": 0,
+  "reused": 14088,
+  "record_sha256": "0889c2db07693d189aa127463a7e98910c5ee3543b3cb7688e31e35af265ff25",
+  "fresh_source_rebuild": false,
+  "full_acceptance_suite": false
+}

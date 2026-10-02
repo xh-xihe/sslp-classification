@@ -1,0 +1,202 @@
+{
+  "schema": "sslp.reproduction-run.v1",
+  "status": "passed",
+  "environment": {
+    "schema": "sslp.reproduction-doctor.v1",
+    "ready": true,
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_executable": "/tmp/sslp-linux-20260926/venv/bin/python",
+    "toolchain": "leanprover/lean4:v4.27.0",
+    "checks": [
+      {
+        "check": "python",
+        "okay": true,
+        "detail": "3.12.3",
+        "remedy": null
+      },
+      {
+        "check": "sympy",
+        "okay": true,
+        "detail": "1.14.0",
+        "remedy": null
+      },
+      {
+        "check": "mpmath",
+        "okay": true,
+        "detail": "1.3.0",
+        "remedy": null
+      },
+      {
+        "check": "git",
+        "okay": true,
+        "detail": "/usr/bin/git",
+        "remedy": null
+      },
+      {
+        "check": "lake",
+        "okay": true,
+        "detail": "/tmp/sslp-linux-20260926/elan/bin/lake",
+        "remedy": null
+      },
+      {
+        "check": "elan",
+        "okay": true,
+        "detail": "/tmp/sslp-linux-20260926/elan/bin/elan",
+        "remedy": null
+      },
+      {
+        "check": "installed_pinned_lean",
+        "okay": true,
+        "detail": "/tmp/sslp-linux-20260926/elan/toolchains/leanprover--lean4---v4.27.0/bin/lean",
+        "remedy": null
+      },
+      {
+        "check": "lean_version",
+        "okay": true,
+        "detail": "Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)",
+        "remedy": null
+      },
+      {
+        "check": "dependency:mathlib",
+        "okay": true,
+        "detail": "fc278a179e431ed10630af63fc05481680c0c7bd",
+        "remedy": null
+      },
+      {
+        "check": "dependency:plausible",
+        "okay": true,
+        "detail": "009dc1e6f2feb2c96c081537d80a0905b2c6498f",
+        "remedy": null
+      },
+      {
+        "check": "dependency:LeanSearchClient",
+        "okay": true,
+        "detail": "5ce7f0a355f522a952a3d678d696bd563bb4fd28",
+        "remedy": null
+      },
+      {
+        "check": "dependency:importGraph",
+        "okay": true,
+        "detail": "8f497d55985a189cea8020d9dc51260af1e41ad2",
+        "remedy": null
+      },
+      {
+        "check": "dependency:proofwidgets",
+        "okay": true,
+        "detail": "c04225ee7c0585effbd933662b3151f01b600e40",
+        "remedy": null
+      },
+      {
+        "check": "dependency:aesop",
+        "okay": true,
+        "detail": "cb837cc26236ada03c81837bebe0acd9c70ced7d",
+        "remedy": null
+      },
+      {
+        "check": "dependency:Qq",
+        "okay": true,
+        "detail": "bd58c9efe2086d56ca361807014141a860ddbf8c",
+        "remedy": null
+      },
+      {
+        "check": "dependency:batteries",
+        "okay": true,
+        "detail": "b25b36a7caf8e237e7d1e6121543078a06777c8a",
+        "remedy": null
+      },
+      {
+        "check": "dependency:Cli",
+        "okay": true,
+        "detail": "55c37290ff6186e2e965d68cf853a57c0702db82",
+        "remedy": null
+      },
+      {
+        "check": "mathlib_artifacts",
+        "okay": true,
+        "detail": "presence check only; verifier hashes actual artifacts",
+        "remedy": null
+      },
+      {
+        "check": "build_lock",
+        "okay": true,
+        "detail": "absent",
+        "remedy": null
+      }
+    ],
+    "note": "Readiness only, not kernel certification or proof of artifact integrity."
+  },
+  "initial_local_cache": {
+    "local_artifacts": 0,
+    "local_stamps": 0
+  },
+  "seconds": 105.868,
+  "launcher_sha256": "d62b0fa6a662c3d3d8519a689f6122d4f911c2c8647af77d98ac629be74d9d87",
+  "extraction": {
+    "schema": "sslp.reproduction-origin.v1",
+    "zip_sha256": "88623d7bc2b7824adab97c24dafacbb7acd5c2b28d4e9e444d09e0812c6a8d92",
+    "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+    "prepared_at": 1790453849.9590757,
+    "existing_local_build_cache": false,
+    "scope": "hash-checked extraction only; no new mathematical verification"
+  },
+  "evidence_sha256": "6cb9f0bfe9b6e7a5e2f837a648c39012699575df4cdba8e5cf972f19bf8f88ad",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "kernel": {
+    "status": "passed",
+    "scope": "supplied amplitudes equal canonical pair; normalization, orthogonality, distance at least 3, physical phase layer on every logical superposition (gate theorem assumes zeta^5=1)",
+    "not_certified": [
+      "gate-level encoder",
+      "classification exhaustiveness",
+      "full manuscript",
+      "minimal physical or logical gate order"
+    ],
+    "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+    "certificate_sha256": "0c9614215a99583909f68f48661d992d7d4a662717e6e16f2648606c72f0cede",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "exit_code": 0,
+    "seconds": 105.531,
+    "dependency_context_sha256": "1c967096a26536f0748f0430472cbfe50ac92f784646240fd83f2ca9ff435f8d",
+    "dependency_modules": {
+      "SS.BitString": "7f613f429f148b7bfcaf84dc3dcf3c3b67aab933d822f9765f0ad94ff926efca",
+      "SS.Basic": "9814d0f1a94b814f4fd4788dd0e8c51f5bff4a6554cd2454cdfdd77fba6f16fd",
+      "SS.ResidueShiftScreen": "5d0c932252178f7585c031abbf70ae63b83101dbce70e77088c4ce9edfa33b2d",
+      "SS.Pauli": "2986c705292745bba373db5b4894829b704453a4201fc9db039c2453852bad7a",
+      "SS.FullKL": "94a38d206712633a089715b92c172bf03bc4b3159f246854186a0b6ab7d467fa",
+      "SS.DiagonalAction": "573bf79126acccf60e2747439e5a5d872651406071dc782e59883b760ea45963",
+      "SS.HilbertKL": "eebe78c3263459a3042768c3922e9cc4f9acae3f32563f0d36f30ecded62c086",
+      "SS.QSqrt23i": "df76dba9979f609448a403c32eed783c0890404c9a17232249e0e881fd5875cc",
+      "SS.QSqrt235i": "c424652f5a323084718f481174d126e5b8a4e366304dbb18c0aeafdf2fcb80fd",
+      "SS.QSqrt235iC": "9a8e592865921a1c0b6a68c00525b9e0cd322666983af34659dfcd31cc77a180",
+      "SixQubit.Orbit36Code": "60cda99b2251452d15ec88d73fae03f647f1dc8dfb18159092429f96d0673bce"
+    },
+    "source_sha256": {
+      "SS.BitString": "0b085ba950691abd1e25ae9b1fba1fa7cc46e950446a5805b378a4791af68c00",
+      "SS.Basic": "308da62298e982f331228ea59b84595c38cd1125a308e9ed8ccc77b1be2d8dee",
+      "SS.ResidueShiftScreen": "3d681db1ae58e53b94717e3d38ce7466991055b57f9b0b96bcbaa3f047b29379",
+      "SS.Pauli": "0a19e396dabb33d630a9ee174a2cfe285f10fc1a39d2a3178e2eb1fb4e24c0a8",
+      "SS.FullKL": "5a1ee67e17ce67b1d913aee26a207ad4c2dae5d94b32c0acbf7ef909af849ac2",
+      "SS.DiagonalAction": "f0e6f729c38ac26eb2c9b775725dbc97608e2bc5c60793ee297aac06b235b5fb",
+      "SS.HilbertKL": "14091efbb1cf161f3c30bb89b73ab79678080ae2e41bfeffdee9a418028c45f7",
+      "SS.QSqrt23i": "0ca40f70400c2019f19f654dd1460f8b6630b1123350adfd5a4078c41531044b",
+      "SS.QSqrt235i": "bb6029c35871edcf0644972bc702979b13e6ddc224188780ed6341065d0dab50",
+      "SS.QSqrt235iC": "95cd038103991d8cc820229fb1d235945d9650fcc4fa620a55e6c3f465153179",
+      "SixQubit.Orbit36Code": "27ad8f448f7601861bc0cf2c0edd5abaacbd26a4abc80d11adbc3c6cc4798201"
+    },
+    "configuration_sha256": {
+      "lean-toolchain": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+      "lake-manifest.json": "a356c5d73e0b1f05515af7e0de265f5ad03ef140b2eb114f95065da2cfb41db4",
+      "lakefile.lean": "a98295c1b60f4a66121ad0cf9753f52df8a680c663671fe268b2455fe52c2ade",
+      "driver": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+      "source_lexer": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+      "lean_executable": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c"
+    },
+    "rebuilt": 11,
+    "content_validated_reused": 0
+  },
+  "full_manuscript_certified": false,
+  "independent_machine": "not established by this command; document host provenance separately"
+}

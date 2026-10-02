@@ -1,0 +1,341 @@
+{
+  "schema": "sslp.agent-run.v1",
+  "status": "answered",
+  "error": null,
+  "provider": {
+    "id": "local-qwen",
+    "adapter": "ollama",
+    "model": "qwen3:14b",
+    "model_class": "open_weights",
+    "enabled": true,
+    "configured_revision": null,
+    "timeout_seconds": 120,
+    "max_output_tokens": 1600
+  },
+  "probe": {
+    "status": "available",
+    "provider": {
+      "id": "local-qwen",
+      "adapter": "ollama",
+      "model": "qwen3:14b",
+      "model_class": "open_weights",
+      "enabled": true,
+      "configured_revision": null,
+      "timeout_seconds": 120,
+      "max_output_tokens": 1600
+    },
+    "server_version": "0.35.0",
+    "observed_revision": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+  },
+  "prompt_version": "sslp.assistant.research.v1-en",
+  "system_prompt_sha256": "acc9c8c3f85a456f215b1379ad19e8373cefd6763396451ba296965cc1923f07",
+  "question": "Read the current input with get_case. Run exact checks on current. Create a candidate by negating only the amplitude of |0000> in psi_0, preserving all other amplitudes and gate exponents. Check the candidate and inspect its first failure if any. Do not assume a sign flip breaks KL. Compare the exact results and cite tool records. Do not run Lean.",
+  "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+  "answer": {
+    "text": "The original input passed all exact checks, with KL conditions satisfied and normalization confirmed [tool:t2]. The candidate, created by negating the amplitude of |0000> in psi_0, also passed all exact checks, with KL conditions satisfied and normalization confirmed [tool:t4]. No first failure was found for the candidate, indicating that the sign flip did not violate KL conditions. Both the original input and the candidate have matching gate support residues [tool:t3]. Lean was not run, as requested.",
+    "kind": "untrusted_model_explanation",
+    "citations": {
+      "status": "present",
+      "cited_tools": [
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "unknown_or_failed_tools": [],
+      "scope": "reference existence only; no semantic verification of model prose"
+    }
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "round": 1,
+      "name": "get_case",
+      "arguments": {},
+      "output": {
+        "ok": true,
+        "reference": "t1",
+        "result": {
+          "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+          "n": 4,
+          "k": 2,
+          "target_distance": 2,
+          "squared_amplitude_denominator": 2,
+          "gate": {
+            "q": 4,
+            "angles": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "words": [
+            [
+              {
+                "bits": "0000",
+                "coordinates": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "1111",
+                "coordinates": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            [
+              {
+                "bits": "0011",
+                "coordinates": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "bits": "1100",
+                "coordinates": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          ],
+          "conventions": {
+            "qubit_labels": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "bitstring": "leftmost character is qubit 1; integer mask bit 0 is qubit 1",
+            "pauli": "i^popcount(x&z) X^x Z^z",
+            "phase_gate": "diag(1, exp(2*pi*i*a/q))",
+            "logical_basis": [
+              "psi_0",
+              "psi_1"
+            ]
+          },
+          "kernel_status": "not_run"
+        }
+      }
+    },
+    {
+      "id": "t2",
+      "round": 1,
+      "name": "check_exact",
+      "arguments": {
+        "target": "current"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t2",
+        "result": {
+          "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 13,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    },
+    {
+      "id": "t3",
+      "round": 1,
+      "name": "make_candidate",
+      "arguments": {
+        "phase_changes": [
+          {
+            "bits": "0000",
+            "quarter_turns": 2,
+            "word": 0
+          }
+        ]
+      },
+      "output": {
+        "ok": true,
+        "reference": "t3",
+        "result": {
+          "target": "candidate",
+          "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+          "gate": {
+            "q": 4,
+            "angles": [
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "support_residues": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ],
+          "phase_changes": [
+            {
+              "bits": "0000",
+              "quarter_turns": 2,
+              "word": 0
+            }
+          ],
+          "kernel_status": "not_run",
+          "notice": "candidate copied from current; no certification inherited"
+        }
+      }
+    },
+    {
+      "id": "t4",
+      "round": 1,
+      "name": "check_exact",
+      "arguments": {
+        "target": "candidate"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t4",
+        "result": {
+          "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 13,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    },
+    {
+      "id": "t5",
+      "round": 1,
+      "name": "inspect_pauli",
+      "arguments": {
+        "target": "candidate"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t5",
+        "result": {
+          "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "selection": "first_failure",
+          "found": false
+        }
+      }
+    }
+  ],
+  "model_invocations": [
+    {
+      "round": 1,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 1140,
+        "output_tokens": 120
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 8.672
+    },
+    {
+      "round": 2,
+      "status": "completed",
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 2319,
+        "output_tokens": 105
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 4.687
+    }
+  ],
+  "explanation_feedback": [],
+  "verification": [
+    {
+      "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+      "exact": {
+        "input_sha256": "75a811db515c2b27d47f9d51b419c02a667a51a7ccc9db5daf5dc0b0acb4bc19",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 13,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    },
+    {
+      "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+      "exact": {
+        "input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 13,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ],
+  "full_manuscript_certified": false,
+  "candidate_input_sha256": "f6ffa3ee8b585c0c1a44161f8904412d2b899e38d86e113d13f577fe41b6de9e",
+  "budget": {
+    "max_rounds": 6,
+    "max_tools": 10,
+    "allow_lean": false,
+    "lean_certificate_timeout_seconds": 180
+  },
+  "seconds": 13.64
+}

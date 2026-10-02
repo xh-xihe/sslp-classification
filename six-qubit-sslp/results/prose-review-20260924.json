@@ -1,0 +1,86 @@
+{
+  "schema": 2,
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "status": "partial",
+  "method": "Targeted single-agent semantic review on 2026-09-26 of the 19 new/changed named statements, their immediate context, and the four historical errata. This is not the historical two-agent prose audit; no historical prose review is automatically transferred. Follow-up single-agent semantic review closes the minimum-length corollaries and proof at supplementary lines 5992-6034 using new Lean matrix-level theorems; see results/minimum-length-20260924/review.json. Other review gaps are unchanged. Follow-up arbitrary-subspace review closes the converse paragraph at main lines 1000-1007; see results/colored-subspaces-20260924/review.json. Follow-up common-witness review closes the binary-pivot/Smith/physical-lift claim at main lines 1336-1343; see results/colored-lift-smith-20260924/review.json.",
+  "assertions": [
+    {
+      "source": "main.tex",
+      "line": 284,
+      "kind": "gap",
+      "severity": "high",
+      "declarations": [
+        "MainTheory.SingletonRankOneCounterexample.violates_unrestricted_singleton"
+      ],
+      "reason": "The surrounding scope of eq:quantum-Singleton remains unqualified. The recorded rank-one counterexample applies; author previously requested no manuscript edit."
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5340,
+      "kind": "tracked",
+      "severity": null,
+      "declarations": [
+        "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion"
+      ],
+      "reason": "The former existence/open-status mismatch is corrected here and at lines 61, 893 and 5686: only weight-enumerator images of classes 1--4 remain unresolved; physical realizations are acknowledged."
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6003,
+      "kind": "covered",
+      "severity": null,
+      "declarations": [
+        "MainTheory.TransversalDiagonalization.exists_diagonal_normal_form",
+        "MainTheory.AncillaPadding.compression_snocPauli",
+        "MainTheory.AncillaPadding.hasDistance_padFrame",
+        "MainTheory.AncillaGatePadding.intertwining_padFrame",
+        "MainTheory.AncillaPadding.AWeight_padFrame_one",
+        "MainTheory.AncillaPadding.AWeight_padFrame_one_pos",
+        "MainTheory.SixQubitExactDistance.exactCode_distance_three",
+        "MainTheory.MinimumLengthOrderFive.minimum_length",
+        "MainTheory.MinimumLengthOrderFive.canonical_attains",
+        "MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three"
+      ],
+      "reason": "The minimum-length proof chain is now explicit: literal zero-ancilla projector, full KL preservation, unchanged logical matrix, exact A1 identity and positivity, arbitrary local-unitary diagonalization, quotient order, contradiction and canonical attainment/uniqueness. Exact distance three at six qubits is independently certified by the MacWilliams weight-three obstruction; the unrestricted Singleton display is not used. This review ends at line 6034; the next Clifford paragraph remains a gap."
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6036,
+      "kind": "gap",
+      "severity": "medium",
+      "declarations": [],
+      "reason": "The following full-transversal-group/Clifford consequence uses finite rotation-group classification and a common logical-basis conjugacy. Neither follows just from separate diagonal-element order bounds. No accepted Lean correspondence for this new prose consequence has been recorded."
+    },
+    {
+      "source": "main.tex",
+      "line": 1000,
+      "kind": "covered",
+      "severity": null,
+      "declarations": [
+        "MainTheory.PaperGeneralSSLP.general_sslp_converse",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.finrank_sum",
+        "MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.frame_hasDistance"
+      ],
+      "reason": "The converse paragraph at lines 1000-1007 now has an arbitrary-subspace entrance: the same supplied direct sum is the rank-K code, its complete KL equations give the target distance, and the displayed D(a;q) has exact intrinsic order m. No orthonormal frame is required from the caller. This is a bounded review of that paragraph, not the remainder of the subsequent forward proof."
+    },
+    {
+      "source": "main.tex",
+      "line": 1336,
+      "kind": "covered",
+      "severity": null,
+      "declarations": [
+        "MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects",
+        "MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution",
+        "MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor"
+      ],
+      "reason": "The common-construction claim at lines 1336-1343 is now explicit: the representative comes from the solved binary pivot whose actual Smith factor is divisible by its modulus. The same witness also carries the actual eigenvalue-count bound and original projective action. This bounded review does not mark all subsequent normalization/common-mean proof prose complete."
+    }
+  ],
+  "remaining": "The remainder of both manuscripts, including 1450 unchanged-statement candidates and the new construction narratives, still requires context-sensitive review. The 20260908 prose audit is background only, not evidence of completed 20260924 prose review."
+}

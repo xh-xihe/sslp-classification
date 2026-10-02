@@ -1,0 +1,62 @@
+{
+  "paper_version": "20260924",
+  "sources_sha256": {
+    "documents/20260924/main.tex": "0015798c22359efffe64afd26bda2d057b71fd4b6b408062a6672193b487e542",
+    "documents/20260924/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "scope": "Two minimum-length corollaries, two padding displays and their proof; not full release acceptance",
+  "reviews": {
+    "main.tex:cor:six-C5-minimum-length": {
+      "status": "covered",
+      "reason": "All three clauses now have actual matrix-level theorems. minimum_length quantifies over arbitrary n, ExactCode n 2 d with d >= 3, arbitrary local U(2) matrices and their literal tensor-kernel action on the orthonormal encoding. Projective order five is orderOf of the faithful adjoint representation of the logical unitary; its kernel consists exactly of scalar matrices. KL-preserving ancilla padding and the exact A1 recurrence give positive A1 when n < 6. The local eigenbasis construction preserves the full distance and LU class and changes the logical matrix only by a unit scalar; the quotient/matrix bridge supplies an actual intrinsic element of order five. Six-qubit rigidity therefore forces A1 = 0. canonical_attains uses the explicit c36,d36 states, with the same logical matrix/projective-order interface; six_qubit_lu_unique_of_distance_ge_three supplies uniqueness under the actual LU relation including physical permutations. This does not certify the following full-transversal-group/Clifford prose consequence or the unqualified Singleton display.",
+      "lean_declarations": [
+        "MainTheory.MinimumLengthOrderFive.minimum_length",
+        "MainTheory.MinimumLengthOrderFive.canonical_attains",
+        "MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three"
+      ],
+      "statement_sha256": "72ce04092cc48bfde4699a4439c9c175271be62d97746d5a351a432c0a072990"
+    },
+    "supplementary.tex:cor:main-order-five-minimum-length": {
+      "status": "covered",
+      "reason": "All three clauses now have actual matrix-level theorems. minimum_length quantifies over arbitrary n, ExactCode n 2 d with d >= 3, arbitrary local U(2) matrices and their literal tensor-kernel action on the orthonormal encoding. Projective order five is orderOf of the faithful adjoint representation of the logical unitary; its kernel consists exactly of scalar matrices. KL-preserving ancilla padding and the exact A1 recurrence give positive A1 when n < 6. The local eigenbasis construction preserves the full distance and LU class and changes the logical matrix only by a unit scalar; the quotient/matrix bridge supplies an actual intrinsic element of order five. Six-qubit rigidity therefore forces A1 = 0. canonical_attains uses the explicit c36,d36 states, with the same logical matrix/projective-order interface; six_qubit_lu_unique_of_distance_ge_three supplies uniqueness under the actual LU relation including physical permutations. This does not certify the following full-transversal-group/Clifford prose consequence or the unqualified Singleton display.",
+      "lean_declarations": [
+        "MainTheory.MinimumLengthOrderFive.minimum_length",
+        "MainTheory.MinimumLengthOrderFive.canonical_attains",
+        "MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three"
+      ],
+      "statement_sha256": "57129229b2beb8de89e63aa4b93db44d341c82c53a76ba11528ba8d729f98262"
+    },
+    "supplementary.tex:eq:main-order-five-padding": {
+      "status": "covered",
+      "reason": "projector_padFrame gives the literal computational-basis matrix entries of P tensored with m zero-state projectors, for arbitrary m including zero. padCode constructs the padded exact code from the original code; hasDistance_padFrame proves all KL equations at the same requested distance. Identity extension of the physical factors preserves the very same logical matrix, hence its projective order. minimum_length specializes m to 6-n under n<6.",
+      "lean_declarations": [
+        "MainTheory.AncillaGatePadding.projector_padFrame",
+        "MainTheory.AncillaPadding.hasDistance_padFrame",
+        "MainTheory.AncillaGatePadding.intertwining_padFrame",
+        "MainTheory.AncillaGatePadding.padLocal_unitary"
+      ],
+      "statement_sha256": "67bc87107447035ffce21b90e1f3b95b3a28be5d129d4900e6ff15ddcd4888fc"
+    },
+    "supplementary.tex:eq:main-order-five-padding-A1": {
+      "status": "covered",
+      "reason": "For any positive rank K and any m, the normalized coefficient satisfies AWeight(padFrame F m,1) = AWeight(F,1)+m. The proof enumerates all four last-site Pauli labels using an actual finite equivalence and derives the full raw enumerator recurrence; the zero-weight term is K^2. Nonnegativity and m>0 give strict positivity. The lower-bound proof uses K=2 and m=6-n; there is no numerical approximation or supplied trace identity.",
+      "lean_declarations": [
+        "MainTheory.AncillaPadding.AWeight_padFrame_one",
+        "MainTheory.AncillaPadding.AWeight_padFrame_one_pos"
+      ],
+      "statement_sha256": "1a2603bf71b72be00bc182f8ff20fd9a1bbcbe7ef45e059d4d43bbb6bd74cd42"
+    }
+  },
+  "lean_sources_sha256": {
+    "MainTheory/AncillaPadding.lean": "80856ea7ba111d6e7036059c76c8d89f65c28af3198425b8770c744a599aaa5e",
+    "MainTheory/AncillaGatePadding.lean": "1de2640474bf8b8a0feff3611b3788cc1b24bbc41b4a790a28ab38c2dd69213a",
+    "MainTheory/TransversalDiagonalization.lean": "44172456789d6c6d46a42ae8f466c0b63483a1a950dacd74bceff2a5daffa98b",
+    "MainTheory/DiagonalLogicalMatrixBridge.lean": "811dd7c1be1a4df4dbd240208cc7ac3346845c0dafdf18d005ba71ca641a7275",
+    "MainTheory/MinimumLengthOrderFive.lean": "a4c28b84ef6540ab93e225aaf71b8bc8896be6beee0c2b01db40d7ddcdec1384"
+  },
+  "claims_counts": {
+    "unreviewed": 1630,
+    "partial": 6,
+    "covered": 16
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "elan_release": "v4.2.4",
+  "elan_url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz",
+  "elan_sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+  "get_pip_sha256": "fb24e693bab954209a063d90953621412ccad4a500905a726286e038f508ddf6",
+  "toolchain": "leanprover/lean4:v4.27.0",
+  "same_physical_machine": true,
+  "environment": "WSL2 Ubuntu Linux; fresh workspace toolchain/venv/cache; no Windows compiled dependencies"
+}

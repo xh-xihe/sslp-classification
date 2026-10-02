@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "scope": "first_executable_class36_slice",
+  "full_manuscript_certified": false,
+  "new_tests": {
+    "passed": 17
+  },
+  "existing_tool_tests": {
+    "passed": 23,
+    "skipped": 8
+  },
+  "actual_lean_negative_control": {
+    "mutation": "negate the first amplitude of psi_0",
+    "exit_code": 1,
+    "rejected": true,
+    "diagnostics": [
+      "decide proved data0_matches false",
+      "Unexpected axiom: sorryAx"
+    ]
+  },
+  "latest_kernel_run": {
+    "status": "passed",
+    "seconds": 82.282,
+    "reused_modules": 11,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "isolated_source_rebuild": {
+    "status": "passed",
+    "seconds": 242.484,
+    "rebuilt_modules": 11,
+    "same_machine": true,
+    "shared_dependencies": "pinned third-party packages via junction; artifact context validated before and after",
+    "input_matches_latest": true,
+    "certificate_matches_latest": true,
+    "proof_sources_match_latest": true,
+    "note": "Source rebuild used the first adapter snapshot. Subsequent input validation was tightened; the exact input, generated Lean certificate and all proof sources are identical."
+  },
+  "bundle": {
+    "path": "tmp/sslp-explorer/class36-bundle-v2.zip",
+    "sha256": "88623d7bc2b7824adab97c24dafacbb7acd5c2b28d4e9e444d09e0812c6a8d92",
+    "integrity_passed": true,
+    "private_manuscripts_included": false
+  },
+  "pending": [
+    "browser App and job service",
+    "20260924 semantic/prose review and full acceptance migration",
+    "gate-level encoder",
+    "independent machine/dependency rebuild"
+  ]
+}

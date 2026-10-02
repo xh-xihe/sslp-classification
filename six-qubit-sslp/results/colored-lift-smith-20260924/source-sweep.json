@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": [
+    "MainTheory/BinaryPivotLift.lean",
+    "MainTheory/PaperColoredFiniteLift.lean",
+    "MainTheory.lean",
+    "MainTheory/Audit.lean"
+  ],
+  "hits": {
+    "MainTheory/BinaryPivotLift.lean": [],
+    "MainTheory/PaperColoredFiniteLift.lean": [],
+    "MainTheory.lean": [],
+    "MainTheory/Audit.lean": []
+  }
+}

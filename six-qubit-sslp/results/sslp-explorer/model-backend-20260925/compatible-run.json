@@ -1,0 +1,114 @@
+{
+  "schema": "sslp.agent-run.v1",
+  "status": "answered",
+  "error": null,
+  "provider": {
+    "id": "local-compatible",
+    "adapter": "chat_completions",
+    "model": "qwen3:14b",
+    "model_class": "open_weights",
+    "enabled": true,
+    "configured_revision": null,
+    "timeout_seconds": 120,
+    "max_output_tokens": 1600
+  },
+  "probe": {
+    "status": "available",
+    "provider": {
+      "id": "local-compatible",
+      "adapter": "chat_completions",
+      "model": "qwen3:14b",
+      "model_class": "open_weights",
+      "enabled": true,
+      "configured_revision": null,
+      "timeout_seconds": 120,
+      "max_output_tokens": 1600
+    },
+    "observed_revision": null
+  },
+  "prompt_version": "sslp.assistant.class36.v1",
+  "system_prompt_sha256": "e6b3b4030a0d25c5c4fd8f652c2613c9d8233ff6b94c4510a4dce8ccb6fa7d0c",
+  "question": "Use check_exact on current. Report the actual number of passed KL checks and whether Lean ran. Cite the tool reference. Be brief. /no_think",
+  "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+  "answer": {
+    "text": "All 154 KL checks passed [tool:t1]. Lean kernel status: not run.",
+    "kind": "untrusted_model_explanation"
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "round": 1,
+      "name": "check_exact",
+      "arguments": {
+        "target": "current"
+      },
+      "output": {
+        "ok": true,
+        "reference": "t1",
+        "result": {
+          "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+          "execution": "exact_python_arithmetic",
+          "kernel_status": "not_run",
+          "normalization_and_orthogonality": true,
+          "kl_passed": true,
+          "pauli_count": 154,
+          "failed_pauli_count": 0,
+          "first_failure": null,
+          "gate_support_matches_requested_residues": true,
+          "passed_requested_checks": true,
+          "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+        }
+      }
+    }
+  ],
+  "model_invocations": [
+    {
+      "finish_reason": "tool_calls",
+      "usage": {
+        "input_tokens": 775,
+        "output_tokens": 276
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 17.656
+    },
+    {
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 991,
+        "output_tokens": 188
+      },
+      "reported_model": "qwen3:14b",
+      "seconds": 25.344
+    }
+  ],
+  "verification": [
+    {
+      "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+      "exact": {
+        "input_sha256": "6e62b1c392be0da7bd5d2b12b81136b138b2735d689f327a658f6d5bb14ef7eb",
+        "execution": "exact_python_arithmetic",
+        "kernel_status": "not_run",
+        "normalization_and_orthogonality": true,
+        "kl_passed": true,
+        "pauli_count": 154,
+        "failed_pauli_count": 0,
+        "first_failure": null,
+        "gate_support_matches_requested_residues": true,
+        "passed_requested_checks": true,
+        "scope": "this input only; full manuscript, classification, minimal gate order and gate-level encoder not certified"
+      },
+      "kernel": {
+        "status": "not_run"
+      }
+    }
+  ],
+  "full_manuscript_certified": false,
+  "candidate_input_sha256": null,
+  "budget": {
+    "max_rounds": 3,
+    "max_tools": 10,
+    "allow_lean": false,
+    "lean_certificate_timeout_seconds": 180
+  },
+  "seconds": 43.172
+}

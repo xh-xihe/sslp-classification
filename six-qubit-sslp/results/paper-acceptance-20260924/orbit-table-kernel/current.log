@@ -1,0 +1,30 @@
+MainTheory.Generated.OrbitTableNumericData.all_rows (i : Fin 66) : RowFacts i
+MainTheory.Generated.OrbitTableNumericData.all_faces_valid (i : Fin 66) :
+  MainTheory.FinitePipeline.FaceData.Valid (paperPair i) (paperFace i)
+MainTheory.Generated.OrbitTableNumeric.all_statistics (i : Fin 66) :
+  min (MainTheory.AffineRankCertificate.maskAffineRank (paperFace i).active0)
+        (MainTheory.AffineRankCertificate.maskAffineRank (paperFace i).active1) =
+      paperRank i ∧
+    Module.finrank ℝ ↥(affineSpan ℝ (MainTheory.FiniteMomentLP.polytope (paperPair i))).direction = paperDimension i ∧
+      MainTheory.OrbitRecordMultiplicity.multiplicity (MainTheory.Generated.OrbitTableRecords.paperKey i) =
+        paperMultiplicity i
+MainTheory.Generated.OrbitTableNumeric.all_real_statistics (i : Fin 66) (r : ℕ) :
+  ((∃ p ∈ MainTheory.FiniteMomentLP.polytope (paperPair i),
+        r ≤
+          min (MainTheory.FiniteMomentSupportRank.supportRank p false)
+            (MainTheory.FiniteMomentSupportRank.supportRank p true)) ↔
+      r ≤ paperRank i) ∧
+    Module.finrank ℝ ↥(affineSpan ℝ (MainTheory.FiniteMomentLP.polytope (paperPair i))).direction = paperDimension i ∧
+      MainTheory.OrbitRecordMultiplicity.multiplicity (MainTheory.Generated.OrbitTableRecords.paperKey i) =
+        paperMultiplicity i
+MainTheory.Generated.OrbitTableActiveRanks.all_maximum_support_ranks (i : Fin 66) :
+  (∀ p ∈ MainTheory.FiniteMomentLP.polytope (paperPair i),
+      ∀ (b : Bool), MainTheory.FiniteMomentSupportRank.supportRank p b ≤ paperRank i) ∧
+    ∃ p ∈ MainTheory.FiniteMomentLP.polytope (paperPair i),
+      ∀ (b : Bool), MainTheory.FiniteMomentSupportRank.supportRank p b = paperRank i
+MainTheory.Generated.OrbitTableNumeric.all_labeled_equivalences (i : Fin 66) :
+  MainTheory.DistanceSignature.LabeledEquivalent (paperQ i) (paperM i)
+    (MainTheory.FiniteOrbitPipeline.fibersOfPair (paperPair i))
+    (MainTheory.Generated.FiniteOrbitBase.keyAt (MainTheory.Generated.OrbitTableRecords.paperKey i)).q
+    (MainTheory.Generated.FiniteOrbitBase.keyAt (MainTheory.Generated.OrbitTableRecords.paperKey i)).m
+    (MainTheory.Generated.FiniteOrbitBase.keyAt (MainTheory.Generated.OrbitTableRecords.paperKey i)).fibers

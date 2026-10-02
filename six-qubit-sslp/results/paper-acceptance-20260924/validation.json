@@ -1,0 +1,80 @@
+{
+  "paper_version": "20260924",
+  "recorded_at": "2026-09-26T21:22:08.147588+00:00",
+  "full_manuscript_certified": false,
+  "full_suite_executed": false,
+  "priority_named_reviews": {
+    "total": 19,
+    "covered": 12,
+    "partial": 7
+  },
+  "singleton_display": "partial; retained author instruction to record only",
+  "ledger_counts": {
+    "covered": 12,
+    "partial": 8,
+    "unreviewed": 1632
+  },
+  "audit_dependency_modules": 14088,
+  "rebuilt_modules": 0,
+  "content_validated_reused": 14088,
+  "kernel_audit_roots": 1452,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "table_kernel_check": "passed; rank, LP dimension and multiplicity mutations rejected",
+  "tests": {
+    "acceptance_and_release": {
+      "run": 43,
+      "passed": 35,
+      "skipped": 8
+    },
+    "explorer": {
+      "run": 56,
+      "passed": 56
+    },
+    "migration_subset_after_context_change": {
+      "run": 4,
+      "passed": 4
+    }
+  },
+  "manuscripts_modified": false,
+  "github_pushed": false,
+  "site_published_this_increment": false,
+  "tools_sha256": {
+    "tools/verify.py": "df0f82a5734e1166ab5f59d5fd7bddbecdaff6db86ee7b0d6989a8e4f2203e52",
+    "tools/paper_release.py": "b4edfc90cf43aaf667a9c44ec88cbf5ddb46319f4aeaf8cb7d3a341958aacee0",
+    "tools/paper_claims.py": "4ed8d527294f1e7e05292d780a18afd90885dce21d7ab141301baa7361d1966a",
+    "tools/named_results_doc.py": "73a170a341394a89c6d7f583a838c8d01e8b3384531ca270b971b0396082dd03",
+    "tools/prose_review_doc.py": "2153bc86e2f6d4857b4b373771056dfb5de52441f048a8d1b8844f1f5d7d13a0",
+    "tools/check-readme-names.py": "421e1816b06d71ab047b6507c646c3834c7ce595b32d6c1d9c781fbbe8a5f5cb",
+    "tools/verification/check_audit_names.py": "c9474cdfb29e7457c27bc4751137abeaf22511ffac4dfd740a619c07f8aedf73",
+    "tools/verification/orbit_table_kernel.py": "7e7ed375c78203e8b8a3501ccd341f2309333b4e789267918691c3bed6168cdd",
+    "tools/verification/mkmanifest.py": "23397d67a55c5873297d36607b59d3ffbd97ca86d9d0e8ae5bdf58cf525c5d1a",
+    "tools/build_lean.py": "537206d8f0e440bc2028c72eddd8f4451d7e2ab21758639b64156432fd220cab",
+    "tools/lean_source.py": "669401c9a1589e565d12e204576c22a4b912cd32c38fab477a93d8d4da1d40fa",
+    "tools/tests/test_paper_release.py": "dcc6bcc9c0c7eba5147e3c5a0b78111f7b2fb42ac31aae3ceb168ad991543cf1",
+    "tools/tests/test_certification_tools.py": "6c5cd1e1c659a7655a5a5e6ebcdfbf742dbfcbe4caea51ce5a94919475156998"
+  },
+  "files_sha256": {
+    "release.json": "044810261d422b8bec9a488f732e1fecc7080902f331367073261b4ba8751d3d",
+    "report.json": "2e839258ad1de7384c2aa0b2a514d10ce7cbcba45d9838a8dc78d988f1e686cc",
+    "axioms.json": "ef12b5e737edd43f8747f288159ed48d4308189e28f5ecbf62813781e982c725",
+    "axioms.log": "c134d70df05cb03a04091aabc6475a1bb84544b52a8c8770cc5cfd58b4c666e4",
+    "axiom-union.lean": "3743af959e3203f9e1d92ed4a9a64d4ad35aeb192fc004e2d4dde35400dded7f",
+    "claims.log": "0b13b91c930fd60e930dbe961e43b153362e2ec4e6a7df1c6374be2dc8decd01",
+    "named-results.log": "a967dbb7acc00b9ed5e6fa003e81078c6d309d596f11265a5b2e389d2590e5e7",
+    "prose-review.log": "31c28e3b5b9eb2344cc2b28d575d6528e1a154fe74ca1b9272eceab76e9c2a48",
+    "audit-names.log": "6db57fdb491861b6dd3f26d3ae512ef63864bfdc00343fdf56f800b2dd621754",
+    "table-kernel-selftest.log": "26b5973e0376114523660f5e3d641952dc8be03e7a03191ca7dcbf772c4a051e",
+    "orbit-table-kernel/current.lean": "1930e82327ddb0c29db0ee336dc6c61fde6569539ac317906884cacd2c61254a",
+    "orbit-table-kernel/current.log": "f41e97a1a1ed9be99974cfb33bcc8e1dceaf827953be9267c7e7807918161f8e",
+    "orbit-table-kernel/mutated-lp_dimension.lean": "01106eb40ede6268e22721c8d6f5e0f97a380832aa8f1c1e3c27f5d8d4ebfc2f",
+    "orbit-table-kernel/mutated-lp_dimension.log": "98af83c91af191b3553005030584e363a3fe57dd00cc6631cbbb28a5b4c912ac",
+    "orbit-table-kernel/mutated-multiplicity.lean": "8fe7e2cb94fb0765fc5d0400855f8ae98d8fcb14eefb6e095e23b2d5f84b6fb7",
+    "orbit-table-kernel/mutated-multiplicity.log": "b1e96f6999b82b129a0235e8c1d1f75c5e0f50e5535403ea6e6f2adeabfc596e",
+    "orbit-table-kernel/mutated-r_star.lean": "ae79b1c1a03df05167a0b63c4e3dbfd2a7fbcf3583047d0f7108fd9c533b67d2",
+    "orbit-table-kernel/mutated-r_star.log": "b17d57a91fe3cab141a9293eb159522a64d52882fc355d44d5c74f38b9d048c7"
+  }
+}
