@@ -1,0 +1,11 @@
+PARTIAL verification: sources, generated, audit-names, axioms
+Paper version: 20261003
+START sources
+[PASS] sources (143.8s): 15922 Lean sources clean
+START generated
+[PASS] generated (240.8s): exit=0; log=tmp\verification\20261003\generated.log; PASS: generated coverage, SHA-256, and build order (819 + 1101 + 11 + 40 + 112 + 119 + 240 + 624 + 197 + 1466 + 5356 files)
+START audit-names
+[PASS] audit-names (8.4s): exit=0; log=tmp\verification\20261003\audit-names.log; all audited and ledger-cited names resolve
+START axioms
+[FAIL] axioms (43.2s): axiom audit failed, exit=1; D:\UTD\Project_purdue\Lean_certification\tmp\verification\20261003\axiom-union.lean:743:0: error: Missing kernel declaration: Orbit2.macWilliams_normal_form
+

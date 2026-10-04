@@ -16,16 +16,19 @@ import subprocess
 import sys
 import time
 
-from lean_source import audit_names, code_only, imports
+from lean_source import code_only, imports
+from lean_audit import audit_names
 DEFAULT_PAPER_VERSION = '20260908'
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
-LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC')
+LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC', 'Orbit2')
 AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean',
                'SixQubit/Orbit7CollinearAxiomCheck.lean',
-               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean')
+               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
+               'MainTheory/OrbitCertificationAudit.lean',
+               'MainTheory/OrbitCertificationFinalAudit.lean', 'Orbit2.lean')
 REPORT_DIR = ROOT / 'tmp' / 'verification'
 FORBIDDEN = re.compile(
     r'(?<![\w])(?:sorry|admit|sorryAx|axiom|native_decide|ofReduceBool|ofReduceNat|'

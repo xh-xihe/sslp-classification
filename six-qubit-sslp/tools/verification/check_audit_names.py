@@ -23,11 +23,16 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC')
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+from lean_source import code_only
+from lean_audit import audit_names
+LEAN_DIRS = ('MainTheory', 'SS', 'SixQubit', 'QECC', 'Orbit2')
 AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/CodeWrapAudit.lean',
                'SixQubit/Orbit7CollinearAxiomCheck.lean',
-               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean')
+               'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
+               'MainTheory/OrbitCertificationAudit.lean',
+               'MainTheory/OrbitCertificationFinalAudit.lean', 'Orbit2.lean')
 
 # Lean identifiers admit far more than ASCII: subscripts (`cov_eq₂`), Greek
 # letters, primes.  Narrowing this to `[A-Za-z0-9_]` produces false misses, so
@@ -104,12 +109,15 @@ def audited_names():
     out = []
     for relative in AUDIT_FILES:
         path = os.path.join(ROOT, relative)
-        if not os.path.exists(path):
-            continue
-        for number, line in enumerate(io.open(path, encoding='utf-8'), 1):
-            m = PRINT.match(line)
-            if m:
-                out.append((relative, number, m.group(1)))
+        source = io.open(path, encoding='utf-8').read()
+        names = audit_names(source)
+        if not names:
+            raise ValueError('audit file contains no declarations: ' + relative)
+        code = code_only(source)
+        for name in names:
+            match = re.search(r'(?<![A-Za-z0-9_.])' + re.escape(name) + r'(?![A-Za-z0-9_.])', code)
+            number = code.count('\n', 0, match.start()) + 1 if match else 1
+            out.append((relative, number, name))
     return out
 
 

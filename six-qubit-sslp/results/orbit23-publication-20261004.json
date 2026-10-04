@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "publication_commit": "5001c040c8c9673eb14ac4e8cd9c2bd0d66fa7ac",
+  "publication_commit": "4a5e8c36dc13f6933d7d0d8d066f2d3d383da22a",
   "canonical_branch": "sixqubit-classification",
   "checked_published_generated_sources": 3066,
   "manifest_corrections": [
@@ -19,7 +19,10 @@
     "Quot.sound",
     "Classical.choice"
   ],
-  "latest_unified_acceptance": "running; will be recorded separately",
+  "latest_unified_acceptance": "PASS",
   "scope": "Orbit-2/3 full images integrated into the existing manuscript formalization tree.",
-  "auxiliary_scalar_plane": "Compiled successfully; macwilliams_six resolved in SS.MacWilliams."
+  "auxiliary_scalar_plane": "Compiled successfully; macwilliams_six resolved in SS.MacWilliams.",
+  "unified_modules": 15922,
+  "unified_axiom_roots": 2764,
+  "acceptance_record": "artifacts/orbit-certification-20261003/unified-acceptance-20261004.json"
 }

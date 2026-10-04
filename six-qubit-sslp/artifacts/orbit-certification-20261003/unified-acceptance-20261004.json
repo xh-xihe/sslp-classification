@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "published_commit": "4a5e8c36dc13f6933d7d0d8d066f2d3d383da22a",
+  "published_branch": "sixqubit-classification",
+  "stages": [
+    {
+      "name": "build",
+      "status": "PASS",
+      "command": [
+        "D:\\Anaconda\\python.exe",
+        "-u",
+        "tools/build_lean.py"
+      ],
+      "log": "tmp/orbit23-acceptance-20261004-r2/build.log",
+      "exit_code": 0,
+      "seconds": 446.922,
+      "log_sha256": "515bb78a92f6f345f005e63310297d7b47488c4bf82f3c40b62f60c899651b07",
+      "reused_from": "tmp/orbit23-acceptance-20261004-r2/status.json"
+    },
+    {
+      "name": "published-orbit-axioms",
+      "status": "PASS",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-j",
+        "1",
+        "-DwarningAsError=true",
+        "tmp/orbit23-publication-20261004/focused-orbit-audit.lean"
+      ],
+      "log": "tmp/orbit23-acceptance-20261004-r2/published-orbit-axioms.log",
+      "exit_code": 0,
+      "seconds": 22.844,
+      "log_sha256": "791be0d0555ac09060b1dc6c8ca4d69c7061a1127b7510f09fd7eac7c0e7223a",
+      "reused_from": "tmp/orbit23-acceptance-20261004-r2/status.json"
+    },
+    {
+      "name": "sources",
+      "status": "PASS",
+      "seconds": 143.8,
+      "detail": "15922 Lean sources clean",
+      "command": [
+        "D:\\Anaconda\\python.exe",
+        "-u",
+        "tools/verify.py",
+        "--paper-version",
+        "20261003",
+        "--only",
+        "sources",
+        "generated",
+        "audit-names",
+        "axioms"
+      ],
+      "log": "tmp/orbit23-acceptance-20261004-r2/verification.log",
+      "log_sha256": "d87b9c42489d388c02e20b692b39aa2bfc12107393cbbbd62eb5009e866e2b8b",
+      "reused_from": "Independent passing gate in the prior run; all 15922 Lean source hashes remain unchanged."
+    },
+    {
+      "name": "generated",
+      "status": "PASS",
+      "seconds": 240.8,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\generated.log; PASS: generated coverage, SHA-256, and build order (819 + 1101 + 11 + 40 + 112 + 119 + 240 + 624 + 197 + 1466 + 5356 files)",
+      "command": [
+        "D:\\Anaconda\\python.exe",
+        "-u",
+        "tools/verify.py",
+        "--paper-version",
+        "20261003",
+        "--only",
+        "sources",
+        "generated",
+        "audit-names",
+        "axioms"
+      ],
+      "log": "tmp/orbit23-acceptance-20261004-r2/verification.log",
+      "log_sha256": "d87b9c42489d388c02e20b692b39aa2bfc12107393cbbbd62eb5009e866e2b8b",
+      "reused_from": "Independent passing gate in the prior run; all 15922 Lean source hashes remain unchanged."
+    },
+    {
+      "name": "audit-names",
+      "status": "PASS",
+      "seconds": 8.515,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\audit-names.log; all audited and ledger-cited names resolve",
+      "command": [
+        "D:\\Anaconda\\python.exe",
+        "tools/verify.py",
+        "--paper-version",
+        "20261003",
+        "--only",
+        "audit-names",
+        "axioms"
+      ],
+      "log": "tmp/verification/20261003/audit-names.log",
+      "log_sha256": "03389e8ebca11bc22e38c94920bb49812e3d445a74bbfd2fb1ad61b99293ac22"
+    },
+    {
+      "name": "axioms",
+      "status": "PASS",
+      "seconds": 139.11,
+      "detail": "2764 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20261003\\axioms.log",
+      "command": [
+        "D:\\Anaconda\\python.exe",
+        "tools/verify.py",
+        "--paper-version",
+        "20261003",
+        "--only",
+        "audit-names",
+        "axioms"
+      ],
+      "log": "tmp/verification/20261003/axioms.log",
+      "log_sha256": "a8ff73c1988f321719066d0e998fd2162285578a68fcfab03dd7d87c9689e37e"
+    },
+    {
+      "name": "published-verification-tests",
+      "status": "PASS",
+      "tests": 43,
+      "skipped": 11,
+      "log": "tmp/orbit23-acceptance-20261004-r3/published-verification-tests.log",
+      "log_sha256": "0e1b1c81e02fce9cce072626e331237977ffd6732db6aa9183afda516b9299ba"
+    }
+  ],
+  "modules": 15922,
+  "rebuilt": 0,
+  "reused": 15922,
+  "build_success_sha256": "7f54053ffc923dbeeefffb02138f593e7bc89963a9f73ab708e131633a0e5c49",
+  "axiom_roots": 2764,
+  "axiom_union": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_evidence_sha256": "3a3f49cda02827856dbc17b6f0c346f5440a88ccd4d4de6c1c6ed64ea929d2de",
+  "seconds": 1001.9910000000001,
+  "prior_attempts": [
+    "tmp/orbit23-acceptance-20261004/status.json",
+    "tmp/orbit23-acceptance-20261004-r2/status.json"
+  ],
+  "audit_entry_fix": "Include Orbit2.lean in the audit inventory so its imports load all covered physical MacWilliams roots; parse both legacy and shared axiom inventories.",
+  "scope": "Unified content-validated Lean build of the complete local proof tree, source/generated/audit-name checks, full workspace transitive axiom audit, and the exact published 142-root orbit-2/3 audit. Manuscript release/correspondence gates are separate.",
+  "published_proof_dependency_modules": 2945,
+  "published_proof_dependency_relation": "Identical bytes or CRLF-to-LF normalization; exact scoped audit source separately compiled.",
+  "focused_axiom_roots": 142,
+  "published_sign_manifest_sources": 7019,
+  "publication_binding_sha256": "65aea17316a9873612fcb728fdfec9f5833a3fd5879180e4738c03698c253f8e",
+  "previous_attempt": "Initial build exposed an unresolved auxiliary macwilliams_six name. The qualification fix was compiled, published and accepted by this final run."
+}
