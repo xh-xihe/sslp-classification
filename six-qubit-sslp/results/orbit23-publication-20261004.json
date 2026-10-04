@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "publication_commit": "9ce262c4ca5bd8dc3a598676d0b1d5db205e87a1",
+  "canonical_branch": "sixqubit-classification",
+  "checked_published_generated_sources": 3066,
+  "manifest_corrections": [
+    {
+      "path": "six-qubit-sslp/SixQubit/Generated/OpenLFamilies/generation-manifest.sha256",
+      "entries": 40
+    },
+    {
+      "path": "six-qubit-sslp/SixQubit/Generated/OpenMParity/generation-manifest.sha256",
+      "entries": 11
+    }
+  ],
+  "focused_axiom_roots": 138,
+  "axiom_union": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "latest_unified_acceptance": "running; will be recorded separately",
+  "scope": "Orbit-2/3 full images integrated into the existing manuscript formalization tree."
+}
