@@ -1,0 +1,388 @@
+PASS Orbit2.Certificate
+Orbit2/TensorPauli.lean:240:29: warning: This simp argument is unused:
+  Matrix.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.sum_mul, M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵ ̵Matrix.smul_mul, Matrix.mul_smul, smul_smul, tau_sum, tau_smul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/TensorPauli.lean:241:4: warning: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.sum_mul, Matrix.mul_sum, Matrix.smul_mul, Matrix.mul_smul, s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵ ̵tau_sum, tau_smul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/TensorPauli.lean:257:29: warning: This simp argument is unused:
+  Matrix.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.sum_mul, M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵ ̵Matrix.smul_mul, Matrix.mul_smul, smul_smul, tau_sum, tau_smul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/TensorPauli.lean:258:4: warning: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.sum_mul, Matrix.mul_sum, Matrix.smul_mul, Matrix.mul_smul, s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵ ̵tau_sum, tau_smul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.TensorPauli
+PASS SS.BitString
+PASS Orbit2.BlockFamily
+PASS Orbit2.Analytic
+PASS Orbit2.Blocks.Block001
+PASS Orbit2.Blocks.Block002
+PASS Orbit2.Blocks.Block003
+PASS Orbit2.Blocks.Block004
+PASS Orbit2.Blocks.Block000
+PASS Orbit2.Blocks.Block005
+PASS Orbit2.Blocks.Block006
+PASS Orbit2.Blocks.Block007
+PASS Orbit2.Blocks.Block008
+PASS Orbit2.Blocks.Block009
+PASS Orbit2.Blocks.Block010
+PASS Orbit2.Blocks.Block011
+PASS Orbit2.Blocks.Block012
+PASS Orbit2.Blocks.Block013
+PASS Orbit2.Blocks.Block014
+PASS Orbit2.Blocks.Block015
+PASS Orbit2.Blocks.Block016
+PASS Orbit2.Blocks.Block017
+PASS Orbit2.Blocks.Block018
+PASS Orbit2.Blocks.Block019
+PASS Orbit2.Blocks.Block020
+PASS Orbit2.Blocks.Block021
+PASS Orbit2.Blocks.Block022
+PASS Orbit2.Blocks.Block023
+PASS Orbit2.Blocks.Block024
+PASS Orbit2.Blocks.Block025
+PASS Orbit2.Blocks.Block026
+PASS Orbit2.Blocks.Block027
+PASS Orbit2.Blocks.Block028
+PASS Orbit2.Blocks.Block029
+PASS Orbit2.Blocks.Block030
+PASS Orbit2.Blocks.Block031
+PASS Orbit2.Blocks.Block032
+PASS Orbit2.Blocks.Block033
+PASS Orbit2.Blocks.Block034
+PASS Orbit2.Blocks.Block035
+PASS Orbit2.Blocks.Block036
+PASS Orbit2.Blocks.Block037
+PASS Orbit2.Blocks.Block038
+PASS Orbit2.Blocks.Block039
+PASS Orbit2.Blocks.Block040
+PASS Orbit2.Blocks.Block041
+PASS Orbit2.Blocks.Block042
+PASS Orbit2.Blocks.Block043
+PASS Orbit2.Blocks.Block044
+PASS Orbit2.Blocks.Block045
+PASS Orbit2.Blocks.Block046
+PASS Orbit2.Blocks.Block047
+PASS Orbit2.Blocks.Block048
+PASS Orbit2.Blocks.Block049
+PASS Orbit2.Blocks.Block050
+PASS Orbit2.Blocks.Block051
+PASS Orbit2.Blocks.Block052
+PASS Orbit2.Blocks.Block053
+PASS Orbit2.Blocks.Block054
+PASS Orbit2.Blocks.Block055
+PASS Orbit2.Blocks.Block056
+PASS Orbit2.Blocks.Block057
+PASS Orbit2.Blocks.Block058
+PASS Orbit2.Blocks.Block059
+PASS Orbit2.Blocks.Block060
+PASS Orbit2.Blocks.Block061
+PASS Orbit2.Blocks.Block062
+PASS Orbit2.Blocks.Block063
+PASS Orbit2.Blocks.Block064
+PASS Orbit2.Blocks.Block065
+PASS Orbit2.Blocks.Block066
+PASS Orbit2.Blocks.Block067
+PASS Orbit2.Blocks.Block068
+PASS Orbit2.Blocks.Block069
+PASS Orbit2.Blocks.Block070
+PASS Orbit2.Blocks.Block071
+PASS Orbit2.Blocks.Block072
+PASS Orbit2.Blocks.Block073
+PASS Orbit2.Blocks.Block074
+PASS Orbit2.Blocks.Block075
+PASS Orbit2.Blocks.Block076
+PASS Orbit2.Blocks.Block077
+PASS Orbit2.Blocks.Block078
+PASS Orbit2.Blocks.Block079
+PASS Orbit2.Blocks.Block080
+PASS Orbit2.Blocks.Block081
+PASS Orbit2.Blocks.Block082
+PASS Orbit2.Blocks.Block083
+PASS Orbit2.Blocks.Block084
+PASS Orbit2.Blocks.Block085
+PASS Orbit2.Blocks.Block086
+PASS Orbit2.Blocks.Block088
+PASS Orbit2.Blocks.Block087
+PASS Orbit2.Blocks.Block089
+PASS Orbit2.Blocks.Block090
+PASS Orbit2.Blocks.Block091
+PASS Orbit2.Blocks.Block092
+PASS Orbit2.Blocks.Block093
+PASS Orbit2.Blocks.Block094
+PASS Orbit2.Blocks.Block095
+PASS Orbit2.Blocks.Block096
+PASS Orbit2.Blocks.Block097
+PASS Orbit2.Blocks.Block098
+PASS Orbit2.Blocks.Block099
+PASS Orbit2.Blocks.Block100
+PASS Orbit2.Blocks.Block101
+PASS Orbit2.Blocks.Block102
+PASS Orbit2.Blocks.Block103
+PASS Orbit2.Blocks.Block104
+PASS Orbit2.Blocks.Block106
+PASS Orbit2.Blocks.Block105
+PASS Orbit2.Blocks.Block107
+PASS Orbit2.Blocks.Block108
+PASS Orbit2.Blocks.Block109
+PASS Orbit2.Blocks.Block110
+PASS Orbit2.MatrixSteps
+Orbit2/ZeroExtension.lean:69:2: warning: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PASS Orbit2.ZeroExtension
+PASS SS.Basic
+PASS Orbit2.FiveQubit
+PASS Orbit2.Blocks
+PASS Orbit2.FiveQubitPhysical
+Orbit2/Frames.lean:36:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.transpose_isometry`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:40:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.pi_idempotent`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:45:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.pi_hermitian`:
+  [Fintype α]
+  [DecidableEq α]
+  hQ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] [DecidableEq α] hQ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:47:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.omega_skew`:
+  [Fintype α]
+  [DecidableEq α]
+  hQ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] [DecidableEq α] hQ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:53:39: warning: This simp argument is unused:
+  Matrix.conjTranspose_transpose
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.conjTranspose_mul,̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵j̵T̵r̵a̵n̵s̵p̵o̵s̵e̵_̵t̵r̵a̵n̵s̵p̵o̵s̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/Frames.lean:60:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.omega_right`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:70:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.pi_omega`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:77:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.pi_trace`:
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:82:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.lift_commonJ`:
+  [DecidableEq α]
+  hQ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] hQ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:105:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.pi_sigma_trace`:
+  [DecidableEq α]
+  hQ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq α] hQ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Orbit2/Frames.lean:145:0: warning: automatically included section variable(s) unused in theorem `Orbit2.Frames.t_commonJ`:
+  hQ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hQ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+PASS Orbit2.Frames
+PASS Orbit2.MacWilliams
+PASS SS.DiagonalAction
+PASS SS.ResidueShiftScreen
+PASS Orbit2.SplitSeed
+PASS Orbit2.Defects
+PASS SS.Pauli
+PASS Orbit2.Global
+PASS SS.FullKL
+PASS Orbit2.QuarticCoefficients
+PASS Orbit2.CharacterBlocks
+PASS Orbit2.Coefficients.Coefficient001
+PASS Orbit2.Coefficients.Coefficient002
+PASS Orbit2.Coefficients.Coefficient003
+PASS Orbit2.Coefficients.Coefficient004
+PASS Orbit2.Coefficients.Coefficient005
+PASS Orbit2.Coefficients.Coefficient006
+PASS Orbit2.Coefficients.Coefficient007
+PASS Orbit2.Coefficients.Coefficient000
+PASS Orbit2.Coefficients.Coefficient008
+PASS Orbit2.Coefficients.Coefficient009
+PASS Orbit2.Coefficients.Coefficient010
+PASS Orbit2.Coefficients.Coefficient011
+PASS Orbit2.Coefficients.Coefficient012
+PASS Orbit2.Coefficients.Coefficient013
+PASS Orbit2.Coefficients.Coefficient014
+PASS Orbit2.Coefficients.Coefficient015
+PASS Orbit2.Coefficients.Coefficient016
+PASS Orbit2.Coefficients.Coefficient017
+PASS Orbit2.Coefficients.Coefficient018
+PASS Orbit2.Coefficients.Coefficient019
+PASS Orbit2.Coefficients.Coefficient020
+PASS Orbit2.Coefficients.Coefficient021
+PASS Orbit2.Coefficients.Coefficient022
+PASS Orbit2.Coefficients.Coefficient023
+PASS Orbit2.Coefficients.Coefficient024
+PASS Orbit2.Coefficients.Coefficient026
+PASS Orbit2.Coefficients.Coefficient027
+PASS Orbit2.Coefficients.Coefficient025
+PASS Orbit2.Coefficients.Coefficient028
+PASS Orbit2.Coefficients.Coefficient029
+PASS Orbit2.Coefficients.Coefficient030
+PASS Orbit2.Coefficients.Coefficient032
+PASS Orbit2.Coefficients.Coefficient033
+PASS Orbit2.Coefficients.Coefficient031
+PASS Orbit2.Coefficients.Coefficient034
+PASS Orbit2.Coefficients.Coefficient035
+PASS Orbit2.Coefficients.Coefficient036
+PASS Orbit2.Coefficients.Coefficient037
+PASS Orbit2.Coefficients.Coefficient038
+PASS Orbit2.Coefficients.Coefficient039
+PASS Orbit2.Coefficients.Coefficient040
+PASS Orbit2.Coefficients.Coefficient041
+PASS Orbit2.Coefficients.Coefficient042
+PASS Orbit2.Coefficients.Coefficient043
+PASS Orbit2.Coefficients.Coefficient044
+PASS Orbit2.Coefficients.Coefficient045
+PASS Orbit2.Coefficients.Coefficient046
+PASS Orbit2.Coefficients.Coefficient047
+PASS Orbit2.Coefficients.Coefficient048
+PASS Orbit2.Coefficients.Coefficient049
+PASS Orbit2.Coefficients.Coefficient050
+PASS Orbit2.Coefficients.Coefficient051
+PASS Orbit2.Coefficients.Coefficient052
+PASS Orbit2.Coefficients.Coefficient053
+PASS Orbit2.Coefficients.Coefficient054
+PASS Orbit2.Coefficients.Coefficient055
+PASS Orbit2.Coefficients.Coefficient056
+PASS Orbit2.Coefficients.Coefficient057
+PASS Orbit2.Coefficients.Coefficient058
+PASS Orbit2.Coefficients.Coefficient059
+PASS Orbit2.Coefficients.Coefficient060
+PASS Orbit2.Coefficients.Coefficient061
+PASS Orbit2.Coefficients.Coefficient062
+PASS Orbit2.Coefficients.Coefficient063
+PASS Orbit2.Coefficients.Coefficient064
+PASS Orbit2.Coefficients.Coefficient065
+PASS Orbit2.Coefficients.Coefficient066
+PASS Orbit2.Coefficients.Coefficient067
+PASS Orbit2.Coefficients.Coefficient068
+PASS Orbit2.Coefficients.Coefficient069
+PASS Orbit2.Coefficients.Coefficient070
+PASS Orbit2.Coefficients.Coefficient071
+PASS Orbit2.Coefficients.Coefficient072
+PASS Orbit2.Coefficients.Coefficient073
+PASS Orbit2.Coefficients.Coefficient074
+PASS Orbit2.Coefficients.Coefficient075
+PASS Orbit2.Coefficients.Coefficient076
+PASS Orbit2.Coefficients.Coefficient077
+PASS Orbit2.Coefficients.Coefficient078
+PASS Orbit2.Coefficients.Coefficient079
+PASS Orbit2.Coefficients.Coefficient080
+PASS Orbit2.Coefficients.Coefficient082
+PASS Orbit2.Coefficients.Coefficient083
+PASS Orbit2.Coefficients.Coefficient081
+PASS Orbit2.Coefficients.Coefficient084
+PASS Orbit2.Coefficients.Coefficient085
+PASS Orbit2.Coefficients.Coefficient086
+PASS Orbit2.Coefficients.Coefficient088
+PASS Orbit2.Coefficients.Coefficient089
+PASS Orbit2.Coefficients.Coefficient087
+PASS Orbit2.Coefficients.Coefficient090
+PASS Orbit2.Coefficients.Coefficient091
+PASS Orbit2.Coefficients.Coefficient092
+PASS Orbit2.Coefficients.Coefficient093
+PASS Orbit2.Coefficients.Coefficient094
+PASS Orbit2.Coefficients.Coefficient095
+PASS Orbit2.Coefficients.Coefficient096
+PASS Orbit2.Coefficients.Coefficient097
+PASS Orbit2.Coefficients.Coefficient098
+PASS Orbit2.Coefficients.Coefficient099
+PASS Orbit2.Coefficients.Coefficient100
+PASS Orbit2.Coefficients.Coefficient101
+PASS Orbit2.Coefficients.Coefficient102
+PASS Orbit2.Coefficients.Coefficient103
+PASS Orbit2.Coefficients.Coefficient104
+PASS Orbit2.Coefficients.Coefficient106
+PASS Orbit2.Coefficients.Coefficient105
+PASS Orbit2.Coefficients.Coefficient108
+PASS Orbit2.Coefficients.Coefficient107
+PASS Orbit2.Coefficients.Coefficient109
+PASS Orbit2.Coefficients.Coefficient110
+PASS Orbit2.ReconstructionBase
+PASS SS.HilbertKL
+PASS Orbit2.Coefficients
+PASS Orbit2.PauliConjugation
+PASS Orbit2.PhysicalMacWilliams
+PASS Orbit2.PhysicalShadow
+PASS Orbit2.PhysicalB
+PASS Orbit2.Reconstruction
+PASS Orbit2.Encoder
+PASS Orbit2.ExactDistance
+PASS Orbit2.HilbertBridge
+Orbit2/SplitPhysical.lean:78:40: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PASS Orbit2.SplitPhysical
+PASS Orbit2.Attainment
+'Orbit2.checked_polynomial_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.enumerator_of_flatness_and_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.commonJ_block_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.split_isometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.split_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.macWilliams_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.alternating_shadow_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.macWilliams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.shadow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Frames.omega_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Defects.frame_compressionDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.J_trace_shortcut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.twiceCoefficient_offblock' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.Coefficient000.certified_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.FiveQubit.code_pure_KL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.reconstructed_polynomial_eq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.SplitSeed.every_parameter_attained_exact_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS Orbit2
+LEAN CHECKS PASSED (258 modules, 1329.6s)
+warning  libmamba Failed to remove file '/tmp/codex-mamba-cache/mamba/proc/3.json' : Success

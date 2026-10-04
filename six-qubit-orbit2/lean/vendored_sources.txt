@@ -1,0 +1,14 @@
+Source: xh-xihe/dyadic-lifts, six-qubit-sslp/ on dev-zc
+Source revision: 52e43c8d36f5c1317cd1ec380e380e5e8ad879d3
+The supporting modules are vendored here; that directory is not required to build.
+SS.Basic
+SS.BitString
+SS.DiagonalAction
+SS.FullKL
+SS.HilbertKL
+SS.Pauli
+SS.ResidueShiftScreen
+PhysicalMacWilliams.lean: general part through macwilliams_six; removed orbit-36 imports and specialization.
+PhysicalShadow.lean: Shadow.lean with local import adjusted.
+PhysicalB.lean: BEnumerator.lean general part through bco_transform_six;
+removed orbit-specific specialization and adjusted local import.

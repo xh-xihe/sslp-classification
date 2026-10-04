@@ -1,0 +1,532 @@
+PASS Orbit2.Certificate (cached kernel-checked olean)
+PASS Orbit2.TensorPauli (cached kernel-checked olean)
+PASS SS.BitString (cached kernel-checked olean)
+PASS Orbit2.Analytic (cached kernel-checked olean)
+PASS Orbit2.BlockFamily (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block000 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block001 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block002 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block003 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block004 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block005 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block006 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block007 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block008 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block009 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block010 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block011 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block012 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block013 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block014 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block015 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block016 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block017 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block018 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block019 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block020 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block021 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block022 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block023 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block024 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block025 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block026 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block027 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block028 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block029 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block030 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block031 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block032 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block033 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block034 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block035 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block036 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block037 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block038 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block039 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block040 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block041 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block042 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block043 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block044 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block045 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block046 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block047 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block048 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block049 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block050 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block051 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block052 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block053 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block054 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block055 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block056 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block057 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block058 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block059 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block060 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block061 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block062 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block063 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block064 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block065 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block066 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block067 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block068 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block069 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block070 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block071 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block072 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block073 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block074 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block075 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block076 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block077 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block078 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block079 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block080 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block081 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block082 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block083 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block084 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block085 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block086 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block087 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block088 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block089 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block090 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block091 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block092 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block093 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block094 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block095 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block096 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block097 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block098 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block099 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block100 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block101 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block102 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block103 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block104 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block105 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block106 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block107 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block108 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block109 (cached kernel-checked olean)
+PASS Orbit2.Blocks.Block110 (cached kernel-checked olean)
+PASS Orbit2.FiveQubit (cached kernel-checked olean)
+PASS Orbit2.MatrixSteps (cached kernel-checked olean)
+PASS Orbit2.PauliReconstruction (cached kernel-checked olean)
+PASS Orbit2.PurityDefinitions (cached kernel-checked olean)
+PASS Orbit2.ZeroExtension (cached kernel-checked olean)
+PASS SS.Basic (cached kernel-checked olean)
+PASS Orbit2.FiveQubitPhysical (cached kernel-checked olean)
+PASS Orbit2.Frames (cached kernel-checked olean)
+PASS Orbit2.MacWilliams (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case000 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case001 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case002 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case003 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case004 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case005 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case006 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case007 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case008 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case009 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case010 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case011 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case012 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case013 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case014 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case015 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case016 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case017 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case018 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case019 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case020 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case021 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case022 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case023 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case024 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case025 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case026 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case027 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case028 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case029 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case030 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case031 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case032 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case033 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case034 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case035 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case036 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case037 (cached kernel-checked olean)
+PASS Orbit2.Blocks (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case038 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case039 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case040 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case041 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case042 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case043 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case044 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case045 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case046 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case047 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case048 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case049 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case050 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case051 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case052 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case053 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case055 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case054 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case056 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case057 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case058 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case059 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case060 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case061 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case062 (cached kernel-checked olean)
+PASS Orbit2.PurityCases.Case063 (cached kernel-checked olean)
+PASS Orbit2.SplitSeed (cached kernel-checked olean)
+PASS SS.DiagonalAction (cached kernel-checked olean)
+PASS SS.ResidueShiftScreen (cached kernel-checked olean)
+PASS Orbit2.Defects (cached kernel-checked olean)
+PASS Orbit2.PurityCases (cached kernel-checked olean)
+PASS SS.Pauli (cached kernel-checked olean)
+PASS Orbit2.Global
+PASS Orbit2.PurityReduction (cached kernel-checked olean)
+PASS SS.FullKL (cached kernel-checked olean)
+PASS Orbit2.QuarticCoefficients
+PASS Orbit2.CharacterBlocks
+PASS Orbit2.Coefficients.Coefficient001
+PASS Orbit2.Coefficients.Coefficient002
+PASS Orbit2.Coefficients.Coefficient003
+PASS Orbit2.Coefficients.Coefficient004
+PASS Orbit2.Coefficients.Coefficient005
+PASS Orbit2.Coefficients.Coefficient006
+PASS Orbit2.Coefficients.Coefficient007
+PASS Orbit2.Coefficients.Coefficient000
+PASS Orbit2.Coefficients.Coefficient008
+PASS Orbit2.Coefficients.Coefficient009
+PASS Orbit2.Coefficients.Coefficient010
+PASS Orbit2.Coefficients.Coefficient011
+PASS Orbit2.Coefficients.Coefficient012
+PASS Orbit2.Coefficients.Coefficient013
+PASS Orbit2.Coefficients.Coefficient014
+PASS Orbit2.Coefficients.Coefficient015
+PASS Orbit2.Coefficients.Coefficient016
+PASS Orbit2.Coefficients.Coefficient017
+PASS Orbit2.Coefficients.Coefficient018
+PASS Orbit2.Coefficients.Coefficient019
+PASS Orbit2.Coefficients.Coefficient020
+PASS Orbit2.Coefficients.Coefficient021
+PASS Orbit2.Coefficients.Coefficient022
+PASS Orbit2.Coefficients.Coefficient023
+PASS Orbit2.Coefficients.Coefficient024
+PASS Orbit2.Coefficients.Coefficient026
+PASS Orbit2.Coefficients.Coefficient025
+PASS Orbit2.Coefficients.Coefficient027
+PASS Orbit2.Coefficients.Coefficient028
+PASS Orbit2.Coefficients.Coefficient029
+PASS Orbit2.Coefficients.Coefficient030
+PASS Orbit2.Coefficients.Coefficient032
+PASS Orbit2.Coefficients.Coefficient033
+PASS Orbit2.Coefficients.Coefficient031
+PASS Orbit2.Coefficients.Coefficient034
+PASS Orbit2.Coefficients.Coefficient035
+PASS Orbit2.Coefficients.Coefficient036
+PASS Orbit2.Coefficients.Coefficient037
+PASS Orbit2.Coefficients.Coefficient038
+PASS Orbit2.Coefficients.Coefficient039
+PASS Orbit2.Coefficients.Coefficient040
+PASS Orbit2.Coefficients.Coefficient041
+PASS Orbit2.Coefficients.Coefficient042
+PASS Orbit2.Coefficients.Coefficient043
+PASS Orbit2.Coefficients.Coefficient044
+PASS Orbit2.Coefficients.Coefficient045
+PASS Orbit2.Coefficients.Coefficient046
+PASS Orbit2.Coefficients.Coefficient047
+PASS Orbit2.Coefficients.Coefficient048
+PASS Orbit2.Coefficients.Coefficient049
+PASS Orbit2.Coefficients.Coefficient050
+PASS Orbit2.Coefficients.Coefficient051
+PASS Orbit2.Coefficients.Coefficient052
+PASS Orbit2.Coefficients.Coefficient053
+PASS Orbit2.Coefficients.Coefficient054
+PASS Orbit2.Coefficients.Coefficient055
+PASS Orbit2.Coefficients.Coefficient056
+PASS Orbit2.Coefficients.Coefficient057
+PASS Orbit2.Coefficients.Coefficient058
+PASS Orbit2.Coefficients.Coefficient059
+PASS Orbit2.Coefficients.Coefficient060
+PASS Orbit2.Coefficients.Coefficient061
+PASS Orbit2.Coefficients.Coefficient062
+PASS Orbit2.Coefficients.Coefficient063
+PASS Orbit2.Coefficients.Coefficient064
+PASS Orbit2.Coefficients.Coefficient065
+PASS Orbit2.Coefficients.Coefficient066
+PASS Orbit2.Coefficients.Coefficient067
+PASS Orbit2.Coefficients.Coefficient068
+PASS Orbit2.Coefficients.Coefficient069
+PASS Orbit2.Coefficients.Coefficient070
+PASS Orbit2.Coefficients.Coefficient071
+PASS Orbit2.Coefficients.Coefficient072
+PASS Orbit2.Coefficients.Coefficient073
+PASS Orbit2.Coefficients.Coefficient074
+PASS Orbit2.Coefficients.Coefficient075
+PASS Orbit2.Coefficients.Coefficient076
+PASS Orbit2.Coefficients.Coefficient077
+PASS Orbit2.Coefficients.Coefficient078
+PASS Orbit2.Coefficients.Coefficient079
+PASS Orbit2.Coefficients.Coefficient080
+PASS Orbit2.Coefficients.Coefficient082
+PASS Orbit2.Coefficients.Coefficient083
+PASS Orbit2.Coefficients.Coefficient081
+PASS Orbit2.Coefficients.Coefficient084
+PASS Orbit2.Coefficients.Coefficient085
+PASS Orbit2.Coefficients.Coefficient086
+PASS Orbit2.Coefficients.Coefficient088
+PASS Orbit2.Coefficients.Coefficient089
+PASS Orbit2.Coefficients.Coefficient087
+PASS Orbit2.Coefficients.Coefficient090
+PASS Orbit2.Coefficients.Coefficient091
+PASS Orbit2.Coefficients.Coefficient092
+PASS Orbit2.Coefficients.Coefficient093
+PASS Orbit2.Coefficients.Coefficient094
+PASS Orbit2.Coefficients.Coefficient095
+PASS Orbit2.Coefficients.Coefficient096
+PASS Orbit2.Coefficients.Coefficient097
+PASS Orbit2.Coefficients.Coefficient098
+PASS Orbit2.Coefficients.Coefficient099
+PASS Orbit2.Coefficients.Coefficient100
+PASS Orbit2.Coefficients.Coefficient101
+PASS Orbit2.Coefficients.Coefficient102
+PASS Orbit2.Coefficients.Coefficient103
+PASS Orbit2.Coefficients.Coefficient104
+PASS Orbit2.Coefficients.Coefficient106
+PASS Orbit2.Coefficients.Coefficient107
+PASS Orbit2.Coefficients.Coefficient105
+PASS Orbit2.Coefficients.Coefficient108
+PASS Orbit2.Coefficients.Coefficient109
+PASS Orbit2.ReconstructionBase
+PASS SS.HilbertKL (cached kernel-checked olean)
+PASS Orbit2.Coefficients.Coefficient110
+PASS Orbit2.Coefficients
+PASS Orbit2.PhysicalMacWilliams (cached kernel-checked olean)
+PASS Orbit2.PauliConjugation
+PASS Orbit2.PhysicalB (cached kernel-checked olean)
+PASS Orbit2.PhysicalShadow (cached kernel-checked olean)
+PASS Orbit2.Reconstruction
+PASS Orbit2.Encoder (cached kernel-checked olean)
+PASS Orbit2.BlockRegroup
+PASS Orbit2.HilbertBridge (cached kernel-checked olean)
+PASS Orbit2.ExactDistance (cached kernel-checked olean)
+PASS Orbit2.Purification (cached kernel-checked olean)
+PASS Orbit2.TensorEncoder (cached kernel-checked olean)
+PASS Orbit2.SplitPhysical (cached kernel-checked olean)
+PASS Orbit2.Attainment (cached kernel-checked olean)
+PASS Orbit2.PurificationKL (cached kernel-checked olean)
+Orbit2/PurificationSymmetry.lean:97:59: warning: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/PurificationSymmetry.lean:97:75: warning: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.mul_smul,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.PurificationSymmetry
+Orbit2/PhysicalFlatness.lean:21:60: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp [labelSite, ̲hx̵,̵h̵z]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/PhysicalFlatness.lean:21:63: warning: This simp argument is unused:
+  hz
+
+Hint: Omit it from the simp argument list.
+  simp [labelSite, ̲hx,̵h̵z̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/PhysicalFlatness.lean:46:53: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+PASS Orbit2.PhysicalFlatness
+Orbit2/LowWeightFlatness.lean:138:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PASS Orbit2.LowWeightFlatness
+PASS Orbit2.SpectatorFrames
+Orbit2/FrameConstruction.lean:51:33: warning: This simp argument is unused:
+  Finset.sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  simp [̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵i̵t̵e̵_̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵e̵q̵'̵]̵[̲M̲a̲t̲r̲i̲x̲.̲o̲n̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲i̲t̲e̲_̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/FrameConstruction.lean:104:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PASS Orbit2.FrameConstruction
+Orbit2/FrameKL.lean:24:28: warning: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.mul_sum,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.FrameKL
+PASS Orbit2.FrameSpin
+PASS Orbit2.MagicBasis
+PASS Orbit2.PhysicalCommonJ
+PASS Orbit2.PhysicalDefects
+PASS Orbit2.ActiveProjector
+Orbit2/EnumeratorTransport.lean:88:8: warning: This simp argument is unused:
+  Complex.normSq_div
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵d̵i̵v̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.EnumeratorTransport
+Orbit2/ProjectorSupport.lean:87:26: warning: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp [̵o̵p̵e̵r̵a̵t̵o̵r̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵h̵n̵]̵[̲o̲p̲e̲r̲a̲t̲o̲r̲_̲z̲e̲r̲o̲,̲ ̲h̲n̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.ProjectorSupport
+PASS Orbit2.FrameParity
+Orbit2/SpectralGeometry.lean:30:6: warning: 'change FiveQubit.flipSite 3 (x i) = x i' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PASS Orbit2.SpectralGeometry
+PASS Orbit2.PhysicalSpectral
+PASS Orbit2.TSupport
+PASS Orbit2.PhysicalPauliSupport
+PASS Orbit2.TraceReality
+PASS Orbit2.FinalReduction
+Orbit2/ContractionExpansion.lean:35:75: warning: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵m̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵,̵s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵t̵a̵u̵_̵s̵u̵m̵,̵t̵a̵u̵_̵s̵m̵u̵l̵,̵b̵a̵s̵i̵s̵_̵t̵a̵u̵_̵p̵a̵i̵r̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲u̲m̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲,̲ ̲t̲a̲u̲_̲s̲u̲m̲,̲ ̲t̲a̲u̲_̲s̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲b̲a̲s̲i̲s̲_̲t̲a̲u̲_̲p̲a̲i̲r̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/ContractionExpansion.lean:76:21: warning: This simp argument is unused:
+  Finset.sum_ite_irrel
+
+Hint: Omit it from the simp argument list.
+  simp only [̵i̵t̵e̵_̵a̵n̵d̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵i̵r̵r̵e̵l̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵c̵o̵n̵s̵t̵_̵z̵e̵r̵o̵]̵[̲i̲t̲e̲_̲a̲n̲d̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲c̲o̲n̲s̲t̲_̲z̲e̲r̲o̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/ContractionExpansion.lean:76:42: warning: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵i̵t̵e̵_̵a̵n̵d̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵i̵r̵r̵e̵l̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵c̵o̵n̵s̵t̵_̵z̵e̵r̵o̵]̵[̲i̲t̲e̲_̲a̲n̲d̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲i̲t̲e̲_̲i̲r̲r̲e̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/ContractionExpansion.lean:100:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+PASS Orbit2.ContractionExpansion
+Orbit2/JExpansion.lean:45:28: warning: This simp argument is unused:
+  Matrix.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵m̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵,̵s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵t̵a̵u̵_̵s̵u̵m̵,̵t̵a̵u̵_̵s̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲,̲ ̲s̲m̲u̲l̲_̲s̲m̲u̲l̲,̲ ̲t̲a̲u̲_̲s̲u̲m̲,̲ ̲t̲a̲u̲_̲s̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲s̲e̲t̲.̲m̲u̲l̲_̲s̲u̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/JExpansion.lean:45:75: warning: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵m̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵,̵s̵m̵u̵l̵_̵s̵m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵t̵a̵u̵_̵s̵u̵m̵,̵t̵a̵u̵_̵s̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲u̲m̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲,̲ ̲t̲a̲u̲_̲s̲u̲m̲,̲ ̲t̲a̲u̲_̲s̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲s̲e̲t̲.̲m̲u̲l̲_̲s̲u̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/JExpansion.lean:86:13: warning: This simp argument is unused:
+  Matrix.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵u̵m̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵m̵u̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵t̵a̵u̵_̵s̵u̵m̵,̵t̵a̵u̵_̵s̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲s̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲m̲u̲l̲,̲ ̲t̲a̲u̲_̲s̲u̲m̲,̲ ̲t̲a̲u̲_̲s̲m̲u̲l̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲m̲u̲l̲_̲s̲u̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Orbit2/JExpansion.lean:158:6: warning: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+PASS Orbit2.JExpansion
+Orbit2/CExpansion.lean:38:12: warning: This simp argument is unused:
+  eq_comm
+
+Hint: Omit it from the simp argument list.
+  simp [h,̵e̵q̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+PASS Orbit2.CExpansion
+PASS Orbit2.MonomialIndex
+PASS Orbit2.MonomialRegroup
+PASS Orbit2.PhysicalQuartic
+PASS Orbit2.Complete
+'Orbit2.checked_polynomial_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.enumerator_of_flatness_and_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.commonJ_block_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.split_isometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.split_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.macWilliams_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.alternating_shadow_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.macWilliams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.shadow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Frames.omega_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Defects.frame_compressionDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.J_trace_shortcut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.twiceCoefficient_offblock' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.Coefficient000.certified_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.FiveQubit.code_pure_KL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.reconstructed_polynomial_eq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.SplitSeed.every_parameter_attained_exact_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.flat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.PhysicalFlatness.target_masses_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.TensorPauli.matrix_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.spectatorDensity_flat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.computationalFrames_isometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.schmidtFrame_parity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.physical_commonJ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.physicalT_equations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.A3_projector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.activeProjector_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.physicalOmega_distance_one_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.physicalT_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.physicalT_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.wordTrace_four_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.A3_zero_of_T_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.enumerator_of_certificate_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.projection_contraction_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.J_contraction_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.c_contraction_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.physical_raw_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.orderedPolynomial_eq_fullEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Quartic.fullCoefficientEnergy_eq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.certificate_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.enumerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.A3_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.Encoder.exact_distance_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Orbit2.orbit2_exact_enumerator_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS Orbit2
+LEAN CHECKS PASSED (357 modules, 663.1s)

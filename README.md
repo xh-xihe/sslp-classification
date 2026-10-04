@@ -47,6 +47,7 @@ lean/       the Lean 4 formalization (source only; `lake build` fetches the rest
 code/       the numerics: the lift, the seed data, and the two verification runs
 data/       the sweep results
 results/    the theorem-hypothesis sweep report, and its consistency checker
+six-qubit-orbit2/  independent kernel-checked orbit-2 enumerator certification
 ```
 
 Nothing here is stale. Superseded drafts, intermediate outputs, and the
@@ -182,6 +183,28 @@ Block lengths quoted for other families are lengths those families *achieve*.
 For stabilizer codes a matching lower bound is known under the hypotheses of
 [arXiv:2210.14066](https://arxiv.org/abs/2210.14066); for nonadditive codes we
 know of no lower bound.
+
+---
+
+## Six-qubit orbit-2 enumerator certification
+
+[`six-qubit-orbit2/`](six-qubit-orbit2/README.md) contains a separate,
+self-contained Lean 4 certification of the exact orbit-2 enumerator image:
+
+```text
+(1, alpha, 1-alpha, 0, 11+4*alpha, 16-alpha, 3-3*alpha), 0 <= alpha <= 1.
+```
+
+The theorem assumes an isometric six-qubit encoder, full weight-two Pauli
+Knill--Laflamme detection, and logical `IIZZZZ`. It proves the converse and
+attainment of every parameter with exact distance three. The entire argument,
+including the physical reductions and exact Gram certificate, is kernel
+checked. The final theorem uses only `propext`, `Classical.choice`, and
+`Quot.sound`, with no admitted proof or native computation oracle.
+
+This package has its own pinned toolchain and Mathlib dependency. It does not
+change the dyadic-ladder formalization. See its README for the assumptions,
+main theorem, verification logs, and build commands.
 
 ---
 

@@ -216,3 +216,33 @@ machine and about 12.5 min with another job competing for the CPU.
 
 The Lean build is fully pinned: the toolchain by `lean-toolchain`, Mathlib by
 `lake-manifest.json`.
+
+
+## Orbit-2 enumerator certification
+
+The independent `six-qubit-orbit2/lean/` package pins Lean and Mathlib v4.27.0.
+From the repository root:
+
+```bash
+cd six-qubit-orbit2/lean
+lake update
+lake exe cache get
+python3 check.py --jobs 2
+```
+
+Expected final output: `LEAN CHECKS PASSED (357 modules, ...s)`. The entry point
+prints axiom audits of the end-to-end theorem and the contraction/Gram bridge;
+all report only `propext`, `Classical.choice`, and `Quot.sound`. The wrapper
+rejects admitted proofs and unexpected audit dependencies. Two workers bound
+concurrency for the exact finite certificate checks.
+
+To reuse a compatible local Mathlib installation without modifying it:
+
+```bash
+python3 check.py --mathlib-project /absolute/path/to/mathlib-project --jobs 2
+```
+
+See [the package README](six-qubit-orbit2/README.md) and
+[proof notes](six-qubit-orbit2/lean/README.txt) for scope, source provenance,
+logs, and certificate-regeneration commands. The original verifier and JSON
+are included for independent exact checks; they are not Lean proof assumptions.
