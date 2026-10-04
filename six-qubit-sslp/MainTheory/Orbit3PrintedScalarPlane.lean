@@ -13,7 +13,7 @@ theorem three_parameter (W : Encoder) : (fun k : Fin 7 => A W k)=
     ![1,A W 1,A W 2,A W 3,15-4*A W 2-3*A W 3,
       12+3*A W 1+4*A W 2+3*A W 3,4-4*A W 1-A W 2-A W 3] := by
   have h0 := SixQubit.Pin.Aco_zero W.states W.normalized
-  obtain ⟨h4,h5,h6⟩ := macwilliams_six W.states W.hasDistance h0
+  obtain ⟨h4,h5,h6⟩ := SS.MacWilliams.macwilliams_six W.states W.hasDistance h0
   ext k
   fin_cases k <;> simp only [A] <;> norm_num <;> linarith
 

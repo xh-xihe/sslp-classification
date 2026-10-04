@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "publication_commit": "9ce262c4ca5bd8dc3a598676d0b1d5db205e87a1",
+  "publication_commit": "5001c040c8c9673eb14ac4e8cd9c2bd0d66fa7ac",
   "canonical_branch": "sixqubit-classification",
   "checked_published_generated_sources": 3066,
   "manifest_corrections": [
@@ -13,12 +13,13 @@
       "entries": 11
     }
   ],
-  "focused_axiom_roots": 138,
+  "focused_axiom_roots": 142,
   "axiom_union": [
     "propext",
     "Quot.sound",
     "Classical.choice"
   ],
   "latest_unified_acceptance": "running; will be recorded separately",
-  "scope": "Orbit-2/3 full images integrated into the existing manuscript formalization tree."
+  "scope": "Orbit-2/3 full images integrated into the existing manuscript formalization tree.",
+  "auxiliary_scalar_plane": "Compiled successfully; macwilliams_six resolved in SS.MacWilliams."
 }

@@ -1,3 +1,4 @@
+import MainTheory.Orbit3PrintedScalarPlane
 import MainTheory.KernelAxiomAudit
 import MainTheory.Orbit2ActiveProjectorRank
 import MainTheory.Orbit2FullGramMatrix
@@ -167,5 +168,9 @@ import SixQubit.Generated.Orbit2PhysicalSpectra
   MainTheory.Orbit2SpectralTable.number_of_coordinates,
   MainTheory.Orbit2SpectralTable.all_polynomials,
   SixQubit.Generated.Orbit2PhysicalSpectra.physical_dimensions,
-  SixQubit.Generated.Orbit2PhysicalSpectra.physical_characteristic_polynomials
+  SixQubit.Generated.Orbit2PhysicalSpectra.physical_characteristic_polynomials,
+  MainTheory.Orbit3PrintedScalarPlane.three_parameter,
+  MainTheory.Orbit3PrintedScalarPlane.low_plane,
+  MainTheory.Orbit3PrintedScalarPlane.two_parameter,
+  MainTheory.Orbit3PrintedScalarPlane.domain
 ]
