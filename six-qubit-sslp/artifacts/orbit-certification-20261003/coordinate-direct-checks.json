@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "kernel_only": true,
+  "workers": 2,
+  "modules": {
+    "SixQubit.Generated.Orbit3Coordinates.Proof01": {
+      "returncode": 0,
+      "elapsed_seconds": 94.67,
+      "source_sha256": "03146b208499406cfe7a4cd04a032d6cc7c8a223cee91a5b43f4f339c2f35915",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof01.log",
+      "output_sha256": "5e926c79132410dc96a04d26bc8db50d41310ed5a7818c2522571810e94f0db8"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof02": {
+      "returncode": 0,
+      "elapsed_seconds": 100.88,
+      "source_sha256": "206b14ac108e7c909ab626d8a8b4cf5ff76a3542058aa93659eaacccaef9fe80",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof02.log",
+      "output_sha256": "fe5ef0f50710f7ad058d8dc139147cce64d17d4ca3e2d1f151a7a6bcae8d7147"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof03": {
+      "returncode": 0,
+      "elapsed_seconds": 103.62,
+      "source_sha256": "af099d1cb0cb623cf61efd1240f0eb66949478c3d29daaa55997d95dc2a570e3",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof03.log",
+      "output_sha256": "dd1f5e18c3c373c00611454983fbea358be61ee974e819b92d8ced40a0bc07cc"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof04": {
+      "returncode": 0,
+      "elapsed_seconds": 102.38,
+      "source_sha256": "72107930cb03b197a6d06a0cd94f479cbd33008a2811e23d0c05bd20ea6d405d",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof04.log",
+      "output_sha256": "162ebb9d9e24686ddc9337147e9dcef25c5f1e10d38505f03365b39625d491e8"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof05": {
+      "returncode": 0,
+      "elapsed_seconds": 111.03,
+      "source_sha256": "015bb1b9572610bbe41028785271741900b328525a0e9d128fedba6076e3b3d0",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof05.log",
+      "output_sha256": "3c619391df2002faf394144be982509ebcdd912b39ea2e4d7f11fa7f12f2e2c0"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof06": {
+      "returncode": 0,
+      "elapsed_seconds": 113.75,
+      "source_sha256": "852da55bfb88333a3b090847fc61b6a4b3cc1ca15013ccfaf840649f60e1e44d",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof06.log",
+      "output_sha256": "1d46bf0f534fa3def3b060fddd0e1c1be5587d8814c1f0f43e37832c82f7c10f"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof07": {
+      "returncode": 0,
+      "elapsed_seconds": 113.14,
+      "source_sha256": "5bd70ff1bc630e0cc68e6422279661e04a87f35c287b94380af595a76a5e11e2",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof07.log",
+      "output_sha256": "cb09862d46347feece85bb7bf25562d33ee5af3b8bd2d190fc919c79b6e37fe2"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof08": {
+      "returncode": 0,
+      "elapsed_seconds": 112.19,
+      "source_sha256": "ebab7d806649fd5f814c6a121300c8ad276d0401097b0dc5bc5782d51274ddbc",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof08.log",
+      "output_sha256": "56f89630e767b14d0a4a9e7700a28b84df759a9200911d08e7cb0f2e043443cd"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof09": {
+      "returncode": 0,
+      "elapsed_seconds": 131.97,
+      "source_sha256": "70a827ff471916e4744ef6046b79b30e3b0cade862c4504f728dc36a9074c62f",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof09.log",
+      "output_sha256": "8e786c040bb80ecc35451d97cbb9bf18c2e20567c6991c17e799439cdc780322"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof10": {
+      "returncode": 0,
+      "elapsed_seconds": 127.92,
+      "source_sha256": "7b3f8f40a83babee37042d63a8749d860980b2b3469e1802306ceeeb3697a96c",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof10.log",
+      "output_sha256": "0dd83abd82f97f58b26d5ffb6a69f6077288f03818ed8e213406325b126af148"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof11": {
+      "returncode": 0,
+      "elapsed_seconds": 104.19,
+      "source_sha256": "390a0ea7695fe53205d2bd45ac9416df123af24acc5accdb2d9376c14c31f293",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof11.log",
+      "output_sha256": "512717c4ca339000450f93a1ac69886c79dd0d510373ddb59272eb5cd40d27ac"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof12": {
+      "returncode": 0,
+      "elapsed_seconds": 111.53,
+      "source_sha256": "36273f1247b4ec86710e166a179c5e81a866e19185ddb478d8eab1d1adfb33a8",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof12.log",
+      "output_sha256": "bbdb8484b935392c7be08ce368de271df16b7b27dfc66264af7f463edba37c1b"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof13": {
+      "returncode": 0,
+      "elapsed_seconds": 102.33,
+      "source_sha256": "b8ea75d69bdfaf95d813b22baa71f5c85ee6282b36181ee66d6d0db9f5019c67",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof13.log",
+      "output_sha256": "6183627152718b68ed8a2fe8ce7448314e14b835f8b5f18249149ae72a45b3b9"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof14": {
+      "returncode": 0,
+      "elapsed_seconds": 112.72,
+      "source_sha256": "eadd36131e856b00643a9b28fa71eb325e66ee0514301ca5b2c154f1ba924c01",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof14.log",
+      "output_sha256": "559b2c20edefd43de5394419256f73e6c0fb0c55dad57007e8659b77d1576cce"
+    },
+    "SixQubit.Generated.Orbit3Coordinates.Proof15": {
+      "returncode": 0,
+      "elapsed_seconds": 100.25,
+      "source_sha256": "f83223b9e9b55b4e1e4facadfc27318623150af63c417bf59a8f2a9baf02cb67",
+      "log": "tmp\\orbit3-coordinate-chunks\\Proof15.log",
+      "output_sha256": "c78ab2a2e3f6c40a0359e134b5471daea2c4303d388efcd8222069c5ecb5cd2e"
+    },
+    "SixQubit.Generated.Orbit3ReducedCoordinates": {
+      "returncode": 0,
+      "elapsed_seconds": 16.34,
+      "source_sha256": "70ad704ef6ccdf301ce1cea706316ce07bf53d965ef47b2650e0c34dcba0b574",
+      "log": "tmp\\orbit3-coordinate-chunks\\Orbit3ReducedCoordinates.log",
+      "output_sha256": "6f8c6582ca5bdb0616a178664ebca0029880e412649fc208f4a76478a612b83e"
+    }
+  },
+  "scope": "Direct kernel checks of coverage and concrete permutation/transposition witnesses; not a content-stamped import-closure build or a full encoder converse."
+}

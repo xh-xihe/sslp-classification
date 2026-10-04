@@ -35,7 +35,7 @@ import uuid
 from lean_source import imports, MODULE_NAME
 
 ROOT = Path(__file__).resolve().parent.parent
-LIVE_DIRS = ('SS', 'SixQubit', 'MainTheory', 'QECC')
+LIVE_DIRS = ('SS', 'SixQubit', 'MainTheory', 'QECC', 'Orbit2')
 SCHEMA = 1
 LEAN_FLAGS = ['-j', '1', '-DwarningAsError=true']
 OUTPUT_SUFFIXES = ('.olean', '.olean.private', '.olean.server', '.ir', '.ilean')

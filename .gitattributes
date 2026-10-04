@@ -16,3 +16,8 @@ latexmkrc       text eol=lf
 
 # Built documents: never diffed, never line-ending-mangled.
 *.pdf   binary
+
+# Certificate payloads and evidence are bound by byte hashes.
+six-qubit-sslp/results/orbit2-kernel/*.json -text
+six-qubit-sslp/results/orbit3-kernel/*.json -text
+six-qubit-sslp/artifacts/orbit-certification-20261003/* -text

@@ -1,0 +1,2424 @@
+{
+  "description": "Exact orbit-3 sextic moment certificate. The identity uses necessary KL, scalar-zero, spin-flip and symmetry equations.",
+  "dimension": 64,
+  "site_zero_lsb": true,
+  "pauli_convention": "r=x+64*z; P_r=i^popcount(x&z) X^x Z^z",
+  "cubic_polynomial": [
+    [
+      [
+        2,
+        61,
+        63
+      ],
+      1
+    ],
+    [
+      [
+        3,
+        60,
+        63
+      ],
+      1
+    ],
+    [
+      [
+        3,
+        61,
+        62
+      ],
+      -2
+    ],
+    [
+      [
+        4,
+        59,
+        63
+      ],
+      -1
+    ],
+    [
+      [
+        5,
+        58,
+        63
+      ],
+      -1
+    ],
+    [
+      [
+        5,
+        59,
+        62
+      ],
+      2
+    ],
+    [
+      [
+        10,
+        53,
+        63
+      ],
+      1
+    ],
+    [
+      [
+        11,
+        53,
+        62
+      ],
+      -1
+    ],
+    [
+      [
+        12,
+        51,
+        63
+      ],
+      -1
+    ],
+    [
+      [
+        13,
+        51,
+        62
+      ],
+      1
+    ],
+    [
+      [
+        14,
+        51,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        14,
+        53,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        15,
+        50,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        15,
+        51,
+        60
+      ],
+      -2
+    ],
+    [
+      [
+        15,
+        52,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        15,
+        53,
+        58
+      ],
+      2
+    ],
+    [
+      [
+        18,
+        45,
+        63
+      ],
+      1
+    ],
+    [
+      [
+        19,
+        45,
+        62
+      ],
+      -1
+    ],
+    [
+      [
+        20,
+        43,
+        63
+      ],
+      -1
+    ],
+    [
+      [
+        21,
+        43,
+        62
+      ],
+      1
+    ],
+    [
+      [
+        22,
+        43,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        22,
+        45,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        23,
+        42,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        23,
+        43,
+        60
+      ],
+      -2
+    ],
+    [
+      [
+        23,
+        44,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        23,
+        45,
+        58
+      ],
+      2
+    ],
+    [
+      [
+        26,
+        39,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        27,
+        36,
+        63
+      ],
+      -1
+    ],
+    [
+      [
+        27,
+        37,
+        62
+      ],
+      1
+    ],
+    [
+      [
+        27,
+        38,
+        61
+      ],
+      1
+    ],
+    [
+      [
+        27,
+        39,
+        60
+      ],
+      -2
+    ],
+    [
+      [
+        28,
+        39,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        29,
+        34,
+        63
+      ],
+      1
+    ],
+    [
+      [
+        29,
+        35,
+        62
+      ],
+      -1
+    ],
+    [
+      [
+        29,
+        38,
+        59
+      ],
+      -1
+    ],
+    [
+      [
+        29,
+        39,
+        58
+      ],
+      2
+    ]
+  ],
+  "lhs_target_multiplier": 3,
+  "lhs_square_multiplier": 1280,
+  "lhs_divisor": 80,
+  "terms": [
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        2048,
+        2048
+      ],
+      "row_divisor": 1,
+      "multiplier": "-6537267/3155584"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        32,
+        32
+      ],
+      "row_divisor": 2,
+      "multiplier": "3154949/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        1056,
+        1056
+      ],
+      "row_divisor": 2,
+      "multiplier": "1507/1108"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1024,
+        3072
+      ],
+      "row_divisor": 1,
+      "multiplier": "736943/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1024,
+        1056
+      ],
+      "row_divisor": 2,
+      "multiplier": "-720505/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        48,
+        48
+      ],
+      "row_divisor": 2,
+      "multiplier": "-70782/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        48,
+        3120
+      ],
+      "row_divisor": -2,
+      "multiplier": "493439/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        2064,
+        3120
+      ],
+      "row_divisor": -2,
+      "multiplier": "-2093035/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1536,
+        3584
+      ],
+      "row_divisor": 1,
+      "multiplier": "-5233215/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        528,
+        560
+      ],
+      "row_divisor": 2,
+      "multiplier": "-593301/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        560,
+        3632
+      ],
+      "row_divisor": -2,
+      "multiplier": "2950221/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        2576,
+        3632
+      ],
+      "row_divisor": -2,
+      "multiplier": "2595117/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        40,
+        24
+      ],
+      "row_divisor": 2,
+      "multiplier": "654801/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3080,
+        3128
+      ],
+      "row_divisor": -2,
+      "multiplier": "334629/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        3840,
+        3840
+      ],
+      "row_divisor": 1,
+      "multiplier": "796367/6311168"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1792,
+        3840
+      ],
+      "row_divisor": 1,
+      "multiplier": "-3550337/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1792,
+        1824
+      ],
+      "row_divisor": 2,
+      "multiplier": "645519/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        784,
+        816
+      ],
+      "row_divisor": 2,
+      "multiplier": "1560933/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        768,
+        3840
+      ],
+      "row_divisor": 1,
+      "multiplier": "-767481/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        768,
+        816
+      ],
+      "row_divisor": 2,
+      "multiplier": "-773547/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        264,
+        1320
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1523457/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        304,
+        768
+      ],
+      "row_divisor": 2,
+      "multiplier": "1524447/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        304,
+        3888
+      ],
+      "row_divisor": -2,
+      "multiplier": "-582663/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3376,
+        3840
+      ],
+      "row_divisor": -2,
+      "multiplier": "629091/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        56,
+        288,
+        280
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1768209/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3080,
+        304,
+        3384
+      ],
+      "row_divisor": -2,
+      "multiplier": "-2272911/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        44,
+        28
+      ],
+      "row_divisor": 2,
+      "multiplier": "-154953/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        2076,
+        3132
+      ],
+      "row_divisor": -2,
+      "multiplier": "-937026/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1824,
+        2076,
+        3900
+      ],
+      "row_divisor": 2,
+      "multiplier": "1121962/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        3968,
+        3968
+      ],
+      "row_divisor": 1,
+      "multiplier": "-23957/15777920"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1920,
+        3968
+      ],
+      "row_divisor": 1,
+      "multiplier": "6104701/12622336"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1920,
+        1952
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1829779/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        944,
+        944
+      ],
+      "row_divisor": 2,
+      "multiplier": "12877793/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        912,
+        944
+      ],
+      "row_divisor": -2,
+      "multiplier": "1216659/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        896,
+        3968
+      ],
+      "row_divisor": 1,
+      "multiplier": "-3734533/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        2944,
+        1920
+      ],
+      "row_divisor": 1,
+      "multiplier": "-2204119/3155584"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        896,
+        944
+      ],
+      "row_divisor": 2,
+      "multiplier": "4086021/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        944,
+        4016
+      ],
+      "row_divisor": -2,
+      "multiplier": "335039/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3968,
+        4016
+      ],
+      "row_divisor": -2,
+      "multiplier": "-6540249/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        408,
+        2456
+      ],
+      "row_divisor": 2,
+      "multiplier": "-3925425/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        408,
+        440
+      ],
+      "row_divisor": 2,
+      "multiplier": "-6555/356"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        424,
+        408
+      ],
+      "row_divisor": 2,
+      "multiplier": "-613575/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3496,
+        3480
+      ],
+      "row_divisor": -2,
+      "multiplier": "649527/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        2432,
+        1920
+      ],
+      "row_divisor": 1,
+      "multiplier": "14652333/12622336"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        384,
+        944
+      ],
+      "row_divisor": 2,
+      "multiplier": "-18998805/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        432,
+        896
+      ],
+      "row_divisor": 2,
+      "multiplier": "-5064291/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        432,
+        4016
+      ],
+      "row_divisor": -2,
+      "multiplier": "30068649/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        56,
+        3456,
+        3512
+      ],
+      "row_divisor": -2,
+      "multiplier": "705015/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        172,
+        1164
+      ],
+      "row_divisor": 2,
+      "multiplier": "1250544/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3212,
+        3260
+      ],
+      "row_divisor": -2,
+      "multiplier": "3045207/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        56,
+        132,
+        188
+      ],
+      "row_divisor": 2,
+      "multiplier": "523132/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        688,
+        3504
+      ],
+      "row_divisor": -2,
+      "multiplier": "8494515/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3084,
+        176,
+        3260
+      ],
+      "row_divisor": -2,
+      "multiplier": "-302091/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        60,
+        3248,
+        3212
+      ],
+      "row_divisor": -2,
+      "multiplier": "-4751421/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        188,
+        4028
+      ],
+      "row_divisor": 2,
+      "multiplier": "6688593/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        3212,
+        4028
+      ],
+      "row_divisor": 2,
+      "multiplier": "5840877/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        60,
+        4016,
+        3980
+      ],
+      "row_divisor": 2,
+      "multiplier": "-8522487/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        30,
+        62
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1603495/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        14,
+        62
+      ],
+      "row_divisor": 2,
+      "multiplier": "-751072/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        46,
+        30
+      ],
+      "row_divisor": 2,
+      "multiplier": "-356022/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        62,
+        3902
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1588857/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        96,
+        96
+      ],
+      "row_divisor": 2,
+      "multiplier": "94292/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        64,
+        2112
+      ],
+      "row_divisor": 1,
+      "multiplier": "5417157/3155584"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        64,
+        96
+      ],
+      "row_divisor": 2,
+      "multiplier": "-427093/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        3136,
+        3136
+      ],
+      "row_divisor": 1,
+      "multiplier": "1470829/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1088,
+        3136
+      ],
+      "row_divisor": 1,
+      "multiplier": "-129465/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1088,
+        1120
+      ],
+      "row_divisor": 2,
+      "multiplier": "480017/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        80,
+        2128
+      ],
+      "row_divisor": 2,
+      "multiplier": "81573/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        64,
+        3136
+      ],
+      "row_divisor": 1,
+      "multiplier": "-1177803/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        64,
+        1120
+      ],
+      "row_divisor": 2,
+      "multiplier": "-397643/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        96,
+        80
+      ],
+      "row_divisor": 2,
+      "multiplier": "-268287/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3136,
+        3184
+      ],
+      "row_divisor": -2,
+      "multiplier": "1260987/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        576,
+        1632
+      ],
+      "row_divisor": 2,
+      "multiplier": "-509415/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        2624,
+        1600
+      ],
+      "row_divisor": 1,
+      "multiplier": "3343671/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        576,
+        624
+      ],
+      "row_divisor": 2,
+      "multiplier": "1141641/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        608,
+        592
+      ],
+      "row_divisor": 2,
+      "multiplier": "921/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        104,
+        1096
+      ],
+      "row_divisor": 2,
+      "multiplier": "-196749/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3144,
+        3192
+      ],
+      "row_divisor": -2,
+      "multiplier": "-551427/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        64,
+        3648
+      ],
+      "row_divisor": 1,
+      "multiplier": "-29913/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1568,
+        96,
+        1600
+      ],
+      "row_divisor": 2,
+      "multiplier": "39957/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        112,
+        576
+      ],
+      "row_divisor": 2,
+      "multiplier": "-301362/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3168,
+        3664
+      ],
+      "row_divisor": -2,
+      "multiplier": "-5463309/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3184,
+        3648
+      ],
+      "row_divisor": -2,
+      "multiplier": "-5734269/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        56,
+        96,
+        88
+      ],
+      "row_divisor": 2,
+      "multiplier": "705015/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1064,
+        2160,
+        3160
+      ],
+      "row_divisor": 2,
+      "multiplier": "-198/277"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1856,
+        3904
+      ],
+      "row_divisor": 1,
+      "multiplier": "2605323/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3904,
+        3952
+      ],
+      "row_divisor": -2,
+      "multiplier": "-168279/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        320,
+        3904
+      ],
+      "row_divisor": 1,
+      "multiplier": "-436115/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        68,
+        3652
+      ],
+      "row_divisor": 2,
+      "multiplier": "-330353/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        116,
+        580
+      ],
+      "row_divisor": 2,
+      "multiplier": "1992915/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        2112,
+        1856
+      ],
+      "row_divisor": 1,
+      "multiplier": "352211/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1824,
+        96,
+        1856
+      ],
+      "row_divisor": 2,
+      "multiplier": "453839/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        96,
+        848
+      ],
+      "row_divisor": 2,
+      "multiplier": "1656477/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        3136,
+        832
+      ],
+      "row_divisor": 1,
+      "multiplier": "-1665459/6311168"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        112,
+        832
+      ],
+      "row_divisor": 2,
+      "multiplier": "3431781/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        3136,
+        3952
+      ],
+      "row_divisor": -2,
+      "multiplier": "-196545/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        4032,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "-50923/493060"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1984,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "-5482899/3155584"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        976,
+        1008
+      ],
+      "row_divisor": -2,
+      "multiplier": "-154757/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        960,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "921/1108"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        3008,
+        1984
+      ],
+      "row_divisor": 1,
+      "multiplier": "3/2"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        992,
+        1984
+      ],
+      "row_divisor": 2,
+      "multiplier": "-7297/356"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        960,
+        1008
+      ],
+      "row_divisor": 2,
+      "multiplier": "-698227/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        4032,
+        4080
+      ],
+      "row_divisor": -2,
+      "multiplier": "282777/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3560,
+        3544
+      ],
+      "row_divisor": -2,
+      "multiplier": "-275031/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        448,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "320251/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1568,
+        480,
+        1984
+      ],
+      "row_divisor": 2,
+      "multiplier": "9"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        496,
+        960
+      ],
+      "row_divisor": 2,
+      "multiplier": "1542015/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3520,
+        4080
+      ],
+      "row_divisor": -2,
+      "multiplier": "709923/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3276,
+        3324
+      ],
+      "row_divisor": -2,
+      "multiplier": "-30927/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        192,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "749087/6311168"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        2240,
+        1984
+      ],
+      "row_divisor": 1,
+      "multiplier": "-879859/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2328,
+        2240,
+        472
+      ],
+      "row_divisor": 2,
+      "multiplier": "-381744/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        752,
+        3568
+      ],
+      "row_divisor": -2,
+      "multiplier": "93939/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        70,
+        3654
+      ],
+      "row_divisor": 2,
+      "multiplier": "72187/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        70,
+        630
+      ],
+      "row_divisor": 2,
+      "multiplier": "-167793/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3190,
+        3654
+      ],
+      "row_divisor": -2,
+      "multiplier": "1034691/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        66,
+        3906
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1103407/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        66,
+        882
+      ],
+      "row_divisor": 2,
+      "multiplier": "3388815/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3968,
+        64,
+        4032
+      ],
+      "row_divisor": 1,
+      "multiplier": "2660463/15777920"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3968,
+        2112,
+        1984
+      ],
+      "row_divisor": 1,
+      "multiplier": "4914261/3155584"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        64,
+        1008
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1342005/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        112,
+        960
+      ],
+      "row_divisor": 2,
+      "multiplier": "-101333/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        3184,
+        4032
+      ],
+      "row_divisor": -2,
+      "multiplier": "1361777/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2456,
+        2112,
+        472
+      ],
+      "row_divisor": 2,
+      "multiplier": "340317/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        3696,
+        3520
+      ],
+      "row_divisor": -2,
+      "multiplier": "-3612129/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3212,
+        112,
+        3324
+      ],
+      "row_divisor": -2,
+      "multiplier": "-76590/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        188,
+        3904,
+        4092
+      ],
+      "row_divisor": 2,
+      "multiplier": "-40877/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        33,
+        33
+      ],
+      "row_divisor": 2,
+      "multiplier": "188584/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1,
+        2049
+      ],
+      "row_divisor": 2,
+      "multiplier": "5417157/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1,
+        33
+      ],
+      "row_divisor": 2,
+      "multiplier": "-427093/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        3073,
+        3073
+      ],
+      "row_divisor": 2,
+      "multiplier": "1470829/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1025,
+        3073
+      ],
+      "row_divisor": 2,
+      "multiplier": "-129465/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        1025,
+        1057
+      ],
+      "row_divisor": 2,
+      "multiplier": "480017/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        17,
+        2065
+      ],
+      "row_divisor": 2,
+      "multiplier": "81573/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        1,
+        3073
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1177803/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        1,
+        1057
+      ],
+      "row_divisor": 2,
+      "multiplier": "-397643/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        33,
+        17
+      ],
+      "row_divisor": 2,
+      "multiplier": "-536574/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3073,
+        3121
+      ],
+      "row_divisor": -2,
+      "multiplier": "1260987/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        513,
+        1569
+      ],
+      "row_divisor": 2,
+      "multiplier": "-509415/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        2561,
+        1537
+      ],
+      "row_divisor": 2,
+      "multiplier": "3343671/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        513,
+        561
+      ],
+      "row_divisor": 2,
+      "multiplier": "1141641/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        545,
+        529
+      ],
+      "row_divisor": 2,
+      "multiplier": "921/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        41,
+        1033
+      ],
+      "row_divisor": 2,
+      "multiplier": "-196749/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3081,
+        3129
+      ],
+      "row_divisor": -2,
+      "multiplier": "-551427/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        1,
+        3585
+      ],
+      "row_divisor": 2,
+      "multiplier": "-59826/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1568,
+        33,
+        1537
+      ],
+      "row_divisor": 2,
+      "multiplier": "39957/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        49,
+        513
+      ],
+      "row_divisor": 2,
+      "multiplier": "-602724/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3105,
+        3601
+      ],
+      "row_divisor": -2,
+      "multiplier": "-5463309/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3121,
+        3585
+      ],
+      "row_divisor": -2,
+      "multiplier": "-5734269/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        56,
+        33,
+        25
+      ],
+      "row_divisor": 2,
+      "multiplier": "705015/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1064,
+        2097,
+        3097
+      ],
+      "row_divisor": 2,
+      "multiplier": "-396/277"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1793,
+        3841
+      ],
+      "row_divisor": 2,
+      "multiplier": "2605323/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3841,
+        3889
+      ],
+      "row_divisor": -2,
+      "multiplier": "-168279/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        257,
+        3841
+      ],
+      "row_divisor": 2,
+      "multiplier": "-436115/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        5,
+        3589
+      ],
+      "row_divisor": 2,
+      "multiplier": "-330353/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        53,
+        517
+      ],
+      "row_divisor": 2,
+      "multiplier": "1992915/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        2049,
+        1793
+      ],
+      "row_divisor": 2,
+      "multiplier": "352211/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1824,
+        33,
+        1793
+      ],
+      "row_divisor": 2,
+      "multiplier": "453839/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        33,
+        785
+      ],
+      "row_divisor": 2,
+      "multiplier": "1656477/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        49,
+        769
+      ],
+      "row_divisor": 2,
+      "multiplier": "3431781/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        3073,
+        3889
+      ],
+      "row_divisor": -2,
+      "multiplier": "-196545/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        0,
+        3969,
+        3969
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1634219/23666880"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2048,
+        1921,
+        3969
+      ],
+      "row_divisor": 2,
+      "multiplier": "-9888619/1577792"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        32,
+        913,
+        945
+      ],
+      "row_divisor": -2,
+      "multiplier": "-154757/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        897,
+        3969
+      ],
+      "row_divisor": 2,
+      "multiplier": "4502887/1183344"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3072,
+        2945,
+        1921
+      ],
+      "row_divisor": 2,
+      "multiplier": "6"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1056,
+        929,
+        1921
+      ],
+      "row_divisor": 2,
+      "multiplier": "-7297/178"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        897,
+        945
+      ],
+      "row_divisor": 2,
+      "multiplier": "-698227/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3969,
+        4017
+      ],
+      "row_divisor": -2,
+      "multiplier": "953217/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3497,
+        3481
+      ],
+      "row_divisor": 2,
+      "multiplier": "550062/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        385,
+        3969
+      ],
+      "row_divisor": 2,
+      "multiplier": "468123/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1568,
+        417,
+        1921
+      ],
+      "row_divisor": 2,
+      "multiplier": "18"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        433,
+        897
+      ],
+      "row_divisor": 2,
+      "multiplier": "1542015/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3457,
+        4017
+      ],
+      "row_divisor": -2,
+      "multiplier": "709923/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3505,
+        3969
+      ],
+      "row_divisor": -2,
+      "multiplier": "-905559/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        48,
+        3213,
+        3261
+      ],
+      "row_divisor": -2,
+      "multiplier": "-61854/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        2177,
+        1921
+      ],
+      "row_divisor": 2,
+      "multiplier": "-879859/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2328,
+        2177,
+        409
+      ],
+      "row_divisor": 2,
+      "multiplier": "-763488/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        689,
+        3505
+      ],
+      "row_divisor": -2,
+      "multiplier": "93939/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        60,
+        3969,
+        4029
+      ],
+      "row_divisor": 2,
+      "multiplier": "26239/295836"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3584,
+        7,
+        3591
+      ],
+      "row_divisor": 2,
+      "multiplier": "72187/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        7,
+        567
+      ],
+      "row_divisor": 2,
+      "multiplier": "-335586/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        560,
+        3127,
+        3591
+      ],
+      "row_divisor": -2,
+      "multiplier": "1034691/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3840,
+        3,
+        3843
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1103407/788896"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        816,
+        3,
+        819
+      ],
+      "row_divisor": 2,
+      "multiplier": "3388815/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3968,
+        1,
+        3969
+      ],
+      "row_divisor": 2,
+      "multiplier": "4072127/7888960"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        1,
+        945
+      ],
+      "row_divisor": 2,
+      "multiplier": "-1342005/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        49,
+        897
+      ],
+      "row_divisor": 2,
+      "multiplier": "-101333/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        3121,
+        3969
+      ],
+      "row_divisor": -2,
+      "multiplier": "4369929/394448"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2456,
+        2049,
+        409
+      ],
+      "row_divisor": 2,
+      "multiplier": "340317/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        944,
+        3633,
+        3457
+      ],
+      "row_divisor": -2,
+      "multiplier": "-3612129/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3212,
+        49,
+        3261
+      ],
+      "row_divisor": -2,
+      "multiplier": "-153180/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        188,
+        3841,
+        4029
+      ],
+      "row_divisor": 2,
+      "multiplier": "-40877/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        2112,
+        33,
+        2145
+      ],
+      "row_divisor": -2,
+      "multiplier": "-1219897/197224"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        96,
+        2049,
+        2145
+      ],
+      "row_divisor": -2,
+      "multiplier": "1219897/98612"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        96,
+        3585,
+        3681
+      ],
+      "row_divisor": -2,
+      "multiplier": "165621/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        3648,
+        33,
+        3681
+      ],
+      "row_divisor": -2,
+      "multiplier": "-165621/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1632,
+        2081,
+        3649
+      ],
+      "row_divisor": 2,
+      "multiplier": "165621/49306"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        96,
+        2961,
+        3057
+      ],
+      "row_divisor": 2,
+      "multiplier": "-599984/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1120,
+        2977,
+        4033
+      ],
+      "row_divisor": 2,
+      "multiplier": "5053747/591672"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        1008,
+        2081,
+        3025
+      ],
+      "row_divisor": 2,
+      "multiplier": "299992/24653"
+    },
+    {
+      "kind": "kl",
+      "paulis": [
+        4032,
+        1057,
+        3041
+      ],
+      "row_divisor": -2,
+      "multiplier": "-39056/24653"
+    },
+    {
+      "kind": "spin",
+      "triple": [
+        0,
+        63,
+        63
+      ],
+      "row_divisor": -2,
+      "multiplier": "767641/246530"
+    },
+    {
+      "kind": "spin",
+      "triple": [
+        1,
+        62,
+        63
+      ],
+      "row_divisor": -2,
+      "multiplier": "-297631/123265"
+    },
+    {
+      "kind": "spin",
+      "triple": [
+        3,
+        60,
+        63
+      ],
+      "row_divisor": -2,
+      "multiplier": "172379/49306"
+    },
+    {
+      "kind": "spin",
+      "triple": [
+        7,
+        56,
+        63
+      ],
+      "row_divisor": -2,
+      "multiplier": "264523/24653"
+    },
+    {
+      "kind": "spin",
+      "triple": [
+        7,
+        57,
+        62
+      ],
+      "row_divisor": -2,
+      "multiplier": "-92144/24653"
+    },
+    {
+      "kind": "H",
+      "paulis": [
+        3840,
+        3136,
+        832
+      ],
+      "row_divisor": 1,
+      "multiplier": "555153/3155584"
+    },
+    {
+      "kind": "H",
+      "paulis": [
+        3968,
+        2112,
+        1984
+      ],
+      "row_divisor": 1,
+      "multiplier": "-1638087/1577792"
+    },
+    {
+      "kind": "H",
+      "paulis": [
+        96,
+        3969,
+        4065
+      ],
+      "row_divisor": -2,
+      "multiplier": "129221/197224"
+    }
+  ],
+  "raw_moment_variable_count": 269,
+  "four_parameter_target": [
+    -245760,
+    -122880,
+    0,
+    122880
+  ],
+  "four_parameter_square": [
+    576,
+    288,
+    0,
+    -288
+  ]
+}

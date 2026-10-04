@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "status": "passed_direct_kernel_checks",
+  "scope": "Physical Pauli and spin expansion, full translation reduction, all 211 raw physical coordinate expressions, sound coefficient accumulation and intermediate-state traces, first complete primitive row. Not all 211 primitive rows or the full orbit converse.",
+  "kernel_only": true,
+  "modules": {
+    "MainTheory.DyadicCoefficientTree": {
+      "returncode": 0,
+      "source_sha256": "3f92e4edf34bd64aeff523535ecd6078bf1ddab782212f093cf386ef04fc2535",
+      "output_sha256": "cbdbb0c3dddba45f10c77b7af1bec86c786c0ff9e78de9ec189bd8a03e8e0716"
+    },
+    "MainTheory.Orbit3PauliCubicExpansion": {
+      "returncode": 0,
+      "source_sha256": "bfe4a14d2adbd218295f0b45f09b20855db18af7dcde8ed7ad146dffa00361a2",
+      "output_sha256": "9138be40ee5fe816134227a65d730af33dc3d8eef07fb8da8d25517951905db7"
+    },
+    "MainTheory.Orbit3PauliTranslationReduction": {
+      "returncode": 0,
+      "source_sha256": "e4d0563a3880f12c1ed304868c1120035a30d6ffe4be03552bcdacf8d4fc9b99",
+      "output_sha256": "980f43de496de98233868d35090c81e66bdbfcd08e9a8c56a225388b8f0d0b65"
+    },
+    "MainTheory.Orbit3PauliMomentInterpretation": {
+      "returncode": 0,
+      "source_sha256": "b8556d045960559837579a01ab0afcf40d4014c42f8d5b54f95d883844a2fb7b",
+      "output_sha256": "dd0da1c48378ee875d27807873d4e705d6001f1d862da011b57c80c8d0428626"
+    },
+    "MainTheory.Orbit3CoefficientCollection": {
+      "returncode": 0,
+      "source_sha256": "93ec783100f06660efc008c2a6bb7d98a1909c309d9facb199cc4b0c0fab8db1",
+      "output_sha256": "1d4cc78ac2018c32888d993a43b6c93765743f094b6597a00821a31aa0f16f7e"
+    },
+    "MainTheory.Orbit3SpinMomentInterpretation": {
+      "returncode": 0,
+      "source_sha256": "6b92460795e19c8119b05636d887e345515bf453e3ed29010de17da24efe49cc",
+      "output_sha256": "24d35bc172dbf7f953c690c72ad150b179a01165532a53e05fd48bdd28cdb0f0"
+    },
+    "MainTheory.Orbit3CollectedRowEvaluation": {
+      "returncode": 0,
+      "source_sha256": "13312a3d0c524f62f0d7de2ae64357efe427344a52f3f2b7ca113fc1dbdf405b",
+      "output_sha256": "4613a1fa9bff3ad9b322ef2411e7220a189a6f1a0a012d84c5cd6ab1f0c48737"
+    },
+    "MainTheory.Orbit3CoefficientTrace": {
+      "returncode": 0,
+      "source_sha256": "2ca2d1411761e5f698e2849acbe7ae7c2610178b9d972ead6053d264db40b9b9",
+      "output_sha256": "1ece5395bde5797813318e49eb87ef97ec5914053bfa41b6b0bf774993ca1bfe"
+    },
+    "MainTheory.Orbit3RowCoordinateExpressions": {
+      "returncode": 0,
+      "source_sha256": "33896ac8b25f9dce9198c0beecf3dbeec13910ded0ae3fcb12f262dfb0ff5293",
+      "output_sha256": "1ada8c16bde55285516e6634a5adf133b7126c6e4a70c96b27538f5db32f4a57"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Data": {
+      "returncode": 0,
+      "source_sha256": "5c6222fa8642fbee18521271b79ae1ebdfb60668007d544c3751b38e9ff77e55",
+      "output_sha256": "9482ca20c26d141d830032433f4f5d44ae6bf8273cfa429249dd8fc3059084f8"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Trace000": {
+      "returncode": 0,
+      "source_sha256": "cfb76708065527618366d09a0f3cb11b691b5f234667f6c415aae48d34c5b38c",
+      "output_sha256": "a23e2bb2e4642e63d9af32aa2b95b44af3a180743fc969152a76919c5bfc6fa1"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Trace000Step00": {
+      "returncode": 0,
+      "source_sha256": "08a51b74554f4bde15320abed0a4d6d18b0479ee59481691a622160d0b16ec06",
+      "output_sha256": "541764d18f0e8a769ca0707cdd6f8ec87c0c6246375badf67dcf9bbc651aabb1"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Trace000Checks": {
+      "returncode": 0,
+      "source_sha256": "a8694d8ed0151f70b07d19287c38d0033c0209cf61dc01dc9f47beb3e6ef71f4",
+      "output_sha256": "daa32933df3b4e5e8ec60c5def7d9419d11cf0255549bca99cbfac89d197ed02"
+    },
+    "MainTheory.Orbit3FirstCollectedRow": {
+      "returncode": 0,
+      "source_sha256": "e56cbbc547eafd3f2667cd647fe73564238f6a443d7d7893468d9cd5c6656694",
+      "output_sha256": "07212c74c6edcc6614ff2bf58c19468641079a5cebbc31c77f2ed746dc59b9b8"
+    },
+    "MainTheory.Orbit3CoefficientAudit": {
+      "returncode": 0,
+      "source_sha256": "8786e7e3f400c54b5d8e088945b250c96ea0be753565deb8f1e3e9cd654e7e88",
+      "output_sha256": "5be08318c3958bc6b93a9567086b68e36aa1f2cd58ccbb5aebeb5c58e55cb4c4"
+    }
+  },
+  "audit": {
+    "roots": 19,
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "log": "artifacts/orbit-certification-20261003/pauli-coefficient-direct-axiom-audit.log"
+  },
+  "monolithic_first_row_attempt": "terminated in favor of the passed 64-transition trace; not counted as a passing check",
+  "content_validation": "not yet included in a content-stamped full import-closure build"
+}

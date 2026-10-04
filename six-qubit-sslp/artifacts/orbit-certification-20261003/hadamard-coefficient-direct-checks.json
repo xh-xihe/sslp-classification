@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "modules_checked": 12,
+  "axiom_roots": [
+    {
+      "declaration": "MainTheory.Orbit3CollectedHadamardRow.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.TraceH208.Certified.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.TraceH209.Certified.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.TraceH210.Certified.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedHadamardRows.all_hadamard_primitive_rows_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  ],
+  "scope": "All three primitive Hadamard rows evaluate to zero on coordinates of every actual orbit-3 encoder; every signed Pauli term is covered by 64 checked intermediate transitions.",
+  "records": {
+    "MainTheory.Orbit3CollectedHadamardRow": {
+      "source_sha256": "383aa077add40a322a82c4362489525fea266a7fc075a35f89887d89f131d6bf",
+      "output_sha256": "574d08f2b91f7269dac1aa4b14f0b8efb77b7ce3c90aaf4f3045a4d2539d4a66",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedHadamardRows": {
+      "source_sha256": "54ad8815f75b7a0ef095ca30a631a1b602ed64cb30a98b1ad3366e55f5896fd4",
+      "output_sha256": "65926e6ada122f642d465a59441d45f1207d7d9a3887dc00e6ed4af9dc11eb9f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "MainTheory.Orbit3HadamardCoefficientAudit": {
+      "source_sha256": "6d16b7225c814bb2e9dcaa8f9d5faaadc087ba7573513707cb689559e812e8da",
+      "output_sha256": "d8e7a284058755a0da179440b4e166f829f8eace9c0cfbfb5bcdc23927c18b41",
+      "log_sha256": "4e3e01fa7ae1a3e285b584059e919fd4d3cdd307b3bc80df5527923b3c448737",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH208": {
+      "source_sha256": "a4148fbb969fdb83c0e51881b3176cc809f183aba0e301cb920a15d6ee87e707",
+      "output_sha256": "3356dc0fbf38d554c1b385a203155177874582e1592d4709e3fcca3a5d9e495a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH208Checks": {
+      "source_sha256": "751d9af6fe31f918ee28958a70243e3d8c4ce7d5818857ee63be4ed49a0c2f3e",
+      "output_sha256": "bd94e6b7335b6947baf4342372d16f997d3240f159d976f7979033eda81d8c09",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH208Certified": {
+      "source_sha256": "8230aed9313b3eb146d9fa47bc1b786e4135cc3bf18803261c307b4b153a3c71",
+      "output_sha256": "89ec2caf7ee06771ea1c568c866792996a2c633fb791b74449362d4229f44dfe",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH209": {
+      "source_sha256": "b56766ba18301d144be0c04e57fede837b535d1a9acde6051d7407ddbe5727aa",
+      "output_sha256": "ec6ee38878a28b366a531ee828118f21ddfed4f567fcf93a30bd32f447183d96",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH209Checks": {
+      "source_sha256": "f50864d13011b5788c645ba3a93685ba971a6f866424b4a292db6e717027aa4a",
+      "output_sha256": "f883957910c93b20c78205f714e6dc937c7922b4b700d031ad4a375fe8a8715a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH209Certified": {
+      "source_sha256": "0eff88a1b48561bacadc2f2a0420a1ed7a7c4205d9d37936f820bfc26534385b",
+      "output_sha256": "05d9969517472b23e9ec7deae6ae5539903dbf85e1b242ac26bed7ebde37da60",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH210": {
+      "source_sha256": "37b01e2239de1798bdb25879b893a6ea648f012e692b2652bfd82e45cf1ffa15",
+      "output_sha256": "e8dade3be9329ecc2d0febe268c099165c765c5b104b2f8e0611c3dad223d583",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH210Checks": {
+      "source_sha256": "a32d73f57221f9275805242df8c19e4ff73ad3858bb179a524e3a0124b85e347",
+      "output_sha256": "c2f1d168ada79ffd317bfd912046cf6c065e0e937961d3a95fa517bd135818be",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.TraceH210Certified": {
+      "source_sha256": "a11c89a91fe53a3edae2536def68fbd4539add74659bbe02d6211a527d94127c",
+      "output_sha256": "0d0e2bb0f6b53753941e2a5c87adddea9a1b7d15b9d1e03fa9996de24bac1802",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    }
+  }
+}

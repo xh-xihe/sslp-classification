@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "modules_checked": 8,
+  "axiom_roots": [
+    {
+      "declaration": "MainTheory.Orbit3CollectedSpinRow.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.Spin203.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.Spin204.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.Spin205.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.Spin206.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedRows.Spin207.primitive_row_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "SixQubit.Generated.Orbit3CollectedSpinRows.all_spin_primitive_rows_zero",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  ],
+  "scope": "All five primitive spin rows evaluate to zero on coordinates of every actual orbit-3 encoder, with the physical factor 64 derived.",
+  "records": {
+    "MainTheory.Orbit3CollectedSpinRow": {
+      "source_sha256": "971f282ae8c29113384a8c2f6abd2220d7e41bf601de8da81f5d26663540208b",
+      "output_sha256": "658c09f0f097954733afc4ef787a1cf5d034510b138317a8dd687ad8a3b0e7a6",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedSpinRows": {
+      "source_sha256": "bdf540b21686334e3e7b142224cac39bbbbaafb920e1d2c95c143d8249fe5a84",
+      "output_sha256": "574caff40aaae344ed192cfda6755e5c4768c306c3b8668cdedb4d6395d7e0f3",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "MainTheory.Orbit3SpinCoefficientAudit": {
+      "source_sha256": "267617870e1a771370a0dabc8b928d589ceb6cd3a41d56baff459bae3e5042df",
+      "output_sha256": "be6aaef851c058cd27a92fb620382106218185fef9d6dd7ff8da5912cae8d884",
+      "log_sha256": "852e606cca6d0f8d0ef0d2319b27627d04336e9d6db8df18f98b063cba992951",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Spin203": {
+      "source_sha256": "37b99a9288f9ddddf2fccc488aefdddaa3eaae88c357cd271bfd2e073c459798",
+      "output_sha256": "ec68ed059bb7ecd16d1fc6eb234282330b79b98585348220527390ec6fdd522e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Spin204": {
+      "source_sha256": "eb5443c01d8513c27aa9b1613eb7d346de830aa3e2c7e6ae121105b91f11774a",
+      "output_sha256": "01fe29fd242a9684801f09fd7c2fec4e24fe06d8d6b1d0d44a40a77810d68286",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Spin205": {
+      "source_sha256": "b6b96cac0236777e49855244452773e96a8122307da438e57b0f5f93b069fa95",
+      "output_sha256": "327fbb7af90f0ce0767595cc6107b13d248a57c372de92e24b3731e829f7d07c",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Spin206": {
+      "source_sha256": "48f3807b917f60b62ddc429c24ff5de9d80211eb752e2d242920e22b9baf42dc",
+      "output_sha256": "4bcc77b449bcc70fd2e93972965c6179809b271413d40f0314725794962ac2a8",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    },
+    "SixQubit.Generated.Orbit3CollectedRows.Spin207": {
+      "source_sha256": "b277adee49b4edaea027260de244c9a97594b1cf175741e3568550537bab2aec",
+      "output_sha256": "9bdd52d2d4e9b96acff083400bfeb8b082f8de631c4d870849b270096e305ca5",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0,
+      "check": "direct Lean kernel check with warningAsError; content rebuild pending"
+    }
+  }
+}

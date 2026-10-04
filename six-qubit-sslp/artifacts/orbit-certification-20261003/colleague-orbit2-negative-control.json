@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "expected": "kernel rejects a one-entry-corrupted LDL factorization",
+  "returncode": 1,
+  "positive_returncode": 0,
+  "positive_source_sha256": "c5f5ead8ed8c123dd334cdff4f5f1427ac28026d8f19128d634dea9e4e1740d8",
+  "source_sha256": "92237a90783b3f977dfd02d92a2a0ad7e5b3129da7ac00442a9317f7412d78f0",
+  "log_sha256": "27bd5a4895bd0440afff26ea31b27c2102249b5136751adb39c88fd28b1a75a4"
+}

@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\orbit2-negative\CorruptedBlock.lean:15:2: error: Type mismatch: After simplification, term
+  Block000.certificate.factorization 0 0
+ has type
+  Block000.certificate.A 0 0 = ∑ k, Block000.certificate.L 0 k * Block000.certificate.d k * Block000.certificate.L 0 k
+but is expected to have type
+  Block000.M 0 0 - 4 + 1 = ∑ k, Block000.L 0 k * Block000.d k * Block000.L 0 k

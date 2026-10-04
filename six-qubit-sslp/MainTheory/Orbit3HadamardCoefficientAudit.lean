@@ -1,0 +1,7 @@
+import SixQubit.Generated.Orbit3CollectedHadamardRows
+
+#print axioms MainTheory.Orbit3CollectedHadamardRow.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.TraceH208.Certified.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.TraceH209.Certified.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.TraceH210.Certified.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedHadamardRows.all_hadamard_primitive_rows_zero

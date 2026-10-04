@@ -27,7 +27,7 @@ lean_lib SixQubit where
 all `n`, `K` and `d`, as opposed to the six-qubit enumeration in `SixQubit`. -/
 @[default_target]
 lean_lib MainTheory where
-  globs := #[.andSubmodules `MainTheory]
+  globs := #[.andSubmodules `MainTheory, .andSubmodules `Orbit2]
 
 /-- Section III of the 20260929 manuscript: finite diagonal logical groups, the
 SSLP normal form and the physical-order bounds. Bei Zeng's LeanSecIII package,

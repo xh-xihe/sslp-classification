@@ -1,0 +1,9 @@
+import SixQubit.Generated.Orbit3CollectedSpinRows
+
+#print axioms MainTheory.Orbit3CollectedSpinRow.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.Spin203.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.Spin204.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.Spin205.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.Spin206.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedRows.Spin207.primitive_row_zero
+#print axioms SixQubit.Generated.Orbit3CollectedSpinRows.all_spin_primitive_rows_zero

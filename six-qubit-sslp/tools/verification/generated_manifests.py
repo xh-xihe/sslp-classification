@@ -14,6 +14,10 @@ MANIFEST_DIRS = ('MainTheory/Generated/BinaryBetaFiveFast',
                  'MainTheory/Generated/BinaryBetaSixKernel',
                  'SixQubit/Generated/OpenMParity',
                  'SixQubit/Generated/OpenLFamilies')
+MANIFEST_DIRS += ('SixQubit/Generated/Orbit2Gram',)
+MANIFEST_DIRS += ('SixQubit/Generated/Orbit2Spectra',
+                  'SixQubit/Generated/Orbit3TargetTraces',
+                  'SixQubit/Generated/Orbit3CollectedRows',)
 
 SIGN_ORDERS = (7, 8, 9)
 

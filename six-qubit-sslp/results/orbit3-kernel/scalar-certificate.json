@@ -1,0 +1,1016 @@
+{
+  "status": "exact_certificate_passed",
+  "scope": "Formal nonnegative squared-coefficient array; not a quantum code.",
+  "enumerator": [
+    1,
+    0,
+    0,
+    1,
+    12,
+    15,
+    3
+  ],
+  "category_convention": [
+    "spectator_nonidentity",
+    "tail_Z",
+    "tail_X_or_Y"
+  ],
+  "nonzero_category_masses": [
+    {
+      "category": [
+        0,
+        0,
+        0
+      ],
+      "mass": "1",
+      "orbit_size": 1
+    },
+    {
+      "category": [
+        0,
+        2,
+        2
+      ],
+      "mass": "4",
+      "orbit_size": 120
+    },
+    {
+      "category": [
+        0,
+        0,
+        4
+      ],
+      "mass": "1",
+      "orbit_size": 80
+    },
+    {
+      "category": [
+        0,
+        1,
+        4
+      ],
+      "mass": "2",
+      "orbit_size": 80
+    },
+    {
+      "category": [
+        1,
+        3,
+        0
+      ],
+      "mass": "1",
+      "orbit_size": 30
+    },
+    {
+      "category": [
+        1,
+        0,
+        2
+      ],
+      "mass": "1",
+      "orbit_size": 120
+    },
+    {
+      "category": [
+        1,
+        1,
+        2
+      ],
+      "mass": "6",
+      "orbit_size": 360
+    },
+    {
+      "category": [
+        1,
+        2,
+        2
+      ],
+      "mass": "7",
+      "orbit_size": 360
+    },
+    {
+      "category": [
+        1,
+        3,
+        2
+      ],
+      "mass": "2",
+      "orbit_size": 120
+    },
+    {
+      "category": [
+        1,
+        0,
+        4
+      ],
+      "mass": "6",
+      "orbit_size": 240
+    },
+    {
+      "category": [
+        1,
+        1,
+        4
+      ],
+      "mass": "1",
+      "orbit_size": 240
+    }
+  ],
+  "checks": {
+    "arithmetic": "fractions.Fraction; exact",
+    "symmetry_refined_categories": 42,
+    "normalization_and_rank_two_purity_sum": true,
+    "parity_support": true,
+    "all_weight_at_most_two_KL_Fourier_equalities": true,
+    "all_B_ge_A_and_shadow_nonnegative": true,
+    "all_commuting_error_B_equals_A_plus_DA": true,
+    "odd_weight_anticommuting_error_shadow_zero": true,
+    "walsh_faces": [
+      {
+        "parity": 0,
+        "face_size": 8,
+        "constrained_character_rank": 5,
+        "surviving_character_dimension": 3
+      },
+      {
+        "parity": 1,
+        "face_size": 8,
+        "constrained_character_rank": 5,
+        "surviving_character_dimension": 3
+      }
+    ]
+  },
+  "conclusion": "These scalar constraints cannot imply the class-3 L-line converse.",
+  "proved_class3_linear_consequences": [
+    {
+      "name": "active_one_body_zero",
+      "proved_lower_bound": "0",
+      "equality_terms": [
+        [
+          "KL",
+          [
+            0,
+            0,
+            0
+          ],
+          -3
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            0
+          ],
+          -10
+        ],
+        [
+          "KL",
+          [
+            0,
+            2,
+            0
+          ],
+          "-37/4"
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            1
+          ],
+          -10
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            1
+          ],
+          -20
+        ],
+        [
+          "diag",
+          [
+            0,
+            0,
+            2
+          ],
+          15
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            2
+          ],
+          -20
+        ],
+        [
+          "diag",
+          [
+            0,
+            0,
+            4
+          ],
+          4
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            0
+          ],
+          -6
+        ],
+        [
+          "KL",
+          [
+            1,
+            1,
+            0
+          ],
+          "-33/4"
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            1
+          ],
+          -30
+        ],
+        [
+          "shadowzero",
+          [
+            1,
+            1,
+            3
+          ],
+          -18
+        ]
+      ],
+      "inequality_terms": [
+        [
+          "shadow",
+          [
+            0,
+            0,
+            0
+          ],
+          -2
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            0
+          ],
+          -10
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            1
+          ],
+          "-15/2"
+        ]
+      ],
+      "nonnegative_variable_remainder": [
+        {
+          "category": [
+            0,
+            3,
+            0
+          ],
+          "coefficient": "37/40"
+        },
+        {
+          "category": [
+            0,
+            0,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "category": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            1,
+            4,
+            0
+          ],
+          "coefficient": "11/20"
+        }
+      ]
+    },
+    {
+      "name": "active_transverse_pair_zero",
+      "proved_lower_bound": "0",
+      "equality_terms": [
+        [
+          "KL",
+          [
+            0,
+            0,
+            0
+          ],
+          -3
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            0
+          ],
+          -10
+        ],
+        [
+          "diag",
+          [
+            0,
+            2,
+            0
+          ],
+          -1
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            1
+          ],
+          -10
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            1
+          ],
+          -20
+        ],
+        [
+          "diag",
+          [
+            0,
+            0,
+            2
+          ],
+          48
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            2
+          ],
+          -20
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            0
+          ],
+          -6
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            1
+          ],
+          -30
+        ],
+        [
+          "shadowzero",
+          [
+            1,
+            1,
+            3
+          ],
+          -84
+        ]
+      ],
+      "inequality_terms": [
+        [
+          "shadow",
+          [
+            0,
+            0,
+            0
+          ],
+          -2
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            0
+          ],
+          -10
+        ],
+        [
+          "shadow",
+          [
+            0,
+            0,
+            1
+          ],
+          -16
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            1
+          ],
+          -6
+        ],
+        [
+          "shadow",
+          [
+            1,
+            1,
+            1
+          ],
+          -6
+        ]
+      ],
+      "nonnegative_variable_remainder": [
+        {
+          "category": [
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": "1/2"
+        },
+        {
+          "category": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": "1"
+        }
+      ]
+    },
+    {
+      "name": "active_three_body_zero",
+      "proved_lower_bound": "0",
+      "equality_terms": [
+        [
+          "KL",
+          [
+            0,
+            0,
+            0
+          ],
+          -6
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            0
+          ],
+          -20
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            1
+          ],
+          -20
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            1
+          ],
+          -40
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            2
+          ],
+          -40
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            0
+          ],
+          -15
+        ],
+        [
+          "diag",
+          [
+            1,
+            1,
+            0
+          ],
+          5
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            1
+          ],
+          -60
+        ],
+        [
+          "diag",
+          [
+            1,
+            1,
+            2
+          ],
+          -80
+        ],
+        [
+          "shadowzero",
+          [
+            0,
+            0,
+            1
+          ],
+          -10
+        ]
+      ],
+      "inequality_terms": [
+        [
+          "shadow",
+          [
+            0,
+            0,
+            0
+          ],
+          -4
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            0
+          ],
+          -20
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            1
+          ],
+          -70
+        ]
+      ],
+      "nonnegative_variable_remainder": [
+        {
+          "category": [
+            0,
+            1,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "category": [
+            0,
+            0,
+            2
+          ],
+          "coefficient": "2"
+        },
+        {
+          "category": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "category": [
+            1,
+            5,
+            0
+          ],
+          "coefficient": "1"
+        }
+      ]
+    },
+    {
+      "name": "spectator_times_active_ZZ_zero",
+      "proved_lower_bound": "0",
+      "equality_terms": [
+        [
+          "KL",
+          [
+            0,
+            0,
+            0
+          ],
+          -4
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            0
+          ],
+          -10
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            1
+          ],
+          -10
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            1
+          ],
+          -20
+        ],
+        [
+          "diag",
+          [
+            0,
+            0,
+            2
+          ],
+          20
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            2
+          ],
+          -20
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            0
+          ],
+          -6
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            1
+          ],
+          -30
+        ],
+        [
+          "diag",
+          [
+            1,
+            1,
+            2
+          ],
+          -40
+        ],
+        [
+          "shadowzero",
+          [
+            1,
+            1,
+            3
+          ],
+          -40
+        ]
+      ],
+      "inequality_terms": [
+        [
+          "shadow",
+          [
+            0,
+            0,
+            0
+          ],
+          -2
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            0
+          ],
+          -10
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            1
+          ],
+          -20
+        ]
+      ],
+      "nonnegative_variable_remainder": [
+        {
+          "category": [
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            5,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            0,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "active_ZZZ_zero",
+      "proved_lower_bound": "0",
+      "equality_terms": [
+        [
+          "diag",
+          [
+            0,
+            2,
+            0
+          ],
+          10
+        ],
+        [
+          "KL",
+          [
+            0,
+            2,
+            0
+          ],
+          -10
+        ]
+      ],
+      "inequality_terms": [],
+      "nonnegative_variable_remainder": []
+    },
+    {
+      "name": "A1_plus_A2_plus_A3_at_least_one",
+      "proved_lower_bound": "1",
+      "equality_terms": [
+        [
+          "norm",
+          null,
+          1
+        ],
+        [
+          "KL",
+          [
+            0,
+            0,
+            0
+          ],
+          1
+        ],
+        [
+          "KL",
+          [
+            0,
+            1,
+            0
+          ],
+          -5
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            0
+          ],
+          -3
+        ],
+        [
+          "KL",
+          [
+            1,
+            1,
+            0
+          ],
+          15
+        ],
+        [
+          "KL",
+          [
+            1,
+            0,
+            1
+          ],
+          -30
+        ],
+        [
+          "shadowzero",
+          [
+            0,
+            0,
+            1
+          ],
+          -5
+        ],
+        [
+          "shadowzero",
+          [
+            0,
+            0,
+            3
+          ],
+          -40
+        ],
+        [
+          "shadowzero",
+          [
+            0,
+            0,
+            5
+          ],
+          -8
+        ]
+      ],
+      "inequality_terms": [
+        [
+          "shadow",
+          [
+            0,
+            2,
+            0
+          ],
+          -20
+        ],
+        [
+          "B",
+          [
+            0,
+            0,
+            1
+          ],
+          -10
+        ],
+        [
+          "shadow",
+          [
+            0,
+            2,
+            1
+          ],
+          -45
+        ]
+      ],
+      "nonnegative_variable_remainder": [
+        {
+          "category": [
+            0,
+            1,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "category": [
+            0,
+            3,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            0,
+            0,
+            2
+          ],
+          "coefficient": "2"
+        },
+        {
+          "category": [
+            0,
+            1,
+            2
+          ],
+          "coefficient": "1"
+        },
+        {
+          "category": [
+            1,
+            2,
+            0
+          ],
+          "coefficient": "2"
+        }
+      ]
+    }
+  ],
+  "shortening_counterexample": {
+    "construction": "CZ(data qubit 5, ancilla 6) applied to perfect-five code times |+>",
+    "positive_stabilizer_generators": [
+      "XZZXII",
+      "IXZZXZ",
+      "XIXZZI",
+      "ZXIXZI",
+      "IIIIZX"
+    ],
+    "stabilizer_rank": 5,
+    "low_weight_errors_checked": 153,
+    "exact_distance": 3,
+    "weight_three_logical_witness": "IXYXII",
+    "class3_logical_involution": "IXYXZX",
+    "inactive_site_zero_based": 0,
+    "surviving_active_weight_two_stabilizer": "IIIIZX",
+    "conclusion": "Every nonzero inactive-site measurement outcome retains a weight-two stabilizer; no such outcome is a perfect-five code."
+  }
+}

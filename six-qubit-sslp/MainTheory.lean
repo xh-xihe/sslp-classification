@@ -215,3 +215,8 @@ import MainTheory.PaperGeneralSSLPConverse
 import MainTheory.PaperColoredFiniteLift
 import MainTheory.Audit
 import MainTheory.QECCSmithBridge
+
+import MainTheory.Orbit2FullImage
+import MainTheory.Orbit3FullImage
+import MainTheory.OrbitCertificationAudit
+import MainTheory.OrbitCertificationFinalAudit
