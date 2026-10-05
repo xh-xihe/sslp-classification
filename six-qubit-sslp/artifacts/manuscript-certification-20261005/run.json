@@ -139,10 +139,10 @@
   },
   "publication": {
     "status": "PASS",
-    "commit": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
+    "commit": "999afd760c9c13106e21047f4159d7239f32a1c6",
     "branch": "sixqubit-classification",
-    "modules": 15942,
-    "record": "artifacts/manuscript-certification-20261005/publication-binding-15942.json"
+    "modules": 15951,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15951.json"
   },
   "last_accepted_whole_build": {
     "status": "PASS",
@@ -178,10 +178,5 @@
     "log": "sector-tables-full-build.log",
     "record": "full-build-success-15950-before-audit-fix.json",
     "scope": "Before removing one duplicate audit-list entry and adding the rational rank module."
-  },
-  "pending_publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification",
-    "modules": 15951
   }
 }

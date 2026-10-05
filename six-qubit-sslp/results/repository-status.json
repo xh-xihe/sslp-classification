@@ -38,7 +38,7 @@
   },
   "current_type_inspection_declarations": 3108,
   "historical_publication_source_binding": "PASS",
-  "publication_source_binding": "PASS_last_accepted_proof_snapshot_new_batch_pending",
+  "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
     "modules": 15951,
     "axiom_roots": 4471,
@@ -59,10 +59,6 @@
     "reviewed_blocks": 14
   },
   "planned_axiom_roots": 4471,
-  "canonical_publication_commit": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-15942.json",
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/sector-tables-work-in-progress.json",
-    "scope": "PASS local proof acceptance; canonical publication pending. Manuscript correspondence remains incomplete."
-  }
+  "canonical_publication_commit": "999afd760c9c13106e21047f4159d7239f32a1c6",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-15951.json"
 }

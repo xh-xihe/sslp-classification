@@ -23,8 +23,11 @@
     "unreviewed": 348
   },
   "publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification"
+    "status": "PASS",
+    "commit": "999afd760c9c13106e21047f4159d7239f32a1c6",
+    "branch": "sixqubit-classification",
+    "modules": 15951,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15951.json"
   },
   "evidence": [
     {

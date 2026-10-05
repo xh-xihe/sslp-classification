@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "last_accepted_public_proof_snapshot": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
   "new_modules": [
     "MainTheory.SupplementarySectorCountBase",
@@ -29,5 +29,12 @@
     "conjecture": 3,
     "unreviewed": 348
   },
-  "proof_acceptance": "proof-acceptance-15951.json"
+  "proof_acceptance": "proof-acceptance-15951.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "999afd760c9c13106e21047f4159d7239f32a1c6",
+    "branch": "sixqubit-classification",
+    "modules": 15951,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15951.json"
+  }
 }
