@@ -1,0 +1,9 @@
+PASS: tools/verification/generate_orbit30_moment_rank.py
+PASS: tools/verification/generate_orbit30_printed_moments.py
+PASS: tools/verification/generate_orbit30_probability_labels.py
+PASS: tools/verification/generate_orbit30_physical_rows.py
+PASS: tools/verification/generate_orbit30_normalized_determinant.py
+PASS: tools/verification/generate_orbit30_graph_classification.py
+PASS: tools/verification/generate_orbit30_proper_graph_tables.py
+PASS: tools/verification/generate_orbit30_full_support.py
+8 source reconstruction checks; 22 source bindings; PASS

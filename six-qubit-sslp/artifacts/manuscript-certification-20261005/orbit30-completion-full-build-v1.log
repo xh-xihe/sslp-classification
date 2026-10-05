@@ -1,0 +1,43 @@
+Serial plan: 16149 modules; 21 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[14/16149] BUILD MainTheory.Orbit30MomentRank
+[24/16149] BUILD MainTheory.Orbit30PrintedMoments
+[25/16149] BUILD MainTheory.Orbit30ProbabilityLabels
+[26/16149] BUILD MainTheory.Orbit30PhysicalRows
+[28/16149] BUILD MainTheory.Orbit30PhysicalPhases
+[30/16149] BUILD MainTheory.Orbit30PhysicalGraph
+[31/16149] BUILD MainTheory.Orbit30NormalizedDeterminant
+[32/16149] BUILD MainTheory.Orbit30VertexScaling
+[33/16149] BUILD MainTheory.Orbit30GraphClassification
+[34/16149] BUILD MainTheory.Orbit30ProperGraphTables
+[35/16149] BUILD MainTheory.Orbit30PhysicalHafnians
+[36/16149] BUILD MainTheory.Orbit30FullSupport
+[37/16149] BUILD MainTheory.Orbit30GraphMaskEncoding
+[38/16149] BUILD MainTheory.Orbit30PhysicalFullSupport
+[39/16149] BUILD MainTheory.Orbit30GraphRelabel
+[40/16149] BUILD MainTheory.Orbit30PhysicalMask
+[41/16149] BUILD MainTheory.Orbit30ProperGraphExclusion
+[42/16149] BUILD MainTheory.Orbit30PhysicalProperSupport
+[43/16149] BUILD MainTheory.Orbit30TwoPointDisplays
+[44/16149] BUILD MainTheory.Orbit30BoundaryDisplays
+[45/16149] BUILD MainTheory.Orbit30GraphTypes
+[16030/16149] BUILD MainTheory.ManuscriptCertificationAudit20261005
+[16033/16149] BUILD MainTheory
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 23 serially rebuilt, 16126 content-validated cached modules

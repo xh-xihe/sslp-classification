@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "status": "strict_isolated_pilots_passed",
+  "staged_modules": [
+    {
+      "module": "Orbit30MomentRank",
+      "phase": "orbit30-moment-rank-staged-pilot-v1",
+      "source_sha256": "e1c3538e90bf325cf221732cb70529a44ae1964e54c0c91773d2c2f4c536a803"
+    },
+    {
+      "module": "Orbit30PrintedMoments",
+      "phase": "orbit30-printed-moments-staged-pilot-v2",
+      "source_sha256": "ff841881ecff98745424000fdb11c0032a26d5053b3816af4aa4eed5d3131b34"
+    },
+    {
+      "module": "Orbit30ProbabilityLabels",
+      "phase": "orbit30-probability-labels-staged-pilot-v3",
+      "source_sha256": "27c035253541377d4880f0ec3ae46f8e4e4070262ca4c5cd3eb42742105e2e0f"
+    },
+    {
+      "module": "Orbit30PhysicalRows",
+      "phase": "orbit30-physical-rows-staged-pilot-v2",
+      "source_sha256": "468c65e81142921220dfc850236f702d989778fa14cce5e74613d63fb9a26bce"
+    },
+    {
+      "module": "Orbit30PhysicalPhases",
+      "phase": "orbit30-physical-phases-staged-pilot-v5",
+      "source_sha256": "82be09be76bbccbffbad98b064c2e343b375ace19350214e9d8493cf3478541e"
+    },
+    {
+      "module": "Orbit30PhysicalGraph",
+      "phase": "orbit30-physical-graph-staged-pilot-v4",
+      "source_sha256": "4b01f45ef1371f588c923279ae7ff186c43a5c1a24efb458830423afd4cba2db"
+    },
+    {
+      "module": "Orbit30NormalizedDeterminant",
+      "phase": "orbit30-normalized-determinant-staged-pilot-v6",
+      "source_sha256": "84a4d5e601ab7f68399b8bfd5dee55ccc973d203fde18472d5ebab0332b1acd1"
+    },
+    {
+      "module": "Orbit30VertexScaling",
+      "phase": "orbit30-vertex-scaling-staged-pilot-v3",
+      "source_sha256": "fc8c691554c8e7e8726a1c34b5281ddf6eb2f1b089ab7c915fab83878312c09a"
+    },
+    {
+      "module": "Orbit30GraphClassification",
+      "phase": "orbit30-graph-classification-staged-pilot-v3",
+      "source_sha256": "74fd9e02d00715ae6c7c42a0cf6ea1a9b4f57059e86d275ffafbbc05da395424"
+    },
+    {
+      "module": "Orbit30ProperGraphTables",
+      "phase": "orbit30-proper-graph-tables-staged-pilot-v2",
+      "source_sha256": "76f1403caa49963529b0ab1665a8ac0642c707c7b29324205d59b4b2df3daf3d"
+    },
+    {
+      "module": "Orbit30PhysicalHafnians",
+      "phase": "orbit30-physical-hafnians-staged-pilot-v4",
+      "source_sha256": "3af5a145b6c6eb4097a9d0532f957b2cc387775829074df0bfea9c07ddd4eab9"
+    },
+    {
+      "module": "Orbit30FullSupport",
+      "phase": "orbit30-full-support-staged-pilot-v3",
+      "source_sha256": "ec603fa205722a6e6a77ace1c50ed0531f6b246a187ded52bfba47dd9cf4c794"
+    },
+    {
+      "module": "Orbit30GraphMaskEncoding",
+      "phase": "orbit30-graph-mask-encoding-staged-pilot-v1",
+      "source_sha256": "35a4b25389752519612c24b130647963234f7badc1cb9bfec513405d3fc1bbe9"
+    },
+    {
+      "module": "Orbit30PhysicalFullSupport",
+      "phase": "orbit30-physical-full-support-staged-pilot-v1",
+      "source_sha256": "0f13f038b31f8bb036dfa9ca6760e159ef9e2167d5f5514d35c437815b2930b9"
+    },
+    {
+      "module": "Orbit30GraphRelabel",
+      "phase": "orbit30-graph-relabel-staged-pilot-v4",
+      "source_sha256": "73d8bdad6b45826a4fea1f99ee22ec46491248c9ee20a836747675e921a78a89"
+    },
+    {
+      "module": "Orbit30PhysicalMask",
+      "phase": "orbit30-physical-mask-staged-pilot-v3",
+      "source_sha256": "a5c7b61ea9745ee1f10f653661bd7a9746a630863914e9eccb62374ecc2393b8"
+    },
+    {
+      "module": "Orbit30ProperGraphExclusion",
+      "phase": "orbit30-proper-graph-exclusion-staged-pilot-v1",
+      "source_sha256": "eda1658f3e203988512dbcb4528d134e802a5726fe5fca3fe223cb809dc450fc"
+    },
+    {
+      "module": "Orbit30PhysicalProperSupport",
+      "phase": "orbit30-physical-proper-support-staged-pilot-v2",
+      "source_sha256": "434654cdbb7f66642f92814c5dd95f6f8b873f89e93cd65d56bc2e87d41f5023"
+    },
+    {
+      "module": "Orbit30TwoPointDisplays",
+      "phase": "orbit30-two-point-displays-staged-pilot-v3",
+      "source_sha256": "0544ca9d5e3d27f7910ba19d75bebccb7cc27d353de34e8d5003a430a903bcce"
+    },
+    {
+      "module": "Orbit30BoundaryDisplays",
+      "phase": "orbit30-boundary-displays-staged-pilot-v1",
+      "source_sha256": "f816d060df7c5cec53944dc97be9b0fcebe81dee8c77105c04d6147eac7237a3"
+    }
+  ],
+  "scope": "Isolated orbit-30 proofs only; promotion, canonical type export, whole build and transitive axiom audit remain required."
+}

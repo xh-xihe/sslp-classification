@@ -28503,11 +28503,12 @@
       "statement_sha256": "bc8d135f968f77ead0adb343702008286d7582d9c7e0c81dbe20fd4fc1f57c43",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.S0",
-        "SixQubit.Orbit30.S0_eq_fiber",
-        "SixQubit.Orbit30.av"
+        "MainTheory.Orbit30PrintedMoments.actual_fibers",
+        "MainTheory.Orbit30PrintedMoments.bottom",
+        "MainTheory.Orbit30PrintedMoments.top",
+        "MainTheory.Orbit30PrintedMoments.complementIndex"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Introduces the bottom-fibre parametrisation x(u) = (u, t(wt u)) with t(0) = t(4) = 00, t(1) = 01, t(2) = 10, t(3) = 11. The package defines no such t or x: the sixteen strings are the literal definitions SixQubit.Orbit30.y0 through y15, indexed so that y_k is x(u) for u the four-bit binary expansion of k, and collected into SixQubit.Orbit30.S0. SixQubit.Orbit30.S0_eq_fiber proves by decide that S0 is exactly the residue-0 fibre of SixQubit.Orbit30.av = ![1,1,1,1,2,3] in ZMod 4, so the parametrisation is used only as a naming convention for the sixteen literals. | ADVERSARIAL CHECK: Checked all three names exist in SixQubit/Orbit30.lean and read their statements. I also verified the indexing claim numerically: for every k, y_k equals the four-bit binary expansion of k followed by t(wt), e.g. y15 = 111100 = x(1111) and y3 = 001110 = x(0011). av is literally ![1,1,1,1,2,3] : Fin 6 -> ZMod 4 and S0_eq_fiber is a `decide`. Classification `definition` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The enumerated physical native fiber words give the displayed sixteen bottom strings and exactly their complements; the top index is explicitly reversed."
     },
     {
       "id": "supplementary.tex:eq:q4o30complement",
@@ -28519,9 +28520,14 @@
       "line": 11454,
       "end_line": 11459,
       "statement_sha256": "fed35cf1ec0b7a6e1071b3345580e44e697c2e163166c1aaecc0b64870ba343a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PrintedMoments.actual_fibers",
+        "MainTheory.Orbit30PrintedMoments.bottom",
+        "MainTheory.Orbit30PrintedMoments.top",
+        "MainTheory.Orbit30PrintedMoments.complementIndex"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The enumerated physical native fiber words give the displayed sixteen bottom strings and exactly their complements; the top index is explicitly reversed."
     },
     {
       "id": "supplementary.tex:eq:q4o30K5labels",
@@ -28535,11 +28541,20 @@
       "statement_sha256": "d53724dfb6d617faadb4ccf8e057640b9a99a4a26195cd42a1c7b6c7585761b2",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.S0",
-        "SixQubit.Orbit30.S0_eq_fiber",
-        "SixQubit.K5.Sys"
+        "MainTheory.Orbit30ProbabilityLabels.vertexIndex",
+        "MainTheory.Orbit30ProbabilityLabels.edgeIndex",
+        "MainTheory.Orbit30ProbabilityLabels.endpoints",
+        "MainTheory.Orbit30ProbabilityLabels.pointMass",
+        "MainTheory.Orbit30ProbabilityLabels.edgeMass",
+        "MainTheory.Orbit30ProbabilityLabels.degreeMass",
+        "MainTheory.Orbit30PhysicalRows.pointC",
+        "MainTheory.Orbit30PhysicalRows.edgeC",
+        "MainTheory.Orbit30PhysicalRows.pointV",
+        "MainTheory.Orbit30PhysicalRows.edgeV",
+        "MainTheory.Orbit30PhysicalRows.edgeIndexMatrix",
+        "MainTheory.Orbit30PhysicalGraph.edge_symmetric"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The table assigning the sixteen bottom points to one symbol star, five vertices v_i and the ten edges e_ij of K_5. Lean carries the labelling only in the ordering of the definitions SixQubit.Orbit30.y0 through y15 -- y15 = 111100 is star, y0, y1, y2, y4, y8 are v_0 through v_4, and e_01 = y14, e_02 = y13, e_03 = y11, e_04 = y7, e_12 = y12, e_13 = y10, e_14 = y6, e_23 = y9, e_24 = y5, e_34 = y3 -- and SixQubit.Orbit30.S0_eq_fiber proves the collection is the whole residue-0 fibre. No declaration states the correspondence itself; the label names survive downstream only as the argument names s, b0..b4, c01..c34 of SixQubit.K5.Sys, which mentions no bit strings at all. | ADVERSARIAL CHECK: Every label in the table decodes correctly against the Lean literals: star = y15 = 111100, v_0..v_4 = y0, y1, y2, y4, y8, and the ten edges are e_01 = y14, e_02 = y13, e_03 = y11, e_04 = y7, e_12 = y12, e_13 = y10, e_14 = y6, e_23 = y9, e_24 = y5, e_34 = y3. SixQubit.K5.Sys exists with exactly the scalar arguments s, b0..b4, c01..c34 (plus k01..k34). The review's caveat is correct: no declaration states the label-to-string table, it is only a naming convention that the ordering of conjuncts in `rows` and `target_zero` respects. Classification `data` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The five vertices and ten symmetric edges are the literal SI native coordinates, including the zero diagonal, physical top complements and probabilities as actual squared amplitude norms."
     },
     {
       "id": "supplementary.tex:eq:q4o30momentnormal",
@@ -28551,9 +28566,18 @@
       "line": 11489,
       "end_line": 11497,
       "statement_sha256": "02110848f62405f9b95669529fd809daca0fd0a8ef8c4ee19d5721df025484f1",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PrintedMoments.complete_normal",
+        "MainTheory.Orbit30PrintedMoments.physical_normal",
+        "MainTheory.Orbit30PrintedMoments.literal_coordinate_sum",
+        "MainTheory.Orbit30PrintedMoments.literal_total_sum",
+        "MainTheory.Orbit30MomentRank.Orbit30.actual_matrix",
+        "MainTheory.Orbit30MomentRank.Orbit30.rank_exact",
+        "MainTheory.Orbit30MomentRank.Orbit30.real_witness",
+        "MainTheory.Orbit30MomentRank.Orbit30.full_diagonal_polytope_dimension"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Both directions of the complete real moment form are proved. The actual 23 by 32 physical matrix has rank 23 and a strictly positive feasible witness, so its full nonnegative polytope has affine dimension nine. This is independent of the no-code theorem."
     },
     {
       "id": "supplementary.tex:eq:q4o30probnotation",
@@ -28567,15 +28591,20 @@
       "statement_sha256": "8062be11d0deb1ae23fa295367618134786e9d582834e8f35ae514508e3dda83",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.r",
-        "MainTheory.Orbit30.Data.w",
-        "MainTheory.Orbit30.Data.D",
-        "MainTheory.Orbit30.Data.w_symm",
-        "MainTheory.Orbit30.Data.w_diag",
-        "SixQubit.Orbit30.MomentSystem",
-        "SixQubit.K5.Sys"
+        "MainTheory.Orbit30ProbabilityLabels.vertexIndex",
+        "MainTheory.Orbit30ProbabilityLabels.edgeIndex",
+        "MainTheory.Orbit30ProbabilityLabels.endpoints",
+        "MainTheory.Orbit30ProbabilityLabels.pointMass",
+        "MainTheory.Orbit30ProbabilityLabels.edgeMass",
+        "MainTheory.Orbit30ProbabilityLabels.degreeMass",
+        "MainTheory.Orbit30PhysicalRows.pointC",
+        "MainTheory.Orbit30PhysicalRows.edgeC",
+        "MainTheory.Orbit30PhysicalRows.pointV",
+        "MainTheory.Orbit30PhysicalRows.edgeV",
+        "MainTheory.Orbit30PhysicalRows.edgeIndexMatrix",
+        "MainTheory.Orbit30PhysicalGraph.edge_symmetric"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Names p_star, r_i = p(v_i), w_ij = p(e_ij) and the weighted edge degree D_i = sum over j /= i of w_ij. MainTheory.Orbit30.Data.r, .w and .D are the last three as functions on Fin 5, with MainTheory.Orbit30.Data.w_symm and .w_diag; D is written as a sum over all j, which agrees with the display because w_diag gives w i i = 0. p_star has no named definition: it is the parameter slot q15 of SixQubit.Orbit30.MomentSystem, and in the certified route it is only |s|^2 for the scalar s of SixQubit.K5.Sys, which records nothing about it beyond the field hs, s /= 0. The same three quantities otherwise appear as the Complex.normSq arguments of the SixQubit.K5.Sys fields dg0 through dg4, tb and tc. | ADVERSARIAL CHECK: r, w, D are defs in MainTheory/Orbit30SupportGraph.lean (r i = normSq (d.b i), w i j = normSq (d.c i j), D i = sum over all j of w i j, which equals the manuscript's sum over j /= i because w_diag gives w i i = 0). w_symm and w_diag are theorems. The proposed list omitted p_star, which has no named definition anywhere; I added SixQubit.Orbit30.MomentSystem, whose parameter slot q15 is p_star (endpoints' first conjunct is q15 = 1/8). Otherwise the review is accurate."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The five vertices and ten symmetric edges are the literal SI native coordinates, including the zero diagonal, physical top complements and probabilities as actual squared amplitude norms."
     },
     {
       "id": "supplementary.tex:eq:q4o30starindicator",
@@ -28589,9 +28618,13 @@
       "line": 11516,
       "end_line": 11527,
       "statement_sha256": "1c5600f99fa3bd665c0bcf002b8069facee2adfee9a0fe8091ad69dafd841180",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30ProbabilityLabels.literal_pointwise_identities",
+        "MainTheory.Orbit30ProbabilityLabels.actual_probabilities",
+        "MainTheory.Orbit30PrintedMoments.physical_normal"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All three labeled lines in this align environment are pointwise identities on the actual sixteen fiber words, with their exact rational coefficients and physical coordinate order."
     },
     {
       "id": "supplementary.tex:eq:q4o30degreeprob",
@@ -28605,13 +28638,12 @@
       "statement_sha256": "8bcfd2cf32bfafff6da792b367e9aa9554e9aa21b23a13dfdf69cb983dd25a01",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.MomentSystem.endpoints",
-        "SixQubit.Orbit30.MomentSystem.endpoints_pos",
-        "SixQubit.K5.Sys",
-        "MainTheory.Orbit30.Data.degree",
-        "MainTheory.Orbit30.Data.degree_eq"
+        "MainTheory.Orbit30ProbabilityLabels.physical_probabilities",
+        "MainTheory.Orbit30ProbabilityLabels.literal_degree_sum",
+        "MainTheory.Orbit30PhysicalGraph.degree_norm",
+        "MainTheory.Orbit30PhysicalGraph.physicalData"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: p_star = 1/8 and D_i - r_i = 1/8 at every vertex. These are the first and the third through seventh conjuncts of SixQubit.Orbit30.MomentSystem.endpoints. The degree half enters the amplitude layer as the fields SixQubit.K5.Sys.dg0 through dg4, sum over j /= i of normSq c_ij = normSq b_i + 1/8; the p_star half enters only as the field hs, s /= 0, obtained from SixQubit.Orbit30.MomentSystem.endpoints_pos, 0 < r0, which is also the manuscript's claim that star is always active. In the manuscript-facing file the degree half is the hypothesis MainTheory.Orbit30.Data.degree with its restatement MainTheory.Orbit30.Data.degree_eq. | ADVERSARIAL CHECK: Read endpoints: its nine conjuncts are q15 = 1/8; r0 = q15; five degree equations; R = 3/8; W = 1/2. I decoded the five degree conjuncts and they are exactly D_i - r_i = 1/8 for i = 0..4 under the label table (e.g. q14 + q13 + q11 + q7 = q0 + 1/8 is D_0 = r_0 + 1/8). endpoints_pos : 0 < r0 exists. Sys.dg0..dg4 exist and are the degree half only; p_star = 1/8 enters the amplitude layer as the field hs, s /= 0, not as a dg field -- I tightened that sentence. Data.degree is the structure field and degree_eq its restatement; both exist."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The star probability, five weighted degrees, total point mass three eighths and total edge mass one half follow from physical supported normalized amplitudes and full weight-at-most-two KL."
     },
     {
       "id": "supplementary.tex:equation@11536",
@@ -28623,11 +28655,12 @@
       "statement_sha256": "713a48d50369a7664dfc508584cd39bb73f2ad37a53ad7c2639902f3c8ecdd55",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.K5.Sys",
-        "MainTheory.Orbit30.Data.total_point'",
-        "MainTheory.Orbit30.Data.total_weight"
+        "MainTheory.Orbit30ProbabilityLabels.physical_probabilities",
+        "MainTheory.Orbit30ProbabilityLabels.literal_degree_sum",
+        "MainTheory.Orbit30PhysicalGraph.degree_norm",
+        "MainTheory.Orbit30PhysicalGraph.physicalData"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Names the total point mass R and the total edge mass W. Lean introduces no constants for either: SixQubit.K5.Sys.tb is an equation whose left side is R over the five point amplitudes and SixQubit.K5.Sys.tc one whose left side is W over the ten edge amplitudes, while MainTheory.Orbit30.Data.total_point' and MainTheory.Orbit30.Data.total_weight are the same two aggregates in Finset.sum form (total_weight sums over ordered pairs, so its value 1 is 2W). | ADVERSARIAL CHECK: Both MainTheory declarations exist and were read: total_point' : sum over i of r i = 3/8, total_weight : sum over i, sum over j of w i j = 1. The review's parenthesis about ordered pairs is correct. Sys.tb and tc exist as equations whose left-hand sides are the two aggregates. No definition of R or W as a constant exists anywhere, which is what the review says. Classification `definition` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The star probability, five weighted degrees, total point mass three eighths and total edge mass one half follow from physical supported normalized amplitudes and full weight-at-most-two KL."
     },
     {
       "id": "supplementary.tex:eq:q4o30RW",
@@ -28641,12 +28674,12 @@
       "statement_sha256": "f2ee120948db362737a51f4d3635379a922595af27e6ff61c37442b94cca5d8b",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.MomentSystem.endpoints",
-        "SixQubit.K5.Sys",
-        "MainTheory.Orbit30.Data.total_point'",
-        "MainTheory.Orbit30.Data.total_weight"
+        "MainTheory.Orbit30ProbabilityLabels.physical_probabilities",
+        "MainTheory.Orbit30ProbabilityLabels.literal_degree_sum",
+        "MainTheory.Orbit30PhysicalGraph.degree_norm",
+        "MainTheory.Orbit30PhysicalGraph.physicalData"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: R = 3/8 and W = 1/2. Both are the eighth and ninth conjuncts of SixQubit.Orbit30.MomentSystem.endpoints and appear downstream as the hypotheses SixQubit.K5.Sys.tb and SixQubit.K5.Sys.tc. In the manuscript-facing file MainTheory.Orbit30.Data.total_point' is the point half and MainTheory.Orbit30.Data.total_weight derives the edge half from R = 3/8 and the degree relation rather than assuming it, its value 1 being 2W because the sum runs over ordered pairs. | ADVERSARIAL CHECK: Confirmed the eighth conjunct of endpoints is q0 + q1 + q2 + q4 + q8 = 3/8 (the five v_i) and the ninth is the ten-term edge sum = 1/2. Sys.tb and tc match. I read the proof of Data.total_weight: it rewrites each inner sum by degree_eq and then uses total_point', so W is derived, not assumed, exactly as the review says. Added total_point' since the display's R half is that declaration."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The star probability, five weighted degrees, total point mass three eighths and total edge mass one half follow from physical supported normalized amplitudes and full weight-at-most-two KL."
     },
     {
       "id": "supplementary.tex:eq:q4o30ampnotation",
@@ -28660,10 +28693,20 @@
       "statement_sha256": "3238b9ab71f969989f7afcfeb00b65e6991b88182ba564967851bca8730eb05e",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.K5.Sys",
-        "MainTheory.Orbit30.Data"
+        "MainTheory.Orbit30ProbabilityLabels.vertexIndex",
+        "MainTheory.Orbit30ProbabilityLabels.edgeIndex",
+        "MainTheory.Orbit30ProbabilityLabels.endpoints",
+        "MainTheory.Orbit30ProbabilityLabels.pointMass",
+        "MainTheory.Orbit30ProbabilityLabels.edgeMass",
+        "MainTheory.Orbit30ProbabilityLabels.degreeMass",
+        "MainTheory.Orbit30PhysicalRows.pointC",
+        "MainTheory.Orbit30PhysicalRows.edgeC",
+        "MainTheory.Orbit30PhysicalRows.pointV",
+        "MainTheory.Orbit30PhysicalRows.edgeV",
+        "MainTheory.Orbit30PhysicalRows.edgeIndexMatrix",
+        "MainTheory.Orbit30PhysicalGraph.edge_symmetric"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Names the bottom amplitudes s at star, b_i at the points and c_ij = c_ji at the edges. These are the explicit scalar arguments of SixQubit.K5.Sys (s, b0..b4, c01..c34, together with the ten phase defects k_ij), where the symmetry c_ij = c_ji is built into the naming; in the manuscript-facing file the point and edge amplitudes are the structure MainTheory.Orbit30.Data, with fields b and c and the symmetry and zero-diagonal fields c_symm and c_diag, but no field for s. | ADVERSARIAL CHECK: Sys's explicit scalar arguments are s b0 b1 b2 b3 b4 c01 c02 c03 c04 c12 c13 c14 c23 c24 c34 k01 ... k34, exactly as claimed. MainTheory.Orbit30.Data has fields b : Fin 5 -> C, c : Fin 5 -> Fin 5 -> C, c_symm and c_diag; it has no s, but Sys supplies it, so between the two the display is covered. Classification `definition` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The five vertices and ten symmetric edges are the literal SI native coordinates, including the zero diagonal, physical top complements and probabilities as actual squared amplitude norms."
     },
     {
       "id": "supplementary.tex:eq:q4o30rho",
@@ -28675,9 +28718,14 @@
       "line": 11561,
       "end_line": 11567,
       "statement_sha256": "a2ee74381fff1d4b1101982671cac85aea302ad69e892830f1d8328b1cb39047",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalPhases.phase",
+        "MainTheory.Orbit30PhysicalPhases.actual_equal_norms",
+        "MainTheory.Orbit30PhysicalPhases.actual_unit_phase",
+        "MainTheory.Orbit30PhysicalPhases.reciprocal_product"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The conjugate amplitude denominator and complement index agree with the printed phase ratio. Unit modulus is asserted only at nonzero amplitudes; the reciprocal product identity retains its precise nonzero denominator hypothesis."
     },
     {
       "id": "supplementary.tex:eq:q4o30z",
@@ -28691,10 +28739,12 @@
       "statement_sha256": "34d89fcc4d66186ddd8a7e9b949f1a313eab5284d0294d7774fb0e7926e6cef4",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.offSum",
-        "SixQubit.Orbit30.rows"
+        "MainTheory.Orbit30PhysicalPhases.phase",
+        "MainTheory.Orbit30PhysicalPhases.actual_equal_norms",
+        "MainTheory.Orbit30PhysicalPhases.actual_unit_phase",
+        "MainTheory.Orbit30PhysicalPhases.reciprocal_product"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Introduces z_(alpha beta) = conj(C_alpha) d_(complement beta) for a reciprocal incidence pair. Those products are literally the summands of SixQubit.Orbit30.offSum, and every one of the thirty-five equations in the conclusion of SixQubit.Orbit30.rows is written in them, but Lean introduces no z abbreviation. The second displayed form, z = rho_beta conj(C_alpha C_beta), has no counterpart because rho is never defined. | ADVERSARIAL CHECK: offSum c d e z = sum over y in S1.filter (bxor y e in S0) of signMul (bdot z y) (star (c (bxor y e)) * d y); the bare summand star (c x) * d y with y in S1 is exactly conj(C_alpha) d_(complement beta) for the reciprocal pair, so the review's identification is right. All thirty-five conjuncts of `rows` are written in such products. No z abbreviation exists (I read the whole declaration list of Orbit30.lean). The second displayed form needs rho, which does not exist."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The conjugate amplitude denominator and complement index agree with the printed phase ratio. Unit modulus is asserted only at nonzero amplitudes; the reciprocal product identity retains its precise nonzero denominator hypothesis."
     },
     {
       "id": "supplementary.tex:eq:q4o30mu",
@@ -28708,14 +28758,13 @@
       "statement_sha256": "5da82df76de3338657347d96bb05eb724fefdbf9f329ec0240d061834a93daaf",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.ef0",
-        "SixQubit.Orbit30.ef2",
-        "SixQubit.Orbit30.ef4",
-        "SixQubit.Orbit30.ef6",
-        "SixQubit.Orbit30.ef8",
-        "SixQubit.Orbit30.rows"
+        "MainTheory.Orbit30PhysicalRows.physical_native_rows",
+        "MainTheory.Orbit30PhysicalRows.canonical_rows",
+        "MainTheory.Orbit30PhysicalRows.physical_rows",
+        "MainTheory.Orbit30PhysicalRows.starSum",
+        "MainTheory.Orbit30PhysicalRows.matchingSum"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The map from the five weight-one cross systems to physical qubits, mu = (6,4,3,2,1). The corresponding Lean flip masks are SixQubit.Orbit30.ef0 = 000001, ef2 = 000100, ef4 = 001000, ef6 = 010000 and ef8 = 100000, that is X_6, X_4, X_3, X_2, X_1 for i = 0,1,2,3,4, and the weight-two masks ef1, ef3, ef5, ef7, ef9 are each of these times X_5. The mask 000010, X_5 alone, occurs in the file only as the dressing w2 and is not among the ten masks fed to SixQubit.Orbit30.rows, though no declaration proves its incidence set is empty. | ADVERSARIAL CHECK: Read all ten ef definitions. ef0 = 000001, ef2 = 000100, ef4 = 001000, ef6 = 010000, ef8 = 100000, i.e. X_6, X_4, X_3, X_2, X_1, matching mu = (6,4,3,2,1) for i = 0..4; I cross-checked this against the incidence sets (incidence_ef0 decodes to v_1..v_4 against e_01..e_04, incidence_ef4 to the i = 2 star, etc.). ef1 = 000011, ef3 = 000110, ef5 = 001010, ef7 = 010010, ef9 = 100010 are each of the above times X_5. The mask 000010 appears only as the dressing w2, never as a flip mask, and `rows` takes exactly ef0..ef9; no declaration says the X_5 incidence set is empty."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All thirty-five literal native Pauli rows are derived from actual full KL, then converted into the five reciprocal differences, five point/star pairs, five weight-one stars and five perfect-matching sums. The first starsign align entry includes the matching-sum line; no support or final impossibility assumption is used."
     },
     {
       "id": "supplementary.tex:eq:q4o30stars",
@@ -28729,13 +28778,13 @@
       "statement_sha256": "6ef67af201cef74b8ba31c301a63ed53b0eb468b3fe8a401ce1ec39918231791",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.incidence_ef0",
-        "SixQubit.Orbit30.incidence_ef2",
-        "SixQubit.Orbit30.incidence_ef4",
-        "SixQubit.Orbit30.incidence_ef6",
-        "SixQubit.Orbit30.incidence_ef8"
+        "MainTheory.Orbit30PhysicalRows.physical_native_rows",
+        "MainTheory.Orbit30PhysicalRows.canonical_rows",
+        "MainTheory.Orbit30PhysicalRows.physical_rows",
+        "MainTheory.Orbit30PhysicalRows.starSum",
+        "MainTheory.Orbit30PhysicalRows.matchingSum"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: For the weight-one flip X_mu(i), the four reciprocal pairs are v_j against e_ij, j /= i. SixQubit.Orbit30.incidence_ef0 computes by decide that the eight top strings incident under ef0 = X_6 are the complements of v_1..v_4 and of e_01..e_04, and the flip_ef0_* lemmas in the same file pair them both ways round; incidence_ef2, incidence_ef4, incidence_ef6 and incidence_ef8 are the same statements for i = 1, 2, 3, 4, each decoding to {v_j : j /= i} together with {e_ij : j /= i}. | ADVERSARIAL CHECK: All five exist and are `by decide`. I decoded each right-hand side through complement(y_k) = z_(15-k): ef0 gives {v_1..v_4, e_01..e_04}, ef2 gives {v_0, v_2, v_3, v_4, e_01, e_12, e_13, e_14}, ef4 the i = 2 set, ef6 the i = 3 set, ef8 the i = 4 set -- exactly the display's v_j against e_ij for j /= i. The flip_ef0_* lemmas do pair them both ways (flip_ef0_1 sends the complement of e_01 to v_1, flip_ef0_14 sends the complement of v_1 to e_01)."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All thirty-five literal native Pauli rows are derived from actual full KL, then converted into the five reciprocal differences, five point/star pairs, five weight-one stars and five perfect-matching sums. The first starsign align entry includes the matching-sum line; no support or final impossibility assumption is used."
     },
     {
       "id": "supplementary.tex:eq:q4o30weightonediff",
@@ -28750,10 +28799,13 @@
       "statement_sha256": "1570f348ea79959b2159b15593e4a45393ecc6cd768a401b663811d965f828d8",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.rows",
-        "SixQubit.Orbit30.offSum"
+        "MainTheory.Orbit30PhysicalRows.physical_native_rows",
+        "MainTheory.Orbit30PhysicalRows.canonical_rows",
+        "MainTheory.Orbit30PhysicalRows.physical_rows",
+        "MainTheory.Orbit30PhysicalRows.starSum",
+        "MainTheory.Orbit30PhysicalRows.matchingSum"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The row-reduced weight-one cross system: the four difference equations z_(v_j,e_ij) = z_(e_ij,v_j) and the single sum over j /= i. SixQubit.Orbit30.rows proves both families from the thirty-five admissible dressed Walsh rows written as SixQubit.Orbit30.offSum: its first twenty conjuncts are the differences and its last five are the weight-one sums, stated one-sidedly as sum over j /= i of conj(c v_j) d_(complement e_ij) = 0, which is the displayed sum once the differences are used. The accompanying rank-five claim about the allowed dressings is not itself stated. | ADVERSARIAL CHECK: `rows` takes thirty-five hypotheses h0..h34, each an offSum vanishing, and concludes a thirty-five-fold conjunction. I decoded it: conjuncts 1-20 are the differences (conjunct 1 is star (c y1) * d z1 - star (c y14) * d z14 = 0, i.e. z_(v_1,e_01) - z_(e_01,v_1) = 0), 21-25 the six-term matching rows, 26-30 the star-sign rows, 31-35 the one-sided weight-one sums (conjunct 31 is star (c y1) * d z1 + star (c y2) * d z2 + star (c y4) * d z4 + star (c y8) * d z8 = 0, the i = 0 sum). The rank-five claim is indeed absent."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All thirty-five literal native Pauli rows are derived from actual full KL, then converted into the five reciprocal differences, five point/star pairs, five weight-one stars and five perfect-matching sums. The first starsign align entry includes the matching-sum line; no support or final impossibility assumption is used."
     },
     {
       "id": "supplementary.tex:eq:q4o30matchpairs",
@@ -28767,13 +28819,13 @@
       "statement_sha256": "1271c10aabe6b24a60f2c740bb2ad6bcd28a9acf51faaa7e38f863e978b5c744",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.incidence_ef1",
-        "SixQubit.Orbit30.incidence_ef3",
-        "SixQubit.Orbit30.incidence_ef5",
-        "SixQubit.Orbit30.incidence_ef7",
-        "SixQubit.Orbit30.incidence_ef9"
+        "MainTheory.Orbit30PhysicalRows.physical_native_rows",
+        "MainTheory.Orbit30PhysicalRows.canonical_rows",
+        "MainTheory.Orbit30PhysicalRows.physical_rows",
+        "MainTheory.Orbit30PhysicalRows.starSum",
+        "MainTheory.Orbit30PhysicalRows.matchingSum"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: For the weight-two flip X_mu(i) X_5, the four reciprocal pairs are star against v_i and the three perfect matchings of V minus i. SixQubit.Orbit30.incidence_ef1 computes by decide that the eight strings incident under ef1 = X_5 X_6 are the complements of star, v_0, e_12, e_34, e_13, e_24, e_14, e_23, which is the i = 0 case; incidence_ef3, incidence_ef5, incidence_ef7 and incidence_ef9 are the same for i = 1, 2, 3, 4, each decoding to star against v_i together with the three matchings of V minus i. | ADVERSARIAL CHECK: All five exist and are `by decide`. Decoding incidence_ef1 = {z0, z3, z5, z6, z9, z10, z12, z15} gives the complements of star, e_12, e_13, e_23, e_14, e_24, e_34, v_0 -- the i = 0 case, star against v_0 plus the three matchings {12|34}, {13|24}, {14|23} of V minus 0. incidence_ef3, ef5, ef7, ef9 decode to the i = 1, 2, 3, 4 cases in the same way. flip_ef1_0 confirms the star-to-v_0 direction."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All thirty-five literal native Pauli rows are derived from actual full KL, then converted into the five reciprocal differences, five point/star pairs, five weight-one stars and five perfect-matching sums. The first starsign align entry includes the matching-sum line; no support or final impossibility assumption is used."
     },
     {
       "id": "supplementary.tex:eq:q4o30starsign",
@@ -28788,11 +28840,13 @@
       "statement_sha256": "9bd91c1a4d9781e81e9e4e3219c413b350f727561075ad4ba23dcca119778880",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.rows",
-        "SixQubit.Orbit30.no_go_of_moments",
-        "SixQubit.K5.Sys"
+        "MainTheory.Orbit30PhysicalRows.physical_native_rows",
+        "MainTheory.Orbit30PhysicalRows.canonical_rows",
+        "MainTheory.Orbit30PhysicalRows.physical_rows",
+        "MainTheory.Orbit30PhysicalRows.starSum",
+        "MainTheory.Orbit30PhysicalRows.matchingSum"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The rank-two weight-two system: z_(star,v_i) + z_(v_i,star) = 0, and the all-plus sum over the three matchings of V minus i. Both families are conjuncts of SixQubit.Orbit30.rows -- the five star-sign rows conj(c y15) d_(complement v_i) + conj(c v_i) d z0 = 0 sit in positions 26 to 30 and the five six-term matching rows in positions 21 to 25. SixQubit.Orbit30.no_go_of_moments repackages them by linear_combination into the twenty kb fields and the five hf fields of SixQubit.K5.Sys. | ADVERSARIAL CHECK: Verified the positions by decoding the conjunction: conjuncts 26-30 are star (c y15) * d z_j + star (c y_i) * d z0 = 0 for the five v_i (z0 is the complement of star, z15/z14/z13/z11/z7 the complements of v_0..v_4), and conjuncts 21-25 are the six-term matching rows (conjunct 21 is the V minus 0 one). Inside no_go_of_moments these are combined by linear_combination into the kb fields and hf0..hf4 of the Sys instance; I added no_go_of_moments, since that is where the repackaging happens (SixQubit.Orbit30.target_zero repackages only the weight-one sums)."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All thirty-five literal native Pauli rows are derived from actual full KL, then converted into the five reciprocal differences, five point/star pairs, five weight-one stars and five perfect-matching sums. The first starsign align entry includes the matching-sum line; no support or final impossibility assumption is used."
     },
     {
       "id": "supplementary.tex:eq:q4o30A",
@@ -28806,12 +28860,14 @@
       "statement_sha256": "f14ba8b2cbad28299f0e322d393d15e95501884930619411f5cbf3adfa950f3b",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.Active",
-        "MainTheory.Orbit30.Data.A",
-        "MainTheory.Orbit30.Data.mem_A",
-        "MainTheory.Orbit30.Data.Edge"
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_three_active",
+        "MainTheory.Orbit30TwoPointDisplays.internal_edge_zero",
+        "MainTheory.Orbit30TwoPointDisplays.two_term_row",
+        "MainTheory.Orbit30.Data.card_A_ne_zero",
+        "MainTheory.Orbit30.Data.card_A_ne_one"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Defines the active point set A = {i : r_i > 0}. MainTheory.Orbit30.Data.Active is the predicate 0 < d.r i, MainTheory.Orbit30.Data.A the corresponding Finset with MainTheory.Orbit30.Data.mem_A the membership characterisation. The support graph's edge relation introduced in the same paragraph is MainTheory.Orbit30.Data.Edge, 0 < d.w i j. | ADVERSARIAL CHECK: All four read in MainTheory/Orbit30SupportGraph.lean: Active i is `0 < d.r i`, A is `Finset.univ.filter fun i => d.Active i`, mem_A : i in d.A iff d.Active i, Edge i j is `0 < d.w i j`. The display's paragraph does introduce the edge relation alongside A, so listing Edge is right. Classification `definition` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The abstract support-graph data are now instantiated from actual code amplitudes with every defining hypothesis proved; all small-active-set exclusions are applied through that physical bridge."
     },
     {
       "id": "supplementary.tex:lem:q4o30threepoints",
@@ -28825,12 +28881,14 @@
       "statement_sha256": "ef5deca2719a35057ee8f7bf953426b6bad801b7f9b628e6187673ee13a4fdf5",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.three_le_card_A",
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_three_active",
+        "MainTheory.Orbit30TwoPointDisplays.internal_edge_zero",
+        "MainTheory.Orbit30TwoPointDisplays.two_term_row",
         "MainTheory.Orbit30.Data.card_A_ne_zero",
-        "MainTheory.Orbit30.Data.card_A_ne_one",
-        "MainTheory.Orbit30.Data.card_A_ne_two"
+        "MainTheory.Orbit30.Data.card_A_ne_one"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: At least three point amplitudes are active. |A| = 0 contradicts R = 3/8; |A| = 1 makes the row at a neighbour of the single active point have exactly one nonzero term; |A| = 2 splits on whether the edge ab is present -- present gives the same one-term contradiction at a, absent makes the split identity SAA - SII = (|A|-1)/4 read 0 - SII = 1/4 with SII nonnegative."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The abstract support-graph data are now instantiated from actual code amplitudes with every defining hypothesis proved; all small-active-set exclusions are applied through that physical bridge."
     },
     {
       "id": "supplementary.tex:eq:q4o30twopointmag",
@@ -28842,9 +28900,18 @@
       "line": 11654,
       "end_line": 11657,
       "statement_sha256": "c51bdf02b651612f4abbabd23b8aa29df8898256e2b02fbd10062355db43b536",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30TwoPointDisplays.internal_edge_zero",
+        "MainTheory.Orbit30TwoPointDisplays.two_term_row",
+        "MainTheory.Orbit30TwoPointDisplays.two_point_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.degree_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.equal_point_mass",
+        "MainTheory.Orbit30TwoPointDisplays.point_and_degree_values",
+        "MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The conditional two-point branch derives the literal magnitude identity for every vertex including zero edges, sums it to the quadratic degree equality, proves equal masses three sixteenths and degrees five sixteenths, and derives the disjoint-star bound by nonnegative matrix partitioning. No previously proved no-code theorem supplies an intermediate assertion."
     },
     {
       "id": "supplementary.tex:equation@11660",
@@ -28854,9 +28921,18 @@
       "line": 11660,
       "end_line": 11663,
       "statement_sha256": "537f601c5bff5db9d721bfd13789b54a26dfe5feb2ce9978d0b94f2a996083e7",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30TwoPointDisplays.internal_edge_zero",
+        "MainTheory.Orbit30TwoPointDisplays.two_term_row",
+        "MainTheory.Orbit30TwoPointDisplays.two_point_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.degree_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.equal_point_mass",
+        "MainTheory.Orbit30TwoPointDisplays.point_and_degree_values",
+        "MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The conditional two-point branch derives the literal magnitude identity for every vertex including zero edges, sums it to the quadratic degree equality, proves equal masses three sixteenths and degrees five sixteenths, and derives the disjoint-star bound by nonnegative matrix partitioning. No previously proved no-code theorem supplies an intermediate assertion."
     },
     {
       "id": "supplementary.tex:equation@11669",
@@ -28866,9 +28942,18 @@
       "line": 11669,
       "end_line": 11671,
       "statement_sha256": "d2ed10ff43f180ed0635145a6f20fd488d839fb4772f6c79c12bc5d02165a69c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30TwoPointDisplays.internal_edge_zero",
+        "MainTheory.Orbit30TwoPointDisplays.two_term_row",
+        "MainTheory.Orbit30TwoPointDisplays.two_point_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.degree_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.equal_point_mass",
+        "MainTheory.Orbit30TwoPointDisplays.point_and_degree_values",
+        "MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The conditional two-point branch derives the literal magnitude identity for every vertex including zero edges, sums it to the quadratic degree equality, proves equal masses three sixteenths and degrees five sixteenths, and derives the disjoint-star bound by nonnegative matrix partitioning. No previously proved no-code theorem supplies an intermediate assertion."
     },
     {
       "id": "supplementary.tex:lem:q4o30exceptional",
@@ -28882,12 +28967,14 @@
       "statement_sha256": "3ff9d7a14de6fb96c06764c659f3f0e0cae23294d7e865cdf3881a5de5de407c",
       "status": "covered",
       "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_four_active",
+        "MainTheory.Orbit30PhysicalHafnians.actual_regular_points",
         "MainTheory.Orbit30.Data.q4o30_exceptional",
-        "MainTheory.Orbit30.Data.card_A_ne_three",
-        "MainTheory.Orbit30.Data.exists_internal_edge",
+        "MainTheory.Orbit30.Data.row_over_A",
         "MainTheory.Orbit30.triangle_contradiction"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The inactive-inactive edge branch is impossible. Proved in the stronger form card_A_ne_three: under the synchronised weight-one interface the active set cannot have exactly three elements at all, since the split identity gives SAA - SII = 1/2 so the graph induced on A is nonempty whether or not the inactive-inactive edge is present, the induced degree cannot be one so the induced graph is the full triangle, and triangle_contradiction shows the three triangle rows are inconsistent. The manuscript states the weaker conclusion because eq:q4o30globalsync is not yet available in general at that point of its argument; this file assumes the synchronised rows throughout, which is recorded in its header."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The physical graph supplies the restricted bilinear rows and actual nonzero point/edge factors. The three-active-point triangle exclusion proves the exceptional branch impossible and implies regularity; all three triangle lines in the align environment are included."
     },
     {
       "id": "supplementary.tex:align@11691",
@@ -28897,9 +28984,15 @@
       "line": 11691,
       "end_line": 11694,
       "statement_sha256": "b6d5da331002d2d669266fd6c27ad1cfb472bf1520d8db7ecae74b54bf1c3a5e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30BoundaryDisplays.innerWeight",
+        "MainTheory.Orbit30BoundaryDisplays.crossWeight",
+        "MainTheory.Orbit30BoundaryDisplays.inactiveWeight",
+        "MainTheory.Orbit30BoundaryDisplays.exceptional_mass_equations"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The two displayed exceptional-branch mass equations use unordered internal edge mass, correctly half the symmetric double sum. The isolated inactive pair contributes exactly one edge weight, and subtracting yields the printed one-quarter difference."
     },
     {
       "id": "supplementary.tex:eq:q4o30WAA",
@@ -28913,10 +29006,13 @@
       "statement_sha256": "ec37d621fd4a5bcfd45911bada471b9e4148bd050f4b81884674a7221bd0c350",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.split_identity",
-        "MainTheory.Orbit30.Data.exists_internal_edge"
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30BoundaryDisplays.innerWeight",
+        "MainTheory.Orbit30BoundaryDisplays.crossWeight",
+        "MainTheory.Orbit30BoundaryDisplays.inactiveWeight",
+        "MainTheory.Orbit30BoundaryDisplays.exceptional_mass_equations"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: split_identity proves S_AA - S_II = (|A| - 1)/4 where S_AA and S_II are sums over ORDERED pairs, so S_AA = 2 W_AA and, for the two-element inactive complement, S_II = 2 w_rs. At |A| = 3 the identity therefore reads 2(W_AA - w_rs) = 1/2, which is the display W_AA - w_rs = 1/4. exists_internal_edge is the use the manuscript makes of it, that the induced graph on A is nonempty."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The two displayed exceptional-branch mass equations use unordered internal edge mass, correctly half the symmetric double sum. The isolated inactive pair contributes exactly one edge weight, and subtracting yields the printed one-quarter difference."
     },
     {
       "id": "supplementary.tex:eq:q4o30triangle1",
@@ -28932,11 +29028,14 @@
       "statement_sha256": "a6a0d2a2834ba114b469e3d8b4f3a90b74c82d823a2373eda0503d6c75154019",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.triangle_contradiction",
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_four_active",
+        "MainTheory.Orbit30PhysicalHafnians.actual_regular_points",
+        "MainTheory.Orbit30.Data.q4o30_exceptional",
         "MainTheory.Orbit30.Data.row_over_A",
-        "MainTheory.Orbit30.Data.card_A_ne_three"
+        "MainTheory.Orbit30.triangle_contradiction"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: All three displayed equations, verbatim. triangle_contradiction takes b1 c01 + b2 c02 = 0, b0 c01 + b2 c12 = 0 and b0 c02 + b1 c12 = 0 as its hypotheses e1, e2, e3 and derives False from them, by linear_combination b0 e1 + b1 e2 - b2 e3 giving 2 b0 b1 c01 = 0. They are not assumed at the point of use: card_A_ne_three obtains each of the three from row_over_A, the synchronised weight-one row restricted to the active set, at the three vertices of the triangle."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The physical graph supplies the restricted bilinear rows and actual nonzero point/edge factors. The three-active-point triangle exclusion proves the exceptional branch impossible and implies regularity; all three triangle lines in the align environment are included."
     },
     {
       "id": "supplementary.tex:eq:q4o30regular",
@@ -28950,11 +29049,14 @@
       "statement_sha256": "3b288f673f07ebe2b71710fb2ccee6b1871363cd21ccb3770b2f240c7c0ec2b7",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.two_le_nbhd_card",
-        "MainTheory.Orbit30.Data.four_le_card_A",
-        "SixQubit.K5.case31"
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_four_active",
+        "MainTheory.Orbit30PhysicalHafnians.actual_regular_points",
+        "MainTheory.Orbit30.Data.q4o30_exceptional",
+        "MainTheory.Orbit30.Data.row_over_A",
+        "MainTheory.Orbit30.triangle_contradiction"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The regular branch: every support edge is incident to an active point. It is the hypothesis hreg of MainTheory.Orbit30.Data.two_le_nbhd_card, stated verbatim as forall i j, d.Edge i j -> d.Active i or d.Active j, and it is not merely assumed in that file: MainTheory.Orbit30.Data.four_le_card_A proves 4 <= |A|, which leaves at most one inactive vertex and hence implies the display. The package's own no-go never isolates the branch as a hypothesis; SixQubit.K5.case31 and its four-active siblings reach the same situation case by case, deriving k_ij = 0 for every edge from the SixQubit.K5.Sys kb fields at an active endpoint. | ADVERSARIAL CHECK: two_le_nbhd_card's hypothesis is literally `hreg : forall i j, d.Edge i j -> d.Active i or d.Active j`, so the display is stated verbatim there. The proposed review missed that the same file establishes the branch rather than merely assuming it: MainTheory.Orbit30.Data.four_le_card_A : 4 <= d.A.card, proved from three_le_card_A and card_A_ne_three, leaves at most one inactive vertex and so implies the display. I added it. The remark about case31 checks out: I read it and it derives k01 = 0 from Sys.kb01_0 and p0, and so on for all ten edges, then haf0..haf4 by cancelling 2s; case30 (four active) does the same using the kb field at whichever endpoint is active."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The physical graph supplies the restricted bilinear rows and actual nonzero point/edge factors. The three-active-point triangle exclusion proves the exceptional branch impossible and implies regularity; all three triangle lines in the align environment are included."
     },
     {
       "id": "supplementary.tex:eq:q4o30globalsync",
@@ -28966,9 +29068,15 @@
       "line": 11731,
       "end_line": 11734,
       "statement_sha256": "dbfbbedc1155ac00e97d5414633c4fae2d6bf14a0498eaa3fe3d99ebd0b68904",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalPhases.actual_point_phase",
+        "MainTheory.Orbit30PhysicalHafnians.actual_all_edge_phases",
+        "MainTheory.Orbit30PhysicalHafnians.actual_edge_reconstruction",
+        "MainTheory.Orbit30PhysicalHafnians.actual_matching_factor",
+        "MainTheory.Orbit30PhysicalHafnians.actual_hafnians"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All active physical point and edge ratios equal minus the star ratio. The exact physical matching sum is twice that nonzero common factor times the conjugated all-plus hafnian, proving each printed matching equation including zero-edge boundaries."
     },
     {
       "id": "supplementary.tex:lem:q4o30mindegree",
@@ -28982,11 +29090,12 @@
       "statement_sha256": "bb73fccc6c66c96924c258b15cd3f2be14881faf95152ccd09e4a44b8a1a40d4",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.two_le_nbhd_card",
-        "MainTheory.Orbit30.Data.nbhd_nonempty",
-        "MainTheory.Orbit30.Data.rowSupport_card_ne_one"
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalMask.actual_minimum_degree",
+        "MainTheory.Orbit30PhysicalMask.actual_complement_degree",
+        "MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: On the regular branch the support graph has minimum degree at least two. Degree zero contradicts D_i = r_i + 1/8 > 0; a unique neighbour j splits on whether j is active -- active gives a row with exactly one nonzero term, inactive makes regularity force i active and then w_ij = D_i = r_i + 1/8 > 1/8 while D_j = 1/8 bounds w_ij from above."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual support graph has minimum degree two. The displayed hypothetical unique-neighbor weight equals the complete weighted degree and is strictly greater than one eighth when the point is active."
     },
     {
       "id": "supplementary.tex:equation@11748",
@@ -28996,9 +29105,14 @@
       "line": 11748,
       "end_line": 11750,
       "statement_sha256": "b4d5fa7b97e7342c7c87b2d486b54579a1687d15eeb22b29af9a21eca6c0f7f1",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalMask.actual_minimum_degree",
+        "MainTheory.Orbit30PhysicalMask.actual_complement_degree",
+        "MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual support graph has minimum degree two. The displayed hypothetical unique-neighbor weight equals the complete weighted degree and is strictly greater than one eighth when the point is active."
     },
     {
       "id": "supplementary.tex:eq:q4o30Hi",
@@ -29012,12 +29126,13 @@
       "statement_sha256": "2f3518c0cd48929976ccf48e623652a473cf1c571f7e394b796140a5bc7a938b",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.K5.graph",
-        "SixQubit.K5.dets0",
-        "SixQubit.K5.dets1",
-        "SixQubit.K5.case31"
+        "MainTheory.Orbit30PhysicalPhases.actual_point_phase",
+        "MainTheory.Orbit30PhysicalHafnians.actual_all_edge_phases",
+        "MainTheory.Orbit30PhysicalHafnians.actual_edge_reconstruction",
+        "MainTheory.Orbit30PhysicalHafnians.actual_matching_factor",
+        "MainTheory.Orbit30PhysicalHafnians.actual_hafnians"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Defines H_i as the all-plus sum over the three perfect matchings of V minus i and asserts H_i = 0 for every i. The five equations are the hypotheses haf0 through haf4 of SixQubit.K5.graph and of SixQubit.K5.dets0 and dets1; haf0 is c12 c34 + c13 c24 + c14 c23 = 0 and haf2 is c01 c34 + c03 c14 + c04 c13 = 0, matching the matchings of V minus 0 and V minus 2. SixQubit.K5.case31 derives them from SixQubit.K5.Sys.hf0 through hf4 by cancelling the nonzero factor 2s once every k_ij has been shown to vanish. | ADVERSARIAL CHECK: Read all four signatures. haf0..haf4 are hypotheses of graph, dets0 and dets1 alike; haf0 is c12 * c34 + c13 * c24 + c14 * c23 = 0 and haf2 is c01 * c34 + c03 * c14 + c04 * c13 = 0, which are the matchings of V minus 0 and V minus 2 as claimed. In case31 I read the derivation: each haf_i is obtained by linear_combination from Sys.hf_i and the ten kk facts, then 2 * s * (...) = 0 is split with hs. Added dets1, which the proposed review mentioned in prose but omitted from the list."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All active physical point and edge ratios equal minus the star ratio. The exact physical matching sum is twice that nonzero common factor times the conjugated all-plus hafnian, proving each printed matching equation including zero-edge boundaries."
     },
     {
       "id": "supplementary.tex:eq:q4o30tencomplements",
@@ -29029,9 +29144,15 @@
       "line": 11772,
       "end_line": 11776,
       "statement_sha256": "2b8dc76e3430edeb74ff0854220b641c2b1f719280114ae920c9ec70ea6541db",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalMask.actual_admissible",
+        "MainTheory.Orbit30GraphClassification.literal_representatives",
+        "MainTheory.Orbit30GraphClassification.exhaustive_relabeling",
+        "MainTheory.Orbit30GraphTypes.admissible_count",
+        "MainTheory.Orbit30GraphTypes.distinct_isomorphism_types"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All 252 nonempty maximum-degree-two masks among the 1024 possible five-vertex graphs are classified by an actual kernel-checked vertex bijection into the ten printed representatives. Degree profiles and triangle counts prove the representatives pairwise nonisomorphic, and the physical zero-amplitude mask satisfies exactly these hypotheses."
     },
     {
       "id": "supplementary.tex:eq:q4o30monomialtable",
@@ -29043,9 +29164,19 @@
       "line": 11779,
       "end_line": 11791,
       "statement_sha256": "ba59125d83f38dbabc74aa2f2148a5e8461f7b3f6708bb795c1a0bfd77ca8e86",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30ProperGraphTables.monomial0",
+        "MainTheory.Orbit30ProperGraphTables.monomial1",
+        "MainTheory.Orbit30ProperGraphTables.monomial2",
+        "MainTheory.Orbit30ProperGraphTables.monomial3",
+        "MainTheory.Orbit30ProperGraphTables.monomial4",
+        "MainTheory.Orbit30ProperGraphTables.monomial5",
+        "MainTheory.Orbit30ProperGraphExclusion.relabeled_missing",
+        "MainTheory.Orbit30GraphRelabel.hafnian_relabel",
+        "MainTheory.Orbit30PhysicalProperSupport.actual_proper_support_no_go"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Every literal missing-edge row and the specified single surviving nonzero product are checked. A bijective relabeling carries the actual physical zero pattern and hafnians to these representative equations."
     },
     {
       "id": "supplementary.tex:eq:q4o30AB",
@@ -29059,9 +29190,15 @@
       "statement_sha256": "f65bb9eb70c91a1c0cbe1c3c11d2ab451d13eea2fd56b64e9739ceed99ff7f4b",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.K5.graph"
+        "MainTheory.Orbit30ProperGraphTables.binomial0",
+        "MainTheory.Orbit30ProperGraphTables.binomial1",
+        "MainTheory.Orbit30ProperGraphTables.binomial2",
+        "MainTheory.Orbit30ProperGraphTables.binomial3",
+        "MainTheory.Orbit30ProperGraphTables.odd_product_contradiction",
+        "MainTheory.Orbit30ProperGraphExclusion.representative_no_go",
+        "MainTheory.Orbit30ProperGraphExclusion.proper_no_go"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The shape A_r + B_r = 0 for r = 1,2,3, whose product comparison A_1A_2A_3 = -B_1B_2B_3 against A_1A_2A_3 = B_1B_2B_3 closes the remaining complement types. SixQubit.K5.graph applies exactly this rule at its eleven odd-cycle leaves, where three two-term reductions of the haf hypotheses are combined by linear_combination into 2 A_1 A_2 A_3 = 0 with every factor already known nonzero. | ADVERSARIAL CHECK: Verified at the odd-cycle leaves of graph. For example one leaf builds hr0 : c03 * c14 + c04 * c13 = 0, hr1 : c04 * c12 + c02 * c14 = 0, hr2 : c02 * c13 + c03 * c12 = 0 (two-term reductions of haf2, haf3, haf4) and then `key : 2 * ((c03 * c14) * (c04 * c12) * (c02 * c13)) = 0` by linear_combination, closed by mul_ne_zero on factors already known nonzero. That is exactly the A_r + B_r = 0 shape and the product comparison of the display. Eleven such `key` lines exist in the file."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All four literal odd-binomial-cycle rows, the three indicated hafnian equations, the equal nonzero products and the minus sign from three factors are proved, completing every proper graph case."
     },
     {
       "id": "supplementary.tex:eq:q4o30binomialtable",
@@ -29073,9 +29210,17 @@
       "line": 11807,
       "end_line": 11829,
       "statement_sha256": "6011377a2cba8fcfd8debb6b91ca08e16508eb96e8af05733cd2d0190ad88228",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30ProperGraphTables.binomial0",
+        "MainTheory.Orbit30ProperGraphTables.binomial1",
+        "MainTheory.Orbit30ProperGraphTables.binomial2",
+        "MainTheory.Orbit30ProperGraphTables.binomial3",
+        "MainTheory.Orbit30ProperGraphTables.odd_product_contradiction",
+        "MainTheory.Orbit30ProperGraphExclusion.representative_no_go",
+        "MainTheory.Orbit30ProperGraphExclusion.proper_no_go"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: All four literal odd-binomial-cycle rows, the three indicated hafnian equations, the equal nonzero products and the minus sign from three factors are proved, completing every proper graph case."
     },
     {
       "id": "supplementary.tex:eq:q4o30C",
@@ -29089,12 +29234,13 @@
       "statement_sha256": "909f248b16240a4f8025da14ce062c869ba65a1363d9788e23f3838f96cb92df",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit30.Data.c",
-        "MainTheory.Orbit30.Data.c_symm",
-        "MainTheory.Orbit30.Data.c_diag",
-        "SixQubit.K5.Sys"
+        "MainTheory.Orbit30PhysicalHafnians.edgeMatrix",
+        "MainTheory.Orbit30PhysicalGraph.edge_symmetric",
+        "MainTheory.Orbit30PhysicalGraph.bilinear_row",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_point_vector_nonzero",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_matrix_kernel"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Introduces the symmetric zero-diagonal edge-amplitude matrix C = (c_ij). The fields MainTheory.Orbit30.Data.c, MainTheory.Orbit30.Data.c_symm and MainTheory.Orbit30.Data.c_diag are exactly this, carried as a function Fin 5 -> Fin 5 -> C rather than as a Matrix. The certified route instead keeps the ten independent scalars c01..c34 of SixQubit.K5.Sys, with symmetry and the zero diagonal built into the naming. | ADVERSARIAL CHECK: c is the structure field `c : Fin 5 -> Fin 5 -> C`; c_symm : forall i j, c i j = c j i; c_diag : forall i, c i i = 0. All three are fields of MainTheory.Orbit30.Data, so the accessor names exist. Sys carries the ten independent scalars. The review is accurate; classification `definition` is right."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual symmetric zero-diagonal edge matrix kills the actual point vector, which is nonzero by its physical total squared norm three eighths."
     },
     {
       "id": "supplementary.tex:eq:q4o30Cb0",
@@ -29108,11 +29254,13 @@
       "statement_sha256": "a2311d9ccbd9cfcbd509ffdcf68f69918a1d15ee5a6e64d3f18883896761fbdd",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit30.target_zero",
-        "SixQubit.K5.Sys",
-        "MainTheory.Orbit30.Data.row"
+        "MainTheory.Orbit30PhysicalHafnians.edgeMatrix",
+        "MainTheory.Orbit30PhysicalGraph.edge_symmetric",
+        "MainTheory.Orbit30PhysicalGraph.bilinear_row",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_point_vector_nonzero",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_matrix_kernel"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: C b = 0, the synchronized weight-one sums read as a matrix equation. SixQubit.Orbit30.target_zero proves the five rows from the thirty-five Walsh rows together with d z0 /= 0; they are stated in the conjugated amplitudes, its first row being conj(C_(v_1)) conj(C_(e_01)) + conj(C_(v_2)) conj(C_(e_02)) + conj(C_(v_3)) conj(C_(e_03)) + conj(C_(v_4)) conj(C_(e_04)) = 0, and they become the fields st0 through st4 of SixQubit.K5.Sys under b_i = conj(C_(v_i)), c_ij = conj(C_(e_ij)). MainTheory.Orbit30.Data.row is the same equation written as sum over j /= i of b_j c_ij = 0. | ADVERSARIAL CHECK: target_zero exists, takes the thirty-five offSum hypotheses plus hs : d z0 /= 0, and concludes five equations. Its first is star (c y1) * star (c y14) + star (c y2) * star (c y13) + star (c y4) * star (c y11) + star (c y8) * star (c y7) = 0, which under the label table is the conjugated form of b_1 c_01 + b_2 c_02 + b_3 c_03 + b_4 c_04 = 0 -- worth saying, since the Sys instance built in no_go_of_moments takes b_i = conj(C_(v_i)) and c_ij = conj(C_(e_ij)). Those five become the fields st0..st4. Data.row is the structure field, sum over j in erase i of b j * c i j = 0."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual symmetric zero-diagonal edge matrix kills the actual point vector, which is nonzero by its physical total squared norm three eighths."
     },
     {
       "id": "supplementary.tex:eq:q4o30scaling",
@@ -29124,9 +29272,16 @@
       "line": 11857,
       "end_line": 11861,
       "statement_sha256": "d82978fbfb93b8df89b726088a2dde223fcad7e38fafc9f4ae26bcdb4f4fde2e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30VertexScaling.scaled_entry",
+        "MainTheory.Orbit30VertexScaling.scaled_determinant",
+        "MainTheory.Orbit30VertexScaling.preserves_singularity",
+        "MainTheory.Orbit30VertexScaling.scaled_hafnian",
+        "MainTheory.Orbit30VertexScaling.preserves_hafnians",
+        "MainTheory.Orbit30VertexScaling.four_edge_normalization"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Nonzero vertex scaling preserves singularity and multiplies each four-vertex hafnian by the product of exactly its four vertex factors. A complex square root constructs all five nonzero scales setting the four literal edges to one."
     },
     {
       "id": "supplementary.tex:eq:q4o30normalization",
@@ -29138,9 +29293,16 @@
       "line": 11864,
       "end_line": 11867,
       "statement_sha256": "a0dbf690214a4a7b7c66373ca3121c5b4083e8457f42cdb301e7bcc6d2ce0dbc",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30VertexScaling.scaled_entry",
+        "MainTheory.Orbit30VertexScaling.scaled_determinant",
+        "MainTheory.Orbit30VertexScaling.preserves_singularity",
+        "MainTheory.Orbit30VertexScaling.scaled_hafnian",
+        "MainTheory.Orbit30VertexScaling.preserves_hafnians",
+        "MainTheory.Orbit30VertexScaling.four_edge_normalization"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Nonzero vertex scaling preserves singularity and multiplies each four-vertex hafnian by the product of exactly its four vertex factors. A complex square root constructs all five nonzero scales setting the four literal edges to one."
     },
     {
       "id": "supplementary.tex:eq:q4o30sixvars",
@@ -29152,9 +29314,13 @@
       "line": 11869,
       "end_line": 11873,
       "statement_sha256": "e80d542f4c32d85c28b33764896be446525e64c666d2e52c458963ee1dddf9a6",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.matrix",
+        "MainTheory.Orbit30FullSupport.normalized_hafnians",
+        "MainTheory.Orbit30FullSupport.full_hafnian_det_ne_zero"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The displayed six variables occupy the actual symmetric matrix entries; all five labeled normalized hafnian equations in the align environment are the literal matching polynomials of that matrix."
     },
     {
       "id": "supplementary.tex:eq:q4o30H0",
@@ -29170,9 +29336,13 @@
       "line": 11875,
       "end_line": 11886,
       "statement_sha256": "65f9f42e4484067d9556661f25bec0541032aba660a5a20161c0f8a0965f9c19",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.matrix",
+        "MainTheory.Orbit30FullSupport.normalized_hafnians",
+        "MainTheory.Orbit30FullSupport.full_hafnian_det_ne_zero"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The displayed six variables occupy the actual symmetric matrix entries; all five labeled normalized hafnian equations in the align environment are the literal matching polynomials of that matrix."
     },
     {
       "id": "supplementary.tex:eq:q4o30cdfg",
@@ -29184,9 +29354,13 @@
       "line": 11890,
       "end_line": 11895,
       "statement_sha256": "4cc32a1be6e05a092706d0b9c0c87825b330522605ffff095b6f007cc382f6f8",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.products",
+        "MainTheory.Orbit30NormalizedDeterminant.cube",
+        "MainTheory.Orbit30NormalizedDeterminant.parameter_nonzero"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Exact polynomial combinations of the normalized hafnians give cd=fg=1 and t squared plus t plus one equals zero, with t=cg nonzero."
     },
     {
       "id": "supplementary.tex:eq:q4o30cube",
@@ -29198,9 +29372,13 @@
       "line": 11897,
       "end_line": 11902,
       "statement_sha256": "51d0eead78f2ddcaa6c8672f9055a46a4699129a168a3c551a6c359d102e8374",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.products",
+        "MainTheory.Orbit30NormalizedDeterminant.cube",
+        "MainTheory.Orbit30NormalizedDeterminant.parameter_nonzero"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: Exact polynomial combinations of the normalized hafnians give cd=fg=1 and t squared plus t plus one equals zero, with t=cg nonzero."
     },
     {
       "id": "supplementary.tex:eq:q4o30det",
@@ -29212,9 +29390,16 @@
       "line": 11905,
       "end_line": 11909,
       "statement_sha256": "db6dd403299dec79017bcdd8e94326b9053407d0c4fab689a6d6c5a5c653c8a0",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_polynomial",
+        "MainTheory.Orbit30NormalizedDeterminant.cleared_determinant",
+        "MainTheory.Orbit30NormalizedDeterminant.displayed_determinant",
+        "MainTheory.Orbit30NormalizedDeterminant.numerator_reduction",
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_minus32",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_full_support_no_go"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual matrix determinant is expanded and reduced by kernel-checked polynomial identities, giving the literal rational expression and exactly minus 32. Scaling and the actual nonzero kernel vector connect this computation to the full-support physical contradiction."
     },
     {
       "id": "supplementary.tex:eq:q4o30detnonzero",
@@ -29226,9 +29411,16 @@
       "line": 11912,
       "end_line": 11915,
       "statement_sha256": "1bb53ab1cf325f2ef7d28e75eafe4ebbe8a30cfaa30d30086e1df58c5cbf2ff8",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_polynomial",
+        "MainTheory.Orbit30NormalizedDeterminant.cleared_determinant",
+        "MainTheory.Orbit30NormalizedDeterminant.displayed_determinant",
+        "MainTheory.Orbit30NormalizedDeterminant.numerator_reduction",
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_minus32",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_full_support_no_go"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The actual matrix determinant is expanded and reduced by kernel-checked polynomial identities, giving the literal rational expression and exactly minus 32. Scaling and the actual nonzero kernel vector connect this computation to the full-support physical contradiction."
     },
     {
       "id": "supplementary.tex:thm:q4o30nogo",
@@ -29242,11 +29434,10 @@
       "statement_sha256": "14ed3e4db5e1bce18083caba36dd7de1670d1f7e7686cee4c0cf6bdd202f7bab",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.PaperSupplementaryNoGo.q4o30nogo",
-        "MainTheory.PaperSupplementaryNoGo.hasCompletion_iff_paperOrbitId",
-        "MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective"
+        "MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go",
+        "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: An instance of hasCompletion_iff_paperOrbitId, which says an orbit key admits an exact normalized distance-three completion exactly when its manuscript orbit number is one of the fifteen.  Indexed through paperOrbitId, whose injectivity is what makes \"manuscript orbit N\" denote a single key; the generated key order is not the paper order."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The complete literal SI route excludes arbitrary physically supported normalized full-KL code columns, through the small-point support argument, all ten proper complements and the full K5 determinant branch. The existing exact-code frontend identifies the supplied projective-order-four representative."
     },
     {
       "id": "supplementary.tex:equation@11922",
@@ -29258,11 +29449,10 @@
       "statement_sha256": "a9bdfdf82b877685e52069555bc9a729caf3ce6cb74879283071d35e512cc0c6",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.OrbitRepresentative.orbit30_representative",
-        "MainTheory.PaperSupplementaryImages.q4o30_representative",
+        "MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go",
         "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The orbit representative (q,m,a) = (4,4,(1,1,1,1,2,3)), by the same composition as for orbit 26: SixQubit.Orbit30.S0_eq_fiber/S1_eq_fiber identify the paper support pair with the residue fibres of the displayed angle vector, and OrderFourNoCompletion.paper30_equivalent_key29 carries that pair onto directory key 29, whose paperOrbitId is 30. q4o30nogo is the no-go itself."
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The complete literal SI route excludes arbitrary physically supported normalized full-KL code columns, through the small-point support argument, all ten proper complements and the full K5 determinant branch. The existing exact-code frontend identifies the supplied projective-order-four representative."
     },
     {
       "id": "supplementary.tex:remark@11938",
@@ -29272,9 +29462,12 @@
       "line": 11938,
       "end_line": 11942,
       "statement_sha256": "d6f77b8439a4339730c3b52a8a6230a4042f24f6ce1ba5bee3a76114f32baacb",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go",
+        "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
+      ],
+      "review": "20261005 actual orbit-30 literal intermediate/type review: The complete literal SI route excludes arbitrary physically supported normalized full-KL code columns, through the small-point support argument, all ten proper complements and the full K5 determinant branch. The existing exact-code frontend identifies the supplied projective-order-four representative."
     },
     {
       "id": "supplementary.tex:eq:q4o31data",

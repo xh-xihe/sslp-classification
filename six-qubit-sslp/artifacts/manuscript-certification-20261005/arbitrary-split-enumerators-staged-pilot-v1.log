@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitEnumerators.lean:42:56: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitEnumerators.lean:36:0: error: linter Lean.Linter.constructorNameAsVariable failed: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

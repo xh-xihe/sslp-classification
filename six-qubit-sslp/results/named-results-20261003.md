@@ -7,7 +7,7 @@ are separate checks. Partial entries list related declarations and the uncovered
 Unreviewed entries have no accepted correspondence; a missing correspondence is not
 by itself evidence that no proof exists. Conjectures are not proved results.
 
-Named environments: 161. conjecture=1, covered=152, expository=5, unreviewed=3
+Named environments: 161. conjecture=1, covered=153, expository=5, unreviewed=2
 
 To regenerate: `python tools/named_results_doc.py --paper-version 20261003`.
 
@@ -1472,50 +1472,56 @@ proposition, line 11431.
 
 lemma, line 11636.
 
-- `MainTheory.Orbit30.Data.three_le_card_A`
+- `MainTheory.Orbit30PhysicalGraph.physicalData`
+- `MainTheory.Orbit30PhysicalGraph.actual_three_active`
+- `MainTheory.Orbit30TwoPointDisplays.internal_edge_zero`
+- `MainTheory.Orbit30TwoPointDisplays.two_term_row`
 - `MainTheory.Orbit30.Data.card_A_ne_zero`
 - `MainTheory.Orbit30.Data.card_A_ne_one`
-- `MainTheory.Orbit30.Data.card_A_ne_two`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: At least three point amplitudes are active. |A| = 0 contradicts R = 3/8; |A| = 1 makes the row at a neighbour of the single active point have exactly one nonzero term; |A| = 2 splits on whether the edge ab is present -- present gives the same one-term contradiction at a, absent makes the split identity SAA - SII = (|A|-1)/4 read 0 - SII = 1/4 with SII nonnegative.
+20261005 actual orbit-30 literal intermediate/type review: The abstract support-graph data are now instantiated from actual code amplitudes with every defining hypothesis proved; all small-active-set exclusions are applied through that physical bridge.
 
 ### `supplementary.tex:lem:q4o30exceptional` — covered
 
 lemma, line 11679.
 
+- `MainTheory.Orbit30PhysicalGraph.physicalData`
+- `MainTheory.Orbit30PhysicalGraph.actual_four_active`
+- `MainTheory.Orbit30PhysicalHafnians.actual_regular_points`
 - `MainTheory.Orbit30.Data.q4o30_exceptional`
-- `MainTheory.Orbit30.Data.card_A_ne_three`
-- `MainTheory.Orbit30.Data.exists_internal_edge`
+- `MainTheory.Orbit30.Data.row_over_A`
 - `MainTheory.Orbit30.triangle_contradiction`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The inactive-inactive edge branch is impossible. Proved in the stronger form card_A_ne_three: under the synchronised weight-one interface the active set cannot have exactly three elements at all, since the split identity gives SAA - SII = 1/2 so the graph induced on A is nonempty whether or not the inactive-inactive edge is present, the induced degree cannot be one so the induced graph is the full triangle, and triangle_contradiction shows the three triangle rows are inconsistent. The manuscript states the weaker conclusion because eq:q4o30globalsync is not yet available in general at that point of its argument; this file assumes the synchronised rows throughout, which is recorded in its header.
+20261005 actual orbit-30 literal intermediate/type review: The physical graph supplies the restricted bilinear rows and actual nonzero point/edge factors. The three-active-point triangle exclusion proves the exceptional branch impossible and implies regularity; all three triangle lines in the align environment are included.
 
 ### `supplementary.tex:lem:q4o30mindegree` — covered
 
 lemma, line 11737.
 
-- `MainTheory.Orbit30.Data.two_le_nbhd_card`
-- `MainTheory.Orbit30.Data.nbhd_nonempty`
-- `MainTheory.Orbit30.Data.rowSupport_card_ne_one`
+- `MainTheory.Orbit30PhysicalGraph.physicalData`
+- `MainTheory.Orbit30PhysicalMask.actual_minimum_degree`
+- `MainTheory.Orbit30PhysicalMask.actual_complement_degree`
+- `MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: On the regular branch the support graph has minimum degree at least two. Degree zero contradicts D_i = r_i + 1/8 > 0; a unique neighbour j splits on whether j is active -- active gives a row with exactly one nonzero term, inactive makes regularity force i active and then w_ij = D_i = r_i + 1/8 > 1/8 while D_j = 1/8 bounds w_ij from above.
+20261005 actual orbit-30 literal intermediate/type review: The actual support graph has minimum degree two. The displayed hypothetical unique-neighbor weight equals the complete weighted degree and is strictly greater than one eighth when the point is active.
 
 ### `supplementary.tex:thm:q4o30nogo` — covered
 
 theorem, line 11918.
 
+- `MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go`
 - `MainTheory.PaperSupplementaryNoGo.q4o30nogo`
-- `MainTheory.PaperSupplementaryNoGo.hasCompletion_iff_paperOrbitId`
-- `MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: An instance of hasCompletion_iff_paperOrbitId, which says an orbit key admits an exact normalized distance-three completion exactly when its manuscript orbit number is one of the fifteen.  Indexed through paperOrbitId, whose injectivity is what makes "manuscript orbit N" denote a single key; the generated key order is not the paper order.
+20261005 actual orbit-30 literal intermediate/type review: The complete literal SI route excludes arbitrary physically supported normalized full-KL code columns, through the small-point support argument, all ten proper complements and the full K5 determinant branch. The existing exact-code frontend identifies the supplied projective-order-four representative.
 
-### `supplementary.tex:remark@11938` — unreviewed
+### `supplementary.tex:remark@11938` — covered
 
 remark, line 11938.
 
+- `MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go`
+- `MainTheory.PaperSupplementaryNoGo.q4o30nogo`
 
-_No review recorded._
+20261005 actual orbit-30 literal intermediate/type review: The complete literal SI route excludes arbitrary physically supported normalized full-KL code columns, through the small-point support argument, all ten proper complements and the full K5 determinant branch. The existing exact-code frontend identifies the supplied projective-order-four representative.
 
 ### `supplementary.tex:prop:q4o31momentnormal` — covered
 

@@ -1,0 +1,18 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:26:8: error: typeclass instance problem is stuck
+  AddCommMonoid ?m.21
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommMonoid` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:33:8: error: typeclass instance problem is stuck
+  AddCommMonoid ?m.20
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommMonoid` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:48:13: error: Type mismatch
+  Equiv.sum_comp p ?m.166
+has type
+  ∑ i, ?m.166 (p i) = ∑ i, ?m.166 i
+but is expected to have type
+  ∑ i, ∑ j, ∑ k, triangleTerm n (p i) j k = ∑ i, ∑ j, ∑ k, triangleTerm n i j k

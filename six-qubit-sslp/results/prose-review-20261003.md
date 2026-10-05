@@ -842,6 +842,85 @@ The pinned anchor, positive high target and every one of the final printed Walsh
 - `MainTheory.Orbit29PrintedEta.eta_contradiction`
 - `MainTheory.Orbit29PrintedEta.physical_no_go`
 
+## supplementary.tex:11481 — covered
+
+The rank twenty-three, equivalent physical moment normal form and actual dimension-nine nonnegative polytope are checked independently of the no-code theorem.
+
+- `MainTheory.Orbit30PrintedMoments.complete_normal`
+- `MainTheory.Orbit30MomentRank.Orbit30.actual_matrix`
+- `MainTheory.Orbit30MomentRank.Orbit30.rank_exact`
+- `MainTheory.Orbit30MomentRank.Orbit30.full_diagonal_polytope_dimension`
+
+## supplementary.tex:11513 — covered
+
+The symmetric K5 probability translation follows from literal pointwise coordinate identities and balanced physical marginals.
+
+- `MainTheory.Orbit30ProbabilityLabels.literal_pointwise_identities`
+- `MainTheory.Orbit30ProbabilityLabels.physical_probabilities`
+
+## supplementary.tex:11551 — covered
+
+All phase definitions, reciprocal rows and five matching sums are explicitly tied to supported full physical KL without a nonzero-support assumption.
+
+- `MainTheory.Orbit30PhysicalPhases.actual_unit_phase`
+- `MainTheory.Orbit30PhysicalPhases.reciprocal_product`
+- `MainTheory.Orbit30PhysicalRows.physical_rows`
+
+## supplementary.tex:11625 — covered
+
+The one- and two-point support exclusions include the printed amplitude and mass intermediate steps, with exact nonnegative boundary handling.
+
+- `MainTheory.Orbit30PhysicalGraph.physicalData`
+- `MainTheory.Orbit30PhysicalGraph.actual_three_active`
+- `MainTheory.Orbit30TwoPointDisplays.two_point_magnitude`
+- `MainTheory.Orbit30TwoPointDisplays.point_and_degree_values`
+- `MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound`
+
+## supplementary.tex:11675 — covered
+
+The exceptional branch uses the correct unordered edge masses, physical bilinear triangle rows and nonzero phase synchronization.
+
+- `MainTheory.Orbit30PhysicalGraph.physicalData`
+- `MainTheory.Orbit30BoundaryDisplays.exceptional_mass_equations`
+- `MainTheory.Orbit30PhysicalGraph.actual_four_active`
+- `MainTheory.Orbit30PhysicalHafnians.actual_all_edge_phases`
+
+## supplementary.tex:11737 — covered
+
+Minimum physical degree and the exact common phase factor produce all five matching equations.
+
+- `MainTheory.Orbit30PhysicalMask.actual_minimum_degree`
+- `MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight`
+- `MainTheory.Orbit30PhysicalHafnians.actual_matching_factor`
+- `MainTheory.Orbit30PhysicalHafnians.actual_hafnians`
+
+## supplementary.tex:11766 — covered
+
+The ten pairwise distinct complement types exhaust the actual proper graph; both exclusion tables survive actual vertex relabeling and cover zero/nonzero edges exactly.
+
+- `MainTheory.Orbit30GraphClassification.exhaustive_relabeling`
+- `MainTheory.Orbit30GraphTypes.distinct_isomorphism_types`
+- `MainTheory.Orbit30GraphRelabel.hafnian_relabel`
+- `MainTheory.Orbit30ProperGraphExclusion.proper_no_go`
+- `MainTheory.Orbit30PhysicalProperSupport.actual_proper_support_no_go`
+
+## supplementary.tex:11836 — covered
+
+The full graph route constructs the literal normalization, verifies each matching polynomial, proves the actual determinant minus 32 and contradicts the nonzero physical kernel vector.
+
+- `MainTheory.Orbit30VertexScaling.four_edge_normalization`
+- `MainTheory.Orbit30VertexScaling.preserves_singularity`
+- `MainTheory.Orbit30VertexScaling.preserves_hafnians`
+- `MainTheory.Orbit30NormalizedDeterminant.determinant_minus32`
+- `MainTheory.Orbit30PhysicalFullSupport.actual_full_support_no_go`
+
+## supplementary.tex:11918 — covered
+
+The theorem and support-case coverage remark use the complete literal physical SI proof route.
+
+- `MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go`
+- `MainTheory.PaperSupplementaryNoGo.q4o30nogo`
+
 ## Remaining review
 
 Complete other current mathematical/prose correspondence; preserve five frozen main issues and the SI empty-mask qualification.

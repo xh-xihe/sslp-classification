@@ -1,0 +1,30 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:57:2: error: unsolved goals
+case pos
+θ : ℝ
+p : SS.PauliString 6
+hp : p.wt = 1 ∨ p.wt = 2
+hz : p = PZ
+hx : p ≠ PXZ
+⊢ (Complex.cos ↑θ).re ^ 2 * 4 = Real.cos θ ^ 2 * 4 + if PZ = PXZ then Real.sin θ ^ 2 * 4 else 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:61:4: error: unsolved goals
+case pos
+θ : ℝ
+p : SS.PauliString 6
+hp : p.wt = 1 ∨ p.wt = 2
+hz : ¬p = PZ
+hx : p = PXZ
+⊢ (if PXZ = PZ then Complex.cos ↑θ * 2 else Complex.sin ↑θ * 2).re ^ 2 +
+      (if PXZ = PZ then Complex.cos ↑θ * 2 else Complex.sin ↑θ * 2).im ^ 2 =
+    (if PXZ = PZ then Real.cos θ ^ 2 * 4 else 0) + Real.sin θ ^ 2 * 4

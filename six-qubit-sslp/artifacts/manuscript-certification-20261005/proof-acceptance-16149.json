@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including literal physical orbit-30 intermediates; manuscript correspondence incomplete.",
+  "active_modules": 16149,
+  "axiom_roots": 8463,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1680,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 141
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 1,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16149.json",
+      "sha256": "d16473378167b793a121f554e1b711da799fa885276d05218d8af47e7ac6d325"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-8463.json",
+      "sha256": "4030184159ba128b57d35b533da6f0393acac7a4ff95b65b630e622dc863edf8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-staged-proof-snapshot-21.json",
+      "sha256": "11a9853769134b7f9a8b72dc0946e32445891def9c492e478ecd7effcb3d06e5"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-generation-v1.json",
+      "sha256": "84b7dea6979a75b42aeb3c30f2a18c480a5fd34790879282c59c64ce019ba228"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-orbit30-completion.json",
+      "sha256": "a3dfcbf73799c3216285bdb0cffd0e47d93fa0904381895b9243442aee9a5fdc"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-type-binding.json",
+      "sha256": "bcf1bff6d2da3aca32d2766d126bf79713e1680974a67351e90edd43f2dbde56"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-correspondence-gates-report.json",
+      "sha256": "9d6eb0655ed7abc67eee0e3a6fc6d39a80a9d0acee55c1cb126400e11cf33380"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-review.json",
+      "sha256": "1660a2305c18d6135e273265dd30adf8fd78f8b2c4ae810335936c5569d3ce1e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-full-build-v1.log",
+      "sha256": "33cdd044c5aff6eabff0858f40bfb368c8e44247f6cb912d0f20b8e6e34fef36"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-full-build-v1-exit.json",
+      "sha256": "754107fa4a7da27e1e2bf1f69526826babdc2cb702d1a86695ad4e1cbd76ef22"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-type-inspection-v1.log",
+      "sha256": "177c8fbc5a790acffd5b161ead4505fd123b7a1de16cab74a1e9f96321135f73"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-type-inspection-v1-exit.json",
+      "sha256": "aacf1ff883789a2460e3401d784581ebc0a6c5537381925dd8153c1ea3b92b10"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-axioms-v1.log",
+      "sha256": "408cdf0f38f5652b5af0cb084e5032853fe73ffa29cc372418b71f867e76c0b9"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-axioms-v1-exit.json",
+      "sha256": "6d94a147daab4ece2e9094ce3ff3c241515f6b59af39b9c516935eb5ae9eae59"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-reproduction-check-v1.log",
+      "sha256": "00f5b11222edf39c30018211f992a61e0836de27b0290e66d74b01578e21478a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit30-completion-reproduction-check-v1-exit.json",
+      "sha256": "7b019d9c78061f3dff40351305b66ad175c8191fa7c20d5167cdad90b855b6b4"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Source reproduction only; ordinary kernel proofs and axiom audit are separately required.",
+  "source_hashes_lf": {
+    "MainTheory/Orbit30BoundaryDisplays.lean": "c6279454951fc30a8b21a2acbe2d0023ff189fb05d31b20cafc90f03155f6d43",
+    "MainTheory/Orbit30FullSupport.lean": "e4530191dfa8bb2e57543a1958df2e8f42929acf9648be709e54c0e4dd203691",
+    "MainTheory/Orbit30GraphClassification.lean": "74fd9e02d00715ae6c7c42a0cf6ea1a9b4f57059e86d275ffafbbc05da395424",
+    "MainTheory/Orbit30GraphMaskEncoding.lean": "5ea2076978f79d13d08391f980a5375427dca57e46f4f64f0038eb1c2e91cb68",
+    "MainTheory/Orbit30GraphRelabel.lean": "b5108dfc7261e6adbb79751a48743a73e064f80fdd20ec328e6c0aaf9decf8b8",
+    "MainTheory/Orbit30GraphTypes.lean": "88610983b560debdcb7fae5b66902febc68e330dd76ebaceb05d88114ddc2b92",
+    "MainTheory/Orbit30MomentRank.lean": "e1c3538e90bf325cf221732cb70529a44ae1964e54c0c91773d2c2f4c536a803",
+    "MainTheory/Orbit30NormalizedDeterminant.lean": "84a4d5e601ab7f68399b8bfd5dee55ccc973d203fde18472d5ebab0332b1acd1",
+    "MainTheory/Orbit30PhysicalFullSupport.lean": "3d8ccad93ca4a0617cc3840bf3c85b667da5a524fa546ab93eed067bcd1f7c74",
+    "MainTheory/Orbit30PhysicalGraph.lean": "72f34ee92088d7e558f49824a12f9914651b3f50047aa5c0dba4bcb47745061d",
+    "MainTheory/Orbit30PhysicalHafnians.lean": "d60586a03050361a10e3dc87bdc79e086bd064087478454b69737e8f434f5b4b",
+    "MainTheory/Orbit30PhysicalMask.lean": "eb86b2cb5cb36eee280ba55b33a260ebef245d59f407f1eecf947ca94d52c718",
+    "MainTheory/Orbit30PhysicalPhases.lean": "f309e340cb829b34dd78d60f8de750fb9eb31b6a5f87d2266a2af7bfa6eb60d1",
+    "MainTheory/Orbit30PhysicalProperSupport.lean": "3092d74515e0314e72be5a59bad56b94e0e0ca338e25419137202de5c93c36ad",
+    "MainTheory/Orbit30PhysicalRows.lean": "d0041f12b6b2fd9dd42a1135f2b8075a8d957f2dce5583347f54966dee6d6167",
+    "MainTheory/Orbit30PrintedMoments.lean": "ff841881ecff98745424000fdb11c0032a26d5053b3816af4aa4eed5d3131b34",
+    "MainTheory/Orbit30ProbabilityLabels.lean": "f0d6cefcb52217989c93529ae84d468f24d641e978f3bc0d091088496e80fcd2",
+    "MainTheory/Orbit30ProperGraphExclusion.lean": "900f11c221da8a7c87ce196b5a263d579ce8579c91e8e7b9e7aa0318315f910b",
+    "MainTheory/Orbit30ProperGraphTables.lean": "76f1403caa49963529b0ab1665a8ac0642c707c7b29324205d59b4b2df3daf3d",
+    "MainTheory/Orbit30SupportGraph.lean": "02b807a530d5c4cac63e9a8e9aaa0f9cd4771552c59293630928c2ba40686eea",
+    "MainTheory/Orbit30TwoPointDisplays.lean": "0544ca9d5e3d27f7910ba19d75bebccb7cc27d353de34e8d5003a430a903bcce",
+    "MainTheory/Orbit30VertexScaling.lean": "fc8c691554c8e7e8726a1c34b5281ddf6eb2f1b089ab7c915fab83878312c09a"
+  },
+  "checks": [
+    {
+      "tool": "tools/verification/generate_orbit30_moment_rank.py",
+      "sha256_lf": "22686131c457f42e60f355d2f085404faca3e0f29d6b49c8b6f380e3d4e0e098",
+      "exit_code": 0,
+      "output": "Actual rank 23 signed minor -48 kernel and full affine dimension 9\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_printed_moments.py",
+      "sha256_lf": "cb1f0faa75e40b4553d11e020ccd189503b2b91ca173f725eb6820ff1a00bb15",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_probability_labels.py",
+      "sha256_lf": "12389ba8a1356e4acdbc4761c2848ac3a035e01119e0231361055a9b04cebc8b",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_physical_rows.py",
+      "sha256_lf": "69332cc71378b5d693eb35f5331019376fd6f750a761103472865e3d5f53f30a",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_normalized_determinant.py",
+      "sha256_lf": "213258a94ba1c38f27d70951e36b2f0a5efccfbad4ed92f99905a675ffa5dd8c",
+      "exit_code": 0,
+      "output": "Checked candidate polynomial reductions; Lean must verify every identity\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_graph_classification.py",
+      "sha256_lf": "fb4b3dc5b12ad4b21610f39d159857b1d607fad48f31e2da745c7dba71a94a69",
+      "exit_code": 0,
+      "output": "All masks 1024 admissible masks 252 literal types 10\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_proper_graph_tables.py",
+      "sha256_lf": "a8bd2668e4a0533f51dad1846eb064e7daf9777d49406ee5d8a18570fad009a0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit30_full_support.py",
+      "sha256_lf": "2f0caf4a77c37a6c32188eed514ef1bdc291214b05d6c123eb8636d36b4bf9c9",
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}

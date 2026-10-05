@@ -53,6 +53,17 @@ This checks exact source provenance. Kernel acceptance still requires the
 serial whole build and transitive axiom audit above. The proof layers are
 indexed by mathematical topic in [proof-index.md](proof-index.md).
 
+## Literal physical orbit-30 sources
+
+Reconstruct its eight finite source certificates with:
+
+```console
+python tools/verification/check_orbit30_reproduction.py
+```
+
+These exact source checks supplement the whole kernel build and axiom audit.
+The physical graph and determinant entry points appear in [proof-index.md](proof-index.md).
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

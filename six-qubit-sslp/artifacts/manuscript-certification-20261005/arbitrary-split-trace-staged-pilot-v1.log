@@ -1,0 +1,71 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:20:54: error: unsolved goals
+F : Matrix (Fin 2) (Fin 2) ℂ
+p : Label 4
+⊢ (Cᴴ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) F (operator p) * C).diag 0 +
+      (Cᴴ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) F (operator p) * C).diag 1 =
+    F 0 0 * GaussianInt.toComplex (coefficient p 0 0 0 0) * (1 / 16) +
+                  F 0 0 * GaussianInt.toComplex (coefficient p 1 1 0 0) * (1 / 16) +
+                F 0 1 * GaussianInt.toComplex (coefficient p 0 0 0 1) * (1 / 16) +
+              F 0 1 * GaussianInt.toComplex (coefficient p 1 1 0 1) * (1 / 16) +
+            F 1 0 * GaussianInt.toComplex (coefficient p 0 0 1 0) * (1 / 16) +
+          F 1 0 * GaussianInt.toComplex (coefficient p 1 1 1 0) * (1 / 16) +
+        F 1 1 * GaussianInt.toComplex (coefficient p 0 0 1 1) * (1 / 16) +
+      F 1 1 * GaussianInt.toComplex (coefficient p 1 1 1 1) * (1 / 16)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:21:26: error: This simp argument is unused:
+  compression
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.trace,̵c̵o̵m̵p̵r̵e̵s̵s̵i̵o̵n̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:35:89: error: unsolved goals
+p : Label 4
+hp : weight p ≤ 3
+hn : p ≠ fun x => 0
+hz : ∑ a, ∑ j, GaussianInt.toComplex (coefficient p j j a a) = 0
+⊢ (1 / 16 * ∑ x, ∑ x_1, if x = x_1 then ∑ j, GaussianInt.toComplex (coefficient p j j x x_1) else 0) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:40:55: error: This simp argument is unused:
+  Finset.sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵i̵t̵e̵_̵m̵u̵l̵,̵o̵n̵e̵_̵m̵u̵l̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵e̵q̵'̵,̵F̵i̵n̵s̵e̵t̵.̵m̵e̵m̵_̵u̵n̵i̵v̵,̵i̵f̵_̵t̵r̵u̵e̵,̵h̵z̵,̵m̵u̵l̵_̵z̵e̵r̵o̵]̵[̲M̲a̲t̲r̲i̲x̲.̲o̲n̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲i̲t̲e̲_̲m̲u̲l̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲m̲e̲m̲_̲u̲n̲i̲v̲,̲ ̲i̲f̲_̲t̲r̲u̲e̲,̲ ̲h̲z̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:40:74: error: This simp argument is unused:
+  Finset.mem_univ
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵i̵t̵e̵_̵m̵u̵l̵,̵o̵n̵e̵_̵m̵u̵l̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵i̵t̵e̵_̵e̵q̵'̵,̵F̵i̵n̵s̵e̵t̵.̵m̵e̵m̵_̵u̵n̵i̵v̵,̵i̵f̵_̵t̵r̵u̵e̵,̵h̵z̵,̵m̵u̵l̵_̵z̵e̵r̵o̵]̵[̲M̲a̲t̲r̲i̲x̲.̲o̲n̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲i̲t̲e̲_̲m̲u̲l̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲i̲t̲e̲_̲e̲q̲'̲,̲ ̲i̲f̲_̲t̲r̲u̲e̲,̲ ̲h̲z̲,̲
+  ̲ ̲ ̲ ̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:40:90: error: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.one_apply, ̲ite_mul, ̲one_mul, ̲zero_mul, ̲Finset.sum_ite_eq', ̲Finset.mem_univ,i̵f̵_̵t̵r̵u̵e̵,̵ ̲hz,
+  ̲ ̲ ̲ ̲ ̲mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:40:98: error: This simp argument is unused:
+  hz
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.one_apply, ̲ite_mul, ̲one_mul, ̲zero_mul, ̲Finset.sum_ite_eq', ̲Finset.mem_univ,
+  ̲ ̲ ̲ ̲ ̲if_true,h̵z̵,̵ ̲mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitTrace.lean:40:101: error: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.one_apply, ̲ite_mul, ̲one_mul, ̲zero_mul, ̲Finset.sum_ite_eq', ̲Finset.mem_univ,
+  ̲ ̲ ̲ ̲ ̲if_true, ̲hz,̵m̵u̵l̵_̵z̵e̵r̵o̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

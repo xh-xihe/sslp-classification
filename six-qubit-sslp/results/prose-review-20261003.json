@@ -1315,6 +1315,139 @@
       ],
       "origin": "20261005 actual orbit-29 intermediate/type review",
       "context_sha256_lf": "f19c5fff36e5464893385ae51509b907dd0bc486cc1722d764a597dfd182079f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11481,
+      "end_line": 11500,
+      "kind": "covered",
+      "reason": "The rank twenty-three, equivalent physical moment normal form and actual dimension-nine nonnegative polytope are checked independently of the no-code theorem.",
+      "declarations": [
+        "MainTheory.Orbit30PrintedMoments.complete_normal",
+        "MainTheory.Orbit30MomentRank.Orbit30.actual_matrix",
+        "MainTheory.Orbit30MomentRank.Orbit30.rank_exact",
+        "MainTheory.Orbit30MomentRank.Orbit30.full_diagonal_polytope_dimension"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "5617001a070960f7665acc369e3ee7a767a226bd6d981c6ed62072663d2b7553"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11513,
+      "end_line": 11550,
+      "kind": "covered",
+      "reason": "The symmetric K5 probability translation follows from literal pointwise coordinate identities and balanced physical marginals.",
+      "declarations": [
+        "MainTheory.Orbit30ProbabilityLabels.literal_pointwise_identities",
+        "MainTheory.Orbit30ProbabilityLabels.physical_probabilities"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "65a5fc299c122125e62e9de416afe1b37054a197b5ed04509791d2f903bbcbc6"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11551,
+      "end_line": 11623,
+      "kind": "covered",
+      "reason": "All phase definitions, reciprocal rows and five matching sums are explicitly tied to supported full physical KL without a nonzero-support assumption.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalPhases.actual_unit_phase",
+        "MainTheory.Orbit30PhysicalPhases.reciprocal_product",
+        "MainTheory.Orbit30PhysicalRows.physical_rows"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "1a122e79d4d53276b768f417a8a275b8e64f0db46d0a6d819b3fa2fb8369950a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11625,
+      "end_line": 11673,
+      "kind": "covered",
+      "reason": "The one- and two-point support exclusions include the printed amplitude and mass intermediate steps, with exact nonnegative boundary handling.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_three_active",
+        "MainTheory.Orbit30TwoPointDisplays.two_point_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.point_and_degree_values",
+        "MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "5b3d2c4aec590e45c9a8f6a58f61dde9e4a125e2bf11088b54d6c87d90dc63d3"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11675,
+      "end_line": 11735,
+      "kind": "covered",
+      "reason": "The exceptional branch uses the correct unordered edge masses, physical bilinear triangle rows and nonzero phase synchronization.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30BoundaryDisplays.exceptional_mass_equations",
+        "MainTheory.Orbit30PhysicalGraph.actual_four_active",
+        "MainTheory.Orbit30PhysicalHafnians.actual_all_edge_phases"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "d01261ad8e5c98b69a9cf1916c80b1197339526aea84c745e1e75b24dfa2e9a1"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11737,
+      "end_line": 11764,
+      "kind": "covered",
+      "reason": "Minimum physical degree and the exact common phase factor produce all five matching equations.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalMask.actual_minimum_degree",
+        "MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight",
+        "MainTheory.Orbit30PhysicalHafnians.actual_matching_factor",
+        "MainTheory.Orbit30PhysicalHafnians.actual_hafnians"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "21291661b868af816ae203a49a4f98738ccafcbe9f61d707e98d9652aad9ffca"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11766,
+      "end_line": 11834,
+      "kind": "covered",
+      "reason": "The ten pairwise distinct complement types exhaust the actual proper graph; both exclusion tables survive actual vertex relabeling and cover zero/nonzero edges exactly.",
+      "declarations": [
+        "MainTheory.Orbit30GraphClassification.exhaustive_relabeling",
+        "MainTheory.Orbit30GraphTypes.distinct_isomorphism_types",
+        "MainTheory.Orbit30GraphRelabel.hafnian_relabel",
+        "MainTheory.Orbit30ProperGraphExclusion.proper_no_go",
+        "MainTheory.Orbit30PhysicalProperSupport.actual_proper_support_no_go"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "689033531849713fabc522a2fdbc61d612306d043279a09887d2a4ac32e8c7ae"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11836,
+      "end_line": 11916,
+      "kind": "covered",
+      "reason": "The full graph route constructs the literal normalization, verifies each matching polynomial, proves the actual determinant minus 32 and contradicts the nonzero physical kernel vector.",
+      "declarations": [
+        "MainTheory.Orbit30VertexScaling.four_edge_normalization",
+        "MainTheory.Orbit30VertexScaling.preserves_singularity",
+        "MainTheory.Orbit30VertexScaling.preserves_hafnians",
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_minus32",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_full_support_no_go"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "e5863cd7bffd7bdccb7fd3f35cead8fdf26ea0258349d01f7cd72bcf9b7cc4cd"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11918,
+      "end_line": 11942,
+      "kind": "covered",
+      "reason": "The theorem and support-case coverage remark use the complete literal physical SI proof route.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go",
+        "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "d623949a0786264e954fee8e26766c0fd26830356627e17212ca386452c02b8e"
     }
   ],
   "remaining": "Complete other current mathematical/prose correspondence; preserve five frozen main issues and the SI empty-mask qualification."

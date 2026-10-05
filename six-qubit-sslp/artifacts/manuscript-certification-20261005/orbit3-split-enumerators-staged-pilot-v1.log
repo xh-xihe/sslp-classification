@@ -1,0 +1,42 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:53:4: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a =>
+    Complex.normSq (2 * if _a then ↑(Real.cos θ) else if label p = xzLabel then ↑(Real.sin θ) else 0) =
+      (if p = PZ then 4 * Real.cos θ ^ 2 else 0) + if p = PXZ then 4 * Real.sin θ ^ 2 else 0
+Error: Application type mismatch: The argument
+  Fintype.decidablePiFintype (label p) zLabel
+has type
+  Decidable (label p = zLabel)
+but is expected to have type
+  Decidable _a
+in the application
+  @ite ℂ _a (Fintype.decidablePiFintype (label p) zLabel)
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+θ : ℝ
+p : SS.PauliString 6
+hp : p.wt = 1 ∨ p.wt = 2
+⊢ Complex.normSq (2 * if label p = zLabel then ↑(Real.cos θ) else if label p = xzLabel then ↑(Real.sin θ) else 0) =
+    (if p = PZ then 4 * Real.cos θ ^ 2 else 0) + if p = PXZ then 4 * Real.sin θ ^ 2 else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:75:49: error(lean.unknownIdentifier): Unknown identifier `p`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:79:13: error: unsolved goals
+θ : ℝ
+w : ℕ
+hw : w = 1 ∨ w = 2
+⊢ (if w = 2 then 4 * Real.sin θ ^ 2 else 0) = if PXZ = sorry () then 4 * Real.sin θ ^ 2 else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:79:22: error: This simp argument is unused:
+  Finset.sum_add_distrib
+
+Hint: Omit it from the simp argument list.
+  simp [̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵d̵d̵_̵d̵i̵s̵t̵r̵i̵b̵,̵w̵e̵i̵g̵h̵t̵_̵P̵Z̵,̵w̵e̵i̵g̵h̵t̵_̵P̵X̵Z̵,̵e̵q̵_̵c̵o̵m̵m̵]̵[̲w̲e̲i̲g̲h̲t̲_̲P̲Z̲,̲ ̲w̲e̲i̲g̲h̲t̲_̲P̲X̲Z̲,̲ ̲e̲q̲_̲c̲o̲m̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit3SplitEnumerators.lean:79:55: error: This simp argument is unused:
+  weight_PXZ
+
+Hint: Omit it from the simp argument list.
+  simp [̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵d̵d̵_̵d̵i̵s̵t̵r̵i̵b̵,̵w̵e̵i̵g̵h̵t̵_̵P̵Z̵,̵w̵e̵i̵g̵h̵t̵_̵P̵X̵Z̵,̵e̵q̵_̵c̵o̵m̵m̵]̵[̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲a̲d̲d̲_̲d̲i̲s̲t̲r̲i̲b̲,̲ ̲w̲e̲i̲g̲h̲t̲_̲P̲Z̲,̲ ̲e̲q̲_̲c̲o̲m̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

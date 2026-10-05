@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "tools/verification/export_claim_types.py",
+    "--paper-version",
+    "20261003",
+    "--extra-roots",
+    "artifacts/manuscript-certification-20261005/orbit30-review-extra-roots.json",
+    "--import",
+    "MainTheory.ManuscriptCertificationAudit20261005",
+    "--output",
+    "artifacts/manuscript-certification-20261005/kernel-types-orbit30-completion.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 41.61915260000387
+}

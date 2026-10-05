@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "proof_accepted_publication_pending",
+  "active_lean_modules": 16149,
+  "new_lean_modules": 21,
+  "strict_pilots": "PASS_source_bound",
+  "isolated_inspected_declarations": 274,
+  "source_reproduction": {
+    "status": "PASS",
+    "checks": 8,
+    "record": "orbit30-completion-generation-v1.json"
+  },
+  "whole_build": "PASS",
+  "whole_build_log": "orbit30-completion-full-build-v1.log",
+  "fresh_axiom_audit": "pending",
+  "manuscript_correspondence": "pending_canonical_type_inspection_and_explicit_review",
+  "scope": "Accepted orbit-30 proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "axiom_audit": "PASS",
+  "canonical_type_inspection": "PASS",
+  "correspondence_review": "applied",
+  "proof_acceptance": "proof-acceptance-16149.json"
+}

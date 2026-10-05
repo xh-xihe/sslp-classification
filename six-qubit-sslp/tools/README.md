@@ -14,6 +14,7 @@ provenance for older construction routes.
 | `verification/generate_orbit26_printed_moments.py --check` | Reproduce the literal orbit-26 rational matrix, complete affine solution and rank-fourteen certificate; Lean checks the output |
 | `verification/generate_order_five_printed_moments.py --check` | Reproduce physical SI moment consequences for orbits 35, 37 and 38, including reconstruction of the complete real moment system |
 | `verification/check_orbit31_reproduction.py` | Forty exact source-reproduction checks for current literal moment, support, physical phase and enumerator bridges; requires separate kernel build and axiom audit |
+| `verification/check_orbit30_reproduction.py` | Eight exact source-reconstruction checks for the literal physical K5, graph and determinant route; requires separate kernel build and axiom audit |
 | `paper_claims.py`, `named_results_doc.py`, `prose_review_doc.py` | Version-bound private-source correspondence records |
 
 Use `--paper-version 20261003` explicitly. Historical tools retain their

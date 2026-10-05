@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit28PrintedProbabilities.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 38.75499809999019
+}
