@@ -59,11 +59,7 @@
     "reviewed_blocks": 89
   },
   "planned_axiom_roots": 8627,
-  "canonical_publication_commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json",
-  "identified_si_qualifications": 1,
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json",
-    "scope": "PASS local literal split/matrix physical proof route; publication pending and manuscript correspondence incomplete."
-  }
+  "canonical_publication_commit": "2014be38800dd9c61077073528fe56162a18f7b5",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16161.json",
+  "identified_si_qualifications": 1
 }

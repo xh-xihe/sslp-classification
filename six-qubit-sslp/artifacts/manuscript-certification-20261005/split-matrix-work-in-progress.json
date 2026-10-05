@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "modules_added": 12,
   "proof_snapshot": "split-matrix-staged-proof-snapshot-12.json",
   "strict_staged_compilation": "PASS_12_modules",
@@ -11,7 +11,13 @@
   "manuscript_correspondence": "not_applied",
   "scope": "Accepted split/matrix proof-source snapshot; publication pending and other manuscript obligations remain.",
   "manuscript_certification": "not_complete",
-  "publication": "pending",
+  "publication": {
+    "status": "PASS",
+    "commit": "2014be38800dd9c61077073528fe56162a18f7b5",
+    "branch": "sixqubit-classification",
+    "modules": 16161,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16161.json"
+  },
   "last_accepted_proof_modules": 16149,
   "canonical_source_modules": 16161,
   "active_lean_modules": 16161,

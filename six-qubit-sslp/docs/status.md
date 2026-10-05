@@ -21,9 +21,12 @@ Its fresh transitive audit passes **8,627 roots**, using only `propext`,
 `Classical.choice` and `Quot.sound`. Its evidence is recorded in
 [proof-acceptance-16161.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16161.json).
 This acceptance does not declare complete manuscript correspondence.
-Publication of this snapshot is pending. The preceding
-[16,149-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16149.json)
-is retained unchanged. Machine-readable current status is in
+The accepted current proof snapshot is published in
+[`2014be38`](https://github.com/xh-xihe/dyadic-lifts/commit/2014be38800dd9c61077073528fe56162a18f7b5).
+Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16161.json)
+checks every one of the 16,161 active proof sources against the local
+successful build. Earlier publication bindings are retained unchanged.
+Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages

@@ -143,10 +143,10 @@
   },
   "publication": {
     "status": "PASS",
-    "commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
+    "commit": "2014be38800dd9c61077073528fe56162a18f7b5",
     "branch": "sixqubit-classification",
-    "modules": 16149,
-    "record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json"
+    "modules": 16161,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16161.json"
   },
   "last_accepted_whole_build": {
     "status": "PASS",
@@ -560,10 +560,5 @@
     "record": "artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json",
     "scope": "Literal arbitrary split enumerators and output conventions; orbit-28 complete probabilities; orbit-32 parity notation; orbit-26 physical outer, anchor and matrix moment equations and generic dependent-anchor algebra.",
     "status": "canonical_whole_build_running"
-  },
-  "pending_publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification",
-    "modules": 16161
   }
 }
