@@ -139,10 +139,10 @@
   },
   "publication": {
     "status": "PASS",
-    "commit": "abc13b21f76a7e562231432882a08a3fc5e4c8d1",
+    "commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
     "branch": "sixqubit-classification",
-    "modules": 16128,
-    "record": "artifacts/manuscript-certification-20261005/publication-binding-16128.json"
+    "modules": 16149,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json"
   },
   "last_accepted_whole_build": {
     "status": "PASS",
@@ -558,10 +558,5 @@
     "new_modules": 21,
     "whole_build": "running",
     "axiom_audit": "pending"
-  },
-  "pending_publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification",
-    "modules": 16149
   }
 }

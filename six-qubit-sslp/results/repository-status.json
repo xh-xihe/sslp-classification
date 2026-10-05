@@ -59,11 +59,7 @@
     "reviewed_blocks": 89
   },
   "planned_axiom_roots": 8463,
-  "canonical_publication_commit": "abc13b21f76a7e562231432882a08a3fc5e4c8d1",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16128.json",
-  "identified_si_qualifications": 1,
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/orbit30-work-in-progress.json",
-    "scope": "PASS local literal orbit-30 physical proof route; publication pending and manuscript correspondence incomplete."
-  }
+  "canonical_publication_commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json",
+  "identified_si_qualifications": 1
 }

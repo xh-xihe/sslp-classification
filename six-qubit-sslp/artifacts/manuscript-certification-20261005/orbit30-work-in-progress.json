@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "active_lean_modules": 16149,
   "new_lean_modules": 21,
   "strict_pilots": "PASS_source_bound",
@@ -18,5 +18,12 @@
   "axiom_audit": "PASS",
   "canonical_type_inspection": "PASS",
   "correspondence_review": "applied",
-  "proof_acceptance": "proof-acceptance-16149.json"
+  "proof_acceptance": "proof-acceptance-16149.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
+    "branch": "sixqubit-classification",
+    "modules": 16149,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json"
+  }
 }
