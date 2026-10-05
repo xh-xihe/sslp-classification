@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 15942,
+  "module_count": 15951,
   "counts_by_library": {
-    "MainTheory": 14052,
+    "MainTheory": 14061,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -93776,6 +93776,27 @@
       "topic": "Generated certificates"
     },
     {
+      "module": "MainTheory.Generated.SupplementarySectorHeaderCertificate",
+      "path": "MainTheory/Generated/SupplementarySectorHeaderCertificate.lean",
+      "sha256_lf": "b1ea1919377ce8b143f281fe3020ec61fd69f5a58fe663ae7ee159fbe9679fbf",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.SupplementarySectorHeaders",
+      "path": "MainTheory/Generated/SupplementarySectorHeaders.lean",
+      "sha256_lf": "a5716c1b44d41d5e03e3fd434803bdfeb2cf4b40e3195607f89450de3612b258",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.SupplementarySectorWitnesses",
+      "path": "MainTheory/Generated/SupplementarySectorWitnesses.lean",
+      "sha256_lf": "676c3a95f78095768509b3573ce2cfb5de184ee6d5a7a997d3f042eeda62599e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
       "module": "MainTheory.GlobalClassificationBridge",
       "path": "MainTheory/GlobalClassificationBridge.lean",
       "sha256_lf": "c61e01af9d7972aeec696c6dffc1ff75118029dc19ff1f4b9b7141580c119475",
@@ -94079,7 +94100,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "eb6d4eb5da936e505a8bc21f72c81454d912fcd8c9ea41f952e286831c2d9648",
+      "sha256_lf": "367fd6a1036c0b6f717e7fa80b4fc76c5173d9b09ab0d9a4bf596b4a5c810793",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -94367,6 +94388,20 @@
       "module": "MainTheory.Orbit26AnchorSingular",
       "path": "MainTheory/Orbit26AnchorSingular.lean",
       "sha256_lf": "c31c5f2eaaa01ff5037bccc3c9f9b71bfbbc02b71dd5aa58dcf30e8ec411ce6d",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit26PrintedMoments",
+      "path": "MainTheory/Orbit26PrintedMoments.lean",
+      "sha256_lf": "890d5c7bd8705847837099fb293586a6e2849e8d191bfa8889f81878b239657d",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit26PrintedProbabilities",
+      "path": "MainTheory/Orbit26PrintedProbabilities.lean",
+      "sha256_lf": "e9dadfca36ccec5145316486ef899af17a4f6816d62a7afa5feb3c8c48778a76",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -95018,6 +95053,13 @@
       "module": "MainTheory.Orbit3PrintedScalarPlane",
       "path": "MainTheory/Orbit3PrintedScalarPlane.lean",
       "sha256_lf": "02e7ec9800d5b7317220d22651aae3ac37a5ac96b253251c9f81ec6cdb65075d",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3PrintedSpinTrace",
+      "path": "MainTheory/Orbit3PrintedSpinTrace.lean",
+      "sha256_lf": "f760c370d115c015d0158e095936bf00d3b248ef8251839fc7787d557639f05f",
       "library": "MainTheory",
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
@@ -98109,6 +98151,27 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.SupplementaryOrderTwoReduction",
+      "path": "MainTheory/SupplementaryOrderTwoReduction.lean",
+      "sha256_lf": "24e5a34cd341d212f59dbbb4dfb2e69555a4ca2233daad9d1d369212aec082df",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SupplementarySectorCountBase",
+      "path": "MainTheory/SupplementarySectorCountBase.lean",
+      "sha256_lf": "236eb731425008b2e0b6c7f61d958fe8a58ecd2de2355edb0b56f24347589066",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SupplementarySectorCounts",
+      "path": "MainTheory/SupplementarySectorCounts.lean",
+      "sha256_lf": "00c3d9e8baa6e3648935b377ae7f404a98bdad6d216ff756c47c879942d0dac3",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.SupplementSummaryDisplays",
       "path": "MainTheory/SupplementSummaryDisplays.lean",
       "sha256_lf": "390bd54ea02c91aa80855c4fae9998fc1a854c07aeaa721a43beff95e2fe49ad",
@@ -98377,7 +98440,7 @@
     {
       "module": "MainTheory",
       "path": "MainTheory.lean",
-      "sha256_lf": "505112ce8ea9dc0be9ee178e300ffaf4c87c2eaefacf98a762358f8fbd132eda",
+      "sha256_lf": "f9c862830dac115542b42f9e6b9b57358d4f4fd2f230cff2eb1be7d940424a99",
       "library": "MainTheory",
       "topic": "Library entry points"
     },

@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "scope": "Complete current local Lean proof-source snapshot only; manuscript correspondence remains unfinished.",
+  "proof_acceptance": "PASS",
+  "active_modules": 15951,
+  "axiom_roots": 4471,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "claim_status_counts": {
+    "covered": 1473,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 348
+  },
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-15951.json",
+      "sha256": "85e325a54443c20c92c40413f594906f722f105740e5cadd1640d60d25e2e4d0"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-final-full-build.log",
+      "sha256": "4414f1d91d52e4ae6d1520e0efea4762a65801279e76a0b5059823df5d180465"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-final-full-build-exit.json",
+      "sha256": "2e450bfdb0e17dc2dfc7d9dcb38dceaad5867b74dc53bbad69f1715164556804"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-4471.json",
+      "sha256": "663931ca19470f129d1e86b8bc6c2c6d4c1d2efc50e1aaf14ccfb8fb48f4c797"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-axioms.log",
+      "sha256": "3a9dffa748c6ae545e47a30c652f2b5a1c629565245f9787ece8bb092fc3d732"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-axioms-exit.json",
+      "sha256": "73b81a9fa1f5172f97d4f7d3da18d1c6bab6fe0a8e87815cce4e89fe14bcf68a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-correspondence-gates.log",
+      "sha256": "4ec24a8cea606969916277654e4737c736afaf8f0599e27f7df75f2712fc67f0"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-correspondence-gates-exit.json",
+      "sha256": "72c707c5ea0c956caab556b69022a6f3b6bf1c7250e209e7b29a1e05fc56b81b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-generation.json",
+      "sha256": "424ad5b37fd45104b1dd07da10c6aef5bcb5e86f8de6f07c51040dbe3f9b5463"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-regeneration.json",
+      "sha256": "5f03dbba6b01df66b12c990e711aae965c2b826be89c4f194f9cc09375106c2b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-tables-type-binding.json",
+      "sha256": "5ecc7af68ebbcc026241d12fe731bd68c99adb73aed896ff5029a6e69548438c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/sector-prose-type-binding.json",
+      "sha256": "5b6d386c21f505b60724ce7197cd53cc148ea0c8d173346050890787637e4eea"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/moment-rank-type-binding.json",
+      "sha256": "7630e079f8fbcf281d965c9f5126dac7bc333ae0ea40a32ea68a29ef1c1dad41"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/moment-rank-generation.json",
+      "sha256": "eece3148587f9ce3e79ca2e408058ca363677e3e1a56f6fe5dc885c45c091f5f"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/moment-rank-generation-check.log",
+      "sha256": "9769b8d8b5aa27a44fb7fba0f0c4eb6b1646a98dec93fc6096778c6ef625100b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/moment-rank-generation-check-exit.json",
+      "sha256": "7bb1dc0c32ff344a86fa9e8a47bbcb35bd8f155716bafc68940ffd2100f00063"
+    }
+  ]
+}

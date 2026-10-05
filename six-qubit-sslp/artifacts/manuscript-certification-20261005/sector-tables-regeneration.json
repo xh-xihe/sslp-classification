@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "outputs": [
+    {
+      "path": "MainTheory/Generated/SupplementarySectorWitnesses.lean",
+      "sha256_lf": "676c3a95f78095768509b3573ce2cfb5de184ee6d5a7a997d3f042eeda62599e"
+    },
+    {
+      "path": "MainTheory/Generated/SupplementarySectorHeaderCertificate.lean",
+      "sha256_lf": "b1ea1919377ce8b143f281fe3020ec61fd69f5a58fe663ae7ee159fbe9679fbf"
+    },
+    {
+      "path": "MainTheory/Generated/SupplementarySectorHeaders.lean",
+      "sha256_lf": "a5716c1b44d41d5e03e3fd434803bdfeb2cf4b40e3195607f89450de3612b258"
+    },
+    {
+      "path": "MainTheory/SupplementarySectorCounts.lean",
+      "sha256_lf": "00c3d9e8baa6e3648935b377ae7f404a98bdad6d216ff756c47c879942d0dac3"
+    }
+  ],
+  "scope": "Independent temporary regeneration agrees byte-for-byte after LF normalization. Semantic validity is a separate ordinary-kernel obligation."
+}

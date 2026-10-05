@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "parent": "8d0dedab8f8f2176973e62aa38332ca810fba073",
+  "branch": "sixqubit-classification",
+  "scope": "Read-only plan; these current proof changes are not published yet.",
+  "active_modules": 15942,
+  "proof_changes": [
+    {
+      "local": "MainTheory/BinaryMaskConvention.lean",
+      "remote": "six-qubit-sslp/MainTheory/BinaryMaskConvention.lean",
+      "change": "new",
+      "sha256_lf": "567ff228c55f1b2202512e8c20bc9b14e9103fb1e2478507bca7aeafd1285c02",
+      "blob_oid": "3b792990c7f4607090bef4f457f4b35744aa058b"
+    },
+    {
+      "local": "MainTheory/KernelDeclarationTypes.lean",
+      "remote": "six-qubit-sslp/MainTheory/KernelDeclarationTypes.lean",
+      "change": "new",
+      "sha256_lf": "cf62dd29f2663806fea51696fe60cd611cf9b988e937ffa15574b76795ebcb2c",
+      "blob_oid": "b4fc356bcd83a016ace37be9dc53007a258a9fec"
+    },
+    {
+      "local": "MainTheory/ManuscriptCertificationAudit20261005.lean",
+      "remote": "six-qubit-sslp/MainTheory/ManuscriptCertificationAudit20261005.lean",
+      "change": "new",
+      "sha256_lf": "eb6d4eb5da936e505a8bc21f72c81454d912fcd8c9ea41f952e286831c2d9648",
+      "blob_oid": "a8d678b43d8c77db1c9a78b562321b1f84e6075a"
+    },
+    {
+      "local": "MainTheory/Orbit33PrintedReflection.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit33PrintedReflection.lean",
+      "change": "new",
+      "sha256_lf": "d4704df9bb622e2e77cfbd9654d01c0670b2c1b5631c8320c9f312fbdb22daed",
+      "blob_oid": "b1744aa39b509d9ff003055be4efe9992436c21f"
+    },
+    {
+      "local": "MainTheory/Orbit3PrintedAmplitudes.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit3PrintedAmplitudes.lean",
+      "change": "new",
+      "sha256_lf": "dcd5141cd61b91fa0177966548865049f155b01151c3b96b7e281663b9d278bf",
+      "blob_oid": "6e4db4deab4384e3ffa28f7b60418527c6c9507f"
+    },
+    {
+      "local": "MainTheory/Orbit3PrintedHomogeneousTarget.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit3PrintedHomogeneousTarget.lean",
+      "change": "new",
+      "sha256_lf": "3330b33ee7ffd7015c7486cf1e3473b311039deb22919f8166d25e35a2e504c9",
+      "blob_oid": "50330d839c175df99b04dfce77ca5e488bc77d66"
+    },
+    {
+      "local": "MainTheory/Orbit3PrintedParityRelations.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit3PrintedParityRelations.lean",
+      "change": "new",
+      "sha256_lf": "51217ff9c3ea3c6abc0d7a49a83d274a4eaba3d5518c834e1acf90090dd9341c",
+      "blob_oid": "396d2b8611a3776163664e8748f47f06ab1aeb89"
+    },
+    {
+      "local": "MainTheory/Orbit3PrintedScalarConsequences.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit3PrintedScalarConsequences.lean",
+      "change": "new",
+      "sha256_lf": "a3a92a9063334314e7ca25002086af1f03d92972bffd02ffd5158e1d63e7c6e2",
+      "blob_oid": "b72dd77a00424a9a3e1f7ac4a1fd9d147e48e047"
+    },
+    {
+      "local": "MainTheory/Orbit45PrintedAlgebra.lean",
+      "remote": "six-qubit-sslp/MainTheory/Orbit45PrintedAlgebra.lean",
+      "change": "new",
+      "sha256_lf": "47c3075149965b750d4eaa7df0908ad4fd02d0560b6f965b940ef559fa72f1fa",
+      "blob_oid": "f642589c4a287549090806f50bbbf290842a1c8b"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatAlgebra.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatAlgebra.lean",
+      "change": "new",
+      "sha256_lf": "7d8f78562b7b91b82ac61173874b68e523a5e1a8795b9c74fe163402ab680900",
+      "blob_oid": "c6a561ab9a7381439c48ce520ab676aacae5f8d5"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatCompression.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatCompression.lean",
+      "change": "new",
+      "sha256_lf": "103668a29761cfc03665132f85e601605c124090a91cb127dc3b783b5bad92ea",
+      "blob_oid": "e02b16b4982d287e164ada78b1454f4e13244aa1"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatEncoder.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatEncoder.lean",
+      "change": "new",
+      "sha256_lf": "f09a5b76b3af46abb508c8101c3cafc94adceab9aa58626c79faafae05d8df39",
+      "blob_oid": "c699b180ce37cc6b5dc0e805b41509717ee1ae23"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatEnumerator.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatEnumerator.lean",
+      "change": "new",
+      "sha256_lf": "fd2bd0bdbae843159ba7468e231451e02de1edd84118f35a690e39c35165b9c4",
+      "blob_oid": "f059885211c23ceea929166c61f25e7928345fd0"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatKL.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatKL.lean",
+      "change": "new",
+      "sha256_lf": "5acb5c787cf9c83349a59949dbfd0a87f497420f4d5987f70edffebd6ae0a83c",
+      "blob_oid": "ffa237c0cecd66648417bc22ab4a011d16aacaf2"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatLogicals.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatLogicals.lean",
+      "change": "new",
+      "sha256_lf": "d88a9f4b68fe03c5a3348d1b5335b067908fc40f446365620261132fe64a6b36",
+      "blob_oid": "6d72440831108ec2084c18b3ad01343d9a75e9cb"
+    },
+    {
+      "local": "MainTheory/PrimitiveOrderTwoCatSpinFlip.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveOrderTwoCatSpinFlip.lean",
+      "change": "new",
+      "sha256_lf": "2d551e8b393c26540b4f461ea20132bd38fd2577f78c70be1b61ceb1060f64fa",
+      "blob_oid": "dd2777f2eea5d1705499f93d8cad612baae0023e"
+    },
+    {
+      "local": "MainTheory/PrimitiveSplitDisplays.lean",
+      "remote": "six-qubit-sslp/MainTheory/PrimitiveSplitDisplays.lean",
+      "change": "new",
+      "sha256_lf": "0f593096087205855649c79f276dc49a6e7f2dd72485e9db8a9c409cdc9e8302",
+      "blob_oid": "bf10904e45a644ead482ae765efe80bc1d32b59d"
+    },
+    {
+      "local": "MainTheory/StandardPerfectCodePhysical.lean",
+      "remote": "six-qubit-sslp/MainTheory/StandardPerfectCodePhysical.lean",
+      "change": "new",
+      "sha256_lf": "5671df7f5bd1f4c3c3e22dccb4e9c6090f48027075fbe056eda6b30c96d0393c",
+      "blob_oid": "9288728c1fac071a687cf1b1eebf4264afda9ffb"
+    },
+    {
+      "local": "MainTheory/SupplementaryImageStatus.lean",
+      "remote": "six-qubit-sslp/MainTheory/SupplementaryImageStatus.lean",
+      "change": "new",
+      "sha256_lf": "66849cb439e1e9708cc8b9d9becda76f7058040731ee11bd4f4af4b654c50602",
+      "blob_oid": "82bc8358a83959252b5c94d9f66383ef3bf9bd2a"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:eq:q4o26equalweights",
+      "statement_sha256": "ca3dc40248e54e53e46373c28d2e1aa0b25a62f1abd53322d7a5780a1497100f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PrintedProbabilities.P",
+        "MainTheory.Orbit26PrintedProbabilities.Q",
+        "MainTheory.Orbit26PrintedProbabilities.bottom_native",
+        "MainTheory.Orbit26PrintedProbabilities.top_native",
+        "MainTheory.Orbit26PrintedProbabilities.physical_probabilities",
+        "MainTheory.Orbit26PrintedMoments.actual_rows",
+        "MainTheory.Orbit26PrintedMoments.affine_iff",
+        "MainTheory.Orbit26PrintedMoments.rank_fourteen"
+      ],
+      "review": "20261005 exact moment rank/type review: The two aggregate probability vectors of the actual supported complex codewords equal the same printed pattern under normalized physical KL. The native-to-printed block ordering is kernel checked. The separate literal rational matrix now has a complete two-parameter affine solution and a rank-fourteen proof. This replaces the earlier review sentence which correctly recorded that the rank assertion had no Lean declaration."
+    }
+  ]
+}

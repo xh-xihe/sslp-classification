@@ -25,32 +25,32 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 15942,
+  "active_lean_modules": 15951,
   "whole_build": {
     "status": "PASS",
-    "modules": 15942,
-    "rebuilt": 10,
-    "reused": 15932,
-    "record": "full-build-success-15942.json",
-    "log": "physical-formulas-full-build.log"
+    "modules": 15951,
+    "rebuilt": 3,
+    "reused": 15948,
+    "record": "full-build-success-15951.json",
+    "log": "sector-tables-final-full-build.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 4217,
+    "roots": 4471,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-4217.json",
-    "log": "physical-formulas-axioms.log"
+    "record": "axioms-4471.json",
+    "log": "sector-tables-axioms.log"
   },
   "current_claim_status_counts": {
-    "covered": 1467,
+    "covered": 1473,
     "partial": 1,
     "expository": 5,
     "conjecture": 3,
-    "unreviewed": 354
+    "unreviewed": 348
   },
   "kernel_type_inspections": [
     {
@@ -80,29 +80,37 @@
     {
       "record": "kernel-types-physical-formulas.json",
       "declarations": 2853
+    },
+    {
+      "record": "kernel-types-sector-tables.json",
+      "declarations": 3092
+    },
+    {
+      "record": "kernel-types-moment-rank.json",
+      "declarations": 3108
     }
   ],
   "fully_kernel_manuscript_certification": "not_complete",
   "last_accepted_local_proof_snapshot": {
-    "modules": 15942,
+    "modules": 15951,
     "whole_build": {
       "status": "PASS",
-      "modules": 15942,
-      "rebuilt": 10,
-      "reused": 15932,
-      "record": "full-build-success-15942.json",
-      "log": "physical-formulas-full-build.log"
+      "modules": 15951,
+      "rebuilt": 3,
+      "reused": 15948,
+      "record": "full-build-success-15951.json",
+      "log": "sector-tables-final-full-build.log"
     },
     "axiom_audit": {
       "status": "PASS",
-      "roots": 4217,
+      "roots": 4471,
       "allowed": [
         "Classical.choice",
         "Quot.sound",
         "propext"
       ],
-      "record": "axioms-4217.json",
-      "log": "physical-formulas-axioms.log"
+      "record": "axioms-4471.json",
+      "log": "sector-tables-axioms.log"
     }
   },
   "current_tool_regressions": {
@@ -113,9 +121,10 @@
   },
   "prose_review": {
     "status": "partial",
-    "reviewed_blocks": 10,
-    "covered_si_blocks": 5,
-    "held_main_gaps": 5
+    "reviewed_blocks": 14,
+    "covered_si_blocks": 9,
+    "held_main_gaps": 5,
+    "record": "results/prose-review-20261003.json"
   },
   "remaining_obligations": "remaining-obligations.json",
   "correspondence_gates": {
@@ -123,10 +132,10 @@
     "readme": "PASS",
     "audit-names": "PASS",
     "named-results": "PASS",
-    "claims": "incomplete: 354 unreviewed SI assertions and one held main assertion",
+    "claims": "incomplete: 348 unreviewed SI assertions and one held main assertion",
     "prose-review": "partial current review",
     "errata": "five author-held main issues",
-    "log": "physical-formulas-correspondence-gates.log"
+    "log": "sector-tables-correspondence-gates.log"
   },
   "publication": {
     "status": "PASS",
@@ -134,5 +143,45 @@
     "branch": "sixqubit-classification",
     "modules": 15942,
     "record": "artifacts/manuscript-certification-20261005/publication-binding-15942.json"
+  },
+  "last_accepted_whole_build": {
+    "status": "PASS",
+    "modules": 15951,
+    "rebuilt": 3,
+    "reused": 15948,
+    "record": "full-build-success-15951.json",
+    "log": "sector-tables-final-full-build.log"
+  },
+  "last_accepted_axiom_audit": {
+    "status": "PASS",
+    "roots": 4471,
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "record": "axioms-4471.json",
+    "log": "sector-tables-axioms.log"
+  },
+  "current_prose_review": {
+    "status": "partial",
+    "reviewed_blocks": 14,
+    "covered_si_blocks": 9,
+    "held_main_gaps": 5,
+    "record": "results/prose-review-20261003.json"
+  },
+  "initial_sector_build": {
+    "status": "PASS",
+    "modules": 15950,
+    "rebuilt": 10,
+    "reused": 15940,
+    "log": "sector-tables-full-build.log",
+    "record": "full-build-success-15950-before-audit-fix.json",
+    "scope": "Before removing one duplicate audit-list entry and adding the rational rank module."
+  },
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 15951
   }
 }

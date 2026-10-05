@@ -10,6 +10,8 @@ provenance for older construction routes.
 | `verify.py --paper-version 20261003 --only sources generated audit-names axioms` | Public proof checks without private manuscripts |
 | `repository_index.py --check` | Source-catalog and topic-navigation consistency |
 | `rebuild_orbit_certificates.py` | Exact orbit-2/3 payload reconstruction |
+| `generators/emit_si_sector_counts.py` | Witnesses for both SI count tables, checked against actual records, distinct fibre pairs and orbit keys by ordinary Lean reduction |
+| `verification/generate_orbit26_printed_moments.py --check` | Reproduce the literal orbit-26 rational matrix, complete affine solution and rank-fourteen certificate; Lean checks the output |
 | `paper_claims.py`, `named_results_doc.py`, `prose_review_doc.py` | Version-bound private-source correspondence records |
 
 Use `--paper-version 20261003` explicitly. Historical tools retain their

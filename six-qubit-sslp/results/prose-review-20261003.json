@@ -130,7 +130,72 @@
       ],
       "origin": "20261005 explicit current context/type review",
       "context_sha256_lf": "71e2612bd8be3afbbbbbec7685c0123987d950c163f0f5510a86c776743a4697"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5594,
+      "end_line": 5595,
+      "kind": "covered",
+      "reason": "The actual six-Y bilinear is symmetric. Its same-parity terms vanish under the actual odd orbit-three involution, including zero amplitudes. The preceding shadow-saturation sentence is outside this narrowly reviewed block.",
+      "declarations": [
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_symmetric",
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_diagonal_zero",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_parity",
+        "MainTheory.Orbit3PrintedSpinTrace.orbit3_odd"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "6019ffd2ab3f7ca1fc9390d429365986a93aa2f4890514e21b3ebfcc8044d5c1"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16129,
+      "end_line": 16131,
+      "kind": "covered",
+      "reason": "The three final table stages still count the actual primitive angle records. Distinct records mapped to the same pair remain distinct in these actual survivor sets.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.recordCount",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete",
+        "MainTheory.SupplementarySectorCounts.angle_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "3f78c8bb53be62cae52fbaba04a9845c572fb376b47465218ca98986d871951b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16164,
+      "end_line": 16165,
+      "kind": "covered",
+      "reason": "The second table counts distinct actual full labelled fibre-pair payloads after hashing, and inequivalent actual directory keys in its final column. Both q and m are retained throughout.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.pairCount",
+        "MainTheory.Generated.FinitePairDistinctness.pairAtId_injective",
+        "MainTheory.Generated.FiniteOrbitCertificate.directory_valid",
+        "MainTheory.SupplementarySectorCounts.pair_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "05da8665fa9f6d0fed75bba0e74fcb92c47db930bd405a4fad78368462ebdbf7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10743,
+      "end_line": 10745,
+      "kind": "covered",
+      "reason": "The literal two-normalization, five-first-moment and ten-second-moment matrix is checked against the actual bottom/top tail-bit coordinates. Its rational kernel is linearly equivalent to two free parameters; rank-nullity therefore proves rank fourteen. An independent affine equivalence proves that every rational solution, and only those solutions, has the printed two-parameter form. Physical real probabilities are connected separately by physical_probabilities; they are not assumed to be rational.",
+      "declarations": [
+        "MainTheory.Orbit26PrintedMoments.actual",
+        "MainTheory.Orbit26PrintedMoments.rows",
+        "MainTheory.Orbit26PrintedMoments.actual_rows",
+        "MainTheory.Orbit26PrintedMoments.M",
+        "MainTheory.Orbit26PrintedMoments.kernel_iff",
+        "MainTheory.Orbit26PrintedMoments.affine_iff",
+        "MainTheory.Orbit26PrintedMoments.kernel_dimension",
+        "MainTheory.Orbit26PrintedMoments.rank_fourteen"
+      ],
+      "origin": "20261005 explicit literal matrix/rank context and kernel type review",
+      "context_sha256_lf": "40bec92b1bd9ae5c76bb22854edc1a089cb00b938dfa40299d24f6f81f99d989"
     }
   ],
-  "remaining": "Complete all other current prose/context review and the remaining display/named-result obligations. Preserve the five frozen main issues until the author changes their disposition."
+  "remaining": "Complete all other current prose and mathematical correspondence. Preserve the five author-held frozen main issues. Kernel build and axiom acceptance are recorded separately."
 }

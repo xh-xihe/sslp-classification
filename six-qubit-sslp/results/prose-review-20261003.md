@@ -77,6 +77,47 @@ The target identity retains arbitrary raw amplitudes and only divides by the pos
 - `MainTheory.Orbit3PrintedHomogeneousTarget.raw_expectation`
 - `MainTheory.Orbit3PrintedHomogeneousTarget.homogeneous_target`
 
+## supplementary.tex:5594 — covered
+
+The actual six-Y bilinear is symmetric. Its same-parity terms vanish under the actual odd orbit-three involution, including zero amplitudes. The preceding shadow-saturation sentence is outside this narrowly reviewed block.
+
+- `MainTheory.Orbit3PrintedSpinTrace.pairing_symmetric`
+- `MainTheory.Orbit3PrintedSpinTrace.pairing_diagonal_zero`
+- `MainTheory.Orbit3PrintedSpinTrace.raw_parity`
+- `MainTheory.Orbit3PrintedSpinTrace.orbit3_odd`
+
+## supplementary.tex:16129 — covered
+
+The three final table stages still count the actual primitive angle records. Distinct records mapped to the same pair remain distinct in these actual survivor sets.
+
+- `MainTheory.SupplementarySectorCountBase.recordCount`
+- `MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete`
+- `MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete`
+- `MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete`
+- `MainTheory.SupplementarySectorCounts.angle_table`
+
+## supplementary.tex:16164 — covered
+
+The second table counts distinct actual full labelled fibre-pair payloads after hashing, and inequivalent actual directory keys in its final column. Both q and m are retained throughout.
+
+- `MainTheory.SupplementarySectorCountBase.pairCount`
+- `MainTheory.Generated.FinitePairDistinctness.pairAtId_injective`
+- `MainTheory.Generated.FiniteOrbitCertificate.directory_valid`
+- `MainTheory.SupplementarySectorCounts.pair_table`
+
+## supplementary.tex:10743 — covered
+
+The literal two-normalization, five-first-moment and ten-second-moment matrix is checked against the actual bottom/top tail-bit coordinates. Its rational kernel is linearly equivalent to two free parameters; rank-nullity therefore proves rank fourteen. An independent affine equivalence proves that every rational solution, and only those solutions, has the printed two-parameter form. Physical real probabilities are connected separately by physical_probabilities; they are not assumed to be rational.
+
+- `MainTheory.Orbit26PrintedMoments.actual`
+- `MainTheory.Orbit26PrintedMoments.rows`
+- `MainTheory.Orbit26PrintedMoments.actual_rows`
+- `MainTheory.Orbit26PrintedMoments.M`
+- `MainTheory.Orbit26PrintedMoments.kernel_iff`
+- `MainTheory.Orbit26PrintedMoments.affine_iff`
+- `MainTheory.Orbit26PrintedMoments.kernel_dimension`
+- `MainTheory.Orbit26PrintedMoments.rank_fourteen`
+
 ## Remaining review
 
-Complete all other current prose/context review and the remaining display/named-result obligations. Preserve the five frozen main issues until the author changes their disposition.
+Complete all other current prose and mathematical correspondence. Preserve the five author-held frozen main issues. Kernel build and axiom acceptance are recorded separately.

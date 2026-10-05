@@ -1,0 +1,57 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-sector-tables.json",
+  "type_evidence_sha256": "d578682e52879036fd299449cc6f1138a7849300fb3951eafd22cc71447b9089",
+  "reviewed_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 5594,
+      "end_line": 5595,
+      "kind": "covered",
+      "reason": "The actual six-Y bilinear is symmetric. Its same-parity terms vanish under the actual odd orbit-three involution, including zero amplitudes. The preceding shadow-saturation sentence is outside this narrowly reviewed block.",
+      "declarations": [
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_symmetric",
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_diagonal_zero",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_parity",
+        "MainTheory.Orbit3PrintedSpinTrace.orbit3_odd"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "6019ffd2ab3f7ca1fc9390d429365986a93aa2f4890514e21b3ebfcc8044d5c1"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16129,
+      "end_line": 16131,
+      "kind": "covered",
+      "reason": "The three final table stages still count the actual primitive angle records. Distinct records mapped to the same pair remain distinct in these actual survivor sets.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.recordCount",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete",
+        "MainTheory.SupplementarySectorCounts.angle_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "3f78c8bb53be62cae52fbaba04a9845c572fb376b47465218ca98986d871951b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16164,
+      "end_line": 16165,
+      "kind": "covered",
+      "reason": "The second table counts distinct actual full labelled fibre-pair payloads after hashing, and inequivalent actual directory keys in its final column. Both q and m are retained throughout.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.pairCount",
+        "MainTheory.Generated.FinitePairDistinctness.pairAtId_injective",
+        "MainTheory.Generated.FiniteOrbitCertificate.directory_valid",
+        "MainTheory.SupplementarySectorCounts.pair_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "05da8665fa9f6d0fed75bba0e74fcb92c47db930bd405a4fad78368462ebdbf7"
+    }
+  ],
+  "scope": "partial current prose only"
+}

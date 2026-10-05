@@ -7,7 +7,7 @@ are separate checks. Partial entries list related declarations and the uncovered
 Unreviewed entries have no accepted correspondence; a missing correspondence is not
 by itself evidence that no proof exists. Conjectures are not proved results.
 
-Named environments: 161. conjecture=1, covered=145, expository=5, unreviewed=10
+Named environments: 161. conjecture=1, covered=148, expository=5, unreviewed=7
 
 To regenerate: `python tools/named_results_doc.py --paper-version 20261003`.
 
@@ -1893,26 +1893,58 @@ theorem, line 16087.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The listed manuscript orbit numbers all fail to admit an exact completion.  paperOrbitId_injective is what makes the count of listed numbers a count of distinct orbits.
 
-### `supplementary.tex:cor:m2-eleven-remaining` — unreviewed
+### `supplementary.tex:cor:m2-eleven-remaining` — covered
 
 corollary, line 16108.
 
+- `MainTheory.SupplementaryOrderTwoReduction.order_two_count`
+- `MainTheory.SupplementaryOrderTwoReduction.order_two_partition`
+- `MainTheory.SupplementaryOrderTwoReduction.exact_reduction`
+- `MainTheory.SupplementaryOrderTwoReduction.excluded_no_completion`
+- `MainTheory.SupplementaryOrderTwoReduction.image_scope`
+- `MainTheory.SupplementaryImageStatus.provedImages_eq`
 
-_No review recorded._
+20261005 sector table/physical formula type review: The actual directory has 25 logical-order-two keys, and the explicit 14 excluded paper ids and 11 retained ids partition them. Exact HasCompletion is equivalent to membership in the printed eleven-id set under the actual logical-order-two hypothesis. Of those eleven, the updated proved-image set intersects in the nine printed settled ids 2,3,10,11,16,21,22,23,45; its complement is precisely 1 and 4. The existence classification is not substituted for an unknown weight-enumerator image converse.
 
-### `supplementary.tex:tab:angle-record-counts` — unreviewed
+### `supplementary.tex:tab:angle-record-counts` — covered
 
 table, line 16133.
 
+- `MainTheory.SupplementarySectorCounts.angleRow`
+- `MainTheory.SupplementarySectorCounts.angle_table`
+- `MainTheory.SupplementarySectorCounts.angle_totals`
+- `MainTheory.SupplementarySectorCountBase.recordSector`
+- `MainTheory.SupplementarySectorCountBase.selectedRecords_eq_list`
+- `MainTheory.SupplementarySectorCountBase.recordCount_eq_list`
+- `MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete`
+- `MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete`
+- `MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete`
 
-_No review recorded._
+20261005 sector table/physical formula type review: Compared all fourteen (q,m) rows, delta=q/m, and all six total columns. The raw, primitive and nonempty counts use the exact outer enumeration. Every subsequent count is the cardinality of the actual surviving record set filtered by its actual generated record q/m fields. Kernel membership and no-repetition proofs, together with the already proved total cardinalities, establish completeness of the smaller witness lists. Duplicated angle records are retained; no copied per-sector Python count replaces the semantic record count.
 
-### `supplementary.tex:tab:fiber-pair-counts` — unreviewed
+### `supplementary.tex:tab:fiber-pair-counts` — covered
 
 table, line 16167.
 
+- `MainTheory.SupplementarySectorCounts.pairRow`
+- `MainTheory.SupplementarySectorCounts.pair_table`
+- `MainTheory.SupplementarySectorCounts.pair_totals`
+- `MainTheory.SupplementarySectorCounts.orbitCount`
+- `MainTheory.SupplementarySectorCountBase.pairCount`
+- `MainTheory.SupplementarySectorCountBase.pairCount_eq_list`
+- `MainTheory.SupplementarySectorCountBase.allPairCount_eq_interval`
+- `MainTheory.Generated.SupplementarySectorHeaders.header_spec`
+- `MainTheory.Generated.SupplementarySectorWitnesses.coarsePairs_source`
+- `MainTheory.Generated.SupplementarySectorWitnesses.feasiblePairs_source`
+- `MainTheory.Generated.SupplementarySectorWitnesses.compatiblePairs_source`
+- `MainTheory.Generated.SupplementarySectorWitnesses.coarsePairs_nodup`
+- `MainTheory.Generated.SupplementarySectorWitnesses.feasiblePairs_nodup`
+- `MainTheory.Generated.SupplementarySectorWitnesses.compatiblePairs_nodup`
+- `MainTheory.Generated.FinitePairProvenance.validity`
+- `MainTheory.Generated.FinitePairDistinctness.pairAtId_injective`
+- `MainTheory.Generated.FiniteOrbitCertificate.directory_valid`
 
-_No review recorded._
+20261005 sector table/physical formula type review: Compared all fourteen (q,m) rows and all five total columns. Counts refer to sets of actual full fibre-pair payloads. Exact provenance supplies both directions and an injective lookup proves distinct pair indices carry distinct payloads. Stage id lists are connected exactly to the original coarse/moment/rank lists and proved to have no repetitions. All 11422 actual q/m headers are independently checked in bounded kernel decisions; sector intervals then give the nonempty pair counts. Orbit counts read q AND m from the actual complete and pairwise-inequivalent 66-key directory; this is distinct from the main table grouped only by logical order m.
 
 ## Scope
 

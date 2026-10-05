@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-05",
+  "status": "proof_accepted_publication_pending",
+  "last_accepted_public_proof_snapshot": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
+  "new_modules": [
+    "MainTheory.SupplementarySectorCountBase",
+    "MainTheory.Generated.SupplementarySectorWitnesses",
+    "MainTheory.Generated.SupplementarySectorHeaders",
+    "MainTheory.SupplementarySectorCounts",
+    "MainTheory.SupplementaryOrderTwoReduction",
+    "MainTheory.Generated.SupplementarySectorHeaderCertificate",
+    "MainTheory.Orbit3PrintedSpinTrace",
+    "MainTheory.Orbit26PrintedProbabilities",
+    "MainTheory.Orbit26PrintedMoments"
+  ],
+  "scope": "New sector-table and order-two-remainder bridges require strict compilation, type review, full content-validated build, and transitive axiom audit before acceptance.",
+  "strict_per_module_compilation": "PASS",
+  "kernel_type_inspection": {
+    "status": "PASS",
+    "declarations": 3108,
+    "record": "kernel-types-moment-rank.json"
+  },
+  "whole_build": "PASS",
+  "axiom_audit": "PASS",
+  "current_claim_status_counts": {
+    "covered": 1473,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 348
+  },
+  "proof_acceptance": "proof-acceptance-15951.json"
+}

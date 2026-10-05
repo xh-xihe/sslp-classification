@@ -1,0 +1,9 @@
+{
+  "command": [
+    "python",
+    "tools/verification/generate_orbit26_printed_moments.py",
+    "--check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.2866228999919258
+}

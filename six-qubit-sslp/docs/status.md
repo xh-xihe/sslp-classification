@@ -16,17 +16,20 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current complete local source snapshot passes the whole build: **15,942 modules**,
-with ten rebuilt and 15,932 content-validated cached modules. Its fresh
-transitive audit passes **4,217 roots**, using only `propext`, `Classical.choice`
+The complete local proof snapshot passes the whole build: **15,951 modules**,
+with three rebuilt and 15,948 content-validated cached modules. Its fresh
+transitive audit passes **4,471 roots**, using only `propext`, `Classical.choice`
 and `Quot.sound`. The current source, declaration-name and navigation gates
 also pass. The unchanged 10,085 generated-source bindings and all 66 orbit rows
 passed in the preceding current-source verification. The scoped proof acceptance
-is recorded in [proof-acceptance-15942.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15942.json).
-The current proof snapshot is published on the canonical branch in
+is recorded in [proof-acceptance-15951.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15951.json).
+The preceding accepted proof snapshot is published on the canonical branch in
 [`d8c38263`](https://github.com/xh-xihe/dyadic-lifts/commit/d8c382635cbd8c569f0a76ac1b47a85d3511cfdf).
 The [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-15942.json)
-checks all 15,942 proof sources against the accepted local snapshot. The
+checks all 15,942 proof sources against the accepted local snapshot.
+The accepted 15,951-module snapshot is awaiting canonical publication, as
+recorded in [run.json](../artifacts/manuscript-certification-20261005/run.json).
+The
 machine-readable current status is
 [repository-status.json](../results/repository-status.json).
 
@@ -58,13 +61,13 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-Another 1,453 roots now enter the shared audit through
+Another 1,707 roots now enter the shared audit through
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and the newly checked physical bridges.
 
-The current ledger has **1,467 covered assertions**, five scope-only statements,
-three stated conjectures, **354 unreviewed SI assertions**, and one explicitly
-partial main-text Singleton assertion. Kernel type inspection covers 2,853
+The current ledger has **1,473 covered assertions**, five scope-only statements,
+three stated conjectures, **348 unreviewed SI assertions**, and one explicitly
+partial main-text Singleton assertion. Kernel type inspection covers 3,108
 named declarations. The new proofs include the actual cat isometry and
 six-qubit tensor encoder, its compressions, the closed parameter path, the
 literal binary encoding, the orbit-three `DE`/`iDE` expectation identities,
@@ -75,12 +78,16 @@ its physical projector-trace coefficients and A1/A2 formulas, spin-flip
 orthogonality, and weight-three/six logical actions. Both printed split
 matrices have isometry, projector and logical-action proofs. The orbit-three
 target identity retains the arbitrary positive common column norm.
-The remaining SI assertions include intermediate derivations and the detailed
-count tables; final image/no-go results do not automatically certify them.
+Both detailed count tables now have proofs for every row and total, using
+actual angle-record sets, distinct full fibre-pair payloads and orbit keys.
+The new bridges also cover the order-two 25-to-11 reduction, the actual
+orbit-three spin trace, and orbit-26 physical probabilities and rational rank.
+The remaining SI assertions include intermediate derivations; final image/no-go
+results do not automatically certify them.
 The [remaining-obligation inventory](../artifacts/manuscript-certification-20261005/remaining-obligations.json)
 gives every unfinished statement's current locator. These locators denote
 pending reviews, not findings that the corresponding mathematics is false.
-The [prose review](../results/prose-review-20261003.md) is partial: five SI
+The [prose review](../results/prose-review-20261003.md) is partial: nine SI
 blocks have current type/context evidence and the five frozen main issues
 remain explicit gaps. Other running text still requires review.
 

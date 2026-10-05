@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "scope": "Untrusted rational row-combination candidates; all output identities are checked in Lean.",
+  "source_bindings_sha256_lf": {
+    "tools/verification/generate_orbit26_printed_moments.py": "6d672b31d27162d61151bab6e516cf0c6b225d6836fd54e9f405522b76155a80",
+    "MainTheory/Orbit26PrintedMoments.lean": "890d5c7bd8705847837099fb293586a6e2849e8d191bfa8889f81878b239657d"
+  },
+  "strict_single_module_compilation": "PASS",
+  "whole_build": "PASS_snapshot_15951"
+}

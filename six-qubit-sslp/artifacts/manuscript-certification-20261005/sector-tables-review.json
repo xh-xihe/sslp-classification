@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:o3gc:spinzero",
+      "statement_sha256": "f60fd4d495cfc89eedf85a117cfafe3dae57a9f686902e0505973e2e97f1b7bf",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedSpinTrace.bilinear",
+        "MainTheory.Orbit3PrintedSpinTrace.bilinear_eq",
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_symmetric",
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_diagonal_zero",
+        "MainTheory.Orbit3PrintedSpinTrace.trace_formula",
+        "MainTheory.Orbit3PrintedSpinTrace.sqrt_two_spin",
+        "MainTheory.Orbit3PrintedSpinTrace.bilinear_normalized",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_parity",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_spin",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_trace",
+        "MainTheory.Orbit8SpinProjector.spin_conjugate_action"
+      ],
+      "review": "20261005 sector table/physical formula type review: The bilinear is the actual six-site Y tensor with no conjugation on the left state, including the Hermitian-Pauli sign. The actual odd parity involution kills both same-parity terms, and symmetry equates the two mixed terms. The sqrt-two superposition therefore has s(w)=u^T S v. The normalized actual projector and its spin conjugate have trace 2*normSq(u^T S v)/N^2 for arbitrary positive common norm N. No individual amplitude is divided out; the operator identity does not use the final A3-vanishing theorem."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26weights",
+      "statement_sha256": "4540917502d5757f9f319e3e382550394e336391ef993e7bad6eb2eb1abce296",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PrintedProbabilities.P",
+        "MainTheory.Orbit26PrintedProbabilities.Q",
+        "MainTheory.Orbit26PrintedProbabilities.bottom_native",
+        "MainTheory.Orbit26PrintedProbabilities.top_native",
+        "MainTheory.Orbit26PrintedProbabilities.physical_probabilities",
+        "MainTheory.OrderFour26Moments.pattern"
+      ],
+      "review": "20261005 sector table/physical formula type review: All eight aggregate probabilities of the actual supported codewords have the literal two-parameter pattern under normalized physical KL. The bottom/top ordering is kernel-checked against the native physical fibres; alpha=P3 and beta=P5 are retained in the printed order. The derivation uses the physical diagonal moment equations, rather than the final no-code conclusion, and permits every zero-amplitude face."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26paritysums",
+      "statement_sha256": "59c1a310f2f54515b4ce4de74c1a2b0e5fa95c452884a8825c8112985f063e1d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PrintedProbabilities.physical_parity_sums",
+        "MainTheory.Orbit26PrintedProbabilities.physical_probabilities"
+      ],
+      "review": "20261005 sector table/physical formula type review: Both displayed aggregate parity sums are 3/8 for the actual supported complex codewords. They follow directly from the physical moment normal form, with the same normalization and KL hypotheses."
+    },
+    {
+      "id": "supplementary.tex:cor:m2-eleven-remaining",
+      "statement_sha256": "e6e8cb1daea1ea1f13660b708d41ca667d3aa4693153d38c2b299296835eabe9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.SupplementaryOrderTwoReduction.order_two_count",
+        "MainTheory.SupplementaryOrderTwoReduction.order_two_partition",
+        "MainTheory.SupplementaryOrderTwoReduction.exact_reduction",
+        "MainTheory.SupplementaryOrderTwoReduction.excluded_no_completion",
+        "MainTheory.SupplementaryOrderTwoReduction.image_scope",
+        "MainTheory.SupplementaryImageStatus.provedImages_eq"
+      ],
+      "review": "20261005 sector table/physical formula type review: The actual directory has 25 logical-order-two keys, and the explicit 14 excluded paper ids and 11 retained ids partition them. Exact HasCompletion is equivalent to membership in the printed eleven-id set under the actual logical-order-two hypothesis. Of those eleven, the updated proved-image set intersects in the nine printed settled ids 2,3,10,11,16,21,22,23,45; its complement is precisely 1 and 4. The existence classification is not substituted for an unknown weight-enumerator image converse."
+    },
+    {
+      "id": "supplementary.tex:eq:m2-eleven-remaining",
+      "statement_sha256": "25366a41f6a9c6478e61620dc58e5b37cce335e3dbb7d6936c68fb42690902ab",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.SupplementaryOrderTwoReduction.order_two_count",
+        "MainTheory.SupplementaryOrderTwoReduction.order_two_partition",
+        "MainTheory.SupplementaryOrderTwoReduction.exact_reduction",
+        "MainTheory.SupplementaryOrderTwoReduction.excluded_no_completion",
+        "MainTheory.SupplementaryOrderTwoReduction.image_scope",
+        "MainTheory.SupplementaryImageStatus.provedImages_eq"
+      ],
+      "review": "20261005 sector table/physical formula type review: The actual directory has 25 logical-order-two keys, and the explicit 14 excluded paper ids and 11 retained ids partition them. Exact HasCompletion is equivalent to membership in the printed eleven-id set under the actual logical-order-two hypothesis. Of those eleven, the updated proved-image set intersects in the nine printed settled ids 2,3,10,11,16,21,22,23,45; its complement is precisely 1 and 4. The existence classification is not substituted for an unknown weight-enumerator image converse."
+    },
+    {
+      "id": "supplementary.tex:tab:angle-record-counts",
+      "statement_sha256": "a4cedf0d0f3e8777dc322f41117d4327dbfae8434aee7e157e80218ecbcb31b7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.SupplementarySectorCounts.angleRow",
+        "MainTheory.SupplementarySectorCounts.angle_table",
+        "MainTheory.SupplementarySectorCounts.angle_totals",
+        "MainTheory.SupplementarySectorCountBase.recordSector",
+        "MainTheory.SupplementarySectorCountBase.selectedRecords_eq_list",
+        "MainTheory.SupplementarySectorCountBase.recordCount_eq_list",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete"
+      ],
+      "review": "20261005 sector table/physical formula type review: Compared all fourteen (q,m) rows, delta=q/m, and all six total columns. The raw, primitive and nonempty counts use the exact outer enumeration. Every subsequent count is the cardinality of the actual surviving record set filtered by its actual generated record q/m fields. Kernel membership and no-repetition proofs, together with the already proved total cardinalities, establish completeness of the smaller witness lists. Duplicated angle records are retained; no copied per-sector Python count replaces the semantic record count."
+    },
+    {
+      "id": "supplementary.tex:tab:fiber-pair-counts",
+      "statement_sha256": "f361715c63d014d7d9f13499b30adf1d6d49ae4e03dc56003fd86c537964c57b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.SupplementarySectorCounts.pairRow",
+        "MainTheory.SupplementarySectorCounts.pair_table",
+        "MainTheory.SupplementarySectorCounts.pair_totals",
+        "MainTheory.SupplementarySectorCounts.orbitCount",
+        "MainTheory.SupplementarySectorCountBase.pairCount",
+        "MainTheory.SupplementarySectorCountBase.pairCount_eq_list",
+        "MainTheory.SupplementarySectorCountBase.allPairCount_eq_interval",
+        "MainTheory.Generated.SupplementarySectorHeaders.header_spec",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarsePairs_source",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasiblePairs_source",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatiblePairs_source",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarsePairs_nodup",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasiblePairs_nodup",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatiblePairs_nodup",
+        "MainTheory.Generated.FinitePairProvenance.validity",
+        "MainTheory.Generated.FinitePairDistinctness.pairAtId_injective",
+        "MainTheory.Generated.FiniteOrbitCertificate.directory_valid"
+      ],
+      "review": "20261005 sector table/physical formula type review: Compared all fourteen (q,m) rows and all five total columns. Counts refer to sets of actual full fibre-pair payloads. Exact provenance supplies both directions and an injective lookup proves distinct pair indices carry distinct payloads. Stage id lists are connected exactly to the original coarse/moment/rank lists and proved to have no repetitions. All 11422 actual q/m headers are independently checked in bounded kernel decisions; sector intervals then give the nonempty pair counts. Orbit counts read q AND m from the actual complete and pairwise-inequivalent 66-key directory; this is distinct from the main table grouped only by logical order m."
+    }
+  ]
+}

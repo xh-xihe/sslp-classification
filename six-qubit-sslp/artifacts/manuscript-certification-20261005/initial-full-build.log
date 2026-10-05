@@ -1,0 +1,15 @@
+Serial plan: 15928 modules; 4 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[15871/15928] BUILD MainTheory.Orbit3PrintedAmplitudes
+[15875/15928] BUILD MainTheory.Orbit3PrintedScalarConsequences
+[15881/15928] BUILD MainTheory.PrimitiveOrderTwoCatAlgebra
+[15882/15928] BUILD MainTheory.PrimitiveOrderTwoCatCompression
+FAIL: MainTheory.PrimitiveOrderTwoCatCompression failed, exit=1; old outputs preserved; log=D:\UTD\Project_purdue\Lean_certification\.lake\build\certification\logs\MainTheory\PrimitiveOrderTwoCatCompression.log

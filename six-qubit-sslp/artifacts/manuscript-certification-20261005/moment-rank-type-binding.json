@@ -1,0 +1,30 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-moment-rank.json",
+  "type_evidence_sha256": "22a62947dfadf9c401c625382e1b0c703b544beb99818fa8b21b2f04254cd325",
+  "reviewed_prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 10743,
+      "end_line": 10745,
+      "kind": "covered",
+      "reason": "The literal two-normalization, five-first-moment and ten-second-moment matrix is checked against the actual bottom/top tail-bit coordinates. Its rational kernel is linearly equivalent to two free parameters; rank-nullity therefore proves rank fourteen. An independent affine equivalence proves that every rational solution, and only those solutions, has the printed two-parameter form. Physical real probabilities are connected separately by physical_probabilities; they are not assumed to be rational.",
+      "declarations": [
+        "MainTheory.Orbit26PrintedMoments.actual",
+        "MainTheory.Orbit26PrintedMoments.rows",
+        "MainTheory.Orbit26PrintedMoments.actual_rows",
+        "MainTheory.Orbit26PrintedMoments.M",
+        "MainTheory.Orbit26PrintedMoments.kernel_iff",
+        "MainTheory.Orbit26PrintedMoments.affine_iff",
+        "MainTheory.Orbit26PrintedMoments.kernel_dimension",
+        "MainTheory.Orbit26PrintedMoments.rank_fourteen"
+      ],
+      "origin": "20261005 explicit literal matrix/rank context and kernel type review",
+      "context_sha256_lf": "40bec92b1bd9ae5c76bb22854edc1a089cb00b938dfa40299d24f6f81f99d989"
+    }
+  ],
+  "scope": "partial current manuscript correspondence"
+}

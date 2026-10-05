@@ -8,21 +8,20 @@
   "scope": "Current unfinished semantic correspondence; compiled final results do not discharge intermediate statements.",
   "claim_status_counts": {
     "conjecture": 3,
-    "covered": 1467,
+    "covered": 1473,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 354
+    "unreviewed": 348
   },
   "pending_by_source_section": {
     "main.tex:2": 1,
     "supplementary.tex:10": 3,
-    "supplementary.tex:12": 9,
+    "supplementary.tex:12": 8,
     "supplementary.tex:13": 26,
     "supplementary.tex:21": 28,
-    "supplementary.tex:22": 99,
+    "supplementary.tex:22": 97,
     "supplementary.tex:23": 85,
-    "supplementary.tex:24": 102,
-    "supplementary.tex:25": 2
+    "supplementary.tex:24": 101
   },
   "pending_assertions": [
     {
@@ -73,18 +72,6 @@
       "status": "unreviewed",
       "lean_declarations": [],
       "section_number": 10,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:o3gc:spinzero",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 5596,
-      "end_line": 5600,
-      "statement_sha256": "f60fd4d495cfc89eedf85a117cfafe3dae57a9f686902e0505973e2e97f1b7bf",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 12,
       "work_scope": "pending statement/context/type review; not a finding of falsehood"
     },
     {
@@ -850,30 +837,6 @@
       "line": 10480,
       "end_line": 10486,
       "statement_sha256": "8780c384486a217733009050b6e92b0f7588d60f95dc79632ea8a1d8ea472eef",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 22,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:q4o26weights",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 10752,
-      "end_line": 10764,
-      "statement_sha256": "4540917502d5757f9f319e3e382550394e336391ef993e7bad6eb2eb1abce296",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 22,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:q4o26paritysums",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 10782,
-      "end_line": 10789,
-      "statement_sha256": "59c1a310f2f54515b4ce4de74c1a2b0e5fa95c452884a8825c8112985f063e1d",
       "status": "unreviewed",
       "lean_declarations": [],
       "section_number": 22,
@@ -4250,47 +4213,11 @@
       "lean_declarations": [],
       "section_number": 24,
       "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:cor:m2-eleven-remaining",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "corollary",
-      "line": 16108,
-      "end_line": 16121,
-      "statement_sha256": "e6e8cb1daea1ea1f13660b708d41ca667d3aa4693153d38c2b299296835eabe9",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:tab:angle-record-counts",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "table",
-      "line": 16133,
-      "end_line": 16162,
-      "statement_sha256": "a4cedf0d0f3e8777dc322f41117d4327dbfae8434aee7e157e80218ecbcb31b7",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 25,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:tab:fiber-pair-counts",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "table",
-      "line": 16167,
-      "end_line": 16197,
-      "statement_sha256": "f361715c63d014d7d9f13499b30adf1d6d49ae4e03dc56003fd86c537964c57b",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 25,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
     }
   ],
   "prose_review": {
     "status": "partial",
-    "reviewed_blocks": 10,
+    "reviewed_blocks": 14,
     "record": "results/prose-review-20261003.json"
   },
   "held_main_errata": "notes/main-errata-hold-20261003.md",

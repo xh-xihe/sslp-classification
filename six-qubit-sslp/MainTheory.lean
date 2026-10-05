@@ -1,4 +1,5 @@
 import MainTheory.Rationalize
+import MainTheory.ManuscriptCertificationAudit20261005
 import MainTheory.TransversalFixedBasis
 import MainTheory.CodePreservingUnitary
 import MainTheory.ProjectorCompression
