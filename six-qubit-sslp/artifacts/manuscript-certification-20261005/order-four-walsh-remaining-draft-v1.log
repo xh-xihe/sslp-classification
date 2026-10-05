@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderFourWalshRemainingDisplays.lean:52:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((algebraMap ℚ ℂ).mapMatrix ?M).det
+in the target expression
+  (fun x => ↑x) W.det = (fun x => ↑x) (-128)
+
+he : (fun x => ↑x) W.det = (fun x => ↑x) (-128)
+⊢ WC.det = -128

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit33ProjectorArgument.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 15.504111799993552
+}

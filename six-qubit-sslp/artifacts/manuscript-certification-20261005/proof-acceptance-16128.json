@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Whole current local Lean proof-source snapshot; manuscript correspondence remains incomplete.",
+  "active_modules": 16128,
+  "axiom_roots": 8189,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1658,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 163
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 1,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16128.json",
+      "sha256": "93dea58bd2c16465810642089af6503daef44e5a166d96deeb9a930403caa1c2"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-8189.json",
+      "sha256": "911cda745d3e64472398936c583ccfdd4d96c4a791e932b82f8354911799aca8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-full-build-v2.log",
+      "sha256": "3ae80fc303e958ce137bf37f556227b0642b3dfe764c1a8fe6eff5fcee6d6e7d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-full-build-v2-exit.json",
+      "sha256": "3506ed0b929750b6e756d93d8f136872c01f3aabc690d81f3f71b7541020ef1a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-axioms-v2.log",
+      "sha256": "31e64ca59bbb55bfac7710b0b90e51737f48e8e21d62b278a005ea29cb1acc84"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-axioms-v2-exit.json",
+      "sha256": "c8249e52c5165a9f532af60d97eca51ed3eac45a0eb02cd7f27ffca94a1ed597"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-generation-v2.json",
+      "sha256": "6abe3cea5b14cd5dfbc00bb871ba9990d0db108ef792cf37baeb209a765773de"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-reproduction-check-v2.log",
+      "sha256": "ceb520b552f87d65aed56b9c1d203cd06417e362cbc2de7a31d69a32d55b9b95"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-reproduction-check-v2-exit.json",
+      "sha256": "9f6e63bddd97e808a57a3f2365a4947ae04f0fc90347ef78e3b07e5d58bb9310"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-correspondence-gates-report.json",
+      "sha256": "ec95bf0109617e77e97e28f0141b34ebbc1cd0c0f851337a9c95dfff525b14e7"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit31-completion-type-binding.json",
+      "sha256": "4c6cedea7907d3e114a1084b45fda9534d049169281186dcf79e44ee23c89a44"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit33-completion-type-binding.json",
+      "sha256": "80ce318445a9539e3d9fc9e33f27300718c384573c0d5a480331fde33c97c8a5"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-four-five-remaining-type-binding.json",
+      "sha256": "fd966bc5f7f447cd4ec902c79e5d3764fb8725b388a6230a4eb49bbc285b2c57"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-three-printed-type-binding.json",
+      "sha256": "85294c7c77aa7990918117be03f4b80f7092b04c66b263c41d3f5011133ea05d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-two-printed-type-binding.json",
+      "sha256": "5f2d7fa5434c32edd5eaf33386ee5b02a392289b88c987f70984ed6de04b9615"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit45-physical-type-binding.json",
+      "sha256": "c3ae176c038d9dd474fad50f02b5cc15bb10bd9412c3ff6133ffed9df988423d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/orbit29-printed-type-binding.json",
+      "sha256": "aa8299630a33d1774c273a6611f3b2dd7f08934b235078c3c20010e45de48a79"
+    }
+  ]
+}

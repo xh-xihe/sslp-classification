@@ -1,0 +1,286 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:21:73: error: Tactic `decide` proved that the proposition
+  ∀ (e : SS.BitString 6), (SS.hammingWt e ≤ 2 → ∃ y ∈ S1, SS.bxor y e ∈ S0) ↔ e = SS.stdBasis 3 ∨ ∃ r, e = flip r
+is false
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:64:13: error: unused variable `U`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:64:17: error: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:64:22: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:64:26: error: unused variable `zeta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:71:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:71:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:71:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:71:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:73:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:73:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:69:55: error: unsolved goals
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ V *
+      (↑(Row0.W ⟨3, ⋯⟩ 0) * (↑H * (↑B * xi)) +
+        (-(↑(Row0.W ⟨3, ⋯⟩ 1) * (↑B * ↑H)) +
+          (-(↑(Row0.W ⟨3, ⋯⟩ ⟨2, ⋯⟩) * (↑B * (starRingEnd ℂ) V * ↑H)) +
+            ↑(Row0.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) * (↑H * (↑B * V * xi))))) =
+    -(↑B * ↑H * ((V + 1) * (V * xi - 1)))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:65:8: error: (kernel) declaration has metavariables 'MainTheory.Orbit45CrossFactors.Row0.substitution'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:73:23: error: This simp argument is unused:
+  star_unit V _hV
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵V̵ ̵_̵h̵V̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:134:13: error: unused variable `U`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:134:15: error: unused variable `V`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:134:17: error: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:134:19: error: unused variable `xi`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:134:22: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:141:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:141:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:141:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:141:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:139:57: error: unsolved goals
+case «0»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ ↑(Row1.W 0 0) * ↑H * ↑S * zeta + ↑H * ↑S * zeta * ↑(Row1.W 0 ⟨3, ⋯⟩) +
+      (-(↑H * ↑S * ↑(Row1.W 0 1)) - ↑H * ↑S * ↑(Row1.W 0 ⟨2, ⋯⟩)) =
+    -(↑H * ↑S * 2) + ↑H * ↑S * zeta * 2
+
+case «1»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ ↑(Row1.W 1 0) * ↑H * ↑S * zeta + ↑H * ↑S * zeta * ↑(Row1.W 1 ⟨3, ⋯⟩) +
+      (-(↑H * ↑S * ↑(Row1.W 1 1)) - ↑H * ↑S * ↑(Row1.W 1 ⟨2, ⋯⟩)) =
+    0
+
+case «2»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ ↑(Row1.W ⟨2, ⋯⟩ 0) * ↑H * ↑S * zeta + ↑H * ↑S * zeta * ↑(Row1.W ⟨2, ⋯⟩ ⟨3, ⋯⟩) +
+      (-(↑H * ↑S * ↑(Row1.W ⟨2, ⋯⟩ 1)) - ↑H * ↑S * ↑(Row1.W ⟨2, ⋯⟩ ⟨2, ⋯⟩)) =
+    0
+
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ ↑(Row1.W ⟨3, ⋯⟩ 0) * ↑H * ↑S * zeta + ↑H * ↑S * zeta * ↑(Row1.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) +
+      (-(↑H * ↑S * ↑(Row1.W ⟨3, ⋯⟩ 1)) - ↑H * ↑S * ↑(Row1.W ⟨3, ⋯⟩ ⟨2, ⋯⟩)) =
+    ↑H * ↑S * 2 - ↑H * ↑S * zeta * 2
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:202:13: error: unused variable `U`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:202:15: error: unused variable `V`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:202:19: error: unused variable `xi`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:202:26: error: unused variable `zeta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:209:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:209:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:209:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:209:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:211:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:211:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:207:55: error: unsolved goals
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ W *
+      (↑(Row2.W ⟨3, ⋯⟩ 0) * (↑H * (↑G * eta)) +
+        (-(↑(Row2.W ⟨3, ⋯⟩ 1) * (↑G * ↑H)) +
+          (-(↑(Row2.W ⟨3, ⋯⟩ ⟨2, ⋯⟩) * (↑G * (starRingEnd ℂ) W * ↑H)) +
+            ↑(Row2.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) * (↑H * (↑G * W * eta))))) =
+    ↑G * ↑H * ((W + 1) * (W * eta - 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:203:8: error: (kernel) declaration has metavariables 'MainTheory.Orbit45CrossFactors.Row2.substitution'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:211:23: error: This simp argument is unused:
+  star_unit W _hW
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵W̵ ̵_̵h̵W̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:272:17: error: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:272:22: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:272:26: error: unused variable `zeta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:279:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:279:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:279:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:279:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:281:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:281:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:277:55: error: unsolved goals
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ U * V *
+      (↑(Row3.W ⟨3, ⋯⟩ 0) * (↑H * (starRingEnd ℂ) U * (↑B * xi)) +
+        (↑(Row3.W ⟨3, ⋯⟩ 1) * (↑B * (starRingEnd ℂ) V * ↑H) +
+          (↑(Row3.W ⟨3, ⋯⟩ ⟨2, ⋯⟩) * (↑B * (↑H * U)) + ↑(Row3.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) * (↑H * (↑B * V * xi))))) =
+    -(↑B * ↑H * ((U + V * xi) * (U * V + 1)))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:273:8: error: (kernel) declaration has metavariables 'MainTheory.Orbit45CrossFactors.Row3.substitution'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:281:23: error: This simp argument is unused:
+  star_unit U _hU
+
+Hint: Omit it from the simp argument list.
+  simp only [star_unit U̵ ̵_̵h̵U̵,̵ ̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵V _hV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:281:40: error: This simp argument is unused:
+  star_unit V _hV
+
+Hint: Omit it from the simp argument list.
+  simp only [star_unit U _hU,̵ ̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵V̵ ̵_̵h̵V̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:342:15: error: unused variable `V`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:342:17: error: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:342:19: error: unused variable `xi`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:342:22: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:349:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:349:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:349:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:349:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:351:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:351:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:347:55: error: unsolved goals
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ U *
+      (↑(Row4.W ⟨3, ⋯⟩ 0) * (↑H * (starRingEnd ℂ) U * (↑S * zeta)) +
+        (↑(Row4.W ⟨3, ⋯⟩ 1) * (↑S * ↑H) +
+          (↑(Row4.W ⟨3, ⋯⟩ ⟨2, ⋯⟩) * (↑S * (↑H * U)) + ↑(Row4.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) * (↑H * (↑S * zeta))))) =
+    -(↑S * ↑H * ((U + 1) * (U + zeta)))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:343:8: error: (kernel) declaration has metavariables 'MainTheory.Orbit45CrossFactors.Row4.substitution'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:351:23: error: This simp argument is unused:
+  star_unit U _hU
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵U̵ ̵_̵h̵U̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:412:15: error: unused variable `V`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:412:19: error: unused variable `xi`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:412:26: error: unused variable `zeta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:419:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:419:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:419:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:419:17: error: Invalid argument: Variable `W` is not a proposition or let-declaration
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:421:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:421:12: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:417:55: error: unsolved goals
+case «3»
+B G S H : ℝ
+U V W xi eta zeta : ℂ
+_hU : Complex.normSq U = 1
+_hV : Complex.normSq V = 1
+_hW : Complex.normSq W = 1
+⊢ U * W *
+      (↑(Row5.W ⟨3, ⋯⟩ 0) * (↑H * (starRingEnd ℂ) U * (↑G * eta)) +
+        (↑(Row5.W ⟨3, ⋯⟩ 1) * (↑G * (starRingEnd ℂ) W * ↑H) +
+          (↑(Row5.W ⟨3, ⋯⟩ ⟨2, ⋯⟩) * (↑G * (↑H * U)) + ↑(Row5.W ⟨3, ⋯⟩ ⟨3, ⋯⟩) * (↑H * (↑G * W * eta))))) =
+    ↑G * ↑H * ((U + W * eta) * (U * W + 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:413:8: error: (kernel) declaration has metavariables 'MainTheory.Orbit45CrossFactors.Row5.substitution'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:421:23: error: This simp argument is unused:
+  star_unit U _hU
+
+Hint: Omit it from the simp argument list.
+  simp only [star_unit U̵ ̵_̵h̵U̵,̵ ̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵W _hW]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:421:40: error: This simp argument is unused:
+  star_unit W _hW
+
+Hint: Omit it from the simp argument list.
+  simp only [star_unit U _hU,̵ ̵s̵t̵a̵r̵_̵u̵n̵i̵t̵ ̵W̵ ̵_̵h̵W̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

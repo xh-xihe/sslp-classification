@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Generated/Orbit31DirectTriangles/Type03.olean",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type03.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 1.1463137999526225
+}

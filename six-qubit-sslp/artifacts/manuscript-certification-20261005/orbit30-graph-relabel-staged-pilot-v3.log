@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:47:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  (Multiset.map (fun x => z (relabelEdge f x.1) * z (relabelEdge f x.2)) ↑(matchingRows i)).sum =
+    Orbit30ProperGraphTables.hafnian z (f i)
+but is expected to have type
+  Orbit30ProperGraphTables.hafnian (fun e => z (relabelEdge f e)) i = Orbit30ProperGraphTables.hafnian z (f i)

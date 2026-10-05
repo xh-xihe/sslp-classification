@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    "tmp/manuscript-publication-20261005/drafts/Orbit31FinalQuotients.olean",
+    "tmp/manuscript-publication-20261005/drafts/Orbit31FinalQuotients.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 14.75986540003214
+}

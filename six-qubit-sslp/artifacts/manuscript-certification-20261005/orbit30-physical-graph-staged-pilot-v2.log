@@ -1,0 +1,60 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:18:37: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:18:40: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:18:43: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:18:47: error(lean.unknownIdentifier): Unknown identifier `hnd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:18:51: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:29:30: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:29:33: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:29:36: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:33:34: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:33:37: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:33:40: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:33:44: error(lean.unknownIdentifier): Unknown identifier `hnd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:33:48: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:33: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:35: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:38: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:41: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:45: error(lean.unknownIdentifier): Unknown identifier `hnd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:41:49: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:29: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:31: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:34: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:37: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:41: error(lean.unknownIdentifier): Unknown identifier `hnd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:42:45: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:43:21: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:47:21: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:49:31: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:52:20: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:52:47: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:53:32: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:53:34: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:53:37: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:53:40: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:51:68: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:51:70: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:51:73: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:65:23: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:38: error(lean.unknownIdentifier): Unknown identifier `d`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:40: error(lean.unknownIdentifier): Unknown identifier `hc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:43: error(lean.unknownIdentifier): Unknown identifier `hd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:46: error(lean.unknownIdentifier): Unknown identifier `hnc`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:50: error(lean.unknownIdentifier): Unknown identifier `hnd`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:70:54: error(lean.unknownIdentifier): Unknown identifier `hkl`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:79:26: error: Application type mismatch: The argument
+  d
+has type
+  SS.State 6 ℂ
+but is expected to have type
+  Fin 5
+in the application
+  degree_norm c d
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:83:30: error: Application type mismatch: The argument
+  d
+has type
+  SS.State 6 ℂ
+but is expected to have type
+  Fin 5
+in the application
+  bilinear_erase_row c d

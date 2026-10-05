@@ -1,0 +1,14 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderFourWalshRemainingDisplays.lean:103:88: error: unsolved goals
+case a.isTrue
+i j k : Fin 6
+h✝ : SS.bdot (characters i j) (sources i k) = true
+⊢ -1 = ↑(if SS.bdot (characters ?a.i✝ j) (sources ?a.i✝ k) = true then -1 else 1)
+
+case a.isFalse
+i j k : Fin 6
+h✝ : ¬SS.bdot (characters i j) (sources i k) = true
+⊢ 1 = ↑(if SS.bdot (characters ?a.i✝ j) (sources ?a.i✝ k) = true then -1 else 1)
+
+case a.i
+i j k : Fin 6
+⊢ Fin 6

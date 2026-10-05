@@ -1,0 +1,142 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:498:57: error: unsolved goals
+case refine_1.h.«0»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) xi + 1 = 0 ∨ (starRingEnd ℂ) xi * xi - 1 = 0
+
+case refine_1.h.«1»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) xi - 1 = 0 ∨ (starRingEnd ℂ) xi * xi - 1 = 0
+
+case refine_1.h.«2»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) xi - 1 = 0 ∨ (starRingEnd ℂ) xi * xi - 1 = 0
+
+case refine_1.h.«3»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) xi + 1 = 0 ∨ (starRingEnd ℂ) xi * xi - 1 = 0
+
+case refine_3.h.«0»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) eta + 1 = 0 ∨ (starRingEnd ℂ) eta * eta - 1 = 0
+
+case refine_3.h.«1»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) eta - 1 = 0 ∨ (starRingEnd ℂ) eta * eta - 1 = 0
+
+case refine_3.h.«2»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) eta - 1 = 0 ∨ (starRingEnd ℂ) eta * eta - 1 = 0
+
+case refine_3.h.«3»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ (starRingEnd ℂ) eta + 1 = 0 ∨ (starRingEnd ℂ) eta * eta - 1 = 0
+
+case refine_4.h.«0»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) xi * xi = 0 ∨ -(starRingEnd ℂ) xi + 1 = 0
+
+case refine_4.h.«1»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) xi * xi = 0 ∨ -(starRingEnd ℂ) xi - 1 = 0
+
+case refine_4.h.«2»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) xi * xi = 0 ∨ -(starRingEnd ℂ) xi - 1 = 0
+
+case refine_4.h.«3»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) xi * xi = 0 ∨ -(starRingEnd ℂ) xi + 1 = 0
+
+case refine_6.h.«0»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) eta * eta = 0 ∨ -(starRingEnd ℂ) eta + 1 = 0
+
+case refine_6.h.«1»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) eta * eta = 0 ∨ -(starRingEnd ℂ) eta - 1 = 0
+
+case refine_6.h.«2»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) eta * eta = 0 ∨ -(starRingEnd ℂ) eta - 1 = 0
+
+case refine_6.h.«3»
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : star xi * xi = 1
+he : star eta * eta = 1
+⊢ -1 + (starRingEnd ℂ) eta * eta = 0 ∨ -(starRingEnd ℂ) eta + 1 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:502:88: error: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp [Row0.factors, ̲Row1.factors, ̲Row2.factors, ̲Row3.factors, ̲Row4.factors, ̲Row5.factors, ̲hx̵,̵h̵e]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:502:91: error: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  simp [Row0.factors, ̲Row1.factors, ̲Row2.factors, ̲Row3.factors, ̲Row4.factors, ̲Row5.factors, ̲hx,̵h̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

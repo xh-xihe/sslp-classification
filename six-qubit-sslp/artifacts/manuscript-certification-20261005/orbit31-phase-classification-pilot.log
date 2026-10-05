@@ -1,0 +1,7 @@
+MainTheory/Orbit31PhaseClassification.lean:49:45: error: Function expected at
+  List.filter_sublist
+but this term has type
+  (List.filter ?m.19 ?m.20).Sublist ?m.20
+
+Note: Expected a function because this term is being applied to the argument
+  _

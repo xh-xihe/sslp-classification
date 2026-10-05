@@ -1,0 +1,36 @@
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:371:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:389:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:398:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:416:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:425:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:443:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:452:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:470:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:479:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:497:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:506:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:524:6: error: 'norm_num at hc' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

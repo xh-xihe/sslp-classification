@@ -1,0 +1,30 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:77:110: error: unsolved goals
+case left.h.«2»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : (starRingEnd ℂ) xi * xi = 1
+he : (starRingEnd ℂ) eta * eta = 1
+⊢ ↑G * ↑B + ↑G * ↑B * (starRingEnd ℂ) xi * eta = ↑G * ↑B * (starRingEnd ℂ) xi * eta + ↑G * ↑B * (starRingEnd ℂ) xi * xi
+
+case right.h.«2»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+hx : (starRingEnd ℂ) xi * xi = 1
+he : (starRingEnd ℂ) eta * eta = 1
+⊢ ↑G * eta * ↑B * (starRingEnd ℂ) xi + ↑G * ↑B = ↑G * eta * ↑B * (starRingEnd ℂ) xi + ↑G * ↑B * (starRingEnd ℂ) xi * xi

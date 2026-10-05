@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31PhaseRatios.olean",
+    "MainTheory/Orbit31PhaseRatios.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 15.437546100001782
+}

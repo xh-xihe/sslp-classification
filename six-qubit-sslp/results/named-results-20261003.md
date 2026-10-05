@@ -7,7 +7,7 @@ are separate checks. Partial entries list related declarations and the uncovered
 Unreviewed entries have no accepted correspondence; a missing correspondence is not
 by itself evidence that no proof exists. Conjectures are not proved results.
 
-Named environments: 161. conjecture=1, covered=148, expository=5, unreviewed=7
+Named environments: 161. conjecture=1, covered=152, expository=5, unreviewed=3
 
 To regenerate: `python tools/named_results_doc.py --paper-version 20261003`.
 
@@ -1429,22 +1429,44 @@ proposition, line 11280.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Same three levels. HYPOTHESIS GAP: None, and notably the reduced support is derived rather than assumed. The manuscript's actual supports T_0, T_1 (six strings each) are a proper subset of the sixteen-element residue fibres; the Lean hypothesis is the full fibre pair (c vanishes off the 16-element S0), and `MomentSystem.tops_zero` proves the six vanishing endpoint probabilities from the moment equations plus nonnegativity. So the Lean hypothesis is weaker than the manuscript's displayed support, not stronger.
 
-### `supplementary.tex:tab:q4o29faces` — unreviewed
+### `supplementary.tex:tab:q4o29faces` — covered
 
 table, line 11364.
 
+- `MainTheory.Orbit29PrintedFaceAudit.fifteen_masks`
+- `MainTheory.Orbit29PrintedFaceAudit.literal_counts`
+- `MainTheory.Orbit29PrintedFaceAudit.dimension_support`
+- `MainTheory.Orbit29PrintedFaceAudit.bit_overlap`
+- `MainTheory.Orbit29PrintedFaceAudit.vertex_positive_iff`
+- `MainTheory.Orbit29PrintedFaceAudit.face_centers`
+- `MainTheory.Orbit29PrintedFaceAudit.distinct_faces`
+- `MainTheory.Orbit29PrintedFaceAudit.exhaustive_faces`
+- `MainTheory.Orbit29PrintedFaceAudit.checked_walks`
+- `MainTheory.Orbit29PrintedFaceAudit.anchors_active`
+- `MainTheory.Orbit29SimplexRelativeInterior.relative_interior_iff`
+- `MainTheory.Orbit29SimplexRelativeInterior.fifteen_nonempty`
+- `MainTheory.Orbit29SimplexRelativeInterior.exhaustive_relative_interiors`
+- `MainTheory.Orbit29SimplexDimensions.literal_face_dimensions`
+- `MainTheory.Orbit29PhysicalRatios.amplitude_probabilities`
+- `MainTheory.Orbit29PhysicalRatios.common_unit_phase`
 
-_No review recorded._
+20261005 actual orbit-29 intermediate/type review: The fifteen rows exhaust the nonempty simplex faces. Their actual relative interiors, affine dimensions, zero vertices, vertex and edge counts, and signed paths are proved, and activity is equivalent to positive physical per-string probability.
 
 ### `supplementary.tex:proposition@11431` — covered
 
 proposition, line 11431.
 
-- `SixQubit.Orbit29.no_code`
-- `MainTheory.OrderFourNoCompletion.paper29_noCompletion`
-- `MainTheory.PaperSupplementaryNoGo.orbit29_is_impossible`
+- `MainTheory.Orbit29PhysicalRatios.common_unit_phase`
+- `MainTheory.Orbit29PhysicalPairGauge.physical_pair_gauge`
+- `MainTheory.Orbit29PrintedEta.aligned_bottom`
+- `MainTheory.Orbit29PrintedEta.opposite_high`
+- `MainTheory.Orbit29PrintedEta.actual_rows`
+- `MainTheory.Orbit29PrintedEta.printed_eta_equations`
+- `MainTheory.Orbit29PrintedEta.active_product_nonzero`
+- `MainTheory.Orbit29PrintedEta.eta_contradiction`
+- `MainTheory.Orbit29PrintedEta.physical_no_go`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Same three levels. HYPOTHESIS GAP: None. The manuscript's eight-dimensional moment polytope and its fifteen-face audit are internal to the proof; the Lean statement quantifies over all c,d on the fibre pair with distance three, so no interior/facet/vertex case is assumed away and no genericity is imposed. The pair structure (both fibres closed under X_5X_6) is a proved property of S0/S1, not a hypothesis.
+20261005 actual orbit-29 intermediate/type review: One actual local diagonal unitary removes the common phase while preserving complete physical KL. The four literal eta equations then follow from actual Walsh rows; the positive target product forces the two incompatible eta values at every boundary and interior.
 
 ### `supplementary.tex:lem:q4o30threepoints` — covered
 
@@ -1503,20 +1525,42 @@ proposition, line 12006.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Rank twenty-three, and membership in the moment polytope is exactly the displayed normal form: the complement relation, the three row sums 1/4, and the four column relations alpha_e = sum_i beta_ie - 1/8.
 
-### `supplementary.tex:tab:q4o31supportorbits` — unreviewed
+### `supplementary.tex:tab:q4o31supportorbits` — covered
 
 table, line 12151.
 
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.literal_words`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.support_sizes`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.orbit_sizes`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.size_sum`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.complete_survivor_set`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.unique_type`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go`
+- `MainTheory.Orbit31FinalCross.Type01.no_go`
+- `MainTheory.Orbit31FinalSameState.final_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type9_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type14_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type16_no_go`
 
-_No review recorded._
+20261005 literal completion/current type review: Checked every printed representative, support size, actual orbit size, disjointness and complete union of 311 masks. All sixteen literal certificate entries now have their stated derivation, including the propagated and column-phase triangles and the final same-state row.
 
 ### `supplementary.tex:lem:q4o31permanenttriangle` — covered
 
 lemma, line 12191.
 
-- `MainTheory.PaperSupplementaryImages.q4o31_permanent_triangle`
+- `MainTheory.Orbit31PermanentAlgebra.odd_permanent_triangle`
 
-20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Three pairs with both entries nonzero cannot satisfy r_i s_j + s_i r_j = 0 for all i < j. Proved from the orbit-26 axis lemma read contrapositively; only four of the manuscript six nonvanishing hypotheses are used.
+20261005 current orbit-31 physical/type review: The three printed complex permanent equations contradict nonzero entries. The checked division-free combination is 2*r0*s1*s2=0; it uses only these three equations and the required nonzero factors.
 
 ### `supplementary.tex:thm:q4o31nogo` — covered
 
@@ -1528,12 +1572,34 @@ theorem, line 12368.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: An instance of hasCompletion_iff_paperOrbitId, which says an orbit key admits an exact normalized distance-three completion exactly when its manuscript orbit number is one of the fifteen.  Indexed through paperOrbitId, whose injectivity is what makes "manuscript orbit N" denote a single key; the generated key order is not the paper order.
 
-### `supplementary.tex:remark@12389` — unreviewed
+### `supplementary.tex:remark@12389` — covered
 
 remark, line 12389.
 
+- `MainTheory.Orbit31MomentVertices.vertex_count`
+- `MainTheory.Orbit31MomentVertices.vertex_support_counts`
+- `MainTheory.Orbit31ExactSupportClassification.exact_support_count`
+- `MainTheory.Orbit31PhaseClassification.exact_count_chain`
+- `MainTheory.Generated.Orbit31PrintedSupportOrbits.complete_survivor_set`
+- `MainTheory.Orbit31BalancedMomentIff.feasible_iff_full_moments`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go`
+- `MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go`
+- `MainTheory.Orbit31FinalCross.Type01.no_go`
+- `MainTheory.Orbit31FinalSameState.final_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type9_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type14_no_go`
+- `MainTheory.Orbit31ResidualTriangles.physical_type16_no_go`
 
-_No review recorded._
+20261005 literal completion/current type review: This finite-scope summary is supported by actual arbitrary-real moment and support semantics, 204-vertex completeness, exhaustive masks, physical cross rows, the actual quotient action and every literal branch certificate. Candidate arithmetic is checked by ordinary Lean proofs; the separate empty-mask wording issue is retained in prose review.
 
 ### `supplementary.tex:thm:q4o32nogo` — covered
 
@@ -1545,12 +1611,19 @@ theorem, line 12620.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: An instance of hasCompletion_iff_paperOrbitId, which says an orbit key admits an exact normalized distance-three completion exactly when its manuscript orbit number is one of the fifteen.  Indexed through paperOrbitId, whose injectivity is what makes "manuscript orbit N" denote a single key; the generated key order is not the paper order.
 
-### `supplementary.tex:remark@12629` — unreviewed
+### `supplementary.tex:remark@12629` — covered
 
 remark, line 12629.
 
+- `MainTheory.Orbit32PrintedMomentNormal.physical_normal_form`
+- `MainTheory.Orbit32PrintedMomentNormal.rowsums`
+- `MainTheory.Orbit32PrintedLocalAlgebra.moduli`
+- `MainTheory.Orbit32PrintedLocalAlgebra.factors`
+- `MainTheory.Orbit32PrintedLocalAlgebra.positive_triple`
+- `MainTheory.Orbit32PrintedLocalAlgebra.triangle_identity`
+- `SixQubit.Orbit32.local_nogo`
 
-_No review recorded._
+20261005 literal completion/current type review: The actual moment row sums guarantee a positive E entry. The literal three weight-one cross equations and moment reflection then force all six local probabilities positive and the odd triangle contradiction. No probability alone is treated as full KL.
 
 ### `supplementary.tex:proposition@12691` — covered
 

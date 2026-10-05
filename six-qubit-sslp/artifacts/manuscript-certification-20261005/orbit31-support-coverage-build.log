@@ -1,0 +1,20 @@
+Serial plan: 155 modules; 134 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[1/155] BUILD MainTheory.MatrixPositiveSupportCertificates
+[23/155] BUILD MainTheory.Orbit31SupportBase
+[24/155] BUILD MainTheory.Generated.Orbit31SupportArithmetic
+[25/155] BUILD MainTheory.Orbit31SupportSemantics
+[26/155] BUILD MainTheory.Orbit31SupportCoverageBase
+[27/155] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard000
+[28/155] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard001
+[29/155] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard002
+[30/155] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard003
+[31/155] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard004

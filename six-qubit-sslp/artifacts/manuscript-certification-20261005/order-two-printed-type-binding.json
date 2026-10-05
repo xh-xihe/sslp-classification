@@ -1,0 +1,212 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 14475,
+      "end_line": 14477,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "cb32ee1136bb7e3d511fba08053e8c9c7f27fff78b845a89749d77fd15c4e01f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14582,
+      "end_line": 14583,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "8b3d16b13cb2703f33aa053c0b7600dde57646a235e90faf76f7d10b47c793d0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14720,
+      "end_line": 14723,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.kernel_dimension",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "16f355b1274b1efbf087abd28cc5246fbf0586a455273c4744eeace2eed264b6"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14791,
+      "end_line": 14792,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "d9a8a1d9ae307983b1c7d6fa28d79d14e71196e194146df08ca89fe245983d21"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14865,
+      "end_line": 14866,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "d9a8a1d9ae307983b1c7d6fa28d79d14e71196e194146df08ca89fe245983d21"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14423,
+      "end_line": 14507,
+      "kind": "covered",
+      "reason": "The complete literal orbit-18 shell and restricted-projector proof is checked from the actual physical diagonal and cross KL equations.",
+      "declarations": [
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_types",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.actual_shell_masses",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_system",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_solution",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.point_projector",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_anchor_zero",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_anchor_norm",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "504eb9f655df03571fd73c900a734e4cb24483ea93d7c0713f41bd9ce4660ae4"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14527,
+      "end_line": 14609,
+      "kind": "covered",
+      "reason": "The complete literal orbit-41 shell chain and four-character anchor projector are checked from the actual physical KL equations.",
+      "declarations": [
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_types",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.actual_shell_masses",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_system",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_chain",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_solution",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.point_projector",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_anchor_zero",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_anchor_norm",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "be7a955ad233ec23fc5ccec95a36629ed1a4bbdccea079074a05c5dcc5b9403e"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14700,
+      "end_line": 14739,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit42.complete_iff",
+        "MainTheory.OrderTwoPrintedMoments.Orbit43.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_no_go",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "8924a8cce6bc6e430c86654490f45e5ce887524b571ce15d3c701fd5cfcb54a0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14767,
+      "end_line": 14812,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit44.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "b9164447141950bb4876c2d7f5dfa5fec85948813825f6948a3ac240cd952793"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14843,
+      "end_line": 14880,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit46.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "39d971c9622b982faad8e90327b99e16004ba2ff95ada38707e25f7d6a3bc397"
+    }
+  ],
+  "scope": "Scoped current correspondence; full manuscript review remains incomplete"
+}

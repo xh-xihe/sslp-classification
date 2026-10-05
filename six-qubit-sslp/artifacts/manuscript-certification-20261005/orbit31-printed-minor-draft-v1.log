@@ -1,0 +1,16 @@
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:27:45: error(lean.unknownIdentifier): Unknown identifier `toDual`
+
+Note: It is not possible to treat `toDual` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:28:54: error: failed to synthesize
+  Decidable (U.BlockTriangular id)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:32:38: error(lean.unknownIdentifier): Unknown identifier `lower_triangular`
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:31:31: error: unsolved goals
+⊢ L.det = 1
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:57:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((RingHom.mapMatrix ?f) ?M).det
+in the target expression
+  |(minorQ.map ⇑(Rat.castHom ℝ)).det| = 128
+
+⊢ |(minorQ.map ⇑(Rat.castHom ℝ)).det| = 128

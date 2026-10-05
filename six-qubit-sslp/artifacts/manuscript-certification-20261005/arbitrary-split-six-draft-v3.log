@@ -1,0 +1,24 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:33:83: error: unsolved goals
+case a
+p : Label 6
+s t : Fin 4 × Tail
+⊢ localC (p 0) (![0, 0, 1, 1] s.1) (![0, 0, 1, 1] t.1) * localC (p 1) (![0, 1, 0, 1] s.1) (![0, 1, 0, 1] t.1) *
+            localC (p 2) (![![0, 0, 1, 1] s.1, ![0, 1, 0, 1] s.1, s.2 0, s.2 1, s.2 2, s.2 3] 2)
+              (![![0, 0, 1, 1] t.1, ![0, 1, 0, 1] t.1, t.2 0, t.2 1, t.2 2, t.2 3] 2) *
+          localC (p 3) (![![0, 0, 1, 1] s.1, ![0, 1, 0, 1] s.1, s.2 0, s.2 1, s.2 2, s.2 3] 3)
+            (![![0, 0, 1, 1] t.1, ![0, 1, 0, 1] t.1, t.2 0, t.2 1, t.2 2, t.2 3] 3) *
+        localC (p 4) (![![0, 0, 1, 1] s.1, ![0, 1, 0, 1] s.1, s.2 0, s.2 1, s.2 2, s.2 3] 4)
+          (![![0, 0, 1, 1] t.1, ![0, 1, 0, 1] t.1, t.2 0, t.2 1, t.2 2, t.2 3] 4) *
+      localC (p 5) (![![0, 0, 1, 1] s.1, ![0, 1, 0, 1] s.1, s.2 0, s.2 1, s.2 2, s.2 3] 5)
+        (![![0, 0, 1, 1] t.1, ![0, 1, 0, 1] t.1, t.2 0, t.2 1, t.2 2, t.2 3] 5) =
+    localC (p 0) (![0, 0, 1, 1] s.1) (![0, 0, 1, 1] t.1) * localC (p 1) (![0, 1, 0, 1] s.1) (![0, 1, 0, 1] t.1) *
+            localC (p 2) (s.2 0) (t.2 0) *
+          localC (p 3) (s.2 1) (t.2 1) *
+        localC (![p 2, p 3, p 4, p 5] 2) (s.2 2) (t.2 2) *
+      localC (![p 2, p 3, p 4, p 5] 3) (s.2 3) (t.2 3)

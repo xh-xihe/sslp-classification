@@ -1,0 +1,372 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:eq:q4o31phaseratio",
+      "statement_sha256": "1d8191b07cee5538c106876243477bdcd6e49f347e4f22c23dca9b7999229259",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PhaseRatios.sigma",
+        "MainTheory.Orbit31PhaseRatios.physical_equal_probabilities",
+        "MainTheory.Orbit31PhaseRatios.reconstruct",
+        "MainTheory.Orbit31PhaseRatios.unit_norm",
+        "MainTheory.ComplementPhaseRatios.rho",
+        "MainTheory.ComplementPhaseRatios.unit_norm"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The actual paired codeword amplitudes have equal squared magnitudes. On an active cell rho=d/star(c) has unit norm; sigma=star(d)/c is its conjugate. Reconstruction star(d)=sigma*c includes zero cells, and unit norm is asserted only on active cells. The physical equality is derived from normalized supported codewords and complete distance-three KL."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31verticalphase",
+      "statement_sha256": "7669ff39eedf6a347862ab1657a30b46578ccba7c731578a0511b5091e8a405c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31CrossConsequences.physical_reciprocal",
+        "MainTheory.Orbit31CanonicalPhase.vertical_phase"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The twelve actual reciprocal Pauli incidences give equality of phase ratios when both endpoints are active. The retained nonzero hypotheses exclude no boundary solution because zero endpoints carry no phase ratio."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31weightonesum",
+      "statement_sha256": "4ed17ea4b24e1558f74ea341c60d7794c6e5623a19a228a1ae139e1b04420fb8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31CrossConsequences.physical_weight_one_sum",
+        "MainTheory.Orbit31CanonicalPhase.weight_one_phase_sum"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Conjugating the three physical single-flip cross rows and reconstructing the top amplitudes gives exactly the printed bilinear sums. Terms with zero endpoints vanish automatically."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31rectangle",
+      "statement_sha256": "12fc7408c96a803d5fb065c47c143e18def1f49d4c9134de4dd6a514c2a1408a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31CrossConsequences.physical_rectangles",
+        "MainTheory.Orbit31CanonicalPhase.rectangle_phase"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: All eighteen actual four-term rectangle equations are derived from weight-at-most-two physical Paulis and conjugated into the printed sigma-weighted products. The row and column pairs keep the SI order."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31supportcounts",
+      "statement_sha256": "854f2fd8ec62ffdf27e0aec26da6bfaa29d7891b9e844f98c070c8101e3c707b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ExactSupportClassification.exact_support_count",
+        "MainTheory.Orbit31NoSingletonClassification.exact_support_count",
+        "MainTheory.Orbit31PhaseClassification.exact_count_chain",
+        "MainTheory.Orbit31PhaseClassification.physical_survivor",
+        "MainTheory.Orbit31BalancedMomentIff.feasible_iff_full_moments",
+        "MainTheory.Orbit31PhysicalSupportFilters.physical_filters"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: All 65536 masks have checked primal-union or strict-support dual certificates for arbitrary real nonnegative probabilities in the actual moment system, not only rational points. Exact subtype cardinalities are 15603, 2903 and 311. The actual canonical cross equations rule out singleton overlaps and induce the signed graph. Every remaining graph record has a checked coloring or a checked odd closed walk, and the 2903 records exhaust the first-filter subtype. The seven balanced equations are equivalent to the complete real MomentSystem."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31symmetry",
+      "statement_sha256": "52b94051e43b227fe722845523fb7a3460bcc6c20b8092182955c71aa40d3de5",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31AffineTableGroup.aglTwoIsoSFour",
+        "MainTheory.Orbit31AffineTableGroup.productGroupIso",
+        "MainTheory.Orbit31AffineTableGroup.all_table_actions",
+        "MainTheory.Orbit31TableSymmetry.actual_bottom",
+        "MainTheory.Orbit31TableSymmetry.actual_top",
+        "MainTheory.Orbit31TableSymmetry.fibres_preserved",
+        "MainTheory.Orbit31TableSymmetry.inner_preserved",
+        "MainTheory.Orbit31TableSymmetry.distance_preserved"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The actual affine equivalences of F2 squared form a group isomorphic to all permutations of its four points, with multiplication preserved. Together with the three-row permutation group this gives the printed product group. All 144 table actions are realized by physical qubit permutations and even local-X translations. They preserve both actual fibers, inner products and the complete physical distance condition."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31permanent",
+      "statement_sha256": "9e63029cba12db811249a93acee613d25c3c256206938556682e1d10b8535f76",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.permanent"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The permanent is defined as the two literal crossed amplitude products in the SI table coordinates, without conjugation."
+    },
+    {
+      "id": "supplementary.tex:lem:q4o31permanenttriangle",
+      "statement_sha256": "4e0750b506db5cfc080960c7452ea366a3abd75e5cf8a45376208386c99aac61",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.odd_permanent_triangle"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The three printed complex permanent equations contradict nonzero entries. The checked division-free combination is 2*r0*s1*s2=0; it uses only these three equations and the required nonzero factors."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31oddpermanent",
+      "statement_sha256": "7d6ebcc84cd0c14d25e1ab5fcb72a1f92744b2603d45c49a05dfa7cc6eee67e9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.odd_permanent_triangle"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The three printed complex permanent equations contradict nonzero entries. The checked division-free combination is 2*r0*s1*s2=0; it uses only these three equations and the required nonzero factors."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31direct23types",
+      "statement_sha256": "e69b71cbc3566bb0d90a8bd4628cb28281bf2d0b7f9692b54ca6f888b8d062e5",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Each of the literal types 3, 6 and 12 has checked paths in its actual signed support graph. Substituting the forced signs into the actual column-(2,3) rectangle rows gives each of the three row-pair permanents equal to zero after canceling a nonzero phase factor. The physical wrapper derives all assumptions from actual supported normalized KL."
+    },
+    {
+      "id": "supplementary.tex:equation@12215",
+      "statement_sha256": "1f0e251ba5973ea911bd3be86f6844239c5d61e5809804e49f04fd929b650604",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Each of the literal types 3, 6 and 12 has checked paths in its actual signed support graph. Substituting the forced signs into the actual column-(2,3) rectangle rows gives each of the three row-pair permanents equal to zero after canceling a nonzero phase factor. The physical wrapper derives all assumptions from actual supported normalized KL."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31direct12types",
+      "statement_sha256": "f0585b0d427088c78e735f31765cbd22f7f26833252613937de8b4137cfa6f67",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Each of the eight literal types has the printed column-(1,2) permanent triangle. Every selected endpoint is connected to the phase anchor by a checked signed path; unrelated isolated active vertices are not assigned this phase. Actual physical rectangle rows, checked substitutions and nonzero cancellation yield all three permanents."
+    },
+    {
+      "id": "supplementary.tex:equation@12224",
+      "statement_sha256": "afabf687db8530b596ccc4a56bb8632c890ed6cd6488eb96e2687929e60ed94a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.phase_pattern",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_0",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_1",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.permanent_2",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Each of the eight literal types has the printed column-(1,2) permanent triangle. Every selected endpoint is connected to the phase anchor by a checked signed path; unrelated isolated active vertices are not assigned this phase. Actual physical rectangle rows, checked substitutions and nonzero cancellation yield all three permanents."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31type1a",
+      "statement_sha256": "7f2d790d3577924ffc52a62a6f53832729dbdc41b5e9e69ec2d61cca2588bc4f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type01.printed_binding",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type01.phase_pattern",
+        "MainTheory.Orbit31FinalCross.Type01.equation1",
+        "MainTheory.Orbit31FinalCross.Type01.equation2",
+        "MainTheory.Orbit31FinalCross.Type01.equation3",
+        "MainTheory.Orbit31FinalCross.Type01.no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The complete three-line align block for type 1 is checked. Its two weight-one equations and the column-(2,3) rectangle produce the two mixed dot products and the permanent. Nonzero active entries give the division-free mixed-triangle contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31finaltable",
+      "statement_sha256": "05acd5f7861eb94bcb9d7811320b284f2e3fe15b57e53fe134ebe259f9fd5ebe",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.literal_words",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type02.printed_binding",
+        "MainTheory.Orbit31CanonicalPhase.AmplitudeSupport"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The literal type-2 support has A and B1 full, B2 active in columns 0,1 and B3 active in columns 2,3. The amplitude-support predicate requires exactly the twelve displayed entries to be nonzero and the other four to vanish."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31final1",
+      "statement_sha256": "29b6bbc6f04d415526e2ce912e59f8ea5db4264474ec7cd43f2f5fa2b36b5b7c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31DirectTriangles.Type02.phase_pattern",
+        "MainTheory.Orbit31FinalCross.Type02.equation1",
+        "MainTheory.Orbit31FinalCross.Type02.equation2",
+        "MainTheory.Orbit31FinalCross.Type02.equation3",
+        "MainTheory.Orbit31FinalCross.Type02.equation4",
+        "MainTheory.Orbit31FinalCross.Type02.equation5"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The complete five-line align block is derived from actual signed paths, three weight-one sums and two rectangle rows. Type-2 phase signs are positive in columns 0,1 and negative in columns 2,3; canceling the nonzero common phase gives precisely the five printed polynomials."
+    },
+    {
+      "id": "supplementary.tex:equation@12333",
+      "statement_sha256": "9f67249df8f9a3ffe356f3951f1704bbb53d0b79efb6c8d4362718e45aef1d63",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.product_equality",
+        "MainTheory.Orbit31FinalCross.Type02.equation1",
+        "MainTheory.Orbit31FinalCross.Type02.equation2",
+        "MainTheory.Orbit31FinalCross.Type02.equation3",
+        "MainTheory.Orbit31FinalCross.Type02.equation4"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The first and second cross equations imply a0*x0=a1*x1, and the third and fourth imply a2*x2=a3*x3. The proof multiplies by a nonzero active y or z amplitude, and does not assume a ratio exists on an inactive position."
+    },
+    {
+      "id": "supplementary.tex:equation@12337",
+      "statement_sha256": "a1d1dafb1aeb5fedfe90bc17b926aa43b2a302ac48c62cfe251add7d8949485e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.product_equality",
+        "MainTheory.Orbit31FinalCross.Type02.equation1",
+        "MainTheory.Orbit31FinalCross.Type02.equation2",
+        "MainTheory.Orbit31FinalCross.Type02.equation3",
+        "MainTheory.Orbit31FinalCross.Type02.equation4"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The first and second cross equations imply a0*x0=a1*x1, and the third and fourth imply a2*x2=a3*x3. The proof multiplies by a nonzero active y or z amplitude, and does not assume a ratio exists on an inactive position."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31commonK",
+      "statement_sha256": "b1ec5cf5a0143c14f81a77a6d669165b867d4d5f2bc0778af5c7dd1050c28a3a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.common_product",
+        "MainTheory.Orbit31FinalCross.Type02.commonK"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The fifth actual cross equation equates the two previously equal pairs of products. The theorem supplies a common nonzero K for all four columns under the exact type-2 amplitude support."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31samestate",
+      "statement_sha256": "73d0aa13e51025d3f7afb0256b24f50f2f7f3d37b770fd47340d8abdf6171604",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31FinalSameState.SameStateRow",
+        "MainTheory.Orbit31FinalSameState.physical_row",
+        "MainTheory.Orbit31FinalSameState.same_state",
+        "MainTheory.Orbit31FinalSameState.physical_same_state"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: The actual X4X5 flip and its four physical Z dressings yield the same-state row. Substitution of the proved type-2 phase signs, zero inactive amplitudes and unit phase norm isolates the literal star(a0)*a3+star(x3)*x0=0. No final no-code theorem is invoked."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31positivecontradiction",
+      "statement_sha256": "a3be6ba811e7167b5e2cee2ffe50a563186ad0cea80c168f953528aed8bcb8d7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PermanentAlgebra.positive_identity",
+        "MainTheory.Orbit31PermanentAlgebra.positive_contradiction",
+        "MainTheory.Orbit31FinalSameState.final_no_go"
+      ],
+      "review": "20261005 current orbit-31 physical/type review: Multiplying the actual same-state row by a0*star(a3), with a0*x0=a3*x3=K, gives exactly normSq(a0*a3)+normSq(K)=0. Strict positivity of the active a0*a3 and nonnegativity of normSq(K) give the final physical support contradiction without division."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31PhaseClassification.olean",
+    "MainTheory/Orbit31PhaseClassification.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 14.668058900046162
+}

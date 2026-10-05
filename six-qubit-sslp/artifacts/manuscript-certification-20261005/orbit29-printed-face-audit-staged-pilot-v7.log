@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:116:77: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:117:79: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:118:6: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

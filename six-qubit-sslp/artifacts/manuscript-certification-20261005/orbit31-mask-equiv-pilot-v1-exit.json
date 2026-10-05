@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31SupportMaskEquiv.olean",
+    "MainTheory/Orbit31SupportMaskEquiv.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 14.203531300008763
+}

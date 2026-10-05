@@ -1,0 +1,78 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45BottomGauge.lean:24:37: error: unsolved goals
+case refine_1
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 4 =
+    ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 3
+
+case refine_2
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 5 =
+    ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 3
+
+case refine_3
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 6 =
+    ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 3
+
+case refine_4
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 7 =
+    ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 2
+
+case refine_5
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 8 = p c 1
+
+case refine_6
+c d : SS.State 6 ℂ
+H : FullKL c d
+hp : p c = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0)
+he :
+  ∀ (i j : Fin 10),
+    Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) i = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) j →
+      ‖c (bottom i)‖ = ‖c (bottom j)‖
+⊢ ![p c 0, p c 1, 1 / 4 - p c 1 - p c 0, 1 / 8, 1 / 8, 1 / 8, 1 / 8, 1 / 4 - p c 1 - p c 0, p c 1, p c 0] 9 = p c 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45BottomGauge.lean:88:28: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Complex.normSq (phaseAction ?theta ?c ?x)
+in the target expression
+  ↑√(Complex.normSq (c (bottom (anchors i)))) = ↑‖↑√(Complex.normSq (c (bottom (anchors i))))‖
+
+c d : SS.State 6 ℂ
+H : FullKL c d
+theta : Fin 7 → ℝ
+hH : FullKL (phaseAction theta c) (phaseAction theta d)
+hp : p (phaseAction theta c) = p c
+hq : q (phaseAction theta d) = q d
+ha : ∀ (i : Fin 7), phaseAction theta c (bottom (anchors i)) = ↑‖c (bottom (anchors i))‖
+i : Fin 7
+⊢ ↑√(Complex.normSq (c (bottom (anchors i)))) = ↑‖↑√(Complex.normSq (c (bottom (anchors i))))‖

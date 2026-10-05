@@ -1,0 +1,156 @@
+{
+  "status": "strict_isolated_pilots_passed",
+  "active_snapshot_modules": 16056,
+  "planned_modules": 16077,
+  "whole_build": "required_after_promotion",
+  "manuscript_coverage": "requires_fresh_type_export_and_explicit_review",
+  "drafts": [
+    {
+      "module": "MainTheory.Orbit31ResidualTriangles",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit31ResidualTriangles.lean",
+      "sha256": "e5a82c172cf853734f8d25e4a2d51469d428cff8d7a48b0d59a717f9e05b9584",
+      "phase": "orbit31-residual-triangles-draft-v7",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit31PrintedMinor",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean",
+      "sha256": "21cb3d9740b62debbed25f0857db0967cd2b63b61b92544a9019ff92a29ac60e",
+      "phase": "orbit31-printed-minor-draft-v3",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit31RelativeInterior",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit31RelativeInterior.lean",
+      "sha256": "74a0d30676112fa8dbf61ca0a6d105d4ba0a4c3e339597ee814db8370ec61411",
+      "phase": "orbit31-relative-interior-draft-v4",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit31FinalQuotients",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit31FinalQuotients.lean",
+      "sha256": "e4d526b64bbc624b0b12c136d62a968b4726e3ad27540a8aeeb07661f98fd378",
+      "phase": "orbit31-final-quotients-draft-v1",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit31HistoricalSupport",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit31HistoricalSupport.lean",
+      "sha256": "6cdf834e24c9752ee416f3e3c8debce38a71a56475c755e4427726ece49a89d1",
+      "phase": "orbit31-historical-support-draft-v1",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedMomentNormal",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedMomentNormal.lean",
+      "sha256": "1b9608ccde2020ec54fd7a589a7132eef72993d117661df8a27e24e13e2f7265",
+      "phase": "orbit32-printed-normal-draft-v3",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedLocalAlgebra",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedLocalAlgebra.lean",
+      "sha256": "f860aef8c28e1d6deaa78efc4f57b761ab8a9a214ce5537ef2f7b51fefde770c",
+      "phase": "orbit32-local-algebra-draft-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedMinor",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedMinor.lean",
+      "sha256": "aaae244b15af8dc435d0e1f6f137cabfa2b22e18d17ef92a024e16fc834bb4f4",
+      "phase": "orbit32-printed-minor-draft-v3",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit3PrintedSplitMatrices",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit3PrintedSplitMatrices.lean",
+      "sha256": "1b03ec56c43d3e37d2aec41cd6fe777ae48bc40862ddbfcebb3cf4a34b0d5159",
+      "phase": "orbit3-split-matrices-draft-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit33PrintedBlocks",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean",
+      "sha256": "f4f0a955790ace3d95d3c20f17462d555e4348c3028641a0df04a1403123d690",
+      "phase": "orbit33-blocks-draft-v11",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit33ScalarReflection",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit33ScalarReflection.lean",
+      "sha256": "52de3e2b59046bd5cabbe5f99b95607f1d624d57c2cf9286cef7dd31670855f0",
+      "phase": "orbit33-scalar-draft-v3",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit33NormalizedPairs",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit33NormalizedPairs.lean",
+      "sha256": "a591b7337e514374bcdb828566f100ceaebcfbcb9cb240526137c0e83ed1f84b",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit33PhysicalReflection",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit33PhysicalReflection.lean",
+      "sha256": "c174bf2dca9a0a3d5518cbc8855f41b32403a2cc438b9f96cf40e940fca0a68a",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.Orbit33ProjectorArgument",
+      "draft": "tmp/manuscript-publication-20261005/drafts/Orbit33ProjectorArgument.lean",
+      "sha256": "3aae3473478b70d6a5a114a85d0ea09f590886ce581b052983c3a0b8d7b8a215",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.ComplementaryPhasePair",
+      "draft": "tmp/manuscript-publication-20261005/drafts/ComplementaryPhasePair.lean",
+      "sha256": "8c1f1523b0cc5433b62b1185cd99e2fcacaf9313a0564e4a9efdeaf5d0e6cbd6",
+      "phase": "complementary-phase-pair-draft-v1",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.GridSupportAlgebra",
+      "draft": "tmp/manuscript-publication-20261005/drafts/GridSupportAlgebra.lean",
+      "sha256": "c2bccf9d2f4400f014493e5fa7dab595f4f38387ad91839ee7ce3f6455701f3b",
+      "phase": "grid-support-algebra-draft-v2",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.OrderFiveWalshRemainingDisplays",
+      "draft": "tmp/manuscript-publication-20261005/drafts/OrderFiveWalshRemainingDisplays.lean",
+      "sha256": "e1651427ba92844fa3d39d2956cf1f1852bc645734e37232b6942511c6ac9a76",
+      "phase": "order-five-walsh-remaining-draft-v1",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.OrderFiveGridRemainingDisplays",
+      "draft": "tmp/manuscript-publication-20261005/drafts/OrderFiveGridRemainingDisplays.lean",
+      "sha256": "235f533458eca448e1136b217f1edb4dae82e1c30523a97fb222046d02376c6a",
+      "phase": "extra-literal-staged-pilots-v1",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.OrderFourWalshRemainingDisplays",
+      "draft": "tmp/manuscript-publication-20261005/drafts/OrderFourWalshRemainingDisplays.lean",
+      "sha256": "5ca31b93093e46f908a5d679e56c18f46468fb3e927992a9e61b7cd28668e48f",
+      "phase": "order-four-walsh-remaining-draft-v3",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.OrderThreePrintedMoments",
+      "draft": "tmp/manuscript-publication-20261005/drafts/OrderThreePrintedMoments.lean",
+      "sha256": "821e736d325282aab9e0386112d8fed5c13e1c7a9b44df9f41a5c3fda261c20c",
+      "phase": "order-three-printed-moments-draft-v5",
+      "phase_exit_code": 0
+    },
+    {
+      "module": "MainTheory.OrderThreePrintedCrossRows",
+      "draft": "tmp/manuscript-publication-20261005/drafts/OrderThreePrintedCrossRows.lean",
+      "sha256": "b2af708bb4587091be1904c78ab9f594c10c325d37b5330b76ced0a39da4c306",
+      "phase": "extra-literal-staged-pilots-v1",
+      "phase_exit_code": 0
+    }
+  ]
+}

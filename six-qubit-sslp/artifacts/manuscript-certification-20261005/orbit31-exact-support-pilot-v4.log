@@ -1,0 +1,9 @@
+MainTheory/Orbit31ExactSupportClassification.lean:52:21: error: Application type mismatch: The argument
+  Equiv.subtypeProdEquivSigmaSubtype ?m.38
+has type
+  (@Subtype (?m.36 × ?m.37) fun x => ?m.38 x.1 x.2) ≃ (a : ?m.36) × { b // ?m.38 a b }
+but is expected to have type
+  (@Subtype (Fin 16 × Fin 4096) fun pair => isPrimal (Aggregate.certificates pair.1 pair.2) = true) ≃
+    (i : Fin 16) × { j // isPrimal (Aggregate.certificates i j) = true }
+in the application
+  Nat.card_congr (Equiv.subtypeProdEquivSigmaSubtype ?m.38)

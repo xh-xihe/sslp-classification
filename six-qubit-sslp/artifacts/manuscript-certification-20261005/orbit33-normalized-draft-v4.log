@@ -1,0 +1,22 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:128:4: error: Not a comparison: b0 * (starRingEnd ℂ) a1 + b1 * (starRingEnd ℂ) a0 = 0 ∨ v s = 0 ∨ u r = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:135:2: error: ring failed, ring expressions not equal
+a0 a1 b0 b1 : ℂ
+ha0 : a0 ≠ 0
+ha1 : a1 ≠ 0
+h : b0 * star a1 + b1 * star a0 = 0
+⊢ b1 * (star a1)⁻¹ + (-(b1 * star a0) - star a1 * b0) + b0 * (star a0)⁻¹ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:182:2: error: ring failed, ring expressions not equal
+u v cf df : Fin 2 → ℂ
+a b : ℂ
+ha : a ≠ 0
+h :
+  (starRingEnd ℂ) (cf 0) * (b * v 0) + (starRingEnd ℂ) (cf 1) * (b * v 1) +
+      ((starRingEnd ℂ) a * (starRingEnd ℂ) (u 0) * df 0 + (starRingEnd ℂ) a * (starRingEnd ℂ) (u 1) * df 1) =
+    0
+⊢ -(b * (starRingEnd ℂ) (cf 0) * v 0) +
+              (b * (starRingEnd ℂ) (cf 0) * v 0 * ((starRingEnd ℂ) a)⁻¹ - b * (starRingEnd ℂ) (cf 1) * v 1) +
+            b * (starRingEnd ℂ) (cf 1) * v 1 * ((starRingEnd ℂ) a)⁻¹ +
+          (-((starRingEnd ℂ) a * (starRingEnd ℂ) (u 0) * df 0) - (starRingEnd ℂ) a * (starRingEnd ℂ) (u 1) * df 1) +
+        (starRingEnd ℂ) (u 0) * df 0 +
+      (starRingEnd ℂ) (u 1) * df 1 =
+    0

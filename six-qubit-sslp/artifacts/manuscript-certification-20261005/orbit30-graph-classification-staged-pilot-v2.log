@@ -1,0 +1,13 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphClassification.lean:54:46: error: failed to synthesize
+  Decidable (Function.Injective representative ∧ ∀ (r : Fin 10), Admissible (representative r))
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphClassification.lean:58:5: error: failed to synthesize
+  Decidable
+    (∀ (m : Fin 1024),
+      Admissible m →
+        Function.Bijective (relabelWitness m) ∧
+          ∀ (i j : Fin 5),
+            missing m i j = missing (representative (typeWitness m)) (relabelWitness m i) (relabelWitness m j))
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

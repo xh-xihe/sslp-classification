@@ -1,0 +1,37 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:70:34: error: unsolved goals
+case a
+i j : Fin 7
+⊢ ↑(if i = j then 1 else 0) = if i = j then 1 else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:108:2: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.77 ?m.74 = Finset.sum ?m.77 ?m.75
+with the goal
+  ↑(if True then 1 else if bottom (anchors i) ⟨0 - 1, ⋯⟩ = true then 1 else 0) * theta 0 = theta 0
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.77, ?m.74 x = ?m.75 x) → Finset.sum ?m.77 ?m.74 = Finset.sum ?m.77 ?m.75
+
+case e_a
+theta : Fin 7 → ℝ
+i : Fin 7
+⊢ ↑(if True then 1 else if bottom (anchors i) ⟨0 - 1, ⋯⟩ = true then 1 else 0) * theta 0 = theta 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:106:26: error: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵i̵n̵.̵v̵a̵l̵_̵z̵e̵r̵o̵,̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵,̵R̵a̵t̵.̵c̵a̵s̵t̵_̵o̵n̵e̵,̵o̵n̵e̵_̵m̵u̵l̵]̵[̲F̲i̲n̲.̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲R̲a̲t̲.̲c̲a̲s̲t̲_̲o̲n̲e̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:106:37: error: This simp argument is unused:
+  Rat.cast_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵i̵n̵.̵v̵a̵l̵_̵z̵e̵r̵o̵,̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵,̵R̵a̵t̵.̵c̵a̵s̵t̵_̵o̵n̵e̵,̵o̵n̵e̵_̵m̵u̵l̵]̵[̲F̲i̲n̲.̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲i̲f̲_̲p̲o̲s̲ ̲r̲f̲l̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:106:50: error: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵i̵n̵.̵v̵a̵l̵_̵z̵e̵r̵o̵,̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵,̵R̵a̵t̵.̵c̵a̵s̵t̵_̵o̵n̵e̵,̵o̵n̵e̵_̵m̵u̵l̵]̵[̲F̲i̲n̲.̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲i̲f̲_̲p̲o̲s̲ ̲r̲f̲l̲,̲ ̲R̲a̲t̲.̲c̲a̲s̲t̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

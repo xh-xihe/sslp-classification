@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "tools/verification/check_orbit31_reproduction.py",
+    "--output",
+    "artifacts/manuscript-certification-20261005/orbit31-completion-generation.json"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 9.233422900026198
+}

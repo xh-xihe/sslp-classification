@@ -8,8 +8,9 @@ four-group on the last three qubits, so each splits into FOUR cosets of size
 four.  The sixteen positions form a `4 x 4` table with rows `A, B_1, B_2, B_3`
 and columns `e_0..e_3`.  The moment system pins `p_1(v-bar) = p_0(v)` at every
 position, so each active position admits `d_{v-bar} = rho_v conj(c_v)` with
-`|rho_v| = 1`, and the twelve two-term relations make `rho` constant along
-COLUMNS.  Substituting turns every Knill-Laflamme condition into a statement
+`|rho_v| = 1`. In each column with nonzero `A`, the twelve two-term relations
+synchronize its active `B` phase ratios with the `A` ratio. Substituting turns
+the Knill-Laflamme conditions into statements
 about the four bottom columns, viewed as vectors in `C^3` (the `B` rows) plus the
 `A` row.
 
@@ -29,10 +30,11 @@ evaluates to `3/32`.  `partition31` is the `(3,1)` branch in its covering-A
 form, where the three same-phase columns have disjoint supports and the identity
 becomes a sum of nonnegative reals plus `1/32`.
 
-Status: partial.  The `(4)`, `(2,2)` and `(2,1,1)` branches are proved on paper
-but not yet here, and the transcription of orbit 31 -- fibers, the moment normal
-form, and the three families -- is not built, so orbit 31 is NOT yet certified.
-Nothing here is imported by `SixQubit.Audit`.
+These elementary identities are used by `SixQubit.Orbit31`; the physical
+distance-three no-go is `SixQubit.Orbit31.no_code` in `CodeOrbit31.lean`.
+The current SI's support enumeration and representative certificates are in
+`MainTheory.Orbit31*` and `MainTheory.Generated.Orbit31*`. Their individual
+manuscript correspondence is tracked separately in the current claims ledger.
 -/
 
 namespace SixQubit.Table31

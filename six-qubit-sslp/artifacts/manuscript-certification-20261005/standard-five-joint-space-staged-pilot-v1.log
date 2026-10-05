@@ -1,0 +1,100 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:57:2: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.30 ?m.27 = Finset.sum ?m.30 ?m.28
+with the goal
+  GaussianInt.toComplex ((∑ s, coefficients s • rawOperator (words s)) x y) =
+    (∑ x, GaussianInt.toComplex (coefficients x) • operator (words x)) x y
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.30, ?m.27 x = ?m.28 x) → Finset.sum ?m.30 ?m.27 = Finset.sum ?m.30 ?m.28
+
+case a
+x y : Basis
+⊢ GaussianInt.toComplex ((∑ s, coefficients s • rawOperator (words s)) x y) =
+    (∑ x, GaussianInt.toComplex (coefficients x) • operator (words x)) x y
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:55:53: error: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵r̵o̵j̵e̵c̵t̵o̵r̵,̵r̵a̵w̵P̵r̵o̵j̵e̵c̵t̵o̵r̵,̵M̵a̵t̵r̵i̵x̵.̵m̵a̵p̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵p̵p̵l̵y̵,̵m̵a̵p̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵G̵a̵u̵s̵s̵i̵a̵n̵I̵n̵t̵.̵t̵o̵C̵o̵m̵p̵l̵e̵x̵_̵m̵u̵l̵,̵w̵o̵r̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲p̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲r̲a̲w̲P̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲a̲p̲_̲a̲p̲p̲l̲y̲,̲ ̲m̲a̲p̲_̲s̲u̲m̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲G̲a̲u̲s̲s̲i̲a̲n̲I̲n̲t̲.̲t̲o̲C̲o̲m̲p̲l̲e̲x̲_̲m̲u̲l̲,̲ ̲w̲o̲r̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:55:70: error: This simp argument is unused:
+  map_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [projector, ̲rawProjector, ̲Matrix.map_apply, ̲Finset.sum_apply,m̵a̵p̵_̵s̵u̵m̵,̵ ̲Matrix.smul_apply,
+      smul_eq_mul, ̲GaussianInt.toComplex_mul, ̲word_product]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:55:78: error: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵r̵o̵j̵e̵c̵t̵o̵r̵,̵r̵a̵w̵P̵r̵o̵j̵e̵c̵t̵o̵r̵,̵M̵a̵t̵r̵i̵x̵.̵m̵a̵p̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵p̵p̵l̵y̵,̵m̵a̵p̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵G̵a̵u̵s̵s̵i̵a̵n̵I̵n̵t̵.̵t̵o̵C̵o̵m̵p̵l̵e̵x̵_̵m̵u̵l̵,̵w̵o̵r̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲p̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲r̲a̲w̲P̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲a̲p̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲a̲p̲p̲l̲y̲,̲ ̲m̲a̲p̲_̲s̲u̲m̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲G̲a̲u̲s̲s̲i̲a̲n̲I̲n̲t̲.̲t̲o̲C̲o̲m̲p̲l̲e̲x̲_̲m̲u̲l̲,̲ ̲w̲o̲r̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:56:4: error: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [projector, ̲rawProjector, ̲Matrix.map_apply, ̲Finset.sum_apply, ̲map_sum,
+  ̲ ̲ ̲ ̲ ̲Matrix.smul_apply,
+  ̵  ̵ ̵ ̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵GaussianInt.toComplex_mul, ̲word_product]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:56:16: error: This simp argument is unused:
+  GaussianInt.toComplex_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵r̵o̵j̵e̵c̵t̵o̵r̵,̵r̵a̵w̵P̵r̵o̵j̵e̵c̵t̵o̵r̵,̵M̵a̵t̵r̵i̵x̵.̵m̵a̵p̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵p̵p̵l̵y̵,̵m̵a̵p̵_̵s̵u̵m̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵G̵a̵u̵s̵s̵i̵a̵n̵I̵n̵t̵.̵t̵o̵C̵o̵m̵p̵l̵e̵x̵_̵m̵u̵l̵,̵w̵o̵r̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲p̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲r̲a̲w̲P̲r̲o̲j̲e̲c̲t̲o̲r̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲a̲p̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲a̲p̲p̲l̲y̲,̲ ̲m̲a̲p̲_̲s̲u̲m̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲ ̲w̲o̲r̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:68:48: error: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.map_apply, ̲Matrix.smul_apply,s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵ ̲GaussianInt.toComplex_mul, ̲Matrix.one_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:68:60: error: This simp argument is unused:
+  GaussianInt.toComplex_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵m̵a̵p̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵G̵a̵u̵s̵s̵i̵a̵n̵I̵n̵t̵.̵t̵o̵C̵o̵m̵p̵l̵e̵x̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲a̲p̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲o̲n̲e̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:88:10: error: typeclass instance problem is stuck
+  AddCommMonoid ?m.65
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommMonoid` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:87:57: error: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵V̵e̵c̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵m̵u̵l̵]̵[̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲V̲e̲c̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲F̲i̲n̲s̲e̲t̲.̲s̲u̲m̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:101:2: error: unsolved goals
+case h.mp
+v : Basis → ℂ
+hv : v ∈ jointSpace
+⊢ 16⁻¹ • (16 * v) = v
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:105:10: error: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵s̵m̵u̵l̵_̵s̵m̵u̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\StandardFiveJointSpace.lean:118:2: error: 'change' tactic failed, pattern
+  16 * a i = 16 * b i
+is not definitionally equal to target
+  (16 • a) i = ((16 • 1) *ᵥ b) i

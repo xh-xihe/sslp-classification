@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedLogicalAction.lean:33:4: error: Type mismatch: After simplification, term
+  e1
+ has type
+  Gate.gate SixthRootCoefficients.root av d = fun s => SixthRootCoefficients.root ^ ZMod.val 3 * d s
+but is expected to have type
+  Gate.gate SixthRootCoefficients.root av d = -d

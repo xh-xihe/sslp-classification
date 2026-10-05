@@ -1,0 +1,81 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30VertexScaling.lean:28:79: error: unsolved goals
+case «0»
+A : Matrix (Fin 5) (Fin 5) ℂ
+s : Fin 5 → ℂ
+⊢ s 1 * s 2 * A 1 2 * s 3 * s 4 * A 3 4 + s 1 * s 2 * s 3 * s 4 * A 1 3 * A 2 4 +
+      s 1 * s 2 * s 3 * s 4 * A 1 4 * A 2 3 =
+    s 1 * A 1 2 * A 3 4 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ + s 1 * A 1 3 * A 2 4 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ +
+      s 1 * A 1 4 * A 2 3 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩
+
+case «1»
+A : Matrix (Fin 5) (Fin 5) ℂ
+s : Fin 5 → ℂ
+⊢ s 0 * s 2 * A 0 2 * s 3 * s 4 * A 3 4 + s 0 * s 2 * s 3 * s 4 * A 0 3 * A 2 4 +
+      s 0 * s 2 * s 3 * s 4 * A 0 4 * A 2 3 =
+    s 0 * A 0 2 * A 3 4 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ + s 0 * A 0 3 * A 2 4 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ +
+      s 0 * A 0 4 * A 2 3 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩
+
+case «2»
+A : Matrix (Fin 5) (Fin 5) ℂ
+s : Fin 5 → ℂ
+⊢ s 0 * s 1 * A 0 1 * s 3 * s 4 * A 3 4 + s 0 * s 1 * s 3 * s 4 * A 0 3 * A 1 4 +
+      s 0 * s 1 * s 3 * s 4 * A 0 4 * A 1 3 =
+    s 0 * s 1 * A 0 1 * A 3 4 * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ + s 0 * s 1 * A 0 3 * A 1 4 * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩ +
+      s 0 * s 1 * A 0 4 * A 1 3 * s ⟨3, ⋯⟩ * s ⟨4, ⋯⟩
+
+case «3»
+A : Matrix (Fin 5) (Fin 5) ℂ
+s : Fin 5 → ℂ
+⊢ s 0 * s 1 * A 0 1 * s 2 * s 4 * A 2 4 + s 0 * s 1 * s 2 * s 4 * A 0 2 * A 1 4 +
+      s 0 * s 1 * s 2 * s 4 * A 0 4 * A 1 2 =
+    s 0 * s 1 * A 0 1 * A 2 4 * s ⟨2, ⋯⟩ * s ⟨4, ⋯⟩ + s 0 * s 1 * A 0 2 * A 1 4 * s ⟨2, ⋯⟩ * s ⟨4, ⋯⟩ +
+      s 0 * s 1 * A 0 4 * A 1 2 * s ⟨2, ⋯⟩ * s ⟨4, ⋯⟩
+
+case «4»
+A : Matrix (Fin 5) (Fin 5) ℂ
+s : Fin 5 → ℂ
+⊢ s 0 * s 1 * A 0 1 * s 2 * s 3 * A 2 3 + s 0 * s 1 * s 2 * s 3 * A 0 2 * A 1 3 +
+      s 0 * s 1 * s 2 * s 3 * A 0 3 * A 1 2 =
+    s 0 * s 1 * A 0 1 * A 2 3 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ + s 0 * s 1 * A 0 2 * A 1 3 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩ +
+      s 0 * s 1 * A 0 3 * A 1 2 * s ⟨2, ⋯⟩ * s ⟨3, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30VertexScaling.lean:57:4: error: ring failed, ring expressions not equal
+a b c d : ℂ
+ha : a ≠ 0
+hb : b ≠ 0
+hc : c ≠ 0
+hd : d ≠ 0
+z : ℂ
+hz : z ^ 2 = c / (a * b)
+hzn : z ≠ 0
+he : z ^ 2 * a * b = c
+⊢ c * 2 - z ^ 2 * a * b * 2 = 0

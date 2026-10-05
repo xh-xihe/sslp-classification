@@ -1,0 +1,97 @@
+MainTheory/Orbit31FinalCross.lean:38:2: error: `simp` made no progress
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+he :
+  sigma c d ⟨8, ⋯⟩ * c 0 * c ⟨8, ⋯⟩ +
+      (sigma c d ⟨9, ⋯⟩ * c 1 * c ⟨9, ⋯⟩ +
+        (sigma c d ⟨10, ⋯⟩ * c ⟨2, ⋯⟩ * c ⟨10, ⋯⟩ + sigma c d ⟨11, ⋯⟩ * c ⟨3, ⋯⟩ * c ⟨11, ⋯⟩)) =
+    0
+⊢ c ⟨2, ⋯⟩ * c ⟨10, ⋯⟩ + c ⟨3, ⋯⟩ * c ⟨11, ⋯⟩ = 0
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+he : sigma c d 8 * c 0 * c 8 + (sigma c d 9 * c 1 * c 9 + (sigma c d 10 * c 2 * c 10 + sigma c d 11 * c 3 * c 11)) = 0
+hz0 : c ⟨0, ⋯⟩ = 0
+hz1 : c ⟨1, ⋯⟩ = 0
+hs10 : sigma c d ⟨10, ⋯⟩ = sign (colors ⟨10, ⋯⟩) (sigma c d anchor)
+hs11 : sigma c d ⟨11, ⋯⟩ = sign (colors ⟨11, ⋯⟩) (sigma c d anchor)
+⊢ c ⟨2, ⋯⟩ * c ⟨10, ⋯⟩ + c ⟨3, ⋯⟩ * c ⟨11, ⋯⟩ = 0
+MainTheory/Orbit31FinalCross.lean:34:8: error: This simp argument is unused:
+  hz0
+
+Hint: Omit it from the simp argument list.
+  simp [hz0̵,̵h̵z̵1] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:34:12: error: This simp argument is unused:
+  hz1
+
+Hint: Omit it from the simp argument list.
+  simp [hz0,̵h̵z̵1̵] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:53:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:50:8: error: This simp argument is unused:
+  hz0
+
+Hint: Omit it from the simp argument list.
+  simp [hz0̵,̵h̵z̵1] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:50:12: error: This simp argument is unused:
+  hz1
+
+Hint: Omit it from the simp argument list.
+  simp [hz0,̵h̵z̵1̵] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:94:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:91:8: error: This simp argument is unused:
+  hz10
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵z̵1̵0̵,̵h̵z̵1̵1̵]̵[̲h̲z̲1̲1̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:91:13: error: This simp argument is unused:
+  hz11
+
+Hint: Omit it from the simp argument list.
+  simp [hz10,̵h̵z̵1̵1̵] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:124:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:121:8: error: This simp argument is unused:
+  hz12
+
+Hint: Omit it from the simp argument list.
+  simp [hz12̵,̵h̵z̵1̵3] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:121:13: error: This simp argument is unused:
+  hz13
+
+Hint: Omit it from the simp argument list.
+  simp [hz12,̵h̵z̵1̵3̵] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:156:4: error: ring failed, ring expressions not equal
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+hs4 : sigma c d ⟨4, ⋯⟩ = sign (colors ⟨4, ⋯⟩) (sigma c d anchor)
+hs5 : sigma c d ⟨5, ⋯⟩ = sign (colors ⟨5, ⋯⟩) (sigma c d anchor)
+hs6 : sigma c d ⟨6, ⋯⟩ = sign (colors ⟨6, ⋯⟩) (sigma c d anchor)
+hs7 : sigma c d ⟨7, ⋯⟩ = sign (colors ⟨7, ⋯⟩) (sigma c d anchor)
+he :
+  sigma c d anchor * c 0 * c ⟨4, ⋯⟩ +
+      (sigma c d anchor * c 1 * c ⟨5, ⋯⟩ +
+        (-(sigma c d anchor * c ⟨2, ⋯⟩ * c ⟨6, ⋯⟩) + -(sigma c d anchor * c ⟨3, ⋯⟩ * c ⟨7, ⋯⟩))) =
+    0
+⊢ sigma c d anchor * c ⟨0, ⋯⟩ * c ⟨4, ⋯⟩ - sigma c d anchor * c ⟨4, ⋯⟩ * c 0 +
+      (sigma c d anchor * c ⟨1, ⋯⟩ * c ⟨5, ⋯⟩ - sigma c d anchor * c ⟨5, ⋯⟩ * c 1) =
+    0

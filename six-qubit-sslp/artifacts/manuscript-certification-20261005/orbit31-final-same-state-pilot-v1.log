@@ -1,0 +1,82 @@
+MainTheory/Orbit31FinalSameState.lean:58:11: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  sigma c d ⟨3, ⋯⟩
+in the target expression
+  sigma c d 4 * c 4 * star (sigma c d 7 * c 7) + star (sigma c d anchor * c 0) * (sigma c d 3 * c 3) =
+    -(c 4 * star (c 7) + star (c 0) * c 3)
+
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+hr : SameStateRow c d
+hz11 : c ⟨11, ⋯⟩ = 0
+hz12 : c ⟨12, ⋯⟩ = 0
+hd11 : d ⟨11, ⋯⟩ = 0
+hd12 : d ⟨12, ⋯⟩ = 0
+h0 : sigma c d 0 = sigma c d anchor
+h3 : sigma c d ⟨3, ⋯⟩ = -sigma c d anchor
+h4 : sigma c d ⟨4, ⋯⟩ = sigma c d anchor
+h7 : sigma c d ⟨7, ⋯⟩ = -sigma c d anchor
+hunit : sigma c d anchor * star (sigma c d anchor) = 1
+hd7 : d 7 = star (sigma c d 7 * c 7)
+hd0 : d 0 = star (sigma c d 0 * c 0)
+⊢ sigma c d 4 * c 4 * star (sigma c d 7 * c 7) + star (sigma c d anchor * c 0) * (sigma c d 3 * c 3) =
+    -(c 4 * star (c 7) + star (c 0) * c 3)
+MainTheory/Orbit31FinalSameState.lean:65:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  star (d 4) * d 7 + d 0 * star (d 3)
+in the target expression
+  c 4 * (starRingEnd ℂ) (c 7) + c 8 * (starRingEnd ℂ) (c 11) + c 12 * (starRingEnd ℂ) (c 15) +
+      (starRingEnd ℂ) (c 0) * c 3 =
+    (starRingEnd ℂ) (d 4) * d 7 + (starRingEnd ℂ) (d 8) * d 11 + (starRingEnd ℂ) (d 12) * d 15 +
+      d 0 * (starRingEnd ℂ) (d 3)
+
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+hr :
+  c 4 * (starRingEnd ℂ) (c 7) + c 8 * (starRingEnd ℂ) (c 11) + c 12 * (starRingEnd ℂ) (c 15) +
+      (starRingEnd ℂ) (c 0) * c 3 =
+    (starRingEnd ℂ) (d 4) * d 7 + (starRingEnd ℂ) (d 8) * d 11 + (starRingEnd ℂ) (d 12) * d 15 +
+      d 0 * (starRingEnd ℂ) (d 3)
+hz11 : c ⟨11, ⋯⟩ = 0
+hz12 : c ⟨12, ⋯⟩ = 0
+hd11 : d ⟨11, ⋯⟩ = 0
+hd12 : d ⟨12, ⋯⟩ = 0
+h0 : sigma c d 0 = sigma c d anchor
+h3 : sigma c d ⟨3, ⋯⟩ = -sigma c d anchor
+h4 : sigma c d ⟨4, ⋯⟩ = sigma c d anchor
+h7 : sigma c d ⟨7, ⋯⟩ = -sigma c d anchor
+hunit : sigma c d anchor * star (sigma c d anchor) = 1
+hd7 : d 7 = star (sigma c d 7 * c 7)
+hd0 : d 0 = star (sigma c d 0 * c 0)
+htop : star (d 4) * d 7 + d 0 * star (d 3) = -(c 4 * star (c 7) + star (c 0) * c 3)
+⊢ star (c 0) * c 3 + star (c 7) * c 4 = 0
+MainTheory/Orbit31FinalSameState.lean:64:8: error: This simp argument is unused:
+  hz11
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵d̵1̵1̵,̵h̵d̵1̵2̵]̵[̲h̲z̲1̲2̲,̲ ̲h̲d̲1̲1̲,̲ ̲h̲d̲1̲2̲]̲ at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalSameState.lean:64:13: error: This simp argument is unused:
+  hz12
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵d̵1̵1̵,̵h̵d̵1̵2̵]̵[̲h̲z̲1̲1̲,̲ ̲h̲d̲1̲1̲,̲ ̲h̲d̲1̲2̲]̲ at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalSameState.lean:64:18: error: This simp argument is unused:
+  hd11
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵d̵1̵1̵,̵h̵d̵1̵2̵]̵[̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲d̲1̲2̲]̲ at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalSameState.lean:64:23: error: This simp argument is unused:
+  hd12
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵d̵1̵1̵,̵h̵d̵1̵2̵]̵[̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲d̲1̲1̲]̲ at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

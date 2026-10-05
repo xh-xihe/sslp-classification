@@ -1,0 +1,13 @@
+MainTheory/Orbit31FinalCross.lean:39:2: error: 'norm_num [colors, sign, Fin.succ] at he' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+MainTheory/Orbit31FinalCross.lean:57:2: error: 'norm_num [colors, sign, Fin.succ] at he' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+MainTheory/Orbit31FinalCross.lean:73:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:103:2: error: 'norm_num [colors, sign, Fin.succ] at he' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+MainTheory/Orbit31FinalCross.lean:119:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:154:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:170:2: error: `simp` made no progress

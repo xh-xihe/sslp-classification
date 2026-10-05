@@ -1,0 +1,426 @@
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:375:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y0 * star (c y6) + d z5 * star (d z11) =
+    3 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y0 * (starRingEnd ℂ) (c y6) * (2 / 5) + c y0 * star (c y6) * (-2 / 5) +
+                          (d z5 * (starRingEnd ℂ) (d z11) - d z5 * star (d z11)) +
+                        c y1 * star (c y7) * (3 / 5) +
+                      c y1 * (starRingEnd ℂ) (c y7) * (-3 / 5) +
+                    c y2 * star (c y8) * (3 / 5) +
+                  c y2 * (starRingEnd ℂ) (c y8) * (-3 / 5) +
+                c y3 * star (c y9) * (3 / 5) +
+              c y3 * (starRingEnd ℂ) (c y9) * (-3 / 5) +
+            c y4 * star (c y10) * (3 / 5) +
+          c y4 * (starRingEnd ℂ) (c y10) * (-3 / 5) +
+        c y5 * star (c y11) * (3 / 5) +
+      c y5 * (starRingEnd ℂ) (c y11) * (-3 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:380:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y0 * star (c y6) + d z5 * star (d z11) =
+    3 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y0) * c y6 + star (d z5) * d z11 =
+    3 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y6 * (starRingEnd ℂ) (c y0) * (2 / 5) + c y6 * star (c y0) * (-2 / 5) +
+                          (d z11 * (starRingEnd ℂ) (d z5) - d z11 * star (d z5)) +
+                        star (c y1) * c y7 * (3 / 5) +
+                      c y7 * (starRingEnd ℂ) (c y1) * (-3 / 5) +
+                    star (c y2) * c y8 * (3 / 5) +
+                  c y8 * (starRingEnd ℂ) (c y2) * (-3 / 5) +
+                star (c y3) * c y9 * (3 / 5) +
+              c y9 * (starRingEnd ℂ) (c y3) * (-3 / 5) +
+            star (c y4) * c y10 * (3 / 5) +
+          c y10 * (starRingEnd ℂ) (c y4) * (-3 / 5) +
+        star (c y5) * c y11 * (3 / 5) +
+      c y11 * (starRingEnd ℂ) (c y5) * (-3 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:398:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y1 * star (c y7) + d z4 * star (d z10) =
+    2 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y1 * (starRingEnd ℂ) (c y7) * (3 / 5) + c y1 * star (c y7) * (-3 / 5) +
+                          (d z4 * (starRingEnd ℂ) (d z10) - d z4 * star (d z10)) +
+                        c y0 * star (c y6) * (2 / 5) +
+                      c y0 * (starRingEnd ℂ) (c y6) * (-2 / 5) +
+                    c y2 * star (c y8) * (2 / 5) +
+                  c y2 * (starRingEnd ℂ) (c y8) * (-2 / 5) +
+                c y3 * star (c y9) * (2 / 5) +
+              c y3 * (starRingEnd ℂ) (c y9) * (-2 / 5) +
+            c y4 * star (c y10) * (2 / 5) +
+          c y4 * (starRingEnd ℂ) (c y10) * (-2 / 5) +
+        c y5 * star (c y11) * (2 / 5) +
+      c y5 * (starRingEnd ℂ) (c y11) * (-2 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:403:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y1 * star (c y7) + d z4 * star (d z10) =
+    2 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y1) * c y7 + star (d z4) * d z10 =
+    2 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y7 * (starRingEnd ℂ) (c y1) * (3 / 5) + c y7 * star (c y1) * (-3 / 5) +
+                          (d z10 * (starRingEnd ℂ) (d z4) - d z10 * star (d z4)) +
+                        star (c y0) * c y6 * (2 / 5) +
+                      c y6 * (starRingEnd ℂ) (c y0) * (-2 / 5) +
+                    star (c y2) * c y8 * (2 / 5) +
+                  c y8 * (starRingEnd ℂ) (c y2) * (-2 / 5) +
+                star (c y3) * c y9 * (2 / 5) +
+              c y9 * (starRingEnd ℂ) (c y3) * (-2 / 5) +
+            star (c y4) * c y10 * (2 / 5) +
+          c y10 * (starRingEnd ℂ) (c y4) * (-2 / 5) +
+        star (c y5) * c y11 * (2 / 5) +
+      c y11 * (starRingEnd ℂ) (c y5) * (-2 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:421:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y2 * star (c y8) + d z3 * star (d z9) =
+    2 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y2 * (starRingEnd ℂ) (c y8) * (3 / 5) + c y2 * star (c y8) * (-3 / 5) +
+                          (d z3 * (starRingEnd ℂ) (d z9) - d z3 * star (d z9)) +
+                        c y0 * star (c y6) * (2 / 5) +
+                      c y0 * (starRingEnd ℂ) (c y6) * (-2 / 5) +
+                    c y1 * star (c y7) * (2 / 5) +
+                  c y1 * (starRingEnd ℂ) (c y7) * (-2 / 5) +
+                c y3 * star (c y9) * (2 / 5) +
+              c y3 * (starRingEnd ℂ) (c y9) * (-2 / 5) +
+            c y4 * star (c y10) * (2 / 5) +
+          c y4 * (starRingEnd ℂ) (c y10) * (-2 / 5) +
+        c y5 * star (c y11) * (2 / 5) +
+      c y5 * (starRingEnd ℂ) (c y11) * (-2 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:426:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y2 * star (c y8) + d z3 * star (d z9) =
+    2 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y2) * c y8 + star (d z3) * d z9 =
+    2 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y8 * (starRingEnd ℂ) (c y2) * (3 / 5) + c y8 * star (c y2) * (-3 / 5) +
+                          (d z9 * (starRingEnd ℂ) (d z3) - d z9 * star (d z3)) +
+                        star (c y0) * c y6 * (2 / 5) +
+                      c y6 * (starRingEnd ℂ) (c y0) * (-2 / 5) +
+                    star (c y1) * c y7 * (2 / 5) +
+                  c y7 * (starRingEnd ℂ) (c y1) * (-2 / 5) +
+                star (c y3) * c y9 * (2 / 5) +
+              c y9 * (starRingEnd ℂ) (c y3) * (-2 / 5) +
+            star (c y4) * c y10 * (2 / 5) +
+          c y10 * (starRingEnd ℂ) (c y4) * (-2 / 5) +
+        star (c y5) * c y11 * (2 / 5) +
+      c y11 * (starRingEnd ℂ) (c y5) * (-2 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:444:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y3 * star (c y9) + d z2 * star (d z8) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y3 * (starRingEnd ℂ) (c y9) * (4 / 5) + c y3 * star (c y9) * (-4 / 5) +
+                          (d z2 * (starRingEnd ℂ) (d z8) - d z2 * star (d z8)) +
+                        c y0 * star (c y6) * (1 / 5) +
+                      c y0 * (starRingEnd ℂ) (c y6) * (-1 / 5) +
+                    c y1 * star (c y7) * (1 / 5) +
+                  c y1 * (starRingEnd ℂ) (c y7) * (-1 / 5) +
+                c y2 * star (c y8) * (1 / 5) +
+              c y2 * (starRingEnd ℂ) (c y8) * (-1 / 5) +
+            c y4 * star (c y10) * (1 / 5) +
+          c y4 * (starRingEnd ℂ) (c y10) * (-1 / 5) +
+        c y5 * star (c y11) * (1 / 5) +
+      c y5 * (starRingEnd ℂ) (c y11) * (-1 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:449:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y3 * star (c y9) + d z2 * star (d z8) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y3) * c y9 + star (d z2) * d z8 =
+    star 1 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y9 * (starRingEnd ℂ) (c y3) * (4 / 5) + (c y9 * star 1 * star (c y3) * (1 / 5) - c y9 * star (c y3)) +
+                          (d z8 * (starRingEnd ℂ) (d z2) - d z8 * star (d z2)) +
+                        star 1 * star (c y0) * c y6 * (1 / 5) +
+                      star 1 * star (c y1) * c y7 * (1 / 5) +
+                    star 1 * star (c y2) * c y8 * (1 / 5) +
+                  star 1 * star (c y4) * c y10 * (1 / 5) +
+                star 1 * star (c y5) * c y11 * (1 / 5) +
+              c y6 * (starRingEnd ℂ) (c y0) * (-1 / 5) +
+            c y7 * (starRingEnd ℂ) (c y1) * (-1 / 5) +
+          c y8 * (starRingEnd ℂ) (c y2) * (-1 / 5) +
+        c y10 * (starRingEnd ℂ) (c y4) * (-1 / 5) +
+      c y11 * (starRingEnd ℂ) (c y5) * (-1 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:467:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y4 * star (c y10) + d z1 * star (d z7) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y4 * (starRingEnd ℂ) (c y10) * (4 / 5) + c y4 * star (c y10) * (-4 / 5) +
+                          (d z1 * (starRingEnd ℂ) (d z7) - d z1 * star (d z7)) +
+                        c y0 * star (c y6) * (1 / 5) +
+                      c y0 * (starRingEnd ℂ) (c y6) * (-1 / 5) +
+                    c y1 * star (c y7) * (1 / 5) +
+                  c y1 * (starRingEnd ℂ) (c y7) * (-1 / 5) +
+                c y2 * star (c y8) * (1 / 5) +
+              c y2 * (starRingEnd ℂ) (c y8) * (-1 / 5) +
+            c y3 * star (c y9) * (1 / 5) +
+          c y3 * (starRingEnd ℂ) (c y9) * (-1 / 5) +
+        c y5 * star (c y11) * (1 / 5) +
+      c y5 * (starRingEnd ℂ) (c y11) * (-1 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:472:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y4 * star (c y10) + d z1 * star (d z7) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y4) * c y10 + star (d z1) * d z7 =
+    star 1 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y10 * (starRingEnd ℂ) (c y4) * (4 / 5) + (c y10 * star 1 * star (c y4) * (1 / 5) - c y10 * star (c y4)) +
+                          (d z7 * (starRingEnd ℂ) (d z1) - d z7 * star (d z1)) +
+                        star 1 * star (c y0) * c y6 * (1 / 5) +
+                      star 1 * star (c y1) * c y7 * (1 / 5) +
+                    star 1 * star (c y2) * c y8 * (1 / 5) +
+                  star 1 * star (c y3) * c y9 * (1 / 5) +
+                star 1 * star (c y5) * c y11 * (1 / 5) +
+              c y6 * (starRingEnd ℂ) (c y0) * (-1 / 5) +
+            c y7 * (starRingEnd ℂ) (c y1) * (-1 / 5) +
+          c y8 * (starRingEnd ℂ) (c y2) * (-1 / 5) +
+        c y9 * (starRingEnd ℂ) (c y3) * (-1 / 5) +
+      c y11 * (starRingEnd ℂ) (c y5) * (-1 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:490:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc :
+  c y5 * star (c y11) + d z0 * star (d z6) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+⊢ c y5 * (starRingEnd ℂ) (c y11) * (4 / 5) + c y5 * star (c y11) * (-4 / 5) +
+                          (d z0 * (starRingEnd ℂ) (d z6) - d z0 * star (d z6)) +
+                        c y0 * star (c y6) * (1 / 5) +
+                      c y0 * (starRingEnd ℂ) (c y6) * (-1 / 5) +
+                    c y1 * star (c y7) * (1 / 5) +
+                  c y1 * (starRingEnd ℂ) (c y7) * (-1 / 5) +
+                c y2 * star (c y8) * (1 / 5) +
+              c y2 * (starRingEnd ℂ) (c y8) * (-1 / 5) +
+            c y3 * star (c y9) * (1 / 5) +
+          c y3 * (starRingEnd ℂ) (c y9) * (-1 / 5) +
+        c y4 * star (c y10) * (1 / 5) +
+      c y4 * (starRingEnd ℂ) (c y10) * (-1 / 5) =
+    0
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:495:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hm : ActualMoments c d
+Dg_w0 : diagBot c ef0 w0 = diagTop d ef0 w0
+Dg_w6 : diagBot c ef0 w6 = diagTop d ef0 w6
+Dg_w5 : diagBot c ef0 w5 = diagTop d ef0 w5
+Dg_w11 : diagBot c ef0 w11 = diagTop d ef0 w11
+Dg_w4 : diagBot c ef0 w4 = diagTop d ef0 w4
+Dg_w10 : diagBot c ef0 w10 = diagTop d ef0 w10
+Dg_w3 : diagBot c ef0 w3 = diagTop d ef0 w3
+Dg_w9 : diagBot c ef0 w9 = diagTop d ef0 w9
+Dg_w2 : diagBot c ef0 w2 = diagTop d ef0 w2
+Dg_w8 : diagBot c ef0 w8 = diagTop d ef0 w8
+Dg_w1 : diagBot c ef0 w1 = diagTop d ef0 w1
+Dg_w7 : diagBot c ef0 w7 = diagTop d ef0 w7
+hc✝ :
+  c y5 * star (c y11) + d z0 * star (d z6) =
+    1 / 5 *
+      (c y0 * star (c y6) + c y1 * star (c y7) + c y2 * star (c y8) + c y3 * star (c y9) + c y4 * star (c y10) +
+        c y5 * star (c y11))
+hc :
+  star (c y5) * c y11 + star (d z0) * d z6 =
+    star 1 / 5 *
+      (star (c y0) * c y6 + star (c y1) * c y7 + star (c y2) * c y8 + star (c y3) * c y9 + star (c y4) * c y10 +
+        star (c y5) * c y11)
+⊢ c y11 * (starRingEnd ℂ) (c y5) * (4 / 5) + (c y11 * star 1 * star (c y5) * (1 / 5) - c y11 * star (c y5)) +
+                          (d z6 * (starRingEnd ℂ) (d z0) - d z6 * star (d z0)) +
+                        star 1 * star (c y0) * c y6 * (1 / 5) +
+                      star 1 * star (c y1) * c y7 * (1 / 5) +
+                    star 1 * star (c y2) * c y8 * (1 / 5) +
+                  star 1 * star (c y3) * c y9 * (1 / 5) +
+                star 1 * star (c y4) * c y10 * (1 / 5) +
+              c y6 * (starRingEnd ℂ) (c y0) * (-1 / 5) +
+            c y7 * (starRingEnd ℂ) (c y1) * (-1 / 5) +
+          c y8 * (starRingEnd ℂ) (c y2) * (-1 / 5) +
+        c y9 * (starRingEnd ℂ) (c y3) * (-1 / 5) +
+      c y10 * (starRingEnd ℂ) (c y4) * (-1 / 5) =
+    0

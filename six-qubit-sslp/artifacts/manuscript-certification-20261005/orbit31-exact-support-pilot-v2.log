@@ -1,0 +1,7 @@
+MainTheory/Orbit31ExactSupportClassification.lean:32:25: error(lean.unknownIdentifier): Unknown identifier `finProdFinEquiv_apply`
+MainTheory/Orbit31ExactSupportClassification.lean:46:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fintype.card { mask // HasSupport mask }
+in the target expression
+  Fintype.card { mask // HasSupport mask } = 15603
+
+⊢ Fintype.card { mask // HasSupport mask } = 15603

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/check_orbit33_staged.py",
+    "orbit33-staged-success-v2.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 45.93940259999363
+}

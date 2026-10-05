@@ -1,0 +1,17 @@
+MainTheory/Orbit31SupportMaskEquiv.lean:16:55: error: invalid `▸` notation, expected result type of cast is 
+  j ∈ maskSet ↑a ↔ j ∈ maskSet ↑b
+however, the equality 
+  he
+of type 
+  (fun mask => maskSet ↑mask) a = (fun mask => maskSet ↑mask) b
+does not contain the expected result type on either the left or the right hand side
+MainTheory/Orbit31SupportMaskEquiv.lean:39:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun mask => maskSet ↑mask) mask
+in the target expression
+  0 < p j ↔ j ∈ maskSet ↑mask
+
+p : Fin 16 → ℝ
+mask : Fin 65536
+hm : (fun mask => maskSet ↑mask) mask = {j | 0 < p j}
+j : Fin 16
+⊢ 0 < p j ↔ j ∈ maskSet ↑mask

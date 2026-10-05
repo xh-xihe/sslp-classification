@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit30NormalizedDeterminant.lean"
+  ],
+  "exit_code": 4294967295,
+  "elapsed_seconds": 46.81303850002587
+}

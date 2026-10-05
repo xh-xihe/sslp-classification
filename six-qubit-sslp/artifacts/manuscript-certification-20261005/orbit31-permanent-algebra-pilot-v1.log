@@ -1,0 +1,12 @@
+MainTheory/Orbit31PermanentAlgebra.lean:39:4: error: ring failed, ring expressions not equal
+a x : Fin 4 → ℂ
+hleft : a 0 * x 0 = a 1 * x 1
+hright : a 2 * x 2 = a 3 * x 3
+hsum : a 0 * x 0 + a 1 * x 1 - a 2 * x 2 - a 3 * x 3 = 0
+⊢ a 0 * x 0 + a 3 * x 3 + (-(a 2 * x 2) - a 1 * x 1) = 0
+MainTheory/Orbit31PermanentAlgebra.lean:40:4: error: ring failed, ring expressions not equal
+a x : Fin 4 → ℂ
+hleft : a 0 * x 0 = a 1 * x 1
+hright : a 2 * x 2 = a 3 * x 3
+hsum : a 0 * x 0 + a 1 * x 1 - a 2 * x 2 - a 3 * x 3 = 0
+⊢ a 0 * x 0 + a 2 * x 2 + (-(a 3 * x 3) - a 1 * x 1) = 0

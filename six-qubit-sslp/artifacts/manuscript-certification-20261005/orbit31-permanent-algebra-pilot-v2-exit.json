@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31PermanentAlgebra.olean",
+    "MainTheory/Orbit31PermanentAlgebra.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 15.332076799997594
+}

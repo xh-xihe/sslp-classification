@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Generated/Orbit31CrossRows/Flip14.olean",
+    "MainTheory/Generated/Orbit31CrossRows/Flip14.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 24.486126700008754
+}

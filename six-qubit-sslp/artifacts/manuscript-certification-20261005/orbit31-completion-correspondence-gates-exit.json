@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "tools/verify.py",
+    "--paper-version",
+    "20261003",
+    "--only",
+    "sources",
+    "readme",
+    "audit-names",
+    "named-results",
+    "claims",
+    "prose-review",
+    "errata"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 215.00172860000748
+}

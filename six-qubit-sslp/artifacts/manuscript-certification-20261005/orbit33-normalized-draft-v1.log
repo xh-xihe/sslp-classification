@@ -1,0 +1,70 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:16:65: error: unsolved goals
+v : Fin 2 → ℂ
+⊢ v 0 * star (v 0) + v 1 * star (v 1) = v 0 * (starRingEnd ℂ) (v 0) + v 1 * (starRingEnd ℂ) (v 1)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:63:6: error: ring failed, ring expressions not equal
+u v : Fin 2 → ℂ
+r t : ℝ
+hr : 0 < r
+ht : 0 < t
+hn : normSq u = r
+hv : normSq v = t
+hdet : u 0 * v 1 - u 1 * v 0 = 0
+hrC : ↑r ≠ 0
+hsC : ↑√r ≠ 0
+hu : square u = ↑r
+h0 : ↑r * v 0 = (star (u 0) * v 0 + star (u 1) * v 1) * u 0
+h1 : ↑r * v 1 = (star (u 0) * v 0 + star (u 1) * v 1) * u 1
+a : ℂ := ⋯
+⊢ v 0 * star (u 0) * u 0 - v 0 * u 0 * (starRingEnd ℂ) (u 0) +
+      (star (u 1) * v 1 * u 0 - v 1 * u 0 * (starRingEnd ℂ) (u 1)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:67:6: error: ring failed, ring expressions not equal
+u v : Fin 2 → ℂ
+r t : ℝ
+hr : 0 < r
+ht : 0 < t
+hn : normSq u = r
+hv : normSq v = t
+hdet : u 0 * v 1 - u 1 * v 0 = 0
+hrC : ↑r ≠ 0
+hsC : ↑√r ≠ 0
+hu : square u = ↑r
+h0 : ↑r * v 0 = (star (u 0) * v 0 + star (u 1) * v 1) * u 0
+h1 : ↑r * v 1 = (star (u 0) * v 0 + star (u 1) * v 1) * u 1
+a : ℂ := ⋯
+⊢ v 1 * star (u 1) * u 1 - v 1 * u 1 * (starRingEnd ℂ) (u 1) +
+      (star (u 0) * v 0 * u 1 - v 0 * u 1 * (starRingEnd ℂ) (u 0)) =
+    0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:88:4: error: unsolved goals
+case «0»
+c d : Fin 3 → Fin 2 → ℂ
+hc : ∀ (i : Fin 3), normSq (c i) = R3 i
+hd : ∀ (i : Fin 3), normSq (d i) = R3 i
+hp : ∀ (i : Fin 2), mixed (d 0) (c (next i)) + mixed (d (next i)) (c 0) = 0
+⊢ c 0 0 * c ⟨0, ⋯⟩ 1 - c 0 1 * c ⟨0, ⋯⟩ 0 = 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33NormalizedPairs.lean:94:4: error: unsolved goals
+case «0»
+c d : Fin 3 → Fin 2 → ℂ
+hc : ∀ (i : Fin 3), normSq (c i) = R3 i
+hd : ∀ (i : Fin 3), normSq (d i) = R3 i
+hp : ∀ (i : Fin 2), mixed (d 0) (c (next i)) + mixed (d (next i)) (c 0) = 0
+dc : ∀ (i : Fin 3), c 0 0 * c i 1 - c 0 1 * c i 0 = 0
+⊢ d 0 0 * d ⟨0, ⋯⟩ 1 - d 0 1 * d ⟨0, ⋯⟩ 0 = 0

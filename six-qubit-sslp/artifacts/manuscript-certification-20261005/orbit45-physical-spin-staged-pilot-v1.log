@@ -1,0 +1,8 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalSpinFlip.lean:97:6: error: ring failed, ring expressions not equal
+psi : Fin 2 → SS.State 6 ℂ
+a b : Fin 2
+x : SS.BitString 6
+a✝ : x ∈ Finset.univ
+h1 : ↑(SixQubit.Orbit8Universal.spinSign x) = -↑(SS.Shadow.psign x)
+h2 : ↑(SixQubit.Orbit8Universal.spinSign x) = -↑(SS.Shadow.psign (SS.complement x))
+⊢ ↑(SS.Shadow.psign (SS.complement x)) * 2 - ↑(SS.Shadow.psign x) * 2 = 0

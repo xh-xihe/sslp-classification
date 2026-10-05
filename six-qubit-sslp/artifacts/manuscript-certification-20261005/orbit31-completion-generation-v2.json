@@ -1,0 +1,429 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Source reproduction only; candidate inputs do not replace Lean kernel semantics.",
+  "candidate_data": {
+    "path": "results/orbit31-support-candidates-20261005.json",
+    "sha256": "ceee7df03c938fd25ac35f8fc195e5faad1468f5536d117856d97d0b79e457e1"
+  },
+  "source_hashes_lf": {
+    "MainTheory/ArbitrarySplitPerfectCode.lean": "48bd67df266a209751170a0ed5f80d594e4103d98e221398292c613a8d604786",
+    "MainTheory/ArbitrarySplitSixQubit.lean": "b1e8d7da434dae01c8827657b78f9fcae79e8f69d7c79e2cae98323999dfc552",
+    "MainTheory/ComplementaryPhasePair.lean": "8c1f1523b0cc5433b62b1185cd99e2fcacaf9313a0564e4a9efdeaf5d0e6cbd6",
+    "MainTheory/FiniteListCertificateCounts.lean": "107335bfe1c93fda907f53ef6566689e0a101e9ac3c5254a7a8464a40e954eeb",
+    "MainTheory/Generated/Orbit31CrossRows/Flip1.lean": "645df138aa9419c0fc453c6573bc006cbe69867634bc7aaf1cda4dbe520554bf",
+    "MainTheory/Generated/Orbit31CrossRows/Flip14.lean": "cce4b233ec1a2cadd27ddb930c75db47d34f8d71826daa959da8482d208cf3de",
+    "MainTheory/Generated/Orbit31CrossRows/Flip15.lean": "39a554e8e746cc3459b547186663c630ea9ceee77bef773ca0662e58acaaf078",
+    "MainTheory/Generated/Orbit31CrossRows/Flip16.lean": "456e5a9748146c6ecba458e09f2b49c1f95ad8e3fff3d1a9f2d4b32cb58a8217",
+    "MainTheory/Generated/Orbit31CrossRows/Flip2.lean": "4bbd3594f6e689958b5692d291ea47b8c035cc1347fa55c2318d5d1ea616a2d7",
+    "MainTheory/Generated/Orbit31CrossRows/Flip24.lean": "3fd96a99cbfd000c37ddbcf20d503cc129d0a2eb3b4220104b313a9d5b39b974",
+    "MainTheory/Generated/Orbit31CrossRows/Flip25.lean": "7b53781a6fe0acdccea5a5904c0e2e443087c6245d8cae370818cd65a65d1c13",
+    "MainTheory/Generated/Orbit31CrossRows/Flip26.lean": "9e07a17fca891587bcec625691e64fae8b3612fe8f4706b412abdbeb0fe8bef6",
+    "MainTheory/Generated/Orbit31CrossRows/Flip3.lean": "fbd1a38b5b790812804a263a8c83a9fe1352782204e9817bae8524b4f8c80746",
+    "MainTheory/Generated/Orbit31CrossRows/Flip34.lean": "1f6ce9c986f93ab4ff8995ed9c76aa796b66de33ae3f1b5aa0d87b7dddcaf75c",
+    "MainTheory/Generated/Orbit31CrossRows/Flip35.lean": "6755b3bd5707246741b73af4998190e27ee6b3b9d074899de238c1a01d88b718",
+    "MainTheory/Generated/Orbit31CrossRows/Flip36.lean": "a759fc0808a6a10275b63c57faaa56f1314289214c8c4dc530d0b735d191ee3a",
+    "MainTheory/Generated/Orbit31DirectTriangles/Aggregate.lean": "0178914c27011699e95ebaf9bc28d02c157a7ff3d6d933a262dca08b57c181b0",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type01.lean": "22ddc6b6134c83d481b2348300b8865988d8b1351f6289a07523945bed5ad0ad",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type02.lean": "b38a851e63e833a790ff07f6c11ba15f26e4e8e32fefe2d411f131cbf4244e78",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type03.lean": "58be7519299764028cd2d8e224fa602b233d610f00c3b43e4dfd7229af837bf9",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type04.lean": "6fc3db3d3029fdbf751ec9ac33a4814fdf2687fce93d67d1adc4315f6743039b",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type05.lean": "a9ec2bfde5327ec9d12140c47a6ca58890488b21a6064dcd310864636afc079e",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type06.lean": "3a8abea254665b5f377eafae325d765842038ae9874d47f0b28b9296628313c5",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type07.lean": "f8a308d9cb15ef9bfe30227a1165b126a32701435a15db2d2957256015acd7e3",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type08.lean": "2eb3d73f613d0b41f8087eab68c032b2c3ed64dd8a0ddf18cea522fbfb04d1b5",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type10.lean": "6837b7f6697060cdc444806f22afa50bcaa10a937a1290e8eb1fe170b9fc6df0",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type11.lean": "46c036cc52bc895a84a3043e8e0f59761561ddbbf323aad9ca1b6112c966fbf4",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type12.lean": "337168d6dba14f3eded17054ad5f365e99912e2a8b478bba9ebbc828684c0bbe",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type13.lean": "3608375c3708eb8157f10ecfb14219e800bd5d6f7c0ad6fc75eac4b8c52069b3",
+    "MainTheory/Generated/Orbit31DirectTriangles/Type15.lean": "8c0d79512a52a656ddd9c32e9c825ae2248c9d7261174c91f06d6e1461a037fe",
+    "MainTheory/Generated/Orbit31NoSingletonCounts.lean": "e44d18c786f0336cb9c2a13a2d984519c399ca7517da5e714d37b067d521520a",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Aggregate.lean": "01f376716ea3e12e46a8b24c5a384737cb067d19fd5f1e8726d3753fc7f3a294",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard000.lean": "b1da620930f81bea2b3cd1fb3c154e5745a5104e3375092fa560bd690a0063e3",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard001.lean": "7ee538790add9b7f42e8d8247068a7dbfe7f2c24b0f860fadceb8e2f16fbb0be",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard002.lean": "97d46cd8a3e445adfb1796fb671fa387ec4a9d515f7d9180136c0d433d977e96",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard003.lean": "3f8389393726712d28c889f0200e3ac741a9cdde5a9833d5c830a9ee90ce30e3",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard004.lean": "e5c89f5e2c7dd18609444073743e71f834f4d45c7e7df6b98cdf38c9acb0f3dc",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard005.lean": "3d605a93ad4fd886f9dabb6f717018132e32e6abaa3b72c282975075c7f82617",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard006.lean": "8288227b7a79c413f5ceb95bd3552a6b348083f55b3614f2216dfb8c1351f8a9",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard007.lean": "faa8fc8afdbeefddb189369f43bfd00f62f8933ed32ec923e66663efb24beab0",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard008.lean": "d58a97b8512a517624b9b7e793bc1ac9bc39bba108b724e16d9b2c0eed498f04",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard009.lean": "bbfe6bd394141fec000c839e070db82a2046279d6a3de8deff7c7d6ccebb9ed0",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard010.lean": "04a7644287e34a4af5d4b67255b265e7a73f2ff8d0fced68960b827c8b1b649e",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard011.lean": "68841ce5352ae9ffcacc325547313d95bf67ab65d6977c42111b2376e6743949",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard012.lean": "7b29350ae2565b76b8c9a62f9a328df3abae3a2928d5b5f19015ac2eca290067",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard013.lean": "ac4a310119e4b7e5fdde292e31233770843bdd0c6ee3098ea50bc8cfd96cbdef",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard014.lean": "c46624bea0059222939a6191f5b15e8a3698cb9c203f259884be7d5d8ab6a67a",
+    "MainTheory/Generated/Orbit31PhaseCoverage/Shard015.lean": "a7e50a1da853c03384e07af54f296857214af3e166d57c0fd91b8b213d544b8e",
+    "MainTheory/Generated/Orbit31PrintedSupportOrbits.lean": "65cc6723a9ff08bfb32cf67ca84ab855f9a2b47eaff255efed3d8b398428c5ab",
+    "MainTheory/Generated/Orbit31SupportArithmetic.lean": "3ab1a08ff5dfa0611c0239a12560e962db5886775ca6cca5c0ea2285c800b177",
+    "MainTheory/Generated/Orbit31SupportCoverage/Aggregate.lean": "1084a20912b366c93833790752ee33de1ad080cfa9527643f8f550bb6380d379",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard000.lean": "b2b249166c08914ca8ed0301823340bc10352049b0fae274ce5435284fd3f65e",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard001.lean": "fb56f09346d4146fb163c5beb441f92b74dd430f4a47b28c91bbc308710fbe8d",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard002.lean": "999b80b3e044cf36ee3e85be6a162917147ee98e2cd5dac234e4dfea75431a8e",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard003.lean": "7e7f0b2040e7319fdea80d6832782f9303385c72097213846afdf4baca95a5b4",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard004.lean": "c72f3b5f6b2db2ce7bd11559d5cce2193ba3ff394f14834e6f025c395381df55",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard005.lean": "74f26d92e02f20a4c005f79db1b2f2f343b7e27b6f113b01004aeefa8de1b05c",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard006.lean": "decc2e1ed2ab2b81b2404f5e6be98579e3402589374c0b962801c2ee3ad2ee9d",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard007.lean": "e7f770b0a21bc9dae53f36cb973d8dab8f7de78183e30057e3011a9820a068b6",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard008.lean": "75b3434ae89790620cce9be229783ca0b5e9dafc0973fe954c20fbe04cac190c",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard009.lean": "488ff471728ebfe9e5b9e85315fb7d6b11dfd0d5e4e3d7f24246fffb3e3dc596",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard010.lean": "4bfeb63486112a30299309af9cf5b2f0ce3e64da6d923e50f3eaf197fa9582b9",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard011.lean": "284b69b41bf87ec873e5a7576458d98ffdb59d37c94dfb8c52df95a3522f3824",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard012.lean": "f80074e8519e1114d0a746ca89b3f01cb2220e01cd861f2b2be074422c9dccbf",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard013.lean": "04abad0a3c7eec62ae42338fdaf93b74bf13b2e77d9a7d5d80fab85e5c8f28af",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard014.lean": "abe3cee7baf92f4d35f2dd90e8b0ba7bbf5984bc0a18576d754f46a21e67ccb4",
+    "MainTheory/Generated/Orbit31SupportCoverage/Shard015.lean": "eab798596b7fd337db150290d8f79ddfc31dbe88faf81ad14814d5a9c0087ef2",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Aggregate.lean": "6446e92a1b382abec0799e7bc630a9eb340ee04cc9400e5f67ed37cdaf543da2",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard000.lean": "5137c18680be888ae35a2d740e3fedd556b40dc8f44312bcd49e38c6230d4af0",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard001.lean": "adc541ede969e3adda2fbb8a03e0823858130824a8419d9ddefdca0721c974d0",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard002.lean": "849196d0a1ce99026faff74b470f7cbb3873c6790f291ec86c93f17ce6860d18",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard003.lean": "ca3cd49d3fb6e8bd7d1899ff4de565cd7f94dbdd35aef7b2be4311a8162b970d",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard004.lean": "0c7dd7ccab66df7f28ec4f79b6967a49a085d95025919b9fcd35f4ed1de60a65",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard005.lean": "7b5700a98200fd42eecfcd747dea6c6f13e154cd2a48a4241d78babe197420f3",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard006.lean": "a77b3eebd0b44931fcc1c336f499bd992d3640459501bbc0b67e44789b9c08ee",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard007.lean": "16fe1359b2eb4b5927e0b7444658b047e3f5c7d9bf5030de755e275cb58367bb",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard008.lean": "85f96eb546dab9e5d924d0955550fd92812a99f1e34541e731a637f7a97db66d",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard009.lean": "05b895bc7e773edd120d16da898509e67123a99545b95be2a8667ff4e5b56be8",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard010.lean": "47c15ce34b55570e4dcbe79cc1a2acd8b87847257d4959be1eddcd5a83ae0ab7",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard011.lean": "c74723cc8ea94a7cda7be03e513f802c2ec5a2ed2972ec67eb16cdf09657dbee",
+    "MainTheory/Generated/Orbit31VertexReconstructions/Shard012.lean": "5bb6886bd3bf55037d3c011d57bcda982bb9288b308f37ff71c876af0683c281",
+    "MainTheory/GridSupportAlgebra.lean": "c2bccf9d2f4400f014493e5fa7dab595f4f38387ad91839ee7ce3f6455701f3b",
+    "MainTheory/HalfAngleFiberFlip.lean": "f9a505350ef34d334f980e8f9e1189246c0f115791b7c6f541642816264076f7",
+    "MainTheory/IndexedCodeMoments.lean": "d3dfe998a82560e50020bd0a0be5e5443b9679d2472a72cacc8d528e8738dda9",
+    "MainTheory/MatrixPositiveSupportCertificates.lean": "76a85e575a687011a4be32657f42b19ccc73b1d03f6e708a76a1d5b4ab48ebdd",
+    "MainTheory/MatrixPositiveSupportVertices.lean": "38920f5dad0dff667ee13e8f06ec53190a3f691d4c3fd8b2d37c80edaadf91fb",
+    "MainTheory/Orbit29MomentPolytope.lean": "37780bde2403e0932286ff157c740a51276ccb9fe6034ee6bce2b122c3f137aa",
+    "MainTheory/Orbit29MomentRank.lean": "2668c89120306b5d24368cd8c77ff1a1c30607aec2291f871ff8457273db4cbe",
+    "MainTheory/Orbit29PairBalance.lean": "98fe3dc41466fd309f002b266aadad07c97a04d5c6913d9cd6790b46f4834e3f",
+    "MainTheory/Orbit29PhysicalPairGauge.lean": "e59863148b0355ca3185b9b436265592005bc9dc8c11ac1205b032b8829027dd",
+    "MainTheory/Orbit29PhysicalPairReduction.lean": "32ea27443428c452de549274b94f2ad18a2229d585ae04c9a382c51adb7e4ff8",
+    "MainTheory/Orbit29PhysicalRatios.lean": "cd0d0710b87d1514f6c8b5d8518cab945bdcc98d4dea0a40438e90794d923f0f",
+    "MainTheory/Orbit29PrintedEta.lean": "db77f8c8060a9b00803a2eff8a4f1f1a49a303c13cfa9002cb8b3229f1996395",
+    "MainTheory/Orbit29PrintedFaceAudit.lean": "c08d1ddbbfe03b46bb7d5d861ee95f44d8b74d7e4240ca27eb19fd7331bc28a3",
+    "MainTheory/Orbit29PrintedSimplex.lean": "f6764bfbeda85abe67a3e72b508565cd68b81254bb94b6b743753ba67ee027f1",
+    "MainTheory/Orbit29SimplexDimensions.lean": "7cae39dd5e5122dee451cc713f4f64b441e665e035632137a52d42f46e2b2723",
+    "MainTheory/Orbit29SimplexRelativeInterior.lean": "a06f096eea3390e7db1c4c661b4f21db4e097a868350ebe97305d8310a1c3645",
+    "MainTheory/Orbit31AffineTableGroup.lean": "67a0953e81d5d7c7869760a7f3ba4581edd7cd8f1735b2e7769a88634d81aa4c",
+    "MainTheory/Orbit31BalancedMomentIff.lean": "2945b135b08544846a965859e249b9f5bd2f25bac0228e981d152e058e3d0895",
+    "MainTheory/Orbit31CanonicalPhase.lean": "ac9e8895982bbc72f96f835856bfefd3ecff55600f29d5ce25b47a536479d934",
+    "MainTheory/Orbit31CrossConsequences.lean": "4435d41cda952a3a77a062375fa5ace2c0d607d502f1b0a848545428ae4046ca",
+    "MainTheory/Orbit31CrossRows.lean": "c9f7c2d866f30893f63c7876a99cce05841ff8c032b1d8563baa8f1f1159367e",
+    "MainTheory/Orbit31ExactSupportClassification.lean": "ea5d695237c331a044c80ecf9c18036e3a9f3909b1f92a4d7771b46b206838d3",
+    "MainTheory/Orbit31FinalCross.lean": "ab0895ed20942e9bea026a3aadebf43954173c57a529fb3c133cbb8b15c271f2",
+    "MainTheory/Orbit31FinalQuotients.lean": "e4d526b64bbc624b0b12c136d62a968b4726e3ad27540a8aeeb07661f98fd378",
+    "MainTheory/Orbit31FinalSameState.lean": "ae0f099bb1c0d6267a96be3ec24fa8cb162a375fbc000d52c677699f752f26fa",
+    "MainTheory/Orbit31HistoricalSupport.lean": "6cdf834e24c9752ee416f3e3c8debce38a71a56475c755e4427726ece49a89d1",
+    "MainTheory/Orbit31MomentFaces.lean": "c0d4d2965ea0ac35ddab8a30552cc0ea5df21d1b801135de0bb984f7ad753c9b",
+    "MainTheory/Orbit31MomentVertices.lean": "8b64db3be7440bdb395af8a30fab0fb2397c2f602c790803af74ec9478e38830",
+    "MainTheory/Orbit31NoSingletonClassification.lean": "c3bd3dfa989ab452d366d94db55c50bab040b6d38d21f6536d4d0e4a6a5a6f52",
+    "MainTheory/Orbit31PermanentAlgebra.lean": "2461249a0cf371ce7b26735fb91e83c5b7ff7a7989c7e4d7e3613113bad9d944",
+    "MainTheory/Orbit31PhaseClassification.lean": "7af6079d637b59663a436fedc51134d89f1ded544b2d2441ffde0c7086ea6451",
+    "MainTheory/Orbit31PhaseCoverageBase.lean": "d25f3f1d08e3004def1837c43371af227c270841c531998a6f6eb182ef1567f6",
+    "MainTheory/Orbit31PhaseRatios.lean": "b066edbb1c53f2267e24500308f9fe47e8daeafad3fde75423f7d84db7410a9a",
+    "MainTheory/Orbit31PhysicalSupportFilters.lean": "0573742b6f3246230067fef87dbd4eaba124cd2366aa3b8d8dc76a078b7c1ebc",
+    "MainTheory/Orbit31PrintedMinor.lean": "21cb3d9740b62debbed25f0857db0967cd2b63b61b92544a9019ff92a29ac60e",
+    "MainTheory/Orbit31RelativeInterior.lean": "74a0d30676112fa8dbf61ca0a6d105d4ba0a4c3e339597ee814db8370ec61411",
+    "MainTheory/Orbit31ResidualTriangles.lean": "e5a82c172cf853734f8d25e4a2d51469d428cff8d7a48b0d59a717f9e05b9584",
+    "MainTheory/Orbit31SignedSupport.lean": "6601729ae10c780d8b231632eb0093424735e45fe0800479064635ebfe631ab0",
+    "MainTheory/Orbit31SupportBase.lean": "7f6129a15902c94f11f04ca66d6837260e9920c9b2e3a43d2b9e920ef638a040",
+    "MainTheory/Orbit31SupportCoverageBase.lean": "da2c44fd1a080e4a2c99f8919e3cfb80208c03e3e46b9ad1f4026b692146eacd",
+    "MainTheory/Orbit31SupportMaskEquiv.lean": "dfb0ef103c9f424261f0c12061d95c5d52007dbdbe0be56709130f10dbe8cf66",
+    "MainTheory/Orbit31SupportSemantics.lean": "f26ed96b545c5d233b86edf2fc0bfff4f8e63becb09d9165876c6e17df324e1e",
+    "MainTheory/Orbit31TableSymmetry.lean": "e4086df471766f157be0a53f8df4aad96c1e1974b89642f1e02e000c38239e67",
+    "MainTheory/Orbit31VertexCertificateBase.lean": "d2754da62e8ff31fbe6b66dbe53d3ec7304fb49296231b9599b25d4f889d9d78",
+    "MainTheory/Orbit32PrintedLocalAlgebra.lean": "f860aef8c28e1d6deaa78efc4f57b761ab8a9a214ce5537ef2f7b51fefde770c",
+    "MainTheory/Orbit32PrintedMinor.lean": "aaae244b15af8dc435d0e1f6f137cabfa2b22e18d17ef92a024e16fc834bb4f4",
+    "MainTheory/Orbit32PrintedMomentNormal.lean": "1b9608ccde2020ec54fd7a589a7132eef72993d117661df8a27e24e13e2f7265",
+    "MainTheory/Orbit33NormalizedPairs.lean": "697374ac0a5be60fee492ddc05a7f8dc31b635e30dbf139ab7a2dd24f21b150b",
+    "MainTheory/Orbit33PhysicalReflection.lean": "b353329710c252fb9f835cff3f42a5e8ad9b616acc109f832c3d52a8dc2d8700",
+    "MainTheory/Orbit33PrintedBlocks.lean": "f4f0a955790ace3d95d3c20f17462d555e4348c3028641a0df04a1403123d690",
+    "MainTheory/Orbit33ProjectorArgument.lean": "332dffa3d314503274e3bc4ecece4d2ff07a572da3bb319a4dd9a27b08cbc53c",
+    "MainTheory/Orbit33ScalarReflection.lean": "52de3e2b59046bd5cabbe5f99b95607f1d624d57c2cf9286cef7dd31670855f0",
+    "MainTheory/Orbit3PrintedSplitMatrices.lean": "1b03ec56c43d3e37d2aec41cd6fe777ae48bc40862ddbfcebb3cf4a34b0d5159",
+    "MainTheory/Orbit45AffineGauge.lean": "0132be03831e70930960b46a43ff7ade774e4934197db15af1575f7d55c9703b",
+    "MainTheory/Orbit45BottomGauge.lean": "4f253f5af3a14738071c46aabaf32ee902722e91f85f43956e5479a5910f2036",
+    "MainTheory/Orbit45CrossFactors.lean": "d6f06ffa18e220ca30cfa7eab0c811f35f6615dbb7bc2c3cf4b61c62cca081c7",
+    "MainTheory/Orbit45DressingParseval.lean": "72648d9ea17e8fcd7dc61f396e3e799ae31d7cc229fff6644802e4bd78d6433a",
+    "MainTheory/Orbit45OrientedCoherences.lean": "84237fba69792bb193aae9f421a197e371bab607490196a36db35a7d81fd9d6d",
+    "MainTheory/Orbit45PhysicalCanonicalForm.lean": "2107a6a22af7718a6b771431f6f1dfb07c4f61adec91deed5e1654d0461ae1eb",
+    "MainTheory/Orbit45PhysicalGauge.lean": "9bca0e7bc2b2ebbb9315776c7457ae26c909477d24c9a45554527c6ec6ae99a9",
+    "MainTheory/Orbit45PhysicalPhaseNormalForm.lean": "63ef77d359326115fa934dd4590c495992ab4da1eafd073f709886738b98a09d",
+    "MainTheory/Orbit45PhysicalPrintedRows.lean": "9571979d423826c6f9a7fb0fc1080204744dc79fe31d73516a082d8eb154fd78",
+    "MainTheory/Orbit45PhysicalProbabilityDomain.lean": "37554efb434bab7fd569bf8d4e12ec2f981cb335dfcbcd056029d169d119271b",
+    "MainTheory/Orbit45PhysicalSpinFlip.lean": "ddcf65dfce4b820fa2b971bbd16822a7aa5c6ed3374fe0928d89b8e8dfcececb",
+    "MainTheory/Orbit45PrintedDiagonalContribution.lean": "88b6884846fc62450f0c5654c15d8d27049b2dd3bb5c94d2472535814ccc2770",
+    "MainTheory/Orbit45PrintedEnumerator.lean": "ea96b5cc2e155678bb59c8466f3a4dbda9364a7a75a46fbcff3d1cb9cf92a5fe",
+    "MainTheory/Orbit45PrintedLogicalAction.lean": "ed2a98e3a7e89e9e575ac19c19879f666538d152b97f7591bccec37a3c2b676e",
+    "MainTheory/Orbit45PrintedOffContribution.lean": "60ab59c2e16b214a3f0f058b3fe30cd408ac7f7110f142e8d7944aef5a1b4ed0",
+    "MainTheory/Orbit45RelativeLogicalPhase.lean": "84ae46b73c7ee73bedc50f8dde7ecd5c51bb51ec5c582941c4ff0c0fad520e19",
+    "MainTheory/Orbit45ShadowNormalization.lean": "2a84b31e52432098c5de6f61910bf8a5c07b320676c4c44b9fc499cb6e5456c8",
+    "MainTheory/Orbit45TopGauge.lean": "f7679a35a2465f2c3257cda45d8259dec0e60398c779f7468dd4bed33952796b",
+    "MainTheory/Orbit45TriangleExistence.lean": "99882180ea34af56ea5138e1edfdf6d565053bc92a7abd024b6cee138f80a2fb",
+    "MainTheory/Orbit49PhysicalCompletion.lean": "ae785f4f906ba130ada49922d01d38dafb6f6770c209e04ea7ef793da385e767",
+    "MainTheory/Orbit49PrintedAlgebra.lean": "7587c26937deb46e6e7afd86363301bec65df5248417fcc0ae39138b2e29d67d",
+    "MainTheory/Orbit49PrintedRows.lean": "1a664677382a52fb50a29f72733f6e766ca62eb2909adfea88d57b92de7e8020",
+    "MainTheory/Orbit50PhysicalTriangle.lean": "57d795f6b9544d32d7984e0b9684ece010290c46e97192a3477ef34fbb515d11",
+    "MainTheory/Orbit50PrintedRows.lean": "d95fc86a3b450109fd40eaf3ce2a10bac711c4e60911e48bfc18f7349006283b",
+    "MainTheory/Orbit51PhysicalCompletion.lean": "175baf6b0e8ee9e495e79d4b65b942f92fceaa9d2029890862f9b398d401a246",
+    "MainTheory/Orbit51PrintedAlgebra.lean": "a9984230f701269fa1daef23e19775fb39c5a181c5368db6899a6cf3b357dd47",
+    "MainTheory/Orbit51PrintedRows.lean": "00faed71df3c97b37329cea4543399e37b6cd137e983c50767c614e62a9673fe",
+    "MainTheory/OrderFiveGridRemainingDisplays.lean": "ea49a8c96ea47b71ce5eb570ee24f76d2837ac50c83841b7dea55763ee59e215",
+    "MainTheory/OrderFiveWalshRemainingDisplays.lean": "e1651427ba92844fa3d39d2956cf1f1852bc645734e37232b6942511c6ac9a76",
+    "MainTheory/OrderFourWalshRemainingDisplays.lean": "5ca31b93093e46f908a5d679e56c18f46468fb3e927992a9e61b7cd28668e48f",
+    "MainTheory/OrderThreePrintedCrossRows.lean": "d875302963bb71c51de900f8baced1afb1cd7a94b57d4752049c9eee3b8903b8",
+    "MainTheory/OrderThreePrintedMoments.lean": "821e736d325282aab9e0386112d8fed5c13e1c7a9b44df9f41a5c3fda261c20c",
+    "MainTheory/OrderThreePrintedRanks.lean": "1719fbe8f9c4acdfed7537f2e371444266a5bd4b834d8eef25c1f091c5d83754",
+    "MainTheory/OrderTwoPrintedMoments.lean": "4700bcecc7f05c94d9af789f8261f64e0d075a66bbbf28496a2bed52eb8b7ab8",
+    "MainTheory/OrderTwoPrintedRanks.lean": "9f73253d83d69040ffa7d1bdb1589eb96bd154554e1399c8ec30880d06c30760",
+    "MainTheory/OrderTwoPrintedWalsh.lean": "15dbdade415407f97768519bdfe3ce686e5e14f44786f04d1e7e222cfa4c050c",
+    "MainTheory/OrderTwoShellProjectors.lean": "ed4a43bb409e0af028328caa048f73262cde3499a9997482699a69eb04c9568c",
+    "MainTheory/PhysicalPhaseQuotients.lean": "0f45f385436956c79a02e4295c8ec8a95c9c4b8603667bb3c263892d37e59e98",
+    "MainTheory/RectangularFlipCharacters.lean": "2b68326011811b4d6ffe8723e1ae0bc5ac1dd6c1391c49294fe9403af051b31f",
+    "MainTheory/SignedPhaseSupport.lean": "8989735676aa060dec346eb2cbdef30199b52d481d4dc4be78c91a105488f8e5",
+    "MainTheory/StandardFiveJointSpace.lean": "62d49f71e9304d2780c46249c27e39520a42b7cf658f177509c8a4efa86d7322",
+    "MainTheory/StandardFiveSyndromeDisplays.lean": "032e2d83201e4f09daf5b10c8b2e5006a645359a9ea718018e8fcd4f6e279d8c"
+  },
+  "checks": [
+    {
+      "tool": "tools/verification/emit_orbit31_support_arithmetic.py",
+      "sha256_lf": "56f9214c75f3240b0091b42364fc41c2b3a88da23491cbaab645f536d4e778c6",
+      "exit_code": 0,
+      "output": "Prepared actual orbit-31 moment bridge and 204/68 integer arithmetic records; all-mask proof pending\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_support_coverage.py",
+      "sha256_lf": "6606b729a131cf07dce9c8f6f1b10c270a9eab9ba9c0c40ab822b3504c3f51cb",
+      "exit_code": 0,
+      "output": "Prepared 17 kernel-only coverage modules; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_cross_rows.py",
+      "sha256_lf": "79f59d4ab1b13c60f369462dbfb65156dad77bb4eda39036d064e591584717b6",
+      "exit_code": 0,
+      "output": "Prepared 12 actual cross-row modules; strict Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_cross_consequences.py",
+      "sha256_lf": "6c7976f612da9df2091a0bfac78427ffd191c61078b9468c6fbca2eefe061824",
+      "exit_code": 0,
+      "output": "Prepared canonical physical reciprocal, sum and eighteen rectangle equations; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_no_singleton_counts.py",
+      "sha256_lf": "24e2c783fc8c0d7fd07fd981401ce393eea5830b991b5bc38e2ea8da780fe1f0",
+      "exit_code": 0,
+      "output": "Prepared kernel counts for the no-singleton filter; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_phase_coverage.py",
+      "sha256_lf": "f5d38a238f6f8742aafc9b700a71516a9a3cb4e9119ca6f87ff3a03214cb46b1",
+      "exit_code": 0,
+      "output": "Prepared 17 kernel-only signed-graph coverage modules; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_symmetry_base.py",
+      "sha256_lf": "c65ebd9b4a7df6c949eb810944cc72460c8a7b299759c077975b703bdbe2d574",
+      "exit_code": 0,
+      "output": "Prepared 144 table permutations with physical realizations; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_printed_orbits.py",
+      "sha256_lf": "3ec40fb13a0cd842c2bc13066950b331b04b0b3cf693f870901c06710115e94b",
+      "exit_code": 0,
+      "output": "Prepared the literal 16-row SI support table and exact orbit coverage; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_affine_table_group.py",
+      "sha256_lf": "2e95cfd41f0ae45fc9d739cea9fe95ef5fdeb2bc4b74d3b1a58e9a62d2044f76",
+      "exit_code": 0,
+      "output": "affine table group source checked\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_vertex_reconstructions.py",
+      "sha256_lf": "e95436b2d969441062bc1196dfd0c5e53bdb21944a93668080e8b699aad3c04d",
+      "exit_code": 0,
+      "output": "14 vertex reconstruction modules checked\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_direct_triangles.py",
+      "sha256_lf": "9b93330a6f154757899479bea235b4851ac99e3827c75635db0ab0db8a1bbc14",
+      "exit_code": 0,
+      "output": "14 direct-triangle modules checked\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_final_cross.py",
+      "sha256_lf": "965d0dacffafb1d3263405fb4f491061a2205509e4c9434cc051689ca10b10c9",
+      "exit_code": 0,
+      "output": "final cross source checked\n"
+    },
+    {
+      "tool": "tools/verification/emit_orbit31_balanced_moment_iff.py",
+      "sha256_lf": "8abf97fe9687751daff7a5ac424031387db956d391044a1e522d4ce5dbe4f1d2",
+      "exit_code": 0,
+      "output": "Prepared full real moment iff; Lean acceptance remains required.\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit31_printed_minor.py",
+      "sha256_lf": "a8cf32db5dd91aaab5885b97e7c32664ce5744e6e8fab28d1e5b4e19547efe8b",
+      "exit_code": 0,
+      "output": "Generated literal minor certificate; discovery determinant: 128\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit32_printed_normal.py",
+      "sha256_lf": "f66950d7a7b669f6d85338c271250a47d2d732c65e2a7b1fcb9ce8812afa64dd",
+      "exit_code": 0,
+      "output": "Generated 23 independent printed normal equations, both directions\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit32_printed_minor.py",
+      "sha256_lf": "06226c2b0c43238a0e226afb36a6b7449e08e59ff0a3e009186d4c1ab30acac4",
+      "exit_code": 0,
+      "output": "Generated actual matrix and signed determinant 3456 certificate\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit33_printed_blocks.py",
+      "sha256_lf": "a42eab8c8fe4b786bb212bedb2fd2a749e0db209dd71c5c17c2be48766b47d6c",
+      "exit_code": 0,
+      "output": "Emitted all twelve norms and all twenty-four matrix-reflection entries\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit33_scalar_reflection.py",
+      "sha256_lf": "e7287f5c418b00d0a29ae2466a48ba82a25c7eeecdfe31ed8f45adbbfa1ca35d",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_order_five_grid_remaining.py",
+      "sha256_lf": "0060c3a964192cd556300752dc04ec7dcebd1ee0dabfe64a048dce9e4dbb8f58",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_order_four_walsh_remaining.py",
+      "sha256_lf": "3cd2c668b72679dae949556b2965533b9b15d6db4818b993c0a395043e58ca64",
+      "exit_code": 0,
+      "output": "Generated literal orbit-27 and orbit-62 physical derivations\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_three_printed_moments.py",
+      "sha256_lf": "ed9e43fbe0580c2aa9489c32dc53f67c11ac77a6f7336202399754c59a88701c",
+      "exit_code": 0,
+      "output": "Generated complete real SI moment normal forms for orbits 47 through 52\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_three_cross_rows.py",
+      "sha256_lf": "7509e74274c455afa3572d21d71b2658540aa054ce83dece31c4a14ebf7911c6",
+      "exit_code": 0,
+      "output": "Generated the three literal cross systems and probability products\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_three_printed_ranks.py",
+      "sha256_lf": "58927a4bc542c582b611d01d6332872dee35a15c352f5876e5f3624a1dfbb9b2",
+      "exit_code": 0,
+      "output": "Generated six actual matrix, signed minor, rank and kernel-dimension certificates\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit49_printed_rows.py",
+      "sha256_lf": "af73ce863fe81971539dd5e26aef04ebeb12de3f20601615c8e59d0b7fa6120b",
+      "exit_code": 0,
+      "output": "Generated all twelve literal four-Pauli cross tables and bidirectional row reductions\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit50_printed_rows.py",
+      "sha256_lf": "942211178c16e4a7a9cb50ed0e4c84795e6c94ab4ea3ea8d9cbdfc9bf2c3aa77",
+      "exit_code": 0,
+      "output": "Generated seven literal tables, complementary indexing and signed physical row reductions\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit51_printed_rows.py",
+      "sha256_lf": "274fbc27db3e9f48cccab5769fd55ff4826663da7096063f3e5423ca01f6ea91",
+      "exit_code": 0,
+      "output": "Generated five literal cross systems and both directions of the two one-dimensional kernels\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_two_printed_moments.py",
+      "sha256_lf": "cf6a44a4f68ad6f1b221811fb7936b819ee0125fe2f117680a89530c6cad52df",
+      "exit_code": 0,
+      "output": "Generated complete real SI moment normal forms for orbits 42,43,44,46\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_two_printed_walsh.py",
+      "sha256_lf": "4c09f5d962d200d19e2b124dff15229d7eab7837cf39b94a99fc89fbf14f2dd9",
+      "exit_code": 0,
+      "output": "Generated four literal signed determinants and physical matched-flip exclusions\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_two_printed_ranks.py",
+      "sha256_lf": "971819c7ffadd2852097ec43121ec9098c38d7e0e67efb3618fb451b740b45a7",
+      "exit_code": 0,
+      "output": "Generated six actual matrix, signed minor, rank and kernel-dimension certificates\n"
+    },
+    {
+      "tool": "tools/verification/generate_order_two_shell_projectors.py",
+      "sha256_lf": "93034dff72aeba27773f37a623f44a3acc79f6fd9d780a3e55482184bd557d67",
+      "exit_code": 0,
+      "output": "Generated actual shell masses, complete displayed systems and exact physical anchor projectors\n"
+    },
+    {
+      "tool": "tools/verification/generate_orbit45_affine_gauge.py",
+      "sha256_lf": "d50df99d0486f01596bf5cb48838d97512d12af31a9c06187dead3dee357bf36",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit45_cross_factors.py",
+      "sha256_lf": "e81639145ce92b68189ee0ca3d26ec7f60715a6038b2be061e5be6585cbaf2f9",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_standard_five_joint_space.py",
+      "sha256_lf": "e30b22040eda350f322e46b0665bdf6fca1c490b2b68625006a2f9e9fd69aed2",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_face_audit.py",
+      "sha256_lf": "3e6d00fc3d9b96c85652d7991e00c11f152362f4dab1a52c556a49af75e6aa4f",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_pair_balance.py",
+      "sha256_lf": "b94c020d5a74d34c323a12ca132f02b44697a4b5e10a991c4404cc1e15cef668",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_physical_pair_reduction.py",
+      "sha256_lf": "d94cdcc30c9c345cbe6e535d738a49de72cb8eafcee5029321f7ebc5ab987438",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_printed_simplex.py",
+      "sha256_lf": "0c9fe400fb1c405028489440fc8e4649519d6f4102835fdce6fe4ab743252c92",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_physical_ratios.py",
+      "sha256_lf": "cf9a760a33ce6dc6acdbe7d9645567eda77f9abbaca7befc8e610e174bee92c2",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_printed_eta.py",
+      "sha256_lf": "4b051586ea3d1ab7daa94d2bd5ddb2494bcaf86f1ed93c665c34904ba1f06baa",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "tool": "tools/verification/generate_orbit29_moment_rank.py",
+      "sha256_lf": "15b5b482ae0649112f103910f8d8d70958a88175513beac1c7e3086a50524c19",
+      "exit_code": 0,
+      "output": "Active rank 22 signed minor -384 kernel and active affine dimension 8\n"
+    }
+  ]
+}

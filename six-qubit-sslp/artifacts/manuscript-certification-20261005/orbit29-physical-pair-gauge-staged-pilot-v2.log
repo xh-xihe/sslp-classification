@@ -1,0 +1,44 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:61:57: error: unsolved goals
+case false
+u : ↥(unitary ℂ)
+c d : SS.State 6 ℂ
+v : Fin 10
+j : Fin 2
+⊢ (if vertexWords v j 4 = true then ↑u * c (vertexWords v j) else c (vertexWords v j)) =
+    if j = 0 then ↑u * c (vertexWords v j) else c (vertexWords v j)
+
+case true
+u : ↥(unitary ℂ)
+c d : SS.State 6 ℂ
+v : Fin 10
+j : Fin 2
+⊢ (if vertexWords v j 4 = true then ↑u * d (vertexWords v j) else d (vertexWords v j)) =
+    if j = 0 then ↑u * d (vertexWords v j) else d (vertexWords v j)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:64:55: error: This simp argument is unused:
+  vertex_fifth_bits
+
+Hint: Omit it from the simp argument list.
+  simp [̵d̵i̵a̵g̵o̵n̵a̵l̵A̵c̵t̵i̵o̵n̵,̵s̵i̵n̵g̵l̵e̵_̵v̵a̵l̵u̵e̵,̵v̵e̵r̵t̵e̵x̵_̵f̵i̵f̵t̵h̵_̵b̵i̵t̵s̵]̵[̲d̲i̲a̲g̲o̲n̲a̲l̲A̲c̲t̲i̲o̲n̲,̲ ̲s̲i̲n̲g̲l̲e̲_̲v̲a̲l̲u̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:92:6: error: Type mismatch
+  he
+has type
+  amplitudes c d v 1 = (if colors v = true then -u else u) * amplitudes c d v 0
+but is expected to have type
+  amplitudes c d v 1 = u * amplitudes c d v 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:93:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+H : FullKL c d
+m : Fin 15
+u : ℂ
+hf : Face m (coordinates d)
+hu : Complex.normSq u = 1
+hr : ∀ v ∈ active m, ratio c d v = sign (colors v) u
+U : ↥(unitary ℂ) := ⋯
+v : Fin 10
+hv : v ∈ active m
+hphase : ratio c d v = sign (colors v) u
+ha : amplitudes c d v 0 ≠ 0
+he : amplitudes c d v 1 = (if colors v = true then -u else u) * amplitudes c d v 0
+⊢ (if colors v = true then -u else u) * amplitudes c d v 0 + amplitudes c d v 0 * u = 0

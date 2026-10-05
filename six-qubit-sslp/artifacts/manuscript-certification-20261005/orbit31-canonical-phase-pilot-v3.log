@@ -1,0 +1,106 @@
+MainTheory/Orbit31CanonicalPhase.lean:162:41: error: Application type mismatch: The argument
+  hl.left
+has type
+  active mask (B (rowPairs r).1 (colPairs k).1) = true ∧ active mask (B (rowPairs r).2 (colPairs k).2) = true
+but is expected to have type
+  (active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+in the application
+  opposite_left hp hs hm r k hl.left
+MainTheory/Orbit31CanonicalPhase.lean:162:54: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  !(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1))
+in the target expression
+  ¬(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+left✝¹ : r ∈ List.finRange 3
+k : Fin 6
+left✝ : k ∈ List.finRange 6
+he✝¹ :
+  { left := B (rowPairs r).1 (colPairs k).1, right := B (rowPairs r).2 (colPairs k).2, negative := true } ∈ edges mask
+he✝ :
+  { left := B (rowPairs r).1 (colPairs k).1, right := B (rowPairs r).2 (colPairs k).2, negative := true } ∈
+    rectangleEdges mask
+he :
+  { left := B (rowPairs r).1 (colPairs k).1, right := B (rowPairs r).2 (colPairs k).2, negative := true } ∈
+    List.flatMap
+      (fun k =>
+        have i := (rowPairs r).1;
+        have j := (rowPairs r).2;
+        have e := (colPairs k).1;
+        have f := (colPairs k).2;
+        have left := active mask (B i e) && active mask (B j f);
+        have right := active mask (B i f) && active mask (B j e);
+        if (left && !right) = true then [{ left := B i e, right := B j f, negative := true }]
+        else if (right && !left) = true then [{ left := B i f, right := B j e, negative := true }] else [])
+      (List.finRange 6)
+hl :
+  (active mask (B (rowPairs r).1 (colPairs k).1) = true ∧ active mask (B (rowPairs r).2 (colPairs k).2) = true) ∧
+    (!(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1))) = true
+⊢ ¬(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+MainTheory/Orbit31CanonicalPhase.lean:166:42: error: Application type mismatch: The argument
+  hr.left
+has type
+  active mask (B (rowPairs r).1 (colPairs k).2) = true ∧ active mask (B (rowPairs r).2 (colPairs k).1) = true
+but is expected to have type
+  (active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+in the application
+  opposite_right hp hs hm r k hr.left
+MainTheory/Orbit31CanonicalPhase.lean:166:55: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  !(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2))
+in the target expression
+  ¬(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+left✝¹ : r ∈ List.finRange 3
+k : Fin 6
+left✝ : k ∈ List.finRange 6
+hl :
+  ¬(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2) &&
+        !(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1))) =
+      true
+he✝¹ :
+  { left := B (rowPairs r).1 (colPairs k).2, right := B (rowPairs r).2 (colPairs k).1, negative := true } ∈ edges mask
+he✝ :
+  { left := B (rowPairs r).1 (colPairs k).2, right := B (rowPairs r).2 (colPairs k).1, negative := true } ∈
+    rectangleEdges mask
+he :
+  { left := B (rowPairs r).1 (colPairs k).2, right := B (rowPairs r).2 (colPairs k).1, negative := true } ∈
+    List.flatMap
+      (fun k =>
+        have i := (rowPairs r).1;
+        have j := (rowPairs r).2;
+        have e := (colPairs k).1;
+        have f := (colPairs k).2;
+        have left := active mask (B i e) && active mask (B j f);
+        have right := active mask (B i f) && active mask (B j e);
+        if (left && !right) = true then [{ left := B i e, right := B j f, negative := true }]
+        else if (right && !left) = true then [{ left := B i f, right := B j e, negative := true }] else [])
+      (List.finRange 6)
+hr :
+  (active mask (B (rowPairs r).1 (colPairs k).2) = true ∧ active mask (B (rowPairs r).2 (colPairs k).1) = true) ∧
+    (!(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2))) = true
+⊢ ¬(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+MainTheory/Orbit31CanonicalPhase.lean:161:36: error: This simp argument is unused:
+  Bool.not_eq_true
+
+Hint: Omit it from the simp argument list.
+  simp only [Bool.and_eq_true,̵B̵o̵o̵l̵.̵n̵o̵t̵_̵e̵q̵_̵t̵r̵u̵e̵] at hl
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31CanonicalPhase.lean:165:36: error: This simp argument is unused:
+  Bool.not_eq_true
+
+Hint: Omit it from the simp argument list.
+  simp only [Bool.and_eq_true,̵B̵o̵o̵l̵.̵n̵o̵t̵_̵e̵q̵_̵t̵r̵u̵e̵] at hr
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

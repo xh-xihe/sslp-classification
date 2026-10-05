@@ -1,0 +1,34 @@
+MainTheory/Orbit31CanonicalPhase.lean:106:24: error: invalid 'by' tactic, expected type has not been provided
+MainTheory/Orbit31CanonicalPhase.lean:100:54: error: unsolved goals
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+k : Fin 6
+hl : (active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+hr : ¬(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+h :
+  (sigma c d (B (rowPairs r).1 (colPairs k).1) + sigma c d (B (rowPairs r).2 (colPairs k).2)) *
+        c (B (rowPairs r).1 (colPairs k).1) *
+      c (B (rowPairs r).2 (colPairs k).2) =
+    0
+⊢ sigma c d (B (rowPairs r).1 (colPairs k).1) = -sigma c d (B (rowPairs r).2 (colPairs k).2)
+MainTheory/Orbit31CanonicalPhase.lean:127:24: error: invalid 'by' tactic, expected type has not been provided
+MainTheory/Orbit31CanonicalPhase.lean:121:54: error: unsolved goals
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+k : Fin 6
+hr : (active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+hl : ¬(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+h :
+  (sigma c d (B (rowPairs r).1 (colPairs k).2) + sigma c d (B (rowPairs r).2 (colPairs k).1)) *
+        c (B (rowPairs r).1 (colPairs k).2) *
+      c (B (rowPairs r).2 (colPairs k).1) =
+    0
+⊢ sigma c d (B (rowPairs r).1 (colPairs k).2) = -sigma c d (B (rowPairs r).2 (colPairs k).1)

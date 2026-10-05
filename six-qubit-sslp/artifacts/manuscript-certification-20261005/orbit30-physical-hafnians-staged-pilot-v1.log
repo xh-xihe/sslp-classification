@@ -1,0 +1,361 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalHafnians.lean:53:73: error: unsolved goals
+case «0»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ![-(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2)]
+      ⟨0, ⋯⟩ =
+    -(phase c d ⟨15, ⋯⟩ *
+          star
+            (![edgeC c 1 2 * edgeC c 3 4 + edgeC c 1 3 * edgeC c 2 4 + edgeC c 1 4 * edgeC c 2 3,
+                edgeC c 3 4 * edgeC c 0 2 + edgeC c 2 4 * edgeC c 0 3 + edgeC c 2 3 * edgeC c 0 4,
+                edgeC c 3 4 * edgeC c 0 1 + edgeC c 1 3 * edgeC c 0 4 + edgeC c 1 4 * edgeC c 0 3,
+                edgeC c 1 2 * edgeC c 0 4 + edgeC c 2 4 * edgeC c 0 1 + edgeC c 1 4 * edgeC c 0 2,
+                edgeC c 1 2 * edgeC c 0 3 + edgeC c 1 3 * edgeC c 0 2 + edgeC c 2 3 * edgeC c 0 1]
+              ⟨0, ⋯⟩) *
+        2)
+
+case «1»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ![-(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2)]
+      ⟨1, ⋯⟩ =
+    -(phase c d ⟨15, ⋯⟩ *
+          star
+            (![edgeC c 1 2 * edgeC c 3 4 + edgeC c 1 3 * edgeC c 2 4 + edgeC c 1 4 * edgeC c 2 3,
+                edgeC c 3 4 * edgeC c 0 2 + edgeC c 2 4 * edgeC c 0 3 + edgeC c 2 3 * edgeC c 0 4,
+                edgeC c 3 4 * edgeC c 0 1 + edgeC c 1 3 * edgeC c 0 4 + edgeC c 1 4 * edgeC c 0 3,
+                edgeC c 1 2 * edgeC c 0 4 + edgeC c 2 4 * edgeC c 0 1 + edgeC c 1 4 * edgeC c 0 2,
+                edgeC c 1 2 * edgeC c 0 3 + edgeC c 1 3 * edgeC c 0 2 + edgeC c 2 3 * edgeC c 0 1]
+              ⟨1, ⋯⟩) *
+        2)
+
+case «2»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ![-(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2)]
+      ⟨2, ⋯⟩ =
+    -(phase c d ⟨15, ⋯⟩ *
+          star
+            (![edgeC c 1 2 * edgeC c 3 4 + edgeC c 1 3 * edgeC c 2 4 + edgeC c 1 4 * edgeC c 2 3,
+                edgeC c 3 4 * edgeC c 0 2 + edgeC c 2 4 * edgeC c 0 3 + edgeC c 2 3 * edgeC c 0 4,
+                edgeC c 3 4 * edgeC c 0 1 + edgeC c 1 3 * edgeC c 0 4 + edgeC c 1 4 * edgeC c 0 3,
+                edgeC c 1 2 * edgeC c 0 4 + edgeC c 2 4 * edgeC c 0 1 + edgeC c 1 4 * edgeC c 0 2,
+                edgeC c 1 2 * edgeC c 0 3 + edgeC c 1 3 * edgeC c 0 2 + edgeC c 2 3 * edgeC c 0 1]
+              ⟨2, ⋯⟩) *
+        2)
+
+case «3»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ![-(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2)]
+      ⟨3, ⋯⟩ =
+    -(phase c d ⟨15, ⋯⟩ *
+          star
+            (![edgeC c 1 2 * edgeC c 3 4 + edgeC c 1 3 * edgeC c 2 4 + edgeC c 1 4 * edgeC c 2 3,
+                edgeC c 3 4 * edgeC c 0 2 + edgeC c 2 4 * edgeC c 0 3 + edgeC c 2 3 * edgeC c 0 4,
+                edgeC c 3 4 * edgeC c 0 1 + edgeC c 1 3 * edgeC c 0 4 + edgeC c 1 4 * edgeC c 0 3,
+                edgeC c 1 2 * edgeC c 0 4 + edgeC c 2 4 * edgeC c 0 1 + edgeC c 1 4 * edgeC c 0 2,
+                edgeC c 1 2 * edgeC c 0 3 + edgeC c 1 3 * edgeC c 0 2 + edgeC c 2 3 * edgeC c 0 1]
+              ⟨3, ⋯⟩) *
+        2)
+
+case «4»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ![-(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2),
+        -(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨3, starSum._proof_4⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨4, starSum._proof_5⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨4, starSum._proof_5⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨4, starSum._proof_5⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+              2),
+        -(star (edgeC c ⟨1, starSum._proof_1⟩ ⟨2, starSum._proof_3⟩) * phase c d ⟨15, ⋯⟩ *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨3, starSum._proof_4⟩) *
+              2) +
+          (-(phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨1, starSum._proof_1⟩ ⟨3, starSum._proof_4⟩) *
+                  star (edgeC c ⟨0, starSum._proof_2⟩ ⟨2, starSum._proof_3⟩) *
+                2) -
+            phase c d ⟨15, ⋯⟩ * star (edgeC c ⟨2, starSum._proof_3⟩ ⟨3, starSum._proof_4⟩) *
+                star (edgeC c ⟨0, starSum._proof_2⟩ ⟨1, starSum._proof_1⟩) *
+              2)]
+      ⟨4, ⋯⟩ =
+    -(phase c d ⟨15, ⋯⟩ *
+          star
+            (![edgeC c 1 2 * edgeC c 3 4 + edgeC c 1 3 * edgeC c 2 4 + edgeC c 1 4 * edgeC c 2 3,
+                edgeC c 3 4 * edgeC c 0 2 + edgeC c 2 4 * edgeC c 0 3 + edgeC c 2 3 * edgeC c 0 4,
+                edgeC c 3 4 * edgeC c 0 1 + edgeC c 1 3 * edgeC c 0 4 + edgeC c 1 4 * edgeC c 0 3,
+                edgeC c 1 2 * edgeC c 0 4 + edgeC c 2 4 * edgeC c 0 1 + edgeC c 1 4 * edgeC c 0 2,
+                edgeC c 1 2 * edgeC c 0 3 + edgeC c 1 3 * edgeC c 0 2 + edgeC c 2 3 * edgeC c 0 1]
+              ⟨4, ⋯⟩) *
+        2)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalHafnians.lean:56:55: error: This simp argument is unused:
+  star_add
+
+Hint: Omit it from the simp argument list.
+  simp only [matchingSum, ̲MainTheory.Orbit30VertexScaling.hafnian, ̲edgeMatrix, ̲edgeU,
+        actual_edge_reconstruction c d hc hd hnc hnd hkl, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalHafnians.lean:56:64: error: This simp argument is unused:
+  star_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [matchingSum, ̲MainTheory.Orbit30VertexScaling.hafnian, ̲edgeMatrix, ̲edgeU,
+        actual_edge_reconstruction c d hc hd hnc hnd hkl, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵a̲d̲d̲]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

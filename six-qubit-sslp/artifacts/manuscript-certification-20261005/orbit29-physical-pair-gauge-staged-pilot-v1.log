@@ -1,0 +1,30 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:64:26: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:61:57: error: unsolved goals
+case true
+u : ↥(unitary ℂ)
+c d : SS.State 6 ℂ
+v : Fin 10
+j : Fin 2
+hc : colors v = true
+⊢ diagonalAction (singlePhase u) d (vertexWords v j) = (if j = 0 then ↑u else 1) * d (vertexWords v j)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:64:37: error: This simp argument is unused:
+  hc
+
+Hint: Omit it from the simp argument list.
+  simp only [h̵c̵,̵ite_true, ̲ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:64:49: error: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵c̵,̵i̵t̵e̵_̵t̵r̵u̵e̵,̵i̵t̵e̵_̵f̵a̵l̵s̵e̵]̵[̲h̲c̲,̲ ̲i̲t̲e̲_̲t̲r̲u̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairGauge.lean:93:56: error: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵c̵,̵s̵i̵g̵n̵,̵i̵t̵e̵_̵t̵r̵u̵e̵,̵i̵t̵e̵_̵f̵a̵l̵s̵e̵]̵[̲h̲c̲,̲ ̲s̲i̲g̲n̲,̲ ̲i̲t̲e̲_̲t̲r̲u̲e̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

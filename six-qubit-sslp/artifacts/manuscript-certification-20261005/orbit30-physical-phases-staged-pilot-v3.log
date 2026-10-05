@@ -1,0 +1,13 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalPhases.lean:24:54: error: unsolved goals
+c d : SS.State 6 ℂ
+i j : Fin 16
+hj : c (bottom j) ≠ 0
+⊢ (starRingEnd ℂ) (c (bottom i)) * d (top (complementIndex j)) =
+    (starRingEnd ℂ) (c (bottom i)) * d (top (complementIndex j)) * (starRingEnd ℂ) (c (bottom j)) *
+      ((starRingEnd ℂ) (c (bottom j)))⁻¹

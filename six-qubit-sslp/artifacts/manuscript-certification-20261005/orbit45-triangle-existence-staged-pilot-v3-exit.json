@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit45TriangleExistence.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 18.743033899983857
+}

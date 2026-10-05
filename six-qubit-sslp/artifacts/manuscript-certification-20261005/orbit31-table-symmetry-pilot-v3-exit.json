@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31TableSymmetry.olean",
+    "MainTheory/Orbit31TableSymmetry.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 53.90147900005104
+}

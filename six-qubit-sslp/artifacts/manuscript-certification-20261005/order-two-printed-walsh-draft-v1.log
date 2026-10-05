@@ -1,0 +1,52 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:101:32: error(lean.unknownIdentifier): Unknown constant `Complex.normSq_star`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:96:73: error: unsolved goals
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit42.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit42.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+j : Fin 10
+hm : Moment (fun i => Complex.normSq (c (bottom i))) fun i => Complex.normSq (d (top i))
+he : Complex.normSq (c (bottom j)) = Complex.normSq (d (top j))
+⊢ Complex.normSq (star (c (bottom j))) * Complex.normSq (d (top j)) =
+    Complex.normSq (d (top j)) * Complex.normSq (d (top j))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:206:32: error(lean.unknownIdentifier): Unknown constant `Complex.normSq_star`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:201:73: error: unsolved goals
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit43.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit43.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+j : Fin 10
+hm : Moment (fun i => Complex.normSq (c (bottom i))) fun i => Complex.normSq (d (top i))
+he : Complex.normSq (c (bottom j)) = Complex.normSq (d (top j))
+⊢ Complex.normSq (star (c (bottom j))) * Complex.normSq (d (top j)) =
+    Complex.normSq (d (top j)) * Complex.normSq (d (top j))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:311:32: error(lean.unknownIdentifier): Unknown constant `Complex.normSq_star`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:306:73: error: unsolved goals
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit44.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit44.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+j : Fin 10
+hm : Moment (fun i => Complex.normSq (c (bottom i))) fun i => Complex.normSq (d (top i))
+he : Complex.normSq (c (bottom j)) = Complex.normSq (d (top j))
+⊢ Complex.normSq (star (c (bottom j))) * Complex.normSq (d (top j)) =
+    Complex.normSq (d (top j)) * Complex.normSq (d (top j))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:416:32: error(lean.unknownIdentifier): Unknown constant `Complex.normSq_star`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoPrintedWalsh.lean:411:73: error: unsolved goals
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit46.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit46.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+j : Fin 10
+hm : Moment (fun i => Complex.normSq (c (bottom i))) fun i => Complex.normSq (d (top i))
+he : Complex.normSq (c (bottom j)) = Complex.normSq (d (top j))
+⊢ Complex.normSq (star (c (bottom j))) * Complex.normSq (d (top j)) =
+    Complex.normSq (d (top j)) * Complex.normSq (d (top j))

@@ -1,0 +1,11 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalPhases.lean:26:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  star (?r * ?s)
+in the target expression
+  (starRingEnd ℂ) (c (bottom i)) * d (top (complementIndex j)) =
+    d (top (complementIndex j)) / (starRingEnd ℂ) (c (bottom j)) * (starRingEnd ℂ) (c (bottom i) * c (bottom j))
+
+c d : SS.State 6 ℂ
+i j : Fin 16
+hj : c (bottom j) ≠ 0
+⊢ (starRingEnd ℂ) (c (bottom i)) * d (top (complementIndex j)) =
+    d (top (complementIndex j)) / (starRingEnd ℂ) (c (bottom j)) * (starRingEnd ℂ) (c (bottom i) * c (bottom j))

@@ -1,0 +1,42 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30ProbabilityLabels.lean:45:2: error: unsolved goals
+case h.e'_2
+p t : Fin 16 → ℝ
+hm : Moment p t
+he :
+  p ⟨15, Moment._proof_16⟩ = 1 / 8 ∧
+    t ⟨15, Moment._proof_16⟩ = p ⟨15, Moment._proof_16⟩ ∧
+      p ⟨14, Moment._proof_15⟩ + p ⟨13, Moment._proof_14⟩ + p ⟨11, Moment._proof_12⟩ + p ⟨7, Moment._proof_8⟩ =
+          p ⟨0, Moment._proof_1⟩ + 1 / 8 ∧
+        p ⟨14, Moment._proof_15⟩ + p ⟨12, Moment._proof_13⟩ + p ⟨10, Moment._proof_11⟩ + p ⟨6, Moment._proof_7⟩ =
+            p ⟨1, Moment._proof_2⟩ + 1 / 8 ∧
+          p ⟨13, Moment._proof_14⟩ + p ⟨12, Moment._proof_13⟩ + p ⟨9, Moment._proof_10⟩ + p ⟨5, Moment._proof_6⟩ =
+              p ⟨2, Moment._proof_3⟩ + 1 / 8 ∧
+            p ⟨11, Moment._proof_12⟩ + p ⟨10, Moment._proof_11⟩ + p ⟨9, Moment._proof_10⟩ + p ⟨3, Moment._proof_4⟩ =
+                p ⟨4, Moment._proof_5⟩ + 1 / 8 ∧
+              p ⟨7, Moment._proof_8⟩ + p ⟨6, Moment._proof_7⟩ + p ⟨5, Moment._proof_6⟩ + p ⟨3, Moment._proof_4⟩ =
+                  p ⟨8, Moment._proof_9⟩ + 1 / 8 ∧
+                p ⟨0, Moment._proof_1⟩ + p ⟨1, Moment._proof_2⟩ + p ⟨2, Moment._proof_3⟩ + p ⟨4, Moment._proof_5⟩ +
+                      p ⟨8, Moment._proof_9⟩ =
+                    3 / 8 ∧
+                  p ⟨14, Moment._proof_15⟩ + p ⟨13, Moment._proof_14⟩ + p ⟨11, Moment._proof_12⟩ +
+                                  p ⟨7, Moment._proof_8⟩ +
+                                p ⟨12, Moment._proof_13⟩ +
+                              p ⟨10, Moment._proof_11⟩ +
+                            p ⟨6, Moment._proof_7⟩ +
+                          p ⟨9, Moment._proof_10⟩ +
+                        p ⟨5, Moment._proof_6⟩ +
+                      p ⟨3, Moment._proof_4⟩ =
+                    1 / 2
+h :
+  p ⟨0, Moment._proof_1⟩ + p ⟨1, Moment._proof_2⟩ + p ⟨2, Moment._proof_3⟩ + p ⟨4, Moment._proof_5⟩ +
+      p ⟨8, Moment._proof_9⟩ =
+    3 / 8
+⊢ p 0 + p 1 + p ⟨2, vertexIndex._proof_3⟩ + p ⟨4, vertexIndex._proof_4⟩ + p ⟨8, vertexIndex._proof_5⟩ =
+    p ⟨2, vertexIndex._proof_3⟩ + p ⟨4, vertexIndex._proof_4⟩ + p ⟨8, vertexIndex._proof_5⟩ + p ⟨0, Moment._proof_1⟩ +
+      p ⟨1, Moment._proof_2⟩

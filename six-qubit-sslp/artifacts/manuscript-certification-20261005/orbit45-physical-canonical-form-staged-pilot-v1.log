@@ -1,0 +1,54 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalCanonicalForm.lean:27:17: error: Application type mismatch: The argument
+  s0
+has type
+  ↑S ≠ 0
+but is expected to have type
+  2 * ↑S ≠ 0
+in the application
+  mul_ne_zero s0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalCanonicalForm.lean:40:2: error: 'change' tactic failed, pattern
+  star (c (bottom ⟨2, ⋯⟩)) * d (top ⟨2, ⋯⟩) = -star (c (bottom 1)) * d (top 1) - star (c (bottom 0)) * d (top 0)
+is not definitionally equal to target
+  z c d ⟨2, ⋯⟩ = Orbit45PrintedWalsh.pattern (z c d 3) (z c d 1) (z c d 0) ⟨2, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalCanonicalForm.lean:79:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  √(Complex.normSq ?m.402) ^ 2
+in the target expression
+  ↑(√(p c 1) ^ 2) * xi + ↑(√(p c 0) ^ 2) * eta + ↑(√(p c 2) ^ 2) * zeta = 0
+
+c d : SS.State 6 ℂ
+H : FullKL c d
+hpos : 0 < p c 1 * p c 0 * p c 2
+theta : Fin 7 → ℝ
+tau U V W xi eta zeta : ℂ
+htau : star tau * tau = 1
+hH : FullKL (phaseAction theta c) (tau • phaseAction theta d)
+hp : p (phaseAction theta c) = p c
+hU : Complex.normSq U = 1
+hV : Complex.normSq V = 1
+hW : Complex.normSq W = 1
+hxi : Complex.normSq xi = 1
+heta : Complex.normSq eta = 1
+left✝ : Complex.normSq zeta = 1
+hC : (fun i => phaseAction theta c (bottom i)) = C (√(p c 1)) (√(p c 0)) (√(p c 2)) (1 / √8) U V W
+hD : (fun i => (tau • phaseAction theta d) (top i)) = D (√(p c 1)) (√(p c 0)) (√(p c 2)) (1 / √8) U V W xi eta zeta
+hall : (∀ (i : Fin 10), c (bottom i) ≠ 0) ∧ ∀ (i : Fin 10), d (top i) ≠ 0
+hB : 0 < √(p c 1)
+hG : 0 < √(p c 0)
+hS : 0 < √(p c 2)
+hh : 0 < 1 / √8
+hu : U = -1
+hv : V = star xi
+hw : W = star eta
+hz : zeta = 1
+htriangle : ↑(√(p c 1) ^ 2) * xi + ↑(√(p c 0) ^ 2) * eta + ↑(√(p c 2) ^ 2) * zeta = 0
+⊢ ∃ theta tau xi eta,
+    let c' := phaseAction theta c;
+    let d' := tau • phaseAction theta d;
+    star tau * tau = 1 ∧
+      FullKL c' d' ∧
+        p c' = p c ∧
+          Complex.normSq xi = 1 ∧
+            Complex.normSq eta = 1 ∧
+              ↑(p c 1) * xi + ↑(p c 0) * eta + ↑(p c 2) = 0 ∧
+                (fun i => c' (bottom i)) = C (√(p c 1)) (√(p c 0)) (√(p c 2)) (1 / √8) (-1) (star xi) (star eta) ∧
+                  (fun i => d' (top i)) = D (√(p c 1)) (√(p c 0)) (√(p c 2)) (1 / √8) (-1) (star xi) (star eta) xi eta 1

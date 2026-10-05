@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit29PrintedFaceAudit.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 16.73429260001285
+}

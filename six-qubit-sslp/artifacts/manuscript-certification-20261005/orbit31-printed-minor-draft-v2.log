@@ -1,0 +1,4 @@
+tmp/manuscript-publication-20261005/drafts/Orbit31PrintedMinor.lean:64:2: error: mod_cast has type
+  |minorQ.det| = 128
+but is expected to have type
+  |(Rat.castHom ℝ) minorQ.det| = 128

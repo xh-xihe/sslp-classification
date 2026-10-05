@@ -1,0 +1,5 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:66:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  2 ≤ a ≤ 31
+where
+ a := ↑↑⟨1, ⋯⟩

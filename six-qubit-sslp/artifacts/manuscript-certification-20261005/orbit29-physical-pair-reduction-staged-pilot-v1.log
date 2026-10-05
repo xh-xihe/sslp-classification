@@ -1,0 +1,156 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:163:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:163:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 1) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 1 1 - highPairs d 1 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 0) * highPairs d 0 0 * highPairs d 1 1 - ↑(Q d 0) * highPairs d 1 0 * highPairs d 0 1 +
+          (↑(Q d 1) * highPairs d 0 0 * highPairs d 1 1 - ↑(Q d 1) * highPairs d 1 0 * highPairs d 0 1) +
+        highPairs d 0 0 * highPairs d 1 1 * (-1 / 4) +
+      highPairs d 1 0 * highPairs d 0 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:173:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:173:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 2) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 2 1 - highPairs d 2 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 0) * highPairs d 0 0 * highPairs d 2 1 - ↑(Q d 0) * highPairs d 2 0 * highPairs d 0 1 +
+          (↑(Q d 2) * highPairs d 0 0 * highPairs d 2 1 - ↑(Q d 2) * highPairs d 2 0 * highPairs d 0 1) +
+        highPairs d 0 0 * highPairs d 2 1 * (-1 / 4) +
+      highPairs d 2 0 * highPairs d 0 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:183:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:183:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 0) * highPairs d 0 0 * highPairs d 3 1 - ↑(Q d 0) * highPairs d 3 0 * highPairs d 0 1 +
+          (↑(Q d 3) * highPairs d 0 0 * highPairs d 3 1 - ↑(Q d 3) * highPairs d 3 0 * highPairs d 0 1) +
+        highPairs d 0 0 * highPairs d 3 1 * (-1 / 4) +
+      highPairs d 3 0 * highPairs d 0 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:193:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:193:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 1) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 1 1 - highPairs d 1 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 1) * highPairs d 1 0 * highPairs d 0 1 - ↑(Q d 1) * highPairs d 0 0 * highPairs d 1 1 +
+          (↑(Q d 0) * highPairs d 1 0 * highPairs d 0 1 - ↑(Q d 0) * highPairs d 0 0 * highPairs d 1 1) +
+        highPairs d 1 0 * highPairs d 0 1 * (-1 / 4) +
+      highPairs d 0 0 * highPairs d 1 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:204:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:204:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 1) + ↑(Q d 2) - 1 / 4 = 0 ∨ highPairs d 1 0 * highPairs d 2 1 - highPairs d 2 0 * highPairs d 1 1 = 0
+⊢ ↑(Q d 1) * highPairs d 1 0 * highPairs d 2 1 - ↑(Q d 1) * highPairs d 2 0 * highPairs d 1 1 +
+          (↑(Q d 2) * highPairs d 1 0 * highPairs d 2 1 - ↑(Q d 2) * highPairs d 2 0 * highPairs d 1 1) +
+        highPairs d 1 0 * highPairs d 2 1 * (-1 / 4) +
+      highPairs d 2 0 * highPairs d 1 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:214:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:214:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 1) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 1 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 1 1 = 0
+⊢ ↑(Q d 1) * highPairs d 1 0 * highPairs d 3 1 - ↑(Q d 1) * highPairs d 3 0 * highPairs d 1 1 +
+          (↑(Q d 3) * highPairs d 1 0 * highPairs d 3 1 - ↑(Q d 3) * highPairs d 3 0 * highPairs d 1 1) +
+        highPairs d 1 0 * highPairs d 3 1 * (-1 / 4) +
+      highPairs d 3 0 * highPairs d 1 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:224:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:224:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 2) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 2 1 - highPairs d 2 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 2) * highPairs d 2 0 * highPairs d 0 1 - ↑(Q d 2) * highPairs d 0 0 * highPairs d 2 1 +
+          (↑(Q d 0) * highPairs d 2 0 * highPairs d 0 1 - ↑(Q d 0) * highPairs d 0 0 * highPairs d 2 1) +
+        highPairs d 2 0 * highPairs d 0 1 * (-1 / 4) +
+      highPairs d 0 0 * highPairs d 2 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:234:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:234:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 1) + ↑(Q d 2) - 1 / 4 = 0 ∨ highPairs d 1 0 * highPairs d 2 1 - highPairs d 2 0 * highPairs d 1 1 = 0
+⊢ ↑(Q d 2) * highPairs d 2 0 * highPairs d 1 1 - ↑(Q d 2) * highPairs d 1 0 * highPairs d 2 1 +
+          (↑(Q d 1) * highPairs d 2 0 * highPairs d 1 1 - ↑(Q d 1) * highPairs d 1 0 * highPairs d 2 1) +
+        highPairs d 2 0 * highPairs d 1 1 * (-1 / 4) +
+      highPairs d 1 0 * highPairs d 2 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:245:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:245:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 2) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 2 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 2 1 = 0
+⊢ ↑(Q d 2) * highPairs d 2 0 * highPairs d 3 1 - ↑(Q d 2) * highPairs d 3 0 * highPairs d 2 1 +
+          (↑(Q d 3) * highPairs d 2 0 * highPairs d 3 1 - ↑(Q d 3) * highPairs d 3 0 * highPairs d 2 1) +
+        highPairs d 2 0 * highPairs d 3 1 * (-1 / 4) +
+      highPairs d 3 0 * highPairs d 2 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:255:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:255:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 0) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 0 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 0 1 = 0
+⊢ ↑(Q d 3) * highPairs d 3 0 * highPairs d 0 1 - ↑(Q d 3) * highPairs d 0 0 * highPairs d 3 1 +
+          (↑(Q d 0) * highPairs d 3 0 * highPairs d 0 1 - ↑(Q d 0) * highPairs d 0 0 * highPairs d 3 1) +
+        highPairs d 3 0 * highPairs d 0 1 * (-1 / 4) +
+      highPairs d 0 0 * highPairs d 3 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:265:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:265:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 1) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 1 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 1 1 = 0
+⊢ ↑(Q d 3) * highPairs d 3 0 * highPairs d 1 1 - ↑(Q d 3) * highPairs d 1 0 * highPairs d 3 1 +
+          (↑(Q d 1) * highPairs d 3 0 * highPairs d 1 1 - ↑(Q d 1) * highPairs d 1 0 * highPairs d 3 1) +
+        highPairs d 3 0 * highPairs d 1 1 * (-1 / 4) +
+      highPairs d 1 0 * highPairs d 3 1 * (1 / 4) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:275:23: error: this constant has no effect on the linear combination; it can be dropped from the term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalPairReduction.lean:275:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h : Moment c d
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hdist : SS.HasDistance ![c, d] 3
+he : ↑(Q d 2) + ↑(Q d 3) - 1 / 4 = 0 ∨ highPairs d 2 0 * highPairs d 3 1 - highPairs d 3 0 * highPairs d 2 1 = 0
+⊢ ↑(Q d 3) * highPairs d 3 0 * highPairs d 2 1 - ↑(Q d 3) * highPairs d 2 0 * highPairs d 3 1 +
+          (↑(Q d 2) * highPairs d 3 0 * highPairs d 2 1 - ↑(Q d 2) * highPairs d 2 0 * highPairs d 3 1) +
+        highPairs d 3 0 * highPairs d 2 1 * (-1 / 4) +
+      highPairs d 2 0 * highPairs d 3 1 * (1 / 4) =
+    0

@@ -1,0 +1,34 @@
+Serial plan: 156 modules; 25 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[24/156] BUILD MainTheory.Orbit31PhaseRatios
+[79/156] BUILD MainTheory.Orbit31TableSymmetry
+[133/156] BUILD MainTheory.Orbit31CrossConsequences
+[134/156] BUILD MainTheory.Orbit31CanonicalPhase
+[135/156] BUILD MainTheory.Orbit31PhysicalSupportFilters
+[136/156] BUILD MainTheory.Orbit31PhaseClassification
+[137/156] BUILD MainTheory.Generated.Orbit31PrintedSupportOrbits
+[138/156] BUILD MainTheory.MatrixPositiveSupportVertices
+[139/156] BUILD MainTheory.Orbit31VertexCertificateBase
+[140/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard000
+[141/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard001
+[142/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard002
+[143/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard003
+[144/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard004
+[145/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard005
+[146/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard006
+[147/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard007
+[148/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard008
+[149/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard009
+[150/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard010
+[151/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard011
+[152/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Shard012
+[153/156] BUILD MainTheory.Generated.Orbit31VertexReconstructions.Aggregate
+FAIL: MainTheory.Generated.Orbit31VertexReconstructions.Aggregate failed, exit=1; old outputs preserved; log=D:\UTD\Project_purdue\Lean_certification\.lake\build\certification\logs\MainTheory\Generated\Orbit31VertexReconstructions\Aggregate.log

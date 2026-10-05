@@ -1,0 +1,120 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50NormProbe.lean:34:77: error: unsolved goals
+case «0»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 10 = 1 / 6
+
+case «1»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 9 = a
+
+case «2»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 8 = b
+
+case «3»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 7 = g
+
+case «4»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 6 =
+    -a - b - g + 1 / 3
+
+case «5»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 5 =
+    -a - b + 1 / 3
+
+case «6»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 4 = t
+
+case «7»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 3 = b - t
+
+case «8»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit50.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit50.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+a b g t : ℝ
+_h : Domain a b g t
+hp : (fun i => Complex.normSq (c (bottom i))) = bottomProb a b g t
+hq : (fun i => Complex.normSq (d (top i))) = topProb a b g t
+⊢ ![1 / 6, a + g + t - 1 / 6, -g - t + 1 / 6, b - t, t, -a - b + 1 / 3, -a - b - g + 1 / 3, g, b, a, 1 / 6] 2 =
+    -g - t + 1 / 6

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31PhaseCoverageBase.olean",
+    "MainTheory/Orbit31PhaseCoverageBase.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 14.519597099977545
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31CanonicalPhase.olean",
+    "MainTheory/Orbit31CanonicalPhase.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 14.765827600029297
+}

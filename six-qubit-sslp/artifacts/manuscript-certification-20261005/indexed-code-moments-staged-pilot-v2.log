@@ -1,0 +1,70 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:22:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f (xs i)
+in the target expression
+  ∑ i, Complex.normSq (c (xs i)) * MomentPolytope.coord (xs i) j = SixQubit.occOn S c j
+
+N : ℕ
+S : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+hi : Function.Injective xs
+hs : Finset.image xs Finset.univ = S
+c : SS.State 6 ℂ
+j : Fin 6
+⊢ ∑ i, Complex.normSq (c (xs i)) * MomentPolytope.coord (xs i) j = SixQubit.occOn S c j
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:34:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f (xs i)
+in the target expression
+  ∑ i, Complex.normSq (c (xs i)) * MomentPolytope.coord (xs i) j * MomentPolytope.coord (xs i) k =
+    SixQubit.occ2On S c j k
+
+N : ℕ
+S : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+hi : Function.Injective xs
+hs : Finset.image xs Finset.univ = S
+c : SS.State 6 ℂ
+j k : Fin 6
+⊢ ∑ i, Complex.normSq (c (xs i)) * MomentPolytope.coord (xs i) j * MomentPolytope.coord (xs i) k =
+    SixQubit.occ2On S c j k
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:58:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f (xs i)
+in the target expression
+  ∑ i, Complex.normSq (c (xs i)) = 1
+
+case refine_2
+N M : ℕ
+S0 S1 : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+ys : Fin M → SS.BitString 6
+hxi : Function.Injective xs
+hyi : Function.Injective ys
+hxs : Finset.image xs Finset.univ = S0
+hys : Finset.image ys Finset.univ = S1
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ∑ i, Complex.normSq (c (xs i)) = 1
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:61:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f (ys i)
+in the target expression
+  ∑ i, Complex.normSq (d (ys i)) = 1
+
+case refine_3
+N M : ℕ
+S0 S1 : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+ys : Fin M → SS.BitString 6
+hxi : Function.Injective xs
+hyi : Function.Injective ys
+hxs : Finset.image xs Finset.univ = S0
+hys : Finset.image ys Finset.univ = S1
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ ∑ i, Complex.normSq (d (ys i)) = 1

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31AffineTableGroup.olean",
+    "MainTheory/Orbit31AffineTableGroup.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 17.437744199996814
+}

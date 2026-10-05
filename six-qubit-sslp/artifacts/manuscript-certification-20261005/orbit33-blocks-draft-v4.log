@@ -1,0 +1,168 @@
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:554:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:554:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:554:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y3) * d z5 + (starRingEnd ℂ) (c y9) * d z11 + (starRingEnd ℂ) (c y0) * d z2 +
+      (starRingEnd ℂ) (c y6) * d z8 =
+    (starRingEnd ℂ) (c y3) * d z5 + (starRingEnd ℂ) (c y9) * d z11 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y0 (fun i => y6) (sorry ()))) * d (Matrix.vecCons z2 (fun i => z8) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:569:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:569:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:569:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y4) * d z5 + (starRingEnd ℂ) (c y10) * d z11 + (starRingEnd ℂ) (c y0) * d z1 +
+      (starRingEnd ℂ) (c y6) * d z7 =
+    (starRingEnd ℂ) (c y4) * d z5 + (starRingEnd ℂ) (c y10) * d z11 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y0 (fun i => y6) (sorry ()))) * d (Matrix.vecCons z1 (fun i => z7) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:584:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:584:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:584:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y5) * d z5 + (starRingEnd ℂ) (c y11) * d z11 + (starRingEnd ℂ) (c y0) * d z0 +
+      (starRingEnd ℂ) (c y6) * d z6 =
+    (starRingEnd ℂ) (c y5) * d z5 + (starRingEnd ℂ) (c y11) * d z11 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y0 (fun i => y6) (sorry ()))) * d (Matrix.vecCons z0 (fun i => z6) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:599:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:599:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:599:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y3) * d z4 + (starRingEnd ℂ) (c y9) * d z10 + (starRingEnd ℂ) (c y1) * d z2 +
+      (starRingEnd ℂ) (c y7) * d z8 =
+    (starRingEnd ℂ) (c y3) * d z4 + (starRingEnd ℂ) (c y9) * d z10 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y1 (fun i => y7) (sorry ()))) * d (Matrix.vecCons z2 (fun i => z8) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:614:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:614:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:614:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y4) * d z4 + (starRingEnd ℂ) (c y10) * d z10 + (starRingEnd ℂ) (c y1) * d z1 +
+      (starRingEnd ℂ) (c y7) * d z7 =
+    (starRingEnd ℂ) (c y4) * d z4 + (starRingEnd ℂ) (c y10) * d z10 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y1 (fun i => y7) (sorry ()))) * d (Matrix.vecCons z1 (fun i => z7) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:629:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:629:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:629:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y5) * d z4 + (starRingEnd ℂ) (c y11) * d z10 + (starRingEnd ℂ) (c y1) * d z0 +
+      (starRingEnd ℂ) (c y7) * d z6 =
+    (starRingEnd ℂ) (c y5) * d z4 + (starRingEnd ℂ) (c y11) * d z10 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y1 (fun i => y7) (sorry ()))) * d (Matrix.vecCons z0 (fun i => z6) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:644:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:644:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:644:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y3) * d z3 + (starRingEnd ℂ) (c y9) * d z9 + (starRingEnd ℂ) (c y2) * d z2 +
+      (starRingEnd ℂ) (c y8) * d z8 =
+    (starRingEnd ℂ) (c y3) * d z3 + (starRingEnd ℂ) (c y9) * d z9 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y2 (fun i => y8) (sorry ()))) * d (Matrix.vecCons z2 (fun i => z8) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:659:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:659:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:659:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y4) * d z3 + (starRingEnd ℂ) (c y10) * d z9 + (starRingEnd ℂ) (c y2) * d z1 +
+      (starRingEnd ℂ) (c y8) * d z7 =
+    (starRingEnd ℂ) (c y4) * d z3 + (starRingEnd ℂ) (c y10) * d z9 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y2 (fun i => y8) (sorry ()))) * d (Matrix.vecCons z1 (fun i => z7) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:674:44: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:674:78: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:674:84: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ (starRingEnd ℂ) (c y5) * d z3 + (starRingEnd ℂ) (c y11) * d z9 + (starRingEnd ℂ) (c y2) * d z0 +
+      (starRingEnd ℂ) (c y8) * d z6 =
+    (starRingEnd ℂ) (c y5) * d z3 + (starRingEnd ℂ) (c y11) * d z9 +
+      (starRingEnd ℂ) (c (Matrix.vecCons y2 (fun i => y8) (sorry ()))) * d (Matrix.vecCons z0 (fun i => z6) (sorry ()))
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:690:30: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean:690:52: error(lean.unknownIdentifier): Unknown identifier `r`
+
+Note: It is not possible to treat `r` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.

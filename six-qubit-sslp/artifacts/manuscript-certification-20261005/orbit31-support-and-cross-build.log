@@ -1,0 +1,2 @@
+Serial plan: 57 modules; 27 without content-validation stamps
+FAIL: another driver owns D:\UTD\Project_purdue\Lean_certification\.lake\build\certification\build.lock; inspect its PID before removing a stale lock

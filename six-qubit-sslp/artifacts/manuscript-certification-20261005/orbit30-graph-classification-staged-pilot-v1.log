@@ -1,0 +1,4 @@
+libc++abi: terminating due to uncaught exception of type lean::throwable: deep recursion was detected at 'interpreter' (potential solution: increase stack space in your system)
+interpreter stacktrace:
+#1 Matrix._aux_Mathlib_Data_Fin_VecNotation___macroRules_Matrix_vecNotation_1
+

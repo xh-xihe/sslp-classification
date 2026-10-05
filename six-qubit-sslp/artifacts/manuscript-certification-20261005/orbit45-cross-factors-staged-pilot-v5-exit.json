@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit45CrossFactors.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 20.572881200001575
+}

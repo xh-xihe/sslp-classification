@@ -1,0 +1,265 @@
+MainTheory/Orbit31FinalCross.lean:39:13: error: This simp argument is unused:
+  hz0
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0̵,̵h̵z̵1, ̲hz6, ̲hz7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:17: error: This simp argument is unused:
+  hz1
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1̵,̵h̵z̵6, ̲hz7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:21: error: This simp argument is unused:
+  hz6
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6̵,̵h̵z̵7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:25: error: This simp argument is unused:
+  hz7
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7̵,̵h̵z̵8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:37: error: This simp argument is unused:
+  hz12
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7, ̲hz8, ̲hz9, ̲hz12̵,̵h̵z̵1̵3, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:42: error: This simp argument is unused:
+  hz13
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7, ̲hz8, ̲hz9, ̲hz12,h̵z̵1̵3̵,̵ ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:56: error: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵0̵,̵h̵z̵1̵,̵h̵z̵6̵,̵h̵z̵7̵,̵h̵z̵8̵,̵h̵z̵9̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲0̲,̲ ̲h̲z̲1̲,̲ ̲h̲z̲6̲,̲ ̲h̲z̲7̲,̲ ̲h̲z̲8̲,̲ ̲h̲z̲9̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲a̲d̲d̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:39:65: error: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵0̵,̵h̵z̵1̵,̵h̵z̵6̵,̵h̵z̵7̵,̵h̵z̵8̵,̵h̵z̵9̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲0̲,̲ ̲h̲z̲1̲,̲ ̲h̲z̲6̲,̲ ̲h̲z̲7̲,̲ ̲h̲z̲8̲,̲ ̲h̲z̲9̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:13: error: This simp argument is unused:
+  hz0
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0̵,̵h̵z̵1, ̲hz6, ̲hz7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:17: error: This simp argument is unused:
+  hz1
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1̵,̵h̵z̵6, ̲hz7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:21: error: This simp argument is unused:
+  hz6
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6̵,̵h̵z̵7, ̲hz8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:25: error: This simp argument is unused:
+  hz7
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7̵,̵h̵z̵8, ̲hz9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:29: error: This simp argument is unused:
+  hz8
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7, ̲hz8̵,̵h̵z̵9, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:33: error: This simp argument is unused:
+  hz9
+
+Hint: Omit it from the simp argument list.
+  simp only [hz0, ̲hz1, ̲hz6, ̲hz7, ̲hz8, ̲hz9̵,̵h̵z̵12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:56: error: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵0̵,̵h̵z̵1̵,̵h̵z̵6̵,̵h̵z̵7̵,̵h̵z̵8̵,̵h̵z̵9̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲0̲,̲ ̲h̲z̲1̲,̲ ̲h̲z̲6̲,̲ ̲h̲z̲7̲,̲ ̲h̲z̲8̲,̲ ̲h̲z̲9̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲a̲d̲d̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:60:65: error: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵0̵,̵h̵z̵1̵,̵h̵z̵6̵,̵h̵z̵7̵,̵h̵z̵8̵,̵h̵z̵9̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲0̲,̲ ̲h̲z̲1̲,̲ ̲h̲z̲6̲,̲ ̲h̲z̲7̲,̲ ̲h̲z̲8̲,̲ ̲h̲z̲9̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:82:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:95:17: error: Application type mismatch: The argument
+  c
+has type
+  Fin 16 → ℂ
+but is expected to have type
+  ℂ
+in the application
+  mixed_triangle c
+MainTheory/Orbit31FinalCross.lean:95:68: error: Invalid `⟨...⟩` notation: The expected type
+  { re := 3, im := ?m.10 } = 0 → False
+is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+MainTheory/Orbit31FinalCross.lean:95:85: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided
+MainTheory/Orbit31FinalCross.lean:95:102: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided
+MainTheory/Orbit31FinalCross.lean:95:25: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:95:41: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:95:58: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:118:4: error: ring failed, ring expressions not equal
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+hz10 : c ⟨10, ⋯⟩ = 0
+hz11 : c ⟨11, ⋯⟩ = 0
+hz12 : c ⟨12, ⋯⟩ = 0
+hz13 : c ⟨13, ⋯⟩ = 0
+hs8 : sigma c d ⟨8, ⋯⟩ = sign (colors ⟨8, ⋯⟩) (sigma c d anchor)
+hs9 : sigma c d ⟨9, ⋯⟩ = sign (colors ⟨9, ⋯⟩) (sigma c d anchor)
+he : sigma c d anchor * c 0 * c ⟨8, ⋯⟩ + sigma c d anchor * c 1 * c ⟨9, ⋯⟩ = 0
+⊢ sigma c d anchor * c ⟨0, ⋯⟩ * c ⟨8, ⋯⟩ - sigma c d anchor * c ⟨8, ⋯⟩ * c 0 +
+      (sigma c d anchor * c ⟨1, ⋯⟩ * c ⟨9, ⋯⟩ - sigma c d anchor * c ⟨9, ⋯⟩ * c 1) =
+    0
+MainTheory/Orbit31FinalCross.lean:112:23: error: This simp argument is unused:
+  hz12
+
+Hint: Omit it from the simp argument list.
+  simp only [hz10, ̲hz11̵1̲, ̲hz12̵,̵h̵z̵1̵3, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:112:28: error: This simp argument is unused:
+  hz13
+
+Hint: Omit it from the simp argument list.
+  simp only [hz10, ̲hz11, ̲hz12,h̵z̵1̵3̵,̵ ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:112:42: error: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵1̵0̵,̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲1̲0̲,̲ ̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲a̲d̲d̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:112:60: error: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵1̵0̵,̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲1̲0̲,̲ ̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲a̲d̲d̲_̲z̲e̲r̲o̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:130:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:149:13: error: This simp argument is unused:
+  hz10
+
+Hint: Omit it from the simp argument list.
+  simp only [hz10̵,̵h̵z̵11̵, ̲hz12, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:149:18: error: This simp argument is unused:
+  hz11
+
+Hint: Omit it from the simp argument list.
+  simp only [hz10, ̲hz11̵,̵h̵z̵1̵2, ̲hz13, ̲mul_zero, ̲zero_mul, ̲add_zero, ̲zero_add] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:149:42: error: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵1̵0̵,̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲1̲0̲,̲ ̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲a̲d̲d̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:149:51: error: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵h̵z̵1̵0̵,̵h̵z̵1̵1̵,̵h̵z̵1̵2̵,̵h̵z̵1̵3̵,̵m̵u̵l̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵a̵d̵d̵_̵z̵e̵r̵o̵,̵z̵e̵r̵o̵_̵a̵d̵d̵]̵[̲h̲z̲1̲0̲,̲ ̲h̲z̲1̲1̲,̲ ̲h̲z̲1̲2̲,̲ ̲h̲z̲1̲3̲,̲ ̲m̲u̲l̲_̲z̲e̲r̲o̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲z̲e̲r̲o̲_̲a̲d̲d̲]̲ at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31FinalCross.lean:167:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:186:2: error: `simp` made no progress
+MainTheory/Orbit31FinalCross.lean:200:30: error: Application type mismatch: The argument
+  c
+has type
+  Fin 16 → ℂ
+but is expected to have type
+  ℂ
+in the application
+  product_equality c
+MainTheory/Orbit31FinalCross.lean:200:80: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided
+MainTheory/Orbit31FinalCross.lean:200:38: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:200:54: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:200:70: error: Application type mismatch: The argument
+  ℝ
+has type
+  Type
+of sort `Type 1` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @decide ℝ
+MainTheory/Orbit31FinalCross.lean:199:69: error: unsolved goals
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+⊢ ∃ K, K ≠ 0 ∧ ∀ (e : Fin 4), c (A e) * c (B ⟨0, ⋯⟩ e) = K

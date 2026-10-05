@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:159:46: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  star
+in the target expression
+  Complex.normSq ((starRingEnd ℂ) (c y15)) / Complex.normSq ((starRingEnd ℂ) (c y14)) = 1
+
+c d : SS.State 6 ℂ
+H : FullKL c d
+hm : Complex.normSq (c y14) = 1 / 8 ∧ Complex.normSq (c y15) = 1 / 8
+⊢ Complex.normSq ((starRingEnd ℂ) (c y15)) / Complex.normSq ((starRingEnd ℂ) (c y14)) = 1

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    "tmp/manuscript-publication-20261005/drafts/Orbit3PrintedSplitMatrices.olean",
+    "tmp/manuscript-publication-20261005/drafts/Orbit3PrintedSplitMatrices.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 33.33434200001648
+}

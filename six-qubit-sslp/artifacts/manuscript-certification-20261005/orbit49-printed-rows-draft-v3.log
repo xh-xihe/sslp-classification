@@ -1,0 +1,357 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:53:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (-v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:54:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (-v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:59:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:61:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:63:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:65:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + (-v ⟨3, ⋯⟩ - v 2) + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:112:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:113:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:118:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:120:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:122:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 3 + v 2 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:124:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ -v ⟨2, ⋯⟩ + (v ⟨3, ⋯⟩ - v 3) + v 2 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:171:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:172:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:177:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:179:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:181:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:183:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:230:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:231:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:236:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:238:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:240:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:242:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:289:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:290:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:295:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:297:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:299:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:301:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:348:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:349:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:354:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:356:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:358:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:360:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:407:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:408:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (-v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:413:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:415:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:417:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:419:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 2 = 0
+h1 : v 1 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:466:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 3 - v ⟨3, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:467:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 h1 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h2 h3 : -v 0 + (v 1 + (v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 2 - v ⟨2, ⋯⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:472:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:474:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:476:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:478:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 3 = 0
+h1 : v 1 + v 2 = 0
+⊢ v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + (v 3 - v 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:524:4: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 + v 3 + (-v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:529:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:531:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:533:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:535:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:581:4: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 + v 3 + (-v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:586:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:588:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:590:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:592:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:638:4: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h2 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h3 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+⊢ v 2 + v 3 + (-v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:643:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:645:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:647:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:649:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:695:4: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h : WC *ᵥ v = 0
+h0 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+h1 h2 : -v 0 + (-v 1 + (-v ⟨2, ⋯⟩ + -v ⟨3, ⋯⟩)) = 0
+h3 : v 0 + (v 1 + (v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩)) = 0
+⊢ v 2 + v 3 + (-v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:700:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:702:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:704:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ -v ⟨2, ⋯⟩ - v ⟨3, ⋯⟩ + v 2 + v 3 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedRows.lean:706:6: error: ring failed, ring expressions not equal
+v : Fin 4 → ℂ
+h0 : v 0 + v 1 + v 2 + v 3 = 0
+⊢ v ⟨2, ⋯⟩ + v ⟨3, ⋯⟩ + (-v 2 - v 3) = 0

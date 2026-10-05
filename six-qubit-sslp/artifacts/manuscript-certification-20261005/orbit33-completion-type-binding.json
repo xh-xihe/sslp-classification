@@ -1,0 +1,89 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 10265,
+      "end_line": 10272,
+      "kind": "covered",
+      "reason": "All twelve positive block norms and nonzero vectors are proved in physical coordinates.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection",
+        "MainTheory.Orbit33PrintedBlocks.physical_blocks_nonzero"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "c1d135d68c12ed25943045a9bcf61b1e69ff0e2c7c2031dc3669d5b03a832863"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10274,
+      "end_line": 10316,
+      "kind": "covered",
+      "reason": "The actual character matrix, arbitrary-F quadratic forms, common reduced state and full six-block matrix reflection are checked.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.actual_characters",
+        "MainTheory.Orbit33PrintedBlocks.evaluation_formula",
+        "MainTheory.Orbit33PrintedBlocks.matrix_reflection_iff",
+        "MainTheory.Orbit33PhysicalReflection.physical_character_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_common_reduced_state",
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "99bd30356fc9e2839f9931e764c455da055a25a22c377c227d730f5eee43e6db"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10318,
+      "end_line": 10346,
+      "kind": "covered",
+      "reason": "Both directions of the literal matrix-pair reduction, unit-vector factorization, nonzero factors and phase signs are proved.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_1",
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_2",
+        "MainTheory.Orbit33PrintedBlocks.physical_rankone_pairs",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "28c09cda7eb51b7a03399e17f816dad1ac6b22722f8cdfce95da9acecac3aaa5"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10348,
+      "end_line": 10383,
+      "kind": "covered",
+      "reason": "All nine actual reciprocal pairs and both far-block orthogonality relations are derived from physical cross KL.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.cross_incidence",
+        "MainTheory.Orbit33PrintedBlocks.cross_weight",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross",
+        "MainTheory.Orbit33NormalizedPairs.divided_cross",
+        "MainTheory.Orbit33NormalizedPairs.physical_far_orthogonal"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "758c93ada8598924af223561f212804f7f2676d967675a7d9ebe0b0d18df4904"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10385,
+      "end_line": 10403,
+      "kind": "covered",
+      "reason": "The two projector sums, half-identity reduced state, perpendicular unit vectors, rank-one reduced state and final contradiction are separately exposed.",
+      "declarations": [
+        "MainTheory.Orbit33ProjectorArgument.physical_near_and_far_sums",
+        "MainTheory.Orbit33ProjectorArgument.physical_projector_sums",
+        "MainTheory.Orbit33ProjectorArgument.physical_unit_orthogonality",
+        "MainTheory.Orbit33ProjectorArgument.physical_all_bottom_outers",
+        "MainTheory.Orbit33ProjectorArgument.physical_rho_projector",
+        "MainTheory.Orbit33ProjectorArgument.physical_no_go"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "570c1e34b1af949ed22b0d11c966ca95f7569c5a040e2ca4f0d3711fa6cdcf24"
+    }
+  ],
+  "scope": "Scoped current six-block correspondence; other manuscript review remains incomplete"
+}

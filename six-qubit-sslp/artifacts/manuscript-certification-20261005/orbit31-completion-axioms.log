@@ -1,0 +1,4 @@
+PARTIAL verification: axioms
+Paper version: 20261003
+START axioms
+[FAIL] axioms (0.2s): duplicate declarations in the audit inventory

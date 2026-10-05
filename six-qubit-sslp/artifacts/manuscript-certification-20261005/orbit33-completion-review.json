@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:displaymath@10239",
+      "statement_sha256": "189aace9136bd4f52995fc460f8507626be7e58286df3d468a76bca02642d139",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.tail",
+        "MainTheory.Orbit33PrintedBlocks.actual_words",
+        "MainTheory.Orbit33PrintedBlocks.actual_fibers",
+        "MainTheory.Orbit33PrintedBlocks.CBlock",
+        "MainTheory.Orbit33PrintedBlocks.DBlock"
+      ],
+      "review": "20261005 literal six-block/current type review: The actual block words and their complements are checked against the native fibers. The zero-angle site is the first physical coordinate; top blocks retain that coordinate and reverse the native tail order."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10246",
+      "statement_sha256": "d5e60d8da4bde76eab83d6f722b89f840ad5ff233135aad525d4b779b9afb527",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.tail",
+        "MainTheory.Orbit33PrintedBlocks.actual_words",
+        "MainTheory.Orbit33PrintedBlocks.actual_fibers",
+        "MainTheory.Orbit33PrintedBlocks.CBlock",
+        "MainTheory.Orbit33PrintedBlocks.DBlock"
+      ],
+      "review": "20261005 literal six-block/current type review: The actual block words and their complements are checked against the native fibers. The zero-angle site is the first physical coordinate; top blocks retain that coordinate and reverse the native tail order."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10252",
+      "statement_sha256": "b4fb8bb3481c9ad54318acf87a24c4bd66f38de2818bf3bb615be7dcd23e3a60",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.tail",
+        "MainTheory.Orbit33PrintedBlocks.actual_words",
+        "MainTheory.Orbit33PrintedBlocks.actual_fibers",
+        "MainTheory.Orbit33PrintedBlocks.CBlock",
+        "MainTheory.Orbit33PrintedBlocks.DBlock"
+      ],
+      "review": "20261005 literal six-block/current type review: The actual block words and their complements are checked against the native fibers. The zero-angle site is the first physical coordinate; top blocks retain that coordinate and reverse the native tail order."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10258",
+      "statement_sha256": "ce719dd1ab3d0371e42c94cb4488396bf85010155ac509186e973e85724f4c6f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.tail",
+        "MainTheory.Orbit33PrintedBlocks.actual_words",
+        "MainTheory.Orbit33PrintedBlocks.actual_fibers",
+        "MainTheory.Orbit33PrintedBlocks.CBlock",
+        "MainTheory.Orbit33PrintedBlocks.DBlock"
+      ],
+      "review": "20261005 literal six-block/current type review: The actual block words and their complements are checked against the native fibers. The zero-angle site is the first physical coordinate; top blocks retain that coordinate and reverse the native tail order."
+    },
+    {
+      "id": "supplementary.tex:eq:o33blocknorms",
+      "statement_sha256": "da23dc08714b5f0d090c11d622d9dd1e232df08ac259cf9fec8f3ddf31c47438",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.R",
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection",
+        "MainTheory.Orbit33PrintedBlocks.physical_blocks_nonzero"
+      ],
+      "review": "20261005 literal six-block/current type review: All six bottom and six top squared norms are derived from actual normalized diagonal moments, including every boundary. Every R_i is strictly positive, so all twelve block vectors are nonzero."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10276",
+      "statement_sha256": "6ff78efce64c6c0b5265c73686d2a152251fafe23ca53e97d813856abec48a9a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.actual_characters",
+        "MainTheory.Orbit33ScalarReflection.C_cast",
+        "MainTheory.Orbit33ScalarReflection.inverse",
+        "MainTheory.Orbit33ScalarReflection.reflection_entries",
+        "MainTheory.Orbit33PrintedReflection.determinant"
+      ],
+      "review": "20261005 literal six-block/current type review: The literal character matrix is checked against the actual five-bit tails. Its signed determinant is 160. The inverse and reflection are proved over both the rational and complex coefficient fields."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10291",
+      "statement_sha256": "03cfd35efb49f19ec4f488fddae848d7205dc206960a023eee5f261d9128914c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.evaluation",
+        "MainTheory.Orbit33PrintedBlocks.evaluation_formula",
+        "MainTheory.Orbit33PhysicalReflection.physical_scalar_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_character_reflection"
+      ],
+      "review": "20261005 literal six-block/current type review: The quadratic form is exactly c_i dagger F c_i, for arbitrary complex two-by-two F. Actual physical KL and moments imply the complete f=C^{-1}JCg identity in the printed tail coordinates."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10295",
+      "statement_sha256": "3486d34075345c373a806c22191d38c6a9690b2f9d7a263b927601ae794c2153",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.evaluation",
+        "MainTheory.Orbit33PrintedBlocks.evaluation_formula",
+        "MainTheory.Orbit33PhysicalReflection.physical_scalar_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_character_reflection"
+      ],
+      "review": "20261005 literal six-block/current type review: The quadratic form is exactly c_i dagger F c_i, for arbitrary complex two-by-two F. Actual physical KL and moments imply the complete f=C^{-1}JCg identity in the printed tail coordinates."
+    },
+    {
+      "id": "supplementary.tex:eq:o33reflection",
+      "statement_sha256": "ac4e8bd6328ab37f72254ecba89530618dfa3a13f5ff01a1fe2735168587ffdb",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.actual_characters",
+        "MainTheory.Orbit33ScalarReflection.C_cast",
+        "MainTheory.Orbit33ScalarReflection.inverse",
+        "MainTheory.Orbit33ScalarReflection.reflection_entries",
+        "MainTheory.Orbit33PrintedReflection.determinant"
+      ],
+      "review": "20261005 literal six-block/current type review: The literal character matrix is checked against the actual five-bit tails. Its signed determinant is 160. The inverse and reflection are proved over both the rational and complex coefficient fields."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10306",
+      "statement_sha256": "4a3854aa30c0421535a818a60ec67f835e3dbadd83fe803758a837ec9f70c447",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.rho",
+        "MainTheory.Orbit33PrintedBlocks.matrix_reflection_iff",
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_common_reduced_state"
+      ],
+      "review": "20261005 literal six-block/current type review: The two actual reduced matrices agree. All four entries of all six outer-product identities are proved. Equality of matrices is equivalent to equality of pairings with all complex F."
+    },
+    {
+      "id": "supplementary.tex:eq:o33matrixreflection",
+      "statement_sha256": "ce5c364fc269e5072c899c41a3a61f4b6ee67cad6d370c6c35a0b1069a7ac634",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.rho",
+        "MainTheory.Orbit33PrintedBlocks.matrix_reflection_iff",
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_common_reduced_state"
+      ],
+      "review": "20261005 literal six-block/current type review: The two actual reduced matrices agree. All four entries of all six outer-product identities are proved. Equality of matrices is equivalent to equality of pairings with all complex F."
+    },
+    {
+      "id": "supplementary.tex:eq:o33rankonepairs",
+      "statement_sha256": "b084610d1ee91761638f70b81610fd45119723fcf8fec2523712a5827cdf699f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_1",
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_2",
+        "MainTheory.Orbit33PrintedBlocks.physical_rankone_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: For each of the two literal reciprocal pairs, the four raw cross rows are equivalent in both directions to the zero rank-one matrix sum. Every physical Pauli used has weight at most two."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10332",
+      "statement_sha256": "f811b369e0c84ecb8a2a17a302269b5e7647c9f83c31ae0826c28ae6bdcc1040",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.factorization",
+        "MainTheory.Orbit33NormalizedPairs.normalized_pairs",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: The two matrix pairs and the positive actual norms give common unit vectors and all six nonzero scalar factors. Normalization uses the positive square root with its nonzero denominator proved."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10339",
+      "statement_sha256": "fb14992352b8d85bfc1942a0700468fe7613ebec787d7b540e4f33b2739a4418",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.gamma",
+        "MainTheory.Orbit33NormalizedPairs.quotient_sign",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: The phase quotient is beta_i/conjugate(alpha_i). All denominators and the baseline quotient are proved nonzero, and both printed sign relations follow from the actual rank-one equations."
+    },
+    {
+      "id": "supplementary.tex:eq:o33gammasigns",
+      "statement_sha256": "87e0804bc5bf0ea1ce900b5731682d21d3c1bb381191f5fd13f56985473dcd9d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.gamma",
+        "MainTheory.Orbit33NormalizedPairs.quotient_sign",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: The phase quotient is beta_i/conjugate(alpha_i). All denominators and the baseline quotient are proved nonzero, and both printed sign relations follow from the actual rank-one equations."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10349",
+      "statement_sha256": "2780862db03231974a876c101ccfdf25840e4feb6284f3ff779b533a3a9b8043",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.near",
+        "MainTheory.Orbit33PrintedBlocks.far",
+        "MainTheory.Orbit33PrintedBlocks.crossFlip",
+        "MainTheory.Orbit33PrintedBlocks.cross_weight",
+        "MainTheory.Orbit33PrintedBlocks.cross_incidence",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross"
+      ],
+      "review": "20261005 literal six-block/current type review: All nine near/far reciprocal pairs are checked on the actual physical fibers. Each flip has weight two and exactly its four qubit-resolved incidences. Every displayed scalar cross equation is derived from actual distance three."
+    },
+    {
+      "id": "supplementary.tex:eq:o33crosscomplete",
+      "statement_sha256": "10089d9a8a6103e6f3df70d79d2b19da0fe5b288a85c5642e2bd11c2c0748d11",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedBlocks.near",
+        "MainTheory.Orbit33PrintedBlocks.far",
+        "MainTheory.Orbit33PrintedBlocks.crossFlip",
+        "MainTheory.Orbit33PrintedBlocks.cross_weight",
+        "MainTheory.Orbit33PrintedBlocks.cross_incidence",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross"
+      ],
+      "review": "20261005 literal six-block/current type review: All nine near/far reciprocal pairs are checked on the actual physical fibers. Each flip has weight two and exactly its four qubit-resolved incidences. Every displayed scalar cross equation is derived from actual distance three."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10361",
+      "statement_sha256": "15ac312df53d36d9f3340611f538dc86c9b2c182977823785640c791ca359f9c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.inner",
+        "MainTheory.Orbit33NormalizedPairs.divided_cross",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: The two inner products are A_j=c_j dagger v and B_j=u dagger d_j. Substitution of the actual nonzero factors and division by conjugate(alpha_i) gives gamma_i A_j+B_j=0 for i=0 and i=1."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10367",
+      "statement_sha256": "99ce0a78284f534f562680e3ac6cd2cd630aa3ff8b37400f453411ffcee5ee98",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.inner",
+        "MainTheory.Orbit33NormalizedPairs.divided_cross",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "review": "20261005 literal six-block/current type review: The two inner products are A_j=c_j dagger v and B_j=u dagger d_j. Substitution of the actual nonzero factors and division by conjugate(alpha_i) gives gamma_i A_j+B_j=0 for i=0 and i=1."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10373",
+      "statement_sha256": "c6c9e6c892dfa24e63a5497be40de9c9f4171ce49a837469beb7678a46d5872c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.orthogonal_from_opposite",
+        "MainTheory.Orbit33NormalizedPairs.physical_far_orthogonal",
+        "MainTheory.Orbit33NormalizedPairs.physical_frame"
+      ],
+      "review": "20261005 literal six-block/current type review: The nonzero opposite quotients force both inner products to vanish in every far block, yielding both stated orthogonality relations independently of the final no-code conclusion."
+    },
+    {
+      "id": "supplementary.tex:eq:o33orthogonalblocks",
+      "statement_sha256": "014fa394bc27d31c56190f2617cd48fcb11ac341155002724d20190e3829f3ac",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33NormalizedPairs.orthogonal_from_opposite",
+        "MainTheory.Orbit33NormalizedPairs.physical_far_orthogonal",
+        "MainTheory.Orbit33NormalizedPairs.physical_frame"
+      ],
+      "review": "20261005 literal six-block/current type review: The nonzero opposite quotients force both inner products to vanish in every far block, yielding both stated orthogonality relations independently of the final no-code conclusion."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10387",
+      "statement_sha256": "0665ff227451c890327b6fc4c5768e86e4ebe35109778349e227983ce4c61d91",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33ProjectorArgument.scaled_outer",
+        "MainTheory.Orbit33ProjectorArgument.orthogonal_outer",
+        "MainTheory.Orbit33ProjectorArgument.physical_near_and_far_sums"
+      ],
+      "review": "20261005 literal six-block/current type review: The unit-vector outer products and the two-dimensional orthogonal complements give the two literal projector sums. The strictly positive R_0 and R_3 are canceled explicitly."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10391",
+      "statement_sha256": "941df3b88b035ec9e0f91d7307f61bd77c13b84d6e292dd4708182d1f82f4384",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33ProjectorArgument.scaled_outer",
+        "MainTheory.Orbit33ProjectorArgument.orthogonal_outer",
+        "MainTheory.Orbit33ProjectorArgument.physical_near_and_far_sums"
+      ],
+      "review": "20261005 literal six-block/current type review: The unit-vector outer products and the two-dimensional orthogonal complements give the two literal projector sums. The strictly positive R_0 and R_3 are canceled explicitly."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10398",
+      "statement_sha256": "9c633ccdeaa52602f387e44990add99258a134b4c9b4048a376c59a48e701a46",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33ProjectorArgument.physical_all_bottom_outers",
+        "MainTheory.Orbit33ProjectorArgument.physical_rho_projector",
+        "MainTheory.Orbit33ProjectorArgument.physical_projector_sums",
+        "MainTheory.Orbit33ProjectorArgument.physical_unit_orthogonality",
+        "MainTheory.Orbit33ProjectorArgument.rank_one_not_half",
+        "MainTheory.Orbit33ProjectorArgument.physical_no_go"
+      ],
+      "review": "20261005 literal six-block/current type review: The two projector sums imply I/2 and perpendicular unit vectors. All six actual bottom outer products equal R_i P_u, so their sum is P_u. Its determinant zero contradicts that of I/2."
+    }
+  ]
+}

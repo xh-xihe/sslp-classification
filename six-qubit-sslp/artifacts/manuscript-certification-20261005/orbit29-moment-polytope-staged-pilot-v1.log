@@ -1,0 +1,45 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:44:4: error: Type mismatch
+  Eq.symm h
+has type
+  ⇑(Rat.castHom ℝ) ∘ zeroDualQ ⬝ᵥ ⇑(Rat.castHom ℝ) ∘ rhsQ = (Rat.castHom ℝ) 0
+but is expected to have type
+  zeroDualR ⬝ᵥ rhsR = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:55:18: error: linarith failed to find a contradiction
+case left.h2.h
+p : Fin 32 → ℝ
+hp : p ∈ LPDimension.feasibleSet fullMatrixR rhsR
+he : p 0 + p 1 = 0
+h0 : 0 ≤ p ⟨0, ⋯⟩
+h1 : 0 ≤ p ⟨1, ⋯⟩
+a✝ : 0 < p ⟨0, ⋯⟩
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:55:18: error: linarith failed to find a contradiction
+case right.h2.h
+p : Fin 32 → ℝ
+hp : p ∈ LPDimension.feasibleSet fullMatrixR rhsR
+he : p 0 + p 1 = 0
+h0 : 0 ≤ p ⟨0, ⋯⟩
+h1 : 0 ≤ p ⟨1, ⋯⟩
+a✝ : 0 < p ⟨1, ⋯⟩
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:62:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ b ≤ 1
+  2 ≤ a ≤ 31
+where
+ a := ↑j
+ b := ↑↑⟨j, hj✝⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:90:33: error: Type mismatch: After simplification, term
+  j.property
+ has type
+  True
+but is expected to have type
+  2 ≤ ↑↑j
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentPolytope.lean:97:33: error: Type mismatch: After simplification, term
+  j.property
+ has type
+  True
+but is expected to have type
+  2 ≤ ↑↑j

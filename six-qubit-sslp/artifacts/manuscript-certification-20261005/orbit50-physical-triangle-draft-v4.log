@@ -1,0 +1,29 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:86:48: error: elaboration function for `Mathlib.Tactic.subscriptTerm` has not been implemented
+  ᵥ
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:97:4: error: Type mismatch: After simplification, term
+  r2
+ has type
+  PhysicalPhaseQuotients.rho (C c ⟨10, ⋯⟩) (D d ⟨10, ⋯⟩) +
+      PhysicalPhaseQuotients.rho (C c (activeIndices j)) (D d (activeIndices j)) =
+    0
+but is expected to have type
+  Complex.normSq (PhysicalPhaseQuotients.rho (C c 0) (D d 0)) = 1
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:98:53: error: Application type mismatch: The argument
+  h0
+has type
+  C c 0 ≠ 0
+but is expected to have type
+  C c ⟨10, ⋯⟩ ≠ 0
+in the application
+  PhysicalPhaseQuotients.unit (C c ⟨10, of_decide_eq_true (id (Eq.refl true))⟩)
+    (D d ⟨10, of_decide_eq_true (id (Eq.refl true))⟩) h0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:99:53: error: Application type mismatch: The argument
+  h10
+has type
+  C c ⟨10, ⋯⟩ ≠ 0
+but is expected to have type
+  C c (activeIndices j) ≠ 0
+in the application
+  PhysicalPhaseQuotients.unit (C c (activeIndices j)) (D d (activeIndices j)) h10
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:100:2: error: No goals to be solved
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PhysicalTriangle.lean:102:8: error: declaration uses 'sorry'

@@ -1,0 +1,762 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:32:2: error: unsolved goals
+case left.«0»
+p q : Fin 16 → ℝ
+⊢ p 0 =
+    (((((((((((((((if (∀ ⦃x : Fin 5⦄, y0 ⟨↑x, ⋯⟩ = false) ∧ y0 ⟨5, coordinates._proof_3⟩ = false then p 0 else 0) +
+                                  if (∀ ⦃x : Fin 5⦄, y1 ⟨↑x, ⋯⟩ = false) ∧ y1 ⟨5, coordinates._proof_3⟩ = false then p 1
+                                  else 0) +
+                                if (∀ ⦃x : Fin 5⦄, y2 ⟨↑x, ⋯⟩ = false) ∧ y2 ⟨5, coordinates._proof_3⟩ = false then
+                                  p ⟨2, ⋯⟩
+                                else 0) +
+                              if (∀ ⦃x : Fin 5⦄, y3 ⟨↑x, ⋯⟩ = false) ∧ y3 ⟨5, coordinates._proof_3⟩ = false then
+                                p ⟨3, ⋯⟩
+                              else 0) +
+                            if (∀ ⦃x : Fin 5⦄, y4 ⟨↑x, ⋯⟩ = false) ∧ y4 ⟨5, coordinates._proof_3⟩ = false then p ⟨4, ⋯⟩
+                            else 0) +
+                          if (∀ ⦃x : Fin 5⦄, y5 ⟨↑x, ⋯⟩ = false) ∧ y5 ⟨5, coordinates._proof_3⟩ = false then p ⟨5, ⋯⟩
+                          else 0) +
+                        if (∀ ⦃x : Fin 5⦄, y6 ⟨↑x, ⋯⟩ = false) ∧ y6 ⟨5, coordinates._proof_3⟩ = false then p ⟨6, ⋯⟩
+                        else 0) +
+                      if (∀ ⦃x : Fin 5⦄, y7 ⟨↑x, ⋯⟩ = false) ∧ y7 ⟨5, coordinates._proof_3⟩ = false then p ⟨7, ⋯⟩
+                      else 0) +
+                    if (∀ ⦃x : Fin 5⦄, y8 ⟨↑x, ⋯⟩ = false) ∧ y8 ⟨5, coordinates._proof_3⟩ = false then p ⟨8, ⋯⟩
+                    else 0) +
+                  if (∀ ⦃x : Fin 5⦄, y9 ⟨↑x, ⋯⟩ = false) ∧ y9 ⟨5, coordinates._proof_3⟩ = false then p ⟨9, ⋯⟩ else 0) +
+                if (∀ ⦃x : Fin 5⦄, y10 ⟨↑x, ⋯⟩ = false) ∧ y10 ⟨5, coordinates._proof_3⟩ = false then p ⟨10, ⋯⟩ else 0) +
+              if (∀ ⦃x : Fin 5⦄, y11 ⟨↑x, ⋯⟩ = false) ∧ y11 ⟨5, coordinates._proof_3⟩ = false then p ⟨11, ⋯⟩ else 0) +
+            if (∀ ⦃x : Fin 5⦄, y12 ⟨↑x, ⋯⟩ = false) ∧ y12 ⟨5, coordinates._proof_3⟩ = false then p ⟨12, ⋯⟩ else 0) +
+          if (∀ ⦃x : Fin 5⦄, y13 ⟨↑x, ⋯⟩ = false) ∧ y13 ⟨5, coordinates._proof_3⟩ = false then p ⟨13, ⋯⟩ else 0) +
+        if (∀ ⦃x : Fin 5⦄, y14 ⟨↑x, ⋯⟩ = false) ∧ y14 ⟨5, coordinates._proof_3⟩ = false then p ⟨14, ⋯⟩ else 0) +
+      if (∀ ⦃x : Fin 5⦄, y15 ⟨↑x, ⋯⟩ = false) ∧ y15 ⟨5, coordinates._proof_3⟩ = false then p ⟨15, ⋯⟩ else 0
+
+case left.«1»
+p q : Fin 16 → ℝ
+⊢ p ⟨7, bottomMass._proof_2⟩ + p ⟨11, bottomMass._proof_3⟩ + p ⟨13, bottomMass._proof_4⟩ + p ⟨14, bottomMass._proof_5⟩ +
+      p ⟨15, bottomMass._proof_6⟩ =
+    (((((((((((((((if {x | y0 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y0 ⟨5, coordinates._proof_3⟩ = false then p 0 else 0) +
+                                  if {x | y1 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y1 ⟨5, coordinates._proof_3⟩ = false then p 1
+                                  else 0) +
+                                if {x | y2 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y2 ⟨5, coordinates._proof_3⟩ = false then p ⟨2, ⋯⟩
+                                else 0) +
+                              if {x | y3 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y3 ⟨5, coordinates._proof_3⟩ = false then p ⟨3, ⋯⟩
+                              else 0) +
+                            if {x | y4 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y4 ⟨5, coordinates._proof_3⟩ = false then p ⟨4, ⋯⟩
+                            else 0) +
+                          if {x | y5 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y5 ⟨5, coordinates._proof_3⟩ = false then p ⟨5, ⋯⟩
+                          else 0) +
+                        if {x | y6 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y6 ⟨5, coordinates._proof_3⟩ = false then p ⟨6, ⋯⟩
+                        else 0) +
+                      if {x | y7 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y7 ⟨5, coordinates._proof_3⟩ = false then p ⟨7, ⋯⟩ else 0) +
+                    if {x | y8 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y8 ⟨5, coordinates._proof_3⟩ = false then p ⟨8, ⋯⟩ else 0) +
+                  if {x | y9 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y9 ⟨5, coordinates._proof_3⟩ = false then p ⟨9, ⋯⟩ else 0) +
+                if {x | y10 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y10 ⟨5, coordinates._proof_3⟩ = false then p ⟨10, ⋯⟩ else 0) +
+              if {x | y11 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y11 ⟨5, coordinates._proof_3⟩ = false then p ⟨11, ⋯⟩ else 0) +
+            if {x | y12 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y12 ⟨5, coordinates._proof_3⟩ = false then p ⟨12, ⋯⟩ else 0) +
+          if {x | y13 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y13 ⟨5, coordinates._proof_3⟩ = false then p ⟨13, ⋯⟩ else 0) +
+        if {x | y14 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y14 ⟨5, coordinates._proof_3⟩ = false then p ⟨14, ⋯⟩ else 0) +
+      if {x | y15 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ y15 ⟨5, coordinates._proof_3⟩ = false then p ⟨15, ⋯⟩ else 0
+
+case left.«2»
+p q : Fin 16 → ℝ
+⊢ p 1 + p ⟨2, bottomMass._proof_8⟩ + p ⟨3, bottomMass._proof_9⟩ + p ⟨4, bottomMass._proof_10⟩ +
+                p ⟨5, bottomMass._proof_11⟩ +
+              p ⟨6, bottomMass._proof_12⟩ +
+            p ⟨8, bottomMass._proof_13⟩ +
+          p ⟨9, bottomMass._proof_14⟩ +
+        p ⟨10, bottomMass._proof_15⟩ +
+      p ⟨12, bottomMass._proof_16⟩ =
+    (((((((((((((((if {x | y0 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y0 ⟨5, coordinates._proof_3⟩ = true then p 0 else 0) +
+                                  if {x | y1 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y1 ⟨5, coordinates._proof_3⟩ = true then p 1
+                                  else 0) +
+                                if {x | y2 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y2 ⟨5, coordinates._proof_3⟩ = true then p ⟨2, ⋯⟩
+                                else 0) +
+                              if {x | y3 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y3 ⟨5, coordinates._proof_3⟩ = true then p ⟨3, ⋯⟩
+                              else 0) +
+                            if {x | y4 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y4 ⟨5, coordinates._proof_3⟩ = true then p ⟨4, ⋯⟩
+                            else 0) +
+                          if {x | y5 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y5 ⟨5, coordinates._proof_3⟩ = true then p ⟨5, ⋯⟩
+                          else 0) +
+                        if {x | y6 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y6 ⟨5, coordinates._proof_3⟩ = true then p ⟨6, ⋯⟩
+                        else 0) +
+                      if {x | y7 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y7 ⟨5, coordinates._proof_3⟩ = true then p ⟨7, ⋯⟩ else 0) +
+                    if {x | y8 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y8 ⟨5, coordinates._proof_3⟩ = true then p ⟨8, ⋯⟩ else 0) +
+                  if {x | y9 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y9 ⟨5, coordinates._proof_3⟩ = true then p ⟨9, ⋯⟩ else 0) +
+                if {x | y10 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y10 ⟨5, coordinates._proof_3⟩ = true then p ⟨10, ⋯⟩ else 0) +
+              if {x | y11 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y11 ⟨5, coordinates._proof_3⟩ = true then p ⟨11, ⋯⟩ else 0) +
+            if {x | y12 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y12 ⟨5, coordinates._proof_3⟩ = true then p ⟨12, ⋯⟩ else 0) +
+          if {x | y13 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y13 ⟨5, coordinates._proof_3⟩ = true then p ⟨13, ⋯⟩ else 0) +
+        if {x | y14 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y14 ⟨5, coordinates._proof_3⟩ = true then p ⟨14, ⋯⟩ else 0) +
+      if {x | y15 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ y15 ⟨5, coordinates._proof_3⟩ = true then p ⟨15, ⋯⟩ else 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:35:2: error: unsolved goals
+case right.«0»
+p q : Fin 16 → ℝ
+⊢ q 1 + q ⟨2, bottomMass._proof_8⟩ + q ⟨3, bottomMass._proof_9⟩ + q ⟨4, bottomMass._proof_10⟩ +
+                q ⟨5, bottomMass._proof_11⟩ +
+              q ⟨6, bottomMass._proof_12⟩ +
+            q ⟨8, bottomMass._proof_13⟩ +
+          q ⟨9, bottomMass._proof_14⟩ +
+        q ⟨10, bottomMass._proof_15⟩ +
+      q ⟨12, bottomMass._proof_16⟩ =
+    (((((((((((((((if {x | z0 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z0 ⟨5, coordinates._proof_3⟩ = false then q 0 else 0) +
+                                  if {x | z1 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z1 ⟨5, coordinates._proof_3⟩ = false then q 1
+                                  else 0) +
+                                if {x | z2 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z2 ⟨5, coordinates._proof_3⟩ = false then q ⟨2, ⋯⟩
+                                else 0) +
+                              if {x | z3 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z3 ⟨5, coordinates._proof_3⟩ = false then q ⟨3, ⋯⟩
+                              else 0) +
+                            if {x | z4 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z4 ⟨5, coordinates._proof_3⟩ = false then q ⟨4, ⋯⟩
+                            else 0) +
+                          if {x | z5 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z5 ⟨5, coordinates._proof_3⟩ = false then q ⟨5, ⋯⟩
+                          else 0) +
+                        if {x | z6 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z6 ⟨5, coordinates._proof_3⟩ = false then q ⟨6, ⋯⟩
+                        else 0) +
+                      if {x | z7 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z7 ⟨5, coordinates._proof_3⟩ = false then q ⟨7, ⋯⟩ else 0) +
+                    if {x | z8 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z8 ⟨5, coordinates._proof_3⟩ = false then q ⟨8, ⋯⟩ else 0) +
+                  if {x | z9 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z9 ⟨5, coordinates._proof_3⟩ = false then q ⟨9, ⋯⟩ else 0) +
+                if {x | z10 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z10 ⟨5, coordinates._proof_3⟩ = false then q ⟨10, ⋯⟩ else 0) +
+              if {x | z11 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z11 ⟨5, coordinates._proof_3⟩ = false then q ⟨11, ⋯⟩ else 0) +
+            if {x | z12 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z12 ⟨5, coordinates._proof_3⟩ = false then q ⟨12, ⋯⟩ else 0) +
+          if {x | z13 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z13 ⟨5, coordinates._proof_3⟩ = false then q ⟨13, ⋯⟩ else 0) +
+        if {x | z14 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z14 ⟨5, coordinates._proof_3⟩ = false then q ⟨14, ⋯⟩ else 0) +
+      if {x | z15 ⟨↑x, ⋯⟩ = true}.card = 2 ∧ z15 ⟨5, coordinates._proof_3⟩ = false then q ⟨15, ⋯⟩ else 0
+
+case right.«1»
+p q : Fin 16 → ℝ
+⊢ q 0 =
+    (((((((((((((((if (∀ ⦃x : Fin 5⦄, z0 ⟨↑x, ⋯⟩ = false) ∧ z0 ⟨5, coordinates._proof_3⟩ = true then q 0 else 0) +
+                                  if (∀ ⦃x : Fin 5⦄, z1 ⟨↑x, ⋯⟩ = false) ∧ z1 ⟨5, coordinates._proof_3⟩ = true then q 1
+                                  else 0) +
+                                if (∀ ⦃x : Fin 5⦄, z2 ⟨↑x, ⋯⟩ = false) ∧ z2 ⟨5, coordinates._proof_3⟩ = true then
+                                  q ⟨2, ⋯⟩
+                                else 0) +
+                              if (∀ ⦃x : Fin 5⦄, z3 ⟨↑x, ⋯⟩ = false) ∧ z3 ⟨5, coordinates._proof_3⟩ = true then q ⟨3, ⋯⟩
+                              else 0) +
+                            if (∀ ⦃x : Fin 5⦄, z4 ⟨↑x, ⋯⟩ = false) ∧ z4 ⟨5, coordinates._proof_3⟩ = true then q ⟨4, ⋯⟩
+                            else 0) +
+                          if (∀ ⦃x : Fin 5⦄, z5 ⟨↑x, ⋯⟩ = false) ∧ z5 ⟨5, coordinates._proof_3⟩ = true then q ⟨5, ⋯⟩
+                          else 0) +
+                        if (∀ ⦃x : Fin 5⦄, z6 ⟨↑x, ⋯⟩ = false) ∧ z6 ⟨5, coordinates._proof_3⟩ = true then q ⟨6, ⋯⟩
+                        else 0) +
+                      if (∀ ⦃x : Fin 5⦄, z7 ⟨↑x, ⋯⟩ = false) ∧ z7 ⟨5, coordinates._proof_3⟩ = true then q ⟨7, ⋯⟩
+                      else 0) +
+                    if (∀ ⦃x : Fin 5⦄, z8 ⟨↑x, ⋯⟩ = false) ∧ z8 ⟨5, coordinates._proof_3⟩ = true then q ⟨8, ⋯⟩ else 0) +
+                  if (∀ ⦃x : Fin 5⦄, z9 ⟨↑x, ⋯⟩ = false) ∧ z9 ⟨5, coordinates._proof_3⟩ = true then q ⟨9, ⋯⟩ else 0) +
+                if (∀ ⦃x : Fin 5⦄, z10 ⟨↑x, ⋯⟩ = false) ∧ z10 ⟨5, coordinates._proof_3⟩ = true then q ⟨10, ⋯⟩ else 0) +
+              if (∀ ⦃x : Fin 5⦄, z11 ⟨↑x, ⋯⟩ = false) ∧ z11 ⟨5, coordinates._proof_3⟩ = true then q ⟨11, ⋯⟩ else 0) +
+            if (∀ ⦃x : Fin 5⦄, z12 ⟨↑x, ⋯⟩ = false) ∧ z12 ⟨5, coordinates._proof_3⟩ = true then q ⟨12, ⋯⟩ else 0) +
+          if (∀ ⦃x : Fin 5⦄, z13 ⟨↑x, ⋯⟩ = false) ∧ z13 ⟨5, coordinates._proof_3⟩ = true then q ⟨13, ⋯⟩ else 0) +
+        if (∀ ⦃x : Fin 5⦄, z14 ⟨↑x, ⋯⟩ = false) ∧ z14 ⟨5, coordinates._proof_3⟩ = true then q ⟨14, ⋯⟩ else 0) +
+      if (∀ ⦃x : Fin 5⦄, z15 ⟨↑x, ⋯⟩ = false) ∧ z15 ⟨5, coordinates._proof_3⟩ = true then q ⟨15, ⋯⟩ else 0
+
+case right.«2»
+p q : Fin 16 → ℝ
+⊢ q ⟨7, bottomMass._proof_2⟩ + q ⟨11, bottomMass._proof_3⟩ + q ⟨13, bottomMass._proof_4⟩ + q ⟨14, bottomMass._proof_5⟩ +
+      q ⟨15, bottomMass._proof_6⟩ =
+    (((((((((((((((if {x | z0 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z0 ⟨5, coordinates._proof_3⟩ = true then q 0 else 0) +
+                                  if {x | z1 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z1 ⟨5, coordinates._proof_3⟩ = true then q 1
+                                  else 0) +
+                                if {x | z2 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z2 ⟨5, coordinates._proof_3⟩ = true then q ⟨2, ⋯⟩
+                                else 0) +
+                              if {x | z3 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z3 ⟨5, coordinates._proof_3⟩ = true then q ⟨3, ⋯⟩
+                              else 0) +
+                            if {x | z4 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z4 ⟨5, coordinates._proof_3⟩ = true then q ⟨4, ⋯⟩
+                            else 0) +
+                          if {x | z5 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z5 ⟨5, coordinates._proof_3⟩ = true then q ⟨5, ⋯⟩
+                          else 0) +
+                        if {x | z6 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z6 ⟨5, coordinates._proof_3⟩ = true then q ⟨6, ⋯⟩
+                        else 0) +
+                      if {x | z7 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z7 ⟨5, coordinates._proof_3⟩ = true then q ⟨7, ⋯⟩ else 0) +
+                    if {x | z8 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z8 ⟨5, coordinates._proof_3⟩ = true then q ⟨8, ⋯⟩ else 0) +
+                  if {x | z9 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z9 ⟨5, coordinates._proof_3⟩ = true then q ⟨9, ⋯⟩ else 0) +
+                if {x | z10 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z10 ⟨5, coordinates._proof_3⟩ = true then q ⟨10, ⋯⟩ else 0) +
+              if {x | z11 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z11 ⟨5, coordinates._proof_3⟩ = true then q ⟨11, ⋯⟩ else 0) +
+            if {x | z12 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z12 ⟨5, coordinates._proof_3⟩ = true then q ⟨12, ⋯⟩ else 0) +
+          if {x | z13 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z13 ⟨5, coordinates._proof_3⟩ = true then q ⟨13, ⋯⟩ else 0) +
+        if {x | z14 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z14 ⟨5, coordinates._proof_3⟩ = true then q ⟨14, ⋯⟩ else 0) +
+      if {x | z15 ⟨↑x, ⋯⟩ = true}.card = 4 ∧ z15 ⟨5, coordinates._proof_3⟩ = true then q ⟨15, ⋯⟩ else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:44:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ p 0 + p 1 + (-p ⟨0, bottomMass._proof_1⟩ - p ⟨1, bottomMass._proof_7⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:46:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ q 1 + q 0 + (-q ⟨0, bottomMass._proof_1⟩ - q ⟨1, bottomMass._proof_7⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:48:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ p 1 + q ⟨0, bottomMass._proof_1⟩ + (-q 0 - p ⟨1, bottomMass._proof_7⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:50:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ p 1 * 2 - p ⟨1, bottomMass._proof_7⟩ * 2 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:52:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ p 1 * 2 + q ⟨1, bottomMass._proof_7⟩ * 2 + (-(q 1 * 2) - p ⟨1, bottomMass._proof_7⟩ * 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:54:4: error: ring failed, ring expressions not equal
+p q : Fin 16 → ℝ
+hm : Moment p q
+⊢ p 1 + q ⟨1, bottomMass._proof_7⟩ + (-q 1 - p ⟨1, bottomMass._proof_7⟩) = 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:154:2: error: unsolved goals
+case left.«0»
+p q : Fin 10 → ℝ
+⊢ p 0 =
+    (((((((((if
+                          (∀ ⦃x : Fin 4⦄, y0 ⟨↑x, ⋯⟩ = false) ∧
+                            y0 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              y0 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        p 0
+                      else 0) +
+                      if
+                          (∀ ⦃x : Fin 4⦄, y1 ⟨↑x, ⋯⟩ = false) ∧
+                            y1 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              y1 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        p 1
+                      else 0) +
+                    if
+                        (∀ ⦃x : Fin 4⦄, y2 ⟨↑x, ⋯⟩ = false) ∧
+                          y2 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                            y2 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                      p ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      (∀ ⦃x : Fin 4⦄, y3 ⟨↑x, ⋯⟩ = false) ∧
+                        y3 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y3 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                    p ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    (∀ ⦃x : Fin 4⦄, y4 ⟨↑x, ⋯⟩ = false) ∧
+                      y4 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y4 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                  p ⟨4, ⋯⟩
+                else 0) +
+              if
+                  (∀ ⦃x : Fin 4⦄, y5 ⟨↑x, ⋯⟩ = false) ∧
+                    y5 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y5 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                p ⟨5, ⋯⟩
+              else 0) +
+            if
+                (∀ ⦃x : Fin 4⦄, y6 ⟨↑x, ⋯⟩ = false) ∧
+                  y6 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y6 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+              p ⟨6, ⋯⟩
+            else 0) +
+          if
+              (∀ ⦃x : Fin 4⦄, y7 ⟨↑x, ⋯⟩ = false) ∧
+                y7 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y7 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+            p ⟨7, ⋯⟩
+          else 0) +
+        if
+            (∀ ⦃x : Fin 4⦄, y8 ⟨↑x, ⋯⟩ = false) ∧
+              y8 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y8 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+          p ⟨8, ⋯⟩
+        else 0) +
+      if
+          (∀ ⦃x : Fin 4⦄, y9 ⟨↑x, ⋯⟩ = false) ∧
+            y9 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y9 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+        p ⟨9, ⋯⟩
+      else 0
+
+case left.«1»
+p q : Fin 10 → ℝ
+⊢ p 1 + p ⟨2, bottomMass._proof_3⟩ + p ⟨3, bottomMass._proof_4⟩ + p ⟨5, bottomMass._proof_5⟩ =
+    (((((((((if
+                          {x | y0 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                            y0 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              y0 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        p 0
+                      else 0) +
+                      if
+                          {x | y1 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                            y1 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              y1 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        p 1
+                      else 0) +
+                    if
+                        {x | y2 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                          y2 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y2 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                      p ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | y3 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                        y3 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y3 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                    p ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | y4 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                      y4 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y4 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                  p ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | y5 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                    y5 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y5 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                p ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | y6 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                  y6 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y6 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+              p ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | y7 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                y7 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y7 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+            p ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | y8 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+              y8 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y8 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+          p ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | y9 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+            y9 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y9 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+        p ⟨9, ⋯⟩
+      else 0
+
+case left.«2»
+p q : Fin 10 → ℝ
+⊢ p ⟨4, bottomMass._proof_6⟩ + p ⟨6, bottomMass._proof_7⟩ + p ⟨7, bottomMass._proof_8⟩ + p ⟨8, bottomMass._proof_9⟩ =
+    (((((((((if
+                          {x | y0 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                            y0 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              y0 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        p 0
+                      else 0) +
+                      if
+                          {x | y1 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                            y1 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              y1 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        p 1
+                      else 0) +
+                    if
+                        {x | y2 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                          y2 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y2 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                      p ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | y3 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                        y3 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y3 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                    p ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | y4 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                      y4 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y4 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                  p ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | y5 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                    y5 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y5 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                p ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | y6 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                  y6 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y6 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+              p ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | y7 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                y7 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y7 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+            p ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | y8 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+              y8 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y8 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+          p ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | y9 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+            y9 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ y9 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+        p ⟨9, ⋯⟩
+      else 0
+
+case left.«3»
+p q : Fin 10 → ℝ
+⊢ p ⟨9, bottomMass._proof_10⟩ =
+    (((((((((if
+                          {x | y0 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                            y0 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              y0 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        p 0
+                      else 0) +
+                      if
+                          {x | y1 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                            y1 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              y1 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        p 1
+                      else 0) +
+                    if
+                        {x | y2 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                          y2 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y2 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                      p ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | y3 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                        y3 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y3 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                    p ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | y4 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                      y4 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y4 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                  p ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | y5 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                    y5 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y5 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                p ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | y6 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                  y6 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y6 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+              p ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | y7 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                y7 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y7 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+            p ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | y8 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+              y8 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y8 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+          p ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | y9 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+            y9 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ y9 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+        p ⟨9, ⋯⟩
+      else 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:157:2: error: unsolved goals
+case right.«0»
+p q : Fin 10 → ℝ
+⊢ q 0 =
+    (((((((((if
+                          (∀ ⦃x : Fin 4⦄, z0 ⟨↑x, ⋯⟩ = false) ∧
+                            z0 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              z0 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        q 0
+                      else 0) +
+                      if
+                          (∀ ⦃x : Fin 4⦄, z1 ⟨↑x, ⋯⟩ = false) ∧
+                            z1 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              z1 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        q 1
+                      else 0) +
+                    if
+                        (∀ ⦃x : Fin 4⦄, z2 ⟨↑x, ⋯⟩ = false) ∧
+                          z2 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z2 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                      q ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      (∀ ⦃x : Fin 4⦄, z3 ⟨↑x, ⋯⟩ = false) ∧
+                        z3 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z3 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                    q ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    (∀ ⦃x : Fin 4⦄, z4 ⟨↑x, ⋯⟩ = false) ∧
+                      z4 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z4 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                  q ⟨4, ⋯⟩
+                else 0) +
+              if
+                  (∀ ⦃x : Fin 4⦄, z5 ⟨↑x, ⋯⟩ = false) ∧
+                    z5 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z5 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                q ⟨5, ⋯⟩
+              else 0) +
+            if
+                (∀ ⦃x : Fin 4⦄, z6 ⟨↑x, ⋯⟩ = false) ∧
+                  z6 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z6 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+              q ⟨6, ⋯⟩
+            else 0) +
+          if
+              (∀ ⦃x : Fin 4⦄, z7 ⟨↑x, ⋯⟩ = false) ∧
+                z7 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z7 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+            q ⟨7, ⋯⟩
+          else 0) +
+        if
+            (∀ ⦃x : Fin 4⦄, z8 ⟨↑x, ⋯⟩ = false) ∧
+              z8 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z8 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+          q ⟨8, ⋯⟩
+        else 0) +
+      if
+          (∀ ⦃x : Fin 4⦄, z9 ⟨↑x, ⋯⟩ = false) ∧
+            z9 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z9 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+        q ⟨9, ⋯⟩
+      else 0
+
+case right.«1»
+p q : Fin 10 → ℝ
+⊢ q 1 + q ⟨2, bottomMass._proof_3⟩ + q ⟨3, bottomMass._proof_4⟩ + q ⟨5, bottomMass._proof_5⟩ =
+    (((((((((if
+                          {x | z0 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                            z0 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              z0 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        q 0
+                      else 0) +
+                      if
+                          {x | z1 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                            z1 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              z1 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        q 1
+                      else 0) +
+                    if
+                        {x | z2 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                          z2 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z2 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                      q ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | z3 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                        z3 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z3 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                    q ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | z4 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                      z4 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z4 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                  q ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | z5 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                    z5 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z5 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                q ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | z6 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                  z6 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z6 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+              q ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | z7 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+                z7 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z7 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+            q ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | z8 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+              z8 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z8 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+          q ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | z9 ⟨↑x, ⋯⟩ = true}.card = 1 ∧
+            z9 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z9 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+        q ⟨9, ⋯⟩
+      else 0
+
+case right.«2»
+p q : Fin 10 → ℝ
+⊢ q ⟨4, bottomMass._proof_6⟩ + q ⟨6, bottomMass._proof_7⟩ + q ⟨7, bottomMass._proof_8⟩ + q ⟨8, bottomMass._proof_9⟩ =
+    (((((((((if
+                          {x | z0 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                            z0 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              z0 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        q 0
+                      else 0) +
+                      if
+                          {x | z1 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                            z1 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                              z1 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                        q 1
+                      else 0) +
+                    if
+                        {x | z2 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                          z2 ⟨4, Orbit18.characters._proof_5⟩ = false ∧
+                            z2 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                      q ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | z3 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                        z3 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z3 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                    q ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | z4 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                      z4 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z4 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                  q ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | z5 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                    z5 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z5 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+                q ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | z6 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                  z6 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z6 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+              q ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | z7 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+                z7 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z7 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+            q ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | z8 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+              z8 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z8 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+          q ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | z9 ⟨↑x, ⋯⟩ = true}.card = 3 ∧
+            z9 ⟨4, Orbit18.characters._proof_5⟩ = false ∧ z9 ⟨5, Orbit18.coordinates._proof_3⟩ = false then
+        q ⟨9, ⋯⟩
+      else 0
+
+case right.«3»
+p q : Fin 10 → ℝ
+⊢ q ⟨9, bottomMass._proof_10⟩ =
+    (((((((((if
+                          {x | z0 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                            z0 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              z0 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        q 0
+                      else 0) +
+                      if
+                          {x | z1 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                            z1 ⟨4, Orbit18.characters._proof_5⟩ = true ∧
+                              z1 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                        q 1
+                      else 0) +
+                    if
+                        {x | z2 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                          z2 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z2 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                      q ⟨2, ⋯⟩
+                    else 0) +
+                  if
+                      {x | z3 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                        z3 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z3 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                    q ⟨3, ⋯⟩
+                  else 0) +
+                if
+                    {x | z4 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                      z4 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z4 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                  q ⟨4, ⋯⟩
+                else 0) +
+              if
+                  {x | z5 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                    z5 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z5 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+                q ⟨5, ⋯⟩
+              else 0) +
+            if
+                {x | z6 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                  z6 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z6 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+              q ⟨6, ⋯⟩
+            else 0) +
+          if
+              {x | z7 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+                z7 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z7 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+            q ⟨7, ⋯⟩
+          else 0) +
+        if
+            {x | z8 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+              z8 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z8 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+          q ⟨8, ⋯⟩
+        else 0) +
+      if
+          {x | z9 ⟨↑x, ⋯⟩ = true}.card = 4 ∧
+            z9 ⟨4, Orbit18.characters._proof_5⟩ = true ∧ z9 ⟨5, Orbit18.coordinates._proof_3⟩ = true then
+        q ⟨9, ⋯⟩
+      else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:166:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 0 + p 1 + (-p ⟨0, bottomMass._proof_1⟩ - p ⟨1, bottomMass._proof_2⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:168:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ q 0 + q 1 + (-q ⟨0, bottomMass._proof_1⟩ - q ⟨1, bottomMass._proof_2⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:170:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 1 - p ⟨1, bottomMass._proof_2⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:172:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 1 - p ⟨1, bottomMass._proof_2⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:176:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 1 + q ⟨0, bottomMass._proof_1⟩ + (-q 0 - p ⟨1, bottomMass._proof_2⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:178:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 1 + q ⟨1, bottomMass._proof_2⟩ + (-q 1 - p ⟨1, bottomMass._proof_2⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoShellProjectors.lean:180:4: error: ring failed, ring expressions not equal
+p q : Fin 10 → ℝ
+hm : Moment p q
+⊢ p 1 + q ⟨1, bottomMass._proof_2⟩ + (-q 1 - p ⟨1, bottomMass._proof_2⟩) = 0

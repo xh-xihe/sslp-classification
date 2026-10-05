@@ -1,0 +1,181 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 5925,
+      "end_line": 5931,
+      "kind": "covered",
+      "reason": "The literal four commuting standard generators have sixteen distinct stabilizer words. Their actual common +1 eigenspace equals the range of the actual two standard seed words, whose Gram matrix is 16 I. Its complex dimension is exactly two; the low-weight syndrome argument and both actual logical Pauli actions are separately proved.",
+      "declarations": [
+        "MainTheory.StandardFiveSyndromeDisplays.all_nonzero_unique",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_anticommutes",
+        "MainTheory.StandardFiveSyndromeDisplays.generators_commute",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_X",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_anticommute",
+        "MainTheory.StandardFiveJointSpace.independent_generators",
+        "MainTheory.StandardFiveJointSpace.projector_checked",
+        "MainTheory.StandardFiveJointSpace.seed_gram",
+        "MainTheory.StandardFiveJointSpace.joint_range",
+        "MainTheory.StandardFiveJointSpace.joint_dimension"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "1c923579d219093657d5c0523736a716493541f46363e0f4d2cbdda31ca52c2a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4246,
+      "end_line": 4263,
+      "kind": "covered",
+      "reason": "The universal complex-isometry construction, full low-weight physical KL, zero unsplit scalars and both literal trace formulas are proved for the actual normalized standard five-qubit seed.",
+      "declarations": [
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.ArbitrarySplitPerfectCode.split_trace",
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "2e720e1e92e62c96d0b5eedc798a8f3c10d002ebcf9a85b93b2da5b9359d1549"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5952,
+      "end_line": 5964,
+      "kind": "covered",
+      "reason": "All low-weight six-qubit Pauli errors are covered by the universal split-isometry proof, including the stated zero unsplit coefficients and the split-pair trace formula in this output order.",
+      "declarations": [
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three",
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.Orbit3PrintedSplitMatrices.trace_identity"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "cbc8f4c2d6c803049e077e2eb9e61c102e98305d87175d7fdcbaf84edec358c8"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12026,
+      "end_line": 12042,
+      "kind": "covered",
+      "reason": "The specified minor and full moment rank are independently proved.",
+      "declarations": [
+        "MainTheory.Orbit31PrintedMinor.real_determinant_abs",
+        "SixQubit.Orbit31.momentMatrix_rank"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "c343f645737f382491faa213b237beb1c3fba1394808cab0d30f90803a349b15"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12115,
+      "end_line": 12120,
+      "kind": "covered",
+      "reason": "All actual real extreme points, and only those points, are the 204 checked primal vertices, with support counts 108 and 96.",
+      "declarations": [
+        "MainTheory.Orbit31SupportBase.actual_rows",
+        "MainTheory.Orbit31MomentVertices.extreme_points",
+        "MainTheory.Orbit31MomentVertices.vertex_count",
+        "MainTheory.Orbit31MomentVertices.vertex_support_counts"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "e32e454ce56a0f11b02c5aaaa4cbddc8d0c99d4eaa2770a1dcbcc00b05af2698"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12122,
+      "end_line": 12123,
+      "kind": "covered",
+      "reason": "Every coordinate face is the convex hull of the actual supported vertices.",
+      "declarations": [
+        "MainTheory.Orbit31MomentFaces.convex_hull_supported_vertices"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "5b8cf7f3f606554d5a6cef385ec2273a7f19b4355deda8729cc840c243c32275"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12124,
+      "end_line": 12126,
+      "kind": "gap",
+      "reason": "The stated iff needs a nonempty-mask or nonempty-face hypothesis. For the empty mask the vertex union is empty, but normalization excludes an exact empty support. The repository proves the corrected iff and this boundary obstruction; the authoritative SI source is unchanged.",
+      "declarations": [
+        "MainTheory.Orbit31RelativeInterior.relative_interior_iff_vertexUnion",
+        "MainTheory.Orbit31RelativeInterior.empty_vertexUnion",
+        "MainTheory.Orbit31RelativeInterior.empty_mask_no_support"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "9fc4eb6eb00381be09e974d2cc5d05c090d6ac8aac88796f8d0fe10be59bb9f0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12277,
+      "end_line": 12290,
+      "kind": "covered",
+      "reason": "Actual synchronized phases prove the literal type-14 and type-16 exclusions. Together with the other checked literal branches only type two remains at this stage.",
+      "declarations": [
+        "MainTheory.Orbit31ResidualTriangles.column_rectangle",
+        "MainTheory.Orbit31ResidualTriangles.column_opposition",
+        "MainTheory.Orbit31ResidualTriangles.three_column_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go",
+        "MainTheory.Orbit31FinalCross.Type01.no_go",
+        "MainTheory.Orbit31FinalSameState.final_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "d00b934ffe6e8e5b264429210c547e2c723da0b77ee73d1aff501cf1d33d3ffc"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12469,
+      "end_line": 12479,
+      "kind": "covered",
+      "reason": "The printed signed minor is checked in the actual lexicographic matrix, and proves rank twenty-three.",
+      "declarations": [
+        "MainTheory.Orbit32PrintedMinor.actual_matrix",
+        "MainTheory.Orbit32PrintedMinor.real_determinant",
+        "MainTheory.Orbit32PrintedMinor.full_rank"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "389b361b0f7d4113dfc089565c434ec6da070a28b1e63f6470099be76c3f052c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12513,
+      "end_line": 12520,
+      "kind": "covered",
+      "reason": "Both directions of the complete nonnegative real normal form are proved. The twelve displayed parameters determine the entire probability vector injectively, the actual moment kernel has dimension nine, and the literal reflection squares to identity.",
+      "declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.complete_normal_form",
+        "MainTheory.Orbit32PrintedMomentNormal.parameter_injectivity",
+        "MainTheory.Orbit32PrintedMinor.kernel_dimension",
+        "MainTheory.Orbit32PrintedLocalAlgebra.reflection_involution"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "74032b6ecb825c06f111132c32f9f2abc099ff5c56b69070e4c5bfc4fdc71772"
+    }
+  ],
+  "scope": "Scoped current correspondence; full manuscript review remains incomplete"
+}

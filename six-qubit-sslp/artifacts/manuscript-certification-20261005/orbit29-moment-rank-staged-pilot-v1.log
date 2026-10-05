@@ -1,0 +1,14 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentRank.lean:126:2: error: No goals to be solved
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentRank.lean:134:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (matrixQ.map ⇑(Rat.castHom ℝ) *ᵥ centerR) i
+in the target expression
+  (matrixR *ᵥ centerR) i = rhsR i
+
+case left.h
+i : Fin 23
+he : ↑(rhsQ i) = (matrixQ.map ⇑(Rat.castHom ℝ) *ᵥ centerR) i
+⊢ (matrixR *ᵥ centerR) i = rhsR i
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29MomentRank.lean:137:4: error: mod_cast has type
+  (0 : ℚ) < centerQ i
+but is expected to have type
+  (0 : ℝ) < centerR i

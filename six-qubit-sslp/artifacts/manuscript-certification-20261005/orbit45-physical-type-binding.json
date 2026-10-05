@@ -1,0 +1,196 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 6532,
+      "end_line": 6539,
+      "kind": "covered",
+      "reason": "The printed general logical words are the actual complete-fiber indexed ket expansions.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalPrintedRows.codewords"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "91cd39af7f439fe7478e376ff842290b224059d1525030a0da6a0b821a2575b4"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6599,
+      "end_line": 6607,
+      "kind": "covered",
+      "reason": "The actual half-angle rows have rank seven and the literal selected seven-column minor has absolute determinant 256. Nonzero physical/printed row signs are explicitly checked.",
+      "declarations": [
+        "MainTheory.Orbit45PrintedWalsh.rank_seven",
+        "MainTheory.Orbit45PrintedWalsh.selectedRows",
+        "MainTheory.Orbit45PrintedWalsh.selectedCols",
+        "MainTheory.Orbit45PrintedWalsh.minor_absolute_determinant",
+        "MainTheory.Orbit45PhysicalPrintedRows.physical_walsh"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "dd7692d0191e1bf1ff4864b7e6720b432069ac5c1440c12bc6b05f5bf6610a43"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6695,
+      "end_line": 6771,
+      "kind": "covered",
+      "reason": "The actual spin flip, complementary index pairing, zero-overlap trace and A2+A3=1 are proved for arbitrary supported physical codes, including all zero-amplitude boundaries.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalSpinFlip.general_shadow_trace",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_overlaps_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_spin_trace_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_A1_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_A2_A3_line"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "f07e9deb27f7a9b2e1e3e68188885c6c9c050e4ab575b06195c35f9376ae1c8c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6783,
+      "end_line": 6793,
+      "kind": "covered",
+      "reason": "The exact seven affine phase rows are invertible over the reals and yield the claimed physical/global phase normalization, preserving actual supports, probabilities, normalization and every physical KL equation.",
+      "declarations": [
+        "MainTheory.Orbit45AffineGauge.actual_rows",
+        "MainTheory.Orbit45AffineGauge.determinant",
+        "MainTheory.Orbit45AffineGauge.solve_angles",
+        "MainTheory.Orbit45AffineGauge.anchors_positive",
+        "MainTheory.Orbit45PhysicalGauge.diagonal_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.rephase_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.phaseAction_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.physical_anchor_gauge"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "f0e9a4a6be398aafb32919133da65ea0f84553ca9976a8dd546fe350ceaf4f83"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6794,
+      "end_line": 6831,
+      "kind": "covered",
+      "reason": "Both literal gauges are constructed for every actual positive-stratum code. The top amplitudes follow from actual half-angle and paired-product equations after a unit relative logical phase; no displayed gauge is assumed.",
+      "declarations": [
+        "MainTheory.Orbit45BottomGauge.physical_bottom_gauge",
+        "MainTheory.Orbit45TopGauge.top_canonical",
+        "MainTheory.Orbit45PhysicalPhaseNormalForm.physical_phase_normal_form"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "1ade72df3c72a01d1c56866b56ccdfd6a00062ff64b90d16698c8cd12429de57"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6832,
+      "end_line": 6889,
+      "kind": "covered",
+      "reason": "Given the preceding displayed positive-stratum gauges, every actual remaining cross-KL row has the printed factorization and forces precisely the stated phases. Coverage here is conditional on those gauges; their complete arbitrary-code construction is reviewed separately.",
+      "declarations": [
+        "MainTheory.Orbit45CrossFactors.all_cross_masks",
+        "MainTheory.Orbit45CrossFactors.forced_phases",
+        "MainTheory.Orbit45CrossFactors.triangle_after_gauge",
+        "MainTheory.Orbit45CrossFactors.remaining_factors_zero",
+        "MainTheory.Orbit45CrossFactors.Row0.substitution",
+        "MainTheory.Orbit45CrossFactors.Row1.substitution",
+        "MainTheory.Orbit45CrossFactors.Row2.substitution",
+        "MainTheory.Orbit45CrossFactors.Row3.substitution",
+        "MainTheory.Orbit45CrossFactors.Row4.substitution",
+        "MainTheory.Orbit45CrossFactors.Row5.substitution",
+        "MainTheory.Orbit45CrossFactors.Row0.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row1.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row2.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row3.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row4.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row5.physical_factors"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "9c2cf20bd7e4b94b50f1ace803d56d878d25fce93e8b48dd484cf28014ed58bf"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6890,
+      "end_line": 6925,
+      "kind": "covered",
+      "reason": "The final printed canonical words are available for every actual positive-stratum solution, with the complete physical KL predicate, unchanged probabilities and literal vector triangle retained.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalCanonicalForm.physical_canonical_form",
+        "MainTheory.Orbit45PrintedAttainment.canonical_bottom",
+        "MainTheory.Orbit45PrintedAttainment.canonical_top"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "ea2c012702afa16a5b9ccb75a28ba8469e53201c8847b057f589b228cc4e158a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6926,
+      "end_line": 6957,
+      "kind": "covered",
+      "reason": "The complete within-fiber incidence classification, unique occupied channels and identical literal coherences on both words are proved. The printed family independently satisfies every physical distance-three KL equation.",
+      "declarations": [
+        "MainTheory.Orbit45OrientedCoherences.all_within_masks",
+        "MainTheory.Orbit45OrientedCoherences.unique_channel",
+        "MainTheory.Orbit45OrientedCoherences.physical_printed_table",
+        "MainTheory.Orbit45PrintedAttainment.full_kl"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "750e561d0869fc7be844c26afb10f033127856da7a4e476bb61583d01d0b1499"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6958,
+      "end_line": 6979,
+      "kind": "covered",
+      "reason": "Every triple in the printed triangle domain admits explicit unit phases and actual canonical logical words with full fiber support conditions, normalization, orthogonality, distance-three KL and the claimed diagonal logical action. All boundary triples are included.",
+      "declarations": [
+        "MainTheory.Orbit45TriangleExistence.domain_phases",
+        "MainTheory.Orbit45TriangleExistence.canonical_fullKL",
+        "MainTheory.Orbit45TriangleExistence.every_triple_completion",
+        "MainTheory.Orbit45PrintedAttainment.canonical_bottom",
+        "MainTheory.Orbit45PrintedAttainment.canonical_top",
+        "MainTheory.Orbit45PrintedLogicalAction.physical_logical_action"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "339e62bac21279a3190f31eeaf55f2a00a134b8e3e7fab7265b3e32fe1a4c073"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 7018,
+      "end_line": 7048,
+      "kind": "covered",
+      "reason": "The complete actual Pauli dressings give the stated Parseval coefficient eight and the printed off-diagonal enumerator contribution; the displayed vector triangle gives its exact polynomial reduction.",
+      "declarations": [
+        "MainTheory.Orbit45DressingParseval.dressing_exhaustion",
+        "MainTheory.Orbit45DressingParseval.parseval",
+        "MainTheory.Orbit45DressingParseval.actual_bottom_value",
+        "MainTheory.Orbit45DressingParseval.physical_parseval",
+        "MainTheory.Orbit45PrintedOffContribution.physical_off_contribution",
+        "MainTheory.Orbit45PrintedOffContribution.physical_off_reduction"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "66076b71214633facf883cbe23e03290bd0539db7e5c36bdc605714ab9b4159b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 7062,
+      "end_line": 7078,
+      "kind": "covered",
+      "reason": "The printed probability coordinates determine the actual normalized enumerators. Every zero-product boundary is one of the three literal triples and has the actual coefficients A2=1, A3=0.",
+      "declarations": [
+        "MainTheory.Orbit45PrintedEnumerator.printed_block_masses",
+        "MainTheory.Orbit45PrintedEnumerator.physical_A2",
+        "MainTheory.Orbit45PrintedEnumerator.physical_A3",
+        "MainTheory.Orbit45PrintedEnumerator.physical_full_enumerators",
+        "MainTheory.Orbit45PrintedEnumerator.boundary_permutations",
+        "MainTheory.Orbit45PrintedEnumerator.boundary_R",
+        "MainTheory.Orbit45PrintedEnumerator.physical_boundary"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "6d46e09fa892ba2d70839f86f6ab40cd1a769e3c98b78781e57962d34b17ef5d"
+    }
+  ],
+  "scope": "Scoped physical intermediate correspondence; other manuscript review remains incomplete"
+}

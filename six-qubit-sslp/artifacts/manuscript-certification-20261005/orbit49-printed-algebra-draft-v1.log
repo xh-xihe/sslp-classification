@@ -1,0 +1,237 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:35:4: error: Type mismatch: After simplification, term
+  ⟨h0.left, h1.left⟩
+ has type
+  star (c SixQubit.Orbit49.y0) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z0 = 0 ∧
+    star (c SixQubit.Orbit49.y0) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z0 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨0, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨0, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨0, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨0, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:36:4: error: Type mismatch: After simplification, term
+  ⟨h1.right, h0.right⟩
+ has type
+  star (c SixQubit.Orbit49.y1) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z1 = 0 ∧
+    star (c SixQubit.Orbit49.y1) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z1 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨1, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨1, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨1, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨1, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:37:4: error: Type mismatch: After simplification, term
+  ⟨h2.left, h3.left⟩
+ has type
+  star (c SixQubit.Orbit49.y2) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z2 = 0 ∧
+    star (c SixQubit.Orbit49.y2) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z2 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨2, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨2, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨2, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨2, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:38:4: error: Tactic `simp` failed with a nested error:
+(deterministic) timeout at `simp`, maximum number of heartbeats (8000000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:19:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (8000000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:47:2: error: ring failed, ring expressions not equal
+c d b e : ℂ
+hb : b ≠ 0
+h : star c * e + star b * d = 0
+⊢ d + (-(d * star b) - e * star c) + e * star c * (star b)⁻¹ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:60:63: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun i => Complex.normSq (c i)) ⟨8, Moment._proof_9⟩
+in the target expression
+  0 < Complex.normSq (c ⟨8, ⋯⟩)
+
+c d : Fin 10 → ℂ
+hm : Moment (fun i => Complex.normSq (c i)) fun i => Complex.normSq (d i)
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0 ∧ rec c d ⟨9, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h8 : (fun i => Complex.normSq (c i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h9 : (fun i => Complex.normSq (c i)) ⟨9, Moment._proof_10⟩ = 1 / 6
+hd8 : (fun i => Complex.normSq (d i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h1 : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+⊢ 0 < Complex.normSq (c ⟨8, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:61:63: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun i => Complex.normSq (c i)) ⟨9, Moment._proof_10⟩
+in the target expression
+  0 < Complex.normSq (c ⟨9, ⋯⟩)
+
+c d : Fin 10 → ℂ
+hm : Moment (fun i => Complex.normSq (c i)) fun i => Complex.normSq (d i)
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0 ∧ rec c d ⟨9, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h8 : (fun i => Complex.normSq (c i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h9 : (fun i => Complex.normSq (c i)) ⟨9, Moment._proof_10⟩ = 1 / 6
+hd8 : (fun i => Complex.normSq (d i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h1 : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+hc8 : c ⟨8, ⋯⟩ ≠ 0
+⊢ 0 < Complex.normSq (c ⟨9, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:62:63: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun i => Complex.normSq (d i)) ⟨8, Moment._proof_9⟩
+in the target expression
+  0 < Complex.normSq (d ⟨8, ⋯⟩)
+
+c d : Fin 10 → ℂ
+hm : Moment (fun i => Complex.normSq (c i)) fun i => Complex.normSq (d i)
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0 ∧ rec c d ⟨9, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h8 : (fun i => Complex.normSq (c i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h9 : (fun i => Complex.normSq (c i)) ⟨9, Moment._proof_10⟩ = 1 / 6
+hd8 : (fun i => Complex.normSq (d i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h1 : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+hc8 : c ⟨8, ⋯⟩ ≠ 0
+hc9 : c ⟨9, ⋯⟩ ≠ 0
+⊢ 0 < Complex.normSq (d ⟨8, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:69:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  c 0
+in the target expression
+  (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+
+c d : Fin 10 → ℂ
+hm : Moment (fun i => Complex.normSq (c i)) fun i => Complex.normSq (d i)
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0 ∧ rec c d ⟨9, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h8 : (fun i => Complex.normSq (c i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h9 : (fun i => Complex.normSq (c i)) ⟨9, Moment._proof_10⟩ = 1 / 6
+hd8 : (fun i => Complex.normSq (d i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+h1 : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+hc8 : c ⟨8, ⋯⟩ ≠ 0
+hc9 : c ⟨9, ⋯⟩ ≠ 0
+he8 : d ⟨8, ⋯⟩ ≠ 0
+hu : ∀ (i : Fin 8), d ⟨↑i, ⋯⟩ = -rho c d ⟨8, ⋯⟩ * star (c ⟨↑i, ⋯⟩)
+h : c 0 = 0 ∧ c 1 = 0
+⊢ False
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:126:4: error: linarith failed to find a contradiction
+case h1.h
+c d : Fin 10 → ℂ
+hm : Moment (fun i => Complex.normSq (c i)) fun i => Complex.normSq (d i)
+h1 : c 0 * c ⟨3, ⋯⟩ + c 1 * c ⟨2, ⋯⟩ = 0
+h2 : c 0 * c ⟨5, ⋯⟩ + c 1 * c ⟨4, ⋯⟩ = 0
+h4 : c 0 * c ⟨7, ⋯⟩ + c 1 * c ⟨6, ⋯⟩ = 0
+e1 : Complex.normSq (c 0) * Complex.normSq (c ⟨3, ⋯⟩) = Complex.normSq (c 1) * Complex.normSq (c ⟨2, ⋯⟩)
+e2 : Complex.normSq (c 0) * Complex.normSq (c ⟨5, ⋯⟩) = Complex.normSq (c 1) * Complex.normSq (c ⟨4, ⋯⟩)
+e4 : Complex.normSq (c 0) * Complex.normSq (c ⟨7, ⋯⟩) = Complex.normSq (c 1) * Complex.normSq (c ⟨6, ⋯⟩)
+hq1 : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 12
+hq2 : (fun i => Complex.normSq (c i)) ⟨2, Moment._proof_3⟩ = 1 / 12
+hq4 : (fun i => Complex.normSq (c i)) ⟨4, Moment._proof_5⟩ = 1 / 12
+he : (fun i => Complex.normSq (c i)) ⟨1, Moment._proof_2⟩ = 1 / 6 - (fun i => Complex.normSq (c i)) ⟨0, Moment._proof_1⟩
+a✝ : Complex.normSq (c 0) < 1 / 12
+⊢ False
+failed

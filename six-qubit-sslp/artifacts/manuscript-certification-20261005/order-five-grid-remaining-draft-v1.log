@@ -1,0 +1,25 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderFiveGridRemainingDisplays.lean:243:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  c y12
+in the target expression
+  Complex.normSq (c y0) = 0 → Complex.normSq (c y5) + Complex.normSq (c y8) + Complex.normSq (c y11) = 1 / 10
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+i j : Fin 3
+ha : c (A j) ≠ 0
+hb : c (B i j) ≠ 0
+hm :
+  MomentSystem (Complex.normSq (c y0)) (Complex.normSq (c y1)) (Complex.normSq (c y2)) (Complex.normSq (c y3))
+    (Complex.normSq (c y4)) (Complex.normSq (c y5)) (Complex.normSq (c y6)) (Complex.normSq (c y7))
+    (Complex.normSq (c y8)) (Complex.normSq (c y9)) (Complex.normSq (c y10)) (Complex.normSq (c y11))
+    (Complex.normSq (c y12)) (Complex.normSq (d z0)) (Complex.normSq (d z1)) (Complex.normSq (d z2))
+    (Complex.normSq (d z3)) (Complex.normSq (d z4)) (Complex.normSq (d z5)) (Complex.normSq (d z6))
+    (Complex.normSq (d z7)) (Complex.normSq (d z8)) (Complex.normSq (d z9)) (Complex.normSq (d z10))
+    (Complex.normSq (d z11)) (Complex.normSq (d z12))
+he : c y12 = 0
+hx : Complex.normSq (c y0) = 0 → Complex.normSq (c y5) + Complex.normSq (c y8) + Complex.normSq (c y11) = 1 / 10
+⊢ False

@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30TwoPointDisplays.lean:100:4: error: Type mismatch: After simplification, term
+  Eq.trans h (Data.total_weight d)
+ has type
+  ∑ j, d.w a j + ∑ j, d.w b j + ∑ x ∈ {a, b}ᶜ, ∑ j, d.w x j = 1
+but is expected to have type
+  ∑ j, d.w a j + ∑ j, d.w b j + ∑ x ∈ d.Aᶜ, ∑ j, d.w x j = 1

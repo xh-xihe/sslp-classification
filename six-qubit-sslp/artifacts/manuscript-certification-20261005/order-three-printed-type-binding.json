@@ -1,0 +1,352 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 13927,
+      "end_line": 13994,
+      "kind": "covered",
+      "reason": "The literal orbit-50 incidence and reciprocal route is checked, including the native top reversal and global Z4 row sign; one active index suffices for the unit-modulus odd triangle.",
+      "declarations": [
+        "MainTheory.Orbit50PhysicalTriangle.physical_active",
+        "MainTheory.Orbit50PhysicalTriangle.physical_reciprocals",
+        "MainTheory.Orbit50PhysicalTriangle.physical_triangle",
+        "MainTheory.Orbit50PhysicalTriangle.physical_no_go",
+        "MainTheory.Orbit50PrintedRows.Row04.actual_characters",
+        "MainTheory.Orbit50PrintedRows.Row04.rowSign"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "417e13c5770c94756f0ca0a3a4c2fe9796f956dc2c9cb13c94e4cbc8a958667f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14050,
+      "end_line": 14104,
+      "kind": "covered",
+      "reason": "Both actual printed kernels and the exact norm-product parameter pinning give all six fixed positive probabilities.",
+      "declarations": [
+        "MainTheory.Orbit51PrintedRows.Row00.kernel_span",
+        "MainTheory.Orbit51PrintedRows.Row01.kernel_span",
+        "MainTheory.Orbit51PrintedAlgebra.printed_pin_identities",
+        "MainTheory.Orbit51PrintedAlgebra.linear_pin",
+        "MainTheory.Orbit51PrintedAlgebra.pin_parameters",
+        "MainTheory.Orbit51PhysicalCompletion.physical_pinned_point"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "b0e71572628ee7987544d95ed597d793d50d1d795c283e71a34171b07fd86ff8"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14106,
+      "end_line": 14147,
+      "kind": "covered",
+      "reason": "The two actual synchronization systems identify both anchors even when alpha is at either boundary endpoint.",
+      "declarations": [
+        "MainTheory.Orbit51PrintedAlgebra.partial_sync",
+        "MainTheory.Orbit51PrintedAlgebra.boundary_active",
+        "MainTheory.Orbit51PrintedAlgebra.anchor_sync",
+        "MainTheory.Orbit51PrintedAlgebra.full_sync",
+        "MainTheory.Orbit51PhysicalCompletion.physical_sync_rows",
+        "MainTheory.Orbit51PhysicalCompletion.physical_full_sync"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d52e4fde3e5e0d12daa566d1e457595026755278df09ed60ab0314c0bcd92f91"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14149,
+      "end_line": 14184,
+      "kind": "covered",
+      "reason": "All three physical quadrics, the explicitly nonzero ratio denominators and the literal odd-triangle contradiction are proved.",
+      "declarations": [
+        "MainTheory.Orbit51PhysicalCompletion.quadrics_of_sync",
+        "MainTheory.Orbit51PhysicalCompletion.physical_quadrics",
+        "MainTheory.Orbit51PhysicalCompletion.physical_ratios",
+        "MainTheory.Orbit51PrintedAlgebra.fixed_nonzero",
+        "MainTheory.Orbit51PhysicalCompletion.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "cf8607ee79dd6d251a0413d9cf152f6b578767b65fabf890025c3ff8d3db5215"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13750,
+      "end_line": 13806,
+      "kind": "covered",
+      "reason": "The literal twelve mask reductions, common anchor phase and four quadrics are physically derived, including the whole closed boundary.",
+      "declarations": [
+        "MainTheory.Orbit49PrintedAlgebra.reciprocal_rows",
+        "MainTheory.Orbit49PhysicalCompletion.physical_uniform_phase",
+        "MainTheory.Orbit49PhysicalCompletion.physical_four_rows",
+        "MainTheory.Orbit49PhysicalCompletion.physical_quadrics"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "371bf07f796dadceb2a1d4a79852b604bf026a04cdda63194051b978da7c7443"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13821,
+      "end_line": 13864,
+      "kind": "covered",
+      "reason": "Both parameter pinning identities, all physical pinned probabilities and the exact nonzero-ratio triangle and final contradiction are proved.",
+      "declarations": [
+        "MainTheory.Orbit49PrintedAlgebra.norm_product",
+        "MainTheory.Orbit49PrintedAlgebra.pin_parameters",
+        "MainTheory.Orbit49PhysicalCompletion.physical_pinned_point",
+        "MainTheory.Orbit49PrintedAlgebra.triangle_equations",
+        "MainTheory.Orbit49PrintedAlgebra.triangle_determinant",
+        "MainTheory.Orbit49PhysicalCompletion.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d2423442af7561f128742909d936d9e7d2e6088d45a18b315b363876509997a7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13506,
+      "end_line": 13524,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability family and its exact domain are proved in both directions.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit47.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit47.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "6d03c3bc5123a8618e84e7f6e6a8dac90e5add47e3ebb6b49020809b65a47241"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13587,
+      "end_line": 13611,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability family and nonnegative domain are proved; rank/minor prose is reviewed separately.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit48.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit48.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "8e063a2351c6a4b4a4bc525f2da26b1cbdbee39c841ae7a4627c41243e85f6bb"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13719,
+      "end_line": 13737,
+      "kind": "covered",
+      "reason": "The complete real three-parameter probability family and all facets of its exact domain are proved.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit49.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit49.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "69abf1ef6c58ff51973b60a0154cadf0afef94c75f6ab3695212c6bf02e8965b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13892,
+      "end_line": 13918,
+      "kind": "covered",
+      "reason": "The complete real four-parameter probability family and its exact nonnegative domain are proved, including the top-order reversal.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit50.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.physical_normal_form",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.actual_complements"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "b5eb7221999ec2686a1400ecc2f4adf60d4dabb4c6716bf4121949e882a29177"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14029,
+      "end_line": 14045,
+      "kind": "covered",
+      "reason": "The complete real three-parameter moment cube, with every boundary, is proved in both directions.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit51.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit51.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d2f0d39debd257c20662fb201a3080c3ec96ba93d3d4c34bb42ef06630947a45"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14215,
+      "end_line": 14239,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability rectangle and its exact nonnegative domain are proved.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit52.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit52.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "e13177228e8493429b605e02bff31a1099c3e45b98116f2e4fad7bb42638d551"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13530,
+      "end_line": 13559,
+      "kind": "covered",
+      "reason": "The actual X5 and X5Z1 rows, their individual zero products and the positive probability product 1/18 give the literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_products_zero",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_first_product_positive",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "9fe545d2e48eb04feb4fa845422e1b2fb7b96c6ab276eba177ae4978c55f5870"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13616,
+      "end_line": 13651,
+      "kind": "covered",
+      "reason": "The actual X4 four-incidence Hadamard system and positive first product give the literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.determinant",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_products_zero",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_first_product_positive",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "3fe468134ca433ce690d9cc2716b60f56683cc5d5a6315e9d4ba2c26d562af33"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14243,
+      "end_line": 14298,
+      "kind": "covered",
+      "reason": "The actual X2 Hadamard system, two half-probability identities and positive total give a boundary-inclusive literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_half_relations",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_squared_products",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "f9208be449adbb2adef8fc1316a64b82eee7f1b7fead523f5b2854e4cd060412"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13525,
+      "end_line": 13527,
+      "kind": "covered",
+      "reason": "The actual orbit-47 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit47.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit47.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "88824c8de623caef472d52a3d7d97f3090c0e370c76b36af08bed5fab989c1b2"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13613,
+      "end_line": 13614,
+      "kind": "covered",
+      "reason": "The actual orbit-48 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit48.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit48.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "89eabb97986d4f6d43e04c016d90d38e99835cd44ecb22ba49561f9312a05d20"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13739,
+      "end_line": 13741,
+      "kind": "covered",
+      "reason": "The actual orbit-49 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit49.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit49.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "508cdbff6fbc281a50f0a219d0d4f68911452762a8ca564054e2f0175cee935c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13920,
+      "end_line": 13921,
+      "kind": "covered",
+      "reason": "The actual orbit-50 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit50.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "6b53a985cd919d422a2f891df9990b865b37347e10e5af334831625435170ea7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14047,
+      "end_line": 14048,
+      "kind": "covered",
+      "reason": "The actual orbit-51 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit51.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit51.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "9665a5c3683fd34f35d94d9b35772d98b0b7d4e89dc0a6f67ce8c88bac1e3f22"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14241,
+      "end_line": 14242,
+      "kind": "covered",
+      "reason": "The actual orbit-52 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit52.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit52.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "4ccbd4941b94f2efd044677cc81ee6c245e9b1cc5c7004627d529d830b0b4152"
+    }
+  ],
+  "scope": "Scoped current probability/row correspondence; other manuscript review remains incomplete"
+}

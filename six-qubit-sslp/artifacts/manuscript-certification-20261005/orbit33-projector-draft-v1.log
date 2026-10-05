@@ -1,0 +1,181 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:40:4: error: ring failed, ring expressions not equal
+v w : Fin 2 → ℂ
+r : ℝ
+hv : normSq v = 1
+hw : normSq w = r
+hi : Orbit33NormalizedPairs.inner w v = 0
+hs : v 0 * (starRingEnd ℂ) (v 0) + v 1 * (starRingEnd ℂ) (v 1) = 1
+ht : w 0 * (starRingEnd ℂ) (w 0) + w 1 * (starRingEnd ℂ) (w 1) = ↑r
+h0 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 0)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 1 * star (v 1))
+h1 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 1)) =
+    -((w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 1)))
+h2 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 1 * star (w 1)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 0))
+⊢ w 0 * star (w 0) * v 1 * (starRingEnd ℂ) (v 1) + w 0 * star (w 0) * v 0 * (starRingEnd ℂ) (v 0) +
+        (-(w 0 * star (w 0) * v 0 * star (v 0)) - w 0 * v 1 * star (v 1) * (starRingEnd ℂ) (w 0)) +
+      (w 1 * star (w 1) * v 1 * star (v 1) - w 1 * v 1 * star (v 1) * (starRingEnd ℂ) (w 1)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:43:4: error: ring failed, ring expressions not equal
+v w : Fin 2 → ℂ
+r : ℝ
+hv : normSq v = 1
+hw : normSq w = r
+hi : Orbit33NormalizedPairs.inner w v = 0
+hs : v 0 * (starRingEnd ℂ) (v 0) + v 1 * (starRingEnd ℂ) (v 1) = 1
+ht : w 0 * (starRingEnd ℂ) (w 0) + w 1 * (starRingEnd ℂ) (w 1) = ↑r
+h0 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 0)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 1 * star (v 1))
+h1 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 1)) =
+    -((w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 1)))
+h2 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 1 * star (w 1)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 0))
+hd0 : w 0 * star (w 0) = ↑r * (v 1 * star (v 1))
+⊢ w 1 * star (w 1) * v 0 * (starRingEnd ℂ) (v 0) + w 1 * star (w 1) * v 1 * (starRingEnd ℂ) (v 1) +
+        (-(w 1 * star (w 1) * v 1 * star (v 1)) - w 1 * v 0 * star (v 0) * (starRingEnd ℂ) (w 1)) +
+      (w 0 * star (w 0) * v 0 * star (v 0) - w 0 * v 0 * star (v 0) * (starRingEnd ℂ) (w 0)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:46:4: error: ring failed, ring expressions not equal
+v w : Fin 2 → ℂ
+r : ℝ
+hv : normSq v = 1
+hw : normSq w = r
+hi : Orbit33NormalizedPairs.inner w v = 0
+hs : v 0 * (starRingEnd ℂ) (v 0) + v 1 * (starRingEnd ℂ) (v 1) = 1
+ht : w 0 * (starRingEnd ℂ) (w 0) + w 1 * (starRingEnd ℂ) (w 1) = ↑r
+h0 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 0)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 1 * star (v 1))
+h1 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 0 * star (w 1)) =
+    -((w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 1)))
+h2 :
+  (v 0 * star (v 0) + v 1 * star (v 1)) * (w 1 * star (w 1)) =
+    (w 0 * star (w 0) + w 1 * star (w 1)) * (v 0 * star (v 0))
+hd0 : w 0 * star (w 0) = ↑r * (v 1 * star (v 1))
+hd1 : w 1 * star (w 1) = ↑r * (v 0 * star (v 0))
+⊢ w 0 * star (w 1) * v 0 * (starRingEnd ℂ) (v 0) +
+            (-(w 0 * star (w 1) * v 0 * star (v 0)) - w 0 * star (w 1) * star (v 1) * v 1) +
+          (w 0 * star (w 1) * v 1 * (starRingEnd ℂ) (v 1) - w 0 * star (w 0) * v 0 * star (v 1)) +
+        (w 0 * v 0 * star (v 1) * (starRingEnd ℂ) (w 0) - star (w 1) * w 1 * v 0 * star (v 1)) +
+      w 1 * v 0 * star (v 1) * (starRingEnd ℂ) (w 1) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:91:4: error: Tactic `apply` failed: could not unify the type of `scaled_outer f.u ?m.99 (f.a 0) (3 / 10) f.unitU ?m.114 ?m.115`
+  outer ?m.99 = ↑(3 / 10) • outer f.u
+with the goal
+  outer (CBlock c 0) = (3 / 10) • outer f.u
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+⊢ outer (CBlock c 0) = (3 / 10) • outer f.u
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:95:4: error: Tactic `apply` failed: could not unify the type of `scaled_outer f.v ?m.138 (f.b 0) (3 / 10) f.unitV ?m.153 ?m.154`
+  outer ?m.138 = ↑(3 / 10) • outer f.v
+with the goal
+  outer (DBlock d 0) = (3 / 10) • outer f.v
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = (3 / 10) • outer f.u
+⊢ outer (DBlock d 0) = (3 / 10) • outer f.v
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:99:4: error: Tactic `apply` failed: could not unify the type of `orthogonal_outer f.v ?m.183 (1 / 10) f.unitV ?m.194 ?m.195`
+  outer ?m.183 = ↑(1 / 10) • (1 - outer f.v)
+with the goal
+  outer (CBlock c 3) = (1 / 10) • (1 - outer f.v)
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = (3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = (3 / 10) • outer f.v
+⊢ outer (CBlock c 3) = (1 / 10) • (1 - outer f.v)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:103:4: error: Tactic `apply` failed: could not unify the type of `orthogonal_outer f.u ?m.224 (1 / 10) f.unitU ?m.235 ?m.236`
+  outer ?m.224 = ↑(1 / 10) • (1 - outer f.u)
+with the goal
+  outer (DBlock d 3) = (1 / 10) • (1 - outer f.u)
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = (3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = (3 / 10) • outer f.v
+hu3 : outer (CBlock c 3) = (1 / 10) • (1 - outer f.v)
+⊢ outer (DBlock d 3) = (1 / 10) • (1 - outer f.u)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:115:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = (3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = (3 / 10) • outer f.v
+hu3 : outer (CBlock c 3) = (1 / 10) • (1 - outer f.v)
+hv3 : outer (DBlock d 3) = (1 / 10) • (1 - outer f.u)
+he : (3 / 10) • outer f.u + (3 / 10) • outer f.v = (3 / 5) • rho c
+i j : Fin 2
+h0 : 3 / 10 * outer f.u i j + 3 / 10 * outer f.v i j = 3 / 5 * rho c i j
+⊢ ↑(3 / 10) * outer f.u i j + (↑(3 / 10) * outer f.v i j - ↑(3 / 10) * rho c i j * 2) + outer f.u i j * (-3 / 10) +
+        outer f.v i j * (-3 / 10) +
+      rho c i j * (3 / 5) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:123:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = (3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = (3 / 10) • outer f.v
+hu3 : outer (CBlock c 3) = (1 / 10) • (1 - outer f.v)
+hv3 : outer (DBlock d 3) = (1 / 10) • (1 - outer f.u)
+he :
+  (1 / 10) • (1 - outer f.v) + (1 / 10) • (1 - outer f.u) =
+    (2 * ↑(![3 / 10, 1 / 5, 1 / 5, 1 / 10, 1 / 10, 1 / 10] 3)) • rho c
+i j : Fin 2
+h0 :
+  1 / 10 * (1 - outer f.v) i j + 1 / 10 * (1 - outer f.u) i j =
+    2 * ↑(![3 / 10, 1 / 5, 1 / 5, 1 / 10, 1 / 10, 1 / 10] 3) * rho c i j
+⊢ ↑(1 / 10) * (1 - outer f.v) i j + (↑(1 / 10) * (1 - outer f.u) i j - ↑(1 / 10) * rho c i j * 2) +
+          (1 - outer f.v) i j * (-1 / 10) +
+        (1 - outer f.u) i j * (-1 / 10) +
+      ↑(![3 / 10, 1 / 5, 1 / 5, 1 / 10, 1 / 10, 1 / 10] 3) * rho c i j * 2 =
+    0

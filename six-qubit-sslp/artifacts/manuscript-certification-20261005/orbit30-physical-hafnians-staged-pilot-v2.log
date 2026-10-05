@@ -1,0 +1,538 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalHafnians.lean:53:73: error: unsolved goals
+case «0»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ -((starRingEnd ℂ) (c y12) * phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y3) * 2) +
+      (-(phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y10) * (starRingEnd ℂ) (c y5) * 2) -
+        phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y6) * (starRingEnd ℂ) (c y9) * 2) =
+    -(phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 3 = 4 then 0
+              else
+                if 1 = 2 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                            ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                          2)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (Matrix.vecCons
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            4)
+                          (fun i =>
+                            Matrix.vecCons
+                              (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                  ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                4)
+                              (fun i =>
+                                Matrix.vecCons
+                                  (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                      ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                    4)
+                                  (fun i =>
+                                    Matrix.vecCons
+                                      (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                          ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                        4)
+                                      (fun i =>
+                                        ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                            ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                          4)
+                                      i)
+                                  i)
+                              i)
+                          3))) *
+          2) +
+      (-(phase c d ⟨15, ⋯⟩ *
+              (starRingEnd ℂ)
+                (if 2 = 4 then 0
+                else
+                  if 1 = 3 then 0
+                  else
+                    c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                              ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                            3)) *
+                      c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (Matrix.vecCons
+                            (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                                ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                              4)
+                            (fun i =>
+                              Matrix.vecCons
+                                (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                    ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                  4)
+                                (fun i =>
+                                  Matrix.vecCons
+                                    (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                        ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                      4)
+                                    (fun i =>
+                                      Matrix.vecCons
+                                        (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                            ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                          4)
+                                        (fun i =>
+                                          ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                              ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                            4)
+                                        i)
+                                    i)
+                                i)
+                            2))) *
+            2) -
+        phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 2 = 3 then 0
+              else
+                if 1 = 4 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                            ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                          4)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (Matrix.vecCons
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            3)
+                          (fun i =>
+                            Matrix.vecCons
+                              (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                  ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                3)
+                              (fun i =>
+                                Matrix.vecCons
+                                  (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                      ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                    3)
+                                  (fun i =>
+                                    Matrix.vecCons
+                                      (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                          ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                        3)
+                                      (fun i =>
+                                        ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                            ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                          3)
+                                      i)
+                                  i)
+                              i)
+                          2))) *
+          2)
+
+case «1»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ -((starRingEnd ℂ) (c y13) * phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y3) * 2) +
+      (-(phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y11) * (starRingEnd ℂ) (c y5) * 2) -
+        phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y7) * (starRingEnd ℂ) (c y9) * 2) =
+    -(phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 3 = 4 then 0
+              else
+                if 0 = 2 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          2)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (Matrix.vecCons
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            4)
+                          (fun i =>
+                            Matrix.vecCons
+                              (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                  ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                4)
+                              (fun i =>
+                                Matrix.vecCons
+                                  (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                      ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                    4)
+                                  (fun i =>
+                                    Matrix.vecCons
+                                      (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                          ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                        4)
+                                      (fun i =>
+                                        ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                            ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                          4)
+                                      i)
+                                  i)
+                              i)
+                          3))) *
+          2) +
+      (-(phase c d ⟨15, ⋯⟩ *
+              (starRingEnd ℂ)
+                (if 2 = 4 then 0
+                else
+                  if 0 = 3 then 0
+                  else
+                    c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            3)) *
+                      c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (Matrix.vecCons
+                            (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                                ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                              4)
+                            (fun i =>
+                              Matrix.vecCons
+                                (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                    ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                  4)
+                                (fun i =>
+                                  Matrix.vecCons
+                                    (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                        ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                      4)
+                                    (fun i =>
+                                      Matrix.vecCons
+                                        (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                            ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                          4)
+                                        (fun i =>
+                                          ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                              ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                            4)
+                                        i)
+                                    i)
+                                i)
+                            2))) *
+            2) -
+        phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 2 = 3 then 0
+              else
+                if 0 = 4 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          4)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (Matrix.vecCons
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            3)
+                          (fun i =>
+                            Matrix.vecCons
+                              (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                  ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                                3)
+                              (fun i =>
+                                Matrix.vecCons
+                                  (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                      ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                    3)
+                                  (fun i =>
+                                    Matrix.vecCons
+                                      (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                          ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                        3)
+                                      (fun i =>
+                                        ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                            ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                          3)
+                                      i)
+                                  i)
+                              i)
+                          2))) *
+          2)
+
+case «2»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ -((starRingEnd ℂ) (c y14) * phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y3) * 2) +
+      (-(phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y11) * (starRingEnd ℂ) (c y6) * 2) -
+        phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y7) * (starRingEnd ℂ) (c y10) * 2) =
+    -(phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 3 = 4 then 0
+              else
+                c y14 *
+                  c
+                    (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                      (Matrix.vecCons
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          4)
+                        (fun i =>
+                          Matrix.vecCons
+                            (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                              4)
+                            (fun i =>
+                              Matrix.vecCons
+                                (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                    ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                  4)
+                                (fun i =>
+                                  Matrix.vecCons
+                                    (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                        ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                      4)
+                                    (fun i =>
+                                      ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                          ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                        4)
+                                    i)
+                                i)
+                            i)
+                        3))) *
+          2) +
+      (-(phase c d ⟨15, ⋯⟩ *
+              (starRingEnd ℂ)
+                (if 1 = 4 then 0
+                else
+                  if 0 = 3 then 0
+                  else
+                    c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            3)) *
+                      c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                              ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                            4))) *
+            2) -
+        phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 1 = 3 then 0
+              else
+                if 0 = 4 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          4)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                            ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                          3))) *
+          2)
+
+case «3»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ -((starRingEnd ℂ) (c y14) * phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y5) * 2) +
+      (-(phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y13) * (starRingEnd ℂ) (c y6) * 2) -
+        phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y7) * (starRingEnd ℂ) (c y12) * 2) =
+    -(phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 2 = 4 then 0
+              else
+                c y14 *
+                  c
+                    (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                      (Matrix.vecCons
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          4)
+                        (fun i =>
+                          Matrix.vecCons
+                            (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                              4)
+                            (fun i =>
+                              Matrix.vecCons
+                                (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                    ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                  4)
+                                (fun i =>
+                                  Matrix.vecCons
+                                    (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                        ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                      4)
+                                    (fun i =>
+                                      ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                          ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                        4)
+                                    i)
+                                i)
+                            i)
+                        2))) *
+          2) +
+      (-(phase c d ⟨15, ⋯⟩ *
+              (starRingEnd ℂ)
+                (if 1 = 4 then 0
+                else
+                  if 0 = 2 then 0
+                  else
+                    c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            2)) *
+                      c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                              ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                            4))) *
+            2) -
+        phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 1 = 2 then 0
+              else
+                if 0 = 4 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          4)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                            ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                          2))) *
+          2)
+
+case «4»
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+⊢ -((starRingEnd ℂ) (c y14) * phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y9) * 2) +
+      (-(phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y13) * (starRingEnd ℂ) (c y10) * 2) -
+        phase c d ⟨15, ⋯⟩ * (starRingEnd ℂ) (c y11) * (starRingEnd ℂ) (c y12) * 2) =
+    -(phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 2 = 3 then 0
+              else
+                c y14 *
+                  c
+                    (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                      (Matrix.vecCons
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          3)
+                        (fun i =>
+                          Matrix.vecCons
+                            (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                                ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                              3)
+                            (fun i =>
+                              Matrix.vecCons
+                                (![⟨13, edgeIndexMatrix._proof_3⟩, ⟨12, edgeIndexMatrix._proof_6⟩, 0,
+                                    ⟨9, edgeIndexMatrix._proof_9⟩, ⟨5, edgeIndexMatrix._proof_10⟩]
+                                  3)
+                                (fun i =>
+                                  Matrix.vecCons
+                                    (![⟨11, edgeIndexMatrix._proof_4⟩, ⟨10, edgeIndexMatrix._proof_7⟩,
+                                        ⟨9, edgeIndexMatrix._proof_9⟩, 0, ⟨3, edgeIndexMatrix._proof_11⟩]
+                                      3)
+                                    (fun i =>
+                                      ![⟨7, edgeIndexMatrix._proof_5⟩, ⟨6, edgeIndexMatrix._proof_8⟩,
+                                          ⟨5, edgeIndexMatrix._proof_10⟩, ⟨3, edgeIndexMatrix._proof_11⟩, 0]
+                                        3)
+                                    i)
+                                i)
+                            i)
+                        2))) *
+          2) +
+      (-(phase c d ⟨15, ⋯⟩ *
+              (starRingEnd ℂ)
+                (if 1 = 3 then 0
+                else
+                  if 0 = 2 then 0
+                  else
+                    c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                              ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                            2)) *
+                      c
+                        (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                          (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                              ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                            3))) *
+            2) -
+        phase c d ⟨15, ⋯⟩ *
+            (starRingEnd ℂ)
+              (if 1 = 2 then 0
+              else
+                if 0 = 3 then 0
+                else
+                  c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![0, ⟨14, edgeIndexMatrix._proof_2⟩, ⟨13, edgeIndexMatrix._proof_3⟩,
+                            ⟨11, edgeIndexMatrix._proof_4⟩, ⟨7, edgeIndexMatrix._proof_5⟩]
+                          3)) *
+                    c
+                      (![y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15]
+                        (![⟨14, edgeIndexMatrix._proof_2⟩, 0, ⟨12, edgeIndexMatrix._proof_6⟩,
+                            ⟨10, edgeIndexMatrix._proof_7⟩, ⟨6, edgeIndexMatrix._proof_8⟩]
+                          2))) *
+          2)

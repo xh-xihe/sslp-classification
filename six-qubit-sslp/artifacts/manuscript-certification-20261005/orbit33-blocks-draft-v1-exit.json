@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "-D",
+    "linter.unusedSimpArgs=true",
+    "tmp/manuscript-publication-20261005/drafts/Orbit33PrintedBlocks.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 27.4801975999726
+}

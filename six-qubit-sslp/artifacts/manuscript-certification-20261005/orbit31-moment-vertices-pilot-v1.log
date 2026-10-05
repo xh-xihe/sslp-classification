@@ -1,0 +1,13 @@
+MainTheory/Orbit31MomentVertices.lean:76:4: error: Invalid argument name `a` for function `Orbit31SupportMaskEquiv.mask_injective`
+
+Hint: Perhaps you meant one of the following parameter names:
+  • `a₁`: a₁̲
+  • `a₂`: a₂̲
+MainTheory/Orbit31MomentVertices.lean:77:48: error: Application type mismatch: The argument
+  hs
+has type
+  maskSet (primalMasks v) = maskSet (primalMasks w)
+but is expected to have type
+  (fun mask => maskSet ↑mask) ?m.32 = (fun mask => maskSet ↑mask) ?m.33
+in the application
+  Orbit31SupportMaskEquiv.mask_injective hs

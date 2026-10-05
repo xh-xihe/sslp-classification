@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:align@11295",
+      "statement_sha256": "0079601264e5fa3fb81541d33b64333c6e5c06adf1150e00658cdc352be315a7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.bottomPairs",
+        "MainTheory.Orbit29PrintedFaceAudit.topPairs",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_pairs",
+        "MainTheory.Orbit29PrintedSimplex.literal_native_pairs",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The literal displayed X5X6 pairs are actual native fiber words, with their printed order and partners checked by the kernel. The omitted bottom pair is proved to vanish from the actual diagonal moments."
+    },
+    {
+      "id": "supplementary.tex:align@11305",
+      "statement_sha256": "ede87bb78c215c05e63789539a7dd6d007548f9be0417ade470186212716397b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.bottomPairs",
+        "MainTheory.Orbit29PrintedFaceAudit.topPairs",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_pairs",
+        "MainTheory.Orbit29PrintedSimplex.literal_native_pairs",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The literal displayed X5X6 pairs are actual native fiber words, with their printed order and partners checked by the kernel. The omitted bottom pair is proved to vanish from the actual diagonal moments."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o29bottomsimplex",
+      "statement_sha256": "19966d0b56e63c7020133c58c568859e2ca55dc03fc66543ac1a11ff98e61a9c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PhysicalPairReduction.physical_moments",
+        "MainTheory.Orbit29PhysicalPairReduction.native_orth",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_mass",
+        "MainTheory.Orbit29PhysicalPairReduction.total_high_mass",
+        "MainTheory.Orbit29PhysicalPairReduction.high_mass_bound",
+        "MainTheory.Orbit29PhysicalPairReduction.weighted_determinants",
+        "MainTheory.Orbit29PhysicalPairReduction.high_parallel",
+        "MainTheory.Orbit29PhysicalPairReduction.high_balanced",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_balanced",
+        "MainTheory.Orbit29PrintedSimplex.omitted_zero",
+        "MainTheory.Orbit29PrintedSimplex.reduced_normal",
+        "MainTheory.Orbit29PrintedSimplex.physical_normal",
+        "MainTheory.Orbit29PrintedSimplex.physical_printed_probabilities",
+        "MainTheory.Orbit29PrintedSimplex.physical_domain",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: All per-string probabilities and the exact three-parameter nonnegative domain are derived from actual supported normalized physical code amplitudes, the complete native moment system, and physical Walsh orthogonality. No final impossibility theorem supplies an intermediate formula."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o29topsimplex",
+      "statement_sha256": "0ff8fc1deb4368c4e252c4871876c8ab976a24f69373cf4cf595fc24e43b10e8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PhysicalPairReduction.physical_moments",
+        "MainTheory.Orbit29PhysicalPairReduction.native_orth",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_mass",
+        "MainTheory.Orbit29PhysicalPairReduction.total_high_mass",
+        "MainTheory.Orbit29PhysicalPairReduction.high_mass_bound",
+        "MainTheory.Orbit29PhysicalPairReduction.weighted_determinants",
+        "MainTheory.Orbit29PhysicalPairReduction.high_parallel",
+        "MainTheory.Orbit29PhysicalPairReduction.high_balanced",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_balanced",
+        "MainTheory.Orbit29PrintedSimplex.omitted_zero",
+        "MainTheory.Orbit29PrintedSimplex.reduced_normal",
+        "MainTheory.Orbit29PrintedSimplex.physical_normal",
+        "MainTheory.Orbit29PrintedSimplex.physical_printed_probabilities",
+        "MainTheory.Orbit29PrintedSimplex.physical_domain",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: All per-string probabilities and the exact three-parameter nonnegative domain are derived from actual supported normalized physical code amplitudes, the complete native moment system, and physical Walsh orthogonality. No final impossibility theorem supplies an intermediate formula."
+    },
+    {
+      "id": "supplementary.tex:equation@11337",
+      "statement_sha256": "1a42896b9da16bb228a079b8df50266da4b31669d92ea80b8ff6b1b3d3288dbe",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.barycentric",
+        "MainTheory.Orbit29PrintedFaceAudit.barycentric_domain",
+        "MainTheory.Orbit29PrintedFaceAudit.barycentric_sum",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_vertex_probabilities",
+        "MainTheory.Orbit29PrintedSimplex.physical_domain"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The literal barycentric coordinates are nonnegative exactly on the printed parameter domain and sum to one eighth; the displayed graph probabilities are their actual subset sums."
+    },
+    {
+      "id": "supplementary.tex:equation@11349",
+      "statement_sha256": "cdf9cc6fb69b524351d37f57fa6fbba89834f22fb06835d1e961d27e812ee37e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.probabilityWords",
+        "MainTheory.Orbit29PrintedFaceAudit.baseEdges",
+        "MainTheory.Orbit29PrintedFaceAudit.bottomEdge",
+        "MainTheory.Orbit29PrintedFaceAudit.topEdge",
+        "MainTheory.Orbit29PrintedFaceAudit.flipCoordinate",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_graph_incidence",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_pairs",
+        "MainTheory.Orbit29PhysicalRatios.edge_order",
+        "MainTheory.Orbit29PhysicalRatios.indexed_orth",
+        "MainTheory.Orbit29PhysicalRatios.physical_assignment"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: Every printed weight-one edge is an actual flip incidence between the specified pairs. Its signed internal-ratio equation follows from the physical Walsh rows, with the literal graph order retained."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o29graph",
+      "statement_sha256": "b790881ce01ab869c378b70a461ee5c34d12e0b791dc1fb77b944c30de3bf8ec",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.probabilityWords",
+        "MainTheory.Orbit29PrintedFaceAudit.baseEdges",
+        "MainTheory.Orbit29PrintedFaceAudit.bottomEdge",
+        "MainTheory.Orbit29PrintedFaceAudit.topEdge",
+        "MainTheory.Orbit29PrintedFaceAudit.flipCoordinate",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_graph_incidence",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_pairs",
+        "MainTheory.Orbit29PhysicalRatios.edge_order",
+        "MainTheory.Orbit29PhysicalRatios.indexed_orth",
+        "MainTheory.Orbit29PhysicalRatios.physical_assignment"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: Every printed weight-one edge is an actual flip incidence between the specified pairs. Its signed internal-ratio equation follows from the physical Walsh rows, with the literal graph order retained."
+    },
+    {
+      "id": "supplementary.tex:tab:q4o29faces",
+      "statement_sha256": "6e42eca0163f685ba987d6a1f42f2c5d016ed767b2b5dd73de11cdfaad1bc942",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.fifteen_masks",
+        "MainTheory.Orbit29PrintedFaceAudit.literal_counts",
+        "MainTheory.Orbit29PrintedFaceAudit.dimension_support",
+        "MainTheory.Orbit29PrintedFaceAudit.bit_overlap",
+        "MainTheory.Orbit29PrintedFaceAudit.vertex_positive_iff",
+        "MainTheory.Orbit29PrintedFaceAudit.face_centers",
+        "MainTheory.Orbit29PrintedFaceAudit.distinct_faces",
+        "MainTheory.Orbit29PrintedFaceAudit.exhaustive_faces",
+        "MainTheory.Orbit29PrintedFaceAudit.checked_walks",
+        "MainTheory.Orbit29PrintedFaceAudit.anchors_active",
+        "MainTheory.Orbit29SimplexRelativeInterior.relative_interior_iff",
+        "MainTheory.Orbit29SimplexRelativeInterior.fifteen_nonempty",
+        "MainTheory.Orbit29SimplexRelativeInterior.exhaustive_relative_interiors",
+        "MainTheory.Orbit29SimplexDimensions.literal_face_dimensions",
+        "MainTheory.Orbit29PhysicalRatios.amplitude_probabilities",
+        "MainTheory.Orbit29PhysicalRatios.common_unit_phase"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The fifteen rows exhaust the nonempty simplex faces. Their actual relative interiors, affine dimensions, zero vertices, vertex and edge counts, and signed paths are proved, and activity is equivalent to positive physical per-string probability."
+    },
+    {
+      "id": "supplementary.tex:equation@11404",
+      "statement_sha256": "0eb472f1c1d604e3d6205d41696dd2a10ab5a686abfa81ac64467458f05085f6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedEta.targetPair",
+        "MainTheory.Orbit29PrintedEta.flipQubit",
+        "MainTheory.Orbit29PrintedEta.maskFive",
+        "MainTheory.Orbit29PrintedEta.maskSix",
+        "MainTheory.Orbit29PrintedEta.literal_target_errors",
+        "MainTheory.Orbit29PrintedEta.actual_rows"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The four target-pair/qubit assignments and the actual XjX5 and XjX6 masks are checked on the literal native words. Their four separating Walsh combinations are physical distance-three rows."
+    },
+    {
+      "id": "supplementary.tex:equation@11412",
+      "statement_sha256": "11c50de782ce6f2d4149cbdceb8eae124e2a13fae20fdfe14991409495e30cb3",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PrintedEta.eta",
+        "MainTheory.Orbit29PrintedEta.pinned_probability",
+        "MainTheory.Orbit29PrintedEta.pinned_nonzero",
+        "MainTheory.Orbit29PrintedEta.eta_unit",
+        "MainTheory.Orbit29PrintedEta.eta_mul"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: The printed conjugate-amplitude quotient has a nonzero denominator, is a unit phase, and satisfies the exact cancellation identity used in the displayed equations."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o29etaeqs",
+      "statement_sha256": "3b0e80836a147204e63c358171ebb4486b179afd2ea53be57f1fe690cfa1319b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PhysicalRatios.common_unit_phase",
+        "MainTheory.Orbit29PhysicalPairGauge.physical_pair_gauge",
+        "MainTheory.Orbit29PrintedEta.aligned_bottom",
+        "MainTheory.Orbit29PrintedEta.opposite_high",
+        "MainTheory.Orbit29PrintedEta.actual_rows",
+        "MainTheory.Orbit29PrintedEta.printed_eta_equations",
+        "MainTheory.Orbit29PrintedEta.active_product_nonzero",
+        "MainTheory.Orbit29PrintedEta.eta_contradiction",
+        "MainTheory.Orbit29PrintedEta.physical_no_go"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: One actual local diagonal unitary removes the common phase while preserving complete physical KL. The four literal eta equations then follow from actual Walsh rows; the positive target product forces the two incompatible eta values at every boundary and interior."
+    },
+    {
+      "id": "supplementary.tex:proposition@11431",
+      "statement_sha256": "a39d3327b1a965169b3389efdb4cc61aa09c97bbb327458318cf4a7d9b2a3c36",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit29PhysicalRatios.common_unit_phase",
+        "MainTheory.Orbit29PhysicalPairGauge.physical_pair_gauge",
+        "MainTheory.Orbit29PrintedEta.aligned_bottom",
+        "MainTheory.Orbit29PrintedEta.opposite_high",
+        "MainTheory.Orbit29PrintedEta.actual_rows",
+        "MainTheory.Orbit29PrintedEta.printed_eta_equations",
+        "MainTheory.Orbit29PrintedEta.active_product_nonzero",
+        "MainTheory.Orbit29PrintedEta.eta_contradiction",
+        "MainTheory.Orbit29PrintedEta.physical_no_go"
+      ],
+      "review": "20261005 actual orbit-29 intermediate/type review: One actual local diagonal unitary removes the common phase while preserving complete physical KL. The four literal eta equations then follow from actual Walsh rows; the positive target product forces the two incompatible eta values at every boundary and interior."
+    }
+  ]
+}

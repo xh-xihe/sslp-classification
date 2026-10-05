@@ -40,6 +40,60 @@ The certificate regeneration check independently reconstructs finite rational
 payloads. The actual-encoder semantics and final interval statements are Lean
 theorems, audited separately.
 
+## Current literal correspondence proof sources
+
+Reproduce the forty source generators for the current support, block, moment,
+physical phase and enumerator batch:
+
+```console
+python tools/verification/check_orbit31_reproduction.py
+```
+
+This checks exact source provenance. Kernel acceptance still requires the
+serial whole build and transitive axiom audit above. The proof layers are
+indexed by mathematical topic in [proof-index.md](proof-index.md).
+
+## Finite certificate data
+
+The supplementary manuscript describes the mathematical reductions and
+identities. The complete coefficient data and implementation details are
+available here, using paths relative to `six-qubit-sslp`:
+
+| Certificate | Exact calculation | Complete data |
+| --- | --- | --- |
+| Orbit 2: quartic matrix and positive character blocks | [orbit2_exact_certificate.py](../tools/certificates/orbit2_exact_certificate.py) | [gram-blocks.json](../results/orbit2-kernel/gram-blocks.json) |
+| Orbit 3: six scalar dual certificates | [orbit3_scalar_certificate.py](../tools/certificates/orbit3_scalar_certificate.py) | [scalar-certificate.json](../results/orbit3-kernel/scalar-certificate.json) |
+| Orbit 3: degree-six identity and positive cubic square | [orbit3_exact_sextic_certificate.py](../tools/certificates/orbit3_exact_sextic_certificate.py) | [certificate.json](../results/orbit3-kernel/certificate.json), [reduced-coefficients.json](../results/orbit3-kernel/reduced-coefficients.json) |
+
+These finite calculations use the Python standard library. To reconstruct
+each payload and compare it with the stored data, run:
+
+```console
+python tools/rebuild_orbit_certificates.py --only orbit2
+python tools/rebuild_orbit_certificates.py --only scalar
+python tools/rebuild_orbit_certificates.py --only orbit3
+```
+
+The orbit-2 calculation reconstructs the integer matrix from its polynomial
+and verifies every block by rational `LDL^T` elimination. Its exported block
+data are supporting records, not inputs to the matrix reconstruction. The
+scalar calculation reconstructs the rational duals, including all equality
+multipliers, inequality multipliers and variable remainders.
+
+The degree-six calculation takes the rational certificate terms as input,
+reconstructs the moment coordinates and constraint rows, and compares all
+269 coefficients. To also sum all 120 target rows independently, run:
+
+```console
+python tools/certificates/orbit3_exact_sextic_certificate.py --exhaustive-target
+```
+
+Its `--json PATH` option writes verification metadata, not a newly discovered
+certificate. The output includes a digest of the target, square and final
+coefficient arrays. Numerical controls are separate from these exact checks.
+For the enumeration and other orbit proofs, follow the modules in the
+[proof index](proof-index.md) and the [source inventory](../results/proof-modules.json).
+
 ## Private-source correspondence checks
 
 Authors who have the current private sources can place them in

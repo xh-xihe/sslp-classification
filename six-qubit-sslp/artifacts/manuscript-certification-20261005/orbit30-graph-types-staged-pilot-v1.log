@@ -1,0 +1,30 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:26:8: error: typeclass instance problem is stuck
+  AddCommMonoid ?m.20
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommMonoid` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:33:8: error: typeclass instance problem is stuck
+  AddCommMonoid ?m.19
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `AddCommMonoid` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:45:72: error: Type mismatch
+  Equiv.Perm.sum_comp p ?m.96
+has type
+  ∀ (f : Fin 5 → ?m.94), {a | p a ≠ a} ⊆ ↑?m.96 → ∑ x ∈ ?m.96, f (p x) = ∑ x ∈ ?m.96, f x
+but is expected to have type
+  ?m.88 i j = ∑ k, triangleTerm n (p i) (p j) k
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:47:39: error: Type mismatch
+  Equiv.Perm.sum_comp p ?m.141
+has type
+  ∀ (f : Fin 5 → ?m.139), {a | p a ≠ a} ⊆ ↑?m.141 → ∑ x ∈ ?m.141, f (p x) = ∑ x ∈ ?m.141, f x
+but is expected to have type
+  ∑ j, ∑ k, triangleTerm n (p i) (p j) k = ∑ j, ∑ k, triangleTerm n (p i) j k
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphTypes.lean:48:13: error: Type mismatch
+  Equiv.Perm.sum_comp p ?m.151
+has type
+  ∀ (f : Fin 5 → ?m.149), {a | p a ≠ a} ⊆ ↑?m.151 → ∑ x ∈ ?m.151, f (p x) = ∑ x ∈ ?m.151, f x
+but is expected to have type
+  ∑ i, ∑ j, ∑ k, triangleTerm n (p i) j k = ?m.146

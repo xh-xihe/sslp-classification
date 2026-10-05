@@ -1,0 +1,34 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:13:3: error: unknown tactic
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:10:70: error: unsolved goals
+k : ℕ
+h : 2 * ↑k = 0
+⊢ ↑k + ↑k = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:16:3: error: unknown tactic
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:15:58: error: unsolved goals
+q : ℕ
+δ : ZMod q
+hδ : δ + δ = 0
+⊢ -δ = δ
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:23:15: error: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp only [h̵x̵,̵Bool.false_eq_true, ̲if_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:24:15: error: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp only [h̵x̵,̵if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\HalfAngleFiberFlip.lean:30:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  SS.bxor ?s (SS.stdBasis ?i)
+in the target expression
+  (fun x => SS.bxor x (SS.stdBasis i)) ((fun x => SS.bxor x (SS.stdBasis i)) x) = x
+
+n : ℕ
+i : Fin n
+x : SS.BitString n
+⊢ (fun x => SS.bxor x (SS.stdBasis i)) ((fun x => SS.bxor x (SS.stdBasis i)) x) = x

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit50PhysicalTriangle.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 15.893495400028769
+}

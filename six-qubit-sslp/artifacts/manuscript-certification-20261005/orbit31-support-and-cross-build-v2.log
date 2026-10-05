@@ -1,0 +1,51 @@
+Serial plan: 57 modules; 27 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[27/57] BUILD MainTheory.FiniteListCertificateCounts
+[28/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard000
+[29/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard001
+[30/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard002
+[31/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard003
+[32/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard004
+[33/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard005
+[34/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard006
+[35/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard007
+[36/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard008
+[37/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard009
+[38/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard010
+[39/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard011
+[40/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard012
+[41/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard013
+[42/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard014
+[43/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Shard015
+[44/57] BUILD MainTheory.Generated.Orbit31SupportCoverage.Aggregate
+[45/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip1
+[46/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip2
+[47/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip3
+[48/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip14
+[49/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip15
+[50/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip16
+[51/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip24
+[52/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip25
+[53/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip26
+[54/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip34
+[55/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip35
+[56/57] BUILD MainTheory.Generated.Orbit31CrossRows.Flip36
+[57/57] BUILD MainTheory.Orbit31CrossRows
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 31 serially rebuilt, 26 content-validated cached modules

@@ -1,0 +1,155 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:21:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨0, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:25:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨0, ⋯⟩ + Q ⟨2, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:29:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨0, ⋯⟩ + Q ⟨3, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨2, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:33:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨1, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:38:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨1, ⋯⟩ + Q ⟨2, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:42:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨1, ⋯⟩ + Q ⟨3, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨2, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:46:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨2, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:50:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨2, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨3, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:55:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨1, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:59:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨3, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨2, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:63:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨3, ⋯⟩ + Q ⟨1, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨2, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:67:10: error: linarith failed to find a contradiction
+case h1.h
+s t : Fin 4 → ℂ
+Q : Fin 4 → ℝ
+hle : ∀ (i : Fin 4), Q i ≤ 1 / 4
+hn : ∀ (i : Fin 4), 0 ≤ Q i
+hm : ∀ (i : Fin 4), s i * star (s i) + t i * star (t i) = ↑(Q i)
+hd : ∀ (i j : Fin 4), ↑(Q i + Q j - 1 / 4) * (s i * t j - s j * t i) = 0
+hs : Q 0 + (Q 1 + (Q ⟨2, ⋯⟩ + Q ⟨3, ⋯⟩)) = 3 / 4
+a✝ : Q ⟨3, ⋯⟩ + Q ⟨2, ⋯⟩ + Q ⟨0, ⋯⟩ + Q ⟨1, ⋯⟩ < 3 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PairBalance.lean:101:2: error: linarith failed to find a contradiction
+case h1.h
+c0 c1 s t : ℂ
+ho : star c0 * s + star c1 * t = 0
+hb : Complex.normSq s = Complex.normSq t
+hp : 0 < Complex.normSq s + Complex.normSq t
+he : star c0 * s = -(star c1 * t)
+hn : Complex.normSq c0 * Complex.normSq s = Complex.normSq c1 * Complex.normSq t
+a✝ : Complex.normSq c0 < Complex.normSq c1
+⊢ False
+failed

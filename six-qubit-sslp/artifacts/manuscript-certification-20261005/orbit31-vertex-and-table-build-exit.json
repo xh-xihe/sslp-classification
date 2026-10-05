@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "tools/build_lean.py",
+    "--module",
+    "MainTheory.Generated.Orbit31VertexReconstructions.Aggregate",
+    "--module",
+    "MainTheory.Orbit31AffineTableGroup",
+    "--module",
+    "MainTheory.Generated.Orbit31PrintedSupportOrbits",
+    "--module",
+    "MainTheory.Orbit31BalancedMomentIff",
+    "--module",
+    "MainTheory.Orbit31PhysicalSupportFilters"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 714.1543092000065
+}

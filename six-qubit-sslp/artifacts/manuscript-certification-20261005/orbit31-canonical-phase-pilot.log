@@ -1,0 +1,55 @@
+MainTheory/Orbit31CanonicalPhase.lean:77:16: error: unsolved goals
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+i : Fin 3
+hi : (overlaps mask i).card = 1
+e : Fin 4
+he : overlaps mask i = {e}
+f : Fin 4
+hf : f ∉ overlaps mask i
+h : (active mask (A f) && active mask (B i f)) = true
+⊢ active mask (A f) = true ∧ active mask (B i f) = true
+MainTheory/Orbit31CanonicalPhase.lean:77:34: error: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  simp [overlaps,̵h̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MainTheory/Orbit31CanonicalPhase.lean:105:24: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+MainTheory/Orbit31CanonicalPhase.lean:99:54: error: unsolved goals
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+k : Fin 6
+hl : (active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+hr : ¬(active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+h :
+  (sigma c d (B (rowPairs r).1 (colPairs k).1) + sigma c d (B (rowPairs r).2 (colPairs k).2)) *
+        c (B (rowPairs r).1 (colPairs k).1) *
+      c (B (rowPairs r).2 (colPairs k).2) =
+    0
+⊢ sigma c d (B (rowPairs r).1 (colPairs k).1) = -sigma c d (B (rowPairs r).2 (colPairs k).2)
+MainTheory/Orbit31CanonicalPhase.lean:126:24: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+MainTheory/Orbit31CanonicalPhase.lean:120:54: error: unsolved goals
+c d : Fin 16 → ℂ
+mask : ℕ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+hm : AmplitudeSupport mask c
+r : Fin 3
+k : Fin 6
+hr : (active mask (B (rowPairs r).1 (colPairs k).2) && active mask (B (rowPairs r).2 (colPairs k).1)) = true
+hl : ¬(active mask (B (rowPairs r).1 (colPairs k).1) && active mask (B (rowPairs r).2 (colPairs k).2)) = true
+h :
+  (sigma c d (B (rowPairs r).1 (colPairs k).2) + sigma c d (B (rowPairs r).2 (colPairs k).1)) *
+        c (B (rowPairs r).1 (colPairs k).2) *
+      c (B (rowPairs r).2 (colPairs k).1) =
+    0
+⊢ sigma c d (B (rowPairs r).1 (colPairs k).2) = -sigma c d (B (rowPairs r).2 (colPairs k).1)

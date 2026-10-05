@@ -1,0 +1,3 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30FullSupport.lean:11:52: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

@@ -1,0 +1,382 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:63:23: error: unexpected token 'λ'; expected '_' or identifier
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:66:23: error: unexpected token 'λ'; expected '_' or identifier
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:75:42: error: unexpected token 'λ'; expected '_' or identifier
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:94:4: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+
+Note: It is not possible to treat `vertexProbability` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:97:28: error(lean.unknownIdentifier): Unknown identifier `vertexProbability`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:95:72: error: unsolved goals
+case h.«0»
+a b c : ℝ
+⊢ sorry () 0 = 1 / 8 + (-b - c)
+
+case h.«1»
+a b c : ℝ
+⊢ sorry () 1 = 1 / 8 + (-a - c)
+
+case h.«2»
+a b c : ℝ
+⊢ sorry () ⟨2, ⋯⟩ = a + b
+
+case h.«3»
+a b c : ℝ
+⊢ sorry () ⟨3, ⋯⟩ = 1 / 8 + (-a - b)
+
+case h.«4»
+a b c : ℝ
+⊢ sorry () ⟨4, ⋯⟩ = a + c
+
+case h.«5»
+a b c : ℝ
+⊢ sorry () ⟨5, ⋯⟩ = b + c
+
+case h.«6»
+a b c : ℝ
+⊢ sorry () ⟨6, ⋯⟩ = 1 / 8 - c
+
+case h.«7»
+a b c : ℝ
+⊢ sorry () ⟨7, ⋯⟩ = 1 / 8 - b
+
+case h.«8»
+a b c : ℝ
+⊢ sorry () ⟨8, ⋯⟩ = 1 / 8 - a
+
+case h.«9»
+a b c : ℝ
+⊢ sorry () ⟨9, ⋯⟩ = a + b + c
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:104:32: error(lean.unknownIdentifier): Unknown identifier `Face`
+
+Note: It is not possible to treat `Face` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:104:57: error: unsolved goals
+case «0».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 1 1 = true then 1 / 8 else 0
+
+case «0».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 1 2 = true then 1 / 8 else 0
+
+case «0».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 1 3 = true then 1 / 8 else 0
+
+case «0».refine_2
+⊢ (if Nat.testBit 1 1 = true then 1 / 8 else 0) +
+      ((if Nat.testBit 1 2 = true then 1 / 8 else 0) + if Nat.testBit 1 3 = true then 1 / 8 else 0) =
+    0
+
+case «0».refine_3
+⊢ sorry ()
+
+case «1».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 2 1 = true then 1 / 8 else 0
+
+case «1».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 2 2 = true then 1 / 8 else 0
+
+case «1».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 2 3 = true then 1 / 8 else 0
+
+case «1».refine_2
+⊢ (if Nat.testBit 2 1 = true then 1 / 8 else 0) +
+      ((if Nat.testBit 2 2 = true then 1 / 8 else 0) + if Nat.testBit 2 3 = true then 1 / 8 else 0) =
+    1 / 8
+
+case «1».refine_3
+⊢ sorry ()
+
+case «2».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 4 1 = true then 1 / 8 else 0
+
+case «2».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 4 2 = true then 1 / 8 else 0
+
+case «2».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 4 3 = true then 1 / 8 else 0
+
+case «2».refine_2
+⊢ (if Nat.testBit 4 1 = true then 1 / 8 else 0) +
+      ((if Nat.testBit 4 2 = true then 1 / 8 else 0) + if Nat.testBit 4 3 = true then 1 / 8 else 0) =
+    1 / 8
+
+case «2».refine_3
+⊢ sorry ()
+
+case «3».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 8 1 = true then 1 / 8 else 0
+
+case «3».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 8 2 = true then 1 / 8 else 0
+
+case «3».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 8 3 = true then 1 / 8 else 0
+
+case «3».refine_2
+⊢ (if Nat.testBit 8 1 = true then 1 / 8 else 0) +
+      ((if Nat.testBit 8 2 = true then 1 / 8 else 0) + if Nat.testBit 8 3 = true then 1 / 8 else 0) =
+    1 / 8
+
+case «3».refine_3
+⊢ sorry ()
+
+case «4».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 3 1 = true then 1 / 16 else 0
+
+case «4».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 3 2 = true then 1 / 16 else 0
+
+case «4».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 3 3 = true then 1 / 16 else 0
+
+case «4».refine_2
+⊢ 1 / 16 +
+      ((if Nat.testBit 3 1 = true then 1 / 16 else 0) +
+        ((if Nat.testBit 3 2 = true then 1 / 16 else 0) + if Nat.testBit 3 3 = true then 1 / 16 else 0)) =
+    1 / 8
+
+case «4».refine_3
+⊢ sorry ()
+
+case «5».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 5 1 = true then 1 / 16 else 0
+
+case «5».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 5 2 = true then 1 / 16 else 0
+
+case «5».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 5 3 = true then 1 / 16 else 0
+
+case «5».refine_2
+⊢ 1 / 16 +
+      ((if Nat.testBit 5 1 = true then 1 / 16 else 0) +
+        ((if Nat.testBit 5 2 = true then 1 / 16 else 0) + if Nat.testBit 5 3 = true then 1 / 16 else 0)) =
+    1 / 8
+
+case «5».refine_3
+⊢ sorry ()
+
+case «6».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 9 1 = true then 1 / 16 else 0
+
+case «6».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 9 2 = true then 1 / 16 else 0
+
+case «6».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 9 3 = true then 1 / 16 else 0
+
+case «6».refine_2
+⊢ 1 / 16 +
+      ((if Nat.testBit 9 1 = true then 1 / 16 else 0) +
+        ((if Nat.testBit 9 2 = true then 1 / 16 else 0) + if Nat.testBit 9 3 = true then 1 / 16 else 0)) =
+    1 / 8
+
+case «6».refine_3
+⊢ sorry ()
+
+case «7».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 6 1 = true then 1 / 16 else 0
+
+case «7».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 6 2 = true then 1 / 16 else 0
+
+case «7».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 6 3 = true then 1 / 16 else 0
+
+case «7».refine_2
+⊢ (if Nat.testBit 6 1 = true then 1 / 16 else 0) +
+      ((if Nat.testBit 6 2 = true then 1 / 16 else 0) + if Nat.testBit 6 3 = true then 1 / 16 else 0) =
+    1 / 8
+
+case «7».refine_3
+⊢ sorry ()
+
+case «8».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 10 1 = true then 1 / 16 else 0
+
+case «8».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 10 2 = true then 1 / 16 else 0
+
+case «8».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 10 3 = true then 1 / 16 else 0
+
+case «8».refine_2
+⊢ (if Nat.testBit 10 1 = true then 1 / 16 else 0) +
+      ((if Nat.testBit 10 2 = true then 1 / 16 else 0) + if Nat.testBit 10 3 = true then 1 / 16 else 0) =
+    1 / 8
+
+case «8».refine_3
+⊢ sorry ()
+
+case «9».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 12 1 = true then 1 / 16 else 0
+
+case «9».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 12 2 = true then 1 / 16 else 0
+
+case «9».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 12 3 = true then 1 / 16 else 0
+
+case «9».refine_2
+⊢ (if Nat.testBit 12 1 = true then 1 / 16 else 0) +
+      ((if Nat.testBit 12 2 = true then 1 / 16 else 0) + if Nat.testBit 12 3 = true then 1 / 16 else 0) =
+    1 / 8
+
+case «9».refine_3
+⊢ sorry ()
+
+case «10».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 7 1 = true then 1 / 24 else 0
+
+case «10».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 7 2 = true then 1 / 24 else 0
+
+case «10».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 7 3 = true then 1 / 24 else 0
+
+case «10».refine_2
+⊢ 1 / 24 +
+      ((if Nat.testBit 7 1 = true then 1 / 24 else 0) +
+        ((if Nat.testBit 7 2 = true then 1 / 24 else 0) + if Nat.testBit 7 3 = true then 1 / 24 else 0)) =
+    1 / 8
+
+case «10».refine_3
+⊢ sorry ()
+
+case «11».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 11 1 = true then 1 / 24 else 0
+
+case «11».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 11 2 = true then 1 / 24 else 0
+
+case «11».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 11 3 = true then 1 / 24 else 0
+
+case «11».refine_2
+⊢ 1 / 24 +
+      ((if Nat.testBit 11 1 = true then 1 / 24 else 0) +
+        ((if Nat.testBit 11 2 = true then 1 / 24 else 0) + if Nat.testBit 11 3 = true then 1 / 24 else 0)) =
+    1 / 8
+
+case «11».refine_3
+⊢ sorry ()
+
+case «12».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 13 1 = true then 1 / 24 else 0
+
+case «12».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 13 2 = true then 1 / 24 else 0
+
+case «12».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 13 3 = true then 1 / 24 else 0
+
+case «12».refine_2
+⊢ 1 / 24 +
+      ((if Nat.testBit 13 1 = true then 1 / 24 else 0) +
+        ((if Nat.testBit 13 2 = true then 1 / 24 else 0) + if Nat.testBit 13 3 = true then 1 / 24 else 0)) =
+    1 / 8
+
+case «12».refine_3
+⊢ sorry ()
+
+case «13».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 14 1 = true then 1 / 24 else 0
+
+case «13».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 14 2 = true then 1 / 24 else 0
+
+case «13».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 14 3 = true then 1 / 24 else 0
+
+case «13».refine_2
+⊢ (if Nat.testBit 14 1 = true then 1 / 24 else 0) +
+      ((if Nat.testBit 14 2 = true then 1 / 24 else 0) + if Nat.testBit 14 3 = true then 1 / 24 else 0) =
+    1 / 8
+
+case «13».refine_3
+⊢ sorry ()
+
+case «14».refine_1.«1»
+⊢ 0 ≤ if Nat.testBit 15 1 = true then 1 / 32 else 0
+
+case «14».refine_1.«2»
+⊢ 0 ≤ if Nat.testBit 15 2 = true then 1 / 32 else 0
+
+case «14».refine_1.«3»
+⊢ 0 ≤ if Nat.testBit 15 3 = true then 1 / 32 else 0
+
+case «14».refine_2
+⊢ 1 / 32 +
+      ((if Nat.testBit 15 1 = true then 1 / 32 else 0) +
+        ((if Nat.testBit 15 2 = true then 1 / 32 else 0) + if Nat.testBit 15 3 = true then 1 / 32 else 0)) =
+    1 / 8
+
+case «14».refine_3
+⊢ sorry ()
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:112:39: error: unexpected token 'λ'; expected '_' or identifier

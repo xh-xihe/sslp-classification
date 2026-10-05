@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedMomentNormal.olean",
+    "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedMomentNormal.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 24.7011499000364
+}

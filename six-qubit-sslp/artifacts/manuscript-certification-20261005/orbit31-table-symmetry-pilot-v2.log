@@ -1,0 +1,24 @@
+MainTheory/Orbit31TableSymmetry.lean:71:68: error: unsolved goals
+g : Fin 144
+⊢ Finset.image (physicalAction g ∘ bottom) Finset.univ = Finset.image (fun v => physicalAction g (bottom v)) Finset.univ
+MainTheory/Orbit31TableSymmetry.lean:73:65: error: unsolved goals
+g : Fin 144
+⊢ Finset.image (fun v => bottom (tablePermutation g v)) Finset.univ =
+    Finset.image (bottom ∘ tablePermutation g) Finset.univ
+MainTheory/Orbit31TableSymmetry.lean:80:95: error: unsolved goals
+g : Fin 144
+ht : Finset.image Orbit31PhaseRatios.top Finset.univ = SixQubit.Orbit31.S1
+⊢ Finset.image (physicalAction g ∘ Orbit31PhaseRatios.top) Finset.univ =
+    Finset.image (fun v => physicalAction g (Orbit31PhaseRatios.top v)) Finset.univ
+MainTheory/Orbit31TableSymmetry.lean:82:92: error: unsolved goals
+g : Fin 144
+ht : Finset.image Orbit31PhaseRatios.top Finset.univ = SixQubit.Orbit31.S1
+⊢ Finset.image (fun v => Orbit31PhaseRatios.top (tablePermutation g v)) Finset.univ =
+    Finset.image (Orbit31PhaseRatios.top ∘ tablePermutation g) Finset.univ
+MainTheory/Orbit31TableSymmetry.lean:132:18: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≤ -1
+  a ≥ 0
+where
+ a := ↑(∑ v, 2 ^ ↑v)
+ c := ↑2 ^ ↑(tablePermutation g v)

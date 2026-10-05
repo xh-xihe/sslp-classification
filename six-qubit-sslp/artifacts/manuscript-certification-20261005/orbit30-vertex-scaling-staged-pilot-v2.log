@@ -1,0 +1,11 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30VertexScaling.lean:61:4: error: ring failed, ring expressions not equal
+a b c d : ℂ
+ha : a ≠ 0
+hb : b ≠ 0
+hc : c ≠ 0
+hd : d ≠ 0
+z : ℂ
+hz : z ^ 2 = c / (a * b)
+hzn : z ≠ 0
+he : z ^ 2 * a * b = c
+⊢ c * 2 - z ^ 2 * a * b * 2 = 0

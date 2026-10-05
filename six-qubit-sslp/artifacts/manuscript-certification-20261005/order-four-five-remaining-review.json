@@ -1,0 +1,273 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:displaymath@9919",
+      "statement_sha256": "5420c36dc6e1856e15353447db59c89ff459b044ffbce8c349c9338391ca369e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.incidence_all",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.flip_images",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.separating_signs",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.weights",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.physical_two_rows"
+      ],
+      "review": "20261005 literal physical intermediate/type review: Both literal rows are proved for every distinct physical coordinate pair, with the complete two-source incidence and weight-at-most-two checks."
+    },
+    {
+      "id": "supplementary.tex:displaymath@9923",
+      "statement_sha256": "db757d5863128df60e78718151c6e0eebd96a105ec40bd170b416c392adc2f4c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.incidence_all",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.flip_images",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.separating_signs",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.weights",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit34.physical_two_rows"
+      ],
+      "review": "20261005 literal physical intermediate/type review: Both literal rows are proved for every distinct physical coordinate pair, with the complete two-source incidence and weight-at-most-two checks."
+    },
+    {
+      "id": "supplementary.tex:displaymath@9981",
+      "statement_sha256": "ef8082beecb61a7bdc5b9e501c8eb7092d8519f97b4099393b27cb1b32e43b31",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.sources",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.destinations",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.characters",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.actual_incidence",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.actual_images",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.source_characters",
+        "MainTheory.OrderFiveWalshRemainingDisplays.Orbit39.determinant"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The exact five sources, five characters I,Z2,Z3,Z4,Z5, source/destination convention and signed determinant 16 are checked against the actual fibers."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10043",
+      "statement_sha256": "f30c0e4b0b02552102af1c367d7b1e8805439140788ae8f10566e1730fedfabf",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.A",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.B",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.literal_labels"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The actual four A words, two-by-four B grid and star exhaust S0. All top grid labels are the actual complements."
+    },
+    {
+      "id": "supplementary.tex:eq:o38commonphase",
+      "statement_sha256": "554e28e631b7972a812aa371f62bdae4cbcd0db28e270eaf0f4ac059d0a00663",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_hub",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_star_nonzero",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_weighted_phases",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_common_phase"
+      ],
+      "review": "20261005 literal physical intermediate/type review: Actual physical hub rows yield the common phase on every active B entry. The weighted relation also retains zero B amplitudes; both star amplitudes are proved nonzero from moments."
+    },
+    {
+      "id": "supplementary.tex:eq:o38permanent",
+      "statement_sha256": "cf142e5c28d313ce2d0eabb4182e8c5bdf8d4150456feefe07b366a87a5228c0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_rectangle",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_permanents"
+      ],
+      "review": "20261005 literal physical intermediate/type review: All six literal rectangle rows are derived from physical KL and the common nonzero star phase, yielding the permanents without assuming grid positivity."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10109",
+      "statement_sha256": "b841d0b9e48ac7626be2b1e33b0f898a5b556e701430b854e3c80e7b4976ebaa",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.rowSupport",
+        "MainTheory.GridSupportAlgebra.full_support",
+        "MainTheory.GridSupportAlgebra.supports_univ",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_supports_full"
+      ],
+      "review": "20261005 literal physical intermediate/type review: Row supports are the nonzero actual amplitudes. Positive row masses and column masses, together with the actual permanents, imply both complete four-column supports, including boundary cases."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10118",
+      "statement_sha256": "1e2e94c2efb1eb4de95c5c8974a8678ec9613e8a4c03e9806af9f7d3bc4e8e94",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.rowSupport",
+        "MainTheory.GridSupportAlgebra.full_support",
+        "MainTheory.GridSupportAlgebra.supports_univ",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_supports_full"
+      ],
+      "review": "20261005 literal physical intermediate/type review: Row supports are the nonzero actual amplitudes. Positive row masses and column masses, together with the actual permanents, imply both complete four-column supports, including boundary cases."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10192",
+      "statement_sha256": "57410fc45ea683d4489b8bdbda0f8a0fa3afc2bb8c9a74767e2c1913843c93d1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.activeColumns",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.rowSupport",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.A",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.B",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.actual_complements"
+      ],
+      "review": "20261005 literal physical intermediate/type review: J is precisely the support of the actual A amplitudes. Each R_i is the B-row support restricted to J, with the printed ordering and actual complementary coordinates retained."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10200",
+      "statement_sha256": "3e2820c73ee8a6721985a5a569b39950931a9a0ee0915da88e5cd799946af38d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.physical_reciprocal",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.physical_sync",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit37.physical_active_column_phase"
+      ],
+      "review": "20261005 literal physical intermediate/type review: For each active A and B entry in a column, physical reciprocity and all nine signed sync rows give the same phase, opposite to the star phase. Nonzero star mass is proved as 1/10."
+    },
+    {
+      "id": "supplementary.tex:equation@11194",
+      "statement_sha256": "8c46fde531730fd549046a3ffc263762801d4f68ba2468b62fba2f15b99ae633",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.consequence0",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.consequence1",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_probabilities"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The exact bottom-zero mass 3/8 and total weight-one top mass 5/8 are derived using rational combinations of the actual normalization and diagonal degree-two moments."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o27weightoneprob",
+      "statement_sha256": "4cc5dd496091037734978d01fbcf65610a97836b5305e28bc8ec5a0ae71c9018",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.consequence0",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.consequence1",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_probabilities"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The exact bottom-zero mass 3/8 and total weight-one top mass 5/8 are derived using rational combinations of the actual normalization and diagonal degree-two moments."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o27W6",
+      "statement_sha256": "a586a691894d3c7129d9f75e707f988a04e742d7897fc7ce04dbcf89504fe439",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_characters",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.determinant",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_matrix_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_all_edges_zero",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.AllCoordinates.physical_weight_one_zero"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The literal six-edge matrix, signed determinant -128, and every individual product are certified. A separately checked all-coordinate matrix identity forces all six actual weight-one top amplitudes to vanish."
+    },
+    {
+      "id": "supplementary.tex:equation@11223",
+      "statement_sha256": "6678cd306e705661f18ce3008a6215ff707c930272afbd95bc73cf7f0a33fd9e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_characters",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.determinant",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_matrix_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_all_edges_zero",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.AllCoordinates.physical_weight_one_zero"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The literal six-edge matrix, signed determinant -128, and every individual product are certified. A separately checked all-coordinate matrix identity forces all six actual weight-one top amplitudes to vanish."
+    },
+    {
+      "id": "supplementary.tex:equation@11228",
+      "statement_sha256": "5fc16b553677ba5cac352031a99abdc2487d3c32a6004509905a7aa3fe94fa78",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_characters",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.determinant",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_matrix_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_all_edges_zero",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.AllCoordinates.physical_weight_one_zero"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The literal six-edge matrix, signed determinant -128, and every individual product are certified. A separately checked all-coordinate matrix identity forces all six actual weight-one top amplitudes to vanish."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o62probabilities",
+      "statement_sha256": "36a0ec084338bd9a6f611784844ab6dc66c5d8175c44ffdecfc380b14a936f28",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_probabilities",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_complements",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_all_nonzero"
+      ],
+      "review": "20261005 literal physical intermediate/type review: All fourteen actual probabilities are pinned, with complementary masses 1/4 at zero and 1/8 elsewhere; every bottom and top amplitude is independently proved nonzero."
+    },
+    {
+      "id": "supplementary.tex:equation@12660",
+      "statement_sha256": "521fb46de243438751578ef4ae59bae5c9b288fa8378e36b393f0b3496819940",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.rho",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.triangle",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.flips",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.weights",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_triangle_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The actual SI triangle is (000000,111100,010111), with flips X5X6,X2X4,X1X3. All three complete two-incidence sets and all three phase oppositions are checked, with their quotient denominators proved nonzero."
+    },
+    {
+      "id": "supplementary.tex:equation@12665",
+      "statement_sha256": "cdb71ca394b3656e094630f38e8e3724b0d642cc7bd6c18b7d26c946e358ee54",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.rho",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.triangle",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.flips",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.weights",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_triangle_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The actual SI triangle is (000000,111100,010111), with flips X5X6,X2X4,X1X3. All three complete two-incidence sets and all three phase oppositions are checked, with their quotient denominators proved nonzero."
+    },
+    {
+      "id": "supplementary.tex:equation@12673",
+      "statement_sha256": "463c88c4703af85f9a7de750c79d9faa057cab8469c15c0dbd8e071e7133087d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.rho",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.triangle",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.flips",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.weights",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_triangle_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The actual SI triangle is (000000,111100,010111), with flips X5X6,X2X4,X1X3. All three complete two-incidence sets and all three phase oppositions are checked, with their quotient denominators proved nonzero."
+    },
+    {
+      "id": "supplementary.tex:equation@12682",
+      "statement_sha256": "111ac14c7498a2edceb1feffd1486fde60539f5e68b92744377ad4c8c963fc08",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.rho",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.triangle",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.flips",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_incidence",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_images",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.weights",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_triangle_rows",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "review": "20261005 literal physical intermediate/type review: The actual SI triangle is (000000,111100,010111), with flips X5X6,X2X4,X1X3. All three complete two-incidence sets and all three phase oppositions are checked, with their quotient denominators proved nonzero."
+    }
+  ]
+}

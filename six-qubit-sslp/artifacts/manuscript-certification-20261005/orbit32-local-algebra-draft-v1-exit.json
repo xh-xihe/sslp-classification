@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedLocalAlgebra.olean",
+    "tmp/manuscript-publication-20261005/drafts/Orbit32PrintedLocalAlgebra.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 19.637055999948643
+}

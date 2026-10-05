@@ -1,0 +1,8 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45BottomGauge.lean:33:27: error: Application type mismatch: The argument
+  rfl
+has type
+  ?m.137 = ?m.137
+but is expected to have type
+  Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) 5 = Orbit45PrintedMoments.pattern (1 / 8) (p c 1) (p c 0) 3
+in the application
+  he 5 3 rfl

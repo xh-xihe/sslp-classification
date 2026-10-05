@@ -1,0 +1,62 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:25:38: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:25:6: error: Type mismatch: After simplification, term
+  h
+ has type
+  (fun j => 1) ⬝ᵥ p = 8⁻¹
+but is expected to have type
+  ∑ i, p i = 8⁻¹
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:30:38: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:30:6: error: Type mismatch: After simplification, term
+  h
+ has type
+  (fun j => if i = j then 1 else 0) ⬝ᵥ p = 0
+but is expected to have type
+  p i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:35:47: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:35:15: error: Type mismatch: After simplification, term
+  hs
+ has type
+  ∑ i, p i = 8⁻¹
+but is expected to have type
+  (fun j => 1) ⬝ᵥ p = 8⁻¹
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:38:39: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:41:40: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:41:8: error: Type mismatch: After simplification, term
+  hz i hi
+ has type
+  p i = 0
+but is expected to have type
+  (fun j => if i = j then 1 else 0) ⬝ᵥ p = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:53:13: error: Tactic `rfl` failed: The left-hand side
+  (matrix m).submatrix id Subtype.val (Sum.inl u) j
+is not definitionally equal to the right-hand side
+  Matrix.vecMulVec
+    (fun r =>
+      match r with
+      | Sum.inl val => 1
+      | Sum.inr val => 0)
+    (fun x => 1) (Sum.inl u) j
+
+case a.inl
+m : Fin 15
+j : ↥(lambdaSupport m)
+u : Unit
+⊢ (matrix m).submatrix id Subtype.val (Sum.inl u) j =
+    Matrix.vecMulVec
+      (fun r =>
+        match r with
+        | Sum.inl val => 1
+        | Sum.inr val => 0)
+      (fun x => 1) (Sum.inl u) j
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:81:27: error(lean.unknownIdentifier): Unknown constant `Matrix.dotProduct`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:81:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  (fun j => 1) = 0
+but is expected to have type
+  lambdaSupport m = ∅
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexDimensions.lean:82:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 1
+where
+ a := ↑(lambdaSupport m).card

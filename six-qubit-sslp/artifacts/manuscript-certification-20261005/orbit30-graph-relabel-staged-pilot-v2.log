@@ -1,0 +1,39 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:47:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  (↑(List.map (fun q => z q.1 * z q.2) (List.map (relabelPair f) (matchingRows i)))).sum =
+    (↑(List.map (fun q => z q.1 * z q.2) (List.map orderedPair (matchingRows (f i))))).sum
+but is expected to have type
+  Orbit30ProperGraphTables.hafnian (fun e => z (relabelEdge f e)) i = Orbit30ProperGraphTables.hafnian z (f i)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:45:30: error: This simp argument is unused:
+  Multiset.map_map
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵c̵o̵e̵,̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵m̵a̵p̵,̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵d̵e̵f̵,̵
+  ̵ ̵ ̵ ̵ ̵r̵e̵l̵a̵b̵e̵l̵P̵a̵i̵r̵,̵o̵r̵d̵e̵r̵e̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲c̲o̲e̲,̲ ̲F̲u̲n̲c̲t̲i̲o̲n̲.̲c̲o̲m̲p̲_̲d̲e̲f̲,̲ ̲r̲e̲l̲a̲b̲e̲l̲P̲a̲i̲r̲,̲ ̲o̲r̲d̲e̲r̲e̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:45:47: error: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵c̵o̵e̵,̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵m̵a̵p̵,̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵d̵e̵f̵,̵
+  ̵ ̵ ̵ ̵ ̵r̵e̵l̵a̵b̵e̵l̵P̵a̵i̵r̵,̵o̵r̵d̵e̵r̵e̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲c̲o̲e̲,̲ ̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲m̲a̲p̲,̲ ̲r̲e̲l̲a̲b̲e̲l̲P̲a̲i̲r̲,̲ ̲o̲r̲d̲e̲r̲e̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:46:4: error: This simp argument is unused:
+  relabelPair
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵c̵o̵e̵,̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵m̵a̵p̵,̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵d̵e̵f̵,̵
+  ̵ ̵ ̵ ̵ ̵r̵e̵l̵a̵b̵e̵l̵P̵a̵i̵r̵,̵o̵r̵d̵e̵r̵e̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲c̲o̲e̲,̲ ̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲m̲a̲p̲,̲ ̲F̲u̲n̲c̲t̲i̲o̲n̲.̲c̲o̲m̲p̲_̲d̲e̲f̲,̲ ̲o̲r̲d̲e̲r̲e̲d̲_̲p̲r̲o̲d̲u̲c̲t̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30GraphRelabel.lean:46:16: error: This simp argument is unused:
+  ordered_product
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵c̵o̵e̵,̵M̵u̵l̵t̵i̵s̵e̵t̵.̵m̵a̵p̵_̵m̵a̵p̵,̵F̵u̵n̵c̵t̵i̵o̵n̵.̵c̵o̵m̵p̵_̵d̵e̵f̵,̵
+  ̵ ̵ ̵ ̵ ̵r̵e̵l̵a̵b̵e̵l̵P̵a̵i̵r̵,̵o̵r̵d̵e̵r̵e̵d̵_̵p̵r̵o̵d̵u̵c̵t̵]̵[̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲c̲o̲e̲,̲ ̲M̲u̲l̲t̲i̲s̲e̲t̲.̲m̲a̲p̲_̲m̲a̲p̲,̲ ̲F̲u̲n̲c̲t̲i̲o̲n̲.̲c̲o̲m̲p̲_̲d̲e̲f̲,̲ ̲r̲e̲l̲a̲b̲e̲l̲P̲a̲i̲r̲]̲ at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

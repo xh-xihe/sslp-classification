@@ -1,0 +1,94 @@
+Serial plan: 16128 modules; 72 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[84/16128] BUILD MainTheory.ArbitrarySplitPerfectCode
+[85/16128] BUILD MainTheory.ArbitrarySplitSixQubit
+[86/16128] BUILD MainTheory.ComplementaryPhasePair
+[212/16128] BUILD MainTheory.GridSupportAlgebra
+[213/16128] BUILD MainTheory.HalfAngleFiberFlip
+[214/16128] BUILD MainTheory.IndexedCodeMoments
+[218/16128] BUILD MainTheory.Orbit29MomentRank
+[220/16128] BUILD MainTheory.Orbit29MomentPolytope
+[221/16128] BUILD MainTheory.Orbit29PairBalance
+[223/16128] BUILD MainTheory.Orbit29PhysicalPairReduction
+[225/16128] BUILD MainTheory.Orbit29PrintedFaceAudit
+[226/16128] BUILD MainTheory.Orbit29PrintedSimplex
+[227/16128] BUILD MainTheory.Orbit29PhysicalRatios
+[270/16128] BUILD MainTheory.Orbit29PhysicalPairGauge
+[271/16128] BUILD MainTheory.Orbit29PrintedEta
+[272/16128] BUILD MainTheory.Orbit29SimplexRelativeInterior
+[273/16128] BUILD MainTheory.Orbit29SimplexDimensions
+[278/16128] BUILD MainTheory.Orbit31FinalQuotients
+[280/16128] BUILD MainTheory.Orbit31HistoricalSupport
+[285/16128] BUILD MainTheory.Orbit31PrintedMinor
+[286/16128] BUILD MainTheory.Orbit31RelativeInterior
+[287/16128] BUILD MainTheory.Orbit31ResidualTriangles
+[289/16128] BUILD MainTheory.Orbit32PrintedLocalAlgebra
+[291/16128] BUILD MainTheory.Orbit32PrintedMinor
+[292/16128] BUILD MainTheory.Orbit32PrintedMomentNormal
+[297/16128] BUILD MainTheory.Orbit33PrintedBlocks
+[298/16128] BUILD MainTheory.Orbit33NormalizedPairs
+[299/16128] BUILD MainTheory.Orbit33ScalarReflection
+[300/16128] BUILD MainTheory.Orbit33PhysicalReflection
+[301/16128] BUILD MainTheory.Orbit33ProjectorArgument
+[1859/16128] BUILD MainTheory.Orbit3PrintedSplitMatrices
+[1869/16128] BUILD MainTheory.Orbit45AffineGauge
+[1871/16128] BUILD MainTheory.RectangularFlipCharacters
+[1885/16128] BUILD MainTheory.Orbit45PhysicalPrintedRows
+[1886/16128] BUILD MainTheory.Orbit45PhysicalProbabilityDomain
+[1887/16128] BUILD MainTheory.Orbit45RelativeLogicalPhase
+[1888/16128] BUILD MainTheory.Orbit45PhysicalGauge
+[1889/16128] BUILD MainTheory.Orbit45CrossFactors
+[1890/16128] BUILD MainTheory.Orbit45BottomGauge
+[1891/16128] BUILD MainTheory.Orbit45OrientedCoherences
+[1892/16128] BUILD MainTheory.Orbit45DressingParseval
+[1893/16128] BUILD MainTheory.Orbit45TopGauge
+[1894/16128] BUILD MainTheory.Orbit45PhysicalPhaseNormalForm
+[1895/16128] BUILD MainTheory.Orbit45PhysicalCanonicalForm
+[1941/16128] BUILD MainTheory.Orbit45PhysicalSpinFlip
+[1942/16128] BUILD MainTheory.Orbit45PrintedDiagonalContribution
+[1943/16128] BUILD MainTheory.Orbit45PrintedEnumerator
+[1945/16128] BUILD MainTheory.Orbit45PrintedLogicalAction
+[1946/16128] BUILD MainTheory.Orbit45PrintedOffContribution
+[1950/16128] BUILD MainTheory.Orbit45ShadowNormalization
+[1951/16128] BUILD MainTheory.Orbit45TriangleExistence
+[1964/16128] BUILD MainTheory.OrderThreePrintedMoments
+[1965/16128] BUILD MainTheory.Orbit49PrintedRows
+[1966/16128] BUILD MainTheory.Orbit49PrintedAlgebra
+[1967/16128] BUILD MainTheory.Orbit49PhysicalCompletion
+[1968/16128] BUILD MainTheory.Orbit50PrintedRows
+[1969/16128] BUILD MainTheory.PhysicalPhaseQuotients
+[1970/16128] BUILD MainTheory.Orbit50PhysicalTriangle
+[1971/16128] BUILD MainTheory.Orbit51PrintedRows
+[1972/16128] BUILD MainTheory.Orbit51PrintedAlgebra
+[1973/16128] BUILD MainTheory.Orbit51PhysicalCompletion
+[1981/16128] BUILD MainTheory.OrderFiveGridRemainingDisplays
+[1986/16128] BUILD MainTheory.OrderFiveWalshRemainingDisplays
+[1991/16128] BUILD MainTheory.OrderFourWalshRemainingDisplays
+[1992/16128] BUILD MainTheory.OrderThreePrintedCrossRows
+[1993/16128] BUILD MainTheory.OrderThreePrintedRanks
+[2002/16128] BUILD MainTheory.OrderTwoPrintedMoments
+[2007/16128] BUILD MainTheory.OrderTwoPrintedRanks
+[2008/16128] BUILD MainTheory.OrderTwoPrintedWalsh
+[2009/16128] BUILD MainTheory.OrderTwoShellProjectors
+[2010/16128] BUILD MainTheory.StandardFiveJointSpace
+[2011/16128] BUILD MainTheory.StandardFiveSyndromeDisplays
+[16009/16128] BUILD MainTheory.ManuscriptCertificationAudit20261005
+[16012/16128] BUILD MainTheory
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 74 serially rebuilt, 16054 content-validated cached modules

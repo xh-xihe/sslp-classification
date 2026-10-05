@@ -1,0 +1,10 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalHafnians.lean:57:35: error: This simp argument is unused:
+  Fin.succ
+
+Hint: Omit it from the simp argument list.
+  simp +decide [matchingSum, ̲MainTheory.Orbit30VertexScaling.hafnian, ̲edgeMatrix, ̲edgeU,
+        actual_edge_reconstruction c d hc hd hnc hnd hkl, ̲star_add, ̲star_mul,
+  ̵  ̵ ̵ ̵ ̵ ̵edgeC, ̲edgeIndexMatrix,
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲bottom,̵F̵i̵n̵.̵s̵u̵c̵c̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

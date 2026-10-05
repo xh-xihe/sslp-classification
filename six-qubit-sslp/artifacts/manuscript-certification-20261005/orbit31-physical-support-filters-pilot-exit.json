@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31PhysicalSupportFilters.olean",
+    "MainTheory/Orbit31PhysicalSupportFilters.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 14.526288799999747
+}

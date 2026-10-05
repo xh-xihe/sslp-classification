@@ -1,0 +1,65 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45DressingParseval.lean:33:86: error: Tactic `decide` failed for proposition
+  ∀ (r : Fin 4) (P : SS.PauliString 6), P.x = Orbit45OrientedCoherences.flip r → P.wt ≤ 2 → ∃ d, P = error r d
+because its `Decidable` instance
+  Nat.decidableForallFin fun r =>
+    ∀ (P : SS.PauliString 6), P.x = Orbit45OrientedCoherences.flip r → P.wt ≤ 2 → ∃ d, P = error r d
+did not reduce to `isTrue` or `isFalse`.
+
+Reduction got stuck at the `Decidable` instance
+  ⋯ ▸
+    if h :
+        ({ toFun := fun f a => f a ⋯, inj' := ⋯ }
+                (Multiset.Pi.cons
+                  ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩
+                      ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩
+                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []))))⟧
+                  ((fun i => i) ⟨0, ⋯⟩) true
+                  (Multiset.Pi.cons
+                    ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩
+                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ [])))⟧
+                    ((fun i => i) ⟨1, ⋯⟩) true
+                    (Multiset.Pi.cons
+                      ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []))⟧
+                      ((fun i => i) ⟨2, ⋯⟩) false
+                      (Multiset.Pi.cons
+                        ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ [])⟧
+                        ((fun i => i) ⟨3, ⋯⟩) false
+                        (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []⟧ ((fun i => i) ⟨4, ⋯⟩) false
+                          (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨5, ⋯⟩) false (Multiset.Pi.empty fun a => Bool))))))),
+              { toFun := fun f a => f a ⋯, inj' := ⋯ }
+                (Multiset.Pi.cons
+                  ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, ⋯⟩
+                      ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩
+                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []))))⟧
+                  ((fun i => i) ⟨0, ⋯⟩) true
+                  (Multiset.Pi.cons
+                    ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, ⋯⟩
+                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ [])))⟧
+                    ((fun i => i) ⟨1, ⋯⟩) true
+                    (Multiset.Pi.cons
+                      ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨3, ⋯⟩
+                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []))⟧
+                      ((fun i => i) ⟨2, ⋯⟩) false
+                      (Multiset.Pi.cons
+                        ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨4, ⋯⟩ ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ [])⟧
+                        ((fun i => i) ⟨3, ⋯⟩) false
+                        (Multiset.Pi.cons ⟦(fun x1 x2 => (fun i => i) x1 :: x2) ⟨5, ⋯⟩ []⟧ ((fun i => i) ⟨4, ⋯⟩) false
+                          (Multiset.Pi.cons ⟦[]⟧ ((fun i => i) ⟨5, ⋯⟩) false
+                            (Multiset.Pi.empty fun a => Bool)))))))).2 =
+          SS.bxor (if (↑⟨((fun i => i) ⟨0, ⋯⟩, (fun i => i) ⟨0, ⋯⟩), ⋯⟩).1 = 0 then 0 else SS.stdBasis (pairs ⟨0, ⋯⟩).1)
+            (if (↑⟨((fun i => i) ⟨0, ⋯⟩, (fun i => i) ⟨0, ⋯⟩), ⋯⟩).2 = 0 then 0 else SS.stdBasis (pairs ⟨0, ⋯⟩).2) then
+      h ▸ isTrue ⋯
+    else isFalse ⋯
+
+Hint: Reduction got stuck on `▸` (Eq.rec), which suggests that one of the `Decidable` instances is defined using tactics such as `rw` or `simp`. To avoid tactics, make use of functions such as `inferInstanceAs` or `decidable_of_decidable_of_iff` to alter a proposition.

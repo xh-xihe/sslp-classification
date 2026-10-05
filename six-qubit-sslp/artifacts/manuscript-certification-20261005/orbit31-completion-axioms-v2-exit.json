@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "tools/verify.py",
+    "--paper-version",
+    "20261003",
+    "--only",
+    "axioms"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 180.69922150002094
+}

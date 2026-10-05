@@ -1,0 +1,24 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalPrintedRows.lean:118:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a * ?b * ?c
+in the target expression
+  (-↑1) ^ SS.hammingWt (bottom i.rev) * (c (bottom i.rev) * d (top i)) =
+    -((-↑1) ^ SS.hammingWt (bottom i.rev) * (c (bottom i.rev) * d (top i)))
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+hp : ∀ (i : Fin 10), c (bottom i) * d (top i.rev) = c (bottom i.rev) * d (top i)
+i : Fin 10
+a✝ : i ∈ Finset.univ
+⊢ (-↑1) ^ SS.hammingWt (bottom i.rev) * (c (bottom i.rev) * d (top i)) =
+    -((-↑1) ^ SS.hammingWt (bottom i.rev) * (c (bottom i.rev) * d (top i)))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalPrintedRows.lean:117:45: error: This simp argument is unused:
+  reverse_sign
+
+Hint: Omit it from the simp argument list.
+  simp only [̵F̵i̵n̵.̵r̵e̵v̵P̵e̵r̵m̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵r̵e̵v̵_̵r̵e̵v̵,̵r̵e̵v̵e̵r̵s̵e̵_̵s̵i̵g̵n̵,̵I̵n̵t̵.̵c̵a̵s̵t̵_̵n̵e̵g̵]̵[̲F̲i̲n̲.̲r̲e̲v̲P̲e̲r̲m̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲.̲r̲e̲v̲_̲r̲e̲v̲,̲ ̲I̲n̲t̲.̲c̲a̲s̲t̲_̲n̲e̲g̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

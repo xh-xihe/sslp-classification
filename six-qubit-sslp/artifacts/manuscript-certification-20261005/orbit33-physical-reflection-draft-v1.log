@@ -1,0 +1,35 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:13:12: error: unexpected token ':='; expected command
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:15:22: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:17:28: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:15:41: error: unsolved goals
+case «0»
+⊢ sorry () = 3 / 10
+
+case «1»
+⊢ sorry () = 1 / 5
+
+case «2»
+⊢ sorry () = 1 / 5
+
+case «3»
+⊢ sorry () = 1 / 10
+
+case «4»
+⊢ sorry () = 1 / 10
+
+case «5»
+⊢ sorry () = 1 / 10
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:26:8: error(lean.unknownIdentifier): Unknown identifier `S.R`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:37:7: error(lean.unknownIdentifier): Unknown identifier `S.C`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:37:13: error(lean.unknownIdentifier): Unknown identifier `S.J`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:37:17: error(lean.unknownIdentifier): Unknown identifier `S.C`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:58:0: error: Missing name after `end`: Expected the current scope name `S`
+
+Hint: To end the current scope `S`, specify its name:
+  end ̲S̲
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PhysicalReflection.lean:59:0: error: Invalid name after `end`: Expected `S`, but found `MainTheory.Orbit33PhysicalReflection`

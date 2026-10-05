@@ -1,0 +1,58 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:66:26: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hbg : b * g = 0
+hb : b = 0
+a✝ : 1 / 8 < g
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:66:60: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hbg : b * g = 0
+hb : b = 0
+a✝ : 1 / 8 < s
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:67:31: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hbg : b * g = 0
+hg : g = 0
+a✝ : 1 / 8 < b
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:67:68: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hbg : b * g = 0
+hg : g = 0
+a✝ : 1 / 8 < s
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:68:29: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hs : s = 0
+a✝ : 1 / 8 < b
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PrintedEnumerator.lean:68:63: error: linarith failed to find a contradiction
+case h2.h
+b g s : ℝ
+H : Orbit45TrianglePolynomial.Domain b g s
+hz : b * g * s = 0
+hs : s = 0
+a✝ : 1 / 8 < g
+⊢ False
+failed

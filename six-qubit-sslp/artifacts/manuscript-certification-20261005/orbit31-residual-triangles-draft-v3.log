@@ -1,0 +1,24 @@
+tmp/manuscript-publication-20261005/drafts/Orbit31ResidualTriangles.lean:53:62: error: Application type mismatch: The argument
+  ha0
+has type
+  c (A 0) ≠ 0
+but is expected to have type
+  c (A (colPairs ⟨0, ?m.34⟩).1) ≠ 0
+in the application
+  column_opposition hp hs ⟨0, ?m.34⟩ ha0
+tmp/manuscript-publication-20261005/drafts/Orbit31ResidualTriangles.lean:54:62: error: Application type mismatch: The argument
+  ha0
+has type
+  c (A 0) ≠ 0
+but is expected to have type
+  c (A (colPairs ⟨1, ?m.45⟩).1) ≠ 0
+in the application
+  column_opposition hp hs ⟨1, ?m.45⟩ ha0
+tmp/manuscript-publication-20261005/drafts/Orbit31ResidualTriangles.lean:55:62: error: Application type mismatch: The argument
+  ha1
+has type
+  c (A 1) ≠ 0
+but is expected to have type
+  c (A (colPairs ⟨3, ?m.56⟩).1) ≠ 0
+in the application
+  column_opposition hp hs ⟨3, ?m.56⟩ ha1

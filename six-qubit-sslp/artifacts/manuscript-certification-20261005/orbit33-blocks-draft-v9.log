@@ -1,0 +1,22 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:807:4: error: unsolved goals
+case mpr.right.right
+c d : SS.State 6 ℂ
+h : mixed (DBlock d 0) (CBlock c ⟨1, ⋯⟩) + mixed (DBlock d ⟨1, ⋯⟩) (CBlock c 0) = 0
+h00 : d z5 * (starRingEnd ℂ) (c y1) + d z4 * (starRingEnd ℂ) (c y0) = 0
+h01 : d z5 * (starRingEnd ℂ) (c y7) + d z4 * (starRingEnd ℂ) (c y6) = 0
+h10 : d z11 * (starRingEnd ℂ) (c y1) + d z10 * (starRingEnd ℂ) (c y0) = 0
+h11 : d z11 * (starRingEnd ℂ) (c y7) + d z10 * (starRingEnd ℂ) (c y6) = 0
+⊢ offSum c d ef2 w0 = 0 ∧ offSum c d ef2 w6 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:811:4: error: No goals to be solved
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:812:8: error: unexpected token '·'; expected command
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:849:4: error: unsolved goals
+case mpr.right.right
+c d : SS.State 6 ℂ
+h : mixed (DBlock d 0) (CBlock c ⟨2, ⋯⟩) + mixed (DBlock d ⟨2, ⋯⟩) (CBlock c 0) = 0
+h00 : d z5 * (starRingEnd ℂ) (c y2) + d z3 * (starRingEnd ℂ) (c y0) = 0
+h01 : d z5 * (starRingEnd ℂ) (c y8) + d z3 * (starRingEnd ℂ) (c y6) = 0
+h10 : d z11 * (starRingEnd ℂ) (c y2) + d z9 * (starRingEnd ℂ) (c y0) = 0
+h11 : d z11 * (starRingEnd ℂ) (c y8) + d z9 * (starRingEnd ℂ) (c y6) = 0
+⊢ offSum c d ef4 w0 = 0 ∧ offSum c d ef4 w6 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:853:4: error: No goals to be solved
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33PrintedBlocks.lean:854:8: error: unexpected token '·'; expected command

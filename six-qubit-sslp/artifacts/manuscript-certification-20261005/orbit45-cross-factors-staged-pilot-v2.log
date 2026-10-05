@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:21:73: error: Tactic `decide` proved that the proposition
+  ∀ (e : SS.BitString 6), (SS.hammingWt e ≤ 2 → ∃ y ∈ S1, SS.bxor y e ∈ S0) ↔ e = SS.stdBasis 3 ∨ ∃ r, e = flip r
+is false
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:135:26: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45CrossFactors.lean:345:25: error: unused variable `eta`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

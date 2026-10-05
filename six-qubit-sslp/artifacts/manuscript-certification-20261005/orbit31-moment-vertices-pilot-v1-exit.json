@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31MomentVertices.olean",
+    "MainTheory/Orbit31MomentVertices.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 31.204800400009844
+}

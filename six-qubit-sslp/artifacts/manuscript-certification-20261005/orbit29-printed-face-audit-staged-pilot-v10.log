@@ -1,0 +1,360 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:143:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.205.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:143:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.205.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:147:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.205.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:147:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.205.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:153:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.557.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:153:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.557.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:157:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.557.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:157:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.557.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:165:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.947.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:165:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.947.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:169:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.947.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:169:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.947.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:175:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1299.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:175:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1299.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:179:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1299.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 0 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:179:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1299.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:189:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1727.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:189:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1727.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:193:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1727.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:193:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1727.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:199:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2079.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:199:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2079.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:203:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2079.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:203:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2079.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : lam 1 ≤ 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:211:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2469.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:211:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2469.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:215:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2469.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:215:55: error: linarith failed to find a contradiction
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2469.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:221:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2821.«0».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:221:55: error: linarith failed to find a contradiction
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2821.«1».h
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+a✝ : 0 < lam 1
+⊢ False
+failed

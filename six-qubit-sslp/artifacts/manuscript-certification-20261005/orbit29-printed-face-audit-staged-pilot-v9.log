@@ -1,0 +1,308 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:147:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.205.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:153:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.525.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:157:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.525.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:157:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.525.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:165:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.886.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:169:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.886.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:169:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.886.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:175:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1209.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:175:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1209.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:179:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1209.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:179:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1209.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:179:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1209.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : 0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:189:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1610.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:193:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1610.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:193:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1610.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:199:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1933.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:199:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1933.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:203:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1933.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:203:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1933.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:203:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.1933.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : 0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:211:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2296.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:211:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2296.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:215:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2296.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:215:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2296.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:215:55: error: Tactic `assumption` failed
+
+case neg.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2296.«3»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : 0 < lam ⟨2, ⋯⟩
+h3 : ¬0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨3, ⋯⟩ ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:221:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2621.«0»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 0 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:221:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2621.«1»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam 1 ≤ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedFaceAudit.lean:221:55: error: Tactic `assumption` failed
+
+case pos.«_@».Orbit29PrintedFaceAudit.2592084971._hygCtx._hyg.2621.«2»
+lam : Fin 4 → ℝ
+hn : ∀ (i : Fin 4), 0 ≤ lam i
+hs : lam ⟨0, ⋯⟩ + (lam ⟨1, ⋯⟩ + (lam ⟨2, ⋯⟩ + lam ⟨3, ⋯⟩)) = 1 / 8
+h0 : ¬0 < lam ⟨0, ⋯⟩
+h1 : ¬0 < lam ⟨1, ⋯⟩
+h2 : ¬0 < lam ⟨2, ⋯⟩
+h3 : 0 < lam ⟨3, ⋯⟩
+⊢ lam ⟨2, ⋯⟩ ≤ 0

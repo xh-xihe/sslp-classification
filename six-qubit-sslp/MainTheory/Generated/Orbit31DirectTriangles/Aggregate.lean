@@ -1,0 +1,13 @@
+import MainTheory.Generated.Orbit31DirectTriangles.Type01
+import MainTheory.Generated.Orbit31DirectTriangles.Type02
+import MainTheory.Generated.Orbit31DirectTriangles.Type03
+import MainTheory.Generated.Orbit31DirectTriangles.Type04
+import MainTheory.Generated.Orbit31DirectTriangles.Type05
+import MainTheory.Generated.Orbit31DirectTriangles.Type06
+import MainTheory.Generated.Orbit31DirectTriangles.Type07
+import MainTheory.Generated.Orbit31DirectTriangles.Type08
+import MainTheory.Generated.Orbit31DirectTriangles.Type10
+import MainTheory.Generated.Orbit31DirectTriangles.Type11
+import MainTheory.Generated.Orbit31DirectTriangles.Type12
+import MainTheory.Generated.Orbit31DirectTriangles.Type13
+import MainTheory.Generated.Orbit31DirectTriangles.Type15

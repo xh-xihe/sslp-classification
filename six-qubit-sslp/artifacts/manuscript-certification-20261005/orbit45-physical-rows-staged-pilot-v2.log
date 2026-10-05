@@ -1,0 +1,10 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45PhysicalPrintedRows.lean:114:4: error: Tactic `conv` failed: There are unsolved goals
+case hs
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+hp : ∀ (i : Fin 10), c (bottom i) * d (top i.rev) = c (bottom i.rev) * d (top i)
+⊢ {a | Fin.revPerm a ≠ a} ⊆ ↑Finset.univ

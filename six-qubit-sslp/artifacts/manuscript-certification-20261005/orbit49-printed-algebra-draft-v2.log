@@ -1,0 +1,160 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:35:4: error: Type mismatch: After simplification, term
+  ⟨h0.left, h1.left⟩
+ has type
+  star (c SixQubit.Orbit49.y0) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z0 = 0 ∧
+    star (c SixQubit.Orbit49.y0) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z0 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨0, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨0, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨0, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨0, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:36:4: error: Type mismatch: After simplification, term
+  ⟨h1.right, h0.right⟩
+ has type
+  star (c SixQubit.Orbit49.y1) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z1 = 0 ∧
+    star (c SixQubit.Orbit49.y1) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z1 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨1, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨1, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨1, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨1, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:37:4: error: Type mismatch: After simplification, term
+  ⟨h2.left, h3.left⟩
+ has type
+  star (c SixQubit.Orbit49.y2) * d SixQubit.Orbit49.z8 + star (c SixQubit.Orbit49.y8) * d SixQubit.Orbit49.z2 = 0 ∧
+    star (c SixQubit.Orbit49.y2) * d SixQubit.Orbit49.z9 + star (c SixQubit.Orbit49.y9) * d SixQubit.Orbit49.z2 = 0
+but is expected to have type
+  star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨8, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨2, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨2, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨8, ⋯⟩) =
+      0 ∧
+    star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨9, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨2, ⋯⟩) +
+        star
+            (c
+              (![SixQubit.Orbit49.y0, SixQubit.Orbit49.y1, SixQubit.Orbit49.y2, SixQubit.Orbit49.y3,
+                  SixQubit.Orbit49.y4, SixQubit.Orbit49.y5, SixQubit.Orbit49.y6, SixQubit.Orbit49.y7,
+                  SixQubit.Orbit49.y8, SixQubit.Orbit49.y9]
+                ⟨2, ⋯⟩)) *
+          d
+            (![SixQubit.Orbit49.z0, SixQubit.Orbit49.z1, SixQubit.Orbit49.z2, SixQubit.Orbit49.z3, SixQubit.Orbit49.z4,
+                SixQubit.Orbit49.z5, SixQubit.Orbit49.z6, SixQubit.Orbit49.z7, SixQubit.Orbit49.z8, SixQubit.Orbit49.z9]
+              ⟨9, ⋯⟩) =
+      0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:38:4: error: Tactic `simp` failed with a nested error:
+(deterministic) timeout at `simp`, maximum number of heartbeats (8000000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:19:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (8000000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PrintedAlgebra.lean:47:2: error: ring failed, ring expressions not equal
+c d b e : ℂ
+hb : b ≠ 0
+h : star c * e + star b * d = 0
+⊢ d + (-(d * star b) - e * star c) + e * star c * (star b)⁻¹ = 0

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/SignedPhaseSupport.olean",
+    "MainTheory/SignedPhaseSupport.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 15.04550950002158
+}

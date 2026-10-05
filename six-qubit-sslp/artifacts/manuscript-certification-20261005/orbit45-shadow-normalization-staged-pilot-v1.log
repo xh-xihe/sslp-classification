@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45ShadowNormalization.lean:17:8: error: Possibly looping simp theorem: `pauliKernel.eq_1`
+
+Note: Possibly caused by: `SS.signC`, `eq_comm`, and `Bool.true_eq`
+
+Hint: You can disable a simp theorem from the default simp set by passing `- theoremName` to `simp`.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45ShadowNormalization.lean:17:2: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

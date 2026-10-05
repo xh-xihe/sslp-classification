@@ -1,0 +1,46 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:71:8: error: typeclass instance problem is stuck
+  One ?m.29
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `One` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:73:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ((RingHom.mapMatrix ?f) ?M).det
+in the target expression
+  (A.map ⇑(Rat.castHom ℝ)).det = 6
+
+⊢ (A.map ⇑(Rat.castHom ℝ)).det = 6
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:92:86: error: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  simp [localPhases, ̲MainTheory.BoundedRepresentation.circlePhase,̵h̵x̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:97:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45AffineGauge.lean:118:2: error: 'change' tactic failed, pattern
+  globalPhase (BR *ᵥ t) * diagonalValue (localPhases (BR *ᵥ t)) (bottom (anchors i)) * c (bottom (anchors i)) = ?m.54
+is not definitionally equal to target
+  phaseAction (BR *ᵥ t) c (bottom (anchors i)) = ↑‖c (bottom (anchors i))‖

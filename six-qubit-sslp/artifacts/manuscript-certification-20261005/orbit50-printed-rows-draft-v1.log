@@ -1,0 +1,154 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:56:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 1
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:74:2: error: Type mismatch
+  he
+has type
+  products c d 0 + products c d 1 = 0
+but is expected to have type
+  star (c y0) * d z0 + star (c y10) * d z10 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:118:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 1
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:136:2: error: Type mismatch
+  he
+has type
+  products c d 0 + products c d 1 = 0
+but is expected to have type
+  star (c y0) * d z9 + star (c y1) * d z10 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:180:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 1
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:198:2: error: Type mismatch
+  he
+has type
+  products c d 0 + products c d 1 = 0
+but is expected to have type
+  star (c y0) * d z8 + star (c y2) * d z10 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:242:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 1
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:260:2: error: Type mismatch
+  he
+has type
+  products c d 0 + products c d 1 = 0
+but is expected to have type
+  star (c y0) * d z5 + star (c y5) * d z10 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:304:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 2
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:327:2: error: Type mismatch
+  he.left
+has type
+  products c d 0 + products c d ⟨5, ⋯⟩ = 0
+but is expected to have type
+  star (c y1) * d z0 + star (c y10) * d z9 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:371:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 2
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:394:2: error: Type mismatch
+  he.left
+has type
+  products c d 0 + products c d ⟨5, ⋯⟩ = 0
+but is expected to have type
+  star (c y2) * d z0 + star (c y10) * d z8 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:438:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RectangularFlipCharacters.matrix characters sources *ᵥ fun j => FlipCharacter.incidenceMonomial c d flip (sources j)
+in the target expression
+  ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+
+case h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+he :
+  (RectangularFlipCharacters.matrix characters sources *ᵥ fun j =>
+      FlipCharacter.incidenceMonomial c d flip (sources j)) =
+    0
+i : Fin 2
+⊢ ↑(rowSign i) * (RectangularFlipCharacters.matrix characters sources *ᵥ products c d) i = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit50PrintedRows.lean:461:2: error: Type mismatch
+  he.left
+has type
+  products c d 0 + products c d ⟨5, ⋯⟩ = 0
+but is expected to have type
+  star (c y5) * d z0 + star (c y10) * d z5 = 0

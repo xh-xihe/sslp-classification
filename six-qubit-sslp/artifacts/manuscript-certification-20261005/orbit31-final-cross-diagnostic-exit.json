@@ -1,0 +1,12 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "MainTheory/Orbit31FinalCross.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 15.902857600012794
+}

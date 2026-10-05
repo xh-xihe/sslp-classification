@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit30PrintedMoments.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 31.008257199951913
+}

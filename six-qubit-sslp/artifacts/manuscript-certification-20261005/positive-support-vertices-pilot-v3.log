@@ -1,0 +1,29 @@
+MainTheory/MatrixPositiveSupportVertices.lean:34:0: error: automatically included section variable(s) unused in theorem `MainTheory.MatrixPositiveSupportVertices.extreme_unique_face`:
+  [Fintype m]
+  [DecidableEq n]
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq n] [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+MainTheory/MatrixPositiveSupportVertices.lean:95:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?M *ᵥ ?N *ᵥ ?v
+in the target expression
+  (C * M) *ᵥ q = q
+
+m : Type u_1
+n : Type u_2
+inst✝² : Fintype m
+inst✝¹ : Fintype n
+inst✝ : DecidableEq n
+M : Matrix m n ℝ
+b : m → ℝ
+p q : n → ℝ
+S : Finset n
+C : Matrix n m ℝ
+hleft : ∀ (j k : n), k ∈ S → (C * M) j k = if j = k then 1 else 0
+hrhs : C *ᵥ b = p
+hq : Feasible M b q
+hoff : ∀ k ∉ S, q k = 0
+he : (C * M) *ᵥ q = q
+⊢ q = p

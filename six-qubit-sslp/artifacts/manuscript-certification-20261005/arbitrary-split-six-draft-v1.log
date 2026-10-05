@@ -1,0 +1,107 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:33:83: error: unsolved goals
+case a
+p : Label 6
+s t : Fin 4 × Tail
+⊢ localC (p 0) ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 0)
+                ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t
+                  0) *
+              localC (p 1)
+                ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 1)
+                ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t
+                  1) *
+            localC (p 2)
+              ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 2)
+              ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t 2) *
+          localC (p 3)
+            ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 3)
+            ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t 3) *
+        localC (p 4)
+          ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 4)
+          ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t 4) *
+      localC (p 5)
+        ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } s 5)
+        ({ toFun := sixBits, invFun := splitBits, left_inv := basis._proof_1, right_inv := basis._proof_2 } t 5) =
+    Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (pairOperator p) (tensor fun i => localC (![p 2, p 3, p 4, p 5] i)) s t
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:35:36: error: This simp argument is unused:
+  Matrix.kronecker_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲s̲i̲x̲B̲i̲t̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲f̲o̲u̲r̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲s̲u̲c̲c̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:35:65: error: This simp argument is unused:
+  sixBits
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲k̲r̲o̲n̲e̲c̲k̲e̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲f̲o̲u̲r̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲s̲u̲c̲c̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:36:38: error: This simp argument is unused:
+  Fin.prod_univ_four
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲k̲r̲o̲n̲e̲c̲k̲e̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲s̲i̲x̲B̲i̲t̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲s̲u̲c̲c̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:36:57: error: This simp argument is unused:
+  pairOperator
+
+Hint: Omit it from the simp argument list.
+  simp only [Matrix.submatrix_apply, ̲Matrix.kronecker_apply, ̲basis, ̲sixBits,
+  ̵  ̵ ̵ ̵operator, ̲tensor,
+  ̲ ̲ ̲ ̲ ̲Fin.prod_univ_six, ̲Fin.prod_univ_four,p̵a̵i̵r̵O̵p̵e̵r̵a̵ ̲to̵r̵,̵t̵ailLabel,
+  ̵  ̵ ̵ ̵Matrix.cons_val_zero, ̲Matrix.cons_val_succ,
+  ̲ ̲ ̲ ̲ ̲Matrix.cons_val_fin_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:37:4: error: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲k̲r̲o̲n̲e̲c̲k̲e̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲s̲i̲x̲B̲i̲t̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲f̲o̲u̲r̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲s̲u̲c̲c̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:37:25: error: This simp argument is unused:
+  Matrix.cons_val_succ
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲k̲r̲o̲n̲e̲c̲k̲e̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲s̲i̲x̲B̲i̲t̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲f̲o̲u̲r̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitSixQubit.lean:37:46: error: This simp argument is unused:
+  Matrix.cons_val_fin_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵s̵u̵b̵m̵a̵t̵r̵i̵x̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵k̵r̵o̵n̵e̵c̵k̵e̵r̵_̵a̵p̵p̵l̵y̵,̵b̵a̵s̵i̵s̵,̵s̵i̵x̵B̵i̵t̵s̵,̵
+  ̵ ̵ ̵ ̵ ̵o̵p̵e̵r̵a̵t̵o̵r̵,̵t̵e̵n̵s̵o̵r̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵s̵i̵x̵,̵F̵i̵n̵.̵p̵r̵o̵d̵_̵u̵n̵i̵v̵_̵f̵o̵u̵r̵,̵p̵a̵i̵r̵O̵p̵e̵r̵a̵t̵o̵r̵,̵t̵a̵i̵l̵L̵a̵b̵e̵l̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵s̵u̵c̵c̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲s̲u̲b̲m̲a̲t̲r̲i̲x̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲k̲r̲o̲n̲e̲c̲k̲e̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲b̲a̲s̲i̲s̲,̲ ̲s̲i̲x̲B̲i̲t̲s̲,̲ ̲o̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲e̲n̲s̲o̲r̲,̲
+  ̲ ̲ ̲ ̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲s̲i̲x̲,̲ ̲F̲i̲n̲.̲p̲r̲o̲d̲_̲u̲n̲i̲v̲_̲f̲o̲u̲r̲,̲ ̲p̲a̲i̲r̲O̲p̲e̲r̲a̲t̲o̲r̲,̲ ̲t̲a̲i̲l̲L̲a̲b̲e̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲s̲u̲c̲c̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

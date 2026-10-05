@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalMask.lean:61:4: error: Type mismatch
+  Complex.normSq_pos
+has type
+  0 < Complex.normSq ?m.142 ↔ ?m.142 ≠ 0
+but is expected to have type
+  j ∈ Finset.univ.erase i ∧ 0 < Complex.normSq (D.c i j) ↔ edgeC c i j ≠ 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalMask.lean:74:28: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  hij
+of type `i = j → False`

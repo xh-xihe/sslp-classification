@@ -1,0 +1,18 @@
+MainTheory/Orbit31AffineTableGroup.lean:43:24: error: Type mismatch
+  Equiv.symm_apply_apply coordinateEquiv j
+has type
+  coordinateEquiv.symm (coordinateEquiv j) = j
+but is expected to have type
+  ↑(((coordinateEquiv.trans (AffineEquiv.toEquiv 1)).trans coordinateEquiv.symm) j) = ↑(1 j)
+MainTheory/Orbit31AffineTableGroup.lean:46:4: error: 'change' tactic failed, pattern
+  coordinateEquiv.symm (e (f (coordinateEquiv j))) =
+    coordinateEquiv.symm (e (coordinateEquiv (coordinateEquiv.symm (f (coordinateEquiv j)))))
+is not definitionally equal to target
+  ↑(((coordinateEquiv.trans (e * f).toEquiv).trans coordinateEquiv.symm) j) =
+    ↑(((coordinateEquiv.trans e.toEquiv).trans coordinateEquiv.symm *
+          (coordinateEquiv.trans f.toEquiv).trans coordinateEquiv.symm)
+        j)
+MainTheory/Orbit31AffineTableGroup.lean:64:2: error: 'change' tactic failed, pattern
+  coordinateEquiv.symm ((affinePart r) (coordinates j)) = colFunctions r j
+is not definitionally equal to target
+  ↑((affineAction (affinePart r)) j) = ↑((colPerm r) j)

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "tools/build_lean.py",
+    "--module",
+    "MainTheory.Generated.Orbit31SupportCoverage.Aggregate",
+    "--module",
+    "MainTheory.Orbit31CrossRows"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 135.48715050000465
+}

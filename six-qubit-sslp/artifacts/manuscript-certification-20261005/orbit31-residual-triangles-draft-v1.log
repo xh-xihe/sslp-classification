@@ -1,0 +1,17 @@
+tmp/manuscript-publication-20261005/drafts/Orbit31ResidualTriangles.lean:57:4: error: ring failed, ring expressions not equal
+c d : Fin 16 → ℂ
+hp : EqualProbabilities c d
+hs : CrossSystem c d
+ha0 : c (A 0) ≠ 0
+ha1 : c (A 1) ≠ 0
+ha2 : c (A 2) ≠ 0
+hb : ∀ (i : Fin 3) (e : Fin 4), c (B i e) ≠ 0
+h01 : sigma c d (A (colPairs 0).2) = -sigma c d (A (colPairs 0).1)
+h02 : sigma c d (A (colPairs 1).2) = -sigma c d (A (colPairs 1).1)
+h12 : sigma c d (A (colPairs 3).2) = -sigma c d (A (colPairs 3).1)
+⊢ sigma c d (A 0) + sigma c d (A (colPairs 0).1) * (1 / 2) + sigma c d (A (colPairs 1).2) * (1 / 2) +
+            sigma c d (A (colPairs 3).2) * (1 / 2) +
+          sigma c d (A (colPairs 0).2) * (1 / 2) +
+        sigma c d (A (colPairs 1).1) * (1 / 2) +
+      sigma c d (A (colPairs 3).1) * (1 / 2) =
+    0

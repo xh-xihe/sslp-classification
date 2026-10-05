@@ -1,0 +1,39 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:100:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:102:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:104:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:106:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:108:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:110:22: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:117:25: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:119:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hg : PairGauge c d
+he : d z6 = if Orbit29PrintedFaceAudit.colors ⟨9, ⋯⟩ = true then -d z7 else d z7
+⊢ (d z7 + if Orbit29PrintedFaceAudit.colors ⟨9, ⋯⟩ = true then -d z7 else d z7) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:121:25: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:123:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hg : PairGauge c d
+he : d z10 = if Orbit29PrintedFaceAudit.colors ⟨8, ⋯⟩ = true then -d z11 else d z11
+⊢ (d z11 + if Orbit29PrintedFaceAudit.colors ⟨8, ⋯⟩ = true then -d z11 else d z11) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:125:25: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:127:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hg : PairGauge c d
+he : d z12 = if Orbit29PrintedFaceAudit.colors ⟨7, ⋯⟩ = true then -d z13 else d z13
+⊢ (d z13 + if Orbit29PrintedFaceAudit.colors ⟨7, ⋯⟩ = true then -d z13 else d z13) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:129:25: error(lean.unknownIdentifier): Unknown identifier `colors`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:131:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hg : PairGauge c d
+he : d z14 = if Orbit29PrintedFaceAudit.colors ⟨6, ⋯⟩ = true then -d z15 else d z15
+⊢ (d z15 + if Orbit29PrintedFaceAudit.colors ⟨6, ⋯⟩ = true then -d z15 else d z15) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PrintedEta.lean:145:9: error: Application type mismatch: The argument
+  congrFun hp.left ⟨14, ?m.50⟩
+has type
+  probabilities c xs ⟨14, ?m.50⟩ =
+    normalQ (Complex.normSq (d z4)) (Complex.normSq (d z2)) (Complex.normSq (d z0)) ⟨14, ?m.50⟩
+but is expected to have type
+  Complex.normSq (c y14) = 1 / 8
+in the application
+  And.intro (congrFun hp.left ⟨14, ?m.50⟩)

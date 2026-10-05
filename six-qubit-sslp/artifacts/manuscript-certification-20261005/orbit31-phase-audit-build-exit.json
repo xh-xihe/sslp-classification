@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "tools/build_lean.py",
+    "--module",
+    "MainTheory.Generated.Orbit31PhaseCoverage.Aggregate",
+    "--module",
+    "MainTheory.Orbit31NoSingletonClassification"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 865.4261822000262
+}

@@ -1,0 +1,36 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45DressingParseval.lean:78:51: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if ↑j < 2 then ↑(signSource d (channel r)) else ↑(signDestination d (channel r))
+in the target expression
+  (starRingEnd ℂ) (c (sources r (target j))) * c (sources r j) =
+    if ↑j < 2 then ↑(signSource d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+    else ↑(signDestination d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+
+case false
+c : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+r : Fin 4
+d : Dressing
+j : Fin 4
+hx : SS.bdot (error r d).z (sources r j) = false
+hh : 1 = if ↑j < 2 then ↑(signSource d (channel r)) else ↑(signDestination d (channel r))
+⊢ (starRingEnd ℂ) (c (sources r (target j))) * c (sources r j) =
+    if ↑j < 2 then ↑(signSource d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+    else ↑(signDestination d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45DressingParseval.lean:78:51: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if ↑j < 2 then ↑(signSource d (channel r)) else ↑(signDestination d (channel r))
+in the target expression
+  -((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j)) =
+    if ↑j < 2 then ↑(signSource d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+    else ↑(signDestination d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+
+case true
+c : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+r : Fin 4
+d : Dressing
+j : Fin 4
+hx : SS.bdot (error r d).z (sources r j) = true
+hh : -1 = if ↑j < 2 then ↑(signSource d (channel r)) else ↑(signDestination d (channel r))
+⊢ -((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j)) =
+    if ↑j < 2 then ↑(signSource d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))
+    else ↑(signDestination d (channel r)) * ((starRingEnd ℂ) (c (sources r (target j))) * c (sources r j))

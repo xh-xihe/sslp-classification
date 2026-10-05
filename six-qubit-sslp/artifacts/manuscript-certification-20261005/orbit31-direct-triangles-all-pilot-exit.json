@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python",
+    "tmp/manuscript-publication-20261005/pilot_module_list.py",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type01",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type02",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type03",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type04",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type05",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type06",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type07",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type08",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type10",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type11",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type12",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type13",
+    "MainTheory.Generated.Orbit31DirectTriangles.Type15",
+    "MainTheory.Generated.Orbit31DirectTriangles.Aggregate"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 216.54224400001112
+}

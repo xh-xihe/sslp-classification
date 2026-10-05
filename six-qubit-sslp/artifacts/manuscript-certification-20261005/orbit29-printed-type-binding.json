@@ -1,0 +1,99 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 11289,
+      "end_line": 11290,
+      "kind": "covered",
+      "reason": "The full 32-coordinate nonnegative diagonal-moment polytope has actual affine dimension eight. A checked dual certificate forces the first two bottom coordinates to zero; the remaining 30 columns have rank 22 with signed minor minus 384 and a strictly positive feasible witness. The rank calculation is explicitly tied to the native physical bit strings.",
+      "declarations": [
+        "MainTheory.Orbit29MomentRank.Orbit29.actual_matrix",
+        "MainTheory.Orbit29MomentRank.Orbit29.rank_exact",
+        "MainTheory.Orbit29MomentRank.Orbit29.kernel_dimension",
+        "MainTheory.Orbit29MomentPolytope.full_actual_matrix",
+        "MainTheory.Orbit29MomentPolytope.real_dual",
+        "MainTheory.Orbit29MomentPolytope.forced_zero",
+        "MainTheory.Orbit29MomentPolytope.full_center_feasible",
+        "MainTheory.Orbit29MomentPolytope.full_center_positive",
+        "MainTheory.Orbit29MomentPolytope.restricted_rank",
+        "MainTheory.Orbit29MomentPolytope.full_diagonal_polytope_dimension"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "b0ac1afa54a61c9d2cb231848d30faae8c2ff8576e708570eeb4b9234ad9ac6d"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11291,
+      "end_line": 11334,
+      "kind": "covered",
+      "reason": "The printed pair reduction and every equal-probability assertion follow from the actual physical moment and non-diagonal constraints, including zero pairs.",
+      "declarations": [
+        "MainTheory.Orbit29PhysicalPairReduction.high_parallel",
+        "MainTheory.Orbit29PhysicalPairReduction.high_balanced",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_balanced",
+        "MainTheory.Orbit29PrintedSimplex.physical_printed_probabilities",
+        "MainTheory.Orbit29PrintedSimplex.physical_domain",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "b59bed01ded81659602219b1751741c82607d790f5310995cdddae27e640cd61"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11335,
+      "end_line": 11393,
+      "kind": "covered",
+      "reason": "The barycentric three-simplex, all fifteen exact relative interiors and the complete literal face table are checked with actual affine dimensions and signed connectivity.",
+      "declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.literal_counts",
+        "MainTheory.Orbit29PrintedFaceAudit.vertex_positive_iff",
+        "MainTheory.Orbit29PrintedFaceAudit.checked_walks",
+        "MainTheory.Orbit29SimplexRelativeInterior.relative_interior_iff",
+        "MainTheory.Orbit29SimplexRelativeInterior.exhaustive_relative_interiors",
+        "MainTheory.Orbit29SimplexDimensions.literal_face_dimensions"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "a3153a63f4455b9488a688ea9ffeb6c08aa187e90e10636cdad5d07ee605c278"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11394,
+      "end_line": 11402,
+      "kind": "covered",
+      "reason": "Every active internal ratio has unit modulus. Physical orthogonality gives signed graph propagation, and an actual single-qubit diagonal phase normalizes all active bottom and high-top ratios with complete KL retained.",
+      "declarations": [
+        "MainTheory.Orbit29PhysicalRatios.physical_assignment",
+        "MainTheory.Orbit29PhysicalRatios.common_unit_phase",
+        "MainTheory.Orbit29PhysicalPairGauge.diagonal_fullKL",
+        "MainTheory.Orbit29PhysicalPairGauge.physical_pair_gauge"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "75abcb821365d955975dd06a22f620a5049460ddc6b4f30f05064fe1a0a548a0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11403,
+      "end_line": 11436,
+      "kind": "covered",
+      "reason": "The pinned anchor, positive high target and every one of the final printed Walsh equations are derived; the eta contradiction excludes all fifteen support strata.",
+      "declarations": [
+        "MainTheory.Orbit29PrintedEta.literal_target_errors",
+        "MainTheory.Orbit29PrintedEta.pinned_probability",
+        "MainTheory.Orbit29PrintedEta.actual_rows",
+        "MainTheory.Orbit29PrintedEta.printed_eta_equations",
+        "MainTheory.Orbit29PrintedEta.active_product_nonzero",
+        "MainTheory.Orbit29PrintedEta.eta_contradiction",
+        "MainTheory.Orbit29PrintedEta.physical_no_go"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "f19c5fff36e5464893385ae51509b907dd0bc486cc1722d764a597dfd182079f"
+    }
+  ],
+  "scope": "Scoped physical pair and literal fifteen-face correspondence; other manuscript review remains incomplete"
+}

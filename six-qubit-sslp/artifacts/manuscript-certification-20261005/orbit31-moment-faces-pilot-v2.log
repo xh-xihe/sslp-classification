@@ -1,0 +1,144 @@
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨0, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «0»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨0, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨1, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «1»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨1, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨2, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «2»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨2, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨3, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «3»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨3, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨4, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «4»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨4, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨5, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «5»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨5, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨6, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «6»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨6, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨7, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «7»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨7, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨8, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «8»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨8, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨9, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «9»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨9, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨10, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «10»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨10, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨11, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «11»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨11, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨12, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «12»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨12, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨13, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «13»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨13, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨14, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «14»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨14, ⋯⟩) = 1
+MainTheory/Orbit31MomentFaces.lean:15:67: error: Tactic `rfl` failed: The left-hand side
+  M 0 ((fun i => i) ⟨15, ⋯⟩)
+is not definitionally equal to the right-hand side
+  1
+
+case «15»
+p : Fin 16 → ℝ
+hp : Feasible M b p
+⊢ M 0 ((fun i => i) ⟨15, ⋯⟩) = 1

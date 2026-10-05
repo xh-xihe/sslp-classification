@@ -1,0 +1,15 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:33:2: error: Type mismatch
+  W
+has type
+  Matrix (Fin 4) (Fin 2) ℂ
+but is expected to have type
+  Matrix (Fin 4 × Tail) (Fin 2 × Tail) ℂ
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:33:4: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:41:24: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:75:23: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:81:23: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:96:52: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:105:8: error: declaration uses 'sorry'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:105:8: error: (kernel) unknown constant 'MainTheory.ArbitrarySplitPerfectCode.first_matrix_compression'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:116:43: error: expected token
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:124:31: error: expected token

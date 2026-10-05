@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-DwarningAsError=true",
+    "-o",
+    ".lake/build/lib/lean/MainTheory/Orbit31CrossConsequences.olean",
+    "MainTheory/Orbit31CrossConsequences.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 22.4795023999759
+}

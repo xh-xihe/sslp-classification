@@ -1,0 +1,16 @@
+libc++abi: terminating due to uncaught exception of type lean::throwable: deep recursion was detected at 'interpreter' (potential solution: increase stack space in your system)
+interpreter stacktrace:
+#1 Mathlib.Meta.NormNum.inferAddMonoidWithOne._closed_0
+#2 Mathlib.Meta.NormNum.inferAddMonoidWithOne._closed_1
+#3 Mathlib.Meta.NormNum.inferAddMonoidWithOne
+#4 Mathlib.Meta.NormNum.evalOfNat._lam_1
+#5 Mathlib.Meta.NormNum.evalOfNat._lam_1._boxed
+#6 _private.Init.Data.Array.Basic.0.Array.forIn'Unsafe.loop._at_.Mathlib.Meta.NormNum.derive.spec_6._redArg
+#7 Mathlib.Meta.NormNum.derive._lam_0
+#8 Mathlib.Meta.NormNum.derive._lam_0._boxed
+#9 Lean.profileitIOUnsafe._redArg
+#10 Lean.profileitM._at_.Mathlib.Meta.NormNum.derive.spec_9._redArg
+#11 Mathlib.Meta.NormNum.derive
+#12 Mathlib.Meta.NormNum.evalLT._lam_1
+#13 Mathlib.Meta.NormNum.evalLT._lam_1._boxed
+

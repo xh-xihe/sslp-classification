@@ -1,0 +1,69 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:55:6: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.205 ?m.202 = Finset.sum ?m.205 ?m.203
+with the goal
+  ∑ x,
+      ∑ x_1,
+        ∑ i,
+          star (GaussianInt.toComplex (raw j x x_1)) / 4 *
+            (F x i * GaussianInt.toComplex (amplitude p x_1) *
+              (GaussianInt.toComplex (raw k i (Orbit2.HilbertBridge.flip p x_1)) / 4)) =
+    (∑ a,
+        ∑ t,
+          ∑ b,
+            F a b *
+              (star (GaussianInt.toComplex (raw j a t)) * GaussianInt.toComplex (amplitude p t) *
+                GaussianInt.toComplex (raw k b (flip p t)))) /
+      16
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.205, ?m.202 x = ?m.203 x) → Finset.sum ?m.205 ?m.202 = Finset.sum ?m.205 ?m.203
+
+F : Matrix (Fin 2) (Fin 2) ℂ
+p : Label 4
+j k : Fin 2
+⊢ ∑ x,
+      ∑ x_1,
+        ∑ i,
+          star (GaussianInt.toComplex (raw j x x_1)) / 4 *
+            (F x i * GaussianInt.toComplex (amplitude p x_1) *
+              (GaussianInt.toComplex (raw k i (Orbit2.HilbertBridge.flip p x_1)) / 4)) =
+    (∑ a,
+        ∑ t,
+          ∑ b,
+            F a b *
+              (star (GaussianInt.toComplex (raw j a t)) * GaussianInt.toComplex (amplitude p t) *
+                GaussianInt.toComplex (raw k b (flip p t)))) /
+      16
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:68:11: error: unsolved goals
+F : Matrix (Fin 2) (Fin 2) ℂ
+p : Label 4
+j k : Fin 2
+⊢ (∑ x,
+        ∑ x_1,
+          F x x_1 *
+            ∑ x_2,
+              star (GaussianInt.toComplex (raw j x x_2)) * GaussianInt.toComplex (amplitude p x_2) *
+                GaussianInt.toComplex (raw k x_1 (flip p x_2))) *
+      (1 / 16) =
+    (∑ x,
+        ∑ x_1,
+          F x x_1 *
+            ∑ x_2,
+              (starRingEnd ℂ) (GaussianInt.toComplex (raw j x x_2)) * GaussianInt.toComplex (amplitude p x_2) *
+                GaussianInt.toComplex (raw k x_1 (flip p x_2))) *
+      (1 / 16)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ArbitrarySplitPerfectCode.lean:53:17: error: This simp argument is unused:
+  ← Finset.sum_div
+
+Hint: Omit it from the simp argument list.
+  simp only [̵←̵ ̵F̵i̵n̵s̵e̵t̵.̵s̵u̵m̵_̵d̵i̵v̵,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]̵[̲F̲i̲n̲s̲e̲t̲.̲m̲u̲l̲_̲s̲u̲m̲]̲
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

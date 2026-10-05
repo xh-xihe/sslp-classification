@@ -1,0 +1,43 @@
+Serial plan: 67 modules; 23 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[27/67] BUILD MainTheory.SignedPhaseSupport
+[28/67] BUILD MainTheory.Orbit31SignedSupport
+[29/67] BUILD MainTheory.Orbit31PhaseCoverageBase
+[30/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard000
+[31/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard001
+[32/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard002
+[33/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard003
+[34/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard004
+[35/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard005
+[36/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard006
+[37/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard007
+[38/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard008
+[39/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard009
+[40/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard010
+[41/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard011
+[42/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard012
+[43/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard013
+[44/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard014
+[45/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Shard015
+[46/67] BUILD MainTheory.Generated.Orbit31PhaseCoverage.Aggregate
+[65/67] BUILD MainTheory.Orbit31ExactSupportClassification
+[66/67] BUILD MainTheory.Generated.Orbit31NoSingletonCounts
+[67/67] BUILD MainTheory.Orbit31NoSingletonClassification
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 23 serially rebuilt, 44 content-validated cached modules

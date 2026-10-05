@@ -1,0 +1,8 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30PhysicalGraph.lean:45:4: error: Application type mismatch: The argument
+  (actual_anchor_nonzero c d hc hd hnc hnd hkl).left
+has type
+  c y15 ≠ 0
+but is expected to have type
+  c (bottom ⟨15, ?m.56⟩) ≠ 0
+in the application
+  actual_unit_phase c d hc hd hnc hnd hkl ⟨15, ?m.56⟩ (actual_anchor_nonzero c d hc hd hnc hnd hkl).left

@@ -1,0 +1,48 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:108:13: error: Ambiguous term
+  inner
+Possible interpretations:
+  Orbit33NormalizedPairs.inner : (Fin 2 → ℂ) → (Fin 2 → ℂ) → ℂ
+  
+  Inner.inner : (𝕜 : Type ?u.11970) → {E : Type ?u.11969} → [self : Inner 𝕜 E] → E → E → 𝕜
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:108:6: error: Type mismatch: After simplification, term
+  he
+ has type
+  Orbit33NormalizedPairs.inner f.u (DBlock d 3) = 0
+but is expected to have type
+  Orbit33NormalizedPairs.inner (DBlock d 3) f.u = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:117:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = ↑(3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = ↑(3 / 10) • outer f.v
+hu3 : outer (CBlock c ⟨3, ⋯⟩) = ↑(1 / 10) • (1 - outer f.v)
+hv3 : outer (DBlock d ⟨3, ⋯⟩) = ↑(1 / 10) • (1 - outer f.u)
+he : (3 / 10) • outer f.u + (3 / 10) • outer f.v = (3 / 5) • rho c
+i j : Fin 2
+h0 : 3 / 10 * outer f.u i j + 3 / 10 * outer f.v i j = 3 / 5 * rho c i j
+⊢ outer f.u i j * (7 / 10) + outer f.v i j * (7 / 10) + rho c i j * (-7 / 5) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:125:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = ↑(3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = ↑(3 / 10) • outer f.v
+hu3 : outer (CBlock c ⟨3, ⋯⟩) = ↑(1 / 10) • (1 - outer f.v)
+hv3 : outer (DBlock d ⟨3, ⋯⟩) = ↑(1 / 10) • (1 - outer f.u)
+he : (1 / 10) • (1 - outer f.v) + (1 / 10) • (1 - outer f.u) = (1 / 5) • rho c
+i j : Fin 2
+h0 : 1 / 10 * (1 i j - outer f.v i j) + 1 / 10 * (1 i j - outer f.u i j) = 1 / 5 * rho c i j
+⊢ 1 i j * (9 / 5) + outer f.v i j * (-9 / 10) + outer f.u i j * (-9 / 10) + rho c i j * (-9 / 5) = 0

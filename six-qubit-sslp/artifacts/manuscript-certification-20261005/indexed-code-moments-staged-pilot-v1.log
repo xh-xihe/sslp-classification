@@ -1,0 +1,51 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:19:9: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:21:6: error(lean.unknownIdentifier): Unknown identifier `SixQubit.occOn`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:31:9: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:33:37: error(lean.unknownIdentifier): Unknown identifier `SixQubit.occ2On`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:42:11: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:42:11: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:50:11: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:50:11: error(lean.unknownIdentifier): Unknown identifier `SS.State`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:52:11: error(lean.unknownIdentifier): Unknown identifier `SS.innerC`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:52:35: error(lean.unknownIdentifier): Unknown identifier `SS.innerC`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:53:11: error(lean.unknownIdentifier): Unknown identifier `SS.HasDistance`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:67:10: error(lean.unknownIdentifier): Unknown identifier `SixQubit.occOn_eq_of_hasDistance`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:63:2: error: unsolved goals
+case refine_4.c
+N M : ℕ
+S0 S1 : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+ys : Fin M → SS.BitString 6
+hxi : Function.Injective xs
+hyi : Function.Injective ys
+hxs : Finset.image xs Finset.univ = S0
+hys : Finset.image ys Finset.univ = S1
+c : sorry
+d : sorry
+hc : ∀ x ∉ S0, sorry = 0
+hd : ∀ x ∉ S1, sorry = 0
+hnc : sorry = 1
+hnd : sorry = 1
+hkl : sorry
+j : Fin 6
+⊢ sorry
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:74:10: error(lean.unknownIdentifier): Unknown identifier `SixQubit.occ2On_eq_of_hasDistance`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\IndexedCodeMoments.lean:68:2: error: unsolved goals
+case refine_5.c
+N M : ℕ
+S0 S1 : Finset (SS.BitString 6)
+xs : Fin N → SS.BitString 6
+ys : Fin M → SS.BitString 6
+hxi : Function.Injective xs
+hyi : Function.Injective ys
+hxs : Finset.image xs Finset.univ = S0
+hys : Finset.image ys Finset.univ = S1
+c : sorry
+d : sorry
+hc : ∀ x ∉ S0, sorry = 0
+hd : ∀ x ∉ S1, sorry = 0
+hnc : sorry = 1
+hnd : sorry = 1
+hkl : sorry
+jk : MomentPolytope.Pair6
+⊢ sorry

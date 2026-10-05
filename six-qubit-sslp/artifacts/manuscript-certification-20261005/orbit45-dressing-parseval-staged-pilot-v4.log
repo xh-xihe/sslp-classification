@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45DressingParseval.lean:32:8: error: Ambiguous term
+  flip
+Possible interpretations:
+  _root_.flip r : ?m.9 → ?m.8 → ?m.10
+  
+  Orbit45OrientedCoherences.flip r : SS.BitString 6

@@ -1,0 +1,16 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45TopGauge.lean:1:0: error: unknown module prefix 'Orbit45BottomGauge'
+
+No directory 'Orbit45BottomGauge' or file 'Orbit45BottomGauge.olean' in the search path entries:
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\Cli\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\batteries\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\Qq\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\aesop\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\proofwidgets\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\importGraph\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\LeanSearchClient\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\plausible\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\packages\mathlib\.lake\build\lib\lean
+D:\UTD\Project_purdue\Lean_certification\.lake\build\lib\lean
+c:\Users\richa\.elan\toolchains\leanprover--lean4---v4.27.0\lib\lean
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts
+c:\Users\richa\.elan\toolchains\leanprover--lean4---v4.27.0\lib\lean

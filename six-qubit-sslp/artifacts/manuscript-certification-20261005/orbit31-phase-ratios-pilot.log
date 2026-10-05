@@ -1,0 +1,9 @@
+MainTheory/Orbit31PhaseRatios.lean:33:49: error: Failed to rewrite using equation theorems for `D`
+MainTheory/Orbit31PhaseRatios.lean:34:2: error: Tactic `rfl` failed: The left-hand side
+  fun j => d (nativeTop j)
+is not definitionally equal to the right-hand side
+  ![d z15, d z14, d z13, d z12, d z8, d z9, d z10, d z11, d z4, d z5, d z6, d z7, d z0, d z1, d z2, d z3]
+
+d : SS.State 6 ℂ
+⊢ (fun j => d (nativeTop j)) =
+    ![d z15, d z14, d z13, d z12, d z8, d z9, d z10, d z11, d z4, d z5, d z6, d z7, d z0, d z1, d z2, d z3]

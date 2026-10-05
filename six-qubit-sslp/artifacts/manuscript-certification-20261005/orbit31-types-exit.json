@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "tools/verification/export_claim_types.py",
+    "--paper-version",
+    "20261003",
+    "--extra-roots",
+    "artifacts/manuscript-certification-20261005/orbit31-extra-roots.json",
+    "--output",
+    "artifacts/manuscript-certification-20261005/kernel-types-orbit31-support.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 42.10472589998972
+}

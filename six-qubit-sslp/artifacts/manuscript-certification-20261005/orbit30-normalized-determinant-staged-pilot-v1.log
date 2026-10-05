@@ -1,0 +1,20 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30NormalizedDeterminant.lean:10:19: error(lean.unknownIdentifier): Unknown constant `Matrix.det_succ`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30NormalizedDeterminant.lean:9:251: error: unsolved goals
+c d f g h k : ℂ
+⊢ !![0, 1, 1, c, d; 1, 0, 1, f, g; 1, 1, 0, h, k; c, f, h, 0, 1; d, g, k, 1, 0].det =
+    -2 + c * g * 2 + c * g * k * f * 2 + c * g * k * h * 2 + (c * g * d * h * 2 - c * g ^ 2 * h * 2) + c * k * 2 +
+                      (c * k * d * f * 2 - c * k ^ 2 * f * 2) +
+                    (-(c * d * 2) - c ^ 2 * g * k * 2) +
+                  g * d * f * h * 2 +
+                (-(g * d * h ^ 2 * 2) - g * f * 2) +
+              g * h * 2 +
+            (k * d * f * h * 2 - k * d * f ^ 2 * 2) +
+          (k * f * 2 - k * h * 2) +
+        d * f * 2 +
+      (d * h * 2 - d ^ 2 * f * h * 2)

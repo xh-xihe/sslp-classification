@@ -1,0 +1,8 @@
+{
+  "command": [
+    "python",
+    "tools/build_lean.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 26831.671187
+}

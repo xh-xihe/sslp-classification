@@ -1,0 +1,42 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalRatios.lean:190:38: error: unsolved goals
+case H
+c d : SS.State 6 ℂ
+H : FullKL c d
+m : Fin 15
+hf : Face m (coordinates d)
+v : Fin 10
+hv : v ∈ active m
+⊢ FullKL c d
+
+case H
+c d : SS.State 6 ℂ
+H : FullKL c d
+m : Fin 15
+hf : Face m (coordinates d)
+v : Fin 10
+hv : v ∈ active m
+⊢ FullKL c d
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29PhysicalRatios.lean:213:4: error: unsolved goals
+case right.h.hb.H
+c d : SS.State 6 ℂ
+H : FullKL c d
+m : Fin 15
+hf : Face m (coordinates d)
+i : Fin 12
+he : indexedEdges i ∈ activeEdges m
+hb : indexedEdges i ∈ List.ofFn indexedEdges
+hactive : decide ((indexedEdges i).left ∈ active m ∧ (indexedEdges i).right ∈ active m) = true
+hav : (indexedEdges i).left ∈ active m ∧ (indexedEdges i).right ∈ active m
+⊢ FullKL c d
+
+case right.h.hb.H
+c d : SS.State 6 ℂ
+H : FullKL c d
+m : Fin 15
+hf : Face m (coordinates d)
+i : Fin 12
+he : indexedEdges i ∈ activeEdges m
+hb : indexedEdges i ∈ List.ofFn indexedEdges
+hactive : decide ((indexedEdges i).left ∈ active m ∧ (indexedEdges i).right ∈ active m) = true
+hav : (indexedEdges i).left ∈ active m ∧ (indexedEdges i).right ∈ active m
+⊢ FullKL c d

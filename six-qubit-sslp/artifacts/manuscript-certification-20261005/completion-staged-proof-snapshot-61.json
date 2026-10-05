@@ -1,0 +1,316 @@
+{
+  "schema": 1,
+  "status": "strict_isolated_pilots_passed",
+  "planned_active_modules": 16117,
+  "staged_modules": [
+    {
+      "module": "Orbit31ResidualTriangles",
+      "phase": "orbit31-residual-triangles-draft-v7",
+      "source_sha256": "e5a82c172cf853734f8d25e4a2d51469d428cff8d7a48b0d59a717f9e05b9584"
+    },
+    {
+      "module": "Orbit31PrintedMinor",
+      "phase": "orbit31-printed-minor-draft-v3",
+      "source_sha256": "21cb3d9740b62debbed25f0857db0967cd2b63b61b92544a9019ff92a29ac60e"
+    },
+    {
+      "module": "Orbit31RelativeInterior",
+      "phase": "orbit31-relative-interior-draft-v4",
+      "source_sha256": "74a0d30676112fa8dbf61ca0a6d105d4ba0a4c3e339597ee814db8370ec61411"
+    },
+    {
+      "module": "Orbit31FinalQuotients",
+      "phase": "orbit31-final-quotients-draft-v1",
+      "source_sha256": "e4d526b64bbc624b0b12c136d62a968b4726e3ad27540a8aeeb07661f98fd378"
+    },
+    {
+      "module": "Orbit31HistoricalSupport",
+      "phase": "orbit31-historical-support-draft-v1",
+      "source_sha256": "6cdf834e24c9752ee416f3e3c8debce38a71a56475c755e4427726ece49a89d1"
+    },
+    {
+      "module": "Orbit32PrintedMomentNormal",
+      "phase": "orbit32-printed-normal-draft-v3",
+      "source_sha256": "1b9608ccde2020ec54fd7a589a7132eef72993d117661df8a27e24e13e2f7265"
+    },
+    {
+      "module": "Orbit32PrintedLocalAlgebra",
+      "phase": "orbit32-local-algebra-draft-v2",
+      "source_sha256": "f860aef8c28e1d6deaa78efc4f57b761ab8a9a214ce5537ef2f7b51fefde770c"
+    },
+    {
+      "module": "Orbit32PrintedMinor",
+      "phase": "orbit32-printed-minor-draft-v3",
+      "source_sha256": "aaae244b15af8dc435d0e1f6f137cabfa2b22e18d17ef92a024e16fc834bb4f4"
+    },
+    {
+      "module": "Orbit3PrintedSplitMatrices",
+      "phase": "orbit3-split-matrices-draft-v2",
+      "source_sha256": "1b03ec56c43d3e37d2aec41cd6fe777ae48bc40862ddbfcebb3cf4a34b0d5159"
+    },
+    {
+      "module": "Orbit33PrintedBlocks",
+      "phase": "orbit33-blocks-draft-v11",
+      "source_sha256": "f4f0a955790ace3d95d3c20f17462d555e4348c3028641a0df04a1403123d690"
+    },
+    {
+      "module": "Orbit33ScalarReflection",
+      "phase": "orbit33-scalar-draft-v3",
+      "source_sha256": "52de3e2b59046bd5cabbe5f99b95607f1d624d57c2cf9286cef7dd31670855f0"
+    },
+    {
+      "module": "Orbit33NormalizedPairs",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "source_sha256": "a591b7337e514374bcdb828566f100ceaebcfbcb9cb240526137c0e83ed1f84b"
+    },
+    {
+      "module": "Orbit33PhysicalReflection",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "source_sha256": "c174bf2dca9a0a3d5518cbc8855f41b32403a2cc438b9f96cf40e940fca0a68a"
+    },
+    {
+      "module": "Orbit33ProjectorArgument",
+      "phase": "orbit33-final-staged-pilots-v2",
+      "source_sha256": "3aae3473478b70d6a5a114a85d0ea09f590886ce581b052983c3a0b8d7b8a215"
+    },
+    {
+      "module": "ComplementaryPhasePair",
+      "phase": "complementary-phase-pair-draft-v1",
+      "source_sha256": "8c1f1523b0cc5433b62b1185cd99e2fcacaf9313a0564e4a9efdeaf5d0e6cbd6"
+    },
+    {
+      "module": "GridSupportAlgebra",
+      "phase": "grid-support-algebra-draft-v2",
+      "source_sha256": "c2bccf9d2f4400f014493e5fa7dab595f4f38387ad91839ee7ce3f6455701f3b"
+    },
+    {
+      "module": "OrderFiveWalshRemainingDisplays",
+      "phase": "order-five-walsh-remaining-draft-v1",
+      "source_sha256": "e1651427ba92844fa3d39d2956cf1f1852bc645734e37232b6942511c6ac9a76"
+    },
+    {
+      "module": "OrderFiveGridRemainingDisplays",
+      "phase": "extra-literal-staged-pilots-v1",
+      "source_sha256": "235f533458eca448e1136b217f1edb4dae82e1c30523a97fb222046d02376c6a"
+    },
+    {
+      "module": "OrderFourWalshRemainingDisplays",
+      "phase": "order-four-walsh-remaining-draft-v3",
+      "source_sha256": "5ca31b93093e46f908a5d679e56c18f46468fb3e927992a9e61b7cd28668e48f"
+    },
+    {
+      "module": "OrderThreePrintedMoments",
+      "phase": "order-three-printed-moments-draft-v5",
+      "source_sha256": "821e736d325282aab9e0386112d8fed5c13e1c7a9b44df9f41a5c3fda261c20c"
+    },
+    {
+      "module": "OrderThreePrintedCrossRows",
+      "phase": "extra-literal-staged-pilots-v1",
+      "source_sha256": "b2af708bb4587091be1904c78ab9f594c10c325d37b5330b76ced0a39da4c306"
+    },
+    {
+      "module": "OrderThreePrintedRanks",
+      "phase": "order-three-printed-ranks-draft-v2",
+      "source_sha256": "a8398b5dc86fd3baeca4633f6308a6109e92be22ad67e2ee16dfa66a4c96e5b6"
+    },
+    {
+      "module": "ArbitrarySplitPerfectCode",
+      "phase": "arbitrary-split-perfect-draft-v5",
+      "source_sha256": "48bd67df266a209751170a0ed5f80d594e4103d98e221398292c613a8d604786"
+    },
+    {
+      "module": "ArbitrarySplitSixQubit",
+      "phase": "arbitrary-split-six-draft-v5",
+      "source_sha256": "eafc7c58a058d433e20f3609d443ad4ee023de15e63a60c8b9f786944720de07"
+    },
+    {
+      "module": "StandardFiveSyndromeDisplays",
+      "phase": "standard-five-syndromes-draft-v1",
+      "source_sha256": "032e2d83201e4f09daf5b10c8b2e5006a645359a9ea718018e8fcd4f6e279d8c"
+    },
+    {
+      "module": "Orbit49PrintedRows",
+      "phase": "orbit49-printed-rows-draft-v4",
+      "source_sha256": "9878cd64d66651e76feb1fc10c5834323cbd1fab21e102ca3020d93332237782"
+    },
+    {
+      "module": "Orbit49PrintedAlgebra",
+      "phase": "orbit49-printed-algebra-draft-v4",
+      "source_sha256": "ba83e78f6857c0c9f9bea088e7bef8626b9aabb5f51c9b46153a38d073f4881f"
+    },
+    {
+      "module": "Orbit49PhysicalCompletion",
+      "phase": "orbit49-physical-completion-draft-v4",
+      "source_sha256": "0ba266a973d9a0d9315b7a60f4ca884e3ab2685d2e9242bc1d6926b89c0ab701"
+    },
+    {
+      "module": "RectangularFlipCharacters",
+      "phase": "rectangular-flip-characters-draft-v1",
+      "source_sha256": "2b68326011811b4d6ffe8723e1ae0bc5ac1dd6c1391c49294fe9403af051b31f"
+    },
+    {
+      "module": "Orbit50PrintedRows",
+      "phase": "orbit50-printed-rows-draft-v2",
+      "source_sha256": "4517b59a2f8d6e088065c356714585df9d5f5b5d16ce97ef74369e8c802bbd7a"
+    },
+    {
+      "module": "PhysicalPhaseQuotients",
+      "phase": "physical-phase-quotients-draft-v1",
+      "source_sha256": "0f45f385436956c79a02e4295c8ec8a95c9c4b8603667bb3c263892d37e59e98"
+    },
+    {
+      "module": "Orbit50PhysicalTriangle",
+      "phase": "orbit50-physical-triangle-draft-v5",
+      "source_sha256": "df96027337c3522a2a26178ec20fbcda922d5d10e53dd997f928f5e0586f659e"
+    },
+    {
+      "module": "Orbit51PrintedRows",
+      "phase": "orbit51-printed-rows-draft-v1",
+      "source_sha256": "b40579bfa53022b60b08132b70f2b25c5da185a984e6cdc86ea0315b53957991"
+    },
+    {
+      "module": "Orbit51PrintedAlgebra",
+      "phase": "orbit51-printed-algebra-draft-v3",
+      "source_sha256": "fa58ae10b1c696c6cd1df41729bf301ba9c2cede1d6a67ac5e7e5509035fbdcb"
+    },
+    {
+      "module": "Orbit51PhysicalCompletion",
+      "phase": "orbit51-physical-completion-draft-v2",
+      "source_sha256": "2ef763bcfd3cd0d0aee882735b3b119ae1f3e09ae4068e8045e258d9a7508bb5"
+    },
+    {
+      "module": "OrderTwoPrintedMoments",
+      "phase": "order-two-printed-moments-draft-v1",
+      "source_sha256": "4700bcecc7f05c94d9af789f8261f64e0d075a66bbbf28496a2bed52eb8b7ab8"
+    },
+    {
+      "module": "OrderTwoPrintedWalsh",
+      "phase": "order-two-printed-walsh-draft-v3",
+      "source_sha256": "13d75f1cf3f492ef48c79a0988f081095295c6cedd38ac2c5d5687562ec901b9"
+    },
+    {
+      "module": "OrderTwoPrintedRanks",
+      "phase": "order-two-printed-ranks-draft-v1",
+      "source_sha256": "9f73253d83d69040ffa7d1bdb1589eb96bd154554e1399c8ec30880d06c30760"
+    },
+    {
+      "module": "OrderTwoShellProjectors",
+      "phase": "order-two-shell-projectors-draft-v4",
+      "source_sha256": "9e69e51fb535293ed1d9ee9c5049081b9806059a86f026e3eb45c6b3c78f7b71"
+    },
+    {
+      "module": "HalfAngleFiberFlip",
+      "phase": "half-angle-fiber-flip-draft-v2",
+      "source_sha256": "f9a505350ef34d334f980e8f9e1189246c0f115791b7c6f541642816264076f7"
+    },
+    {
+      "module": "IndexedCodeMoments",
+      "phase": "indexed-code-moments-staged-pilot-v3",
+      "source_sha256": "d3dfe998a82560e50020bd0a0be5e5443b9679d2472a72cacc8d528e8738dda9"
+    },
+    {
+      "module": "Orbit45PhysicalPrintedRows",
+      "phase": "orbit45-physical-rows-staged-pilot-v3",
+      "source_sha256": "4bfc7128c5d39da20575cf35951f67d76d951b610904959f2a29a3a9c02dd5d0"
+    },
+    {
+      "module": "Orbit45PhysicalSpinFlip",
+      "phase": "orbit45-physical-spin-staged-pilot-v3",
+      "source_sha256": "dad840493af2638913f85ce87f48b61d1e56a424a6c62637a0c226e9044e542c"
+    },
+    {
+      "module": "Orbit45AffineGauge",
+      "phase": "orbit45-affine-gauge-staged-pilot-v3",
+      "source_sha256": "0132be03831e70930960b46a43ff7ade774e4934197db15af1575f7d55c9703b"
+    },
+    {
+      "module": "Orbit45CrossFactors",
+      "phase": "orbit45-cross-factors-staged-pilot-v5",
+      "source_sha256": "f0bd462a7eab61c07ba434179b825e2626015ffd23d6893e803c0f9523647d6e"
+    },
+    {
+      "module": "Orbit45PhysicalProbabilityDomain",
+      "phase": "orbit45-physical-domain-staged-pilot-v1",
+      "source_sha256": "220e316e28e7f16b1185d064ba4ac6347326caf701ea5a2756d9479165f49e57"
+    },
+    {
+      "module": "Orbit45RelativeLogicalPhase",
+      "phase": "orbit45-relative-phase-staged-pilot-v1",
+      "source_sha256": "3a01925d9b3a7b59b78a50c78c789fedabc0a71aa1ab17556ee2a6a7e62d4fd1"
+    },
+    {
+      "module": "Orbit45PrintedDiagonalContribution",
+      "phase": "orbit45-diagonal-contribution-staged-pilot-v2",
+      "source_sha256": "df169ed81e48c24af9bc12d3947a842d60270d20d0d3746e418c4d781a64f991"
+    },
+    {
+      "module": "Orbit45ShadowNormalization",
+      "phase": "orbit45-shadow-normalization-staged-pilot-v3",
+      "source_sha256": "11e26661e7da3b43c8d37f58888b83a537e07b52431c3e17f074cc003a26cc36"
+    },
+    {
+      "module": "StandardFiveJointSpace",
+      "phase": "standard-five-joint-space-staged-pilot-v2",
+      "source_sha256": "62d49f71e9304d2780c46249c27e39520a42b7cf658f177509c8a4efa86d7322"
+    },
+    {
+      "module": "Orbit45PhysicalGauge",
+      "phase": "orbit45-physical-gauge-staged-pilot-v1",
+      "source_sha256": "84168e445cc3069b7ba3492cb0409575293f9c22a59cd99abae0be37b1423263"
+    },
+    {
+      "module": "Orbit45BottomGauge",
+      "phase": "orbit45-bottom-gauge-staged-pilot-v3",
+      "source_sha256": "eafaac69cc2b2e08977157b28d963efc272e74704bf162ec801aae6d185f7638"
+    },
+    {
+      "module": "Orbit45TopGauge",
+      "phase": "orbit45-top-gauge-staged-pilot-v6",
+      "source_sha256": "87fce9d76c02ecde8d8123b72ee7855bcf76f0a428e58373b63e2d9317daa61e"
+    },
+    {
+      "module": "Orbit45PhysicalPhaseNormalForm",
+      "phase": "orbit45-physical-phase-normal-form-staged-pilot-v1",
+      "source_sha256": "c684bc99d087280b3ca07ba912217a71dd967a0094a27dcef9e301c5cce2de74"
+    },
+    {
+      "module": "Orbit45PhysicalCanonicalForm",
+      "phase": "orbit45-physical-canonical-form-staged-pilot-v2",
+      "source_sha256": "8d7cac5f07c4de56af1f598077bc8843863078e3149b523d3e2b76c04f86bc2a"
+    },
+    {
+      "module": "Orbit45OrientedCoherences",
+      "phase": "orbit45-oriented-coherences-staged-pilot-v8",
+      "source_sha256": "99449b7f29fce305ac9f6204875a4ef6df4151de9420ad105d9e03beede10e67"
+    },
+    {
+      "module": "Orbit45PrintedLogicalAction",
+      "phase": "orbit45-printed-logical-action-staged-pilot-v2",
+      "source_sha256": "ed2a98e3a7e89e9e575ac19c19879f666538d152b97f7591bccec37a3c2b676e"
+    },
+    {
+      "module": "Orbit45DressingParseval",
+      "phase": "orbit45-dressing-parseval-staged-pilot-v7",
+      "source_sha256": "b4101b45842736a823fc4abfe1630e49b6f086326182547ab042c34412c64c19"
+    },
+    {
+      "module": "Orbit45PrintedOffContribution",
+      "phase": "orbit45-printed-off-contribution-staged-pilot-v2",
+      "source_sha256": "6ff5a400660570dadcdbf32ab91e92dfea47085bf5f8ca71279ac0a57250416d"
+    },
+    {
+      "module": "Orbit45PrintedEnumerator",
+      "phase": "orbit45-printed-enumerator-staged-pilot-v2",
+      "source_sha256": "3bffc4a08d1c9c6ff5bc34af33534f65f273622236f73201f4a57e34c4ea67f1"
+    },
+    {
+      "module": "Orbit45TriangleExistence",
+      "phase": "orbit45-triangle-existence-staged-pilot-v3",
+      "source_sha256": "25b2de6e5280d556b669773664a38f8448f456c0a89a0d0129393303fff22711"
+    }
+  ],
+  "planned_covered_claims": 1649,
+  "planned_pending_si_claims": 172,
+  "newly_reviewed_claims": 158,
+  "scope": "Staged sources only. Promotion, fresh whole build, type exports, manual correspondence and transitive axiom audit remain required."
+}

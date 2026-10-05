@@ -1,0 +1,21 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:108:16: error: Ambiguous term
+  inner
+Possible interpretations:
+  Orbit33NormalizedPairs.inner : (Fin 2 → ℂ) → (Fin 2 → ℂ) → ℂ
+  
+  Inner.inner : (𝕜 : Type ?u.11969) → {E : Type ?u.11968} → [self : Inner 𝕜 E] → E → E → 𝕜
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit33ProjectorArgument.lean:109:6: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit33.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit33.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+f : Frame c d
+hn : ∀ (i : Fin 6), ∑ r, Complex.normSq (CBlock c i r) = R i ∧ ∑ r, Complex.normSq (DBlock d i r) = R i
+hm : ∀ (i : Fin 6), outer (CBlock c i) + outer (DBlock d i) = (2 * ↑(R i)) • rho c
+hu0 : outer (CBlock c 0) = ↑(3 / 10) • outer f.u
+hv0 : outer (DBlock d 0) = ↑(3 / 10) • outer f.v
+hu3 : outer (CBlock c ⟨3, ⋯⟩) = ↑(1 / 10) • (1 - outer f.v)
+he : Orbit33NormalizedPairs.inner f.u (DBlock d ⟨3, ⋯⟩) = 0
+⊢ Orbit33NormalizedPairs.inner (DBlock d ⟨3, ⋯⟩) f.u - Orbit33NormalizedPairs.inner f.u (DBlock d ⟨3, ⋯⟩) = 0

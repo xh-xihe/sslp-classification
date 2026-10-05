@@ -1,0 +1,53 @@
+PASS: tools/verification/emit_orbit31_support_arithmetic.py
+PASS: tools/verification/emit_orbit31_support_coverage.py
+PASS: tools/verification/emit_orbit31_cross_rows.py
+PASS: tools/verification/emit_orbit31_cross_consequences.py
+PASS: tools/verification/emit_orbit31_no_singleton_counts.py
+PASS: tools/verification/emit_orbit31_phase_coverage.py
+PASS: tools/verification/emit_orbit31_symmetry_base.py
+PASS: tools/verification/emit_orbit31_printed_orbits.py
+PASS: tools/verification/emit_orbit31_affine_table_group.py
+PASS: tools/verification/emit_orbit31_vertex_reconstructions.py
+PASS: tools/verification/emit_orbit31_direct_triangles.py
+PASS: tools/verification/emit_orbit31_final_cross.py
+PASS: tools/verification/emit_orbit31_balanced_moment_iff.py
+PASS: tools/verification/generate_orbit31_printed_minor.py
+PASS: tools/verification/generate_orbit32_printed_normal.py
+PASS: tools/verification/generate_orbit32_printed_minor.py
+PASS: tools/verification/generate_orbit33_printed_blocks.py
+FAIL: tools/verification/generate_orbit33_scalar_reflection.py
+Traceback (most recent call last):
+  File "D:\UTD\Project_purdue\Lean_certification\tools\verification\generate_orbit33_scalar_reflection.py", line 68, in <module>
+    target=ROOT/'MainTheory/Orbit33ScalarReflection.lean'
+           ^^^^
+NameError: name 'ROOT' is not defined
+
+FAIL: tools/verification/generate_order_five_grid_remaining.py
+Traceback (most recent call last):
+  File "D:\UTD\Project_purdue\Lean_certification\tools\verification\generate_order_five_grid_remaining.py", line 190, in <module>
+    target=ROOT/'MainTheory/OrderFiveGridRemainingDisplays.lean'
+           ^^^^
+NameError: name 'ROOT' is not defined
+
+PASS: tools/verification/generate_order_four_walsh_remaining.py
+PASS: tools/verification/generate_order_three_printed_moments.py
+PASS: tools/verification/generate_order_three_cross_rows.py
+PASS: tools/verification/generate_order_three_printed_ranks.py
+PASS: tools/verification/generate_orbit49_printed_rows.py
+PASS: tools/verification/generate_orbit50_printed_rows.py
+PASS: tools/verification/generate_orbit51_printed_rows.py
+PASS: tools/verification/generate_order_two_printed_moments.py
+PASS: tools/verification/generate_order_two_printed_walsh.py
+PASS: tools/verification/generate_order_two_printed_ranks.py
+PASS: tools/verification/generate_order_two_shell_projectors.py
+PASS: tools/verification/generate_orbit45_affine_gauge.py
+PASS: tools/verification/generate_orbit45_cross_factors.py
+PASS: tools/verification/generate_standard_five_joint_space.py
+PASS: tools/verification/generate_orbit29_face_audit.py
+PASS: tools/verification/generate_orbit29_pair_balance.py
+PASS: tools/verification/generate_orbit29_physical_pair_reduction.py
+PASS: tools/verification/generate_orbit29_printed_simplex.py
+PASS: tools/verification/generate_orbit29_physical_ratios.py
+PASS: tools/verification/generate_orbit29_printed_eta.py
+PASS: tools/verification/generate_orbit29_moment_rank.py
+40 reproduction checks; 176 source bindings; FAIL

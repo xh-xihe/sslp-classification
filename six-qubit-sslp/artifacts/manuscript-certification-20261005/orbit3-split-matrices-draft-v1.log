@@ -1,0 +1,4 @@
+tmp/manuscript-publication-20261005/drafts/Orbit3PrintedSplitMatrices.lean:60:56: error: unsolved goals
+W : Matrix (Fin 4) (Fin 2) ℂ
+E : Matrix (Fin 4) (Fin 4) ℂ
+⊢ 1 / 2 * (W * (Wᴴ * E)).trace = 1 / 2 * (E * (W * Wᴴ)).trace

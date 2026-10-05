@@ -1,0 +1,544 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:51:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 0 - d 0 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:51:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 1 - d 1 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:52:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨2, fourRows._proof_3⟩ - d ⟨2, fourRows._proof_3⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:52:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨3, fourRows._proof_2⟩ - d ⟨3, fourRows._proof_2⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:54:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 0 - d 0 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:54:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 1 - d 1 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:55:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨4, fourRows._proof_5⟩ - d ⟨4, fourRows._proof_5⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:55:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨5, fourRows._proof_4⟩ - d ⟨5, fourRows._proof_4⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:57:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c ⟨2, fourRows._proof_3⟩) * d ⟨2, fourRows._proof_3⟩ - d ⟨2, fourRows._proof_3⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:57:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c ⟨2, fourRows._proof_3⟩) * d ⟨3, fourRows._proof_2⟩ - d ⟨3, fourRows._proof_2⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:58:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c ⟨2, fourRows._proof_3⟩) * d ⟨4, fourRows._proof_5⟩ - d ⟨4, fourRows._proof_5⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:58:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ - d ⟨5, fourRows._proof_4⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:60:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 0 - d 0 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:60:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d 1 - d 1 * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:61:10: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨6, fourRows._proof_7⟩ - d ⟨6, fourRows._proof_7⟩ * star (c ⟨8, ⋯⟩) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:61:37: error: ring failed, ring expressions not equal
+c d : Fin 10 → ℂ
+hd : d ⟨8, ⋯⟩ ≠ 0
+hr : ∀ (i : Fin 8), rec c d ⟨8, ⋯⟩ ⟨↑i, ⋯⟩ = 0
+h0 : star (c 0) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 0 = 0
+h1 : star (c 1) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d 1 = 0
+h2 : star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ = 0
+h3 : star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ = 0
+h4 : star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ = 0
+h5 : star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ = 0
+h6 : star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ = 0
+h7 : star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ = 0
+r0 :
+  star (c 0) * d ⟨3, fourRows._proof_2⟩ + star (c 1) * d ⟨2, fourRows._proof_3⟩ +
+        star (c ⟨2, fourRows._proof_3⟩) * d 1 +
+      star (c ⟨3, fourRows._proof_2⟩) * d 0 =
+    0
+r1 :
+  star (c 0) * d ⟨5, fourRows._proof_4⟩ + star (c 1) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d 1 +
+      star (c ⟨5, fourRows._proof_4⟩) * d 0 =
+    0
+r2 :
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨5, fourRows._proof_4⟩ +
+          star (c ⟨3, fourRows._proof_2⟩) * d ⟨4, fourRows._proof_5⟩ +
+        star (c ⟨4, fourRows._proof_5⟩) * d ⟨3, fourRows._proof_2⟩ +
+      star (c ⟨5, fourRows._proof_4⟩) * d ⟨2, fourRows._proof_3⟩ =
+    0
+r3 :
+  star (c 0) * d ⟨7, fourRows._proof_6⟩ + star (c 1) * d ⟨6, fourRows._proof_7⟩ +
+        star (c ⟨6, fourRows._proof_7⟩) * d 1 +
+      star (c ⟨7, fourRows._proof_6⟩) * d 0 =
+    0
+⊢ star (c 0) * d ⟨7, fourRows._proof_6⟩ - d ⟨7, fourRows._proof_6⟩ * star (c ⟨8, ⋯⟩) = 0

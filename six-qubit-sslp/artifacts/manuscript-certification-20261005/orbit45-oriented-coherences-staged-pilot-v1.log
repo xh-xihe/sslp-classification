@@ -1,0 +1,169 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:44:12: error: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  simp [he̵,̵h̵m]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:45:12: error: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵e̵,̵h̵m̵,̵h̵f̵[̲h̲m̲,̲ ̲h̲f̲ _ hm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:46:10: error: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵h̵e̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:57:4: error: No goals to be solved
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:66:4: error: No goals to be solved
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45OrientedCoherences.lean:75:110: error: unsolved goals
+case left.h.«0»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 3 *
+        (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 5) +
+      ![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 4 *
+        (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 6) =
+    0
+
+case left.h.«1»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑G * (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 2) +
+      ![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 7 *
+        (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 9) =
+    ↑G * ↑S + ↑G * ↑S * eta
+
+case left.h.«2»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑G * ↑B +
+      ![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 8 *
+        (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 9) =
+    ↑G * ↑B * (starRingEnd ℂ) xi * xi + ↑G * ↑B * (starRingEnd ℂ) xi * eta
+
+case left.h.«3»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑B * (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 2) +
+      ![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 7 *
+        (starRingEnd ℂ) (![↑G, ↑B, ↑S, ↑h, ↑h, ↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi, ↑G * (starRingEnd ℂ) eta] 8) =
+    ↑B * ↑S + ↑B * ↑S * xi
+
+case right.h.«0»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta] 3 *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            5) +
+      ![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta] 4 *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            6) =
+    0
+
+case right.h.«1»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑G * eta *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            2) +
+      ![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta] 7 *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            9) =
+    ↑G * eta * ↑S + ↑G * ↑S
+
+case right.h.«2»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑G * eta * ↑B * (starRingEnd ℂ) xi +
+      ![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi * xi, ↑G * eta * (starRingEnd ℂ) eta] 8 *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * (starRingEnd ℂ) xi * xi, ↑G * eta * (starRingEnd ℂ) eta]
+            9) =
+    ↑G * eta * ↑B * (starRingEnd ℂ) xi + ↑G * ↑B * (starRingEnd ℂ) xi * xi
+
+case right.h.«3»
+B G S h : ℝ
+xi eta : ℂ
+hxi : Complex.normSq xi = 1
+hx : star xi * xi = 1
+⊢ ↑B * xi *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            2) +
+      ![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta] 7 *
+        (starRingEnd ℂ)
+          (![↑G * eta, ↑B * xi, ↑S, ↑h, -↑h, -↑h, -↑h, ↑S, ↑B * xi * (starRingEnd ℂ) xi, ↑G * eta * (starRingEnd ℂ) eta]
+            8) =
+    ↑B * xi * ↑S + ↑B * ↑S

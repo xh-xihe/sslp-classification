@@ -1,0 +1,68 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:44:10: error: Type mismatch: After simplification, term
+  h2
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨2, ⋯⟩ + star (c ⟨2, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨2, fourRows._proof_3⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨2, fourRows._proof_3⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:44:46: error: Type mismatch: After simplification, term
+  h3
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ + star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨3, fourRows._proof_2⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, fourRows._proof_2⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:47:10: error: Type mismatch: After simplification, term
+  h4
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ + star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨4, fourRows._proof_5⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, fourRows._proof_5⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:47:46: error: Type mismatch: After simplification, term
+  h5
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ + star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨5, fourRows._proof_4⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, fourRows._proof_4⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:49:46: error: Type mismatch: After simplification, term
+  h3
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨3, ⋯⟩ + star (c ⟨3, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨3, fourRows._proof_2⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨3, fourRows._proof_2⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:50:10: error: Type mismatch: After simplification, term
+  h4
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨4, ⋯⟩ + star (c ⟨4, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨4, fourRows._proof_5⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨4, fourRows._proof_5⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:50:46: error: Type mismatch: After simplification, term
+  h5
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨5, ⋯⟩ + star (c ⟨5, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨5, fourRows._proof_4⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨5, fourRows._proof_4⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:53:10: error: Type mismatch: After simplification, term
+  h6
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨6, ⋯⟩ + star (c ⟨6, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨6, fourRows._proof_7⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨6, fourRows._proof_7⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:53:46: error: Type mismatch: After simplification, term
+  h7
+ has type
+  star (c ⟨8, ⋯⟩) * d ⟨7, ⋯⟩ + star (c ⟨7, ⋯⟩) * d ⟨8, ⋯⟩ = 0
+but is expected to have type
+  star (c ⟨7, fourRows._proof_6⟩) * d ⟨8, ⋯⟩ + star (c ⟨8, ⋯⟩) * d ⟨7, fourRows._proof_6⟩ = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit49PhysicalCompletion.lean:94:76: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun i => Complex.normSq (topAmplitudes d i)) ⟨8, Moment._proof_9⟩
+in the target expression
+  0 < Complex.normSq (topAmplitudes d ⟨8, ⋯⟩)
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ SixQubit.Orbit49.S0, c x = 0
+hd : ∀ x ∉ SixQubit.Orbit49.S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+hm : Moment (fun i => Complex.normSq (bottomAmplitudes c i)) fun i => Complex.normSq (topAmplitudes d i)
+he : (fun i => Complex.normSq (topAmplitudes d i)) ⟨8, Moment._proof_9⟩ = 1 / 6
+⊢ 0 < Complex.normSq (topAmplitudes d ⟨8, ⋯⟩)

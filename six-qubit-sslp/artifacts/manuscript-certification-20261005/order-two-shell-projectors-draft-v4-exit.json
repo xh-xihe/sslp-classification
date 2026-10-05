@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "OrderTwoShellProjectors.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 23.856650999980047
+}

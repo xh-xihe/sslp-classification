@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45ShadowNormalization.lean:17:49: error: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵a̵u̵l̵i̵K̵e̵r̵n̵e̵l̵,̵h̵y̵,̵p̵o̵w̵_̵z̵e̵r̵o̵,̵h̵z̵,̵S̵S̵.̵s̵i̵g̵n̵C̵,̵i̵t̵e̵_̵f̵a̵l̵s̵e̵,̵o̵n̵e̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵]̵[̲p̲a̲u̲l̲i̲K̲e̲r̲n̲e̲l̲,̲ ̲h̲y̲,̲ ̲p̲o̲w̲_̲z̲e̲r̲o̲,̲ ̲h̲z̲,̲ ̲S̲S̲.̲s̲i̲g̲n̲C̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲o̲n̲e̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

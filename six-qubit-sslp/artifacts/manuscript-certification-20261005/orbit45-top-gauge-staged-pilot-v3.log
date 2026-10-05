@@ -1,0 +1,41 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit45TopGauge.lean:52:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ‖d (top 2)‖
+in the target expression
+  ↑‖d (top ⟨2, ⋯⟩)‖ * Orbit45PrintedConsequences.unitPhase (d (top ⟨2, ⋯⟩)) = d (top ⟨2, ⋯⟩)
+
+c d : SS.State 6 ℂ
+H : FullKL c d
+B G S h : ℝ
+U V W : ℂ
+hB : 0 < B
+hG : 0 < G
+hS : 0 < S
+hh : 0 < h
+hsq : h ^ 2 = 1 / 8
+hC : (fun i => c (bottom i)) = Orbit45CrossFactors.C B G S h U V W
+hz : z c d ⟨3, ⋯⟩ = 1 / 8
+c0 : c (bottom 0) = ↑G
+c1 : c (bottom 1) = ↑B
+c2 : c (bottom ⟨2, ⋯⟩) = ↑S
+c3 : c (bottom ⟨3, ⋯⟩) = ↑h
+c4 : c (bottom ⟨4, ⋯⟩) = ↑h
+c5 : c (bottom ⟨5, ⋯⟩) = ↑h
+c6 : c (bottom ⟨6, ⋯⟩) = ↑h * U
+c7 : c (bottom ⟨7, ⋯⟩) = ↑S
+c8 : c (bottom ⟨8, ⋯⟩) = ↑B * V
+c9 : c (bottom ⟨9, ⋯⟩) = ↑G * W
+b0 : ↑B ≠ 0
+g0 : ↑G ≠ 0
+s0 : ↑S ≠ 0
+h0 : ↑h ≠ 0
+hs : ↑h * ↑h = 1 / 8
+xi : ℂ := Orbit45PrintedConsequences.unitPhase (d (top 1))
+eta : ℂ := Orbit45PrintedConsequences.unitPhase (d (top 0))
+zeta : ℂ := Orbit45PrintedConsequences.unitPhase (d (top ⟨2, ⋯⟩))
+d0 : ↑G * Orbit45PrintedConsequences.unitPhase (d (top 0)) = d (top 0)
+d1 : ↑B * Orbit45PrintedConsequences.unitPhase (d (top 1)) = d (top 1)
+d2 : ↑‖d (top ⟨2, ⋯⟩)‖ * Orbit45PrintedConsequences.unitPhase (d (top ⟨2, ⋯⟩)) = d (top ⟨2, ⋯⟩)
+⊢ ∃ xi eta zeta,
+    Complex.normSq xi = 1 ∧
+      Complex.normSq eta = 1 ∧
+        Complex.normSq zeta = 1 ∧ (fun i => d (top i)) = Orbit45CrossFactors.D B G S h U V W xi eta zeta

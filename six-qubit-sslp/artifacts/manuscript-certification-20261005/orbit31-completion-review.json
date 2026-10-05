@@ -1,0 +1,365 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:q2fam:eq:split-lambda",
+      "statement_sha256": "913f6c6d086bc1be1b505615b47e9eae9bd0f28def9e4f93ca6c9a9a1fd90a48",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.ArbitrarySplitPerfectCode.raw",
+        "MainTheory.ArbitrarySplitPerfectCode.single_tail",
+        "MainTheory.ArbitrarySplitPerfectCode.double_tail",
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.ArbitrarySplitPerfectCode.split_trace",
+        "MainTheory.ArbitrarySplitSixQubit.basis",
+        "MainTheory.ArbitrarySplitSixQubit.operator_factor",
+        "MainTheory.ArbitrarySplitSixQubit.compression_transport",
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_orthonormal",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three",
+        "MainTheory.Orbit3PrintedSplitMatrices.trace_identity"
+      ],
+      "review": "20261005 literal completion/current type review: An arbitrary complex four-by-two isometry applied to the actual standard five-qubit code is reindexed in the six-qubit computational basis. Every weight-at-most-two Pauli satisfies actual matrix and Hilbert KL, not merely a particular real one-parameter family. Every nonzero unsplit tail has scalar zero; split-pair scalars equal half the pullback trace and half the image-projector trace in either cyclic order."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5907",
+      "statement_sha256": "a7b81a65bbd7d1784886f4bb166769d865c4272a02cf87cf21f150e9c7081752",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit2StandardFiveQubit.generators",
+        "MainTheory.StandardFiveSyndromeDisplays.table",
+        "MainTheory.StandardFiveSyndromeDisplays.literal_table",
+        "MainTheory.StandardFiveSyndromeDisplays.all_nonzero_unique",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_nonzero",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_anticommutes",
+        "MainTheory.StandardFiveSyndromeDisplays.commuting_generators",
+        "MainTheory.StandardFiveSyndromeDisplays.generators_commute",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_X",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_anticommute"
+      ],
+      "review": "20261005 literal completion/current type review: The literal four standard generators and all fifteen table entries are checked in their printed order. The syndrome set is exactly the fifteen nonzero four-bit words, without duplication. Every nonidentity Pauli of weight at most two has an actual anticommuting generator. Logical X and Z anticommute, and X exchanges the actual two seed words."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5913",
+      "statement_sha256": "339dc3cb1aeae3ed94860958419d468b16251d7e921b0f606e48dc69b76f43ca",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit2StandardFiveQubit.generators",
+        "MainTheory.StandardFiveSyndromeDisplays.table",
+        "MainTheory.StandardFiveSyndromeDisplays.literal_table",
+        "MainTheory.StandardFiveSyndromeDisplays.all_nonzero_unique",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_nonzero",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_anticommutes",
+        "MainTheory.StandardFiveSyndromeDisplays.commuting_generators",
+        "MainTheory.StandardFiveSyndromeDisplays.generators_commute",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_X",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_anticommute"
+      ],
+      "review": "20261005 literal completion/current type review: The literal four standard generators and all fifteen table entries are checked in their printed order. The syndrome set is exactly the fifteen nonzero four-bit words, without duplication. Every nonidentity Pauli of weight at most two has an actual anticommuting generator. Logical X and Z anticommute, and X exchanges the actual two seed words."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5933",
+      "statement_sha256": "15f1a97847f2835c0d3fe0e4d0fbcc6a0f582ca33f214196756d615d9c1e3963",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedSplitMatrices.a",
+        "MainTheory.Orbit3PrintedSplitMatrices.b"
+      ],
+      "review": "20261005 literal completion/current type review: The two real half-angle coefficients are the printed cosine and sine."
+    },
+    {
+      "id": "supplementary.tex:o3gc:split",
+      "statement_sha256": "59e864cd5f57acc63baee12fd58661cd11440ccf765aee9b073b05b7d74ff930",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedSplitMatrices.columns",
+        "MainTheory.Orbit3PrintedSplitMatrices.output_order",
+        "MainTheory.Orbit3PrintedSplitMatrices.isometry"
+      ],
+      "review": "20261005 literal completion/current type review: The orbit-three subsection reverses the output-site order relative to W3 in Section 10. The literal columns, actual output swap and isometry are proved in this order."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5945",
+      "statement_sha256": "f82f530e224df2791efcb8724ab2b8e2aab0021611270827ee5d621acbc4ed29",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedSplitMatrices.logical",
+        "MainTheory.Orbit3PrintedSplitMatrices.projection",
+        "MainTheory.Orbit3PrintedSplitMatrices.isometry"
+      ],
+      "review": "20261005 literal completion/current type review: In the orbit-three output order the logical factor is I tensor Z, and the projector is one half of I+cos(theta) Z tensor I +sin(theta) X tensor Z. Both literal matrix identities are proved."
+    },
+    {
+      "id": "supplementary.tex:o3gc:splittrace",
+      "statement_sha256": "fe06b6663977e0782e8ec8bfa7c4e980423fbe907d25ca9c0e700b41665d50c8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.ArbitrarySplitPerfectCode.raw",
+        "MainTheory.ArbitrarySplitPerfectCode.single_tail",
+        "MainTheory.ArbitrarySplitPerfectCode.double_tail",
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.ArbitrarySplitPerfectCode.split_trace",
+        "MainTheory.ArbitrarySplitSixQubit.basis",
+        "MainTheory.ArbitrarySplitSixQubit.operator_factor",
+        "MainTheory.ArbitrarySplitSixQubit.compression_transport",
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_orthonormal",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three",
+        "MainTheory.Orbit3PrintedSplitMatrices.trace_identity"
+      ],
+      "review": "20261005 literal completion/current type review: An arbitrary complex four-by-two isometry applied to the actual standard five-qubit code is reindexed in the six-qubit computational basis. Every weight-at-most-two Pauli satisfies actual matrix and Hilbert KL, not merely a particular real one-parameter family. Every nonzero unsplit tail has scalar zero; split-pair scalars equal half the pullback trace and half the image-projector trace in either cyclic order."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31supportwords",
+      "statement_sha256": "02958389f42d81d0a7decfe347c522f418363f3afcb4ef8945d77e3c9e3b7bab",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31SupportBase.words",
+        "MainTheory.Orbit31SupportBase.bottom_native",
+        "MainTheory.Orbit31SignedSupport.A",
+        "MainTheory.Orbit31SignedSupport.B",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.literal_words"
+      ],
+      "review": "20261005 literal completion/current type review: The four words use consecutive A,B1,B2,B3 blocks and columns e0,e1,e2,e3. The table coordinates are checked against the actual six-bit words; the little-endian mask convention is an encoding of this literal order."
+    },
+    {
+      "id": "supplementary.tex:equation@12030",
+      "statement_sha256": "8c2fff6d25831e66014304aed5b3d95de3dc4e79d9ac8efe2d12a94b2f88c589",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31PrintedMinor.printedColumns",
+        "MainTheory.Orbit31PrintedMinor.real_cast",
+        "MainTheory.Orbit31PrintedMinor.real_determinant_abs"
+      ],
+      "review": "20261005 literal completion/current type review: The exact specified seven complementary top columns, after all sixteen bottom columns, give the checked real minor of absolute determinant 128. The column list retains the native lexicographic-to-table permutation; an arbitrary rank witness is not substituted for the printed minor."
+    },
+    {
+      "id": "supplementary.tex:tab:q4o31supportorbits",
+      "statement_sha256": "b24313ed75f47cb73590202e983daf4a89f6cd97da9e5b336691ad18368d7c88",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.literal_words",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.support_sizes",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.orbit_sizes",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.size_sum",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.complete_survivor_set",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.unique_type",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go",
+        "MainTheory.Orbit31FinalCross.Type01.no_go",
+        "MainTheory.Orbit31FinalSameState.final_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "review": "20261005 literal completion/current type review: Checked every printed representative, support size, actual orbit size, disjointness and complete union of 311 masks. All sixteen literal certificate entries now have their stated derivation, including the propagated and column-phase triangles and the final same-state row."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31type9first",
+      "statement_sha256": "c5ee8ed5706f170d45ac964ee40d760c20a9b25c1965473e7a4a4951c4293e87",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ResidualTriangles.column_rectangle",
+        "MainTheory.Orbit31ResidualTriangles.type9_A_nonzero",
+        "MainTheory.Orbit31ResidualTriangles.type9_B_nonzero"
+      ],
+      "review": "20261005 literal completion/current type review: Actual type-nine support and vertical synchronization turn the column-(0,1) rectangle into the displayed phase-sum permanent equation."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31type9opposite",
+      "statement_sha256": "3a44a94d079a8ceb7ba1135913ec75ed83a6b1941d8608ddf9e50347da250ab0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ResidualTriangles.type9_opposite"
+      ],
+      "review": "20261005 literal completion/current type review: The three actual row-pair permanents cannot all vanish with all B entries active, so the two nonzero synchronized phases are opposite."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31type9proportional",
+      "statement_sha256": "67f1d2f2c59ddaa0067e3a5a64780f0bc1e35cc4fc21b348dfefceed9fa40318",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ResidualTriangles.type9_weight_product",
+        "MainTheory.Orbit31ResidualTriangles.ratio",
+        "MainTheory.Orbit31ResidualTriangles.type9_proportional"
+      ],
+      "review": "20261005 literal completion/current type review: The actual weight-one sums, zero inactive A entries and opposite phases give all three products a0*bi0=a1*bi1. The same nonzero ratio a1/a0 therefore works for every row."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31type9second",
+      "statement_sha256": "977ab5deaf2c428c4f0a9378773d845beedef0ebb0ea26f984bfde02bb16f495",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ResidualTriangles.type9_propagated",
+        "MainTheory.Orbit31ResidualTriangles.type9_permanents",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go"
+      ],
+      "review": "20261005 literal completion/current type review: The literal (0,2) rectangle minus the common ratio times (1,2) cancels every unknown column-two phase. A proved nonzero ratio is canceled, giving the printed phase-difference permanent and contradiction."
+    },
+    {
+      "id": "supplementary.tex:equation@12281",
+      "statement_sha256": "b88824e89b0c2d96bd58093a5621d6ea8c3957d91957b0dbadeb1f89d7249095",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31ResidualTriangles.column_rectangle",
+        "MainTheory.Orbit31ResidualTriangles.column_opposition",
+        "MainTheory.Orbit31ResidualTriangles.three_column_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "review": "20261005 literal completion/current type review: The actual literal types fourteen and sixteen have all twelve B entries active and three active A columns. Each column pair forces opposition; three pairwise opposite nonzero phases are impossible."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o31oldsupport",
+      "statement_sha256": "e3e38b624d802893a34a57889965799a3636fcd00cb2bed3fd1e4d8186b550bf",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31HistoricalSupport.oldSupport",
+        "MainTheory.Orbit31HistoricalSupport.literal_support",
+        "MainTheory.Orbit31HistoricalSupport.physical_swap",
+        "MainTheory.Orbit31HistoricalSupport.physical_image"
+      ],
+      "review": "20261005 literal completion/current type review: All twelve historical strings are checked. Swapping physical sites one and two maps the actual canonical type-two support exactly to this set; both the literal set and its physical transport are proved."
+    },
+    {
+      "id": "supplementary.tex:equation@12354",
+      "statement_sha256": "c7b512979386b5df5f8cca0152bf85d13a068220d89c484624f6b0820e968940",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31FinalQuotients.common_quotients"
+      ],
+      "review": "20261005 literal completion/current type review: The common-product equations give x_e=K/a_e on every active A column. All denominators and K are proved nonzero before division; in particular the printed e=0 and e=3 substitutions are valid."
+    },
+    {
+      "id": "supplementary.tex:remark@12389",
+      "statement_sha256": "0ec1bf13fe8fb8a25e76ee9e97ddb14ae86e1a601a435ec5acfe54545dc10d0d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit31MomentVertices.vertex_count",
+        "MainTheory.Orbit31MomentVertices.vertex_support_counts",
+        "MainTheory.Orbit31ExactSupportClassification.exact_support_count",
+        "MainTheory.Orbit31PhaseClassification.exact_count_chain",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.complete_survivor_set",
+        "MainTheory.Orbit31BalancedMomentIff.feasible_iff_full_moments",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go",
+        "MainTheory.Orbit31FinalCross.Type01.no_go",
+        "MainTheory.Orbit31FinalSameState.final_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "review": "20261005 literal completion/current type review: This finite-scope summary is supported by actual arbitrary-real moment and support semantics, 204-vertex completeness, exhaustive masks, physical cross rows, the actual quotient action and every literal branch certificate. Candidate arithmetic is checked by ordinary Lean proofs; the separate empty-mask wording issue is retained in prose review."
+    },
+    {
+      "id": "supplementary.tex:equation@12476",
+      "statement_sha256": "7e3bc7835fc8243bd69d3621bf9ca12e9511ff38b7d9c848a080c0cfd18d6dd2",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedMinor.printedColumns",
+        "MainTheory.Orbit32PrintedMinor.actual_matrix",
+        "MainTheory.Orbit32PrintedMinor.real_determinant",
+        "MainTheory.Orbit32PrintedMinor.full_rank"
+      ],
+      "review": "20261005 literal completion/current type review: The actual bit-coordinate moment matrix, in native lexicographic order, has exactly the specified seven top columns. The signed determinant is 3456, not merely its absolute value; rank is 23."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o32momentreflection",
+      "statement_sha256": "5eecc20aeaa8a64a86377a436c7d3430ea54074915dcf5d693767bfcd1a43c8c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.actual_bottom_groups",
+        "MainTheory.Orbit32PrintedMomentNormal.actual_top_groups",
+        "MainTheory.Orbit32PrintedMomentNormal.reflected",
+        "MainTheory.Orbit32PrintedMomentNormal.complete_normal_form",
+        "MainTheory.Orbit32PrintedMomentNormal.physical_normal_form"
+      ],
+      "review": "20261005 literal completion/current type review: All four actual middle strings and outer labels are checked against native codeword coordinates. The twelve reflected probabilities are derived from physical moments, and the printed normal form reconstructs the complete real nonnegative MomentSystem in the reverse direction."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o32rowsums",
+      "statement_sha256": "757ce3a90f03f7df36b231be3a373ede3abfef7b0e8894304595f41915fa5263",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.rowsums",
+        "MainTheory.Orbit32PrintedMomentNormal.physical_normal_form"
+      ],
+      "review": "20261005 literal completion/current type review: Each of the three actual E,F,G rows sums to one quarter. These are literal real consequences of normalized physical diagonal KL, including all zero-amplitude boundaries."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o32oddweights",
+      "statement_sha256": "389771ffa337bfe610621b932886b0e5d2150c4e384f5421575617d5510c5afc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.actual_bottom_groups",
+        "MainTheory.Orbit32PrintedMomentNormal.actual_top_groups",
+        "MainTheory.Orbit32PrintedMomentNormal.oddweights",
+        "MainTheory.Orbit32PrintedMomentNormal.physical_normal_form"
+      ],
+      "review": "20261005 literal completion/current type review: The complemented middle string is explicitly bound to bottom index 15-e and top index 3-e. Both odd probabilities equal one eighth minus the corresponding E+F+G sum divided by three."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o32modulus",
+      "statement_sha256": "247c30b06a4a316b95fa9ae8dd045f34ca6fac31afbecc25f96ca3738fb6f875",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedLocalAlgebra.moduli"
+      ],
+      "review": "20261005 literal completion/current type review: Taking normSq of each of the three complex cross equations proves all three printed real product equalities without division or a final impossibility hypothesis."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o32factor1",
+      "statement_sha256": "b2e4c975988862774a91b91f9763cf4d45150d9eb7e90974f9f8899d5ba814d3",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedLocalAlgebra.factors",
+        "MainTheory.Orbit32PrintedLocalAlgebra.moduli",
+        "MainTheory.Orbit32PrintedLocalAlgebra.positive_triple"
+      ],
+      "review": "20261005 literal completion/current type review: The complete three-line align block has all three literal factors with coefficient two thirds. Squared-modulus equalities make each zero; a positive E and nonnegative F,G give positive total and equal positive probabilities for all six amplitudes."
+    },
+    {
+      "id": "supplementary.tex:remark@12629",
+      "statement_sha256": "2cff4d354967f91eee5cfb39df587d0545b1cab63cbb39e1b083ab9585df292b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.physical_normal_form",
+        "MainTheory.Orbit32PrintedMomentNormal.rowsums",
+        "MainTheory.Orbit32PrintedLocalAlgebra.moduli",
+        "MainTheory.Orbit32PrintedLocalAlgebra.factors",
+        "MainTheory.Orbit32PrintedLocalAlgebra.positive_triple",
+        "MainTheory.Orbit32PrintedLocalAlgebra.triangle_identity",
+        "SixQubit.Orbit32.local_nogo"
+      ],
+      "review": "20261005 literal completion/current type review: The actual moment row sums guarantee a positive E entry. The literal three weight-one cross equations and moment reflection then force all six local probabilities positive and the odd triangle contradiction. No probability alone is treated as full KL."
+    }
+  ]
+}

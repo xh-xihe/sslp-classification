@@ -1,0 +1,4 @@
+MainTheory/Orbit31ExactSupportClassification.lean:47:4: error: invalid 'calc' step, left-hand side is
+  @Fintype.card { mask // HasSupport mask } (Subtype.fintype HasSupport) : Nat
+but is expected to be
+  @Fintype.card { mask // HasSupport mask } CategoryTheory.FinCategory.fintypeObj : Nat

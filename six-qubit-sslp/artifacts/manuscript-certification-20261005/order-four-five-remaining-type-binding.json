@@ -1,0 +1,68 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-orbit31-completion.json",
+  "type_evidence_sha256": "074fc654342e23e1e8aeee858ae3dde4ce8c8ca5d176b3476df1b51a6546f9dd",
+  "prose_blocks": [
+    {
+      "source": "supplementary.tex",
+      "line": 10079,
+      "end_line": 10103,
+      "kind": "covered",
+      "reason": "The physical star-to-grid rows, common active phase and rectangle permanent reduction retain all zero-amplitude boundaries.",
+      "declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_hub",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_common_phase",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_rectangle",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_permanents"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "ffe87fdac59339475d520d906e938a35e76a0a6f93087c348695d1a4cb1c2796"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10106,
+      "end_line": 10121,
+      "kind": "covered",
+      "reason": "Actual positive row and column masses and all permanents force full support in both grid rows.",
+      "declarations": [
+        "MainTheory.GridSupportAlgebra.full_support",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_supports_full"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "b1c6fa237ba9aea07a5c489ca0120c6172ded119fb455fb1de67b469e573c943"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11191,
+      "end_line": 11237,
+      "kind": "covered",
+      "reason": "The exact masses, actual six-edge rows and every physical coordinate version give the complete Walsh exclusion.",
+      "declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_probabilities",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.determinant",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.AllCoordinates.physical_weight_one_zero"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "895a543c52b29857e9f6a24cb504ddd93e007d7929f3e10891630312d39cc714"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12647,
+      "end_line": 12688,
+      "kind": "covered",
+      "reason": "All complementary probability pins and the literal SI three-mask odd cycle are separately proved.",
+      "declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_probabilities",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_complements",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_all_nonzero",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "9aaafae8febbef2530be649cc1037132c07f415bac0f619931ed35e7d6361467"
+    }
+  ],
+  "scope": "Scoped current correspondence; full manuscript review remains incomplete"
+}

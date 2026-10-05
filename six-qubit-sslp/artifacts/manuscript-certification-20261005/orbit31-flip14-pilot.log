@@ -1,0 +1,96 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MainTheory/Generated/Orbit31CrossRows/Flip14.lean:35:105: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ star (c (bottom ⟨8, ⋯⟩)) * d (top ⟨13, ⋯⟩) + star (c (bottom ⟨13, ⋯⟩)) * d (top ⟨8, ⋯⟩) +
+                star (c (bottom ⟨9, ⋯⟩)) * d (top ⟨12, ⋯⟩) +
+              star (c (bottom ⟨12, ⋯⟩)) * d (top ⟨9, ⋯⟩) +
+            star (c (bottom ⟨10, ⋯⟩)) * d (top ⟨15, ⋯⟩) +
+          star (c (bottom ⟨15, ⋯⟩)) * d (top ⟨10, ⋯⟩) +
+        star (c (bottom ⟨11, ⋯⟩)) * d (top ⟨14, ⋯⟩) +
+      star (c (bottom ⟨14, ⋯⟩)) * d (top ⟨11, ⋯⟩) =
+    d (top ⟨13, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨8, src._proof_1⟩)) +
+                  d (top ⟨8, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨13, src._proof_2⟩)) +
+                d (top ⟨12, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨9, src._proof_3⟩)) +
+              d (top ⟨9, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨12, src._proof_4⟩)) +
+            d (top ⟨15, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨10, src._proof_5⟩)) +
+          d (top ⟨10, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨15, src._proof_6⟩)) +
+        d (top ⟨14, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨11, src._proof_7⟩)) +
+      d (top ⟨11, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨14, src._proof_8⟩))
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MainTheory/Generated/Orbit31CrossRows/Flip14.lean:68:105: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ star (c (bottom ⟨8, ⋯⟩)) * d (top ⟨13, ⋯⟩) + star (c (bottom ⟨13, ⋯⟩)) * d (top ⟨8, ⋯⟩) +
+            star (c (bottom ⟨9, ⋯⟩)) * d (top ⟨12, ⋯⟩) +
+          star (c (bottom ⟨12, ⋯⟩)) * d (top ⟨9, ⋯⟩) +
+        (-(star (c (bottom ⟨10, ⋯⟩)) * d (top ⟨15, ⋯⟩)) - star (c (bottom ⟨15, ⋯⟩)) * d (top ⟨10, ⋯⟩)) +
+      (-(star (c (bottom ⟨11, ⋯⟩)) * d (top ⟨14, ⋯⟩)) - star (c (bottom ⟨14, ⋯⟩)) * d (top ⟨11, ⋯⟩)) =
+    d (top ⟨13, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨8, src._proof_1⟩)) +
+              d (top ⟨8, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨13, src._proof_2⟩)) +
+            d (top ⟨12, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨9, src._proof_3⟩)) +
+          d (top ⟨9, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨12, src._proof_4⟩)) +
+        (-(d (top ⟨15, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨10, src._proof_5⟩))) -
+          d (top ⟨10, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨15, src._proof_6⟩))) +
+      (-(d (top ⟨14, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨11, src._proof_7⟩))) -
+        d (top ⟨11, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨14, src._proof_8⟩)))
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MainTheory/Generated/Orbit31CrossRows/Flip14.lean:101:105: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ star (c (bottom ⟨8, ⋯⟩)) * d (top ⟨13, ⋯⟩) + star (c (bottom ⟨13, ⋯⟩)) * d (top ⟨8, ⋯⟩) +
+                star (c (bottom ⟨9, ⋯⟩)) * d (top ⟨12, ⋯⟩) +
+              star (c (bottom ⟨12, ⋯⟩)) * d (top ⟨9, ⋯⟩) +
+            star (c (bottom ⟨10, ⋯⟩)) * d (top ⟨15, ⋯⟩) +
+          star (c (bottom ⟨15, ⋯⟩)) * d (top ⟨10, ⋯⟩) +
+        star (c (bottom ⟨11, ⋯⟩)) * d (top ⟨14, ⋯⟩) +
+      star (c (bottom ⟨14, ⋯⟩)) * d (top ⟨11, ⋯⟩) =
+    d (top ⟨13, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨8, src._proof_1⟩)) +
+                  d (top ⟨8, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨13, src._proof_2⟩)) +
+                d (top ⟨12, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨9, src._proof_3⟩)) +
+              d (top ⟨9, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨12, src._proof_4⟩)) +
+            d (top ⟨15, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨10, src._proof_5⟩)) +
+          d (top ⟨10, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨15, src._proof_6⟩)) +
+        d (top ⟨14, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨11, src._proof_7⟩)) +
+      d (top ⟨11, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨14, src._proof_8⟩))
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+MainTheory/Generated/Orbit31CrossRows/Flip14.lean:134:105: error: unsolved goals
+c d : SS.State 6 ℂ
+⊢ star (c (bottom ⟨8, ⋯⟩)) * d (top ⟨13, ⋯⟩) + star (c (bottom ⟨13, ⋯⟩)) * d (top ⟨8, ⋯⟩) +
+            star (c (bottom ⟨9, ⋯⟩)) * d (top ⟨12, ⋯⟩) +
+          star (c (bottom ⟨12, ⋯⟩)) * d (top ⟨9, ⋯⟩) +
+        (-(star (c (bottom ⟨10, ⋯⟩)) * d (top ⟨15, ⋯⟩)) - star (c (bottom ⟨15, ⋯⟩)) * d (top ⟨10, ⋯⟩)) +
+      (-(star (c (bottom ⟨11, ⋯⟩)) * d (top ⟨14, ⋯⟩)) - star (c (bottom ⟨14, ⋯⟩)) * d (top ⟨11, ⋯⟩)) =
+    d (top ⟨13, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨8, src._proof_1⟩)) +
+              d (top ⟨8, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨13, src._proof_2⟩)) +
+            d (top ⟨12, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨9, src._proof_3⟩)) +
+          d (top ⟨9, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨12, src._proof_4⟩)) +
+        (-(d (top ⟨15, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨10, src._proof_5⟩))) -
+          d (top ⟨10, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨15, src._proof_6⟩))) +
+      (-(d (top ⟨14, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨11, src._proof_7⟩))) -
+        d (top ⟨11, ⋯⟩) * (starRingEnd ℂ) (c (bottom ⟨14, src._proof_8⟩)))
+MainTheory/Generated/Orbit31CrossRows/Flip14.lean:197:6: error: ring failed, ring expressions not equal
+t : Fin 8 → ℂ
+h : W.mulVec t = 0
+h0 : t 0 + (t 1 + (t ⟨2, ⋯⟩ + (t ⟨3, ⋯⟩ + (t ⟨4, ⋯⟩ + (t ⟨5, ⋯⟩ + (t ⟨6, ⋯⟩ + t ⟨7, ⋯⟩)))))) = 0
+h1 : t 0 + (t 1 + (t ⟨2, ⋯⟩ + (t ⟨3, ⋯⟩ + (-t ⟨4, ⋯⟩ + (-t ⟨5, ⋯⟩ + (-t ⟨6, ⋯⟩ + -t ⟨7, ⋯⟩)))))) = 0
+h2 : t 0 + (t 1 + (t ⟨2, ⋯⟩ + (t ⟨3, ⋯⟩ + (t ⟨4, ⋯⟩ + (t ⟨5, ⋯⟩ + (t ⟨6, ⋯⟩ + t ⟨7, ⋯⟩)))))) = 0
+h3 : t 0 + (t 1 + (t ⟨2, ⋯⟩ + (t ⟨3, ⋯⟩ + (-t ⟨4, ⋯⟩ + (-t ⟨5, ⋯⟩ + (-t ⟨6, ⋯⟩ + -t ⟨7, ⋯⟩)))))) = 0
+⊢ t ⟨0, ⋯⟩ + t ⟨1, ⋯⟩ + (-t 0 - t 1) = 0

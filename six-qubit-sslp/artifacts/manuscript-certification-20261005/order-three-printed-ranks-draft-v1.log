@@ -1,0 +1,60 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:44:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:94:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:94:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:137:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:187:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:187:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:230:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:280:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:280:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:323:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:373:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:373:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:416:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:466:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:466:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:509:28: error: unexpected token '→'; expected term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:559:31: error(lean.unknownIdentifier): Unknown identifier `atrixR.rank`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderThreePrintedRanks.lean:559:12: error: Application type mismatch: The argument
+  selectedRows.rank
+has type
+  ℕ
+but is expected to have type
+  Matroid ?m.54
+in the application
+  Matroid.IsMinor selectedRows.rank

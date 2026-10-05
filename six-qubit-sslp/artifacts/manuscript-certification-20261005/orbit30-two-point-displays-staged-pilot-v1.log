@@ -1,0 +1,16 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30TwoPointDisplays.lean:44:29: error: Invalid argument name `s` for function `Finset.sum_congr`
+
+Hint: Perhaps you meant one of the following parameter names:
+  • `ι`: s̵ι̲
+  • `M`: s̵M̲
+  • `s₁`: s₁̲
+  • `s₂`: s₂̲
+  • `f`: s̵f̲
+  • `g`: s̵g̲
+  • `h`: s̵h̲
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit30TwoPointDisplays.lean:43:66: error: unsolved goals
+d : Data
+a b : Fin 5
+hab : a ≠ b
+hA : d.A = {a, b}
+⊢ d.r a * (d.r a + 1 / 8) = d.r b * (d.r b + 1 / 8)

@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 15952,
+  "module_count": 16128,
   "counts_by_library": {
-    "MainTheory": 14062,
+    "MainTheory": 14238,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -77,6 +77,20 @@
       "module": "MainTheory.AntisymmetricTriangleRatios",
       "path": "MainTheory/AntisymmetricTriangleRatios.lean",
       "sha256_lf": "d4926883909970972e5ce07bf07ded4445fdaec9d06465b9d1ce563b4671dd50",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ArbitrarySplitPerfectCode",
+      "path": "MainTheory/ArbitrarySplitPerfectCode.lean",
+      "sha256_lf": "48bd67df266a209751170a0ed5f80d594e4103d98e221398292c613a8d604786",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ArbitrarySplitSixQubit",
+      "path": "MainTheory/ArbitrarySplitSixQubit.lean",
+      "sha256_lf": "b1e8d7da434dae01c8827657b78f9fcae79e8f69d7c79e2cae98323999dfc552",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -630,6 +644,13 @@
       "module": "MainTheory.CompactFaceCertificate",
       "path": "MainTheory/CompactFaceCertificate.lean",
       "sha256_lf": "c7125407e8bd2cf6aa386a91ec15a31a8e3e4b551960f3cdc60bb7245d9edd6b",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ComplementaryPhasePair",
+      "path": "MainTheory/ComplementaryPhasePair.lean",
+      "sha256_lf": "8c1f1523b0cc5433b62b1185cd99e2fcacaf9313a0564e4a9efdeaf5d0e6cbd6",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -1225,6 +1246,13 @@
       "module": "MainTheory.FiniteLift",
       "path": "MainTheory/FiniteLift.lean",
       "sha256_lf": "cb5c2065b17583217ebd2edc5ecd0317c37205c8152c8e7f65f3597a485704c1",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.FiniteListCertificateCounts",
+      "path": "MainTheory/FiniteListCertificateCounts.lean",
+      "sha256_lf": "107335bfe1c93fda907f53ef6566689e0a101e9ac3c5254a7a8464a40e954eeb",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -33922,6 +33950,545 @@
       "module": "MainTheory.Generated.FiniteRankSummaryShard99",
       "path": "MainTheory/Generated/FiniteRankSummaryShard99.lean",
       "sha256_lf": "266b1e640623e9873b26f0eba9a4d96074d802efda9cd4813a73a29f49f6665e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip1",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip1.lean",
+      "sha256_lf": "645df138aa9419c0fc453c6573bc006cbe69867634bc7aaf1cda4dbe520554bf",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip14",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip14.lean",
+      "sha256_lf": "cce4b233ec1a2cadd27ddb930c75db47d34f8d71826daa959da8482d208cf3de",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip15",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip15.lean",
+      "sha256_lf": "39a554e8e746cc3459b547186663c630ea9ceee77bef773ca0662e58acaaf078",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip16",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip16.lean",
+      "sha256_lf": "456e5a9748146c6ecba458e09f2b49c1f95ad8e3fff3d1a9f2d4b32cb58a8217",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip2",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip2.lean",
+      "sha256_lf": "4bbd3594f6e689958b5692d291ea47b8c035cc1347fa55c2318d5d1ea616a2d7",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip24",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip24.lean",
+      "sha256_lf": "3fd96a99cbfd000c37ddbcf20d503cc129d0a2eb3b4220104b313a9d5b39b974",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip25",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip25.lean",
+      "sha256_lf": "7b53781a6fe0acdccea5a5904c0e2e443087c6245d8cae370818cd65a65d1c13",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip26",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip26.lean",
+      "sha256_lf": "9e07a17fca891587bcec625691e64fae8b3612fe8f4706b412abdbeb0fe8bef6",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip3",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip3.lean",
+      "sha256_lf": "fbd1a38b5b790812804a263a8c83a9fe1352782204e9817bae8524b4f8c80746",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip34",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip34.lean",
+      "sha256_lf": "1f6ce9c986f93ab4ff8995ed9c76aa796b66de33ae3f1b5aa0d87b7dddcaf75c",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip35",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip35.lean",
+      "sha256_lf": "6755b3bd5707246741b73af4998190e27ee6b3b9d074899de238c1a01d88b718",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31CrossRows.Flip36",
+      "path": "MainTheory/Generated/Orbit31CrossRows/Flip36.lean",
+      "sha256_lf": "a759fc0808a6a10275b63c57faaa56f1314289214c8c4dc530d0b735d191ee3a",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Aggregate",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Aggregate.lean",
+      "sha256_lf": "0178914c27011699e95ebaf9bc28d02c157a7ff3d6d933a262dca08b57c181b0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type01",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type01.lean",
+      "sha256_lf": "22ddc6b6134c83d481b2348300b8865988d8b1351f6289a07523945bed5ad0ad",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type02",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type02.lean",
+      "sha256_lf": "b38a851e63e833a790ff07f6c11ba15f26e4e8e32fefe2d411f131cbf4244e78",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type03",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type03.lean",
+      "sha256_lf": "58be7519299764028cd2d8e224fa602b233d610f00c3b43e4dfd7229af837bf9",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type04",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type04.lean",
+      "sha256_lf": "6fc3db3d3029fdbf751ec9ac33a4814fdf2687fce93d67d1adc4315f6743039b",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type05",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type05.lean",
+      "sha256_lf": "a9ec2bfde5327ec9d12140c47a6ca58890488b21a6064dcd310864636afc079e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type06",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type06.lean",
+      "sha256_lf": "3a8abea254665b5f377eafae325d765842038ae9874d47f0b28b9296628313c5",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type07",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type07.lean",
+      "sha256_lf": "f8a308d9cb15ef9bfe30227a1165b126a32701435a15db2d2957256015acd7e3",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type08",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type08.lean",
+      "sha256_lf": "2eb3d73f613d0b41f8087eab68c032b2c3ed64dd8a0ddf18cea522fbfb04d1b5",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type10",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type10.lean",
+      "sha256_lf": "6837b7f6697060cdc444806f22afa50bcaa10a937a1290e8eb1fe170b9fc6df0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type11",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type11.lean",
+      "sha256_lf": "46c036cc52bc895a84a3043e8e0f59761561ddbbf323aad9ca1b6112c966fbf4",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type12",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type12.lean",
+      "sha256_lf": "337168d6dba14f3eded17054ad5f365e99912e2a8b478bba9ebbc828684c0bbe",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type13",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type13.lean",
+      "sha256_lf": "3608375c3708eb8157f10ecfb14219e800bd5d6f7c0ad6fc75eac4b8c52069b3",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31DirectTriangles.Type15",
+      "path": "MainTheory/Generated/Orbit31DirectTriangles/Type15.lean",
+      "sha256_lf": "8c0d79512a52a656ddd9c32e9c825ae2248c9d7261174c91f06d6e1461a037fe",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31NoSingletonCounts",
+      "path": "MainTheory/Generated/Orbit31NoSingletonCounts.lean",
+      "sha256_lf": "e44d18c786f0336cb9c2a13a2d984519c399ca7517da5e714d37b067d521520a",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Aggregate",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Aggregate.lean",
+      "sha256_lf": "01f376716ea3e12e46a8b24c5a384737cb067d19fd5f1e8726d3753fc7f3a294",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard000",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard000.lean",
+      "sha256_lf": "b1da620930f81bea2b3cd1fb3c154e5745a5104e3375092fa560bd690a0063e3",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard001",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard001.lean",
+      "sha256_lf": "7ee538790add9b7f42e8d8247068a7dbfe7f2c24b0f860fadceb8e2f16fbb0be",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard002",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard002.lean",
+      "sha256_lf": "97d46cd8a3e445adfb1796fb671fa387ec4a9d515f7d9180136c0d433d977e96",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard003",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard003.lean",
+      "sha256_lf": "3f8389393726712d28c889f0200e3ac741a9cdde5a9833d5c830a9ee90ce30e3",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard004",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard004.lean",
+      "sha256_lf": "e5c89f5e2c7dd18609444073743e71f834f4d45c7e7df6b98cdf38c9acb0f3dc",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard005",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard005.lean",
+      "sha256_lf": "3d605a93ad4fd886f9dabb6f717018132e32e6abaa3b72c282975075c7f82617",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard006",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard006.lean",
+      "sha256_lf": "8288227b7a79c413f5ceb95bd3552a6b348083f55b3614f2216dfb8c1351f8a9",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard007",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard007.lean",
+      "sha256_lf": "faa8fc8afdbeefddb189369f43bfd00f62f8933ed32ec923e66663efb24beab0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard008",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard008.lean",
+      "sha256_lf": "d58a97b8512a517624b9b7e793bc1ac9bc39bba108b724e16d9b2c0eed498f04",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard009",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard009.lean",
+      "sha256_lf": "bbfe6bd394141fec000c839e070db82a2046279d6a3de8deff7c7d6ccebb9ed0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard010",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard010.lean",
+      "sha256_lf": "04a7644287e34a4af5d4b67255b265e7a73f2ff8d0fced68960b827c8b1b649e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard011",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard011.lean",
+      "sha256_lf": "68841ce5352ae9ffcacc325547313d95bf67ab65d6977c42111b2376e6743949",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard012",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard012.lean",
+      "sha256_lf": "7b29350ae2565b76b8c9a62f9a328df3abae3a2928d5b5f19015ac2eca290067",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard013",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard013.lean",
+      "sha256_lf": "ac4a310119e4b7e5fdde292e31233770843bdd0c6ee3098ea50bc8cfd96cbdef",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard014",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard014.lean",
+      "sha256_lf": "c46624bea0059222939a6191f5b15e8a3698cb9c203f259884be7d5d8ab6a67a",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PhaseCoverage.Shard015",
+      "path": "MainTheory/Generated/Orbit31PhaseCoverage/Shard015.lean",
+      "sha256_lf": "a7e50a1da853c03384e07af54f296857214af3e166d57c0fd91b8b213d544b8e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31PrintedSupportOrbits",
+      "path": "MainTheory/Generated/Orbit31PrintedSupportOrbits.lean",
+      "sha256_lf": "65cc6723a9ff08bfb32cf67ca84ab855f9a2b47eaff255efed3d8b398428c5ab",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportArithmetic",
+      "path": "MainTheory/Generated/Orbit31SupportArithmetic.lean",
+      "sha256_lf": "3ab1a08ff5dfa0611c0239a12560e962db5886775ca6cca5c0ea2285c800b177",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Aggregate",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Aggregate.lean",
+      "sha256_lf": "1084a20912b366c93833790752ee33de1ad080cfa9527643f8f550bb6380d379",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard000",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard000.lean",
+      "sha256_lf": "b2b249166c08914ca8ed0301823340bc10352049b0fae274ce5435284fd3f65e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard001",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard001.lean",
+      "sha256_lf": "fb56f09346d4146fb163c5beb441f92b74dd430f4a47b28c91bbc308710fbe8d",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard002",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard002.lean",
+      "sha256_lf": "999b80b3e044cf36ee3e85be6a162917147ee98e2cd5dac234e4dfea75431a8e",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard003",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard003.lean",
+      "sha256_lf": "7e7f0b2040e7319fdea80d6832782f9303385c72097213846afdf4baca95a5b4",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard004",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard004.lean",
+      "sha256_lf": "c72f3b5f6b2db2ce7bd11559d5cce2193ba3ff394f14834e6f025c395381df55",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard005",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard005.lean",
+      "sha256_lf": "74f26d92e02f20a4c005f79db1b2f2f343b7e27b6f113b01004aeefa8de1b05c",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard006",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard006.lean",
+      "sha256_lf": "decc2e1ed2ab2b81b2404f5e6be98579e3402589374c0b962801c2ee3ad2ee9d",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard007",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard007.lean",
+      "sha256_lf": "e7f770b0a21bc9dae53f36cb973d8dab8f7de78183e30057e3011a9820a068b6",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard008",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard008.lean",
+      "sha256_lf": "75b3434ae89790620cce9be229783ca0b5e9dafc0973fe954c20fbe04cac190c",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard009",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard009.lean",
+      "sha256_lf": "488ff471728ebfe9e5b9e85315fb7d6b11dfd0d5e4e3d7f24246fffb3e3dc596",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard010",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard010.lean",
+      "sha256_lf": "4bfeb63486112a30299309af9cf5b2f0ce3e64da6d923e50f3eaf197fa9582b9",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard011",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard011.lean",
+      "sha256_lf": "284b69b41bf87ec873e5a7576458d98ffdb59d37c94dfb8c52df95a3522f3824",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard012",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard012.lean",
+      "sha256_lf": "f80074e8519e1114d0a746ca89b3f01cb2220e01cd861f2b2be074422c9dccbf",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard013",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard013.lean",
+      "sha256_lf": "04abad0a3c7eec62ae42338fdaf93b74bf13b2e77d9a7d5d80fab85e5c8f28af",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard014",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard014.lean",
+      "sha256_lf": "abe3cee7baf92f4d35f2dd90e8b0ba7bbf5984bc0a18576d754f46a21e67ccb4",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31SupportCoverage.Shard015",
+      "path": "MainTheory/Generated/Orbit31SupportCoverage/Shard015.lean",
+      "sha256_lf": "eab798596b7fd337db150290d8f79ddfc31dbe88faf81ad14814d5a9c0087ef2",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Aggregate",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Aggregate.lean",
+      "sha256_lf": "6446e92a1b382abec0799e7bc630a9eb340ee04cc9400e5f67ed37cdaf543da2",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard000",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard000.lean",
+      "sha256_lf": "5137c18680be888ae35a2d740e3fedd556b40dc8f44312bcd49e38c6230d4af0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard001",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard001.lean",
+      "sha256_lf": "adc541ede969e3adda2fbb8a03e0823858130824a8419d9ddefdca0721c974d0",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard002",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard002.lean",
+      "sha256_lf": "849196d0a1ce99026faff74b470f7cbb3873c6790f291ec86c93f17ce6860d18",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard003",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard003.lean",
+      "sha256_lf": "ca3cd49d3fb6e8bd7d1899ff4de565cd7f94dbdd35aef7b2be4311a8162b970d",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard004",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard004.lean",
+      "sha256_lf": "0c7dd7ccab66df7f28ec4f79b6967a49a085d95025919b9fcd35f4ed1de60a65",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard005",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard005.lean",
+      "sha256_lf": "7b5700a98200fd42eecfcd747dea6c6f13e154cd2a48a4241d78babe197420f3",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard006",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard006.lean",
+      "sha256_lf": "a77b3eebd0b44931fcc1c336f499bd992d3640459501bbc0b67e44789b9c08ee",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard007",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard007.lean",
+      "sha256_lf": "16fe1359b2eb4b5927e0b7444658b047e3f5c7d9bf5030de755e275cb58367bb",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard008",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard008.lean",
+      "sha256_lf": "85f96eb546dab9e5d924d0955550fd92812a99f1e34541e731a637f7a97db66d",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard009",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard009.lean",
+      "sha256_lf": "05b895bc7e773edd120d16da898509e67123a99545b95be2a8667ff4e5b56be8",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard010",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard010.lean",
+      "sha256_lf": "47c15ce34b55570e4dcbe79cc1a2acd8b87847257d4959be1eddcd5a83ae0ab7",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard011",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard011.lean",
+      "sha256_lf": "c74723cc8ea94a7cda7be03e513f802c2ec5a2ed2972ec67eb16cdf09657dbee",
+      "library": "MainTheory",
+      "topic": "Generated certificates"
+    },
+    {
+      "module": "MainTheory.Generated.Orbit31VertexReconstructions.Shard012",
+      "path": "MainTheory/Generated/Orbit31VertexReconstructions/Shard012.lean",
+      "sha256_lf": "5bb6886bd3bf55037d3c011d57bcda982bb9288b308f37ff71c876af0683c281",
       "library": "MainTheory",
       "topic": "Generated certificates"
     },
@@ -93825,6 +94392,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.GridSupportAlgebra",
+      "path": "MainTheory/GridSupportAlgebra.lean",
+      "sha256_lf": "c2bccf9d2f4400f014493e5fa7dab595f4f38387ad91839ee7ce3f6455701f3b",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.GroupOrder",
       "path": "MainTheory/GroupOrder.lean",
       "sha256_lf": "dc66ed89ac6bd1ddfac63086bb04e56c6be69e14e160b622af1ee4622b6c726a",
@@ -93832,9 +94406,23 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.HalfAngleFiberFlip",
+      "path": "MainTheory/HalfAngleFiberFlip.lean",
+      "sha256_lf": "f9a505350ef34d334f980e8f9e1189246c0f115791b7c6f541642816264076f7",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.HomogeneousCompletionNormalization",
       "path": "MainTheory/HomogeneousCompletionNormalization.lean",
       "sha256_lf": "b26702a36da5f787aa0a63c3e63750c56e8ca0ab45582839895cd8a495957e4d",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.IndexedCodeMoments",
+      "path": "MainTheory/IndexedCodeMoments.lean",
+      "sha256_lf": "d3dfe998a82560e50020bd0a0be5e5443b9679d2472a72cacc8d528e8738dda9",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -94100,7 +94688,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "771ae3fa3734c160312e851f0dd742f655ee86a230e664820dae38e0690cb563",
+      "sha256_lf": "f68cb407bbe989811decb3c33442518e3dbcf73a99d1409feda9c97fa29ce971",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -94115,6 +94703,20 @@
       "module": "MainTheory.MatchedFlipObstruction",
       "path": "MainTheory/MatchedFlipObstruction.lean",
       "sha256_lf": "6100b21ef350b119fd2a655e6ddba29b13b465f7c06e86c3fabb30f93dc79655",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.MatrixPositiveSupportCertificates",
+      "path": "MainTheory/MatrixPositiveSupportCertificates.lean",
+      "sha256_lf": "76a85e575a687011a4be32657f42b19ccc73b1d03f6e708a76a1d5b4ab48ebdd",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.MatrixPositiveSupportVertices",
+      "path": "MainTheory/MatrixPositiveSupportVertices.lean",
+      "sha256_lf": "38920f5dad0dff667ee13e8f06ec53190a3f691d4c3fd8b2d37c80edaadf91fb",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -94406,6 +95008,83 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit29MomentPolytope",
+      "path": "MainTheory/Orbit29MomentPolytope.lean",
+      "sha256_lf": "37780bde2403e0932286ff157c740a51276ccb9fe6034ee6bce2b122c3f137aa",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29MomentRank",
+      "path": "MainTheory/Orbit29MomentRank.lean",
+      "sha256_lf": "2668c89120306b5d24368cd8c77ff1a1c30607aec2291f871ff8457273db4cbe",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PairBalance",
+      "path": "MainTheory/Orbit29PairBalance.lean",
+      "sha256_lf": "98fe3dc41466fd309f002b266aadad07c97a04d5c6913d9cd6790b46f4834e3f",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PhysicalPairGauge",
+      "path": "MainTheory/Orbit29PhysicalPairGauge.lean",
+      "sha256_lf": "e59863148b0355ca3185b9b436265592005bc9dc8c11ac1205b032b8829027dd",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PhysicalPairReduction",
+      "path": "MainTheory/Orbit29PhysicalPairReduction.lean",
+      "sha256_lf": "32ea27443428c452de549274b94f2ad18a2229d585ae04c9a382c51adb7e4ff8",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PhysicalRatios",
+      "path": "MainTheory/Orbit29PhysicalRatios.lean",
+      "sha256_lf": "cd0d0710b87d1514f6c8b5d8518cab945bdcc98d4dea0a40438e90794d923f0f",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PrintedEta",
+      "path": "MainTheory/Orbit29PrintedEta.lean",
+      "sha256_lf": "db77f8c8060a9b00803a2eff8a4f1f1a49a303c13cfa9002cb8b3229f1996395",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29PrintedFaceAudit",
+      "path": "MainTheory/Orbit29PrintedFaceAudit.lean",
+      "sha256_lf": "c08d1ddbbfe03b46bb7d5d861ee95f44d8b74d7e4240ca27eb19fd7331bc28a3",
+      "library": "MainTheory",
+      "topic": "Kernel audits"
+    },
+    {
+      "module": "MainTheory.Orbit29PrintedSimplex",
+      "path": "MainTheory/Orbit29PrintedSimplex.lean",
+      "sha256_lf": "f6764bfbeda85abe67a3e72b508565cd68b81254bb94b6b743753ba67ee027f1",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29SimplexDimensions",
+      "path": "MainTheory/Orbit29SimplexDimensions.lean",
+      "sha256_lf": "7cae39dd5e5122dee451cc713f4f64b441e665e035632137a52d42f46e2b2723",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit29SimplexRelativeInterior",
+      "path": "MainTheory/Orbit29SimplexRelativeInterior.lean",
+      "sha256_lf": "a06f096eea3390e7db1c4c661b4f21db4e097a868350ebe97305d8310a1c3645",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit2ActiveProjectorRank",
       "path": "MainTheory/Orbit2ActiveProjectorRank.lean",
       "sha256_lf": "97acd994a02199605af4e9bdd31fdf1f868f0688ca647ff572763881a77eaea4",
@@ -94623,6 +95302,76 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit31AffineTableGroup",
+      "path": "MainTheory/Orbit31AffineTableGroup.lean",
+      "sha256_lf": "67a0953e81d5d7c7869760a7f3ba4581edd7cd8f1735b2e7769a88634d81aa4c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31BalancedMomentIff",
+      "path": "MainTheory/Orbit31BalancedMomentIff.lean",
+      "sha256_lf": "2945b135b08544846a965859e249b9f5bd2f25bac0228e981d152e058e3d0895",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31CanonicalPhase",
+      "path": "MainTheory/Orbit31CanonicalPhase.lean",
+      "sha256_lf": "ac9e8895982bbc72f96f835856bfefd3ecff55600f29d5ce25b47a536479d934",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31CrossConsequences",
+      "path": "MainTheory/Orbit31CrossConsequences.lean",
+      "sha256_lf": "4435d41cda952a3a77a062375fa5ace2c0d607d502f1b0a848545428ae4046ca",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31CrossRows",
+      "path": "MainTheory/Orbit31CrossRows.lean",
+      "sha256_lf": "c9f7c2d866f30893f63c7876a99cce05841ff8c032b1d8563baa8f1f1159367e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31ExactSupportClassification",
+      "path": "MainTheory/Orbit31ExactSupportClassification.lean",
+      "sha256_lf": "ea5d695237c331a044c80ecf9c18036e3a9f3909b1f92a4d7771b46b206838d3",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31FinalCross",
+      "path": "MainTheory/Orbit31FinalCross.lean",
+      "sha256_lf": "ab0895ed20942e9bea026a3aadebf43954173c57a529fb3c133cbb8b15c271f2",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31FinalQuotients",
+      "path": "MainTheory/Orbit31FinalQuotients.lean",
+      "sha256_lf": "e4d526b64bbc624b0b12c136d62a968b4726e3ad27540a8aeeb07661f98fd378",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31FinalSameState",
+      "path": "MainTheory/Orbit31FinalSameState.lean",
+      "sha256_lf": "ae0f099bb1c0d6267a96be3ec24fa8cb162a375fbc000d52c677699f752f26fa",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31HistoricalSupport",
+      "path": "MainTheory/Orbit31HistoricalSupport.lean",
+      "sha256_lf": "6cdf834e24c9752ee416f3e3c8debce38a71a56475c755e4427726ece49a89d1",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit31Identification",
       "path": "MainTheory/Orbit31Identification.lean",
       "sha256_lf": "dc35b2db1fe5af217f8a5e05b04278428a14c4111143a802f2e26eae69761837",
@@ -94630,9 +95379,191 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit31MomentFaces",
+      "path": "MainTheory/Orbit31MomentFaces.lean",
+      "sha256_lf": "c0d4d2965ea0ac35ddab8a30552cc0ea5df21d1b801135de0bb984f7ad753c9b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31MomentVertices",
+      "path": "MainTheory/Orbit31MomentVertices.lean",
+      "sha256_lf": "8b64db3be7440bdb395af8a30fab0fb2397c2f602c790803af74ec9478e38830",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31NoSingletonClassification",
+      "path": "MainTheory/Orbit31NoSingletonClassification.lean",
+      "sha256_lf": "c3bd3dfa989ab452d366d94db55c50bab040b6d38d21f6536d4d0e4a6a5a6f52",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PermanentAlgebra",
+      "path": "MainTheory/Orbit31PermanentAlgebra.lean",
+      "sha256_lf": "2461249a0cf371ce7b26735fb91e83c5b7ff7a7989c7e4d7e3613113bad9d944",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PhaseClassification",
+      "path": "MainTheory/Orbit31PhaseClassification.lean",
+      "sha256_lf": "7af6079d637b59663a436fedc51134d89f1ded544b2d2441ffde0c7086ea6451",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PhaseCoverageBase",
+      "path": "MainTheory/Orbit31PhaseCoverageBase.lean",
+      "sha256_lf": "d25f3f1d08e3004def1837c43371af227c270841c531998a6f6eb182ef1567f6",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PhaseRatios",
+      "path": "MainTheory/Orbit31PhaseRatios.lean",
+      "sha256_lf": "b066edbb1c53f2267e24500308f9fe47e8daeafad3fde75423f7d84db7410a9a",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PhysicalSupportFilters",
+      "path": "MainTheory/Orbit31PhysicalSupportFilters.lean",
+      "sha256_lf": "0573742b6f3246230067fef87dbd4eaba124cd2366aa3b8d8dc76a078b7c1ebc",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31PrintedMinor",
+      "path": "MainTheory/Orbit31PrintedMinor.lean",
+      "sha256_lf": "21cb3d9740b62debbed25f0857db0967cd2b63b61b92544a9019ff92a29ac60e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31RelativeInterior",
+      "path": "MainTheory/Orbit31RelativeInterior.lean",
+      "sha256_lf": "74a0d30676112fa8dbf61ca0a6d105d4ba0a4c3e339597ee814db8370ec61411",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31ResidualTriangles",
+      "path": "MainTheory/Orbit31ResidualTriangles.lean",
+      "sha256_lf": "e5a82c172cf853734f8d25e4a2d51469d428cff8d7a48b0d59a717f9e05b9584",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31SignedSupport",
+      "path": "MainTheory/Orbit31SignedSupport.lean",
+      "sha256_lf": "6601729ae10c780d8b231632eb0093424735e45fe0800479064635ebfe631ab0",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31SupportBase",
+      "path": "MainTheory/Orbit31SupportBase.lean",
+      "sha256_lf": "7f6129a15902c94f11f04ca66d6837260e9920c9b2e3a43d2b9e920ef638a040",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31SupportCoverageBase",
+      "path": "MainTheory/Orbit31SupportCoverageBase.lean",
+      "sha256_lf": "da2c44fd1a080e4a2c99f8919e3cfb80208c03e3e46b9ad1f4026b692146eacd",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31SupportMaskEquiv",
+      "path": "MainTheory/Orbit31SupportMaskEquiv.lean",
+      "sha256_lf": "dfb0ef103c9f424261f0c12061d95c5d52007dbdbe0be56709130f10dbe8cf66",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31SupportSemantics",
+      "path": "MainTheory/Orbit31SupportSemantics.lean",
+      "sha256_lf": "f26ed96b545c5d233b86edf2fc0bfff4f8e63becb09d9165876c6e17df324e1e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31TableSymmetry",
+      "path": "MainTheory/Orbit31TableSymmetry.lean",
+      "sha256_lf": "e4086df471766f157be0a53f8df4aad96c1e1974b89642f1e02e000c38239e67",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit31VertexCertificateBase",
+      "path": "MainTheory/Orbit31VertexCertificateBase.lean",
+      "sha256_lf": "d2754da62e8ff31fbe6b66dbe53d3ec7304fb49296231b9599b25d4f889d9d78",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedLocalAlgebra",
+      "path": "MainTheory/Orbit32PrintedLocalAlgebra.lean",
+      "sha256_lf": "f860aef8c28e1d6deaa78efc4f57b761ab8a9a214ce5537ef2f7b51fefde770c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedMinor",
+      "path": "MainTheory/Orbit32PrintedMinor.lean",
+      "sha256_lf": "aaae244b15af8dc435d0e1f6f137cabfa2b22e18d17ef92a024e16fc834bb4f4",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit32PrintedMomentNormal",
+      "path": "MainTheory/Orbit32PrintedMomentNormal.lean",
+      "sha256_lf": "1b9608ccde2020ec54fd7a589a7132eef72993d117661df8a27e24e13e2f7265",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit33NormalizedPairs",
+      "path": "MainTheory/Orbit33NormalizedPairs.lean",
+      "sha256_lf": "697374ac0a5be60fee492ddc05a7f8dc31b635e30dbf139ab7a2dd24f21b150b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit33PhysicalReflection",
+      "path": "MainTheory/Orbit33PhysicalReflection.lean",
+      "sha256_lf": "b353329710c252fb9f835cff3f42a5e8ad9b616acc109f832c3d52a8dc2d8700",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit33PrintedBlocks",
+      "path": "MainTheory/Orbit33PrintedBlocks.lean",
+      "sha256_lf": "f4f0a955790ace3d95d3c20f17462d555e4348c3028641a0df04a1403123d690",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit33PrintedReflection",
       "path": "MainTheory/Orbit33PrintedReflection.lean",
       "sha256_lf": "d4704df9bb622e2e77cfbd9654d01c0670b2c1b5631c8320c9f312fbdb22daed",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit33ProjectorArgument",
+      "path": "MainTheory/Orbit33ProjectorArgument.lean",
+      "sha256_lf": "332dffa3d314503274e3bc4ecece4d2ff07a572da3bb319a4dd9a27b08cbc53c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit33ScalarReflection",
+      "path": "MainTheory/Orbit33ScalarReflection.lean",
+      "sha256_lf": "52de3e2b59046bd5cabbe5f99b95607f1d624d57c2cf9286cef7dd31670855f0",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -95064,6 +95995,13 @@
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
     {
+      "module": "MainTheory.Orbit3PrintedSplitMatrices",
+      "path": "MainTheory/Orbit3PrintedSplitMatrices.lean",
+      "sha256_lf": "1b03ec56c43d3e37d2aec41cd6fe777ae48bc40862ddbfcebb3cf4a34b0d5159",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
       "module": "MainTheory.Orbit3QuadraticZeros",
       "path": "MainTheory/Orbit3QuadraticZeros.lean",
       "sha256_lf": "3af9b5b7fb482317f50c1197e7a5f020d68ac53670024cb6b2a0d8006869603b",
@@ -95190,6 +96128,83 @@
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
     {
+      "module": "MainTheory.Orbit45AffineGauge",
+      "path": "MainTheory/Orbit45AffineGauge.lean",
+      "sha256_lf": "0132be03831e70930960b46a43ff7ade774e4934197db15af1575f7d55c9703b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45BottomGauge",
+      "path": "MainTheory/Orbit45BottomGauge.lean",
+      "sha256_lf": "4f253f5af3a14738071c46aabaf32ee902722e91f85f43956e5479a5910f2036",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45CrossFactors",
+      "path": "MainTheory/Orbit45CrossFactors.lean",
+      "sha256_lf": "d6f06ffa18e220ca30cfa7eab0c811f35f6615dbb7bc2c3cf4b61c62cca081c7",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45DressingParseval",
+      "path": "MainTheory/Orbit45DressingParseval.lean",
+      "sha256_lf": "72648d9ea17e8fcd7dc61f396e3e799ae31d7cc229fff6644802e4bd78d6433a",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45OrientedCoherences",
+      "path": "MainTheory/Orbit45OrientedCoherences.lean",
+      "sha256_lf": "84237fba69792bb193aae9f421a197e371bab607490196a36db35a7d81fd9d6d",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalCanonicalForm",
+      "path": "MainTheory/Orbit45PhysicalCanonicalForm.lean",
+      "sha256_lf": "2107a6a22af7718a6b771431f6f1dfb07c4f61adec91deed5e1654d0461ae1eb",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalGauge",
+      "path": "MainTheory/Orbit45PhysicalGauge.lean",
+      "sha256_lf": "9bca0e7bc2b2ebbb9315776c7457ae26c909477d24c9a45554527c6ec6ae99a9",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalPhaseNormalForm",
+      "path": "MainTheory/Orbit45PhysicalPhaseNormalForm.lean",
+      "sha256_lf": "63ef77d359326115fa934dd4590c495992ab4da1eafd073f709886738b98a09d",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalPrintedRows",
+      "path": "MainTheory/Orbit45PhysicalPrintedRows.lean",
+      "sha256_lf": "9571979d423826c6f9a7fb0fc1080204744dc79fe31d73516a082d8eb154fd78",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalProbabilityDomain",
+      "path": "MainTheory/Orbit45PhysicalProbabilityDomain.lean",
+      "sha256_lf": "37554efb434bab7fd569bf8d4e12ec2f981cb335dfcbcd056029d169d119271b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PhysicalSpinFlip",
+      "path": "MainTheory/Orbit45PhysicalSpinFlip.lean",
+      "sha256_lf": "ddcf65dfce4b820fa2b971bbd16822a7aa5c6ed3374fe0928d89b8e8dfcececb",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit45PrintedAlgebra",
       "path": "MainTheory/Orbit45PrintedAlgebra.lean",
       "sha256_lf": "47c3075149965b750d4eaa7df0908ad4fd02d0560b6f965b940ef559fa72f1fa",
@@ -95211,9 +96226,30 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit45PrintedDiagonalContribution",
+      "path": "MainTheory/Orbit45PrintedDiagonalContribution.lean",
+      "sha256_lf": "88b6884846fc62450f0c5654c15d8d27049b2dd3bb5c94d2472535814ccc2770",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PrintedEnumerator",
+      "path": "MainTheory/Orbit45PrintedEnumerator.lean",
+      "sha256_lf": "ea96b5cc2e155678bb59c8466f3a4dbda9364a7a75a46fbcff3d1cb9cf92a5fe",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit45PrintedFibers",
       "path": "MainTheory/Orbit45PrintedFibers.lean",
       "sha256_lf": "0bc64fc175bfbedadac0565fbd422aab7188dc112944d75eece9e732073a2c19",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45PrintedLogicalAction",
+      "path": "MainTheory/Orbit45PrintedLogicalAction.lean",
+      "sha256_lf": "ed2a98e3a7e89e9e575ac19c19879f666538d152b97f7591bccec37a3c2b676e",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -95225,6 +96261,13 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit45PrintedOffContribution",
+      "path": "MainTheory/Orbit45PrintedOffContribution.lean",
+      "sha256_lf": "60ab59c2e16b214a3f0f058b3fe30cd408ac7f7110f142e8d7944aef5a1b4ed0",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit45PrintedWalsh",
       "path": "MainTheory/Orbit45PrintedWalsh.lean",
       "sha256_lf": "ce607f4081d53e38470a821ec40c1e6de045e344b8a7cafb0e7dfd069ca3c0de",
@@ -95232,9 +96275,93 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit45RelativeLogicalPhase",
+      "path": "MainTheory/Orbit45RelativeLogicalPhase.lean",
+      "sha256_lf": "84ae46b73c7ee73bedc50f8dde7ecd5c51bb51ec5c582941c4ff0c0fad520e19",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45ShadowNormalization",
+      "path": "MainTheory/Orbit45ShadowNormalization.lean",
+      "sha256_lf": "2a84b31e52432098c5de6f61910bf8a5c07b320676c4c44b9fc499cb6e5456c8",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45TopGauge",
+      "path": "MainTheory/Orbit45TopGauge.lean",
+      "sha256_lf": "f7679a35a2465f2c3257cda45d8259dec0e60398c779f7468dd4bed33952796b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit45TriangleExistence",
+      "path": "MainTheory/Orbit45TriangleExistence.lean",
+      "sha256_lf": "99882180ea34af56ea5138e1edfdf6d565053bc92a7abd024b6cee138f80a2fb",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit45TrianglePolynomial",
       "path": "MainTheory/Orbit45TrianglePolynomial.lean",
       "sha256_lf": "9a7cc825d3e85c67f0b19d4f53af20a9ef488311a923e1f21cd9c83aeada9b7e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit49PhysicalCompletion",
+      "path": "MainTheory/Orbit49PhysicalCompletion.lean",
+      "sha256_lf": "ae785f4f906ba130ada49922d01d38dafb6f6770c209e04ea7ef793da385e767",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit49PrintedAlgebra",
+      "path": "MainTheory/Orbit49PrintedAlgebra.lean",
+      "sha256_lf": "7587c26937deb46e6e7afd86363301bec65df5248417fcc0ae39138b2e29d67d",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit49PrintedRows",
+      "path": "MainTheory/Orbit49PrintedRows.lean",
+      "sha256_lf": "1a664677382a52fb50a29f72733f6e766ca62eb2909adfea88d57b92de7e8020",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit50PhysicalTriangle",
+      "path": "MainTheory/Orbit50PhysicalTriangle.lean",
+      "sha256_lf": "57d795f6b9544d32d7984e0b9684ece010290c46e97192a3477ef34fbb515d11",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit50PrintedRows",
+      "path": "MainTheory/Orbit50PrintedRows.lean",
+      "sha256_lf": "d95fc86a3b450109fd40eaf3ce2a10bac711c4e60911e48bfc18f7349006283b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit51PhysicalCompletion",
+      "path": "MainTheory/Orbit51PhysicalCompletion.lean",
+      "sha256_lf": "175baf6b0e8ee9e495e79d4b65b942f92fceaa9d2029890862f9b398d401a246",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit51PrintedAlgebra",
+      "path": "MainTheory/Orbit51PrintedAlgebra.lean",
+      "sha256_lf": "a9984230f701269fa1daef23e19775fb39c5a181c5368db6899a6cf3b357dd47",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit51PrintedRows",
+      "path": "MainTheory/Orbit51PrintedRows.lean",
+      "sha256_lf": "00faed71df3c97b37329cea4543399e37b6cd137e983c50767c614e62a9673fe",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -95932,6 +97059,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.OrderFiveGridRemainingDisplays",
+      "path": "MainTheory/OrderFiveGridRemainingDisplays.lean",
+      "sha256_lf": "ea49a8c96ea47b71ce5eb570ee24f76d2837ac50c83841b7dea55763ee59e215",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.OrderFiveOrbitMembership",
       "path": "MainTheory/OrderFiveOrbitMembership.lean",
       "sha256_lf": "f4c8aa3be8320773f9abae14fce15ad319c4d38678efc8d0d94772a6508d6acb",
@@ -95956,6 +97090,13 @@
       "module": "MainTheory.OrderFiveUniqueCompletion",
       "path": "MainTheory/OrderFiveUniqueCompletion.lean",
       "sha256_lf": "04b68380fbbba6923fdaccec8e5720b26e4ded991efddd5b5549061619b2852c",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.OrderFiveWalshRemainingDisplays",
+      "path": "MainTheory/OrderFiveWalshRemainingDisplays.lean",
+      "sha256_lf": "e1651427ba92844fa3d39d2956cf1f1852bc645734e37232b6942511c6ac9a76",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -96110,6 +97251,13 @@
       "module": "MainTheory.OrderFourTableDisplays",
       "path": "MainTheory/OrderFourTableDisplays.lean",
       "sha256_lf": "b5886d03a4d895ce4e73af099b45d418d9b9baacc9d7ce597b2c87ac571438ba",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.OrderFourWalshRemainingDisplays",
+      "path": "MainTheory/OrderFourWalshRemainingDisplays.lean",
+      "sha256_lf": "5ca31b93093e46f908a5d679e56c18f46468fb3e927992a9e61b7cd28668e48f",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -96562,6 +97710,27 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.OrderThreePrintedCrossRows",
+      "path": "MainTheory/OrderThreePrintedCrossRows.lean",
+      "sha256_lf": "d875302963bb71c51de900f8baced1afb1cd7a94b57d4752049c9eee3b8903b8",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.OrderThreePrintedMoments",
+      "path": "MainTheory/OrderThreePrintedMoments.lean",
+      "sha256_lf": "821e736d325282aab9e0386112d8fed5c13e1c7a9b44df9f41a5c3fda261c20c",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.OrderThreePrintedRanks",
+      "path": "MainTheory/OrderThreePrintedRanks.lean",
+      "sha256_lf": "1719fbe8f9c4acdfed7537f2e371444266a5bd4b834d8eef25c1f091c5d83754",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.OrderTwoEnumeratorDisplays",
       "path": "MainTheory/OrderTwoEnumeratorDisplays.lean",
       "sha256_lf": "2d0b94c038875753c64ba67b35e63f71461588ca403a0decf4244930db9ec5a2",
@@ -96583,9 +97752,37 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.OrderTwoPrintedMoments",
+      "path": "MainTheory/OrderTwoPrintedMoments.lean",
+      "sha256_lf": "4700bcecc7f05c94d9af789f8261f64e0d075a66bbbf28496a2bed52eb8b7ab8",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.OrderTwoPrintedRanks",
+      "path": "MainTheory/OrderTwoPrintedRanks.lean",
+      "sha256_lf": "9f73253d83d69040ffa7d1bdb1589eb96bd154554e1399c8ec30880d06c30760",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.OrderTwoPrintedWalsh",
+      "path": "MainTheory/OrderTwoPrintedWalsh.lean",
+      "sha256_lf": "15dbdade415407f97768519bdfe3ce686e5e14f44786f04d1e7e222cfa4c050c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.OrderTwoScalarBridge",
       "path": "MainTheory/OrderTwoScalarBridge.lean",
       "sha256_lf": "26755de0774af4aafab3e03da9248c68226ea44fb8469700c1038b8c2e5a793e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.OrderTwoShellProjectors",
+      "path": "MainTheory/OrderTwoShellProjectors.lean",
+      "sha256_lf": "ed4a43bb409e0af028328caa048f73262cde3499a9997482699a69eb04c9568c",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -96987,6 +98184,13 @@
       "sha256_lf": "68cd29f5d294cbe32059caacc5382f021750d75968741fc0ed46a9b8b2364467",
       "library": "MainTheory",
       "topic": "Exact moment and symmetry infrastructure"
+    },
+    {
+      "module": "MainTheory.PhysicalPhaseQuotients",
+      "path": "MainTheory/PhysicalPhaseQuotients.lean",
+      "sha256_lf": "0f45f385436956c79a02e4295c8ec8a95c9c4b8603667bb3c263892d37e59e98",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
     },
     {
       "module": "MainTheory.PhysicalProjectorBridge",
@@ -97605,6 +98809,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.RectangularFlipCharacters",
+      "path": "MainTheory/RectangularFlipCharacters.lean",
+      "sha256_lf": "2b68326011811b4d6ffe8723e1ae0bc5ac1dd6c1391c49294fe9403af051b31f",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.RestrictedSignQuadraticMinimum",
       "path": "MainTheory/RestrictedSignQuadraticMinimum.lean",
       "sha256_lf": "0d6941ecf97476323d48329fdbe283741d9539d0ec28fa72f281218500a53c1d",
@@ -97783,6 +98994,13 @@
       "module": "MainTheory.SignDagFastCertificate",
       "path": "MainTheory/SignDagFastCertificate.lean",
       "sha256_lf": "5de12bb098373fdb76ab1c6d125a2e39360285b553bac0cf77b1f246186db866",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SignedPhaseSupport",
+      "path": "MainTheory/SignedPhaseSupport.lean",
+      "sha256_lf": "8989735676aa060dec346eb2cbdef30199b52d481d4dc4be78c91a105488f8e5",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -98126,6 +99344,20 @@
       "module": "MainTheory.StageRecordCounts",
       "path": "MainTheory/StageRecordCounts.lean",
       "sha256_lf": "9b3b8771fd9586c5e200d61dc8da1f5df4c25080ef3ee727fac72019bcace207",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.StandardFiveJointSpace",
+      "path": "MainTheory/StandardFiveJointSpace.lean",
+      "sha256_lf": "62d49f71e9304d2780c46249c27e39520a42b7cf658f177509c8a4efa86d7322",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.StandardFiveSyndromeDisplays",
+      "path": "MainTheory/StandardFiveSyndromeDisplays.lean",
+      "sha256_lf": "032e2d83201e4f09daf5b10c8b2e5006a645359a9ea718018e8fcd4f6e279d8c",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -111544,7 +112776,7 @@
     {
       "module": "SixQubit.Table31",
       "path": "SixQubit/Table31.lean",
-      "sha256_lf": "2c78a695bbe0f42e7be75e9dce8badcfb3af4f07189f4cd8400be42b857cf40c",
+      "sha256_lf": "2069188658f15b4f03e55c1ffd4adc9a9020dad2de3f674e1fc8f7c106469938",
       "library": "SixQubit",
       "topic": "Six-qubit orbit proofs and constructions"
     },

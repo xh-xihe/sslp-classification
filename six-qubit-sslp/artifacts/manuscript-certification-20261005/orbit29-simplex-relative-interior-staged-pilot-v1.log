@@ -1,0 +1,9 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexRelativeInterior.lean:24:33: error(lean.unknownIdentifier): Unknown identifier `i`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit29SimplexRelativeInterior.lean:76:59: error: Application type mismatch: The argument
+  hq
+has type
+  q ∈ interior (Subtype.val ⁻¹' face m)
+but is expected to have type
+  ↑q ∈ interior (face m)
+in the application
+  interior_subset hq
