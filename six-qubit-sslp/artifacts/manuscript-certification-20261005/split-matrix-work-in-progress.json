@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "proof_accepted_publication_pending",
+  "modules_added": 12,
+  "proof_snapshot": "split-matrix-staged-proof-snapshot-12.json",
+  "strict_staged_compilation": "PASS_12_modules",
+  "generation": "PASS_3_exact_source_checks",
+  "canonical_whole_build": "pending",
+  "fresh_axiom_audit": "pending",
+  "canonical_type_inspection": "PASS",
+  "manuscript_correspondence": "not_applied",
+  "scope": "Accepted split/matrix proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "manuscript_certification": "not_complete",
+  "publication": "pending",
+  "last_accepted_proof_modules": 16149,
+  "canonical_source_modules": 16161,
+  "active_lean_modules": 16161,
+  "whole_build": "PASS",
+  "axiom_audit": "PASS",
+  "correspondence_review": "applied",
+  "proof_acceptance": "proof-acceptance-16161.json"
+}

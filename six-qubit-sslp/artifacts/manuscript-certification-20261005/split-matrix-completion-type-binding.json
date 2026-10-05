@@ -1,0 +1,9 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-split-matrix-completion.json",
+  "type_evidence_sha256": "5ae52e967f2d7f71ac1b0b0591f3d4df0986e59830750b98ed03a22565f4946a",
+  "scope": "Only the explicitly listed literal physical formulas. Other SI intermediate obligations remain incomplete."
+}

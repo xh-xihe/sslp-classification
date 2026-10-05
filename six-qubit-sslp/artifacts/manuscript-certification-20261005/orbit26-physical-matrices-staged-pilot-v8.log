@@ -1,0 +1,98 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:145:1089: error: Expected type must not contain free variables
+  bottom i =
+    if ↑i = 0 then OrderEightSupportDisplays.bits 0
+    else
+      if ↑i = 1 then OrderEightSupportDisplays.bits 6
+      else
+        if ↑i = 2 then OrderEightSupportDisplays.bits 17
+        else
+          if ↑i = 3 then OrderEightSupportDisplays.bits 23
+          else
+            if ↑i = 4 then OrderEightSupportDisplays.bits 9
+            else
+              if ↑i = 5 then OrderEightSupportDisplays.bits 15
+              else
+                if ↑i = 6 then OrderEightSupportDisplays.bits 26
+                else
+                  if ↑i = 7 then OrderEightSupportDisplays.bits 28
+                  else
+                    if ↑i = 8 then OrderEightSupportDisplays.bits 32
+                    else
+                      if ↑i = 9 then OrderEightSupportDisplays.bits 38
+                      else
+                        if ↑i = 10 then OrderEightSupportDisplays.bits 49
+                        else
+                          if ↑i = 11 then OrderEightSupportDisplays.bits 55
+                          else
+                            if ↑i = 12 then OrderEightSupportDisplays.bits 41
+                            else
+                              if ↑i = 13 then OrderEightSupportDisplays.bits 47
+                              else
+                                if ↑i = 14 then OrderEightSupportDisplays.bits 58 else OrderEightSupportDisplays.bits 60
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:146:1083: error: Expected type must not contain free variables
+  top i =
+    if ↑i = 0 then OrderEightSupportDisplays.bits 31
+    else
+      if ↑i = 1 then OrderEightSupportDisplays.bits 25
+      else
+        if ↑i = 2 then OrderEightSupportDisplays.bits 14
+        else
+          if ↑i = 3 then OrderEightSupportDisplays.bits 8
+          else
+            if ↑i = 4 then OrderEightSupportDisplays.bits 22
+            else
+              if ↑i = 5 then OrderEightSupportDisplays.bits 16
+              else
+                if ↑i = 6 then OrderEightSupportDisplays.bits 5
+                else
+                  if ↑i = 7 then OrderEightSupportDisplays.bits 3
+                  else
+                    if ↑i = 8 then OrderEightSupportDisplays.bits 63
+                    else
+                      if ↑i = 9 then OrderEightSupportDisplays.bits 57
+                      else
+                        if ↑i = 10 then OrderEightSupportDisplays.bits 46
+                        else
+                          if ↑i = 11 then OrderEightSupportDisplays.bits 40
+                          else
+                            if ↑i = 12 then OrderEightSupportDisplays.bits 54
+                            else
+                              if ↑i = 13 then OrderEightSupportDisplays.bits 48
+                              else
+                                if ↑i = 14 then OrderEightSupportDisplays.bits 37 else OrderEightSupportDisplays.bits 35
+
+Hint: Use the `+revert` option to automatically clean up and revert free variables
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:440:2: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+a b : Fin 2
+h0 :
+  (C c 0 * (C c 0)ᴴ) a b + (D d 0 * (D d 0)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h1 :
+  (C c 1 * (C c 1)ᴴ) a b + (D d 1 * (D d 1)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h2 :
+  (C c 2 * (C c 2)ᴴ) a b + (D d 2 * (D d 2)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h3 :
+  (C c 3 * (C c 3)ᴴ) a b + (D d 3 * (D d 3)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+⊢ -(C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b - (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b + (C c 2 * (C c 2)ᴴ) a b +
+            (D d 2 * (D d 2)ᴴ) a b +
+          (C c 3 * (C c 3)ᴴ) a b +
+        (D d 3 * (D d 3)ᴴ) a b +
+      (-(D d ⟨2, ⋯⟩ * (D d ⟨2, ⋯⟩)ᴴ) a b - (D d ⟨3, ⋯⟩ * (D d ⟨3, ⋯⟩)ᴴ) a b) =
+    0

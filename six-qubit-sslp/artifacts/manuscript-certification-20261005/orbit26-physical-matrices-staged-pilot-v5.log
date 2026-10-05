@@ -1,0 +1,2354 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:276:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * c (OrderEightSupportDisplays.bits 0) +
+          (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) * c (OrderEightSupportDisplays.bits 6) +
+        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 31)) * d (OrderEightSupportDisplays.bits 31) +
+      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 25)) * d (OrderEightSupportDisplays.bits 25) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) * c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                    (1 / 2) +
+                c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+      c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:283:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+            c (OrderEightSupportDisplays.bits 0) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+            c (OrderEightSupportDisplays.bits 6) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8))) *
+          d (OrderEightSupportDisplays.bits 31) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9))) *
+        d (OrderEightSupportDisplays.bits 25) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 0) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) * (1 / 2) +
+                                      c (OrderEightSupportDisplays.bits 0) *
+                                          (starRingEnd ℂ)
+                                            (c
+                                              (OrderEightSupportDisplays.bits
+                                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                        (-1 / 2) +
+                                    c (OrderEightSupportDisplays.bits 6) *
+                                        (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                                      (1 / 2) +
+                                  c (OrderEightSupportDisplays.bits 6) *
+                                      (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                    (-1 / 2) +
+                                (d (OrderEightSupportDisplays.bits 31) *
+                                    (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 63)) -
+                                  d (OrderEightSupportDisplays.bits 31) *
+                                    (starRingEnd ℂ)
+                                      (d
+                                        (OrderEightSupportDisplays.bits
+                                          (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8)))) +
+                              (d (OrderEightSupportDisplays.bits 25) *
+                                  (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 57)) -
+                                d (OrderEightSupportDisplays.bits 25) *
+                                  (starRingEnd ℂ)
+                                    (d
+                                      (OrderEightSupportDisplays.bits
+                                        (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9)))) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                              (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                    (1 / 2) +
+                c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+      c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:290:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+          (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 31)) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8)) +
+      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 25)) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 32) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * (1 / 2) +
+                                      (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                          c
+                                            (OrderEightSupportDisplays.bits
+                                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                        (-1 / 2) +
+                                    c (OrderEightSupportDisplays.bits 38) *
+                                        (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                      (1 / 2) +
+                                  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                    (-1 / 2) +
+                                (d (OrderEightSupportDisplays.bits 63) *
+                                    (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 31)) -
+                                  (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 31)) *
+                                    d
+                                      (OrderEightSupportDisplays.bits
+                                        (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8))) +
+                              (d (OrderEightSupportDisplays.bits 57) *
+                                  (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 25)) -
+                                (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 25)) *
+                                  d
+                                    (OrderEightSupportDisplays.bits
+                                      (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9))) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                              (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                    (1 / 2) +
+                c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+      c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:297:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 32) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 38) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 63) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 63)) +
+                                    d (OrderEightSupportDisplays.bits 57) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 57)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (-1 / 2) +
+                                (starRingEnd ℂ)
+                                      (c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                    c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                              (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                      (1 / 2) +
+                  c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                    (-1 / 2) +
+                c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 8))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 9))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:274:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:281:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:288:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:295:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:312:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) * c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) * (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 23) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) *
+                                  (1 / 2) +
+                              d (OrderEightSupportDisplays.bits 14) *
+                                (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 14)) +
+                            d (OrderEightSupportDisplays.bits 8) *
+                              (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 8)) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (-1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (-1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:319:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 23) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 14) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 46)) +
+                                    d (OrderEightSupportDisplays.bits 8) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 40)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c (OrderEightSupportDisplays.bits 0) *
+                                    (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 0) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                  c (OrderEightSupportDisplays.bits 6) *
+                                (1 / 2) +
+                            c (OrderEightSupportDisplays.bits 6) *
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (-1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (-1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:326:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 55) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 46) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 14)) +
+                                    d (OrderEightSupportDisplays.bits 40) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 8)) +
+                                  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                    c (OrderEightSupportDisplays.bits 32) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                c (OrderEightSupportDisplays.bits 38) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                            (-1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                          (-1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 2))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 3))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:333:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 55) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 46) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 46)) +
+                                    d (OrderEightSupportDisplays.bits 40) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 40)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ)
+                                      (c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                    c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                  (1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                                (-1 / 2) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                      (1 / 2) +
+                  c (OrderEightSupportDisplays.bits 32) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                    (-1 / 2) +
+                c (OrderEightSupportDisplays.bits 38) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 10))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 11))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:310:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:317:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:324:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:331:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:348:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) * c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 15) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) *
+                                  (1 / 2) +
+                              d (OrderEightSupportDisplays.bits 22) *
+                                (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 22)) +
+                            d (OrderEightSupportDisplays.bits 16) *
+                              (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 16)) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (-1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (-1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:355:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 15) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 22) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 54)) +
+                                    d (OrderEightSupportDisplays.bits 16) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 48)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c (OrderEightSupportDisplays.bits 0) *
+                                    (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 0) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                  c (OrderEightSupportDisplays.bits 6) *
+                                (1 / 2) +
+                            c (OrderEightSupportDisplays.bits 6) *
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (-1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (-1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 28) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:362:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 47) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 54) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 22)) +
+                                    d (OrderEightSupportDisplays.bits 48) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 16)) +
+                                  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                    c (OrderEightSupportDisplays.bits 32) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                c (OrderEightSupportDisplays.bits 38) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                        (-1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                      (-1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                    (1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                  (1 / 2) +
+              c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 4))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 5))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:369:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 47) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 54) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 54)) +
+                                    d (OrderEightSupportDisplays.bits 48) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 48)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ)
+                                      (c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                    c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                  (1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                              (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                            (-1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                          (-1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                      (1 / 2) +
+                  c (OrderEightSupportDisplays.bits 32) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                    (-1 / 2) +
+                c (OrderEightSupportDisplays.bits 38) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 60) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 12))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 13))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:346:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:353:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:360:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:367:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:384:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) * c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) * c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 28) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) *
+                                  (1 / 2) +
+                              d (OrderEightSupportDisplays.bits 5) *
+                                (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 5)) +
+                            d (OrderEightSupportDisplays.bits 3) *
+                              (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 3)) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (-1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:391:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c (OrderEightSupportDisplays.bits 0) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c (OrderEightSupportDisplays.bits 6) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)))
+⊢ c (OrderEightSupportDisplays.bits 26) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 28) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 5) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 37)) +
+                                    d (OrderEightSupportDisplays.bits 3) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 35)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c (OrderEightSupportDisplays.bits 0) *
+                                    (1 / 2) +
+                                c (OrderEightSupportDisplays.bits 0) *
+                                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                  c (OrderEightSupportDisplays.bits 6) *
+                                (1 / 2) +
+                            c (OrderEightSupportDisplays.bits 6) *
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6)) *
+                    (-1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 17) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 23) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 9) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 15) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:398:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15)) =
+    1 / 2 *
+      ((starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 26)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 60) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 28)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 37) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 5)) +
+                                    d (OrderEightSupportDisplays.bits 35) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 3)) +
+                                  (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 0)) *
+                                    c (OrderEightSupportDisplays.bits 32) *
+                                  (-1 / 2) +
+                              (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 6)) *
+                                c (OrderEightSupportDisplays.bits 38) *
+                              (-1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 2))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 3))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 4))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                        (1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 5))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                      (1 / 2) +
+                  (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 6))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                    (-1 / 2) +
+                (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 7))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 17)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 23)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 9)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 15)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 6))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 7))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:405:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn :
+  (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) +
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14)) +
+      (starRingEnd ℂ)
+          (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) *
+        d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15)) =
+    1 / 2 *
+      ((starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) +
+                    (starRingEnd ℂ)
+                        (c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                      c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) +
+                  (starRingEnd ℂ)
+                      (c
+                        (OrderEightSupportDisplays.bits
+                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                    c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) +
+                (starRingEnd ℂ)
+                    (c
+                      (OrderEightSupportDisplays.bits
+                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                  c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) +
+              (starRingEnd ℂ)
+                  (c
+                    (OrderEightSupportDisplays.bits
+                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) +
+            (starRingEnd ℂ)
+                (c
+                  (OrderEightSupportDisplays.bits
+                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+              c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) +
+          (starRingEnd ℂ)
+              (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+            c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) +
+        (starRingEnd ℂ)
+            (c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+          c (OrderEightSupportDisplays.bits (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)))
+⊢ c (OrderEightSupportDisplays.bits 58) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 58)) * (1 / 2) +
+                                        c (OrderEightSupportDisplays.bits 60) *
+                                            (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 60)) *
+                                          (1 / 2) +
+                                      d (OrderEightSupportDisplays.bits 37) *
+                                        (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 37)) +
+                                    d (OrderEightSupportDisplays.bits 35) *
+                                      (starRingEnd ℂ) (d (OrderEightSupportDisplays.bits 35)) +
+                                  (starRingEnd ℂ)
+                                        (c
+                                          (OrderEightSupportDisplays.bits
+                                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8))) *
+                                      c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 8)) *
+                                    (1 / 2) +
+                                (starRingEnd ℂ)
+                                      (c
+                                        (OrderEightSupportDisplays.bits
+                                          (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9))) *
+                                    c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 9)) *
+                                  (1 / 2) +
+                              (starRingEnd ℂ)
+                                    (c
+                                      (OrderEightSupportDisplays.bits
+                                        (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10))) *
+                                  c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 10)) *
+                                (1 / 2) +
+                            (starRingEnd ℂ)
+                                  (c
+                                    (OrderEightSupportDisplays.bits
+                                      (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11))) *
+                                c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 11)) *
+                              (1 / 2) +
+                          (starRingEnd ℂ)
+                                (c
+                                  (OrderEightSupportDisplays.bits
+                                    (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12))) *
+                              c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 12)) *
+                            (1 / 2) +
+                        (starRingEnd ℂ)
+                              (c
+                                (OrderEightSupportDisplays.bits
+                                  (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13))) *
+                            c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 13)) *
+                          (1 / 2) +
+                      (starRingEnd ℂ)
+                            (c
+                              (OrderEightSupportDisplays.bits
+                                (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14))) *
+                          c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 14)) *
+                        (-1 / 2) +
+                    (starRingEnd ℂ)
+                          (c
+                            (OrderEightSupportDisplays.bits
+                              (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15))) *
+                        c
+                          (OrderEightSupportDisplays.bits
+                            (![0, 6, 17, 23, 9, 15, 26, 28, 32, 38, 49, 55, 41, 47, 58, 60] 15)) *
+                      (-1 / 2) +
+                  c (OrderEightSupportDisplays.bits 32) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 32)) *
+                    (-1 / 2) +
+                c (OrderEightSupportDisplays.bits 38) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 38)) *
+                  (-1 / 2) +
+              c (OrderEightSupportDisplays.bits 49) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 49)) *
+                (-1 / 2) +
+            c (OrderEightSupportDisplays.bits 55) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 55)) * (-1 / 2) +
+          c (OrderEightSupportDisplays.bits 41) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 41)) * (-1 / 2) +
+        c (OrderEightSupportDisplays.bits 47) * (starRingEnd ℂ) (c (OrderEightSupportDisplays.bits 47)) * (-1 / 2) +
+      (-((starRingEnd ℂ)
+              (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) *
+            d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 14))) -
+        (starRingEnd ℂ)
+            (d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) *
+          d (OrderEightSupportDisplays.bits (![31, 25, 14, 8, 22, 16, 5, 3, 63, 57, 46, 40, 54, 48, 37, 35] 15))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:382:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:389:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:396:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:403:33: error: This simp argument is unused:
+  Fin.reduceFinMk
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵F̵i̵n̵.̵r̵e̵d̵u̵c̵e̵F̵i̵n̵M̵k̵] at hn ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:438:2: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+a b : Fin 2
+h0 :
+  (C c 0 * (C c 0)ᴴ) a b + (D d 0 * (D d 0)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c ⟨↑0 + 1, ⋯⟩ * (C c ⟨↑0 + 1, ⋯⟩)ᴴ) a b +
+          ((C c ⟨↑0 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b +
+            ((C c ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b +
+              ∑ c_1, (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩)ᴴ) a b))))
+h1 :
+  (C c 1 * (C c 1)ᴴ) a b + (D d 1 * (D d 1)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c ⟨↑0 + 1, ⋯⟩ * (C c ⟨↑0 + 1, ⋯⟩)ᴴ) a b +
+          ((C c ⟨↑0 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b +
+            ((C c ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b +
+              ∑ c_1, (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩)ᴴ) a b))))
+h2 :
+  (C c 2 * (C c 2)ᴴ) a b + (D d 2 * (D d 2)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c ⟨↑0 + 1, ⋯⟩ * (C c ⟨↑0 + 1, ⋯⟩)ᴴ) a b +
+          ((C c ⟨↑0 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b +
+            ((C c ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b +
+              ∑ c_1, (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩)ᴴ) a b))))
+h3 :
+  (C c 3 * (C c 3)ᴴ) a b + (D d 3 * (D d 3)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c ⟨↑0 + 1, ⋯⟩ * (C c ⟨↑0 + 1, ⋯⟩)ᴴ) a b +
+          ((C c ⟨↑0 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b +
+            ((C c ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b +
+              ∑ c_1, (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑c_1 + 1 + 1 + 1 + 1, ⋯⟩)ᴴ) a b))))
+⊢ -(C c ⟨↑0 + 1, ⋯⟩ * (C c ⟨↑0 + 1, ⋯⟩)ᴴ) a b +
+                    (-(C c ⟨↑0 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b -
+                      (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (C c ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b) +
+                  (C c 1 * (C c 1)ᴴ) a b +
+                (D d 1 * (D d 1)ᴴ) a b +
+              (C c 2 * (C c 2)ᴴ) a b +
+            (D d 2 * (D d 2)ᴴ) a b +
+          (C c 3 * (C c 3)ᴴ) a b +
+        ((D d 3 * (D d 3)ᴴ) a b - (D d ⟨↑0 + 1, ⋯⟩ * (D d ⟨↑0 + 1, ⋯⟩)ᴴ) a b) +
+      (-(D d ⟨↑0 + 1 + 1, ⋯⟩ * (D d ⟨↑0 + 1 + 1, ⋯⟩)ᴴ) a b -
+        (D d ⟨↑0 + 1 + 1 + 1, ⋯⟩ * (D d ⟨↑0 + 1 + 1 + 1, ⋯⟩)ᴴ) a b) =
+    0

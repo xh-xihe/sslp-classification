@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 16149,
+  "module_count": 16161,
   "counts_by_library": {
-    "MainTheory": 14259,
+    "MainTheory": 14271,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -81,6 +81,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.ArbitrarySplitEnumerators",
+      "path": "MainTheory/ArbitrarySplitEnumerators.lean",
+      "sha256_lf": "8e725d10bb56679c5fa1839ad9b03a3d4242481b8b64dac0e74d35fe642ece77",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.ArbitrarySplitPerfectCode",
       "path": "MainTheory/ArbitrarySplitPerfectCode.lean",
       "sha256_lf": "48bd67df266a209751170a0ed5f80d594e4103d98e221398292c613a8d604786",
@@ -91,6 +98,13 @@
       "module": "MainTheory.ArbitrarySplitSixQubit",
       "path": "MainTheory/ArbitrarySplitSixQubit.lean",
       "sha256_lf": "b1e8d7da434dae01c8827657b78f9fcae79e8f69d7c79e2cae98323999dfc552",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ArbitrarySplitTrace",
+      "path": "MainTheory/ArbitrarySplitTrace.lean",
+      "sha256_lf": "1418914598542f2e9b4fd985bc27a55c84a26f0f4c351671c5d36a1f2f2427f8",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -94688,7 +94702,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "cbf8602d0de52743616eb2549e5749f9f3caa16e40c9572bd88d9a263e6b295f",
+      "sha256_lf": "d3dabd8a7a95faff86efed429d4804a528d0888c470967fe52b7eef5745047fc",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -94994,6 +95008,20 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit26DependentAnchors",
+      "path": "MainTheory/Orbit26DependentAnchors.lean",
+      "sha256_lf": "d3ec864509767c22686d83ef4b8113da41ec0e179f8af295b4fe935fa06da6e7",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit26PhysicalMatrices",
+      "path": "MainTheory/Orbit26PhysicalMatrices.lean",
+      "sha256_lf": "3fc0ab4309b10bcc9db67e40e803b4ff6425250e463cabc53921363384a00eb0",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit26PrintedMoments",
       "path": "MainTheory/Orbit26PrintedMoments.lean",
       "sha256_lf": "890d5c7bd8705847837099fb293586a6e2849e8d191bfa8889f81878b239657d",
@@ -95004,6 +95032,13 @@
       "module": "MainTheory.Orbit26PrintedProbabilities",
       "path": "MainTheory/Orbit26PrintedProbabilities.lean",
       "sha256_lf": "e9dadfca36ccec5145316486ef899af17a4f6816d62a7afa5feb3c8c48778a76",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit28PrintedProbabilities",
+      "path": "MainTheory/Orbit28PrintedProbabilities.lean",
+      "sha256_lf": "6582fdb67c6cc0f1b4583599ec62a2a694140b338687677b2fa25bdbb326bbd9",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -95256,6 +95291,20 @@
       "module": "MainTheory.Orbit2SpectralTable",
       "path": "MainTheory/Orbit2SpectralTable.lean",
       "sha256_lf": "99e1fc9e6458d26fa809d87e1beda60e3f8a03032e8851b4966ad303575234e4",
+      "library": "MainTheory",
+      "topic": "Orbit 2: physical encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit2SplitEnumerators",
+      "path": "MainTheory/Orbit2SplitEnumerators.lean",
+      "sha256_lf": "38b3ad053dc926d7f85321fb4b4b17c27e675ba1c208d53dbe38890407ca9811",
+      "library": "MainTheory",
+      "topic": "Orbit 2: physical encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit2SplitScalarDisplays",
+      "path": "MainTheory/Orbit2SplitScalarDisplays.lean",
+      "sha256_lf": "21c3555f7546a1eb8a90725f40d1a54532d0af9aeea3ff1126eee570fe00e119",
       "library": "MainTheory",
       "topic": "Orbit 2: physical encoder bridges"
     },
@@ -95648,6 +95697,13 @@
       "module": "MainTheory.Orbit31VertexCertificateBase",
       "path": "MainTheory/Orbit31VertexCertificateBase.lean",
       "sha256_lf": "d2754da62e8ff31fbe6b66dbe53d3ec7304fb49296231b9599b25d4f889d9d78",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit32ParityNotation",
+      "path": "MainTheory/Orbit32ParityNotation.lean",
+      "sha256_lf": "0f982354d7c65b71dea79da18d339223761966746114a803986ed2b84b9f1541",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -96243,6 +96299,20 @@
       "module": "MainTheory.Orbit3SpinMomentInterpretation",
       "path": "MainTheory/Orbit3SpinMomentInterpretation.lean",
       "sha256_lf": "6b92460795e19c8119b05636d887e345515bf453e3ed29010de17da24efe49cc",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3SplitEnumerators",
+      "path": "MainTheory/Orbit3SplitEnumerators.lean",
+      "sha256_lf": "186332ed99f57ad70bec85947dc878e25ddbae37c1c3c0a23fc156195bfdee9a",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3SplitScalarDisplays",
+      "path": "MainTheory/Orbit3SplitScalarDisplays.lean",
+      "sha256_lf": "f64d5e35ffdbc4d5b7c1be8d57d6ddd058e07325c971eea10651aee8cd4529d6",
       "library": "MainTheory",
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
@@ -98485,6 +98555,20 @@
       "sha256_lf": "0f593096087205855649c79f276dc49a6e7f2dd72485e9db8a9c409cdc9e8302",
       "library": "MainTheory",
       "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveW3SplitEnumerators",
+      "path": "MainTheory/PrimitiveW3SplitEnumerators.lean",
+      "sha256_lf": "086ebf26376b38b2c210d41077d1802b327d6ad69a3ff62bc2951ad58129eb36",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.PrimitiveW3SplitScalarDisplays",
+      "path": "MainTheory/PrimitiveW3SplitScalarDisplays.lean",
+      "sha256_lf": "c392b1e055d6a09e577f37bd362f5f883f48c92869b68056da1cbca547510961",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
     },
     {
       "module": "MainTheory.ProbabilityFrameEntries",

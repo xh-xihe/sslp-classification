@@ -14455,9 +14455,16 @@
       "line": 4293,
       "end_line": 4296,
       "statement_sha256": "bcded45b51a1abdb59f7433e1a66c3382338c9a632cceff1118e9ff518c8e10e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.ArbitrarySplitEnumerators.A_three",
+        "MainTheory.ArbitrarySplitEnumerators.macwilliams",
+        "MainTheory.Orbit2SplitEnumerators.low_enumerators",
+        "MainTheory.PrimitiveW3SplitEnumerators.low_enumerators",
+        "MainTheory.Orbit2SplitEnumerators.enumerator",
+        "MainTheory.PrimitiveW3SplitEnumerators.enumerator"
+      ],
+      "review": "20261005 actual split/matrix type and context review: Both literal W2 and family W3 output conventions are applied to the actual standard perfect-code split. All normalized Pauli sums, including weight three, and all seven MacWilliams coefficients are derived directly for those physical encoders."
     },
     {
       "id": "supplementary.tex:q2fam:eq:split-orbits",
@@ -17420,9 +17427,12 @@
       "line": 5966,
       "end_line": 5969,
       "statement_sha256": "ec28b9d9fe16913424e1b508e0d9a253b2380f0dce5773988033e92802a08751",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3SplitScalarDisplays.physical_scalar",
+        "MainTheory.Orbit3SplitEnumerators.sparse_scalar"
+      ],
+      "review": "20261005 actual split/matrix type and context review: For the actual orbit-three attainment encoder, the only nonidentity traces are the printed ZI and XZ terms with cos theta and sin theta. The theorem uses the attainment subsection output convention, including its swap relative to the family W3 convention."
     },
     {
       "id": "supplementary.tex:displaymath@5974",
@@ -17432,9 +17442,13 @@
       "line": 5974,
       "end_line": 5976,
       "statement_sha256": "e962e62df701abc121b7e58df9e2c2a06ed1688e44180e802cedb2fd0ce5e335",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3SplitEnumerators.low_enumerators",
+        "MainTheory.Orbit3SplitEnumerators.enumerator",
+        "MainTheory.ArbitrarySplitEnumerators.A_three"
+      ],
+      "review": "20261005 actual split/matrix type and context review: Actual normalized physical weight enumerators have A1=cos squared, A2=sin squared, A3=zero and the complete printed enumerator line, proved from actual Pauli traces and exact KL."
     },
     {
       "id": "supplementary.tex:displaymath@5987",
@@ -26737,9 +26751,24 @@
       "line": 10453,
       "end_line": 10478,
       "statement_sha256": "1a7485b06cfd330ca81caa334c11832a03c47ba63657ab69912cc23149100fc2",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourTableDisplays.displayed_data",
+        "MainTheory.OrderFourTableDisplays.exhaustive",
+        "MainTheory.OrderFourTableDisplays.row_injective",
+        "MainTheory.OrderFourTableDisplays.no_completion",
+        "MainTheory.Generated.OrbitTableSemantics25.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics26.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics27.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics28.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics29.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics30.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics31.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics32.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics62.lp_affine_dimension",
+        "MainTheory.Generated.OrbitTableSemantics63.lp_affine_dimension"
+      ],
+      "review": "20261005 actual split/matrix type and context review: All ten row numbers, q values, representatives, order-four status and displayed dimensions match the finite orbit table. Each dimension root concerns the full nonnegative physical moment polytope, including forced-zero coordinates. The final physical no-completion results supply the status column; individual analytic intermediate equations remain separately reviewed."
     },
     {
       "id": "supplementary.tex:remark@10480",
@@ -27338,12 +27367,15 @@
       "statement_sha256": "c8206634f35bcf73e6dde5675cfc50464f5c6dc873474f0c6a8494f53605c668",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.Orbit26.M2",
-        "SixQubit.Orbit26.sandwich",
-        "SixQubit.Orbit26.core",
-        "MainTheory.OrderFour26DiagonalRows0.Entry00.equation"
+        "MainTheory.Orbit26PhysicalMatrices.C",
+        "MainTheory.Orbit26PhysicalMatrices.D",
+        "MainTheory.Orbit26PhysicalMatrices.groupIndex",
+        "MainTheory.Orbit26PhysicalMatrices.physical_moment",
+        "MainTheory.Orbit26PhysicalMatrices.physical_rho",
+        "MainTheory.Orbit26PhysicalMatrices.physical_anchor",
+        "MainTheory.Orbit26PhysicalMatrices.physical_outer"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Notation grouping the eight blocks into four 2x2 matrices, with g = 3 the anchor group. In the anchor-lemma layer the group matrix is an honest matrix, MainTheory.Orbit26.M2 = Matrix (Fin 2) (Fin 2) C, the type of C, D : Fin 3 -> M2 and of C3, D3 in MainTheory.Orbit26.anchor_singular, where the anchor is carried as a separate argument rather than as index 3; in the transcription layer it is spread over four scalars -- SixQubit.Orbit26.sandwich takes a group as its two bottom column pairs (g1,g2), (g3,g4) and two top pairs (h1,h2), (h3,h4), and the four Entry00/01/10/11 theorems of each MainTheory.OrderFour26DiagonalRows file are the four entries of one group. | ADVERSARIAL CHECK: All four declarations exist. MainTheory.Orbit26.M2 = Matrix (Fin 2) (Fin 2) C (Orbit26AnchorMatrix.lean:19) is the type of C D : Fin 3 -> M2 and C3 D3 : M2 in anchor_singular. SixQubit.Orbit26.sandwich (line 1913) takes a group as (g1,g2), (g3,g4) for the bottom columns and (h1,h2), (h3,h4) for the top ones, as its instantiations SM0..SM3 in core confirm. MainTheory.OrderFour26DiagonalRows0..3 have namespaces Entry00/01/10/11, one file per group. No declaration assembles C_g from C_{2g}, C_{2g+1}, which the review correctly does not claim. Classification 'definition' is right."
+      "review": "20261005 actual split/matrix type and context review: The actual supported six-qubit amplitudes form the literal printed 2 by 2 block matrices in the SI group order. All sixteen moment entries, twelve anchor entries and twelve outer-flip entries are derived from actual weight-at-most-two KL. No final no-code theorem or unproved matrix equation supplies any of these roots."
     },
     {
       "id": "supplementary.tex:eq:q4o26grouptrace",
@@ -27377,11 +27409,15 @@
       "statement_sha256": "d7a4deb31c6daa63fbe97e4b106558a758755fad01cc98377182d6eaf96c671e",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.OrderFour26DiagonalRows0.Entry00.equation",
-        "SixQubit.Orbit26.mom_g0_a0b0",
-        "MainTheory.Orbit26.anchor_singular"
+        "MainTheory.Orbit26PhysicalMatrices.C",
+        "MainTheory.Orbit26PhysicalMatrices.D",
+        "MainTheory.Orbit26PhysicalMatrices.groupIndex",
+        "MainTheory.Orbit26PhysicalMatrices.physical_moment",
+        "MainTheory.Orbit26PhysicalMatrices.physical_rho",
+        "MainTheory.Orbit26PhysicalMatrices.physical_anchor",
+        "MainTheory.Orbit26PhysicalMatrices.physical_outer"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Notation for the common first-qubit reduced density matrix and the assertion that the bottom and top sums agree. rho has no Lean name: it occurs as the right-hand side 1/2 * (sum of the eight bottom amplitude products) of the sixteen Entry** equations of MainTheory.OrderFour26DiagonalRows0..3 and of SixQubit.Orbit26.mom_g0_a0b0 .. mom_g3_a1b1, and in anchored form as the hypotheses hmomC and hmomD of MainTheory.Orbit26.anchor_singular, whose statement sum over g < 3 of C g * (C g)^H = C3*C3^H + 2*(D3*D3^H) is the display combined with the anchor case of eq:q4o26matrixmoment. The displayed equality of the two total sums is a consequence of those sixteen identities rather than a separate theorem. | ADVERSARIAL CHECK: Read MainTheory/OrderFour26DiagonalRows0.lean Entry00.equation: its right-hand side is (1/2)*(sum over the eight b=0 bottom amplitude products), i.e. (1/2)*rho_{00}; likewise across the sixteen Entry** theorems of Rows0..3 and the sixteen mom_g*_a*b*. hmomC : sum over the three non-anchor g of C g * (C g)^H = C3*C3^H + 2*(D3*D3^H) is exactly the display's equality combined with the anchor case of eq:q4o26matrixmoment (rho = 2 C3 C3^H + 2 D3 D3^H), and hmomD is the same read on the top state, so hmomD does encode rho_bottom = rho_top. No declaration names rho. Classification 'definition' is right."
+      "review": "20261005 actual split/matrix type and context review: The actual supported six-qubit amplitudes form the literal printed 2 by 2 block matrices in the SI group order. All sixteen moment entries, twelve anchor entries and twelve outer-flip entries are derived from actual weight-at-most-two KL. No final no-code theorem or unproved matrix equation supplies any of these roots."
     },
     {
       "id": "supplementary.tex:eq:q4o26matrixmoment",
@@ -27395,15 +27431,15 @@
       "statement_sha256": "789faeef33b5f3486511b06271b697e66e550470faeb9fe26ac4aa5214035cd1",
       "status": "covered",
       "lean_declarations": [
-        "MainTheory.OrderFour26DiagonalRows0.Entry00.equation",
-        "MainTheory.OrderFour26DiagonalRows1.Entry00.equation",
-        "MainTheory.OrderFour26DiagonalRows2.Entry00.equation",
-        "MainTheory.OrderFour26DiagonalRows3.Entry00.equation",
-        "SixQubit.Orbit26.mom_g0_a0b0",
-        "SixQubit.Orbit26.mom_g3_a1b1",
-        "MainTheory.Orbit26.anchor_singular"
+        "MainTheory.Orbit26PhysicalMatrices.C",
+        "MainTheory.Orbit26PhysicalMatrices.D",
+        "MainTheory.Orbit26PhysicalMatrices.groupIndex",
+        "MainTheory.Orbit26PhysicalMatrices.physical_moment",
+        "MainTheory.Orbit26PhysicalMatrices.physical_rho",
+        "MainTheory.Orbit26PhysicalMatrices.physical_anchor",
+        "MainTheory.Orbit26PhysicalMatrices.physical_outer"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The boxed matrix moment identity C_g C_g^dagger + D_g D_g^dagger = rho/2 for the four groups. MainTheory.OrderFour26DiagonalRows0, 1, 2, 3 prove all sixteen entries -- one file per group in the manuscript's A..H order, namespaces Entry00, Entry01, Entry10, Entry11 -- directly from SS.HasDistance ![c,d] 3, each with kernel-decided incidences and flips, a weight-at-most-two check on its eight Paulis and an explicit rational character certificate, routed through MainTheory.DiagonalLinearCombination.equation. SixQubit.Orbit26.mom_g0_a0b0 .. mom_g3_a1b1 prove the same sixteen from the eight transcribed diagonal Walsh rows, in the sorted block order. The anchor case enters MainTheory.Orbit26.anchor_singular in the derived form hmomC, hmomD. | ADVERSARIAL CHECK: Verified all four DiagonalRows files: each Entry namespace has zs : Fin 8 -> BitString 6, coeffQ : Fin 8 -> Q, incidences/flips/weights/certificate by decide +kernel, and equation proved from hc, hd, hkl : SS.HasDistance ![c,d] 3 via MainTheory.DiagonalLinearCombination.equation. Rows0/1/2/3 use bottom 0,1 / 2,3 / 4,5 / 6,7 respectively, so file g is manuscript group g and the RHS is (1/2)*rho_{ab}. Sixteen mom_g*_a*b* theorems exist in SixQubit/Orbit26.lean, each from the eight diagBot/diagTop rows. Only softened the last clause: hmomC/hmomD are the derived anchor form, not the display's anchor case verbatim."
+      "review": "20261005 actual split/matrix type and context review: The actual supported six-qubit amplitudes form the literal printed 2 by 2 block matrices in the SI group order. All sixteen moment entries, twelve anchor entries and twelve outer-flip entries are derived from actual weight-at-most-two KL. No final no-code theorem or unproved matrix equation supplies any of these roots."
     },
     {
       "id": "supplementary.tex:eq:q4o26J",
@@ -27455,9 +27491,17 @@
       "line": 10861,
       "end_line": 10870,
       "statement_sha256": "4a3c9cfcf5cf4b904c4aa851e0a781acd0e75e27828640f0808694c856dc73e5",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalMatrices.C",
+        "MainTheory.Orbit26PhysicalMatrices.D",
+        "MainTheory.Orbit26PhysicalMatrices.groupIndex",
+        "MainTheory.Orbit26PhysicalMatrices.physical_moment",
+        "MainTheory.Orbit26PhysicalMatrices.physical_rho",
+        "MainTheory.Orbit26PhysicalMatrices.physical_anchor",
+        "MainTheory.Orbit26PhysicalMatrices.physical_outer"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The actual supported six-qubit amplitudes form the literal printed 2 by 2 block matrices in the SI group order. All sixteen moment entries, twelve anchor entries and twelve outer-flip entries are derived from actual weight-at-most-two KL. No final no-code theorem or unproved matrix equation supplies any of these roots."
     },
     {
       "id": "supplementary.tex:eq:q4o26anchormatrix",
@@ -27471,13 +27515,15 @@
       "statement_sha256": "78ddbe07bc66aca332a55c2a1c9ac5c77b6460d7616bb77933a5f7a2a3d57002",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit26.anch_i0_j6",
-        "SixQubit.Orbit26.anch_i0_j7",
-        "SixQubit.Orbit26.anch_i5_j7",
-        "MainTheory.Orbit26.anchor_singular",
-        "MainTheory.Orbit26.anchor_solve"
+        "MainTheory.Orbit26PhysicalMatrices.C",
+        "MainTheory.Orbit26PhysicalMatrices.D",
+        "MainTheory.Orbit26PhysicalMatrices.groupIndex",
+        "MainTheory.Orbit26PhysicalMatrices.physical_moment",
+        "MainTheory.Orbit26PhysicalMatrices.physical_rho",
+        "MainTheory.Orbit26PhysicalMatrices.physical_anchor",
+        "MainTheory.Orbit26PhysicalMatrices.physical_outer"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: The boxed anchor relation C_3^dagger D_g + (C_g^dagger D_3)^T = 0 for the three non-anchor groups. Its twelve scalar entries are SixQubit.Orbit26.anch_i0_j6 through anch_i5_j7, one for each non-anchor block i in 0..5 and each anchor j in {6,7}, each stating ip C_i D_j + ip C_j D_i = 0 and each proved from one off-diagonal mask together with one Z-dressing. The matrix statement is the `anchor` hypothesis of MainTheory.Orbit26.anchor_singular, C3^H * D g + ((C g)^H * D3)^T = 0, and MainTheory.Orbit26.anchor_solve is where it is solved for D_g = -M cj(C_g) with M = (C_3^H)^{-1} D_3^T. | ADVERSARIAL CHECK: All twelve anch_i{0..5}_j{6,7} exist. Read anch_i0_j6: star (c y0)*d z1 + star (c y8)*d z9 + star (c y6)*d z7 + star (c y14)*d z15 = 0, which is ip C_0 D_6 + ip C_6 D_0 = 0; expanding the display's entry (c, c') gives exactly <C_{6+c}, D_{2g+c'}> + <C_{2g+c'}, D_{6+c}> = 0, so the twelve scalars are the three matrix identities. Each takes one mask plus one Z-dressing (anch_i0_j6 uses ef3 = 000101 with w0 and w3), matching the manuscript's masks 00101 and 00011 connecting (A,B) to (G,H). anchor_solve and the `anchor` hypothesis of anchor_singular are as described."
+      "review": "20261005 actual split/matrix type and context review: The actual supported six-qubit amplitudes form the literal printed 2 by 2 block matrices in the SI group order. All sixteen moment entries, twelve anchor entries and twelve outer-flip entries are derived from actual weight-at-most-two KL. No final no-code theorem or unproved matrix equation supplies any of these roots."
     },
     {
       "id": "supplementary.tex:lem:q4o26Jorth",
@@ -28099,9 +28145,20 @@
       "line": 11247,
       "end_line": 11250,
       "statement_sha256": "13afd9bfddc5cdb70b76741a1f6eb9e48c1d08066db3a62412b9b11780e31ab5",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit28PrintedProbabilities.bottom",
+        "MainTheory.Orbit28PrintedProbabilities.top",
+        "MainTheory.Orbit28PrintedProbabilities.bottomProbability",
+        "MainTheory.Orbit28PrintedProbabilities.topProbability",
+        "MainTheory.Orbit28PrintedProbabilities.complete_normal",
+        "MainTheory.Orbit28PrintedProbabilities.physical_normal",
+        "MainTheory.Orbit28PrintedProbabilities.bottomActive",
+        "MainTheory.Orbit28PrintedProbabilities.topActive",
+        "MainTheory.Orbit28PrintedProbabilities.literal_supports",
+        "MainTheory.Orbit28PrintedProbabilities.physical_supports"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The complete native real moment inequalities force all thirty-two literal probabilities. The normalized full-KL physical amplitudes therefore have the exact six-point bottom and top supports, including the zeros outside both fibers. These intermediate roots do not use the orbit-28 no-code conclusion."
     },
     {
       "id": "supplementary.tex:equation@11252",
@@ -28111,9 +28168,20 @@
       "line": 11252,
       "end_line": 11256,
       "statement_sha256": "6a0739bbc67ae82994e1fff8c906b8eeec2333121a8b0648abc76e85dfa4d369",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit28PrintedProbabilities.bottom",
+        "MainTheory.Orbit28PrintedProbabilities.top",
+        "MainTheory.Orbit28PrintedProbabilities.bottomProbability",
+        "MainTheory.Orbit28PrintedProbabilities.topProbability",
+        "MainTheory.Orbit28PrintedProbabilities.complete_normal",
+        "MainTheory.Orbit28PrintedProbabilities.physical_normal",
+        "MainTheory.Orbit28PrintedProbabilities.bottomActive",
+        "MainTheory.Orbit28PrintedProbabilities.topActive",
+        "MainTheory.Orbit28PrintedProbabilities.literal_supports",
+        "MainTheory.Orbit28PrintedProbabilities.physical_supports"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The complete native real moment inequalities force all thirty-two literal probabilities. The normalized full-KL physical amplitudes therefore have the exact six-point bottom and top supports, including the zeros outside both fibers. These intermediate roots do not use the orbit-28 no-code conclusion."
     },
     {
       "id": "supplementary.tex:equation@11258",
@@ -28123,9 +28191,20 @@
       "line": 11258,
       "end_line": 11262,
       "statement_sha256": "a94ea6d2293578cc7d676a7003c42c9a9e948985a13b0d040fd271effd6ed233",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit28PrintedProbabilities.bottom",
+        "MainTheory.Orbit28PrintedProbabilities.top",
+        "MainTheory.Orbit28PrintedProbabilities.bottomProbability",
+        "MainTheory.Orbit28PrintedProbabilities.topProbability",
+        "MainTheory.Orbit28PrintedProbabilities.complete_normal",
+        "MainTheory.Orbit28PrintedProbabilities.physical_normal",
+        "MainTheory.Orbit28PrintedProbabilities.bottomActive",
+        "MainTheory.Orbit28PrintedProbabilities.topActive",
+        "MainTheory.Orbit28PrintedProbabilities.literal_supports",
+        "MainTheory.Orbit28PrintedProbabilities.physical_supports"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The complete native real moment inequalities force all thirty-two literal probabilities. The normalized full-KL physical amplitudes therefore have the exact six-point bottom and top supports, including the zeros outside both fibers. These intermediate roots do not use the orbit-28 no-code conclusion."
     },
     {
       "id": "supplementary.tex:equation@11264",
@@ -30473,9 +30552,13 @@
       "line": 12415,
       "end_line": 12419,
       "statement_sha256": "5505679078859126d5275813367f4c8452f5fb4d3a503541d273285af9aed67f",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32ParityNotation.literal_parities",
+        "MainTheory.Orbit32ParityNotation.coordinate_identity",
+        "MainTheory.Orbit32ParityNotation.literal_fibers"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The actual six-bit residue is the printed outer-bit sum plus twice the inner three-bit Hamming weight, modulo four. The literal even and odd inner sets and the eight outer-label rows are kernel-checked against both physical native fibers."
     },
     {
       "id": "supplementary.tex:eq:q4o32outerlabels",
@@ -30504,9 +30587,13 @@
       "line": 12437,
       "end_line": 12440,
       "statement_sha256": "87ed5f15b59248c6be78e90952fbec606f87286e8365e6adc8d4035f73794d64",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit32ParityNotation.literal_parities",
+        "MainTheory.Orbit32ParityNotation.coordinate_identity",
+        "MainTheory.Orbit32ParityNotation.literal_fibers"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The actual six-bit residue is the printed outer-bit sum plus twice the inner three-bit Hamming weight, modulo four. The literal even and odd inner sets and the eight outer-label rows are kernel-checked against both physical native fibers."
     },
     {
       "id": "supplementary.tex:eq:q4o32S0",
@@ -30985,9 +31072,11 @@
       "line": 12699,
       "end_line": 12701,
       "statement_sha256": "194112cd231b5c5ee074a91f8634891003b1cab0d73db89eff2cd904047b4d8a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourTableDisplays.displayed_data"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The ninth zero-based row is exactly the printed orbit-63 q=8, m=4 representative (1,1,2,4,5,5), with the numeric display tied to the finite orbit key."
     },
     {
       "id": "supplementary.tex:equation@12703",
@@ -31075,9 +31164,14 @@
       "line": 12733,
       "end_line": 12736,
       "statement_sha256": "89566737023cf3c71e67f81530c9e633294539e46c00e4427e5a6fbf69860692",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFourTableDisplays.exhaustive",
+        "MainTheory.OrderFourTableDisplays.row_injective",
+        "MainTheory.OrderFourTableDisplays.no_completion",
+        "MainTheory.OrderFourTableDisplays.lift"
+      ],
+      "review": "20261005 actual split/matrix type and context review: The actual finite orbit keys of projective order four are exactly the ten listed distinct rows. The bounded physical lift leaves only denominators four and eight, and every listed key has a physical no-completion theorem."
     },
     {
       "id": "supplementary.tex:thm:q4nogo",

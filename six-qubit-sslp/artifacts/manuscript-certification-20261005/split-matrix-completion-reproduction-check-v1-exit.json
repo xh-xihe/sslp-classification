@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_split_matrix_reproduction.py",
+    "--output",
+    "artifacts/manuscript-certification-20261005/split-matrix-generation-v1.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.16778930003056303
+}

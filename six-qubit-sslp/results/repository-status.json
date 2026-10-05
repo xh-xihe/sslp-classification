@@ -19,8 +19,8 @@
   ],
   "orbit2_full_image": "kernel_checked",
   "orbit3_full_image": "kernel_checked",
-  "active_lean_modules": 16149,
-  "axiom_roots": 8463,
+  "active_lean_modules": 16161,
+  "axiom_roots": 8627,
   "standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -31,19 +31,19 @@
   "historical_acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1680,
+    "covered": 1692,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 141
+    "unreviewed": 129
   },
-  "current_type_inspection_declarations": 4254,
+  "current_type_inspection_declarations": 4197,
   "historical_publication_source_binding": "PASS",
   "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16149,
-    "axiom_roots": 8463,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16149.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8463.json"
+    "modules": 16161,
+    "axiom_roots": 8627,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16161.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8627.json"
   },
   "historical_regression_tests_per_environment": 61,
   "historical_skipped_tests_per_environment": 11,
@@ -58,8 +58,12 @@
     "status": "partial",
     "reviewed_blocks": 89
   },
-  "planned_axiom_roots": 8463,
+  "planned_axiom_roots": 8627,
   "canonical_publication_commit": "f8846a633c70f863d0e796127b5de2f1361e0584",
   "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16149.json",
-  "identified_si_qualifications": 1
+  "identified_si_qualifications": 1,
+  "pending_proof_batch": {
+    "record": "artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json",
+    "scope": "PASS local literal split/matrix physical proof route; publication pending and manuscript correspondence incomplete."
+  }
 }

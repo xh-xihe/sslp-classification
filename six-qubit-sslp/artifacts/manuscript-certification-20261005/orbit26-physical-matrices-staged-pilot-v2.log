@@ -1,0 +1,48 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:29:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:37:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:45:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:53:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:70:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:78:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:86:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:94:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:111:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:119:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:127:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:135:4: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

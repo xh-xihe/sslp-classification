@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": [
+    {
+      "generator": "generate_split_family_displays.py",
+      "passed": true,
+      "output": "Generated literal W2 and family W3 scalar/enumerator conventions\n"
+    },
+    {
+      "generator": "generate_orbit28_printed_probabilities.py",
+      "passed": true,
+      "output": "Generated complete orbit-28 probabilities and actual support bridge\n"
+    },
+    {
+      "generator": "generate_orbit26_physical_matrices.py",
+      "passed": true,
+      "output": "Checked orbit-26 physical block generation\n"
+    }
+  ],
+  "source_hashes_lf": {
+    "MainTheory/ArbitrarySplitTrace.lean": "1418914598542f2e9b4fd985bc27a55c84a26f0f4c351671c5d36a1f2f2427f8",
+    "MainTheory/ArbitrarySplitEnumerators.lean": "8e725d10bb56679c5fa1839ad9b03a3d4242481b8b64dac0e74d35fe642ece77",
+    "MainTheory/Orbit3SplitScalarDisplays.lean": "f64d5e35ffdbc4d5b7c1be8d57d6ddd058e07325c971eea10651aee8cd4529d6",
+    "MainTheory/Orbit3SplitEnumerators.lean": "186332ed99f57ad70bec85947dc878e25ddbae37c1c3c0a23fc156195bfdee9a",
+    "MainTheory/Orbit2SplitScalarDisplays.lean": "21c3555f7546a1eb8a90725f40d1a54532d0af9aeea3ff1126eee570fe00e119",
+    "MainTheory/Orbit2SplitEnumerators.lean": "38b3ad053dc926d7f85321fb4b4b17c27e675ba1c208d53dbe38890407ca9811",
+    "MainTheory/PrimitiveW3SplitScalarDisplays.lean": "c392b1e055d6a09e577f37bd362f5f883f48c92869b68056da1cbca547510961",
+    "MainTheory/PrimitiveW3SplitEnumerators.lean": "086ebf26376b38b2c210d41077d1802b327d6ad69a3ff62bc2951ad58129eb36",
+    "MainTheory/Orbit28PrintedProbabilities.lean": "6582fdb67c6cc0f1b4583599ec62a2a694140b338687677b2fa25bdbb326bbd9",
+    "MainTheory/Orbit32ParityNotation.lean": "0f982354d7c65b71dea79da18d339223761966746114a803986ed2b84b9f1541",
+    "MainTheory/Orbit26PhysicalMatrices.lean": "3fc0ab4309b10bcc9db67e40e803b4ff6425250e463cabc53921363384a00eb0",
+    "MainTheory/Orbit26DependentAnchors.lean": "d3ec864509767c22686d83ef4b8113da41ec0e179f8af295b4fe935fa06da6e7"
+  },
+  "scope": "Exact-source reconstruction; separate whole kernel build and audit required."
+}

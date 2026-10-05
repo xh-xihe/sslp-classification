@@ -1,0 +1,56 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:84:33: error: mod_cast has type
+  r ^ 2 = 1 / 8
+but is expected to have type
+  ↑(r ^ 2) = 1 / 8
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:99:33: error: This simp argument is unused:
+  star_add
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵mul', ̲star_star] at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:99:42: error: This simp argument is unused:
+  star_mul'
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲s̲t̲a̲r̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:99:52: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:108:33: error: This simp argument is unused:
+  star_add
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵mul', ̲star_star] at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:108:42: error: This simp argument is unused:
+  star_mul'
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲s̲t̲a̲r̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:108:52: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:118:6: error: ring failed, ring expressions not equal
+u v : Vec
+lam mu : ℂ
+hne : mu ≠ star lam
+h0 : u + v = 0
+h1 : star lam • u + mu • v = 0
+j : Fin 2
+e0 : (u + v) j = 0 j
+e1 : (star lam • u + mu • v) j = 0 j
+⊢ mu * v j + (-(star lam * v j) - star lam * 0 j) + star lam * (u + v) j + (0 j - (star lam • u + mu • v) j) = 0

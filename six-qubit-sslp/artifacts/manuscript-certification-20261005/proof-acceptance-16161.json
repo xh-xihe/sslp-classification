@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including literal physical split enumerators and matrix/probability intermediates; manuscript correspondence incomplete.",
+  "active_modules": 16161,
+  "axiom_roots": 8627,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1692,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 129
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 1,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16161.json",
+      "sha256": "2d33beecf110d95ba71e7a30b0cd4ba249751a2cb838b24d37b623ca38e73ed8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-8627.json",
+      "sha256": "0b4b456bf8fa84a63956edebfe6eb51a41816e16ad927219c5ec32ba9e26ef86"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-staged-proof-snapshot-12.json",
+      "sha256": "219dc7cab154ae8565631a5a1cd1145eb1f394dd4d3892a8f0c564f22541cfdd"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-generation-v1.json",
+      "sha256": "dd707399ddbe390b9f8a6a6ac445bed5e90bb643a089c725e21b15e09500839e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-split-matrix-completion.json",
+      "sha256": "5ae52e967f2d7f71ac1b0b0591f3d4df0986e59830750b98ed03a22565f4946a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-type-binding.json",
+      "sha256": "234bf980781bde897940e0d98c1e64758e7fe978f05c8826db3675f870f76c2e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-correspondence-gates-report.json",
+      "sha256": "e1ee2bff16e2e43a77380fa9fb3c06dc4f3aa367b0d33c4cf529695f85613c56"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-review.json",
+      "sha256": "73fc815f7f301bf64df018176db5961360db592ac1057ea033fbc8d831428af9"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-full-build-v1.log",
+      "sha256": "2e62048c5f628fb298a25e5d35e4fe635a466b164a1bc281d2e22e845229e798"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-full-build-v1-exit.json",
+      "sha256": "6a0f07af33dbb7966024f39cf0389a96b0e46f9b0cb37819f99cdaeabbabbd2e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-type-inspection-v1.log",
+      "sha256": "f76167171dd826ddfed249bc93d25b4fa7d4d69a07102302ae4090abeb4765a3"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-type-inspection-v1-exit.json",
+      "sha256": "ee0347be43c4a1112b9af5d48a38dedb52781eabdbce4dd4d9c48a427f6b8121"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-axioms-v1.log",
+      "sha256": "0981da8b158b7d9d701224fd6c3b9a0796cdf88fd62abb5fb747c088508e23dd"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-axioms-v1-exit.json",
+      "sha256": "e62c77586ebe81062c4481c5a9a6fa3e45b7197d873deb6e80682d44e5c6a5c9"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-reproduction-check-v1.log",
+      "sha256": "34a6f57544b9b3ba70cdfbc0afaafc101e4b4f49a4567f1d231f2fa06ca8a471"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/split-matrix-completion-reproduction-check-v1-exit.json",
+      "sha256": "b6621a8af8df433f2b77f8088486c338d6b5290386c9eeca994583ecc29180f2"
+    }
+  ]
+}

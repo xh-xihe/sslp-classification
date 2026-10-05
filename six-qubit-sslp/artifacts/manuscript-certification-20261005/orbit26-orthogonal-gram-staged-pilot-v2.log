@@ -1,0 +1,24 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:15:40: error: unsolved goals
+case a.«_@»._internal._hyg.0.«0».«0»
+v : Vec
+hv : nsq v = 1
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+⊢ star (v 1) * v 1 = 1 - v 0 * star (v 0)
+
+case a.«_@»._internal._hyg.0.«1».«1»
+v : Vec
+hv : nsq v = 1
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+⊢ star (v 0) * v 0 = 1 - v 1 * star (v 1)

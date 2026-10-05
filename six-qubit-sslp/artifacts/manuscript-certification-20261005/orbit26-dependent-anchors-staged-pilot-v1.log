@@ -1,0 +1,148 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:36:6: error: ring failed, ring expressions not equal
+A : M2
+hA : Matrix.det A = 0
+h0 : 0 < nsq (col A 0)
+hd : A 0 0 * A 1 1 - A 0 1 * A 1 0 = 0
+ha : ¬A 0 0 = 0
+⊢ A ⟨1, ⋯⟩ 1 * A 0 0 + (-(A 0 0 * A 1 1) - A 0 1 * A ⟨1, ⋯⟩ 0) + A 0 1 * A 1 0 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:57:13: error: This simp argument is unused:
+  starRingEnd_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵]̵[̲s̲t̲a̲r̲_̲m̲u̲l̲'̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:75:56: error: unsolved goals
+A : M2
+hA : Matrix.det A = 0
+h0 : nsq (col A 0) = 1 / 8
+h1 : nsq (col A 1) = 1 / 8
+lam : ℂ
+hl : Complex.normSq lam = 1
+hcol : ∀ (i : Fin 2), A i 1 = lam * A i 0
+r : ℝ := √(1 / 8)
+hr : 0 < r
+hr2 : r ^ 2 = 1 / 8
+hv : (nsq fun i => col A 0 i / ↑r) = 1
+hproj : projector (col A 0) = ↑r ^ 2 • projector fun i => col A 0 i / ↑r
+⊢ ((2 * ↑r ^ 2) • projector fun i => col A 0 i / ↑r) = (1 / 4) • projector fun i => A i 0 / ↑r
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:88:32: error(lean.invalidField): Invalid field `map`: The environment does not contain `Function.map`, so it is not possible to project the field `map` from an expression
+  star d ᵥ* C
+of type `Fin 2 → ℂ`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:89:50: error(lean.invalidField): Invalid field `map`: The environment does not contain `Function.map`, so it is not possible to project the field `map` from an expression
+  star d ᵥ* C
+of type `Fin 2 → ℂ`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:99:4: error: ring failed, ring expressions not equal
+c d : Vec
+lam mu : ℂ
+C D : M2
+h : (Matrix.vecMulVec c ![1, lam])ᴴ * D + (Cᴴ * Matrix.vecMulVec d ![1, mu])ᵀ = 0
+j : Fin 2
+he :
+  (starRingEnd ℂ) (c 0) * D 0 j + (starRingEnd ℂ) (c 1) * D 1 j +
+      ((starRingEnd ℂ) (C 0 j) * d 0 + (starRingEnd ℂ) (C 1 j) * d 1) =
+    0
+⊢ star (c 0) * D 0 j - D 0 j * (starRingEnd ℂ) (c 0) + (star (c 1) * D 1 j - D 1 j * (starRingEnd ℂ) (c 1)) + sorry j +
+      (-((starRingEnd ℂ) (C 0 j) * d 0) - (starRingEnd ℂ) (C 1 j) * d 1) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:108:4: error: ring failed, ring expressions not equal
+c d : Vec
+lam mu : ℂ
+C D : M2
+h : (Matrix.vecMulVec c ![1, lam])ᴴ * D + (Cᴴ * Matrix.vecMulVec d ![1, mu])ᵀ = 0
+j : Fin 2
+he :
+  star (c 0) * star lam * D 0 j + star (c 1) * star lam * D 1 j +
+      (star (C 0 j) * (d 0 * mu) + star (C 1 j) * (d 1 * mu)) =
+    0 1 j
+⊢ mu * sorry j + (-(mu * star (C 0 j) * d 0) - mu * star (C 1 j) * d 1) + 0 1 j = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:96:27: error: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵j̵T̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵t̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵V̵e̵c̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵z̵e̵r̵o̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲j̲T̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲t̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲V̲e̲c̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲P̲i̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲P̲i̲.̲z̲e̲r̲o̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:96:47: error: This simp argument is unused:
+  Matrix.cons_val_fin_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵j̵T̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵t̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵V̵e̵c̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵z̵e̵r̵o̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵]̵[̲M̲a̲t̲r̲i̲x̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲j̲T̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲t̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲V̲e̲c̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲P̲i̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲P̲i̲.̲z̲e̲r̲o̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:97:15: error: This simp argument is unused:
+  starRingEnd_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲,̲ ̲s̲t̲a̲r̲_̲s̲t̲a̲r̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:97:33: error: This simp argument is unused:
+  star_add
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵mul', ̲star_star] at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:97:52: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:105:32: error: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵j̵T̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵t̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵V̵e̵c̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵z̵e̵r̵o̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵P̵i̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵[̲M̲a̲t̲r̲i̲x̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲j̲T̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲t̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲V̲e̲c̲_̲a̲p̲p̲l̲y̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲P̲i̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲P̲i̲.̲z̲e̲r̲o̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲P̲i̲.̲s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲,̲
+        Matrix.cons_val_fin_one] at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:107:15: error: This simp argument is unused:
+  starRingEnd_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲,̲ ̲s̲t̲a̲r̲_̲s̲t̲a̲r̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:107:33: error: This simp argument is unused:
+  star_add
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply, ̲star_a̵d̵d̵,̵s̵t̵a̵r̵_̵mul', ̲star_star] at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:107:52: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵R̵i̵n̵g̵E̵n̵d̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵]̵[̲s̲t̲a̲r̲R̲i̲n̲g̲E̲n̲d̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲]̲ at he ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:117:6: error: ring failed, ring expressions not equal
+u v : Vec
+lam mu : ℂ
+hne : mu ≠ star lam
+h0 : u + v = 0
+h1 : star lam • u + mu • v = 0
+j : Fin 2
+e0 : (u + v) j = 0 j
+e1 : (star lam • u + mu • v) j = 0 j
+⊢ mu * v j + (-(star lam * v j) - star lam * 0 j) + star lam * (u + v) j + (0 j - (star lam • u + mu • v) j) = 0

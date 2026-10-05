@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:13:5: error: unknown namespace `MainTheory.Orbit26PrintedMoments`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:125:4: error(lean.unknownIdentifier): Unknown identifier `bottomAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:125:13: error(lean.unknownIdentifier): Unknown identifier `topAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:125:19: error(lean.unknownIdentifier): Unknown identifier `tailWords`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:138:4: error(lean.unknownIdentifier): Unknown identifier `bottomAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:138:13: error(lean.unknownIdentifier): Unknown identifier `topAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:138:19: error(lean.unknownIdentifier): Unknown identifier `tailWords`

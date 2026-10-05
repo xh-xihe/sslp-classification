@@ -64,6 +64,17 @@ python tools/verification/check_orbit30_reproduction.py
 These exact source checks supplement the whole kernel build and axiom audit.
 The physical graph and determinant entry points appear in [proof-index.md](proof-index.md).
 
+## Split and physical matrix sources
+
+Reconstruct the three finite source certificates with:
+
+```console
+python tools/verification/check_split_matrix_reproduction.py
+```
+
+This checks exact source reconstruction; the separate whole kernel build and
+standard-axiom audit remain required.
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

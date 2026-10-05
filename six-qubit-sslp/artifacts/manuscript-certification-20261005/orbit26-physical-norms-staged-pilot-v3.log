@@ -1,0 +1,56 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:113:12: error: linarith failed to find a contradiction
+case «0».h
+A : Fin 4 → M2
+p : Fin 8 → ℝ
+a b : ℝ
+hc : ∀ (g : Fin 4) (j : Fin 2), nsq (col (A g) j) = p (groupIndex g j)
+hp : p = pattern a b
+v : Vec
+hv : nsq v = 1
+h0 : Complex.normSq ((v ᵥ* cj (A 0)) 0) ≤ a + b - 1 / 8
+h1 : Complex.normSq ((v ᵥ* cj (A 1)) 0) ≤ 1 / 4 - a
+h2 : Complex.normSq ((v ᵥ* cj (A 2)) 0) ≤ 1 / 4 - b
+a✝ :
+  3 / 8 <
+    Complex.normSq ((v ᵥ* cj (A 0)) ((fun i => i) ⟨0, ⋯⟩)) + Complex.normSq ((v ᵥ* cj (A 1)) ((fun i => i) ⟨0, ⋯⟩)) +
+      Complex.normSq ((v ᵥ* cj (A 2)) ((fun i => i) ⟨0, ⋯⟩))
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:113:12: error: linarith failed to find a contradiction
+case «1».h
+A : Fin 4 → M2
+p : Fin 8 → ℝ
+a b : ℝ
+hc : ∀ (g : Fin 4) (j : Fin 2), nsq (col (A g) j) = p (groupIndex g j)
+hp : p = pattern a b
+v : Vec
+hv : nsq v = 1
+h0 : Complex.normSq ((v ᵥ* cj (A 0)) 1) ≤ 3 / 8 - a - b
+h1 : Complex.normSq ((v ᵥ* cj (A 1)) 1) ≤ a
+h2 : Complex.normSq ((v ᵥ* cj (A 2)) 1) ≤ b
+a✝ :
+  3 / 8 <
+    Complex.normSq ((v ᵥ* cj (A 0)) ((fun i => i) ⟨1, ⋯⟩)) + Complex.normSq ((v ᵥ* cj (A 1)) ((fun i => i) ⟨1, ⋯⟩)) +
+      Complex.normSq ((v ᵥ* cj (A 2)) ((fun i => i) ⟨1, ⋯⟩))
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:124:4: error(lean.unknownIdentifier): Unknown identifier `bottomAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:124:13: error(lean.unknownIdentifier): Unknown identifier `topAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:124:19: error(lean.unknownIdentifier): Unknown identifier `tailWords`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:137:4: error(lean.unknownIdentifier): Unknown identifier `bottomAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:137:13: error(lean.unknownIdentifier): Unknown identifier `topAt`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:137:19: error(lean.unknownIdentifier): Unknown identifier `tailWords`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:180:5: error: Function expected at
+  (fun w hw g => ?m.347) (C c) (P c) a
+but this term has type
+  ?m.350 (C c) (P c) a
+
+Note: Expected a function because this term is being applied to the argument
+  b
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:182:5: error: Function expected at
+  (fun w hw g => ?m.358) (D d) (Q d) a
+but this term has type
+  ?m.361 (D d) (Q d) a
+
+Note: Expected a function because this term is being applied to the argument
+  b

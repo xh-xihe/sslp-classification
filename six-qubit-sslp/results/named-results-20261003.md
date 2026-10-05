@@ -7,7 +7,7 @@ are separate checks. Partial entries list related declarations and the uncovered
 Unreviewed entries have no accepted correspondence; a missing correspondence is not
 by itself evidence that no proof exists. Conjectures are not proved results.
 
-Named environments: 161. conjecture=1, covered=153, expository=5, unreviewed=2
+Named environments: 161. conjecture=1, covered=154, expository=5, unreviewed=1
 
 To regenerate: `python tools/named_results_doc.py --paper-version 20261003`.
 
@@ -1351,12 +1351,26 @@ corollary, line 10407.
 
 20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Any code whose normal form has m = 5 lands on the key whose manuscript orbit number is 36.
 
-### `supplementary.tex:tab:q4status` — unreviewed
+### `supplementary.tex:tab:q4status` — covered
 
 table, line 10453.
 
+- `MainTheory.OrderFourTableDisplays.displayed_data`
+- `MainTheory.OrderFourTableDisplays.exhaustive`
+- `MainTheory.OrderFourTableDisplays.row_injective`
+- `MainTheory.OrderFourTableDisplays.no_completion`
+- `MainTheory.Generated.OrbitTableSemantics25.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics26.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics27.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics28.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics29.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics30.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics31.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics32.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics62.lp_affine_dimension`
+- `MainTheory.Generated.OrbitTableSemantics63.lp_affine_dimension`
 
-_No review recorded._
+20261005 actual split/matrix type and context review: All ten row numbers, q values, representatives, order-four status and displayed dimensions match the finite orbit table. Each dimension root concerns the full nonnegative physical moment polytope, including forced-zero coordinates. The final physical no-completion results supply the status column; individual analytic intermediate equations remain separately reviewed.
 
 ### `supplementary.tex:remark@10480` — unreviewed
 

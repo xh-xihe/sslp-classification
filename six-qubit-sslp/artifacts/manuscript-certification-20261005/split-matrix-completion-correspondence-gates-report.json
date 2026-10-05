@@ -1,0 +1,49 @@
+{
+  "paper_version": "20261003",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "sources",
+      "passed": true,
+      "detail": "16161 Lean sources clean",
+      "seconds": 144.438
+    },
+    {
+      "check": "readme",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\readme-names.log; all present",
+      "seconds": 42.75
+    },
+    {
+      "check": "audit-names",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\audit-names.log; all audited and ledger-cited names resolve",
+      "seconds": 18.5
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\named-results.log; named-results document is current",
+      "seconds": 0.875
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\claims.log; FAIL: 130 incomplete assertions (partial=1, unreviewed=129); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:eq:quantum-Singleton, supplementary.tex:q2fam:eq:split-orbits, supplementary.tex:remark@10480, supplementary.tex:equation@10939, supplementary.tex:eq:q4o26D3rankone, ...",
+      "seconds": 0.875
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.047
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed",
+      "seconds": 0.0
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:31:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y0) * d z2 + star (c y1) * d z3 + star (c y4) * d z6 + star (c y5) * d z7 = 0
+⊢ (starRingEnd ℂ) (c y1) * d z3 - d z3 * star (c y1) + ((starRingEnd ℂ) (c y0) * d z2 - d z2 * star (c y0)) +
+        ((starRingEnd ℂ) (c y5) * d z7 - d z7 * star (c y5)) +
+      ((starRingEnd ℂ) (c y4) * d z6 - d z6 * star (c y4)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:38:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y0) * d z10 + star (c y1) * d z11 + star (c y4) * d z14 + star (c y5) * d z15 = 0
+⊢ (starRingEnd ℂ) (c y1) * d z11 - d z11 * star (c y1) + ((starRingEnd ℂ) (c y0) * d z10 - d z10 * star (c y0)) +
+        ((starRingEnd ℂ) (c y5) * d z15 - d z15 * star (c y5)) +
+      ((starRingEnd ℂ) (c y4) * d z14 - d z14 * star (c y4)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:45:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y8) * d z2 + star (c y9) * d z3 + star (c y12) * d z6 + star (c y13) * d z7 = 0
+⊢ (starRingEnd ℂ) (c y9) * d z3 - d z3 * star (c y9) + ((starRingEnd ℂ) (c y8) * d z2 - d z2 * star (c y8)) +
+        ((starRingEnd ℂ) (c y13) * d z7 - d z7 * star (c y13)) +
+      ((starRingEnd ℂ) (c y12) * d z6 - d z6 * star (c y12)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:52:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y8) * d z10 + star (c y9) * d z11 + star (c y12) * d z14 + star (c y13) * d z15 = 0
+⊢ (starRingEnd ℂ) (c y9) * d z11 - d z11 * star (c y9) + ((starRingEnd ℂ) (c y8) * d z10 - d z10 * star (c y8)) +
+        ((starRingEnd ℂ) (c y13) * d z15 - d z15 * star (c y13)) +
+      ((starRingEnd ℂ) (c y12) * d z14 - d z14 * star (c y12)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:68:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y0) * d z4 + star (c y1) * d z5 + star (c y2) * d z6 + star (c y3) * d z7 = 0
+⊢ (starRingEnd ℂ) (c y1) * d z5 - d z5 * star (c y1) + ((starRingEnd ℂ) (c y0) * d z4 - d z4 * star (c y0)) +
+        ((starRingEnd ℂ) (c y3) * d z7 - d z7 * star (c y3)) +
+      ((starRingEnd ℂ) (c y2) * d z6 - d z6 * star (c y2)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:75:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y0) * d z12 + star (c y1) * d z13 + star (c y2) * d z14 + star (c y3) * d z15 = 0
+⊢ (starRingEnd ℂ) (c y1) * d z13 - d z13 * star (c y1) + ((starRingEnd ℂ) (c y0) * d z12 - d z12 * star (c y0)) +
+        ((starRingEnd ℂ) (c y3) * d z15 - d z15 * star (c y3)) +
+      ((starRingEnd ℂ) (c y2) * d z14 - d z14 * star (c y2)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:82:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y8) * d z4 + star (c y9) * d z5 + star (c y10) * d z6 + star (c y11) * d z7 = 0
+⊢ (starRingEnd ℂ) (c y9) * d z5 - d z5 * star (c y9) + ((starRingEnd ℂ) (c y8) * d z4 - d z4 * star (c y8)) +
+        ((starRingEnd ℂ) (c y11) * d z7 - d z7 * star (c y11)) +
+      ((starRingEnd ℂ) (c y10) * d z6 - d z6 * star (c y10)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:89:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y8) * d z12 + star (c y9) * d z13 + star (c y10) * d z14 + star (c y11) * d z15 = 0
+⊢ (starRingEnd ℂ) (c y9) * d z13 - d z13 * star (c y9) + ((starRingEnd ℂ) (c y8) * d z12 - d z12 * star (c y8)) +
+        ((starRingEnd ℂ) (c y11) * d z15 - d z15 * star (c y11)) +
+      ((starRingEnd ℂ) (c y10) * d z14 - d z14 * star (c y10)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:105:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y2) * d z2 + star (c y3) * d z3 + star (c y4) * d z4 + star (c y5) * d z5 = 0
+⊢ (starRingEnd ℂ) (c y5) * d z5 - d z5 * star (c y5) + ((starRingEnd ℂ) (c y4) * d z4 - d z4 * star (c y4)) +
+        ((starRingEnd ℂ) (c y3) * d z3 - d z3 * star (c y3)) +
+      ((starRingEnd ℂ) (c y2) * d z2 - d z2 * star (c y2)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:112:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y2) * d z10 + star (c y3) * d z11 + star (c y4) * d z12 + star (c y5) * d z13 = 0
+⊢ (starRingEnd ℂ) (c y5) * d z13 - d z13 * star (c y5) + ((starRingEnd ℂ) (c y4) * d z12 - d z12 * star (c y4)) +
+        ((starRingEnd ℂ) (c y3) * d z11 - d z11 * star (c y3)) +
+      ((starRingEnd ℂ) (c y2) * d z10 - d z10 * star (c y2)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:119:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y10) * d z2 + star (c y11) * d z3 + star (c y12) * d z4 + star (c y13) * d z5 = 0
+⊢ (starRingEnd ℂ) (c y13) * d z5 - d z5 * star (c y13) + ((starRingEnd ℂ) (c y12) * d z4 - d z4 * star (c y12)) +
+        ((starRingEnd ℂ) (c y11) * d z3 - d z3 * star (c y11)) +
+      ((starRingEnd ℂ) (c y10) * d z2 - d z2 * star (c y10)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:126:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+hn : star (c y10) * d z10 + star (c y11) * d z11 + star (c y12) * d z12 + star (c y13) * d z13 = 0
+⊢ (starRingEnd ℂ) (c y13) * d z13 - d z13 * star (c y13) + ((starRingEnd ℂ) (c y12) * d z12 - d z12 * star (c y12)) +
+        ((starRingEnd ℂ) (c y11) * d z11 - d z11 * star (c y11)) +
+      ((starRingEnd ℂ) (c y10) * d z10 - d z10 * star (c y10)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:135:90: error: Type mismatch
+  outer_12 c d hc hd hkl
+has type
+  cj (C c 1) * Jmat * (D d 2)ᵀ + cj (C c 2) * Jmat * (D d 1)ᵀ = 0
+but is expected to have type
+  cj (C c ((fun i => i) ⟨1, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨0, ⋯⟩).castSucc)ᵀ +
+      cj (C c ((fun i => i) ⟨0, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨1, ⋯⟩).castSucc)ᵀ =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:135:90: error: Type mismatch
+  outer_12 c d hc hd hkl
+has type
+  cj (C c 1) * Jmat * (D d 2)ᵀ + cj (C c 2) * Jmat * (D d 1)ᵀ = 0
+but is expected to have type
+  cj (C c ((fun i => i) ⟨2, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨0, ⋯⟩).castSucc)ᵀ +
+      cj (C c ((fun i => i) ⟨0, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨2, ⋯⟩).castSucc)ᵀ =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:135:90: error: Type mismatch
+  outer_12 c d hc hd hkl
+has type
+  cj (C c 1) * Jmat * (D d 2)ᵀ + cj (C c 2) * Jmat * (D d 1)ᵀ = 0
+but is expected to have type
+  cj (C c ((fun i => i) ⟨2, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨1, ⋯⟩).castSucc)ᵀ +
+      cj (C c ((fun i => i) ⟨1, ⋯⟩).castSucc) * Jmat * (D d ((fun i => i) ⟨2, ⋯⟩).castSucc)ᵀ =
+    0

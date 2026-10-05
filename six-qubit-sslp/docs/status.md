@@ -16,17 +16,14 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current local proof snapshot passes the whole build: **16,149 modules**.
-Its fresh transitive audit passes **8,463 roots**, using only `propext`,
-`Classical.choice` and `Quot.sound`. The scope and evidence are recorded in
-[proof-acceptance-16149.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16149.json).
-This local acceptance does not declare complete manuscript correspondence.
-The accepted current proof snapshot is published in
-[`f8846a63`](https://github.com/xh-xihe/dyadic-lifts/commit/f8846a633c70f863d0e796127b5de2f1361e0584).
-Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16149.json)
-checks every one of the 16,149 active proof sources against the local
-successful build. Earlier publication bindings are retained unchanged.
-Machine-readable current status is in
+The current local proof snapshot passes the whole build: **16,161 modules**.
+Its fresh transitive audit passes **8,627 roots**, using only `propext`,
+`Classical.choice` and `Quot.sound`. Its evidence is recorded in
+[proof-acceptance-16161.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16161.json).
+This acceptance does not declare complete manuscript correspondence.
+Publication of this snapshot is pending. The preceding
+[16,149-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16149.json)
+is retained unchanged. Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -57,16 +54,16 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-The current audit contains 5,699 distinct selected roots in
+The current audit contains 5,863 distinct selected roots in
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and newly checked physical bridges. Roots
 already present in another audit are retained there rather than duplicated.
 
-The current ledger has **1,680 covered assertions**, five
-scope-only statements, three stated conjectures, **141 unreviewed
+The current ledger has **1,692 covered assertions**, five
+scope-only statements, three stated conjectures, **129 unreviewed
 SI assertions**, and one explicitly partial main-text Singleton assertion.
-Current kernel type inspection covers **4,254 declarations**.
-The source inventory contains **16,149 active Lean modules**. The new
+Current kernel type inspection covers **4,197 declarations**.
+The source inventory contains **16,161 active Lean modules**. The new
 correspondence proofs include:
 
 - Orbit 31: the exact support-count chain, all sixteen representatives and
@@ -129,6 +126,21 @@ correspondences were explicitly reviewed; twenty-two previously unreviewed
 assertions are now covered. The
 [batch record](../artifacts/manuscript-certification-20261005/orbit30-work-in-progress.json)
 retains the evidence and publication scope.
+
+## Actual split enumerators and physical matrices
+
+Twelve modules derive normalized actual-encoder Pauli sums for arbitrary
+complex isometries and both printed orbit-three output conventions, all seven
+split-family enumerators, orbit-26 KL matrix entries in the SI group order,
+the complete orbit-28 probabilities and support, and literal orbit-32 parity
+labels. Sixteen correspondences were explicitly reviewed, including twelve
+previously unreviewed assertions and four strengthened matrix bridges.
+
+The whole build, fresh standard-axiom audit, canonical type inspection and
+three source-reconstruction checks pass. The
+[batch record](../artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json)
+states the limited proof scope. Later isolated draft proofs are excluded from
+this acceptance until a new canonical build and audit pass.
 
 ## Historical records
 

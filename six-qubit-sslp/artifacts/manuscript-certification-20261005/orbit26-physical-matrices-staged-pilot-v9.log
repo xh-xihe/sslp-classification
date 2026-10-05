@@ -1,0 +1,32 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalMatrices.lean:440:2: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+a b : Fin 2
+h0 :
+  (C c 0 * (C c 0)ᴴ) a b + (D d 0 * (D d 0)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h1 :
+  (C c 1 * (C c 1)ᴴ) a b + (D d 1 * (D d 1)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h2 :
+  (C c 2 * (C c 2)ᴴ) a b + (D d 2 * (D d 2)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+h3 :
+  (C c 3 * (C c 3)ᴴ) a b + (D d 3 * (D d 3)ᴴ) a b =
+    1 / 2 *
+      ((C c 0 * (C c 0)ᴴ) a b +
+        ((C c 1 * (C c 1)ᴴ) a b + ((C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b + (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b)))
+⊢ -(C c ⟨2, ⋯⟩ * (C c ⟨2, ⋯⟩)ᴴ) a b - (C c ⟨3, ⋯⟩ * (C c ⟨3, ⋯⟩)ᴴ) a b + (C c 2 * (C c 2)ᴴ) a b +
+            (D d 2 * (D d 2)ᴴ) a b +
+          (C c 3 * (C c 3)ᴴ) a b +
+        (D d 3 * (D d 3)ᴴ) a b +
+      (-(D d ⟨2, ⋯⟩ * (D d ⟨2, ⋯⟩)ᴴ) a b - (D d ⟨3, ⋯⟩ * (D d ⟨3, ⋯⟩)ᴴ) a b) =
+    0

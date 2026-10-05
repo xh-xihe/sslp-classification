@@ -25,32 +25,32 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 16149,
+  "active_lean_modules": 16161,
   "whole_build": {
     "status": "PASS",
-    "modules": 16149,
-    "rebuilt": 23,
-    "reused": 16126,
-    "record": "full-build-success-16149.json",
-    "log": "orbit30-completion-full-build-v1.log"
+    "modules": 16161,
+    "rebuilt": 14,
+    "reused": 16147,
+    "record": "full-build-success-16161.json",
+    "log": "split-matrix-completion-full-build-v1.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 8463,
+    "roots": 8627,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8463.json",
-    "log": "orbit30-completion-axioms-v1.log"
+    "record": "axioms-8627.json",
+    "log": "split-matrix-completion-axioms-v1.log"
   },
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1680,
+    "covered": 1692,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 141
+    "unreviewed": 129
   },
   "kernel_type_inspections": [
     {
@@ -104,14 +104,18 @@
     {
       "record": "kernel-types-orbit30-completion.json",
       "declarations": 4254
+    },
+    {
+      "record": "kernel-types-split-matrix-completion.json",
+      "declarations": 4197
     }
   ],
   "fully_kernel_manuscript_certification": "not_complete",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16149,
-    "axiom_roots": 8463,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16149.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8463.json"
+    "modules": 16161,
+    "axiom_roots": 8627,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16161.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8627.json"
   },
   "current_tool_regressions": {
     "certification_tools": 44,
@@ -135,7 +139,7 @@
     "claims": "incomplete",
     "prose-review": "incomplete",
     "errata": "incomplete",
-    "log": "orbit30-completion-correspondence-gates.log"
+    "log": "split-matrix-completion-correspondence-gates.log"
   },
   "publication": {
     "status": "PASS",
@@ -146,22 +150,22 @@
   },
   "last_accepted_whole_build": {
     "status": "PASS",
-    "modules": 16149,
-    "rebuilt": 23,
-    "reused": 16126,
-    "record": "full-build-success-16149.json",
-    "log": "orbit30-completion-full-build-v1.log"
+    "modules": 16161,
+    "rebuilt": 14,
+    "reused": 16147,
+    "record": "full-build-success-16161.json",
+    "log": "split-matrix-completion-full-build-v1.log"
   },
   "last_accepted_axiom_audit": {
     "status": "PASS",
-    "roots": 8463,
+    "roots": 8627,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8463.json",
-    "log": "orbit30-completion-axioms-v1.log"
+    "record": "axioms-8627.json",
+    "log": "split-matrix-completion-axioms-v1.log"
   },
   "current_prose_review": {
     "status": "partial",
@@ -553,10 +557,13 @@
     "record": "artifacts/manuscript-certification-20261005/completion-staged-proof-snapshot-72.json"
   },
   "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/orbit30-work-in-progress.json",
-    "scope": "Literal orbit-30 matrices, phase equations, actual support graph, ten proper complement types and full-support determinant route. No manuscript coverage is transferred from staged proofs.",
-    "new_modules": 21,
-    "whole_build": "running",
-    "axiom_audit": "pending"
+    "record": "artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json",
+    "scope": "Literal arbitrary split enumerators and output conventions; orbit-28 complete probabilities; orbit-32 parity notation; orbit-26 physical outer, anchor and matrix moment equations and generic dependent-anchor algebra.",
+    "status": "canonical_whole_build_running"
+  },
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 16161
   }
 }

@@ -1,0 +1,10 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26DependentAnchors.lean:122:6: error: ring failed, ring expressions not equal
+u v : Vec
+lam mu : ℂ
+hne : mu ≠ star lam
+h0 : u + v = 0
+h1 : star lam • u + mu • v = 0
+j : Fin 2
+e0 : u j + v j = 0
+e1 : (starRingEnd ℂ) lam * u j + mu * v j = 0
+⊢ star lam * u j - u j * (starRingEnd ℂ) lam = 0

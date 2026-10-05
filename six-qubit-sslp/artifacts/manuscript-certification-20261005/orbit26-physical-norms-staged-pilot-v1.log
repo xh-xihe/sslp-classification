@@ -1,0 +1,29 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:17:18: error: Ambiguous term
+  P
+Possible interpretations:
+  OrderFour26Moments.P : (Fin 16 ⊕ Fin 16 → ℝ) → Fin 8 → ℝ
+  
+  Orbit26PrintedProbabilities.P : SS.State 6 ℂ → Fin 8 → ℝ
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:16:48: error: unsolved goals
+c : SS.State 6 ℂ
+g : Fin 4
+j : Fin 2
+⊢ Complex.normSq (c (OrderFour26Support.bottomAt false (groupIndex g j))) +
+      Complex.normSq (c (OrderFour26Support.bottomAt true (groupIndex g j))) =
+    Orbit26PrintedProbabilities.P c (groupIndex g j)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:21:18: error: Ambiguous term
+  Q
+Possible interpretations:
+  OrderFour26Moments.Q : (Fin 16 ⊕ Fin 16 → ℝ) → Fin 8 → ℝ
+  
+  Orbit26PrintedProbabilities.Q : SS.State 6 ℂ → Fin 8 → ℝ
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:20:48: error: unsolved goals
+d : SS.State 6 ℂ
+g : Fin 4
+j : Fin 2
+⊢ Complex.normSq (d (OrderFour26Support.topAt false (groupIndex g j))) +
+      Complex.normSq (d (OrderFour26Support.topAt true (groupIndex g j))) =
+    Orbit26PrintedProbabilities.Q d (groupIndex g j)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26PhysicalNorms.lean:42:48: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

@@ -1,0 +1,75 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:24:12: error: ring failed, ring expressions not equal
+v : Vec
+hv : nsq v = 1
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+⊢ 1 + (-(star (v 1) * v 1) - v 0 * star (v 0)) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:24:12: error: ring failed, ring expressions not equal
+v : Vec
+hv : nsq v = 1
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+⊢ 1 + (-(star (v 0) * v 0) - v 1 * star (v 1)) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:39:6: error: ring failed, ring expressions not equal
+v w : Vec
+hv : nsq v = 1
+ho : star v ⬝ᵥ w = 0
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+hoC : star (v 0) * w 0 + star (v 1) * w 1 = 0
+t : ℂ := ⋯
+⊢ w ⟨0, ⋯⟩ - v 0 * star (v 1) * w 1 + (-(v 0 * w 1 * ![-star (v 1), star (v 0)] ⟨0, ⋯⟩) - w 0) +
+        w 0 * star (v 1) * v 1 +
+      w 0 * v 1 * ![-star (v 1), star (v 0)] ⟨0, ⋯⟩ =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:40:6: error: ring failed, ring expressions not equal
+v w : Vec
+hv : nsq v = 1
+ho : star v ⬝ᵥ w = 0
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+hoC : star (v 0) * w 0 + star (v 1) * w 1 = 0
+t : ℂ := ⋯
+⊢ w ⟨1, ⋯⟩ - v 1 * star (v 0) * w 0 + (v 1 * w 0 * ![-star (v 1), star (v 0)] ⟨1, ⋯⟩ - w 1) +
+      (w 1 * star (v 0) * v 0 - w 1 * v 0 * ![-star (v 1), star (v 0)] ⟨1, ⋯⟩) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:43:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, Complex.normSq (perp v i)
+in the target expression
+  ∑ x, Complex.normSq t * Complex.normSq (perp v x) = Complex.normSq t
+
+v w : Vec
+hv : nsq v = 1
+ho : star v ⬝ᵥ w = 0
+hC : star (v 0) * v 0 + star (v 1) * v 1 = 1
+hoC : star (v 0) * w 0 + star (v 1) * w 1 = 0
+t : ℂ := v 0 * w 1 - v 1 * w 0
+hw : ∀ (i : Fin 2), w i = t * perp v i
+⊢ ∑ x, Complex.normSq t * Complex.normSq (perp v x) = Complex.normSq t
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:37:30: error: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵e̵r̵p̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵,̵t̵]̵[̲p̲e̲r̲p̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲,̲ ̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:37:51: error: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵e̵r̵p̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵,̵t̵]̵[̲p̲e̲r̲p̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲f̲i̲n̲_̲o̲n̲e̲,̲ ̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:38:6: error: This simp argument is unused:
+  Matrix.cons_val_fin_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵e̵r̵p̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵,̵t̵]̵[̲p̲e̲r̲p̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲,̲ ̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26OrthogonalGram.lean:42:30: error: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [̵n̵s̵q̵,̵h̵w̵,̵m̵a̵p̵_̵m̵u̵l̵,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]̵[̲n̲s̲q̲,̲ ̲h̲w̲,̲ ̲m̲a̲p̲_̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
