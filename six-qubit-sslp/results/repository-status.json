@@ -38,7 +38,7 @@
   },
   "current_type_inspection_declarations": 6387,
   "historical_publication_source_binding": "PASS",
-  "publication_source_binding": "PASS_last_accepted_proof_snapshot_new_batch_pending",
+  "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
     "modules": 16128,
     "axiom_roots": 8189,
@@ -59,11 +59,7 @@
     "reviewed_blocks": 80
   },
   "planned_axiom_roots": 8189,
-  "canonical_publication_commit": "e60b7ec61b70805cf6ab07644cb87073bbb077c6",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-15952.json",
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/orbit31-support-work-in-progress.json",
-    "scope": "PASS current local orbit-31 completion, literal orbit-32, complete orbit-33 block argument, arbitrary complex-isometry physical split and syndrome table, literal order-four/five intermediate steps, all real orbit-47–52 normal forms and ranks, and all six literal order-three physical cross exclusions; publication pending. Manuscript review remains incomplete."
-  },
+  "canonical_publication_commit": "abc13b21f76a7e562231432882a08a3fc5e4c8d1",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16128.json",
   "identified_si_qualifications": 1
 }

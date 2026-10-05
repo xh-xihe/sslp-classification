@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "scope": "Accepted local proof snapshot; publication pending and manuscript review incomplete.",
   "candidate_data": "results/orbit31-support-candidates-20261005.json",
   "active_lean_modules": 16128,
@@ -415,5 +415,12 @@
   "orbit45_physical_intermediates": "kernel_checked_arbitrary_code_moments_Walsh_signs_spin_flip_boundary_domain_relative_phase_affine_gauge_six_cross_factor_tables_and_all_fifteen_ZZ_expectations",
   "whole_build": "PASS",
   "axiom_audit": "PASS",
-  "proof_acceptance": "proof-acceptance-16128.json"
+  "proof_acceptance": "proof-acceptance-16128.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "abc13b21f76a7e562231432882a08a3fc5e4c8d1",
+    "branch": "sixqubit-classification",
+    "modules": 16128,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16128.json"
+  }
 }
