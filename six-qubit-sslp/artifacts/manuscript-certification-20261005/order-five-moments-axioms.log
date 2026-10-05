@@ -1,0 +1,4 @@
+PARTIAL verification: axioms
+Paper version: 20261003
+START axioms
+[PASS] axioms (155.8s): 4531 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\verification\20261003\axioms.log

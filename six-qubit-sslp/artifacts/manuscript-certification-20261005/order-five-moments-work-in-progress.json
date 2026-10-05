@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "status": "proof_accepted_publication_pending",
+  "new_modules": [
+    "MainTheory.OrderFivePrintedMoments"
+  ],
+  "strict_single_module_compilation": "PASS",
+  "kernel_type_inspection": {
+    "status": "PASS",
+    "declarations": 3168,
+    "record": "kernel-types-order-five-moments.json"
+  },
+  "whole_build": "PASS",
+  "axiom_audit": "PASS",
+  "last_accepted_public_snapshot": "999afd760c9c13106e21047f4159d7239f32a1c6",
+  "source_bindings_sha256_lf": {
+    "tools/verification/generate_order_five_printed_moments.py": "ab8b2347d155df0586623917c19165d81b7ceaebf4c3a90514354818480b4532",
+    "MainTheory/OrderFivePrintedMoments.lean": "b2f1743d050c87e8d2f279e6d4c9cce27e49cb03d686993224ea7c04125a9353"
+  },
+  "proof_acceptance": "proof-acceptance-15952.json"
+}

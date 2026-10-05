@@ -1,0 +1,23 @@
+Serial plan: 15952 modules; 1 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[26/15952] BUILD MainTheory.OrderFivePrintedMoments
+[15833/15952] BUILD MainTheory.ManuscriptCertificationAudit20261005
+[15836/15952] BUILD MainTheory
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 3 serially rebuilt, 15949 content-validated cached modules

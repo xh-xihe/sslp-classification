@@ -8,17 +8,17 @@
   "scope": "Current unfinished semantic correspondence; compiled final results do not discharge intermediate statements.",
   "claim_status_counts": {
     "conjecture": 3,
-    "covered": 1473,
+    "covered": 1476,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 348
+    "unreviewed": 345
   },
   "pending_by_source_section": {
     "main.tex:2": 1,
     "supplementary.tex:10": 3,
     "supplementary.tex:12": 8,
     "supplementary.tex:13": 26,
-    "supplementary.tex:21": 28,
+    "supplementary.tex:21": 25,
     "supplementary.tex:22": 97,
     "supplementary.tex:23": 85,
     "supplementary.tex:24": 101
@@ -519,36 +519,12 @@
       "work_scope": "pending statement/context/type review; not a finding of falsehood"
     },
     {
-      "id": "supplementary.tex:eq:o35momentcore",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 10001,
-      "end_line": 10010,
-      "statement_sha256": "5f73f584ae77a056fd1ce08747f72d37b706fb43276b1e36e8a54640cdd752c5",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 21,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
       "id": "supplementary.tex:displaymath@10043",
       "source": "documents/20261003/supplementary.tex",
       "kind": "displaymath",
       "line": 10043,
       "end_line": 10047,
       "statement_sha256": "f30c0e4b0b02552102af1c367d7b1e8805439140788ae8f10566e1730fedfabf",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 21,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o38columnpositive",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 10075,
-      "end_line": 10078,
-      "statement_sha256": "a2f1cf1dc200c718d40b098dfee86c3fbadb392bf2a89826e21aa1b882d2b1ee",
       "status": "unreviewed",
       "lean_declarations": [],
       "section_number": 21,
@@ -585,18 +561,6 @@
       "line": 10118,
       "end_line": 10120,
       "statement_sha256": "1e2e94c2efb1eb4de95c5c8974a8678ec9613e8a4c03e9806af9f7d3bc4e8e94",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 21,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o37momentnormal",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 10151,
-      "end_line": 10158,
-      "statement_sha256": "0899170ae836fca266e4523ddf7d6258022ce0414d31f67ad56ec650a3d1850c",
       "status": "unreviewed",
       "lean_declarations": [],
       "section_number": 21,

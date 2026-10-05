@@ -1,0 +1,9 @@
+{
+  "command": [
+    "python",
+    "tools/verification/generate_order_five_printed_moments.py",
+    "--check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.6764124999754131
+}

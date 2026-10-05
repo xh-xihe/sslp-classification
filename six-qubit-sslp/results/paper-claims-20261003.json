@@ -24849,9 +24849,15 @@
       "line": 10001,
       "end_line": 10010,
       "statement_sha256": "5f73f584ae77a056fd1ce08747f72d37b706fb43276b1e36e8a54640cdd752c5",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFivePrintedMoments.Orbit35.physical_consequences",
+        "MainTheory.OrderFivePrintedMoments.Orbit35.consequence0",
+        "MainTheory.OrderFivePrintedMoments.Orbit35.consequence1",
+        "MainTheory.OrderFivePrintedMoments.Orbit35.consequence2",
+        "MainTheory.OrderFivePrintedMoments.Orbit35.consequence3"
+      ],
+      "review": "20261005 physical order-five moment/type review: The four literal relations hold for the squared magnitudes of the actual supported, normalized complex codewords under physical distance-three KL. The paper lexicographic bottom indices 5,7,8 and top indices 10,11,12 agree with native y5,y7,y8 and z10,z11,z12. Exact rational combinations use only the two normalizations and diagonal degree-two moment rows. No Walsh exclusion or final no-code theorem is used."
     },
     {
       "id": "supplementary.tex:displaymath@10012",
@@ -24985,11 +24991,14 @@
       "statement_sha256": "27d1e93f3da021d6b649b1345c089b2dd4fc2d8010ee94dfd889e1723517d701",
       "status": "covered",
       "lean_declarations": [
-        "SixQubit.Orbit38.MomentSystem.facts",
-        "SixQubit.Orbit38.MomentSystem",
-        "SixQubit.Orbit38.moments"
+        "MainTheory.OrderFivePrintedMoments.Orbit38.A",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.B",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.printed_labels",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.physical_display",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.physical_consequences",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.reconstruct"
       ],
-      "review": "20261005 fixed-context/type revalidation: The no-go proofs retain their literal orbit records, full residue fibers, actual supported complex amplitudes and complete KL equations, allowing all boundary supports. Replacing filenames by exact finite-check descriptions does not alter any local premise or infer a no-go from probability feasibility alone. Previously unreviewed intermediate equalities and changed finite-scope remarks are excluded; final no-gos do not automatically cover those formulas. Retained statement review: 20261004 current-source no-go revalidation: the local records and displayed equations retain their exact historical statement bytes. Reviewed the unchanged local hypotheses against the common convention: full residue fibers, actual supports allowed to be smaller, normalized complex rank-two words, all Pauli errors of weight at most two, and real nonnegative diagonal moments. Logical order is the order of the actual projective action; no enumeration count substitutes for code nonexistence. Section moves do not strengthen any hypothesis. Previously partial intermediate routes are not promoted. Statement review: Orbit 38's complete moment normal form: |s|^2 = 1/5, both grid row sums 3/10, and |a_j|^2 = w_1j + w_2j - 1/10. SixQubit.Orbit38.MomentSystem.facts states exactly this from the twenty-three moment rows -- q12 = 1/5 and r0 = 1/5 for the star and its complement, q4+q5+q6+q7 = q8+q9+q10+q11 = 3/10 with the two matching top row sums, and the four column identities q4+q8 = q3+1/10, q5+q9 = q2+1/10, q6+q10 = q1+1/10, q7+q11 = q0+1/10, whose A-indices y3, y2, y1, y0 are the manuscript's j = 1,2,3,4. SixQubit.Orbit38.moments derives the system from the code hypotheses. | ADVERSARIAL CHECK: Read MomentSystem.facts in full: q12 = 1/5, r0 = 1/5, q4+q5+q6+q7 = 3/10, q8+q9+q10+q11 = 3/10, r8+r7+r6+r5 = 3/10, r4+r3+r2+r1 = 3/10, and the four column identities q4+q8 = q3+1/10, q5+q9 = q2+1/10, q6+q10 = q1+1/10, q7+q11 = q0+1/10. Checked the index correspondence: with A_1 = y3, A_2 = y2, A_3 = y1, A_4 = y0 these are the display's |a_j|^2 = w_1j + w_2j - 1/10 for j = 1..4. Added moments."
+      "review": "20261005 physical order-five moment/type review: Both directions of the complete diagonal moment normal form are now explicit. Actual normalized supported complex codewords under KL have star mass 1/5, grid row masses 3/10, A probabilities equal to column mass minus 1/10, and complementary equality. The printed A order is native y3,y2,y1,y0; all B and star strings are kernel checked. Conversely these real relations together with nonnegative probabilities rebuild every normalization, first moment and second moment field. This completeness concerns diagonal moments and does not assert full KL sufficiency or an exact-code construction."
     },
     {
       "id": "supplementary.tex:eq:o38columnpositive",
@@ -25001,9 +25010,14 @@
       "line": 10075,
       "end_line": 10078,
       "statement_sha256": "a2f1cf1dc200c718d40b098dfee86c3fbadb392bf2a89826e21aa1b882d2b1ee",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFivePrintedMoments.Orbit38.B",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.printed_labels",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.column_positive",
+        "MainTheory.OrderFivePrintedMoments.Orbit38.physical_column_positive"
+      ],
+      "review": "20261005 physical order-five moment/type review: Every printed grid column of actual supported normalized physical codewords has mass at least 1/10 and strictly greater than zero. This follows from the exact column relation and nonnegativity of the actual A squared magnitude, and includes all zero-amplitude boundary supports. No individual grid amplitude is assumed positive."
     },
     {
       "id": "supplementary.tex:displaymath@10081",
@@ -25197,9 +25211,16 @@
       "line": 10151,
       "end_line": 10158,
       "statement_sha256": "0899170ae836fca266e4523ddf7d6258022ce0414d31f67ad56ec650a3d1850c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderFivePrintedMoments.Orbit37.A",
+        "MainTheory.OrderFivePrintedMoments.Orbit37.B",
+        "MainTheory.OrderFivePrintedMoments.Orbit37.printed_labels",
+        "MainTheory.OrderFivePrintedMoments.Orbit37.physical_display",
+        "MainTheory.OrderFivePrintedMoments.Orbit37.physical_consequences",
+        "MainTheory.OrderFivePrintedMoments.Orbit37.reconstruct"
+      ],
+      "review": "20261005 physical order-five moment/type review: The printed star probability is 1/10, each actual three-column grid row sums to 1/5, and each A probability equals its grid column sum minus 1/10. The paper A order is native y2,y1,y0, while the B grid keeps y3 through y11 in row order; all literal strings and the star are kernel checked. The actual physical theorem is derived from KL moments. The rational multiplier proofs also give complementary equality and total A mass 3/10; reconstruct proves sufficiency for the complete real MomentSystem under the explicitly retained nonnegativity and complementary equalities."
     },
     {
       "id": "supplementary.tex:displaymath@10160",

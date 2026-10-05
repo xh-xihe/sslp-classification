@@ -25,32 +25,32 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 15951,
+  "active_lean_modules": 15952,
   "whole_build": {
     "status": "PASS",
-    "modules": 15951,
+    "modules": 15952,
     "rebuilt": 3,
-    "reused": 15948,
-    "record": "full-build-success-15951.json",
-    "log": "sector-tables-final-full-build.log"
+    "reused": 15949,
+    "record": "full-build-success-15952.json",
+    "log": "order-five-moments-full-build.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 4471,
+    "roots": 4531,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-4471.json",
-    "log": "sector-tables-axioms.log"
+    "record": "axioms-4531.json",
+    "log": "order-five-moments-axioms.log"
   },
   "current_claim_status_counts": {
-    "covered": 1473,
-    "partial": 1,
-    "expository": 5,
     "conjecture": 3,
-    "unreviewed": 348
+    "covered": 1476,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 345
   },
   "kernel_type_inspections": [
     {
@@ -88,29 +88,33 @@
     {
       "record": "kernel-types-moment-rank.json",
       "declarations": 3108
+    },
+    {
+      "record": "kernel-types-order-five-moments.json",
+      "declarations": 3168
     }
   ],
   "fully_kernel_manuscript_certification": "not_complete",
   "last_accepted_local_proof_snapshot": {
-    "modules": 15951,
+    "modules": 15952,
     "whole_build": {
       "status": "PASS",
-      "modules": 15951,
+      "modules": 15952,
       "rebuilt": 3,
-      "reused": 15948,
-      "record": "full-build-success-15951.json",
-      "log": "sector-tables-final-full-build.log"
+      "reused": 15949,
+      "record": "full-build-success-15952.json",
+      "log": "order-five-moments-full-build.log"
     },
     "axiom_audit": {
       "status": "PASS",
-      "roots": 4471,
+      "roots": 4531,
       "allowed": [
         "Classical.choice",
         "Quot.sound",
         "propext"
       ],
-      "record": "axioms-4471.json",
-      "log": "sector-tables-axioms.log"
+      "record": "axioms-4531.json",
+      "log": "order-five-moments-axioms.log"
     }
   },
   "current_tool_regressions": {
@@ -132,10 +136,10 @@
     "readme": "PASS",
     "audit-names": "PASS",
     "named-results": "PASS",
-    "claims": "incomplete: 348 unreviewed SI assertions and one held main assertion",
+    "claims": "incomplete: 345 unreviewed SI assertions and one held main assertion",
     "prose-review": "partial current review",
     "errata": "five author-held main issues",
-    "log": "sector-tables-correspondence-gates.log"
+    "log": "order-five-moments-correspondence-gates.log"
   },
   "publication": {
     "status": "PASS",
@@ -146,22 +150,22 @@
   },
   "last_accepted_whole_build": {
     "status": "PASS",
-    "modules": 15951,
+    "modules": 15952,
     "rebuilt": 3,
-    "reused": 15948,
-    "record": "full-build-success-15951.json",
-    "log": "sector-tables-final-full-build.log"
+    "reused": 15949,
+    "record": "full-build-success-15952.json",
+    "log": "order-five-moments-full-build.log"
   },
   "last_accepted_axiom_audit": {
     "status": "PASS",
-    "roots": 4471,
+    "roots": 4531,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-4471.json",
-    "log": "sector-tables-axioms.log"
+    "record": "axioms-4531.json",
+    "log": "order-five-moments-axioms.log"
   },
   "current_prose_review": {
     "status": "partial",
@@ -178,5 +182,10 @@
     "log": "sector-tables-full-build.log",
     "record": "full-build-success-15950-before-audit-fix.json",
     "scope": "Before removing one duplicate audit-list entry and adding the rational rank module."
+  },
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 15952
   }
 }

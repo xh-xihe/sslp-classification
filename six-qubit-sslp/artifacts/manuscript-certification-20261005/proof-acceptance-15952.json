@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "scope": "Complete current local Lean proof-source snapshot only; manuscript correspondence remains unfinished.",
+  "proof_acceptance": "PASS",
+  "active_modules": 15952,
+  "axiom_roots": 4531,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "claim_status_counts": {
+    "covered": 1476,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 345
+  },
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-15952.json",
+      "sha256": "1e690aa10ea084f83b08685fdeec1c21e2104bf9ea7a777cf334cbc5f98fe609"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-full-build.log",
+      "sha256": "177854ccce889c2d01e300809ba38aa96556938cb5d95ae65238273cd8220436"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-full-build-exit.json",
+      "sha256": "5521ead79f4f135259157154ca54df2a314e8abaae76ff1ab4d5128b32967fa0"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-4531.json",
+      "sha256": "d7719df96bf2102e62cec9d7793114804aac5f35965fa4511b4f28a109629971"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-axioms.log",
+      "sha256": "071111031db93a9ced9acb7f9406a104b4a31fa594b3057c51a61e4b38d49fb7"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-axioms-exit.json",
+      "sha256": "650fd243e98c14a54f996fa7a71ffda12ed18d673609d4ba7c6268016d80e825"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-correspondence-gates.log",
+      "sha256": "b84cdefaa97127bd98fde4381ffdcdaadc4ee3402d89c5c7fff5f947f4530323"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-correspondence-gates-exit.json",
+      "sha256": "3440e068bec64b43aeb6cf6e49e95b6904a4aee138b2acea4e018eb24fc79b96"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-generation.json",
+      "sha256": "aa74ebd3c1fb5ffa8c29e6a5a43f9c15e21c5ac2285c9aec195facde1eb97004"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-generation-check.log",
+      "sha256": "7f4ff8152efab3d0069bca0176e59f45ce56c740c52fd7f9748024bb811d5528"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-generation-check-exit.json",
+      "sha256": "0a00888b3e16905368439615e5ae9b2f7aa49ac35a5152c73a3a52523f34a70d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/order-five-moments-type-binding.json",
+      "sha256": "14f9a86c5b97a02405291030afedf1b62221afe3af129adcb34095e04541f731"
+    }
+  ]
+}

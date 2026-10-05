@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 15951,
+  "module_count": 15952,
   "counts_by_library": {
-    "MainTheory": 14061,
+    "MainTheory": 14062,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -94100,7 +94100,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "367fd6a1036c0b6f717e7fa80b4fc76c5173d9b09ab0d9a4bf596b4a5c810793",
+      "sha256_lf": "771ae3fa3734c160312e851f0dd742f655ee86a230e664820dae38e0690cb563",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -95942,6 +95942,13 @@
       "module": "MainTheory.OrderFivePaperIdentification",
       "path": "MainTheory/OrderFivePaperIdentification.lean",
       "sha256_lf": "8e28c30f0edf48ab07c6a3742bd11aadd180da4f0a989c67109feafeee9e8a17",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.OrderFivePrintedMoments",
+      "path": "MainTheory/OrderFivePrintedMoments.lean",
+      "sha256_lf": "b2f1743d050c87e8d2f279e6d4c9cce27e49cb03d686993224ea7c04125a9353",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },

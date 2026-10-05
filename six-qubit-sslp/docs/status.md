@@ -16,17 +16,18 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The complete local proof snapshot passes the whole build: **15,951 modules**,
-with three rebuilt and 15,948 content-validated cached modules. Its fresh
-transitive audit passes **4,471 roots**, using only `propext`, `Classical.choice`
+The complete local proof snapshot passes the whole build: **15,952 modules**,
+with three rebuilt and 15,949 content-validated cached modules. Its fresh
+transitive audit passes **4,531 roots**, using only `propext`, `Classical.choice`
 and `Quot.sound`. The current source, declaration-name and navigation gates
 also pass. The unchanged 10,085 generated-source bindings and all 66 orbit rows
 passed in the preceding current-source verification. The scoped proof acceptance
-is recorded in [proof-acceptance-15951.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15951.json).
-The accepted proof snapshot is published on the canonical branch in
+is recorded in [proof-acceptance-15952.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15952.json).
+The preceding accepted proof snapshot is published on the canonical branch in
 [`999afd76`](https://github.com/xh-xihe/dyadic-lifts/commit/999afd760c9c13106e21047f4159d7239f32a1c6).
 The [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-15951.json)
 checks all 15,951 proof sources against the accepted local snapshot. The
+accepted 15,952-module snapshot awaits canonical publication. The
 machine-readable current status is
 [repository-status.json](../results/repository-status.json).
 
@@ -58,13 +59,13 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-Another 1,707 roots now enter the shared audit through
+Another 1,767 roots now enter the shared audit through
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and the newly checked physical bridges.
 
-The current ledger has **1,473 covered assertions**, five scope-only statements,
-three stated conjectures, **348 unreviewed SI assertions**, and one explicitly
-partial main-text Singleton assertion. Kernel type inspection covers 3,108
+The current ledger has **1,476 covered assertions**, five scope-only statements,
+three stated conjectures, **345 unreviewed SI assertions**, and one explicitly
+partial main-text Singleton assertion. Kernel type inspection covers 3,168
 named declarations. The new proofs include the actual cat isometry and
 six-qubit tensor encoder, its compressions, the closed parameter path, the
 literal binary encoding, the orbit-three `DE`/`iDE` expectation identities,
@@ -79,6 +80,9 @@ Both detailed count tables now have proofs for every row and total, using
 actual angle-record sets, distinct full fibre-pair payloads and orbit keys.
 The new bridges also cover the order-two 25-to-11 reduction, the actual
 orbit-three spin trace, and orbit-26 physical probabilities and rational rank.
+The order-five bridges give the literal physical moment relations for orbits
+35, 37 and 38, the complete real moment reconstruction for 37/38, and strict
+positivity of every aggregate grid column for orbit 38.
 The remaining SI assertions include intermediate derivations; final image/no-go
 results do not automatically certify them.
 The [remaining-obligation inventory](../artifacts/manuscript-certification-20261005/remaining-obligations.json)
