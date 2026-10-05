@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "date": "2026-10-04",
+  "canonical_branch": "sixqubit-classification",
+  "base_commit": "ec0c5fa55a93e046928d682012646df274b9586f",
+  "scope": "Complete active proof tree and publication-source binding, generated certificates, transitive axiom audit, portable tooling and navigation. Whole-manuscript correspondence is a separate incomplete gate.",
+  "active_modules": 15923,
+  "rebuilt_modules": 1,
+  "content_validated_cached_modules": 15922,
+  "axiom_roots": 2764,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "published_proof_binding_modules": 15923,
+  "published_proof_byte_relation": "Identical after CRLF-to-LF normalization",
+  "generated_manifest_sources": 10085,
+  "regression_tests_per_environment": 61,
+  "skipped_tests_per_environment": 11,
+  "regression_environments": [
+    "checked_workspace",
+    "private_manuscript_free_publication_snapshot"
+  ],
+  "archive_files_preserved": 3211,
+  "documentation_files_checked": 15,
+  "private_source_portability": "PASS",
+  "private_manuscripts_in_publication": false,
+  "manuscript_sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "28be11e4301c5b7dceb234ce4474f106fcd647b0ef00b0eb28af135c82055fca"
+  },
+  "current_manuscript_claims": 1829,
+  "current_manuscript_correspondence": "awaiting_context_review",
+  "historical_correspondence_candidates": 712,
+  "manuscript_completion_gates": {
+    "claims": "expected_incomplete",
+    "prose-review": "expected_incomplete",
+    "errata": "expected_incomplete"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/repository-acceptance-20261004/build.log",
+      "sha256": "855ac1b77c263555a47c88899cda97cd99ceb041b1c6c7fd36d1d82b1bbeb397",
+      "original_log_sha256": "dd70e2879a2e8cdc5b74c9143ac8a807528c04cd6629d1693d843f0d8ecfaaed"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/verification.log",
+      "sha256": "cf75fbacc30337bde70d24f00b75a6013ad31780628c831ba786201136558505",
+      "original_log_sha256": "59ccb81295cad0548a1dc38c2c38dbd6e4541210e38e31daa596839760cf91bd"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/axioms-run.log",
+      "sha256": "91eb582d4087e1a86d7c551670b9fb6438d94e66303785530bcb6731d2795bce",
+      "original_log_sha256": "9cde6095e8adf96f4f967188922c88f4d4b913e5c2c005253a1bbbc3465d30ac"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/axioms.log",
+      "sha256": "ee08cd9d6be824100a3ff30eb7e881a2b66d52e6d5cff8f3aa4b71002adb40df",
+      "original_log_sha256": "a8ff73c1988f321719066d0e998fd2162285578a68fcfab03dd7d87c9689e37e"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/axioms.json",
+      "sha256": "c91cc01ed71d89c2464b648fb81dac979c63db24ac5018bca46fca2e1e775451",
+      "original_log_sha256": "c91cc01ed71d89c2464b648fb81dac979c63db24ac5018bca46fca2e1e775451"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/published-generated.log",
+      "sha256": "9c9ed424dbdee38be5b08b90253c7f19f7d7d0bd7d95816cf769056dc3ee26d5",
+      "original_log_sha256": "9c9ed424dbdee38be5b08b90253c7f19f7d7d0bd7d95816cf769056dc3ee26d5"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/full-publication-binding.json",
+      "sha256": "926bca39dc4330f70a8ac2b00f90a4fbbcbd9a6dc96e06833643d9d84401a4f3",
+      "original_log_sha256": "926bca39dc4330f70a8ac2b00f90a4fbbcbd9a6dc96e06833643d9d84401a4f3"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/snapshot-integrity.json",
+      "sha256": "efb35f2feb032bf592170b989ca2da4835c807f40e01d9404cad5b2d68761d49",
+      "original_log_sha256": "efb35f2feb032bf592170b989ca2da4835c807f40e01d9404cad5b2d68761d49"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/published-private-source-binding.log",
+      "sha256": "a9ac0c3ac83c40e1b4c3416066d63d324ee9f8c144641dfeed72d140b6557245",
+      "original_log_sha256": "ca4a016eae14ab0c7ebb935a6e24ae8b512958f25c788f11eb99566d066b7957"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/build-success.json",
+      "sha256": "3336fb8a2c7526b5bd97133cbe54f60199042e52db51cfee979bea9f2ba3ced6",
+      "original_log_sha256": "3336fb8a2c7526b5bd97133cbe54f60199042e52db51cfee979bea9f2ba3ced6"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/local-test_certification_tools.log",
+      "sha256": "9037af018008dd75db443dc17f511200e63e273a710c5785aa24020b27fa9021",
+      "original_log_sha256": "510669810611a1f8fd89ef158382687dbca13c7fbe21739aef803589ec6b29d1"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/local-test_paper_release.log",
+      "sha256": "d9d60b90ab60ab62657d5fc7c5ea1281fb9adef14f42e0551101851841b757e7",
+      "original_log_sha256": "e9ea33ac8b088caf9a339f872b0adc073961466c6c5ff92c2aa14de495e16a27"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/local-test_repository_index.log",
+      "sha256": "5402f77f8ce671f7b978d9cfafeb67eedb7e10294eab564507ffb5f95134c47b",
+      "original_log_sha256": "83e98f965ad62458f8c22060b4d9917a9495fc8abe2fd68dbaca95c1d65b2aad"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/published-test_certification_tools.log",
+      "sha256": "7194a620104a70f8fdf587e814a7807dccc158d0c407f149aee5cf618b4e02f2",
+      "original_log_sha256": "0259a83ae4d08d5048387e33e650bb8e755c68f7ea08ee855269db1b47d18253"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/published-test_paper_release.log",
+      "sha256": "8a0c1df6513c4fc11159fdd03f5048d30ca0a8d52996976df489a569a464d160",
+      "original_log_sha256": "28593970b955d290b9111323a29f7805ba098d6577a71f8e40884ddc452d75d4"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/published-test_repository_index.log",
+      "sha256": "edf1d515f65fdf3aeccc5e008ca52a13dd1562b97e111d7b812f2b7cee8bd6b6",
+      "original_log_sha256": "8df93c1fac1005af412ca166794c9cbdbf3dab1867b0bc2e190176da0b0e451b"
+    },
+    {
+      "path": "artifacts/repository-acceptance-20261004/manuscript-remaining-gates.log",
+      "sha256": "38266b3b9fdba8b69c40ef8710cc52c80c918cb5030b30a81ea249a695809cc6"
+    }
+  ]
+}

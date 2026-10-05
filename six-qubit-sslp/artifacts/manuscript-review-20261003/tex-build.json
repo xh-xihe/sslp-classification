@@ -1,0 +1,45 @@
+[
+  {
+    "command": [
+      "latexmk",
+      "-xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "supplementary.tex"
+    ],
+    "exit_code": 0,
+    "warnings": [
+      " file:line:error style messages enabled.",
+      "Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)",
+      "Overfull \\hbox (5.29768pt too wide) in paragraph at lines 4258--4263",
+      "Overfull \\hbox (2.32315pt too wide) in paragraph at lines 8838--8842",
+      "Overfull \\hbox (2.67139pt too wide) in paragraph at lines 9688--9694",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):",
+      "Package hyperref Warning: Token not allowed in a PDF string (Unicode):"
+    ]
+  },
+  {
+    "command": [
+      "latexmk",
+      "-xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "main.tex"
+    ],
+    "exit_code": 0,
+    "warnings": [
+      " file:line:error style messages enabled.",
+      "Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)",
+      "Overfull \\hbox (4.99832pt too wide) in paragraph at lines 2633--2640",
+      "Overfull \\hbox (19.78296pt too wide) in paragraph at lines 2679--2690"
+    ]
+  }
+]

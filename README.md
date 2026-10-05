@@ -1,5 +1,17 @@
 # A dyadic Bell ladder for transversal diagonal gates
 
+## Projects in this repository
+
+| Project | Proof and reproduction entry point |
+| --- | --- |
+| Six-qubit classification and general SSLP theory | [six-qubit-sslp/README.md](six-qubit-sslp/README.md) |
+| Dyadic Bell ladder | This README and [REPRODUCE.md](REPRODUCE.md) |
+
+The classification development is maintained on `sixqubit-classification`.
+Its complete orbit-2/3 images, proof-module index and verification status are
+documented in the project directory. Each project has its own Lean package.
+
+
 Code, data, and machine-checked proofs for the dyadic Bell ladder.
 
 > **Status.** `paper/dyadic_lifts.tex` is the development note, included so the

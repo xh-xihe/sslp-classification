@@ -1,5 +1,9 @@
 # Working notes
 
+Current status and navigation live in [`docs/status.md`](../docs/status.md)
+and [`docs/proof-index.md`](../docs/proof-index.md). The dated notes below
+preserve their original progress reports and are not the current status authority.
+
 Condensed notes kept during the formalization, one fact per file. They are
 working notes, not polished documentation — the process document in
 `formalization/` is the reference. They are preserved because each records

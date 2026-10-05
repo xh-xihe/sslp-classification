@@ -36,9 +36,9 @@ def source_hashes(paper_version, root=ROOT, source_dir=None):
         for name in ('main', 'supplementary')}
 
 
-def validate_review(record, paper_version, root=ROOT, require_complete=False):
+def validate_review(record, paper_version, root=ROOT, require_complete=False, source_dir=None):
     v = version(paper_version)
-    if record.get('paper_version') != v or record.get('sources_sha256') != source_hashes(v, root):
+    if record.get('paper_version') != v or record.get('sources_sha256') != source_hashes(v, root, source_dir):
         raise ValueError('review version or manuscript hashes do not match selected release')
     if record.get('status') not in {'unreviewed', 'partial', 'covered'}:
         raise ValueError('invalid review status')
@@ -68,11 +68,10 @@ def binding(paper_version, root=ROOT, source_dir=None):
     v, root = version(paper_version), Path(root)
     p = paths(v, root)
     hashes = source_hashes(v, root, source_dir)
-    if hashes != source_hashes(v, root):
-        raise ValueError('--source-dir differs from the selected release manuscripts')
     ledger = json.loads(p['ledger'].read_text(encoding='utf-8'))
     if ledger['sources'] != hashes:
-        raise ValueError('selected release ledger source hashes differ')
+        raise ValueError('--source-dir differs from the selected release manuscripts (ledger source hashes differ)'
+                         if source_dir else 'selected release ledger source hashes differ')
     manifest = json.loads(p['manifest'].read_text(encoding='utf-8'))
     if manifest['_paper']['sources_sha256'] != hashes:
         raise ValueError('selected release orbit manifest source hashes differ')
@@ -82,7 +81,7 @@ def binding(paper_version, root=ROOT, source_dir=None):
         raise ValueError('selected orbit data differ from shared mathematical gates; migrate gates first')
     files = [p['ledger'], p['manifest'], p['prose'], p['named'], p['prose_doc']]
     if v != DEFAULT_VERSION:
-        validate_review(json.loads(p['prose'].read_text(encoding='utf-8')), v, root)
+        validate_review(json.loads(p['prose'].read_text(encoding='utf-8')), v, root, source_dir=source_dir)
         errata = json.loads(p['errata'].read_text(encoding='utf-8'))
         if errata.get('paper_version') != v or errata.get('sources_sha256') != hashes:
             raise ValueError('errata review is not bound to the selected release')
@@ -97,12 +96,12 @@ def binding(paper_version, root=ROOT, source_dir=None):
             'shared_orbit_data_equal': True}
 
 
-def check_errata(paper_version, root=ROOT):
+def check_errata(paper_version, root=ROOT, source_dir=None):
     v = version(paper_version)
     if v == DEFAULT_VERSION:
         return True, 'historical errata are tracked by the historical claims/prose gates'
     record = json.loads(paths(v, root)['errata'].read_text(encoding='utf-8'))
-    if record.get('paper_version') != v or record.get('sources_sha256') != source_hashes(v, root):
+    if record.get('paper_version') != v or record.get('sources_sha256') != source_hashes(v, root, source_dir):
         raise ValueError('stale or wrong-version errata review')
     if not record.get('issues'):
         raise ValueError('missing errata dispositions')

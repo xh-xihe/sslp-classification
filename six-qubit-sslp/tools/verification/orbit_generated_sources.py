@@ -65,6 +65,8 @@ def main():
                         'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
     import subprocess
     for generator, relative in (
+        ('generate_orbit45_printed_walsh.py', 'MainTheory/Orbit45PrintedWalsh.lean'),
+        ('generate_orbit45_printed_moments.py', 'MainTheory/Orbit45PrintedMoments.lean'),
         ('generate_orbit2_remaining_coordinates.py', 'MainTheory/Orbit2RemainingCoordinates.lean'),
     ):
         subprocess.run([sys.executable, str(ROOT / 'tools/verification' / generator), '--check'],

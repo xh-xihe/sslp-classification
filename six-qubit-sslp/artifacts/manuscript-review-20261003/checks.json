@@ -1,0 +1,83 @@
+{
+  "paper_version": "20261003",
+  "full_manuscript_certification_complete": false,
+  "main_and_supplementary_byte_identical_to": "20260929",
+  "lean_source_build": {
+    "passed": true,
+    "method": "content-validated serial build driver",
+    "modules": 14244,
+    "rebuilt": 0
+  },
+  "smith_bridge_fresh_elaboration": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-j",
+      "1",
+      "-DwarningAsError=true",
+      "MainTheory/QECCSmithBridge.lean"
+    ],
+    "exit_code": 0,
+    "source_sha256": "e145748d6157f9e5b665a0a2b4c680e546dc82381dadf978b629c7a0cbbc6c04"
+  },
+  "axiom_gate": {
+    "passed": true,
+    "roots": 1859,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "python_tests": {
+    "passed": 116,
+    "skipped": 8,
+    "subtests_passed": 18
+  },
+  "new_certificate_file_integrity": {
+    "checked": 18,
+    "passed": 18
+  },
+  "orbit2_rational_ldl": {
+    "passed": true,
+    "blocks": 111,
+    "monomials": 528
+  },
+  "orbit2_independent_charpolys": {
+    "passed": true,
+    "blocks": 111
+  },
+  "orbit3_scalar_duals": {
+    "passed": true,
+    "duals": 6
+  },
+  "orbit3_sextic": {
+    "passed": true,
+    "exhaustive_target": true,
+    "target_paulis": 120,
+    "coordinates": 269
+  },
+  "new_orbit2_orbit3_kernel_theorems_present": false,
+  "release_20261003": {
+    "passed": false,
+    "cause": "missing paper-claims-20261003.json"
+  },
+  "release_20260929_complete_gates": {
+    "claims": false,
+    "prose_review": false,
+    "errata": false
+  },
+  "claim_ledger": {
+    "covered": 103,
+    "partial": 58,
+    "unreviewed": 1542,
+    "interpretation": "review status, not number of missing mathematical proofs"
+  },
+  "tex_compile": {
+    "main": true,
+    "supplementary": true,
+    "unresolved_refs_or_cites": false
+  },
+  "manuscripts_and_proofs_changed_by_review": false
+}

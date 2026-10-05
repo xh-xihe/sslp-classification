@@ -1,5 +1,19 @@
 # Results
 
+## Current entry points
+
+- [`repository-status.json`](repository-status.json): current version and verification scope.
+- [`proof-modules.json`](proof-modules.json): all active proof-source paths and LF-normalized hashes.
+- [`named-results-20261003.md`](named-results-20261003.md): current manuscript locators and correspondence status.
+- [`correspondence-candidates-20261004.json`](correspondence-candidates-20261004.json): prior declaration mappings retained as review candidates.
+- [`orbit-certification-20261003.json`](orbit-certification-20261003.json): completed actual-encoder orbit-2/3 statements.
+- [`../artifacts/repository-acceptance-20261004/`](../artifacts/repository-acceptance-20261004): current whole-project proof acceptance evidence.
+
+See [`docs/status.md`](../docs/status.md) for the current human-readable status.
+Dated reports below remain historical evidence. Their counts and coverage are
+tied to their own source hashes and must not be transferred to a changed SI.
+
+
 ## `axiom-audit.txt`
 
 The output of `lake build SixQubit.Audit`, 592 lines.  Every footprint is a

@@ -48,8 +48,9 @@ def uncomment(source):
     return ''.join(chars)
 
 
-def inventory(relative):
-    data = (ROOT / relative).read_bytes()
+def inventory(relative, source_dir=None):
+    path = Path(source_dir) / Path(relative).name if source_dir else ROOT / relative
+    data = path.read_bytes()
     original = data.decode('utf-8')
     source = uncomment(original)
     stack, spans = [], []
@@ -108,10 +109,10 @@ def sources_for_version(version):
     return tuple(f'documents/{version}/{name}.tex' for name in ('main', 'supplementary'))
 
 
-def snapshot(previous=None, sources=None):
+def snapshot(previous=None, sources=None, source_dir=None):
     old = {entry['id']: entry for entry in (previous or {}).get('claims', [])}
     result = {'schema': 1, 'sources': {}, 'prose_review': {}, 'claims': []}
-    inventories = {relative: inventory(relative) for relative in (SOURCES if sources is None else sources)}
+    inventories = {relative: inventory(relative, source_dir) for relative in (SOURCES if sources is None else sources)}
     # Hypotheses can change outside a theorem's span or in the other document.
     # A changed manuscript therefore invalidates the release's semantic reviews,
     # even when an individual displayed statement is byte-identical.
@@ -136,8 +137,8 @@ def snapshot(previous=None, sources=None):
     return result
 
 
-def validate(ledger, require_complete=False, sources=None):
-    current = snapshot(ledger, sources)
+def validate(ledger, require_complete=False, sources=None, source_dir=None):
+    current = snapshot(ledger, sources, source_dir)
     if current != ledger:
         raise ValueError('manuscript/ledger drift: run refresh and review changed assertions')
     for entry in ledger['claims']:
@@ -182,20 +183,21 @@ def main():
     parser.add_argument('--require-complete', action='store_true')
     parser.add_argument('--paper-version', default='20260908',
                         help='explicit manuscript date; historical default remains 20260908')
+    parser.add_argument('--source-dir', type=Path, help='private manuscript directory bound to the ledger hashes')
     args = parser.parse_args()
     try:
         sources = sources_for_version(args.paper_version)
         ledger_path = ROOT / f'results/paper-claims-{args.paper_version}.json'
         previous = json.loads(ledger_path.read_text(encoding='utf-8')) if ledger_path.exists() else None
         if args.command == 'refresh':
-            ledger = snapshot(previous, sources)
+            ledger = snapshot(previous, sources, args.source_dir)
             ledger_path.parent.mkdir(parents=True, exist_ok=True)
             ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         else:
             if previous is None:
                 raise ValueError('missing ledger; run refresh')
             ledger = previous
-        validate(ledger, args.require_complete, sources)
+        validate(ledger, args.require_complete, sources, args.source_dir)
         print('Paper version: ' + args.paper_version)
         counts = Counter(entry['status'] for entry in ledger['claims'])
         print(f"Paper assertion inventory: {len(ledger['claims'])}; " +

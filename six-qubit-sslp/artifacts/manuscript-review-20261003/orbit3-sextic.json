@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "moment_coordinates": 269,
+  "pauli_constraints": 429,
+  "certificate_terms": 211,
+  "term_counts": {
+    "kl": 203,
+    "spin": 5,
+    "H": 3
+  },
+  "positive_square_monomials": 36,
+  "identity": "3 T + 1280 V = 0 on exact encoders",
+  "T": "N^3 A_3",
+  "V": "64 times a group average of |p(w)|^2, hence nonnegative",
+  "normalization_free": true,
+  "coefficient_sha256": "1490db62714338fe198198fc0b8e76551833ec02024bd66b2bd4fa6d807bcb2c",
+  "scope": "Global orbit-3 enumerator converse, using the universal scalar reductions; not LU classification."
+}

@@ -1,3 +1,4 @@
+import MainTheory.KernelAxiomAudit
 import MainTheory.Rationalize
 import MainTheory.MinimumLengthOrderFive
 import MainTheory.PaperGeneralSSLPConverse
@@ -224,6 +225,13 @@ import MainTheory.CanonicalRationalNumerators
 import MainTheory.CitedConstructionAlpha
 import MainTheory.CitedFamilyMomentSemantics
 import MainTheory.CitedFamilyOneBody
+import MainTheory.CitedCorrectedLogicalGate
+import MainTheory.QECCFrameBridge
+import MainTheory.QECCBoundedNormalForm
+import MainTheory.DirectoryEnumeratorImages
+import MainTheory.OrderTwoScalarBridge
+import MainTheory.EnumeratorOrbitTransport
+import MainTheory.OrbitNumberingBridge
 import MainTheory.ColoredJointOrder
 import MainTheory.ColoredSmithDisplays
 import MainTheory.ComplementPhaseRatios
@@ -472,921 +480,885 @@ import MainTheory.TwoEdgeWalshDisplays
 import MainTheory.VertexScalingMatrix
 import MainTheory.WithinSectorCodeAction
 import MainTheory.WithinSectorRationalization
-/-!
-# Axiom audit for the `main.tex` general theory
 
-Every headline of `MainTheory` is printed here, on the same standard the
-six-qubit development is held to: the footprint must be contained in
-`{propext, Classical.choice, Quot.sound}`, with no `sorryAx`, no
-`ofReduceBool` and no `native_decide`.
-
-`Classical.choice` is expected throughout this library: the retraction of the
-structure map is chosen, not constructed.
--/
-
-#print axioms MainTheory.Rationalize.retract
-#print axioms MainTheory.Rationalize.retract_algebraMap
-#print axioms MainTheory.Rationalize.retract_algebraMap_mul
-#print axioms MainTheory.Rationalize.exists_solution_of_exists_solution_ext
-#print axioms MainTheory.Rationalize.eq_of_ker_eq_zero
-#print axioms MainTheory.Rationalize.pi_solution
-#print axioms MainTheory.Rationalize.rationalized_pi_solution
-
-#print axioms MainTheory.Denominator.clears_iff
-#print axioms MainTheory.Denominator.lcmDen_pos
-#print axioms MainTheory.Denominator.lcmDen_clears
-#print axioms MainTheory.Denominator.lcmDen_dvd_of_clears
-#print axioms MainTheory.Denominator.liftNum_spec
-#print axioms MainTheory.Denominator.eq_one_of_dvd_lcmDen_of_dvd_liftNum
-#print axioms MainTheory.Denominator.lcmDen_example
-#print axioms MainTheory.Denominator.lift_exists
-
-#print axioms MainTheory.Gate.weight_stdBasis
-#print axioms MainTheory.Gate.diag_pow
-#print axioms MainTheory.Gate.natCast_mul_weight
-#print axioms MainTheory.Gate.dvd_of_forall_mul_eq_zero
-#print axioms MainTheory.Gate.pow_eq_one_iff
-#print axioms MainTheory.Gate.primitive_orbit21
-#print axioms MainTheory.Gate.not_primitive_allEven
-#print axioms MainTheory.Gate.orbit21_order
-
-#print axioms MainTheory.PhaseSector.diag_eq_of_eigen
-#print axioms MainTheory.PhaseSector.weight_eq_of_eigen
-#print axioms MainTheory.PhaseSector.ssCondition_of_eigen
-#print axioms MainTheory.PhaseSector.disjoint_of_ne
-#print axioms MainTheory.PhaseSector.eigen_of_ssCondition
-#print axioms MainTheory.PhaseSector.eigen_iff_ssCondition
-#print axioms MainTheory.PhaseSector.exists_eigen
-#print axioms MainTheory.PhaseSector.ssCondition_nonvacuous
-#print axioms MainTheory.PhaseSector.support_of_ssCondition
-#print axioms MainTheory.PhaseSector.support_of_eigen
-
-#print axioms MainTheory.Normalize.flip_flip
-#print axioms MainTheory.Normalize.weight_bxor
-#print axioms MainTheory.Normalize.weight_flip_self
-#print axioms MainTheory.Normalize.addOrderOf_dvd
-#print axioms MainTheory.Normalize.exists_unit_reduction_inv
-#print axioms MainTheory.Normalize.exists_unit_mul_eq_one
-#print axioms MainTheory.Normalize.ssCondition_bxor
-#print axioms MainTheory.Normalize.weight_bxor_check
-
-#print axioms MainTheory.Cyclic.chi_zero
-#print axioms MainTheory.Cyclic.diag_eq_chi
-#print axioms MainTheory.Cyclic.pow_mod
-#print axioms MainTheory.Cyclic.chi_add
-#print axioms MainTheory.Cyclic.chi_pow
-#print axioms MainTheory.Cyclic.chi_eq_one_iff
-#print axioms MainTheory.Cyclic.chi_ne_zero
-#print axioms MainTheory.Cyclic.chi_injective
-#print axioms MainTheory.Cyclic.chi_pow_eq_one_iff
-#print axioms MainTheory.Cyclic.addOrderOf_dvd_card
-#print axioms MainTheory.Cyclic.isCyclic_of_faithful
-#print axioms MainTheory.Cyclic.addOrderOf_orbit21_gap
-#print axioms MainTheory.Cyclic.orbit21_projective_order
-
-#print axioms MainTheory.Cyclic.chi_sub
-#print axioms MainTheory.RankTwo.normal_form_core
-#print axioms MainTheory.RankTwo.addOrderOf_div
-#print axioms MainTheory.RankTwo.order_of_two_fiber
-#print axioms MainTheory.RankTwo.normal_form_nonvacuous
-#print axioms MainTheory.RankTwo.addOrderOf_dvd_q
-
-#print axioms MainTheory.Normalize.primitive_flip
-#print axioms MainTheory.RankTwo.gap_ne_zero
-#print axioms MainTheory.RankTwo.exists_unit_mul_eq_div
-
-#print axioms MainTheory.Clearing.map_mulVec
-#print axioms MainTheory.Clearing.det_smul_eq_adjugate_mulVec
-#print axioms MainTheory.Clearing.exists_cleared_of_real
-#print axioms MainTheory.Clearing.exists_clearing
-#print axioms MainTheory.Clearing.clearing_example
-
-#print axioms MainTheory.Covariance.quad_eq_sum_sq
-#print axioms MainTheory.Covariance.quad_eq_zero_iff
-#print axioms MainTheory.Covariance.quad_nonneg
-#print axioms MainTheory.Covariance.proj_eq_zero_congr
-#print axioms MainTheory.Covariance.orthDir_mem_kernel
-#print axioms MainTheory.Covariance.along_not_mem_kernel
-
-#print axioms MainTheory.AffineSpan.covariance_eq_of_hasDistance
-#print axioms MainTheory.AffineSpan.mean_eq_of_hasDistance
-
-#print axioms MainTheory.D3Bound.dot_eq_of_mulVec_eq
-#print axioms MainTheory.D3Bound.exists_rational_agreeing
-#print axioms MainTheory.D3Bound.exists_primitive_lift
-
-#print axioms MainTheory.Levels.WImage_orbit21
-#print axioms MainTheory.WImages.WImage_orbit9
-#print axioms MainTheory.WImages.WImage_orbit10
-#print axioms MainTheory.WImages.WImage_orbit11
-#print axioms MainTheory.WImages.WImage_orbit16
-#print axioms MainTheory.WImages.WImage_orbit22
-#print axioms MainTheory.WImages.WImage_orbit23
-
-#print axioms MainTheory.WImages.WImage_orbit7
-#print axioms MainTheory.WImages.WImage_orbit8
-#print axioms MainTheory.WImages.WImage_orbit45
-
-#print axioms MainTheory.RealGate.exp_eq_of_eigen
-#print axioms MainTheory.RealGate.angle_sub_int_of_eigen
-#print axioms MainTheory.RealGate.diffMatrix_mulVec
-#print axioms MainTheory.RealGate.exists_rational_angle
-
-#print axioms MainTheory.OuterIndex.card_two
-#print axioms MainTheory.OuterIndex.card_three
-#print axioms MainTheory.OuterIndex.card_four
-#print axioms MainTheory.OuterIndex.card_five
-#print axioms MainTheory.OuterIndex.outerRecords_finite
-
-#print axioms MainTheory.ActiveFace.avg_mem
-#print axioms MainTheory.ActiveFace.avg_pos
-
-#print axioms MainTheory.Covariance.mem_dualAnnihilator_span
-#print axioms MainTheory.Covariance.span_eq_of_cov_eq
-
-#print axioms MainTheory.PhaseSector.weight_eq_of_eigen_family
-#print axioms MainTheory.PhaseSector.disjoint_of_ne_family
-#print axioms MainTheory.PhaseSector.ssCondition_of_eigen_family
-
-/-! ## The bounded-representation route to finiteness
-
-These are the declarations that replace the Cartan argument: a diagonal
-symmetry is transported across the entrance's local-`X` and unit-power
-normalizations, comes back as a bounded label, and the resulting surjection
-off `BoundedPhaseLabel 6 9` makes the intrinsic group finite. -/
-
-#print axioms MainTheory.IntrinsicTransport.intrinsicClass_flip_eq
-#print axioms MainTheory.IntrinsicTransport.mem_symmetryGroup_flip
-#print axioms MainTheory.IntrinsicTransport.intrinsicClass_congr
-#print axioms MainTheory.NormalizationIsShift.normalizedFrame_eq_shiftFrame
-#print axioms MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction
-#print axioms MainTheory.FiniteGateAsPhase.exists_label_of_phaseOfAngle_le
-#print axioms MainTheory.PhaseTranscription.phaseOfAngle_eq_finiteLocalPhase
-#print axioms MainTheory.SameProjectiveClass.intrinsicClass_eq_of_sameProjective
-#print axioms MainTheory.SymmetryToEntrance.exists_label_of_class_one
-#print axioms MainTheory.CoprimePowerRecovery.exists_pow_eq_self
-#print axioms MainTheory.BoundedClassPower.BoundedClass.of_pow_coprime
-#print axioms MainTheory.UndoNormalization.flipPhase_phaseOfAngle_normalized
-#print axioms MainTheory.BoundedRepresentationProof.boundedClass_of_twoFiber
-#print axioms MainTheory.BoundedRepresentationProof.boundedClass_of_class_ne_one
-#print axioms MainTheory.BoundedRepresentationProof.hasBoundedRepresentation
-#print axioms MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation
-#print axioms MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup
-
-/-! ## Section II at general code shape
-
-These are the paper's own statements: an exact code and a preserving diagonal
-operation, with the spectral data produced rather than assumed. -/
-
-#print axioms MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm
-#print axioms MainTheory.LogicalCharacter.isCyclic_of_nontrivial
-#print axioms MainTheory.UnitarySpectral.directSum_isInternal
-#print axioms MainTheory.GeneralSpectral.spectralExtractionPrinciple
-#print axioms MainTheory.SectionTwoGeneral.phaseSectors
-#print axioms MainTheory.SectionTwoGeneral.phaseSectors_mean
-#print axioms MainTheory.SectionTwoGeneral.qualitativeFiniteLift
-#print axioms MainTheory.SectorMeanValue.sectorMean_eq_klScalar
-#print axioms MainTheory.PivotSize.card_eq_rank
-#print axioms MainTheory.PivotSize.card_le
-#print axioms MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup_unconditional
-
-/-! ## Section II at arbitrary n -/
-
-#print axioms MainTheory.GeneralFiniteness.finite_intrinsicGroup
-#print axioms MainTheory.GeneralFiniteness.isCyclic
-#print axioms MainTheory.GeneralFiniteness.finite_and_abelian
-#print axioms MainTheory.FiniteProjectiveGroup.lifts
-#print axioms MainTheory.FiniteProjectiveGroup.whole_of_finite
-#print axioms MainTheory.FiniteProjectiveGroup.whole
-#print axioms MainTheory.FiniteProjectiveGroup.whole_six_qubit
-#print axioms MainTheory.MomentEquivalence.charOn_stdBasis_eq_iff
-#print axioms MainTheory.MomentEquivalence.charOn_stdBasis_pair_eq_iff
-#print axioms MainTheory.MomentEquivalence.lp_normalization_and_positivity
-#print axioms MainTheory.BetaExists.exists_betaBound
-#print axioms MainTheory.DeterminantalRank.exists_nonsingular_minor
-#print axioms MainTheory.PivotSize.exists_pivot_rank_le
-
-/-! ## The paper's rank-two theorem, stated whole -/
-
-#print axioms MainTheory.GeneralLiftOrder.liftSymmetry
-#print axioms MainTheory.GeneralLiftOrder.intrinsicClass_liftSymmetry
-#print axioms MainTheory.GeneralLiftOrder.sector_in_fibre
-#print axioms MainTheory.GeneralLiftOrder.exists_lift_order_dvd
-#print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift
-#print axioms MainTheory.GeneralLiftOrder.qMin
-#print axioms MainTheory.GeneralLiftOrder.qMin_spec
-#print axioms MainTheory.GeneralLiftOrder.qMin_le
-#print axioms MainTheory.GeneralLiftOrder.orderOf_dvd_qMin
-#print axioms MainTheory.GeneralLiftOrder.orderOf_pos
-#print axioms MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact
-#print axioms MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation_unconditional
-#print axioms MainTheory.RankTwoSSLP.rank_two_sslp
-#print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form
-#print axioms MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial
-#print axioms MainTheory.RankTwoSSLP.cyclic_of_finite
-#print axioms MainTheory.GroupOrder.rank_two_sslp_generator
-#print axioms MainTheory.SortedForm.exists_sortedNormalForm
-#print axioms MainTheory.SortedForm.exists_sortedNormalForm_le
-#print axioms MainTheory.SortedForm.d2_sslp_classification
-#print axioms MainTheory.SortedForm.SortedNormalForm.gate_left
-#print axioms MainTheory.SortedForm.SortedNormalForm.val_rightResidue
-#print axioms MainTheory.SortedForm.SortedNormalForm.gate_right
-#print axioms MainTheory.SortedForm.SortedNormalForm.physicalOrder
-#print axioms MainTheory.SortedForm.SortedNormalForm.projectiveOrder
-#print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator
-#print axioms MainTheory.FlipSemanticTransport.gate_flip_shift
-#print axioms MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution
-#print axioms MainTheory.InterchangeTransport.swapFiniteGeneratorResolution
-#print axioms MainTheory.InterchangeTransport.swap_ratio
-#print axioms MainTheory.D3BoundedNormalForm.boundedGenerator
-#print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN
-#print axioms MainTheory.D3BoundedNormalForm.d3_bound
-#print axioms MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine
-#print axioms MainTheory.SSLPCompleteness.weakenDistance
-#print axioms MainTheory.SSLPCompleteness.completeness_distance_two
-#print axioms MainTheory.SSLPCompleteness.completeness_distance_three
-#print axioms MainTheory.SSLPCompleteness.completeness_six_qubit
-#print axioms MainTheory.SSLPCompleteness.hasDistance_normalForm
-#print axioms MainTheory.SSLPCompleteness.completeness_of_nontrivial_two
-#print axioms MainTheory.SSLPCompleteness.completeness_of_nontrivial_three
-#print axioms MainTheory.SSLPCompleteness.orderOf_le_nine
-#print axioms MainTheory.PrimitiveReduction.primitive_reducedAngle
-#print axioms MainTheory.PrimitiveReduction.finiteLocalPhase_reduced
-#print axioms MainTheory.QMinBound.exists_primitiveLift_le_of_boundedClass
-#print axioms MainTheory.QMinBound.qMin_le_of_boundedClass
-#print axioms MainTheory.QMinBound.qMin_le_nine
-#print axioms MainTheory.QMinBound.d3_bound_same_class
-#print axioms MainTheory.QMinBound.d3_bound_nine
-#print axioms MainTheory.SectionTwoGeneral.sectorCount_eq_two
-#print axioms MainTheory.SectionTwoGeneral.rationalLift_order_le
-#print axioms MainTheory.ColoredBound.pivotLift_order_le
-#print axioms MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard
-#print axioms MainTheory.GroupOrder.logicalOrder_dvd_natCard
-#print axioms MainTheory.NumberOperator.numberOp_apply
-#print axioms MainTheory.NumberOperator.innerC_numberOp
-#print axioms MainTheory.NumberOperator.codeProj_numberOp_codeProj
-
-/-! ## Section III: the quantitative bound -/
-
-#print axioms MainTheory.SharpClearing.solution_lcmDen_dvd_inverseDenominator
-#print axioms MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor
-#print axioms MainTheory.FiniteLift.sharp_pivot_divisibility
-#print axioms MainTheory.FiniteLift.quantitative_colored_finite_lift
-#print axioms MainTheory.BinaryPivot.inverseDenominator_mul_diagonal
-#print axioms MainTheory.BinaryPivot.coloredMatrixZ_eq
-#print axioms MainTheory.ColoredBound.pivot_order_le
-#print axioms MainTheory.ColoredBound.quantitative_colored_finite_lift
-#print axioms MainTheory.SectionTwoGeneral.sectorCount_le
-#print axioms MainTheory.QuantitativeGroup.qualitative_finite_lift
-#print axioms MainTheory.QuantitativeGroup.quantitative_projective_group
-#print axioms MainTheory.QuantitativeGroup.qMin_le_beta
-#print axioms MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le
-#print axioms MainTheory.QuantitativeGroup.k2_q_bound
-
-/-! ## Section III is about something -/
-
-#print axioms MainTheory.SectionThreeNonVacuity.exists_nontrivial_six_qubit_code
-#print axioms MainTheory.SectionThreeNonVacuity.completeness_applies
-#print axioms MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness
-
-/-! ## Section IV: the semantic bridge into the enumerated fibre pairs -/
-
-#print axioms MainTheory.CodeFiberBridge.recordOf_mem
-#print axioms MainTheory.CodeFiberBridge.support_mask0
-#print axioms MainTheory.CodeFiberBridge.support_mask1
-#print axioms MainTheory.CodeFiberBridge.code_supports_in_enumerated_fibres
-#print axioms MainTheory.CodeFiberBridge.recordOf_hasSecondFiber
-#print axioms MainTheory.CodeFiberBridge.recordOf_mem_nonemptyFiber
-
-/-! ## Section IV: the 215-to-66 orbit directory -/
-
-#print axioms MainTheory.Generated.OrbitCertificate.signature_exact
-#print axioms MainTheory.Generated.OrbitCertificate.witness_valid
-#print axioms MainTheory.Generated.OrbitCertificate.expectedSignatureAt_injective
-#print axioms MainTheory.Generated.FiniteOrbitCertificate.directory_valid
-#print axioms MainTheory.Generated.FiniteOrbitCertificate.orbit_coverage
-#print axioms MainTheory.Generated.FiniteOrbitCertificate.no_ghost_key
-#print axioms MainTheory.Generated.FiniteOrbitCertificate.hasExactlyClasses
-
-/-! ## Section IV: which orders a code can carry -/
-
-#print axioms MainTheory.OrderFourNoCompletion.noCompletion_of_orderFour
-#print axioms MainTheory.OrderSevenNoCompletion.noCompletion_of_orderSeven
-#print axioms MainTheory.OrderRange.logicalOrder_mem
-#print axioms MainTheory.OrderRange.maxLogicalOrder_eq_five
-#print axioms MainTheory.OrderRange.logicalOrders_attained
-#print axioms MainTheory.OrderRange.physicalOrder_le_six
-#print axioms MainTheory.OrderRange.maxPhysicalOrder_eq_six
-#print axioms MainTheory.OrderRange.physicalOrders_attained
-
-/-! ## Section IV: the completion status of all 66 keys -/
-
-#print axioms MainTheory.DirectoryOrbitStatus.noCompletion_of_mem_noGoKeys
-#print axioms MainTheory.DirectoryOrbitStatus.hasCompletion_of_mem_realizedKeys
-#print axioms MainTheory.DirectoryOrbitStatus.settled_or_open
-#print axioms MainTheory.DirectoryOrbitStatus.keys_partition
-#print axioms MainTheory.DirectoryOrbitStatus.openKeys_paperIds
-#print axioms MainTheory.DirectoryOrbitStatus.noGoKeys_paperIds
-#print axioms MainTheory.DirectoryOrbitStatus.realizedKeys_paperIds
-
-/-! ## Section IV: entering the coarse affine-rank filter -/
-
-#print axioms MainTheory.MaskRankBridge.maskAffineRank_eq_finrank_span
-#print axioms MainTheory.MaskRankBridge.residueZeroMask_affineRank_eq_span
-#print axioms MainTheory.MaskRankBridge.linearIndependent_point_of_real
-#print axioms MainTheory.MaskRankBridge.le_maskAffineRank_mask0
-#print axioms MainTheory.MaskRankBridge.finrank_direction_image_affine
-#print axioms MainTheory.MaskRankBridge.finrank_direction_bxor_image
-#print axioms MainTheory.MaskRankBridge.vectorSpan_eq_span_of_zero_mem
-#print axioms MainTheory.MaskRankBridge.finrank_vectorSpan_le_finrank_span
-#print axioms MainTheory.MaskRankBridge.exists_nonsingular_rows
-#print axioms MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0
-#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible
-#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_realInfeasible
-#print axioms MainTheory.Generated.ExtraMoment.rejectRightPairs_length
-#print axioms MainTheory.Generated.CoarseRightRows.rejectRight_mem
-#print axioms MainTheory.CoarseFilterSound.not_s0Clause_of_rejectLeft
-#print axioms MainTheory.CoarseFilterUnconditional.keepAt_of_s0_of_feasible
-#print axioms MainTheory.CoarseFilterUnconditional.fullFiberCriterion_of_s0_of_feasible
-#print axioms MainTheory.CoarseFilterUnconditional.exists_output_of_s0_of_feasible
-#print axioms MainTheory.ThresholdBoundsSmall.betaBound_one
-#print axioms MainTheory.ThresholdBoundsSmall.betaBound_two
-#print axioms MainTheory.ThresholdBoundsSmall.betaBound_three
-#print axioms MainTheory.ThresholdBoundsSmall.thresholdBounds
-#print axioms MainTheory.SortedPivot.Pivot.rank_le_maskAffineRank
-#print axioms MainTheory.SortedPivot.lcmDen_phase
-#print axioms MainTheory.SortedPivot.Pivot.q_dvd_inverseDenominator
-#print axioms MainTheory.SortedPivot.Pivot.rMin_le_rank
-#print axioms MainTheory.SortedPivot.Pivot.s0Clause
-#print axioms MainTheory.SortedPivot.angle_eq_zero_of_not_mem
-#print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning
-#print axioms MainTheory.SortedPivot.span_rqpoint_bxor_iff
-#print axioms MainTheory.SortedPivot.span_rqpoint_of_shifted_nonsingular
-#print axioms MainTheory.SortedPivot.span_rqpoint_permStr
-#print axioms MainTheory.MaskRankBridge.span_rqpoint_comp
-#print axioms MainTheory.MaskRankBridge.span_eq_top_of_nonsingular
-#print axioms MainTheory.MaskRankBridge.finrank_direction_rqpoint_bxor
-#print axioms MainTheory.MaskRankBridge.bitVec_xor
-#print axioms MainTheory.SortedForm.exists_sortedNormalForm_of_generator'
-#print axioms MainTheory.SortedPivotConstruction.freshMinor_det_ne_zero
-#print axioms MainTheory.SortedPivotConstruction.zero_mem_normalizedSupport
-#print axioms MainTheory.SortedPivotConstruction.zero_mem_sortedSupport
-#print axioms MainTheory.SortedPivotConstruction.sparseAngle_eq_zero
-#print axioms MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot
-#print axioms MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot_nine
-#print axioms MainTheory.SortedPivotConstruction.exists_normalForm_s0Clause
-#print axioms MainTheory.SortedPivot.nonempty_pivot_of_spanning_at
-#print axioms MainTheory.BinaryBetaTinyLower.betaExact_one
-#print axioms MainTheory.BinaryBetaTinyLower.betaExact_two
-#print axioms MainTheory.BinaryBetaTinyLower.betaExact_three
-#print axioms MainTheory.BinaryBetaTinyLower.rMin_two_eq_three
-#print axioms MainTheory.RankThresholdBridge.beta_eq_threshold
-#print axioms MainTheory.RankThresholdBridge.q_le_beta_of_le_threshold
-#print axioms MainTheory.Generated.RankSymmetry.ranks_equal
-#print axioms MainTheory.PaperReductionChain.six_66_orbits
-#print axioms MainTheory.PaperReductionChain.primitive_sorted_counts
-#print axioms MainTheory.ProvedWEUnion.provedImages_eq
-#print axioms MainTheory.OpenOrbitsRealized.openKeys_hasCompletion
-#print axioms MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys
-#print axioms MainTheory.RealizationOrbits15.realizationKeys_paperIds
-#print axioms MainTheory.RealizationOrbits15.realizationKeys_orderDistribution
-#print axioms MainTheory.RealizationOrbits15.card_realization_orbits
-#print axioms MainTheory.RealizationOrbits15.settled
-#print axioms MainTheory.CodeMomentPoint.exists_realFeasible
-#print axioms MainTheory.RealFaceBridge.realSupport_subset_face
-#print axioms MainTheory.CodeDirectoryEntry.code_enters_coarse_directory
-#print axioms MainTheory.CodeMomentFeasible.code_enters_moment_stage
-#print axioms MainTheory.CodeActiveFace.rank_le_activeMaskRank
-#print axioms MainTheory.CodeRankFilter.compatible_of_pivot_certified
-#print axioms MainTheory.CodeOrbitKey.code_reaches_orbit_key
-#print axioms MainTheory.CodeOrbitStatus.code_logicalOrder_mem
-#print axioms MainTheory.CodeOrbitStatus.code_in_realization_orbit
-#print axioms MainTheory.CodeOrbitStatus.code_logicalOrder_le_five
-#print axioms MainTheory.SortedPivotConstruction.exists_normalForm_pivot_full
-#print axioms MainTheory.PrimitiveMobius.primitiveCount_eq_mobiusCount
-#print axioms MainTheory.PrimitiveMobius.mobius_nine
-#print axioms MainTheory.CodeOrbitStatus.code_orderFive_is_orbit36
-#print axioms MainTheory.Orbit36LUBridge.original_projector_luEquivalent_canonical
-#print axioms MainTheory.D3CertifiedSpectralOuterEntrance.arbitrary_code_enters_outer
-#print axioms MainTheory.D3CertifiedSpectralOuterEntrance.code_with_nontrivial_diagonal_symmetry_enters_outer
-#print axioms MainTheory.Orbit9IntrinsicRealization.exists_exact_six_qubit_intrinsic_order_three
-#print axioms MainTheory.SixQubitIntrinsicAttainment.two_three_five_attained
-#print axioms MainTheory.SixQubitIntrinsicAttainment.two_three_five_subset_attained
-#print axioms MainTheory.IntrinsicProjectiveAbelian.intrinsic_group_abelian
-#print axioms MainTheory.UnitPowerSemanticTransport.unitPower_ratio
-#print axioms MainTheory.ActiveRankRecordCount.compatible_record_count
-#print axioms MainTheory.ActiveRankRecordCount.one_more_record_than_pair
-#print axioms MainTheory.SSLPOrbitLevels.card_realizationOrbit
-#print axioms MainTheory.SSLPOrbitLevels.isRealizationOrbit_iff_mem
-#print axioms MainTheory.SSLPOrbitLevels.realization_or_empty
-#print axioms MainTheory.ClassificationLevelsSix.level_one_intrinsic_group
-#print axioms MainTheory.ClassificationLevelsSix.level_two_realization_orbits
-#print axioms MainTheory.ClassificationLevelsSix.level_three_weight_enumerators
-#print axioms MainTheory.ClassificationLevelsSix.level_four_lu_class
-#print axioms MainTheory.SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent
-#print axioms MainTheory.SSLPOrbitLevels.activeAffineRanks_of_fiberEquivalent
-#print axioms MainTheory.SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent
-#print axioms MainTheory.Generated.FiniteOrbitRankBridge.inputPairIds_eq_rankCompatible
-#print axioms MainTheory.GeneralFinitenessRank.finite_intrinsicGroup
-#print axioms MainTheory.GeneralFinitenessRank.hasBoundedRepresentation_general
-#print axioms MainTheory.ProjectiveGroupGeneral.whole
-#print axioms MainTheory.ProjectiveGroupGeneral.cyclic_of_rank_two
-#print axioms MainTheory.ProjectiveGroupGeneral.k2_bound_and_cyclic
-#print axioms MainTheory.RankTwoSSLPCanonical.rank_two_sslp_canonical
-#print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount
-#print axioms MainTheory.SharpSectorBound.hasPrimitiveLift_of_rationalLift'
-#print axioms MainTheory.SectionTwoGeneral.two_le_sectorCount_of_resolution
-#print axioms MainTheory.SupportAffineRank.q_le_threshold_supportAffineRank
-#print axioms MainTheory.SupportAffineRank.exists_normalForm_q_le_beta_supportRank
-#print axioms MainTheory.SupportAffineRank.rank_le_supportAffineRank
-#print axioms MainTheory.BoundedGeneratorOrder.logicalOrder_boundedGenerator
-#print axioms MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order
-#print axioms MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator
-#print axioms MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator_six
-#print axioms MainTheory.WImageOrbit1.FII_subset_WImage_orbit1
-#print axioms MainTheory.WImageOrbit1.weight_orbit1Av
-#print axioms MainTheory.SSLPConverse.orderOf_intrinsicClass_resolutionOfPair
-#print axioms MainTheory.SSLPConverse.sslp_converse
-#print axioms MainTheory.SSLPConverse.nontrivial_intrinsicGroup_of_pair
-#print axioms MainTheory.SSLPPipelineExact.code_of_sortedNormalForm
-#print axioms MainTheory.SSLPPipelineExact.pipeline_exact_two
-#print axioms MainTheory.SSLPPipelineExact.pipeline_exact_three
-#print axioms MainTheory.SortedVectorMobius.sortedCount_eq_choose
-#print axioms MainTheory.SortedVectorMobius.sum_primitiveCount_divisors
-#print axioms MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusSum
-#print axioms MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusChoose
-#print axioms MainTheory.SortedVectorMobius.primitiveCount_six_eq_mobiusCount
-#print axioms MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount
-#print axioms MainTheory.SortedVectorMobius.sortedCount_six
-#print axioms MainTheory.SortedVectorMobius.sum_sortedCount_two_to_nine
-#print axioms MainTheory.BinaryBetaSevenLower.betaSevenAttained
-#print axioms MainTheory.BinaryBetaEightLower.betaEightAttained
-#print axioms MainTheory.BinaryBetaNineLower.betaNineAttained
-#print axioms MainTheory.SpanProjectorBridge.ofFrame_eq_of_codeSpan_eq
-#print axioms MainTheory.NormalFormLUBridge.equivalent_source_frame
-#print axioms MainTheory.NormalFormLUBridge.luEquivalent_ofFrame_normalForm
-#print axioms MainTheory.CubeCompletionTransport.equivalent_pushPair
-#print axioms MainTheory.CodeOrbitStatus.exists_key_transport
-#print axioms MainTheory.IntrinsicOrderAudit.exists_key_of_element
-#print axioms MainTheory.IntrinsicOrderAudit.orderOf_mem
-#print axioms MainTheory.IntrinsicOrderAudit.orderOf_le_five
-#print axioms MainTheory.IntrinsicOrderAudit.natCard_mem
-#print axioms MainTheory.IntrinsicOrderAudit.natCard_le_five
-#print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive
-#print axioms MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive
-#print axioms MainTheory.OrderFiveOrbitMembership.natCard_eq_five_of_orderFive
-#print axioms MainTheory.OrderFiveOrbitMembership.orbit36_of_orderFive
-#print axioms MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36
-#print axioms MainTheory.OrderFiveOrbitMembership.unique_C5_LU
-#print axioms MainTheory.OrderFiveOrbitMembership.unique_C5_LU_of_natCard
-#print axioms MainTheory.Orbit26.anchor_solve
-#print axioms MainTheory.Orbit26.F_mul_transpose
-#print axioms MainTheory.Orbit26.F_eq_zero_of_isUnit
-#print axioms MainTheory.Orbit26.F_mulVec_eq_zero_of_rankOne
-#print axioms MainTheory.Orbit26.sum_rowNormSq_gt
-#print axioms MainTheory.Orbit26.anchor_swap
-#print axioms MainTheory.Orbit26.outer_swap
-#print axioms MainTheory.Orbit26.C3_not_isUnit
-#print axioms MainTheory.Orbit26.D3_not_isUnit
-#print axioms MainTheory.Orbit26.anchor_singular
-#print axioms MainTheory.ParityFour.push_emb
-#print axioms MainTheory.ParityFour.bdot_push
-#print axioms MainTheory.ParityFour.proj_bxor_push
-#print axioms MainTheory.ParityFour.row_eq_character_sum
-#print axioms MainTheory.ParityFour.edgeMasks_eq
-#print axioms MainTheory.ParityFour.edgeMasks_transversal
-#print axioms MainTheory.ParityFour.edge_isolation
-#print axioms MainTheory.DeterminantalFactor.inv_eq_smul_adjugate
-#print axioms MainTheory.DeterminantalFactor.cofactorGcd_dvd_det
-#print axioms MainTheory.DeterminantalFactor.inverseDenominator_dvd_iff
-#print axioms MainTheory.DeterminantalFactor.inverseDenominator_eq_det_div_cofactorGcd
-#print axioms MainTheory.DeterminantalFactor.dvd_lastInvariantFactor
-#print axioms MainTheory.PaperSmithFactor.colouredPivot_order_dvd_lastInvariantFactor
-#print axioms MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor
-#print axioms MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor'
-#print axioms MainTheory.GatePrimitiveConverse.dvd_val_weight
-#print axioms MainTheory.GatePrimitiveConverse.primitive_of_order
-#print axioms MainTheory.GatePrimitiveConverse.primitive_iff_exact_order
-#print axioms MainTheory.RankTwoGeneratorGeneral.intrinsicClass_finiteGenerator'
-#print axioms MainTheory.RankTwoGeneratorGeneral.exists_sortedNormalForm_natCard
-#print axioms MainTheory.ZDetection.zDetectsFrame_of_hasDistance
-#print axioms MainTheory.ZDetection.zDetectsFrame_of_codeSpan_eq
-#print axioms MainTheory.ZDetection.phaseSectors_of_zDetects
-#print axioms MainTheory.ZDetection.quantitative_projective_group_of_zDetects
-#print axioms MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects
-#print axioms MainTheory.ZDetection.cyclic_of_zDetects
-#print axioms MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank
-#print axioms MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank_le
-#print axioms MainTheory.RankStageDistribution.table
-#print axioms MainTheory.RankStageDistribution.eight_two_rank_four
-#print axioms MainTheory.RankStageDistribution.nine_three_rank_five
-#print axioms MainTheory.SurvivingLiftOrders.survivingQ_table
-#print axioms MainTheory.SurvivingLiftOrders.q_eq_m_or_exception
-#print axioms MainTheory.StageRecordCounts.record_level_chain
-#print axioms MainTheory.StageRecordCounts.coarse_two_more_records_than_pairs
-#print axioms MainTheory.StageRecordCounts.feasible_one_more_record_than_pair
-#print axioms MainTheory.MomentConvexHull.momentSet_eq_convexHull
-#print axioms MainTheory.MomentConvexHull.exists_feasible_iff_momentSet_inter
-#print axioms MainTheory.MomentConvexHull.exists_feasible_iff_convexHull_inter
-#print axioms MainTheory.WEStrictInclusion.FI_injective
-#print axioms MainTheory.WEStrictInclusion.FI_half_ssubset
-#print axioms MainTheory.WEStrictInclusion.provedImages_subset_conjectured
-#print axioms MainTheory.ScaledModulusFibres.Sk_scale
-#print axioms MainTheory.ScaledModulusFibres.weight_scale
-#print axioms MainTheory.ScaledModulusFibres.orderOf_intrinsicClass_dvd
-#print axioms MainTheory.DisjointFibreOffDiagonal.offSumOn_zero_of_disjoint
-#print axioms MainTheory.DisjointFibreOffDiagonal.innerC_pauliAct_eq_zero_of_disjoint
-#print axioms MainTheory.PauliKernelTrace.kernelAction_pauliKernel
-#print axioms MainTheory.PauliKernelTrace.trace_pauliKernel_mul_projector
-#print axioms MainTheory.PauliKernelTrace.Aco_eq_sum_normSq_trace
-#print axioms MainTheory.PauliKernelBTrace.trace_mul_projector_mul_adjoint_mul_projector
-#print axioms MainTheory.PauliKernelBTrace.BWeight_cast_eq_sum_trace
-#print axioms MainTheory.KLWeightEquality.AWeight_eq_BWeight_of_hasDistance
-#print axioms MainTheory.SixQubitExactDistance.exactCode_distance_three
-#print axioms MainTheory.SharpSectorZDetection.hasPrimitiveLift_le_beta_sectorCount
-#print axioms MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects
-#print axioms MainTheory.SharpSectorZDetection.qMinOfExists_eq_qMin
-#print axioms MainTheory.SharpSectorZDetection.exists_minimal_primitiveLift_le_betaOf_sectorCount
-#print axioms MainTheory.RealSupportAffineRank.SupportedBitBasis.rank_eq_supportAffineRank
-#print axioms MainTheory.RealSupportAffineRank.supportAffineRank_bxor
-#print axioms MainTheory.RealSupportAffineRank.supportAffineRank_permAct
-#print axioms MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank
-#print axioms MainTheory.D3AffineNormalForm.exists_normalForm_affinePivot_of_generator
-#print axioms MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank
-#print axioms MainTheory.FiveQubitRationalization.fully_certified
-#print axioms MainTheory.FiveQubitRationalization.first_moments
-#print axioms MainTheory.FiveQubitRationalization.auxiliary_solutions
-#print axioms MainTheory.FiveQubitRationalization.rational_gate6
-#print axioms MainTheory.FiveQubitRationalization.rational_gate3
-#print axioms MainTheory.FiveQubitRationalization.least_denominator_six
-#print axioms MainTheory.FiveQubitRationalization.physical_order_six
-#print axioms MainTheory.FiveQubitRationalization.family_rational_lifts
-#print axioms MainTheory.MacWilliamsPolynomial.raw_macwilliams
-#print axioms MainTheory.MacWilliamsPolynomial.quantum_macwilliams
-#print axioms MainTheory.MacWilliamsPolynomial.A_eq_sum
-#print axioms MainTheory.MacWilliamsPolynomial.B_eq_sum
-#print axioms MainTheory.MacWilliamsPolynomial.B_eq_frobenius_sum
-#print axioms MainTheory.MacWilliamsPolynomial.normalized_coefficients_equal_below_distance
-#print axioms MainTheory.GeneralSectorMoments.wordMoment_eq
-#print axioms MainTheory.GeneralSectorMoments.sectorProbability_eq_projector
-#print axioms MainTheory.GeneralSectorMoments.sectorProbability_nonneg
-#print axioms MainTheory.GeneralSectorMoments.sectorProbability_sum_eq_one
-#print axioms MainTheory.GeneralSectorMoments.sectorProbability_eq_zero_of_support
-#print axioms MainTheory.GeneralSectorMoments.sector_moment_eq
-#print axioms MainTheory.ColoredResidueArithmetic.existsUnique_scaledColor
-#print axioms MainTheory.ColoredResidueArithmetic.primitive_iff_exact_joint_order
-#print axioms MainTheory.GeneralFrameTransport.hasDistance_bxor
-#print axioms MainTheory.GeneralFrameTransport.hasDistance_permAct
-#print axioms MainTheory.GeneralColoredConverse.ColoredFrame.sslp_converse
-#print axioms MainTheory.GeneralColoredExistence.general_colored_sslp_normal_form
-#print axioms MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_eq_code_inf_eigenspace
-#print axioms MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_orthogonal
-#print axioms MainTheory.GeneralColoredTheory.colored_subspace_data
-#print axioms MainTheory.GeneralColoredTheory.all_binary_moments_eq
-#print axioms MainTheory.GeneralColoredTheory.probability_eq_projector
-#print axioms MainTheory.LPDimension.finrank_eq_card_sub_rank_of_positive
-#print axioms MainTheory.LPDimension.finrank_eq_active_card_sub_rank
-#print axioms MainTheory.LPDimension.dimension_eq_active_card_sub_rank
-#print axioms MainTheory.ExactLP.exists_rational_feasible_of_real
-#print axioms MainTheory.ExactLP.rational_feasible_iff_real
-#print axioms MainTheory.ExactLP.exists_rational_active_of_real
-#print axioms MainTheory.ExactLP.rational_active_iff_real
-#print axioms MainTheory.FlipCharacter.monomials_zero_of_det_ne_zero
-#print axioms MainTheory.FlipCharacter.two_edge_actual_support_obstruction
-#print axioms MainTheory.FlipCharacter.full_rank_flip_monomials_zero
-#print axioms MainTheory.FlipCharacter.full_rank_flip_positive_obstruction
-#print axioms MainTheory.FlipCharacter.matched_ten_monomials_zero
-#print axioms MainTheory.FlipCharacter.matched_ten_obstruction
-#print axioms MainTheory.LocalUnitaryClosure.luEquivalent_iff_tensor
-#print axioms MainTheory.PauliTransferTwo.transfer_unitary
-#print axioms MainTheory.PauliTensorTransfer.trace_weight_invariant
-#print axioms MainTheory.PauliWordBridge.wordKernel_pauliWordEquiv
-#print axioms MainTheory.LocalUnitaryEnumerators.operatorA_luEquivalent
-#print axioms MainTheory.LocalUnitaryEnumerators.BWeight_luEquivalent
-#print axioms MainTheory.LocalUnitaryEnumerators.enumerators_luEquivalent
-#print axioms MainTheory.QuantumSingleton.quantum_singleton
-#print axioms MainTheory.QuantumSingleton.six_qubit_distance_le_three
-#print axioms MainTheory.ParityFour.feasible_iff_crosspolytope
-#print axioms MainTheory.ParityFour.probability_injective
-#print axioms MainTheory.ParityFour.momentPolytope_affine_dimension
-#print axioms MainTheory.ParityFour.positiveGraph_connected
-#print axioms MainTheory.ParityFour.positiveSliceGraph_empty_or_connected
-#print axioms MainTheory.ParityFour.positiveGraph_adj_iff_hamming_one
-#print axioms MainTheory.ParityFour.positiveSliceGraph_adj_iff
-#print axioms MainTheory.SmithExistence.exists_normalized_smith
-#print axioms MainTheory.SmithExistence.exists_smith_with_sharp_last
-#print axioms MainTheory.SmithExistence.exists_smith_with_determinantal_last
-#print axioms MainTheory.SmithExistence.exists_smith_normal_form
-#print axioms MainTheory.QuantumRecovery.hermitian_projector_kl_iff_recovery
-#print axioms MainTheory.QuantumRecovery.recovery_of_half_distance
-#print axioms MainTheory.QuantumRecovery.common_recovery_of_distance
-#print axioms MainTheory.FiniteKrausChannel.action_completely_positive
-#print axioms MainTheory.FiniteKrausChannel.amplify_tracePreserving
-#print axioms MainTheory.FiniteKrausChannel.action_amplify_tensor
-#print axioms MainTheory.KnillLaflammeRecovery.knillLaflamme_iff_recovery
-#print axioms MainTheory.KnillLaflammeRecovery.knillLaflamme_has_positive_gram
-#print axioms MainTheory.KnillLaflammeRecovery.knillLaflamme_iff_scalar_recovery
-#print axioms MainTheory.KnillLaflammeRecovery.finite_error_set_recovery
-#print axioms MainTheory.QuantumRecovery.projector_kl_iff_recovery
-#print axioms MainTheory.QuantumRecovery.recovery_of_distance
-#print axioms MainTheory.WImageOrbit4M.FII_subset_WImage_orbit4
-#print axioms MainTheory.WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4
-#print axioms MainTheory.WImageOpenL.FI_subset_orbit1
-#print axioms MainTheory.WImageOpenL.FI_subset_orbit2
-#print axioms MainTheory.WImageOpenL.FI_subset_orbit3
-#print axioms MainTheory.WImageOpenL.FI_subset_orbit4
-#print axioms MainTheory.ParityFour.probability_character_formula
-#print axioms MainTheory.ParityFour.two_body_moment_zero
-#print axioms MainTheory.ParityFour.interior_probability_positive
-#print axioms MainTheory.ParityFour.boundary_support_formula
-#print axioms MainTheory.ParityFour.boundary_support_positive_iff
-#print axioms MainTheory.BoundedUnitaryGroup.finite_of_exponent
-#print axioms MainTheory.BoundedUnitaryGroup.finite_of_bounded_order
-#print axioms MainTheory.UnitaryAdjointRepresentation.adjoint_mulVec
-#print axioms MainTheory.UnitaryAdjointRepresentation.adjoint_eq_one_iff
-#print axioms MainTheory.UnitaryAdjointRepresentation.adjoint_eq_iff
-#print axioms MainTheory.UnitaryAdjointRepresentation.adjoint_pow_eq_one_iff
-#print axioms MainTheory.UnitaryAdjointRepresentation.finite_adjoint_image_of_bounded_projective_order
-#print axioms MainTheory.DiagonalLogicalOrder.exists_bounded_scalar_power
-#print axioms MainTheory.EastinKnill.eastin_knill
-#print axioms MainTheory.EastinKnill.eastin_knill_exactCode
-#print axioms MainTheory.FiniteMomentLP.polytope_nonempty
-#print axioms MainTheory.FiniteMomentLP.affine_dimension_eq_of_face
-#print axioms MainTheory.FiniteMomentMatrix.entryZ_moment
-#print axioms MainTheory.FiniteTensorDetection.exists_diagonal_normal_form
-#print axioms MainTheory.FiniteTensorKernel.localKernel_diagonal
-#print axioms MainTheory.FrameDistanceOne.hasDistance_one
-#print axioms MainTheory.Generated.OrbitTableMultiplicities.all_multiplicities
-#print axioms MainTheory.Generated.OrbitTableRank01.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRank02.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRank05.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRank10.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRank31.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRank66.active_moment_rank
-#print axioms MainTheory.Generated.OrbitTableRecords.record_injective
-#print axioms MainTheory.Generated.OrbitTableSemantics31.lp_affine_dimension
-#print axioms MainTheory.Generated.OrbitTableSemantics01.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics01.active_affine_rank
-#print axioms MainTheory.Generated.OrbitTableSemantics01.lp_affine_dimension
-#print axioms MainTheory.Generated.OrbitTableSemantics02.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics02.active_affine_rank
-#print axioms MainTheory.Generated.OrbitTableSemantics02.lp_affine_dimension
-#print axioms MainTheory.Generated.OrbitTableSemantics05.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics05.active_affine_rank
-#print axioms MainTheory.Generated.OrbitTableSemantics05.lp_affine_dimension
-#print axioms MainTheory.Generated.OrbitTableSemantics10.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics10.active_affine_rank
-#print axioms MainTheory.Generated.OrbitTableSemantics10.lp_affine_dimension
-#print axioms MainTheory.Generated.OrbitTableSemantics31.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics31.active_affine_rank
-#print axioms MainTheory.Generated.OrbitTableSemantics66.active_columns_exact
-#print axioms MainTheory.Generated.OrbitTableSemantics66.active_affine_rank
-#print axioms MainTheory.PhaseSectorMoments.probability_nonneg
-#print axioms MainTheory.PhaseSectorMoments.probability_sum_eq_one
-#print axioms MainTheory.PhaseSectorMoments.exists_mem_support
-#print axioms MainTheory.PhaseSectorMoments.probability_pos_of_ne_zero
-#print axioms MainTheory.PhaseSectorMoments.mean_eq_of_detects_one
-#print axioms MainTheory.PhaseSectorMoments.exists_common_mean
-#print axioms MainTheory.PaperGeneralSSLP.general_sslp_normal_form
-#print axioms MainTheory.ConnectedOrthogonality.mem_span_of_inner_eq_zero
-#print axioms MainTheory.CovarianceRange.cov_eq_mul_transpose
-#print axioms MainTheory.CovarianceRange.span_col_sqrtFactor
-#print axioms MainTheory.CovarianceRange.range_cov_eq_span
-#print axioms MainTheory.Orbit30.triangle_contradiction
-#print axioms MainTheory.Orbit26.bad_subsingleton
-#print axioms MainTheory.Orbit26.exists_generic
-#print axioms MainTheory.Orbit26.exists_nonzero_col
-#print axioms MainTheory.Orbit26.finish_of_rows
-#print axioms MainTheory.Orbit26.core
-#print axioms MainTheory.Orbit26.core_rank_one
-#print axioms MainTheory.Orbit30.Data.total_weight
-#print axioms MainTheory.Orbit30.Data.rowSupport_card_ne_one
-#print axioms MainTheory.Orbit30.Data.two_le_nbhd_card
-#print axioms MainTheory.Orbit30.Data.split_identity
-#print axioms MainTheory.Orbit30.Data.row_over_A
-#print axioms MainTheory.Orbit30.Data.card_A_ne_zero
-#print axioms MainTheory.Orbit30.Data.card_A_ne_one
-#print axioms MainTheory.Orbit30.Data.card_A_ne_two
-#print axioms MainTheory.Orbit30.Data.three_le_card_A
-#print axioms MainTheory.Orbit30.Data.exists_internal_edge
-#print axioms MainTheory.Orbit30.Data.card_A_ne_three
-#print axioms MainTheory.Orbit30.Data.q4o30_exceptional
-#print axioms MainTheory.Orbit30.Data.four_le_card_A
-#print axioms MainTheory.CovarianceRange.affineSpan_eq_mu_add_range
-#print axioms MainTheory.Orbit31Identification.fibre0
-#print axioms MainTheory.Orbit31Identification.fibre1
-#print axioms MainTheory.Orbit31Identification.same_fibre_pair
-#print axioms MainTheory.Orbit31Identification.col_injective
-#print axioms MainTheory.Orbit31Identification.inFiber_iff
-#print axioms MainTheory.Orbit31Identification.matrixZ_col
-#print axioms MainTheory.Orbit31Identification.mem_polytope_iff
-#print axioms MainTheory.ParityFour.character_bxor
-#print axioms MainTheory.ParityFour.bxor_eq_false_iff
-#print axioms MainTheory.ParityFour.sum_character
-#print axioms MainTheory.ParityFour.sum_character_mul
-#print axioms MainTheory.ParityFour.eq_zero_of_character_sums
-#print axioms MainTheory.ParityFour.edge_isolation_of_character_rows
-#print axioms MainTheory.ParityFour.parity_eq_bdot
-#print axioms MainTheory.ParityFour.bdot_comm
-#print axioms MainTheory.ParityFour.character_bxor_left
-#print axioms MainTheory.ParityFour.sum_bxor_allOnes
-#print axioms MainTheory.ParityFour.eq_zero_of_transversal
-#print axioms MainTheory.ParityFour.eq_zero_of_clear_coordinate
-#print axioms MainTheory.ConnectedOrthogonality.exists_line
-#print axioms MainTheory.ConnectedOrthogonality.frame_forms_ne
-#print axioms MainTheory.PaperSupplementaryImages.o7_weight_image
-#print axioms MainTheory.PaperSupplementaryImages.o8_weight_image
-#print axioms MainTheory.PaperSupplementaryImages.o9_weight_image
-#print axioms MainTheory.PaperSupplementaryImages.o21_enumerator
-#print axioms MainTheory.PaperSupplementaryImages.o45_weight_image
-#print axioms MainTheory.PaperSupplementaryImages.m2_five_stabilizer_orbits
-#print axioms MainTheory.PaperSupplementaryImages.q9_range
-#print axioms MainTheory.PaperSupplementaryImages.q8_range
-#print axioms MainTheory.PaperSupplementaryImages.q7_range
-#print axioms MainTheory.PaperSupplementaryImages.m5_unique_unconditional
-#print axioms MainTheory.PaperSupplementaryImages.parity4_moment
-#print axioms MainTheory.PaperSupplementaryImages.parity4_connectivity
-#print axioms MainTheory.PaperSupplementaryImages.o36_all_r_active
-#print axioms MainTheory.PaperSupplementaryImages.o8_shells
-#print axioms MainTheory.PaperSupplementaryImages.o8_support_two
-#print axioms MainTheory.PaperSupplementaryImages.o8_ladder01
-#print axioms MainTheory.PaperSupplementaryImages.o8_ladder10
-#print axioms MainTheory.PaperSupplementaryImages.o9_pq_equal
-#print axioms MainTheory.PaperSupplementaryImages.q4o26_Jorth
-#print axioms MainTheory.PaperSupplementaryImages.q4o31_moment_normal
-#print axioms MainTheory.PaperSupplementaryImages.q4o31_permanent_triangle
-#print axioms MainTheory.PaperSupplementaryImages.o7_scalar_moments
-#print axioms MainTheory.PaperSupplementaryImages.o7_boundary_reduction
-#print axioms MainTheory.PaperSupplementaryImages.o7_pair_sum
-#print axioms MainTheory.PaperSupplementaryImages.o9_moment_normal_form
-#print axioms MainTheory.PaperSupplementaryImages.o9_components
-#print axioms MainTheory.PaperSupplementaryImages.o9_support_four
-#print axioms MainTheory.PaperSupplementaryImages.m2_current_status
-#print axioms MainTheory.PaperSupplementaryImages.o9_magnitudes
-#print axioms MainTheory.PaperSupplementaryImages.o8_raising_gram
-#print axioms MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective
-#print axioms MainTheory.PaperSupplementaryNoGo.paperOrbitId_range
-#print axioms MainTheory.PaperSupplementaryNoGo.exists_key_of_paperOrbitId
-#print axioms MainTheory.PaperSupplementaryNoGo.hasCompletion_iff_paperOrbitId
-#print axioms MainTheory.PaperSupplementaryNoGo.no_completion_of_paperOrbitId
-#print axioms MainTheory.PaperSupplementaryNoGo.o12_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o13_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o14_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o15_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o17_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o18_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o19_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o20_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o24_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o41_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o42o43_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o44_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o46_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o5_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o6_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o47_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o48_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o49_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o50_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o51_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.o52_nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.q4o26nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.q4o30nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.q4o31nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.q4o32nogo
-#print axioms MainTheory.PaperSupplementaryNoGo.q6no53
-#print axioms MainTheory.PaperSupplementaryNoGo.q6no54
-#print axioms MainTheory.PaperSupplementaryNoGo.q6no55
-#print axioms MainTheory.PaperSupplementaryNoGo.q6no56
-#print axioms MainTheory.PaperSupplementaryNoGo.q7no57
-#print axioms MainTheory.PaperSupplementaryNoGo.q7no58
-#print axioms MainTheory.PaperSupplementaryNoGo.q7no59
-#print axioms MainTheory.PaperSupplementaryNoGo.q7no60
-#print axioms MainTheory.PaperSupplementaryNoGo.q7no61
-#print axioms MainTheory.PaperSupplementaryNoGo.m2_fourteen_nogos
-#print axioms MainTheory.PaperSupplementaryNoGo.m3_complete_nogos
-#print axioms MainTheory.PaperSupplementaryNoGo.m5_other_seven
-#print axioms MainTheory.PaperSupplementaryNoGo.q4_no_go
-#print axioms MainTheory.PaperSupplementaryNoGo.q6_no_go
-#print axioms MainTheory.PaperSupplementaryNoGo.q7_no_go
-#print axioms MainTheory.PaperSupplementaryNoGo.q8_no_go
-#print axioms MainTheory.PaperSupplementaryNoGo.q9_no_go
-#print axioms MainTheory.PaperSupplementaryNoGo.complete_order_classification
-#print axioms MainTheory.PaperSupplementaryNoGo.max_order_le_five
-#print axioms MainTheory.PaperSupplementaryNoGo.realized_paperOrbitIds
-#print axioms MainTheory.PaperGeneralSSLP.rank_two_sslp
-#print axioms MainTheory.PaperGeneralSSLP.rank_two_sslp_converse
-#print axioms MainTheory.PaperGeneralSSLP.phase_sector_support
-#print axioms MainTheory.PivotSmithNormalForm.clearing_smithLastFactor
-#print axioms MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det
-#print axioms MainTheory.PivotSmithNormalForm.nonempty_smithWitness
-#print axioms MainTheory.PivotSmithNormalForm.q_dvd_smithLastFactor
-#print axioms MainTheory.PivotSmithNormalForm.exists_smithNormalForm_q_dvd_last
-#print axioms MainTheory.PivotSmithNormalForm.nonempty_smithWitness_simplex
-#print axioms MainTheory.PivotSmithNormalForm.q_dvd_smithLastFactor_simplex
-#print axioms MainTheory.PivotSmithNormalForm.exists_smithNormalForm_q_dvd_last_simplex
-#print axioms MainTheory.OrbitTablePaperKey.paperKey_injective
-#print axioms MainTheory.OrbitTablePaperKey.paperKey_bijective
-#print axioms MainTheory.OrbitTablePaperKey.paperKey_surjective
-#print axioms MainTheory.OrbitTablePaperKey.exists_unique_row
-#print axioms MainTheory.OrbitTablePaperKey.multiplicity_eq_paperMultiplicity
-#print axioms MainTheory.OrbitTablePaperKey.sum_paperMultiplicity
-#print axioms MainTheory.Generated.OrbitTableSemantics66.lp_affine_dimension
-#print axioms MainTheory.GramPrefixBound.sign_prune
-#print axioms MainTheory.IntegerMatrixRankCertificate.rank_eq_of_integer_minor_and_expansion
-#print axioms MainTheory.LocalUnitaryKL.hasDistance_unitaryFrame
-#print axioms MainTheory.OneHotTensorEmbedding.diagonalKernel_embedding
-#print axioms MainTheory.OneHotZDetection.zDetects_embeddedFrame
-#print axioms MainTheory.OrbitRecordMultiplicity.multiplicity_eq_assignedCount
-#print axioms MainTheory.QubitTransversalFinite.finite_projective_transversal_image
-#print axioms MainTheory.TransversalLogicalOrder.finite_projective_transversal_image
-#print axioms MainTheory.UnitaryMatrixDiagonalization.exists_unitary_diagonalization
-#print axioms MainTheory.OrbitRepresentative.orbit25_representative
-#print axioms MainTheory.OrbitRepresentative.orbit26_representative
-#print axioms MainTheory.OrbitRepresentative.orbit27_representative
-#print axioms MainTheory.OrbitRepresentative.orbit28_representative
-#print axioms MainTheory.OrbitRepresentative.orbit29_representative
-#print axioms MainTheory.OrbitRepresentative.orbit30_representative
-#print axioms MainTheory.OrbitRepresentative.orbit31_representative
-#print axioms MainTheory.OrbitRepresentative.orbit32_representative
-#print axioms MainTheory.OrbitRepresentative.orbit62_representative
-#print axioms MainTheory.OrbitRepresentative.orbit63_representative
-#print axioms MainTheory.OrderFiveEnumerator.exists_table_witness
-#print axioms MainTheory.OrderFiveEnumerator.canonical_enumerator
-#print axioms MainTheory.OrderFiveEnumerator.orderFive_enumerator
-#print axioms MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full
-#print axioms MainTheory.PaperSupplementaryImages.m36_range
-#print axioms MainTheory.PaperSupplementaryImages.m2_current_status_full
-#print axioms MainTheory.SharpOuterCutoff.outerCutoff_betaOf
-#print axioms MainTheory.SharpOuterCutoff.completeness_three_sharp
-#print axioms MainTheory.TransversalFixedBasis.inner_plus_plus
-#print axioms MainTheory.TransversalFixedBasis.inner_minus_minus
-#print axioms MainTheory.TransversalFixedBasis.inner_plus_minus
-#print axioms MainTheory.TransversalFixedBasis.kl_Zop
-#print axioms MainTheory.TransversalFixedBasis.rotOf_unitary
-#print axioms MainTheory.TransversalFixedBasis.rot_unitary
-#print axioms MainTheory.TransversalFixedBasis.localAct_plus3
-#print axioms MainTheory.TransversalFixedBasis.localAct_minus3
-#print axioms MainTheory.TransversalFixedBasis.fixed_basis_essential
-#print axioms MainTheory.CodePreservingUnitary.preservesProjector_one
-#print axioms MainTheory.CodePreservingUnitary.preservesProjector_mul
-#print axioms MainTheory.CodePreservingUnitary.commute_of_preservesProjector
-#print axioms MainTheory.CodePreservingUnitary.mapsTo_of_preservesProjector
-#print axioms MainTheory.ProjectorCompression.pauli_compression
-#print axioms MainTheory.ProjectorCompression.tensor_compression
-#print axioms MainTheory.GlobalWeightSet.aweight_eq
-#print axioms MainTheory.GlobalWeightSet.R5A_mem_globalWSet
-#print axioms MainTheory.GlobalWeightSet.globalWSet_nonempty
-#print axioms MainTheory.BinaryBetaNine.betaNineBound
-#print axioms MainTheory.BinaryBetaNine.betaNineExact
-#print axioms MainTheory.BetaNineValue.betaOf_nine
-#print axioms MainTheory.BinaryBetaEight.betaEightBound
-#print axioms MainTheory.BinaryBetaEight.betaEightExact
-#print axioms MainTheory.BetaEightValue.betaOf_eight
-#print axioms MainTheory.SixQubitIntrinsicOrderSet.including_identity
-#print axioms MainTheory.SixQubitIntrinsicOrderSet.nontrivial_exact
-#print axioms MainTheory.AncillaPadding.compression_snocPauli
-#print axioms MainTheory.AncillaPadding.detects_appendZero
-#print axioms MainTheory.AncillaPadding.hasDistance_padFrame
-#print axioms MainTheory.AncillaPadding.Aco_appendZero_succ
-#print axioms MainTheory.AncillaPadding.Aco_appendZero_zero
-#print axioms MainTheory.AncillaPadding.AWeight_padFrame_one
-#print axioms MainTheory.AncillaPadding.AWeight_padFrame_one_pos
-#print axioms MainTheory.AncillaGatePadding.projector_appendFrame
-#print axioms MainTheory.AncillaGatePadding.projector_padFrame
-#print axioms MainTheory.AncillaGatePadding.intertwining_padFrame
-#print axioms MainTheory.AncillaGatePadding.padLocal_unitary
-#print axioms MainTheory.TransversalDiagonalization.exists_diagonal_normal_form
-#print axioms MainTheory.DiagonalLogicalMatrixBridge.projectivelyTrivial_iff_scalar
-#print axioms MainTheory.DiagonalLogicalMatrixBridge.exists_intrinsic_order_five
-#print axioms MainTheory.MinimumLengthOrderFive.six_qubit_AWeight_one_zero
-#print axioms MainTheory.MinimumLengthOrderFive.minimum_length
-#print axioms MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three
-#print axioms MainTheory.MinimumLengthOrderFive.canonical_attains
-
--- Arbitrary subspaces, their exact direct sum, and the general SSLP converse.
-#print axioms MainTheory.SubspaceCode.finrank_euclideanSpace
-#print axioms MainTheory.SubspaceCode.frame
-#print axioms MainTheory.SubspaceCode.frame_mem
-#print axioms MainTheory.SubspaceCode.codeSpan_frame
-#print axioms MainTheory.SubspaceCode.hasDistance_iff
-#print axioms MainTheory.SubspaceCode.frame_hasDistance
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.orthogonal
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_sectorFrame
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sigma_orthonormal
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_eq
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.finrank_sum
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.frame_hasDistance
-#print axioms MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sslp_converse
-#print axioms MainTheory.PaperGeneralSSLP.general_sslp_converse
-
--- The same binary system, Smith witness and physical colored lift.
-#print axioms MainTheory.BinaryPivotLift.binary_det_ne_zero
-#print axioms MainTheory.BinaryPivotLift.binarySolution_solves
-#print axioms MainTheory.BinaryPivotLift.sign_selectedSolution_eq_binarySolution
-#print axioms MainTheory.BinaryPivotLift.selectedSolution_eq_sign_binarySolution
-#print axioms MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution
-#print axioms MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor
-#print axioms MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects
+#certification_axioms [
+  MainTheory.Rationalize.retract,
+  MainTheory.Rationalize.retract_algebraMap,
+  MainTheory.Rationalize.retract_algebraMap_mul,
+  MainTheory.Rationalize.exists_solution_of_exists_solution_ext,
+  MainTheory.Rationalize.eq_of_ker_eq_zero,
+  MainTheory.Rationalize.pi_solution,
+  MainTheory.Rationalize.rationalized_pi_solution,
+  MainTheory.Denominator.clears_iff,
+  MainTheory.Denominator.lcmDen_pos,
+  MainTheory.Denominator.lcmDen_clears,
+  MainTheory.Denominator.lcmDen_dvd_of_clears,
+  MainTheory.Denominator.liftNum_spec,
+  MainTheory.Denominator.eq_one_of_dvd_lcmDen_of_dvd_liftNum,
+  MainTheory.Denominator.lcmDen_example,
+  MainTheory.Denominator.lift_exists,
+  MainTheory.Gate.weight_stdBasis,
+  MainTheory.Gate.diag_pow,
+  MainTheory.Gate.natCast_mul_weight,
+  MainTheory.Gate.dvd_of_forall_mul_eq_zero,
+  MainTheory.Gate.pow_eq_one_iff,
+  MainTheory.Gate.primitive_orbit21,
+  MainTheory.Gate.not_primitive_allEven,
+  MainTheory.Gate.orbit21_order,
+  MainTheory.PhaseSector.diag_eq_of_eigen,
+  MainTheory.PhaseSector.weight_eq_of_eigen,
+  MainTheory.PhaseSector.ssCondition_of_eigen,
+  MainTheory.PhaseSector.disjoint_of_ne,
+  MainTheory.PhaseSector.eigen_of_ssCondition,
+  MainTheory.PhaseSector.eigen_iff_ssCondition,
+  MainTheory.PhaseSector.exists_eigen,
+  MainTheory.PhaseSector.ssCondition_nonvacuous,
+  MainTheory.PhaseSector.support_of_ssCondition,
+  MainTheory.PhaseSector.support_of_eigen,
+  MainTheory.Normalize.flip_flip,
+  MainTheory.Normalize.weight_bxor,
+  MainTheory.Normalize.weight_flip_self,
+  MainTheory.Normalize.addOrderOf_dvd,
+  MainTheory.Normalize.exists_unit_reduction_inv,
+  MainTheory.Normalize.exists_unit_mul_eq_one,
+  MainTheory.Normalize.ssCondition_bxor,
+  MainTheory.Normalize.weight_bxor_check,
+  MainTheory.Cyclic.chi_zero,
+  MainTheory.Cyclic.diag_eq_chi,
+  MainTheory.Cyclic.pow_mod,
+  MainTheory.Cyclic.chi_add,
+  MainTheory.Cyclic.chi_pow,
+  MainTheory.Cyclic.chi_eq_one_iff,
+  MainTheory.Cyclic.chi_ne_zero,
+  MainTheory.Cyclic.chi_injective,
+  MainTheory.Cyclic.chi_pow_eq_one_iff,
+  MainTheory.Cyclic.addOrderOf_dvd_card,
+  MainTheory.Cyclic.isCyclic_of_faithful,
+  MainTheory.Cyclic.addOrderOf_orbit21_gap,
+  MainTheory.Cyclic.orbit21_projective_order,
+  MainTheory.Cyclic.chi_sub,
+  MainTheory.RankTwo.normal_form_core,
+  MainTheory.RankTwo.addOrderOf_div,
+  MainTheory.RankTwo.order_of_two_fiber,
+  MainTheory.RankTwo.normal_form_nonvacuous,
+  MainTheory.RankTwo.addOrderOf_dvd_q,
+  MainTheory.Normalize.primitive_flip,
+  MainTheory.RankTwo.gap_ne_zero,
+  MainTheory.RankTwo.exists_unit_mul_eq_div,
+  MainTheory.Clearing.map_mulVec,
+  MainTheory.Clearing.det_smul_eq_adjugate_mulVec,
+  MainTheory.Clearing.exists_cleared_of_real,
+  MainTheory.Clearing.exists_clearing,
+  MainTheory.Clearing.clearing_example,
+  MainTheory.Covariance.quad_eq_sum_sq,
+  MainTheory.Covariance.quad_eq_zero_iff,
+  MainTheory.Covariance.quad_nonneg,
+  MainTheory.Covariance.proj_eq_zero_congr,
+  MainTheory.Covariance.orthDir_mem_kernel,
+  MainTheory.Covariance.along_not_mem_kernel,
+  MainTheory.AffineSpan.covariance_eq_of_hasDistance,
+  MainTheory.AffineSpan.mean_eq_of_hasDistance,
+  MainTheory.D3Bound.dot_eq_of_mulVec_eq,
+  MainTheory.D3Bound.exists_rational_agreeing,
+  MainTheory.D3Bound.exists_primitive_lift,
+  MainTheory.Levels.WImage_orbit21,
+  MainTheory.WImages.WImage_orbit9,
+  MainTheory.WImages.WImage_orbit10,
+  MainTheory.WImages.WImage_orbit11,
+  MainTheory.WImages.WImage_orbit16,
+  MainTheory.WImages.WImage_orbit22,
+  MainTheory.WImages.WImage_orbit23,
+  MainTheory.WImages.WImage_orbit7,
+  MainTheory.WImages.WImage_orbit8,
+  MainTheory.WImages.WImage_orbit45,
+  MainTheory.RealGate.exp_eq_of_eigen,
+  MainTheory.RealGate.angle_sub_int_of_eigen,
+  MainTheory.RealGate.diffMatrix_mulVec,
+  MainTheory.RealGate.exists_rational_angle,
+  MainTheory.OuterIndex.card_two,
+  MainTheory.OuterIndex.card_three,
+  MainTheory.OuterIndex.card_four,
+  MainTheory.OuterIndex.card_five,
+  MainTheory.OuterIndex.outerRecords_finite,
+  MainTheory.ActiveFace.avg_mem,
+  MainTheory.ActiveFace.avg_pos,
+  MainTheory.Covariance.mem_dualAnnihilator_span,
+  MainTheory.Covariance.span_eq_of_cov_eq,
+  MainTheory.PhaseSector.weight_eq_of_eigen_family,
+  MainTheory.PhaseSector.disjoint_of_ne_family,
+  MainTheory.PhaseSector.ssCondition_of_eigen_family,
+  MainTheory.IntrinsicTransport.intrinsicClass_flip_eq,
+  MainTheory.IntrinsicTransport.mem_symmetryGroup_flip,
+  MainTheory.IntrinsicTransport.intrinsicClass_congr,
+  MainTheory.NormalizationIsShift.normalizedFrame_eq_shiftFrame,
+  MainTheory.FiniteGateAsPhase.gate_eq_diagonalAction,
+  MainTheory.FiniteGateAsPhase.exists_label_of_phaseOfAngle_le,
+  MainTheory.PhaseTranscription.phaseOfAngle_eq_finiteLocalPhase,
+  MainTheory.SameProjectiveClass.intrinsicClass_eq_of_sameProjective,
+  MainTheory.SymmetryToEntrance.exists_label_of_class_one,
+  MainTheory.CoprimePowerRecovery.exists_pow_eq_self,
+  MainTheory.BoundedClassPower.BoundedClass.of_pow_coprime,
+  MainTheory.UndoNormalization.flipPhase_phaseOfAngle_normalized,
+  MainTheory.BoundedRepresentationProof.boundedClass_of_twoFiber,
+  MainTheory.BoundedRepresentationProof.boundedClass_of_class_ne_one,
+  MainTheory.BoundedRepresentationProof.hasBoundedRepresentation,
+  MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation,
+  MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup,
+  MainTheory.IntrinsicAbelian.intrinsicGroup_mul_comm,
+  MainTheory.LogicalCharacter.isCyclic_of_nontrivial,
+  MainTheory.UnitarySpectral.directSum_isInternal,
+  MainTheory.GeneralSpectral.spectralExtractionPrinciple,
+  MainTheory.SectionTwoGeneral.phaseSectors,
+  MainTheory.SectionTwoGeneral.phaseSectors_mean,
+  MainTheory.SectionTwoGeneral.qualitativeFiniteLift,
+  MainTheory.SectorMeanValue.sectorMean_eq_klScalar,
+  MainTheory.PivotSize.card_eq_rank,
+  MainTheory.PivotSize.card_le,
+  MainTheory.BoundedRepresentationCertified.finite_intrinsicGroup_unconditional,
+  MainTheory.GeneralFiniteness.finite_intrinsicGroup,
+  MainTheory.GeneralFiniteness.isCyclic,
+  MainTheory.GeneralFiniteness.finite_and_abelian,
+  MainTheory.FiniteProjectiveGroup.lifts,
+  MainTheory.FiniteProjectiveGroup.whole_of_finite,
+  MainTheory.FiniteProjectiveGroup.whole,
+  MainTheory.FiniteProjectiveGroup.whole_six_qubit,
+  MainTheory.MomentEquivalence.charOn_stdBasis_eq_iff,
+  MainTheory.MomentEquivalence.charOn_stdBasis_pair_eq_iff,
+  MainTheory.MomentEquivalence.lp_normalization_and_positivity,
+  MainTheory.BetaExists.exists_betaBound,
+  MainTheory.DeterminantalRank.exists_nonsingular_minor,
+  MainTheory.PivotSize.exists_pivot_rank_le,
+  MainTheory.GeneralLiftOrder.liftSymmetry,
+  MainTheory.GeneralLiftOrder.intrinsicClass_liftSymmetry,
+  MainTheory.GeneralLiftOrder.sector_in_fibre,
+  MainTheory.GeneralLiftOrder.exists_lift_order_dvd,
+  MainTheory.GeneralLiftOrder.orderOf_dvd_of_hasPrimitiveLift,
+  MainTheory.GeneralLiftOrder.qMin,
+  MainTheory.GeneralLiftOrder.qMin_spec,
+  MainTheory.GeneralLiftOrder.qMin_le,
+  MainTheory.GeneralLiftOrder.orderOf_dvd_qMin,
+  MainTheory.GeneralLiftOrder.orderOf_pos,
+  MainTheory.Generated.BinaryBetaSixKernel.Certificate.betaExact,
+  MainTheory.BoundedRepresentationCertified.hasBoundedRepresentation_unconditional,
+  MainTheory.RankTwoSSLP.rank_two_sslp,
+  MainTheory.RankTwoSSLP.two_fibre_normal_form,
+  MainTheory.RankTwoSSLP.two_fibre_normal_form_of_nontrivial,
+  MainTheory.RankTwoSSLP.cyclic_of_finite,
+  MainTheory.GroupOrder.rank_two_sslp_generator,
+  MainTheory.SortedForm.exists_sortedNormalForm,
+  MainTheory.SortedForm.exists_sortedNormalForm_le,
+  MainTheory.SortedForm.d2_sslp_classification,
+  MainTheory.SortedForm.SortedNormalForm.gate_left,
+  MainTheory.SortedForm.SortedNormalForm.val_rightResidue,
+  MainTheory.SortedForm.SortedNormalForm.gate_right,
+  MainTheory.SortedForm.SortedNormalForm.physicalOrder,
+  MainTheory.SortedForm.SortedNormalForm.projectiveOrder,
+  MainTheory.SortedForm.exists_sortedNormalForm_of_generator,
+  MainTheory.FlipSemanticTransport.gate_flip_shift,
+  MainTheory.FlipSemanticTransport.flipFiniteGeneratorResolution,
+  MainTheory.InterchangeTransport.swapFiniteGeneratorResolution,
+  MainTheory.InterchangeTransport.swap_ratio,
+  MainTheory.D3BoundedNormalForm.boundedGenerator,
+  MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_betaN,
+  MainTheory.D3BoundedNormalForm.d3_bound,
+  MainTheory.D3BoundedNormalForm.exists_sortedNormalForm_le_nine,
+  MainTheory.SSLPCompleteness.weakenDistance,
+  MainTheory.SSLPCompleteness.completeness_distance_two,
+  MainTheory.SSLPCompleteness.completeness_distance_three,
+  MainTheory.SSLPCompleteness.completeness_six_qubit,
+  MainTheory.SSLPCompleteness.hasDistance_normalForm,
+  MainTheory.SSLPCompleteness.completeness_of_nontrivial_two,
+  MainTheory.SSLPCompleteness.completeness_of_nontrivial_three,
+  MainTheory.SSLPCompleteness.orderOf_le_nine,
+  MainTheory.PrimitiveReduction.primitive_reducedAngle,
+  MainTheory.PrimitiveReduction.finiteLocalPhase_reduced,
+  MainTheory.QMinBound.exists_primitiveLift_le_of_boundedClass,
+  MainTheory.QMinBound.qMin_le_of_boundedClass,
+  MainTheory.QMinBound.qMin_le_nine,
+  MainTheory.QMinBound.d3_bound_same_class,
+  MainTheory.QMinBound.d3_bound_nine,
+  MainTheory.SectionTwoGeneral.sectorCount_eq_two,
+  MainTheory.SectionTwoGeneral.rationalLift_order_le,
+  MainTheory.ColoredBound.pivotLift_order_le,
+  MainTheory.GroupOrder.exists_generator_orderOf_eq_natCard,
+  MainTheory.GroupOrder.logicalOrder_dvd_natCard,
+  MainTheory.NumberOperator.numberOp_apply,
+  MainTheory.NumberOperator.innerC_numberOp,
+  MainTheory.NumberOperator.codeProj_numberOp_codeProj,
+  MainTheory.SharpClearing.solution_lcmDen_dvd_inverseDenominator,
+  MainTheory.SharpClearing.inverseDenominator_eq_smithLastFactor,
+  MainTheory.FiniteLift.sharp_pivot_divisibility,
+  MainTheory.FiniteLift.quantitative_colored_finite_lift,
+  MainTheory.BinaryPivot.inverseDenominator_mul_diagonal,
+  MainTheory.BinaryPivot.coloredMatrixZ_eq,
+  MainTheory.ColoredBound.pivot_order_le,
+  MainTheory.ColoredBound.quantitative_colored_finite_lift,
+  MainTheory.SectionTwoGeneral.sectorCount_le,
+  MainTheory.QuantitativeGroup.qualitative_finite_lift,
+  MainTheory.QuantitativeGroup.quantitative_projective_group,
+  MainTheory.QuantitativeGroup.qMin_le_beta,
+  MainTheory.QuantitativeGroup.exists_sectorCount_qMin_le,
+  MainTheory.QuantitativeGroup.k2_q_bound,
+  MainTheory.SectionThreeNonVacuity.exists_nontrivial_six_qubit_code,
+  MainTheory.SectionThreeNonVacuity.completeness_applies,
+  MainTheory.SectionThreeNonVacuity.qMin_and_order_on_witness,
+  MainTheory.CodeFiberBridge.recordOf_mem,
+  MainTheory.CodeFiberBridge.support_mask0,
+  MainTheory.CodeFiberBridge.support_mask1,
+  MainTheory.CodeFiberBridge.code_supports_in_enumerated_fibres,
+  MainTheory.CodeFiberBridge.recordOf_hasSecondFiber,
+  MainTheory.CodeFiberBridge.recordOf_mem_nonemptyFiber,
+  MainTheory.Generated.OrbitCertificate.signature_exact,
+  MainTheory.Generated.OrbitCertificate.witness_valid,
+  MainTheory.Generated.OrbitCertificate.expectedSignatureAt_injective,
+  MainTheory.Generated.FiniteOrbitCertificate.directory_valid,
+  MainTheory.Generated.FiniteOrbitCertificate.orbit_coverage,
+  MainTheory.Generated.FiniteOrbitCertificate.no_ghost_key,
+  MainTheory.Generated.FiniteOrbitCertificate.hasExactlyClasses,
+  MainTheory.OrderFourNoCompletion.noCompletion_of_orderFour,
+  MainTheory.OrderSevenNoCompletion.noCompletion_of_orderSeven,
+  MainTheory.OrderRange.logicalOrder_mem,
+  MainTheory.OrderRange.maxLogicalOrder_eq_five,
+  MainTheory.OrderRange.logicalOrders_attained,
+  MainTheory.OrderRange.physicalOrder_le_six,
+  MainTheory.OrderRange.maxPhysicalOrder_eq_six,
+  MainTheory.OrderRange.physicalOrders_attained,
+  MainTheory.DirectoryOrbitStatus.noCompletion_of_mem_noGoKeys,
+  MainTheory.DirectoryOrbitStatus.hasCompletion_of_mem_realizedKeys,
+  MainTheory.DirectoryOrbitStatus.settled_or_open,
+  MainTheory.DirectoryOrbitStatus.keys_partition,
+  MainTheory.DirectoryOrbitStatus.openKeys_paperIds,
+  MainTheory.DirectoryOrbitStatus.noGoKeys_paperIds,
+  MainTheory.DirectoryOrbitStatus.realizedKeys_paperIds,
+  MainTheory.MaskRankBridge.maskAffineRank_eq_finrank_span,
+  MainTheory.MaskRankBridge.residueZeroMask_affineRank_eq_span,
+  MainTheory.MaskRankBridge.linearIndependent_point_of_real,
+  MainTheory.MaskRankBridge.le_maskAffineRank_mask0,
+  MainTheory.MaskRankBridge.finrank_direction_image_affine,
+  MainTheory.MaskRankBridge.finrank_direction_bxor_image,
+  MainTheory.MaskRankBridge.vectorSpan_eq_span_of_zero_mem,
+  MainTheory.MaskRankBridge.finrank_vectorSpan_le_finrank_span,
+  MainTheory.MaskRankBridge.exists_nonsingular_rows,
+  MainTheory.CoarseFilterEntry.supportRank_le_maskAffineRank_mask0,
+  MainTheory.Generated.ExtraMoment.rejectRightPairs_infeasible,
+  MainTheory.Generated.ExtraMoment.rejectRightPairs_realInfeasible,
+  MainTheory.Generated.ExtraMoment.rejectRightPairs_length,
+  MainTheory.Generated.CoarseRightRows.rejectRight_mem,
+  MainTheory.CoarseFilterSound.not_s0Clause_of_rejectLeft,
+  MainTheory.CoarseFilterUnconditional.keepAt_of_s0_of_feasible,
+  MainTheory.CoarseFilterUnconditional.fullFiberCriterion_of_s0_of_feasible,
+  MainTheory.CoarseFilterUnconditional.exists_output_of_s0_of_feasible,
+  MainTheory.ThresholdBoundsSmall.betaBound_one,
+  MainTheory.ThresholdBoundsSmall.betaBound_two,
+  MainTheory.ThresholdBoundsSmall.betaBound_three,
+  MainTheory.ThresholdBoundsSmall.thresholdBounds,
+  MainTheory.SortedPivot.Pivot.rank_le_maskAffineRank,
+  MainTheory.SortedPivot.lcmDen_phase,
+  MainTheory.SortedPivot.Pivot.q_dvd_inverseDenominator,
+  MainTheory.SortedPivot.Pivot.rMin_le_rank,
+  MainTheory.SortedPivot.Pivot.s0Clause,
+  MainTheory.SortedPivot.angle_eq_zero_of_not_mem,
+  MainTheory.SortedPivot.nonempty_pivot_of_spanning,
+  MainTheory.SortedPivot.span_rqpoint_bxor_iff,
+  MainTheory.SortedPivot.span_rqpoint_of_shifted_nonsingular,
+  MainTheory.SortedPivot.span_rqpoint_permStr,
+  MainTheory.MaskRankBridge.span_rqpoint_comp,
+  MainTheory.MaskRankBridge.span_eq_top_of_nonsingular,
+  MainTheory.MaskRankBridge.finrank_direction_rqpoint_bxor,
+  MainTheory.MaskRankBridge.bitVec_xor,
+  MainTheory.SortedForm.exists_sortedNormalForm_of_generator',
+  MainTheory.SortedPivotConstruction.freshMinor_det_ne_zero,
+  MainTheory.SortedPivotConstruction.zero_mem_normalizedSupport,
+  MainTheory.SortedPivotConstruction.zero_mem_sortedSupport,
+  MainTheory.SortedPivotConstruction.sparseAngle_eq_zero,
+  MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot,
+  MainTheory.SortedPivotConstruction.exists_sortedNormalForm_pivot_nine,
+  MainTheory.SortedPivotConstruction.exists_normalForm_s0Clause,
+  MainTheory.SortedPivot.nonempty_pivot_of_spanning_at,
+  MainTheory.BinaryBetaTinyLower.betaExact_one,
+  MainTheory.BinaryBetaTinyLower.betaExact_two,
+  MainTheory.BinaryBetaTinyLower.betaExact_three,
+  MainTheory.BinaryBetaTinyLower.rMin_two_eq_three,
+  MainTheory.RankThresholdBridge.beta_eq_threshold,
+  MainTheory.RankThresholdBridge.q_le_beta_of_le_threshold,
+  MainTheory.Generated.RankSymmetry.ranks_equal,
+  MainTheory.PaperReductionChain.six_66_orbits,
+  MainTheory.PaperReductionChain.primitive_sorted_counts,
+  MainTheory.ProvedWEUnion.provedImages_eq,
+  MainTheory.OpenOrbitsRealized.openKeys_hasCompletion,
+  MainTheory.RealizationOrbits15.hasCompletion_iff_mem_realizationKeys,
+  MainTheory.RealizationOrbits15.realizationKeys_paperIds,
+  MainTheory.RealizationOrbits15.realizationKeys_orderDistribution,
+  MainTheory.RealizationOrbits15.card_realization_orbits,
+  MainTheory.RealizationOrbits15.settled,
+  MainTheory.CodeMomentPoint.exists_realFeasible,
+  MainTheory.RealFaceBridge.realSupport_subset_face,
+  MainTheory.CodeDirectoryEntry.code_enters_coarse_directory,
+  MainTheory.CodeMomentFeasible.code_enters_moment_stage,
+  MainTheory.CodeActiveFace.rank_le_activeMaskRank,
+  MainTheory.CodeRankFilter.compatible_of_pivot_certified,
+  MainTheory.CodeOrbitKey.code_reaches_orbit_key,
+  MainTheory.CodeOrbitStatus.code_logicalOrder_mem,
+  MainTheory.CodeOrbitStatus.code_in_realization_orbit,
+  MainTheory.CodeOrbitStatus.code_logicalOrder_le_five,
+  MainTheory.SortedPivotConstruction.exists_normalForm_pivot_full,
+  MainTheory.PrimitiveMobius.primitiveCount_eq_mobiusCount,
+  MainTheory.PrimitiveMobius.mobius_nine,
+  MainTheory.CodeOrbitStatus.code_orderFive_is_orbit36,
+  MainTheory.Orbit36LUBridge.original_projector_luEquivalent_canonical,
+  MainTheory.D3CertifiedSpectralOuterEntrance.arbitrary_code_enters_outer,
+  MainTheory.D3CertifiedSpectralOuterEntrance.code_with_nontrivial_diagonal_symmetry_enters_outer,
+  MainTheory.Orbit9IntrinsicRealization.exists_exact_six_qubit_intrinsic_order_three,
+  MainTheory.SixQubitIntrinsicAttainment.two_three_five_attained,
+  MainTheory.SixQubitIntrinsicAttainment.two_three_five_subset_attained,
+  MainTheory.IntrinsicProjectiveAbelian.intrinsic_group_abelian,
+  MainTheory.UnitPowerSemanticTransport.unitPower_ratio,
+  MainTheory.ActiveRankRecordCount.compatible_record_count,
+  MainTheory.ActiveRankRecordCount.one_more_record_than_pair,
+  MainTheory.SSLPOrbitLevels.card_realizationOrbit,
+  MainTheory.SSLPOrbitLevels.isRealizationOrbit_iff_mem,
+  MainTheory.SSLPOrbitLevels.realization_or_empty,
+  MainTheory.ClassificationLevelsSix.level_one_intrinsic_group,
+  MainTheory.ClassificationLevelsSix.level_two_realization_orbits,
+  MainTheory.ClassificationLevelsSix.level_three_weight_enumerators,
+  MainTheory.ClassificationLevelsSix.level_four_lu_class,
+  MainTheory.SSLPOrbitLevels.activeAffineRank_of_fiberEquivalent,
+  MainTheory.SSLPOrbitLevels.activeAffineRanks_of_fiberEquivalent,
+  MainTheory.SSLPOrbitLevels.degreeTwoFeasible_of_fiberEquivalent,
+  MainTheory.Generated.FiniteOrbitRankBridge.inputPairIds_eq_rankCompatible,
+  MainTheory.GeneralFinitenessRank.finite_intrinsicGroup,
+  MainTheory.GeneralFinitenessRank.hasBoundedRepresentation_general,
+  MainTheory.ProjectiveGroupGeneral.whole,
+  MainTheory.ProjectiveGroupGeneral.cyclic_of_rank_two,
+  MainTheory.ProjectiveGroupGeneral.k2_bound_and_cyclic,
+  MainTheory.RankTwoSSLPCanonical.rank_two_sslp_canonical,
+  MainTheory.SharpSectorBound.hasPrimitiveLift_le_beta_sectorCount,
+  MainTheory.SharpSectorBound.hasPrimitiveLift_of_rationalLift',
+  MainTheory.SectionTwoGeneral.two_le_sectorCount_of_resolution,
+  MainTheory.SupportAffineRank.q_le_threshold_supportAffineRank,
+  MainTheory.SupportAffineRank.exists_normalForm_q_le_beta_supportRank,
+  MainTheory.SupportAffineRank.rank_le_supportAffineRank,
+  MainTheory.BoundedGeneratorOrder.logicalOrder_boundedGenerator,
+  MainTheory.SSLPGeneratorOrder.exists_sortedNormalForm_le_betaN_order,
+  MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator,
+  MainTheory.SSLPGeneratorOrder.d3_sslp_classification_generator_six,
+  MainTheory.WImageOrbit1.FII_subset_WImage_orbit1,
+  MainTheory.WImageOrbit1.weight_orbit1Av,
+  MainTheory.SSLPConverse.orderOf_intrinsicClass_resolutionOfPair,
+  MainTheory.SSLPConverse.sslp_converse,
+  MainTheory.SSLPConverse.nontrivial_intrinsicGroup_of_pair,
+  MainTheory.SSLPPipelineExact.code_of_sortedNormalForm,
+  MainTheory.SSLPPipelineExact.pipeline_exact_two,
+  MainTheory.SSLPPipelineExact.pipeline_exact_three,
+  MainTheory.SortedVectorMobius.sortedCount_eq_choose,
+  MainTheory.SortedVectorMobius.sum_primitiveCount_divisors,
+  MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusSum,
+  MainTheory.SortedVectorMobius.primitiveCount_eq_mobiusChoose,
+  MainTheory.SortedVectorMobius.primitiveCount_six_eq_mobiusCount,
+  MainTheory.SortedVectorMobius.primitiveAngles6_length_eq_primitiveCount,
+  MainTheory.SortedVectorMobius.sortedCount_six,
+  MainTheory.SortedVectorMobius.sum_sortedCount_two_to_nine,
+  MainTheory.BinaryBetaSevenLower.betaSevenAttained,
+  MainTheory.BinaryBetaEightLower.betaEightAttained,
+  MainTheory.BinaryBetaNineLower.betaNineAttained,
+  MainTheory.SpanProjectorBridge.ofFrame_eq_of_codeSpan_eq,
+  MainTheory.NormalFormLUBridge.equivalent_source_frame,
+  MainTheory.NormalFormLUBridge.luEquivalent_ofFrame_normalForm,
+  MainTheory.CubeCompletionTransport.equivalent_pushPair,
+  MainTheory.CodeOrbitStatus.exists_key_transport,
+  MainTheory.IntrinsicOrderAudit.exists_key_of_element,
+  MainTheory.IntrinsicOrderAudit.orderOf_mem,
+  MainTheory.IntrinsicOrderAudit.orderOf_le_five,
+  MainTheory.IntrinsicOrderAudit.natCard_mem,
+  MainTheory.IntrinsicOrderAudit.natCard_le_five,
+  MainTheory.OrderFiveCodeRigidity.luEquivalent_canonical_of_orderFive,
+  MainTheory.OrderFiveCodeRigidity.luEquivalent_of_orderFive,
+  MainTheory.OrderFiveOrbitMembership.natCard_eq_five_of_orderFive,
+  MainTheory.OrderFiveOrbitMembership.orbit36_of_orderFive,
+  MainTheory.OrderFiveOrbitMembership.exists_cubeParameter_orbit36,
+  MainTheory.OrderFiveOrbitMembership.unique_C5_LU,
+  MainTheory.OrderFiveOrbitMembership.unique_C5_LU_of_natCard,
+  MainTheory.Orbit26.anchor_solve,
+  MainTheory.Orbit26.F_mul_transpose,
+  MainTheory.Orbit26.F_eq_zero_of_isUnit,
+  MainTheory.Orbit26.F_mulVec_eq_zero_of_rankOne,
+  MainTheory.Orbit26.sum_rowNormSq_gt,
+  MainTheory.Orbit26.anchor_swap,
+  MainTheory.Orbit26.outer_swap,
+  MainTheory.Orbit26.C3_not_isUnit,
+  MainTheory.Orbit26.D3_not_isUnit,
+  MainTheory.Orbit26.anchor_singular,
+  MainTheory.ParityFour.push_emb,
+  MainTheory.ParityFour.bdot_push,
+  MainTheory.ParityFour.proj_bxor_push,
+  MainTheory.ParityFour.row_eq_character_sum,
+  MainTheory.ParityFour.edgeMasks_eq,
+  MainTheory.ParityFour.edgeMasks_transversal,
+  MainTheory.ParityFour.edge_isolation,
+  MainTheory.DeterminantalFactor.inv_eq_smul_adjugate,
+  MainTheory.DeterminantalFactor.cofactorGcd_dvd_det,
+  MainTheory.DeterminantalFactor.inverseDenominator_dvd_iff,
+  MainTheory.DeterminantalFactor.inverseDenominator_eq_det_div_cofactorGcd,
+  MainTheory.DeterminantalFactor.dvd_lastInvariantFactor,
+  MainTheory.PaperSmithFactor.colouredPivot_order_dvd_lastInvariantFactor,
+  MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor,
+  MainTheory.PaperSmithFactor.sparsePivot_order_dvd_lastInvariantFactor',
+  MainTheory.GatePrimitiveConverse.dvd_val_weight,
+  MainTheory.GatePrimitiveConverse.primitive_of_order,
+  MainTheory.GatePrimitiveConverse.primitive_iff_exact_order,
+  MainTheory.RankTwoGeneratorGeneral.intrinsicClass_finiteGenerator',
+  MainTheory.RankTwoGeneratorGeneral.exists_sortedNormalForm_natCard,
+  MainTheory.ZDetection.zDetectsFrame_of_hasDistance,
+  MainTheory.ZDetection.zDetectsFrame_of_codeSpan_eq,
+  MainTheory.ZDetection.phaseSectors_of_zDetects,
+  MainTheory.ZDetection.quantitative_projective_group_of_zDetects,
+  MainTheory.ZDetection.finite_intrinsicGroup_of_zDetects,
+  MainTheory.ZDetection.cyclic_of_zDetects,
+  MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank,
+  MainTheory.BetaAtPivotRank.FreshSparsePhase.order_le_betaOf_rank_le,
+  MainTheory.RankStageDistribution.table,
+  MainTheory.RankStageDistribution.eight_two_rank_four,
+  MainTheory.RankStageDistribution.nine_three_rank_five,
+  MainTheory.SurvivingLiftOrders.survivingQ_table,
+  MainTheory.SurvivingLiftOrders.q_eq_m_or_exception,
+  MainTheory.StageRecordCounts.record_level_chain,
+  MainTheory.StageRecordCounts.coarse_two_more_records_than_pairs,
+  MainTheory.StageRecordCounts.feasible_one_more_record_than_pair,
+  MainTheory.MomentConvexHull.momentSet_eq_convexHull,
+  MainTheory.MomentConvexHull.exists_feasible_iff_momentSet_inter,
+  MainTheory.MomentConvexHull.exists_feasible_iff_convexHull_inter,
+  MainTheory.WEStrictInclusion.FI_injective,
+  MainTheory.WEStrictInclusion.FI_half_ssubset,
+  MainTheory.WEStrictInclusion.provedImages_subset_conjectured,
+  MainTheory.ScaledModulusFibres.Sk_scale,
+  MainTheory.ScaledModulusFibres.weight_scale,
+  MainTheory.ScaledModulusFibres.orderOf_intrinsicClass_dvd,
+  MainTheory.DisjointFibreOffDiagonal.offSumOn_zero_of_disjoint,
+  MainTheory.DisjointFibreOffDiagonal.innerC_pauliAct_eq_zero_of_disjoint,
+  MainTheory.PauliKernelTrace.kernelAction_pauliKernel,
+  MainTheory.PauliKernelTrace.trace_pauliKernel_mul_projector,
+  MainTheory.PauliKernelTrace.Aco_eq_sum_normSq_trace,
+  MainTheory.PauliKernelBTrace.trace_mul_projector_mul_adjoint_mul_projector,
+  MainTheory.PauliKernelBTrace.BWeight_cast_eq_sum_trace,
+  MainTheory.KLWeightEquality.AWeight_eq_BWeight_of_hasDistance,
+  MainTheory.SixQubitExactDistance.exactCode_distance_three,
+  MainTheory.SharpSectorZDetection.hasPrimitiveLift_le_beta_sectorCount,
+  MainTheory.SharpSectorZDetection.quantitative_colored_lift_of_zDetects,
+  MainTheory.SharpSectorZDetection.qMinOfExists_eq_qMin,
+  MainTheory.SharpSectorZDetection.exists_minimal_primitiveLift_le_betaOf_sectorCount,
+  MainTheory.RealSupportAffineRank.SupportedBitBasis.rank_eq_supportAffineRank,
+  MainTheory.RealSupportAffineRank.supportAffineRank_bxor,
+  MainTheory.RealSupportAffineRank.supportAffineRank_permAct,
+  MainTheory.D3AffineRankBound.d3_bound_same_class_at_affineRank,
+  MainTheory.D3AffineNormalForm.exists_normalForm_affinePivot_of_generator,
+  MainTheory.D3AffineNormalForm.d3_sslp_classification_generator_affineRank,
+  MainTheory.FiveQubitRationalization.fully_certified,
+  MainTheory.FiveQubitRationalization.first_moments,
+  MainTheory.FiveQubitRationalization.auxiliary_solutions,
+  MainTheory.FiveQubitRationalization.rational_gate6,
+  MainTheory.FiveQubitRationalization.rational_gate3,
+  MainTheory.FiveQubitRationalization.least_denominator_six,
+  MainTheory.FiveQubitRationalization.physical_order_six,
+  MainTheory.FiveQubitRationalization.family_rational_lifts,
+  MainTheory.MacWilliamsPolynomial.raw_macwilliams,
+  MainTheory.MacWilliamsPolynomial.quantum_macwilliams,
+  MainTheory.MacWilliamsPolynomial.A_eq_sum,
+  MainTheory.MacWilliamsPolynomial.B_eq_sum,
+  MainTheory.MacWilliamsPolynomial.B_eq_frobenius_sum,
+  MainTheory.MacWilliamsPolynomial.normalized_coefficients_equal_below_distance,
+  MainTheory.GeneralSectorMoments.wordMoment_eq,
+  MainTheory.GeneralSectorMoments.sectorProbability_eq_projector,
+  MainTheory.GeneralSectorMoments.sectorProbability_nonneg,
+  MainTheory.GeneralSectorMoments.sectorProbability_sum_eq_one,
+  MainTheory.GeneralSectorMoments.sectorProbability_eq_zero_of_support,
+  MainTheory.GeneralSectorMoments.sector_moment_eq,
+  MainTheory.ColoredResidueArithmetic.existsUnique_scaledColor,
+  MainTheory.ColoredResidueArithmetic.primitive_iff_exact_joint_order,
+  MainTheory.GeneralFrameTransport.hasDistance_bxor,
+  MainTheory.GeneralFrameTransport.hasDistance_permAct,
+  MainTheory.GeneralColoredConverse.ColoredFrame.sslp_converse,
+  MainTheory.GeneralColoredExistence.general_colored_sslp_normal_form,
+  MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_eq_code_inf_eigenspace,
+  MainTheory.GeneralColoredSubspaces.ColoredFrame.sectorSpace_orthogonal,
+  MainTheory.GeneralColoredTheory.colored_subspace_data,
+  MainTheory.GeneralColoredTheory.all_binary_moments_eq,
+  MainTheory.GeneralColoredTheory.probability_eq_projector,
+  MainTheory.LPDimension.finrank_eq_card_sub_rank_of_positive,
+  MainTheory.LPDimension.finrank_eq_active_card_sub_rank,
+  MainTheory.LPDimension.dimension_eq_active_card_sub_rank,
+  MainTheory.ExactLP.exists_rational_feasible_of_real,
+  MainTheory.ExactLP.rational_feasible_iff_real,
+  MainTheory.ExactLP.exists_rational_active_of_real,
+  MainTheory.ExactLP.rational_active_iff_real,
+  MainTheory.FlipCharacter.monomials_zero_of_det_ne_zero,
+  MainTheory.FlipCharacter.two_edge_actual_support_obstruction,
+  MainTheory.FlipCharacter.full_rank_flip_monomials_zero,
+  MainTheory.FlipCharacter.full_rank_flip_positive_obstruction,
+  MainTheory.FlipCharacter.matched_ten_monomials_zero,
+  MainTheory.FlipCharacter.matched_ten_obstruction,
+  MainTheory.LocalUnitaryClosure.luEquivalent_iff_tensor,
+  MainTheory.PauliTransferTwo.transfer_unitary,
+  MainTheory.PauliTensorTransfer.trace_weight_invariant,
+  MainTheory.PauliWordBridge.wordKernel_pauliWordEquiv,
+  MainTheory.LocalUnitaryEnumerators.operatorA_luEquivalent,
+  MainTheory.LocalUnitaryEnumerators.BWeight_luEquivalent,
+  MainTheory.LocalUnitaryEnumerators.enumerators_luEquivalent,
+  MainTheory.QuantumSingleton.quantum_singleton,
+  MainTheory.QuantumSingleton.six_qubit_distance_le_three,
+  MainTheory.ParityFour.feasible_iff_crosspolytope,
+  MainTheory.ParityFour.probability_injective,
+  MainTheory.ParityFour.momentPolytope_affine_dimension,
+  MainTheory.ParityFour.positiveGraph_connected,
+  MainTheory.ParityFour.positiveSliceGraph_empty_or_connected,
+  MainTheory.ParityFour.positiveGraph_adj_iff_hamming_one,
+  MainTheory.ParityFour.positiveSliceGraph_adj_iff,
+  MainTheory.SmithExistence.exists_normalized_smith,
+  MainTheory.SmithExistence.exists_smith_with_sharp_last,
+  MainTheory.SmithExistence.exists_smith_with_determinantal_last,
+  MainTheory.SmithExistence.exists_smith_normal_form,
+  MainTheory.QuantumRecovery.hermitian_projector_kl_iff_recovery,
+  MainTheory.QuantumRecovery.recovery_of_half_distance,
+  MainTheory.QuantumRecovery.common_recovery_of_distance,
+  MainTheory.FiniteKrausChannel.action_completely_positive,
+  MainTheory.FiniteKrausChannel.amplify_tracePreserving,
+  MainTheory.FiniteKrausChannel.action_amplify_tensor,
+  MainTheory.KnillLaflammeRecovery.knillLaflamme_iff_recovery,
+  MainTheory.KnillLaflammeRecovery.knillLaflamme_has_positive_gram,
+  MainTheory.KnillLaflammeRecovery.knillLaflamme_iff_scalar_recovery,
+  MainTheory.KnillLaflammeRecovery.finite_error_set_recovery,
+  MainTheory.QuantumRecovery.projector_kl_iff_recovery,
+  MainTheory.QuantumRecovery.recovery_of_distance,
+  MainTheory.WImageOrbit4M.FII_subset_WImage_orbit4,
+  MainTheory.WImageOrbit4M.FII_subset_WImage_orbit1_inter_orbit4,
+  MainTheory.WImageOpenL.FI_subset_orbit1,
+  MainTheory.WImageOpenL.FI_subset_orbit2,
+  MainTheory.WImageOpenL.FI_subset_orbit3,
+  MainTheory.WImageOpenL.FI_subset_orbit4,
+  MainTheory.ParityFour.probability_character_formula,
+  MainTheory.ParityFour.two_body_moment_zero,
+  MainTheory.ParityFour.interior_probability_positive,
+  MainTheory.ParityFour.boundary_support_formula,
+  MainTheory.ParityFour.boundary_support_positive_iff,
+  MainTheory.BoundedUnitaryGroup.finite_of_exponent,
+  MainTheory.BoundedUnitaryGroup.finite_of_bounded_order,
+  MainTheory.UnitaryAdjointRepresentation.adjoint_mulVec,
+  MainTheory.UnitaryAdjointRepresentation.adjoint_eq_one_iff,
+  MainTheory.UnitaryAdjointRepresentation.adjoint_eq_iff,
+  MainTheory.UnitaryAdjointRepresentation.adjoint_pow_eq_one_iff,
+  MainTheory.UnitaryAdjointRepresentation.finite_adjoint_image_of_bounded_projective_order,
+  MainTheory.DiagonalLogicalOrder.exists_bounded_scalar_power,
+  MainTheory.EastinKnill.eastin_knill,
+  MainTheory.EastinKnill.eastin_knill_exactCode,
+  MainTheory.FiniteMomentLP.polytope_nonempty,
+  MainTheory.FiniteMomentLP.affine_dimension_eq_of_face,
+  MainTheory.FiniteMomentMatrix.entryZ_moment,
+  MainTheory.FiniteTensorDetection.exists_diagonal_normal_form,
+  MainTheory.FiniteTensorKernel.localKernel_diagonal,
+  MainTheory.FrameDistanceOne.hasDistance_one,
+  MainTheory.Generated.OrbitTableMultiplicities.all_multiplicities,
+  MainTheory.Generated.OrbitTableRank01.active_moment_rank,
+  MainTheory.Generated.OrbitTableRank02.active_moment_rank,
+  MainTheory.Generated.OrbitTableRank05.active_moment_rank,
+  MainTheory.Generated.OrbitTableRank10.active_moment_rank,
+  MainTheory.Generated.OrbitTableRank31.active_moment_rank,
+  MainTheory.Generated.OrbitTableRank66.active_moment_rank,
+  MainTheory.Generated.OrbitTableRecords.record_injective,
+  MainTheory.Generated.OrbitTableSemantics31.lp_affine_dimension,
+  MainTheory.Generated.OrbitTableSemantics01.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics01.active_affine_rank,
+  MainTheory.Generated.OrbitTableSemantics01.lp_affine_dimension,
+  MainTheory.Generated.OrbitTableSemantics02.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics02.active_affine_rank,
+  MainTheory.Generated.OrbitTableSemantics02.lp_affine_dimension,
+  MainTheory.Generated.OrbitTableSemantics05.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics05.active_affine_rank,
+  MainTheory.Generated.OrbitTableSemantics05.lp_affine_dimension,
+  MainTheory.Generated.OrbitTableSemantics10.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics10.active_affine_rank,
+  MainTheory.Generated.OrbitTableSemantics10.lp_affine_dimension,
+  MainTheory.Generated.OrbitTableSemantics31.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics31.active_affine_rank,
+  MainTheory.Generated.OrbitTableSemantics66.active_columns_exact,
+  MainTheory.Generated.OrbitTableSemantics66.active_affine_rank,
+  MainTheory.PhaseSectorMoments.probability_nonneg,
+  MainTheory.PhaseSectorMoments.probability_sum_eq_one,
+  MainTheory.PhaseSectorMoments.exists_mem_support,
+  MainTheory.PhaseSectorMoments.probability_pos_of_ne_zero,
+  MainTheory.PhaseSectorMoments.mean_eq_of_detects_one,
+  MainTheory.PhaseSectorMoments.exists_common_mean,
+  MainTheory.PaperGeneralSSLP.general_sslp_normal_form,
+  MainTheory.ConnectedOrthogonality.mem_span_of_inner_eq_zero,
+  MainTheory.CovarianceRange.cov_eq_mul_transpose,
+  MainTheory.CovarianceRange.span_col_sqrtFactor,
+  MainTheory.CovarianceRange.range_cov_eq_span,
+  MainTheory.Orbit30.triangle_contradiction,
+  MainTheory.Orbit26.bad_subsingleton,
+  MainTheory.Orbit26.exists_generic,
+  MainTheory.Orbit26.exists_nonzero_col,
+  MainTheory.Orbit26.finish_of_rows,
+  MainTheory.Orbit26.core,
+  MainTheory.Orbit26.core_rank_one,
+  MainTheory.Orbit30.Data.total_weight,
+  MainTheory.Orbit30.Data.rowSupport_card_ne_one,
+  MainTheory.Orbit30.Data.two_le_nbhd_card,
+  MainTheory.Orbit30.Data.split_identity,
+  MainTheory.Orbit30.Data.row_over_A,
+  MainTheory.Orbit30.Data.card_A_ne_zero,
+  MainTheory.Orbit30.Data.card_A_ne_one,
+  MainTheory.Orbit30.Data.card_A_ne_two,
+  MainTheory.Orbit30.Data.three_le_card_A,
+  MainTheory.Orbit30.Data.exists_internal_edge,
+  MainTheory.Orbit30.Data.card_A_ne_three,
+  MainTheory.Orbit30.Data.q4o30_exceptional,
+  MainTheory.Orbit30.Data.four_le_card_A,
+  MainTheory.CovarianceRange.affineSpan_eq_mu_add_range,
+  MainTheory.Orbit31Identification.fibre0,
+  MainTheory.Orbit31Identification.fibre1,
+  MainTheory.Orbit31Identification.same_fibre_pair,
+  MainTheory.Orbit31Identification.col_injective,
+  MainTheory.Orbit31Identification.inFiber_iff,
+  MainTheory.Orbit31Identification.matrixZ_col,
+  MainTheory.Orbit31Identification.mem_polytope_iff,
+  MainTheory.ParityFour.character_bxor,
+  MainTheory.ParityFour.bxor_eq_false_iff,
+  MainTheory.ParityFour.sum_character,
+  MainTheory.ParityFour.sum_character_mul,
+  MainTheory.ParityFour.eq_zero_of_character_sums,
+  MainTheory.ParityFour.edge_isolation_of_character_rows,
+  MainTheory.ParityFour.parity_eq_bdot,
+  MainTheory.ParityFour.bdot_comm,
+  MainTheory.ParityFour.character_bxor_left,
+  MainTheory.ParityFour.sum_bxor_allOnes,
+  MainTheory.ParityFour.eq_zero_of_transversal,
+  MainTheory.ParityFour.eq_zero_of_clear_coordinate,
+  MainTheory.ConnectedOrthogonality.exists_line,
+  MainTheory.ConnectedOrthogonality.frame_forms_ne,
+  MainTheory.PaperSupplementaryImages.o7_weight_image,
+  MainTheory.PaperSupplementaryImages.o8_weight_image,
+  MainTheory.PaperSupplementaryImages.o9_weight_image,
+  MainTheory.PaperSupplementaryImages.o21_enumerator,
+  MainTheory.PaperSupplementaryImages.o45_weight_image,
+  MainTheory.PaperSupplementaryImages.m2_five_stabilizer_orbits,
+  MainTheory.PaperSupplementaryImages.q9_range,
+  MainTheory.PaperSupplementaryImages.q8_range,
+  MainTheory.PaperSupplementaryImages.q7_range,
+  MainTheory.PaperSupplementaryImages.m5_unique_unconditional,
+  MainTheory.PaperSupplementaryImages.parity4_moment,
+  MainTheory.PaperSupplementaryImages.parity4_connectivity,
+  MainTheory.PaperSupplementaryImages.o36_all_r_active,
+  MainTheory.PaperSupplementaryImages.o8_shells,
+  MainTheory.PaperSupplementaryImages.o8_support_two,
+  MainTheory.PaperSupplementaryImages.o8_ladder01,
+  MainTheory.PaperSupplementaryImages.o8_ladder10,
+  MainTheory.PaperSupplementaryImages.o9_pq_equal,
+  MainTheory.PaperSupplementaryImages.q4o26_Jorth,
+  MainTheory.PaperSupplementaryImages.q4o31_moment_normal,
+  MainTheory.PaperSupplementaryImages.q4o31_permanent_triangle,
+  MainTheory.PaperSupplementaryImages.o7_scalar_moments,
+  MainTheory.PaperSupplementaryImages.o7_boundary_reduction,
+  MainTheory.PaperSupplementaryImages.o7_pair_sum,
+  MainTheory.PaperSupplementaryImages.o9_moment_normal_form,
+  MainTheory.PaperSupplementaryImages.o9_components,
+  MainTheory.PaperSupplementaryImages.o9_support_four,
+  MainTheory.PaperSupplementaryImages.m2_current_status,
+  MainTheory.PaperSupplementaryImages.o9_magnitudes,
+  MainTheory.PaperSupplementaryImages.o8_raising_gram,
+  MainTheory.PaperSupplementaryNoGo.paperOrbitId_injective,
+  MainTheory.PaperSupplementaryNoGo.paperOrbitId_range,
+  MainTheory.PaperSupplementaryNoGo.exists_key_of_paperOrbitId,
+  MainTheory.PaperSupplementaryNoGo.hasCompletion_iff_paperOrbitId,
+  MainTheory.PaperSupplementaryNoGo.no_completion_of_paperOrbitId,
+  MainTheory.PaperSupplementaryNoGo.o12_nogo,
+  MainTheory.PaperSupplementaryNoGo.o13_nogo,
+  MainTheory.PaperSupplementaryNoGo.o14_nogo,
+  MainTheory.PaperSupplementaryNoGo.o15_nogo,
+  MainTheory.PaperSupplementaryNoGo.o17_nogo,
+  MainTheory.PaperSupplementaryNoGo.o18_nogo,
+  MainTheory.PaperSupplementaryNoGo.o19_nogo,
+  MainTheory.PaperSupplementaryNoGo.o20_nogo,
+  MainTheory.PaperSupplementaryNoGo.o24_nogo,
+  MainTheory.PaperSupplementaryNoGo.o41_nogo,
+  MainTheory.PaperSupplementaryNoGo.o42o43_nogo,
+  MainTheory.PaperSupplementaryNoGo.o44_nogo,
+  MainTheory.PaperSupplementaryNoGo.o46_nogo,
+  MainTheory.PaperSupplementaryNoGo.o5_nogo,
+  MainTheory.PaperSupplementaryNoGo.o6_nogo,
+  MainTheory.PaperSupplementaryNoGo.o47_nogo,
+  MainTheory.PaperSupplementaryNoGo.o48_nogo,
+  MainTheory.PaperSupplementaryNoGo.o49_nogo,
+  MainTheory.PaperSupplementaryNoGo.o50_nogo,
+  MainTheory.PaperSupplementaryNoGo.o51_nogo,
+  MainTheory.PaperSupplementaryNoGo.o52_nogo,
+  MainTheory.PaperSupplementaryNoGo.q4o26nogo,
+  MainTheory.PaperSupplementaryNoGo.q4o30nogo,
+  MainTheory.PaperSupplementaryNoGo.q4o31nogo,
+  MainTheory.PaperSupplementaryNoGo.q4o32nogo,
+  MainTheory.PaperSupplementaryNoGo.q6no53,
+  MainTheory.PaperSupplementaryNoGo.q6no54,
+  MainTheory.PaperSupplementaryNoGo.q6no55,
+  MainTheory.PaperSupplementaryNoGo.q6no56,
+  MainTheory.PaperSupplementaryNoGo.q7no57,
+  MainTheory.PaperSupplementaryNoGo.q7no58,
+  MainTheory.PaperSupplementaryNoGo.q7no59,
+  MainTheory.PaperSupplementaryNoGo.q7no60,
+  MainTheory.PaperSupplementaryNoGo.q7no61,
+  MainTheory.PaperSupplementaryNoGo.m2_fourteen_nogos,
+  MainTheory.PaperSupplementaryNoGo.m3_complete_nogos,
+  MainTheory.PaperSupplementaryNoGo.m5_other_seven,
+  MainTheory.PaperSupplementaryNoGo.q4_no_go,
+  MainTheory.PaperSupplementaryNoGo.q6_no_go,
+  MainTheory.PaperSupplementaryNoGo.q7_no_go,
+  MainTheory.PaperSupplementaryNoGo.q8_no_go,
+  MainTheory.PaperSupplementaryNoGo.q9_no_go,
+  MainTheory.PaperSupplementaryNoGo.complete_order_classification,
+  MainTheory.PaperSupplementaryNoGo.max_order_le_five,
+  MainTheory.PaperSupplementaryNoGo.realized_paperOrbitIds,
+  MainTheory.PaperGeneralSSLP.rank_two_sslp,
+  MainTheory.PaperGeneralSSLP.rank_two_sslp_converse,
+  MainTheory.PaperGeneralSSLP.phase_sector_support,
+  MainTheory.PivotSmithNormalForm.clearing_smithLastFactor,
+  MainTheory.PivotSmithNormalForm.nonempty_smithWitness_of_det,
+  MainTheory.PivotSmithNormalForm.nonempty_smithWitness,
+  MainTheory.PivotSmithNormalForm.q_dvd_smithLastFactor,
+  MainTheory.PivotSmithNormalForm.exists_smithNormalForm_q_dvd_last,
+  MainTheory.PivotSmithNormalForm.nonempty_smithWitness_simplex,
+  MainTheory.PivotSmithNormalForm.q_dvd_smithLastFactor_simplex,
+  MainTheory.PivotSmithNormalForm.exists_smithNormalForm_q_dvd_last_simplex,
+  MainTheory.OrbitTablePaperKey.paperKey_injective,
+  MainTheory.OrbitTablePaperKey.paperKey_bijective,
+  MainTheory.OrbitTablePaperKey.paperKey_surjective,
+  MainTheory.OrbitTablePaperKey.exists_unique_row,
+  MainTheory.OrbitTablePaperKey.multiplicity_eq_paperMultiplicity,
+  MainTheory.OrbitTablePaperKey.sum_paperMultiplicity,
+  MainTheory.Generated.OrbitTableSemantics66.lp_affine_dimension,
+  MainTheory.GramPrefixBound.sign_prune,
+  MainTheory.IntegerMatrixRankCertificate.rank_eq_of_integer_minor_and_expansion,
+  MainTheory.LocalUnitaryKL.hasDistance_unitaryFrame,
+  MainTheory.OneHotTensorEmbedding.diagonalKernel_embedding,
+  MainTheory.OneHotZDetection.zDetects_embeddedFrame,
+  MainTheory.OrbitRecordMultiplicity.multiplicity_eq_assignedCount,
+  MainTheory.QubitTransversalFinite.finite_projective_transversal_image,
+  MainTheory.TransversalLogicalOrder.finite_projective_transversal_image,
+  MainTheory.UnitaryMatrixDiagonalization.exists_unitary_diagonalization,
+  MainTheory.OrbitRepresentative.orbit25_representative,
+  MainTheory.OrbitRepresentative.orbit26_representative,
+  MainTheory.OrbitRepresentative.orbit27_representative,
+  MainTheory.OrbitRepresentative.orbit28_representative,
+  MainTheory.OrbitRepresentative.orbit29_representative,
+  MainTheory.OrbitRepresentative.orbit30_representative,
+  MainTheory.OrbitRepresentative.orbit31_representative,
+  MainTheory.OrbitRepresentative.orbit32_representative,
+  MainTheory.OrbitRepresentative.orbit62_representative,
+  MainTheory.OrbitRepresentative.orbit63_representative,
+  MainTheory.OrderFiveEnumerator.exists_table_witness,
+  MainTheory.OrderFiveEnumerator.canonical_enumerator,
+  MainTheory.OrderFiveEnumerator.orderFive_enumerator,
+  MainTheory.OrderFiveEnumerator.m5_unique_unconditional_full,
+  MainTheory.PaperSupplementaryImages.m36_range,
+  MainTheory.PaperSupplementaryImages.m2_current_status_full,
+  MainTheory.SharpOuterCutoff.outerCutoff_betaOf,
+  MainTheory.SharpOuterCutoff.completeness_three_sharp,
+  MainTheory.TransversalFixedBasis.inner_plus_plus,
+  MainTheory.TransversalFixedBasis.inner_minus_minus,
+  MainTheory.TransversalFixedBasis.inner_plus_minus,
+  MainTheory.TransversalFixedBasis.kl_Zop,
+  MainTheory.TransversalFixedBasis.rotOf_unitary,
+  MainTheory.TransversalFixedBasis.rot_unitary,
+  MainTheory.TransversalFixedBasis.localAct_plus3,
+  MainTheory.TransversalFixedBasis.localAct_minus3,
+  MainTheory.TransversalFixedBasis.fixed_basis_essential,
+  MainTheory.CodePreservingUnitary.preservesProjector_one,
+  MainTheory.CodePreservingUnitary.preservesProjector_mul,
+  MainTheory.CodePreservingUnitary.commute_of_preservesProjector,
+  MainTheory.CodePreservingUnitary.mapsTo_of_preservesProjector,
+  MainTheory.ProjectorCompression.pauli_compression,
+  MainTheory.ProjectorCompression.tensor_compression,
+  MainTheory.GlobalWeightSet.aweight_eq,
+  MainTheory.GlobalWeightSet.R5A_mem_globalWSet,
+  MainTheory.GlobalWeightSet.globalWSet_nonempty,
+  MainTheory.BinaryBetaNine.betaNineBound,
+  MainTheory.BinaryBetaNine.betaNineExact,
+  MainTheory.BetaNineValue.betaOf_nine,
+  MainTheory.BinaryBetaEight.betaEightBound,
+  MainTheory.BinaryBetaEight.betaEightExact,
+  MainTheory.BetaEightValue.betaOf_eight,
+  MainTheory.SixQubitIntrinsicOrderSet.including_identity,
+  MainTheory.SixQubitIntrinsicOrderSet.nontrivial_exact,
+  MainTheory.AncillaPadding.compression_snocPauli,
+  MainTheory.AncillaPadding.detects_appendZero,
+  MainTheory.AncillaPadding.hasDistance_padFrame,
+  MainTheory.AncillaPadding.Aco_appendZero_succ,
+  MainTheory.AncillaPadding.Aco_appendZero_zero,
+  MainTheory.AncillaPadding.AWeight_padFrame_one,
+  MainTheory.AncillaPadding.AWeight_padFrame_one_pos,
+  MainTheory.AncillaGatePadding.projector_appendFrame,
+  MainTheory.AncillaGatePadding.projector_padFrame,
+  MainTheory.AncillaGatePadding.intertwining_padFrame,
+  MainTheory.AncillaGatePadding.padLocal_unitary,
+  MainTheory.TransversalDiagonalization.exists_diagonal_normal_form,
+  MainTheory.DiagonalLogicalMatrixBridge.projectivelyTrivial_iff_scalar,
+  MainTheory.DiagonalLogicalMatrixBridge.exists_intrinsic_order_five,
+  MainTheory.MinimumLengthOrderFive.six_qubit_AWeight_one_zero,
+  MainTheory.MinimumLengthOrderFive.minimum_length,
+  MainTheory.MinimumLengthOrderFive.six_qubit_lu_unique_of_distance_ge_three,
+  MainTheory.MinimumLengthOrderFive.canonical_attains,
+  MainTheory.SubspaceCode.finrank_euclideanSpace,
+  MainTheory.SubspaceCode.frame,
+  MainTheory.SubspaceCode.frame_mem,
+  MainTheory.SubspaceCode.codeSpan_frame,
+  MainTheory.SubspaceCode.hasDistance_iff,
+  MainTheory.SubspaceCode.frame_hasDistance,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.orthogonal,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.independent,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_sectorFrame,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sigma_orthonormal,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sectorSpace_eq,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.codeSpan_eq,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.finrank_sum,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.frame_hasDistance,
+  MainTheory.GeneralColoredSubspaceConverse.ColoredSubspaces.sslp_converse,
+  MainTheory.PaperGeneralSSLP.general_sslp_converse,
+  MainTheory.BinaryPivotLift.binary_det_ne_zero,
+  MainTheory.BinaryPivotLift.binarySolution_solves,
+  MainTheory.BinaryPivotLift.sign_selectedSolution_eq_binarySolution,
+  MainTheory.BinaryPivotLift.selectedSolution_eq_sign_binarySolution,
+  MainTheory.BinaryPivotLift.rationalLift_augmented_eq_binarySolution,
+  MainTheory.BinaryPivotLift.rationalLift_order_dvd_smithLastFactor,
+  MainTheory.PaperColoredFiniteLift.colored_finite_lift_of_zDetects,
+  MainTheory.CitedCorrectedFamily.action,
+  MainTheory.CitedCorrectedLogicalGate.logical_cube,
+  MainTheory.CitedCorrectedLogicalGate.logical_not_scalar,
+  MainTheory.CitedCorrectedLogicalGate.logical_square_not_scalar,
+  MainTheory.QECCFrameBridge.projector_rank,
+  MainTheory.QECCFrameBridge.hasDistance_iff,
+  MainTheory.QECCBoundedNormalForm.intrinsic_of_representative,
+  MainTheory.QECCBoundedNormalForm.bounded_normal_form,
+  MainTheory.QECCBoundedNormalForm.bounded_full_normal_form,
+  MainTheory.QECCBoundedNormalForm.distanceThree_for_supplied_gate,
+  MainTheory.EnumeratorOrbitTransport.completionImage_actFibers,
+  MainTheory.EnumeratorOrbitTransport.WImage_eq_orbitImage,
+  MainTheory.OrbitNumberingBridge.paperOrbitId_paperKey,
+  MainTheory.OrbitNumberingBridge.paperKeyEquiv_id,
+  MainTheory.DirectoryEnumeratorImages.directoryImage_eq_orbitImage,
+  MainTheory.DirectoryEnumeratorImages.empty_of_noGo,
+  MainTheory.DirectoryEnumeratorImages.orbit1_attainment,
+  MainTheory.DirectoryEnumeratorImages.orbit2_attainment,
+  MainTheory.DirectoryEnumeratorImages.orbit3_attainment,
+  MainTheory.DirectoryEnumeratorImages.orbit4_attainment,
+  MainTheory.DirectoryEnumeratorImages.orbit7_image,
+  MainTheory.DirectoryEnumeratorImages.orbit8_image,
+  MainTheory.DirectoryEnumeratorImages.orbit9_image,
+  MainTheory.DirectoryEnumeratorImages.orbit10_image,
+  MainTheory.DirectoryEnumeratorImages.orbit11_image,
+  MainTheory.DirectoryEnumeratorImages.orbit16_image,
+  MainTheory.DirectoryEnumeratorImages.orbit21_image,
+  MainTheory.DirectoryEnumeratorImages.orbit22_image,
+  MainTheory.DirectoryEnumeratorImages.orbit23_image,
+  MainTheory.DirectoryEnumeratorImages.orbit36_image,
+  MainTheory.DirectoryEnumeratorImages.orbit45_image,
+  MainTheory.OrderTwoScalarBridge.orbit2_parity,
+  MainTheory.OrderTwoScalarBridge.orbit3_parity,
+  MainTheory.OrderTwoScalarBridge.orbit2_diagonal_relation,
+  MainTheory.OrderTwoScalarBridge.orbit3_diagonal_relation,
+  MainTheory.OrderTwoScalarBridge.orbit3_shadow_zero
+]

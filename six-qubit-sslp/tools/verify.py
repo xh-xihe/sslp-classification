@@ -28,7 +28,8 @@ AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/Orbit7CollinearAxiomCheck.lean',
                'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
                'MainTheory/OrbitCertificationAudit.lean',
-               'MainTheory/OrbitCertificationFinalAudit.lean', 'Orbit2.lean')
+               'MainTheory/OrbitCertificationFinalAudit.lean',
+               'MainTheory/ReviewedDeclarationsAudit.lean', 'Orbit2.lean')
 REPORT_DIR = ROOT / 'tmp' / 'verification'
 FORBIDDEN = re.compile(
     r'(?<![\w])(?:sorry|admit|sorryAx|axiom|native_decide|ofReduceBool|ofReduceNat|'
@@ -202,6 +203,7 @@ def checks(source_dir=None, paper_version=DEFAULT_PAPER_VERSION):
     common = ['--source-dir', str(source_dir or release['source_dir']),
               '--manifest', str(release['manifest'])]
     version_args = ['--paper-version', paper_version]
+    private_args = ['--source-dir', str(source_dir)] if source_dir else []
     return {
         'release': lambda: check_release(paper_version, source_dir),
         'build': check_build,
@@ -216,7 +218,7 @@ def checks(source_dir=None, paper_version=DEFAULT_PAPER_VERSION):
             'verification/orbit_table_kernel.py', '--selftest', *common,
             '--output-dir', str(REPORT_DIR / 'orbit-table-kernel')),
         'claims': lambda: recorded_command('claims',
-            [sys.executable, 'tools/paper_claims.py', 'check', '--require-complete', *version_args]),
+            [sys.executable, 'tools/paper_claims.py', 'check', '--require-complete', *version_args, *private_args]),
         'gate': lambda: script_check('gate', 'verification/gate.py'),
         'gate-selftest': lambda: script_check('gate-selftest', 'verification/gate.py', '--selftest'),
         'moments': lambda: script_check('moments', 'verification/momentgate.py'),
@@ -229,13 +231,13 @@ def checks(source_dir=None, paper_version=DEFAULT_PAPER_VERSION):
         # declaration swapped in a review, changes the ledger and this fails
         # until the document is regenerated.
         'named-results': lambda: recorded_command('named-results',
-            [sys.executable, 'tools/named_results_doc.py', '--check', *version_args]),
+            [sys.executable, 'tools/named_results_doc.py', '--check', *version_args, *private_args]),
         # The prose-review document is generated from its own record, and the
         # generator refuses if that record ever carries verbatim manuscript
         # text.  Checking it here keeps both properties from rotting.
         'prose-review': lambda: recorded_command('prose-review',
-            [sys.executable, 'tools/prose_review_doc.py', '--check', '--require-complete', *version_args]),
-        'errata': lambda: paper_release.check_errata(paper_version, ROOT),
+            [sys.executable, 'tools/prose_review_doc.py', '--check', '--require-complete', *version_args, *private_args]),
+        'errata': lambda: paper_release.check_errata(paper_version, ROOT, source_dir),
     }
 
 

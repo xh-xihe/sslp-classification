@@ -1,5 +1,20 @@
 # Tools
 
+Current commands and verification scope are in
+[`docs/reproduce.md`](../docs/reproduce.md). The generator notes below retain
+provenance for older construction routes.
+
+| Current entry point | Purpose |
+| --- | --- |
+| `build_lean.py` | Content-validated serial build of all five active libraries |
+| `verify.py --paper-version 20261003 --only sources generated audit-names axioms` | Public proof checks without private manuscripts |
+| `repository_index.py --check` | Source-catalog and topic-navigation consistency |
+| `rebuild_orbit_certificates.py` | Exact orbit-2/3 payload reconstruction |
+| `paper_claims.py`, `named_results_doc.py`, `prose_review_doc.py` | Version-bound private-source correspondence records |
+
+Use `--paper-version 20261003` explicitly. Historical tools retain their
+historical default so that old release records can still be reproduced.
+
 This directory retains the Python generators used for the Lean transcription and
 the independent checks used to review what the Lean statements say. Execution
 provenance is not part of the kernel certificate; the checked artifacts are the

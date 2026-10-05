@@ -1,0 +1,12 @@
+EXACT ORBIT-3 SEXTIC CERTIFICATE VERIFIED
+715 cubic Pauli-multiplicity coordinates; 269 real moment orbit variables.
+All 429 zero-Pauli constraints regenerated independently.
+211 exact multiplier terms: 203 KL/scalar, 5 spin-flip, 3 spectator-Hadamard.
+All 269 coefficients of 3 T + 1280 V checked over Q.
+V is the squared moment of an explicitly supplied 36-term cubic.
+For every exact encoder: T=N^3 A_3 >= 0, V>=0, and 3 T + 1280 V=0.
+Conclusion: A_3=0 for every nonzero exact orbit-3 encoder.
+Dependency: universal scalar reductions proved in orbit3_enumerator_section.tex.
+SHA256: 1490db62714338fe198198fc0b8e76551833ec02024bd66b2bd4fa6d807bcb2c
+Elapsed seconds: 0.604
+Verification metadata: D:\UTD\Project_purdue\Lean_certification\artifacts\manuscript-review-20261003\orbit3-sextic.json

@@ -1,0 +1,200 @@
+{
+  "schema": 2,
+  "paper_version": "20261003",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "7b15965e38cce05c0b1d3ae0ccccc0642d5c2db74d06f7453d4dd8fac5459ede"
+  },
+  "status": "partial",
+  "method": "Fresh scoped review of the corrected SI and new library bridges on 2026-10-03. This does not replace the historical full Section III correspondence review or claim a complete review of all prose. Main text is frozen at the author instruction. Exact matrix/coordinate certificates and encoder semantics are recorded separately. Updated on 2026-10-04 only for completed actual orbit images, physical spectral tables, the seven-qubit example and two generic geometric bridges. Unreviewed claims and author-held main errata remain outside a completion claim.",
+  "assertions": [
+    {
+      "id": "si-gate-correction",
+      "source": "supplementary.tex",
+      "locator": "eq:o7knowntransversal",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.CitedCorrectedFamily.action",
+        "MainTheory.CitedCorrectedLogicalGate.logical_matrix",
+        "MainTheory.CitedCorrectedLogicalGate.logical_cube",
+        "MainTheory.CitedCorrectedLogicalGate.logical_not_scalar",
+        "MainTheory.CitedCorrectedLogicalGate.logical_square_not_scalar"
+      ],
+      "reason": "The corrected physical gate acts by the stated logical matrix on the entire theta family. Its logical order is exactly three. This record covers the corrected action and order, not the subsequent product-basis diagonalization correspondence.",
+      "line": 2839,
+      "statement": "eq:o7knowntransversal"
+    },
+    {
+      "id": "si-literal-bit-order",
+      "source": "supplementary.tex",
+      "locator": "eq:o9record:literal-witness",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.Orbit9LiteralWitness.literal_code"
+      ],
+      "reason": "The stated rightmost-qubit-one convention matches the existing literal coefficient witness and its complete distance-three proof.",
+      "line": 3551,
+      "statement": "eq:o9record:literal-witness"
+    },
+    {
+      "id": "si-orbit-image-transport",
+      "source": "supplementary.tex",
+      "locator": "thm:main-result-III:orbit-invariance",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.EnumeratorOrbitTransport.WImage_eq_orbitImage",
+        "MainTheory.EnumeratorOrbitTransport.completionImage_actFibers"
+      ],
+      "reason": "Normalized images on literal fibers equal the images over their entire physical cube orbit; every coordinate is preserved. Instantiation at each of the 66 generated representatives is still separate.",
+      "line": 7556,
+      "statement": "thm:main-result-III:orbit-invariance"
+    },
+    {
+      "id": "si-orbit2-new-converse",
+      "source": "supplementary.tex",
+      "locator": "o2gc:thm-image",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.Orbit2FullImage.actual_A3_zero",
+        "MainTheory.Orbit2FullImage.actual_enumerator",
+        "MainTheory.Orbit2FullImage.directory_image",
+        "SixQubit.Generated.Orbit2PhysicalSpectra.physical_characteristic_polynomials"
+      ],
+      "reason": "Actual full-KL complex encoders map into the integrated root orbit-two proof. Its full normalized FI image, both containment and attainment, is kernel checked. All 111 physical quartic blocks are identified and have the seven stated SI spectral patterns.",
+      "line": 5419,
+      "statement": "o2gc:thm-image"
+    },
+    {
+      "id": "si-orbit3-new-converse",
+      "source": "supplementary.tex",
+      "locator": "o3gc:main",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.Orbit3FullImage.all_primitive_rows_zero",
+        "MainTheory.Orbit3FullImage.target_coordinates",
+        "MainTheory.Orbit3FullImage.target_zero",
+        "MainTheory.Orbit3FullImage.actual_enumerator",
+        "MainTheory.Orbit3FullImage.directory_image"
+      ],
+      "reason": "Actual full-KL complex encoders satisfy every KL, spin and Hadamard primitive row. All 120 actual target Paulis yield the 269-coordinate sextic target; its vanishing gives the actual A3=0 and full FI interval image, with attainment.",
+      "line": 6303,
+      "statement": "o3gc:main"
+    },
+    {
+      "id": "main-frozen-errata",
+      "source": "main.tex",
+      "locator": "author-hold-20261003",
+      "kind": "gap",
+      "declarations": [],
+      "reason": "Five main-text issues remain deliberately unchanged pending author discussion; see notes/main-errata-hold-20261003.md.",
+      "line": 277,
+      "statement": "author-hold-20261003"
+    },
+    {
+      "id": "actual-orbit-directory-images",
+      "source": "supplementary.tex",
+      "locator": "thm:six-WE-status",
+      "line": 1,
+      "statement": "Actual representative and orbit image correspondence for the previously known 62 images.",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.DirectoryEnumeratorImages.empty_of_noGo",
+        "MainTheory.DirectoryEnumeratorImages.orbit7_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit8_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit9_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit10_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit11_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit16_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit21_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit22_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit23_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit36_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit45_image"
+      ],
+      "reason": "The 51 empty images and 11 exact nonempty images are transported with actual state norms, all KL conditions and the complete A enumerator. This covers the earlier 62 images, not the newly added orbit-2/3 converses."
+    },
+    {
+      "id": "one-bounded-colored-lift",
+      "source": "main.tex",
+      "locator": "thm:general-sslp",
+      "line": 1069,
+      "statement": "One bounded representative carries general colored SSLP data and sector probability moments.",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.QECCFrameBridge.hasDistance_iff",
+        "MainTheory.QECCBoundedNormalForm.bounded_full_normal_form",
+        "MainTheory.QECCBoundedNormalForm.distanceThree_for_supplied_gate"
+      ],
+      "reason": "Uses the same bounded representative for colors, canonical transport and sector moments. The sharper general beta index remains the source-sector count of the support system; equality with the new representative sector count is not asserted here."
+    },
+    {
+      "id": "seven-qubit-actual-example",
+      "source": "main.tex",
+      "locator": "ex:seven-qubit-rationalization",
+      "statement": "ex:seven-qubit-rationalization",
+      "line": 1,
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.SevenQubitLogicalAction.family_eigenvalues",
+        "MainTheory.SevenQubitRationalFamily.family_infinite_order",
+        "MainTheory.SevenQubitMinimumOrder.minimum_physical_order",
+        "MainTheory.SevenQubitLogicalCharacter.projectiveEquiv"
+      ],
+      "reason": "The new actual seven-qubit complex code has logical group ZMod 6, the stated actual eigenvalues and irrational infinite-order representatives. Its exact minimum physical order for the target class is twelve."
+    },
+    {
+      "id": "generic-common-mean-action",
+      "source": "main.tex",
+      "locator": "lem:common-mean-rational-replacement",
+      "statement": "lem:common-mean-rational-replacement",
+      "line": 1,
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.CommonMeanReplacement.support_value",
+        "MainTheory.CommonMeanReplacement.replacement_on_direct_sum"
+      ],
+      "reason": "The common-mean argument and its exact physical exponential scalar hold for arbitrary finite supports, distributions and supported subspaces, without rational-probability or KL assumptions."
+    },
+    {
+      "id": "generic-positive-affine-moments",
+      "source": "main.tex",
+      "locator": "lem:positive-affine-moments",
+      "statement": "lem:positive-affine-moments",
+      "line": 1,
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.PositiveAffineMoments.affineSpan_eq"
+      ],
+      "reason": "The positive-square-moment lemma is now proved for arbitrary finite real point sets of different cardinalities, including its affine annihilator argument; it is not restricted to computational-basis supports."
+    },
+    {
+      "id": "small-transversal-group-clifford-conjugacy",
+      "source": "supplementary.tex",
+      "locator": "after-cor:main-order-five-minimum-length",
+      "line": 7720,
+      "statement": "Every full finite projective transversal logical group below six qubits is conjugate into the single-qubit Clifford group.",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.SmallTransversalClifford.common_basis",
+        "MainTheory.BoundedProjectiveCliffordGroup.common_basis",
+        "MainTheory.QuaternionBoundedGroup.bounded_group",
+        "MainTheory.QuaternionCliffordMatrixBridge.normalizer_clifford"
+      ],
+      "reason": "For the full group of literal tensor-product logical U(2) operations on every actual rank-two code with distance at least three and n at most five, the kernel proves one common logical U(2) basis sends every group member to a literal Pauli normalizer. The proof uses a unit-quaternion subgroup and its short-order axis geometry. This certifies the simultaneous conjugacy conclusion independently of the cited finite-rotation-group classification route; it does not assert a separate classification by abstract group names."
+    },
+    {
+      "id": "main-small-nonclifford-minimum",
+      "source": "main.tex",
+      "locator": "after-cor:six-C5-minimum-length",
+      "line": 2633,
+      "statement": "The same minimum six applies in the logical-basis-independent non-Clifford sense.",
+      "kind": "covered",
+      "declarations": [
+        "MainTheory.SmallTransversalClifford.minimum_length",
+        "MainTheory.SmallNonCliffordMinimum.minimum_attained",
+        "MainTheory.CliffordProjectiveOrder.order_five_no_clifford_basis"
+      ],
+      "reason": "The full actual transversal logical group below six has a common Pauli-normalizing basis. Conversely the literal six-qubit canonical code implements a projective order-five logical matrix, while every literal Clifford has projective order at most four. Conjugation preserves the actual adjoint order, so no logical basis makes this six-qubit group Clifford. Both the lower bound and its attained endpoint are kernel proved."
+    }
+  ]
+}

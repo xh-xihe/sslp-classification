@@ -1,0 +1,9 @@
+{
+  "expected_private_input_sha256": {
+    "documents/20260929/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20260929/supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "error": "[Errno 2] No such file or directory: 'tmp\\\\manuscript-review-20261003\\\\empty-checkout\\\\documents\\\\20260929\\\\main.tex'",
+  "type": "FileNotFoundError",
+  "cause": "binding recomputes default documents/version hashes even with source_dir supplied"
+}

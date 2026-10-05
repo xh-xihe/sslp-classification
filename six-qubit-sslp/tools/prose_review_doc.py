@@ -21,6 +21,7 @@ import json
 import os
 import sys
 from collections import Counter, defaultdict
+from pathlib import Path
 import paper_release
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -179,6 +180,7 @@ def main(argv=None):
     parser.add_argument('--paper-version', default=paper_release.DEFAULT_VERSION, type=paper_release.version)
     parser.add_argument('--check', action='store_true')
     parser.add_argument('--require-complete', action='store_true')
+    parser.add_argument('--source-dir', type=Path, help='private manuscript directory bound to the review hashes')
     args = parser.parse_args(argv)
     p = paper_release.paths(args.paper_version, ROOT)
     with io.open(p['prose'], encoding='utf-8') as handle:
@@ -187,7 +189,7 @@ def main(argv=None):
         sys.stderr.write('FAIL: the published record contains verbatim manuscript text.\n')
         return 1
     if args.paper_version != paper_release.DEFAULT_VERSION:
-        paper_release.validate_review(record, args.paper_version, ROOT, args.require_complete)
+        paper_release.validate_review(record, args.paper_version, ROOT, args.require_complete, args.source_dir)
         text = render_version(record, args.paper_version)
     else:
         if args.require_complete and any(a['kind'] == 'gap' for a in record['assertions']):

@@ -215,8 +215,14 @@ import MainTheory.PaperGeneralSSLPConverse
 import MainTheory.PaperColoredFiniteLift
 import MainTheory.Audit
 import MainTheory.QECCSmithBridge
-
-import MainTheory.Orbit2FullImage
-import MainTheory.Orbit3FullImage
+import MainTheory.QECCFrameBridge
+import MainTheory.QECCBoundedNormalForm
+import MainTheory.EnumeratorOrbitTransport
+import MainTheory.OrbitNumberingBridge
+import MainTheory.CitedCorrectedLogicalGate
+import MainTheory.RationalGramCertificate
+import MainTheory.DirectoryEnumeratorImages
+import MainTheory.OrderTwoScalarBridge
+import MainTheory.RationalLinearCertificate
 import MainTheory.OrbitCertificationAudit
 import MainTheory.OrbitCertificationFinalAudit

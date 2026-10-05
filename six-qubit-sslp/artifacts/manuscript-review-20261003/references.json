@@ -1,0 +1,12 @@
+{
+  "sources_sha256": {
+    "main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "supplementary.tex": "a0f59088de371644a396fdd40ac218e4be803949b174a095c3233606c324cb37"
+  },
+  "label_count": 1560,
+  "ref_count": 938,
+  "missing_references": [],
+  "duplicate_labels": [],
+  "missing_bibliography": [],
+  "bibliography_method": "BibTeX entries plus per-document inline bibitem keys"
+}

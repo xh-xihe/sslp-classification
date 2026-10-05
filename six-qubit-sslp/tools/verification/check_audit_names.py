@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Check that every name an audit file asks `#print axioms` about is declared.
+"""Check that every root in a Lean axiom audit is declared.
 
-`MainTheory/Audit.lean` and its siblings are long lists of `#print axioms`
-lines.  A misspelled or renamed declaration in one of them is invisible until
+Both `#certification_axioms` inventories and legacy `#print axioms` commands
+are read using the shared Lean source lexer. A misspelled declaration is invisible until
 the serial build reaches that file, which is hours in.  This resolves every
 name against the declarations actually present in the sources, by tracking
 `namespace` / `end` per file so the match is on the fully qualified name and
@@ -32,7 +32,8 @@ AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'SixQubit/Orbit7CollinearAxiomCheck.lean',
                'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
                'MainTheory/OrbitCertificationAudit.lean',
-               'MainTheory/OrbitCertificationFinalAudit.lean', 'Orbit2.lean')
+               'MainTheory/OrbitCertificationFinalAudit.lean',
+               'MainTheory/ReviewedDeclarationsAudit.lean', 'Orbit2.lean')
 
 # Lean identifiers admit far more than ASCII: subscripts (`cov_eq₂`), Greek
 # letters, primes.  Narrowing this to `[A-Za-z0-9_]` produces false misses, so
@@ -55,7 +56,6 @@ FIELD = re.compile(r'^\s{2,}' + IDENT + r'\s*(?:\{[^}]*\}\s*)?'
                    r'(?:\([^)]*\)\s*)*:')
 NAMESPACE = re.compile(r'^\s*namespace\s+' + IDENT)
 END = re.compile(r'^\s*end\s+' + IDENT + r'\s*$')
-PRINT = re.compile(r'^\s*#print\s+axioms\s+' + IDENT)
 
 
 def lean_sources():
@@ -168,7 +168,7 @@ def main(argv=None):
                      % (', '.join(LEAN_DIRS), len(declared)))
 
     failures = 0
-    for label, entries in (('#print axioms', audited_names()),
+    for label, entries in (('audit', audited_names()),
                            ('claims-ledger', cited)):
         missing = [e for e in entries if not resolve(e[2], declared, suffixes)]
         sys.stdout.write('%s names checked: %d, unresolved: %d\n'

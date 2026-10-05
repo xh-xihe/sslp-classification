@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
 from collections import Counter
 import paper_claims
 import paper_release
@@ -320,10 +321,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--paper-version', default=paper_release.DEFAULT_VERSION, type=paper_release.version)
     parser.add_argument('--check', action='store_true')
+    parser.add_argument('--source-dir', type=Path,
+                        help='private manuscript directory bound to the ledger hashes')
     args = parser.parse_args(argv)
     p = paper_release.paths(args.paper_version, ROOT)
     ledger = json.loads(p['ledger'].read_text(encoding='utf-8'))
-    paper_claims.validate(ledger, sources=paper_claims.sources_for_version(args.paper_version))
+    paper_claims.validate(ledger, sources=paper_claims.sources_for_version(args.paper_version),
+                          source_dir=args.source_dir)
     text = render(ledger) if args.paper_version == paper_release.DEFAULT_VERSION else render_version(ledger, args.paper_version)
     output = p['named']
     check = args.check

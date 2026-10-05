@@ -83,6 +83,21 @@ class ReleaseTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'source-dir differs'):
             release.binding('20260924', self.root, self.root / 'documents/20260908')
 
+    def test_private_directory_works_without_default_manuscript_directory(self):
+        private = self.root / 'private-author-input'
+        source = self.root / 'documents/20260924'
+        source.rename(private)
+        report = release.binding('20260924', self.root, private)
+        self.assertEqual(report['sources_sha256'], release.source_hashes('20260924', self.root, private))
+        record = json.loads(release.paths('20260924', self.root)['prose'].read_text())
+        release.validate_review(record, '20260924', self.root, source_dir=private)
+        ok, detail = release.check_errata('20260924', self.root, private)
+        self.assertFalse(ok)
+        self.assertIn('singleton', detail)
+        (private / 'main.tex').write_text('changed private manuscript', encoding='utf8')
+        with self.assertRaisesRegex(ValueError, 'source-dir differs'):
+            release.binding('20260924', self.root, private)
+
     def test_incomplete_and_stale_prose_cannot_pass(self):
         record = json.loads(release.paths('20260924', self.root)['prose'].read_text())
         release.validate_review(record, '20260924', self.root)
@@ -113,6 +128,27 @@ class ReleaseTests(unittest.TestCase):
                 self.assertIn(str(self.root / 'documents/20260924'), args)
                 self.assertIn(str(self.root / 'results/orbit-manifest-20260924.json'), args)
 
+    def test_private_source_directory_reaches_named_results_check(self):
+        private = self.root / 'private-author-input'
+        with patch.object(verify, 'ROOT', self.root), \
+             patch.object(verify, 'recorded_command', return_value=(True, 'fixture')) as command:
+            checks = verify.checks(source_dir=private, paper_version='20260924')
+            for key in ('claims', 'named-results', 'prose-review'):
+                checks[key]()
+                self.assertIn('--source-dir', command.call_args.args[1])
+                self.assertIn(str(private), command.call_args.args[1])
+
+    def test_named_results_generator_accepts_private_source_directory(self):
+        private = self.root / 'private-author-input'
+        (self.root / 'documents/20260924').rename(private)
+        ledger = paper_claims.snapshot(sources=paper_claims.sources_for_version('20260924'),
+                                       source_dir=private)
+        self.write('results/paper-claims-20260924.json', ledger)
+        with patch.object(named_results_doc, 'ROOT', str(self.root)):
+            code = named_results_doc.main(['--paper-version', '20260924', '--source-dir', str(private)])
+        self.assertEqual(code, 0)
+        self.assertTrue(release.paths('20260924', self.root)['named'].is_file())
+
     def test_new_named_report_does_not_inherit_historical_coverage(self):
         record = {'claims': [{'id': 'main.tex:thm:new', 'kind': 'theorem',
             'source': 'documents/20260924/main.tex', 'line': 1,
@@ -141,7 +177,7 @@ class ReleaseTests(unittest.TestCase):
                 paper_claims.validate(old, sources=source)
 
     def test_portable_source_sweep_import_needs_no_release_records(self):
-        for name in ('verify.py', 'lean_source.py'):
+        for name in ('verify.py', 'lean_source.py', 'lean_audit.py'):
             shutil.copyfile(ROOT / 'tools' / name, self.root / name)
         proc = subprocess.run([sys.executable, '-I', '-c',
             'import sys; sys.path.insert(0, sys.argv[1]); from verify import FORBIDDEN; '

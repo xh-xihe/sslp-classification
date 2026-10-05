@@ -1,0 +1,110 @@
+[
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\README.txt",
+    "expected": "0566b9d5b87f920ed305319995edee107f1f8f162358f36968856639ce85b0bf",
+    "actual": "0566b9d5b87f920ed305319995edee107f1f8f162358f36968856639ce85b0bf",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\orbit2_certificate_blocks.json",
+    "expected": "367fef0b304e74d2c5102f9951871ad1c6aa3ba5f0b51b4500dca98f05267b7c",
+    "actual": "367fef0b304e74d2c5102f9951871ad1c6aa3ba5f0b51b4500dca98f05267b7c",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\orbit2_enumerator_section.tex",
+    "expected": "d3542a31740ec8b436194e89481933a64e10295f066a321ed6b003be5f346821",
+    "actual": "d3542a31740ec8b436194e89481933a64e10295f066a321ed6b003be5f346821",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\orbit2_enumerator_section_preview.tex",
+    "expected": "1322514047609e00a4f47c20fdc42941a3f360416b58f5d73537472d6cf8b8d8",
+    "actual": "1322514047609e00a4f47c20fdc42941a3f360416b58f5d73537472d6cf8b8d8",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\orbit2_exact_certificate.py",
+    "expected": "0afe7ee0fe6ee371bab0ebe22b9db7b91e2be5b38f8a67eda88674f8ad536dbb",
+    "actual": "0afe7ee0fe6ee371bab0ebe22b9db7b91e2be5b38f8a67eda88674f8ad536dbb",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit2_enumerator\\orbit2_verification_log.txt",
+    "expected": "47b0765bca1dce5468be6cf5020041d53d02196b10a3e5ec0fe9f9e912e77110",
+    "actual": "47b0765bca1dce5468be6cf5020041d53d02196b10a3e5ec0fe9f9e912e77110",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\README.txt",
+    "expected": "9cca48d93418e609a3252398d7cd3bbe0dec023567f3d6fa2726e7cc620afc0b",
+    "actual": "9cca48d93418e609a3252398d7cd3bbe0dec023567f3d6fa2726e7cc620afc0b",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\class3_scalar_obstruction.json",
+    "expected": "243bb0894c546b4e6d0440cc8f6640f7f00e871621f1745dd9088bf8a32df3af",
+    "actual": "243bb0894c546b4e6d0440cc8f6640f7f00e871621f1745dd9088bf8a32df3af",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\class3_scalar_obstruction.py",
+    "expected": "c9d0f57207e7c2fe409906798da63c96e3297fcd12b726baeb6dd2f6cfe98e58",
+    "actual": "c9d0f57207e7c2fe409906798da63c96e3297fcd12b726baeb6dd2f6cfe98e58",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\class3_scalar_verification_log.txt",
+    "expected": "5975d00a340fe7b5a0f74282142a4b77dc62b153f685b7a653e2520e3b243d70",
+    "actual": "5975d00a340fe7b5a0f74282142a4b77dc62b153f685b7a653e2520e3b243d70",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_enumerator_section.tex",
+    "expected": "83bf047ec18c6a9332330b324f077276bc7a26cd8c01667bf2e8dbf023b02ddb",
+    "actual": "83bf047ec18c6a9332330b324f077276bc7a26cd8c01667bf2e8dbf023b02ddb",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_enumerator_section_preview.tex",
+    "expected": "b028b4a20538717ee44935d7eaee389fbb095556a356f5be5a93dc08ad49ba08",
+    "actual": "b028b4a20538717ee44935d7eaee389fbb095556a356f5be5a93dc08ad49ba08",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_exact_sextic_certificate.py",
+    "expected": "709d01cec6dd9f48e924335a28c63b8f4ede2740fefe8ecbeebd32465dac1782",
+    "actual": "709d01cec6dd9f48e924335a28c63b8f4ede2740fefe8ecbeebd32465dac1782",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_sextic_certificate.json",
+    "expected": "796e239e7b722d2c7e3dd47aab18a40a0a01b064b1824dbda3c6f69606b2534f",
+    "actual": "796e239e7b722d2c7e3dd47aab18a40a0a01b064b1824dbda3c6f69606b2534f",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_sextic_controls.py",
+    "expected": "97c4b98552d90e57bfecd32975b4644e2aa99eeac85278490eaf56947f5a0d85",
+    "actual": "97c4b98552d90e57bfecd32975b4644e2aa99eeac85278490eaf56947f5a0d85",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_sextic_controls_log.txt",
+    "expected": "6a85e057c44ec0ad8d9437a47f4d4d6d287febb62e42aab65c0f513e1281756f",
+    "actual": "6a85e057c44ec0ad8d9437a47f4d4d6d287febb62e42aab65c0f513e1281756f",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_sextic_verification.json",
+    "expected": "1d2e326606f5fb6803a31b9a584dde2b65fc3a4ed40bfbf37ab49ba52f37d403",
+    "actual": "1d2e326606f5fb6803a31b9a584dde2b65fc3a4ed40bfbf37ab49ba52f37d403",
+    "passed": true
+  },
+  {
+    "file": "documents\\20261003\\orbit3_enumerator\\orbit3_sextic_verification_log.txt",
+    "expected": "7ce7ba4192a636830bac8de64902654d87c2b43855da8d61f2b6f48affabf940",
+    "actual": "7ce7ba4192a636830bac8de64902654d87c2b43855da8d61f2b6f48affabf940",
+    "passed": true
+  }
+]

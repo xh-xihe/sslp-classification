@@ -1,0 +1,12 @@
+PARTIAL verification: release, named-results, sources, generated, audit-names
+Paper version: 20261003
+START release
+[PASS] release (0.0s): version-bound manuscripts, review records and orbit data; review completeness checked separately
+START named-results
+[PASS] named-results (0.9s): exit=0; log=tmp\verification\20261003\named-results.log; named-results document is current
+START sources
+[PASS] sources (149.4s): 15923 Lean sources clean
+START generated
+[PASS] generated (238.4s): exit=0; log=tmp\verification\20261003\generated.log; PASS: generated coverage, SHA-256, and build order (819 + 1101 + 11 + 40 + 112 + 119 + 240 + 624 + 197 + 1466 + 5356 files)
+START audit-names
+[PASS] audit-names (9.0s): exit=0; log=tmp\verification\20261003\audit-names.log; all audited and ledger-cited names resolve

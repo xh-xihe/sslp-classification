@@ -1,0 +1,55 @@
+{
+  "paper_version": "20260929",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "release",
+      "passed": true,
+      "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+      "seconds": 0.015
+    },
+    {
+      "check": "sources",
+      "passed": true,
+      "detail": "14244 Lean sources clean",
+      "seconds": 118.829
+    },
+    {
+      "check": "audit-names",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\audit-names.log; all audited and ledger-cited names resolve",
+      "seconds": 7.421
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\named-results.log; named-results document is current",
+      "seconds": 0.75
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260929\\claims.log; FAIL: 1600 incomplete assertions (partial=58, unreviewed=1542); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@231, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...",
+      "seconds": 0.75
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20260929\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.063
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, orbit7-cited-gate, orbit9-bit-convention, supp-hardcoded-corollary-III4, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed",
+      "seconds": 0.0
+    },
+    {
+      "check": "axioms",
+      "passed": true,
+      "detail": "1859 declarations; union=Classical.choice, Quot.sound, propext; log=tmp\\verification\\20260929\\axioms.log",
+      "seconds": 159.203
+    }
+  ]
+}

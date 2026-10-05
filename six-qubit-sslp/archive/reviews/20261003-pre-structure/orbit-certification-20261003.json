@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "paper_version": "20261003",
+  "status": "partial",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "7b15965e38cce05c0b1d3ae0ccccc0642d5c2db74d06f7453d4dd8fac5459ede"
+  },
+  "main_text_frozen": true,
+  "input_sha256": {
+    "results/orbit2-kernel/gram-blocks.json": "367fef0b304e74d2c5102f9951871ad1c6aa3ba5f0b51b4500dca98f05267b7c",
+    "results/orbit3-kernel/certificate.json": "c43f8124a0ced8bd0e64ad5559e358fc3fd93c1d072239408cf5a8b0d18c6386",
+    "results/orbit3-kernel/reduced-coefficients.json": "5249f263cec323aea46b4ab4486c9b9a5489efce825cc5bbb9a39cad196bf0be",
+    "results/orbit3-kernel/scalar-certificate.json": "243bb0894c546b4e6d0440cc8f6640f7f00e871621f1745dd9088bf8a32df3af"
+  },
+  "kernel_build_status": "actual orbit2 and orbit3 full images passed; unified full-local build pending",
+  "axiom_audit_status": "76 final actual-encoder and semantic roots use only propext, Quot.sound, Classical.choice; whole-paper audit remains separate",
+  "stages": [
+    {
+      "id": "existing-library-bridges",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.QECCFrameBridge.hasDistance_iff",
+        "MainTheory.QECCBoundedNormalForm.bounded_full_normal_form",
+        "MainTheory.QECCBoundedNormalForm.distanceThree_for_supplied_gate",
+        "MainTheory.EnumeratorOrbitTransport.WImage_eq_orbitImage",
+        "MainTheory.DirectoryEnumeratorImages.empty_of_noGo",
+        "MainTheory.DirectoryEnumeratorImages.orbit7_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit8_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit9_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit10_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit11_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit16_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit21_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit22_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit23_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit36_image",
+        "MainTheory.DirectoryEnumeratorImages.orbit45_image"
+      ],
+      "scope": "Actual projectors, full KL, one bounded lift, canonical transport, sector probabilities; 62 known actual orbit images. The general beta index is the source-sector count."
+    },
+    {
+      "id": "orbit2-gram-blocks",
+      "status": "kernel_checked",
+      "declarations": [
+        "SixQubit.Generated.Orbit2Gram.all_blocks_posDef"
+      ],
+      "scope": "All 111 explicit rational blocks, M_block minus 4I positive definite on arbitrary complex vectors; total size 492. Does not identify M with the quartic encoder polynomial."
+    },
+    {
+      "id": "orbit3-scalar-duals",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.Generated.Orbit3Scalar.zero_categories",
+        "SixQubit.Generated.Orbit3Scalar.low_mass_bound"
+      ],
+      "scope": "All six rational dual certificates; actual category realization and application to arbitrary complex orbit-3 completions are now proved in MainTheory.Orbit3ScalarEqualities."
+    },
+    {
+      "id": "orbit3-sextic-identity",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.Generated.Orbit3SexticIdentity.coefficients",
+        "SixQubit.Generated.Orbit3SexticIdentity.identity_on_moments"
+      ],
+      "scope": "All 269 rational coefficient identities and evaluation on arbitrary real coordinate vectors. Does not establish actual positive moment realization or zero rows."
+    },
+    {
+      "id": "order-two-actual-scalar-relations",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.OrderTwoScalarBridge.orbit2_parity",
+        "MainTheory.OrderTwoScalarBridge.orbit3_parity",
+        "MainTheory.OrderTwoScalarBridge.orbit2_diagonal_relation",
+        "MainTheory.OrderTwoScalarBridge.orbit3_diagonal_relation",
+        "MainTheory.OrderTwoScalarBridge.orbit3_shadow_zero"
+      ],
+      "scope": "Derived from actual support of arbitrary complex normalized KL completions, no scalar LP assumptions."
+    },
+    {
+      "id": "orbit2-full-converse",
+      "status": "kernel_checked_content_validated",
+      "missing": [],
+      "declarations": [
+        "MainTheory.Orbit2FullImage.logicalZ",
+        "MainTheory.Orbit2FullImage.actual_enumerator",
+        "MainTheory.Orbit2FullImage.actual_A3_zero",
+        "MainTheory.Orbit2FullImage.exact_distance_three",
+        "MainTheory.Orbit2FullImage.directory_image"
+      ],
+      "scope": "Actual full-KL directory completions map to the shared root Encoder. Their normalized enumerators have the whole FI interval as image, including attainment and exact distance three.",
+      "evidence": [
+        "artifacts/orbit-certification-20261003/orbit2-integrated-build.json",
+        "artifacts/orbit-certification-20261003/orbit2-full-image-build.json",
+        "artifacts/orbit-certification-20261003/orbit2-final-image-axioms.log"
+      ]
+    },
+    {
+      "id": "orbit3-full-converse",
+      "status": "kernel_checked_content_validated",
+      "missing": [],
+      "declarations": [
+        "MainTheory.Orbit3FullImage.all_primitive_rows_zero",
+        "MainTheory.Orbit3FullImage.target_coordinates",
+        "MainTheory.Orbit3FullImage.target_zero",
+        "MainTheory.Orbit3FullImage.actual_A3_zero",
+        "MainTheory.Orbit3FullImage.exact_distance_three",
+        "MainTheory.Orbit3FullImage.actual_enumerator",
+        "MainTheory.Orbit3FullImage.directory_image"
+      ],
+      "scope": "Actual full-KL orbit-3 encoders satisfy all 203 KL, five spin and three Hadamard primitive rows. All 120 actual target Paulis yield the 269-coordinate sextic target. Its vanishing gives A3=0, exact distance three and the complete FI interval image including attainment.",
+      "evidence": [
+        "artifacts/orbit-certification-20261003/orbit3-kl-build.json",
+        "artifacts/orbit-certification-20261003/orbit3-target-build.json",
+        "artifacts/orbit-certification-20261003/orbit3-target-closure-build.json",
+        "artifacts/orbit-certification-20261003/orbit3-spin-hadamard-build.json",
+        "artifacts/orbit-certification-20261003/orbit3-full-image-build.json",
+        "artifacts/orbit-certification-20261003/final-orbit-audit-build.json",
+        "artifacts/orbit-certification-20261003/final-orbit-axioms.log"
+      ]
+    },
+    {
+      "id": "orbit3-positive-square",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.Generated.Orbit3PositiveSquare.square_quadratic_form",
+        "SixQubit.Generated.Orbit3PositiveSquare.target_zero_of_psd"
+      ],
+      "scope": "The explicit 36-term polynomial square equals the quadratic form of a reduced 36 by 36 real matrix. PSD realization is not implied by this finite check."
+    },
+    {
+      "id": "actual-cubic-moment-positivity",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.FiniteCubicMoments.cubicMoment_posSemidef",
+        "MainTheory.Orbit3PositiveMoments.actualMoment_posSemidef",
+        "MainTheory.Orbit3PositiveMoments.target_zero_of_actual_moments"
+      ],
+      "scope": "Actual complex amplitudes construct positive finite-sum cubic Gram matrices. Coordinate identification and all vanishing rows remain explicit hypotheses."
+    },
+    {
+      "id": "actual-logical-superposition-zeros",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.ParityLogicalState.superposition_twisted_kl_zero",
+        "SixQubit.ParityLogicalState.superposition_anticommuting_kl_zero",
+        "SixQubit.ParityLogicalState.superposition_trace_zero"
+      ],
+      "scope": "Physical parity and actual KL imply zero expectation rows of an arbitrary logical superposition."
+    },
+    {
+      "id": "normalized-physical-scalar-laws",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.OrderTwoLabelScalars.b_fourier",
+        "MainTheory.OrderTwoLabelScalars.orbit3_diagonal",
+        "MainTheory.OrderTwoLabelScalars.orbit3_shadow_odd_zero"
+      ],
+      "scope": "Actual normalized individual-Pauli Fourier, KL, diagonal and shadow laws; category aggregation is still separate."
+    },
+    {
+      "id": "physical-category-fourier",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.PhysicalPauliCategories.physical_category_pairing_sum",
+        "MainTheory.PhysicalPauliCategories.category_parity",
+        "MainTheory.PhysicalPauliCategories.category_weight",
+        "SixQubit.Generated.Orbit3CategoryFourier.expansion",
+        "MainTheory.Orbit3CategoryBridge.physical_pairing_sum",
+        "MainTheory.Orbit3CategoryBridge.categoryIndex_correct"
+      ],
+      "scope": "Physical tensor Pauli characters, all 21 generating polynomial expansions, and the actual 42-category index; no encoder symmetry assumed."
+    },
+    {
+      "id": "orbit3-scalar-row-correspondence",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.Generated.Orbit3CategoryRows.positive_formula",
+        "SixQubit.Generated.Orbit3CategoryRows.equality_formula",
+        "SixQubit.Generated.Orbit3CategoryRows.equality_conditions"
+      ],
+      "scope": "All 84 positive and 43 equality coefficient rows equal the physical category Fourier formulas, with exact row tags and applicable parity/weight conditions."
+    },
+    {
+      "id": "actual-orbit3-positive-category-rows",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3ScalarCategoryRealization.b_average_eq",
+        "MainTheory.Orbit3ScalarCategoryRealization.shadow_average_eq",
+        "MainTheory.Orbit3ScalarCategoryRealization.positive_rows"
+      ],
+      "scope": "Every arbitrary complex normalized orbit-3 Completion realizes all 84 nonnegative rows from physical b/shadow averages. All 43 equality rows and the scalar duals are also realized in the subsequent full-scalar stage."
+    },
+    {
+      "id": "orbit2-common-compression-antiunitary",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit2CommonAntiunitary.common_equation_of_compression"
+      ],
+      "scope": "Symmetric mixed-compression blocks with the exact common-mean sum imply one fixed skew J for every compression. The encoder-to-block hypotheses remain pending."
+    },
+    {
+      "id": "actual-orbit3-full-scalar-reduction",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3CategoryShift.shifted_mass",
+        "MainTheory.Orbit3ScalarEqualities.identity_mass",
+        "MainTheory.Orbit3ScalarEqualities.equality_rows",
+        "MainTheory.Orbit3ScalarEqualities.zero_categories",
+        "MainTheory.Orbit3ScalarEqualities.low_mass_bound"
+      ],
+      "scope": "Every actual normalized arbitrary complex orbit-3 Completion realizes all 43 equality rows and 84 positivity rows, and satisfies the six exact dual consequences. No submitted LP row, coefficient realization, or PSD hypothesis is assumed."
+    },
+    {
+      "id": "actual-orbit3-scalar-plane-and-quadratic-zeros",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3ScalarPlane.unnormalized_low_plane",
+        "MainTheory.Orbit3QuadraticZeros.zero_category_trace",
+        "MainTheory.Orbit3QuadraticZeros.zero_category_quadratic",
+        "MainTheory.Orbit3QuadraticZeros.spin_pair_zero",
+        "MainTheory.Orbit3QuadraticZeros.superposition_spin_zero"
+      ],
+      "scope": "For every actual orbit-3 Completion, shadow saturation gives normalized A1+A2+A3=1. Each individual trace in the five forced-zero categories vanishes, and the logical superposition satisfies the actual spin bilinear zero. Reduced moment-coordinate interpretation is not inferred."
+    },
+    {
+      "id": "actual-orbit2-active-trace-reduction",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit2TraceReduction.shifted_even_trace_zero",
+        "MainTheory.Orbit2TraceReduction.active_many_Z_trace_zero"
+      ],
+      "scope": "Every actual orbit-2 Completion has zero trace for active-only Pauli words with at least two Z letters, without flatness or quartic hypotheses."
+    },
+    {
+      "id": "actual-orbit3-pauli-zero-factors",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3PauliZeros.constrained_expectation_zero",
+        "SixQubit.Generated.Orbit3PauliConstraints.kl_zero_factor",
+        "SixQubit.Generated.Orbit3PauliConstraints.all_kl_multiplier_products_zero"
+      ],
+      "scope": "All 203 KL-kind multipliers have actual zero Pauli expectation factors for arbitrary orbit-3 Completion data. Their reduced 269-coordinate row interpretation remains pending."
+    },
+    {
+      "id": "finite-phase-projection-of-actual-cubics",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.FinitePhaseAverage.tensor_pairing",
+        "MainTheory.CubicPhaseProjection.moment_eq_phaseGram",
+        "MainTheory.CubicPhaseProjection.moment_apply"
+      ],
+      "scope": "Fourth-root averaging is explicitly realized by modulating actual amplitudes, and projects cubic occupations exactly. This does not assert code preservation by the complete averaging group."
+    },
+    {
+      "id": "actual-orbit3-phase-block-interpretation",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3PhaseBlocks.occupation_eq_iff",
+        "MainTheory.Orbit3PhaseBlocks.physical_moment_apply"
+      ],
+      "scope": "Actual cubic occupation projection is exactly the support/charge partition in the XOR-zero block; permutation reduction to 269 entries remains pending."
+    },
+    {
+      "id": "actual-orbit3-phase-and-spectator-preservation",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3PhasePreservation.transformed_superposition",
+        "MainTheory.Orbit3PhasePreservation.constrained_expectation_zero",
+        "MainTheory.Orbit3SpectatorUnitary.transform_states"
+      ],
+      "scope": "Finite physical/logical phases and arbitrary spectator U(2) preserve actual normalized distance-three completions. This does not yet close the complete symmetry average."
+    },
+    {
+      "id": "actual-orbit3-weight-three-target",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3Target.target_sum_eq_Aco",
+        "MainTheory.Orbit3Target.target_mass_eq_A3"
+      ],
+      "scope": "The actual Pauli target norm sum equals unnormalized Aco3; all other weight-three traces vanish."
+    },
+    {
+      "id": "actual-orbit3-spin-form",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3SpinForm.fullY_action",
+        "MainTheory.Orbit3SpinForm.actual_spin_zero",
+        "MainTheory.Orbit3SpinForm.spin_multiplier_zero"
+      ],
+      "scope": "The actual Y-tensor holomorphic bilinear has the proved zero value and every cubic multiplier times it vanishes. Its reduced coefficient-row identification remains pending."
+    },
+    {
+      "id": "actual-orbit2-first-complementary-purity-equation",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.TensorPauliPurity.parseval",
+        "MainTheory.Orbit2ComplementaryPurity.reference_gram",
+        "MainTheory.Orbit2ComplementaryPurity.active_spectator_pauli_mass"
+      ],
+      "scope": "Genuine KL erasure scalars imply the actual reference/spectator Gram block structure and first complementary Pauli-mass purity identity. The remaining marginal equations and flatness are not assumed proved."
+    },
+    {
+      "id": "actual-orbit2-remaining-raw-purities",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit2RemainingPurity.reference_active_pauli_mass",
+        "MainTheory.Orbit2RemainingPurity.four_oneSite_complementary_pauli_masses"
+      ],
+      "scope": "Actual reference-active and all four spectator-plus-one-site complementary Pauli Gram purities. Their support/counting expansion into the manuscript scalar masses, and hence b+m+w=0, are not yet proved."
+    },
+    {
+      "id": "actual-orbit3-translation-permutation-norm",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3Translation.translated_superposition",
+        "MainTheory.Orbit3ActivePermutation.permuted_superposition",
+        "MainTheory.Orbit3AmplitudeNormalization.homogeneous_target"
+      ],
+      "scope": "Actual bit translations and active permutations preserve normalized full-KL completions; the sqrt-free superposition has norm squared two and the actual homogeneous target equals 8 times normalized A3."
+    },
+    {
+      "id": "spectator-clifford-finite-average",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "SixQubit.Generated.SpectatorClifford.clifford_unitary",
+        "SixQubit.Generated.SpectatorClifford.closureH",
+        "SixQubit.Generated.SpectatorClifford.closureS",
+        "MainTheory.Orbit3CliffordAverage.average_H",
+        "MainTheory.Orbit3CubicPhaseStability.actual_H_entry_identity"
+      ],
+      "scope": "All 24 explicit complex matrices are unitary; all H/S closure scalars are verified unit phases; the induced index maps are bijective. Actual phase-stable Pauli products and cubic entries satisfy exact finite average identities."
+    },
+    {
+      "id": "actual-orbit3-hadamard-label-rows",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3HadamardBridge.expectation_H",
+        "SixQubit.Generated.Orbit3HadamardConstraints.all_H_Ward_rows"
+      ],
+      "scope": "Physical six-qubit spectator Hadamard conjugation and all three certificate Pauli label/sign transformations are proved. The 269-coordinate rational row representation is still separate."
+    },
+    {
+      "id": "actual-orbit3-finite-sampling",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3ActualSampling.kl_product_sum_zero",
+        "MainTheory.Orbit3ActualSampling.spin_multiplier_sum_zero",
+        "MainTheory.Orbit3ActualSampling.pairMoment_formula",
+        "MainTheory.Orbit3ActualSampling.positiveSquareMoment_posSemidef"
+      ],
+      "scope": "Every phase/Clifford/translation/active-permutation sample is an actual Completion. All 203 KL product sums and all spin multiplier sums vanish, and actual Gram positivity and support/charge block projection hold without caller-supplied PSD or zero-row hypotheses."
+    },
+    {
+      "id": "actual-orbit3-complete-sampling-H-rows",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3SamplingHadamard.sampling_H_identity",
+        "MainTheory.Orbit3SamplingRows.all_physical_rows_zero"
+      ],
+      "scope": "Spectator phase powers are absorbed in the finite Clifford average. The complete actual sampler obeys Hadamard invariance and all 211 physical multiplier expressions vanish. Content-validation/audit integration for these newest declarations is pending; equality with the reduced rational coefficient rows is not yet proved."
+    },
+    {
+      "id": "actual-orbit3-sampled-target-recovery",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit3SamplingTarget.target_nonneg",
+        "MainTheory.Orbit3SamplingTarget.original_Aco_zero_of_target_zero"
+      ],
+      "scope": "The actual sampled homogeneous target is nonnegative, and its zero value would force the original encoder Aco3=0 because the sampler contains the original wave up to global sign. Its equality with the 269-coordinate target evaluation remains pending."
+    },
+    {
+      "id": "orbit3-ordinary-cubic-basis",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "SixQubit.Generated.Orbit3CubicTriples.pair_return",
+        "SixQubit.Generated.Orbit3CubicTriples.actual_cubic_pair",
+        "MainTheory.Orbit3CubicBasis.moment_posSemidef",
+        "MainTheory.Orbit3CubicBasis.square_principal_submatrix",
+        "MainTheory.Orbit3CubicPermutation.moment_permuted",
+        "MainTheory.Orbit3CubicPermutation.moment_symmetric"
+      ],
+      "scope": "All 715 ordinary sorted XOR-zero cubic triples and all 4096 ordered pair indices, actual moment PSD and phase-block zeros, the 36-term square as an actual principal submatrix, arbitrary mask-preserving active permutations and transpose symmetry. No 269-coordinate binding claimed yet."
+    },
+    {
+      "id": "orbit3-row-metadata",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "SixQubit.Generated.Orbit3RowMetadata.xor_zero_x",
+        "SixQubit.Generated.Orbit3RowMetadata.xor_zero_z",
+        "SixQubit.Generated.Orbit3RowMetadata.conjugation_even",
+        "SixQubit.Generated.Orbit3RowMetadata.divisor_nonzero"
+      ],
+      "scope": "All 211 row triples have zero X/Z XOR, even total Y count and nonzero primitive integer row divisors. These are metadata facts, not yet physical-to-reduced coefficient identities."
+    },
+    {
+      "id": "actual-orbit3-all-269-coordinate-realization",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "SixQubit.Generated.Orbit3ReducedCoordinates.entry_witness",
+        "SixQubit.Generated.Orbit3ReducedCoordinates.entry_coverage",
+        "MainTheory.Orbit3CoordinateRealization.entry_interpretation",
+        "MainTheory.Orbit3CoordinateRealization.tableMatrix_eq_scaled_moment",
+        "MainTheory.Orbit3CoordinateRealization.tableMatrix_posSemidef",
+        "MainTheory.Orbit3CoordinateRealization.representative_coordinates",
+        "MainTheory.Orbit3CoordinateRealization.square_matrix_eq",
+        "MainTheory.Orbit3CoordinateRealization.reduced_square_nonneg"
+      ],
+      "scope": "Full 715x715 sparse-table coverage, all present concrete permutation/transpose witnesses, all 269 actual representative coordinates, actual 64-scaled Gram realization, and unconditional nonnegativity of the certificate square for arbitrary actual orbit-3 encoders. No rational row or target binding claimed.",
+      "artifact": "artifacts/orbit-certification-20261003/coordinate-direct-checks.json"
+    },
+    {
+      "id": "actual-orbit3-complete-sampler-translation",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3SamplingTranslation.sampling_active_flip",
+        "MainTheory.Orbit3SamplingSpectatorX.sampling_S_identity",
+        "MainTheory.Orbit3SamplingSpectatorX.HSH_X",
+        "MainTheory.Orbit3SamplingSpectatorX.spectator_X_act",
+        "MainTheory.Orbit3SamplingSpectatorX.sampling_translation_identity"
+      ],
+      "scope": "Every physical six-bit X translation preserves the complete actual finite sample sum of an arbitrary global-phase-stable observable. Active flips use explicit parameter bijections and verified unit phases; spectator X follows from exact H S^2 H and complete H/S average invariance."
+    },
+    {
+      "id": "orbit3-physical-coefficient-expansion",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3PauliMomentInterpretation.sampled_product_coordinates",
+        "MainTheory.Orbit3SpinMomentInterpretation.sampled_spin_coordinates",
+        "MainTheory.Orbit3RowCoordinateExpressions.all_raw_rows_zero",
+        "MainTheory.Orbit3CoefficientTrace.pauli_trace_evaluation"
+      ],
+      "scope": "All actual raw Pauli/spin/H row expressions interpreted and proved zero; their equality with the remaining primitive rows is not yet proved."
+    },
+    {
+      "id": "orbit3-first-primitive-row",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3FirstCollectedRow.primitive_row_zero"
+      ],
+      "scope": "Row 0: all 4096 ordered bit pairs, primitive divisor and rational coefficient table, actual encoder zero. Remaining 210 primitive rows and target interpretation pending."
+    },
+    {
+      "id": "orbit3-spin-primitive-rows",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3CollectedSpinRow.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.Spin203.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.Spin204.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.Spin205.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.Spin206.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.Spin207.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedSpinRows.all_spin_primitive_rows_zero"
+      ],
+      "scope": "All five primitive spin rows evaluate to zero on coordinates of every actual orbit-3 encoder, with the physical factor 64 derived.",
+      "evidence": "artifacts/orbit-certification-20261003/spin-coefficient-direct-checks.json"
+    },
+    {
+      "id": "orbit3-hadamard-primitive-rows",
+      "status": "kernel_checked_directly",
+      "declarations": [
+        "MainTheory.Orbit3CollectedHadamardRow.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.TraceH208.Certified.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.TraceH209.Certified.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedRows.TraceH210.Certified.primitive_row_zero",
+        "SixQubit.Generated.Orbit3CollectedHadamardRows.all_hadamard_primitive_rows_zero"
+      ],
+      "scope": "All three primitive Hadamard rows evaluate to zero on coordinates of every actual orbit-3 encoder; every signed Pauli term is covered by 64 checked intermediate transitions.",
+      "evidence": "artifacts/orbit-certification-20261003/hadamard-coefficient-direct-checks.json"
+    },
+    {
+      "id": "orbit2-si-spectral-table",
+      "status": "kernel_checked_content_validated",
+      "declarations": [
+        "MainTheory.Orbit2SpectralTable.counts_correct",
+        "MainTheory.Orbit2SpectralTable.number_of_blocks",
+        "MainTheory.Orbit2SpectralTable.number_of_coordinates",
+        "SixQubit.Generated.Orbit2PhysicalSpectra.physical_dimensions",
+        "SixQubit.Generated.Orbit2PhysicalSpectra.physical_characteristic_polynomials"
+      ],
+      "scope": "All 111 physical quartic blocks, totaling 492 coordinates, have the seven SI characteristic-polynomial patterns and stated multiplicities. Each original physical matrix is identified with the shifted root positivity matrix plus 4I.",
+      "evidence": [
+        "artifacts/orbit-certification-20261003/orbit2-spectra-build.json",
+        "artifacts/orbit-certification-20261003/orbit2-spectral-table-build.json",
+        "artifacts/orbit-certification-20261003/orbit2-physical-spectra-build.json"
+      ]
+    }
+  ],
+  "attainment_declarations": [
+    "MainTheory.DirectoryEnumeratorImages.orbit2_attainment",
+    "MainTheory.DirectoryEnumeratorImages.orbit3_attainment"
+  ],
+  "regeneration_check": "python tools/rebuild_orbit_certificates.py",
+  "trust_boundary": "Python regenerates untrusted coefficient payloads. Lean kernel checks the finite declarations and separately proved semantics. Conditional certificate consequences are not recorded as full orbit certification.",
+  "negative_controls": [
+    {
+      "name": "one_changed_sextic_target_coefficient",
+      "changed": "target[0] += 1",
+      "lean_exit_code": 1,
+      "rejected_at": "sparse_coefficients",
+      "scope": "The ordinary Lean kernel cannot certify the altered rational coefficient identity."
+    },
+    {
+      "name": "one_changed_category_fourier_coefficient",
+      "changed": "coefficients[0][0]: 1 -> 2",
+      "lean_exit_code": 1,
+      "rejected_at": "expanded_00",
+      "scope": "The kernel rejects a mismatch between the explicit Fourier polynomial and its coefficient table."
+    }
+  ],
+  "finite_regeneration_status": "passed_orbit2_orbit3_and_scalar",
+  "audit_negative_controls": "43 tests passed, including missing-root and extra-axiom rejection in the shared command",
+  "manuscript_revision_recommendations": "notes/supplementary-revision-plan.md",
+  "latest_build_artifact": "artifacts/orbit-certification-20261003/balanced-semantic-build.json",
+  "latest_orbit_audit_artifact": "artifacts/orbit-certification-20261003/balanced-axiom-audit.log",
+  "new_generator_roundtrip_status": {
+    "status": "passed",
+    "generated_lean_sources": 30,
+    "log": "tmp/orbit-lean-source-regeneration-extended.log",
+    "scope": "Byte-exact generator provenance, not mathematical certification."
+  },
+  "latest_kernel_evidence": {
+    "build": "artifacts/orbit-certification-20261003/balanced-semantic-build.json",
+    "orbit_axiom_audit": "artifacts/orbit-certification-20261003/balanced-axiom-audit.log",
+    "import_closure": 14325,
+    "rebuilt": 7,
+    "content_validated_reused": 14318,
+    "orbit_audit_roots": 151
+  },
+  "supplementary_review": {
+    "directory": "documents/20261003/revisions/si-review-20261003",
+    "original_main_and_supplementary_preserved": true,
+    "scope": "Review-only revised and redlined SI sources; main-text errata still held.",
+    "revision_round": 2,
+    "style": "Direct mathematical exposition and proof references; implementation progress collected in the final appendix.",
+    "revised_source_sha256": "bd047558fe3ff80a3dec393e399d98e02b096611ac61e838b53ad8f8b92ebfa5",
+    "display_math_blocks_preserved_from_round1": 1490,
+    "checked_labels": 1505,
+    "review_checks": "documents/20261003/revisions/si-review-20261003/review-checks.json",
+    "pdfs": {
+      "revised": {
+        "path": "output/pdf/supplementary-20261003-revised.pdf",
+        "sha256": "201682eb9c69f979e9d737e8de4bfb536c3465c378a275854cf0160b0595f32b"
+      },
+      "marked": {
+        "path": "output/pdf/supplementary-20261003-marked.pdf",
+        "sha256": "3f0ca00e2c4687472f16cd480f9ddde0cfbd239bbaa72fe35c8b0d54c7b5f6fc"
+      }
+    }
+  },
+  "latest_direct_axiom_evidence": {
+    "artifact": "artifacts/orbit-certification-20261003/coordinate-direct-axiom-audit.log",
+    "roots": 174,
+    "axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "scope": "Direct audit after kernel checks of the new coordinate and translation layers; content-stamped build still running."
+  },
+  "new_content_build": {
+    "status": "running",
+    "targets": [
+      "MainTheory",
+      "SixQubit.Audit",
+      "QECC.Audit"
+    ],
+    "log": "tmp/orbit-coordinates-content-build.log"
+  },
+  "pauli_coefficient_direct_evidence": "artifacts/orbit-certification-20261003/pauli-coefficient-direct-checks.json",
+  "latest_additional_direct_axiom_roots": 19,
+  "latest_content_build_evidence": "artifacts/orbit-certification-20261003/coordinate-semantic-content-build.json",
+  "next_build": {
+    "scope": "all 203 primitive KL rows and new physical coefficient bridges",
+    "status": "starting_content_validation",
+    "log": "tmp/orbit-collected-kl-content-build.log"
+  },
+  "orbit2_colleague_review": {
+    "revision": "f84bbd39451a3e0648fd1bd4ccf0ad38f558245a",
+    "source_review": "passed: true encoder fields, full converse, attainment and exact-distance theorem",
+    "independent_kernel_build": "PASS: fresh source compilation of all 357 local modules",
+    "source_evidence": "artifacts/orbit-certification-20261003/colleague-orbit2-source-review.json",
+    "negative_control": "artifacts/orbit-certification-20261003/colleague-orbit2-negative-control.json",
+    "integration_status": "PASS: shared root libraries and actual MainTheory directoryImage 1, with standard-axiom audit",
+    "modules_checked": 357,
+    "audit_roots": 44,
+    "standard_axioms_only": true,
+    "build_evidence": "artifacts/orbit-certification-20261003/colleague-orbit2-fresh-build.json",
+    "seconds": 3995.687
+  },
+  "current_orbit2_kernel_evidence": {
+    "builds": [
+      "artifacts/orbit-certification-20261003/orbit2-integrated-build.json",
+      "artifacts/orbit-certification-20261003/orbit2-full-image-build.json",
+      "artifacts/orbit-certification-20261003/orbit2-spectra-build.json",
+      "artifacts/orbit-certification-20261003/orbit2-spectral-table-build.json",
+      "artifacts/orbit-certification-20261003/orbit2-physical-spectra-build.json"
+    ],
+    "actual_image_axiom_audit": "artifacts/orbit-certification-20261003/orbit2-final-image-axioms.log",
+    "final_serial_validation": "pending; must rehash the full external inventory and validate all content stamps"
+  },
+  "current_orbit3_kernel_evidence": {
+    "builds": [
+      "artifacts/orbit-certification-20261003/orbit3-kl-build.json",
+      "artifacts/orbit-certification-20261003/orbit3-target-build.json",
+      "artifacts/orbit-certification-20261003/orbit3-target-closure-build.json",
+      "artifacts/orbit-certification-20261003/orbit3-spin-hadamard-build.json",
+      "artifacts/orbit-certification-20261003/orbit3-full-image-build.json",
+      "artifacts/orbit-certification-20261003/final-orbit-audit-build.json"
+    ],
+    "actual_image_axiom_audit": "artifacts/orbit-certification-20261003/final-orbit-axioms.log",
+    "final_serial_validation": "pending; the full external inventory and every local module require unified validation"
+  }
+}

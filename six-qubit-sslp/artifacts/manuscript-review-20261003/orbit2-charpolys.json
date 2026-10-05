@@ -1,0 +1,1001 @@
+[
+  {
+    "character": "IIII",
+    "signature": [
+      0,
+      0,
+      24
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIIZ",
+    "signature": [
+      1,
+      0,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIXX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIXY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIYX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIYY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIZI",
+    "signature": [
+      1,
+      0,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IIZZ",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXIX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXIY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXXI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXXZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXYI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXYZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXZX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IXZY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYIX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYIY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYXI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYXZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYYI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYYZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYZX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IYZY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZII",
+    "signature": [
+      1,
+      0,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZIZ",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZXX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZXY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZYX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZYY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZZI",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "IZZZ",
+    "signature": [
+      3,
+      0,
+      12
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIIX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIIY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIXI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIXZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIYI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIYZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIZX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XIZY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XXII",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XXIZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XXZI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XXZZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XYII",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "XYIZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XYZI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XYZZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZIX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZIY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZXI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZXZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZYI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZYZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZZX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "XZZY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIIX",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIIY",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIXI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIXZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIYI",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIYZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIZX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YIZY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YXII",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YXIZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YXZI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YXZZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YYII",
+    "signature": [
+      2,
+      2,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "YYIZ",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YYZI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YYZZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZIX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZIY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZXI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZXZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZYI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZYZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZZX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "YZZY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIII",
+    "signature": [
+      1,
+      0,
+      3
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIIZ",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIXX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIXY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIYX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIYY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIZI",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZIZZ",
+    "signature": [
+      3,
+      0,
+      12
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXIX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXIY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXXI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXXZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXYI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXYZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXZX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZXZY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYIX",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYIY",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYXI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYXZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYYI",
+    "signature": [
+      3,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYYZ",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYZX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZYZY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZII",
+    "signature": [
+      2,
+      0,
+      8
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZIZ",
+    "signature": [
+      3,
+      0,
+      12
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZXX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZXY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZYX",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZYY",
+    "signature": [
+      4,
+      2,
+      4
+    ],
+    "passed": true
+  },
+  {
+    "character": "ZZZI",
+    "signature": [
+      3,
+      0,
+      12
+    ],
+    "passed": true
+  }
+]

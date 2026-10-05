@@ -39,6 +39,12 @@ debug.log
 .v.log
 .check-readme-names.lean
 
+# Local deliverables and inspection caches
+output/
+.pytest_cache/
+scratch/orbit2-colleague-review/
+__beta5_stage/
+
 # The research workbench front end is its own git repository (it is deployed
 # from there, with its own history), so it is not tracked here.
 apps/

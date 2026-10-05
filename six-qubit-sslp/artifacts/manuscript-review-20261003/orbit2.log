@@ -1,0 +1,20 @@
+EXACT CERTIFICATE VERIFIED
+Arithmetic: integer polynomial coefficients and Fraction LDL^T pivots.
+T basis: 8 weight-one and 24 weight-three complex coefficients.
+Holomorphic quadratic monomials: 528.
+Exact zero rows/columns (T1*T1): 36.
+Positive blocks: 111, total dimension 492.
+Every nonzero block satisfies M_block - 4I > 0, exactly.
+Block signatures (Pauli weight, transverse count, size):
+  (0, 0, 24) multiplicity 1
+  (1, 0, 3) multiplicity 4
+  (2, 0, 8) multiplicity 6
+  (2, 2, 3) multiplicity 24
+  (3, 0, 12) multiplicity 4
+  (3, 2, 4) multiplicity 48
+  (4, 2, 4) multiplicity 24
+Nonzero integer matrix entries: 2844
+SHA256 of sparse M: 64b192ccce90edf4b583285307f46265435a51b032f72e6493057138a1820b1d
+Conclusion: on the stated constraints, -sum(c_V^2) = z^* M z / 12 >= 0.
+Therefore all c_V vanish, and the positive blocks also force T3=0.
+Elapsed seconds (not part of proof): 0.14

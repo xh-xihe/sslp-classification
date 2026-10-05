@@ -1,0 +1,8 @@
+PARTIAL verification: claims, prose-review, errata
+Paper version: 20261003
+START claims
+[FAIL] claims (0.9s): exit=1; log=tmp\verification\20261003\claims.log; FAIL: 1829 incomplete assertions (unreviewed=1829); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:equation@231, main.tex:eq:general-KL, main.tex:eq:KL, main.tex:eq:logical-basis-KL, main.tex:eq:quantum-Singleton, ...
+START prose-review
+[FAIL] prose-review (0.0s): exit=1; log=tmp\verification\20261003\prose-review.log; FAIL: selected release prose review is not complete
+START errata
+[FAIL] errata (0.0s): errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed, orbit21-unsigned-count-and-residual

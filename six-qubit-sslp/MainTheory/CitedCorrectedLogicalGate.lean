@@ -23,6 +23,33 @@ theorem logical_unitary : IsOneQubitUnitary logical := by
     norm_num [Matrix.mul_apply,Fin.sum_univ_two,Matrix.star_apply,
       Complex.add_re,Complex.add_im,Complex.mul_re,Complex.mul_im,map_ofNat]
 
+/-- The corrected logical action has cube equal to the identity. -/
+theorem logical_cube : logical ^ 3 = 1 := by
+  rw [logical_matrix]
+  ext i j
+  fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+    norm_num [pow_succ, Matrix.mul_apply, Fin.sum_univ_two,
+      Matrix.one_apply, Complex.add_re, Complex.add_im,
+      Complex.mul_re, Complex.mul_im, map_ofNat]
+
+/-- It is not scalar, so its projective order does not drop to one. -/
+theorem logical_not_scalar : ¬ ∃ z : ℂ, logical = z • (1 : Matrix (Fin 2) (Fin 2) ℂ) := by
+  rintro ⟨z, hz⟩
+  have h := congrFun (congrFun hz 0) 1
+  rw [logical_matrix] at h
+  have hi := congrArg Complex.im h
+  norm_num [Matrix.one_apply] at hi
+
+/-- Its square is not scalar either: the full projective order is three. -/
+theorem logical_square_not_scalar :
+    ¬ ∃ z : ℂ, logical ^ 2 = z • (1 : Matrix (Fin 2) (Fin 2) ℂ) := by
+  rintro ⟨z, hz⟩
+  have h := congrFun (congrFun hz 0) 1
+  rw [logical_matrix] at h
+  have hi := congrArg Complex.im h
+  norm_num [pow_two, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply,
+    Complex.add_im, Complex.mul_im] at hi
+
 theorem recovered_word (theta : ℝ) (i : Fin 2) :
     MainTheory.CitedAncillaFamily.code theta i=
       fun x => ∑ j,star (logical i j)*

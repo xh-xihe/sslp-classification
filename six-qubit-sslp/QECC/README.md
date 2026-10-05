@@ -19,8 +19,9 @@ the `QECC` prefix because they formalize quantum error-correcting codes.
 This library is Bei Zeng's standalone LeanSecIII package, which formalizes
 Section III of the 20260929 manuscript. It is included here with her
 agreement and ported from Lean 4.28.0 / Mathlib v4.28.0 to the Lean 4.27.0 /
-Mathlib revision this repository pins. The port changes no statement and no
-proof:
+Mathlib revision this repository pins. The original toolchain port changed no
+statement or proof. This table records that port; later integration changes
+are listed separately:
 
 | File | Change |
 |---|---|
@@ -35,6 +36,19 @@ delete `MathlibCompat.lean` and the two `set_option` lines; the backported
 names will otherwise clash with upstream.
 
 ## Building in this repository
+
+### Integration extension, 2026-10-04
+
+`DistanceThreeOrderBound.lean` now exposes
+`CodeProjector.distanceThree_physicalOrder_bound_of_representative`, retaining
+the supplied physical representative through the support and Smith-bound
+construction. The original `distanceThree_physicalOrder_bound` statement is
+preserved as a wrapper around that proof. This lets the frame bridge bind the
+bound to the same physical gate used elsewhere in the paper.
+
+`Audit.lean` now checks eighteen roots, including this new entry point, with
+the shared `#certification_axioms` command. Its transitive-axiom policy is the
+same three standard axioms. These are explicit post-port integration changes.
 
 The library is the `QECC` target in the repository's `lakefile.lean`. Build it
 with the repository's serial builder, which compiles one module at a time:

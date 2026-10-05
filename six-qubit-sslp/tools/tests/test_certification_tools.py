@@ -24,6 +24,7 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / 'tools'))
 import build_lean
 import lean_source
+import lean_audit
 import verify
 
 
@@ -107,6 +108,14 @@ class LeanLexing(unittest.TestCase):
         with self.assertRaises(ValueError):
             lean_source.code_only('/- unfinished')
 
+    def test_shared_audit_inventory_ignores_comments_and_strings(self):
+        source = '/- #certification_axioms [Fake.root] -/\n' \
+                 'def text := "#certification_axioms [Fake.other]"\n' \
+                 '#certification_axioms [\n MainTheory.one, -- comment\n MainTheory.two\n]\n'
+        self.assertEqual(lean_audit.audit_names(source), ['MainTheory.one', 'MainTheory.two'])
+        with self.assertRaises(ValueError):
+            lean_audit.audit_names('#certification_axioms [MainTheory.one; bad]')
+
 
 class AxiomAudit(WorkspaceTest):
     def setUp(self):
@@ -123,6 +132,11 @@ class AxiomAudit(WorkspaceTest):
 
     def test_duplicate_root_is_rejected(self):
         self.write(verify.AUDIT_FILES[1], 'import Lean\n#print axioms Test.root0\n')
+        with self.assertRaisesRegex(ValueError, 'duplicate'):
+            verify.axiom_inventory(self.root)
+
+    def test_shared_inventory_rejects_duplicate_roots(self):
+        self.write(verify.AUDIT_FILES[1], 'import Lean\n#certification_axioms [Test.root0]\n')
         with self.assertRaisesRegex(ValueError, 'duplicate'):
             verify.axiom_inventory(self.root)
 
@@ -436,6 +450,29 @@ class LeanNegativeControls(WorkspaceTest):
             ['TestKernelDecision'])
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
         self.assertIn('CERTIFICATION_AXIOMS_OK roots=1', proc.stdout + proc.stderr)
+
+    def execute_shared_command(self, declaration, roots):
+        path = self.write('SharedControl.lean',
+            'import MainTheory.KernelAxiomAudit\n' + declaration + '\n'
+            '#certification_axioms [' + ', '.join(roots) + ']\n')
+        return subprocess.run(['lake', 'env', 'lean', *build_lean.LEAN_FLAGS, str(path)],
+            cwd=REPO, capture_output=True, text=True, encoding='utf-8', errors='replace')
+
+    def test_shared_command_rejects_absent_root(self):
+        proc = self.execute_shared_command('', ['DoesNotExist'])
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn('Missing kernel declaration', proc.stdout + proc.stderr)
+
+    def test_shared_command_rejects_custom_axiom(self):
+        proc = self.execute_shared_command('axiom TestUntrusted : False', ['TestUntrusted'])
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn('Unexpected transitive axiom', proc.stdout + proc.stderr)
+
+    def test_shared_command_accepts_multiple_trusted_roots(self):
+        proc = self.execute_shared_command('theorem TestTrusted : True := True.intro',
+            ['TestTrusted', 'Nat.add_comm'])
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        self.assertIn('CERTIFICATION_AXIOMS_OK roots=2', proc.stdout + proc.stderr)
 
 
 @unittest.skipUnless(os.environ.get('CERTIFICATION_LEAN_TESTS') == '1', 'opt-in Lean certificate controls')

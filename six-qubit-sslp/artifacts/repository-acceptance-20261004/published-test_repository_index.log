@@ -1,0 +1,8 @@
+test_archive_and_scratch_are_not_active_modules (test_repository_index.RepositoryIndexTests.test_archive_and_scratch_are_not_active_modules) ... ok
+test_digest_is_portable_but_sensitive_to_proof_changes (test_repository_index.RepositoryIndexTests.test_digest_is_portable_but_sensitive_to_proof_changes) ... ok
+test_orbit_prefixes_do_not_mix_two_digit_orbits (test_repository_index.RepositoryIndexTests.test_orbit_prefixes_do_not_mix_two_digit_orbits) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+OK

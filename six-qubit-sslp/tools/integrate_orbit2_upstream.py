@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Import the reviewed orbit-2 proofs, preserving a precise upstream ledger."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -20,14 +21,21 @@ def sha(data):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--upstream-dir', type=Path, default=UPSTREAM,
+                        help='reviewed package Lean directory containing Orbit2.lean and Orbit2/')
+    args = parser.parse_args()
+    upstream = args.upstream_dir.resolve()
+    if not (upstream / 'Orbit2.lean').is_file() or not (upstream / 'Orbit2').is_dir():
+        parser.error('reviewed upstream package is absent; use --upstream-dir. The published proofs already build without this import step.')
     evidence = json.loads((ROOT / 'artifacts/orbit-certification-20261003/'
                            'colleague-orbit2-fresh-build.json').read_text(encoding='utf8'))
     if evidence.get('status') != 'PASS':
         raise RuntimeError('The independent fresh build must pass first')
     records = []
-    sources = sorted((UPSTREAM / 'Orbit2').rglob('*.lean')) + [UPSTREAM / 'Orbit2.lean']
+    sources = sorted((upstream / 'Orbit2').rglob('*.lean')) + [upstream / 'Orbit2.lean']
     for source in sources:
-        relative = source.relative_to(UPSTREAM).as_posix()
+        relative = source.relative_to(upstream).as_posix()
         original = source.read_bytes()
         text = original.decode('utf8')
         module = relative[:-5].replace('/', '.')
@@ -40,7 +48,7 @@ def main():
                     '/-! The shared physical definitions are provided by the main library. -/\n')
             changes.append({'kind': 'shared-definition-adapter', 'import': dependency})
         else:
-            log = UPSTREAM / '.lake/review-logs' / (module + '.log')
+            log = upstream / '.lake/review-logs' / (module + '.log')
             options = sorted(set(re.findall(r'set_option (linter\.\w+) false',
                 log.read_text(encoding='utf8') if log.exists() else '')))
             if options:

@@ -1,0 +1,6 @@
+SELF-TEST: every mutation below must be REJECTED.
+
+  inventory corruptions caught 3, missed 0, not injected 0
+  mutations caught 1063, missed 0, not injected 0
+
+PASS - every injected corruption was rejected.

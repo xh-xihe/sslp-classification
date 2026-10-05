@@ -1,5 +1,7 @@
 # Reproducing
 
+For the six-qubit classification project, use [its reproduction guide](six-qubit-sslp/docs/reproduce.md). The commands below concern the dyadic Bell ladder.
+
 Every numeric claim in this repository is re-derivable from it. This file gives
 the commands, the expected output, and the environment.
 

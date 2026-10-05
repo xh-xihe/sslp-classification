@@ -175,3 +175,8 @@ import SixQubit.Orbit22Real
 import SixQubit.Orbit23Real
 import SixQubit.Orbit45Real
 import SixQubit.Orbit45Final
+import SixQubit.Generated.Orbit2Gram.All
+import SixQubit.Generated.Orbit3SexticIdentity
+import SixQubit.Generated.Orbit3Scalar
+import SixQubit.Generated.Orbit3PositiveSquare
+import SixQubit.ParityPauliScalars

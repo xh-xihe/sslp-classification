@@ -1,0 +1,31 @@
+{
+  "paper_version": "20260929",
+  "full_suite": false,
+  "passed": true,
+  "checks": [
+    {
+      "check": "gate",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\gate.log; every module matches the manifest and its own headline ordering",
+      "seconds": 0.359
+    },
+    {
+      "check": "gate-selftest",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\gate-selftest.log; INVENTORY SELF-TEST: caught 3, missed 0, not injected 0",
+      "seconds": 0.469
+    },
+    {
+      "check": "moments",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\moments.log;        are listed, not failed: a smaller hypothesis set is stronger.)",
+      "seconds": 0.172
+    },
+    {
+      "check": "moments-selftest",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20260929\\moments-selftest.log; PASS - every injected corruption was rejected.",
+      "seconds": 1.437
+    }
+  ]
+}

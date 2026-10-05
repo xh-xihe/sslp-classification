@@ -1,14 +1,23 @@
 {
-  "schema": 1,
+  "schema": 2,
   "paper_version": "20261003",
   "status": "orbit_images_kernel_checked",
-  "scope": "Orbit-2 and orbit-3 complete weight-enumerator images; whole-manuscript certification is separate.",
-  "kernel_build_status": "Both actual full-KL encoder images passed; latest unified validation pending.",
+  "publication_branch": "sixqubit-classification",
+  "scope": "Orbit-2 and orbit-3 complete actual-encoder images. Manuscript correspondence is separate.",
+  "kernel_build_status": "PASS: complete active proof tree, 15923 modules",
+  "axiom_audit_status": "PASS: 2764 transitive roots, three standard axioms only",
   "standard_axioms": [
-    "propext",
+    "Classical.choice",
     "Quot.sound",
-    "Classical.choice"
+    "propext"
   ],
+  "acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
+  "input_sha256": {
+    "results/orbit2-kernel/gram-blocks.json": "367fef0b304e74d2c5102f9951871ad1c6aa3ba5f0b51b4500dca98f05267b7c",
+    "results/orbit3-kernel/certificate.json": "c43f8124a0ced8bd0e64ad5559e358fc3fd93c1d072239408cf5a8b0d18c6386",
+    "results/orbit3-kernel/reduced-coefficients.json": "5249f263cec323aea46b4ab4486c9b9a5489efce825cc5bbb9a39cad196bf0be",
+    "results/orbit3-kernel/scalar-certificate.json": "243bb0894c546b4e6d0440cc8f6640f7f00e871621f1745dd9088bf8a32df3af"
+  },
   "stages": [
     {
       "id": "orbit2-full-converse",
@@ -23,9 +32,8 @@
       ],
       "scope": "Actual full-KL directory completions map to the shared root Encoder. Their normalized enumerators have the whole FI interval as image, including attainment and exact distance three.",
       "evidence": [
-        "artifacts/orbit-certification-20261003/orbit2-integrated-build.json",
-        "artifacts/orbit-certification-20261003/orbit2-full-image-build.json",
-        "artifacts/orbit-certification-20261003/orbit2-final-image-axioms.log"
+        "artifacts/repository-acceptance-20261004/acceptance.json",
+        "artifacts/repository-acceptance-20261004/full-publication-binding.json"
       ]
     },
     {
@@ -43,21 +51,12 @@
       ],
       "scope": "Actual full-KL orbit-3 encoders satisfy all 203 KL, five spin and three Hadamard primitive rows. All 120 actual target Paulis yield the 269-coordinate sextic target. Its vanishing gives A3=0, exact distance three and the complete FI interval image including attainment.",
       "evidence": [
-        "artifacts/orbit-certification-20261003/orbit3-kl-build.json",
-        "artifacts/orbit-certification-20261003/orbit3-target-closure-build.json",
-        "artifacts/orbit-certification-20261003/orbit3-full-image-build.json"
+        "artifacts/repository-acceptance-20261004/acceptance.json",
+        "artifacts/repository-acceptance-20261004/full-publication-binding.json"
       ]
     }
   ],
-  "input_sha256": {
-    "results/orbit2-kernel/gram-blocks.json": "367fef0b304e74d2c5102f9951871ad1c6aa3ba5f0b51b4500dca98f05267b7c",
-    "results/orbit3-kernel/certificate.json": "c43f8124a0ced8bd0e64ad5559e358fc3fd93c1d072239408cf5a8b0d18c6386",
-    "results/orbit3-kernel/reduced-coefficients.json": "5249f263cec323aea46b4ab4486c9b9a5489efce825cc5bbb9a39cad196bf0be",
-    "results/orbit3-kernel/scalar-certificate.json": "243bb0894c546b4e6d0440cc8f6640f7f00e871621f1745dd9088bf8a32df3af"
-  },
-  "upstream_orbit2_commit": "f84bbd39451a3e0648fd1bd4ccf0ad38f558245a",
   "build_command": "python tools/build_lean.py",
-  "axiom_command": "lake env lean -j 1 -DwarningAsError=true MainTheory/OrbitCertificationFinalAudit.lean",
-  "regeneration_command": "python tools/rebuild_orbit_certificates.py",
-  "publication_branch": "orbit23-kernel-certification"
+  "axiom_command": "python tools/verify.py --paper-version 20261003 --only axioms",
+  "regeneration_command": "python tools/rebuild_orbit_certificates.py"
 }

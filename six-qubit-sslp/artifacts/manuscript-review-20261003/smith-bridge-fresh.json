@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-j",
+    "1",
+    "-DwarningAsError=true",
+    "MainTheory/QECCSmithBridge.lean"
+  ],
+  "exit_code": 0,
+  "source_sha256": "e145748d6157f9e5b665a0a2b4c680e546dc82381dadf978b629c7a0cbbc6c04"
+}

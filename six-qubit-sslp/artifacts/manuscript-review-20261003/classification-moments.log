@@ -1,0 +1,55 @@
+orbit 5   Orbit5    OK
+orbit 6   Orbit6    OK
+orbit 12  Orbit12   OK
+orbit 13  Orbit13   OK
+orbit 14  Orbit14   OK
+orbit 15  Orbit15   OK
+orbit 17  Orbit17   OK
+orbit 18  Orbit18   OK
+orbit 19  Orbit19   OK
+orbit 20  Orbit20   OK
+orbit 24  Orbit24   OK
+orbit 25  Orbit25   OK
+orbit 26  Orbit26   OK
+orbit 27  Orbit27   OK
+orbit 28  Orbit28   OK
+orbit 29  Orbit29   OK
+orbit 30  Orbit30   OK
+orbit 31  Orbit31   OK
+orbit 32  Orbit32   OK
+orbit 33  Orbit33   OK
+orbit 34  Orbit34   OK  [uses 12 of the 21 rows]
+orbit 35  Orbit35   OK
+orbit 37  Orbit37   OK
+orbit 38  Orbit38   OK
+orbit 39  Orbit39   OK
+orbit 40  Orbit40   OK
+orbit 41  Orbit41   OK
+orbit 42  Orbit42   OK
+orbit 43  Orbit43   OK
+orbit 44  Orbit44   OK
+orbit 46  Orbit46   OK
+orbit 47  Orbit47   OK
+orbit 48  Orbit48   OK
+orbit 49  Orbit49   OK
+orbit 50  Orbit50   OK
+orbit 51  Orbit51   OK
+orbit 52  Orbit52   OK
+orbit 53  Orbit53   OK
+orbit 54  Orbit54   OK
+orbit 55  Orbit55   OK
+orbit 56  Orbit56   OK
+orbit 57  Orbit57   OK  [uses 12 of the 21 rows]
+orbit 58  Orbit58   OK
+orbit 59  Orbit59   OK  [uses 12 of the 21 rows]
+orbit 60  Orbit60   OK
+orbit 61  Orbit61   OK
+orbit 62  Orbit62   OK
+orbit 63  Orbit63   OK
+orbit 64  Orbit64   OK  [uses 12 of the 21 rows]
+orbit 65  Orbit65   OK
+orbit 66  Order9    OK  [uses 12 of the 21 rows]
+
+PASS - every declared MomentSystem row transcribes a genuine
+       weight-<=2 moment condition. (Rows a module does not declare
+       are listed, not failed: a smaller hypothesis set is stronger.)

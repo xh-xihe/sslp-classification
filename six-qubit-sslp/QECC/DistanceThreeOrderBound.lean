@@ -105,10 +105,14 @@ invertible binary `r × r` Smith certificate satisfying
 
 The conclusion also records the corresponding bounds for the minimum
 physical representative order.  No numerical value of `smithBeta` is used. -/
-theorem distanceThree_physicalOrder_bound
+theorem distanceThree_physicalOrder_bound_of_representative
     (hd : C.HasDistanceAtLeast d) (hd3 : 3 ≤ d)
-    (U : C.ProjectiveDiagonalGroup) (hU : U ≠ 0) :
-    Nonempty (C.DistanceThreePhysicalOrderBoundConclusion U) := by
+    (U : C.ProjectiveDiagonalGroup) (hU : U ≠ 0)
+    (R : ReducedDiagonalRepresentative n)
+    (hRpres : C.Preserves R.phase)
+    (hRclass : C.projectiveClassMap ⟨ R.phase, hRpres⟩ = U) :
+    Nonempty {H : C.DistanceThreePhysicalOrderBoundConclusion U //
+      H.sourceRepresentative = R} := by
   classical
   have hdTwo : C.HasDistanceAtLeast 2 := by
     intro p hp
@@ -117,8 +121,6 @@ theorem distanceThree_physicalOrder_bound
     C.detectsSingleZ_of_hasDistanceAtLeast_two hdTwo
   have hdetect : C.DetectsNumberOps :=
     C.detectsNumberOps_of_detectsSingleZ hZ
-  obtain ⟨R, hRpres, hRclass, _hgcd, _hphysical, _hprojectiveDvd⟩ :=
-    C.exists_reduced_representative hdetect U hU
   let q := R.q
   have hq : 0 < q := lt_of_lt_of_le Nat.zero_lt_two R.q_ge_two
   letI : NeZero q := ⟨hq.ne'⟩
@@ -285,7 +287,7 @@ theorem distanceThree_physicalOrder_bound
     unfold actualSectorAffineDimension
     rw [← hspan]
     exact hrFirst
-  exact ⟨{
+  exact ⟨⟨{
     sourceRepresentative := R
     sourcePreserves := hRpres
     sourceClass_eq := hRclass
@@ -331,7 +333,25 @@ theorem distanceThree_physicalOrder_bound
     physicalOrder_le_beta_r := hqleBetaR
     physicalOrder_le_beta_n := hqleBetaN
     minimalPhysicalOrder_le_beta_r := hminBetaR
-    minimalPhysicalOrder_le_beta_n := hminBetaN }⟩
+    minimalPhysicalOrder_le_beta_n := hminBetaN }, rfl⟩⟩
+
+
+/-- The class-only entry point retains its original statement. The specified
+representative entry point above also exposes which gate supplies the supports. -/
+theorem distanceThree_physicalOrder_bound
+    (hd : C.HasDistanceAtLeast d) (hd3 : 3 ≤ d)
+    (U : C.ProjectiveDiagonalGroup) (hU : U ≠ 0) :
+    Nonempty (C.DistanceThreePhysicalOrderBoundConclusion U) := by
+  have hdTwo : C.HasDistanceAtLeast 2 := by
+    intro p hp
+    exact hd p (lt_of_lt_of_le hp (by omega))
+  have hZ := C.detectsSingleZ_of_hasDistanceAtLeast_two hdTwo
+  have hdetect := C.detectsNumberOps_of_detectsSingleZ hZ
+  obtain ⟨R, hRpres, hRclass, _, _, _⟩ :=
+    C.exists_reduced_representative hdetect U hU
+  obtain ⟨H⟩ := C.distanceThree_physicalOrder_bound_of_representative
+    hd hd3 U hU R hRpres hRclass
+  exact ⟨H.1⟩
 
 end CodeProjector
 
