@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including actual shell, anchor and parity-frame intermediates; manuscript correspondence incomplete.",
+  "active_modules": 16171,
+  "axiom_roots": 8781,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1722,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 99
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 0,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16171.json",
+      "sha256": "856b579d78831be019a1b19a9b5d05eb766d86953f83167fb230e9328f25fca3"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-8781.json",
+      "sha256": "429459fbe78889486c66ad529bca6ca32e71955fcbcbb1de272d94dbee5c9ff8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-staged-proof-snapshot-10.json",
+      "sha256": "a77d22d1f1dac62c5397c361059a3b2a839c9ca116726ab81a948eac6b6fad78"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-generation-v1.json",
+      "sha256": "c46c7979e4b48418bcd18031002b5e34848c0f5fb6ef52438e8cfa53a84f3a2b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-frame-anchor-completion.json",
+      "sha256": "d36b6177fdb2924558e9a5cee4ab4834bb993fdd73d12137b65044679a82caec"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-type-binding.json",
+      "sha256": "94d4a4eae033cc342729e65f32d090c44ca1a82c252615bb1ef09871b73a7863"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-correspondence-gates-report.json",
+      "sha256": "f0fcef3405b1ef8f345c10b56298e0001a40553799b588305569ea0fcf39b978"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-review.json",
+      "sha256": "65d327f0450b0ef3776727917b6c326ad81ea99ddf4076fe760dc14bb8a8ff1a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-full-build-v1.log",
+      "sha256": "851ec01d5382a60bd0abd8101be85744db34f2c0bac8619a373c6f2dc0ea70c3"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-full-build-v1-exit.json",
+      "sha256": "a69309f8a6e919d4eefd94086c44a6ae1c9de438ece5ee56025ef482644043c6"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-type-inspection-v1.log",
+      "sha256": "1228ec672b442d7e3f9e6856e3da8014ad91cf1780600036a8b8d6a338ffe29a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-type-inspection-v1-exit.json",
+      "sha256": "0189144e5d5e099bb739450127d5c56cf80afa1a21f2e5ab39fd00a43d7a315f"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-axioms-v1.log",
+      "sha256": "d91bb5dd264fa5160d7b76483edc1f1e6ad81299c65f5ee2d302f3f45261eed2"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-axioms-v1-exit.json",
+      "sha256": "0d22dfa847122c3e8a4aec6009616355c2f1b4b96e5805b01e8f783d99b1acd5"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-reproduction-check-v1.log",
+      "sha256": "d7609e9bd585aab34735ad8a14802174624e494fd4836739d89700cb6a6aea47"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/frame-anchor-completion-reproduction-check-v1-exit.json",
+      "sha256": "ab4311b2b37a589899f9bc97a9e4fa0b7ee335606140c43cb30d2779d5b24f35"
+    }
+  ]
+}

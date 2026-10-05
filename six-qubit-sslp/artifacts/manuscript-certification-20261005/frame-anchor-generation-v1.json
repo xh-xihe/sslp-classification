@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": [
+    {
+      "generator": "generate_orbit19_shell_displays.py",
+      "passed": true,
+      "output": "Generated shell projectors and physical pre-contradiction anchor rows\n"
+    },
+    {
+      "generator": "generate_parity_frame_displays.py",
+      "passed": true,
+      "output": "Generated literal physical parity data: 14 30\nGenerated literal physical parity data: 15 30\nGenerated literal physical parity data: 24 35\nExtended actual frame equality: 14\nExtended actual frame equality: 15\nExtended actual frame equality: 24\n"
+    }
+  ],
+  "source_hashes_lf": {
+    "MainTheory/Orbit19ShellDisplays.lean": "2063511fe66000c916c023cd6419ee9b037482e5cbc43aada25704dd19ef3068",
+    "MainTheory/Orbit26PhysicalNorms.lean": "84d90108e423a7a1ff35de51f0e3b22402290ba9900ea6bfcaf9cd60bbbba523",
+    "MainTheory/Orbit26PhysicalDependentAnchors.lean": "71fb4948bf6bd5de3dcd8f662cd2c3ca408abd6047befa8d47e88ef378c3a92d",
+    "MainTheory/Orbit26OrthogonalGram.lean": "82d0071dc43ec2f72d3043bc3575b90287589017e8e54f31087f3eb6f3de8519",
+    "MainTheory/Orbit26NormalizedRows.lean": "bf61c80237294f3cf353485e3003a4e48208be500469d904d39a4dcb81a43992",
+    "MainTheory/Orbit26NonmatchingPhysical.lean": "e1ce7a50d48010498073dfe4a3529c02ad96da4a23435d1879ef5fc64fdca649",
+    "MainTheory/Orbit26MatchingRows.lean": "be2a905d31cf05dfa51df3a906fe3e1a949e4501e1f9e2bfe058a4932b8f5031",
+    "MainTheory/Orbit14ParityFrames.lean": "185a7e6057a4aa2da65a3c8bff672b92a7f49003331bc0e89306cd140418544c",
+    "MainTheory/Orbit15ParityFrames.lean": "bf2841de74fdae586eaa3103d1470b206ebbd0be6dc8a8fbdb6bf69267c4f66d",
+    "MainTheory/Orbit24ParityFrames.lean": "47a993cefc9330d7878d7814acfb4cda242a43e24ce33034508661c36b71305d"
+  },
+  "scope": "Exact-source reconstruction and hashes; separate whole kernel build and audit required."
+}

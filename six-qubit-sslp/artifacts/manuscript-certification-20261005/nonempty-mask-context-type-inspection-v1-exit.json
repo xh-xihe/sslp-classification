@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/export_claim_types.py",
+    "--paper-version",
+    "20261003",
+    "--extra-roots",
+    "artifacts/manuscript-certification-20261005/nonempty-mask-context-extra-roots.json",
+    "--import",
+    "MainTheory.ManuscriptCertificationAudit20261005",
+    "--output",
+    "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 43.68701819999842
+}

@@ -1,0 +1,147 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingRows.lean:26:43: error: unsolved goals
+v w : Vec
+A B F G : M2
+⊢ v 0 * (starRingEnd ℂ) (A 0 0) * Jmat 0 0 * G 0 0 * (starRingEnd ℂ) (w 0) +
+                                                                  v 0 * (starRingEnd ℂ) (A 0 0) * Jmat 0 0 * G 1 0 *
+                                                                    (starRingEnd ℂ) (w 1) +
+                                                                v 0 * (starRingEnd ℂ) (A 0 0) * Jmat 0 1 * G 0 1 *
+                                                                  (starRingEnd ℂ) (w 0) +
+                                                              v 0 * (starRingEnd ℂ) (A 0 0) * Jmat 0 1 * G 1 1 *
+                                                                (starRingEnd ℂ) (w 1) +
+                                                            v 0 * Jmat 0 0 * (starRingEnd ℂ) (B 0 0) * F 0 0 *
+                                                              (starRingEnd ℂ) (w 0) +
+                                                          v 0 * Jmat 0 0 * (starRingEnd ℂ) (B 0 0) * F 1 0 *
+                                                            (starRingEnd ℂ) (w 1) +
+                                                        v 0 * (starRingEnd ℂ) (A 0 1) * Jmat 1 0 * G 0 0 *
+                                                          (starRingEnd ℂ) (w 0) +
+                                                      v 0 * (starRingEnd ℂ) (A 0 1) * Jmat 1 0 * G 1 0 *
+                                                        (starRingEnd ℂ) (w 1) +
+                                                    v 0 * (starRingEnd ℂ) (A 0 1) * Jmat 1 1 * G 0 1 *
+                                                      (starRingEnd ℂ) (w 0) +
+                                                  v 0 * (starRingEnd ℂ) (A 0 1) * Jmat 1 1 * G 1 1 *
+                                                    (starRingEnd ℂ) (w 1) +
+                                                v 0 * Jmat 1 0 * (starRingEnd ℂ) (B 0 1) * F 0 0 *
+                                                  (starRingEnd ℂ) (w 0) +
+                                              v 0 * Jmat 1 0 * (starRingEnd ℂ) (B 0 1) * F 1 0 * (starRingEnd ℂ) (w 1) +
+                                            v 0 * Jmat 0 1 * (starRingEnd ℂ) (B 0 0) * F 0 1 * (starRingEnd ℂ) (w 0) +
+                                          v 0 * Jmat 0 1 * (starRingEnd ℂ) (B 0 0) * F 1 1 * (starRingEnd ℂ) (w 1) +
+                                        v 0 * Jmat 1 1 * (starRingEnd ℂ) (B 0 1) * F 0 1 * (starRingEnd ℂ) (w 0) +
+                                      v 0 * Jmat 1 1 * (starRingEnd ℂ) (B 0 1) * F 1 1 * (starRingEnd ℂ) (w 1) +
+                                    Jmat 0 0 * G 0 0 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (A 1 0) +
+                                  Jmat 0 0 * F 0 0 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (B 1 0) +
+                                Jmat 0 0 * G 1 0 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (A 1 0) +
+                              Jmat 0 0 * F 1 0 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (B 1 0) +
+                            Jmat 1 0 * G 0 0 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (A 1 1) +
+                          Jmat 1 0 * F 0 0 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (B 1 1) +
+                        Jmat 1 0 * G 1 0 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (A 1 1) +
+                      Jmat 1 0 * F 1 0 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (B 1 1) +
+                    Jmat 0 1 * G 0 1 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (A 1 0) +
+                  Jmat 0 1 * F 0 1 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (B 1 0) +
+                Jmat 0 1 * G 1 1 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (A 1 0) +
+              Jmat 0 1 * F 1 1 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (B 1 0) +
+            Jmat 1 1 * G 0 1 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (A 1 1) +
+          Jmat 1 1 * F 0 1 * (starRingEnd ℂ) (w 0) * v 1 * (starRingEnd ℂ) (B 1 1) +
+        Jmat 1 1 * G 1 1 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (A 1 1) +
+      Jmat 1 1 * F 1 1 * (starRingEnd ℂ) (w 1) * v 1 * (starRingEnd ℂ) (B 1 1) =
+    (starRingEnd ℂ) (A 0 0) * Jmat 0 0 * G 0 0 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                                  (starRingEnd ℂ) (A 0 0) * Jmat 0 0 * G 1 0 *
+                                                                      (starRingEnd ℂ) (w 1) *
+                                                                    (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                                (starRingEnd ℂ) (A 0 0) * Jmat 0 1 * G 0 1 *
+                                                                    (starRingEnd ℂ) (w 0) *
+                                                                  (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                              (starRingEnd ℂ) (A 0 0) * Jmat 0 1 * G 1 1 *
+                                                                  (starRingEnd ℂ) (w 1) *
+                                                                (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                            Jmat 0 0 * G 0 0 * (starRingEnd ℂ) (w 0) *
+                                                                (starRingEnd ℂ) (A 1 0) *
+                                                              (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                                          Jmat 0 0 * (starRingEnd ℂ) (B 0 0) * F 0 0 *
+                                                              (starRingEnd ℂ) (w 0) *
+                                                            (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                        Jmat 0 0 * (starRingEnd ℂ) (B 0 0) * F 1 0 *
+                                                            (starRingEnd ℂ) (w 1) *
+                                                          (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                                      Jmat 0 0 * F 0 0 * (starRingEnd ℂ) (w 0) *
+                                                          (starRingEnd ℂ) (B 1 0) *
+                                                        (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                                    Jmat 0 0 * G 1 0 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (A 1 0) *
+                                                      (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                                  Jmat 0 0 * F 1 0 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (B 1 0) *
+                                                    (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                                (starRingEnd ℂ) (A 0 1) * Jmat 1 0 * G 0 0 * (starRingEnd ℂ) (w 0) *
+                                                  (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                              (starRingEnd ℂ) (A 0 1) * Jmat 1 0 * G 1 0 * (starRingEnd ℂ) (w 1) *
+                                                (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                            (starRingEnd ℂ) (A 0 1) * Jmat 1 1 * G 0 1 * (starRingEnd ℂ) (w 0) *
+                                              (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                          (starRingEnd ℂ) (A 0 1) * Jmat 1 1 * G 1 1 * (starRingEnd ℂ) (w 1) *
+                                            (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                        Jmat 1 0 * G 0 0 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (A 1 1) *
+                                          (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                      Jmat 1 0 * (starRingEnd ℂ) (B 0 1) * F 0 0 * (starRingEnd ℂ) (w 0) *
+                                        (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                    Jmat 1 0 * (starRingEnd ℂ) (B 0 1) * F 1 0 * (starRingEnd ℂ) (w 1) *
+                                      (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                                  Jmat 1 0 * F 0 0 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (B 1 1) *
+                                    (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                                Jmat 1 0 * G 1 0 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (A 1 1) *
+                                  (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                              Jmat 1 0 * F 1 0 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (B 1 1) *
+                                (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                            Jmat 0 1 * G 0 1 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (A 1 0) *
+                              (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                          Jmat 0 1 * (starRingEnd ℂ) (B 0 0) * F 0 1 * (starRingEnd ℂ) (w 0) *
+                            (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                        Jmat 0 1 * (starRingEnd ℂ) (B 0 0) * F 1 1 * (starRingEnd ℂ) (w 1) *
+                          (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+                      Jmat 0 1 * F 0 1 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (B 1 0) *
+                        (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                    Jmat 0 1 * G 1 1 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (A 1 0) *
+                      (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                  Jmat 0 1 * F 1 1 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (B 1 0) *
+                    (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+                Jmat 1 1 * G 0 1 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (A 1 1) *
+                  (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+              Jmat 1 1 * (starRingEnd ℂ) (B 0 1) * F 0 1 * (starRingEnd ℂ) (w 0) *
+                (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+            Jmat 1 1 * (starRingEnd ℂ) (B 0 1) * F 1 1 * (starRingEnd ℂ) (w 1) *
+              (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+          Jmat 1 1 * F 0 1 * (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (B 1 1) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+        Jmat 1 1 * G 1 1 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (A 1 1) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+      Jmat 1 1 * F 1 1 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) (B 1 1) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingRows.lean:29:51: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵r̵o̵w̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵V̵e̵c̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵t̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵i̵n̵T̵h̵e̵o̵r̵y̵.̵O̵r̵b̵i̵t̵2̵6̵.̵c̵j̵_̵a̵p̵p̵l̵y̵,̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵'̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵,̵C̵o̵m̵p̵l̵e̵x̵.̵s̵t̵a̵r̵_̵d̵e̵f̵]̵[̲r̲o̲w̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲V̲e̲c̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲a̲d̲d̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲t̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲,̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲i̲n̲T̲h̲e̲o̲r̲y̲.̲O̲r̲b̲i̲t̲2̲6̲.̲c̲j̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲t̲a̲r̲_̲a̲d̲d̲,̲
+  ̲ ̲ ̲ ̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲'̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲s̲t̲a̲r̲_̲d̲e̲f̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingRows.lean:43:2: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingRows.lean:57:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a₁ • ?a₂ • ?b
+in the target expression
+  star dv ⬝ᵥ (A 0 * (A 0)ᴴ) *ᵥ dv + star dv ⬝ᵥ (A 1 * (A 1)ᴴ) *ᵥ dv + star dv ⬝ᵥ (A 2 * (A 2)ᴴ) *ᵥ dv =
+    (1 / 4) • (star dv ⬝ᵥ projector cv *ᵥ dv) + 2 • (star dv ⬝ᵥ ((1 / 4) • projector dv) *ᵥ dv)
+
+A : Fin 3 → M2
+C3 D3 : M2
+cv dv : Vec
+hv : nsq dv = 1
+hC : C3 * C3ᴴ = (1 / 4) • projector cv
+hD : D3 * D3ᴴ = (1 / 4) • projector dv
+hm : ∑ g, A g * (A g)ᴴ = C3 * C3ᴴ + 2 • (D3 * D3ᴴ)
+he :
+  star dv ⬝ᵥ (A 0 * (A 0)ᴴ) *ᵥ dv + star dv ⬝ᵥ (A 1 * (A 1)ᴴ) *ᵥ dv + star dv ⬝ᵥ (A 2 * (A 2)ᴴ) *ᵥ dv =
+    (1 / 4) • (star dv ⬝ᵥ projector cv *ᵥ dv) + 2 • (star dv ⬝ᵥ ((1 / 4) • projector dv) *ᵥ dv)
+⊢ ∑ g, nsq (row dv (A g)) = 1 / 2 + Complex.normSq (star cv ⬝ᵥ dv) / 4

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_frame_anchor_reproduction.py",
+    "--output",
+    "artifacts/manuscript-certification-20261005/frame-anchor-generation-v1.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.12984390003839508
+}

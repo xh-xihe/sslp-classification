@@ -1,0 +1,9 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-frame-anchor-completion.json",
+  "type_evidence_sha256": "d36b6177fdb2924558e9a5cee4ab4834bb993fdd73d12137b65044679a82caec",
+  "scope": "Only listed actual physical formulas. Other SI intermediate obligations remain incomplete."
+}

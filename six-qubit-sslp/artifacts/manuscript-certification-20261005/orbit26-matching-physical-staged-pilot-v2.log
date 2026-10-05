@@ -1,0 +1,103 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:105:22: error: Type mismatch: After simplification, term
+  have this := h0;
+  this
+ has type
+  r g 0 = 0
+but is expected to have type
+  r g 1 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «0».«1».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨0, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨0, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨1, ⋯⟩)) < 1 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «0».«2».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨0, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨0, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨2, ⋯⟩)) < 1 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «1».«0».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨1, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨1, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨0, ⋯⟩)) < 1 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «1».«2».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨1, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨1, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨2, ⋯⟩)) < 1 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «2».«0».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨2, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨2, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨0, ⋯⟩)) < 1 / 4
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingPhysical.lean:128:12: error: linarith failed to find a contradiction
+case «2».«1».h1.h
+r : Fin 3 → Vec
+hb : ∀ (g : Fin 3), nsq (r g) ≤ 1 / 4
+ha : ∀ (j : Fin 2), ∑ g, Complex.normSq (r g j) ≤ 3 / 8
+he : ∀ (g h : Fin 3), g < h → SixQubit.Block26.Jform (r g 0) (r g 1) (r h 0) (r h 1) = 0
+h0 : nsq (r 0) ≤ 1 / 4
+h1 : nsq (r 1) ≤ 1 / 4
+h2 : nsq (r 2) ≤ 1 / 4
+hs : nsq (r 0) + nsq (r 1) + nsq (r 2) = 1 / 2
+hk : r ((fun i => i) ⟨2, ⋯⟩) = 0
+hzN : nsq (r ((fun i => i) ⟨2, ⋯⟩)) = 0
+hg : True
+a✝ : nsq (r ((fun i => i) ⟨1, ⋯⟩)) < 1 / 4
+⊢ False
+failed

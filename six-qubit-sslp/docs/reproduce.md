@@ -75,6 +75,16 @@ python tools/verification/check_split_matrix_reproduction.py
 This checks exact source reconstruction; the separate whole kernel build and
 standard-axiom audit remain required.
 
+## Shell and parity-frame sources
+
+```console
+python tools/verification/check_frame_anchor_reproduction.py
+```
+
+This checks the exact shell/parity source reconstruction and hashes the ten
+accepted frame/anchor sources. Whole kernel building and the transitive
+standard-axiom audit remain separate required checks.
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

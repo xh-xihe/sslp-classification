@@ -4,7 +4,7 @@
   "status": "in_progress",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
   },
   "claim_count": 1830,
   "candidate_count": 1823,
@@ -25,32 +25,32 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 16161,
+  "active_lean_modules": 16171,
   "whole_build": {
     "status": "PASS",
-    "modules": 16161,
-    "rebuilt": 14,
-    "reused": 16147,
-    "record": "full-build-success-16161.json",
-    "log": "split-matrix-completion-full-build-v1.log"
+    "modules": 16171,
+    "rebuilt": 12,
+    "reused": 16159,
+    "record": "full-build-success-16171.json",
+    "log": "frame-anchor-completion-full-build-v1.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 8627,
+    "roots": 8781,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8627.json",
-    "log": "split-matrix-completion-axioms-v1.log"
+    "record": "axioms-8781.json",
+    "log": "frame-anchor-completion-axioms-v1.log"
   },
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1692,
+    "covered": 1722,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 129
+    "unreviewed": 99
   },
   "kernel_type_inspections": [
     {
@@ -108,14 +108,22 @@
     {
       "record": "kernel-types-split-matrix-completion.json",
       "declarations": 4197
+    },
+    {
+      "record": "kernel-types-nonempty-mask-context.json",
+      "declarations": 4065
+    },
+    {
+      "record": "kernel-types-frame-anchor-completion.json",
+      "declarations": 4221
     }
   ],
   "fully_kernel_manuscript_certification": "not_complete",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16161,
-    "axiom_roots": 8627,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16161.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8627.json"
+    "modules": 16171,
+    "axiom_roots": 8781,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16171.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8781.json"
   },
   "current_tool_regressions": {
     "certification_tools": 44,
@@ -139,7 +147,7 @@
     "claims": "incomplete",
     "prose-review": "incomplete",
     "errata": "incomplete",
-    "log": "split-matrix-completion-correspondence-gates.log"
+    "log": "frame-anchor-completion-correspondence-gates.log"
   },
   "publication": {
     "status": "PASS",
@@ -150,29 +158,29 @@
   },
   "last_accepted_whole_build": {
     "status": "PASS",
-    "modules": 16161,
-    "rebuilt": 14,
-    "reused": 16147,
-    "record": "full-build-success-16161.json",
-    "log": "split-matrix-completion-full-build-v1.log"
+    "modules": 16171,
+    "rebuilt": 12,
+    "reused": 16159,
+    "record": "full-build-success-16171.json",
+    "log": "frame-anchor-completion-full-build-v1.log"
   },
   "last_accepted_axiom_audit": {
     "status": "PASS",
-    "roots": 8627,
+    "roots": 8781,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8627.json",
-    "log": "split-matrix-completion-axioms-v1.log"
+    "record": "axioms-8781.json",
+    "log": "frame-anchor-completion-axioms-v1.log"
   },
   "current_prose_review": {
     "status": "partial",
     "reviewed_blocks": 89,
-    "covered_si_blocks": 83,
+    "covered_si_blocks": 84,
     "held_main_gaps": 5,
-    "si_qualification_gaps": 1,
+    "si_qualification_gaps": 0,
     "record": "results/prose-review-20261003.json"
   },
   "initial_sector_build": {
@@ -557,8 +565,19 @@
     "record": "artifacts/manuscript-certification-20261005/completion-staged-proof-snapshot-72.json"
   },
   "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/split-matrix-work-in-progress.json",
-    "scope": "Literal arbitrary split enumerators and output conventions; orbit-28 complete probabilities; orbit-32 parity notation; orbit-26 physical outer, anchor and matrix moment equations and generic dependent-anchor algebra.",
-    "status": "canonical_whole_build_running"
+    "record": "artifacts/manuscript-certification-20261005/frame-anchor-work-in-progress.json",
+    "scope": "Ten canonical staged sources; previous acceptance excludes these until fresh whole build, type inspection and audit pass."
+  },
+  "identified_si_qualifications": 0,
+  "current_context_revalidation": {
+    "record": "artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json",
+    "status": "PASS",
+    "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
+    "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
+  },
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 16171
   }
 }

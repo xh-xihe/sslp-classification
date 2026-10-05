@@ -2,7 +2,7 @@
 
 Review status: **partial**.
 
-Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited.
+Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited. Localized orbit-31 correction: only line 12122 gains a nonempty-mask hypothesis. Every unchanged assertion and prose context was revalidated explicitly; no equation or main-text byte changed.
 
 This is a version-bound review record, not a successful kernel run.
 No previous-version coverage is transferred. No manuscript text is reproduced.
@@ -179,9 +179,9 @@ Every coordinate face is the convex hull of the actual supported vertices.
 
 - `MainTheory.Orbit31MomentFaces.convex_hull_supported_vertices`
 
-## supplementary.tex:12124 — gap
+## supplementary.tex:12122 — covered
 
-The stated iff needs a nonempty-mask or nonempty-face hypothesis. For the empty mask the vertex union is empty, but normalization excludes an exact empty support. The repository proves the corrected iff and this boundary obstruction; the authoritative SI source is unchanged.
+The SI now explicitly restricts the exact-support relative-interior iff to nonempty masks. The exact vertex-union theorem includes this condition; the empty union and normalization obstruction are proved separately.
 
 - `MainTheory.Orbit31RelativeInterior.relative_interior_iff_vertexUnion`
 - `MainTheory.Orbit31RelativeInterior.empty_vertexUnion`

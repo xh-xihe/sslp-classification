@@ -1,0 +1,438 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:remark@10480",
+      "statement_sha256": "8780c384486a217733009050b6e92b0f7588d60f95dc79632ea8a1d8ea472eef",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.literal_words",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.complete_survivor_set",
+        "MainTheory.Generated.Orbit31PrintedSupportOrbits.unique_type",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go",
+        "MainTheory.Orbit31FinalCross.Type01.no_go",
+        "MainTheory.Orbit31FinalSameState.final_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The finite support-mask classification is exact and exhaustive, with sixteen literal symmetry types. Each type has its stated physical analytic exclusion. The computational-step qualification describes certificate generation; the accepted Lean kernel independently checks the finite coverage and every exclusion."
+    },
+    {
+      "id": "supplementary.tex:lem:q4o26anchorsingular",
+      "statement_sha256": "110d7c9c29aa82ece39e97045853f4a5bba1a5df31a90f7757b2368840b2513f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalNorms.physical_anchor_singular"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Both literal physical anchor determinants vanish, with every norm, moment, nonzero-column and coordinate-axis hypothesis of the algebraic anchor proof derived from the actual physical probabilities and KL matrices."
+    },
+    {
+      "id": "supplementary.tex:equation@10939",
+      "statement_sha256": "0380c2fe1cf98ad61b181f6cdac4b1a44c3d53e68baa14fef174d5e63ad90cb8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26NormalizedRows.conjugate_row",
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_rows"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The row definitions are the actual Hermitian and conjugate-linear contractions of the printed block matrices. Conjugating a Hermitian row gives precisely the transposed-vector contraction with the entrywise conjugate matrix."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26D3rankone",
+      "statement_sha256": "fdb9d11398dde38c62af36d4a4e1f1f3a6ade4e39ba90c2886569756be1ab7e6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_anchor_projectors",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal actual anchor Gram matrices equal one quarter of their unit-direction projectors. The normalized direction is the actual first column divided by square root of one eighth."
+    },
+    {
+      "id": "supplementary.tex:equation@10961",
+      "statement_sha256": "4afb42ef417c318697ffe8abd80be7d57cfea8c078415d3f10166e5e8906b2d0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26NormalizedRows.conjugate_row",
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_rows"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The row definitions are the actual Hermitian and conjugate-linear contractions of the printed block matrices. Conjugating a Hermitian row gives precisely the transposed-vector contraction with the entrywise conjugate matrix."
+    },
+    {
+      "id": "supplementary.tex:equation@10983",
+      "statement_sha256": "b5aec21eeaaf94c2566a93a34c99663eed73f3f651a0a0f07fb4702c5d1ca05d",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalNorms.axis_bound",
+        "MainTheory.Orbit26NormalizedRows.row_nsq",
+        "MainTheory.Orbit26PhysicalNorms.physical_column_masses"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: For a unit contraction vector each of the two actual column axes has total squared row norm at most three eighths, using the physical hexagon probability normal form."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26dependentanchors",
+      "statement_sha256": "aaf70b7a2b005798247e8ccea826bd251a41e1a2b49d3fbdbb79ca900a127335",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_anchor_vectors"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual two anchor blocks are rank-one column matrices with unit-modulus phase ratios. Both first-column squared norms are exactly one eighth; no final no-code theorem supplies the decomposition."
+    },
+    {
+      "id": "supplementary.tex:equation@11009",
+      "statement_sha256": "3c2d73db42ed5d0daec6eed5a4671ebf9215d5ba3a783e2b65adcfb2dda60ac1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26NormalizedRows.conjugate_row",
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_rows"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The row definitions are the actual Hermitian and conjugate-linear contractions of the printed block matrices. Conjugating a Hermitian row gives precisely the transposed-vector contraction with the entrywise conjugate matrix."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26anchorrows",
+      "statement_sha256": "568d8cbac089017e4f22e0b515c117f3e0bb46111bbb0259b92981f0456e77dc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_rows",
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_nonmatching_rows"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Both displayed phase-dependent row relations follow entry by entry from the actual physical anchor equation and the actual rank-one decompositions. Unequal phase ratios force both rows to vanish."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26nonmatchouter",
+      "statement_sha256": "2560d4d085138436240e86ae18c3e6e473fb52731c9f402c08cfb18cf3c98a21",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26NonmatchingPhysical.physical_nonmatching_projectors",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: In the nonmatching phase branch every actual nonanchor Gram matrix is one quarter of the complementary anchor-direction projector, and the two normalized anchor projectors sum to the identity."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26nonmatchanchor",
+      "statement_sha256": "566f335a59424c61e54939f33f3ac7aa98c0d35319f45e3582ab232ad6ea5b57",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_anchor_projectors",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal actual anchor Gram matrices equal one quarter of their unit-direction projectors. The normalized direction is the actual first column divided by square root of one eighth."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26rhoanchors",
+      "statement_sha256": "6b0603a4fa9d22654be1adf580900f5f5f0371b0cf29cdc5d9c0a13e8dcf7172",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26PhysicalDependentAnchors.physical_rho_anchors",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual first-site reduced Gram sum equals one half of the sum of the two actual unit-anchor projectors, directly from the physical anchor moment equation."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-shellcoords",
+      "statement_sha256": "1d62a94044d351fc26df1ab8c69bc0428c7d9d9322cf4869bafada46b83a24f0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.bit",
+        "MainTheory.Orbit19ShellDisplays.w",
+        "MainTheory.Orbit19ShellDisplays.literal_fibers"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual six-bit orbit-19 fibers have exactly the printed shell/tail parity table, with the first-four Hamming weight and the two final bits in the SI order."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-shelltable",
+      "statement_sha256": "42a4412f9fd13654c4450fe240c7ae6b7de0c2f82b2bfe181d925850314b5a6c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.bit",
+        "MainTheory.Orbit19ShellDisplays.w",
+        "MainTheory.Orbit19ShellDisplays.literal_fibers"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual six-bit orbit-19 fibers have exactly the printed shell/tail parity table, with the first-four Hamming weight and the two final bits in the SI order."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-shellprojectors",
+      "statement_sha256": "90333e68728e7de2d062dd01e5c7d306e568742328a31b6916a59c218ce7a9d0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.g0",
+        "MainTheory.Orbit19ShellDisplays.g4",
+        "MainTheory.Orbit19ShellDisplays.square_weight",
+        "MainTheory.Orbit19ShellDisplays.shell_projectors"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal quadratic shell indicators and Boolean Hamming-weight square expansion are checked on every supported six-bit word, with exact rational coefficients."
+    },
+    {
+      "id": "supplementary.tex:equation@14958",
+      "statement_sha256": "936b71d3a93bf60752fa1f05609962c94429e523c67ef31089908f04a960e061",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.g0",
+        "MainTheory.Orbit19ShellDisplays.g4",
+        "MainTheory.Orbit19ShellDisplays.square_weight",
+        "MainTheory.Orbit19ShellDisplays.shell_projectors"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal quadratic shell indicators and Boolean Hamming-weight square expansion are checked on every supported six-bit word, with exact rational coefficients."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-anchor-equality",
+      "statement_sha256": "9153ece847d5f796e34fa9460ef52879c2f78adfb8f0d8d7b21951c4f2b33d5f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.AnchorData",
+        "MainTheory.Orbit19ShellDisplays.anchor_data_of_rows",
+        "MainTheory.Orbit19ShellDisplays.physical_anchor_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Complete physical weight-at-most-two KL gives all eight individual half-angle-flip anchor monomials, equal bottom/top anchor masses, total anchor mass one half, and both zero mass products. These are extracted before the native no-go contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-u-restriction",
+      "statement_sha256": "ba38f463cc6b9f7a479d942e643497d6ea3840eab1979caffd7df3607a28186b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.u",
+        "MainTheory.Orbit19ShellDisplays.h",
+        "MainTheory.Orbit19ShellDisplays.u_restriction"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal tail-mismatch polynomial equals one minus the shell indicator on the actual bottom fiber and the shell indicator on the actual top fiber."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-anchor-halfmass",
+      "statement_sha256": "466cddb52d2d703c42e70a9160bde2de8071dc061c5f966dd14a2600bb0ae47a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.AnchorData",
+        "MainTheory.Orbit19ShellDisplays.anchor_data_of_rows",
+        "MainTheory.Orbit19ShellDisplays.physical_anchor_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Complete physical weight-at-most-two KL gives all eight individual half-angle-flip anchor monomials, equal bottom/top anchor masses, total anchor mass one half, and both zero mass products. These are extracted before the native no-go contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-characters",
+      "statement_sha256": "6cbf1d3c88fa547290a5740db78be815cf87489b5a48b5c95ddcb5de1b14745c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.chi",
+        "MainTheory.Orbit19ShellDisplays.sigma",
+        "MainTheory.Orbit19ShellDisplays.sign",
+        "MainTheory.Orbit19ShellDisplays.phi5",
+        "MainTheory.Orbit19ShellDisplays.phi6",
+        "MainTheory.Orbit19ShellDisplays.phi5_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi6_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi5_expansion",
+        "MainTheory.Orbit19ShellDisplays.phi6_expansion"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: All character and point-indicator formulas use the printed sites and signs. The exact polynomial expansions and the four top-anchor indicators are kernel-checked on the actual top fiber."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-Phi5",
+      "statement_sha256": "e9c31a64400003a5a5990d34a32f93c4053adb1de6aac080cb941071a1e3ef9f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.chi",
+        "MainTheory.Orbit19ShellDisplays.sigma",
+        "MainTheory.Orbit19ShellDisplays.sign",
+        "MainTheory.Orbit19ShellDisplays.phi5",
+        "MainTheory.Orbit19ShellDisplays.phi6",
+        "MainTheory.Orbit19ShellDisplays.phi5_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi6_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi5_expansion",
+        "MainTheory.Orbit19ShellDisplays.phi6_expansion"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: All character and point-indicator formulas use the printed sites and signs. The exact polynomial expansions and the four top-anchor indicators are kernel-checked on the actual top fiber."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-Phi5-anchor",
+      "statement_sha256": "f3d99bfe2954f4008fdd77d49b9a2b4491cce2d9166f5d2da314923ab002fffe",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.chi",
+        "MainTheory.Orbit19ShellDisplays.sigma",
+        "MainTheory.Orbit19ShellDisplays.sign",
+        "MainTheory.Orbit19ShellDisplays.phi5",
+        "MainTheory.Orbit19ShellDisplays.phi6",
+        "MainTheory.Orbit19ShellDisplays.phi5_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi6_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi5_expansion",
+        "MainTheory.Orbit19ShellDisplays.phi6_expansion"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: All character and point-indicator formulas use the printed sites and signs. The exact polynomial expansions and the four top-anchor indicators are kernel-checked on the actual top fiber."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-X5-anchor0",
+      "statement_sha256": "e690a779c91a1ed3e854c7028633cf4c43eb619ce6d5fedcea01ea775928c7ad",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.AnchorData",
+        "MainTheory.Orbit19ShellDisplays.anchor_data_of_rows",
+        "MainTheory.Orbit19ShellDisplays.physical_anchor_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Complete physical weight-at-most-two KL gives all eight individual half-angle-flip anchor monomials, equal bottom/top anchor masses, total anchor mass one half, and both zero mass products. These are extracted before the native no-go contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-Phi6",
+      "statement_sha256": "d0891704164c159d0aefe44c243ca9db518e65d1a447340ebe60892647f068c2",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.chi",
+        "MainTheory.Orbit19ShellDisplays.sigma",
+        "MainTheory.Orbit19ShellDisplays.sign",
+        "MainTheory.Orbit19ShellDisplays.phi5",
+        "MainTheory.Orbit19ShellDisplays.phi6",
+        "MainTheory.Orbit19ShellDisplays.phi5_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi6_anchor",
+        "MainTheory.Orbit19ShellDisplays.phi5_expansion",
+        "MainTheory.Orbit19ShellDisplays.phi6_expansion"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: All character and point-indicator formulas use the printed sites and signs. The exact polynomial expansions and the four top-anchor indicators are kernel-checked on the actual top fiber."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-X6-anchor0",
+      "statement_sha256": "6567facffe548757037fe019192bf6f29cc1bc3ef5d7a4a56fd160128effed73",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.AnchorData",
+        "MainTheory.Orbit19ShellDisplays.anchor_data_of_rows",
+        "MainTheory.Orbit19ShellDisplays.physical_anchor_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Complete physical weight-at-most-two KL gives all eight individual half-angle-flip anchor monomials, equal bottom/top anchor masses, total anchor mass one half, and both zero mass products. These are extracted before the native no-go contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-P0Q0",
+      "statement_sha256": "36c6167a1f7bcf7826d95fbf24458ccb68b9edb18328a3d680e49b12ac36c7ca",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.AnchorData",
+        "MainTheory.Orbit19ShellDisplays.anchor_data_of_rows",
+        "MainTheory.Orbit19ShellDisplays.physical_anchor_data"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Complete physical weight-at-most-two KL gives all eight individual half-angle-flip anchor monomials, equal bottom/top anchor masses, total anchor mass one half, and both zero mass products. These are extracted before the native no-go contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o15-parityfibers",
+      "statement_sha256": "7570bda594d2d9444950f54cb9427c30700bdb354657804f3aa29796a368bba9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit15ParityFrames.effective",
+        "MainTheory.Orbit15ParityFrames.parity",
+        "MainTheory.Orbit15ParityFrames.literal_fibers",
+        "MainTheory.Orbit15ParityFrames.pack_reconstruction"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual orbit-15 fibers are equivalent to the printed four-bit even/odd parity condition together with the fixed or repeated physical coordinate. Every supported word reconstructs uniquely from those effective coordinates."
+    },
+    {
+      "id": "supplementary.tex:eq:o15-bottomword",
+      "statement_sha256": "24dbc3d5c6b12f10d67b17d1053676bfd540208944c5cd5dabb9c8c6de98f529",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit15ParityFrames.pack",
+        "MainTheory.Orbit15ParityFrames.spinor",
+        "MainTheory.Orbit15ParityFrames.pack_injective",
+        "MainTheory.Orbit15ParityFrames.bottom_coordinates",
+        "MainTheory.Orbit15ParityFrames.top_coordinates",
+        "MainTheory.Orbit15ParityFrames.actual_bottom_spinor",
+        "MainTheory.Orbit15ParityFrames.actual_top_spinor",
+        "MainTheory.Orbit15ParityFrames.bottom_labels_exact",
+        "MainTheory.Orbit15ParityFrames.top_labels_exact"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal orbit-15 effective-coordinate spinors reconstruct both physical state expansions in the SI order. The bottom and top labels are bijections onto the complete parity fibers, retaining the actual fixed/repetition sites."
+    },
+    {
+      "id": "supplementary.tex:eq:o15-frameequality",
+      "statement_sha256": "1a8c2b839c08032f05d2725a2c112466916879aa58e81177308cc900b57a5be0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit15ParityFrames.bottomFrame",
+        "MainTheory.Orbit15ParityFrames.topFrame",
+        "MainTheory.Orbit15ParityFrames.frame_data_of_rows",
+        "MainTheory.Orbit15ParityFrames.physical_frame_data",
+        "MainTheory.Orbit15ParityFrames.physical_frame_equality"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Every entry of the actual orbit-15 two-by-two frame equality follows from native physical KL and moment rows before any no-go contradiction. The sums run over all eight literal parity labels."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-parityfibers",
+      "statement_sha256": "d130ffab1ebb347d38b40b6a6dd719e45a5635b049ee5fec3a85d9662d0ffb99",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit24ParityFrames.effective",
+        "MainTheory.Orbit24ParityFrames.parity",
+        "MainTheory.Orbit24ParityFrames.literal_fibers",
+        "MainTheory.Orbit24ParityFrames.pack_reconstruction"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual orbit-24 fibers are equivalent to the printed four-bit even/odd parity condition together with the fixed or repeated physical coordinate. Every supported word reconstructs uniquely from those effective coordinates."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-bottomword",
+      "statement_sha256": "c33222ccabcdcfdb93cbd1ad176a3f9ebc7c2f070666af846a60951236f015ff",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit24ParityFrames.pack",
+        "MainTheory.Orbit24ParityFrames.spinor",
+        "MainTheory.Orbit24ParityFrames.pack_injective",
+        "MainTheory.Orbit24ParityFrames.bottom_coordinates",
+        "MainTheory.Orbit24ParityFrames.top_coordinates",
+        "MainTheory.Orbit24ParityFrames.actual_bottom_spinor",
+        "MainTheory.Orbit24ParityFrames.actual_top_spinor",
+        "MainTheory.Orbit24ParityFrames.bottom_labels_exact",
+        "MainTheory.Orbit24ParityFrames.top_labels_exact"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal orbit-24 effective-coordinate spinors reconstruct both physical state expansions in the SI order. The bottom and top labels are bijections onto the complete parity fibers, retaining the actual fixed/repetition sites."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-frameequality",
+      "statement_sha256": "7b67b74a5e23125f527be0e526dee390fbedaca381665e48f065f0b39eac5aa6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit24ParityFrames.bottomFrame",
+        "MainTheory.Orbit24ParityFrames.topFrame",
+        "MainTheory.Orbit24ParityFrames.frame_data_of_rows",
+        "MainTheory.Orbit24ParityFrames.physical_frame_data",
+        "MainTheory.Orbit24ParityFrames.physical_frame_equality"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: Every entry of the actual orbit-24 two-by-two frame equality follows from native physical KL and moment rows before any no-go contradiction. The sums run over all eight literal parity labels."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-parityfibers",
+      "statement_sha256": "c90afcdc41caeeae562e5093febfde3a14f66dee1861b96175b5dd0553a31738",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14ParityFrames.effective",
+        "MainTheory.Orbit14ParityFrames.parity",
+        "MainTheory.Orbit14ParityFrames.literal_fibers",
+        "MainTheory.Orbit14ParityFrames.pack_reconstruction"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The actual orbit-14 fibers are equivalent to the printed four-bit even/odd parity condition together with the fixed or repeated physical coordinate. Every supported word reconstructs uniquely from those effective coordinates."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-bottomword",
+      "statement_sha256": "bcc60e3a20dca28f1b6040ad5c1fd97a0d3db0baa86251f4522dc596cb6f1e43",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14ParityFrames.pack",
+        "MainTheory.Orbit14ParityFrames.spinor",
+        "MainTheory.Orbit14ParityFrames.pack_injective",
+        "MainTheory.Orbit14ParityFrames.bottom_coordinates",
+        "MainTheory.Orbit14ParityFrames.top_coordinates",
+        "MainTheory.Orbit14ParityFrames.actual_bottom_spinor",
+        "MainTheory.Orbit14ParityFrames.actual_top_spinor",
+        "MainTheory.Orbit14ParityFrames.bottom_labels_exact",
+        "MainTheory.Orbit14ParityFrames.top_labels_exact"
+      ],
+      "review": "20261005 physical frame/anchor type and context review: The literal orbit-14 effective-coordinate spinors reconstruct both physical state expansions in the SI order. The bottom and top labels are bijections onto the complete parity fibers, retaining the actual fixed/repetition sites."
+    }
+  ]
+}

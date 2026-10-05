@@ -16,6 +16,7 @@ provenance for older construction routes.
 | `verification/check_orbit31_reproduction.py` | Forty exact source-reproduction checks for current literal moment, support, physical phase and enumerator bridges; requires separate kernel build and axiom audit |
 | `verification/check_orbit30_reproduction.py` | Eight exact source-reconstruction checks for the literal physical K5, graph and determinant route; requires separate kernel build and axiom audit |
 | `verification/check_split_matrix_reproduction.py` | Three exact source checks for split-family displays and physical orbit-26/28 matrices; requires separate kernel build and axiom audit |
+| `verification/check_frame_anchor_reproduction.py` | Two exact source checks and ten physical anchor/frame source hashes; separate whole kernel build and audit required |
 | `paper_claims.py`, `named_results_doc.py`, `prose_review_doc.py` | Version-bound private-source correspondence records |
 
 Use `--paper-version 20261003` explicitly. Historical tools retain their

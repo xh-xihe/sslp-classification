@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "staged_modules": [
+    {
+      "module": "Orbit19ShellDisplays",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit19ShellDisplays.lean",
+      "staged_sha256_lf": "2063511fe66000c916c023cd6419ee9b037482e5cbc43aada25704dd19ef3068",
+      "canonical_source": "MainTheory/Orbit19ShellDisplays.lean",
+      "canonical_sha256_lf": "2063511fe66000c916c023cd6419ee9b037482e5cbc43aada25704dd19ef3068",
+      "strict_pilot": "orbit19-shell-displays-staged-pilot-v1",
+      "pilot_record_sha256": "fcf3f1121e44212348769eed4950af42e2637ff4ea52b780ca93465c20c6653c",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26PhysicalNorms",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26PhysicalNorms.lean",
+      "staged_sha256_lf": "462fcaaeb10714fe5bd6b48fb9f8fc61f87acccc8647d5304867850565cfda09",
+      "canonical_source": "MainTheory/Orbit26PhysicalNorms.lean",
+      "canonical_sha256_lf": "84d90108e423a7a1ff35de51f0e3b22402290ba9900ea6bfcaf9cd60bbbba523",
+      "strict_pilot": "orbit26-physical-norms-staged-pilot-v5",
+      "pilot_record_sha256": "912c0412f0f4c0296df1441c1ca68c1951fa09019c06a577e7a5c6bc56133539",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26PhysicalDependentAnchors",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26PhysicalDependentAnchors.lean",
+      "staged_sha256_lf": "e38d23e6be31da2bca0fdc84d0bb54b779e560a07c9f0e66888179da2f995e42",
+      "canonical_source": "MainTheory/Orbit26PhysicalDependentAnchors.lean",
+      "canonical_sha256_lf": "71fb4948bf6bd5de3dcd8f662cd2c3ca408abd6047befa8d47e88ef378c3a92d",
+      "strict_pilot": "orbit26-physical-dependent-staged-pilot-v1",
+      "pilot_record_sha256": "18a760322bce71b600750e62847b6896d348e7eb34aa7706a68f14a6bb897216",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26OrthogonalGram",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26OrthogonalGram.lean",
+      "staged_sha256_lf": "a62887d408153389a6feb8779d893aff96ac41ffaebe9bf65ea697e7f11ae226",
+      "canonical_source": "MainTheory/Orbit26OrthogonalGram.lean",
+      "canonical_sha256_lf": "82d0071dc43ec2f72d3043bc3575b90287589017e8e54f31087f3eb6f3de8519",
+      "strict_pilot": "orbit26-orthogonal-gram-staged-pilot-v3",
+      "pilot_record_sha256": "b0ebb387db3e5eda65d79f494fc2721174a6eb2fc46ccda2d37e4b372722ad00",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26NormalizedRows",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26NormalizedRows.lean",
+      "staged_sha256_lf": "098d1bd7e51166802f8551586739c2807a445624c5b5845761ac277bda1edc06",
+      "canonical_source": "MainTheory/Orbit26NormalizedRows.lean",
+      "canonical_sha256_lf": "bf61c80237294f3cf353485e3003a4e48208be500469d904d39a4dcb81a43992",
+      "strict_pilot": "orbit26-normalized-rows-staged-pilot-v3",
+      "pilot_record_sha256": "e04e5cebb3bbb3084f5fed235d9072659f164168faf5e30a9e5e2611378314ef",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26NonmatchingPhysical",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26NonmatchingPhysical.lean",
+      "staged_sha256_lf": "8ea3db21750baacc9f363c0c6b00b9cbe33683acc4e2f58d97c7cbaef2b8bb44",
+      "canonical_source": "MainTheory/Orbit26NonmatchingPhysical.lean",
+      "canonical_sha256_lf": "e1ce7a50d48010498073dfe4a3529c02ad96da4a23435d1879ef5fc64fdca649",
+      "strict_pilot": "orbit26-nonmatching-physical-staged-pilot-v2",
+      "pilot_record_sha256": "0e579d68d0575cedd137d55bb7b3731e8560cb846f0e74b0caf756b7958d253d",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26MatchingRows",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26MatchingRows.lean",
+      "staged_sha256_lf": "e41a0bcbc5576cb31a47f76bbab2b8445c4f612bf4525e501f4eb6d3b60f842e",
+      "canonical_source": "MainTheory/Orbit26MatchingRows.lean",
+      "canonical_sha256_lf": "be2a905d31cf05dfa51df3a906fe3e1a949e4501e1f9e2bfe058a4932b8f5031",
+      "strict_pilot": "orbit26-matching-rows-staged-pilot-v3",
+      "pilot_record_sha256": "dcfee8480f1774c769671b4fe1376d5c7a61d5054059c0d6803b399ae19a482b",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit14ParityFrames",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit14ParityFrames.lean",
+      "staged_sha256_lf": "185a7e6057a4aa2da65a3c8bff672b92a7f49003331bc0e89306cd140418544c",
+      "canonical_source": "MainTheory/Orbit14ParityFrames.lean",
+      "canonical_sha256_lf": "185a7e6057a4aa2da65a3c8bff672b92a7f49003331bc0e89306cd140418544c",
+      "strict_pilot": "orbit14-parity-frame-matrix-staged-pilot-v2",
+      "pilot_record_sha256": "a800e2aa1e9be9e9c2936c4ce09108fb4d1d43a2e8a0800cb006a6f5b71944ba",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit15ParityFrames",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit15ParityFrames.lean",
+      "staged_sha256_lf": "bf2841de74fdae586eaa3103d1470b206ebbd0be6dc8a8fbdb6bf69267c4f66d",
+      "canonical_source": "MainTheory/Orbit15ParityFrames.lean",
+      "canonical_sha256_lf": "bf2841de74fdae586eaa3103d1470b206ebbd0be6dc8a8fbdb6bf69267c4f66d",
+      "strict_pilot": "orbit15-parity-frame-matrix-staged-pilot-v1",
+      "pilot_record_sha256": "32f2cec7721699103b54c396fdbd5984af72605d6783fc522e13278900bce60b",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit24ParityFrames",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit24ParityFrames.lean",
+      "staged_sha256_lf": "47a993cefc9330d7878d7814acfb4cda242a43e24ce33034508661c36b71305d",
+      "canonical_source": "MainTheory/Orbit24ParityFrames.lean",
+      "canonical_sha256_lf": "47a993cefc9330d7878d7814acfb4cda242a43e24ce33034508661c36b71305d",
+      "strict_pilot": "orbit24-parity-frame-matrix-staged-pilot-v1",
+      "pilot_record_sha256": "319a98e3430fc53ff0183b4bf0fedf60760539e71fa40b6d20122f73f0712c3f",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Independent strict pilots pass. Canonical whole build, type/context review, fresh audit and publication remain pending."
+}

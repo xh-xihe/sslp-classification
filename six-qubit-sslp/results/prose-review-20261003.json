@@ -3,10 +3,10 @@
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
   },
   "status": "partial",
-  "method": "Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited.",
+  "method": "Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited. Localized orbit-31 correction: only line 12122 gains a nonempty-mask hypothesis. Every unchanged assertion and prose context was revalidated explicitly; no equation or main-text byte changed.",
   "assertions": [
     {
       "source": "main.tex",
@@ -295,17 +295,17 @@
     },
     {
       "source": "supplementary.tex",
-      "line": 12124,
+      "line": 12122,
       "end_line": 12126,
-      "kind": "gap",
-      "reason": "The stated iff needs a nonempty-mask or nonempty-face hypothesis. For the empty mask the vertex union is empty, but normalization excludes an exact empty support. The repository proves the corrected iff and this boundary obstruction; the authoritative SI source is unchanged.",
+      "kind": "covered",
+      "reason": "The SI now explicitly restricts the exact-support relative-interior iff to nonempty masks. The exact vertex-union theorem includes this condition; the empty union and normalization obstruction are proved separately.",
       "declarations": [
         "MainTheory.Orbit31RelativeInterior.relative_interior_iff_vertexUnion",
         "MainTheory.Orbit31RelativeInterior.empty_vertexUnion",
         "MainTheory.Orbit31RelativeInterior.empty_mask_no_support"
       ],
-      "origin": "20261005 literal completion, boundary and type review",
-      "context_sha256_lf": "9fc4eb6eb00381be09e974d2cc5d05c090d6ac8aac88796f8d0fe10be59bb9f0"
+      "origin": "20261005 localized qualification and unchanged-context revalidation",
+      "context_sha256_lf": "73d174e2779da894b4b99518ef7c187c1066cf68e13e5c9bae43e4a1f1ce1562"
     },
     {
       "source": "supplementary.tex",

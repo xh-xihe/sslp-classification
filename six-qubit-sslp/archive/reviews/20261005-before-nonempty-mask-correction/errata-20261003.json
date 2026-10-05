@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "paper_version": "20261003",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "status": "partial",
+  "method": "20261005 current-source revalidation: the resolved SI items were checked in the authoritative 85aa8ec5 snapshot. The five frozen-main issues remain held under the explicit author instruction; no unrestricted false statement is certified.",
+  "issues": [
+    {
+      "id": "singleton-rank-one",
+      "status": "held_for_author_discussion",
+      "locator": "main.tex:eq:quantum-Singleton",
+      "reason": "Main text retained unchanged by author instruction; see notes/main-errata-hold-20261003.md. Previous evidence: The 20260929 display (main.tex 275-278, lead-in 274) still states the Singleton inequality for every code with no rank restriction. Under the paper's KL definition, a rank-one code meets the detection equations for every Pauli, so it has distance d for every d and the real-exponent inequality fails. At n=3, K=1, d=3 the right side is 1/2. MainTheory.SingletonRankOneCounterexample.violates_unrestricted_singleton builds such an ExactCode 3 1 3 and refutes 1 <= 2^(3-4). MainTheory.QuantumSingleton.quantum_singleton proves the bound under K>=2, together with 2(d-1)<=n, so truncated natural subtraction cannot hide the rank condition. Every 20260929 use is at K=2: the six-qubit remark at 279-281, Section IV line 2226, and the supplement's uses at 5674, 5730, 5850 and 6014. MainTheory.QuantumSingleton.six_qubit_distance_le_three carries all of them. No downstream result is affected, and the author-requested record-only disposition still applies.",
+      "origin": "carried",
+      "declarations": [
+        "MainTheory.SingletonRankOneCounterexample.violates_unrestricted_singleton",
+        "MainTheory.QuantumSingleton.quantum_singleton",
+        "MainTheory.QuantumSingleton.six_qubit_distance_le_three"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "open-orbits-existence",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:cor:m2-current-status",
+      "reason": "The current SI distinguishes all fifteen exact realizations from completed enumerator images. Thirteen nonempty images, including orbits 2 and 3, are proved; only the orbit-1/4 converses remain open. Historical four-open-image annotations in the byte-frozen main are retained as author-controlled progress annotations, not used as the current SI proof scope.",
+      "origin": "carried",
+      "declarations": [
+        "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion",
+        "MainTheory.DirectoryOrbitStatus.openKeys_paperIds",
+        "MainTheory.PaperSupplementaryImages.m2_current_status"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "orbit7-cited-gate",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:eq:o7knowntransversal",
+      "reason": "The current SI uses the corrected Y H S-adjoint gate with explicit phase conventions. Its existing whole-family action, logical matrix, unitarity, cube identity and nonscalar first and second powers remain kernel-proved.",
+      "origin": "carried",
+      "declarations": [
+        "MainTheory.CitedCorrectedFamily.action",
+        "MainTheory.CitedCorrectedLogicalGate.logical_matrix",
+        "MainTheory.CitedCorrectedLogicalGate.logical_unitary",
+        "MainTheory.CitedCorrectedLogicalGate.logical_cube",
+        "MainTheory.CitedCorrectedLogicalGate.logical_not_scalar",
+        "MainTheory.CitedCorrectedLogicalGate.logical_square_not_scalar"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "orbit9-bit-convention",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:align*@4122",
+      "reason": "The current SI defines its least-significant-first binary coordinate convention and states the reversed printed-string convention locally for the orbit-9 witness. The literal witness coefficients are unchanged. MainTheory.BinaryMaskConvention.num_as_sum now also proves the exact integer-encoding formula.",
+      "origin": "carried",
+      "declarations": [
+        "MainTheory.Orbit9LiteralWitness.literal_code",
+        "MainTheory.Orbit9LiteralWitness.literal_normalized"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "supp-hardcoded-corollary-III4",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:thm:main-result-I (proof, line 5772)",
+      "reason": "The current SI uses the external main-cor:rank-two-sslp label instead of a hard-coded main-text corollary number. The last compilation of this unchanged SI source resolved that cross-reference.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.projectiveDiagonalGroup_isAddCyclic"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "qmin-over-all-representatives",
+      "status": "held_for_author_discussion",
+      "locator": "main.tex:thm:colored-finite-lift (proof, lines 1825-1827)",
+      "reason": "Main text retained unchanged by author instruction; see notes/main-errata-hold-20261003.md. Previous evidence: The last step of the proof of thm:colored-finite-lift justifies eq:qmin-general by describing q_min as the least order over every physical representative of the action. eq:qmin (483-487) minimizes only over reduced diagonal representatives D(a;q). Lines 395-397 define a physical representative as any code-preserving gate that induces the action up to phase. Under that definition the description is false. Rescale the logical unitary so its m-th power is the identity on Q, and extend it by the identity on the complement. The result is a code-preserving gate of order exactly m, so the minimum described would always equal m, contradicting eq:example-minimum-order-gap (q_min = 12 > 6 = m). I tested the charitable reading. If the term is silently restricted to diagonal product gates, the sentence is true, because a finite-order diagonal product gate is a scalar times D(theta) with rational theta, and its order is at least the reduced denominator, which the reduced D(a;q) attains. But the sentence states no such restriction, and the paper's own definition is broader. The bound being proved is unaffected, because the constructed representative is reduced. Lines 2035-2036 give the correct justification for the analogous step in cor:d3-physical-order-bound. The sentence is new in 20260929. In Lean, QECC.CodeProjector.minimalPhysicalOrder is the infimum over reduced diagonal representatives only, QECC.CodeProjector.minimalPhysicalOrder_le is the correct step, and QECC.CodeProjector.general_physicalOrder_bound carries the bound.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.minimalPhysicalOrder",
+        "QECC.CodeProjector.minimalPhysicalOrder_le",
+        "QECC.CodeProjector.general_physicalOrder_bound"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "intro-finiteness-missing-hypothesis",
+      "status": "held_for_author_discussion",
+      "locator": "main.tex:sec:introduction (lines 172-176)",
+      "reason": "Main text retained unchanged by author instruction; see notes/main-errata-hold-20261003.md. Previous evidence: The rewritten roadmap paragraph says Section III shows three things: the projective diagonal group is finite and abelian, each of its elements is induced by a physical gate of finite order, and that order has a uniform bound. Nothing in the Introduction (85-199) restricts this to codes that detect every single-site Z, such as codes with d>=2, or fixes the product basis. The 20260924 Introduction had both qualifiers. The abstract (76), thm:finite-projective-group and the Discussion (2658-2660) keep them. Without the hypothesis the claim is false. Take n=2, K=2 and Q spanned by |00> and |10>, a distance-one code. D(phi,0) preserves Q and acts as diag(1, e^{2 pi i phi}) for every real phi, so the group contains a circle. For irrational phi the element has infinite projective order, so no physical representative of any kind has finite order. Lean carries the claim only with its hypothesis. QECC.CodeProjector.finite_diagonal_logical_group_and_physical_representatives assumes DetectsSingleZ, which QECC.CodeProjector.detectsSingleZ_of_hasDistanceAtLeast_two supplies from d>=2. No Lean counterexample is formalized; the one above is elementary.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.finite_diagonal_logical_group_and_physical_representatives",
+        "QECC.CodeProjector.detectsSingleZ_of_hasDistanceAtLeast_two"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "kl-diagonal-requirements-bridge",
+      "status": "held_for_author_discussion",
+      "locator": "main.tex:eq:logical-basis-KL follow-up (lines 269-272)",
+      "reason": "Main text retained unchanged by author instruction; see notes/main-errata-hold-20261003.md. Previous evidence: The new bridge sentence after eq:logical-basis-KL says that, for every Pauli of weight below d_0 and in any orthonormal logical basis, the equal-diagonal-element requirements become moment equations in squared amplitudes, while the off-diagonal requirements make up the remaining completion. That holds only for diagonal Paulis Z_J, and only in a fibre-adapted eigenbasis (529-540). For E = X_1, the diagonal element of a logical word is a sum of products of amplitudes at strings differing in bit 1. It depends on phases and is not a function of the squared amplitudes. The paper itself contradicts the sentence. Lines 586-590 place both requirements for X- and Y-type errors in the KL layer, and 533-534 note that at rank two the off-diagonal Z_J requirements hold automatically. The 20260924 text instead sent both requirements to the completion stage, so the error is new. The preview at 215-218 is vaguer and not false by itself. No result depends on the sentence. QECC.CodeProjector.sslp_sector_probabilities_and_moments carries the correct Z-restricted statement: the sector distributions of a code-preserving D(a;q) have equal binary-monomial moments of every degree below d_0.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.sslp_sector_probabilities_and_moments"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "rational-section-leadin-reversed",
+      "status": "held_for_author_discussion",
+      "locator": "main.tex:lem:uniform-rational-section lead-in (lines 684-686)",
+      "reason": "Main text retained unchanged by author instruction; see notes/main-errata-hold-20261003.md. Previous evidence: The sentence introducing lem:uniform-rational-section says the replacement of a real solution by a rational one leaves the solution's homogeneous component unchanged. The lemma gives the opposite: A(t - a/Q_A) = 0. The rational vector has the same image At and differs from t by a kernel (homogeneous) vector, so the kernel component is exactly what changes, and the row-space component is what stays fixed. Example: A = (1 1), t = (1/2+sqrt2, 1/2-sqrt2), At = 1. With G = B/4 and Q_A = 4, the lemma's construction gives a/Q_A = (1/2,1/2), and t's kernel component sqrt2(1,-1) is replaced by 0. The paper elsewhere uses the lemma correctly. Lines 616-618 say homogeneous directions act as logical scalars, and 965 calls the homogeneous direction the part removed in the rational-section step, which contradicts 686 directly. The lemma statement is correct and is carried by QECC.integerMatrix_uniform_rational_lift. That declaration's docstring is also loosely worded: it says subtracting a/Q leaves the image unchanged, whereas the formal conclusion says the difference lies in the kernel. Docstrings carry no assertion.",
+      "origin": "new",
+      "declarations": [
+        "QECC.integerMatrix_uniform_rational_lift"
+      ],
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    },
+    {
+      "id": "orbit21-unsigned-count-and-residual",
+      "status": "resolved_in_text",
+      "locator": "supplementary.tex:after-eq:o21-R4",
+      "origin": "current-source-review",
+      "reason": "The authoritative SI now gives 640 surviving unsigned Pauli classes and includes the support-pair Walsh residual elimination. The Farkas identity is proved for actual full-KL completions on the prescribed fibers; the current text does not claim that the smaller displayed affine subsystem alone proves it.",
+      "declarations": [
+        "MainTheory.Orbit21UnsignedClasses.classes_count",
+        "MainTheory.Orbit21UnsignedClasses.orbit_operations",
+        "MainTheory.Orbit21UnsignedClasses.representative_exists",
+        "SixQubit.Orbit21Residual.walsh_zero_on_pairs",
+        "SixQubit.Orbit21Residual.residual_vanishes",
+        "MainTheory.Orbit21FarkasDisplay.identity"
+      ],
+      "revision_source": "documents/20261003/revisions/si-review-20261003/supplementary-revised.tex",
+      "locator_snapshot": "archive/reviews/20261003-pre-structure/errata-20261003.json"
+    }
+  ],
+  "considered_not_errata": [
+    {
+      "id": "stale-proof-pointer-1454",
+      "status": "not_applicable",
+      "locator": "main.tex:sec:q-bounds (lines 1453-1458)",
+      "reason": "Lead from the earlier review. The phase-sector paragraph in III.C derives the congruence of theta.x with phi_alpha on each support T_alpha and calls the argument the same as in the proof of thm:general-sslp-normal-form. That rewritten proof (1112-1265) instead argues through the spectral subspaces of the reduced gate D(a;q) and their intersections with the code, so the pointer is stale. The congruence itself follows from the argument given in place, by comparing x-diagonal entries of the eigenprojector identity wherever that entry is positive. The cited theorem exists and contains the analogous support fact, and nothing false is asserted. This is stylistic staleness, not a mathematical error. Lean carries the finite-order analogue only: QECC.CodeProjector.actualSectorSupport_subset_fiber places each actual sector support of a reduced D(a;q) in its subset-sum fibre.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.actualSectorSupport_subset_fiber"
+      ],
+      "checker_note": "Recorded as rejected so the decision is visible. The reader checked it and declined it in its notes."
+    },
+    {
+      "id": "k2-cutoff-attribution-2039",
+      "status": "not_applicable",
+      "locator": "main.tex:eq:K2-finite-cutoff lead-in (lines 2039-2042)",
+      "reason": "Lead from the earlier review. The finite-enumeration paragraph credits the whole piecewise cutoff eq:K2-finite-cutoff to cor:rank-two-sslp and cor:d3-physical-order-bound. Neither gives the d_0=2 branch, beta_{n+1}: cor:rank-two-sslp has no bound and cor:d3-physical-order-bound needs d>=3. That branch comes from thm:colored-finite-lift through eq:K2-q-bound-summary (1851-1856), a few paragraphs above. 20260924 credited the bounds together with the corollary, so the narrowing is new. The cutoff itself is true, and the result it needs sits in the immediate context, so this is an incomplete citation, not a false statement or a reference to a different result. QECC.CodeProjector.rankTwo_physicalOrder_cutoff carries the piecewise cutoff, and its d=2 case is proved through QECC.CodeProjector.general_physicalOrder_bound, which confirms the provenance.",
+      "origin": "new",
+      "declarations": [
+        "QECC.CodeProjector.rankTwo_physicalOrder_cutoff",
+        "QECC.CodeProjector.general_physicalOrder_bound"
+      ],
+      "checker_note": "Recorded as rejected so the decision is visible. The reader checked it and declined it in its notes. Note for authors: restoring the 20260924 attribution would fix it."
+    }
+  ]
+}

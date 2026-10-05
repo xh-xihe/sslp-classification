@@ -1,0 +1,26 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17ConjugatePhases.lean:12:2: error: Tactic `apply` failed: could not unify the conclusion of `(eq_div_iff (star_ne_zero.mpr ha)).mpr`
+  ?m.43 = ?m.41 / star a
+with the goal
+  v = -b / star a * star u
+
+Note: The full type of `(eq_div_iff (star_ne_zero.mpr ha)).mpr` is
+  ?m.43 * star a = ?m.41 → ?m.43 = ?m.41 / star a
+
+a b u v : ℂ
+ha : a ≠ 0
+he : star a * v + star u * b = 0
+⊢ v = -b / star a * star u
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17ConjugatePhases.lean:28:19: error: This simp argument is unused:
+  Complex.normSq_div
+
+Hint: Omit it from the simp argument list.
+  simp [̵p̵h̵a̵s̵e̵R̵a̵t̵i̵o̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵d̵i̵v̵,̵C̵o̵m̵p̵l̵e̵x̵.̵s̵t̵a̵r̵_̵d̵e̵f̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵c̵o̵n̵j̵,̵h̵a̵,̵h̵b̵]̵[̲p̲h̲a̲s̲e̲R̲a̲t̲i̲o̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲s̲t̲a̲r̲_̲d̲e̲f̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲c̲o̲n̲j̲,̲ ̲h̲a̲,̲ ̲h̲b̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17ConjugatePhases.lean:28:38: error: This simp argument is unused:
+  Complex.star_def
+
+Hint: Omit it from the simp argument list.
+  simp [̵p̵h̵a̵s̵e̵R̵a̵t̵i̵o̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵d̵i̵v̵,̵C̵o̵m̵p̵l̵e̵x̵.̵s̵t̵a̵r̵_̵d̵e̵f̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵c̵o̵n̵j̵,̵h̵a̵,̵h̵b̵]̵[̲p̲h̲a̲s̲e̲R̲a̲t̲i̲o̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲d̲i̲v̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲c̲o̲n̲j̲,̲ ̲h̲a̲,̲ ̲h̲b̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

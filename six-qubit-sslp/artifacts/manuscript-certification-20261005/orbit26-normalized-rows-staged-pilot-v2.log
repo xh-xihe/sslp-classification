@@ -1,0 +1,12 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NormalizedRows.lean:67:42: error: Application type mismatch: The argument
+  hv
+has type
+  nsq v = 1
+but is expected to have type
+  Complex.normSq (v 0) + Complex.normSq (v 1) = 1
+in the application
+  congrArg (fun x => ↑x) hv
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NormalizedRows.lean:70:49: error: mod_cast has type
+  (starRingEnd ℂ) (w 0) * v 0 + (starRingEnd ℂ) (w 1) * v 1 = 0
+but is expected to have type
+  Complex.normSq (star w ⬝ᵥ v) = 0

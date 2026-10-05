@@ -1,0 +1,5 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17ConjugatePhases.lean:13:2: error: ring failed, ring expressions not equal
+a b u v : ℂ
+ha : a ≠ 0
+he : star a * v + star u * b = 0
+⊢ v + (-(v * star a) - b * star u) + b * star u * (star a)⁻¹ = 0

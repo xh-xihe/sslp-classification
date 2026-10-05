@@ -1,0 +1,315 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:252:60: error: failed to synthesize
+  Decidable
+    (∀ (i : Fin 8) (a : ℕ), pack (decide (a = 1)) (bottomLabels i) = if a = 0 then bottomWords i else bottomWordsOne i)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:254:54: error: failed to synthesize
+  Decidable (∀ (i : Fin 8) (a : ℕ), pack (decide (a = 1)) (topLabels i) = if a = 0 then topWords i else topWordsOne i)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:262:13: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  pack (decide (?a = 1)) (bottomLabels ?i)
+in the target expression
+  bottomSpinor c i a = c (pack (decide (a = 1)) (bottomLabels i))
+
+case h
+c : SS.State 6 ℂ
+i : Fin 8
+a : Fin 2
+⊢ bottomSpinor c i a = c (pack (decide (a = 1)) (bottomLabels i))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:267:13: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  pack (decide (?a = 1)) (topLabels ?i)
+in the target expression
+  topSpinor d i a = d (pack (decide (a = 1)) (topLabels i))
+
+case h
+d : SS.State 6 ℂ
+i : Fin 8
+a : Fin 2
+⊢ topSpinor d i a = d (pack (decide (a = 1)) (topLabels i))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:294:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : star (c y0) * d z2 + star (c y8) * d z10 = 0
+h1 : star (c y0) * d z1 + star (c y8) * d z9 = 0
+h2 : star (c y0) * d z0 + star (c y8) * d z8 = 0
+h3 : star (c y1) * d z3 + star (c y9) * d z11 = 0
+h4 : star (c y1) * d z1 + star (c y9) * d z9 = 0
+h5 : star (c y1) * d z0 + star (c y9) * d z8 = 0
+h6 : star (c y2) * d z3 + star (c y10) * d z11 = 0
+h7 : star (c y2) * d z2 + star (c y10) * d z10 = 0
+h8 : star (c y2) * d z0 + star (c y10) * d z8 = 0
+h9 : star (c y3) * d z3 + star (c y11) * d z11 = 0
+h10 : star (c y3) * d z2 + star (c y11) * d z10 = 0
+h11 : star (c y3) * d z1 + star (c y11) * d z9 = 0
+h12 :
+  c y0 * star (c y8) + c y1 * star (c y9) + c y2 * star (c y10) + c y3 * star (c y11) =
+    d z3 * star (d z11) + d z2 * star (d z10) + d z1 * star (d z9) + d z0 * star (d z8)
+h13 : star (c y4) * d z6 + star (c y12) * d z14 = 0
+h14 : star (c y4) * d z5 + star (c y12) * d z13 = 0
+h15 : star (c y4) * d z4 + star (c y12) * d z12 = 0
+h16 : star (c y5) * d z7 + star (c y13) * d z15 = 0
+h17 : star (c y5) * d z5 + star (c y13) * d z13 = 0
+h18 : star (c y5) * d z4 + star (c y13) * d z12 = 0
+h19 : star (c y6) * d z7 + star (c y14) * d z15 = 0
+h20 : star (c y6) * d z6 + star (c y14) * d z14 = 0
+h21 : star (c y6) * d z4 + star (c y14) * d z12 = 0
+h22 : star (c y7) * d z7 + star (c y15) * d z15 = 0
+h23 : star (c y7) * d z6 + star (c y15) * d z14 = 0
+h24 : star (c y7) * d z5 + star (c y15) * d z13 = 0
+h25 :
+  c y4 * star (c y12) + c y5 * star (c y13) + c y6 * star (c y14) + c y7 * star (c y15) =
+    d z7 * star (d z15) + d z6 * star (d z14) + d z5 * star (d z13) + d z4 * star (d z12)
+h26 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h27 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h28 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h29 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+c26 :
+  star (c y0) * c y0 + ↑(Complex.normSq (c y1)) + ↑(Complex.normSq (c y2)) + ↑(Complex.normSq (c y3)) =
+    ↑(Complex.normSq (d z3)) + ↑(Complex.normSq (d z2)) + ↑(Complex.normSq (d z1)) + ↑(Complex.normSq (d z0))
+c27 :
+  star (c y8) * c y8 + ↑(Complex.normSq (c y9)) + ↑(Complex.normSq (c y10)) + ↑(Complex.normSq (c y11)) =
+    ↑(Complex.normSq (d z11)) + ↑(Complex.normSq (d z10)) + ↑(Complex.normSq (d z9)) + ↑(Complex.normSq (d z8))
+c28 :
+  star (c y4) * c y4 + ↑(Complex.normSq (c y5)) + ↑(Complex.normSq (c y6)) + ↑(Complex.normSq (c y7)) =
+    ↑(Complex.normSq (d z7)) + ↑(Complex.normSq (d z6)) + ↑(Complex.normSq (d z5)) + ↑(Complex.normSq (d z4))
+c29 :
+  star (c y12) * c y12 + ↑(Complex.normSq (c y13)) + ↑(Complex.normSq (c y14)) + ↑(Complex.normSq (c y15)) =
+    ↑(Complex.normSq (d z15)) + ↑(Complex.normSq (d z14)) + ↑(Complex.normSq (d z13)) + ↑(Complex.normSq (d z12))
+s11 : c y3 * star (d z1) + c y11 * star (d z9) = 0
+s25 :
+  star (c y4) * c y12 + star (c y5) * c y13 + star (c y6) * c y14 + star (c y7) * c y15 =
+    star (d z7) * d z15 + star (d z6) * d z14 + star (d z5) * d z13 + star (d z4) * d z12
+⊢ c y1 * star (c y1) + c y2 * star (c y2) + c y3 * star (c y3) + c y5 * star (c y5) + c y6 * star (c y6) +
+                                    c y7 * star (c y7) +
+                                  ↑(Complex.normSq (d z3)) +
+                                ↑(Complex.normSq (d z2)) +
+                              ↑(Complex.normSq (d z1)) +
+                            ↑(Complex.normSq (d z0)) +
+                          ↑(Complex.normSq (d z7)) +
+                        ↑(Complex.normSq (d z6)) +
+                      ↑(Complex.normSq (d z5)) +
+                    ↑(Complex.normSq (d z4)) +
+                  (-(d z0 * star (d z0)) - d z1 * star (d z1)) +
+                (-(d z2 * star (d z2)) - d z3 * star (d z3)) +
+              (-(d z4 * star (d z4)) - d z5 * star (d z5)) +
+            (-(d z6 * star (d z6)) - d z7 * star (d z7)) +
+          (-↑(Complex.normSq (c y1)) - ↑(Complex.normSq (c y2))) +
+        (-↑(Complex.normSq (c y3)) - ↑(Complex.normSq (c y5))) +
+      (-↑(Complex.normSq (c y6)) - ↑(Complex.normSq (c y7))) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:295:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : star (c y0) * d z2 + star (c y8) * d z10 = 0
+h1 : star (c y0) * d z1 + star (c y8) * d z9 = 0
+h2 : star (c y0) * d z0 + star (c y8) * d z8 = 0
+h3 : star (c y1) * d z3 + star (c y9) * d z11 = 0
+h4 : star (c y1) * d z1 + star (c y9) * d z9 = 0
+h5 : star (c y1) * d z0 + star (c y9) * d z8 = 0
+h6 : star (c y2) * d z3 + star (c y10) * d z11 = 0
+h7 : star (c y2) * d z2 + star (c y10) * d z10 = 0
+h8 : star (c y2) * d z0 + star (c y10) * d z8 = 0
+h9 : star (c y3) * d z3 + star (c y11) * d z11 = 0
+h10 : star (c y3) * d z2 + star (c y11) * d z10 = 0
+h11 : star (c y3) * d z1 + star (c y11) * d z9 = 0
+h12 :
+  c y0 * star (c y8) + c y1 * star (c y9) + c y2 * star (c y10) + c y3 * star (c y11) =
+    d z3 * star (d z11) + d z2 * star (d z10) + d z1 * star (d z9) + d z0 * star (d z8)
+h13 : star (c y4) * d z6 + star (c y12) * d z14 = 0
+h14 : star (c y4) * d z5 + star (c y12) * d z13 = 0
+h15 : star (c y4) * d z4 + star (c y12) * d z12 = 0
+h16 : star (c y5) * d z7 + star (c y13) * d z15 = 0
+h17 : star (c y5) * d z5 + star (c y13) * d z13 = 0
+h18 : star (c y5) * d z4 + star (c y13) * d z12 = 0
+h19 : star (c y6) * d z7 + star (c y14) * d z15 = 0
+h20 : star (c y6) * d z6 + star (c y14) * d z14 = 0
+h21 : star (c y6) * d z4 + star (c y14) * d z12 = 0
+h22 : star (c y7) * d z7 + star (c y15) * d z15 = 0
+h23 : star (c y7) * d z6 + star (c y15) * d z14 = 0
+h24 : star (c y7) * d z5 + star (c y15) * d z13 = 0
+h25 :
+  c y4 * star (c y12) + c y5 * star (c y13) + c y6 * star (c y14) + c y7 * star (c y15) =
+    d z7 * star (d z15) + d z6 * star (d z14) + d z5 * star (d z13) + d z4 * star (d z12)
+h26 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h27 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h28 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h29 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+c26 :
+  star (c y0) * c y0 + ↑(Complex.normSq (c y1)) + ↑(Complex.normSq (c y2)) + ↑(Complex.normSq (c y3)) =
+    ↑(Complex.normSq (d z3)) + ↑(Complex.normSq (d z2)) + ↑(Complex.normSq (d z1)) + ↑(Complex.normSq (d z0))
+c27 :
+  star (c y8) * c y8 + ↑(Complex.normSq (c y9)) + ↑(Complex.normSq (c y10)) + ↑(Complex.normSq (c y11)) =
+    ↑(Complex.normSq (d z11)) + ↑(Complex.normSq (d z10)) + ↑(Complex.normSq (d z9)) + ↑(Complex.normSq (d z8))
+c28 :
+  star (c y4) * c y4 + ↑(Complex.normSq (c y5)) + ↑(Complex.normSq (c y6)) + ↑(Complex.normSq (c y7)) =
+    ↑(Complex.normSq (d z7)) + ↑(Complex.normSq (d z6)) + ↑(Complex.normSq (d z5)) + ↑(Complex.normSq (d z4))
+c29 :
+  star (c y12) * c y12 + ↑(Complex.normSq (c y13)) + ↑(Complex.normSq (c y14)) + ↑(Complex.normSq (c y15)) =
+    ↑(Complex.normSq (d z15)) + ↑(Complex.normSq (d z14)) + ↑(Complex.normSq (d z13)) + ↑(Complex.normSq (d z12))
+s11 : c y3 * star (d z1) + c y11 * star (d z9) = 0
+s25 :
+  star (c y4) * c y12 + star (c y5) * c y13 + star (c y6) * c y14 + star (c y7) * c y15 =
+    star (d z7) * d z15 + star (d z6) * d z14 + star (d z5) * d z13 + star (d z4) * d z12
+⊢ c y0 * star (c y8) + c y1 * star (c y9) + c y2 * star (c y10) + c y3 * star (c y11) +
+          (-(star (c y11) * d z9) - d z0 * star (d z8)) +
+        (-(d z1 * star (d z9)) - d z1 * star (c y3)) +
+      (-(d z2 * star (d z10)) - d z3 * star (d z11)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:296:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : star (c y0) * d z2 + star (c y8) * d z10 = 0
+h1 : star (c y0) * d z1 + star (c y8) * d z9 = 0
+h2 : star (c y0) * d z0 + star (c y8) * d z8 = 0
+h3 : star (c y1) * d z3 + star (c y9) * d z11 = 0
+h4 : star (c y1) * d z1 + star (c y9) * d z9 = 0
+h5 : star (c y1) * d z0 + star (c y9) * d z8 = 0
+h6 : star (c y2) * d z3 + star (c y10) * d z11 = 0
+h7 : star (c y2) * d z2 + star (c y10) * d z10 = 0
+h8 : star (c y2) * d z0 + star (c y10) * d z8 = 0
+h9 : star (c y3) * d z3 + star (c y11) * d z11 = 0
+h10 : star (c y3) * d z2 + star (c y11) * d z10 = 0
+h11 : star (c y3) * d z1 + star (c y11) * d z9 = 0
+h12 :
+  c y0 * star (c y8) + c y1 * star (c y9) + c y2 * star (c y10) + c y3 * star (c y11) =
+    d z3 * star (d z11) + d z2 * star (d z10) + d z1 * star (d z9) + d z0 * star (d z8)
+h13 : star (c y4) * d z6 + star (c y12) * d z14 = 0
+h14 : star (c y4) * d z5 + star (c y12) * d z13 = 0
+h15 : star (c y4) * d z4 + star (c y12) * d z12 = 0
+h16 : star (c y5) * d z7 + star (c y13) * d z15 = 0
+h17 : star (c y5) * d z5 + star (c y13) * d z13 = 0
+h18 : star (c y5) * d z4 + star (c y13) * d z12 = 0
+h19 : star (c y6) * d z7 + star (c y14) * d z15 = 0
+h20 : star (c y6) * d z6 + star (c y14) * d z14 = 0
+h21 : star (c y6) * d z4 + star (c y14) * d z12 = 0
+h22 : star (c y7) * d z7 + star (c y15) * d z15 = 0
+h23 : star (c y7) * d z6 + star (c y15) * d z14 = 0
+h24 : star (c y7) * d z5 + star (c y15) * d z13 = 0
+h25 :
+  c y4 * star (c y12) + c y5 * star (c y13) + c y6 * star (c y14) + c y7 * star (c y15) =
+    d z7 * star (d z15) + d z6 * star (d z14) + d z5 * star (d z13) + d z4 * star (d z12)
+h26 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h27 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h28 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h29 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+c26 :
+  star (c y0) * c y0 + ↑(Complex.normSq (c y1)) + ↑(Complex.normSq (c y2)) + ↑(Complex.normSq (c y3)) =
+    ↑(Complex.normSq (d z3)) + ↑(Complex.normSq (d z2)) + ↑(Complex.normSq (d z1)) + ↑(Complex.normSq (d z0))
+c27 :
+  star (c y8) * c y8 + ↑(Complex.normSq (c y9)) + ↑(Complex.normSq (c y10)) + ↑(Complex.normSq (c y11)) =
+    ↑(Complex.normSq (d z11)) + ↑(Complex.normSq (d z10)) + ↑(Complex.normSq (d z9)) + ↑(Complex.normSq (d z8))
+c28 :
+  star (c y4) * c y4 + ↑(Complex.normSq (c y5)) + ↑(Complex.normSq (c y6)) + ↑(Complex.normSq (c y7)) =
+    ↑(Complex.normSq (d z7)) + ↑(Complex.normSq (d z6)) + ↑(Complex.normSq (d z5)) + ↑(Complex.normSq (d z4))
+c29 :
+  star (c y12) * c y12 + ↑(Complex.normSq (c y13)) + ↑(Complex.normSq (c y14)) + ↑(Complex.normSq (c y15)) =
+    ↑(Complex.normSq (d z15)) + ↑(Complex.normSq (d z14)) + ↑(Complex.normSq (d z13)) + ↑(Complex.normSq (d z12))
+s11 : c y3 * star (d z1) + c y11 * star (d z9) = 0
+s25 :
+  star (c y4) * c y12 + star (c y5) * c y13 + star (c y6) * c y14 + star (c y7) * c y15 =
+    star (d z7) * d z15 + star (d z6) * d z14 + star (d z5) * d z13 + star (d z4) * d z12
+⊢ c y8 * star (c y0) + c y9 * star (c y1) + c y10 * star (c y2) + c y11 * star (c y3) +
+          (-(c y11 * star (d z9)) - d z8 * star (d z0)) +
+        (-(d z9 * star (d z1)) - star (d z1) * c y3) +
+      (-(d z10 * star (d z2)) - d z11 * star (d z3)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14ParityFrames.lean:297:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : star (c y0) * d z2 + star (c y8) * d z10 = 0
+h1 : star (c y0) * d z1 + star (c y8) * d z9 = 0
+h2 : star (c y0) * d z0 + star (c y8) * d z8 = 0
+h3 : star (c y1) * d z3 + star (c y9) * d z11 = 0
+h4 : star (c y1) * d z1 + star (c y9) * d z9 = 0
+h5 : star (c y1) * d z0 + star (c y9) * d z8 = 0
+h6 : star (c y2) * d z3 + star (c y10) * d z11 = 0
+h7 : star (c y2) * d z2 + star (c y10) * d z10 = 0
+h8 : star (c y2) * d z0 + star (c y10) * d z8 = 0
+h9 : star (c y3) * d z3 + star (c y11) * d z11 = 0
+h10 : star (c y3) * d z2 + star (c y11) * d z10 = 0
+h11 : star (c y3) * d z1 + star (c y11) * d z9 = 0
+h12 :
+  c y0 * star (c y8) + c y1 * star (c y9) + c y2 * star (c y10) + c y3 * star (c y11) =
+    d z3 * star (d z11) + d z2 * star (d z10) + d z1 * star (d z9) + d z0 * star (d z8)
+h13 : star (c y4) * d z6 + star (c y12) * d z14 = 0
+h14 : star (c y4) * d z5 + star (c y12) * d z13 = 0
+h15 : star (c y4) * d z4 + star (c y12) * d z12 = 0
+h16 : star (c y5) * d z7 + star (c y13) * d z15 = 0
+h17 : star (c y5) * d z5 + star (c y13) * d z13 = 0
+h18 : star (c y5) * d z4 + star (c y13) * d z12 = 0
+h19 : star (c y6) * d z7 + star (c y14) * d z15 = 0
+h20 : star (c y6) * d z6 + star (c y14) * d z14 = 0
+h21 : star (c y6) * d z4 + star (c y14) * d z12 = 0
+h22 : star (c y7) * d z7 + star (c y15) * d z15 = 0
+h23 : star (c y7) * d z6 + star (c y15) * d z14 = 0
+h24 : star (c y7) * d z5 + star (c y15) * d z13 = 0
+h25 :
+  c y4 * star (c y12) + c y5 * star (c y13) + c y6 * star (c y14) + c y7 * star (c y15) =
+    d z7 * star (d z15) + d z6 * star (d z14) + d z5 * star (d z13) + d z4 * star (d z12)
+h26 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h27 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h28 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h29 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+c26 :
+  star (c y0) * c y0 + ↑(Complex.normSq (c y1)) + ↑(Complex.normSq (c y2)) + ↑(Complex.normSq (c y3)) =
+    ↑(Complex.normSq (d z3)) + ↑(Complex.normSq (d z2)) + ↑(Complex.normSq (d z1)) + ↑(Complex.normSq (d z0))
+c27 :
+  star (c y8) * c y8 + ↑(Complex.normSq (c y9)) + ↑(Complex.normSq (c y10)) + ↑(Complex.normSq (c y11)) =
+    ↑(Complex.normSq (d z11)) + ↑(Complex.normSq (d z10)) + ↑(Complex.normSq (d z9)) + ↑(Complex.normSq (d z8))
+c28 :
+  star (c y4) * c y4 + ↑(Complex.normSq (c y5)) + ↑(Complex.normSq (c y6)) + ↑(Complex.normSq (c y7)) =
+    ↑(Complex.normSq (d z7)) + ↑(Complex.normSq (d z6)) + ↑(Complex.normSq (d z5)) + ↑(Complex.normSq (d z4))
+c29 :
+  star (c y12) * c y12 + ↑(Complex.normSq (c y13)) + ↑(Complex.normSq (c y14)) + ↑(Complex.normSq (c y15)) =
+    ↑(Complex.normSq (d z15)) + ↑(Complex.normSq (d z14)) + ↑(Complex.normSq (d z13)) + ↑(Complex.normSq (d z12))
+s11 : c y3 * star (d z1) + c y11 * star (d z9) = 0
+s25 :
+  star (c y4) * c y12 + star (c y5) * c y13 + star (c y6) * c y14 + star (c y7) * c y15 =
+    star (d z7) * d z15 + star (d z6) * d z14 + star (d z5) * d z13 + star (d z4) * d z12
+⊢ c y9 * star (c y9) + c y10 * star (c y10) + c y11 * star (c y11) + c y13 * star (c y13) + c y14 * star (c y14) +
+                                    c y15 * star (c y15) +
+                                  ↑(Complex.normSq (d z11)) +
+                                ↑(Complex.normSq (d z10)) +
+                              ↑(Complex.normSq (d z9)) +
+                            ↑(Complex.normSq (d z8)) +
+                          ↑(Complex.normSq (d z15)) +
+                        ↑(Complex.normSq (d z14)) +
+                      ↑(Complex.normSq (d z13)) +
+                    ↑(Complex.normSq (d z12)) +
+                  (-(d z8 * star (d z8)) - d z9 * star (d z9)) +
+                (-(d z10 * star (d z10)) - d z11 * star (d z11)) +
+              (-(d z12 * star (d z12)) - d z13 * star (d z13)) +
+            (-(d z14 * star (d z14)) - d z15 * star (d z15)) +
+          (-↑(Complex.normSq (c y9)) - ↑(Complex.normSq (c y10))) +
+        (-↑(Complex.normSq (c y11)) - ↑(Complex.normSq (c y13))) +
+      (-↑(Complex.normSq (c y14)) - ↑(Complex.normSq (c y15))) =
+    0

@@ -1,0 +1,25 @@
+{
+  "paper_version": "20261003",
+  "full_suite": false,
+  "passed": true,
+  "checks": [
+    {
+      "check": "release",
+      "passed": true,
+      "detail": "version-bound manuscripts, review records and orbit data; review completeness checked separately",
+      "seconds": 0.016
+    },
+    {
+      "check": "paper",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\paper.log; PASS: all 66 orbit rows, 51 no-go mappings, and both private-source hashes match",
+      "seconds": 0.062
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\named-results.log; named-results document is current",
+      "seconds": 0.875
+    }
+  ]
+}

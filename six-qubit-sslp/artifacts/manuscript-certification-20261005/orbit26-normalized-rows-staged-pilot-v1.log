@@ -1,0 +1,25 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NormalizedRows.lean:13:72: error: unsolved goals
+A : M2
+hA : Matrix.det A = 0
+h0 : nsq (col A 0) = 1 / 8
+h1 : nsq (col A 1) = 1 / 8
+lam : ℂ
+hl : Complex.normSq lam = 1
+hcol : ∀ (i : Fin 2), A i 1 = lam * A i 0
+r : ℝ := √(1 / 8)
+hr : 0 < r
+hr2 : r ^ 2 = 1 / 8
+hv : (nsq fun i => col A 0 i / ↑r) = 1
+hp : projector (col A 0) = ↑r ^ 2 • projector fun i => col A 0 i / ↑r
+hrC : ↑r ^ 2 = 1 / 8
+⊢ ((2 * (↑√8 ^ 2)⁻¹) • projector fun i => A i 0 * ↑√8) = (1 / 4) • projector (unitAnchor A)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NormalizedRows.lean:58:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (?A + ?B) *ᵥ ?x
+in the target expression
+  (fun A => star v ⬝ᵥ A *ᵥ v) (projector v + projector w) = (fun A => star v ⬝ᵥ A *ᵥ v) 1
+
+v w : Vec
+hv : nsq v = 1
+h : projector v + projector w = 1
+he : (fun A => star v ⬝ᵥ A *ᵥ v) (projector v + projector w) = (fun A => star v ⬝ᵥ A *ᵥ v) 1
+⊢ star w ⬝ᵥ v = 0

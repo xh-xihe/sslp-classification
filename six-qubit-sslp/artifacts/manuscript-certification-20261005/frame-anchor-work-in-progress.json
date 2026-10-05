@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "status": "proof_accepted_publication_pending",
+  "active_lean_modules": 16171,
+  "staged_modules": 10,
+  "strict_pilots": "PASS",
+  "last_accepted_modules": 16161,
+  "source_snapshot": "frame-anchor-staged-proof-snapshot-10.json",
+  "scope": "Accepted physical frame/anchor proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "whole_build": "PASS",
+  "fresh_axiom_audit": "pending",
+  "canonical_type_inspection": "PASS",
+  "current_manuscript_correspondence": "pending explicit review",
+  "publication": "pending",
+  "axiom_audit": "PASS",
+  "correspondence_review": "applied",
+  "proof_acceptance": "proof-acceptance-16171.json"
+}

@@ -1,0 +1,55 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NonmatchingPhysical.lean:9:74: error: unexpected token '('; expected command
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NonmatchingPhysical.lean:66:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  C c (Fin.castSucc 0) * (C c (Fin.castSucc 0))ᴴ
+in the target expression
+  C c 0 * (C c 0)ᴴ + D d 0 * (D d 0)ᴴ = C c 3 * (C c 3)ᴴ + D d 3 * (D d 3)ᴴ
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+lam mu : ℂ
+hne : mu ≠ star lam
+hC : C c 3 = Matrix.vecMulVec (col (C c 3) 0) ![1, lam]
+hD : D d 3 = Matrix.vecMulVec (col (D d 3) 0) ![1, mu]
+huC : nsq (unitAnchor (C c 3)) = 1
+huD : nsq (unitAnchor (D d 3)) = 1
+hCp : C c 3 * (C c 3)ᴴ = (1 / 4) • projector (unitAnchor (C c 3))
+hDp : D d 3 * (D d 3)ᴴ = (1 / 4) • projector (unitAnchor (D d 3))
+hmC : ∀ (g : Fin 4), nsq (col (C c g) 0) + nsq (col (C c g) 1) = 1 / 4
+hmD : ∀ (g : Fin 4), nsq (col (D d g) 0) + nsq (col (D d g) 1) = 1 / 4
+hCg : ∀ (g : Fin 3), C c g.castSucc * (C c g.castSucc)ᴴ = (1 / 4) • (1 - projector (unitAnchor (D d 3)))
+hDg : ∀ (g : Fin 3), D d g.castSucc * (D d g.castSucc)ᴴ = (1 / 4) • (1 - projector (unitAnchor (C c 3)))
+he : C c 0 * (C c 0)ᴴ + D d 0 * (D d 0)ᴴ = C c 3 * (C c 3)ᴴ + D d 3 * (D d 3)ᴴ
+⊢ projector (unitAnchor (C c 3)) + projector (unitAnchor (D d 3)) = 1
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26NonmatchingPhysical.lean:82:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  C c (Fin.castSucc 0) * (C c (Fin.castSucc 0))ᴴ
+in the target expression
+  C c 0 * (C c 0)ᴴ + C c 1 * (C c 1)ᴴ + C c 2 * (C c 2)ᴴ + C c 3 * (C c 3)ᴴ =
+    D d 0 * (D d 0)ᴴ + D d 1 * (D d 1)ᴴ + D d 2 * (D d 2)ᴴ + D d 3 * (D d 3)ᴴ
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+lam mu : ℂ
+hne : mu ≠ star lam
+hC : C c 3 = Matrix.vecMulVec (col (C c 3) 0) ![1, lam]
+hD : D d 3 = Matrix.vecMulVec (col (D d 3) 0) ![1, mu]
+hCg : ∀ (g : Fin 3), C c g.castSucc * (C c g.castSucc)ᴴ = (1 / 4) • (1 - projector (unitAnchor (D d 3)))
+hDg : ∀ (g : Fin 3), D d g.castSucc * (D d g.castSucc)ᴴ = (1 / 4) • (1 - projector (unitAnchor (C c 3)))
+hp : projector (unitAnchor (C c 3)) + projector (unitAnchor (D d 3)) = 1
+huC : nsq (unitAnchor (C c 3)) = 1
+huD : nsq (unitAnchor (D d 3)) = 1
+hCp : C c 3 * (C c 3)ᴴ = (1 / 4) • projector (unitAnchor (C c 3))
+hDp : D d 3 * (D d 3)ᴴ = (1 / 4) • projector (unitAnchor (D d 3))
+left✝ : ∀ (g : Fin 4), nsq (col (C c g) 0) + nsq (col (C c g) 1) = 1 / 4
+right✝ : ∀ (g : Fin 4), nsq (col (D d g) 0) + nsq (col (D d g) 1) = 1 / 4
+hr :
+  C c 0 * (C c 0)ᴴ + C c 1 * (C c 1)ᴴ + C c 2 * (C c 2)ᴴ + C c 3 * (C c 3)ᴴ =
+    D d 0 * (D d 0)ᴴ + D d 1 * (D d 1)ᴴ + D d 2 * (D d 2)ᴴ + D d 3 * (D d 3)ᴴ
+⊢ projector (unitAnchor (C c 3)) = projector (unitAnchor (D d 3))

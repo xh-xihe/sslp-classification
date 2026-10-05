@@ -16,17 +16,14 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current local proof snapshot passes the whole build: **16,161 modules**.
-Its fresh transitive audit passes **8,627 roots**, using only `propext`,
+The current local proof snapshot passes the whole build: **16,171 modules**.
+Its fresh transitive audit passes **8,781 roots**, using only `propext`,
 `Classical.choice` and `Quot.sound`. Its evidence is recorded in
-[proof-acceptance-16161.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16161.json).
+[proof-acceptance-16171.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16171.json).
 This acceptance does not declare complete manuscript correspondence.
-The accepted current proof snapshot is published in
-[`2014be38`](https://github.com/xh-xihe/dyadic-lifts/commit/2014be38800dd9c61077073528fe56162a18f7b5).
-Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16161.json)
-checks every one of the 16,161 active proof sources against the local
-successful build. Earlier publication bindings are retained unchanged.
-Machine-readable current status is in
+Publication of this snapshot is pending. The preceding
+[16,161-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16161.json)
+is retained unchanged. Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -57,22 +54,22 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-The current audit contains 5,863 distinct selected roots in
+The current audit contains 6,017 distinct selected roots in
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and newly checked physical bridges. Roots
 already present in another audit are retained there rather than duplicated.
 
-The current ledger has **1,692 covered assertions**, five
-scope-only statements, three stated conjectures, **129 unreviewed
+The current ledger has **1,722 covered assertions**, five
+scope-only statements, three stated conjectures, **99 unreviewed
 SI assertions**, and one explicitly partial main-text Singleton assertion.
-Current kernel type inspection covers **4,197 declarations**.
-The source inventory contains **16,161 active Lean modules**. The new
+Current kernel type inspection covers **4,221 declarations**.
+The source inventory contains **16,171 active Lean modules**. The new
 correspondence proofs include:
 
 - Orbit 31: the exact support-count chain, all sixteen representatives and
   orbit sizes, all 204 vertices, coordinate-face convex hulls, the literal
   type-9/14/16 triangle arguments, rank minors and nonempty-mask relative
-  interiors. The SI's empty-mask qualification remains an explicit gap.
+  interiors. The SI now explicitly qualifies this criterion for nonempty masks.
 - Orbit 32: the complete real moment normal form, rank minor and literal
   physical exclusion. Orbit 33: all six rational-reflection blocks, normalized
   phase pairs and the physical projector argument, including boundary cases.
@@ -98,8 +95,9 @@ The [remaining-obligation inventory](../artifacts/manuscript-certification-20261
 gives every unfinished statement's current locator. These locators denote
 pending reviews, not findings that the corresponding mathematics is false.
 The [prose review](../results/prose-review-20261003.md) is partial:
-83 SI blocks have current type/context evidence, one SI qualification
-remains open, and the five frozen main issues remain explicit gaps. Other
+84 SI blocks have current type/context evidence, including the corrected
+nonempty-mask criterion. Its new source context passes fresh type inspection
+and the standard-axiom audit; the five frozen main issues remain explicit gaps. Other
 running text still requires review.
 
 The main text is unchanged. Its five held issues remain for author discussion:
@@ -145,9 +143,29 @@ three source-reconstruction checks pass. The
 states the limited proof scope. Later isolated draft proofs are excluded from
 this acceptance until a new canonical build and audit pass.
 
+## Physical anchors and parity frames
+
+Ten modules prove the literal orbit-19 shell indicators and eight isolated
+physical anchor products; the actual orbit-26 singular anchors, unit-phase
+dependent columns, normalized projectors and nonmatching branch; and the
+literal effective-coordinate spinors and full physical frames of orbits
+14, 15 and 24. Thirty formerly pending assertions and four strengthened
+correspondences have explicit current type/context review.
+
+The whole build, fresh standard-axiom audit, canonical type inspection and
+two source-reconstruction checks pass. The
+[batch record](../artifacts/manuscript-certification-20261005/frame-anchor-work-in-progress.json)
+states the accepted scope. Generic matching-row algebra in this batch does
+not by itself close the later physical matching-branch intermediates.
+Subsequent isolated drafts require a separate canonical build and audit.
+
 ## Historical records
 
 The orbit-specific [2026-10-04 acceptance](../artifacts/orbit-certification-20261003/unified-acceptance-20261004.json)
 checked the full local proof tree and bound the published orbit-2/3 closure.
 The current repository acceptance additionally binds every active published
 proof source. Dated records retain their original commit and snapshot scope.
+
+The localized SI qualification and explicit unchanged-context revalidation are
+recorded in [nonempty-mask-context-revalidation.json](../artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json).
+Historical proof and publication snapshots retain their original source bindings.
