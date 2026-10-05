@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-05",
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "new_modules": [
     "MainTheory.OrderFivePrintedMoments"
   ],
@@ -18,5 +18,12 @@
     "tools/verification/generate_order_five_printed_moments.py": "ab8b2347d155df0586623917c19165d81b7ceaebf4c3a90514354818480b4532",
     "MainTheory/OrderFivePrintedMoments.lean": "b2f1743d050c87e8d2f279e6d4c9cce27e49cb03d686993224ea7c04125a9353"
   },
-  "proof_acceptance": "proof-acceptance-15952.json"
+  "proof_acceptance": "proof-acceptance-15952.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "e60b7ec61b70805cf6ab07644cb87073bbb077c6",
+    "branch": "sixqubit-classification",
+    "modules": 15952,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15952.json"
+  }
 }
