@@ -127,5 +127,12 @@
     "prose-review": "partial current review",
     "errata": "five author-held main issues",
     "log": "physical-formulas-correspondence-gates.log"
+  },
+  "publication": {
+    "status": "PASS",
+    "commit": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
+    "branch": "sixqubit-classification",
+    "modules": 15942,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15942.json"
   }
 }

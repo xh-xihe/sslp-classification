@@ -22,7 +22,13 @@
     "conjecture": 3,
     "unreviewed": 354
   },
-  "publication": "pending",
+  "publication": {
+    "status": "PASS",
+    "commit": "d8c382635cbd8c569f0a76ac1b47a85d3511cfdf",
+    "branch": "sixqubit-classification",
+    "modules": 15942,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-15942.json"
+  },
   "evidence": [
     {
       "path": "artifacts/manuscript-certification-20261005/full-build-success-15942.json",

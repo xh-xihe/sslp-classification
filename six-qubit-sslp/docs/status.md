@@ -23,8 +23,10 @@ and `Quot.sound`. The current source, declaration-name and navigation gates
 also pass. The unchanged 10,085 generated-source bindings and all 66 orbit rows
 passed in the preceding current-source verification. The scoped proof acceptance
 is recorded in [proof-acceptance-15942.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15942.json).
-The current changes have not yet been published to the canonical
-branch. The
+The current proof snapshot is published on the canonical branch in
+[`d8c38263`](https://github.com/xh-xihe/dyadic-lifts/commit/d8c382635cbd8c569f0a76ac1b47a85d3511cfdf).
+The [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-15942.json)
+checks all 15,942 proof sources against the accepted local snapshot. The
 machine-readable current status is
 [repository-status.json](../results/repository-status.json).
 
