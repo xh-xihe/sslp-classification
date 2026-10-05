@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:q2fam:eq:five-stabilizers",
+      "statement_sha256": "d9a36028bb3dc7c26a5473a93272b8b270bb421131981dce0f9531feb8dd5ae3",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit2StandardFiveQubit.generators",
+        "MainTheory.Orbit2StandardFiveQubit.fixed_generators",
+        "MainTheory.StandardPerfectCodePhysical.generators_fix",
+        "MainTheory.StandardPerfectCodePhysical.small_anticommuting_generator"
+      ],
+      "review": "20261005 physical matrix/type review: Read all four literal XZZXI, IXZZX, XIXZZ and ZXIXZ words in the physical tensor basis. They fix both standard code columns. Every nonidentity Pauli of weight at most two has an anticommuting generator; the finite Gaussian multiplication phases retain its sign."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:five-pure",
+      "statement_sha256": "8a1d6a0c472df65df7d0cdb5e6acfcf162288c3f62fe59c412222ae4b06b3dc7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.StandardPerfectCodePhysical.compression",
+        "MainTheory.StandardPerfectCodePhysical.isometry",
+        "MainTheory.StandardPerfectCodePhysical.projector",
+        "MainTheory.StandardPerfectCodePhysical.projector_idempotent",
+        "MainTheory.StandardPerfectCodePhysical.pure_projector"
+      ],
+      "review": "20261005 physical matrix/type review: The actual normalized 32-by-2 complex code matrix is standard/4. Its physical tensor-Pauli compression is identity only for the identity word and zero for every other word of weight at most two. The resulting actual projector is idempotent and satisfies the literal P5*E*P5=0 assertion for every weight-one/two physical Pauli."
+    }
+  ]
+}

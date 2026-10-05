@@ -1,0 +1,30 @@
+Serial plan: 15942 modules; 9 without content-validation stamps
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+[15869/15942] BUILD MainTheory.Orbit3PrintedHomogeneousTarget
+[15870/15942] BUILD MainTheory.Orbit33PrintedReflection
+[15871/15942] BUILD MainTheory.Orbit45PrintedAlgebra
+[15872/15942] BUILD MainTheory.StandardPerfectCodePhysical
+[15876/15942] BUILD MainTheory.PrimitiveOrderTwoCatKL
+[15877/15942] BUILD MainTheory.PrimitiveOrderTwoCatLogicals
+[15878/15942] BUILD MainTheory.PrimitiveOrderTwoCatSpinFlip
+[15879/15942] BUILD MainTheory.PrimitiveSplitDisplays
+[15880/15942] BUILD MainTheory.PrimitiveOrderTwoCatEnumerator
+[15910/15942] BUILD MainTheory.ManuscriptCertificationAudit20261005
+External snapshot: toolchain, 8301 artifacts
+External snapshot: package/mathlib, 30074 artifacts
+External snapshot: package/plausible, 44 artifacts
+External snapshot: package/LeanSearchClient, 16 artifacts
+External snapshot: package/importGraph, 12 artifacts
+External snapshot: package/proofwidgets, 146 artifacts
+External snapshot: package/aesop, 540 artifacts
+External snapshot: package/Qq, 56 artifacts
+External snapshot: package/batteries, 692 artifacts
+PASS: 10 serially rebuilt, 15932 content-validated cached modules

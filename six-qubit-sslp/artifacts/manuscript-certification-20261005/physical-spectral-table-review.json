@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:o2gc:tab-blocks",
+      "statement_sha256": "b88092b025127ac9cfea46b46b651fb55761dbde275dfd2c8cc89d5bd6225cdd",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit2SpectralTable.counts_correct",
+        "MainTheory.Orbit2SpectralTable.number_of_blocks",
+        "MainTheory.Orbit2SpectralTable.number_of_coordinates",
+        "SixQubit.Generated.Orbit2PhysicalSpectra.physical_characteristic_polynomials",
+        "Orbit2.checkedBlocks",
+        "Orbit2.shifted_coercivity"
+      ],
+      "review": "20261005 actual matrix/type review: Compared all seven printed sizes, multiplicities and factored characteristic polynomials. The 111-block/492-coordinate counts are actual finite counts; physical_characteristic_polynomials identifies every polynomial with the actual checkedBlocks matrix, not a disconnected copy. Each checked block carries a kernel-proved rational LDL certificate for M-4I, so shifted coercivity supplies positive definiteness for every physical block. The caption correctly treats the spectral expressions as supplementary information and uses rational LDL verification for positivity."
+    }
+  ]
+}

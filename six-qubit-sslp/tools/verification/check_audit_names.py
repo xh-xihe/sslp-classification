@@ -33,7 +33,8 @@ AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
                'MainTheory/OrbitCertificationAudit.lean',
                'MainTheory/OrbitCertificationFinalAudit.lean',
-               'MainTheory/ReviewedDeclarationsAudit.lean', 'Orbit2.lean')
+               'MainTheory/ReviewedDeclarationsAudit.lean',
+               'MainTheory/ManuscriptCertificationAudit20261005.lean', 'Orbit2.lean')
 
 # Lean identifiers admit far more than ASCII: subscripts (`cov_eq₂`), Greek
 # letters, primes.  Narrowing this to `[A-Za-z0-9_]` produces false misses, so

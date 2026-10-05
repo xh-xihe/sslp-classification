@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "status": "in_progress",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claim_count": 1830,
+  "candidate_count": 1823,
+  "candidate_status_counts": {
+    "covered": 1391,
+    "unreviewed": 424,
+    "expository": 5,
+    "conjecture": 3
+  },
+  "held_main_source": "notes/main-errata-hold-20261003.md",
+  "main_source_edit_authorized": false,
+  "required_checks": [
+    "statement hypotheses and conclusions",
+    "actual encoder and projector semantics",
+    "all active Lean sources built under kernel",
+    "transitive axiom audit",
+    "no-placeholder and generated-source gates",
+    "current-source ledger/prose/errata binding",
+    "canonical-branch publication after successful checks"
+  ],
+  "active_lean_modules": 15942,
+  "whole_build": {
+    "status": "PASS",
+    "modules": 15942,
+    "rebuilt": 10,
+    "reused": 15932,
+    "record": "full-build-success-15942.json",
+    "log": "physical-formulas-full-build.log"
+  },
+  "axiom_audit": {
+    "status": "PASS",
+    "roots": 4217,
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "record": "axioms-4217.json",
+    "log": "physical-formulas-axioms.log"
+  },
+  "current_claim_status_counts": {
+    "covered": 1467,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 354
+  },
+  "kernel_type_inspections": [
+    {
+      "record": "kernel-types.json",
+      "declarations": 2615
+    },
+    {
+      "record": "kernel-types-expanded.json",
+      "declarations": 2620
+    },
+    {
+      "record": "kernel-types-orbit45.json",
+      "declarations": 2738
+    },
+    {
+      "record": "kernel-types-orbit45-algebra.json",
+      "declarations": 2759
+    },
+    {
+      "record": "kernel-types-cats.json",
+      "declarations": 2818
+    },
+    {
+      "record": "kernel-types-cat-enumerator.json",
+      "declarations": 2848
+    },
+    {
+      "record": "kernel-types-physical-formulas.json",
+      "declarations": 2853
+    }
+  ],
+  "fully_kernel_manuscript_certification": "not_complete",
+  "last_accepted_local_proof_snapshot": {
+    "modules": 15942,
+    "whole_build": {
+      "status": "PASS",
+      "modules": 15942,
+      "rebuilt": 10,
+      "reused": 15932,
+      "record": "full-build-success-15942.json",
+      "log": "physical-formulas-full-build.log"
+    },
+    "axiom_audit": {
+      "status": "PASS",
+      "roots": 4217,
+      "allowed": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "record": "axioms-4217.json",
+      "log": "physical-formulas-axioms.log"
+    }
+  },
+  "current_tool_regressions": {
+    "certification_tools": 44,
+    "lean_negative_controls": "enabled",
+    "type_export_tests": 9,
+    "status": "PASS"
+  },
+  "prose_review": {
+    "status": "partial",
+    "reviewed_blocks": 10,
+    "covered_si_blocks": 5,
+    "held_main_gaps": 5
+  },
+  "remaining_obligations": "remaining-obligations.json",
+  "correspondence_gates": {
+    "sources": "PASS",
+    "readme": "PASS",
+    "audit-names": "PASS",
+    "named-results": "PASS",
+    "claims": "incomplete: 354 unreviewed SI assertions and one held main assertion",
+    "prose-review": "partial current review",
+    "errata": "five author-held main issues",
+    "log": "physical-formulas-correspondence-gates.log"
+  }
+}

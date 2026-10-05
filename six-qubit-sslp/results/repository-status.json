@@ -1,16 +1,16 @@
 {
   "schema": 1,
-  "date": "2026-10-04",
+  "date": "2026-10-05",
   "canonical_branch": "sixqubit-classification",
   "package_path": "six-qubit-sslp",
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "28be11e4301c5b7dceb234ce4474f106fcd647b0ef00b0eb28af135c82055fca"
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
   },
-  "proof_acceptance": "PASS",
-  "acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
-  "manuscript_correspondence": "awaiting_current_context_review",
+  "proof_acceptance": "PASS_current_local_snapshot",
+  "acceptance_record": "artifacts/manuscript-certification-20261005/run.json",
+  "manuscript_correspondence": "in_progress_current_source_review",
   "historical_review_candidates": 712,
   "held_main_errata": 5,
   "open_enumerator_images": [
@@ -19,15 +19,44 @@
   ],
   "orbit2_full_image": "kernel_checked",
   "orbit3_full_image": "kernel_checked",
-  "active_lean_modules": 15923,
-  "axiom_roots": 2764,
+  "active_lean_modules": 15942,
+  "axiom_roots": 4217,
   "standard_axioms": [
     "Classical.choice",
     "Quot.sound",
     "propext"
   ],
-  "publication_source_binding": "PASS",
-  "regression_tests_per_environment": 61,
-  "skipped_tests_per_environment": 11,
-  "current_manuscript_claims": 1829
+  "current_manuscript_claims": 1830,
+  "current_review_record": "artifacts/manuscript-certification-20261005/run.json",
+  "historical_acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
+  "current_claim_status_counts": {
+    "covered": 1467,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 354
+  },
+  "current_type_inspection_declarations": 2853,
+  "historical_publication_source_binding": "PASS",
+  "publication_source_binding": "pending_current_snapshot_publication",
+  "last_accepted_local_proof_snapshot": {
+    "modules": 15942,
+    "axiom_roots": 4217,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-15942.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-4217.json"
+  },
+  "historical_regression_tests_per_environment": 61,
+  "historical_skipped_tests_per_environment": 11,
+  "current_tool_regressions": {
+    "certification_tools": 44,
+    "lean_negative_controls": "enabled",
+    "type_export_tests": 9,
+    "status": "PASS",
+    "repository_index_tests": 3
+  },
+  "prose_review": {
+    "status": "partial",
+    "reviewed_blocks": 10
+  },
+  "planned_axiom_roots": 4217
 }

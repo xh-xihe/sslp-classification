@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-lambdas",
+      "statement_sha256": "ea3904554553c2ecf3f38848ff5aad4f476deff5f03573460d6dfc81de67d9a1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.ZZ_compression",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.XX_YY_compression",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.coefficient_projector",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.coefficient_scalar",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.tail_pair_compression",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.tail_pair_coefficient",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.first_tail_coefficient"
+      ],
+      "review": "20261005 actual Pauli coefficient/type review: The three displayed scalar coefficients come from the actual six-qubit encoder compression. The coefficient is proved equal to Tr(P*E)/2 for the actual code projector. Compared the ZZ sign and the common negative XX/YY sign. All mixed tail-pair types and all first-qubit/tail pairs vanish, including zero-parameter endpoints."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-A2",
+      "statement_sha256": "eefc19927dea7392a36063fc4bf6d9b9449005051d0d0b16f3a16418a497b459",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.A1",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.A2",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.A1_zero",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.pairSquaredSum",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.A2_pair_sum",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.tail_pair_squared",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.e_squared_sum",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.pair_squared_polynomial",
+        "MainTheory.PrimitiveOrderTwoCatEnumerator.A2_formula"
+      ],
+      "review": "20261005 actual Pauli coefficient/type review: Checked every equality in the displayed block. A1 sums the three first-site and fifteen tail single-site physical coefficients. A2 sums the forty-five first/tail and ninety tail/tail physical weight-two coefficients, with i<j counted once. The actual normalized projector trace coefficient supplies each term; the squared sum is the printed pair sum, then 1/2+8*sum(e_j^4), then 1/2+8*(2*a^4+b^4) under the same real normalization premise."
+    }
+  ]
+}

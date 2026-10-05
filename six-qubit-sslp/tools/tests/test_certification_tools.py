@@ -60,10 +60,14 @@ class WorkspaceTest(unittest.TestCase):
 class ReadmeFailures(WorkspaceTest):
     def setUp(self):
         super().setUp()
+        for entry in verify.AUDIT_FILES:
+            self.write(entry, '-- Empty audit inventory in the disposable fixture.\n')
         self.write('MainTheory.lean', 'import MainTheory.Audit\nimport MainTheory.NewProof\n')
         self.write('MainTheory/Audit.lean', 'import MainTheory.NewProof\nimport MainTheory.Audited\n')
         self.write('SixQubit/Audit.lean', 'import SixQubit.Example\n')
         self.write('QECC/Audit.lean', 'import QECC\n')
+        self.write('MainTheory/ManuscriptCertificationAudit20261005.lean',
+                   'import MainTheory.NewKernelBridge\n')
 
     def test_current_source_imports_bypass_stale_umbrella(self):
         self.write('.lake/build/lib/lean/MainTheory.olean', 'stale umbrella placeholder')
@@ -71,6 +75,7 @@ class ReadmeFailures(WorkspaceTest):
             source = Path(args[-1]).read_text(encoding='utf-8')
             self.assertIn('import MainTheory.NewProof\n', source)
             self.assertIn('import MainTheory.Audited\n', source)
+            self.assertIn('import MainTheory.NewKernelBridge\n', source)
             self.assertIn('import SixQubit.Example\n', source)
             self.assertIn('import QECC\n', source)
             self.assertNotIn('import QECC.Audit\n', source)
@@ -90,6 +95,11 @@ class ReadmeFailures(WorkspaceTest):
             self.assertEqual(readme.check_names(['MainTheory.foo'], fail, self.root), 1)
         self.assertEqual((self.root / 'tmp/verification/readme-names.log').read_text(), error)
         self.assertEqual(list((self.root / 'tmp/verification').glob('readme-*.lean')), [])
+
+    def test_required_audit_inventory_cannot_silently_disappear(self):
+        (self.root / 'MainTheory/ManuscriptCertificationAudit20261005.lean').unlink()
+        with self.assertRaises(FileNotFoundError):
+            readme.live_entry_imports(self.root)
 
 
 class LeanLexing(unittest.TestCase):

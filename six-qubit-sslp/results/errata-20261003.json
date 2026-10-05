@@ -3,10 +3,10 @@
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "28be11e4301c5b7dceb234ce4474f106fcd647b0ef00b0eb28af135c82055fca"
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
   },
   "status": "partial",
-  "method": "2026-10-03: main-text errata archived without edits at the explicit author instruction. Three SI errata corrected locally and recompiled. Full corrected gate action was found in the existing family theorem and its logical order-three assertions were kernel checked. New orbit-2/3 analytic sections integrated; their full encoder kernel bridges remain in progress. Historical records are retained unchanged. Rebound after the 2026-10-04 structural edit: the main source is byte-unchanged; resolved SI issues were inspected at their current labels. Historical line locators remain in the archived record.",
+  "method": "20261005 current-source revalidation: the resolved SI items were checked in the authoritative 85aa8ec5 snapshot. The five frozen-main issues remain held under the explicit author instruction; no unrestricted false statement is certified.",
   "issues": [
     {
       "id": "singleton-rank-one",
@@ -25,7 +25,7 @@
       "id": "open-orbits-existence",
       "status": "resolved_in_text",
       "locator": "supplementary.tex:cor:m2-current-status",
-      "reason": "supplementary.tex is byte-identical to 20260924 (checked with cmp). cor:m2-current-status (supp 5333-5345) still limits the open status of orbits 1-4 to their weight-enumerator images. Supp 60-62, 892-894 and 5686-5687 still say these orbits have exact realizations. The rewritten main.tex agrees: 2251-2254 gives classes 1-4 exact realizations while leaving their enumerator sets open, Result II counts them among the 15 realizable classes, and the Discussion (2679-2681) names only the four enumerator sets as open. MainTheory.OpenOrbitsRealized.openKeys_hasCompletion gives, for each of the four open keys, an exact normalized distance-three pair supported in that key's two fibres. MainTheory.DirectoryOrbitStatus.openKeys_paperIds identifies those keys as paper classes 1-4. MainTheory.PaperSupplementaryImages.m2_current_status says directly that, among the order-two keys, an exact completion exists exactly for paper numbers 1, 2, 3, 4, 10, 11, 16, 21, 22, 23 and 45.",
+      "reason": "The current SI distinguishes all fifteen exact realizations from completed enumerator images. Thirteen nonempty images, including orbits 2 and 3, are proved; only the orbit-1/4 converses remain open. Historical four-open-image annotations in the byte-frozen main are retained as author-controlled progress annotations, not used as the current SI proof scope.",
       "origin": "carried",
       "declarations": [
         "MainTheory.OpenOrbitsRealized.openKeys_hasCompletion",
@@ -38,7 +38,7 @@
       "id": "orbit7-cited-gate",
       "status": "resolved_in_text",
       "locator": "supplementary.tex:eq:o7knowntransversal",
-      "reason": "Corrected to Y H S-adjoint with explicit S and Z conventions. The existing whole-family action theorem applies for every theta; the logical matrix, unitarity, cube identity and nonscalar first/second powers are checked in Lean.",
+      "reason": "The current SI uses the corrected Y H S-adjoint gate with explicit phase conventions. Its existing whole-family action, logical matrix, unitarity, cube identity and nonscalar first and second powers remain kernel-proved.",
       "origin": "carried",
       "declarations": [
         "MainTheory.CitedCorrectedFamily.action",
@@ -54,7 +54,7 @@
       "id": "orbit9-bit-convention",
       "status": "resolved_in_text",
       "locator": "supplementary.tex:align*@4122",
-      "reason": "Added explicit local convention x6 x5 x4 x3 x2 x1 for the displayed strings, with qubit 1 rightmost and tensor basis x1 through x6. Coefficients are unchanged and match the existing exact literal witness.",
+      "reason": "The current SI defines its least-significant-first binary coordinate convention and states the reversed printed-string convention locally for the orbit-9 witness. The literal witness coefficients are unchanged. MainTheory.BinaryMaskConvention.num_as_sum now also proves the exact integer-encoding formula.",
       "origin": "carried",
       "declarations": [
         "MainTheory.Orbit9LiteralWitness.literal_code",
@@ -66,7 +66,7 @@
       "id": "supp-hardcoded-corollary-III4",
       "status": "resolved_in_text",
       "locator": "supplementary.tex:thm:main-result-I (proof, line 5772)",
-      "reason": "Replaced hard-coded numbering by external main-cor:rank-two-sslp reference using xr-hyper. Complete supplementary compilation resolves the reference.",
+      "reason": "The current SI uses the external main-cor:rank-two-sslp label instead of a hard-coded main-text corollary number. The last compilation of this unchanged SI source resolved that cross-reference.",
       "origin": "new",
       "declarations": [
         "QECC.CodeProjector.projectiveDiagonalGroup_isAddCyclic"
@@ -122,10 +122,10 @@
     },
     {
       "id": "orbit21-unsigned-count-and-residual",
-      "status": "resolved_in_review_revision",
+      "status": "resolved_in_text",
       "locator": "supplementary.tex:after-eq:o21-R4",
       "origin": "current-source-review",
-      "reason": "The two stated unsigned actions, after eliminating anticommuting labels, have 640 classes rather than 512. The boxed identity itself is kernel-proved for actual full-KL completions with the prescribed fibers. The review revision retains every displayed formula and adds the support-pair Walsh residual elimination used by that proof. It does not assert that the few listed affine constraints alone imply the identity. The authoritative SI and held main text remain byte-identical.",
+      "reason": "The authoritative SI now gives 640 surviving unsigned Pauli classes and includes the support-pair Walsh residual elimination. The Farkas identity is proved for actual full-KL completions on the prescribed fibers; the current text does not claim that the smaller displayed affine subsystem alone proves it.",
       "declarations": [
         "MainTheory.Orbit21UnsignedClasses.classes_count",
         "MainTheory.Orbit21UnsignedClasses.orbit_operations",

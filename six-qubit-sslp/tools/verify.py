@@ -29,7 +29,8 @@ AUDIT_FILES = ('MainTheory/Audit.lean', 'SixQubit/Audit.lean',
                'MainTheory/ProseCitationAudit.lean', 'QECC/Audit.lean',
                'MainTheory/OrbitCertificationAudit.lean',
                'MainTheory/OrbitCertificationFinalAudit.lean',
-               'MainTheory/ReviewedDeclarationsAudit.lean', 'Orbit2.lean')
+               'MainTheory/ReviewedDeclarationsAudit.lean',
+               'MainTheory/ManuscriptCertificationAudit20261005.lean', 'Orbit2.lean')
 REPORT_DIR = ROOT / 'tmp' / 'verification'
 FORBIDDEN = re.compile(
     r'(?<![\w])(?:sorry|admit|sorryAx|axiom|native_decide|ofReduceBool|ofReduceNat|'

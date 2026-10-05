@@ -25,6 +25,8 @@ def topic(relative):
         return 'Generated certificates'
     if 'Audit' in stem or 'AxiomCheck' in stem:
         return 'Kernel audits'
+    if stem.startswith(('PrimitiveOrderTwoCat', 'PrimitiveSplit')):
+        return 'Primitive order-two families: physical split and cat constructions'
     if stem.startswith('Orbit2') and not stem.startswith(('Orbit21', 'Orbit22', 'Orbit23', 'Orbit24', 'Orbit25', 'Orbit26', 'Orbit27', 'Orbit28', 'Orbit29')):
         return 'Orbit 2: physical encoder bridges'
     if stem.startswith('Orbit3') and not stem.startswith(('Orbit30', 'Orbit31', 'Orbit32', 'Orbit33', 'Orbit34', 'Orbit35', 'Orbit36', 'Orbit37', 'Orbit38', 'Orbit39')):

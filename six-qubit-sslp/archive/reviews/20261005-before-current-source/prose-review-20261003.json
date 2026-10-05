@@ -1,0 +1,12 @@
+{
+  "schema": 2,
+  "paper_version": "20261003",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "28be11e4301c5b7dceb234ce4474f106fcd647b0ef00b0eb28af135c82055fca"
+  },
+  "status": "unreviewed",
+  "method": "Re-inventoried after the 2026-10-04 SI structural edit and author abstract update. Previous reviews are archived by source snapshot; candidate declaration mappings are retained separately. No source-wide prose coverage is transferred.",
+  "assertions": [],
+  "remaining": "Review the current source context using the archived review and correspondence-candidates-20261004.json. Kernel checks of the proof libraries remain separate."
+}

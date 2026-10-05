@@ -1,0 +1,8 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-physical-formulas.json",
+  "type_evidence_sha256": "a0cb9b268f7271395be5d9980c59c2c436ce4748f2d6ead7a19bf52a7ff05ee4"
+}

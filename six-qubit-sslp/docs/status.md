@@ -1,9 +1,12 @@
 # Current verification status
 
 Canonical branch: **`sixqubit-classification`**. Package: `six-qubit-sslp/`.
-Private manuscript version: `20261003`, including the 2026-10-04 SI structural edit.
+Private manuscript version: `20261003`, including the SI edits through
+2026-10-05. The comprehensive current-source correspondence review is in
+progress. Its [run record](../artifacts/manuscript-certification-20261005/run.json)
+binds the frozen main text and current supplementary source hashes.
 
-The whole-project proof acceptance is **PASS**: 15,923 active Lean modules
+The previous whole-project proof acceptance was **PASS**: 15,923 active Lean modules
 (one newly compiled audit module, 15,922 content-validated cached modules),
 2,764 transitive axiom roots and 10,085 manifest-bound generated sources.
 The publication snapshot contains every active proof source, bound to that
@@ -12,7 +15,17 @@ pass 61 regression tests each, with 11 explicitly configured skips each.
 Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
-The machine-readable current status is
+That dated acceptance does not cover all subsequently added proof sources.
+The current complete local source snapshot passes the whole build: **15,942 modules**,
+with ten rebuilt and 15,932 content-validated cached modules. Its fresh
+transitive audit passes **4,217 roots**, using only `propext`, `Classical.choice`
+and `Quot.sound`. The current source, declaration-name and navigation gates
+also pass. The unchanged 10,085 generated-source bindings and all 66 orbit rows
+passed in the preceding current-source verification. The scoped proof acceptance
+is recorded in [proof-acceptance-15942.json](../artifacts/manuscript-certification-20261005/proof-acceptance-15942.json).
+The current changes have not yet been published to the canonical
+branch. The
+machine-readable current status is
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -31,17 +44,43 @@ sentence has been matched to its precise Lean theorem.
 
 ## Current manuscript review
 
-The SI was reorganized and its abstract was edited after the earlier source
-snapshot. All original 119 theorem/lemma/proposition/corollary statements and
-1501 reference labels were preserved in that structural edit. The old review
-is retained in [archive/reviews/20261003-pre-structure](../archive/reviews/20261003-pre-structure).
+The current review inventories 1,830 mathematical assertions: 205 in the
+main text and 1,625 in the SI. Previous reviews are retained in
+[archive/reviews/20261005-before-current-source](../archive/reviews/20261005-before-current-source).
 
 The current claim ledger is bound to the updated source hashes and line numbers.
-The previous 712 usable matches are retained in
-[correspondence-candidates-20261004.json](../results/correspondence-candidates-20261004.json).
-They require current context review before being classified as covered. The
+The 1,823 unchanged statement candidates are retained in
+[correspondence-candidates-20261005.json](../results/correspondence-candidates-20261005.json).
+The SI comparisons normalize CRLF to LF for candidate matching; the ledger
+itself binds the exact authoritative bytes. Candidates require current type
+and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
+Another 1,453 roots now enter the shared audit through
+[ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
+including candidate declarations and the newly checked physical bridges.
+
+The current ledger has **1,467 covered assertions**, five scope-only statements,
+three stated conjectures, **354 unreviewed SI assertions**, and one explicitly
+partial main-text Singleton assertion. Kernel type inspection covers 2,853
+named declarations. The new proofs include the actual cat isometry and
+six-qubit tensor encoder, its compressions, the closed parameter path, the
+literal binary encoding, the orbit-three `DE`/`iDE` expectation identities,
+the orbit-45 triangle and zero-amplitude algebra, the orbit-33 rational
+reflection, and the normalized physical standard perfect-code projector.
+The literal cat family now has proofs of full physical weight-at-most-two KL,
+its physical projector-trace coefficients and A1/A2 formulas, spin-flip
+orthogonality, and weight-three/six logical actions. Both printed split
+matrices have isometry, projector and logical-action proofs. The orbit-three
+target identity retains the arbitrary positive common column norm.
+The remaining SI assertions include intermediate derivations and the detailed
+count tables; final image/no-go results do not automatically certify them.
+The [remaining-obligation inventory](../artifacts/manuscript-certification-20261005/remaining-obligations.json)
+gives every unfinished statement's current locator. These locators denote
+pending reviews, not findings that the corresponding mathematics is false.
+The [prose review](../results/prose-review-20261003.md) is partial: five SI
+blocks have current type/context evidence and the five frozen main issues
+remain explicit gaps. Other running text still requires review.
 
 The main text is unchanged. Its five held issues remain for author discussion:
 rank-one Singleton scope, hypotheses for diagonal-group finiteness, the

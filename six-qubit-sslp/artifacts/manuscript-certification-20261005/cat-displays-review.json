@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:q2fam:eq:records",
+      "statement_sha256": "a9b878998b944c67b162ab1b351732738e15e2e98a6a937a122c8d52e8e0e758",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveSplitDisplays.records",
+        "MainTheory.PrimitiveSplitDisplays.records_checked"
+      ],
+      "review": "20261005 physical matrix/type review: Compared all four active vectors and weights 3,4,5,6. The kernel connects every vector to its actual q=m=2 paper-table row."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:W2",
+      "statement_sha256": "a04bf7ef800b584524ef3cef3344fb6d58a5304966dbf8303ad1dcfa0e686745",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveSplitDisplays.W2_columns",
+        "MainTheory.PrimitiveSplitDisplays.W3",
+        "MainTheory.PrimitiveSplitDisplays.W3_isometry",
+        "MainTheory.Orbit2TrigonometricSplit.isometry"
+      ],
+      "review": "20261005 physical matrix/type review: The entire two-row align includes both W2 and W3. Compared both columns in the ordered two-qubit basis 00,01,10,11, including the negative sin(theta/2) entry in W3. Both actual matrices are isometries."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:W2-identities",
+      "statement_sha256": "cfb873c4cbbe764498afe26e2199ad749474aeb44512322c8f661510a3deffe8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit2TrigonometricSplit.projection",
+        "MainTheory.Orbit2TrigonometricSplit.logical_lift",
+        "MainTheory.PrimitiveSplitDisplays.W3_projection",
+        "MainTheory.PrimitiveSplitDisplays.W3_logical"
+      ],
+      "review": "20261005 physical matrix/type review: The entire align includes both image-projector and intertwining identities for W2 and W3. All four equalities use the actual matrices and literal ZI/XX or IZ/ZX tensor factors, for every real theta."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-code",
+      "statement_sha256": "e9785fa8076f14c9c351d4016aa189f1d7bfa2ac7141a59ced5380f7f7f978e6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_apply",
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_isometry",
+        "MainTheory.PrimitiveOrderTwoCatKL.full_KL",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.projectors_orthogonal",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.spin_trace_zero"
+      ],
+      "review": "20261005 physical matrix/type review: Replaced the earlier normalization-only binding with the complete actual 64-by-2 encoder bridge. Arbitrary real a,b with 2*a^2+b^2=1/4 give an isometry, and every actual six-qubit tensor Pauli of weight at most two has scalar compression. The code projector and its actual six-Y conjugate spin flip are orthogonal. Zero coefficients are allowed. The separate A2 formula is not inferred from KL or spin flip alone."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-logicals",
+      "statement_sha256": "86c3172011b19bbb6e8b2969dab8af6ac065dd58b0b037d7b70937280a58064f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatLogicals.L3",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.SX",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.tailZ_raw",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.tailZ_action",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.stabilizer_action",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.logical_weights"
+      ],
+      "review": "20261005 physical matrix/type review: Compared the literal physical words Z1 Z5 Z6 and X2 X3 X4 X5 X6. The actual cat action has signs +,+,+,-,-; SX fixes both code columns."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:L3-action",
+      "statement_sha256": "9d6a8df5a30cfb696c3e58ffe11987a1b26c642c772722f1fd3aa737b9afaa12",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatLogicals.logical3_action",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.logicalZ"
+      ],
+      "review": "20261005 physical matrix/type review: Actual physical L3 times the encoder equals the encoder times diag(-1,+1), with the printed logical-color order. This is an operator action on both columns, not only an expectation value."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:L6",
+      "statement_sha256": "8e6d0a614c086bd81d30ced8e12aa15f53b189d171f47c4797679845fc342951",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatLogicals.L6",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.product_phase",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.logical6_action",
+        "MainTheory.PrimitiveOrderTwoCatLogicals.logical_weights"
+      ],
+      "review": "20261005 physical matrix/type review: The exact physical product L3*SX is minus Z1 X2 X3 X4 Y5 Y6. Its weight is six and its action on the actual code is the same diag(-1,+1). The Gaussian multiplication phase is retained."
+    }
+  ]
+}

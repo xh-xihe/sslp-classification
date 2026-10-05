@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "scope": "Current complete local Lean proof-source snapshot only; manuscript correspondence is unfinished.",
+  "proof_acceptance": "PASS",
+  "active_modules": 15942,
+  "axiom_roots": 4217,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "claim_status_counts": {
+    "covered": 1467,
+    "partial": 1,
+    "expository": 5,
+    "conjecture": 3,
+    "unreviewed": 354
+  },
+  "publication": "pending",
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-15942.json",
+      "sha256": "5b66e88ce21094a87ef074a640fe795662d8e3ceb1917c231f9be0137cb64433"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-full-build.log",
+      "sha256": "a03942c34eb7841aebc943f49516df02a5b1d4e0b188161556685a7371de138e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-full-build-exit.json",
+      "sha256": "61f71c547ca864885b23c1c4268db3e4689cb54d7ee2e3135a558eace3ba6919"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-4217.json",
+      "sha256": "f764af0306e4b0c9b8785c55aaed4ecc07f79eab3dbc73ba352d2196b4271b9b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-axioms.log",
+      "sha256": "803c26aeeef6b591ce4979083a611752ac978e6dbb1358ed0b05b5ba3a3a4c30"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-axioms-exit.json",
+      "sha256": "b909bd75d4b212f1beb6ff6f90605f68da172ebb534a852ba372e6479bc7767b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-correspondence-gates.log",
+      "sha256": "5ee41f644463f92a77c35afecf7693ca74285640dea7cb76d78ebb9bce2ac0f7"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/physical-formulas-correspondence-gates-exit.json",
+      "sha256": "37bf8190a9b34fd05d92cda84efb839aba5729ade40adedb0ef73794d3819483"
+    }
+  ]
+}

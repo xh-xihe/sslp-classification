@@ -28,13 +28,20 @@ the outstanding manuscript review are recorded in [current status](status.md).
 | --- | --- |
 | Enumeration and directory | [MainTheory/PaperReductionChain.lean](../MainTheory/PaperReductionChain.lean), [MainTheory/DirectoryOrbitStatus.lean](../MainTheory/DirectoryOrbitStatus.lean) |
 | Actual-projector enumerator transport and existing images | [MainTheory/DirectoryEnumeratorImages.lean](../MainTheory/DirectoryEnumeratorImages.lean) |
+| SI Section 10: literal split-qubit matrices | [MainTheory/PrimitiveSplitDisplays.lean](../MainTheory/PrimitiveSplitDisplays.lean) |
+| SI Section 10: actual cat encoder and full KL conditions | [MainTheory/PrimitiveOrderTwoCatEncoder.lean](../MainTheory/PrimitiveOrderTwoCatEncoder.lean), [MainTheory/PrimitiveOrderTwoCatKL.lean](../MainTheory/PrimitiveOrderTwoCatKL.lean) |
+| SI Section 10: physical cat Pauli coefficients and A1/A2 | [MainTheory/PrimitiveOrderTwoCatEnumerator.lean](../MainTheory/PrimitiveOrderTwoCatEnumerator.lean) |
+| SI Section 10: cat logical actions and spin flip | [MainTheory/PrimitiveOrderTwoCatLogicals.lean](../MainTheory/PrimitiveOrderTwoCatLogicals.lean), [MainTheory/PrimitiveOrderTwoCatSpinFlip.lean](../MainTheory/PrimitiveOrderTwoCatSpinFlip.lean) |
 | Orbit 2: complete actual-encoder image | [MainTheory/Orbit2FullImage.lean](../MainTheory/Orbit2FullImage.lean) |
 | Orbit 2: imported proof and exact attainment | [Orbit2/Complete.lean](../Orbit2/Complete.lean) |
 | Orbit 2: physical quartic spectral tables | [SixQubit/Generated/Orbit2PhysicalSpectra.lean](../SixQubit/Generated/Orbit2PhysicalSpectra.lean) |
 | Orbit 3: complete actual-encoder image | [MainTheory/Orbit3FullImage.lean](../MainTheory/Orbit3FullImage.lean) |
 | Orbit 3: scalar constraints | [MainTheory/Orbit3ScalarEqualities.lean](../MainTheory/Orbit3ScalarEqualities.lean) |
 | Orbit 3: sextic certificate identity | [SixQubit/Generated/Orbit3SexticIdentity.lean](../SixQubit/Generated/Orbit3SexticIdentity.lean) |
+| Orbit 3: printed common-norm homogeneous target | [MainTheory/Orbit3PrintedHomogeneousTarget.lean](../MainTheory/Orbit3PrintedHomogeneousTarget.lean) |
 | Orbit 45: printed derivation and attainment | [MainTheory/Orbit45PrintedConsequences.lean](../MainTheory/Orbit45PrintedConsequences.lean), [MainTheory/Orbit45PrintedAttainment.lean](../MainTheory/Orbit45PrintedAttainment.lean) |
+| Orbit 45: triangle, matched-probability and physical coefficient algebra | [MainTheory/Orbit45PrintedAlgebra.lean](../MainTheory/Orbit45PrintedAlgebra.lean) |
+| Orbit 33: literal rational reflection and inverse | [MainTheory/Orbit33PrintedReflection.lean](../MainTheory/Orbit33PrintedReflection.lean) |
 | No-go proofs and constructions | [SixQubit.lean](../SixQubit.lean), [SixQubit/Audit.lean](../SixQubit/Audit.lean) |
 
 The two full-image endpoints are
@@ -48,8 +55,9 @@ including converse and attainment, for actual full-KL encoders.
 - [QECC/Audit.lean](../QECC/Audit.lean): Section III audit roots.
 - [MainTheory/OrbitCertificationFinalAudit.lean](../MainTheory/OrbitCertificationFinalAudit.lean): physical certificate and completed bridge roots.
 - [MainTheory/ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean): declarations cited by the pre-reorganization review, retained for kernel auditing without transferring manuscript coverage.
+- [MainTheory/ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean): current candidate and physical-formula audit roots.
 - [Current named-results map](../results/named-results-20261003.md): locators and review status for the current private sources.
-- [Historical correspondence candidates](../results/correspondence-candidates-20261004.json): prior reviewed declarations matched by label or unchanged statement hash, awaiting context review.
+- [Current correspondence candidates](../results/correspondence-candidates-20261005.json): prior declarations matched to the authoritative source snapshot; coverage still requires current context and type review.
 
 A compiled module or a candidate mapping alone does not certify a manuscript
 assertion. Coverage requires reviewing its full hypotheses and context against

@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:displaymath@192",
+      "statement_sha256": "7daa2102fe28227cf82e2101e8d1f7e940c0c0676e13079a52b312cb7c296470",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.BinaryMaskConvention.num_as_sum"
+      ],
+      "review": "20261005 literal formula/type review: The first printed coordinate is the least significant bit. The actual six-bit integer encoding equals the sum of bit i times 2^i; Lean indexes start at zero whereas the displayed mathematical indices start at one."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:L",
+      "statement_sha256": "53b1729ecfad482819ef64f0cb0fa1d8ce866bd4b8a9a39217b08befc85dd0cc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.WImages.FI",
+        "MainTheory.WImages.FII"
+      ],
+      "review": "20261005 literal formula/type review: Compared all seven entries in both L and M definitions, including the signs of the weight-four/five entries. These are the literal normalized enumerator functions used by the actual image theorems."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cats",
+      "statement_sha256": "bdfd34bc358e34e2fc58820ac1ef867987134b023bfbc58530621df751ba1aca",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatCompression.cats",
+        "MainTheory.PrimitiveOrderTwoCatCompression.orthonormal"
+      ],
+      "review": "20261005 literal formula/type review: These are the literal normalized unit-string/complement cats. The normalization factor is exactly inverse sqrt two and the actual physical 32-by-5 matrix is an isometry."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:gamma",
+      "statement_sha256": "c7fdc49393e5ff246fd0a2f5f3ae252cad499071201d4728e00744575b33cbcc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.gamma",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.delta",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.e",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.two_h"
+      ],
+      "review": "20261005 literal formula/type review: Compared all five entries of gamma, delta and e. The retained real factor h=1/sqrt(2) satisfies 2*h=sqrt(2), including the printed -i*sqrt(2)*a coefficient and both signs in the first two entries."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:spinors",
+      "statement_sha256": "8deb86f553a266755029a2e74c0b4859f974d563fbc2b54a7c303900b62137b7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.x",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.y"
+      ],
+      "review": "20261005 literal formula/type review: The first-qubit spinors are the two literal gamma/delta vectors, with complex conjugation and the minus sign in y retained."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-code",
+      "statement_sha256": "e9785fa8076f14c9c351d4016aa189f1d7bfa2ac7141a59ced5380f7f7f978e6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_apply",
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_isometry"
+      ],
+      "review": "20261005 literal formula/type review: The actual six-qubit product-basis encoder has each displayed column equal to the sum of its spinor tensor the normalized cat. For arbitrary real a,b satisfying 2*a^2+b^2=1/4, its two columns are orthonormal. This row does not certify the subsequent full-KL or enumerator prose."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:bilinear-identities",
+      "statement_sha256": "7b87fa61846563d4652c92aee61f72d269929caa9756ffa9740adba6dd2c8e28",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.gamma_norm",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.delta_norm",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.hermitian_orthogonal",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.bilinear",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.real_gram"
+      ],
+      "review": "20261005 literal formula/type review: Checked the complete gather block: both norms, Hermitian orthogonality, all three bilinear zero identities and every entry of the real Gram matrix. The same real quadratic parameter premise supplies every identity."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-ZZ",
+      "statement_sha256": "e74d39df36ff6a6ad5e6cae480d45d2be389626df7111feebb6b4aabcc90fb25",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatCompression.single_zero",
+        "MainTheory.PrimitiveOrderTwoCatCompression.ZZ",
+        "MainTheory.PrimitiveOrderTwoCatCompression.XX_YY",
+        "MainTheory.PrimitiveOrderTwoCatCompression.mixed_zero",
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_compression"
+      ],
+      "review": "20261005 literal formula/type review: Both align rows are compressions of the actual five-qubit tensor-Pauli matrices through the normalized physical cat isometry. All mixed two-site types and nonidentity single-site types vanish. The explicit six-qubit encoder compression connects these matrices to the code columns."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:tail-KL-symmetry",
+      "statement_sha256": "c8dfb4941ddbb8ee2f792b28d79150452539052a1154c388ebc99efb99c00214",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.gram_swap",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.cross_formula",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.cross_antisymmetric"
+      ],
+      "review": "20261005 literal formula/type review: Verified the swapped Hermitian Gram and the literal conjugated gamma-delta determinant, including its antisymmetry."
+    },
+    {
+      "id": "supplementary.tex:displaymath@4400",
+      "statement_sha256": "3c01a70714b7b9635652695d32a6da4bb821eedc13f2e1536b082756535b62d1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.tail_symmetric"
+      ],
+      "review": "20261005 literal formula/type review: Both sums are proved for any real symmetric 5-by-5 matrix, without positivity, divisions, or nonzero coefficients. This algebraic row has the displayed H premise and is independent of a full-KL conclusion."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:first-KL",
+      "statement_sha256": "6f3354271da35fc2fbf1cf3015b2aaad3a11468387d396ae829309c417c23d5f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.first_KL"
+      ],
+      "review": "20261005 literal formula/type review: All three 2-by-2 outer-product sums are literal coefficient identities under the printed real parameter premise; both diagonal sums are one-half identity and the cross sum is zero."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-path",
+      "statement_sha256": "3d8c8d8670bc4a87faa7f373383d7388f740d8a938b004ccf4390fb9d1dc804a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.pathA",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.pathB",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.path_norm"
+      ],
+      "review": "20261005 literal formula/type review: The two displayed nonnegative square-root functions satisfy the quadratic normalization for every r in the closed unit interval."
+    },
+    {
+      "id": "supplementary.tex:q2fam:eq:cat-t",
+      "statement_sha256": "4735765e1eafb9693e37d91ebb0c15f8790e1462f57d6cb1bc326d44b73d272f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.path_parameter",
+        "MainTheory.PrimitiveOrderTwoCatAlgebra.path_surjective"
+      ],
+      "review": "20261005 literal formula/type review: The literal quartic coefficient expression on the printed path is 2/3+r^2/3, and every t in [2/3,1] is attained by such a parameter r. The separate claim that this quartic is the physical A2 remains under review."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5333",
+      "statement_sha256": "e5a76094d5025b5b0ad4ecc3a840cb7c44a20c8055c5ade75e8606f4829f35dc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedAmplitudes.raw_projector",
+        "MainTheory.Orbit3PrintedAmplitudes.raw_orthogonal"
+      ],
+      "review": "20261005 literal formula/type review: The normalized actual frame projector has the literal outer-product kernel (u*u-dagger+v*v-dagger)/N for the supplied positive common column norm. The identity Pauli in full KL gives orthogonality of the raw columns. N is retained and no column coefficient is divided out."
+    },
+    {
+      "id": "supplementary.tex:o3gc:remaining",
+      "statement_sha256": "835af8c2758710b215ba84b6c579b260c72ab0ca46a05591c48e1e17c21e30c5",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedScalarConsequences.remaining"
+      ],
+      "review": "20261005 literal formula/type review: The actual normalized encoder category masses give the three displayed weight sums after the five zero-category consequences. Category sizes and normalization are retained; no scalar-LP array is treated as a code."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5516",
+      "statement_sha256": "3e8787fb090bd367dfcd4e1ed17825af624d429cc6cf8324cd3fd9d8979598fa",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedScalarConsequences.fifth_dual_identity",
+        "MainTheory.Orbit3PrintedScalarConsequences.fifth_dual_row_metadata"
+      ],
+      "review": "20261005 literal formula/type review: The literal -A_(0,3,0)=10*e_diag_(0,2,0)-10*e_KL_(0,2,0) is a rational row identity for an arbitrary mass array. The metadata identifies exactly these two equality rows and the target category."
+    },
+    {
+      "id": "supplementary.tex:o3gc:w",
+      "statement_sha256": "45361012524bb6460292add227f5b3c02970c1b332e76a9008943f32b0b4e788",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedAmplitudes.w",
+        "MainTheory.Orbit3PrintedAmplitudes.sector",
+        "MainTheory.Orbit3PrintedAmplitudes.reconstruct",
+        "MainTheory.Orbit3PrintedAmplitudes.raw_norm"
+      ],
+      "review": "20261005 literal formula/type review: The printed 1/sqrt(2) superposition reconstructs both original parity columns through the actual sector projections. The positive common column norm equals the norm of this amplitude vector. The expectation r_E is an actual physical Pauli expectation."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5565",
+      "statement_sha256": "dc1de951af011a5ec055890841809d0f58269d4e984db0eafa2a895ac47995ca",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedParityRelations.diagonal_is_pauli",
+        "MainTheory.Orbit3PrintedParityRelations.commuting_difference",
+        "MainTheory.Orbit3PrintedAmplitudes.commuting_expectation"
+      ],
+      "review": "20261005 literal formula/type review: For a commuting Pauli, the original-column diagonal difference is twice the expectation of the actual operator product D*E. The mean diagonal element is the superposition expectation. D is proved equal to the physical Z-mask operator rather than an abstract sign variable."
+    },
+    {
+      "id": "supplementary.tex:displaymath@5570",
+      "statement_sha256": "1ee5af430365216a9184f9f64d0afdcfccd2f1d37d10899b638154598be37717",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedParityRelations.diagonal_is_pauli",
+        "MainTheory.Orbit3PrintedParityRelations.anticommuting_cross"
+      ],
+      "review": "20261005 literal formula/type review: For an anticommuting physical Pauli, the off-diagonal element is r_E-i*r_(iDE). The actual product phase i is retained; the result holds for arbitrary parity-supported complex columns before imposing KL."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:o3gc:homotarget",
+      "statement_sha256": "f5f2ed7c45e4912b502f91d1f9ed018cc850e37ab03db00f6546b3c54687a34f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit3PrintedHomogeneousTarget.w_expectation_scale",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.normalized_target",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.w_normalized",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.raw_expectation",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.homogeneous_target"
+      ],
+      "review": "20261005 actual homogeneous target/type review: The target is the literal physical Pauli category (1,0,2). The printed amplitude uses (u+v)/sqrt(2), with arbitrary positive common column norm N. Its actual expectation squares satisfy N*sum(r_E^2) =N^3*A3 for the normalized actual completion. The proof uses the target trace sum and common-norm normalization; it does not assume the final A3-vanishing conclusion or any nonzero individual amplitude."
+    }
+  ]
+}

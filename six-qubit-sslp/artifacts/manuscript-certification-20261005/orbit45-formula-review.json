@@ -1,0 +1,544 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:eq:o45-record",
+      "statement_sha256": "df716d5dcdeeaf28ff77faefdb9d110da8b37786ac6b1162db902a1069c3266e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.record",
+        "MainTheory.Orbit45PrintedFibers.residues"
+      ],
+      "review": "20261005 actual formula/type review: Compared q=6, m=2, all six angles and the actual residue gap 3. Paper orbit number 45 is the zero-based table index 44."
+    },
+    {
+      "id": "supplementary.tex:thm:o45-weightimage",
+      "statement_sha256": "20313c4b06de2a74028ac1afae660b537158e886d315f25783813dd3f48fb97e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PaperSupplementaryImages.o45_weight_image",
+        "SixQubit.Orbit45Final.fully_certified",
+        "SixQubit.Orbit45Family.IsFamilyA",
+        "SixQubit.Orbit45Family.IsFamilyB",
+        "MainTheory.Orbit45TrianglePolynomial.interval",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: The image equality is for genuine normalized full-KL encoders on both complete fibers. Both directions include boundary supports and exact attainment throughout [2/3,1]. Read all seven A and B entries and divide the raw Aco/Bco values by four. The moment-triangle parameter gives the same enumerator interval, including its endpoints."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A-image",
+      "statement_sha256": "d3fba7f1bf08caafcd71ce118210f236ba49b21feef2aba5ce6df5f297745c03",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PaperSupplementaryImages.o45_weight_image",
+        "SixQubit.Orbit45Final.fully_certified",
+        "SixQubit.Orbit45Family.IsFamilyA",
+        "SixQubit.Orbit45Family.IsFamilyB",
+        "MainTheory.Orbit45TrianglePolynomial.interval",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: The image equality is for genuine normalized full-KL encoders on both complete fibers. Both directions include boundary supports and exact attainment throughout [2/3,1]. Read all seven A and B entries and divide the raw Aco/Bco values by four. The moment-triangle parameter gives the same enumerator interval, including its endpoints."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-B-image",
+      "statement_sha256": "12feae7f21d8121efd9dcb5ffbced22ddb2d6acad3c7cfc9a6fa4e5c6d15bda7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PaperSupplementaryImages.o45_weight_image",
+        "SixQubit.Orbit45Final.fully_certified",
+        "SixQubit.Orbit45Family.IsFamilyA",
+        "SixQubit.Orbit45Family.IsFamilyB",
+        "MainTheory.Orbit45TrianglePolynomial.interval",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: The image equality is for genuine normalized full-KL encoders on both complete fibers. Both directions include boundary supports and exact attainment throughout [2/3,1]. Read all seven A and B entries and divide the raw Aco/Bco values by four. The moment-triangle parameter gives the same enumerator interval, including its endpoints."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-triangle-domain",
+      "statement_sha256": "c68e842079840bbea0651527f4fe9141de5621f9d1cdf725a70cf9843a697784",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedConsequences.triangle_bounds",
+        "MainTheory.Orbit45TrianglePolynomial.Domain"
+      ],
+      "review": "20261005 actual formula/type review: The norm triangle inequalities in both directions and beta+gamma+sigma =1/4 give the three upper bounds 1/8 and all three nonnegative bounds. The domain includes degenerate triangles; no positive-support premise is imposed in this assertion."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-t-from-triangle",
+      "statement_sha256": "6054541d1f9f789a6f2a5700940a59518eef2cb1007642929410d7a642e5148d",
+      "status": "covered",
+      "lean_declarations": [
+        "SixQubit.Orbit45A2.Aco_two_value",
+        "SixQubit.Orbit45Universal.block_masses",
+        "SixQubit.Orbit45Phase.phase_relations",
+        "MainTheory.Orbit45PrintedFibers.bit_transport",
+        "MainTheory.Orbit45PrintedAlgebra.diagonal_sum",
+        "MainTheory.Orbit45PrintedAlgebra.off_diagonal_sum"
+      ],
+      "review": "20261005 actual formula/type review: The physical universal Aco_2 identity gives normalized A2=32R, using g1=4*gamma, g2=4*beta and g3=4*sigma in the explicitly transported printed order. Support, actual KL and derived phase relations are retained and no amplitude is assumed nonzero."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-bottom-fiber",
+      "statement_sha256": "8d6658985d5bb2a69a3d72d11008b1f6e9946037652b3d34a84af9b0dfbfcaaa",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.bottom",
+        "MainTheory.Orbit45PrintedFibers.top",
+        "MainTheory.Orbit45PrintedFibers.bit_transport",
+        "MainTheory.Orbit45PrintedFibers.full_fibers",
+        "MainTheory.Orbit45PrintedFibers.matching",
+        "MainTheory.Orbit45PrintedFibers.bottom_injective",
+        "MainTheory.Orbit45PrintedFibers.top_injective"
+      ],
+      "review": "20261005 actual formula/type review: Read all twenty printed six-bit strings in left-to-right physical qubit order. The explicit transport identifies this order with the library amplitudes, proves both complete fibers and matches them by flipping physical qubit four."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-half-angle-matching",
+      "statement_sha256": "a668e8d61cf87465fac44787084529cc1097c10128faa04d1b14881c0200c13b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.bottom",
+        "MainTheory.Orbit45PrintedFibers.top",
+        "MainTheory.Orbit45PrintedFibers.bit_transport",
+        "MainTheory.Orbit45PrintedFibers.full_fibers",
+        "MainTheory.Orbit45PrintedFibers.matching",
+        "MainTheory.Orbit45PrintedFibers.bottom_injective",
+        "MainTheory.Orbit45PrintedFibers.top_injective"
+      ],
+      "review": "20261005 actual formula/type review: Read all twenty printed six-bit strings in left-to-right physical qubit order. The explicit transport identifies this order with the library amplitudes, proves both complete fibers and matches them by flipping physical qubit four."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-top-fiber",
+      "statement_sha256": "7c5f60244a7a15b38d968047cae3270f234bbe6a1dc76bdf405b1b10edc958ef",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.bottom",
+        "MainTheory.Orbit45PrintedFibers.top",
+        "MainTheory.Orbit45PrintedFibers.bit_transport",
+        "MainTheory.Orbit45PrintedFibers.full_fibers",
+        "MainTheory.Orbit45PrintedFibers.matching",
+        "MainTheory.Orbit45PrintedFibers.bottom_injective",
+        "MainTheory.Orbit45PrintedFibers.top_injective"
+      ],
+      "review": "20261005 actual formula/type review: Read all twenty printed six-bit strings in left-to-right physical qubit order. The explicit transport identifies this order with the library amplitudes, proves both complete fibers and matches them by flipping physical qubit four."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-probabilities",
+      "statement_sha256": "860b4bd768a28533db79de3cbd352b3fbba2e163e091cd4104d6cecfbf62efa9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.probability",
+        "MainTheory.Orbit45PrintedAlgebra.cross"
+      ],
+      "review": "20261005 actual formula/type review: These are literal squared-modulus probabilities and conjugated matched cross monomials. Definitions and all subsequent algebra retain complex amplitudes rather than treating the probabilities as an encoder."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-moment-normal-form",
+      "statement_sha256": "1ac032f8cafdcfbe67d9d3de79f9058a621dbd0170cc3370d0bcf6629fde0bf4",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedMoments.pattern",
+        "MainTheory.Orbit45PrintedMoments.probabilities",
+        "MainTheory.Orbit45PrintedMoments.bounds",
+        "MainTheory.Orbit45PrintedMoments.actual_rows",
+        "MainTheory.Orbit45PrintedMoments.kernel_iff",
+        "MainTheory.Orbit45PrintedMoments.rank_seventeen",
+        "MainTheory.Orbit45PrintedMoments.minor_determinant"
+      ],
+      "review": "20261005 actual formula/type review: The actual 23-by-20 moment matrix has exactly the printed affine probability pattern, including sigma=1/4-beta-gamma in entries 2 and 7 and all ten matched top entries. Its kernel has dimension three, rank 17 and the specified minor determinant -108. Nonnegative boundary probabilities are included."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-sigma-definition",
+      "statement_sha256": "bc4b86b7b0993acf63b243d8b2f22c260b42bc240d173f651bd02a2d41b0b7c1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedMoments.pattern",
+        "MainTheory.Orbit45PrintedMoments.probabilities",
+        "MainTheory.Orbit45PrintedMoments.bounds",
+        "MainTheory.Orbit45PrintedMoments.actual_rows",
+        "MainTheory.Orbit45PrintedMoments.kernel_iff",
+        "MainTheory.Orbit45PrintedMoments.rank_seventeen",
+        "MainTheory.Orbit45PrintedMoments.minor_determinant"
+      ],
+      "review": "20261005 actual formula/type review: The actual 23-by-20 moment matrix has exactly the printed affine probability pattern, including sigma=1/4-beta-gamma in entries 2 and 7 and all ten matched top entries. Its kernel has dimension three, rank 17 and the specified minor determinant -108. Nonnegative boundary probabilities are included."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-z-definition",
+      "statement_sha256": "0518c59b5a0db11644a85c07c0caa00173f11e640dad449233092289548a9e7f",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.probability",
+        "MainTheory.Orbit45PrintedAlgebra.cross"
+      ],
+      "review": "20261005 actual formula/type review: These are literal squared-modulus probabilities and conjugated matched cross monomials. Definitions and all subsequent algebra retain complex amplitudes rather than treating the probabilities as an encoder."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-half-angle-rows",
+      "statement_sha256": "8eefca07c9f06b07f85f9aa8d822606354d8b49b334c5c715d9020f9ac854f20",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.masks",
+        "MainTheory.Orbit45PrintedWalsh.actual_rows",
+        "MainTheory.Orbit45PrintedWalsh.pattern",
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedWalsh.selectedRows",
+        "MainTheory.Orbit45PrintedWalsh.selectedCols",
+        "MainTheory.Orbit45PrintedWalsh.rank_seven",
+        "MainTheory.Orbit45PrintedWalsh.minor_absolute_determinant"
+      ],
+      "review": "20261005 actual formula/type review: Compared the twelve characters, their literal restrictions, the seven selected rows, columns 0,1,2,3,4,5,7 and the absolute determinant 256. The complex kernel is exactly the displayed three-parameter ten-vector with all four A signs and both copies of -B-C retained. This review does not replace the separate physical cross-equation derivation."
+    },
+    {
+      "id": "supplementary.tex:displaymath@6601",
+      "statement_sha256": "f8dd7a1e57abb85c8864768464825efedc51f942fbbb198e2741059acac63114",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.masks",
+        "MainTheory.Orbit45PrintedWalsh.actual_rows",
+        "MainTheory.Orbit45PrintedWalsh.pattern",
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedWalsh.selectedRows",
+        "MainTheory.Orbit45PrintedWalsh.selectedCols",
+        "MainTheory.Orbit45PrintedWalsh.rank_seven",
+        "MainTheory.Orbit45PrintedWalsh.minor_absolute_determinant"
+      ],
+      "review": "20261005 actual formula/type review: Compared the twelve characters, their literal restrictions, the seven selected rows, columns 0,1,2,3,4,5,7 and the absolute determinant 256. The complex kernel is exactly the displayed three-parameter ten-vector with all four A signs and both copies of -B-C retained. This review does not replace the separate physical cross-equation derivation."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-Walsh-kernel",
+      "statement_sha256": "7f8fc44ddceba412cdb2548e33839db13de1736f03a0332c86558ad935092a84",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.masks",
+        "MainTheory.Orbit45PrintedWalsh.actual_rows",
+        "MainTheory.Orbit45PrintedWalsh.pattern",
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedWalsh.selectedRows",
+        "MainTheory.Orbit45PrintedWalsh.selectedCols",
+        "MainTheory.Orbit45PrintedWalsh.rank_seven",
+        "MainTheory.Orbit45PrintedWalsh.minor_absolute_determinant"
+      ],
+      "review": "20261005 actual formula/type review: Compared the twelve characters, their literal restrictions, the seven selected rows, columns 0,1,2,3,4,5,7 and the absolute determinant 256. The complex kernel is exactly the displayed three-parameter ten-vector with all four A signs and both copies of -B-C retained. This review does not replace the separate physical cross-equation derivation."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-z-magnitudes",
+      "statement_sha256": "7646fb89a6bfc786c619ae739df4dedefb69ce93a7314d7302b7d4ccd3b02d21",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.cross_magnitude"
+      ],
+      "review": "20261005 actual formula/type review: Equal matched squared moduli imply |conj(c)*d|=|c|^2, including c=0. The square-root expression is the same nonnegative product magnitude."
+    },
+    {
+      "id": "supplementary.tex:equation@6635",
+      "statement_sha256": "62fb3e9b0651e68c5cd8ca7902899cd46f0d35a820d929b0ea7207aa2b549246",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedConsequences.fixed_mass"
+      ],
+      "review": "20261005 actual formula/type review: The third and fourth zero-based matched entries have opposite cross monomials but magnitudes alpha and 1/4-alpha, so alpha and |A| are both 1/8. No full-enumerator conclusion is assumed."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-alpha-fixed",
+      "statement_sha256": "94a3da6b84b61d20ca70aef56b1a79f097056d1ce6baea99a7939d02d7e7f0dc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedConsequences.fixed_mass"
+      ],
+      "review": "20261005 actual formula/type review: The third and fourth zero-based matched entries have opposite cross monomials but magnitudes alpha and 1/4-alpha, so alpha and |A| are both 1/8. No full-enumerator conclusion is assumed."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-triangle-magnitudes",
+      "statement_sha256": "61d9faa6c2760063440295b516a837f564b619d6135cca21b7f53eb5d8bc4f40",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedWalsh.pattern",
+        "MainTheory.Orbit45PrintedWalsh.kernel_iff",
+        "MainTheory.Orbit45PrintedAlgebra.cross_magnitude"
+      ],
+      "review": "20261005 actual formula/type review: Entries 1,0,2 give |B|=beta, |C|=gamma and |B+C|=sigma from the matched probabilities. The signs have no effect on magnitude."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-triangle-phases-general",
+      "statement_sha256": "140949d10ebe529383cb7be4774c4034dd5637020b57a41b521dd18794bdb2c2",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedConsequences.triangle_phases",
+        "MainTheory.Orbit45PrintedConsequences.unitPhase_normSq",
+        "MainTheory.Orbit45PrintedConsequences.unitPhase_value"
+      ],
+      "review": "20261005 actual formula/type review: The phase decomposition is proved with a total choice at zero magnitude. All three phases have normSq one, the first two reproduce B and C, and the third reproduces -(B+C). Their weighted sum is exactly zero."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-vector-triangle-general",
+      "statement_sha256": "edadca3e12a723100635da619fea0cbc5b78beab7755fa9fba047f057d9f607b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedConsequences.triangle_phases",
+        "MainTheory.Orbit45PrintedConsequences.unitPhase_normSq",
+        "MainTheory.Orbit45PrintedConsequences.unitPhase_value"
+      ],
+      "review": "20261005 actual formula/type review: The phase decomposition is proved with a total choice at zero magnitude. All three phases have normSq one, the first two reproduce B and C, and the third reproduces -(B+C). Their weighted sum is exactly zero."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-onebody-Z-zero",
+      "statement_sha256": "043ee7c3de68a9d8f1b7adfe0a201da382dec2c077863f19387adf1ac45aca1b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.one_body_Z"
+      ],
+      "review": "20261005 actual formula/type review: The printed ten-point probability pattern with alpha=1/8 gives zero for every actual single-coordinate Z character. This is proved before using the final full-KL enumerator theorem."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A1-zero",
+      "statement_sha256": "3db1b548b0ff9bc6e78f61cd05d22f734c4394395d7f841471ae2f20b916fb94",
+      "status": "covered",
+      "lean_declarations": [
+        "SixQubit.Orbit45Family.Aco_one_zero",
+        "SixQubit.Orbit45Family.trProj_weight_one_zero"
+      ],
+      "review": "20261005 actual formula/type review: The physical weight-one trace vanishes for every Pauli, including X and Y via absent full-fiber incidences. Aco_1=0 gives normalized A1=0."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-reversal-relations",
+      "statement_sha256": "12986f9019fe489c264970901acb29402110149a0757ef3bf0697b4bc2be8cfc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.complement_matching",
+        "MainTheory.Orbit45PrintedAlgebra.moment_reversal",
+        "MainTheory.Orbit45PrintedAlgebra.cross_reversal"
+      ],
+      "review": "20261005 actual formula/type review: Bit complementation matches bottom r to top 9-r. Both the exact probability and cross-Walsh patterns are invariant under this reversal."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-d-from-z",
+      "statement_sha256": "e4f661352182df50018a3392393b42ca04b3758955cd0d0721672726c87754ef",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.recover"
+      ],
+      "review": "20261005 actual formula/type review: The two divisions require the displayed strictly positive probability. Complex conjugation and c*conj(c)=|c|^2 give both recovery expressions."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-paired-spinflip-products",
+      "statement_sha256": "2f6f676ee399e4f6b52e6b7c90bbe285efa20e88e2c5cdfe6ad06b24fb805331",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.recover",
+        "MainTheory.Orbit45PrintedAlgebra.paired_products"
+      ],
+      "review": "20261005 actual formula/type review: Equal reversal probabilities and cross monomials give the endpoint product equality. The proof treats the zero-amplitude case explicitly and proves the displayed division only on positive probabilities."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-opposite-parity",
+      "statement_sha256": "c1d6896302ac1548af9172440a319f38067a2cf76a057ccfabdecf111706e357",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedFibers.opposite_parity",
+        "MainTheory.Orbit45PrintedFibers.reverse_sign"
+      ],
+      "review": "20261005 actual formula/type review: All ten actual bottom strings have reversed partners of opposite Hamming parity, so their spin-flip signs are negatives."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-h",
+      "statement_sha256": "9f839601f02a8ae7a095a98183925857054dc4beda974f9ff876233c442137ef",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAttainment.h",
+        "MainTheory.Orbit45PrintedAttainment.h_square"
+      ],
+      "review": "20261005 actual formula/type review: The literal positive factor is 1/sqrt(8) and has square 1/8."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-canonical-c",
+      "statement_sha256": "0d24e0f5c7ee9d7a7b7f8087b60de573b2fb9b701452bc2f6507adae124b0842",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAttainment.canonical_bottom",
+        "MainTheory.Orbit45PrintedAttainment.canonical_top",
+        "MainTheory.Orbit45PrintedAttainment.normalized",
+        "MainTheory.Orbit45PrintedAttainment.full_kl"
+      ],
+      "review": "20261005 actual formula/type review: The align inventory includes both canonical c and d vectors. Compared every square root, sign and conjugated phase in both ten-entry lists. Under the printed vector-triangle premise these are actual normalized physical states with all distance-three KL equations, including zero triangle sides."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-R",
+      "statement_sha256": "b7914bcc8cf5fd2bc05e190fd07e91fd90714f90b0cfcb6014bbd8a7f9d9f8ac",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.R"
+      ],
+      "review": "20261005 actual formula/type review: R is exactly beta^2+gamma^2+sigma^2; no code-space conclusion is inferred from this scalar definition."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A2-diagonal",
+      "statement_sha256": "b80aa14bd4a67452ea6978d9fabbdd81d266c1f928edc8dfd18318750d135afe",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.diagonal_sum",
+        "SixQubit.Orbit45A2.dressing_pure"
+      ],
+      "review": "20261005 actual formula/type review: Summing the nine nonzero diagonal coefficients gives 48R-1/2. The actual pure-Z Pauli sum has the same value with library block masses (g1,g2,g3)=4*(gamma,beta,sigma). This does not certify individual entries of the separate ZZ table."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-triangle-identity1",
+      "statement_sha256": "df5e386c2c0c54313776223edbb1538d9edcd59bb7e8e38e230dece0d0b37d79",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.triangle_identity"
+      ],
+      "review": "20261005 actual formula/type review: The align inventory includes all three identities. Each follows from the literal complex vector-triangle equation and both unit phases. Their norm-square expansions retain the xi+eta sign and need no nonzero side length."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A2-off",
+      "statement_sha256": "4618e45596c199643ea02a1b93c44fa77dba52ab11f3f90e8d3c69d4380cdeca",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45PrintedAlgebra.off_diagonal_sum"
+      ],
+      "review": "20261005 actual formula/type review: The printed three nonnegative coherence contributions sum to 1/2-16R using all three triangle identities and total mass 1/4. The calculation itself imposes no positive-support restriction."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A2-final",
+      "statement_sha256": "6fd94dfa8ce436eaee5f4bc70ecadd5260d1b34fb3c1649dfb56732adba34aa5",
+      "status": "covered",
+      "lean_declarations": [
+        "SixQubit.Orbit45A2.Aco_two_value",
+        "SixQubit.Orbit45Universal.block_masses",
+        "SixQubit.Orbit45Phase.phase_relations",
+        "MainTheory.Orbit45PrintedFibers.bit_transport",
+        "MainTheory.Orbit45PrintedAlgebra.diagonal_sum",
+        "MainTheory.Orbit45PrintedAlgebra.off_diagonal_sum"
+      ],
+      "review": "20261005 actual formula/type review: The physical universal Aco_2 identity gives normalized A2=32R, using g1=4*gamma, g2=4*beta and g3=4*sigma in the explicitly transported printed order. Support, actual KL and derived phase relations are retained and no amplitude is assumed nonzero."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A3-final",
+      "statement_sha256": "c48d6ab3a3085d397e4d4375b3009bc563fb4a6c4519d2782da7839451a4165c",
+      "status": "covered",
+      "lean_declarations": [
+        "SixQubit.Orbit45Family.universal_family",
+        "SixQubit.Orbit45Family.IsFamilyA"
+      ],
+      "review": "20261005 actual formula/type review: The universal physical seven-entry family gives A2=t and A3=1-t for every full-fiber code, including boundary supports."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-R-min",
+      "statement_sha256": "0e1cc70094d45a5dbd09c139e868a0cb684f3dd6db2a84622930f2faf8c83f3a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.lower",
+        "MainTheory.Orbit45TrianglePolynomial.lower_equality"
+      ],
+      "review": "20261005 actual formula/type review: The exact lower bound is 1/48 and equality holds precisely when all three masses are 1/12 under the full closed triangle domain."
+    },
+    {
+      "id": "supplementary.tex:displaymath@7096",
+      "statement_sha256": "0082ae8179422b23d1250795e001e7c7967df56bae8619a2a6f4fb49a0e4a3f9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.lower",
+        "MainTheory.Orbit45TrianglePolynomial.lower_equality"
+      ],
+      "review": "20261005 actual formula/type review: The exact lower bound is 1/48 and equality holds precisely when all three masses are 1/12 under the full closed triangle domain."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-R-max",
+      "statement_sha256": "6ca5b8e9e8bcb8f43936c192fac0f1eef29a8b773701ffe7afa5c4144add25d9",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.upper",
+        "MainTheory.Orbit45TrianglePolynomial.upper_equality"
+      ],
+      "review": "20261005 actual formula/type review: The exact upper bound is 1/32. Equality holds at precisely the three permutations of (0,1/8,1/8), including every degenerate vertex."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-A2-range",
+      "statement_sha256": "994e86a25b4cc284ef0be6d3fe56d9bdc1b2ca17792ec5412ad972306a25645b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.interval",
+        "SixQubit.Orbit45Final.fully_certified"
+      ],
+      "review": "20261005 actual formula/type review: The scalar triangle bounds give [2/3,1] and the actual full-KL converse and pointwise attainment prove both directions for A2."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-explicit-path",
+      "statement_sha256": "63b71f20f53c1a236f2a4f7fbb07c1d78a3726a84ef214ffc3a226ac0d31eccc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.beta",
+        "MainTheory.Orbit45TrianglePolynomial.gamma",
+        "MainTheory.Orbit45TrianglePolynomial.sigma",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: Compared all three printed path functions. For every r in [0,1] they satisfy the closed triangle domain and give 2/3+r^2/3."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-path-t",
+      "statement_sha256": "a7305a2d316f99259de3e5398821775b8f108aa6f50732b934554416e16e990c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit45TrianglePolynomial.beta",
+        "MainTheory.Orbit45TrianglePolynomial.gamma",
+        "MainTheory.Orbit45TrianglePolynomial.sigma",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: Compared all three printed path functions. For every r in [0,1] they satisfy the closed triangle domain and give 2/3+r^2/3."
+    },
+    {
+      "id": "supplementary.tex:eq:o45-full-A",
+      "statement_sha256": "8bb5a6ed4d9f5d049ca9b4b4f9d2b2aa3e4670490643f05fb43f14ff47a6cf09",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.PaperSupplementaryImages.o45_weight_image",
+        "SixQubit.Orbit45Final.fully_certified",
+        "SixQubit.Orbit45Family.IsFamilyA",
+        "SixQubit.Orbit45Family.IsFamilyB",
+        "MainTheory.Orbit45TrianglePolynomial.interval",
+        "MainTheory.Orbit45TrianglePolynomial.path_domain",
+        "MainTheory.Orbit45TrianglePolynomial.path_parameter"
+      ],
+      "review": "20261005 actual formula/type review: The image equality is for genuine normalized full-KL encoders on both complete fibers. Both directions include boundary supports and exact attainment throughout [2/3,1]. Read all seven A and B entries and divide the raw Aco/Bco values by four. The moment-triangle parameter gives the same enumerator interval, including its endpoints."
+    },
+    {
+      "id": "supplementary.tex:displaymath@10276",
+      "statement_sha256": "6ff78efce64c6c0b5265c73686d2a152251fafe23ca53e97d813856abec48a9a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedReflection.C",
+        "MainTheory.Orbit33PrintedReflection.J",
+        "MainTheory.Orbit33PrintedReflection.R",
+        "MainTheory.Orbit33PrintedReflection.inverse",
+        "MainTheory.Orbit33PrintedReflection.determinant",
+        "MainTheory.Orbit33PrintedReflection.reflection"
+      ],
+      "review": "20261005 actual formula/type review: Compared all 36 entries of C, the diagonal J and the six masses R. Its actual rational determinant is 160, its explicit inverse is verified on both sides, and C-inverse*J*C=2R*1-transpose-I. These are unconditional matrix identities; no no-go hypothesis or inconsistent full-KL premise is used."
+    },
+    {
+      "id": "supplementary.tex:eq:o33reflection",
+      "statement_sha256": "ac4e8bd6328ab37f72254ecba89530618dfa3a13f5ff01a1fe2735168587ffdb",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit33PrintedReflection.C",
+        "MainTheory.Orbit33PrintedReflection.J",
+        "MainTheory.Orbit33PrintedReflection.R",
+        "MainTheory.Orbit33PrintedReflection.inverse",
+        "MainTheory.Orbit33PrintedReflection.determinant",
+        "MainTheory.Orbit33PrintedReflection.reflection"
+      ],
+      "review": "20261005 actual formula/type review: Compared all 36 entries of C, the diagonal J and the six masses R. Its actual rational determinant is 160, its explicit inverse is verified on both sides, and C-inverse*J*C=2R*1-transpose-I. These are unconditional matrix identities; no no-go hypothesis or inconsistent full-KL premise is used."
+    }
+  ]
+}

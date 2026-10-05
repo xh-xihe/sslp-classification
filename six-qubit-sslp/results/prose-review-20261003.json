@@ -3,10 +3,134 @@
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "28be11e4301c5b7dceb234ce4474f106fcd647b0ef00b0eb28af135c82055fca"
+    "documents/20261003/supplementary.tex": "85aa8ec508338c4f6f7ab6c529f310b6882f446bec2e3df49c4b9defba24949f"
   },
-  "status": "unreviewed",
-  "method": "Re-inventoried after the 2026-10-04 SI structural edit and author abstract update. Previous reviews are archived by source snapshot; candidate declaration mappings are retained separately. No source-wide prose coverage is transferred.",
-  "assertions": [],
-  "remaining": "Review the current source context using the archived review and correspondence-candidates-20261004.json. Kernel checks of the proof libraries remain separate."
+  "status": "partial",
+  "method": "Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited.",
+  "assertions": [
+    {
+      "source": "main.tex",
+      "line": 172,
+      "end_line": 176,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: the introductory diagonal-group finiteness claim needs the fixed-product-basis and single-site detection hypotheses used by the actual theorem.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "05a38d73cafef363d1c565a54bad8e40172ab3c997a8f6cfc90ce7c70acc73ae"
+    },
+    {
+      "source": "main.tex",
+      "line": 269,
+      "end_line": 272,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: probability moment rows implement diagonal Z detection; full X/Y KL conditions also involve complex phases.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "e5a428e32e0e77151569c6a43813e1778992315a7259109914529ceb2bfd0e09"
+    },
+    {
+      "source": "main.tex",
+      "line": 274,
+      "end_line": 277,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: the unrestricted Singleton statement includes rank one and is false there. The repository carries both the corrected rank-at-least-two theorem and a kernel counterexample. A proof of a corrected statement cannot certify this frozen wording.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "c53a06c5ad205f2df24faec467b1952e2f4aae03e859ec2fa8215fbcf6bb5300"
+    },
+    {
+      "source": "main.tex",
+      "line": 684,
+      "end_line": 686,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: rational homogeneous replacement preserves the specified image/kernel information; this must not be read as equality of the entire homogeneous component.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "20908505be33362a3cf92573d02306825c022c63c5ca7c734ccb094f291b2a6b"
+    },
+    {
+      "source": "main.tex",
+      "line": 1825,
+      "end_line": 1827,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: physical-order minimization in this sentence has a broader representative scope than the reduced diagonal definition used by its corresponding result.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "ee01d99b4ea4376c5e2fdebad52c3cccd982ba9d777cab86da26229d8a41a9e2"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4369,
+      "end_line": 4370,
+      "kind": "covered",
+      "reason": "The literal cat coefficients give two orthonormal actual physical columns under the printed real quadratic parameter constraint.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_apply",
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_isometry"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "8ed945be522ce639f34948f4abedc7578588f59f6f79ed9d1254be47a195b432"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4373,
+      "end_line": 4377,
+      "kind": "covered",
+      "reason": "The actual five-cat embedding kills all nonidentity single-site Paulis. The only nonzero two-site types are ZZ and equal XX/YY; constructive support classification exhausts all weight-at-most-two labels.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatCompression.cats",
+        "MainTheory.PrimitiveOrderTwoCatCompression.single_zero",
+        "MainTheory.PrimitiveOrderTwoCatCompression.ZZ",
+        "MainTheory.PrimitiveOrderTwoCatCompression.XX_YY",
+        "MainTheory.PrimitiveOrderTwoCatCompression.mixed_zero",
+        "MainTheory.PrimitiveOrderTwoCatKL.small_label"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "4fdecc4a4a99915752183bebd48b24439b92fdd11a9a152cb621a18948b7b9d9"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4406,
+      "end_line": 4418,
+      "kind": "covered",
+      "reason": "Tail-only, first-site-only and first/tail Pauli factors exhaust the actual weight-at-most-two matrix compressions. The constructive proof retains all real normalized parameters and uses no nonzero individual amplitude premise or division by an amplitude.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatKL.real_tail_KL",
+        "MainTheory.PrimitiveOrderTwoCatKL.first_pauli_KL",
+        "MainTheory.PrimitiveOrderTwoCatKL.one_tail_zero",
+        "MainTheory.PrimitiveOrderTwoCatKL.weight_split",
+        "MainTheory.PrimitiveOrderTwoCatKL.full_KL"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "46f87cba977dbfeb0eb05d92e06b3992d2ff347f9465c71a5fee9c016916fd2a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4440,
+      "end_line": 4441,
+      "kind": "covered",
+      "reason": "The actual six-qubit code projector is orthogonal to its conjugate six-Y spin flip and their product has zero trace. The subsequent enumerator conclusion is outside this reviewed prose block.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.overlap_zero",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.projectors_orthogonal",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.spin_trace_zero"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "6aa1531913ba019fe24eb6a09df48807a855409e8bf84ba2ed23156003fb0a7c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5607,
+      "end_line": 5607,
+      "kind": "covered",
+      "reason": "The target identity retains arbitrary raw amplitudes and only divides by the positive common column norm. No amplitude or Schmidt coefficient is required to be nonzero.",
+      "declarations": [
+        "MainTheory.Orbit3PrintedHomogeneousTarget.raw_expectation",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.homogeneous_target"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "71e2612bd8be3afbbbbbec7685c0123987d950c163f0f5510a86c776743a4697"
+    }
+  ],
+  "remaining": "Complete all other current prose/context review and the remaining display/named-result obligations. Preserve the five frozen main issues until the author changes their disposition."
 }

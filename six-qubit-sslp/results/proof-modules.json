@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 15923,
+  "module_count": 15942,
   "counts_by_library": {
-    "MainTheory": 14033,
+    "MainTheory": 14052,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -280,6 +280,13 @@
       "module": "MainTheory.BinaryFeatureMoments",
       "path": "MainTheory/BinaryFeatureMoments.lean",
       "sha256_lf": "9772871d358f7ba4956287eeeac3e518088a6215b75b99697ed4efe82d24e4ee",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.BinaryMaskConvention",
+      "path": "MainTheory/BinaryMaskConvention.lean",
+      "sha256_lf": "567ff228c55f1b2202512e8c20bc9b14e9103fb1e2478507bca7aeafd1285c02",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -93881,6 +93888,13 @@
       "topic": "Kernel audits"
     },
     {
+      "module": "MainTheory.KernelDeclarationTypes",
+      "path": "MainTheory/KernelDeclarationTypes.lean",
+      "sha256_lf": "cf62dd29f2663806fea51696fe60cd611cf9b988e937ffa15574b76795ebcb2c",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.KLCodeBridge",
       "path": "MainTheory/KLCodeBridge.lean",
       "sha256_lf": "c55b1f1c8a156b16b025c8e3cb230eb7d76b7d77ea04b93df8620f40f66c6acb",
@@ -94061,6 +94075,13 @@
       "sha256_lf": "612b7edc761a0bf465953489ea7b1b0c4a569c3241960c46f8e2091485672be6",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ManuscriptCertificationAudit20261005",
+      "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
+      "sha256_lf": "eb6d4eb5da936e505a8bc21f72c81454d912fcd8c9ea41f952e286831c2d9648",
+      "library": "MainTheory",
+      "topic": "Kernel audits"
     },
     {
       "module": "MainTheory.MaskRankBridge",
@@ -94574,6 +94595,13 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit33PrintedReflection",
+      "path": "MainTheory/Orbit33PrintedReflection.lean",
+      "sha256_lf": "d4704df9bb622e2e77cfbd9654d01c0670b2c1b5631c8320c9f312fbdb22daed",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit36Adjugate",
       "path": "MainTheory/Orbit36Adjugate.lean",
       "sha256_lf": "09090875c4f38e47a82392eee4e518807ca73cde8fbfb6bc10b7b4be0e07623a",
@@ -94938,9 +94966,37 @@
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
     {
+      "module": "MainTheory.Orbit3PrintedAmplitudes",
+      "path": "MainTheory/Orbit3PrintedAmplitudes.lean",
+      "sha256_lf": "dcd5141cd61b91fa0177966548865049f155b01151c3b96b7e281663b9d278bf",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
       "module": "MainTheory.Orbit3PrintedEncoderEquations",
       "path": "MainTheory/Orbit3PrintedEncoderEquations.lean",
       "sha256_lf": "b23e00c2ae0c7880dab1fb7523ab7aa22279e70d875b067091b6fc5d9c4eb6c4",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3PrintedHomogeneousTarget",
+      "path": "MainTheory/Orbit3PrintedHomogeneousTarget.lean",
+      "sha256_lf": "3330b33ee7ffd7015c7486cf1e3473b311039deb22919f8166d25e35a2e504c9",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3PrintedParityRelations",
+      "path": "MainTheory/Orbit3PrintedParityRelations.lean",
+      "sha256_lf": "51217ff9c3ea3c6abc0d7a49a83d274a4eaba3d5518c834e1acf90090dd9341c",
+      "library": "MainTheory",
+      "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit3PrintedScalarConsequences",
+      "path": "MainTheory/Orbit3PrintedScalarConsequences.lean",
+      "sha256_lf": "a3a92a9063334314e7ca25002086af1f03d92972bffd02ffd5158e1d63e7c6e2",
       "library": "MainTheory",
       "topic": "Orbit 3: scalar and sextic encoder bridges"
     },
@@ -95090,6 +95146,13 @@
       "sha256_lf": "465814eac6675d99bf1e77c76fca4947cfbc255cec8e590d8e231e8030986895",
       "library": "MainTheory",
       "topic": "Orbit 3: scalar and sextic encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit45PrintedAlgebra",
+      "path": "MainTheory/Orbit45PrintedAlgebra.lean",
+      "sha256_lf": "47c3075149965b750d4eaa7df0908ad4fd02d0560b6f965b940ef559fa72f1fa",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
     },
     {
       "module": "MainTheory.Orbit45PrintedAttainment",
@@ -96961,11 +97024,67 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.PrimitiveOrderTwoCatAlgebra",
+      "path": "MainTheory/PrimitiveOrderTwoCatAlgebra.lean",
+      "sha256_lf": "7d8f78562b7b91b82ac61173874b68e523a5e1a8795b9c74fe163402ab680900",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatCompression",
+      "path": "MainTheory/PrimitiveOrderTwoCatCompression.lean",
+      "sha256_lf": "103668a29761cfc03665132f85e601605c124090a91cb127dc3b783b5bad92ea",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatEncoder",
+      "path": "MainTheory/PrimitiveOrderTwoCatEncoder.lean",
+      "sha256_lf": "f09a5b76b3af46abb508c8101c3cafc94adceab9aa58626c79faafae05d8df39",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatEnumerator",
+      "path": "MainTheory/PrimitiveOrderTwoCatEnumerator.lean",
+      "sha256_lf": "fd2bd0bdbae843159ba7468e231451e02de1edd84118f35a690e39c35165b9c4",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatKL",
+      "path": "MainTheory/PrimitiveOrderTwoCatKL.lean",
+      "sha256_lf": "5acb5c787cf9c83349a59949dbfd0a87f497420f4d5987f70edffebd6ae0a83c",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatLogicals",
+      "path": "MainTheory/PrimitiveOrderTwoCatLogicals.lean",
+      "sha256_lf": "d88a9f4b68fe03c5a3348d1b5335b067908fc40f446365620261132fe64a6b36",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
+      "module": "MainTheory.PrimitiveOrderTwoCatSpinFlip",
+      "path": "MainTheory/PrimitiveOrderTwoCatSpinFlip.lean",
+      "sha256_lf": "2d551e8b393c26540b4f461ea20132bd38fd2577f78c70be1b61ceb1060f64fa",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
+    },
+    {
       "module": "MainTheory.PrimitiveReduction",
       "path": "MainTheory/PrimitiveReduction.lean",
       "sha256_lf": "831aca1aa5f14e588061e86771824a92d11f4f85b991df33fa0bb98871402478",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.PrimitiveSplitDisplays",
+      "path": "MainTheory/PrimitiveSplitDisplays.lean",
+      "sha256_lf": "0f593096087205855649c79f276dc49a6e7f2dd72485e9db8a9c409cdc9e8302",
+      "library": "MainTheory",
+      "topic": "Primitive order-two families: physical split and cat constructions"
     },
     {
       "module": "MainTheory.ProbabilityFrameEntries",
@@ -97962,6 +98081,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.StandardPerfectCodePhysical",
+      "path": "MainTheory/StandardPerfectCodePhysical.lean",
+      "sha256_lf": "5671df7f5bd1f4c3c3e22dccb4e9c6090f48027075fbe056eda6b30c96d0393c",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.StateEuclidean",
       "path": "MainTheory/StateEuclidean.lean",
       "sha256_lf": "868fa291a76a71149f292d9c5249658c018470efeb86e1b705e36cde5eeb74e8",
@@ -97972,6 +98098,13 @@
       "module": "MainTheory.SubspaceCode",
       "path": "MainTheory/SubspaceCode.lean",
       "sha256_lf": "5d5578287da1b6bf1b68d5ca041183e0e2b310a1f321bda8dde67b550b3456d4",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SupplementaryImageStatus",
+      "path": "MainTheory/SupplementaryImageStatus.lean",
+      "sha256_lf": "66849cb439e1e9708cc8b9d9becda76f7058040731ee11bd4f4af4b654c50602",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
