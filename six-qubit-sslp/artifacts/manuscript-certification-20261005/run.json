@@ -163,10 +163,10 @@
   },
   "publication": {
     "status": "PASS",
-    "commit": "5ce6aff909dc2370b16bdab649077439762e9058",
+    "commit": "7a533397340e5272622dd69a371900d7fc89bdc0",
     "branch": "sixqubit-classification",
-    "modules": 16198,
-    "record": "artifacts/manuscript-certification-20261005/publication-binding-16198.json"
+    "modules": 16218,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16218.json"
   },
   "last_accepted_whole_build": {
     "status": "PASS",
@@ -587,10 +587,5 @@
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
   },
-  "proof_acceptance": "pending_current_proof_snapshot",
-  "pending_publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification",
-    "modules": 16218
-  }
+  "proof_acceptance": "pending_current_proof_snapshot"
 }

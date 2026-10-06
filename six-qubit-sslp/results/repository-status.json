@@ -59,17 +59,13 @@
     "reviewed_blocks": 89
   },
   "planned_axiom_roots": 9251,
-  "canonical_publication_commit": "5ce6aff909dc2370b16bdab649077439762e9058",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16198.json",
+  "canonical_publication_commit": "7a533397340e5272622dd69a371900d7fc89bdc0",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16218.json",
   "identified_si_qualifications": 0,
   "current_context_revalidation": {
     "record": "artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json",
     "status": "PASS",
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
-  },
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/display-route-work-in-progress.json",
-    "scope": "PASS local physical display-route proof route; publication pending and manuscript correspondence incomplete."
   }
 }
