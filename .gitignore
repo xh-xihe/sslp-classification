@@ -20,3 +20,55 @@ out/
 # Python
 __pycache__/
 *.pyc
+
+# Project-specific exclusions, preserved from the former package root.
+# Lean / lake build artifacts (~8 GB, fully reproducible from lake-manifest.json)
+.lake/
+build/
+*.olean
+*.ilean
+*.trace
+*.hash
+
+# build transcripts kept while working
+b*.log
+build*.log
+build_zh/
+tmp/
+
+# LaTeX intermediates (the .pdf is committed on purpose)
+formalization/*.aux
+formalization/*.log
+formalization/*.out
+formalization/*.toc
+formalization/*.synctex.gz
+
+# scratch
+__pycache__/
+*.pyc
+
+# The manuscript is a collaborator's unpublished work, not part of this
+# formalization and not ours to redistribute. Deliberately excluded; the
+# formalization references it by section and line number instead.
+six_qubit_sslp.tex
+six_qubit_sslp_v7.tex
+# Same reason, same collaborator: the reorganized manuscript and its
+# companion documents. Referenced by section, never redistributed.
+documents/
+formalization/*.fls
+formalization/*.fdb_latexmk
+debug.log
+
+# verification transcripts
+.v.log
+.check-readme-names.lean
+
+# Local deliverables and inspection caches
+output/
+.pytest_cache/
+scratch/orbit2-colleague-review/
+__beta5_stage/
+
+# The research workbench front end is its own git repository (it is deployed
+# from there, with its own history), so it is not tracked here.
+apps/

@@ -1,0 +1,19 @@
+{
+  "paper_version": "20261003",
+  "full_suite": false,
+  "passed": true,
+  "checks": [
+    {
+      "check": "sources",
+      "passed": true,
+      "detail": "16227 Lean sources clean",
+      "seconds": 149.875
+    },
+    {
+      "check": "generated",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\generated.log; PASS: generated coverage, SHA-256, and build order (819 + 1101 + 11 + 40 + 112 + 119 + 240 + 624 + 197 + 1466 + 5356 files)",
+      "seconds": 234.735
+    }
+  ]
+}

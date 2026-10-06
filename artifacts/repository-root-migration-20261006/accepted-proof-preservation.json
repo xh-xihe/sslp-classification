@@ -1,0 +1,12 @@
+{
+  "compiler_configuration_and_tools_identical": true,
+  "accepted_build_context_identical": true,
+  "accepted_compiled_module_keys_identical": true,
+  "modules": 16227,
+  "fresh_build": {
+    "rebuilt": 0,
+    "reused": 16227
+  },
+  "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9375.json",
+  "scope": "Preserves prior axiom acceptance through identical accepted compiled-module keys; no new manuscript correspondence assertion."
+}

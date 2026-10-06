@@ -1,0 +1,61 @@
+test_duplicate_root_is_rejected (test_certification_tools.AxiomAudit.test_duplicate_root_is_rejected) ... ok
+test_empty_audit_file_fails_closed (test_certification_tools.AxiomAudit.test_empty_audit_file_fails_closed) ... ok
+test_no_success_marker_and_wrong_count_are_rejected (test_certification_tools.AxiomAudit.test_no_success_marker_and_wrong_count_are_rejected) ... ok
+test_shared_inventory_rejects_duplicate_roots (test_certification_tools.AxiomAudit.test_shared_inventory_rejects_duplicate_roots) ... ok
+test_unexpected_axiom_and_nonzero_exit_are_rejected (test_certification_tools.AxiomAudit.test_unexpected_axiom_and_nonzero_exit_are_rejected) ... ok
+test_changed_output_is_rejected_and_its_dependents_blocked (test_certification_tools.ContextMigration.test_changed_output_is_rejected_and_its_dependents_blocked) ... ok
+test_reproducible_stamps_are_rekeyed_and_then_validate (test_certification_tools.ContextMigration.test_reproducible_stamps_are_rekeyed_and_then_validate) ... ok
+test_wrong_previous_configuration_accepts_nothing (test_certification_tools.ContextMigration.test_wrong_previous_configuration_accepts_nothing) ... ok
+test_build_order_cannot_omit_or_precede_dependency (test_certification_tools.GeneratedManifest.test_build_order_cannot_omit_or_precede_dependency) ... ok
+test_exact_hash_coverage_and_topology (test_certification_tools.GeneratedManifest.test_exact_hash_coverage_and_topology) ... ok
+test_imports_and_prime_audit_names (test_certification_tools.LeanLexing.test_imports_and_prime_audit_names) ... ok
+test_nested_comments_strings_and_real_escape_hatches (test_certification_tools.LeanLexing.test_nested_comments_strings_and_real_escape_hatches) ... ok
+test_shared_audit_inventory_ignores_comments_and_strings (test_certification_tools.LeanLexing.test_shared_audit_inventory_ignores_comments_and_strings) ... ok
+test_absent_root_is_rejected (test_certification_tools.LeanNegativeControls.test_absent_root_is_rejected) ... skipped 'opt-in tiny Lean controls'
+test_actual_warning_is_a_build_error (test_certification_tools.LeanNegativeControls.test_actual_warning_is_a_build_error) ... skipped 'opt-in tiny Lean controls'
+test_custom_axiom_is_rejected (test_certification_tools.LeanNegativeControls.test_custom_axiom_is_rejected) ... skipped 'opt-in tiny Lean controls'
+test_kernel_decision_has_no_untrusted_axiom (test_certification_tools.LeanNegativeControls.test_kernel_decision_has_no_untrusted_axiom) ... skipped 'opt-in tiny Lean controls'
+test_shared_command_accepts_multiple_trusted_roots (test_certification_tools.LeanNegativeControls.test_shared_command_accepts_multiple_trusted_roots) ... skipped 'opt-in tiny Lean controls'
+test_shared_command_rejects_absent_root (test_certification_tools.LeanNegativeControls.test_shared_command_rejects_absent_root) ... skipped 'opt-in tiny Lean controls'
+test_shared_command_rejects_custom_axiom (test_certification_tools.LeanNegativeControls.test_shared_command_rejects_custom_axiom) ... skipped 'opt-in tiny Lean controls'
+test_valid_root_succeeds (test_certification_tools.LeanNegativeControls.test_valid_root_succeeds) ... skipped 'opt-in tiny Lean controls'
+test_all_statistical_columns_are_preserved_and_change_the_manifest (test_certification_tools.PaperManifest.test_all_statistical_columns_are_preserved_and_change_the_manifest) ... ok
+test_complete_table_and_ordered_fibres (test_certification_tools.PaperManifest.test_complete_table_and_ordered_fibres) ... ok
+test_missing_duplicate_and_malformed_rows_fail (test_certification_tools.PaperManifest.test_missing_duplicate_and_malformed_rows_fail) ... ok
+test_private_source_hashes_and_inventory_are_checked (test_certification_tools.PaperManifest.test_private_source_hashes_and_inventory_are_checked) ... ok
+test_correct_restricted_minimum (test_certification_tools.QuadraticPruneNegativeControls.test_correct_restricted_minimum) ... skipped 'opt-in Lean certificate controls'
+test_overstated_quadratic_lower_bound_is_rejected (test_certification_tools.QuadraticPruneNegativeControls.test_overstated_quadratic_lower_bound_is_rejected) ... skipped 'opt-in Lean certificate controls'
+test_wrong_chunk_fixed_bits_are_rejected (test_certification_tools.QuadraticPruneNegativeControls.test_wrong_chunk_fixed_bits_are_rejected) ... skipped 'opt-in Lean certificate controls'
+test_current_source_imports_bypass_stale_umbrella (test_certification_tools.ReadmeFailures.test_current_source_imports_bypass_stale_umbrella) ... ok
+test_failure_without_unknown_word_is_rejected_and_logged (test_certification_tools.ReadmeFailures.test_failure_without_unknown_word_is_rejected_and_logged) ... ok
+test_required_audit_inventory_cannot_silently_disappear (test_certification_tools.ReadmeFailures.test_required_audit_inventory_cannot_silently_disappear) ... ok
+test_changed_compile_environment_changes_the_context (test_certification_tools.SerialBuild.test_changed_compile_environment_changes_the_context) ... External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+ok
+test_compile_flags_change_the_driver_fingerprint (test_certification_tools.SerialBuild.test_compile_flags_change_the_driver_fingerprint) ... ok
+test_content_changes_invalidate_without_timestamp_reliance (test_certification_tools.SerialBuild.test_content_changes_invalidate_without_timestamp_reliance) ... ok
+test_declaring_another_library_keeps_the_context (test_certification_tools.SerialBuild.test_declaring_another_library_keeps_the_context) ... External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+ok
+test_dependency_order_and_cycle (test_certification_tools.SerialBuild.test_dependency_order_and_cycle) ... ok
+test_failure_preserves_old_cache_and_writes_no_stamp (test_certification_tools.SerialBuild.test_failure_preserves_old_cache_and_writes_no_stamp) ... ok
+test_malformed_stamp_is_never_adopted (test_certification_tools.SerialBuild.test_malformed_stamp_is_never_adopted) ... ok
+test_source_race_preserves_old_cache (test_certification_tools.SerialBuild.test_source_race_preserves_old_cache) ... ok
+test_success_promotes_then_hash_validates_outputs (test_certification_tools.SerialBuild.test_success_promotes_then_hash_validates_outputs) ... ok
+test_unused_tooling_package_needs_no_build_artifacts (test_certification_tools.SerialBuild.test_unused_tooling_package_needs_no_build_artifacts) ... External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+External snapshot: toolchain, 1 artifacts
+External snapshot: package/Mathlib, 1 artifacts
+ok
+test_omitted_proposal_node_is_rejected (test_certification_tools.SignGeneratedManifest.test_omitted_proposal_node_is_rejected) ... ok
+test_proposal_and_source_changes_are_rejected (test_certification_tools.SignGeneratedManifest.test_proposal_and_source_changes_are_rejected) ... ok
+test_relabelled_node_is_rejected_even_with_matching_hash (test_certification_tools.SignGeneratedManifest.test_relabelled_node_is_rejected_even_with_matching_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.260s
+
+OK (skipped=11)

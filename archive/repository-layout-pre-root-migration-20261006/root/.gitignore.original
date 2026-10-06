@@ -1,0 +1,22 @@
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+*Notes.bib
+build/
+out/
+
+# Lean
+.lake/
+*.olean
+*.ilean
+
+# Python
+__pycache__/
+*.pyc

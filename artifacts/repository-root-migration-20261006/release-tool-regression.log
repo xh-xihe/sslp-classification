@@ -1,0 +1,22 @@
+test_changed_context_invalidates_unchanged_statement (test_paper_release.ReleaseTests.test_changed_context_invalidates_unchanged_statement) ... ok
+test_incomplete_and_stale_prose_cannot_pass (test_paper_release.ReleaseTests.test_incomplete_and_stale_prose_cannot_pass) ... ok
+test_named_results_generator_accepts_private_source_directory (test_paper_release.ReleaseTests.test_named_results_generator_accepts_private_source_directory) ... ok
+test_new_named_report_does_not_inherit_historical_coverage (test_paper_release.ReleaseTests.test_new_named_report_does_not_inherit_historical_coverage) ... ok
+test_old_orbit_provenance_cannot_validate_new_release (test_paper_release.ReleaseTests.test_old_orbit_provenance_cannot_validate_new_release) ... ok
+test_path_traversal_rejected (test_paper_release.ReleaseTests.test_path_traversal_rejected) ... ok
+test_portable_source_sweep_import_needs_no_release_records (test_paper_release.ReleaseTests.test_portable_source_sweep_import_needs_no_release_records) ... ok
+test_private_directory_override_must_match_selected_release (test_paper_release.ReleaseTests.test_private_directory_override_must_match_selected_release) ... ok
+test_private_directory_works_without_default_manuscript_directory (test_paper_release.ReleaseTests.test_private_directory_works_without_default_manuscript_directory) ... ok
+test_private_source_directory_reaches_named_results_check (test_paper_release.ReleaseTests.test_private_source_directory_reaches_named_results_check) ... ok
+test_prose_proof_roots_are_included_in_kernel_audit (test_paper_release.ReleaseTests.test_prose_proof_roots_are_included_in_kernel_audit) ... ok
+test_rebinding_source_hash_does_not_hide_stale_prose_context (test_paper_release.ReleaseTests.test_rebinding_source_hash_does_not_hide_stale_prose_context) ... ok
+test_selected_version_reaches_all_manuscript_subcommands (test_paper_release.ReleaseTests.test_selected_version_reaches_all_manuscript_subcommands) ... ok
+test_shared_math_data_cannot_silently_disagree (test_paper_release.ReleaseTests.test_shared_math_data_cannot_silently_disagree) ... ok
+test_unresolved_erratum_blocks_acceptance (test_paper_release.ReleaseTests.test_unresolved_erratum_blocks_acceptance) ... ok
+test_version_selects_only_its_ledger_axioms (test_paper_release.ReleaseTests.test_version_selects_only_its_ledger_axioms) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.469s
+
+OK
+wrote D:\UTD\Project_purdue\Lean_certification\tmp\root-migration-20261006\published-root\tmp\test-release-f90b892df3944c04be3dd4361fc900fa\results\named-results-20260924.md (762 bytes)

@@ -17,3 +17,14 @@ order-8 seed family. The matching distance upper bound and additions in the
 expanded research draft have separate certification requirements.
 
 The archive remains publicly accessible if this repository is made public.
+
+## Earlier package layout
+
+Before the project moved to the repository root, the complete package was
+under `six-qubit-sslp/`. That layout is preserved by
+[`archive/before-root-migration-20261006`](https://github.com/xh-xihe/sslp-classification/tree/archive/before-root-migration-20261006).
+The root migration preserves every original file; edited navigation and
+merged configuration originals are retained under
+[`archive/repository-layout-pre-root-migration-20261006/`](archive/repository-layout-pre-root-migration-20261006/).
+The complete path/blob ledger is in the
+[migration manifest](artifacts/repository-root-migration-20261006/migration-manifest.json).

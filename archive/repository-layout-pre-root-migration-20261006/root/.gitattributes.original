@@ -1,0 +1,28 @@
+# Line endings are normalized to LF in the repository so that collaborators on
+# Windows, macOS and Linux do not see whole-file diffs after a checkout.
+* text=auto eol=lf
+
+*.lean          text eol=lf
+*.py            text eol=lf
+*.tex           text eol=lf
+*.bib           text eol=lf
+*.md            text eol=lf
+*.json          text eol=lf
+*.csv           text eol=lf
+*.txt           text eol=lf
+lean-toolchain  text eol=lf
+latexmkrc       text eol=lf
+.gitignore      text eol=lf
+
+# Built documents: never diffed, never line-ending-mangled.
+*.pdf   binary
+
+# Certificate payloads and evidence are bound by byte hashes.
+six-qubit-sslp/results/orbit2-kernel/*.json -text
+six-qubit-sslp/results/orbit3-kernel/*.json -text
+six-qubit-sslp/artifacts/orbit-certification-20261003/* -text
+
+# Preserve hash-bound metadata and historical bytes.
+six-qubit-sslp/**/*.json -text
+six-qubit-sslp/artifacts/** -text
+six-qubit-sslp/archive/** -text

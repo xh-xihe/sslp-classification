@@ -1,0 +1,68 @@
+[
+  {
+    "name": "repository-index",
+    "command": [
+      "D:\\Anaconda\\python.exe",
+      "-X",
+      "utf8",
+      "tools/repository_index.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.03
+  },
+  {
+    "name": "index-regression",
+    "command": [
+      "D:\\Anaconda\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_repository_index.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06
+  },
+  {
+    "name": "certification-tool-regression",
+    "command": [
+      "D:\\Anaconda\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_certification_tools.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.38
+  },
+  {
+    "name": "release-tool-regression",
+    "command": [
+      "D:\\Anaconda\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-p",
+      "test_paper_release.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.58
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "status": "PASS_repository_root_migration",
+  "source_commit": "10d8eac67ca50044c1c59cd142a109e3827dc5c8",
+  "preserved_layout_tag": "archive/before-root-migration-20261006",
+  "original_files": 21923,
+  "all_original_files_preserved_by_blob_and_mode": true,
+  "originals_preserved_in_archive": 12,
+  "active_proof_modules": 16227,
+  "active_proofs_byte_identical": true,
+  "historical_acceptance_payloads_byte_identical": true,
+  "fresh_full_build": {
+    "rebuilt": 0,
+    "content_validated_cached_modules": 16227,
+    "record": "artifacts/repository-root-migration-20261006/full-build-success.json"
+  },
+  "accepted_proof_preservation": {
+    "compiler_configuration_and_tools_identical": true,
+    "accepted_build_context_identical": true,
+    "accepted_compiled_module_keys_identical": true,
+    "modules": 16227,
+    "fresh_build": {
+      "rebuilt": 0,
+      "reused": 16227
+    },
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9375.json",
+    "scope": "Preserves prior axiom acceptance through identical accepted compiled-module keys; no new manuscript correspondence assertion."
+  },
+  "source_and_generated_gates": {
+    "paper_version": "20261003",
+    "full_suite": false,
+    "passed": true,
+    "checks": [
+      {
+        "check": "sources",
+        "passed": true,
+        "detail": "16227 Lean sources clean",
+        "seconds": 149.875
+      },
+      {
+        "check": "generated",
+        "passed": true,
+        "detail": "exit=0; log=tmp\\verification\\20261003\\generated.log; PASS: generated coverage, SHA-256, and build order (819 + 1101 + 11 + 40 + 112 + 119 + 240 + 624 + 197 + 1466 + 5356 files)",
+        "seconds": 234.735
+      }
+    ]
+  },
+  "repository_index": "PASS",
+  "tool_regression_tests": {
+    "total": 63,
+    "passed": 52,
+    "skipped": 11,
+    "note": "Lean-dependent controls are skipped in the isolated checkout without its build cache."
+  },
+  "publisher_fixture_checks": "PASS",
+  "edited_navigation_links": "PASS",
+  "checkout_original_blob_integrity": "PASS",
+  "evidence_files_sha256": {
+    "full-build-success.json": "118f2d160598f2185a8664201d1e9910df50d056e33c1024004375d880ecc760",
+    "full-build.log": "62e099f315b1084cbe9991fb94d8cdb5e0b0feebbe959eba32d99fc7d22aea81",
+    "source-generated-report.json": "e0a363b5c4f6a99f1543cd9dbda544fa59f70569db3dc500dffd43c8a51a1b9b",
+    "source-generated.log": "87f6b73c8396dcdb2d7daf80d93d04607dcf5cc62d5028fa04a129a33e35ec3d",
+    "tool-checks.json": "ddd0bbf887ccd12ca9081ea7f6051a111a257eae766d4b10d8539584df5a4271",
+    "checkout-integrity.json": "73ae8d2a2eac6180964bd715a2569d20786a52a863ed365304812bf045c5c973",
+    "accepted-proof-preservation.json": "dcf8d425ea797150744b13835be4a5d2c2b9c57e61b633d05db2f6d14ff86b67",
+    "publisher-checks.json": "4f0eb53bfd0887756279dc07d39ef7dd16a3ab9216017fe532ca1bf2d7817198",
+    "index-regression.log": "83e98f965ad62458f8c22060b4d9917a9495fc8abe2fd68dbaca95c1d65b2aad",
+    "certification-tool-regression.log": "9a016ae5ce5bffde640a678a2cd36218aab5766e42c3219a5f7e5cd923d07815",
+    "release-tool-regression.log": "799dd79e14b5f3eae88fe67e2e58aa328c03f69fa9ad83a05d0fd7a1110bf3fb"
+  },
+  "scope": "Directory/layout migration and proof-snapshot preservation. No new manuscript correspondence acceptance and no fresh transitive axiom run. Prior acceptance is preserved through identical accepted compiled-module keys."
+}

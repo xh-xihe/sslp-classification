@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "Local fixture only; no GitHub publication in these tests.",
+  "cases": [
+    {
+      "case": "clean_main_dry_run",
+      "exit_code": 0,
+      "output": "Everything up-to-date\n"
+    },
+    {
+      "case": "dirty_tree_refused",
+      "exit_code": 1,
+      "output": "refusing to publish: tracked files have uncommitted changes.\n"
+    },
+    {
+      "case": "other_branch_refused",
+      "exit_code": 1,
+      "output": "refusing to publish: check out main in a clean root-layout clone first.\n"
+    }
+  ]
+}
