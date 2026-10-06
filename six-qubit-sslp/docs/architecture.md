@@ -2,8 +2,9 @@
 
 The canonical branch is `main`. In the GitHub repository,
 this project lives in `six-qubit-sslp/`; run its commands from that directory.
-The sibling `lean/`, `code/` and `paper/` directories belong to the dyadic-lift
-project and have their own reproduction instructions.
+The earlier independent dyadic-lift project is preserved in the
+[historical archive](https://github.com/xh-xihe/sslp-classification/blob/main/HISTORY.md),
+outside the active classification tree.
 
 ## Active proof libraries
 

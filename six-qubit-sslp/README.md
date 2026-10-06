@@ -57,3 +57,9 @@ The private manuscripts are excluded from the public repository. Version-bound
 records refer to their hashes and labels. Earlier progress counts are preserved
 in [the archived README](archive/documentation/README-pre-20261004.md);
 [current status](docs/status.md) is the current entry point.
+
+## Historical work
+
+The earlier independent dyadic Bell ladder is retained in a fixed archive
+tag; see [the historical archive entry](https://github.com/xh-xihe/sslp-classification/blob/main/HISTORY.md). It is outside the
+active classification package and its manuscript acceptance.

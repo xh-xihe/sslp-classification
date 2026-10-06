@@ -12,9 +12,6 @@
 build/
 out/
 
-# the two built PDFs ARE tracked, so the repo can be read without a TeX
-# install; everything else LaTeX emits is ignored above.
-
 # Lean
 .lake/
 *.olean
@@ -23,7 +20,3 @@ out/
 # Python
 __pycache__/
 *.pyc
-
-# fresh verification runs
-code/outputs/
-code/outputs_thm44/
