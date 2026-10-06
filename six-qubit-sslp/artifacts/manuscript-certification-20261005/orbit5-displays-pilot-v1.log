@@ -1,0 +1,13 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5Displays.lean:61:81: error: unsolved goals
+case a
+x y : Fin 4 → ℂ
+s t : Fin 2
+⊢ x (coord 0 s) * (starRingEnd ℂ) (y (coord 0 t)) + x (coord 1 s) * (starRingEnd ℂ) (y (coord 1 t)) =
+    x (coord 0 s) * (starRingEnd ℂ) (y (coord t 0)) + x (coord 1 s) * (starRingEnd ℂ) (y (coord t 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5Displays.lean:63:77: error: This simp argument is unused:
+  Pi.star_apply
+
+Hint: Omit it from the simp argument list.
+  simp [̵t̵r̵a̵c̵e̵F̵i̵r̵s̵t̵,̵c̵o̵e̵f̵f̵i̵c̵i̵e̵n̵t̵M̵a̵t̵r̵i̵x̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵M̵a̵t̵r̵i̵x̵.̵t̵r̵a̵n̵s̵p̵o̵s̵e̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵]̵[̲t̲r̲a̲c̲e̲F̲i̲r̲s̲t̲,̲ ̲c̲o̲e̲f̲f̲i̲c̲i̲e̲n̲t̲M̲a̲t̲r̲i̲x̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲t̲r̲a̲n̲s̲p̲o̲s̲e̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

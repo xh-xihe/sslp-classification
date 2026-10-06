@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26AnchorGauge.lean:37:32: error: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  simp [̵k̵a̵p̵p̵a̵,̵w̵,̵Q̵,̵b̵a̵s̵i̵s̵M̵a̵t̵r̵i̵x̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵V̵e̵c̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵]̵[̲k̲a̲p̲p̲a̲,̲ ̲w̲,̲ ̲Q̲,̲ ̲b̲a̲s̲i̲s̲M̲a̲t̲r̲i̲x̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

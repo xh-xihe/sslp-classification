@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "status": "proof_accepted_publication_pending",
+  "active_lean_modules": 16186,
+  "staged_modules": 15,
+  "strict_pilots": "PASS",
+  "last_accepted_modules": 16171,
+  "source_snapshot": "matching-parity-staged-proof-snapshot-15.json",
+  "scope": "Accepted physical matching/parity proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "whole_build": "PASS",
+  "fresh_axiom_audit": "pending",
+  "canonical_type_inspection": "PASS",
+  "current_manuscript_correspondence": "pending explicit review",
+  "publication": "pending",
+  "axiom_audit": "PASS",
+  "correspondence_review": "applied",
+  "proof_acceptance": "proof-acceptance-16186.json"
+}

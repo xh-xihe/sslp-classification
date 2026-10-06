@@ -1,0 +1,15 @@
+PASS: MainTheory/Orbit14BlockFrames.lean
+PASS: MainTheory/Orbit26MatchingPhysical.lean
+PASS: MainTheory/Orbit17PhaseData.lean
+PASS: MainTheory/Orbit17MomentDisplays.lean
+PASS: MainTheory/Orbit17ConjugatePhases.lean
+PASS: MainTheory/Orbit24RepetitionPaulis.lean
+PASS: MainTheory/Orbit13BlockData.lean
+PASS: MainTheory/Orbit13Frames.lean
+PASS: MainTheory/Orbit26MatchingNotation.lean
+PASS: MainTheory/Orbit26MatchingComponents.lean
+PASS: MainTheory/OrderTwoRecordResidues.lean
+PASS: MainTheory/Orbit19TailIdentity.lean
+PASS: MainTheory/Orbit14EdgeRows.lean
+PASS: MainTheory/WeightedLineFrames.lean
+PASS: MainTheory/Orbit26AnchorGauge.lean

@@ -85,6 +85,16 @@ This checks the exact shell/parity source reconstruction and hashes the ten
 accepted frame/anchor sources. Whole kernel building and the transitive
 standard-axiom audit remain separate required checks.
 
+## Matching and parity source snapshot
+
+```console
+python tools/verification/check_matching_parity_snapshot.py
+```
+
+This checks the LF hashes of the fifteen matching/parity sources against
+their recorded snapshot. It does not replace whole kernel building,
+fresh transitive standard-axiom auditing or manuscript type review.
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

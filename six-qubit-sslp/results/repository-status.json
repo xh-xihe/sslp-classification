@@ -19,8 +19,8 @@
   ],
   "orbit2_full_image": "kernel_checked",
   "orbit3_full_image": "kernel_checked",
-  "active_lean_modules": 16171,
-  "axiom_roots": 8781,
+  "active_lean_modules": 16186,
+  "axiom_roots": 8932,
   "standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -31,19 +31,19 @@
   "historical_acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1722,
+    "covered": 1763,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 99
+    "unreviewed": 58
   },
-  "current_type_inspection_declarations": 4221,
+  "current_type_inspection_declarations": 4295,
   "historical_publication_source_binding": "PASS",
   "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16171,
-    "axiom_roots": 8781,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16171.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8781.json"
+    "modules": 16186,
+    "axiom_roots": 8932,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16186.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8932.json"
   },
   "historical_regression_tests_per_environment": 61,
   "historical_skipped_tests_per_environment": 11,
@@ -58,7 +58,7 @@
     "status": "partial",
     "reviewed_blocks": 89
   },
-  "planned_axiom_roots": 8781,
+  "planned_axiom_roots": 8932,
   "canonical_publication_commit": "c52f9a1b897c49cc80b2cb745fffbaf9443e7f5b",
   "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16171.json",
   "identified_si_qualifications": 0,
@@ -67,5 +67,9 @@
     "status": "PASS",
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
+  },
+  "pending_proof_batch": {
+    "record": "artifacts/manuscript-certification-20261005/matching-parity-work-in-progress.json",
+    "scope": "PASS local physical matching/parity proof route; publication pending and manuscript correspondence incomplete."
   }
 }

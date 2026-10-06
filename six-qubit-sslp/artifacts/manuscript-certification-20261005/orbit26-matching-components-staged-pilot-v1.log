@@ -1,0 +1,24 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingComponents.lean:17:51: error: linarith failed to find a contradiction
+case h1.h
+v : Vec
+h : nsq v = 0
+hs : Complex.normSq (v 0) + Complex.normSq (v 1) = 0
+a✝ : Complex.normSq (v 0) < 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingComponents.lean:18:51: error: linarith failed to find a contradiction
+case h1.h
+v : Vec
+h : nsq v = 0
+hs : Complex.normSq (v 0) + Complex.normSq (v 1) = 0
+h0 : v 0 = 0
+a✝ : Complex.normSq (v 1) < 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit26MatchingComponents.lean:35:33: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [starRingEnd_apply,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵] at e00 e01 e10 e11 ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

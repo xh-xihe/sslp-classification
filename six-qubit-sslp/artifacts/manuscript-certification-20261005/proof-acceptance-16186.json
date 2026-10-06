@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including actual matching-anchor rows, orbit-17 moments/phases, parity blocks and repetition-Pauli compressions; manuscript correspondence incomplete.",
+  "active_modules": 16186,
+  "axiom_roots": 8932,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1763,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 58
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 0,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16186.json",
+      "sha256": "d43fcb39acddbc028caffcb1a634b23d87b776e0f3bed8f0218d580d4cd18fd7"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-8932.json",
+      "sha256": "25cba9695fc894db1d1289be19b0bc83d6e32213fccf978a18380abf3b70ca4d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-staged-proof-snapshot-15.json",
+      "sha256": "78997b5fa6eef03b470894c68283ca5eae5e0bc3dbf4ee63317a79188e0c8c60"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-source-snapshot-v1.json",
+      "sha256": "98752db9746b96ad1c1449c94028790bde4df526ff94fe6127b17677d54735ee"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-matching-parity-completion-v2.json",
+      "sha256": "eb9b656590a7166f0ea75d8a15d656f1937531139c5002dc3529a171a2fc1713"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-type-binding.json",
+      "sha256": "e1abf6a039a695c67455767ef660d73cd140627e10f42471c2a70f42cd6dc1a2"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-correspondence-gates-report.json",
+      "sha256": "3a29119487bb7895d9f9f6d523113961b91ef248b1cf74ad8d0b29d3631a1c5a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-review.json",
+      "sha256": "db4607fe30f78c27c23126a1c112ffc5853e3924fb89046eba466d14427ffaa3"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-full-build-v1.log",
+      "sha256": "412682a30b86fb67aaf60d4529cff7982787f54cd86439eff2f9d6033988152f"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-full-build-v1-exit.json",
+      "sha256": "b3be4eaef3f4d1d90f26b12a1bd1f0ebc8860300f06c2566d6cba91b07961a5e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-type-inspection-v2.log",
+      "sha256": "1565ad96dfd5f04e9247acaba6319c0630c1f16a00af5f4d4eec0798e02ec0d0"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-type-inspection-v2-exit.json",
+      "sha256": "89eb4b433c28cf6e5b9abfc6f662a42607b13982220678532ada698ee65dbc6c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-axioms-v1.log",
+      "sha256": "3b5d50c1e06fd182dc5df1730a6bc420d76927589d6c2274233966bcab6483f4"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-axioms-v1-exit.json",
+      "sha256": "bdf1941a7c4b772290a8466096266b3fbb83a297f6f46462aeac33bb409d6ece"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-source-snapshot-v1.log",
+      "sha256": "b9497e499b2cc4004fb9cbfa6942c8b022fda338c28b7abbede3373b6c2230cf"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/matching-parity-completion-source-snapshot-v1-exit.json",
+      "sha256": "d2fa6ea5d5dfd4c14609f133e67bc8688ad75e7bff81cb9c6f2eb504819d5bf0"
+    }
+  ]
+}

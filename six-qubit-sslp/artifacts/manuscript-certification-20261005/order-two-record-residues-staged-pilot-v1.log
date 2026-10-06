@@ -1,0 +1,5 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\OrderTwoRecordResidues.lean:17:80: error: Tactic `decide` proved that the proposition
+  ∀ (i : Fin 5),
+    Generated.OrbitTableNumericData.paperQ (row i) = 4 ∧
+      Generated.OrbitTableNumericData.paperM (row i) = 2 ∧ Generated.OrbitTableNumericData.paperAngle (row i) = angle i
+is false

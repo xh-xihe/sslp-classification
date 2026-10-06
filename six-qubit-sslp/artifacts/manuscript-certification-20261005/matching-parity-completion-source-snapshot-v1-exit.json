@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_matching_parity_snapshot.py",
+    "--output",
+    "artifacts/manuscript-certification-20261005/matching-parity-source-snapshot-v1.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.0551784000126645
+}

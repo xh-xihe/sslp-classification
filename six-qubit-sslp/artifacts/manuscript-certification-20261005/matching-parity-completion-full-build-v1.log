@@ -1,0 +1,4 @@
+PARTIAL verification: build
+Paper version: 20261003
+START build
+[PASS] build (919.2s): exit=0; log=tmp\verification\20261003\build.log; PASS: 17 serially rebuilt, 16169 content-validated cached modules

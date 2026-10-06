@@ -1,0 +1,574 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:equation@11047",
+      "statement_sha256": "ea2604fc5b1008c27bb8ed5e051d1b2548055559b74369b09357432ef5d491cb",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingNotation.complementary_projector_sum",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_nonmatching_projectors"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual nonmatching-branch unit anchor projectors sum to the identity. The checked matrix identity gives precisely the printed equality of the sum of their complementary projectors and the sum of the projectors."
+    },
+    {
+      "id": "supplementary.tex:equation@11059",
+      "statement_sha256": "a7f0b9b887724863c3b244aff4fcd041cff4cb0aa181ef6aa68e34bf25281443",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26NormalizedRows.unitAnchor",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data",
+        "MainTheory.Orbit26MatchingNotation.kappa",
+        "MainTheory.Orbit26MatchingNotation.kappa_bounds",
+        "MainTheory.Orbit26MatchingNotation.kappa_sq"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The normalized directions are the actual first columns divided by their fixed positive norm. Kappa is the norm of their Hermitian pairing, lies between zero and one, and its square is the actual complex squared modulus."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26cdgauge",
+      "statement_sha256": "d033e0e9090cf18cb842ce315263c3087468fb752a0b65df8537eff4f4b68878",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26AnchorGauge.standard_form_kappa",
+        "MainTheory.Orbit26NonmatchingPhysical.physical_normalized_data",
+        "MainTheory.Orbit26MatchingNotation.kappa"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The unitary two-spinor gauge retains the actual overlap modulus: the returned real first coordinate equals kappa, rather than an unrelated existential scalar. The second coordinate is its nonnegative complementary square root and the first direction is the first basis vector up to a unit phase."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26firstrowD",
+      "statement_sha256": "25dbaf3a7846819e67b2a52144070490ef99aa48df87f327361687344dea7ad8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingPhysical.physical_firstrowD"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual physical anchor row equation is divided by the common positive anchor norm, giving the printed conjugate negative first-row relation for every actual nonanchor block."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26rJr",
+      "statement_sha256": "62327a6cbe74ad57065dff682f8136bed9372bd7ad16a6f0a9613c8a32d180b6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingPhysical.physical_Jrows"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual physical outer-flip matrix equation is contracted with the two actual normalized anchors. Substitution of the actual first-row relations gives every displayed symmetric J relation."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26rsum",
+      "statement_sha256": "c3dc6c53c1c23217d8457a8a71aee6806efde768f16efc9a80d3b95b8a916031",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingPhysical.physical_row_sum",
+        "MainTheory.Orbit26MatchingNotation.kappa_sq"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual nonanchor Gram sum and normalized rank-one anchors give exactly one half plus one quarter of the squared actual overlap modulus, with no final no-code conclusion used."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26cperpd",
+      "statement_sha256": "20021723ab6721cd07db29a6ff9a628b7bf159b9be2ffd17cf0f78e2c5323813",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingPhysical.physical_anchor_orthogonal",
+        "MainTheory.Orbit26MatchingNotation.physical_kappa_zero"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual row sum, three pairwise J relations, group bounds and coordinate-axis bounds force the actual anchor Hermitian pairing and its norm kappa to vanish."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26twofullrows",
+      "statement_sha256": "31ec98869a9102c124223970e2445c29df035a60f03dfe24614fc3bcc4b58829",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingPhysical.physical_two_full_rows"
+      ],
+      "review": "20261005 physical matching/parity type and context review: There is exactly one zero actual normalized bottom row; each of the other two has squared norm one quarter. The proof uses the actual physical moment and column bounds and the J-axis lemma."
+    },
+    {
+      "id": "supplementary.tex:eq:q4o26skr",
+      "statement_sha256": "f30c58c1d988962099ed5ba9e9202227e1d568c86787b5ca379b8cde0facff0a",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingComponents.physical_mixed_J_rows",
+        "MainTheory.Orbit26MatchingComponents.complementary_row_zero",
+        "MainTheory.Orbit26MatchingComponents.row_norm_decomposition",
+        "MainTheory.Orbit26MatchingComponents.physical_anchor_basis"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The two unit actual anchors form a complete orthogonal basis. Saturation of an actual group norm removes the complementary row. The actual physical outer-flip equation then gives the mixed J relation between the remaining anchor-direction row and each full row."
+    },
+    {
+      "id": "supplementary.tex:eq:o19-h-u",
+      "statement_sha256": "b46e5cf594156bb6cea7b054952d79cdcc4fdc4ead523b9e812019e4a6fcc1e7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit19ShellDisplays.h",
+        "MainTheory.Orbit19ShellDisplays.u",
+        "MainTheory.Orbit19TailIdentity.mismatch_square"
+      ],
+      "review": "20261005 physical matching/parity type and context review: Both polynomial definitions are literal; the Boolean tail polynomial is also exactly the square of the difference of the two actual final bits."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-normalizations",
+      "statement_sha256": "01d1bfe620aba3b02e0304ea562af59c48704e5c9fa661e0b8e589c5192e0efd",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.physical_moments",
+        "MainTheory.Orbit17MomentDisplays.bottom_normalization",
+        "MainTheory.Orbit17MomentDisplays.top_normalization",
+        "MainTheory.Orbit17MomentDisplays.shell_first",
+        "MainTheory.Orbit17MomentDisplays.shell_second",
+        "MainTheory.Orbit17MomentDisplays.edge_coordinates"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The complete actual physical moment system supplies both normalizations and both displayed shell equations. The edge order is explicitly checked against the complementary bottom words and top two-subsets."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-anchor-masses",
+      "statement_sha256": "b7259a0e54b07d1391764cd30a7379fb1f5b162e962acbe4d534af40be7846a1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.bottom_anchor",
+        "MainTheory.Orbit17MomentDisplays.top_anchor",
+        "MainTheory.Orbit17MomentDisplays.bottom_edge_mass",
+        "MainTheory.Orbit17MomentDisplays.top_edge_mass",
+        "MainTheory.Orbit17MomentDisplays.physical_moments"
+      ],
+      "review": "20261005 physical matching/parity type and context review: Exact rational combinations of the actual full moment system give both anchor squared norms one quarter and both total edge masses three quarters."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-degree-sum",
+      "statement_sha256": "e4d67f0b732614af9ce7597773d59b38cb664abaa7284dff8c6a09f37e59e195",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.degree_sum_0",
+        "MainTheory.Orbit17MomentDisplays.degree_sum_1",
+        "MainTheory.Orbit17MomentDisplays.degree_sum_2",
+        "MainTheory.Orbit17MomentDisplays.degree_sum_3",
+        "MainTheory.Orbit17MomentDisplays.degree_sum_4",
+        "MainTheory.Orbit17MomentDisplays.degree_sum_5",
+        "MainTheory.Orbit17MomentDisplays.physical_moments",
+        "MainTheory.Orbit17MomentDisplays.edge_coordinates"
+      ],
+      "review": "20261005 physical matching/parity type and context review: At each of the six actual graph vertices the sum of the two matched weighted degrees is exactly one half."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-degree-second",
+      "statement_sha256": "05bea34c9776735b274003d5a8c2a55c85204b4804ab7cf137efc61376e18052",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.degree_second_0",
+        "MainTheory.Orbit17MomentDisplays.degree_second_1",
+        "MainTheory.Orbit17MomentDisplays.degree_second_2",
+        "MainTheory.Orbit17MomentDisplays.degree_second_3",
+        "MainTheory.Orbit17MomentDisplays.degree_second_4",
+        "MainTheory.Orbit17MomentDisplays.degree_second_5",
+        "MainTheory.Orbit17MomentDisplays.physical_moments"
+      ],
+      "review": "20261005 physical matching/parity type and context review: At every actual vertex the rational pair-moment combinations give three times the bottom weighted degree plus the top weighted degree equal to one."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-degree-quarter",
+      "statement_sha256": "6e617b97313dbea8c12a45cb41f36e93c5af2cddb7544aafb482015182801980",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_0",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_1",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_2",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_3",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_4",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_5",
+        "MainTheory.Orbit17MomentDisplays.top_degree_0",
+        "MainTheory.Orbit17MomentDisplays.top_degree_1",
+        "MainTheory.Orbit17MomentDisplays.top_degree_2",
+        "MainTheory.Orbit17MomentDisplays.top_degree_3",
+        "MainTheory.Orbit17MomentDisplays.top_degree_4",
+        "MainTheory.Orbit17MomentDisplays.top_degree_5",
+        "MainTheory.Orbit17MomentDisplays.physical_moments"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All twelve actual weighted degrees equal one quarter, with the exact edge indexing and complete physical moments retained."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-matched-magnitudes",
+      "statement_sha256": "f5839f0eb1ce7122026393a9f0089f333ec464786c58ee4573b6948b2c91ed10",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.matched_mass_0",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_1",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_2",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_3",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_4",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_5",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_6",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_7",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_8",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_9",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_10",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_11",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_12",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_13",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_14",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_0",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_1",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_2",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_3",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_4",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_5",
+        "MainTheory.Orbit17MomentDisplays.bottom_anchor",
+        "MainTheory.Orbit17MomentDisplays.top_anchor",
+        "MainTheory.Orbit17MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit17MomentDisplays.physical_moments"
+      ],
+      "review": "20261005 physical matching/parity type and context review: Every one of the fifteen actual complementary bottom/top edge magnitudes agrees, both anchors have squared norm one quarter, and all six edge-degree sums are one quarter. The displayed forward normal-form assertions are directly derived; converse prose is a separate context obligation."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-fractionalmatching",
+      "statement_sha256": "91035675864d54c9da8f42d8d2b9bf610e28748f5d455ff1ce76edb7dcf19180",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17MomentDisplays.matched_mass_0",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_1",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_2",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_3",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_4",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_5",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_6",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_7",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_8",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_9",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_10",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_11",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_12",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_13",
+        "MainTheory.Orbit17MomentDisplays.matched_mass_14",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_0",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_1",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_2",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_3",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_4",
+        "MainTheory.Orbit17MomentDisplays.bottom_degree_5",
+        "MainTheory.Orbit17MomentDisplays.bottom_anchor",
+        "MainTheory.Orbit17MomentDisplays.top_anchor",
+        "MainTheory.Orbit17MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit17MomentDisplays.physical_moments"
+      ],
+      "review": "20261005 physical matching/parity type and context review: Every one of the fifteen actual complementary bottom/top edge magnitudes agrees, both anchors have squared norm one quarter, and all six edge-degree sums are one quarter. The displayed forward normal-form assertions are directly derived; converse prose is a separate context obligation."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-lambda",
+      "statement_sha256": "d729b79e64be50360f950e1334c4d64c0358e2cf56016a37599bf740c0510431",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17ConjugatePhases.phaseRatio",
+        "MainTheory.Orbit17ConjugatePhases.physical_phase_unit",
+        "MainTheory.Orbit17ConjugatePhases.indexed_anchor_flips",
+        "MainTheory.Orbit17ConjugatePhases.physical_conjugate_phases"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The ratio uses the printed negative top anchor divided by the conjugate bottom anchor. Its norm is one, with the denominator proved nonzero. All fifteen actual top edge amplitudes equal that common ratio times the conjugate complementary bottom amplitude, including zero edges."
+    },
+    {
+      "id": "supplementary.tex:eq:o17-conjugate-phases",
+      "statement_sha256": "5e73932292c2e6947e022f0f8e9e0ff6edfdd5684424a3269a56a754e37f5642",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17ConjugatePhases.phaseRatio",
+        "MainTheory.Orbit17ConjugatePhases.physical_phase_unit",
+        "MainTheory.Orbit17ConjugatePhases.indexed_anchor_flips",
+        "MainTheory.Orbit17ConjugatePhases.physical_conjugate_phases"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The ratio uses the printed negative top anchor divided by the conjugate bottom anchor. Its norm is one, with the denominator proved nonzero. All fifteen actual top edge amplitudes equal that common ratio times the conjugate complementary bottom amplitude, including zero edges."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-record",
+      "statement_sha256": "28b17433453d7c2bbc93e38224788f8a9d8cf6f5d68cec33bf2c04d58674b305",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.row",
+        "MainTheory.OrderTwoRecordResidues.angle",
+        "MainTheory.OrderTwoRecordResidues.records_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The five exact printed q=4, m=2 and six-coordinate representatives match their actual finite orbit-table rows, using the manuscript row numbers rather than an auxiliary fiber identifier."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-record",
+      "statement_sha256": "12be6c2e23c766d3cd12b1da5c682d8e97c17ff574ee126c420e8817fca2a37e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.row",
+        "MainTheory.OrderTwoRecordResidues.angle",
+        "MainTheory.OrderTwoRecordResidues.records_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The five exact printed q=4, m=2 and six-coordinate representatives match their actual finite orbit-table rows, using the manuscript row numbers rather than an auxiliary fiber identifier."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-R",
+      "statement_sha256": "e6abc370c46c30e6edffaf838d68fd3022d3cb5aca91a6229df2f7e72fbec41c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.R",
+        "MainTheory.Orbit13Frames.pack",
+        "MainTheory.Orbit13Frames.flipLast",
+        "MainTheory.Orbit13Frames.literal_R",
+        "MainTheory.Orbit13Frames.literal_fibers",
+        "MainTheory.Orbit13Frames.bottom_coordinates",
+        "MainTheory.Orbit13Frames.top_coordinates",
+        "MainTheory.Orbit13Frames.bottomSpinor",
+        "MainTheory.Orbit13Frames.topSpinor"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The four literal three-bit patterns and their two parity-selected tail words exhaust the actual bottom fiber. Flipping the final physical bit gives the complete top fiber in the printed matching convention, with both zero-angle spinor components retained."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-Pr",
+      "statement_sha256": "34c83e0ad66243453dfb99f835996cca21f180161deff2295c487a74fbdeb793",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.R",
+        "MainTheory.Orbit13Frames.pack",
+        "MainTheory.Orbit13Frames.flipLast",
+        "MainTheory.Orbit13Frames.literal_R",
+        "MainTheory.Orbit13Frames.literal_fibers",
+        "MainTheory.Orbit13Frames.bottom_coordinates",
+        "MainTheory.Orbit13Frames.top_coordinates",
+        "MainTheory.Orbit13Frames.bottomSpinor",
+        "MainTheory.Orbit13Frames.topSpinor"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The four literal three-bit patterns and their two parity-selected tail words exhaust the actual bottom fiber. Flipping the final physical bit gives the complete top fiber in the printed matching convention, with both zero-angle spinor components retained."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-bottomword",
+      "statement_sha256": "f0766d63a95c526869a3536eccc98551ac764fec5bc00632c2c45e80f57bafdf",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.R",
+        "MainTheory.Orbit13Frames.pack",
+        "MainTheory.Orbit13Frames.flipLast",
+        "MainTheory.Orbit13Frames.literal_R",
+        "MainTheory.Orbit13Frames.literal_fibers",
+        "MainTheory.Orbit13Frames.bottom_coordinates",
+        "MainTheory.Orbit13Frames.top_coordinates",
+        "MainTheory.Orbit13Frames.bottomSpinor",
+        "MainTheory.Orbit13Frames.topSpinor"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The four literal three-bit patterns and their two parity-selected tail words exhaust the actual bottom fiber. Flipping the final physical bit gives the complete top fiber in the printed matching convention, with both zero-angle spinor components retained."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-Pir",
+      "statement_sha256": "8c0522d3ee1e8060bb42033527e0db6b42d7b783eda76d9a9bc9db40768a4774",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.character",
+        "MainTheory.Orbit13Frames.pointProjector",
+        "MainTheory.Orbit13Frames.projector_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The literal restricted character polynomial is exactly the indicator of each of the four actual three-bit patterns on that four-point domain."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-X6overlaps",
+      "statement_sha256": "6477c8c7daf28978265d300acf7829b4dc9171c0a93b21af8a7c48c5732b20b8",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.orthogonality_of_data",
+        "MainTheory.Orbit13Frames.physical_frames",
+        "MainTheory.Orbit13BlockData.physical_block_data"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All four actual bottom/top spinor pairings vanish within every printed three-bit block. Both identical-tail and opposite-tail incidences are included, deriving complete block orthogonality before any block annihilation or final contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-X5overlaps",
+      "statement_sha256": "4f3fc67ff120f4db74d11d93d488427201a309cc328cef890009f735e7791dfb",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.orthogonality_of_data",
+        "MainTheory.Orbit13Frames.physical_frames",
+        "MainTheory.Orbit13BlockData.physical_block_data"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All four actual bottom/top spinor pairings vanish within every printed three-bit block. Both identical-tail and opposite-tail incidences are included, deriving complete block orthogonality before any block annihilation or final contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-completeorthogonality",
+      "statement_sha256": "79129c4f242ff5abeaf84c46bcd1d0c77ab9f239f11e2466720da88b9d530698",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.orthogonality_of_data",
+        "MainTheory.Orbit13Frames.physical_frames",
+        "MainTheory.Orbit13BlockData.physical_block_data"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All four actual bottom/top spinor pairings vanish within every printed three-bit block. Both identical-tail and opposite-tail incidences are included, deriving complete block orthogonality before any block annihilation or final contradiction."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-blockframes",
+      "statement_sha256": "d9e749cc5c9439d5f03a5a6791e707f00f38d1e2f7081744a1b68d6fcb7dc11e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.bottomFrame",
+        "MainTheory.Orbit13Frames.topFrame",
+        "MainTheory.Orbit13Frames.frame_of_data",
+        "MainTheory.Orbit13Frames.frame_product_zero",
+        "MainTheory.Orbit13Frames.physical_frames"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual positive block frames sum both literal tail spinors. Each of their four matrix entries agrees by actual KL and moments, and complete block orthogonality makes their actual matrix product zero. No earlier no-go result is used."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-frameequality",
+      "statement_sha256": "e0dc0cf8d35ef26a8e1690ba34198a55ff1ec3986bdcabf897fcf7c1254f05f1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.bottomFrame",
+        "MainTheory.Orbit13Frames.topFrame",
+        "MainTheory.Orbit13Frames.frame_of_data",
+        "MainTheory.Orbit13Frames.frame_product_zero",
+        "MainTheory.Orbit13Frames.physical_frames"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual positive block frames sum both literal tail spinors. Each of their four matrix entries agrees by actual KL and moments, and complete block orthogonality makes their actual matrix product zero. No earlier no-go result is used."
+    },
+    {
+      "id": "supplementary.tex:eq:o13-frameproduct",
+      "statement_sha256": "b0d33bf035428529073b5aa3fd51e648cdda3c9d685e17b2226261b27d38ef99",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13Frames.bottomFrame",
+        "MainTheory.Orbit13Frames.topFrame",
+        "MainTheory.Orbit13Frames.frame_of_data",
+        "MainTheory.Orbit13Frames.frame_product_zero",
+        "MainTheory.Orbit13Frames.physical_frames"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual positive block frames sum both literal tail spinors. Each of their four matrix entries agrees by actual KL and moments, and complete block orthogonality makes their actual matrix product zero. No earlier no-go result is used."
+    },
+    {
+      "id": "supplementary.tex:eq:o15-record",
+      "statement_sha256": "6a526c3c0d925fce3ff66f0eb356d7ce68db62195e7bb638e5a8c3ef5be415f1",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.row",
+        "MainTheory.OrderTwoRecordResidues.angle",
+        "MainTheory.OrderTwoRecordResidues.records_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The five exact printed q=4, m=2 and six-coordinate representatives match their actual finite orbit-table rows, using the manuscript row numbers rather than an auxiliary fiber identifier."
+    },
+    {
+      "id": "supplementary.tex:equation@15898",
+      "statement_sha256": "4db2cd088b561f291215865015c91d3e2cfe33aa13080dc433505bddab648631",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit15_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit24_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit15_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit24_fibers"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All three printed modular residue polynomials agree with the actual finite angle records on every six-bit word, and their zero/half residues are exactly the native physical bottom/top fibers. Orbit 24 explicitly uses the equality of coefficients three and minus one modulo four."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-record",
+      "statement_sha256": "370e7cab149f79c0ebb6b112ba6930935922d615b8a5336b07ae8a09c91407d6",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.row",
+        "MainTheory.OrderTwoRecordResidues.angle",
+        "MainTheory.OrderTwoRecordResidues.records_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The five exact printed q=4, m=2 and six-coordinate representatives match their actual finite orbit-table rows, using the manuscript row numbers rather than an auxiliary fiber identifier."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-residue",
+      "statement_sha256": "43505f98ba6cbc0e9ff55a0e5764dd4c449b953a66e72262e99f126fe10c3d49",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit15_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit24_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit15_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit24_fibers"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All three printed modular residue polynomials agree with the actual finite angle records on every six-bit word, and their zero/half residues are exactly the native physical bottom/top fibers. Orbit 24 explicitly uses the equality of coefficients three and minus one modulo four."
+    },
+    {
+      "id": "supplementary.tex:eq:o24-repetition-paulis",
+      "statement_sha256": "8c321d3c4e6192cd98b2a9a546b15f002a63349e32a8b36930d0eca00261f88c",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit24RepetitionPaulis.R",
+        "MainTheory.Orbit24RepetitionPaulis.literal_repetition",
+        "MainTheory.Orbit24RepetitionPaulis.actual_isometry",
+        "MainTheory.Orbit24RepetitionPaulis.labels",
+        "MainTheory.Orbit24RepetitionPaulis.effectivePauli",
+        "MainTheory.Orbit24RepetitionPaulis.actual_operator",
+        "MainTheory.Orbit24RepetitionPaulis.actual_compressions",
+        "MainTheory.Orbit24RepetitionPaulis.physical_weights"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The actual repetition isometry maps each effective basis bit to two identical physical bits. Literal Gaussian-integer Pauli compression identities are transported to actual complex tensor Paulis, proving the printed Z, XX and YX compressions and their physical weights at most two."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-record",
+      "statement_sha256": "5183dd9c513f42f0047baa9aed32ce2c51e93b23ed57fff795a22c7f1893c77b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.row",
+        "MainTheory.OrderTwoRecordResidues.angle",
+        "MainTheory.OrderTwoRecordResidues.records_checked"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The five exact printed q=4, m=2 and six-coordinate representatives match their actual finite orbit-table rows, using the manuscript row numbers rather than an auxiliary fiber identifier."
+    },
+    {
+      "id": "supplementary.tex:equation@16016",
+      "statement_sha256": "e1cf7c4ab36557d28f87bf3bb34aa0f9445001470880eaad71e3d62def406a27",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.OrderTwoRecordResidues.residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit15_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit24_residue",
+        "MainTheory.OrderTwoRecordResidues.orbit14_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit15_fibers",
+        "MainTheory.OrderTwoRecordResidues.orbit24_fibers"
+      ],
+      "review": "20261005 physical matching/parity type and context review: All three printed modular residue polynomials agree with the actual finite angle records on every six-bit word, and their zero/half residues are exactly the native physical bottom/top fibers. Orbit 24 explicitly uses the equality of coefficients three and minus one modulo four."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-blockframes",
+      "statement_sha256": "855a552dc067462fb870834c943cb58b21d18f7c10fdb7e41913292794f4c58e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14BlockFrames.blockIndex",
+        "MainTheory.Orbit14BlockFrames.block_labels",
+        "MainTheory.Orbit14BlockFrames.block_labels_exact",
+        "MainTheory.Orbit14BlockFrames.bottomBlockFrame",
+        "MainTheory.Orbit14BlockFrames.topBlockFrame",
+        "MainTheory.Orbit14BlockFrames.block_frame_of_data",
+        "MainTheory.Orbit14BlockFrames.physical_block_frame_equality"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The two actual fixed-repetition-bit blocks are exactly the corresponding four even/odd labels. Both complete two-by-two block frames agree entry by entry under actual physical KL, including diagonal and conjugate off-diagonal entries."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-blockframeequality",
+      "statement_sha256": "c4b45ecdfd3e33514d32697721de65aeb159edfad8c3d521252eacdd1ff33869",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14BlockFrames.blockIndex",
+        "MainTheory.Orbit14BlockFrames.block_labels",
+        "MainTheory.Orbit14BlockFrames.block_labels_exact",
+        "MainTheory.Orbit14BlockFrames.bottomBlockFrame",
+        "MainTheory.Orbit14BlockFrames.topBlockFrame",
+        "MainTheory.Orbit14BlockFrames.block_frame_of_data",
+        "MainTheory.Orbit14BlockFrames.physical_block_frame_equality"
+      ],
+      "review": "20261005 physical matching/parity type and context review: The two actual fixed-repetition-bit blocks are exactly the corresponding four even/odd labels. Both complete two-by-two block frames agree entry by entry under actual physical KL, including diagonal and conjugate off-diagonal entries."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-edgeorthogonality",
+      "statement_sha256": "065635083ac9c02cf99485d01ca3fa66252c27a703d7f418bab1217eb1d655a0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14EdgeRows.middleAdjacent",
+        "MainTheory.Orbit14EdgeRows.middle_adjacent_checked",
+        "MainTheory.Orbit14EdgeRows.edge_rows_of_data",
+        "MainTheory.Orbit14EdgeRows.physical_edge_rows"
+      ],
+      "review": "20261005 physical matching/parity type and context review: Every actual parity-changing edge in one of the three half-angle directions has zero spinor Hermitian pairing. The literal adjacency enumeration fixes the repetition coordinate and checks all twenty-four incidences against actual physical KL rows."
+    }
+  ]
+}

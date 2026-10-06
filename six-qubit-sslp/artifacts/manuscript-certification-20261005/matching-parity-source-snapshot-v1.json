@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": [
+    {
+      "path": "MainTheory/Orbit14BlockFrames.lean",
+      "sha256_lf": "31d7eb3115057560c6380a8ec3ce859110b5e0e807a08341674c66aa20958ffc",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit26MatchingPhysical.lean",
+      "sha256_lf": "05363e8a35f91c4a9a723af9a6bd903c5509afed995be24ed562863505f2a81c",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit17PhaseData.lean",
+      "sha256_lf": "ee5acc43c676ad146f90b343df873b3b5f780accd7703b6ac2f62b863cc28d8b",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit17MomentDisplays.lean",
+      "sha256_lf": "6e2edd8de06ad26357a74d18233e825d1591b3d102bbde30fe2fe42414f2584f",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit17ConjugatePhases.lean",
+      "sha256_lf": "b97c005ade8086b1110d68a0fd5ddcf649ccaf441658ad8f2bb38051b656b850",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit24RepetitionPaulis.lean",
+      "sha256_lf": "41e365005631a7d3334bf8bb6c5ab5ec04fda2d601d27cd335430c1fd6bdef4f",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit13BlockData.lean",
+      "sha256_lf": "775fb697e7f4bb49e32417fd9189aa5842cde199ff51f8ed8f839979e5632767",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit13Frames.lean",
+      "sha256_lf": "43fe00359a4f4df768ff0417b01b78484c2f6dd0ad8d7655aa7f5a0f5454c3f2",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit26MatchingNotation.lean",
+      "sha256_lf": "67f59af79bc0a8180053a5d2ed773e43466fdf31bdd13459e09f609012e0b226",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit26MatchingComponents.lean",
+      "sha256_lf": "81ca0f1613b037a543c37ee8e30b8a9d19a97d623028cbb64c02af9f506f51d1",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/OrderTwoRecordResidues.lean",
+      "sha256_lf": "6dfd044495df108484d875b6b914abe85ad0e81daeffbb5dba8da372b8a4d2b0",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit19TailIdentity.lean",
+      "sha256_lf": "9938f54d2692f16dc862088f687622bd2a6b9029dd034511bec52a2222c8723d",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit14EdgeRows.lean",
+      "sha256_lf": "d49a3b50e19433ff86e416ad0195673d7240e4b9275a161d6d604e454add676e",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/WeightedLineFrames.lean",
+      "sha256_lf": "3a28f3fefe792fcaae9d156e784826ffdc4a45602074c300e70a04491d1c24d9",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit26AnchorGauge.lean",
+      "sha256_lf": "f655755307d7ed4b482a4acbc1cb25f2abbed72153077e567ccdbd48761d3af9",
+      "passed": true
+    }
+  ],
+  "source_hashes_lf": {
+    "MainTheory/Orbit14BlockFrames.lean": "31d7eb3115057560c6380a8ec3ce859110b5e0e807a08341674c66aa20958ffc",
+    "MainTheory/Orbit26MatchingPhysical.lean": "05363e8a35f91c4a9a723af9a6bd903c5509afed995be24ed562863505f2a81c",
+    "MainTheory/Orbit17PhaseData.lean": "ee5acc43c676ad146f90b343df873b3b5f780accd7703b6ac2f62b863cc28d8b",
+    "MainTheory/Orbit17MomentDisplays.lean": "6e2edd8de06ad26357a74d18233e825d1591b3d102bbde30fe2fe42414f2584f",
+    "MainTheory/Orbit17ConjugatePhases.lean": "b97c005ade8086b1110d68a0fd5ddcf649ccaf441658ad8f2bb38051b656b850",
+    "MainTheory/Orbit24RepetitionPaulis.lean": "41e365005631a7d3334bf8bb6c5ab5ec04fda2d601d27cd335430c1fd6bdef4f",
+    "MainTheory/Orbit13BlockData.lean": "775fb697e7f4bb49e32417fd9189aa5842cde199ff51f8ed8f839979e5632767",
+    "MainTheory/Orbit13Frames.lean": "43fe00359a4f4df768ff0417b01b78484c2f6dd0ad8d7655aa7f5a0f5454c3f2",
+    "MainTheory/Orbit26MatchingNotation.lean": "67f59af79bc0a8180053a5d2ed773e43466fdf31bdd13459e09f609012e0b226",
+    "MainTheory/Orbit26MatchingComponents.lean": "81ca0f1613b037a543c37ee8e30b8a9d19a97d623028cbb64c02af9f506f51d1",
+    "MainTheory/OrderTwoRecordResidues.lean": "6dfd044495df108484d875b6b914abe85ad0e81daeffbb5dba8da372b8a4d2b0",
+    "MainTheory/Orbit19TailIdentity.lean": "9938f54d2692f16dc862088f687622bd2a6b9029dd034511bec52a2222c8723d",
+    "MainTheory/Orbit14EdgeRows.lean": "d49a3b50e19433ff86e416ad0195673d7240e4b9275a161d6d604e454add676e",
+    "MainTheory/WeightedLineFrames.lean": "3a28f3fefe792fcaae9d156e784826ffdc4a45602074c300e70a04491d1c24d9",
+    "MainTheory/Orbit26AnchorGauge.lean": "f655755307d7ed4b482a4acbc1cb25f2abbed72153077e567ccdbd48761d3af9"
+  },
+  "scope": "LF source-snapshot consistency only; mathematical acceptance requires whole kernel build and fresh transitive axiom audit."
+}

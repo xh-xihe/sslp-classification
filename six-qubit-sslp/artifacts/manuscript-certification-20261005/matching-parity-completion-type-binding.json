@@ -1,0 +1,9 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "type_evidence": "artifacts\\manuscript-certification-20261005\\kernel-types-matching-parity-completion-v2.json",
+  "type_evidence_sha256": "eb9b656590a7166f0ea75d8a15d656f1937531139c5002dc3529a171a2fc1713",
+  "scope": "Only listed actual physical intermediates. Other SI claims and prose remain incomplete."
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "-X",
+    "utf8",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit26AnchorGauge.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 16.184617099992465
+}

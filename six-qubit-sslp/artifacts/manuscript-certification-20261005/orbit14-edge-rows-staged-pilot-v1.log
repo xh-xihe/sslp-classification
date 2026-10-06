@@ -1,0 +1,4 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14EdgeRows.lean:12:48: error: failed to synthesize
+  Decidable (∀ (g h : Fin 8), middleAdjacent (bottomLabels g) (topLabels h) ↔ ↑g / 4 = ↑h / 4 ∧ ↑g % 4 + ↑h % 4 ≠ 3)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

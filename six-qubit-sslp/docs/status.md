@@ -16,17 +16,14 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current local proof snapshot passes the whole build: **16,171 modules**.
-Its fresh transitive audit passes **8,781 roots**, using only `propext`,
+The current local proof snapshot passes the whole build: **16,186 modules**.
+Its fresh transitive audit passes **8,932 roots**, using only `propext`,
 `Classical.choice` and `Quot.sound`. Its evidence is recorded in
-[proof-acceptance-16171.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16171.json).
+[proof-acceptance-16186.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16186.json).
 This acceptance does not declare complete manuscript correspondence.
-The accepted current proof snapshot is published in
-[`c52f9a1b`](https://github.com/xh-xihe/dyadic-lifts/commit/c52f9a1b897c49cc80b2cb745fffbaf9443e7f5b).
-Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16171.json)
-checks every one of the 16,171 active proof sources against the local
-successful build. Earlier publication bindings are retained unchanged.
-Machine-readable current status is in
+Publication of this snapshot is pending. The preceding
+[16,171-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16171.json)
+is retained unchanged. Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -57,16 +54,16 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-The current audit contains 6,017 distinct selected roots in
+The current audit contains 6,168 distinct selected roots in
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and newly checked physical bridges. Roots
 already present in another audit are retained there rather than duplicated.
 
-The current ledger has **1,722 covered assertions**, five
-scope-only statements, three stated conjectures, **99 unreviewed
+The current ledger has **1,763 covered assertions**, five
+scope-only statements, three stated conjectures, **58 unreviewed
 SI assertions**, and one explicitly partial main-text Singleton assertion.
-Current kernel type inspection covers **4,221 declarations**.
-The source inventory contains **16,171 active Lean modules**. The new
+Current kernel type inspection covers **4,295 declarations**.
+The source inventory contains **16,186 active Lean modules**. The new
 correspondence proofs include:
 
 - Orbit 31: the exact support-count chain, all sixteen representatives and
@@ -161,6 +158,23 @@ two source-reconstruction checks pass. The
 states the accepted scope. Generic matching-row algebra in this batch does
 not by itself close the later physical matching-branch intermediates.
 Subsequent isolated drafts require a separate canonical build and audit.
+
+## Matching anchors, orbit-17 moments and physical parity blocks
+
+Fifteen modules supply actual orbit-26 matching-anchor and mixed-row
+consequences, orbit-17 rational moment equations and unit conjugate phases,
+orbit-13/14 physical block frames, literal order-two residues, orbit-24
+repetition-Pauli compressions, and the orbit-19 tail identity. Forty-one
+formerly pending displayed assertions have explicit current type review.
+The overlap-preserving anchor gauge and weighted-line frame identities are
+generic algebra; their hypotheses remain explicit, and generic line frames
+do not alone certify the remaining actual orbit-14 line-frame display.
+
+Whole kernel building, fresh standard-axiom auditing, canonical type
+inspection and the fifteen-source snapshot check pass. The
+[batch record](../artifacts/manuscript-certification-20261005/matching-parity-work-in-progress.json)
+states the accepted scope. Remaining manuscript correspondences still
+require their own proofs and review.
 
 ## Historical records
 
