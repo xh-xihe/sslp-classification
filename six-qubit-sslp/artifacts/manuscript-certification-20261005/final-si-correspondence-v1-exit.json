@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_si_correspondence.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.0251273000030778
+}

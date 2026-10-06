@@ -115,6 +115,25 @@ This checks the canonical LF hashes of all twenty display-route modules
 against their strict-pilot snapshot. Whole kernel building, transitive
 standard-axiom auditing and manuscript type review remain separate checks.
 
+## Final SI correspondence sources
+
+```console
+python tools/verification/check_final_bridge_snapshot.py
+```
+
+This checks the nine final bridge LF source hashes against their strict-pilot
+snapshot. The whole kernel build and standard-axiom audit remain required.
+With the exact current private manuscript sources also available, run:
+
+```console
+python tools/verification/check_si_correspondence.py
+```
+
+This checks all 1,622 SI mathematical entries, three scope-only remarks and
+the complete running-context review. The combined main/SI claims, prose and
+errata completeness gates deliberately retain the five frozen main issues.
+See [manuscript correspondence](manuscript-correspondence.md).
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including singular-safe unitary Schmidt decomposition, actual positive slice frames and all four literal split-family physical codes and logical actions; SI mathematical correspondence complete; five frozen main issues remain.",
+  "active_modules": 16227,
+  "axiom_roots": 9375,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1821,
+    "expository": 5,
+    "partial": 1
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 0,
+  "si_fully_kernel_correspondence": "complete",
+  "si_pending_assertions": 0,
+  "si_running_context_review": "complete",
+  "si_reviewed_entries": 1625,
+  "si_kernel_mathematical_assertions": 1622,
+  "si_scope_only_remarks": 3,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16227.json",
+      "sha256": "4650726fdc0c4c87b8c8b535c8a814d18efffa1d4bb432119a279fef01463759"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-9375.json",
+      "sha256": "1d44be27707b4f36f3f15ca35a97d718d0bf1a05a86e97edfd2de476e4ce177e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-staged-proof-snapshot-9.json",
+      "sha256": "9ec72cde6bf1af1bb8400356c50f9bf76c8f8c44d03a9179ed038402cda491bd"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-final-bridge-completion-v1.json",
+      "sha256": "8238a3a530e3385795638a79ed3d9cebd3fd7555de5c7629b502ac38fbc316a6"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-type-binding-v1.json",
+      "sha256": "2ba0ede4ae837bfe781dca96c663fdcf38c70c20537c970536b1a5558681a143"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-correspondence-gates-v1-report.json",
+      "sha256": "f6baa912cd794ebdf3c34033b317844bf618bfc1e88a0cf7c4510a68a703ffbd"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-review-v1.json",
+      "sha256": "0411fd636f3d23fb0460740710a3a1b973e407d62a24ef82fabd4bd16a83447b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/complete-running-context-type-binding-v1.json",
+      "sha256": "e94952685e21636ec239aeb364a233abd18cc85b652732b03a10b0a800fd2afb"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/weighted-graph-context-revalidation.json",
+      "sha256": "5a26eb7442be2b112b94e7720245ae5f6a6b0da6bfee24857cb71041803dd868"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-si-correspondence-v1.log",
+      "sha256": "c795ea2fbc1e37e4fe8640fb48af17120f50e976193c879c93a2e2dd26929a43"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-si-correspondence-v1-exit.json",
+      "sha256": "56e7c3b73f54d5ffba802bcce0f4ae14b514e977957fb8b8455370c3c8bb43d2"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-context-release-regression-v1.log",
+      "sha256": "9544da998e8bca27fa0b87ad3f96dd6f5809b3fb61e30e589a833dc4a629b763"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-context-release-regression-v1-exit.json",
+      "sha256": "6c6cba44468a184f59b6263d08c8e47cea518c03c2fde2b502827222a7baf9fe"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-full-build-v1.log",
+      "sha256": "0d69b0f4b91d445c9dde5153a7df1bb24aa59061040c7f02802af19f6f19222c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-full-build-v1-exit.json",
+      "sha256": "8d381908493ff3cc3be22a638592aac736915273f614a2f070671ece242c6a4c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-type-inspection-v1.log",
+      "sha256": "091c9478b7e36009bf9a3da6f1bdd44d41f0ce1f2e4a52910edc071b4e53d23c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-type-inspection-v1-exit.json",
+      "sha256": "2c7dc7ea1d7e250cd315ce636c1f8fcb3d0d336616aea5a6cb73ce1854d5e7e8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-axioms-v1.log",
+      "sha256": "e8a4cff72aa135ba4747ae9a6ba1a6a96c7bda1a8324d8ef792ed2609775515d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-axioms-v1-exit.json",
+      "sha256": "b82278cf30ee7d344a3429ee2c86190b59b240948e708b25a0e76f775f68770f"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-source-snapshot-v1.log",
+      "sha256": "e402e5cccc495ed95afad15f44011a1c6aec517eb896777815b645b542cb6d5b"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/final-bridge-completion-source-snapshot-v1-exit.json",
+      "sha256": "1046c47f7eb561f3f1cbfb4d463cd78d102f18eccbb28568d38df69329ec9db7"
+    }
+  ]
+}

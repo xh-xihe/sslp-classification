@@ -20,6 +20,8 @@ provenance for older construction routes.
 | `verification/check_matching_parity_snapshot.py` | Fifteen matching/parity source hashes; separate whole kernel build and fresh audit required |
 | `verification/check_scalar_spinor_snapshot.py` | Twelve scalar/spinor source hashes; separate whole kernel build and fresh audit required |
 | `verification/check_display_route_snapshot.py` | Twenty display-route source hashes; separate whole kernel build and fresh audit required |
+| `verification/check_final_bridge_snapshot.py` | Nine final bridge source hashes; separate whole kernel build and audit required |
+| `verification/check_si_correspondence.py` | Complete current SI assertion and paragraph/type correspondence; requires exact private sources |
 | `paper_claims.py`, `named_results_doc.py`, `prose_review_doc.py` | Version-bound private-source correspondence records |
 
 Use `--paper-version 20261003` explicitly. Historical tools retain their

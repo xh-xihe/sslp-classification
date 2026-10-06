@@ -41,6 +41,10 @@ def main():
                'pending_assertions':rows,
                'prose_review':{'status':prose['status'],'reviewed_blocks':len(prose['assertions']),
                                'record':'results/prose-review-20261003.json'},
+               'pending_prose_assertions':[{k:r[k] for k in ('source','line','end_line','reason')}
+                                           for r in prose['assertions'] if r['kind']=='gap'],
+               'si_pending_assertions':sum(r['source'].endswith('/supplementary.tex') for r in rows),
+               'si_running_context_review':prose.get('source_status',{}).get('supplementary.tex','partial'),
                'held_main_errata':'notes/main-errata-hold-20261003.md',
                'fully_kernel_manuscript_certification':'not_complete'}
     path = ROOT/'artifacts/manuscript-certification-20261005/remaining-obligations.json'

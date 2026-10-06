@@ -1,0 +1,1454 @@
+{
+  "schema": 2,
+  "paper_version": "20261003",
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "status": "partial",
+  "method": "Explicit review of the frozen 20261003 main source and current SI. Reviewed prose blocks bind their exact current line ranges and kernel-inspected physical theorem types. All other running text still requires review. Five author-held main issues remain gaps; the main source is unchanged. No source-wide coverage is inherited. Localized orbit-31 correction: only line 12122 gains a nonempty-mask hypothesis. Every unchanged assertion and prose context was revalidated explicitly; no equation or main-text byte changed.",
+  "assertions": [
+    {
+      "source": "main.tex",
+      "line": 172,
+      "end_line": 176,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: the introductory diagonal-group finiteness claim needs the fixed-product-basis and single-site detection hypotheses used by the actual theorem.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "05a38d73cafef363d1c565a54bad8e40172ab3c997a8f6cfc90ce7c70acc73ae"
+    },
+    {
+      "source": "main.tex",
+      "line": 269,
+      "end_line": 272,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: probability moment rows implement diagonal Z detection; full X/Y KL conditions also involve complex phases.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "e5a428e32e0e77151569c6a43813e1778992315a7259109914529ceb2bfd0e09"
+    },
+    {
+      "source": "main.tex",
+      "line": 274,
+      "end_line": 277,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: the unrestricted Singleton statement includes rank one and is false there. The repository carries both the corrected rank-at-least-two theorem and a kernel counterexample. A proof of a corrected statement cannot certify this frozen wording.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "c53a06c5ad205f2df24faec467b1952e2f4aae03e859ec2fa8215fbcf6bb5300"
+    },
+    {
+      "source": "main.tex",
+      "line": 684,
+      "end_line": 686,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: rational homogeneous replacement preserves the specified image/kernel information; this must not be read as equality of the entire homogeneous component.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "20908505be33362a3cf92573d02306825c022c63c5ca7c734ccb094f291b2a6b"
+    },
+    {
+      "source": "main.tex",
+      "line": 1825,
+      "end_line": 1827,
+      "kind": "gap",
+      "reason": "Author-held frozen main issue: physical-order minimization in this sentence has a broader representative scope than the reduced diagonal definition used by its corresponding result.",
+      "declarations": [],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "ee01d99b4ea4376c5e2fdebad52c3cccd982ba9d777cab86da26229d8a41a9e2"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4369,
+      "end_line": 4370,
+      "kind": "covered",
+      "reason": "The literal cat coefficients give two orthonormal actual physical columns under the printed real quadratic parameter constraint.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_apply",
+        "MainTheory.PrimitiveOrderTwoCatEncoder.encoder_isometry"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "8ed945be522ce639f34948f4abedc7578588f59f6f79ed9d1254be47a195b432"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4373,
+      "end_line": 4377,
+      "kind": "covered",
+      "reason": "The actual five-cat embedding kills all nonidentity single-site Paulis. The only nonzero two-site types are ZZ and equal XX/YY; constructive support classification exhausts all weight-at-most-two labels.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatCompression.cats",
+        "MainTheory.PrimitiveOrderTwoCatCompression.single_zero",
+        "MainTheory.PrimitiveOrderTwoCatCompression.ZZ",
+        "MainTheory.PrimitiveOrderTwoCatCompression.XX_YY",
+        "MainTheory.PrimitiveOrderTwoCatCompression.mixed_zero",
+        "MainTheory.PrimitiveOrderTwoCatKL.small_label"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "4fdecc4a4a99915752183bebd48b24439b92fdd11a9a152cb621a18948b7b9d9"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4406,
+      "end_line": 4418,
+      "kind": "covered",
+      "reason": "Tail-only, first-site-only and first/tail Pauli factors exhaust the actual weight-at-most-two matrix compressions. The constructive proof retains all real normalized parameters and uses no nonzero individual amplitude premise or division by an amplitude.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatKL.real_tail_KL",
+        "MainTheory.PrimitiveOrderTwoCatKL.first_pauli_KL",
+        "MainTheory.PrimitiveOrderTwoCatKL.one_tail_zero",
+        "MainTheory.PrimitiveOrderTwoCatKL.weight_split",
+        "MainTheory.PrimitiveOrderTwoCatKL.full_KL"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "46f87cba977dbfeb0eb05d92e06b3992d2ff347f9465c71a5fee9c016916fd2a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4440,
+      "end_line": 4441,
+      "kind": "covered",
+      "reason": "The actual six-qubit code projector is orthogonal to its conjugate six-Y spin flip and their product has zero trace. The subsequent enumerator conclusion is outside this reviewed prose block.",
+      "declarations": [
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.overlap_zero",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.projectors_orthogonal",
+        "MainTheory.PrimitiveOrderTwoCatSpinFlip.spin_trace_zero"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "6aa1531913ba019fe24eb6a09df48807a855409e8bf84ba2ed23156003fb0a7c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5607,
+      "end_line": 5607,
+      "kind": "covered",
+      "reason": "The target identity retains arbitrary raw amplitudes and only divides by the positive common column norm. No amplitude or Schmidt coefficient is required to be nonzero.",
+      "declarations": [
+        "MainTheory.Orbit3PrintedHomogeneousTarget.raw_expectation",
+        "MainTheory.Orbit3PrintedHomogeneousTarget.homogeneous_target"
+      ],
+      "origin": "20261005 explicit current context/type review",
+      "context_sha256_lf": "71e2612bd8be3afbbbbbec7685c0123987d950c163f0f5510a86c776743a4697"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5594,
+      "end_line": 5595,
+      "kind": "covered",
+      "reason": "The actual six-Y bilinear is symmetric. Its same-parity terms vanish under the actual odd orbit-three involution, including zero amplitudes. The preceding shadow-saturation sentence is outside this narrowly reviewed block.",
+      "declarations": [
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_symmetric",
+        "MainTheory.Orbit3PrintedSpinTrace.pairing_diagonal_zero",
+        "MainTheory.Orbit3PrintedSpinTrace.raw_parity",
+        "MainTheory.Orbit3PrintedSpinTrace.orbit3_odd"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "6019ffd2ab3f7ca1fc9390d429365986a93aa2f4890514e21b3ebfcc8044d5c1"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16129,
+      "end_line": 16131,
+      "kind": "covered",
+      "reason": "The three final table stages still count the actual primitive angle records. Distinct records mapped to the same pair remain distinct in these actual survivor sets.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.recordCount",
+        "MainTheory.Generated.SupplementarySectorWitnesses.coarseRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.feasibleRecords_complete",
+        "MainTheory.Generated.SupplementarySectorWitnesses.compatibleRecords_complete",
+        "MainTheory.SupplementarySectorCounts.angle_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "3f78c8bb53be62cae52fbaba04a9845c572fb376b47465218ca98986d871951b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 16164,
+      "end_line": 16165,
+      "kind": "covered",
+      "reason": "The second table counts distinct actual full labelled fibre-pair payloads after hashing, and inequivalent actual directory keys in its final column. Both q and m are retained throughout.",
+      "declarations": [
+        "MainTheory.SupplementarySectorCountBase.pairCount",
+        "MainTheory.Generated.FinitePairDistinctness.pairAtId_injective",
+        "MainTheory.Generated.FiniteOrbitCertificate.directory_valid",
+        "MainTheory.SupplementarySectorCounts.pair_table"
+      ],
+      "origin": "20261005 explicit sector-table/spin context and type review",
+      "context_sha256_lf": "05da8665fa9f6d0fed75bba0e74fcb92c47db930bd405a4fad78368462ebdbf7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10743,
+      "end_line": 10745,
+      "kind": "covered",
+      "reason": "The literal two-normalization, five-first-moment and ten-second-moment matrix is checked against the actual bottom/top tail-bit coordinates. Its rational kernel is linearly equivalent to two free parameters; rank-nullity therefore proves rank fourteen. An independent affine equivalence proves that every rational solution, and only those solutions, has the printed two-parameter form. Physical real probabilities are connected separately by physical_probabilities; they are not assumed to be rational.",
+      "declarations": [
+        "MainTheory.Orbit26PrintedMoments.actual",
+        "MainTheory.Orbit26PrintedMoments.rows",
+        "MainTheory.Orbit26PrintedMoments.actual_rows",
+        "MainTheory.Orbit26PrintedMoments.M",
+        "MainTheory.Orbit26PrintedMoments.kernel_iff",
+        "MainTheory.Orbit26PrintedMoments.affine_iff",
+        "MainTheory.Orbit26PrintedMoments.kernel_dimension",
+        "MainTheory.Orbit26PrintedMoments.rank_fourteen"
+      ],
+      "origin": "20261005 explicit literal matrix/rank context and kernel type review",
+      "context_sha256_lf": "40bec92b1bd9ae5c76bb22854edc1a089cb00b938dfa40299d24f6f81f99d989"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5925,
+      "end_line": 5931,
+      "kind": "covered",
+      "reason": "The literal four commuting standard generators have sixteen distinct stabilizer words. Their actual common +1 eigenspace equals the range of the actual two standard seed words, whose Gram matrix is 16 I. Its complex dimension is exactly two; the low-weight syndrome argument and both actual logical Pauli actions are separately proved.",
+      "declarations": [
+        "MainTheory.StandardFiveSyndromeDisplays.all_nonzero_unique",
+        "MainTheory.StandardFiveSyndromeDisplays.low_weight_anticommutes",
+        "MainTheory.StandardFiveSyndromeDisplays.generators_commute",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_X",
+        "MainTheory.StandardFiveSyndromeDisplays.logical_anticommute",
+        "MainTheory.StandardFiveJointSpace.independent_generators",
+        "MainTheory.StandardFiveJointSpace.projector_checked",
+        "MainTheory.StandardFiveJointSpace.seed_gram",
+        "MainTheory.StandardFiveJointSpace.joint_range",
+        "MainTheory.StandardFiveJointSpace.joint_dimension"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "1c923579d219093657d5c0523736a716493541f46363e0f4d2cbdda31ca52c2a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 4246,
+      "end_line": 4263,
+      "kind": "covered",
+      "reason": "The universal complex-isometry construction, full low-weight physical KL, zero unsplit scalars and both literal trace formulas are proved for the actual normalized standard five-qubit seed.",
+      "declarations": [
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.ArbitrarySplitPerfectCode.split_trace",
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "2e720e1e92e62c96d0b5eedc798a8f3c10d002ebcf9a85b93b2da5b9359d1549"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 5952,
+      "end_line": 5964,
+      "kind": "covered",
+      "reason": "All low-weight six-qubit Pauli errors are covered by the universal split-isometry proof, including the stated zero unsplit coefficients and the split-pair trace formula in this output order.",
+      "declarations": [
+        "MainTheory.ArbitrarySplitSixQubit.code_isometry",
+        "MainTheory.ArbitrarySplitSixQubit.code_KL",
+        "MainTheory.ArbitrarySplitSixQubit.projector_KL",
+        "MainTheory.ArbitrarySplitSixQubit.unsplit_scalar_zero",
+        "MainTheory.ArbitrarySplitSixQubit.hilbert_distance_three",
+        "MainTheory.ArbitrarySplitPerfectCode.split_pair_compression",
+        "MainTheory.Orbit3PrintedSplitMatrices.trace_identity"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "cbc8f4c2d6c803049e077e2eb9e61c102e98305d87175d7fdcbaf84edec358c8"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12026,
+      "end_line": 12042,
+      "kind": "covered",
+      "reason": "The specified minor and full moment rank are independently proved.",
+      "declarations": [
+        "MainTheory.Orbit31PrintedMinor.real_determinant_abs",
+        "SixQubit.Orbit31.momentMatrix_rank"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "c343f645737f382491faa213b237beb1c3fba1394808cab0d30f90803a349b15"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12115,
+      "end_line": 12120,
+      "kind": "covered",
+      "reason": "All actual real extreme points, and only those points, are the 204 checked primal vertices, with support counts 108 and 96.",
+      "declarations": [
+        "MainTheory.Orbit31SupportBase.actual_rows",
+        "MainTheory.Orbit31MomentVertices.extreme_points",
+        "MainTheory.Orbit31MomentVertices.vertex_count",
+        "MainTheory.Orbit31MomentVertices.vertex_support_counts"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "e32e454ce56a0f11b02c5aaaa4cbddc8d0c99d4eaa2770a1dcbcc00b05af2698"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12122,
+      "end_line": 12123,
+      "kind": "covered",
+      "reason": "Every coordinate face is the convex hull of the actual supported vertices.",
+      "declarations": [
+        "MainTheory.Orbit31MomentFaces.convex_hull_supported_vertices"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "5b8cf7f3f606554d5a6cef385ec2273a7f19b4355deda8729cc840c243c32275"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12122,
+      "end_line": 12126,
+      "kind": "covered",
+      "reason": "The SI now explicitly restricts the exact-support relative-interior iff to nonempty masks. The exact vertex-union theorem includes this condition; the empty union and normalization obstruction are proved separately.",
+      "declarations": [
+        "MainTheory.Orbit31RelativeInterior.relative_interior_iff_vertexUnion",
+        "MainTheory.Orbit31RelativeInterior.empty_vertexUnion",
+        "MainTheory.Orbit31RelativeInterior.empty_mask_no_support"
+      ],
+      "origin": "20261005 localized qualification and unchanged-context revalidation",
+      "context_sha256_lf": "73d174e2779da894b4b99518ef7c187c1066cf68e13e5c9bae43e4a1f1ce1562"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12277,
+      "end_line": 12290,
+      "kind": "covered",
+      "reason": "Actual synchronized phases prove the literal type-14 and type-16 exclusions. Together with the other checked literal branches only type two remains at this stage.",
+      "declarations": [
+        "MainTheory.Orbit31ResidualTriangles.column_rectangle",
+        "MainTheory.Orbit31ResidualTriangles.column_opposition",
+        "MainTheory.Orbit31ResidualTriangles.three_column_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type03.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type04.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type05.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type06.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type07.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type08.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type10.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type11.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type12.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type13.physical_no_go",
+        "MainTheory.Generated.Orbit31DirectTriangles.Type15.physical_no_go",
+        "MainTheory.Orbit31FinalCross.Type01.no_go",
+        "MainTheory.Orbit31FinalSameState.final_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type9_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type14_no_go",
+        "MainTheory.Orbit31ResidualTriangles.physical_type16_no_go"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "d00b934ffe6e8e5b264429210c547e2c723da0b77ee73d1aff501cf1d33d3ffc"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12469,
+      "end_line": 12479,
+      "kind": "covered",
+      "reason": "The printed signed minor is checked in the actual lexicographic matrix, and proves rank twenty-three.",
+      "declarations": [
+        "MainTheory.Orbit32PrintedMinor.actual_matrix",
+        "MainTheory.Orbit32PrintedMinor.real_determinant",
+        "MainTheory.Orbit32PrintedMinor.full_rank"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "389b361b0f7d4113dfc089565c434ec6da070a28b1e63f6470099be76c3f052c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12513,
+      "end_line": 12520,
+      "kind": "covered",
+      "reason": "Both directions of the complete nonnegative real normal form are proved. The twelve displayed parameters determine the entire probability vector injectively, the actual moment kernel has dimension nine, and the literal reflection squares to identity.",
+      "declarations": [
+        "MainTheory.Orbit32PrintedMomentNormal.complete_normal_form",
+        "MainTheory.Orbit32PrintedMomentNormal.parameter_injectivity",
+        "MainTheory.Orbit32PrintedMinor.kernel_dimension",
+        "MainTheory.Orbit32PrintedLocalAlgebra.reflection_involution"
+      ],
+      "origin": "20261005 literal completion, boundary and type review",
+      "context_sha256_lf": "74032b6ecb825c06f111132c32f9f2abc099ff5c56b69070e4c5bfc4fdc71772"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10265,
+      "end_line": 10272,
+      "kind": "covered",
+      "reason": "All twelve positive block norms and nonzero vectors are proved in physical coordinates.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection",
+        "MainTheory.Orbit33PrintedBlocks.physical_blocks_nonzero"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "c1d135d68c12ed25943045a9bcf61b1e69ff0e2c7c2031dc3669d5b03a832863"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10274,
+      "end_line": 10316,
+      "kind": "covered",
+      "reason": "The actual character matrix, arbitrary-F quadratic forms, common reduced state and full six-block matrix reflection are checked.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.actual_characters",
+        "MainTheory.Orbit33PrintedBlocks.evaluation_formula",
+        "MainTheory.Orbit33PrintedBlocks.matrix_reflection_iff",
+        "MainTheory.Orbit33PhysicalReflection.physical_character_reflection",
+        "MainTheory.Orbit33PhysicalReflection.physical_common_reduced_state",
+        "MainTheory.Orbit33PrintedBlocks.physical_norms_and_reflection"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "99bd30356fc9e2839f9931e764c455da055a25a22c377c227d730f5eee43e6db"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10318,
+      "end_line": 10346,
+      "kind": "covered",
+      "reason": "Both directions of the literal matrix-pair reduction, unit-vector factorization, nonzero factors and phase signs are proved.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_1",
+        "MainTheory.Orbit33PrintedBlocks.rankone_rows_iff_2",
+        "MainTheory.Orbit33PrintedBlocks.physical_rankone_pairs",
+        "MainTheory.Orbit33NormalizedPairs.physical_normalized_pairs"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "28c09cda7eb51b7a03399e17f816dad1ac6b22722f8cdfce95da9acecac3aaa5"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10348,
+      "end_line": 10383,
+      "kind": "covered",
+      "reason": "All nine actual reciprocal pairs and both far-block orthogonality relations are derived from physical cross KL.",
+      "declarations": [
+        "MainTheory.Orbit33PrintedBlocks.cross_incidence",
+        "MainTheory.Orbit33PrintedBlocks.cross_weight",
+        "MainTheory.Orbit33PrintedBlocks.physical_complete_cross",
+        "MainTheory.Orbit33NormalizedPairs.divided_cross",
+        "MainTheory.Orbit33NormalizedPairs.physical_far_orthogonal"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "758c93ada8598924af223561f212804f7f2676d967675a7d9ebe0b0d18df4904"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10385,
+      "end_line": 10403,
+      "kind": "covered",
+      "reason": "The two projector sums, half-identity reduced state, perpendicular unit vectors, rank-one reduced state and final contradiction are separately exposed.",
+      "declarations": [
+        "MainTheory.Orbit33ProjectorArgument.physical_near_and_far_sums",
+        "MainTheory.Orbit33ProjectorArgument.physical_projector_sums",
+        "MainTheory.Orbit33ProjectorArgument.physical_unit_orthogonality",
+        "MainTheory.Orbit33ProjectorArgument.physical_all_bottom_outers",
+        "MainTheory.Orbit33ProjectorArgument.physical_rho_projector",
+        "MainTheory.Orbit33ProjectorArgument.physical_no_go"
+      ],
+      "origin": "20261005 literal six-block current type review",
+      "context_sha256_lf": "570c1e34b1af949ed22b0d11c966ca95f7569c5a040e2ca4f0d3711fa6cdcf24"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10079,
+      "end_line": 10103,
+      "kind": "covered",
+      "reason": "The physical star-to-grid rows, common active phase and rectangle permanent reduction retain all zero-amplitude boundaries.",
+      "declarations": [
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_hub",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_common_phase",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_rectangle",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_permanents"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "ffe87fdac59339475d520d906e938a35e76a0a6f93087c348695d1a4cb1c2796"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 10106,
+      "end_line": 10121,
+      "kind": "covered",
+      "reason": "Actual positive row and column masses and all permanents force full support in both grid rows.",
+      "declarations": [
+        "MainTheory.GridSupportAlgebra.full_support",
+        "MainTheory.OrderFiveGridRemainingDisplays.Orbit38.physical_supports_full"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "b1c6fa237ba9aea07a5c489ca0120c6172ded119fb455fb1de67b469e573c943"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11191,
+      "end_line": 11237,
+      "kind": "covered",
+      "reason": "The exact masses, actual six-edge rows and every physical coordinate version give the complete Walsh exclusion.",
+      "declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.physical_probabilities",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.determinant",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit27.AllCoordinates.physical_weight_one_zero"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "895a543c52b29857e9f6a24cb504ddd93e007d7929f3e10891630312d39cc714"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 12647,
+      "end_line": 12688,
+      "kind": "covered",
+      "reason": "All complementary probability pins and the literal SI three-mask odd cycle are separately proved.",
+      "declarations": [
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_probabilities",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.actual_complements",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_all_nonzero",
+        "MainTheory.OrderFourWalshRemainingDisplays.Orbit62.physical_phase_triangle"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "9aaafae8febbef2530be649cc1037132c07f415bac0f619931ed35e7d6361467"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13927,
+      "end_line": 13994,
+      "kind": "covered",
+      "reason": "The literal orbit-50 incidence and reciprocal route is checked, including the native top reversal and global Z4 row sign; one active index suffices for the unit-modulus odd triangle.",
+      "declarations": [
+        "MainTheory.Orbit50PhysicalTriangle.physical_active",
+        "MainTheory.Orbit50PhysicalTriangle.physical_reciprocals",
+        "MainTheory.Orbit50PhysicalTriangle.physical_triangle",
+        "MainTheory.Orbit50PhysicalTriangle.physical_no_go",
+        "MainTheory.Orbit50PrintedRows.Row04.actual_characters",
+        "MainTheory.Orbit50PrintedRows.Row04.rowSign"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "417e13c5770c94756f0ca0a3a4c2fe9796f956dc2c9cb13c94e4cbc8a958667f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14050,
+      "end_line": 14104,
+      "kind": "covered",
+      "reason": "Both actual printed kernels and the exact norm-product parameter pinning give all six fixed positive probabilities.",
+      "declarations": [
+        "MainTheory.Orbit51PrintedRows.Row00.kernel_span",
+        "MainTheory.Orbit51PrintedRows.Row01.kernel_span",
+        "MainTheory.Orbit51PrintedAlgebra.printed_pin_identities",
+        "MainTheory.Orbit51PrintedAlgebra.linear_pin",
+        "MainTheory.Orbit51PrintedAlgebra.pin_parameters",
+        "MainTheory.Orbit51PhysicalCompletion.physical_pinned_point"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "b0e71572628ee7987544d95ed597d793d50d1d795c283e71a34171b07fd86ff8"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14106,
+      "end_line": 14147,
+      "kind": "covered",
+      "reason": "The two actual synchronization systems identify both anchors even when alpha is at either boundary endpoint.",
+      "declarations": [
+        "MainTheory.Orbit51PrintedAlgebra.partial_sync",
+        "MainTheory.Orbit51PrintedAlgebra.boundary_active",
+        "MainTheory.Orbit51PrintedAlgebra.anchor_sync",
+        "MainTheory.Orbit51PrintedAlgebra.full_sync",
+        "MainTheory.Orbit51PhysicalCompletion.physical_sync_rows",
+        "MainTheory.Orbit51PhysicalCompletion.physical_full_sync"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d52e4fde3e5e0d12daa566d1e457595026755278df09ed60ab0314c0bcd92f91"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14149,
+      "end_line": 14184,
+      "kind": "covered",
+      "reason": "All three physical quadrics, the explicitly nonzero ratio denominators and the literal odd-triangle contradiction are proved.",
+      "declarations": [
+        "MainTheory.Orbit51PhysicalCompletion.quadrics_of_sync",
+        "MainTheory.Orbit51PhysicalCompletion.physical_quadrics",
+        "MainTheory.Orbit51PhysicalCompletion.physical_ratios",
+        "MainTheory.Orbit51PrintedAlgebra.fixed_nonzero",
+        "MainTheory.Orbit51PhysicalCompletion.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "cf8607ee79dd6d251a0413d9cf152f6b578767b65fabf890025c3ff8d3db5215"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13750,
+      "end_line": 13806,
+      "kind": "covered",
+      "reason": "The literal twelve mask reductions, common anchor phase and four quadrics are physically derived, including the whole closed boundary.",
+      "declarations": [
+        "MainTheory.Orbit49PrintedAlgebra.reciprocal_rows",
+        "MainTheory.Orbit49PhysicalCompletion.physical_uniform_phase",
+        "MainTheory.Orbit49PhysicalCompletion.physical_four_rows",
+        "MainTheory.Orbit49PhysicalCompletion.physical_quadrics"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "371bf07f796dadceb2a1d4a79852b604bf026a04cdda63194051b978da7c7443"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13821,
+      "end_line": 13864,
+      "kind": "covered",
+      "reason": "Both parameter pinning identities, all physical pinned probabilities and the exact nonzero-ratio triangle and final contradiction are proved.",
+      "declarations": [
+        "MainTheory.Orbit49PrintedAlgebra.norm_product",
+        "MainTheory.Orbit49PrintedAlgebra.pin_parameters",
+        "MainTheory.Orbit49PhysicalCompletion.physical_pinned_point",
+        "MainTheory.Orbit49PrintedAlgebra.triangle_equations",
+        "MainTheory.Orbit49PrintedAlgebra.triangle_determinant",
+        "MainTheory.Orbit49PhysicalCompletion.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d2423442af7561f128742909d936d9e7d2e6088d45a18b315b363876509997a7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13506,
+      "end_line": 13524,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability family and its exact domain are proved in both directions.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit47.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit47.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "6d03c3bc5123a8618e84e7f6e6a8dac90e5add47e3ebb6b49020809b65a47241"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13587,
+      "end_line": 13611,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability family and nonnegative domain are proved; rank/minor prose is reviewed separately.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit48.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit48.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "8e063a2351c6a4b4a4bc525f2da26b1cbdbee39c841ae7a4627c41243e85f6bb"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13719,
+      "end_line": 13737,
+      "kind": "covered",
+      "reason": "The complete real three-parameter probability family and all facets of its exact domain are proved.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit49.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit49.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "69abf1ef6c58ff51973b60a0154cadf0afef94c75f6ab3695212c6bf02e8965b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13892,
+      "end_line": 13918,
+      "kind": "covered",
+      "reason": "The complete real four-parameter probability family and its exact nonnegative domain are proved, including the top-order reversal.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit50.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.physical_normal_form",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.actual_complements"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "b5eb7221999ec2686a1400ecc2f4adf60d4dabb4c6716bf4121949e882a29177"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14029,
+      "end_line": 14045,
+      "kind": "covered",
+      "reason": "The complete real three-parameter moment cube, with every boundary, is proved in both directions.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit51.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit51.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "d2f0d39debd257c20662fb201a3080c3ec96ba93d3d4c34bb42ef06630947a45"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14215,
+      "end_line": 14239,
+      "kind": "covered",
+      "reason": "The complete real two-parameter probability rectangle and its exact nonnegative domain are proved.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedMoments.Orbit52.complete_iff",
+        "MainTheory.OrderThreePrintedMoments.Orbit52.physical_normal_form"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "e13177228e8493429b605e02bff31a1099c3e45b98116f2e4fad7bb42638d551"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13530,
+      "end_line": 13559,
+      "kind": "covered",
+      "reason": "The actual X5 and X5Z1 rows, their individual zero products and the positive probability product 1/18 give the literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_products_zero",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_first_product_positive",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit47.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "9fe545d2e48eb04feb4fa845422e1b2fb7b96c6ab276eba177ae4978c55f5870"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13616,
+      "end_line": 13651,
+      "kind": "covered",
+      "reason": "The actual X4 four-incidence Hadamard system and positive first product give the literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.determinant",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_products_zero",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_first_product_positive",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit48.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "3fe468134ca433ce690d9cc2716b60f56683cc5d5a6315e9d4ba2c26d562af33"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14243,
+      "end_line": 14298,
+      "kind": "covered",
+      "reason": "The actual X2 Hadamard system, two half-probability identities and positive total give a boundary-inclusive literal exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.actual_incidence",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_rows",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_half_relations",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_squared_products",
+        "MainTheory.OrderThreePrintedCrossRows.Orbit52.physical_no_go"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "f9208be449adbb2adef8fc1316a64b82eee7f1b7fead523f5b2854e4cd060412"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13525,
+      "end_line": 13527,
+      "kind": "covered",
+      "reason": "The actual orbit-47 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit47.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit47.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit47.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "88824c8de623caef472d52a3d7d97f3090c0e370c76b36af08bed5fab989c1b2"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13613,
+      "end_line": 13614,
+      "kind": "covered",
+      "reason": "The actual orbit-48 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit48.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit48.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit48.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "89eabb97986d4f6d43e04c016d90d38e99835cd44ecb22ba49561f9312a05d20"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13739,
+      "end_line": 13741,
+      "kind": "covered",
+      "reason": "The actual orbit-49 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit49.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit49.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit49.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "508cdbff6fbc281a50f0a219d0d4f68911452762a8ca564054e2f0175cee935c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 13920,
+      "end_line": 13921,
+      "kind": "covered",
+      "reason": "The actual orbit-50 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit50.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit50.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit50.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "6b53a985cd919d422a2f891df9990b865b37347e10e5af334831625435170ea7"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14047,
+      "end_line": 14048,
+      "kind": "covered",
+      "reason": "The actual orbit-51 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit51.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit51.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit51.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "9665a5c3683fd34f35d94d9b35772d98b0b7d4e89dc0a6f67ce8c88bac1e3f22"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14241,
+      "end_line": 14242,
+      "kind": "covered",
+      "reason": "The actual orbit-52 23-row occupation matrix has the printed exact rank and an explicitly selected maximal minor with the printed signed determinant. Kernel-checked rectangular factors give the rank upper bound; the real nonzero minor gives the lower bound, independently of any phase exclusion.",
+      "declarations": [
+        "MainTheory.OrderThreePrintedRanks.Orbit52.actual_matrix",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.rows",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.columns",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.real_determinant",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.rank_exact",
+        "MainTheory.OrderThreePrintedRanks.Orbit52.kernel_dimension",
+        "MainTheory.OrderThreePrintedMoments.Orbit52.complete_iff"
+      ],
+      "origin": "20261005 real normal-form and physical type review",
+      "context_sha256_lf": "4ccbd4941b94f2efd044677cc81ee6c245e9b1cc5c7004627d529d830b0b4152"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14475,
+      "end_line": 14477,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit18.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "cb32ee1136bb7e3d511fba08053e8c9c7f27fff78b845a89749d77fd15c4e01f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14582,
+      "end_line": 14583,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit41.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "8b3d16b13cb2703f33aa053c0b7600dde57646a235e90faf76f7d10b47c793d0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14720,
+      "end_line": 14723,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit42.kernel_dimension",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit43.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "16f355b1274b1efbf087abd28cc5246fbf0586a455273c4744eeace2eed264b6"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14791,
+      "end_line": 14792,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit44.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "d9a8a1d9ae307983b1c7d6fa28d79d14e71196e194146df08ca89fe245983d21"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14865,
+      "end_line": 14866,
+      "kind": "covered",
+      "reason": "The actual 23-row occupation matrix, explicitly selected signed maximal minor, exact real rank and kernel dimension are independently proved.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.bottom",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.top",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.actual_matrix",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.rows",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.columns",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.real_determinant",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.rank_exact",
+        "MainTheory.OrderTwoPrintedRanks.Orbit46.kernel_dimension"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "d9a8a1d9ae307983b1c7d6fa28d79d14e71196e194146df08ca89fe245983d21"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14423,
+      "end_line": 14507,
+      "kind": "covered",
+      "reason": "The complete literal orbit-18 shell and restricted-projector proof is checked from the actual physical diagonal and cross KL equations.",
+      "declarations": [
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_types",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.actual_shell_masses",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_system",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.shell_solution",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.point_projector",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_anchor_zero",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_anchor_norm",
+        "MainTheory.OrderTwoShellProjectors.Orbit18.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "504eb9f655df03571fd73c900a734e4cb24483ea93d7c0713f41bd9ce4660ae4"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14527,
+      "end_line": 14609,
+      "kind": "covered",
+      "reason": "The complete literal orbit-41 shell chain and four-character anchor projector are checked from the actual physical KL equations.",
+      "declarations": [
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_types",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.actual_shell_masses",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_system",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_chain",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.shell_solution",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.point_projector",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_anchor_zero",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_anchor_norm",
+        "MainTheory.OrderTwoShellProjectors.Orbit41.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "be7a955ad233ec23fc5ccec95a36629ed1a4bbdccea079074a05c5dcc5b9403e"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14700,
+      "end_line": 14739,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit42.complete_iff",
+        "MainTheory.OrderTwoPrintedMoments.Orbit43.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit42.physical_no_go",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit43.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "8924a8cce6bc6e430c86654490f45e5ce887524b571ce15d3c701fd5cfcb54a0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14767,
+      "end_line": 14812,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit44.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit44.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "b9164447141950bb4876c2d7f5dfa5fec85948813825f6948a3ac240cd952793"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 14843,
+      "end_line": 14880,
+      "kind": "covered",
+      "reason": "The complete real moment normal form and literal signed ten-character system give the physical matched-flip exclusion at every boundary.",
+      "declarations": [
+        "MainTheory.OrderTwoPrintedMoments.Orbit46.complete_iff",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.determinant",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_product_norm",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_products_zero",
+        "MainTheory.OrderTwoPrintedWalsh.Orbit46.physical_no_go"
+      ],
+      "origin": "20261005 literal physical intermediate type review",
+      "context_sha256_lf": "39d971c9622b982faad8e90327b99e16004ba2ff95ada38707e25f7d6a3bc397"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6532,
+      "end_line": 6539,
+      "kind": "covered",
+      "reason": "The printed general logical words are the actual complete-fiber indexed ket expansions.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalPrintedRows.codewords"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "91cd39af7f439fe7478e376ff842290b224059d1525030a0da6a0b821a2575b4"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6599,
+      "end_line": 6607,
+      "kind": "covered",
+      "reason": "The actual half-angle rows have rank seven and the literal selected seven-column minor has absolute determinant 256. Nonzero physical/printed row signs are explicitly checked.",
+      "declarations": [
+        "MainTheory.Orbit45PrintedWalsh.rank_seven",
+        "MainTheory.Orbit45PrintedWalsh.selectedRows",
+        "MainTheory.Orbit45PrintedWalsh.selectedCols",
+        "MainTheory.Orbit45PrintedWalsh.minor_absolute_determinant",
+        "MainTheory.Orbit45PhysicalPrintedRows.physical_walsh"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "dd7692d0191e1bf1ff4864b7e6720b432069ac5c1440c12bc6b05f5bf6610a43"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6695,
+      "end_line": 6771,
+      "kind": "covered",
+      "reason": "The actual spin flip, complementary index pairing, zero-overlap trace and A2+A3=1 are proved for arbitrary supported physical codes, including all zero-amplitude boundaries.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalSpinFlip.general_shadow_trace",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_overlaps_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_spin_trace_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_A1_zero",
+        "MainTheory.Orbit45PhysicalSpinFlip.physical_A2_A3_line"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "f07e9deb27f7a9b2e1e3e68188885c6c9c050e4ab575b06195c35f9376ae1c8c"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6783,
+      "end_line": 6793,
+      "kind": "covered",
+      "reason": "The exact seven affine phase rows are invertible over the reals and yield the claimed physical/global phase normalization, preserving actual supports, probabilities, normalization and every physical KL equation.",
+      "declarations": [
+        "MainTheory.Orbit45AffineGauge.actual_rows",
+        "MainTheory.Orbit45AffineGauge.determinant",
+        "MainTheory.Orbit45AffineGauge.solve_angles",
+        "MainTheory.Orbit45AffineGauge.anchors_positive",
+        "MainTheory.Orbit45PhysicalGauge.diagonal_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.rephase_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.phaseAction_fullKL",
+        "MainTheory.Orbit45PhysicalGauge.physical_anchor_gauge"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "f0e9a4a6be398aafb32919133da65ea0f84553ca9976a8dd546fe350ceaf4f83"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6794,
+      "end_line": 6831,
+      "kind": "covered",
+      "reason": "Both literal gauges are constructed for every actual positive-stratum code. The top amplitudes follow from actual half-angle and paired-product equations after a unit relative logical phase; no displayed gauge is assumed.",
+      "declarations": [
+        "MainTheory.Orbit45BottomGauge.physical_bottom_gauge",
+        "MainTheory.Orbit45TopGauge.top_canonical",
+        "MainTheory.Orbit45PhysicalPhaseNormalForm.physical_phase_normal_form"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "1ade72df3c72a01d1c56866b56ccdfd6a00062ff64b90d16698c8cd12429de57"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6832,
+      "end_line": 6889,
+      "kind": "covered",
+      "reason": "Given the preceding displayed positive-stratum gauges, every actual remaining cross-KL row has the printed factorization and forces precisely the stated phases. Coverage here is conditional on those gauges; their complete arbitrary-code construction is reviewed separately.",
+      "declarations": [
+        "MainTheory.Orbit45CrossFactors.all_cross_masks",
+        "MainTheory.Orbit45CrossFactors.forced_phases",
+        "MainTheory.Orbit45CrossFactors.triangle_after_gauge",
+        "MainTheory.Orbit45CrossFactors.remaining_factors_zero",
+        "MainTheory.Orbit45CrossFactors.Row0.substitution",
+        "MainTheory.Orbit45CrossFactors.Row1.substitution",
+        "MainTheory.Orbit45CrossFactors.Row2.substitution",
+        "MainTheory.Orbit45CrossFactors.Row3.substitution",
+        "MainTheory.Orbit45CrossFactors.Row4.substitution",
+        "MainTheory.Orbit45CrossFactors.Row5.substitution",
+        "MainTheory.Orbit45CrossFactors.Row0.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row1.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row2.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row3.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row4.physical_factors",
+        "MainTheory.Orbit45CrossFactors.Row5.physical_factors"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "9c2cf20bd7e4b94b50f1ace803d56d878d25fce93e8b48dd484cf28014ed58bf"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6890,
+      "end_line": 6925,
+      "kind": "covered",
+      "reason": "The final printed canonical words are available for every actual positive-stratum solution, with the complete physical KL predicate, unchanged probabilities and literal vector triangle retained.",
+      "declarations": [
+        "MainTheory.Orbit45PhysicalCanonicalForm.physical_canonical_form",
+        "MainTheory.Orbit45PrintedAttainment.canonical_bottom",
+        "MainTheory.Orbit45PrintedAttainment.canonical_top"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "ea2c012702afa16a5b9ccb75a28ba8469e53201c8847b057f589b228cc4e158a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6926,
+      "end_line": 6957,
+      "kind": "covered",
+      "reason": "The complete within-fiber incidence classification, unique occupied channels and identical literal coherences on both words are proved. The printed family independently satisfies every physical distance-three KL equation.",
+      "declarations": [
+        "MainTheory.Orbit45OrientedCoherences.all_within_masks",
+        "MainTheory.Orbit45OrientedCoherences.unique_channel",
+        "MainTheory.Orbit45OrientedCoherences.physical_printed_table",
+        "MainTheory.Orbit45PrintedAttainment.full_kl"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "750e561d0869fc7be844c26afb10f033127856da7a4e476bb61583d01d0b1499"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 6958,
+      "end_line": 6979,
+      "kind": "covered",
+      "reason": "Every triple in the printed triangle domain admits explicit unit phases and actual canonical logical words with full fiber support conditions, normalization, orthogonality, distance-three KL and the claimed diagonal logical action. All boundary triples are included.",
+      "declarations": [
+        "MainTheory.Orbit45TriangleExistence.domain_phases",
+        "MainTheory.Orbit45TriangleExistence.canonical_fullKL",
+        "MainTheory.Orbit45TriangleExistence.every_triple_completion",
+        "MainTheory.Orbit45PrintedAttainment.canonical_bottom",
+        "MainTheory.Orbit45PrintedAttainment.canonical_top",
+        "MainTheory.Orbit45PrintedLogicalAction.physical_logical_action"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "339e62bac21279a3190f31eeaf55f2a00a134b8e3e7fab7265b3e32fe1a4c073"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 7018,
+      "end_line": 7048,
+      "kind": "covered",
+      "reason": "The complete actual Pauli dressings give the stated Parseval coefficient eight and the printed off-diagonal enumerator contribution; the displayed vector triangle gives its exact polynomial reduction.",
+      "declarations": [
+        "MainTheory.Orbit45DressingParseval.dressing_exhaustion",
+        "MainTheory.Orbit45DressingParseval.parseval",
+        "MainTheory.Orbit45DressingParseval.actual_bottom_value",
+        "MainTheory.Orbit45DressingParseval.physical_parseval",
+        "MainTheory.Orbit45PrintedOffContribution.physical_off_contribution",
+        "MainTheory.Orbit45PrintedOffContribution.physical_off_reduction"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "66076b71214633facf883cbe23e03290bd0539db7e5c36bdc605714ab9b4159b"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 7062,
+      "end_line": 7078,
+      "kind": "covered",
+      "reason": "The printed probability coordinates determine the actual normalized enumerators. Every zero-product boundary is one of the three literal triples and has the actual coefficients A2=1, A3=0.",
+      "declarations": [
+        "MainTheory.Orbit45PrintedEnumerator.printed_block_masses",
+        "MainTheory.Orbit45PrintedEnumerator.physical_A2",
+        "MainTheory.Orbit45PrintedEnumerator.physical_A3",
+        "MainTheory.Orbit45PrintedEnumerator.physical_full_enumerators",
+        "MainTheory.Orbit45PrintedEnumerator.boundary_permutations",
+        "MainTheory.Orbit45PrintedEnumerator.boundary_R",
+        "MainTheory.Orbit45PrintedEnumerator.physical_boundary"
+      ],
+      "origin": "20261005 actual orbit-45 intermediate/type review",
+      "context_sha256_lf": "6d46e09fa892ba2d70839f86f6ab40cd1a769e3c98b78781e57962d34b17ef5d"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11289,
+      "end_line": 11290,
+      "kind": "covered",
+      "reason": "The full 32-coordinate nonnegative diagonal-moment polytope has actual affine dimension eight. A checked dual certificate forces the first two bottom coordinates to zero; the remaining 30 columns have rank 22 with signed minor minus 384 and a strictly positive feasible witness. The rank calculation is explicitly tied to the native physical bit strings.",
+      "declarations": [
+        "MainTheory.Orbit29MomentRank.Orbit29.actual_matrix",
+        "MainTheory.Orbit29MomentRank.Orbit29.rank_exact",
+        "MainTheory.Orbit29MomentRank.Orbit29.kernel_dimension",
+        "MainTheory.Orbit29MomentPolytope.full_actual_matrix",
+        "MainTheory.Orbit29MomentPolytope.real_dual",
+        "MainTheory.Orbit29MomentPolytope.forced_zero",
+        "MainTheory.Orbit29MomentPolytope.full_center_feasible",
+        "MainTheory.Orbit29MomentPolytope.full_center_positive",
+        "MainTheory.Orbit29MomentPolytope.restricted_rank",
+        "MainTheory.Orbit29MomentPolytope.full_diagonal_polytope_dimension"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "b0ac1afa54a61c9d2cb231848d30faae8c2ff8576e708570eeb4b9234ad9ac6d"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11291,
+      "end_line": 11334,
+      "kind": "covered",
+      "reason": "The printed pair reduction and every equal-probability assertion follow from the actual physical moment and non-diagonal constraints, including zero pairs.",
+      "declarations": [
+        "MainTheory.Orbit29PhysicalPairReduction.high_parallel",
+        "MainTheory.Orbit29PhysicalPairReduction.high_balanced",
+        "MainTheory.Orbit29PhysicalPairReduction.bottom_balanced",
+        "MainTheory.Orbit29PrintedSimplex.physical_printed_probabilities",
+        "MainTheory.Orbit29PrintedSimplex.physical_domain",
+        "MainTheory.Orbit29PrintedSimplex.physical_omitted_amplitudes"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "b59bed01ded81659602219b1751741c82607d790f5310995cdddae27e640cd61"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11335,
+      "end_line": 11393,
+      "kind": "covered",
+      "reason": "The barycentric three-simplex, all fifteen exact relative interiors and the complete literal face table are checked with actual affine dimensions and signed connectivity.",
+      "declarations": [
+        "MainTheory.Orbit29PrintedFaceAudit.literal_counts",
+        "MainTheory.Orbit29PrintedFaceAudit.vertex_positive_iff",
+        "MainTheory.Orbit29PrintedFaceAudit.checked_walks",
+        "MainTheory.Orbit29SimplexRelativeInterior.relative_interior_iff",
+        "MainTheory.Orbit29SimplexRelativeInterior.exhaustive_relative_interiors",
+        "MainTheory.Orbit29SimplexDimensions.literal_face_dimensions"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "a3153a63f4455b9488a688ea9ffeb6c08aa187e90e10636cdad5d07ee605c278"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11394,
+      "end_line": 11402,
+      "kind": "covered",
+      "reason": "Every active internal ratio has unit modulus. Physical orthogonality gives signed graph propagation, and an actual single-qubit diagonal phase normalizes all active bottom and high-top ratios with complete KL retained.",
+      "declarations": [
+        "MainTheory.Orbit29PhysicalRatios.physical_assignment",
+        "MainTheory.Orbit29PhysicalRatios.common_unit_phase",
+        "MainTheory.Orbit29PhysicalPairGauge.diagonal_fullKL",
+        "MainTheory.Orbit29PhysicalPairGauge.physical_pair_gauge"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "75abcb821365d955975dd06a22f620a5049460ddc6b4f30f05064fe1a0a548a0"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11403,
+      "end_line": 11436,
+      "kind": "covered",
+      "reason": "The pinned anchor, positive high target and every one of the final printed Walsh equations are derived; the eta contradiction excludes all fifteen support strata.",
+      "declarations": [
+        "MainTheory.Orbit29PrintedEta.literal_target_errors",
+        "MainTheory.Orbit29PrintedEta.pinned_probability",
+        "MainTheory.Orbit29PrintedEta.actual_rows",
+        "MainTheory.Orbit29PrintedEta.printed_eta_equations",
+        "MainTheory.Orbit29PrintedEta.active_product_nonzero",
+        "MainTheory.Orbit29PrintedEta.eta_contradiction",
+        "MainTheory.Orbit29PrintedEta.physical_no_go"
+      ],
+      "origin": "20261005 actual orbit-29 intermediate/type review",
+      "context_sha256_lf": "f19c5fff36e5464893385ae51509b907dd0bc486cc1722d764a597dfd182079f"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11481,
+      "end_line": 11500,
+      "kind": "covered",
+      "reason": "The rank twenty-three, equivalent physical moment normal form and actual dimension-nine nonnegative polytope are checked independently of the no-code theorem.",
+      "declarations": [
+        "MainTheory.Orbit30PrintedMoments.complete_normal",
+        "MainTheory.Orbit30MomentRank.Orbit30.actual_matrix",
+        "MainTheory.Orbit30MomentRank.Orbit30.rank_exact",
+        "MainTheory.Orbit30MomentRank.Orbit30.full_diagonal_polytope_dimension"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "5617001a070960f7665acc369e3ee7a767a226bd6d981c6ed62072663d2b7553"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11513,
+      "end_line": 11550,
+      "kind": "covered",
+      "reason": "The symmetric K5 probability translation follows from literal pointwise coordinate identities and balanced physical marginals.",
+      "declarations": [
+        "MainTheory.Orbit30ProbabilityLabels.literal_pointwise_identities",
+        "MainTheory.Orbit30ProbabilityLabels.physical_probabilities"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "65a5fc299c122125e62e9de416afe1b37054a197b5ed04509791d2f903bbcbc6"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11551,
+      "end_line": 11623,
+      "kind": "covered",
+      "reason": "All phase definitions, reciprocal rows and five matching sums are explicitly tied to supported full physical KL without a nonzero-support assumption.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalPhases.actual_unit_phase",
+        "MainTheory.Orbit30PhysicalPhases.reciprocal_product",
+        "MainTheory.Orbit30PhysicalRows.physical_rows"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "1a122e79d4d53276b768f417a8a275b8e64f0db46d0a6d819b3fa2fb8369950a"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11625,
+      "end_line": 11673,
+      "kind": "covered",
+      "reason": "The one- and two-point support exclusions include the printed amplitude and mass intermediate steps, with exact nonnegative boundary handling.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30PhysicalGraph.actual_three_active",
+        "MainTheory.Orbit30TwoPointDisplays.two_point_magnitude",
+        "MainTheory.Orbit30TwoPointDisplays.point_and_degree_values",
+        "MainTheory.Orbit30TwoPointDisplays.disjoint_star_bound"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "5b3d2c4aec590e45c9a8f6a58f61dde9e4a125e2bf11088b54d6c87d90dc63d3"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11675,
+      "end_line": 11735,
+      "kind": "covered",
+      "reason": "The exceptional branch uses the correct unordered edge masses, physical bilinear triangle rows and nonzero phase synchronization.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalGraph.physicalData",
+        "MainTheory.Orbit30BoundaryDisplays.exceptional_mass_equations",
+        "MainTheory.Orbit30PhysicalGraph.actual_four_active",
+        "MainTheory.Orbit30PhysicalHafnians.actual_all_edge_phases"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "d01261ad8e5c98b69a9cf1916c80b1197339526aea84c745e1e75b24dfa2e9a1"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11737,
+      "end_line": 11764,
+      "kind": "covered",
+      "reason": "Minimum physical degree and the exact common phase factor produce all five matching equations.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalMask.actual_minimum_degree",
+        "MainTheory.Orbit30BoundaryDisplays.unique_neighbor_weight",
+        "MainTheory.Orbit30PhysicalHafnians.actual_matching_factor",
+        "MainTheory.Orbit30PhysicalHafnians.actual_hafnians"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "21291661b868af816ae203a49a4f98738ccafcbe9f61d707e98d9652aad9ffca"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11766,
+      "end_line": 11834,
+      "kind": "covered",
+      "reason": "The ten pairwise distinct complement types exhaust the actual proper graph; both exclusion tables survive actual vertex relabeling and cover zero/nonzero edges exactly.",
+      "declarations": [
+        "MainTheory.Orbit30GraphClassification.exhaustive_relabeling",
+        "MainTheory.Orbit30GraphTypes.distinct_isomorphism_types",
+        "MainTheory.Orbit30GraphRelabel.hafnian_relabel",
+        "MainTheory.Orbit30ProperGraphExclusion.proper_no_go",
+        "MainTheory.Orbit30PhysicalProperSupport.actual_proper_support_no_go"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "689033531849713fabc522a2fdbc61d612306d043279a09887d2a4ac32e8c7ae"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11836,
+      "end_line": 11916,
+      "kind": "covered",
+      "reason": "The full graph route constructs the literal normalization, verifies each matching polynomial, proves the actual determinant minus 32 and contradicts the nonzero physical kernel vector.",
+      "declarations": [
+        "MainTheory.Orbit30VertexScaling.four_edge_normalization",
+        "MainTheory.Orbit30VertexScaling.preserves_singularity",
+        "MainTheory.Orbit30VertexScaling.preserves_hafnians",
+        "MainTheory.Orbit30NormalizedDeterminant.determinant_minus32",
+        "MainTheory.Orbit30PhysicalFullSupport.actual_full_support_no_go"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "e5863cd7bffd7bdccb7fd3f35cead8fdf26ea0258349d01f7cd72bcf9b7cc4cd"
+    },
+    {
+      "source": "supplementary.tex",
+      "line": 11918,
+      "end_line": 11942,
+      "kind": "covered",
+      "reason": "The theorem and support-case coverage remark use the complete literal physical SI proof route.",
+      "declarations": [
+        "MainTheory.Orbit30PhysicalProperSupport.physical_printed_no_go",
+        "MainTheory.PaperSupplementaryNoGo.q4o30nogo"
+      ],
+      "origin": "20261005 actual orbit-30 literal/type review",
+      "context_sha256_lf": "d623949a0786264e954fee8e26766c0fd26830356627e17212ca386452c02b8e"
+    }
+  ],
+  "remaining": "Complete other current mathematical/prose correspondence; preserve five frozen main issues and the SI empty-mask qualification."
+}

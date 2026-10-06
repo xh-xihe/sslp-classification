@@ -3,21 +3,17 @@
   "date": "2026-10-05",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
   },
   "scope": "Current unfinished semantic correspondence; compiled final results do not discharge intermediate statements.",
   "claim_status_counts": {
     "conjecture": 3,
-    "covered": 1783,
+    "covered": 1821,
     "expository": 5,
-    "partial": 1,
-    "unreviewed": 38
+    "partial": 1
   },
   "pending_by_source_section": {
-    "main.tex:2": 1,
-    "supplementary.tex:10": 1,
-    "supplementary.tex:23": 15,
-    "supplementary.tex:24": 22
+    "main.tex:2": 1
   },
   "pending_assertions": [
     {
@@ -33,469 +29,47 @@
       ],
       "section_number": 2,
       "work_scope": "author-held frozen statement"
-    },
-    {
-      "id": "supplementary.tex:q2fam:eq:split-orbits",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 4308,
-      "end_line": 4318,
-      "statement_sha256": "4e7719656e8a5b5d3bfdef8d3024e5a191b46cd2774d2c5f30bc97832d08ec23",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 10,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-matrixflip",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 12970,
-      "end_line": 12973,
-      "statement_sha256": "ebc9c81568838f8e41d440e0e3843607b91cfa97b03c585aef71b709bceee836",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-schmidt",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 12980,
-      "end_line": 12988,
-      "statement_sha256": "943b83b2624d750407c755ab04c383a17c49c348786981e185367c38dbb34d71",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-offdiagonal-system",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13025,
-      "end_line": 13034,
-      "statement_sha256": "4bb65dddd27417a579ab1a4700abb2f32d655d155bffdc848e5fc3c374d704fd",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-paulibasis",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13079,
-      "end_line": 13083,
-      "statement_sha256": "7cae5f97c814973affc4a58939685cfaf1e6069055c2915ebd68c07727fd3213",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-pauli-coordinates",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13085,
-      "end_line": 13090,
-      "statement_sha256": "56964e99cdd12600acd6edde09ac5a54e7c70447ea75754b3c5593f6c5fc7986",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o5-frame-trace",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13123,
-      "end_line": 13126,
-      "statement_sha256": "7ecaecc115fb866a411e5b7541c2acfe0a81180352e10a21280b8ecd8901d774",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-vector0",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "align",
-      "line": 13162,
-      "end_line": 13171,
-      "statement_sha256": "e9a00a41e2cfd53de7654d795e96b42dfd91a7916c4e647a833fde7caf1b7548",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-flipmonomials",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13287,
-      "end_line": 13293,
-      "statement_sha256": "1a55aad7557ca02752a32187caf208b844d9b7b4a42c77910723056bdfd94f20",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-Xkrow",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13295,
-      "end_line": 13298,
-      "statement_sha256": "cf9078f48ebaec111349f55b984de0b2195270df9c9b0c675ccda69b28d8ff4d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-ZlXkrow",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13300,
-      "end_line": 13304,
-      "statement_sha256": "aae418edfa3cc95e753ad77318482151520fc462e96b3f6091ed1dbe98532185",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-oneflipzero",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13321,
-      "end_line": 13327,
-      "statement_sha256": "9c04cbed7d60ddd96af63f12d5fa57c8e9e2c9978258a11aaea403606dba8a2c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-edgeorthogonality",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13329,
-      "end_line": 13332,
-      "statement_sha256": "95b0f891edb2a2be8dc5e84862a1bea60083d756086336a5a25c18b52a5fe9cc",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-b-line",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13350,
-      "end_line": 13353,
-      "statement_sha256": "ab3327c0cd7e2524085e94b864eeb25a736ee1827b2a1bdac45c08a001a8dfea",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-alignedlines",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13373,
-      "end_line": 13378,
-      "statement_sha256": "57da8607913870561a2ade098fbe63ae2791c501905ac7a5d70f936aa7610218",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o6-matrixflips",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 13382,
-      "end_line": 13386,
-      "statement_sha256": "bad4f906e6a54b3004b41399770ffd1d282c1b55cec38a5463dd42ce7492135e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 23,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o17-degree3-pairsums",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15235,
-      "end_line": 15238,
-      "statement_sha256": "cfa2fc5f30c10d99993dac8cd7924bf02a11f353c96d4e647716ade83b48255b",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:equation@15242",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15242,
-      "end_line": 15244,
-      "statement_sha256": "c94224ab88891f27a21244ecf6ccaea5c8658cb96952d3addfc2a50a09c6686a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o17-triangle-system",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15258,
-      "end_line": 15261,
-      "statement_sha256": "340bd3f65b02cbd334eaee7c1d58e03e6d3e381541daddbc508db752bba13277",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o20-epsilon",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15294,
-      "end_line": 15299,
-      "statement_sha256": "77e6ac8ea487496c479a8c8721aa5332192286caf7770b16760fb85c956206eb",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:equation@15365",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15365,
-      "end_line": 15369,
-      "statement_sha256": "79cabf8d9106a833756deb629c781ec6dc6b96738cedd8c1be50bdb63bbbf09d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o20-global-lastchar",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "align",
-      "line": 15389,
-      "end_line": 15394,
-      "statement_sha256": "f9f80a2e850cc235a28abfc77fd4ed2d943f259eacc74919848d84fae6191b48",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o20-blockchars",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15397,
-      "end_line": 15401,
-      "statement_sha256": "8db9f38e7a509bcd4b26c6872e508b933f03b87ce4f5e621a70c4f76ba7fec4c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o20-rhopairs",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15423,
-      "end_line": 15427,
-      "statement_sha256": "cb71cee61a48f464ac44fd9ecdb99b47b6f0aba3f8224ae892f8b737a798365e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o20-oddtriangle",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15429,
-      "end_line": 15437,
-      "statement_sha256": "8c334566d56b189e93504b45e43650f0bd36f2fd775c659b1c54dd91188a74a0",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-bottomactive",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15466,
-      "end_line": 15470,
-      "statement_sha256": "a031cb5771cf7fc87c8ed5783f829db90bc0daccd3a06bf73c313ed1561f54aa",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-topactive",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15472,
-      "end_line": 15476,
-      "statement_sha256": "d34a60761a49fe3cfe6e07633285d3ce97049e83e94a9840a3ea1b0c713485e0",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-bottomword",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "align",
-      "line": 15478,
-      "end_line": 15489,
-      "statement_sha256": "b027c02aa079ed4e3594a265796169b4f5cbec053cabbf5e5aceae44484590de",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-two-lines",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15561,
-      "end_line": 15566,
-      "statement_sha256": "8bd7a1644029c1f41aad88ccffdea1dd6da69d97fba441d6d7ca40488bd6dde9",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-anchor-scalars",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "align",
-      "line": 15576,
-      "end_line": 15582,
-      "statement_sha256": "b4b357009692f10b44f87c25d87a5cbdfa044813598a2df4a5c2572aeae351aa",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-anchor-cancellation",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15585,
-      "end_line": 15589,
-      "statement_sha256": "e57484214d834d431fa56ca3afda34c5a829b76348cd3830c6aafd8177db56b3",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-pair-e",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15595,
-      "end_line": 15598,
-      "statement_sha256": "d2ff93432c5665b1df697c578c4b0cf560c7142ba3e8b3b32fb6719f4704c34d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-pair-ebar",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15600,
-      "end_line": 15603,
-      "statement_sha256": "934cf7d909303e97b6a84cb41b9e08b7d17052ac989e02430d6d3674ef191e2f",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-scalar1",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "align",
-      "line": 15606,
-      "end_line": 15611,
-      "statement_sha256": "3f892389215e8a7dc2a4396f5bad05fd66141b1d34632a7e32c308c032e78533",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o12-anchor-equality2",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15613,
-      "end_line": 15617,
-      "statement_sha256": "097e4a7dfb8c3a4ad665383196d4e7989ee6da227870cb311a053622f7ca1e7f",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o13-X6errors",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15671,
-      "end_line": 15675,
-      "statement_sha256": "0ae23d57c787c72ed3619b0c23c338ac9ad6217a73708e774c97484dd45893f2",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:equation@15713",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 15713,
-      "end_line": 15716,
-      "statement_sha256": "516c6798ff1dcc9bc3e9b69d557bf4d00858cb516634e35eb2a555c8d7548e1a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
-    },
-    {
-      "id": "supplementary.tex:eq:o14-orthogonalframes",
-      "source": "documents/20261003/supplementary.tex",
-      "kind": "equation",
-      "line": 16076,
-      "end_line": 16081,
-      "statement_sha256": "df5d2a777934454a5ee177873137e144ca04d9f118b10159160f793bbe26b255",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "section_number": 24,
-      "work_scope": "pending statement/context/type review; not a finding of falsehood"
     }
   ],
   "prose_review": {
     "status": "partial",
-    "reviewed_blocks": 89,
+    "reviewed_blocks": 1962,
     "record": "results/prose-review-20261003.json"
   },
+  "pending_prose_assertions": [
+    {
+      "source": "main.tex",
+      "line": 172,
+      "end_line": 176,
+      "reason": "Author-held frozen main issue: the introductory diagonal-group finiteness claim needs the fixed-product-basis and single-site detection hypotheses used by the actual theorem."
+    },
+    {
+      "source": "main.tex",
+      "line": 269,
+      "end_line": 272,
+      "reason": "Author-held frozen main issue: probability moment rows implement diagonal Z detection; full X/Y KL conditions also involve complex phases."
+    },
+    {
+      "source": "main.tex",
+      "line": 274,
+      "end_line": 277,
+      "reason": "Author-held frozen main issue: the unrestricted Singleton statement includes rank one and is false there. The repository carries both the corrected rank-at-least-two theorem and a kernel counterexample. A proof of a corrected statement cannot certify this frozen wording."
+    },
+    {
+      "source": "main.tex",
+      "line": 684,
+      "end_line": 686,
+      "reason": "Author-held frozen main issue: rational homogeneous replacement preserves the specified image/kernel information; this must not be read as equality of the entire homogeneous component."
+    },
+    {
+      "source": "main.tex",
+      "line": 1825,
+      "end_line": 1827,
+      "reason": "Author-held frozen main issue: physical-order minimization in this sentence has a broader representative scope than the reduced diagonal definition used by its corresponding result."
+    }
+  ],
+  "si_pending_assertions": 0,
+  "si_running_context_review": "covered",
   "held_main_errata": "notes/main-errata-hold-20261003.md",
   "fully_kernel_manuscript_certification": "not_complete"
 }

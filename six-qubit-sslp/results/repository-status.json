@@ -6,11 +6,11 @@
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
   },
   "proof_acceptance": "PASS_current_local_proof_snapshot",
   "acceptance_record": "artifacts/manuscript-certification-20261005/run.json",
-  "manuscript_correspondence": "in_progress_current_source_review",
+  "manuscript_correspondence": "si_complete_main_five_issues_held",
   "historical_review_candidates": 712,
   "held_main_errata": 5,
   "open_enumerator_images": [
@@ -19,8 +19,8 @@
   ],
   "orbit2_full_image": "kernel_checked",
   "orbit3_full_image": "kernel_checked",
-  "active_lean_modules": 16218,
-  "axiom_roots": 9251,
+  "active_lean_modules": 16227,
+  "axiom_roots": 9375,
   "standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -31,19 +31,18 @@
   "historical_acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1818,
+    "covered": 1821,
     "expository": 5,
-    "partial": 1,
-    "unreviewed": 3
+    "partial": 1
   },
-  "current_type_inspection_declarations": 4589,
+  "current_type_inspection_declarations": 4806,
   "historical_publication_source_binding": "PASS",
   "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16218,
-    "axiom_roots": 9251,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16218.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9251.json"
+    "modules": 16227,
+    "axiom_roots": 9375,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16227.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9375.json"
   },
   "historical_regression_tests_per_environment": 61,
   "historical_skipped_tests_per_environment": 11,
@@ -56,16 +55,27 @@
   },
   "prose_review": {
     "status": "partial",
-    "reviewed_blocks": 89
+    "reviewed_blocks": 1962
   },
-  "planned_axiom_roots": 9251,
+  "planned_axiom_roots": 9375,
   "canonical_publication_commit": "7a533397340e5272622dd69a371900d7fc89bdc0",
   "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16218.json",
   "identified_si_qualifications": 0,
   "current_context_revalidation": {
-    "record": "artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json",
-    "status": "PASS",
-    "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
-    "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
-  }
+    "record": "artifacts/manuscript-certification-20261005/weighted-graph-context-revalidation.json",
+    "status": "PASS_fresh_types_and_axioms"
+  },
+  "pending_proof_batch": {
+    "record": "artifacts/manuscript-certification-20261005/final-bridge-work-in-progress.json",
+    "scope": "PASS local physical final-bridge proof route; publication pending and SI mathematical correspondence complete; five frozen main issues remain."
+  },
+  "si_fully_kernel_correspondence": "complete",
+  "si_pending_assertions": 0,
+  "si_running_context_review": "complete",
+  "held_main_issues": 5,
+  "current_reading_blocks": {
+    "main.tex": 251,
+    "supplementary.tex": 1622
+  },
+  "fully_kernel_manuscript_certification": "not_complete_frozen_main_issues"
 }

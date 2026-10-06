@@ -1,0 +1,9 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
+  },
+  "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-final-bridge-completion-v1.json",
+  "type_evidence_sha256": "8238a3a530e3385795638a79ed3d9cebd3fd7555de5c7629b502ac38fbc316a6",
+  "scope": "The three listed actual SI intermediates, including singular and boundary cases; frozen main issues retain their dispositions."
+}

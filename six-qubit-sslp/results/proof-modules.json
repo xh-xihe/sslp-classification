@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 16218,
+  "module_count": 16227,
   "counts_by_library": {
-    "MainTheory": 14328,
+    "MainTheory": 14337,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -702,6 +702,20 @@
       "sha256_lf": "387725fd45533e2646aea79e6231a58ffe9d1fa5a25d37819a8fc15e33b8abe2",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.ComplexSchmidtDecomposition",
+      "path": "MainTheory/ComplexSchmidtDecomposition.lean",
+      "sha256_lf": "c316e1b894d1049dbdd63a5cb851c7ff0fc2535c84120a385b7bdab63928eaf5",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.ComplexSchmidtStep",
+      "path": "MainTheory/ComplexSchmidtStep.lean",
+      "sha256_lf": "e78d5837a3c7abd3a417d0ee2c4d4d6ccb269d159645cc457982077cccde850a",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
     },
     {
       "module": "MainTheory.ConjugateStateExpectation",
@@ -94702,7 +94716,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "c90a11ba6b87ff77218b28013ec1f00387a8c39161ee849595a6aee3486132a1",
+      "sha256_lf": "91cb4569ab0e794cc74815f41d889782d698a7c8ad29f93bf33137a424d4b305",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -94780,6 +94794,20 @@
       "module": "MainTheory.MomentPolytope",
       "path": "MainTheory/MomentPolytope.lean",
       "sha256_lf": "d6b6e0386a2ece45f088e203ded62aa0a083d6501c1011d5ce086d65014f04f5",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.NativeArbitrarySplitPerfectCode",
+      "path": "MainTheory/NativeArbitrarySplitPerfectCode.lean",
+      "sha256_lf": "056a26158e391a862a7d3f5cb87ba9d8460a8b27c286cd3b612aa9db6cc0e06f",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.NativeArbitrarySplitSixQubit",
+      "path": "MainTheory/NativeArbitrarySplitSixQubit.lean",
+      "sha256_lf": "a8b462fbf2f3d7b719bbb60b5faf62c8bccda8ee0a6ed9332afdb84f3e00ff30",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },
@@ -94994,9 +95022,23 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit14OrthogonalFrames",
+      "path": "MainTheory/Orbit14OrthogonalFrames.lean",
+      "sha256_lf": "8c159c4ac41a373a27662fe8e09f3430f5dd370049cc1964dbddd8255a008250",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit14ParityFrames",
       "path": "MainTheory/Orbit14ParityFrames.lean",
       "sha256_lf": "185a7e6057a4aa2da65a3c8bff672b92a7f49003331bc0e89306cd140418544c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit14SliceGeometry",
+      "path": "MainTheory/Orbit14SliceGeometry.lean",
+      "sha256_lf": "5bae301711817460d600c73db68d8fae3fb497202f0e01d98f8472c578b10505",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -96887,6 +96929,13 @@
       "module": "MainTheory.Orbit5PhysicalRowData",
       "path": "MainTheory/Orbit5PhysicalRowData.lean",
       "sha256_lf": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit5SchmidtCompletion",
+      "path": "MainTheory/Orbit5SchmidtCompletion.lean",
+      "sha256_lf": "e98f5dcc362e98154f4ded03b001cf4ed69de02a37c02643ba066d4688d1218c",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -99897,6 +99946,20 @@
       "module": "MainTheory.SpinPauliShadowPairing",
       "path": "MainTheory/SpinPauliShadowPairing.lean",
       "sha256_lf": "a94c0245f71e93ae07a6053ccf227311783defb8aa60fb430998bfe0eb1c0cdb",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SplitFamilyLogicalCompletion",
+      "path": "MainTheory/SplitFamilyLogicalCompletion.lean",
+      "sha256_lf": "649aa255de7f256ca6a7b01eff4696b19d42f0ffa4a64cabe7637195e2fc0e1c",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SplitFamilyTableCertification",
+      "path": "MainTheory/SplitFamilyTableCertification.lean",
+      "sha256_lf": "89c20d1ee39032de6224f98bcd014323c1177b0166ac00d6d5d61390692269e5",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },

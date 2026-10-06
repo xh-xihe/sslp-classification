@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "staged_modules": [
+    {
+      "module": "ComplexSchmidtStep",
+      "staged_sha256_lf": "e78d5837a3c7abd3a417d0ee2c4d4d6ccb269d159645cc457982077cccde850a",
+      "canonical_source": "MainTheory/ComplexSchmidtStep.lean",
+      "canonical_sha256_lf": "e78d5837a3c7abd3a417d0ee2c4d4d6ccb269d159645cc457982077cccde850a",
+      "strict_pilot": "complex-schmidt-step-pilot-v2",
+      "pilot_record_sha256": "db00e3373169afcbc9632d001d8edb615688a76f65be0fc40f41513d937a66d5",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ComplexSchmidtDecomposition",
+      "staged_sha256_lf": "ac1a7bdef7eed0dc1be1e1c68788485724563a78c49d26da0c97becbb3e45525",
+      "canonical_source": "MainTheory/ComplexSchmidtDecomposition.lean",
+      "canonical_sha256_lf": "c316e1b894d1049dbdd63a5cb851c7ff0fc2535c84120a385b7bdab63928eaf5",
+      "strict_pilot": "complex-schmidt-decomposition-pilot-v4",
+      "pilot_record_sha256": "b51e131e582aaa3b2986419f16567d71d1a5d8d6eed9d84581c73b92fcce5547",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit5SchmidtCompletion",
+      "staged_sha256_lf": "fd37972865d5af7fb876ddef832479730ed5f77f36b56e007d7258fddbb658df",
+      "canonical_source": "MainTheory/Orbit5SchmidtCompletion.lean",
+      "canonical_sha256_lf": "e98f5dcc362e98154f4ded03b001cf4ed69de02a37c02643ba066d4688d1218c",
+      "strict_pilot": "orbit5-schmidt-completion-pilot-v3",
+      "pilot_record_sha256": "8de607ab22259e4d20351294649ba653d7e33e3a15820bfeb5de80a44c4314be",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit14SliceGeometry",
+      "staged_sha256_lf": "5bae301711817460d600c73db68d8fae3fb497202f0e01d98f8472c578b10505",
+      "canonical_source": "MainTheory/Orbit14SliceGeometry.lean",
+      "canonical_sha256_lf": "5bae301711817460d600c73db68d8fae3fb497202f0e01d98f8472c578b10505",
+      "strict_pilot": "orbit14-slice-geometry-pilot-v4",
+      "pilot_record_sha256": "2e78953795d7e93016bfaed9391f9ed1abef5b4637687d18c31a44679bb30757",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit14OrthogonalFrames",
+      "staged_sha256_lf": "7395dc9f321728d53fceae015a74cc9387b858d978e2b69a1d85a69602c2edef",
+      "canonical_source": "MainTheory/Orbit14OrthogonalFrames.lean",
+      "canonical_sha256_lf": "8c159c4ac41a373a27662fe8e09f3430f5dd370049cc1964dbddd8255a008250",
+      "strict_pilot": "orbit14-orthogonal-frames-pilot-v4",
+      "pilot_record_sha256": "be753c3d6a79799fb759eb347d136494911bad2372c68c229ec726cd35958306",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NativeArbitrarySplitPerfectCode",
+      "staged_sha256_lf": "056a26158e391a862a7d3f5cb87ba9d8460a8b27c286cd3b612aa9db6cc0e06f",
+      "canonical_source": "MainTheory/NativeArbitrarySplitPerfectCode.lean",
+      "canonical_sha256_lf": "056a26158e391a862a7d3f5cb87ba9d8460a8b27c286cd3b612aa9db6cc0e06f",
+      "strict_pilot": "native-arbitrary-split-perfect-pilot-v1",
+      "pilot_record_sha256": "e56784359707e2cb7e362e357ef1b22f08b278dd7a3b252bd836880c7df1c92e",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NativeArbitrarySplitSixQubit",
+      "staged_sha256_lf": "7e54305e27e1ff58b3341d050a04be3ddbd7c3b438b892aabfbc1e4698e5235d",
+      "canonical_source": "MainTheory/NativeArbitrarySplitSixQubit.lean",
+      "canonical_sha256_lf": "a8b462fbf2f3d7b719bbb60b5faf62c8bccda8ee0a6ed9332afdb84f3e00ff30",
+      "strict_pilot": "native-arbitrary-split-six-pilot-v1",
+      "pilot_record_sha256": "00987fbf87daa32514559042b2fa156b76e13a65b9169fe79ecb232c476c9bcf",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SplitFamilyLogicalCompletion",
+      "staged_sha256_lf": "624101c05693f9dc6510b7f48f1175571a676902cf798109065b2c9242e5c9d1",
+      "canonical_source": "MainTheory/SplitFamilyLogicalCompletion.lean",
+      "canonical_sha256_lf": "649aa255de7f256ca6a7b01eff4696b19d42f0ffa4a64cabe7637195e2fc0e1c",
+      "strict_pilot": "split-family-logical-pilot-v4",
+      "pilot_record_sha256": "86e3d9343edbb2710afc0b1d98b2eaa64c78731efa11c579fb01fb7f82043056",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SplitFamilyTableCertification",
+      "staged_sha256_lf": "04b7800682600777f0418a440f6dea4182160efacae997a8d238eb57cf6674d6",
+      "canonical_source": "MainTheory/SplitFamilyTableCertification.lean",
+      "canonical_sha256_lf": "89c20d1ee39032de6224f98bcd014323c1177b0166ac00d6d5d61390692269e5",
+      "strict_pilot": "split-family-table-pilot-v3",
+      "pilot_record_sha256": "93e90c9035c9687d1e222eb9c4fd98dfbc26b6de24ad810c43b000a4e70d440d",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Independent strict pilots pass; canonical whole build, type/context review and fresh audit remain pending."
+}

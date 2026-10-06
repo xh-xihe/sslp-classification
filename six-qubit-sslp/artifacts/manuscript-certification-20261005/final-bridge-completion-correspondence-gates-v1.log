@@ -1,0 +1,18 @@
+PARTIAL verification: release, sources, readme, audit-names, named-results, claims, prose-review, errata
+Paper version: 20261003
+START release
+[PASS] release (0.1s): version-bound manuscripts, review records and orbit data; review completeness checked separately
+START sources
+[PASS] sources (146.5s): 16227 Lean sources clean
+START readme
+[PASS] readme (44.7s): exit=0; log=tmp\verification\20261003\readme-names.log; all present
+START audit-names
+[PASS] audit-names (22.6s): exit=0; log=tmp\verification\20261003\audit-names.log; all audited and ledger-cited names resolve
+START named-results
+[PASS] named-results (0.9s): exit=0; log=tmp\verification\20261003\named-results.log; named-results document is current
+START claims
+[FAIL] claims (0.9s): exit=1; log=tmp\verification\20261003\claims.log; FAIL: 1 incomplete assertions (partial=1); 1 prose reviews not complete (main.tex); first: main.tex:eq:quantum-Singleton
+START prose-review
+[FAIL] prose-review (0.1s): exit=1; log=tmp\verification\20261003\prose-review.log; FAIL: selected release prose review is not complete
+START errata
+[FAIL] errata (0.0s): errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed

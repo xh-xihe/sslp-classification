@@ -1,5 +1,6 @@
 """Negative controls for cross-version acceptance and incomplete reviews."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -114,6 +115,24 @@ class ReleaseTests(unittest.TestCase):
         ok, detail = release.check_errata('20260924', self.root)
         self.assertFalse(ok)
         self.assertIn('singleton', detail)
+
+    def test_rebinding_source_hash_does_not_hide_stale_prose_context(self):
+        path = self.root / 'documents/20260924/main.tex'
+        path.write_bytes(b'first\r\nsecond\r\n')
+        record = {'paper_version': '20260924',
+                  'sources_sha256': release.source_hashes('20260924', self.root),
+                  'status': 'partial', 'method': 'Explicit paragraph review.',
+                  'assertions': [{'source': 'main.tex', 'line': 1, 'end_line': 2,
+                                  'kind': 'nonmath', 'reason': 'Fixture context.',
+                                  'context_sha256_lf': hashlib.sha256(b'first\nsecond').hexdigest()}]}
+        release.validate_review(record, '20260924', self.root)
+        path.write_bytes(b'first\r\nchanged\r\n')
+        record['sources_sha256'] = release.source_hashes('20260924', self.root)
+        with self.assertRaisesRegex(ValueError, 'prose context changed'):
+            release.validate_review(record, '20260924', self.root)
+        record['assertions'][0]['end_line'] = 3
+        with self.assertRaisesRegex(ValueError, 'invalid line range'):
+            release.validate_review(record, '20260924', self.root)
 
     def test_selected_version_reaches_all_manuscript_subcommands(self):
         with patch.object(verify, 'ROOT', self.root), \

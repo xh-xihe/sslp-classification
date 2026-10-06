@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:q2fam:eq:split-orbits",
+      "statement_sha256": "4e7719656e8a5b5d3bfdef8d3024e5a191b46cd2774d2c5f30bc97832d08ec23",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.SplitFamilyLogicalCompletion.raw_logical",
+        "MainTheory.SplitFamilyLogicalCompletion.seed_logical",
+        "MainTheory.SplitFamilyLogicalCompletion.W_isometry",
+        "MainTheory.SplitFamilyLogicalCompletion.W_logical",
+        "MainTheory.SplitFamilyLogicalCompletion.split_logical",
+        "MainTheory.SplitFamilyLogicalCompletion.physical_factors",
+        "MainTheory.SplitFamilyLogicalCompletion.encoder_logical",
+        "MainTheory.SplitFamilyLogicalCompletion.encoder_isometry",
+        "MainTheory.SplitFamilyLogicalCompletion.encoder_distance",
+        "MainTheory.SplitFamilyTableCertification.pauli_label",
+        "MainTheory.SplitFamilyTableCertification.gate_eq_pauli",
+        "MainTheory.SplitFamilyTableCertification.encoder_orthonormal",
+        "MainTheory.SplitFamilyTableCertification.encoder_gate",
+        "MainTheory.SplitFamilyTableCertification.inverse_coordinates",
+        "MainTheory.SplitFamilyTableCertification.table_angles",
+        "MainTheory.SplitFamilyTableCertification.table_primitive",
+        "MainTheory.SplitFamilyTableCertification.logical_values_distinct",
+        "MainTheory.SplitFamilyTableCertification.table_distance",
+        "MainTheory.SplitFamilyTableCertification.table_orthonormal",
+        "MainTheory.SplitFamilyTableCertification.table_gate"
+      ],
+      "review": "20261005 final actual bridge type/context review: All four actual split encoders, with the weight-three or weight-five logical seed and the actual W2 or W3 matrix, satisfy full physical weight-at-most-two KL for every real parameter. The explicit six-coordinate permutations give exactly the four sorted SI angle records. The literal physical diagonal gate has logical eigenvalues plus and minus one on orthonormal code words. The table changes logical seed basis where stated in the manuscript; it does not assume a single displayed seed basis realizes all four rows simultaneously."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-schmidt",
+      "statement_sha256": "943b83b2624d750407c755ab04c383a17c49c348786981e185367c38dbb34d71",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.ComplexSchmidtDecomposition.orthogonal_rows",
+        "MainTheory.ComplexSchmidtDecomposition.left_orthogonal_rows",
+        "MainTheory.ComplexSchmidtDecomposition.schmidt",
+        "MainTheory.Orbit5SchmidtCompletion.gram_trace_unitary",
+        "MainTheory.Orbit5SchmidtCompletion.coefficient_gram_trace",
+        "MainTheory.Orbit5SchmidtCompletion.diagonal_gram_trace",
+        "MainTheory.Orbit5SchmidtCompletion.normalized_schmidt",
+        "MainTheory.Orbit5SchmidtCompletion.physical_schmidt"
+      ],
+      "review": "20261005 final actual bridge type/context review: Actual local complex unitaries diagonalize every two-by-two coefficient matrix, including both singular branches. The actual physical anchor norm is one third. Unitary Gram-trace invariance gives nonnegative real s,t with s squared plus t squared equal to one and the literal inverse-square-root-of-three scale in the printed Schmidt form. No final orbit contradiction is used."
+    },
+    {
+      "id": "supplementary.tex:eq:o14-orthogonalframes",
+      "statement_sha256": "df5d2a777934454a5ee177873137e144ca04d9f118b10159160f793bbe26b255",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit14SliceGeometry.positive_common_neighbor",
+        "MainTheory.Orbit14SliceGeometry.common_orthogonal_wedge",
+        "MainTheory.Orbit14SliceGeometry.balanced_slice_frames",
+        "MainTheory.Orbit14OrthogonalFrames.actual_adjacency",
+        "MainTheory.Orbit14OrthogonalFrames.physical_mass_rows",
+        "MainTheory.Orbit14OrthogonalFrames.physical_positive_block",
+        "MainTheory.Orbit14OrthogonalFrames.physical_orthogonal_frames"
+      ],
+      "review": "20261005 final actual bridge type/context review: The actual native physical KL moment rows give equal positive chosen-block masses and complementary pointwise balances. All actual offdiagonal slice spinors are orthogonal by the weight-at-most-two physical incidence rows. A positive common neighbor puts the actual bottom spinors on one unit line and all top spinors on its orthogonal line. Their actual block frames are respectively mu times the rank-one projector and mu times its orthogonal complement, before using the separate KL block-frame equality. This direct incidence proof proves the printed intermediate without claiming it follows from the final no-code theorem."
+    }
+  ]
+}

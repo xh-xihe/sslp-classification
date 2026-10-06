@@ -3,10 +3,10 @@
   "paper_version": "20261003",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
   },
   "status": "partial",
-  "method": "20261005 current-source revalidation: the resolved SI items were checked in the authoritative 85aa8ec5 snapshot. The five frozen-main issues remain held under the explicit author instruction; no unrestricted false statement is certified. The only subsequent SI change is the local orbit-31 nonempty-mask qualification; unchanged contexts were explicitly revalidated.",
+  "method": "20261005 current-source revalidation: the resolved SI items were checked in the authoritative 85aa8ec5 snapshot. The five frozen-main issues remain held under the explicit author instruction; no unrestricted false statement is certified. The only subsequent SI change is the local orbit-31 nonempty-mask qualification; unchanged contexts were explicitly revalidated. Orbit 17 now expressly retains weighted degree one quarter at every vertex; no displayed assertion changed.",
   "issues": [
     {
       "id": "singleton-rank-one",

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "prior_sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
+  },
+  "changed_lines": [
+    15214
+  ],
+  "main_bytes_unchanged": true,
+  "all_1830_statement_bytes_and_locations_unchanged": true,
+  "reason": "The no-isolated-vertex condition alone permits stars. The actual physical graph has weighted degree one quarter at every vertex; that hypothesis is essential in the final star case and is now explicit.",
+  "archived_records": [
+    {
+      "path": "results/paper-claims-20261003.json",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/paper-claims-20261003.json",
+      "sha256": "009e92597734bdc483b028e0c3fea2e6adcab5f96c94918027ad94d4b1063cb0"
+    },
+    {
+      "path": "results/prose-review-20261003.json",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/prose-review-20261003.json",
+      "sha256": "6d51de1419890df8b38cedc3d8853b69299f8ad148997b5934d71a035944e640"
+    },
+    {
+      "path": "results/errata-20261003.json",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/errata-20261003.json",
+      "sha256": "54c9afe5b52cf45185b55205bec94552355991fda0712213a8686de41c3965bc"
+    },
+    {
+      "path": "results/orbit-manifest-20261003.json",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/orbit-manifest-20261003.json",
+      "sha256": "3ebdb3e82bca8fd3dcfb217ffdbd3d3c4ad0fc9b1789675b3b17d6a8e3f6dc56"
+    },
+    {
+      "path": "results/correspondence-candidates-20261005.json",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/correspondence-candidates-20261005.json",
+      "sha256": "b6b1862e201bd24a96aadd01b949506bf43737873319c3cc55c27a4bead65b81"
+    },
+    {
+      "path": "tools/verification/review_sources_20261005.py",
+      "archive": "archive/reviews/20261005-before-weighted-graph-qualification/review_sources_20261005.py",
+      "sha256": "b7c14c6f822155dccb6b94f2cda96a96311feea155a4f7e3c2c5159ef3cdc40e"
+    }
+  ],
+  "repaired_overlapping_context_bindings": [
+    {
+      "source": "supplementary.tex",
+      "line": 12122,
+      "end_line": 12123,
+      "prior_context_sha256_lf": "5b8cf7f3f606554d5a6cef385ec2273a7f19b4355deda8729cc840c243c32275",
+      "context_sha256_lf": "10e66e1a49a084ca8421336a7ad369dbf6587cb915a39a57a9eb11e40e9b41d5",
+      "reason": "Revalidate the overlapping convex-face block after the earlier nonempty-mask qualification; its general convex-hull theorem remains applicable."
+    }
+  ],
+  "fresh_type_inspection": "PASS",
+  "fresh_axiom_audit": "PASS"
+}

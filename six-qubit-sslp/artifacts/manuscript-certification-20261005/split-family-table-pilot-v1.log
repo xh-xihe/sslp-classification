@@ -1,0 +1,27 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\SplitFamilyTableCertification.lean:55:12: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∑ x_1, encoder f t theta x_1 ⟨0, ⋯⟩ * operator (physicalMask f t) ((Orbit2.HilbertBridge.bitsEquiv 6) x) x_1 =
+    ![1, -1] ⟨0, ⋯⟩ * encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) x) ⟨0, ⋯⟩
+but is expected to have type
+  ∑ x_1,
+      operator (physicalMask f t) ((Orbit2.HilbertBridge.bitsEquiv 6) x) x_1 *
+        encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) ((Orbit2.HilbertBridge.bitsEquiv 6).symm x_1)) ⟨0, ⋯⟩ =
+    (if ⟨0, ⋯⟩ = 0 then 1 else -1) * encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) x) ⟨0, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\SplitFamilyTableCertification.lean:55:12: error: Type mismatch: After simplification, term
+  he
+ has type
+  ∑ x_1, encoder f t theta x_1 ⟨1, ⋯⟩ * operator (physicalMask f t) ((Orbit2.HilbertBridge.bitsEquiv 6) x) x_1 =
+    ![1, -1] ⟨1, ⋯⟩ * encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) x) ⟨1, ⋯⟩
+but is expected to have type
+  ∑ x_1,
+      operator (physicalMask f t) ((Orbit2.HilbertBridge.bitsEquiv 6) x) x_1 *
+        encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) ((Orbit2.HilbertBridge.bitsEquiv 6).symm x_1)) ⟨1, ⋯⟩ =
+    (if ⟨1, ⋯⟩ = 0 then 1 else -1) * encoder f t theta ((Orbit2.HilbertBridge.bitsEquiv 6) x) ⟨1, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\SplitFamilyTableCertification.lean:48:40: error: This simp argument is unused:
+  Equiv.symm_apply_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [̵O̵r̵b̵i̵t̵2̵.̵H̵i̵l̵b̵e̵r̵t̵B̵r̵i̵d̵g̵e̵.̵w̵o̵r̵d̵s̵,̵E̵q̵u̵i̵v̵.̵s̵y̵m̵m̵_̵a̵p̵p̵l̵y̵_̵a̵p̵p̵l̵y̵,̵p̵a̵u̵l̵i̵_̵l̵a̵b̵e̵l̵]̵[̲O̲r̲b̲i̲t̲2̲.̲H̲i̲l̲b̲e̲r̲t̲B̲r̲i̲d̲g̲e̲.̲w̲o̲r̲d̲s̲,̲ ̲p̲a̲u̲l̲i̲_̲l̲a̲b̲e̲l̲]̲ at ha
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

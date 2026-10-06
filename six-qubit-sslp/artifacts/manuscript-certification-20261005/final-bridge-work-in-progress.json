@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "status": "proof_accepted_publication_pending",
+  "active_lean_modules": 16227,
+  "staged_modules": 9,
+  "strict_pilots": "PASS",
+  "last_accepted_modules": 16218,
+  "source_snapshot": "final-bridge-staged-proof-snapshot-9.json",
+  "scope": "Accepted physical final-bridge proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "whole_build": "PASS",
+  "fresh_axiom_audit": "PASS",
+  "canonical_type_inspection": "PASS",
+  "current_manuscript_correspondence": "SI complete; five frozen main issues remain",
+  "axiom_audit": "PASS",
+  "correspondence_review": "applied",
+  "si_correspondence": "covered",
+  "proof_acceptance": "proof-acceptance-16227.json"
+}

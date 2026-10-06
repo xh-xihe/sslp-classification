@@ -2,7 +2,7 @@
 
 Start with these final statements, then follow their imports. The full source
 inventory is [proof modules by topic](proof-modules.md). Verification scope and
-the outstanding manuscript review are recorded in [current status](status.md).
+the SI correspondence and held main issues are recorded in [current status](status.md).
 
 ## Main text
 
@@ -80,6 +80,11 @@ the outstanding manuscript review are recorded in [current status](status.md).
 | Orbit 12: exact basis notation, edge lines and scalar elimination | [MainTheory/Orbit12BasisNotation.lean](../MainTheory/Orbit12BasisNotation.lean), [MainTheory/Orbit12AnchorLines.lean](../MainTheory/Orbit12AnchorLines.lean), [MainTheory/Orbit12AnchorScalars.lean](../MainTheory/Orbit12AnchorScalars.lean), [MainTheory/Orbit12EdgeLines.lean](../MainTheory/Orbit12EdgeLines.lean), [MainTheory/Orbit12ScalarCompletion.lean](../MainTheory/Orbit12ScalarCompletion.lean), [MainTheory/Orbit12PairCompletion.lean](../MainTheory/Orbit12PairCompletion.lean), [MainTheory/Orbit12LineDimensions.lean](../MainTheory/Orbit12LineDimensions.lean) |
 | Orbits 13, 17 and 20: actual error rows, graph algebra and phase triangles | [MainTheory/Orbit13DisplayCompletion.lean](../MainTheory/Orbit13DisplayCompletion.lean), [MainTheory/Orbit17GraphDisplays.lean](../MainTheory/Orbit17GraphDisplays.lean), [MainTheory/Orbit20DisplayCompletion.lean](../MainTheory/Orbit20DisplayCompletion.lean), [MainTheory/Orbit20PhaseCompletion.lean](../MainTheory/Orbit20PhaseCompletion.lean) |
 | Generic exact supported expansions and positive rank-one spinor frames | [MainTheory/SupportedBasisExpansion.lean](../MainTheory/SupportedBasisExpansion.lean), [MainTheory/RankOneSpinorFrame.lean](../MainTheory/RankOneSpinorFrame.lean) |
+| Every complex two-by-two matrix: unitary Schmidt decomposition including singular cases | [MainTheory/ComplexSchmidtStep.lean](../MainTheory/ComplexSchmidtStep.lean), [MainTheory/ComplexSchmidtDecomposition.lean](../MainTheory/ComplexSchmidtDecomposition.lean) |
+| Orbit 5: actual normalized physical Schmidt gauge | [MainTheory/Orbit5SchmidtCompletion.lean](../MainTheory/Orbit5SchmidtCompletion.lean) |
+| Orbit 14: positive common neighbors and actual orthogonal block frames | [MainTheory/Orbit14SliceGeometry.lean](../MainTheory/Orbit14SliceGeometry.lean), [MainTheory/Orbit14OrthogonalFrames.lean](../MainTheory/Orbit14OrthogonalFrames.lean) |
+| Native weight-three logical perfect seed: arbitrary complex split and physical full KL | [MainTheory/NativeArbitrarySplitPerfectCode.lean](../MainTheory/NativeArbitrarySplitPerfectCode.lean), [MainTheory/NativeArbitrarySplitSixQubit.lean](../MainTheory/NativeArbitrarySplitSixQubit.lean) |
+| All four SI split-family records: literal physical encoders, KL and logical gates | [MainTheory/SplitFamilyLogicalCompletion.lean](../MainTheory/SplitFamilyLogicalCompletion.lean), [MainTheory/SplitFamilyTableCertification.lean](../MainTheory/SplitFamilyTableCertification.lean) |
 
 The two full-image endpoints are
 `MainTheory.Orbit2FullImage.directory_image` and

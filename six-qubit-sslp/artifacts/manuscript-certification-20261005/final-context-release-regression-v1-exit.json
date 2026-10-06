@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/tests",
+    "-p",
+    "test_paper_release.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.29378149996045977
+}

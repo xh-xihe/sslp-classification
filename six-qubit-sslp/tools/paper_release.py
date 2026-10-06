@@ -44,6 +44,7 @@ def validate_review(record, paper_version, root=ROOT, require_complete=False, so
         raise ValueError('invalid review status')
     if not record.get('method', '').strip():
         raise ValueError('missing review method/scope')
+    context_lines = {}
     for row in record['assertions']:
         if 'quote' in row:
             raise ValueError('review record must not contain a manuscript quote field')
@@ -53,6 +54,17 @@ def validate_review(record, paper_version, root=ROOT, require_complete=False, so
             raise ValueError('invalid prose review classification')
         if row['kind'] == 'covered' and not row.get('declarations'):
             raise ValueError('covered prose has no Lean declarations')
+        if 'context_sha256_lf' in row:
+            directory = Path(source_dir) if source_dir else paths(v, root)['source_dir']
+            if row['source'] not in context_lines:
+                context_lines[row['source']] = (directory / row['source']).read_text(encoding='utf-8').splitlines()
+            lines = context_lines[row['source']]
+            start, end = row['line'], row.get('end_line', row['line'])
+            if not 1 <= start <= end <= len(lines):
+                raise ValueError('prose context has an invalid line range')
+            context = '\n'.join(lines[start - 1:end]).encode('utf-8')
+            if hashlib.sha256(context).hexdigest() != row['context_sha256_lf']:
+                raise ValueError('prose context changed: ' + row['source'] + ':' + str(start))
     if require_complete and (record['status'] != 'covered' or not record['assertions'] or
                              any(a['kind'] == 'gap' for a in record['assertions'])):
         raise ValueError('selected release prose review is not complete')

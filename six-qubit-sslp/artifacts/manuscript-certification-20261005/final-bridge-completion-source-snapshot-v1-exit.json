@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_final_bridge_snapshot.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.042263299983460456
+}

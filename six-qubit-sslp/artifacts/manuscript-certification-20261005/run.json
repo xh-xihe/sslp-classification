@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "date": "2026-10-05",
-  "status": "in_progress",
+  "status": "si_complete_main_five_issues_held",
   "sources_sha256": {
     "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
-    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+    "documents/20261003/supplementary.tex": "4ca6e12385723bbc104efdc63882f36b2cfd30da020e423783ac77ff1b7e1c88"
   },
   "claim_count": 1830,
   "candidate_count": 1823,
@@ -25,32 +25,31 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 16218,
+  "active_lean_modules": 16227,
   "whole_build": {
     "status": "PASS",
-    "modules": 16218,
-    "rebuilt": 22,
-    "reused": 16196,
-    "record": "full-build-success-16218.json",
-    "log": "display-route-completion-full-build-v1.log"
+    "modules": 16227,
+    "rebuilt": 11,
+    "reused": 16216,
+    "record": "full-build-success-16227.json",
+    "log": "final-bridge-completion-full-build-v1.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 9251,
+    "roots": 9375,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-9251.json",
-    "log": "display-route-completion-axioms-v1.log"
+    "record": "axioms-9375.json",
+    "log": "final-bridge-completion-axioms-v1.log"
   },
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1818,
+    "covered": 1821,
     "expository": 5,
-    "partial": 1,
-    "unreviewed": 3
+    "partial": 1
   },
   "kernel_type_inspections": [
     {
@@ -128,14 +127,18 @@
     {
       "record": "kernel-types-display-route-completion-v1.json",
       "declarations": 4589
+    },
+    {
+      "record": "kernel-types-final-bridge-completion-v1.json",
+      "declarations": 4806
     }
   ],
-  "fully_kernel_manuscript_certification": "not_complete",
+  "fully_kernel_manuscript_certification": "not_complete_frozen_main_issues",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16218,
-    "axiom_roots": 9251,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16218.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9251.json"
+    "modules": 16227,
+    "axiom_roots": 9375,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16227.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9375.json"
   },
   "current_tool_regressions": {
     "certification_tools": 44,
@@ -145,13 +148,23 @@
   },
   "prose_review": {
     "status": "partial",
-    "reviewed_blocks": 14,
-    "covered_si_blocks": 9,
+    "reviewed_blocks": 1962,
+    "covered_si_blocks": 84,
     "held_main_gaps": 5,
-    "record": "results/prose-review-20261003.json"
+    "si_qualification_gaps": 0,
+    "record": "results/prose-review-20261003.json",
+    "source_status": {
+      "main.tex": "partial_five_author_held_issues",
+      "supplementary.tex": "covered"
+    },
+    "full_reading_blocks": {
+      "main.tex": 251,
+      "supplementary.tex": 1622
+    }
   },
   "remaining_obligations": "remaining-obligations.json",
   "correspondence_gates": {
+    "release": "PASS",
     "sources": "PASS",
     "readme": "PASS",
     "audit-names": "PASS",
@@ -159,7 +172,7 @@
     "claims": "incomplete",
     "prose-review": "incomplete",
     "errata": "incomplete",
-    "log": "display-route-completion-correspondence-gates-v2.log"
+    "log": "final-bridge-completion-correspondence-gates-v1.log"
   },
   "publication": {
     "status": "PASS",
@@ -170,30 +183,38 @@
   },
   "last_accepted_whole_build": {
     "status": "PASS",
-    "modules": 16218,
-    "rebuilt": 22,
-    "reused": 16196,
-    "record": "full-build-success-16218.json",
-    "log": "display-route-completion-full-build-v1.log"
+    "modules": 16227,
+    "rebuilt": 11,
+    "reused": 16216,
+    "record": "full-build-success-16227.json",
+    "log": "final-bridge-completion-full-build-v1.log"
   },
   "last_accepted_axiom_audit": {
     "status": "PASS",
-    "roots": 9251,
+    "roots": 9375,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-9251.json",
-    "log": "display-route-completion-axioms-v1.log"
+    "record": "axioms-9375.json",
+    "log": "final-bridge-completion-axioms-v1.log"
   },
   "current_prose_review": {
     "status": "partial",
-    "reviewed_blocks": 89,
+    "reviewed_blocks": 1962,
     "covered_si_blocks": 84,
     "held_main_gaps": 5,
     "si_qualification_gaps": 0,
-    "record": "results/prose-review-20261003.json"
+    "record": "results/prose-review-20261003.json",
+    "source_status": {
+      "main.tex": "partial_five_author_held_issues",
+      "supplementary.tex": "covered"
+    },
+    "full_reading_blocks": {
+      "main.tex": 251,
+      "supplementary.tex": 1622
+    }
   },
   "initial_sector_build": {
     "status": "PASS",
@@ -576,16 +597,25 @@
     "scope": "Staged sources only. Promotion, fresh whole build, type exports, manual correspondence and transitive axiom audit remain required.",
     "record": "artifacts/manuscript-certification-20261005/completion-staged-proof-snapshot-72.json"
   },
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/display-route-work-in-progress.json",
-    "scope": "Actual basis expansions, spinor lines, physical matrix tests and normalized scalar displays; whole-build acceptance and publication pending."
-  },
   "identified_si_qualifications": 0,
   "current_context_revalidation": {
-    "record": "artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json",
-    "status": "PASS",
-    "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
-    "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
+    "record": "artifacts/manuscript-certification-20261005/weighted-graph-context-revalidation.json",
+    "status": "PASS_fresh_types_and_axioms"
   },
-  "proof_acceptance": "pending_current_proof_snapshot"
+  "proof_acceptance": "pending_current_proof_snapshot",
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 16227
+  },
+  "candidate_scope": "Historical inspection inputs; the current explicit decisions are in results/paper-claims-20261003.json.",
+  "si_fully_kernel_correspondence": "complete",
+  "si_pending_assertions": 0,
+  "si_running_context_review": "complete",
+  "held_main_issues": 5,
+  "manuscript_correspondence": "si_complete_main_five_issues_held",
+  "current_reading_blocks": {
+    "main.tex": 251,
+    "supplementary.tex": 1622
+  }
 }
