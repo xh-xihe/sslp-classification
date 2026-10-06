@@ -22,9 +22,12 @@ Its fresh transitive audit passes **9,375 roots**, using only `propext`,
 [proof-acceptance-16227.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16227.json).
 The SI mathematical correspondence is complete. Complete certification of the
 combined frozen main and SI remains unavailable while the five main issues are held.
-Publication of this snapshot is pending. The previous
-[16,218-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16218.json)
-is retained unchanged. Machine-readable current status is in
+The accepted current proof snapshot is published in
+[`14fe906e`](https://github.com/xh-xihe/dyadic-lifts/commit/14fe906e1fed48aca0b6fe37607fa006ba37e3a6).
+Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16227.json)
+checks every one of the 16,227 active proof sources against the local
+successful build. Earlier publication bindings are retained unchanged.
+Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages

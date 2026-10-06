@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "active_lean_modules": 16227,
   "staged_modules": 9,
   "strict_pilots": "PASS",
   "last_accepted_modules": 16218,
   "source_snapshot": "final-bridge-staged-proof-snapshot-9.json",
-  "scope": "Accepted physical final-bridge proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "scope": "Accepted complete SI mathematical proof-source snapshot published on the canonical branch; five frozen main issues remain.",
   "whole_build": "PASS",
   "fresh_axiom_audit": "PASS",
   "canonical_type_inspection": "PASS",
@@ -14,5 +14,12 @@
   "axiom_audit": "PASS",
   "correspondence_review": "applied",
   "si_correspondence": "covered",
-  "proof_acceptance": "proof-acceptance-16227.json"
+  "proof_acceptance": "proof-acceptance-16227.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "14fe906e1fed48aca0b6fe37607fa006ba37e3a6",
+    "branch": "sixqubit-classification",
+    "modules": 16227,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16227.json"
+  }
 }

@@ -30,8 +30,11 @@
   "si_kernel_mathematical_assertions": 1622,
   "si_scope_only_remarks": 3,
   "publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification"
+    "status": "PASS",
+    "commit": "14fe906e1fed48aca0b6fe37607fa006ba37e3a6",
+    "branch": "sixqubit-classification",
+    "modules": 16227,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16227.json"
   },
   "evidence": [
     {

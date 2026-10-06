@@ -176,10 +176,10 @@
   },
   "publication": {
     "status": "PASS",
-    "commit": "7a533397340e5272622dd69a371900d7fc89bdc0",
+    "commit": "14fe906e1fed48aca0b6fe37607fa006ba37e3a6",
     "branch": "sixqubit-classification",
-    "modules": 16218,
-    "record": "artifacts/manuscript-certification-20261005/publication-binding-16218.json"
+    "modules": 16227,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16227.json"
   },
   "last_accepted_whole_build": {
     "status": "PASS",
@@ -603,11 +603,6 @@
     "status": "PASS_fresh_types_and_axioms"
   },
   "proof_acceptance": "pending_current_proof_snapshot",
-  "pending_publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification",
-    "modules": 16227
-  },
   "candidate_scope": "Historical inspection inputs; the current explicit decisions are in results/paper-claims-20261003.json.",
   "si_fully_kernel_correspondence": "complete",
   "si_pending_assertions": 0,
