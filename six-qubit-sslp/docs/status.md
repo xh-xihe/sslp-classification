@@ -1,6 +1,6 @@
 # Current verification status
 
-Canonical branch: **`sixqubit-classification`**. Package: `six-qubit-sslp/`.
+Canonical branch: **`main`**. Package: `six-qubit-sslp/`.
 Private manuscript version: `20261003`, including the SI edits through
 2026-10-05. The current SI mathematical correspondence review is complete.
 The frozen main remains partial because of five author-held issues. Its [run record](../artifacts/manuscript-certification-20261005/run.json)

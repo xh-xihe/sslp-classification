@@ -1,6 +1,6 @@
 # Repository architecture
 
-The canonical branch is `sixqubit-classification`. In the GitHub repository,
+The canonical branch is `main`. In the GitHub repository,
 this project lives in `six-qubit-sslp/`; run its commands from that directory.
 The sibling `lean/`, `code/` and `paper/` directories belong to the dyadic-lift
 project and have their own reproduction instructions.

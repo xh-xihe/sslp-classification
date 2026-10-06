@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-05",
-  "canonical_branch": "sixqubit-classification",
+  "canonical_branch": "main",
   "package_path": "six-qubit-sslp",
   "paper_version": "20261003",
   "sources_sha256": {

@@ -1,6 +1,6 @@
 # Six-qubit classification and general SSLP formalization
 
-The canonical branch is **`sixqubit-classification`**. This project lives in
+The canonical branch is **`main`**. This project lives in
 `six-qubit-sslp/` in the GitHub repository and combines the main-text theory,
 the supplementary classification, and the complete orbit-2/3 image proofs.
 

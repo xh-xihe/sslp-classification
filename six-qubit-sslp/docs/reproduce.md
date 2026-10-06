@@ -1,6 +1,6 @@
 # Reproducing the six-qubit formalization
 
-Use the `sixqubit-classification` branch. From the GitHub repository root:
+Use the `main` branch. From the GitHub repository root:
 
 ```console
 cd six-qubit-sslp

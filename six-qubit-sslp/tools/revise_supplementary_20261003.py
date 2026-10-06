@@ -394,8 +394,8 @@ two images leaves the previously determined union unchanged.
 The portable package commands and their input/output roles are given in
 Sections~\ref{o2gc:subsec-reproducibility} and \ref{o3gc:reproduction}.
 The repository equivalents below are relative to the checkout root of
-\href{https://github.com/xh-xihe/dyadic-lifts/tree/sixqubit-classification}
-{the \texttt{sixqubit-classification} branch}. To identify a verification
+\href{https://github.com/xh-xihe/dyadic-lifts/tree/main}
+{the \texttt{main} branch}. To identify a verification
 run, record its commit identifier, manuscript hashes, and build record.
 
 \begin{center}
