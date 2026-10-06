@@ -1,17 +1,24 @@
 {
   "schema": 1,
-  "status": "proof_accepted_publication_pending",
+  "status": "proof_accepted_and_published",
   "active_lean_modules": 16198,
   "staged_modules": 12,
   "strict_pilots": "PASS",
   "last_accepted_modules": 16186,
   "source_snapshot": "scalar-spinor-staged-proof-snapshot-12.json",
-  "scope": "Accepted physical scalar/spinor proof-source snapshot; publication pending and other manuscript obligations remain.",
+  "scope": "Accepted scalar/spinor proof-source snapshot published on the canonical branch; other manuscript obligations remain.",
   "whole_build": "PASS",
   "fresh_axiom_audit": "PASS",
   "canonical_type_inspection": "PASS",
   "current_manuscript_correspondence": "listed displays reviewed; other assertions pending",
   "axiom_audit": "PASS",
   "correspondence_review": "applied",
-  "proof_acceptance": "proof-acceptance-16198.json"
+  "proof_acceptance": "proof-acceptance-16198.json",
+  "publication": {
+    "status": "PASS",
+    "commit": "5ce6aff909dc2370b16bdab649077439762e9058",
+    "branch": "sixqubit-classification",
+    "modules": 16198,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16198.json"
+  }
 }

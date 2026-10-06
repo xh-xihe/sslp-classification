@@ -59,17 +59,13 @@
     "reviewed_blocks": 89
   },
   "planned_axiom_roots": 9080,
-  "canonical_publication_commit": "cd77b9fc253d4c24a5772d05df9a2b1a8cb27301",
-  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16186.json",
+  "canonical_publication_commit": "5ce6aff909dc2370b16bdab649077439762e9058",
+  "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16198.json",
   "identified_si_qualifications": 0,
   "current_context_revalidation": {
     "record": "artifacts/manuscript-certification-20261005/nonempty-mask-context-revalidation.json",
     "status": "PASS",
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
-  },
-  "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/scalar-spinor-work-in-progress.json",
-    "scope": "PASS local physical scalar/spinor proof route; publication pending and manuscript correspondence incomplete."
   }
 }
