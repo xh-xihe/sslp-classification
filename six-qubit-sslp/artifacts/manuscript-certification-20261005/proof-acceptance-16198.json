@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including actual orbit-5/6/12/20 physical row data, scalar moments, spinor identities and parity character determinants; manuscript correspondence incomplete.",
+  "active_modules": 16198,
+  "axiom_roots": 9080,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1783,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 38
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 0,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16198.json",
+      "sha256": "8125c504bdd6159c1a77ac94c5f15e2fbcebad12a68c0650189ff9fcdec387a2"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-9080.json",
+      "sha256": "54a6575f9e9fe9dc3161c05b7ec5ce823b070adc9a1d6bce793e49b49ba6577d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-staged-proof-snapshot-12.json",
+      "sha256": "8e78367dd6231d63277e91056aad711277751356f7de776a7aafdda5776694b8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-source-snapshot-v1.json",
+      "sha256": "62c2c930688829d08ff0101f3c26865d06a1a36348b6002c4cb7d42a7af556b9"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-scalar-spinor-completion-v1.json",
+      "sha256": "1df10b8f2b7fdaa0c09e18de0379d9b5c4c85cac10456bf48a2bb361be2a6292"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-type-binding-v2.json",
+      "sha256": "282d930cc7beefd6143373156e1bc5d2220218dd9595dff2e5dff00bf6add137"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-correspondence-gates-v2-report.json",
+      "sha256": "562e82fc1a3bfb383f0e205eefc62bab710192bef40a33323cc8e2e4b5cc1b46"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-review-v2.json",
+      "sha256": "e4d58eb472cc37d4b2c1f61516c2d5aef0eb9bb72d0137a59cee8148bc573d33"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-full-build-v1.log",
+      "sha256": "96a1801a2b6170ce8bf73d709a4c769d5dbead26254ed88173d32b7f698a9af7"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-full-build-v1-exit.json",
+      "sha256": "2a89aefdeaaa03f51eb2355dbd5501b439051ffcad360e75e50f667f96b9ab29"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-type-inspection-v1.log",
+      "sha256": "c3d5c89109fc8b30de4a4a3e75a332e90b4e8bc0c5b5c0c7f5b14e3baff7d155"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-type-inspection-v1-exit.json",
+      "sha256": "51629533a2af777e6294481010fc3bd76d7ebf976251ed29ea90905237b8c0bb"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-axioms-v2.log",
+      "sha256": "e684420fb27c2c4822d1a380bf0fbe301a2fbd1ac01b36924f76cfba319bdf41"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-axioms-v2-exit.json",
+      "sha256": "735056f7447dad89dfa38ada420ddaa141c683931abbd51e163f67b620d5b1bc"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-source-snapshot-v1.log",
+      "sha256": "3f4b5776b746013a0653067134b92a1099183c2f1a254bc497615b3f08b1b34d"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/scalar-spinor-completion-source-snapshot-v1-exit.json",
+      "sha256": "6257a71b0ec9dbfbff37383fb2091b6c8ce310c996b181af61979ac6de45e783"
+    }
+  ]
+}

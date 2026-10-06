@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "-X",
+    "utf8",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit6SpinorDebug5.lean"
+  ],
+  "exit_code": 4294967295,
+  "elapsed_seconds": 117.74046230001841
+}

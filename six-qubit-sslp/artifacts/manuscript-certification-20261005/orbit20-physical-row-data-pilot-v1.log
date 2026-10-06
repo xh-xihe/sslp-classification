@@ -1,0 +1,8 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20PhysicalRowData.lean:231:330: error: Application type mismatch: The argument
+  usum
+has type
+  4 * (Complex.normSq (c y0) + Complex.normSq (c y4) + Complex.normSq (c y8) + Complex.normSq (c y12)) = 1
+but is expected to have type
+  Complex.normSq (c y0) + Complex.normSq (c y4) + Complex.normSq (c y8) + Complex.normSq (c y12) = 1 / 4
+in the application
+  ⟨u15, usum⟩

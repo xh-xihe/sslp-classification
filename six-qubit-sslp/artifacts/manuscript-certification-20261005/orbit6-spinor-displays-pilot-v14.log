@@ -1,0 +1,21 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:83:2: error: 'all_goals try simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:84:2: error: 'all_goals norm_num [Matrix.vecMulVec_apply, Pi.star_apply]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:99:2: error: 'all_goals try simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:100:2: error: 'all_goals norm_num [Matrix.vecMulVec_apply, Pi.star_apply]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:116:2: error: 'all_goals norm_num [Matrix.vecMulVec_apply, Pi.star_apply]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:132:2: error: 'all_goals norm_num [Matrix.vecMulVec_apply, Pi.star_apply]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6SpinorDisplays.lean:148:2: error: 'all_goals norm_num [Matrix.vecMulVec_apply, Pi.star_apply]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

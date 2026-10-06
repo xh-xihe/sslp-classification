@@ -1,0 +1,24 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:29:2: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.42 ?m.39 = Finset.sum ?m.42 ?m.40
+with the goal
+  star (w 0) * ∑ x, (outer (b x) 0 0 * w 0 + outer (b x) 0 1 * w 1) +
+      star (w 1) * (∑ i, outer (b i) 1 0 * w 0 + ∑ i, outer (b i) 1 1 * w 1) =
+    ∑ x, ↑(Complex.normSq (star (b x 0) * w 0 + star (b x 1) * w 1))
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.42, ?m.39 x = ?m.40 x) → Finset.sum ?m.42 ?m.39 = Finset.sum ?m.42 ?m.40
+
+α : Type u_1
+inst✝ : Fintype α
+w : Fin 2 → ℂ
+b : α → Fin 2 → ℂ
+⊢ star (w 0) * ∑ x, (outer (b x) 0 0 * w 0 + outer (b x) 0 1 * w 1) +
+      star (w 1) * (∑ i, outer (b i) 1 0 * w 0 + ∑ i, outer (b i) 1 1 * w 1) =
+    ∑ x, ↑(Complex.normSq (star (b x 0) * w 0 + star (b x 1) * w 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:27:28: error: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [Finset.sum_mul,̵F̵i̵n̵s̵e̵t̵.̵m̵u̵l̵_̵s̵u̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

@@ -1,0 +1,2818 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:23:60: error: unsolved goals
+F : Matrix (Fin 2) (Fin 2) ℂ
+u v a b : Fin 4 → ℂ
+⊢ (starRingEnd ℂ) (u 0) * F 0 0 * b 0 + (starRingEnd ℂ) (u 0) * F 0 1 * b ⟨2, ⋯⟩ + F 0 0 * (starRingEnd ℂ) (u 1) * b 1 +
+                              F 0 0 * (starRingEnd ℂ) (a 0) * v 0 +
+                            F 0 0 * (starRingEnd ℂ) (a 1) * v 1 +
+                          F 0 1 * (starRingEnd ℂ) (u 1) * b ⟨3, ⋯⟩ +
+                        F 0 1 * (starRingEnd ℂ) (a 0) * v ⟨2, ⋯⟩ +
+                      F 0 1 * (starRingEnd ℂ) (a 1) * v ⟨3, ⋯⟩ +
+                    (starRingEnd ℂ) (u 2) * F (![0, 0, 1, 1] 2) 0 * b ⟨↑(![0, 1, 0, 1] 2), ⋯⟩ +
+                  (starRingEnd ℂ) (u 2) * F (![0, 0, 1, 1] 2) 1 * b ⟨2 + ↑(![0, 1, 0, 1] 2), ⋯⟩ +
+                F (![0, 0, 1, 1] 2) 0 * (starRingEnd ℂ) (a 2) * v ⟨↑(![0, 1, 0, 1] 2), ⋯⟩ +
+              F (![0, 0, 1, 1] 2) 1 * (starRingEnd ℂ) (a 2) * v ⟨2 + ↑(![0, 1, 0, 1] 2), ⋯⟩ +
+            (starRingEnd ℂ) (u 3) * F (![0, 0, 1, 1] 3) 0 * b ⟨↑(![0, 1, 0, 1] 3), ⋯⟩ +
+          (starRingEnd ℂ) (u 3) * F (![0, 0, 1, 1] 3) 1 * b ⟨2 + ↑(![0, 1, 0, 1] 3), ⋯⟩ +
+        F (![0, 0, 1, 1] 3) 0 * (starRingEnd ℂ) (a 3) * v ⟨↑(![0, 1, 0, 1] 3), ⋯⟩ +
+      F (![0, 0, 1, 1] 3) 1 * (starRingEnd ℂ) (a 3) * v ⟨2 + ↑(![0, 1, 0, 1] 3), ⋯⟩ =
+    (starRingEnd ℂ) (u 0) * F 0 0 * b 0 + (starRingEnd ℂ) (u 0) * F 0 1 * b ⟨2, ⋯⟩ +
+                                F 0 0 * (starRingEnd ℂ) (u 1) * b 1 +
+                              F 0 0 * (starRingEnd ℂ) (a 0) * v 0 +
+                            F 0 0 * (starRingEnd ℂ) (a 1) * v 1 +
+                          b 0 * F 1 0 * (starRingEnd ℂ) (u ⟨2, ⋯⟩) +
+                        F 0 1 * (starRingEnd ℂ) (u 1) * b ⟨3, ⋯⟩ +
+                      F 0 1 * (starRingEnd ℂ) (a 0) * v ⟨2, ⋯⟩ +
+                    F 0 1 * (starRingEnd ℂ) (a 1) * v ⟨3, ⋯⟩ +
+                  b ⟨2, ⋯⟩ * (starRingEnd ℂ) (u ⟨2, ⋯⟩) * F 1 1 +
+                b 1 * F 1 0 * (starRingEnd ℂ) (u ⟨3, ⋯⟩) +
+              b ⟨3, ⋯⟩ * (starRingEnd ℂ) (u ⟨3, ⋯⟩) * F 1 1 +
+            v 0 * F 1 0 * (starRingEnd ℂ) (a ⟨2, ⋯⟩) +
+          v ⟨2, ⋯⟩ * (starRingEnd ℂ) (a ⟨2, ⋯⟩) * F 1 1 +
+        v 1 * F 1 0 * (starRingEnd ℂ) (a ⟨3, ⋯⟩) +
+      v ⟨3, ⋯⟩ * (starRingEnd ℂ) (a ⟨3, ⋯⟩) * F 1 1
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:29:58: error: unsolved goals
+F : Matrix (Fin 2) (Fin 2) ℂ
+u v a b : Fin 4 → ℂ
+⊢ (starRingEnd ℂ) (u 0) * F 0 0 * b 0 + (starRingEnd ℂ) (u 0) * F 0 1 * b 1 + F 0 0 * (starRingEnd ℂ) (a 0) * v 0 +
+                              b 0 * (starRingEnd ℂ) (u 1) * F 1 0 +
+                            F 0 1 * (starRingEnd ℂ) (a 0) * v 1 +
+                          b 1 * (starRingEnd ℂ) (u 1) * F 1 1 +
+                        F 1 0 * v 0 * (starRingEnd ℂ) (a 1) +
+                      F 1 1 * v 1 * (starRingEnd ℂ) (a 1) +
+                    (starRingEnd ℂ) (u 2) * F (![0, 1, 0, 1] 2) 0 * b ⟨↑(![0, 0, 1, 1] 2) * 2, ⋯⟩ +
+                  (starRingEnd ℂ) (u 2) * F (![0, 1, 0, 1] 2) 1 * b ⟨1 + ↑(![0, 0, 1, 1] 2) * 2, ⋯⟩ +
+                F (![0, 1, 0, 1] 2) 0 * (starRingEnd ℂ) (a 2) * v ⟨↑(![0, 0, 1, 1] 2) * 2, ⋯⟩ +
+              F (![0, 1, 0, 1] 2) 1 * (starRingEnd ℂ) (a 2) * v ⟨1 + ↑(![0, 0, 1, 1] 2) * 2, ⋯⟩ +
+            (starRingEnd ℂ) (u 3) * F (![0, 1, 0, 1] 3) 0 * b ⟨↑(![0, 0, 1, 1] 3) * 2, ⋯⟩ +
+          (starRingEnd ℂ) (u 3) * F (![0, 1, 0, 1] 3) 1 * b ⟨1 + ↑(![0, 0, 1, 1] 3) * 2, ⋯⟩ +
+        F (![0, 1, 0, 1] 3) 0 * (starRingEnd ℂ) (a 3) * v ⟨↑(![0, 0, 1, 1] 3) * 2, ⋯⟩ +
+      F (![0, 1, 0, 1] 3) 1 * (starRingEnd ℂ) (a 3) * v ⟨1 + ↑(![0, 0, 1, 1] 3) * 2, ⋯⟩ =
+    (starRingEnd ℂ) (u 0) * F 0 0 * b 0 + (starRingEnd ℂ) (u 0) * F 0 1 * b 1 + F 0 0 * (starRingEnd ℂ) (a 0) * v 0 +
+                              F 0 0 * b ⟨2, ⋯⟩ * (starRingEnd ℂ) (u ⟨2, ⋯⟩) +
+                            F 0 0 * v ⟨2, ⋯⟩ * (starRingEnd ℂ) (a ⟨2, ⋯⟩) +
+                          b 0 * (starRingEnd ℂ) (u 1) * F 1 0 +
+                        F 0 1 * (starRingEnd ℂ) (a 0) * v 1 +
+                      F 0 1 * (starRingEnd ℂ) (u ⟨2, ⋯⟩) * b ⟨3, ⋯⟩ +
+                    F 0 1 * (starRingEnd ℂ) (a ⟨2, ⋯⟩) * v ⟨3, ⋯⟩ +
+                  b 1 * (starRingEnd ℂ) (u 1) * F 1 1 +
+                F 1 0 * v 0 * (starRingEnd ℂ) (a 1) +
+              F 1 0 * b ⟨2, ⋯⟩ * (starRingEnd ℂ) (u ⟨3, ⋯⟩) +
+            F 1 0 * v ⟨2, ⋯⟩ * (starRingEnd ℂ) (a ⟨3, ⋯⟩) +
+          F 1 1 * v 1 * (starRingEnd ℂ) (a 1) +
+        F 1 1 * b ⟨3, ⋯⟩ * (starRingEnd ℂ) (u ⟨3, ⋯⟩) +
+      F 1 1 * v ⟨3, ⋯⟩ * (starRingEnd ℂ) (a ⟨3, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:44:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (c y5) * d z17 =
+    0
+h22 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z1 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * d z17 =
+    0
+h23 :
+  (starRingEnd ℂ) (c y0) * ![d z0, d z1, d z2, d z3] 2 + (starRingEnd ℂ) (c y1) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y5) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h24 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z0 * star (c y0) - d z0 * (starRingEnd ℂ) (c y0) + (d z1 * star (c y1) - d z1 * (starRingEnd ℂ) (c y1)) +
+        (d z16 * star (c y4) - d z16 * (starRingEnd ℂ) (c y4)) +
+      (d z17 * star (c y5) - d z17 * (starRingEnd ℂ) (c y5)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:45:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (c y5) * d z17 =
+    0
+h22 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z1 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * d z17 =
+    0
+h23 :
+  (starRingEnd ℂ) (c y0) * ![d z0, d z1, d z2, d z3] 2 + (starRingEnd ℂ) (c y1) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y5) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h24 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z0 * star (c y2) - d z0 * (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) +
+          (d z1 * star (c y3) - d z1 * (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3)) +
+        (d z16 * star (c y6) - d z16 * (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2)) +
+      (d z17 * star (c y7) - d z17 * (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:46:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (c y5) * d z17 =
+    0
+h22 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z1 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * d z17 =
+    0
+h23 :
+  (starRingEnd ℂ) (c y0) * ![d z0, d z1, d z2, d z3] 2 + (starRingEnd ℂ) (c y1) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y5) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h24 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z2 * star (c y0) + d z3 * star (c y1) + d z18 * star (c y4) + d z19 * star (c y5) +
+        (-((starRingEnd ℂ) (c y0) * ![d z0, d z1, d z2, d z3] 2) -
+          (starRingEnd ℂ) (c y1) * ![d z0, d z1, d z2, d z3] 3) +
+      (-((starRingEnd ℂ) (c y4) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (c y5) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:47:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (c y5) * d z17 =
+    0
+h22 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z1 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * d z17 =
+    0
+h23 :
+  (starRingEnd ℂ) (c y0) * ![d z0, d z1, d z2, d z3] 2 + (starRingEnd ℂ) (c y1) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y5) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h24 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z2 * star (c y2) + d z3 * star (c y3) + d z18 * star (c y6) + d z19 * star (c y7) +
+        (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2) -
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3) +
+      (-((starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:58:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h26 :
+  (starRingEnd ℂ) (c y1) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y5) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h27 :
+  (starRingEnd ℂ) (c y0) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h28 :
+  (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y5) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z0 * star (c y0) - d z0 * (starRingEnd ℂ) (c y0) + d z2 * star (c y2) +
+          (d z16 * star (c y4) - d z16 * (starRingEnd ℂ) (c y4)) +
+        d z18 * star (c y6) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2) -
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:59:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h26 :
+  (starRingEnd ℂ) (c y1) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y5) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h27 :
+  (starRingEnd ℂ) (c y0) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h28 :
+  (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y5) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z0 * star (c y1) - d z0 * (starRingEnd ℂ) (c y1) + d z2 * star (c y3) +
+          (d z16 * star (c y5) - d z16 * (starRingEnd ℂ) (c y5)) +
+        d z18 * star (c y7) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 2) -
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:60:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h26 :
+  (starRingEnd ℂ) (c y1) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y5) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h27 :
+  (starRingEnd ℂ) (c y0) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h28 :
+  (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y5) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z1 * star (c y0) - d z1 * (starRingEnd ℂ) (c y0) + d z3 * star (c y2) +
+          (d z17 * star (c y4) - d z17 * (starRingEnd ℂ) (c y4)) +
+        d z19 * star (c y6) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 3) -
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:61:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 :
+  (starRingEnd ℂ) (c y0) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y4) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h26 :
+  (starRingEnd ℂ) (c y1) * d z0 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 2 +
+        (starRingEnd ℂ) (c y5) * d z16 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h27 :
+  (starRingEnd ℂ) (c y0) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y4) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h28 :
+  (starRingEnd ℂ) (c y1) * d z1 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3 +
+        (starRingEnd ℂ) (c y5) * d z17 +
+      (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z1 * star (c y1) - d z1 * (starRingEnd ℂ) (c y1) + d z3 * star (c y3) +
+          (d z17 * star (c y5) - d z17 * (starRingEnd ℂ) (c y5)) +
+        d z19 * star (c y7) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z0, d z1, d z2, d z3] 3) -
+        (starRingEnd ℂ) (![c y4, c y5, c y6, c y7] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:72:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (c y9) * d z17 =
+    0
+h30 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z5 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * d z17 =
+    0
+h31 :
+  (starRingEnd ℂ) (c y0) * ![d z4, d z5, d z6, d z7] 2 + (starRingEnd ℂ) (c y1) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y9) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h32 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z4 * star (c y0) - d z4 * (starRingEnd ℂ) (c y0) + (d z5 * star (c y1) - d z5 * (starRingEnd ℂ) (c y1)) +
+        (d z16 * star (c y8) - d z16 * (starRingEnd ℂ) (c y8)) +
+      (d z17 * star (c y9) - d z17 * (starRingEnd ℂ) (c y9)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:73:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (c y9) * d z17 =
+    0
+h30 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z5 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * d z17 =
+    0
+h31 :
+  (starRingEnd ℂ) (c y0) * ![d z4, d z5, d z6, d z7] 2 + (starRingEnd ℂ) (c y1) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y9) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h32 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z4 * star (c y2) - d z4 * (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) +
+          (d z5 * star (c y3) - d z5 * (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3)) +
+        (d z16 * star (c y10) - d z16 * (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2)) +
+      (d z17 * star (c y11) - d z17 * (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:74:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (c y9) * d z17 =
+    0
+h30 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z5 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * d z17 =
+    0
+h31 :
+  (starRingEnd ℂ) (c y0) * ![d z4, d z5, d z6, d z7] 2 + (starRingEnd ℂ) (c y1) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y9) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h32 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z6 * star (c y0) + d z7 * star (c y1) + d z18 * star (c y8) + d z19 * star (c y9) +
+        (-((starRingEnd ℂ) (c y0) * ![d z4, d z5, d z6, d z7] 2) -
+          (starRingEnd ℂ) (c y1) * ![d z4, d z5, d z6, d z7] 3) +
+      (-((starRingEnd ℂ) (c y8) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (c y9) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:75:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (c y9) * d z17 =
+    0
+h30 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z5 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * d z17 =
+    0
+h31 :
+  (starRingEnd ℂ) (c y0) * ![d z4, d z5, d z6, d z7] 2 + (starRingEnd ℂ) (c y1) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y9) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h32 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z6 * star (c y2) + d z7 * star (c y3) + d z18 * star (c y10) + d z19 * star (c y11) +
+        (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2) -
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3) +
+      (-((starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:86:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h34 :
+  (starRingEnd ℂ) (c y1) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y9) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h35 :
+  (starRingEnd ℂ) (c y0) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h36 :
+  (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y9) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z4 * star (c y0) - d z4 * (starRingEnd ℂ) (c y0) + d z6 * star (c y2) +
+          (d z16 * star (c y8) - d z16 * (starRingEnd ℂ) (c y8)) +
+        d z18 * star (c y10) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2) -
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:87:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h34 :
+  (starRingEnd ℂ) (c y1) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y9) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h35 :
+  (starRingEnd ℂ) (c y0) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h36 :
+  (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y9) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z4 * star (c y1) - d z4 * (starRingEnd ℂ) (c y1) + d z6 * star (c y3) +
+          (d z16 * star (c y9) - d z16 * (starRingEnd ℂ) (c y9)) +
+        d z18 * star (c y11) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 2) -
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:88:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h34 :
+  (starRingEnd ℂ) (c y1) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y9) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h35 :
+  (starRingEnd ℂ) (c y0) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h36 :
+  (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y9) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z5 * star (c y0) - d z5 * (starRingEnd ℂ) (c y0) + d z7 * star (c y2) +
+          (d z17 * star (c y8) - d z17 * (starRingEnd ℂ) (c y8)) +
+        d z19 * star (c y10) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 3) -
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:89:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 :
+  (starRingEnd ℂ) (c y0) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y8) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h34 :
+  (starRingEnd ℂ) (c y1) * d z4 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 2 +
+        (starRingEnd ℂ) (c y9) * d z16 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h35 :
+  (starRingEnd ℂ) (c y0) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y8) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h36 :
+  (starRingEnd ℂ) (c y1) * d z5 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3 +
+        (starRingEnd ℂ) (c y9) * d z17 +
+      (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ d z5 * star (c y1) - d z5 * (starRingEnd ℂ) (c y1) + d z7 * star (c y3) +
+          (d z17 * star (c y9) - d z17 * (starRingEnd ℂ) (c y9)) +
+        d z19 * star (c y11) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z4, d z5, d z6, d z7] 3) -
+        (starRingEnd ℂ) (![c y8, c y9, c y10, c y11] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:100:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (c y13) * d z17 =
+    0
+h38 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z9 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * d z17 =
+    0
+h39 :
+  (starRingEnd ℂ) (c y0) * ![d z8, d z9, d z10, d z11] 2 + (starRingEnd ℂ) (c y1) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y13) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h40 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 2 *
+              star (c y0) +
+            Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i)
+                2 *
+              star (c y1) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 2) -
+            d z16 * (starRingEnd ℂ) (c y12)) +
+        (d z17 *
+            star
+              (Matrix.vecCons (c y5)
+                (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 2) -
+          d z17 * (starRingEnd ℂ) (c y13)) +
+      (-((starRingEnd ℂ) (c y0) * d z8) - (starRingEnd ℂ) (c y1) * d z9) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:101:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (c y13) * d z17 =
+    0
+h38 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z9 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * d z17 =
+    0
+h39 :
+  (starRingEnd ℂ) (c y0) * ![d z8, d z9, d z10, d z11] 2 + (starRingEnd ℂ) (c y1) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y13) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h40 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 2 *
+              star (c y2) +
+            Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i)
+                2 *
+              star (c y3) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y6)
+                  (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 2) -
+            d z16 * (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2)) +
+        (d z17 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 2) -
+          d z17 * (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3)) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z8) - (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z9) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:102:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (c y13) * d z17 =
+    0
+h38 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z9 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * d z17 =
+    0
+h39 :
+  (starRingEnd ℂ) (c y0) * ![d z8, d z9, d z10, d z11] 2 + (starRingEnd ℂ) (c y1) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y13) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h40 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z2) (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 2 *
+                star (c y0) +
+              Matrix.vecCons (d z3)
+                  (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 2 *
+                star (c y1) +
+            d z18 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 2) +
+          d z19 *
+            star
+              (Matrix.vecCons (c y5)
+                (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 2) +
+        (-((starRingEnd ℂ) (c y0) * ![d z8, d z9, d z10, d z11] 2) -
+          (starRingEnd ℂ) (c y1) * ![d z8, d z9, d z10, d z11] 3) +
+      (-((starRingEnd ℂ) (c y12) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (c y13) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:103:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (c y13) * d z17 =
+    0
+h38 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z9 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * d z17 =
+    0
+h39 :
+  (starRingEnd ℂ) (c y0) * ![d z8, d z9, d z10, d z11] 2 + (starRingEnd ℂ) (c y1) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y13) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h40 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z2) (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 2 *
+                star (c y2) +
+              Matrix.vecCons (d z3)
+                  (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 2 *
+                star (c y3) +
+            d z18 *
+              star
+                (Matrix.vecCons (c y6)
+                  (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 2) +
+          d z19 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 2) +
+        (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2) -
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3) +
+      (-((starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:114:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h42 :
+  (starRingEnd ℂ) (c y1) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y13) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h43 :
+  (starRingEnd ℂ) (c y0) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h44 :
+  (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y13) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 2 *
+              star (c y0) +
+            Matrix.vecCons (d z2)
+                (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 2 *
+              star (c y2) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 2) -
+            d z16 * (starRingEnd ℂ) (c y12)) +
+        (d z18 *
+            star
+              (Matrix.vecCons (c y6)
+                (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 2) -
+          (starRingEnd ℂ) (c y0) * d z8) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2) -
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:115:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h42 :
+  (starRingEnd ℂ) (c y1) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y13) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h43 :
+  (starRingEnd ℂ) (c y0) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h44 :
+  (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y13) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 2 *
+              star (c y1) +
+            Matrix.vecCons (d z2)
+                (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 2 *
+              star (c y3) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y5)
+                  (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 2) -
+            d z16 * (starRingEnd ℂ) (c y13)) +
+        (d z18 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 2) -
+          (starRingEnd ℂ) (c y1) * d z8) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 2) -
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:116:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h42 :
+  (starRingEnd ℂ) (c y1) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y13) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h43 :
+  (starRingEnd ℂ) (c y0) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h44 :
+  (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y13) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i) 2 *
+              star (c y0) +
+            Matrix.vecCons (d z3)
+                (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 2 *
+              star (c y2) +
+          (d z17 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 2) -
+            d z17 * (starRingEnd ℂ) (c y12)) +
+        (d z19 *
+            star
+              (Matrix.vecCons (c y6)
+                (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 2) -
+          (starRingEnd ℂ) (c y0) * d z9) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 3) -
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:117:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 :
+  (starRingEnd ℂ) (c y0) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y12) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h42 :
+  (starRingEnd ℂ) (c y1) * d z8 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 2 +
+        (starRingEnd ℂ) (c y13) * d z16 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h43 :
+  (starRingEnd ℂ) (c y0) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y12) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h44 :
+  (starRingEnd ℂ) (c y1) * d z9 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3 +
+        (starRingEnd ℂ) (c y13) * d z17 +
+      (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i) 2 *
+              star (c y1) +
+            Matrix.vecCons (d z3)
+                (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 2 *
+              star (c y3) +
+          (d z17 *
+              star
+                (Matrix.vecCons (c y5)
+                  (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 2) -
+            d z17 * (starRingEnd ℂ) (c y13)) +
+        (d z19 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 2) -
+          (starRingEnd ℂ) (c y1) * d z9) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z8, d z9, d z10, d z11] 3) -
+        (starRingEnd ℂ) (![c y12, c y13, c y14, c y15] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:128:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (c y17) * d z17 =
+    0
+h46 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z13 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * d z17 =
+    0
+h47 :
+  (starRingEnd ℂ) (c y0) * ![d z12, d z13, d z14, d z15] 2 + (starRingEnd ℂ) (c y1) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y17) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h48 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 3 *
+              star (c y0) +
+            Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i)
+                3 *
+              star (c y1) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 3) -
+            d z16 * (starRingEnd ℂ) (c y16)) +
+        (d z17 *
+            star
+              (Matrix.vecCons (c y5)
+                (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 3) -
+          d z17 * (starRingEnd ℂ) (c y17)) +
+      (-((starRingEnd ℂ) (c y0) * d z12) - (starRingEnd ℂ) (c y1) * d z13) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:129:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (c y17) * d z17 =
+    0
+h46 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z13 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * d z17 =
+    0
+h47 :
+  (starRingEnd ℂ) (c y0) * ![d z12, d z13, d z14, d z15] 2 + (starRingEnd ℂ) (c y1) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y17) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h48 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 3 *
+              star (c y2) +
+            Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i)
+                3 *
+              star (c y3) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y6)
+                  (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 3) -
+            d z16 * (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2)) +
+        (d z17 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 3) -
+          d z17 * (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3)) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z12) -
+        (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z13) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:130:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (c y17) * d z17 =
+    0
+h46 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z13 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * d z17 =
+    0
+h47 :
+  (starRingEnd ℂ) (c y0) * ![d z12, d z13, d z14, d z15] 2 + (starRingEnd ℂ) (c y1) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y17) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h48 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z2) (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 3 *
+                star (c y0) +
+              Matrix.vecCons (d z3)
+                  (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 3 *
+                star (c y1) +
+            d z18 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 3) +
+          d z19 *
+            star
+              (Matrix.vecCons (c y5)
+                (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 3) +
+        (-((starRingEnd ℂ) (c y0) * ![d z12, d z13, d z14, d z15] 2) -
+          (starRingEnd ℂ) (c y1) * ![d z12, d z13, d z14, d z15] 3) +
+      (-((starRingEnd ℂ) (c y16) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (c y17) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:131:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (c y17) * d z17 =
+    0
+h46 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * d z13 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * d z17 =
+    0
+h47 :
+  (starRingEnd ℂ) (c y0) * ![d z12, d z13, d z14, d z15] 2 + (starRingEnd ℂ) (c y1) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (c y17) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h48 :
+  (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h49 : star (uu c 0) * bb4 d 0 + star (uu c 2) * bb4 d 2 + star (aa4 c 0) * vv d 0 + star (aa4 c 2) * vv d 2 = 0
+h50 : star (uu c 1) * bb4 d 0 + star (uu c 3) * bb4 d 2 + star (aa4 c 1) * vv d 0 + star (aa4 c 3) * vv d 2 = 0
+h51 : star (uu c 0) * bb4 d 1 + star (uu c 2) * bb4 d 3 + star (aa4 c 0) * vv d 1 + star (aa4 c 2) * vv d 3 = 0
+h52 : star (uu c 1) * bb4 d 1 + star (uu c 3) * bb4 d 3 + star (aa4 c 1) * vv d 1 + star (aa4 c 3) * vv d 3 = 0
+⊢ Matrix.vecCons (d z2) (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 3 *
+                star (c y2) +
+              Matrix.vecCons (d z3)
+                  (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 3 *
+                star (c y3) +
+            d z18 *
+              star
+                (Matrix.vecCons (c y6)
+                  (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 3) +
+          d z19 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 3) +
+        (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2) -
+          (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3) +
+      (-((starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2) -
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:142:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h50 :
+  (starRingEnd ℂ) (c y1) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y17) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h51 :
+  (starRingEnd ℂ) (c y0) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h52 :
+  (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y17) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 3 *
+              star (c y0) +
+            Matrix.vecCons (d z2)
+                (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 3 *
+              star (c y2) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 3) -
+            d z16 * (starRingEnd ℂ) (c y16)) +
+        (d z18 *
+            star
+              (Matrix.vecCons (c y6)
+                (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 3) -
+          (starRingEnd ℂ) (c y0) * d z12) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2) -
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:143:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h50 :
+  (starRingEnd ℂ) (c y1) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y17) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h51 :
+  (starRingEnd ℂ) (c y0) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h52 :
+  (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y17) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+⊢ Matrix.vecCons (d z0) (fun i => Matrix.vecCons (d z4) (fun i => Matrix.vecCons (d z8) (fun i => d z12) i) i) 3 *
+              star (c y1) +
+            Matrix.vecCons (d z2)
+                (fun i => Matrix.vecCons (d z6) (fun i => Matrix.vecCons (d z10) (fun i => d z14) i) i) 3 *
+              star (c y3) +
+          (d z16 *
+              star
+                (Matrix.vecCons (c y5)
+                  (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 3) -
+            d z16 * (starRingEnd ℂ) (c y17)) +
+        (d z18 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 3) -
+          (starRingEnd ℂ) (c y1) * d z12) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 2) -
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 2) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:144:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h50 :
+  (starRingEnd ℂ) (c y1) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y17) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h51 :
+  (starRingEnd ℂ) (c y0) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h52 :
+  (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y17) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+⊢ Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i) 3 *
+              star (c y0) +
+            Matrix.vecCons (d z3)
+                (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 3 *
+              star (c y2) +
+          (d z17 *
+              star
+                (Matrix.vecCons (c y4)
+                  (fun i => Matrix.vecCons (c y8) (fun i => Matrix.vecCons (c y12) (fun i => c y16) i) i) 3) -
+            d z17 * (starRingEnd ℂ) (c y16)) +
+        (d z19 *
+            star
+              (Matrix.vecCons (c y6)
+                (fun i => Matrix.vecCons (c y10) (fun i => Matrix.vecCons (c y14) (fun i => c y18) i) i) 3) -
+          (starRingEnd ℂ) (c y0) * d z13) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 3) -
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 3) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:145:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : nsq (uu c) = 1 / 3
+h1 : nsq (vv d) = 1 / 3
+h2 : nsq (aa1 c) = 1 / 6
+h3 : nsq (aa2 c) = 1 / 6
+h4 : nsq (aa3 c) = 1 / 6
+h5 : nsq (aa4 c) = 1 / 6
+h6 : nsq (bb1 d) = 1 / 6
+h7 : nsq (bb2 d) = 1 / 6
+h8 : nsq (bb3 d) = 1 / 6
+h9 : nsq (bb4 d) = 1 / 6
+h10 : ip (uu c) (bb1 d) = 0
+h11 : ip (uu c) (bb2 d) = 0
+h12 : ip (uu c) (bb3 d) = 0
+h13 : ip (uu c) (bb4 d) = 0
+h14 :
+  ∀ (k l : Fin 4),
+    uu c k * star (uu c l) + fr (aa1 c) (aa2 c) (aa3 c) (aa4 c) k l =
+      fr (bb1 d) (bb2 d) (bb3 d) (bb4 d) k l + vv d k * star (vv d l)
+h15 : ip (aa1 c) (bb2 d) + ip (aa2 c) (bb1 d) = 0
+h16 : ip (aa1 c) (bb3 d) + ip (aa3 c) (bb1 d) = 0
+h17 : ip (aa1 c) (bb4 d) + ip (aa4 c) (bb1 d) = 0
+h18 : ip (aa2 c) (bb3 d) + ip (aa3 c) (bb2 d) = 0
+h19 : ip (aa2 c) (bb4 d) + ip (aa4 c) (bb2 d) = 0
+h20 : ip (aa3 c) (bb4 d) + ip (aa4 c) (bb3 d) = 0
+h21 : star (uu c 0) * bb1 d 0 + star (uu c 1) * bb1 d 1 + star (aa1 c 0) * vv d 0 + star (aa1 c 1) * vv d 1 = 0
+h22 : star (uu c 2) * bb1 d 0 + star (uu c 3) * bb1 d 1 + star (aa1 c 2) * vv d 0 + star (aa1 c 3) * vv d 1 = 0
+h23 : star (uu c 0) * bb1 d 2 + star (uu c 1) * bb1 d 3 + star (aa1 c 0) * vv d 2 + star (aa1 c 1) * vv d 3 = 0
+h24 : star (uu c 2) * bb1 d 2 + star (uu c 3) * bb1 d 3 + star (aa1 c 2) * vv d 2 + star (aa1 c 3) * vv d 3 = 0
+h25 : star (uu c 0) * bb1 d 0 + star (uu c 2) * bb1 d 2 + star (aa1 c 0) * vv d 0 + star (aa1 c 2) * vv d 2 = 0
+h26 : star (uu c 1) * bb1 d 0 + star (uu c 3) * bb1 d 2 + star (aa1 c 1) * vv d 0 + star (aa1 c 3) * vv d 2 = 0
+h27 : star (uu c 0) * bb1 d 1 + star (uu c 2) * bb1 d 3 + star (aa1 c 0) * vv d 1 + star (aa1 c 2) * vv d 3 = 0
+h28 : star (uu c 1) * bb1 d 1 + star (uu c 3) * bb1 d 3 + star (aa1 c 1) * vv d 1 + star (aa1 c 3) * vv d 3 = 0
+h29 : star (uu c 0) * bb2 d 0 + star (uu c 1) * bb2 d 1 + star (aa2 c 0) * vv d 0 + star (aa2 c 1) * vv d 1 = 0
+h30 : star (uu c 2) * bb2 d 0 + star (uu c 3) * bb2 d 1 + star (aa2 c 2) * vv d 0 + star (aa2 c 3) * vv d 1 = 0
+h31 : star (uu c 0) * bb2 d 2 + star (uu c 1) * bb2 d 3 + star (aa2 c 0) * vv d 2 + star (aa2 c 1) * vv d 3 = 0
+h32 : star (uu c 2) * bb2 d 2 + star (uu c 3) * bb2 d 3 + star (aa2 c 2) * vv d 2 + star (aa2 c 3) * vv d 3 = 0
+h33 : star (uu c 0) * bb2 d 0 + star (uu c 2) * bb2 d 2 + star (aa2 c 0) * vv d 0 + star (aa2 c 2) * vv d 2 = 0
+h34 : star (uu c 1) * bb2 d 0 + star (uu c 3) * bb2 d 2 + star (aa2 c 1) * vv d 0 + star (aa2 c 3) * vv d 2 = 0
+h35 : star (uu c 0) * bb2 d 1 + star (uu c 2) * bb2 d 3 + star (aa2 c 0) * vv d 1 + star (aa2 c 2) * vv d 3 = 0
+h36 : star (uu c 1) * bb2 d 1 + star (uu c 3) * bb2 d 3 + star (aa2 c 1) * vv d 1 + star (aa2 c 3) * vv d 3 = 0
+h37 : star (uu c 0) * bb3 d 0 + star (uu c 1) * bb3 d 1 + star (aa3 c 0) * vv d 0 + star (aa3 c 1) * vv d 1 = 0
+h38 : star (uu c 2) * bb3 d 0 + star (uu c 3) * bb3 d 1 + star (aa3 c 2) * vv d 0 + star (aa3 c 3) * vv d 1 = 0
+h39 : star (uu c 0) * bb3 d 2 + star (uu c 1) * bb3 d 3 + star (aa3 c 0) * vv d 2 + star (aa3 c 1) * vv d 3 = 0
+h40 : star (uu c 2) * bb3 d 2 + star (uu c 3) * bb3 d 3 + star (aa3 c 2) * vv d 2 + star (aa3 c 3) * vv d 3 = 0
+h41 : star (uu c 0) * bb3 d 0 + star (uu c 2) * bb3 d 2 + star (aa3 c 0) * vv d 0 + star (aa3 c 2) * vv d 2 = 0
+h42 : star (uu c 1) * bb3 d 0 + star (uu c 3) * bb3 d 2 + star (aa3 c 1) * vv d 0 + star (aa3 c 3) * vv d 2 = 0
+h43 : star (uu c 0) * bb3 d 1 + star (uu c 2) * bb3 d 3 + star (aa3 c 0) * vv d 1 + star (aa3 c 2) * vv d 3 = 0
+h44 : star (uu c 1) * bb3 d 1 + star (uu c 3) * bb3 d 3 + star (aa3 c 1) * vv d 1 + star (aa3 c 3) * vv d 3 = 0
+h45 : star (uu c 0) * bb4 d 0 + star (uu c 1) * bb4 d 1 + star (aa4 c 0) * vv d 0 + star (aa4 c 1) * vv d 1 = 0
+h46 : star (uu c 2) * bb4 d 0 + star (uu c 3) * bb4 d 1 + star (aa4 c 2) * vv d 0 + star (aa4 c 3) * vv d 1 = 0
+h47 : star (uu c 0) * bb4 d 2 + star (uu c 1) * bb4 d 3 + star (aa4 c 0) * vv d 2 + star (aa4 c 1) * vv d 3 = 0
+h48 : star (uu c 2) * bb4 d 2 + star (uu c 3) * bb4 d 3 + star (aa4 c 2) * vv d 2 + star (aa4 c 3) * vv d 3 = 0
+h49 :
+  (starRingEnd ℂ) (c y0) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y16) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h50 :
+  (starRingEnd ℂ) (c y1) * d z12 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 2 +
+        (starRingEnd ℂ) (c y17) * d z16 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 2 =
+    0
+h51 :
+  (starRingEnd ℂ) (c y0) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 2) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y16) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 2) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+h52 :
+  (starRingEnd ℂ) (c y1) * d z13 + (starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3 +
+        (starRingEnd ℂ) (c y17) * d z17 +
+      (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3 =
+    0
+⊢ Matrix.vecCons (d z1) (fun i => Matrix.vecCons (d z5) (fun i => Matrix.vecCons (d z9) (fun i => d z13) i) i) 3 *
+              star (c y1) +
+            Matrix.vecCons (d z3)
+                (fun i => Matrix.vecCons (d z7) (fun i => Matrix.vecCons (d z11) (fun i => d z15) i) i) 3 *
+              star (c y3) +
+          (d z17 *
+              star
+                (Matrix.vecCons (c y5)
+                  (fun i => Matrix.vecCons (c y9) (fun i => Matrix.vecCons (c y13) (fun i => c y17) i) i) 3) -
+            d z17 * (starRingEnd ℂ) (c y17)) +
+        (d z19 *
+            star
+              (Matrix.vecCons (c y7)
+                (fun i => Matrix.vecCons (c y11) (fun i => Matrix.vecCons (c y15) (fun i => c y19) i) i) 3) -
+          (starRingEnd ℂ) (c y1) * d z13) +
+      (-((starRingEnd ℂ) (![c y0, c y1, c y2, c y3] 3) * ![d z12, d z13, d z14, d z15] 3) -
+        (starRingEnd ℂ) (![c y16, c y17, c y18, c y19] 3) * ![d z16, d z17, d z18, d z19] 3) =
+    0

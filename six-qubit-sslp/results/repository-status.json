@@ -19,8 +19,8 @@
   ],
   "orbit2_full_image": "kernel_checked",
   "orbit3_full_image": "kernel_checked",
-  "active_lean_modules": 16186,
-  "axiom_roots": 8932,
+  "active_lean_modules": 16198,
+  "axiom_roots": 9080,
   "standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -31,19 +31,19 @@
   "historical_acceptance_record": "artifacts/repository-acceptance-20261004/acceptance.json",
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1763,
+    "covered": 1783,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 58
+    "unreviewed": 38
   },
-  "current_type_inspection_declarations": 4295,
+  "current_type_inspection_declarations": 4410,
   "historical_publication_source_binding": "PASS",
   "publication_source_binding": "PASS_current_proof_snapshot",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16186,
-    "axiom_roots": 8932,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16186.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8932.json"
+    "modules": 16198,
+    "axiom_roots": 9080,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16198.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9080.json"
   },
   "historical_regression_tests_per_environment": 61,
   "historical_skipped_tests_per_environment": 11,
@@ -58,7 +58,7 @@
     "status": "partial",
     "reviewed_blocks": 89
   },
-  "planned_axiom_roots": 8932,
+  "planned_axiom_roots": 9080,
   "canonical_publication_commit": "cd77b9fc253d4c24a5772d05df9a2b1a8cb27301",
   "publication_record": "artifacts/manuscript-certification-20261005/publication-binding-16186.json",
   "identified_si_qualifications": 0,
@@ -67,5 +67,9 @@
     "status": "PASS",
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
+  },
+  "pending_proof_batch": {
+    "record": "artifacts/manuscript-certification-20261005/scalar-spinor-work-in-progress.json",
+    "scope": "PASS local physical scalar/spinor proof route; publication pending and manuscript correspondence incomplete."
   }
 }

@@ -1,3 +1,17 @@
+-- BEGIN CURRENT SCALAR SPINOR IMPORTS
+import MainTheory.Orbit5PhysicalRowData
+import MainTheory.Orbit6PhysicalRowData
+import MainTheory.Orbit5Displays
+import MainTheory.Orbit26MatchingZeroRow
+import MainTheory.Orbit6MomentDisplays
+import MainTheory.Orbit6CharacterMatrix
+import MainTheory.Orbit6SpinorDisplays
+import MainTheory.Orbit12PhysicalRowData
+import MainTheory.Orbit12MomentDisplays
+import MainTheory.Orbit12Frames
+import MainTheory.Orbit20PhysicalRowData
+import MainTheory.ParityFourEdgeDeterminant
+-- END CURRENT SCALAR SPINOR IMPORTS
 -- BEGIN CURRENT MATCHING PARITY IMPORTS
 import MainTheory.Orbit14BlockFrames
 import MainTheory.Orbit26MatchingPhysical
@@ -6876,5 +6890,162 @@ Kernel validity is distinct from semantic manuscript coverage.
   MainTheory.WeightedLineFrames.nsq_smul,
   MainTheory.WeightedLineFrames.orthogonal_line_frames,
   MainTheory.WeightedLineFrames.projector_smul
+]
+
+
+-- BEGIN CURRENT SCALAR SPINOR CORRESPONDENCE ROOTS
+#certification_axioms [
+  MainTheory.Orbit12Frames.AHcrossBlock,
+  MainTheory.Orbit12Frames.H0_frame_of_data,
+  MainTheory.Orbit12Frames.H0bottomFrame,
+  MainTheory.Orbit12Frames.H0topFrame,
+  MainTheory.Orbit12Frames.a,
+  MainTheory.Orbit12Frames.b,
+  MainTheory.Orbit12Frames.cross_block_of_data,
+  MainTheory.Orbit12Frames.outer,
+  MainTheory.Orbit12Frames.physical_blocks,
+  MainTheory.Orbit12Frames.u,
+  MainTheory.Orbit12Frames.ut,
+  MainTheory.Orbit12Frames.v,
+  MainTheory.Orbit12Frames.vt,
+  MainTheory.Orbit12MomentDisplays.Moment,
+  MainTheory.Orbit12MomentDisplays.actual_words,
+  MainTheory.Orbit12MomentDisplays.bottom,
+  MainTheory.Orbit12MomentDisplays.bottomProb,
+  MainTheory.Orbit12MomentDisplays.bottom_anchor_mass,
+  MainTheory.Orbit12MomentDisplays.bottom_edge_mass,
+  MainTheory.Orbit12MomentDisplays.bottom_four_anchor,
+  MainTheory.Orbit12MomentDisplays.bottom_zero_anchor,
+  MainTheory.Orbit12MomentDisplays.complementary_mass_0,
+  MainTheory.Orbit12MomentDisplays.complementary_mass_1,
+  MainTheory.Orbit12MomentDisplays.complementary_mass_2,
+  MainTheory.Orbit12MomentDisplays.edge_coordinates,
+  MainTheory.Orbit12MomentDisplays.edge_degree_0,
+  MainTheory.Orbit12MomentDisplays.edge_degree_1,
+  MainTheory.Orbit12MomentDisplays.edge_degree_2,
+  MainTheory.Orbit12MomentDisplays.edge_degree_3,
+  MainTheory.Orbit12MomentDisplays.edges,
+  MainTheory.Orbit12MomentDisplays.four_anchor_equality,
+  MainTheory.Orbit12MomentDisplays.half_angle_moment,
+  MainTheory.Orbit12MomentDisplays.matched_mass_0,
+  MainTheory.Orbit12MomentDisplays.matched_mass_1,
+  MainTheory.Orbit12MomentDisplays.matched_mass_2,
+  MainTheory.Orbit12MomentDisplays.matched_mass_3,
+  MainTheory.Orbit12MomentDisplays.matched_mass_4,
+  MainTheory.Orbit12MomentDisplays.matched_mass_5,
+  MainTheory.Orbit12MomentDisplays.physical_moments,
+  MainTheory.Orbit12MomentDisplays.representative_mass,
+  MainTheory.Orbit12MomentDisplays.top,
+  MainTheory.Orbit12MomentDisplays.topProb,
+  MainTheory.Orbit12MomentDisplays.top_anchor_mass,
+  MainTheory.Orbit12MomentDisplays.top_edge_mass,
+  MainTheory.Orbit12MomentDisplays.top_four_anchor,
+  MainTheory.Orbit12MomentDisplays.top_zero_anchor,
+  MainTheory.Orbit12MomentDisplays.zero_anchor_equality,
+  MainTheory.Orbit12PhysicalRowData.RowData,
+  MainTheory.Orbit12PhysicalRowData.physical_row_data,
+  MainTheory.Orbit12PhysicalRowData.row_data_of_rows,
+  MainTheory.Orbit20PhysicalRowData.RowData,
+  MainTheory.Orbit20PhysicalRowData.physical_row_data,
+  MainTheory.Orbit20PhysicalRowData.row_data_of_rows,
+  MainTheory.Orbit26MatchingZeroRow.physical_sRow_nonzero,
+  MainTheory.Orbit26MatchingZeroRow.physical_sRow_norm,
+  MainTheory.Orbit26MatchingZeroRow.sRow,
+  MainTheory.Orbit5Displays.Omega,
+  MainTheory.Orbit5Displays.actualBottomTail,
+  MainTheory.Orbit5Displays.actualTopTail,
+  MainTheory.Orbit5Displays.actual_tail_notation,
+  MainTheory.Orbit5Displays.coefficientMatrix,
+  MainTheory.Orbit5Displays.coord,
+  MainTheory.Orbit5Displays.hat,
+  MainTheory.Orbit5Displays.literal_coefficient_matrix
+]
+
+#certification_axioms [
+  MainTheory.Orbit5Displays.marginal_expectation,
+  MainTheory.Orbit5Displays.physical_marginal_expectation,
+  MainTheory.Orbit5Displays.tail,
+  MainTheory.Orbit5Displays.traceFirst,
+  MainTheory.Orbit5Displays.traceSecond,
+  MainTheory.Orbit5Displays.vectorization_first,
+  MainTheory.Orbit5Displays.vectorization_second,
+  MainTheory.Orbit5PhysicalRowData.RowData,
+  MainTheory.Orbit5PhysicalRowData.physical_row_data,
+  MainTheory.Orbit5PhysicalRowData.row_data_of_rows,
+  MainTheory.Orbit6CharacterMatrix.W5,
+  MainTheory.Orbit6CharacterMatrix.determinant_checked,
+  MainTheory.Orbit6CharacterMatrix.rows_force_zero,
+  MainTheory.Orbit6MomentDisplays.Moment,
+  MainTheory.Orbit6MomentDisplays.actual_words,
+  MainTheory.Orbit6MomentDisplays.bottom,
+  MainTheory.Orbit6MomentDisplays.bottomProb,
+  MainTheory.Orbit6MomentDisplays.bottom_anchor,
+  MainTheory.Orbit6MomentDisplays.bottom_edge_mass,
+  MainTheory.Orbit6MomentDisplays.bottom_normalization,
+  MainTheory.Orbit6MomentDisplays.complementIndex,
+  MainTheory.Orbit6MomentDisplays.edge_coordinates,
+  MainTheory.Orbit6MomentDisplays.edge_degree_0,
+  MainTheory.Orbit6MomentDisplays.edge_degree_1,
+  MainTheory.Orbit6MomentDisplays.edge_degree_2,
+  MainTheory.Orbit6MomentDisplays.edge_degree_3,
+  MainTheory.Orbit6MomentDisplays.edge_degree_4,
+  MainTheory.Orbit6MomentDisplays.edge_mass_0,
+  MainTheory.Orbit6MomentDisplays.edge_mass_1,
+  MainTheory.Orbit6MomentDisplays.edge_mass_2,
+  MainTheory.Orbit6MomentDisplays.edge_mass_3,
+  MainTheory.Orbit6MomentDisplays.edge_mass_4,
+  MainTheory.Orbit6MomentDisplays.edge_mass_5,
+  MainTheory.Orbit6MomentDisplays.edge_mass_6,
+  MainTheory.Orbit6MomentDisplays.edge_mass_7,
+  MainTheory.Orbit6MomentDisplays.edge_mass_8,
+  MainTheory.Orbit6MomentDisplays.edge_mass_9,
+  MainTheory.Orbit6MomentDisplays.edges,
+  MainTheory.Orbit6MomentDisplays.physical_moments,
+  MainTheory.Orbit6MomentDisplays.singletonIndex,
+  MainTheory.Orbit6MomentDisplays.singleton_mass_0,
+  MainTheory.Orbit6MomentDisplays.singleton_mass_1,
+  MainTheory.Orbit6MomentDisplays.singleton_mass_2,
+  MainTheory.Orbit6MomentDisplays.singleton_mass_3,
+  MainTheory.Orbit6MomentDisplays.singleton_mass_4,
+  MainTheory.Orbit6MomentDisplays.top,
+  MainTheory.Orbit6MomentDisplays.topProb,
+  MainTheory.Orbit6MomentDisplays.top_complement_mass,
+  MainTheory.Orbit6MomentDisplays.top_coordinates,
+  MainTheory.Orbit6MomentDisplays.top_normalization,
+  MainTheory.Orbit6MomentDisplays.top_singleton_mass,
+  MainTheory.Orbit6PhysicalRowData.RowData,
+  MainTheory.Orbit6PhysicalRowData.physical_row_data,
+  MainTheory.Orbit6PhysicalRowData.row_data_of_rows,
+  MainTheory.Orbit6SpinorDisplays.aligned_rows_of_data,
+  MainTheory.Orbit6SpinorDisplays.anchor,
+  MainTheory.Orbit6SpinorDisplays.bIndex,
+  MainTheory.Orbit6SpinorDisplays.bottomEdge,
+  MainTheory.Orbit6SpinorDisplays.cIndex,
+  MainTheory.Orbit6SpinorDisplays.edgeOuter,
+  MainTheory.Orbit6SpinorDisplays.first,
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_0_of_data,
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_1_of_data,
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_2_of_data
+]
+
+#certification_axioms [
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_3_of_data,
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_4_of_data,
+  MainTheory.Orbit6SpinorDisplays.matrix_identity_of_data,
+  MainTheory.Orbit6SpinorDisplays.pairing,
+  MainTheory.Orbit6SpinorDisplays.physical_aligned_rows,
+  MainTheory.Orbit6SpinorDisplays.physical_matrix_identity,
+  MainTheory.Orbit6SpinorDisplays.second,
+  MainTheory.Orbit6SpinorDisplays.topComplement,
+  MainTheory.Orbit6SpinorDisplays.topSingleton,
+  MainTheory.Orbit6SpinorDisplays.wedge,
+  MainTheory.ParityFourEdgeDeterminant.W,
+  MainTheory.ParityFourEdgeDeterminant.absolute_determinant,
+  MainTheory.ParityFourEdgeDeterminant.evenIndex,
+  MainTheory.ParityFourEdgeDeterminant.evenPoint,
+  MainTheory.ParityFourEdgeDeterminant.gram_checked,
+  MainTheory.ParityFourEdgeDeterminant.literal_even_points,
+  MainTheory.ParityFourEdgeDeterminant.other,
+  MainTheory.ParityFourEdgeDeterminant.rowMask
 ]
 

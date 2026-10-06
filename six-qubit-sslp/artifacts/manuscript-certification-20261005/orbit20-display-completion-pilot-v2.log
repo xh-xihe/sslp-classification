@@ -1,0 +1,46 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:82:29: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  AddCommMonoid (Sort ?u.3400)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:82:17: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  AddCommMonoid (Sort ?u.3400)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:83:71: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Sort ?u.3400) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Sort ?u.3400
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:83:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℝ ℝ (Sort ?u.3400)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:86:10: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+case right
+c d : SS.State 6 ℂ
+h : RowData c d
+k : Fin 3
+⊢ (Fin 3 → sorry) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:105:29: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  AddCommMonoid (Sort ?u.12552)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:105:17: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  AddCommMonoid (Sort ?u.12552)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:106:71: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Sort ?u.12552) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Sort ?u.12552
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:106:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℝ ℝ (Sort ?u.12552)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:108:53: error(lean.unknownIdentifier): Unknown identifier `global_characters_of_data`

@@ -16,17 +16,14 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current local proof snapshot passes the whole build: **16,186 modules**.
-Its fresh transitive audit passes **8,932 roots**, using only `propext`,
+The current local proof snapshot passes the whole build: **16,198 modules**.
+Its fresh transitive audit passes **9,080 roots**, using only `propext`,
 `Classical.choice` and `Quot.sound`. Its evidence is recorded in
-[proof-acceptance-16186.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16186.json).
+[proof-acceptance-16198.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16198.json).
 This acceptance does not declare complete manuscript correspondence.
-The accepted current proof snapshot is published in
-[`cd77b9fc`](https://github.com/xh-xihe/dyadic-lifts/commit/cd77b9fc253d4c24a5772d05df9a2b1a8cb27301).
-Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16186.json)
-checks every one of the 16,186 active proof sources against the local
-successful build. Earlier publication bindings are retained unchanged.
-Machine-readable current status is in
+Publication of this snapshot is pending. The preceding
+[16,186-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16186.json)
+is retained unchanged. Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -57,16 +54,16 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-The current audit contains 6,168 distinct selected roots in
+The current audit contains 6,314 distinct selected roots in
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and newly checked physical bridges. Roots
 already present in another audit are retained there rather than duplicated.
 
-The current ledger has **1,763 covered assertions**, five
-scope-only statements, three stated conjectures, **58 unreviewed
+The current ledger has **1,783 covered assertions**, five
+scope-only statements, three stated conjectures, **38 unreviewed
 SI assertions**, and one explicitly partial main-text Singleton assertion.
-Current kernel type inspection covers **4,295 declarations**.
-The source inventory contains **16,186 active Lean modules**. The new
+Current kernel type inspection covers **4,410 declarations**.
+The source inventory contains **16,198 active Lean modules**. The new
 correspondence proofs include:
 
 - Orbit 31: the exact support-count chain, all sixteen representatives and
@@ -178,6 +175,20 @@ inspection and the fifteen-source snapshot check pass. The
 [batch record](../artifacts/manuscript-certification-20261005/matching-parity-work-in-progress.json)
 states the accepted scope. Remaining manuscript correspondences still
 require their own proofs and review.
+
+## Actual scalar moments and spinor matrix identities
+
+Twelve modules derive orbit-5/6/12/20 physical row data before their final
+obstructions, orbit-5 partial traces and marginal expectation, orbit-6/12
+rational moment consequences, all five orbit-6 spinor matrix identities,
+orbit-12 cross-block and frame equations, and parity character determinants.
+Twenty formerly pending displayed assertions have explicit fresh type review.
+
+Whole kernel building, fresh standard-axiom auditing, canonical type
+inspection and the twelve-source snapshot check pass. The
+[batch record](../artifacts/manuscript-certification-20261005/scalar-spinor-work-in-progress.json)
+states the accepted scope. Remaining manuscript obligations retain their
+own incomplete status.
 
 ## Historical records
 

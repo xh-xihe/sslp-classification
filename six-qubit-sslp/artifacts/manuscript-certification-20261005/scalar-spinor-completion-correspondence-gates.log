@@ -1,0 +1,19 @@
+PARTIAL verification: sources, readme, audit-names, named-results, claims, prose-review, errata
+Paper version: 20261003
+START sources
+[PASS] sources (181.1s): 16198 Lean sources clean
+START readme
+[PASS] readme (56.8s): exit=0; log=tmp\verification\20261003\readme-names.log; all present
+START audit-names
+[FAIL] audit-names (26.2s): exit=1; log=tmp\verification\20261003\audit-names.log; declarations found in MainTheory, SS, SixQubit, QECC, Orbit2: 590364
+audit names checked: 9078, unresolved: 0
+claims-ledger names checked: 13544, unresolved: 1
+  results/paper-claims-20261003.json  supplementary.tex:eq:o12-edgepolytope  Complex.normSq_nonneg
+START named-results
+[PASS] named-results (0.9s): exit=0; log=tmp\verification\20261003\named-results.log; named-results document is current
+START claims
+[FAIL] claims (0.9s): exit=1; log=tmp\verification\20261003\claims.log; FAIL: 39 incomplete assertions (partial=1, unreviewed=38); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:eq:quantum-Singleton, supplementary.tex:q2fam:eq:split-orbits, supplementary.tex:eq:o5-matrixflip, supplementary.tex:eq:o5-schmidt, supplementary.tex:eq:o5-offdiagonal-system, ...
+START prose-review
+[FAIL] prose-review (0.0s): exit=1; log=tmp\verification\20261003\prose-review.log; FAIL: selected release prose review is not complete
+START errata
+[FAIL] errata (0.0s): errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed

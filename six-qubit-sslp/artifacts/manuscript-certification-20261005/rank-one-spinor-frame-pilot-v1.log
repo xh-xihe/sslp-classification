@@ -1,0 +1,46 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:17:73: error: unsolved goals
+w v : Fin 2 → ℂ
+⊢ (starRingEnd ℂ) (w 0) * v 0 * (starRingEnd ℂ) (v 0) * w 0 +
+          (starRingEnd ℂ) (w 0) * v 0 * (starRingEnd ℂ) (v 1) * w 1 +
+        (starRingEnd ℂ) (v 0) * w 0 * (starRingEnd ℂ) (w 1) * v 1 +
+      (starRingEnd ℂ) (v 1) * w 1 * (starRingEnd ℂ) (w 1) * v 1 =
+    (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (v 0) * w 0 * (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+          (starRingEnd ℂ) (w 0) * (starRingEnd ℂ) (v 1) * w 1 * (starRingEnd ℂ) ((starRingEnd ℂ) (v 0)) +
+        (starRingEnd ℂ) (v 0) * w 0 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 1)) +
+      (starRingEnd ℂ) (v 1) * w 1 * (starRingEnd ℂ) (w 1) * (starRingEnd ℂ) ((starRingEnd ℂ) (v 1))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:20:20: error: This simp argument is unused:
+  star_star
+
+Hint: Omit it from the simp argument list.
+  simp only [̵p̵a̵i̵r̵i̵n̵g̵,̵o̵u̵t̵e̵r̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵V̵e̵c̵,̵d̵o̵t̵P̵r̵o̵d̵u̵c̵t̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵M̵u̵l̵V̵e̵c̵_̵a̵p̵p̵l̵y̵,̵P̵i̵.̵s̵t̵a̵r̵_̵a̵p̵p̵l̵y̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵e̵q̵_̵c̵o̵n̵j̵_̵m̵u̵l̵_̵s̵e̵l̵f̵,̵
+  ̵ ̵ ̵ ̵ ̵m̵a̵p̵_̵a̵d̵d̵,̵m̵a̵p̵_̵m̵u̵l̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵,̵C̵o̵m̵p̵l̵e̵x̵.̵s̵t̵a̵r̵_̵d̵e̵f̵]̵[̲p̲a̲i̲r̲i̲n̲g̲,̲ ̲o̲u̲t̲e̲r̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲V̲e̲c̲,̲ ̲d̲o̲t̲P̲r̲o̲d̲u̲c̲t̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲M̲u̲l̲V̲e̲c̲_̲a̲p̲p̲l̲y̲,̲
+  ̲ ̲ ̲ ̲ ̲P̲i̲.̲s̲t̲a̲r̲_̲a̲p̲p̲l̲y̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲e̲q̲_̲c̲o̲n̲j̲_̲m̲u̲l̲_̲s̲e̲l̲f̲,̲ ̲m̲a̲p̲_̲a̲d̲d̲,̲ ̲m̲a̲p̲_̲m̲u̲l̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲s̲t̲a̲r̲_̲d̲e̲f̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:27:26: error: `simp` made no progress
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\RankOneSpinorFrame.lean:51:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  pairing (perp u) ((outer u + outer v) *ᵥ perp u)
+in the target expression
+  (fun M => pairing (perp u) (M *ᵥ perp u)) (outer u + outer v) =
+    (fun M => pairing (perp u) (M *ᵥ perp u)) (∑ i, outer (b i))
+
+α : Type u_1
+inst✝ : Fintype α
+u v : Fin 2 → ℂ
+b : α → Fin 2 → ℂ
+hframe : outer u + outer v = ∑ i, outer (b i)
+hw : wedge u v = 0
+hq :
+  (fun M => pairing (perp u) (M *ᵥ perp u)) (outer u + outer v) =
+    (fun M => pairing (perp u) (M *ᵥ perp u)) (∑ i, outer (b i))
+hu : pairing u (perp u) = 0
+hv : pairing v (perp u) = 0
+hleft : pairing (perp u) ((outer u + outer v) *ᵥ perp u) = 0
+⊢ ∀ (i : α), wedge u (b i) = 0

@@ -1,0 +1,297 @@
+{
+  "schema": 1,
+  "sources": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claims": [
+    {
+      "id": "supplementary.tex:equation@11135",
+      "statement_sha256": "0c4728199cc1e2acc3fe261f749895f16e0d25fc3cb287ff2ada25a8da1a2f98",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit26MatchingZeroRow.sRow",
+        "MainTheory.Orbit26MatchingZeroRow.physical_sRow_norm",
+        "MainTheory.Orbit26MatchingZeroRow.physical_sRow_nonzero"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The printed row is the actual normalized bottom anchor contracted with the actual block. When the other actual normalized row vanishes, physical block mass one quarter and the complete orthogonal anchor basis give this row squared norm one quarter and hence nonzero."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-tailnotation",
+      "statement_sha256": "77614302e75a1e04a7f3e2d609f83e8f30c5bed62e8cd9b72a7ad29b7ad3d1e7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5Displays.Omega",
+        "MainTheory.Orbit5Displays.hat",
+        "MainTheory.Orbit5Displays.actualBottomTail",
+        "MainTheory.Orbit5Displays.actualTopTail",
+        "MainTheory.Orbit5Displays.actual_tail_notation"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The literal four-bit all-one word, its singleton complements, and the actual bottom/top tail coordinates are checked on every finite index in the native six-qubit fibers."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-aggregatenorms",
+      "statement_sha256": "4f01cdfdac8b4b13d2351a39963e6161e0064293bf616ab956e71853a63bd1c8",
+      "status": "covered",
+      "lean_declarations": [
+        "SixQubit.Trace5.nsq",
+        "SixQubit.Trace5.ip_self",
+        "SixQubit.Orbit5.uu",
+        "SixQubit.Orbit5.aa1",
+        "SixQubit.Orbit5.aa2",
+        "SixQubit.Orbit5.aa3",
+        "SixQubit.Orbit5.aa4",
+        "SixQubit.Orbit5.bb1",
+        "SixQubit.Orbit5.bb2",
+        "SixQubit.Orbit5.bb3",
+        "SixQubit.Orbit5.bb4",
+        "SixQubit.Orbit5.vv",
+        "MainTheory.Orbit5PhysicalRowData.physical_row_data"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: All aggregate symbols are squared Hermitian norms of the actual four-component native coefficient vectors. The physical row-data theorem supplies their printed anchor and singleton masses without using the final obstruction."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-marginal-u",
+      "statement_sha256": "610bbaab16fe5db565148e3926a2c6642fe2cbaa85d6b9ce51e31d1cf560a725",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5Displays.marginal_expectation",
+        "MainTheory.Orbit5Displays.physical_marginal_expectation"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The actual full marginal matrix equality is contracted with the actual bottom anchor. Its four actual orthogonal top singleton terms vanish, leaving precisely the printed fourth-power norm and four squared pairing terms."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-vectorization",
+      "statement_sha256": "9e15c263a8d6fc1b4082f6a988fb4bddfdb1bef7c50089607a446b26e3bd0272",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5Displays.coord",
+        "MainTheory.Orbit5Displays.coefficientMatrix",
+        "MainTheory.Orbit5Displays.traceSecond",
+        "MainTheory.Orbit5Displays.traceFirst",
+        "MainTheory.Orbit5Displays.vectorization_second",
+        "MainTheory.Orbit5Displays.vectorization_first"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: Both partial traces of an arbitrary two-qubit rank-one operator are defined entrywise and proved equal to the two printed coefficient-matrix products. The second identity uses entrywise conjugation, not matrix adjoint."
+    },
+    {
+      "id": "supplementary.tex:eq:o5-matrixentries",
+      "statement_sha256": "584ce60a83c3a562aa4fdb0344cf5677e5cc7f08304854a2cf250a3526fcb7df",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5Displays.coefficientMatrix",
+        "MainTheory.Orbit5Displays.literal_coefficient_matrix"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: Vectorization of the arbitrary four actual coefficients gives exactly the displayed two-by-two entry order, including the row/column convention used by both partial traces."
+    },
+    {
+      "id": "supplementary.tex:eq:o6-totalvalues",
+      "statement_sha256": "15dcb916f7d95486ed40ee293302157e296c1e3b969991e275e79153570f26b7",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6MomentDisplays.physical_moments",
+        "MainTheory.Orbit6MomentDisplays.bottomProb",
+        "MainTheory.Orbit6MomentDisplays.topProb",
+        "MainTheory.Orbit6MomentDisplays.bottom_anchor",
+        "MainTheory.Orbit6MomentDisplays.bottom_edge_mass",
+        "MainTheory.Orbit6MomentDisplays.top_singleton_mass",
+        "MainTheory.Orbit6MomentDisplays.top_complement_mass",
+        "MainTheory.Orbit6MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit6MomentDisplays.top_coordinates"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: Exact rational combinations of the complete actual moment equations give bottom anchor one third, bottom edge mass two thirds, top singleton mass two thirds and top complementary-singleton mass one third. All native coordinate-to-edge and singleton mappings are finite kernel checks."
+    },
+    {
+      "id": "supplementary.tex:eq:o6-shellmasses",
+      "statement_sha256": "bb7c6c6561a9cbfee257cc002d9ae4b91d1dc999e2ef3f4e7d36c27389f6f325",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6MomentDisplays.physical_moments",
+        "MainTheory.Orbit6MomentDisplays.bottomProb",
+        "MainTheory.Orbit6MomentDisplays.topProb",
+        "MainTheory.Orbit6MomentDisplays.bottom_anchor",
+        "MainTheory.Orbit6MomentDisplays.bottom_edge_mass",
+        "MainTheory.Orbit6MomentDisplays.top_singleton_mass",
+        "MainTheory.Orbit6MomentDisplays.top_complement_mass",
+        "MainTheory.Orbit6MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit6MomentDisplays.top_coordinates"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: Exact rational combinations of the complete actual moment equations give bottom anchor one third, bottom edge mass two thirds, top singleton mass two thirds and top complementary-singleton mass one third. All native coordinate-to-edge and singleton mappings are finite kernel checks."
+    },
+    {
+      "id": "supplementary.tex:eq:o6-W5",
+      "statement_sha256": "bf5dc3c61a7c9ed969868b79a303cfb662ab84304deb57ff2f2f3b2a8c116e82",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6CharacterMatrix.W5",
+        "MainTheory.Orbit6CharacterMatrix.determinant_checked"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The literal five-by-five integer character matrix has kernel-computed determinant minus forty-eight. This review covers the displayed matrix and determinant; its derivation from individual physical character rows remains separate."
+    },
+    {
+      "id": "supplementary.tex:eq:o6-matrixidentity",
+      "statement_sha256": "73f324d25e598b847a81e4475aae3b7bc82ed1ac0440bd392ea8b0f4fb4b580e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6SpinorDisplays.anchor",
+        "MainTheory.Orbit6SpinorDisplays.bottomEdge",
+        "MainTheory.Orbit6SpinorDisplays.topSingleton",
+        "MainTheory.Orbit6SpinorDisplays.topComplement",
+        "MainTheory.Orbit6SpinorDisplays.edgeOuter",
+        "MainTheory.Orbit6SpinorDisplays.matrix_identity_of_data",
+        "MainTheory.Orbit6SpinorDisplays.physical_matrix_identity"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: For each of the five actual active coordinates, all four entries of the printed matrix identity are proved from the actual native one-flip rows before any final obstruction or vanishing of the top singleton vectors."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-anchor-equality",
+      "statement_sha256": "7f6aaca9368f21188ef1e57c93443ea1a528557512ec3bc171d1d16163ef1127",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.bottomProb",
+        "MainTheory.Orbit12MomentDisplays.topProb",
+        "MainTheory.Orbit12MomentDisplays.zero_anchor_equality",
+        "MainTheory.Orbit12MomentDisplays.four_anchor_equality"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The complete actual physical moments directly imply equality of each bottom/top empty and full active-subset anchor squared norm, with both zero-angle components included."
+    },
+    {
+      "id": "supplementary.tex:equation@15500",
+      "statement_sha256": "e21e333970a5a0dce3d0a24b6cf4d15ed70d4c50fe9a80fd2a830d333e1ee9f0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.bottomProb",
+        "MainTheory.Orbit12MomentDisplays.topProb",
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit12MomentDisplays.half_angle_moment"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The two edge masses are precisely sums of squared moduli over the actual paired free-bit coordinates. The literal half-angle-bit labels and its physical moment equation give the printed equality with the two actual top anchor norms."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-Hmoment",
+      "statement_sha256": "f1e746cab177e805636e5fb5dcf5d85ec7293fd66292545ae6348c675c3b7567",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.bottomProb",
+        "MainTheory.Orbit12MomentDisplays.topProb",
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit12MomentDisplays.half_angle_moment"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The two edge masses are precisely sums of squared moduli over the actual paired free-bit coordinates. The literal half-angle-bit labels and its physical moment equation give the printed equality with the two actual top anchor norms."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-shellmasses",
+      "statement_sha256": "2c16daf6cd1b145c0de75721b7d0d4cf7d8096e2b767e845fd9441b9d5baf525",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.bottom_edge_mass",
+        "MainTheory.Orbit12MomentDisplays.top_edge_mass",
+        "MainTheory.Orbit12MomentDisplays.bottom_anchor_mass",
+        "MainTheory.Orbit12MomentDisplays.top_anchor_mass"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: All four printed total shell and anchor masses equal one half as exact rational consequences of the actual full moment system."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-anchor-quarter",
+      "statement_sha256": "3e0bfcc183169d4a2c60e4211d90242958d8caec31d717f467ba688b07325bd0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.bottom_zero_anchor",
+        "MainTheory.Orbit12MomentDisplays.bottom_four_anchor",
+        "MainTheory.Orbit12MomentDisplays.top_zero_anchor",
+        "MainTheory.Orbit12MomentDisplays.top_four_anchor"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: Each of the four actual paired free-bit anchor norms equals one quarter, independently of the final no-code conclusion."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-edgedegrees",
+      "statement_sha256": "de7e88c982ad2953b7efc086ae556c215d988e27a7725e2f634bfbacdbad0f10",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.edge_coordinates",
+        "MainTheory.Orbit12MomentDisplays.edge_degree_0",
+        "MainTheory.Orbit12MomentDisplays.edge_degree_1",
+        "MainTheory.Orbit12MomentDisplays.edge_degree_2",
+        "MainTheory.Orbit12MomentDisplays.edge_degree_3"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: At each of the four printed active graph vertices the sum of actual bottom edge norms is exactly one quarter; the edge order is checked against the actual native words."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-edgepolytope",
+      "statement_sha256": "284d209ad0b716484e9d4b985cf58d37574df0ca18a2201b0bbc668fb92799c0",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12MomentDisplays.physical_moments",
+        "MainTheory.Orbit12MomentDisplays.representative_mass",
+        "MainTheory.Orbit12MomentDisplays.complementary_mass_0",
+        "MainTheory.Orbit12MomentDisplays.complementary_mass_1",
+        "MainTheory.Orbit12MomentDisplays.complementary_mass_2",
+        "Complex.normSq_nonneg"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The three complementary pairs of actual edge norms agree, their representative sum is one quarter, and each is nonnegative because it is a sum of complex squared moduli. This is the displayed necessary polytope constraint, not an assertion that arbitrary points satisfy full physical KL."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-AH-crossblock",
+      "statement_sha256": "7cb12497eca9bc1b5a98dbdd61701afe3298aefe6a1da4f6ff39be00e6474a1e",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12Frames.u",
+        "MainTheory.Orbit12Frames.v",
+        "MainTheory.Orbit12Frames.ut",
+        "MainTheory.Orbit12Frames.vt",
+        "MainTheory.Orbit12Frames.a",
+        "MainTheory.Orbit12Frames.b",
+        "MainTheory.Orbit12Frames.outer",
+        "MainTheory.Orbit12Frames.AHcrossBlock",
+        "MainTheory.Orbit12Frames.H0bottomFrame",
+        "MainTheory.Orbit12Frames.H0topFrame",
+        "MainTheory.Orbit12Frames.cross_block_of_data",
+        "MainTheory.Orbit12Frames.H0_frame_of_data",
+        "MainTheory.Orbit12Frames.physical_blocks"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The two actual anchor spinors and six actual edge spinors retain their native free-bit coefficient order. Actual AH one-flip rows make all four cross-block entries zero; actual H=0 diagonal and off-diagonal rows make all four positive frame entries equal."
+    },
+    {
+      "id": "supplementary.tex:eq:o12-H0frame",
+      "statement_sha256": "2239842a0251d79b0d47fdaa58e914fdfe0e57bdd368530ed2735f17042e521b",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12Frames.u",
+        "MainTheory.Orbit12Frames.v",
+        "MainTheory.Orbit12Frames.ut",
+        "MainTheory.Orbit12Frames.vt",
+        "MainTheory.Orbit12Frames.a",
+        "MainTheory.Orbit12Frames.b",
+        "MainTheory.Orbit12Frames.outer",
+        "MainTheory.Orbit12Frames.AHcrossBlock",
+        "MainTheory.Orbit12Frames.H0bottomFrame",
+        "MainTheory.Orbit12Frames.H0topFrame",
+        "MainTheory.Orbit12Frames.cross_block_of_data",
+        "MainTheory.Orbit12Frames.H0_frame_of_data",
+        "MainTheory.Orbit12Frames.physical_blocks"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: The two actual anchor spinors and six actual edge spinors retain their native free-bit coefficient order. Actual AH one-flip rows make all four cross-block entries zero; actual H=0 diagonal and off-diagonal rows make all four positive frame entries equal."
+    },
+    {
+      "id": "supplementary.tex:eq:parity4-edgedet",
+      "statement_sha256": "6c354702772856dd1be0aa80e9a8d7d3c39f514223beec04c8756b799aa694bc",
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.ParityFourEdgeDeterminant.other",
+        "MainTheory.ParityFourEdgeDeterminant.evenPoint",
+        "MainTheory.ParityFourEdgeDeterminant.rowMask",
+        "MainTheory.ParityFourEdgeDeterminant.W",
+        "MainTheory.ParityFourEdgeDeterminant.literal_even_points",
+        "MainTheory.ParityFourEdgeDeterminant.gram_checked",
+        "MainTheory.ParityFourEdgeDeterminant.absolute_determinant"
+      ],
+      "review": "20261005 actual scalar/spinor type and context review: For every one of the four parity-changing directions, the actual eight-point even-parity character matrix has Gram matrix eight times identity. Taking determinants and the real square identity gives exactly the printed absolute determinant 4096."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": [
+    {
+      "path": "MainTheory/Orbit5PhysicalRowData.lean",
+      "sha256_lf": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit6PhysicalRowData.lean",
+      "sha256_lf": "48776518df9576d3fa757b65e9cabc3ccdf4312005cc6c13e7c68047ce044fd6",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit5Displays.lean",
+      "sha256_lf": "1c7937703470e87d35e7bc842c522f5dc7be0104e66e63d0905b8cd9bb47d895",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit26MatchingZeroRow.lean",
+      "sha256_lf": "ddb3f17576f6fee83c74e6f0b2642f659576d3ba87443c80d4d0e3ffab1ac643",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit6MomentDisplays.lean",
+      "sha256_lf": "764a63fcba3d985f9ca0fbc2fec756f5b54412b3d024169218fe66fbe3ae4631",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit6CharacterMatrix.lean",
+      "sha256_lf": "1122d3897f8cf4fc1031b8675a54c72655fdb86023fbc667aad014e134ef1c92",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit6SpinorDisplays.lean",
+      "sha256_lf": "92b27b2c2f5638b33eddb233e6a6538f7584c48b80aecdcd2c582b8bb7b4daef",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit12PhysicalRowData.lean",
+      "sha256_lf": "895f8e46c731f13cf3af514bfe51018fda890b8196cdcdf3cf0e6e60cd9d46f1",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit12MomentDisplays.lean",
+      "sha256_lf": "ef93afbe810c61eef8769de2612c17b992a77adcadf2ec47ced5c714fd0873dd",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit12Frames.lean",
+      "sha256_lf": "6764c1a5cfba354c3d3c1e0f06cb8b1fee38bfaeb678d4a7276427c5599bf47c",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/Orbit20PhysicalRowData.lean",
+      "sha256_lf": "1ecdbcd6a7367ad3177231e75bedfc8f72fa111d7f0d49d4602cc2979cf167f4",
+      "passed": true
+    },
+    {
+      "path": "MainTheory/ParityFourEdgeDeterminant.lean",
+      "sha256_lf": "3b88504176f35a0b30534c61363c9d59383eb14494941bfd20fdecb5374f9dad",
+      "passed": true
+    }
+  ],
+  "source_hashes_lf": {
+    "MainTheory/Orbit5PhysicalRowData.lean": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
+    "MainTheory/Orbit6PhysicalRowData.lean": "48776518df9576d3fa757b65e9cabc3ccdf4312005cc6c13e7c68047ce044fd6",
+    "MainTheory/Orbit5Displays.lean": "1c7937703470e87d35e7bc842c522f5dc7be0104e66e63d0905b8cd9bb47d895",
+    "MainTheory/Orbit26MatchingZeroRow.lean": "ddb3f17576f6fee83c74e6f0b2642f659576d3ba87443c80d4d0e3ffab1ac643",
+    "MainTheory/Orbit6MomentDisplays.lean": "764a63fcba3d985f9ca0fbc2fec756f5b54412b3d024169218fe66fbe3ae4631",
+    "MainTheory/Orbit6CharacterMatrix.lean": "1122d3897f8cf4fc1031b8675a54c72655fdb86023fbc667aad014e134ef1c92",
+    "MainTheory/Orbit6SpinorDisplays.lean": "92b27b2c2f5638b33eddb233e6a6538f7584c48b80aecdcd2c582b8bb7b4daef",
+    "MainTheory/Orbit12PhysicalRowData.lean": "895f8e46c731f13cf3af514bfe51018fda890b8196cdcdf3cf0e6e60cd9d46f1",
+    "MainTheory/Orbit12MomentDisplays.lean": "ef93afbe810c61eef8769de2612c17b992a77adcadf2ec47ced5c714fd0873dd",
+    "MainTheory/Orbit12Frames.lean": "6764c1a5cfba354c3d3c1e0f06cb8b1fee38bfaeb678d4a7276427c5599bf47c",
+    "MainTheory/Orbit20PhysicalRowData.lean": "1ecdbcd6a7367ad3177231e75bedfc8f72fa111d7f0d49d4602cc2979cf167f4",
+    "MainTheory/ParityFourEdgeDeterminant.lean": "3b88504176f35a0b30534c61363c9d59383eb14494941bfd20fdecb5374f9dad"
+  },
+  "scope": "LF source-snapshot consistency only; mathematical acceptance requires whole kernel build and fresh transitive axiom audit."
+}

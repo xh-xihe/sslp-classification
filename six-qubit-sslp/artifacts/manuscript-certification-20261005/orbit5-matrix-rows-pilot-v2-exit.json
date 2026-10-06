@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "-X",
+    "utf8",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit5MatrixRows.lean"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 22.52821960003348
+}

@@ -1,0 +1,14 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17GraphDisplays.lean:11:31: error: unsolved goals
+c : Fin 6 → Fin 6 → ℂ
+v u r s : Fin 6
+hvu : c v u = 0
+hvr : c v r = 1
+hvs : c v s = 1
+⊢ c u r + (c u s + 0) = c u r + c u s
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit17GraphDisplays.lean:12:36: error: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  simp only [̵H̵,̵h̵v̵u̵,̵h̵v̵r̵,̵h̵v̵s̵,̵z̵e̵r̵o̵_̵m̵u̵l̵,̵z̵e̵r̵o̵_̵a̵d̵d̵,̵o̵n̵e̵_̵m̵u̵l̵,̵a̵d̵d̵_̵c̵o̵m̵m̵]̵[̲H̲,̲ ̲h̲v̲u̲,̲ ̲h̲v̲r̲,̲ ̲h̲v̲s̲,̲ ̲z̲e̲r̲o̲_̲m̲u̲l̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲,̲ ̲a̲d̲d̲_̲c̲o̲m̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

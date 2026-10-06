@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/verification/check_scalar_spinor_snapshot.py",
+    "--output",
+    "artifacts/manuscript-certification-20261005/scalar-spinor-source-snapshot-v1.json"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.07052069995552301
+}

@@ -1,0 +1,36 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6LineCompletion.lean:24:6: error: Type mismatch: After simplification, term
+  hv0
+ has type
+  v 0 = 0
+but is expected to have type
+  v ⟨0, ⋯⟩ = v 1 / u 1 * u ⟨0, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6LineCompletion.lean:25:4: error: unsolved goals
+case pos.h.«_@».Orbit6LineCompletion.2593701895._hygCtx._hyg.62.«1»
+u v : Fin 2 → ℂ
+hu : u ≠ 0
+hw : u 0 * v 1 - u 1 * v 0 = 0
+h0 : u 0 = 0
+h1 : u 1 ≠ 0
+hv0 : v 0 = 0
+⊢ v ⟨1, ⋯⟩ * u 1 = v 1 * u ⟨1, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6LineCompletion.lean:30:4: error: unsolved goals
+case neg.h.«_@».Orbit6LineCompletion.2593701895._hygCtx._hyg.62.«0»
+u v : Fin 2 → ℂ
+hu : u ≠ 0
+hw : u 0 * v 1 - u 1 * v 0 = 0
+h0 : ¬u 0 = 0
+⊢ v ⟨0, ⋯⟩ * u 0 = v 0 * u ⟨0, ⋯⟩
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6LineCompletion.lean:33:6: error: Tactic `apply` failed: could not unify the conclusion of `(eq_div_iff h0).mp`
+  ?m.924 * u 0 = ?m.922
+with the goal
+  v ⟨1, ⋯⟩ = v 0 / u 0 * u ⟨1, ⋯⟩
+
+Note: The full type of `(eq_div_iff h0).mp` is
+  ?m.924 = ?m.922 / u 0 → ?m.924 * u 0 = ?m.922
+
+case neg.h.«_@».Orbit6LineCompletion.2593701895._hygCtx._hyg.62.«1»
+u v : Fin 2 → ℂ
+hu : u ≠ 0
+hw : u 0 * v 1 - u 1 * v 0 = 0
+h0 : ¬u 0 = 0
+⊢ v ⟨1, ⋯⟩ = v 0 / u 0 * u ⟨1, ⋯⟩

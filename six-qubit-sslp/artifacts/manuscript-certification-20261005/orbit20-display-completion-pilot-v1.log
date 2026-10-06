@@ -1,0 +1,30 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:11:3: error: unexpected token 'prefix'; expected identifier
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:11:67: error: Application type mismatch: The argument
+  fun m => Fin.castAdd m j
+has type
+  (m : ℕ) → Fin (3 + m)
+but is expected to have type
+  Fin 6
+in the application
+  bottomWord r 0 fun m => Fin.castAdd m j
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:20:23: error: Application type mismatch: The argument
+  fun m => Fin.castAdd m k
+has type
+  (m : ℕ) → Fin (3 + m)
+but is expected to have type
+  Fin 6
+in the application
+  matchedTopWord r y fun m => Fin.castAdd m k
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:20:48: error: Application type mismatch: The argument
+  fun m => Fin.castAdd m k
+has type
+  (m : ℕ) → Fin (3 + m)
+but is expected to have type
+  Fin 6
+in the application
+  bottomWord r y fun m => Fin.castAdd m k
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:83:20: error: unexpected token 'prefix'; expected '_', 'let', identifier or term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:83:27: error: unexpected identifier; expected ':'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:91:20: error: unexpected identifier; expected ':'
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:106:20: error: unexpected token 'prefix'; expected '_', 'let', identifier or term
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit20DisplayCompletion.lean:106:27: error: unexpected identifier; expected ':'

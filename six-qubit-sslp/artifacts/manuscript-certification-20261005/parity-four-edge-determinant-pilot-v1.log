@@ -1,0 +1,8 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ParityFourEdgeDeterminant.lean:28:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (?M * ?N).det
+in the target expression
+  (fun M => M.det) (W k * (W k)ᵀ) = (fun M => M.det) (8 • 1)
+
+k : Fin 4
+hd : (fun M => M.det) (W k * (W k)ᵀ) = (fun M => M.det) (8 • 1)
+⊢ |(W k).det| = 4096

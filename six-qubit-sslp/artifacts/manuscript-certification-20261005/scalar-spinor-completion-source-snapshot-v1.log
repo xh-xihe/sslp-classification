@@ -1,0 +1,12 @@
+PASS: MainTheory/Orbit5PhysicalRowData.lean
+PASS: MainTheory/Orbit6PhysicalRowData.lean
+PASS: MainTheory/Orbit5Displays.lean
+PASS: MainTheory/Orbit26MatchingZeroRow.lean
+PASS: MainTheory/Orbit6MomentDisplays.lean
+PASS: MainTheory/Orbit6CharacterMatrix.lean
+PASS: MainTheory/Orbit6SpinorDisplays.lean
+PASS: MainTheory/Orbit12PhysicalRowData.lean
+PASS: MainTheory/Orbit12MomentDisplays.lean
+PASS: MainTheory/Orbit12Frames.lean
+PASS: MainTheory/Orbit20PhysicalRowData.lean
+PASS: MainTheory/ParityFourEdgeDeterminant.lean

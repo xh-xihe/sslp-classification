@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12AnchorScalars.lean:14:51: error: This simp argument is unused:
+  Complex.normSq_ofReal
+
+Hint: Omit it from the simp argument list.
+  simp only [̵n̵s̵q̵,̵P̵i̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵s̵m̵u̵l̵_̵e̵q̵_̵m̵u̵l̵,̵m̵a̵p̵_̵m̵u̵l̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵o̵f̵R̵e̵a̵l̵]̵[̲n̲s̲q̲,̲ ̲P̲i̲.̲s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲,̲ ̲s̲m̲u̲l̲_̲e̲q̲_̲m̲u̲l̲,̲ ̲m̲a̲p̲_̲m̲u̲l̲]̲ at h ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "staged_modules": [
+    {
+      "module": "Orbit5PhysicalRowData",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit5PhysicalRowData.lean",
+      "staged_sha256_lf": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
+      "canonical_source": "MainTheory/Orbit5PhysicalRowData.lean",
+      "canonical_sha256_lf": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
+      "strict_pilot": "orbit5-physical-row-data-pilot-v1",
+      "pilot_record_sha256": "4ef65b395dcb8373e6769e3cd79bb70b11f0c1bd8c2cacbfa5fc414fbb04256e",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6PhysicalRowData",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit6PhysicalRowData.lean",
+      "staged_sha256_lf": "48776518df9576d3fa757b65e9cabc3ccdf4312005cc6c13e7c68047ce044fd6",
+      "canonical_source": "MainTheory/Orbit6PhysicalRowData.lean",
+      "canonical_sha256_lf": "48776518df9576d3fa757b65e9cabc3ccdf4312005cc6c13e7c68047ce044fd6",
+      "strict_pilot": "orbit6-physical-row-data-pilot-v2",
+      "pilot_record_sha256": "78935cf8f1a6b19dd21ea5784b8a522adb4ec1f2ad43689b4ddd2acbe09f1a6f",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit5Displays",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit5Displays.lean",
+      "staged_sha256_lf": "0086a1057f2f5149173200c04ce00b38c4da957ad3fe093b39dcac700542f182",
+      "canonical_source": "MainTheory/Orbit5Displays.lean",
+      "canonical_sha256_lf": "1c7937703470e87d35e7bc842c522f5dc7be0104e66e63d0905b8cd9bb47d895",
+      "strict_pilot": "orbit5-displays-pilot-v3",
+      "pilot_record_sha256": "7ce81ce402812ea525397724ad139f7dba88a555d2e6e8df2cb54a9e95a95ca6",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit26MatchingZeroRow",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit26MatchingZeroRow.lean",
+      "staged_sha256_lf": "1b6d1e0ad2f2ad815249e232a552e7c6ae40edcf67bc393ac48d1c5464d2c107",
+      "canonical_source": "MainTheory/Orbit26MatchingZeroRow.lean",
+      "canonical_sha256_lf": "ddb3f17576f6fee83c74e6f0b2642f659576d3ba87443c80d4d0e3ffab1ac643",
+      "strict_pilot": "orbit26-matching-zero-row-pilot-v1",
+      "pilot_record_sha256": "897c1782926a314523866d969498a30df66a872ea1ff2c2fe0427cc14c808e1b",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6MomentDisplays",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit6MomentDisplays.lean",
+      "staged_sha256_lf": "764a63fcba3d985f9ca0fbc2fec756f5b54412b3d024169218fe66fbe3ae4631",
+      "canonical_source": "MainTheory/Orbit6MomentDisplays.lean",
+      "canonical_sha256_lf": "764a63fcba3d985f9ca0fbc2fec756f5b54412b3d024169218fe66fbe3ae4631",
+      "strict_pilot": "orbit6-moment-displays-pilot-v1",
+      "pilot_record_sha256": "ddda74f553aee580f111856d7d53d05c742dd7e9e2d1ad97f6daa576a4bb70cf",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6CharacterMatrix",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit6CharacterMatrix.lean",
+      "staged_sha256_lf": "1122d3897f8cf4fc1031b8675a54c72655fdb86023fbc667aad014e134ef1c92",
+      "canonical_source": "MainTheory/Orbit6CharacterMatrix.lean",
+      "canonical_sha256_lf": "1122d3897f8cf4fc1031b8675a54c72655fdb86023fbc667aad014e134ef1c92",
+      "strict_pilot": "orbit6-character-matrix-pilot-v1",
+      "pilot_record_sha256": "da45e9216dc78a80f3e184bc2bf3ffebc7455d0f326507a34268c62195e6237b",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6SpinorDisplays",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit6SpinorDisplays.lean",
+      "staged_sha256_lf": "4818181a5210715c97e3c192c46400264445d64cfd952dea94dc7e275000a810",
+      "canonical_source": "MainTheory/Orbit6SpinorDisplays.lean",
+      "canonical_sha256_lf": "92b27b2c2f5638b33eddb233e6a6538f7584c48b80aecdcd2c582b8bb7b4daef",
+      "strict_pilot": "orbit6-spinor-displays-pilot-v15",
+      "pilot_record_sha256": "54885aa674fbc428ecba8cd515bfe03ac6c866dd9bfe59158905d1b056e11974",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12PhysicalRowData",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit12PhysicalRowData.lean",
+      "staged_sha256_lf": "895f8e46c731f13cf3af514bfe51018fda890b8196cdcdf3cf0e6e60cd9d46f1",
+      "canonical_source": "MainTheory/Orbit12PhysicalRowData.lean",
+      "canonical_sha256_lf": "895f8e46c731f13cf3af514bfe51018fda890b8196cdcdf3cf0e6e60cd9d46f1",
+      "strict_pilot": "orbit12-physical-row-data-pilot-v1",
+      "pilot_record_sha256": "a8592705ab73d1ee9d734e1c752d90ea91586fc69deb1283891bb322f9901290",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12MomentDisplays",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit12MomentDisplays.lean",
+      "staged_sha256_lf": "ef93afbe810c61eef8769de2612c17b992a77adcadf2ec47ced5c714fd0873dd",
+      "canonical_source": "MainTheory/Orbit12MomentDisplays.lean",
+      "canonical_sha256_lf": "ef93afbe810c61eef8769de2612c17b992a77adcadf2ec47ced5c714fd0873dd",
+      "strict_pilot": "orbit12-moment-displays-pilot-v1",
+      "pilot_record_sha256": "db1e9667369e22916787f86f074578ed068d81b710f465e7275cb807c9bd898d",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12Frames",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit12Frames.lean",
+      "staged_sha256_lf": "e0759b08ff93e5e5060c7970925848531daa190f9842af34eefd040983fb1012",
+      "canonical_source": "MainTheory/Orbit12Frames.lean",
+      "canonical_sha256_lf": "6764c1a5cfba354c3d3c1e0f06cb8b1fee38bfaeb678d4a7276427c5599bf47c",
+      "strict_pilot": "orbit12-frames-pilot-v2",
+      "pilot_record_sha256": "e1aff32fee3be69d429d3a2d9b4f27da9e291bd327980b5964d8689435ab52ed",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit20PhysicalRowData",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/Orbit20PhysicalRowData.lean",
+      "staged_sha256_lf": "1ecdbcd6a7367ad3177231e75bedfc8f72fa111d7f0d49d4602cc2979cf167f4",
+      "canonical_source": "MainTheory/Orbit20PhysicalRowData.lean",
+      "canonical_sha256_lf": "1ecdbcd6a7367ad3177231e75bedfc8f72fa111d7f0d49d4602cc2979cf167f4",
+      "strict_pilot": "orbit20-physical-row-data-pilot-v2",
+      "pilot_record_sha256": "2c4c7bef34b203552b5d10b71b153c8a7bc7f13783ab699b1fd4e98214f0e362",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ParityFourEdgeDeterminant",
+      "staged_source": "tmp/manuscript-publication-20261005/drafts/ParityFourEdgeDeterminant.lean",
+      "staged_sha256_lf": "3b88504176f35a0b30534c61363c9d59383eb14494941bfd20fdecb5374f9dad",
+      "canonical_source": "MainTheory/ParityFourEdgeDeterminant.lean",
+      "canonical_sha256_lf": "3b88504176f35a0b30534c61363c9d59383eb14494941bfd20fdecb5374f9dad",
+      "strict_pilot": "parity-four-edge-determinant-pilot-v2",
+      "pilot_record_sha256": "ace9179af0a0c98fd6f47deba15269098973e7f32a831f8e413f22fc7bfb8079",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Independent strict pilots pass. Canonical whole build, type/context review, fresh audit and publication remain pending."
+}

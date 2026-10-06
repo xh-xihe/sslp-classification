@@ -95,6 +95,16 @@ This checks the LF hashes of the fifteen matching/parity sources against
 their recorded snapshot. It does not replace whole kernel building,
 fresh transitive standard-axiom auditing or manuscript type review.
 
+## Scalar and spinor source snapshot
+
+```console
+python tools/verification/check_scalar_spinor_snapshot.py
+```
+
+This checks the LF hashes of the twelve scalar/spinor sources against
+their recorded snapshot. It does not replace whole kernel building,
+fresh transitive standard-axiom auditing or manuscript type review.
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

@@ -70,6 +70,11 @@ the outstanding manuscript review are recorded in [current status](status.md).
 | Orbit 13 and 14: actual physical parity block equations | [MainTheory/Orbit13BlockData.lean](../MainTheory/Orbit13BlockData.lean), [MainTheory/Orbit13Frames.lean](../MainTheory/Orbit13Frames.lean), [MainTheory/Orbit14BlockFrames.lean](../MainTheory/Orbit14BlockFrames.lean), [MainTheory/Orbit14EdgeRows.lean](../MainTheory/Orbit14EdgeRows.lean) |
 | Literal order-two residues and repetition-Pauli compression | [MainTheory/OrderTwoRecordResidues.lean](../MainTheory/OrderTwoRecordResidues.lean), [MainTheory/Orbit24RepetitionPaulis.lean](../MainTheory/Orbit24RepetitionPaulis.lean) |
 | Tail identity and weighted-line frame algebra | [MainTheory/Orbit19TailIdentity.lean](../MainTheory/Orbit19TailIdentity.lean), [MainTheory/WeightedLineFrames.lean](../MainTheory/WeightedLineFrames.lean) |
+| Orbit 5: actual physical rows, marginal expectation and vectorization | [MainTheory/Orbit5PhysicalRowData.lean](../MainTheory/Orbit5PhysicalRowData.lean), [MainTheory/Orbit5Displays.lean](../MainTheory/Orbit5Displays.lean) |
+| Orbit 6: actual moments, spinor rows and coordinate matrix identities | [MainTheory/Orbit6PhysicalRowData.lean](../MainTheory/Orbit6PhysicalRowData.lean), [MainTheory/Orbit6MomentDisplays.lean](../MainTheory/Orbit6MomentDisplays.lean), [MainTheory/Orbit6CharacterMatrix.lean](../MainTheory/Orbit6CharacterMatrix.lean), [MainTheory/Orbit6SpinorDisplays.lean](../MainTheory/Orbit6SpinorDisplays.lean) |
+| Orbit 12: actual moments, cross blocks and frame equations | [MainTheory/Orbit12PhysicalRowData.lean](../MainTheory/Orbit12PhysicalRowData.lean), [MainTheory/Orbit12MomentDisplays.lean](../MainTheory/Orbit12MomentDisplays.lean), [MainTheory/Orbit12Frames.lean](../MainTheory/Orbit12Frames.lean) |
+| Orbit 20: actual pre-obstruction physical row data | [MainTheory/Orbit20PhysicalRowData.lean](../MainTheory/Orbit20PhysicalRowData.lean) |
+| Matching zero row and parity character determinants | [MainTheory/Orbit26MatchingZeroRow.lean](../MainTheory/Orbit26MatchingZeroRow.lean), [MainTheory/ParityFourEdgeDeterminant.lean](../MainTheory/ParityFourEdgeDeterminant.lean) |
 
 The two full-image endpoints are
 `MainTheory.Orbit2FullImage.directory_image` and

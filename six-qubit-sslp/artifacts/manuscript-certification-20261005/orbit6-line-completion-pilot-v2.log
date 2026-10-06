@@ -1,0 +1,6 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit6LineCompletion.lean:36:6: error: ring failed, ring expressions not equal
+u v : Fin 2 → ℂ
+hu : u ≠ 0
+hw : u 0 * v 1 - u 1 * v 0 = 0
+h0 : ¬u 0 = 0
+⊢ v 1 * u 0 * 2 - u 1 * v 0 * 2 = 0

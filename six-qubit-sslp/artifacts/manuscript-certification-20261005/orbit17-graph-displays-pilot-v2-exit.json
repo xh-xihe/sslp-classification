@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "python",
+    "-X",
+    "utf8",
+    "tmp/manuscript-publication-20261005/compile_staged.py",
+    "Orbit17GraphDisplays.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 17.72930180002004
+}

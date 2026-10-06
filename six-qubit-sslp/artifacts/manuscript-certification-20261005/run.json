@@ -25,32 +25,32 @@
     "current-source ledger/prose/errata binding",
     "canonical-branch publication after successful checks"
   ],
-  "active_lean_modules": 16186,
+  "active_lean_modules": 16198,
   "whole_build": {
     "status": "PASS",
-    "modules": 16186,
-    "rebuilt": 17,
-    "reused": 16169,
-    "record": "full-build-success-16186.json",
-    "log": "matching-parity-completion-full-build-v1.log"
+    "modules": 16198,
+    "rebuilt": 14,
+    "reused": 16184,
+    "record": "full-build-success-16198.json",
+    "log": "scalar-spinor-completion-full-build-v1.log"
   },
   "axiom_audit": {
     "status": "PASS",
-    "roots": 8932,
+    "roots": 9080,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8932.json",
-    "log": "matching-parity-completion-axioms-v1.log"
+    "record": "axioms-9080.json",
+    "log": "scalar-spinor-completion-axioms-v2.log"
   },
   "current_claim_status_counts": {
     "conjecture": 3,
-    "covered": 1763,
+    "covered": 1783,
     "expository": 5,
     "partial": 1,
-    "unreviewed": 58
+    "unreviewed": 38
   },
   "kernel_type_inspections": [
     {
@@ -120,14 +120,18 @@
     {
       "record": "kernel-types-matching-parity-completion-v2.json",
       "declarations": 4295
+    },
+    {
+      "record": "kernel-types-scalar-spinor-completion-v1.json",
+      "declarations": 4410
     }
   ],
   "fully_kernel_manuscript_certification": "not_complete",
   "last_accepted_local_proof_snapshot": {
-    "modules": 16186,
-    "axiom_roots": 8932,
-    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16186.json",
-    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-8932.json"
+    "modules": 16198,
+    "axiom_roots": 9080,
+    "build_record": "artifacts/manuscript-certification-20261005/full-build-success-16198.json",
+    "axiom_record": "artifacts/manuscript-certification-20261005/axioms-9080.json"
   },
   "current_tool_regressions": {
     "certification_tools": 44,
@@ -151,7 +155,7 @@
     "claims": "incomplete",
     "prose-review": "incomplete",
     "errata": "incomplete",
-    "log": "matching-parity-completion-correspondence-gates.log"
+    "log": "scalar-spinor-completion-correspondence-gates-v2.log"
   },
   "publication": {
     "status": "PASS",
@@ -162,22 +166,22 @@
   },
   "last_accepted_whole_build": {
     "status": "PASS",
-    "modules": 16186,
-    "rebuilt": 17,
-    "reused": 16169,
-    "record": "full-build-success-16186.json",
-    "log": "matching-parity-completion-full-build-v1.log"
+    "modules": 16198,
+    "rebuilt": 14,
+    "reused": 16184,
+    "record": "full-build-success-16198.json",
+    "log": "scalar-spinor-completion-full-build-v1.log"
   },
   "last_accepted_axiom_audit": {
     "status": "PASS",
-    "roots": 8932,
+    "roots": 9080,
     "allowed": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "record": "axioms-8932.json",
-    "log": "matching-parity-completion-axioms-v1.log"
+    "record": "axioms-9080.json",
+    "log": "scalar-spinor-completion-axioms-v2.log"
   },
   "current_prose_review": {
     "status": "partial",
@@ -569,8 +573,8 @@
     "record": "artifacts/manuscript-certification-20261005/completion-staged-proof-snapshot-72.json"
   },
   "pending_proof_batch": {
-    "record": "artifacts/manuscript-certification-20261005/matching-parity-work-in-progress.json",
-    "scope": "Fifteen canonical staged sources; last acceptance excludes these pending fresh whole build, type inspection and audit."
+    "record": "artifacts/manuscript-certification-20261005/scalar-spinor-work-in-progress.json",
+    "scope": "Actual scalar/spinor intermediates; whole-build acceptance and publication pending."
   },
   "identified_si_qualifications": 0,
   "current_context_revalidation": {
@@ -578,5 +582,11 @@
     "status": "PASS",
     "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-nonempty-mask-context.json",
     "axiom_evidence": "artifacts/manuscript-certification-20261005/nonempty-mask-context-axioms-8627.json"
+  },
+  "proof_acceptance": "pending_current_proof_snapshot",
+  "pending_publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification",
+    "modules": 16198
   }
 }

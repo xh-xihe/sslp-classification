@@ -1,0 +1,55 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12Frames.lean:50:4: error: ring failed, ring expressions not equal
+c d : SS.State 6 ℂ
+h0 : star (c y0) * d z0 + star (c y7) * d z7 = 0
+h1 : star (c y0) * d z8 + star (c y7) * d z15 = 0
+h2 : star (c y8) * d z0 + star (c y15) * d z7 = 0
+h3 : star (c y8) * d z8 + star (c y15) * d z15 = 0
+h4 :
+  star (c y8) * c y0 + star (c y15) * c y7 =
+    star (d z14) * d z6 + star (d z13) * d z5 + star (d z12) * d z4 + star (d z11) * d z3 + star (d z10) * d z2 +
+      star (d z9) * d z1
+h5 : Complex.normSq (c y0) + Complex.normSq (c y8) = 1 / 4
+h6 : Complex.normSq (c y7) + Complex.normSq (c y15) = 1 / 4
+h7 :
+  Complex.normSq (c y0) + Complex.normSq (c y7) =
+    Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4) + Complex.normSq (d z3) +
+        Complex.normSq (d z2) +
+      Complex.normSq (d z1)
+h8 :
+  Complex.normSq (c y8) + Complex.normSq (c y15) =
+    Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12) + Complex.normSq (d z11) +
+        Complex.normSq (d z10) +
+      Complex.normSq (d z9)
+h9 :
+  Complex.normSq (d z1) + Complex.normSq (d z9) + (Complex.normSq (d z2) + Complex.normSq (d z10)) +
+      (Complex.normSq (d z3) + Complex.normSq (d z11)) =
+    1 / 4
+h10 : star (c y6) * d z0 + star (c y14) * d z8 + (star (c y7) * d z1 + star (c y15) * d z9) = 0
+h11 : star (c y0) * d z1 + star (c y8) * d z9 + (star (c y6) * d z7 + star (c y14) * d z15) = 0
+h12 : star (c y5) * d z0 + star (c y13) * d z8 + (star (c y7) * d z2 + star (c y15) * d z10) = 0
+h13 : star (c y0) * d z2 + star (c y8) * d z10 + (star (c y5) * d z7 + star (c y13) * d z15) = 0
+h14 : star (c y4) * d z0 + star (c y12) * d z8 + (star (c y7) * d z3 + star (c y15) * d z11) = 0
+h15 : star (c y0) * d z3 + star (c y8) * d z11 + (star (c y4) * d z7 + star (c y12) * d z15) = 0
+c0 :
+  star (c y0) * c y0 + star (c y7) * c y7 =
+    star (d z6) * d z6 + star (d z5) * d z5 + star (d z4) * d z4 + star (d z3) * d z3 + star (d z2) * d z2 +
+      star (d z1) * d z1
+c1 :
+  star (c y8) * c y8 + star (c y15) * c y15 =
+    star (d z14) * d z14 + star (d z13) * d z13 + star (d z12) * d z12 + star (d z11) * d z11 + star (d z10) * d z10 +
+      star (d z9) * d z9
+hs :
+  star (star (c y8) * c y0 + star (c y15) * c y7) =
+    star
+      (star (d z14) * d z6 + star (d z13) * d z5 + star (d z12) * d z4 + star (d z11) * d z3 + star (d z10) * d z2 +
+        star (d z9) * d z1)
+⊢ c y8 * star (c y0) + c y15 * star (c y7) +
+            (star
+                (star (d z14) * d z6 + star (d z13) * d z5 + star (d z12) * d z4 + star (d z11) * d z3 +
+                    star (d z10) * d z2 +
+                  star (d z9) * d z1) -
+              d z14 * star (d z6)) +
+          (-(d z13 * star (d z5)) - d z12 * star (d z4)) +
+        (-(d z11 * star (d z3)) - d z10 * star (d z2)) +
+      (-(d z9 * star (d z1)) - star (star (c y8) * c y0 + star (c y15) * c y7)) =
+    0

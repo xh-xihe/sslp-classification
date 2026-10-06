@@ -1,0 +1,20 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:10:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauliX`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:10:29: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauliY`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:11:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:12:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:13:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:14:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:15:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:16:4: error(lean.unknownIdentifier): Unknown constant `SS.PauliString.pauli2`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit13DisplayCompletion.lean:18:58: error: Tactic `decide` failed for proposition
+  ∀ (i : Fin 8), (errors i).wt ≤ 2
+because its `Decidable` instance
+  Nat.decidableForallFin fun i => (errors i).wt ≤ 2
+did not reduce to `isTrue` or `isFalse`.
+
+Reduction got stuck at the `Decidable` instance
+  match (errors ⟨0, ⋯⟩).wt.ble 2, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯

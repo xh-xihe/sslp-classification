@@ -1,0 +1,49 @@
+{
+  "paper_version": "20261003",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "sources",
+      "passed": true,
+      "detail": "16198 Lean sources clean",
+      "seconds": 181.125
+    },
+    {
+      "check": "readme",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\readme-names.log; all present",
+      "seconds": 56.765
+    },
+    {
+      "check": "audit-names",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\audit-names.log; declarations found in MainTheory, SS, SixQubit, QECC, Orbit2: 590364\naudit names checked: 9078, unresolved: 0\nclaims-ledger names checked: 13544, unresolved: 1\n  results/paper-claims-20261003.json  supplementary.tex:eq:o12-edgepolytope  Complex.normSq_nonneg",
+      "seconds": 26.172
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\named-results.log; named-results document is current",
+      "seconds": 0.922
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\claims.log; FAIL: 39 incomplete assertions (partial=1, unreviewed=38); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:eq:quantum-Singleton, supplementary.tex:q2fam:eq:split-orbits, supplementary.tex:eq:o5-matrixflip, supplementary.tex:eq:o5-schmidt, supplementary.tex:eq:o5-offdiagonal-system, ...",
+      "seconds": 0.891
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.047
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed",
+      "seconds": 0.0
+    }
+  ]
+}

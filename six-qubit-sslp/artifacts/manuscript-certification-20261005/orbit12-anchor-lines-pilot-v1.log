@@ -1,0 +1,7 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12AnchorLines.lean:63:41: error(lean.unknownIdentifier): Unknown constant `Matrix.vecMulVec_conjTranspose`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12AnchorLines.lean:63:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  (Matrix.vecMulVec (ut d) (star (u c)))ᴴ + (Matrix.vecMulVec (vt d) (star (v c)))ᴴ = 0
+but is expected to have type
+  Matrix.vecMulVec (u c) (star (ut d)) + Matrix.vecMulVec (v c) (star (vt d)) = 0
