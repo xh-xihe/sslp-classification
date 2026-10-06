@@ -1,0 +1,64 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:25:2: error: 'change' tactic failed, pattern
+  star (u 0) * (F 0 0 * b 0 + F 0 1 * b 2) + star (u 1) * (F 0 0 * b 1 + F 0 1 * b 3) +
+          star (u 2) * (F 1 0 * b 0 + F 1 1 * b 2) +
+        star (u 3) * (F 1 0 * b 1 + F 1 1 * b 3) +
+      (star (a 0) * (F 0 0 * v 0 + F 0 1 * v 2) + star (a 1) * (F 0 0 * v 1 + F 0 1 * v 3) +
+          star (a 2) * (F 1 0 * v 0 + F 1 1 * v 2) +
+        star (a 3) * (F 1 0 * v 1 + F 1 1 * v 3)) =
+    F 0 0 * (b 0 * star (u 0) + b 1 * star (u 1) + (v 0 * star (a 0) + v 1 * star (a 1))) +
+          F 0 1 * (b 2 * star (u 0) + b 3 * star (u 1) + (v 2 * star (a 0) + v 3 * star (a 1))) +
+        F 1 0 * (b 0 * star (u 2) + b 1 * star (u 3) + (v 0 * star (a 2) + v 1 * star (a 3))) +
+      F 1 1 * (b 2 * star (u 2) + b 3 * star (u 3) + (v 2 * star (a 2) + v 3 * star (a 3)))
+is not definitionally equal to target
+  star (u 0) * (F (row4 0) 0 * b (coord 0 (col4 0)) + F (row4 0) 1 * b (coord 1 (col4 0))) +
+            star (u 1) * (F (row4 1) 0 * b (coord 0 (col4 1)) + F (row4 1) 1 * b (coord 1 (col4 1))) +
+          star (u 2) * (F (row4 2) 0 * b (coord 0 (col4 2)) + F (row4 2) 1 * b (coord 1 (col4 2))) +
+        star (u 3) * (F (row4 3) 0 * b (coord 0 (col4 3)) + F (row4 3) 1 * b (coord 1 (col4 3))) +
+      (star (a 0) * (F (row4 0) 0 * v (coord 0 (col4 0)) + F (row4 0) 1 * v (coord 1 (col4 0))) +
+            star (a 1) * (F (row4 1) 0 * v (coord 0 (col4 1)) + F (row4 1) 1 * v (coord 1 (col4 1))) +
+          star (a 2) * (F (row4 2) 0 * v (coord 0 (col4 2)) + F (row4 2) 1 * v (coord 1 (col4 2))) +
+        star (a 3) * (F (row4 3) 0 * v (coord 0 (col4 3)) + F (row4 3) 1 * v (coord 1 (col4 3)))) =
+    F 0 0 *
+          (b (coord 0 0) * star (u (coord 0 0)) + b (coord 0 1) * star (u (coord 0 1)) +
+            (v (coord 0 0) * star (a (coord 0 0)) + v (coord 0 1) * star (a (coord 0 1)))) +
+        F 0 1 *
+          (b (coord 1 0) * star (u (coord 0 0)) + b (coord 1 1) * star (u (coord 0 1)) +
+            (v (coord 1 0) * star (a (coord 0 0)) + v (coord 1 1) * star (a (coord 0 1)))) +
+      (F 1 0 *
+          (b (coord 0 0) * star (u (coord 1 0)) + b (coord 0 1) * star (u (coord 1 1)) +
+            (v (coord 0 0) * star (a (coord 1 0)) + v (coord 0 1) * star (a (coord 1 1)))) +
+        F 1 1 *
+          (b (coord 1 0) * star (u (coord 1 0)) + b (coord 1 1) * star (u (coord 1 1)) +
+            (v (coord 1 0) * star (a (coord 1 0)) + v (coord 1 1) * star (a (coord 1 1)))))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:32:2: error: 'change' tactic failed, pattern
+  star (u 0) * (F 0 0 * b 0 + F 0 1 * b 1) + star (u 1) * (F 1 0 * b 0 + F 1 1 * b 1) +
+          star (u 2) * (F 0 0 * b 2 + F 0 1 * b 3) +
+        star (u 3) * (F 1 0 * b 2 + F 1 1 * b 3) +
+      (star (a 0) * (F 0 0 * v 0 + F 0 1 * v 1) + star (a 1) * (F 1 0 * v 0 + F 1 1 * v 1) +
+          star (a 2) * (F 0 0 * v 2 + F 0 1 * v 3) +
+        star (a 3) * (F 1 0 * v 2 + F 1 1 * v 3)) =
+    F 0 0 * (b 0 * star (u 0) + b 2 * star (u 2) + (v 0 * star (a 0) + v 2 * star (a 2))) +
+          F 0 1 * (b 1 * star (u 0) + b 3 * star (u 2) + (v 1 * star (a 0) + v 3 * star (a 2))) +
+        F 1 0 * (b 0 * star (u 1) + b 2 * star (u 3) + (v 0 * star (a 1) + v 2 * star (a 3))) +
+      F 1 1 * (b 1 * star (u 1) + b 3 * star (u 3) + (v 1 * star (a 1) + v 3 * star (a 3)))
+is not definitionally equal to target
+  star (u 0) * (F (col4 0) 0 * b (coord (row4 0) 0) + F (col4 0) 1 * b (coord (row4 0) 1)) +
+            star (u 1) * (F (col4 1) 0 * b (coord (row4 1) 0) + F (col4 1) 1 * b (coord (row4 1) 1)) +
+          star (u 2) * (F (col4 2) 0 * b (coord (row4 2) 0) + F (col4 2) 1 * b (coord (row4 2) 1)) +
+        star (u 3) * (F (col4 3) 0 * b (coord (row4 3) 0) + F (col4 3) 1 * b (coord (row4 3) 1)) +
+      (star (a 0) * (F (col4 0) 0 * v (coord (row4 0) 0) + F (col4 0) 1 * v (coord (row4 0) 1)) +
+            star (a 1) * (F (col4 1) 0 * v (coord (row4 1) 0) + F (col4 1) 1 * v (coord (row4 1) 1)) +
+          star (a 2) * (F (col4 2) 0 * v (coord (row4 2) 0) + F (col4 2) 1 * v (coord (row4 2) 1)) +
+        star (a 3) * (F (col4 3) 0 * v (coord (row4 3) 0) + F (col4 3) 1 * v (coord (row4 3) 1))) =
+    F 0 0 *
+          (b (coord 0 0) * star (u (coord 0 0)) + b (coord 1 0) * star (u (coord 1 0)) +
+            (v (coord 0 0) * star (a (coord 0 0)) + v (coord 1 0) * star (a (coord 1 0)))) +
+        F 0 1 *
+          (b (coord 0 1) * star (u (coord 0 0)) + b (coord 1 1) * star (u (coord 1 0)) +
+            (v (coord 0 1) * star (a (coord 0 0)) + v (coord 1 1) * star (a (coord 1 0)))) +
+      (F 1 0 *
+          (b (coord 0 0) * star (u (coord 0 1)) + b (coord 1 0) * star (u (coord 1 1)) +
+            (v (coord 0 0) * star (a (coord 0 1)) + v (coord 1 0) * star (a (coord 1 1)))) +
+        F 1 1 *
+          (b (coord 0 1) * star (u (coord 0 1)) + b (coord 1 1) * star (u (coord 1 1)) +
+            (v (coord 0 1) * star (a (coord 0 1)) + v (coord 1 1) * star (a (coord 1 1)))))

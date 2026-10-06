@@ -1,0 +1,190 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:21:91: error: Application type mismatch: The argument
+  h
+has type
+  rowNorm Y i = 0
+but is expected to have type
+  ∑ i_1 ∈ ?m.25, Complex.normSq (Y i i_1) = 0
+in the application
+  (Finset.sum_eq_zero_iff_of_nonneg fun j x => Complex.normSq_nonneg (Y i j)).mp h
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:35:50: error: unsolved goals
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+j : Fin 2
+⊢ (![0, 1] ᵥ* Y) j = Y 1 j ∧ (![1, 0] ᵥ* Y) j = Y 0 j
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:53:29: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  swap * swapᴴ
+in the target expression
+  swap * swap * Y = Y
+
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+⊢ swap * swap * Y = Y
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:58:46: error: unsolved goals
+case a.«_@»._internal._hyg.0.«0».«0»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (Matrix.vecTail fun i j => if i = j then ![↑s, 0] i else 0) 1 = 0
+
+case a.«_@»._internal._hyg.0.«0».«1»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (Matrix.vecTail fun i j => if i = j then ![↑s, 0] i else 0) 0 = 0
+
+case a.«_@»._internal._hyg.0.«1».«0»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (fun i j => if i = j then ![↑s, 0] i else 0) 1 = 0
+
+case a.«_@»._internal._hyg.0.«1».«1»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (fun i j => if i = j then ![↑s, 0] i else 0) 0 = ↑s
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:72:4: error: unsolved goals
+case neg.refine_2
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : ¬0 < rowNorm Y 1
+hz1 : ∀ (j : Fin 2), Y 1 j = 0
+hY : Y = 0
+⊢ 0 = Matrix.of fun i j => if i = j then ![0, 0] i else 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:37:20: error: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  simp [̵Y̵'̵,̵s̵w̵a̵p̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵]̵[̲Y̲'̲,̲ ̲s̲w̲a̲p̲,̲ ̲F̲i̲n̲.̲s̲u̲m̲_̲u̲n̲i̲v̲_̲t̲w̲o̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:37:37: error: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  simp [̵Y̵'̵,̵s̵w̵a̵p̵,̵M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵,̵F̵i̵n̵.̵s̵u̵m̵_̵u̵n̵i̵v̵_̵t̵w̵o̵]̵[̲Y̲'̲,̲ ̲s̲w̲a̲p̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲m̲u̲l̲_̲a̲p̲p̲l̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:99:29: error: Application type mismatch: The argument
+  of_decide_eq_true (id (Eq.refl true))
+has type
+  0 ≠ 1
+of sort `Prop` but is expected to have type
+  ?m.260 → ?m.261
+of sort `Type (max ?u.23303 ?u.23304)` in the application
+  @Matrix.diagonal_apply_ne ?m.260 ?m.261 ?m.262 ?m.263 (of_decide_eq_true (id (Eq.refl true)))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:102:2: error: ring failed, ring expressions not equal
+X : M2
+G : M2 := ⋯
+hG : Matrix.IsHermitian G
+E : M2 := ⋯
+L : M2 := ⋯
+hE : ComplexSchmidtStep.unitary E
+hL : ComplexSchmidtStep.unitary L
+hd : star ↑hG.eigenvectorUnitary * G * ↑hG.eigenvectorUnitary = Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues)
+he : L * X * (L * X)ᴴ = Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues)
+hh :
+  (L 0 0 * X 0 0 + L 0 1 * X 1 0) * star (L 1 0 * X 0 0 + L 1 1 * X 1 0) +
+      (L 0 0 * X 0 1 + L 0 1 * X 1 1) * star (L 1 0 * X 0 1 + L 1 1 * X 1 1) =
+    Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues) 0 1
+hc :
+  (L 1 0 * X 0 0 + L 1 1 * X 1 0) * (star (X 0 0) * star (L 0 0) + star (X 1 0) * star (L 0 1)) +
+      (L 1 0 * X 0 1 + L 1 1 * X 1 1) * (star (X 0 1) * star (L 0 0) + star (X 1 1) * star (L 0 1)) =
+    star (Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues) 0 1)
+⊢ star ((L * X) 0 0) * (L * X) 1 0 + star ((L * X) 0 1) * (L * X) 1 1 +
+              star (Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues) 0 1) +
+            (-(L 1 0 * X 0 0 * star (X 0 0) * star (L 0 0)) - L 1 0 * X 0 0 * star (X 1 0) * star (L 0 1)) +
+          (-(L 1 0 * star (L 0 0) * X 0 1 * star (X 0 1)) - L 1 0 * star (L 0 1) * X 0 1 * star (X 1 1)) +
+        (-(L 1 1 * X 1 0 * star (X 0 0) * star (L 0 0)) - L 1 1 * X 1 0 * star (X 1 0) * star (L 0 1)) +
+      (-(L 1 1 * star (L 0 0) * X 1 1 * star (X 0 1)) - L 1 1 * star (L 0 1) * X 1 1 * star (X 1 1)) =
+    0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:101:41: error: This simp argument is unused:
+  star_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵t̵a̵r̵_̵a̵d̵d̵,̵s̵t̵a̵r̵_̵m̵u̵l̵,̵s̵t̵a̵r̵_̵s̵t̵a̵r̵,̵s̵t̵a̵r̵_̵z̵e̵r̵o̵]̵[̲s̲t̲a̲r̲_̲a̲d̲d̲,̲ ̲s̲t̲a̲r̲_̲m̲u̲l̲,̲ ̲s̲t̲a̲r̲_̲s̲t̲a̲r̲]̲ at hc
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

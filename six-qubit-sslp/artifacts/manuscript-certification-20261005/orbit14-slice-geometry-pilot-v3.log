@@ -1,0 +1,372 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «0».«1»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 0
+hpj : 0 ≤ p 1
+h : ¬∃ k, k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨0, ⋯⟩ → k ≠ (fun i => i) ⟨1, ⋯⟩ → q k = 0
+hij hz0 hz1 : True
+hz2 : q 2 = 0
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «0».«2»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 0
+hpj : 0 ≤ p ⟨2, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨0, ⋯⟩ → k ≠ (fun i => i) ⟨2, ⋯⟩ → q k = 0
+hij hz0 : True
+hz1 : q 1 = 0
+hz2 : True
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «0».«3»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 0
+hpj : 0 ≤ p ⟨3, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨0, ⋯⟩ → k ≠ (fun i => i) ⟨3, ⋯⟩ → q k = 0
+hij hz0 : True
+hz1 : q 1 = 0
+hz2 : q 2 = 0
+hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «1».«0»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 1
+hpj : 0 ≤ p 0
+h : ¬∃ k, k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨1, ⋯⟩ → k ≠ (fun i => i) ⟨0, ⋯⟩ → q k = 0
+hij hz0 hz1 : True
+hz2 : q 2 = 0
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «1».«2»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 1
+hpj : 0 ≤ p ⟨2, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨1, ⋯⟩ → k ≠ (fun i => i) ⟨2, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 hz2 : True
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «1».«3»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p 1
+hpj : 0 ≤ p ⟨3, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨1, ⋯⟩ → k ≠ (fun i => i) ⟨3, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 : True
+hz2 : q 2 = 0
+hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «2».«0»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨2, ⋯⟩
+hpj : 0 ≤ p 0
+h : ¬∃ k, k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨2, ⋯⟩ → k ≠ (fun i => i) ⟨0, ⋯⟩ → q k = 0
+hij hz0 : True
+hz1 : q 1 = 0
+hz2 : True
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «2».«1»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨2, ⋯⟩
+hpj : 0 ≤ p 1
+h : ¬∃ k, k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨2, ⋯⟩ → k ≠ (fun i => i) ⟨1, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 hz2 : True
+hz3 : q 3 = 0
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «2».«3»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨2, ⋯⟩
+hpj : 0 ≤ p ⟨3, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨2, ⋯⟩ → k ≠ (fun i => i) ⟨3, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 : q 1 = 0
+hz2 hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «3».«0»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨3, ⋯⟩
+hpj : 0 ≤ p 0
+h : ¬∃ k, k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ k ≠ (fun i => i) ⟨0, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨3, ⋯⟩ → k ≠ (fun i => i) ⟨0, ⋯⟩ → q k = 0
+hij hz0 : True
+hz1 : q 1 = 0
+hz2 : q 2 = 0
+hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «3».«1»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨3, ⋯⟩
+hpj : 0 ≤ p 1
+h : ¬∃ k, k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ k ≠ (fun i => i) ⟨1, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨3, ⋯⟩ → k ≠ (fun i => i) ⟨1, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 : True
+hz2 : q 2 = 0
+hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:41:12: error: linarith failed to find a contradiction
+case «3».«2»
+p q : Fin 4 → ℝ
+mu : ℝ
+hp : ∀ (k : Fin 4), 0 ≤ p k
+hq : ∀ (k : Fin 4), 0 ≤ q k
+hb : ∀ (k : Fin 4), p k + q k = mu / 2
+h0 : p 0 + q 0 = mu / 2
+h1 : p 1 + q 1 = mu / 2
+h2 : p 2 + q 2 = mu / 2
+h3 : p 3 + q 3 = mu / 2
+hq0 : 0 ≤ q 0
+hq1 : 0 ≤ q 1
+hq2 : 0 ≤ q 2
+hq3 : 0 ≤ q 3
+hi : 0 < p ⟨3, ⋯⟩
+hpj : 0 ≤ p ⟨2, ⋯⟩
+h : ¬∃ k, k ≠ (fun i => i) ⟨3, ⋯⟩ ∧ k ≠ (fun i => i) ⟨2, ⋯⟩ ∧ 0 < q k
+hz : ∀ (k : Fin 4), k ≠ (fun i => i) ⟨3, ⋯⟩ → k ≠ (fun i => i) ⟨2, ⋯⟩ → q k = 0
+hij : True
+hz0 : q 0 = 0
+hz1 : q 1 = 0
+hz2 hz3 : True
+hs : q 0 + (q 1 + (q ⟨2, ⋯⟩ + q ⟨3, ⋯⟩)) = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:59:69: error(lean.unknownIdentifier): Unknown identifier `u`
+
+Note: It is not possible to treat `u` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:74:4: error: linarith failed to find a contradiction
+c d : Fin 4 → Vec
+mu : ℝ
+hmu : 0 <m sorry
+hmd : ∑ i, nsq (d i) = mu
+hb : ∀ (i : Fin 4), nsq (c i) + nsq (d i) = mu / 2
+ho : ∀ (i j : Fin 4), i ≠ j → star (c i) ⬝ᵥ d j = 0
+h : ¬∃ i, 0 < nsq (c i)
+hz : ∀ (i : Fin 4), nsq (c i) = 0
+hmc : 0 = mu
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:94:35: error: unsolved goals
+case h
+c d : Fin 4 → Vec
+mu : ℝ
+hmu : 0 <m sorry
+hmc : ∑ i, nsq (c i) = mu
+hmd : ∑ i, nsq (d i) = mu
+hb : ∀ (i : Fin 4), nsq (c i) + nsq (d i) = mu / 2
+ho : ∀ (i j : Fin 4), i ≠ j → star (c i) ⬝ᵥ d j = 0
+i0 : Fin 4
+hi0 : 0 < nsq (c i0)
+hcne : c i0 ≠ 0
+hlines : ∀ (i : Fin 4), ∃ t, c i = t • c i0
+r : ℝ := √(nsq (c i0))
+hr : 0 < r
+v : Vec := fun a => c i0 a / ↑r
+hv : nsq v = 1
+a : Fin 2
+⊢ c i0 a = c i0 a * ↑r / ↑r
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14SliceGeometry.lean:117:6: error: linarith failed to find a contradiction
+case h
+c d : Fin 4 → Vec
+mu : ℝ
+hmu : 0 <m sorry
+hmc : ∑ i, nsq (c i) = mu
+hmd : ∑ i, nsq (d i) = mu
+hb : ∀ (i : Fin 4), nsq (c i) + nsq (d i) = mu / 2
+ho : ∀ (i j : Fin 4), i ≠ j → star (c i) ⬝ᵥ d j = 0
+i0 : Fin 4
+hi0 : 0 < nsq (c i0)
+hcne : c i0 ≠ 0
+hlines : ∀ (i : Fin 4), ∃ t, c i = t • c i0
+r : ℝ := √(nsq (c i0))
+hr : 0 < r
+v : Vec := fun a => c i0 a / ↑r
+hv : nsq v = 1
+hbase : c i0 = ↑r • v
+hvne : v ≠ 0
+hcv : ∀ (i : Fin 4), ∃ t, c i = t • v
+j : Fin 4
+he : (∑ i, if i = j then 0 else nsq (c i)) + nsq (c j) = mu
+hh : nsq (c j) + nsq (d j) = mu / 2
+a✝ : (∑ i, if i = j then 0 else nsq (c i)) ≤ 0
+⊢ False
+failed

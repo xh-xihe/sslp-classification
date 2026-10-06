@@ -1,0 +1,156 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14OrthogonalFrames.lean:18:96: error: failed to synthesize
+  Decidable
+    (∀ (r : Bool) (i j : Fin 4),
+      i ≠ j → middleAdjacent (bottomLabels (blockIndex r i)) (topLabels (blockIndex r (reverse j))))
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14OrthogonalFrames.lean:23:2: error: Tactic `rfl` failed: equality lhs
+  f 3 + (f 2 + (f 1 + f 0))
+is not definitionally equal to rhs
+  f 0 + (f 1 + (f ⟨2, ⋯⟩ + f ⟨3, ⋯⟩))
+
+α : Type u_1
+inst✝ : AddCommMonoid α
+f : Fin 4 → α
+⊢ f 3 + (f 2 + (f 1 + f 0)) = f 0 + (f 1 + (f ⟨2, ⋯⟩ + f ⟨3, ⋯⟩))
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14OrthogonalFrames.lean:40:14: error: linarith failed to find a contradiction
+case refine_1.true.h1.h
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+hm :
+  MomentSystem (Complex.normSq (c y0)) (Complex.normSq (c y1)) (Complex.normSq (c y2)) (Complex.normSq (c y3))
+    (Complex.normSq (c y4)) (Complex.normSq (c y5)) (Complex.normSq (c y6)) (Complex.normSq (c y7))
+    (Complex.normSq (c y8)) (Complex.normSq (c y9)) (Complex.normSq (c y10)) (Complex.normSq (c y11))
+    (Complex.normSq (c y12)) (Complex.normSq (c y13)) (Complex.normSq (c y14)) (Complex.normSq (c y15))
+    (Complex.normSq (d z0)) (Complex.normSq (d z1)) (Complex.normSq (d z2)) (Complex.normSq (d z3))
+    (Complex.normSq (d z4)) (Complex.normSq (d z5)) (Complex.normSq (d z6)) (Complex.normSq (d z7))
+    (Complex.normSq (d z8)) (Complex.normSq (d z9)) (Complex.normSq (d z10)) (Complex.normSq (d z11))
+    (Complex.normSq (d z12)) (Complex.normSq (d z13)) (Complex.normSq (d z14)) (Complex.normSq (d z15))
+h0 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h1 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h2 :
+  Complex.normSq (d z2) + Complex.normSq (d z10) + Complex.normSq (d z1) + Complex.normSq (d z9) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y0) + Complex.normSq (c y8))
+h3 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z1) + Complex.normSq (d z9) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y1) + Complex.normSq (c y9))
+h4 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z2) + Complex.normSq (d z10) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y2) + Complex.normSq (c y10))
+h5 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z2) + Complex.normSq (d z10) +
+        Complex.normSq (d z1) +
+      Complex.normSq (d z9) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y3) + Complex.normSq (c y11))
+h6 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h7 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+h8 :
+  Complex.normSq (d z6) + Complex.normSq (d z14) + Complex.normSq (d z5) + Complex.normSq (d z13) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y4) + Complex.normSq (c y12))
+h9 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z5) + Complex.normSq (d z13) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y5) + Complex.normSq (c y13))
+h10 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z6) + Complex.normSq (d z14) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y6) + Complex.normSq (c y14))
+h11 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z6) + Complex.normSq (d z14) +
+        Complex.normSq (d z5) +
+      Complex.normSq (d z13) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y7) + Complex.normSq (c y15))
+hn :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) +
+                            Complex.normSq (c y4) +
+                          Complex.normSq (c y5) +
+                        Complex.normSq (c y6) +
+                      Complex.normSq (c y7) +
+                    Complex.normSq (c y8) +
+                  Complex.normSq (c y9) +
+                Complex.normSq (c y10) +
+              Complex.normSq (c y11) +
+            Complex.normSq (c y12) +
+          Complex.normSq (c y13) +
+        Complex.normSq (c y14) +
+      Complex.normSq (c y15) =
+    1
+a✝ :
+  Complex.normSq (d (![z4, z5, z6, z7] 3)) + Complex.normSq (d (![z12, z13, z14, z15] 3)) +
+      (Complex.normSq (d (![z4, z5, z6, z7] 2)) + Complex.normSq (d (![z12, z13, z14, z15] 2)) +
+        (Complex.normSq (d z5) + Complex.normSq (d z13) + (Complex.normSq (d z4) + Complex.normSq (d z12)))) <
+    Complex.normSq (c y4) + Complex.normSq (c y12) +
+      (Complex.normSq (c y5) + Complex.normSq (c y13) +
+        (Complex.normSq (c y6) + Complex.normSq (c y14) + (Complex.normSq (c y7) + Complex.normSq (c y15))))
+⊢ False
+failed

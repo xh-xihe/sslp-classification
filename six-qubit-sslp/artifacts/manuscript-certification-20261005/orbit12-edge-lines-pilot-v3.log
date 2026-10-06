@@ -1,0 +1,24 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12EdgeLines.lean:54:4: error: 'change' tactic failed, pattern
+  c y6 * star (c y6) + c y5 * star (c y5) + c y4 * star (c y4) + c y3 * star (c y3) + c y2 * star (c y2) +
+      c y1 * star (c y1) =
+    d z0 * star (d z0) + d z7 * star (d z7)
+is not definitionally equal to target
+  H1bottomFrame c ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = H1topFrame d ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12EdgeLines.lean:57:4: error: 'change' tactic failed, pattern
+  c y6 * star (c y14) + c y5 * star (c y13) + c y4 * star (c y12) + c y3 * star (c y11) + c y2 * star (c y10) +
+      c y1 * star (c y9) =
+    d z0 * star (d z8) + d z7 * star (d z15)
+is not definitionally equal to target
+  H1bottomFrame c ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = H1topFrame d ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12EdgeLines.lean:60:4: error: 'change' tactic failed, pattern
+  c y14 * star (c y6) + c y13 * star (c y5) + c y12 * star (c y4) + c y11 * star (c y3) + c y10 * star (c y2) +
+      c y9 * star (c y1) =
+    d z8 * star (d z0) + d z15 * star (d z7)
+is not definitionally equal to target
+  H1bottomFrame c ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = H1topFrame d ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12EdgeLines.lean:63:4: error: 'change' tactic failed, pattern
+  c y14 * star (c y14) + c y13 * star (c y13) + c y12 * star (c y12) + c y11 * star (c y11) + c y10 * star (c y10) +
+      c y9 * star (c y9) =
+    d z8 * star (d z8) + d z15 * star (d z15)
+is not definitionally equal to target
+  H1bottomFrame c ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = H1topFrame d ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)

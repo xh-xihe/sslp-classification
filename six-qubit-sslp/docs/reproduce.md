@@ -105,6 +105,16 @@ This checks the LF hashes of the twelve scalar/spinor sources against
 their recorded snapshot. It does not replace whole kernel building,
 fresh transitive standard-axiom auditing or manuscript type review.
 
+## Display-route source snapshot
+
+```console
+python tools/verification/check_display_route_snapshot.py
+```
+
+This checks the canonical LF hashes of all twenty display-route modules
+against their strict-pilot snapshot. Whole kernel building, transitive
+standard-axiom auditing and manuscript type review remain separate checks.
+
 ## Finite certificate data
 
 The supplementary manuscript describes the mathematical reductions and

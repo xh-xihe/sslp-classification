@@ -1,0 +1,9 @@
+{
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "type_evidence": "artifacts/manuscript-certification-20261005/kernel-types-display-route-completion-v1.json",
+  "type_evidence_sha256": "6ec57ba0d5e9e212fba06dd352d275b9739412b76d37d5b208aad40e2271f7cf",
+  "scope": "Only listed actual basis/spinor/scalar/matrix displays; other obligations and frozen main issues remain."
+}

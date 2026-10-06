@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "date": "2026-10-05",
+  "proof_acceptance": "PASS",
+  "scope": "Current whole Lean proof-source snapshot, including actual supported basis expansions, spinor lines, edge frames, scalar elimination, matrix operator tests, phase triangles and normalized Pauli coordinates; manuscript correspondence incomplete.",
+  "active_modules": 16218,
+  "axiom_roots": 9251,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sources_sha256": {
+    "documents/20261003/main.tex": "fb694c01b1144ce99d9a6d602c1a2629269bdd4c906a95fe9654f43f54a70958",
+    "documents/20261003/supplementary.tex": "1ffc6d2a59dd413f5e1ee70e67f01b8ce928f8ecdb85ca888e449669b56d4039"
+  },
+  "claim_status_counts": {
+    "conjecture": 3,
+    "covered": 1818,
+    "expository": 5,
+    "partial": 1,
+    "unreviewed": 3
+  },
+  "fully_kernel_manuscript_certification": "not_complete",
+  "held_main_issues": 5,
+  "identified_si_qualifications": 0,
+  "publication": {
+    "status": "pending",
+    "branch": "sixqubit-classification"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/manuscript-certification-20261005/full-build-success-16218.json",
+      "sha256": "0feb13b76ec77719549c77ff12eeb0dca60abbf89a0367b53a9562e05c1d7d7e"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/axioms-9251.json",
+      "sha256": "575e7fca822bd6b8d4fe1aff1b14cf094cf6b88035357d2a7b07d67b027e5be9"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-staged-proof-snapshot-20.json",
+      "sha256": "aaab3710a027bb39188e85312f497df5408535a45e51d716ad20025afcff4810"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/kernel-types-display-route-completion-v1.json",
+      "sha256": "6ec57ba0d5e9e212fba06dd352d275b9739412b76d37d5b208aad40e2271f7cf"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-type-binding-v1.json",
+      "sha256": "beef690c1ce52fb1985604d3c4678fca1accf3e065a5133576dbaaa1b300a479"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-correspondence-gates-v2-report.json",
+      "sha256": "f43450b2c73d1604e9a5112940db2919cf5cff9cfd672e1e13a9c9445ac10e06"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-review-v1.json",
+      "sha256": "6bf59cca5d79fdf41feccab5ef0fa083be8d9c39e85f9906b172eb08d47c00a4"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-full-build-v1.log",
+      "sha256": "049923fb9e840ba926a1833219a6a8665b9ad777fcb1743c9280c2d0ce127c95"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-full-build-v1-exit.json",
+      "sha256": "4da762a7c2f0da99b5c74ab112e25e27cd12cdfdc10bd85dc8c2778608e018db"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-type-inspection-v1.log",
+      "sha256": "ee1fec8b036163baae5aa0216d687b7b4e518aba1e5a9dbc7bec8a95e6c29ed8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-type-inspection-v1-exit.json",
+      "sha256": "6dc3beaa2321dac2dafe340ec5086d08747b550c8f0a7fb8b32d2a44e0b40b8a"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-axioms-v1.log",
+      "sha256": "439b6d576cd1006854a8aad588b22207f471cd7ad6e93a6a551837b758d9ca35"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-axioms-v1-exit.json",
+      "sha256": "1fa0a96921f468dfc662c5ad69bcf5012e8c24165e763c33e8d74dc709c828a8"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-source-snapshot-v1.log",
+      "sha256": "d579d748e9ecc426fbfa96a52969949ec07d69a7ab1700d5cdf398a7bf3bfb9c"
+    },
+    {
+      "path": "artifacts/manuscript-certification-20261005/display-route-completion-source-snapshot-v1-exit.json",
+      "sha256": "5669d7336d6726e1f2849a8ce840dc2d007bb692ff419ab485611b47ff2ec0ab"
+    }
+  ]
+}

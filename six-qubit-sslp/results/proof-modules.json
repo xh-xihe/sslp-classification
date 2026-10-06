@@ -8,9 +8,9 @@
     "SixQubit",
     "Orbit2"
   ],
-  "module_count": 16198,
+  "module_count": 16218,
   "counts_by_library": {
-    "MainTheory": 14308,
+    "MainTheory": 14328,
     "Orbit2": 350,
     "QECC": 52,
     "SS": 15,
@@ -94702,7 +94702,7 @@
     {
       "module": "MainTheory.ManuscriptCertificationAudit20261005",
       "path": "MainTheory/ManuscriptCertificationAudit20261005.lean",
-      "sha256_lf": "ce81d22b6ab15fcf35be082127f4c77ebf4490299041fe0fc798a2ba440eb90a",
+      "sha256_lf": "c90a11ba6b87ff77218b28013ec1f00387a8c39161ee849595a6aee3486132a1",
       "library": "MainTheory",
       "topic": "Kernel audits"
     },
@@ -94889,9 +94889,44 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit12AnchorLines",
+      "path": "MainTheory/Orbit12AnchorLines.lean",
+      "sha256_lf": "ee28506c87675aa7941abcd0b1f16b84b3e98affbdf44dbfb3358914bfe574c1",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit12AnchorScalars",
+      "path": "MainTheory/Orbit12AnchorScalars.lean",
+      "sha256_lf": "a9be3d5ec47859101eb4f14b71844bb38a76d9a57d49ba78a575107ebb3b15e4",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit12BasisNotation",
+      "path": "MainTheory/Orbit12BasisNotation.lean",
+      "sha256_lf": "d398301e23863d5cb88da77ccbd1221cf12e372897245d94cdaf4e04de9df6f3",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit12EdgeLines",
+      "path": "MainTheory/Orbit12EdgeLines.lean",
+      "sha256_lf": "6f2622abc0c083c56a0e73e2ecba9046ca7ef92ca07c0813c72f43341dc12317",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit12Frames",
       "path": "MainTheory/Orbit12Frames.lean",
       "sha256_lf": "6764c1a5cfba354c3d3c1e0f06cb8b1fee38bfaeb678d4a7276427c5599bf47c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit12LineDimensions",
+      "path": "MainTheory/Orbit12LineDimensions.lean",
+      "sha256_lf": "5afdac124fadaa2a9449d79b775de26a38c54e00130b5d6757653befb66f0639",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -94903,6 +94938,13 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit12PairCompletion",
+      "path": "MainTheory/Orbit12PairCompletion.lean",
+      "sha256_lf": "e442a779cfae01ca75373454ff7e5bd3277383da3ec3fe8adb948e3ab5a2f0ad",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit12PhysicalRowData",
       "path": "MainTheory/Orbit12PhysicalRowData.lean",
       "sha256_lf": "895f8e46c731f13cf3af514bfe51018fda890b8196cdcdf3cf0e6e60cd9d46f1",
@@ -94910,9 +94952,23 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit12ScalarCompletion",
+      "path": "MainTheory/Orbit12ScalarCompletion.lean",
+      "sha256_lf": "883b9a70c2c5823c5334c37f1805d8e12ce3b702a5b3bc9729e848e0358ac0c3",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit13BlockData",
       "path": "MainTheory/Orbit13BlockData.lean",
       "sha256_lf": "775fb697e7f4bb49e32417fd9189aa5842cde199ff51f8ed8f839979e5632767",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit13DisplayCompletion",
+      "path": "MainTheory/Orbit13DisplayCompletion.lean",
+      "sha256_lf": "740e6b1a17582520e63d8031b3eaa0d3c462d205cb96b612f7f78a4179dae2cd",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -94959,6 +95015,13 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit17GraphDisplays",
+      "path": "MainTheory/Orbit17GraphDisplays.lean",
+      "sha256_lf": "f7d17ec1fe8ceaf5248aa1e77bcc7c2209db8e9946b9b1fb83543964214b5917",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit17MomentDisplays",
       "path": "MainTheory/Orbit17MomentDisplays.lean",
       "sha256_lf": "6e2edd8de06ad26357a74d18233e825d1591b3d102bbde30fe2fe42414f2584f",
@@ -94985,6 +95048,20 @@
       "sha256_lf": "9938f54d2692f16dc862088f687622bd2a6b9029dd034511bec52a2222c8723d",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit20DisplayCompletion",
+      "path": "MainTheory/Orbit20DisplayCompletion.lean",
+      "sha256_lf": "94a58b276ad0ae918384e3f94bc7390edb965c5b9cd4ea693498c8ac1fca51b6",
+      "library": "MainTheory",
+      "topic": "Orbit 2: physical encoder bridges"
+    },
+    {
+      "module": "MainTheory.Orbit20PhaseCompletion",
+      "path": "MainTheory/Orbit20PhaseCompletion.lean",
+      "sha256_lf": "6a23f02ee6b282309775609f4f83d8954148f0bd7f1b0d2ae694008f1f071f80",
+      "library": "MainTheory",
+      "topic": "Orbit 2: physical encoder bridges"
     },
     {
       "module": "MainTheory.Orbit20PhysicalRowData",
@@ -96786,6 +96863,27 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit5MatrixRows",
+      "path": "MainTheory/Orbit5MatrixRows.lean",
+      "sha256_lf": "abdeeb26d1ee0fdbc60aba86cd633774cefa45eee3c1ddaa323ce86def375631",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit5OffdiagonalDisplays",
+      "path": "MainTheory/Orbit5OffdiagonalDisplays.lean",
+      "sha256_lf": "47b09131ecf4471ed9c7c42591e4c0960c107dee4d2229f74d54a4e7e4fadd29",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit5PauliDisplays",
+      "path": "MainTheory/Orbit5PauliDisplays.lean",
+      "sha256_lf": "d33326fc827f0ff7e088ad8115bc5db755ff922309e07e4917ab97e93fde8d2b",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit5PhysicalRowData",
       "path": "MainTheory/Orbit5PhysicalRowData.lean",
       "sha256_lf": "23d915bdef62cc993780ba0b8e35e509e31868f30859a778088120f7a27d3aba",
@@ -96793,9 +96891,37 @@
       "topic": "Six-qubit classification and enumerator transport"
     },
     {
+      "module": "MainTheory.Orbit6BasisNotation",
+      "path": "MainTheory/Orbit6BasisNotation.lean",
+      "sha256_lf": "00ea52a454882c9f4f8021e0756e79ad2ab8a08d09d7ff08eefb67c6ff7e7f2e",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
       "module": "MainTheory.Orbit6CharacterMatrix",
       "path": "MainTheory/Orbit6CharacterMatrix.lean",
       "sha256_lf": "1122d3897f8cf4fc1031b8675a54c72655fdb86023fbc667aad014e134ef1c92",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit6CharacterRows",
+      "path": "MainTheory/Orbit6CharacterRows.lean",
+      "sha256_lf": "d6052ed1e7c948cd10b1102ccc8920fd64fd42e4721537026c9720bcea67aa59",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit6LineCompletion",
+      "path": "MainTheory/Orbit6LineCompletion.lean",
+      "sha256_lf": "829f62cbc26bf4993e5a6a8b1e6c7b6c0f1d139101189e0551cc0f3ebb29ea9c",
+      "library": "MainTheory",
+      "topic": "Six-qubit classification and enumerator transport"
+    },
+    {
+      "module": "MainTheory.Orbit6MatrixTests",
+      "path": "MainTheory/Orbit6MatrixTests.lean",
+      "sha256_lf": "80edf53cc7a845c2f56ebc140cff70df5b0a8d804ba374ab007b79e27982e023",
       "library": "MainTheory",
       "topic": "Six-qubit classification and enumerator transport"
     },
@@ -99131,6 +99257,13 @@
       "topic": "General algebra and code infrastructure"
     },
     {
+      "module": "MainTheory.RankOneSpinorFrame",
+      "path": "MainTheory/RankOneSpinorFrame.lean",
+      "sha256_lf": "b729b5d935bfe381394dc6384814cfd8e74d2f969251d58d25bd40142d054cb9",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
       "module": "MainTheory.RankStageDistribution",
       "path": "MainTheory/RankStageDistribution.lean",
       "sha256_lf": "c3bcdc4dbb4ed4597bbf4eb938bf9cb7e2535ae4d613459ea584744ad8201ae2",
@@ -99904,6 +100037,13 @@
       "module": "MainTheory.SupportAffineRank",
       "path": "MainTheory/SupportAffineRank.lean",
       "sha256_lf": "f80cd16fe65ae24314dee6d2e7c6fd1e99e779d2191658a40327031cd6d98cfd",
+      "library": "MainTheory",
+      "topic": "General algebra and code infrastructure"
+    },
+    {
+      "module": "MainTheory.SupportedBasisExpansion",
+      "path": "MainTheory/SupportedBasisExpansion.lean",
+      "sha256_lf": "9b28812844c983585b0f62807f044a774bbfb19dcd55ef73f18c9514620c0f2c",
       "library": "MainTheory",
       "topic": "General algebra and code infrastructure"
     },

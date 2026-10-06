@@ -1,0 +1,63 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:14:2: error: mod_cast has type
+  (√2)⁻¹ ^ 2 = 1 / 2
+but is expected to have type
+  scale ^ 2 = 1 / 2
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:35:12: error: ring failed, ring expressions not equal
+⊢ -(scale ^ 2 * 2) - scale ^ 2 * Complex.I ^ 2 * 2 = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:50:4: error: ring failed, ring expressions not equal
+A : Matrix (Fin 2) (Fin 2) ℂ
+h : A.trace = 0
+hd : A 0 0 + A 1 1 = 0
+⊢ A 0 1 * scale ^ 2 + A 0 1 * scale ^ 2 * Complex.I ^ 2 + (-(scale ^ 2 * A 1 0) - scale ^ 2 * A 1 0 * Complex.I ^ 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:51:4: error: ring failed, ring expressions not equal
+A : Matrix (Fin 2) (Fin 2) ℂ
+h : A.trace = 0
+hd : A 0 0 + A 1 1 = 0
+⊢ A 1 0 * scale ^ 2 + A 1 0 * scale ^ 2 * Complex.I ^ 2 + (-(scale ^ 2 * A 0 1) - scale ^ 2 * A 0 1 * Complex.I ^ 2) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:62:44: error: mod_cast has type
+  ↑(Complex.normSq scale) = 1 / 2
+but is expected to have type
+  Complex.normSq scale = 1 / 2
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:55:56: error: unsolved goals
+A : Matrix (Fin 2) (Fin 2) ℂ
+h : A.trace = 0
+hd : A 1 1 = -A 0 0
+hkc : ↑(Complex.normSq scale) = 1 / 2
+hkr : Complex.normSq scale = 1 / 2
+⊢ Complex.normSq (A 0 1) + Complex.normSq (A 1 0) + Complex.normSq scale * Complex.normSq (A 0 0) * 4 =
+    Complex.normSq (A 0 1) + Complex.normSq (A 1 0) + Complex.normSq (A 0 0) * 2
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:65:34: error: This simp argument is unused:
+  Matrix.cons_val_fin_one
+
+Hint: Omit it from the simp argument list.
+  simp only [̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵z̵e̵r̵o̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵o̵n̵e̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵t̵w̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵H̵e̵a̵d̵,̵M̵a̵t̵r̵i̵x̵.̵v̵e̵c̵T̵a̵i̵l̵,̵M̵a̵t̵r̵i̵x̵.̵c̵o̵n̵s̵_̵v̵a̵l̵_̵f̵i̵n̵_̵o̵n̵e̵,̵m̵a̵p̵_̵m̵u̵l̵,̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵I̵,̵
+  ̵ ̵ ̵ ̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵S̵q̵_̵n̵e̵g̵,̵h̵d̵,̵h̵k̵r̵]̵[̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲z̲e̲r̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲o̲n̲e̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲c̲o̲n̲s̲_̲v̲a̲l̲_̲t̲w̲o̲,̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲H̲e̲a̲d̲,̲
+  ̲ ̲ ̲ ̲ ̲M̲a̲t̲r̲i̲x̲.̲v̲e̲c̲T̲a̲i̲l̲,̲ ̲m̲a̲p̲_̲m̲u̲l̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲I̲,̲ ̲C̲o̲m̲p̲l̲e̲x̲.̲n̲o̲r̲m̲S̲q̲_̲n̲e̲g̲,̲ ̲h̲d̲,̲ ̲h̲k̲r̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5PauliDisplays.lean:103:2: error: 'change' tactic failed, pattern
+  z 0 0 * star (z 0 0) + z 1 0 * star (z 1 0) + z 2 0 * star (z 2 0) + z 3 0 * star (z 3 0) +
+        (z 0 1 * star (z 0 1) + z 1 1 * star (z 1 1) + z 2 1 * star (z 2 1) + z 3 1 * star (z 3 1)) +
+      (z 0 2 * star (z 0 2) + z 1 2 * star (z 1 2) + z 2 2 * star (z 2 2) + z 3 2 * star (z 3 2)) =
+    2 / 3
+is not definitionally equal to target
+  z 0 0 * star (z 0 0) +
+        (z (Fin.succ 0) 0 * star (z (Fin.succ 0) 0) +
+          (z (Fin.succ 0).succ 0 * star (z (Fin.succ 0).succ 0) +
+            z (Fin.succ 0).succ.succ 0 * star (z (Fin.succ 0).succ.succ 0))) +
+      (z 0 (Fin.succ 0) * star (z 0 (Fin.succ 0)) +
+          (z (Fin.succ 0) (Fin.succ 0) * star (z (Fin.succ 0) (Fin.succ 0)) +
+            (z (Fin.succ 0).succ (Fin.succ 0) * star (z (Fin.succ 0).succ (Fin.succ 0)) +
+              z (Fin.succ 0).succ.succ (Fin.succ 0) * star (z (Fin.succ 0).succ.succ (Fin.succ 0)))) +
+        (z 0 (Fin.succ 0).succ * star (z 0 (Fin.succ 0).succ) +
+          (z (Fin.succ 0) (Fin.succ 0).succ * star (z (Fin.succ 0) (Fin.succ 0).succ) +
+            (z (Fin.succ 0).succ (Fin.succ 0).succ * star (z (Fin.succ 0).succ (Fin.succ 0).succ) +
+              z (Fin.succ 0).succ.succ (Fin.succ 0).succ * star (z (Fin.succ 0).succ.succ (Fin.succ 0).succ))))) =
+    2 / 3

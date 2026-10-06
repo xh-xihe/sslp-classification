@@ -10,8 +10,11 @@ not merely on the last component.
 
 It is a source-level check, deliberately cheaper and weaker than elaboration:
 it does not know about `export`, `open ... in`, or names introduced by macros,
-so a reported miss is a prompt to look rather than a proof of absence.  Names
-it cannot resolve are printed with the closest same-basename candidates.
+so a reported miss is a prompt to look rather than a proof of absence. Imported
+Mathlib roots are also resolved against their declarations in the locally
+installed dependency sources. Names it cannot resolve are printed with the
+closest same-basename candidates. Kernel elaboration and the transitive axiom
+audit remain separate checks.
 
 Usage:  python tools/verification/check_audit_names.py
 Exit code 1 if any name is unresolved.
@@ -71,10 +74,10 @@ def lean_sources():
             yield top
 
 
-def declarations():
+def declarations(paths=None):
     """Every fully qualified declaration name the sources introduce."""
     names = set()
-    for path in lean_sources():
+    for path in lean_sources() if paths is None else paths:
         stack = []
         current_structure = None
         for line in io.open(path, encoding='utf-8', errors='replace'):
@@ -104,6 +107,23 @@ def declarations():
                 if f:
                     names.add(current_structure + '.' + f.group(1))
     return names
+
+
+def mathlib_candidate_sources(names):
+    """Locate source declarations for unresolved imported roots, without an allowlist."""
+    basenames = {name.rsplit('.', 1)[-1] for name in names}
+    base = os.path.join(ROOT, '.lake', 'packages', 'mathlib', 'Mathlib')
+    for directory, _dirs, files in os.walk(base):
+        for filename in files:
+            if not filename.endswith('.lean'):
+                continue
+            path = os.path.join(directory, filename)
+            with io.open(path, encoding='utf-8') as source:
+                for line in source:
+                    match = DECL.match(line)
+                    if match and match.group(1).rsplit('.', 1)[-1] in basenames:
+                        yield path
+                        break
 
 
 def audited_names():
@@ -159,8 +179,17 @@ def main(argv=None):
     parser.add_argument('--paper-version')
     args = parser.parse_args(argv)
     cited = ledger_names(args.paper_version)
+    audited = audited_names()
     declared = declarations()
     suffixes = set(name.rsplit('.', 1)[-1] for name in declared)
+    unresolved = {entry[2] for entry in audited + cited
+                  if not resolve(entry[2], declared, suffixes)}
+    imported = declarations(mathlib_candidate_sources(unresolved)) if unresolved else set()
+    imported = imported & unresolved
+    if imported:
+        sys.stdout.write('imported roots resolved from local Mathlib sources: %d\n' % len(imported))
+        declared.update(imported)
+        suffixes.update(name.rsplit('.', 1)[-1] for name in imported)
     by_base = {}
     for name in declared:
         by_base.setdefault(name.rsplit('.', 1)[-1], []).append(name)
@@ -169,7 +198,7 @@ def main(argv=None):
                      % (', '.join(LEAN_DIRS), len(declared)))
 
     failures = 0
-    for label, entries in (('audit', audited_names()),
+    for label, entries in (('audit', audited),
                            ('claims-ledger', cited)):
         missing = [e for e in entries if not resolve(e[2], declared, suffixes)]
         sys.stdout.write('%s names checked: %d, unresolved: %d\n'

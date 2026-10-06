@@ -1,0 +1,138 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit14OrthogonalFrames.lean:40:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f (reverse i)
+in the target expression
+  ∑ i, nsq (topSpinor d (blockIndex r (reverse i))) = mass c r
+
+case refine_1
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hnc : SS.innerC c c = 1
+hnd : SS.innerC d d = 1
+hkl : SS.HasDistance ![c, d] 3
+hm :
+  MomentSystem (Complex.normSq (c y0)) (Complex.normSq (c y1)) (Complex.normSq (c y2)) (Complex.normSq (c y3))
+    (Complex.normSq (c y4)) (Complex.normSq (c y5)) (Complex.normSq (c y6)) (Complex.normSq (c y7))
+    (Complex.normSq (c y8)) (Complex.normSq (c y9)) (Complex.normSq (c y10)) (Complex.normSq (c y11))
+    (Complex.normSq (c y12)) (Complex.normSq (c y13)) (Complex.normSq (c y14)) (Complex.normSq (c y15))
+    (Complex.normSq (d z0)) (Complex.normSq (d z1)) (Complex.normSq (d z2)) (Complex.normSq (d z3))
+    (Complex.normSq (d z4)) (Complex.normSq (d z5)) (Complex.normSq (d z6)) (Complex.normSq (d z7))
+    (Complex.normSq (d z8)) (Complex.normSq (d z9)) (Complex.normSq (d z10)) (Complex.normSq (d z11))
+    (Complex.normSq (d z12)) (Complex.normSq (d z13)) (Complex.normSq (d z14)) (Complex.normSq (d z15))
+h0 :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) =
+    Complex.normSq (d z3) + Complex.normSq (d z2) + Complex.normSq (d z1) + Complex.normSq (d z0)
+h1 :
+  Complex.normSq (c y8) + Complex.normSq (c y9) + Complex.normSq (c y10) + Complex.normSq (c y11) =
+    Complex.normSq (d z11) + Complex.normSq (d z10) + Complex.normSq (d z9) + Complex.normSq (d z8)
+h2 :
+  Complex.normSq (d z2) + Complex.normSq (d z10) + Complex.normSq (d z1) + Complex.normSq (d z9) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y0) + Complex.normSq (c y8))
+h3 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z1) + Complex.normSq (d z9) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y1) + Complex.normSq (c y9))
+h4 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z2) + Complex.normSq (d z10) +
+        Complex.normSq (d z0) +
+      Complex.normSq (d z8) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y2) + Complex.normSq (c y10))
+h5 :
+  Complex.normSq (d z3) + Complex.normSq (d z11) + Complex.normSq (d z2) + Complex.normSq (d z10) +
+        Complex.normSq (d z1) +
+      Complex.normSq (d z9) =
+    (Complex.normSq (c y0) + Complex.normSq (c y8) + Complex.normSq (c y1) + Complex.normSq (c y9) +
+                Complex.normSq (c y2) +
+              Complex.normSq (c y10) +
+            Complex.normSq (c y3) +
+          Complex.normSq (c y11)) /
+        2 +
+      (Complex.normSq (c y3) + Complex.normSq (c y11))
+h6 :
+  Complex.normSq (c y4) + Complex.normSq (c y5) + Complex.normSq (c y6) + Complex.normSq (c y7) =
+    Complex.normSq (d z7) + Complex.normSq (d z6) + Complex.normSq (d z5) + Complex.normSq (d z4)
+h7 :
+  Complex.normSq (c y12) + Complex.normSq (c y13) + Complex.normSq (c y14) + Complex.normSq (c y15) =
+    Complex.normSq (d z15) + Complex.normSq (d z14) + Complex.normSq (d z13) + Complex.normSq (d z12)
+h8 :
+  Complex.normSq (d z6) + Complex.normSq (d z14) + Complex.normSq (d z5) + Complex.normSq (d z13) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y4) + Complex.normSq (c y12))
+h9 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z5) + Complex.normSq (d z13) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y5) + Complex.normSq (c y13))
+h10 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z6) + Complex.normSq (d z14) +
+        Complex.normSq (d z4) +
+      Complex.normSq (d z12) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y6) + Complex.normSq (c y14))
+h11 :
+  Complex.normSq (d z7) + Complex.normSq (d z15) + Complex.normSq (d z6) + Complex.normSq (d z14) +
+        Complex.normSq (d z5) +
+      Complex.normSq (d z13) =
+    (Complex.normSq (c y4) + Complex.normSq (c y12) + Complex.normSq (c y5) + Complex.normSq (c y13) +
+                Complex.normSq (c y6) +
+              Complex.normSq (c y14) +
+            Complex.normSq (c y7) +
+          Complex.normSq (c y15)) /
+        2 +
+      (Complex.normSq (c y7) + Complex.normSq (c y15))
+hn :
+  Complex.normSq (c y0) + Complex.normSq (c y1) + Complex.normSq (c y2) + Complex.normSq (c y3) +
+                            Complex.normSq (c y4) +
+                          Complex.normSq (c y5) +
+                        Complex.normSq (c y6) +
+                      Complex.normSq (c y7) +
+                    Complex.normSq (c y8) +
+                  Complex.normSq (c y9) +
+                Complex.normSq (c y10) +
+              Complex.normSq (c y11) +
+            Complex.normSq (c y12) +
+          Complex.normSq (c y13) +
+        Complex.normSq (c y14) +
+      Complex.normSq (c y15) =
+    1
+r : Bool
+⊢ ∑ i, nsq (topSpinor d (blockIndex r (reverse i))) = mass c r

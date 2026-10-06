@@ -1,0 +1,22 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5OffdiagonalDisplays.lean:68:4: error: ring failed, ring expressions not equal
+k s t : ℝ
+hk : k ≠ 0
+A B : Matrix (Fin 2) (Fin 2) ℂ
+h : PartialTraceRows (schmidtMatrix k s t) A B
+h00 : ↑k * ↑s * (starRingEnd ℂ) (B 1 0) + A 0 1 * (↑k * ↑t) = 0
+h01 : ↑k * ↑s * (starRingEnd ℂ) (B 0 1) + A 1 0 * (↑k * ↑t) = 0
+h10 : ↑k * ↑t * (starRingEnd ℂ) (B 0 1) + A 1 0 * (↑k * ↑s) = 0
+h11 : ↑k * ↑t * (starRingEnd ℂ) (B 1 0) + A 0 1 * (↑k * ↑s) = 0
+hkc : ↑k ≠ 0
+⊢ ↑k * ↑t * (starRingEnd ℂ) (B 1 0) - ↑k * ↑t * A 1 0 + (↑k * ↑s * A 0 1 - ↑k * ↑s * (starRingEnd ℂ) (B 0 1)) = 0
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5OffdiagonalDisplays.lean:72:4: error: ring failed, ring expressions not equal
+k s t : ℝ
+hk : k ≠ 0
+A B : Matrix (Fin 2) (Fin 2) ℂ
+h : PartialTraceRows (schmidtMatrix k s t) A B
+h00 : ↑k * ↑s * (starRingEnd ℂ) (B 1 0) + A 0 1 * (↑k * ↑t) = 0
+h01 : ↑k * ↑s * (starRingEnd ℂ) (B 0 1) + A 1 0 * (↑k * ↑t) = 0
+h10 : ↑k * ↑t * (starRingEnd ℂ) (B 0 1) + A 1 0 * (↑k * ↑s) = 0
+h11 : ↑k * ↑t * (starRingEnd ℂ) (B 1 0) + A 0 1 * (↑k * ↑s) = 0
+hkc : ↑k ≠ 0
+⊢ ↑k * ↑s * (starRingEnd ℂ) (B 0 1) - ↑k * ↑s * A 0 1 + (↑k * ↑t * A 1 0 - ↑k * ↑t * (starRingEnd ℂ) (B 1 0)) = 0

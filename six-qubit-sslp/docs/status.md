@@ -16,17 +16,14 @@ Archive migration preserves 3,211 files. Current documentation links and
 private-source portability also pass. Evidence is recorded in
 [acceptance.json](../artifacts/repository-acceptance-20261004/acceptance.json).
 That dated acceptance does not cover all subsequently added proof sources.
-The current local proof snapshot passes the whole build: **16,198 modules**.
-Its fresh transitive audit passes **9,080 roots**, using only `propext`,
+The current local proof snapshot passes the whole build: **16,218 modules**.
+Its fresh transitive audit passes **9,251 roots**, using only `propext`,
 `Classical.choice` and `Quot.sound`. Its evidence is recorded in
-[proof-acceptance-16198.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16198.json).
+[proof-acceptance-16218.json](../artifacts/manuscript-certification-20261005/proof-acceptance-16218.json).
 This acceptance does not declare complete manuscript correspondence.
-The accepted current proof snapshot is published in
-[`5ce6aff9`](https://github.com/xh-xihe/dyadic-lifts/commit/5ce6aff909dc2370b16bdab649077439762e9058).
-Its [publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16198.json)
-checks every one of the 16,198 active proof sources against the local
-successful build. Earlier publication bindings are retained unchanged.
-Machine-readable current status is in
+Publication of this snapshot is pending. The preceding
+[16,198-module publication binding](../artifacts/manuscript-certification-20261005/publication-binding-16198.json)
+is retained unchanged. Machine-readable current status is in
 [repository-status.json](../results/repository-status.json).
 
 ## Completed mathematical proof packages
@@ -57,16 +54,16 @@ itself binds the exact authoritative bytes. Candidates require current type
 and context review before being classified as covered. The
 767 additional previously cited declarations remain explicit kernel audit roots
 in [ReviewedDeclarationsAudit.lean](../MainTheory/ReviewedDeclarationsAudit.lean).
-The current audit contains 6,314 distinct selected roots in
+The current audit contains 6,487 distinct selected roots in
 [ManuscriptCertificationAudit20261005.lean](../MainTheory/ManuscriptCertificationAudit20261005.lean),
 including candidate declarations and newly checked physical bridges. Roots
 already present in another audit are retained there rather than duplicated.
 
-The current ledger has **1,783 covered assertions**, five
-scope-only statements, three stated conjectures, **38 unreviewed
+The current ledger has **1,818 covered assertions**, five
+scope-only statements, three stated conjectures, **3 unreviewed
 SI assertions**, and one explicitly partial main-text Singleton assertion.
-Current kernel type inspection covers **4,410 declarations**.
-The source inventory contains **16,198 active Lean modules**. The new
+Current kernel type inspection covers **4,589 declarations**.
+The source inventory contains **16,218 active Lean modules**. The new
 correspondence proofs include:
 
 - Orbit 31: the exact support-count chain, all sixteen representatives and
@@ -192,6 +189,20 @@ inspection and the twelve-source snapshot check pass. The
 [batch record](../artifacts/manuscript-certification-20261005/scalar-spinor-work-in-progress.json)
 states the accepted scope. Remaining manuscript obligations retain their
 own incomplete status.
+
+## Actual matrix, scalar and supported-basis displays
+
+Twenty modules certify actual orbit-5/6/12/13/17/20 basis expansions,
+spinor lines, independently derived edge frames, scalar cancellation and
+elimination, arbitrary matrix tests, phase triangles and normalized Pauli
+coordinates. Thirty-five previously pending manuscript displays have fresh
+kernel type and context review.
+
+The whole kernel build, fresh standard-axiom audit, canonical type inspection
+and the twenty-source snapshot check pass. The
+[batch record](../artifacts/manuscript-certification-20261005/display-route-work-in-progress.json)
+records this scope. Three SI obligations and the frozen main issues retain
+their incomplete status; draft proofs are separate from accepted evidence.
 
 ## Historical records
 

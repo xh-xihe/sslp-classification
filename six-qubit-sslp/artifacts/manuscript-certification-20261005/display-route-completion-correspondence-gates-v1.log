@@ -1,0 +1,19 @@
+PARTIAL verification: sources, readme, audit-names, named-results, claims, prose-review, errata
+Paper version: 20261003
+START sources
+[PASS] sources (168.6s): 16218 Lean sources clean
+START readme
+[PASS] readme (61.6s): exit=0; log=tmp\verification\20261003\readme-names.log; all present
+START audit-names
+[FAIL] audit-names (33.5s): exit=1; log=tmp\verification\20261003\audit-names.log; declarations found in MainTheory, SS, SixQubit, QECC, Orbit2: 590534
+audit names checked: 9251, unresolved: 1
+  MainTheory/ManuscriptCertificationAudit20261005.lean  7077  Complex.normSq_nonneg
+claims-ledger names checked: 13780, unresolved: 0
+START named-results
+[PASS] named-results (0.9s): exit=0; log=tmp\verification\20261003\named-results.log; named-results document is current
+START claims
+[FAIL] claims (0.9s): exit=1; log=tmp\verification\20261003\claims.log; FAIL: 4 incomplete assertions (partial=1, unreviewed=3); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:eq:quantum-Singleton, supplementary.tex:q2fam:eq:split-orbits, supplementary.tex:eq:o5-schmidt, supplementary.tex:eq:o14-orthogonalframes
+START prose-review
+[FAIL] prose-review (0.1s): exit=1; log=tmp\verification\20261003\prose-review.log; FAIL: selected release prose review is not complete
+START errata
+[FAIL] errata (0.0s): errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed

@@ -31697,9 +31697,14 @@
       "line": 12970,
       "end_line": 12973,
       "statement_sha256": "ebc9c81568838f8e41d440e0e3843607b91cfa97b03c585aef71b709bceee836",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5MatrixRows.actFirst",
+        "MainTheory.Orbit5MatrixRows.actSecond",
+        "MainTheory.Orbit5MatrixRows.physical_cross_matrices",
+        "MainTheory.Orbit5MatrixRows.physical_matrix_flips"
+      ],
+      "review": "20261005 actual display-route type/context review: Both single-qubit operator actions on the actual zero-angle two-qubit coefficient vectors are explicit. Each of the eight actual cross partial-trace matrices is derived entrywise from native pre-obstruction KL rows. After the stated anchor phase gauge, arbitrary operator contraction gives the printed matrix-valued flip equation on either factor."
     },
     {
       "id": "supplementary.tex:eq:o5-schmidt",
@@ -31777,9 +31782,15 @@
       "line": 13025,
       "end_line": 13034,
       "statement_sha256": "4bb65dddd27417a579ab1a4700abb2f32d655d155bffdc848e5fc3c374d704fd",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5OffdiagonalDisplays.PartialTraceRows",
+        "MainTheory.Orbit5OffdiagonalDisplays.physical_partial_trace_rows",
+        "MainTheory.Orbit5OffdiagonalDisplays.schmidtMatrix",
+        "MainTheory.Orbit5OffdiagonalDisplays.offdiagonal_rows",
+        "MainTheory.Orbit5OffdiagonalDisplays.physical_schmidt_offdiagonal_rows"
+      ],
+      "review": "20261005 actual display-route type/context review: The adjoints of both actual vanishing partial traces give exactly the two displayed coefficient-matrix equations. For the explicitly stated diagonal Schmidt matrix and nonzero real scale, their four actual off-diagonal entries give the four printed scalar equations; existence of the Schmidt gauge is a separate obligation."
     },
     {
       "id": "supplementary.tex:eq:o5-linebranch",
@@ -31871,9 +31882,25 @@
       "line": 13079,
       "end_line": 13083,
       "statement_sha256": "7cae5f97c814973affc4a58939685cfaf1e6069055c2915ebd68c07727fd3213",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5PauliDisplays.scale",
+        "MainTheory.Orbit5PauliDisplays.scale_square",
+        "MainTheory.Orbit5PauliDisplays.pauli",
+        "MainTheory.Orbit5PauliDisplays.tau",
+        "MainTheory.Orbit5PauliDisplays.hsInner",
+        "MainTheory.Orbit5PauliDisplays.tau_orthonormal",
+        "MainTheory.Orbit5PauliDisplays.tau_traceless",
+        "MainTheory.Orbit5PauliDisplays.coordinates",
+        "MainTheory.Orbit5PauliDisplays.coordinate_expansion",
+        "MainTheory.Orbit5PauliDisplays.coordinate_norm",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinate_expansions",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinates_norms",
+        "MainTheory.Orbit5PauliDisplays.frame",
+        "MainTheory.Orbit5PauliDisplays.frame_trace",
+        "MainTheory.Orbit5PauliDisplays.physical_frame_trace"
+      ],
+      "review": "20261005 actual display-route type/context review: The three literal Pauli matrices are scaled by the inverse square root of two and proved orthonormal and traceless. Every traceless actual coefficient matrix has the displayed three-coordinate expansion with preserved squared norm. In the stated Bell branch each of the four physical coefficient norms is one sixth, and summing the actual coordinate frame gives trace two thirds."
     },
     {
       "id": "supplementary.tex:eq:o5-pauli-coordinates",
@@ -31885,9 +31912,25 @@
       "line": 13085,
       "end_line": 13090,
       "statement_sha256": "56964e99cdd12600acd6edde09ac5a54e7c70447ea75754b3c5593f6c5fc7986",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5PauliDisplays.scale",
+        "MainTheory.Orbit5PauliDisplays.scale_square",
+        "MainTheory.Orbit5PauliDisplays.pauli",
+        "MainTheory.Orbit5PauliDisplays.tau",
+        "MainTheory.Orbit5PauliDisplays.hsInner",
+        "MainTheory.Orbit5PauliDisplays.tau_orthonormal",
+        "MainTheory.Orbit5PauliDisplays.tau_traceless",
+        "MainTheory.Orbit5PauliDisplays.coordinates",
+        "MainTheory.Orbit5PauliDisplays.coordinate_expansion",
+        "MainTheory.Orbit5PauliDisplays.coordinate_norm",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinate_expansions",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinates_norms",
+        "MainTheory.Orbit5PauliDisplays.frame",
+        "MainTheory.Orbit5PauliDisplays.frame_trace",
+        "MainTheory.Orbit5PauliDisplays.physical_frame_trace"
+      ],
+      "review": "20261005 actual display-route type/context review: The three literal Pauli matrices are scaled by the inverse square root of two and proved orthonormal and traceless. Every traceless actual coefficient matrix has the displayed three-coordinate expansion with preserved squared norm. In the stated Bell branch each of the four physical coefficient norms is one sixth, and summing the actual coordinate frame gives trace two thirds."
     },
     {
       "id": "supplementary.tex:eq:o5-zi-norm",
@@ -31968,9 +32011,25 @@
       "line": 13123,
       "end_line": 13126,
       "statement_sha256": "7ecaecc115fb866a411e5b7541c2acfe0a81180352e10a21280b8ecd8901d774",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit5PauliDisplays.scale",
+        "MainTheory.Orbit5PauliDisplays.scale_square",
+        "MainTheory.Orbit5PauliDisplays.pauli",
+        "MainTheory.Orbit5PauliDisplays.tau",
+        "MainTheory.Orbit5PauliDisplays.hsInner",
+        "MainTheory.Orbit5PauliDisplays.tau_orthonormal",
+        "MainTheory.Orbit5PauliDisplays.tau_traceless",
+        "MainTheory.Orbit5PauliDisplays.coordinates",
+        "MainTheory.Orbit5PauliDisplays.coordinate_expansion",
+        "MainTheory.Orbit5PauliDisplays.coordinate_norm",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinate_expansions",
+        "MainTheory.Orbit5PauliDisplays.physical_coordinates_norms",
+        "MainTheory.Orbit5PauliDisplays.frame",
+        "MainTheory.Orbit5PauliDisplays.frame_trace",
+        "MainTheory.Orbit5PauliDisplays.physical_frame_trace"
+      ],
+      "review": "20261005 actual display-route type/context review: The three literal Pauli matrices are scaled by the inverse square root of two and proved orthonormal and traceless. Every traceless actual coefficient matrix has the displayed three-coordinate expansion with preserved squared norm. In the stated Bell branch each of the four physical coefficient norms is one sixth, and summing the actual coordinate frame gives trace two thirds."
     },
     {
       "id": "supplementary.tex:eq:o5-frame-lower",
@@ -32054,9 +32113,16 @@
       "line": 13162,
       "end_line": 13171,
       "statement_sha256": "e9a00a41e2cfd53de7654d795e96b42dfd91a7916c4e647a833fde7caf1b7548",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6BasisNotation.bottomWord",
+        "MainTheory.Orbit6BasisNotation.topWord",
+        "MainTheory.Orbit6BasisNotation.bottomCoefficient",
+        "MainTheory.Orbit6BasisNotation.topCoefficient",
+        "MainTheory.Orbit6BasisNotation.physical_bottom_expansion",
+        "MainTheory.Orbit6BasisNotation.physical_top_expansion"
+      ],
+      "review": "20261005 actual display-route type/context review: Both words in this align environment are exact computational-basis delta expansions of the actual supported six-qubit states. Native free-bit/anchor/edge/singleton/complement coordinate orders are checked finitely, and injectivity prevents duplicated summands."
     },
     {
       "id": "supplementary.tex:eq:o6-scalars",
@@ -32304,9 +32370,17 @@
       "line": 13287,
       "end_line": 13293,
       "statement_sha256": "1a55aad7557ca02752a32187caf208b844d9b7b4a42c77910723056bdfd94f20",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6CharacterRows.edgeIndex",
+        "MainTheory.Orbit6CharacterRows.actual_edge_index",
+        "MainTheory.Orbit6CharacterRows.p",
+        "MainTheory.Orbit6CharacterRows.r",
+        "MainTheory.Orbit6CharacterRows.physical_monomials_zero",
+        "MainTheory.Orbit6CharacterRows.physical_X_rows",
+        "MainTheory.Orbit6CharacterRows.physical_ZX_rows"
+      ],
+      "review": "20261005 actual display-route type/context review: The symbols p and r are literal pairings of the actual anchor, singleton, incident edge and complementary singleton vectors, with the actual finite edge index checked. Physical alignment rows prove each pairing zero and therefore both printed signed X and ZX relations. This proves the displayed relations and their conclusion, without claiming that character inversion is the dependency route used by this declaration."
     },
     {
       "id": "supplementary.tex:eq:o6-Xkrow",
@@ -32318,9 +32392,17 @@
       "line": 13295,
       "end_line": 13298,
       "statement_sha256": "cf9078f48ebaec111349f55b984de0b2195270df9c9b0c675ccda69b28d8ff4d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6CharacterRows.edgeIndex",
+        "MainTheory.Orbit6CharacterRows.actual_edge_index",
+        "MainTheory.Orbit6CharacterRows.p",
+        "MainTheory.Orbit6CharacterRows.r",
+        "MainTheory.Orbit6CharacterRows.physical_monomials_zero",
+        "MainTheory.Orbit6CharacterRows.physical_X_rows",
+        "MainTheory.Orbit6CharacterRows.physical_ZX_rows"
+      ],
+      "review": "20261005 actual display-route type/context review: The symbols p and r are literal pairings of the actual anchor, singleton, incident edge and complementary singleton vectors, with the actual finite edge index checked. Physical alignment rows prove each pairing zero and therefore both printed signed X and ZX relations. This proves the displayed relations and their conclusion, without claiming that character inversion is the dependency route used by this declaration."
     },
     {
       "id": "supplementary.tex:eq:o6-ZlXkrow",
@@ -32332,9 +32414,17 @@
       "line": 13300,
       "end_line": 13304,
       "statement_sha256": "aae418edfa3cc95e753ad77318482151520fc462e96b3f6091ed1dbe98532185",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6CharacterRows.edgeIndex",
+        "MainTheory.Orbit6CharacterRows.actual_edge_index",
+        "MainTheory.Orbit6CharacterRows.p",
+        "MainTheory.Orbit6CharacterRows.r",
+        "MainTheory.Orbit6CharacterRows.physical_monomials_zero",
+        "MainTheory.Orbit6CharacterRows.physical_X_rows",
+        "MainTheory.Orbit6CharacterRows.physical_ZX_rows"
+      ],
+      "review": "20261005 actual display-route type/context review: The symbols p and r are literal pairings of the actual anchor, singleton, incident edge and complementary singleton vectors, with the actual finite edge index checked. Physical alignment rows prove each pairing zero and therefore both printed signed X and ZX relations. This proves the displayed relations and their conclusion, without claiming that character inversion is the dependency route used by this declaration."
     },
     {
       "id": "supplementary.tex:eq:o6-W5",
@@ -32363,9 +32453,17 @@
       "line": 13321,
       "end_line": 13327,
       "statement_sha256": "9c04cbed7d60ddd96af63f12d5fa57c8e9e2c9978258a11aaea403606dba8a2c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6CharacterRows.edgeIndex",
+        "MainTheory.Orbit6CharacterRows.actual_edge_index",
+        "MainTheory.Orbit6CharacterRows.p",
+        "MainTheory.Orbit6CharacterRows.r",
+        "MainTheory.Orbit6CharacterRows.physical_monomials_zero",
+        "MainTheory.Orbit6CharacterRows.physical_X_rows",
+        "MainTheory.Orbit6CharacterRows.physical_ZX_rows"
+      ],
+      "review": "20261005 actual display-route type/context review: The symbols p and r are literal pairings of the actual anchor, singleton, incident edge and complementary singleton vectors, with the actual finite edge index checked. Physical alignment rows prove each pairing zero and therefore both printed signed X and ZX relations. This proves the displayed relations and their conclusion, without claiming that character inversion is the dependency route used by this declaration."
     },
     {
       "id": "supplementary.tex:eq:o6-edgeorthogonality",
@@ -32377,9 +32475,12 @@
       "line": 13329,
       "end_line": 13332,
       "statement_sha256": "95b0f891edb2a2be8dc5e84862a1bea60083d756086336a5a25c18b52a5fe9cc",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6LineCompletion.edge_orthogonality_of_data",
+        "MainTheory.Orbit6LineCompletion.physical_edge_orthogonality"
+      ],
+      "review": "20261005 actual display-route type/context review: Every actual bottom edge is orthogonal to every actual complementary singleton, hence in particular to both endpoint complements printed here. The proof uses the actual proportionality and pairing rows before the final obstruction."
     },
     {
       "id": "supplementary.tex:eq:o6-asj-nonzero",
@@ -32425,9 +32526,14 @@
       "line": 13350,
       "end_line": 13353,
       "statement_sha256": "ab3327c0cd7e2524085e94b864eeb25a736ee1827b2a1bdac45c08a001a8dfea",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6LineCompletion.wedge_zero_scalar",
+        "MainTheory.Orbit6LineCompletion.anchor_nonzero_of_data",
+        "MainTheory.Orbit6LineCompletion.line_of_data",
+        "MainTheory.Orbit6LineCompletion.physical_lines"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual bottom anchor has nonzero norm one third. Actual wedge-zero and orthogonality rows imply a one-dimensional span containing it and every actual complementary singleton, with all actual bottom edges and top singletons orthogonal to that span."
     },
     {
       "id": "supplementary.tex:eq:o6-rho0",
@@ -32474,9 +32580,14 @@
       "line": 13373,
       "end_line": 13378,
       "statement_sha256": "57da8607913870561a2ade098fbe63ae2791c501905ac7a5d70f936aa7610218",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6LineCompletion.wedge_zero_scalar",
+        "MainTheory.Orbit6LineCompletion.anchor_nonzero_of_data",
+        "MainTheory.Orbit6LineCompletion.line_of_data",
+        "MainTheory.Orbit6LineCompletion.physical_lines"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual bottom anchor has nonzero norm one third. Actual wedge-zero and orthogonality rows imply a one-dimensional span containing it and every actual complementary singleton, with all actual bottom edges and top singletons orthogonal to that span."
     },
     {
       "id": "supplementary.tex:eq:o6-matrixflips",
@@ -32488,9 +32599,12 @@
       "line": 13382,
       "end_line": 13386,
       "statement_sha256": "bad4f906e6a54b3004b41399770ffd1d282c1b55cec38a5463dd42ce7492135e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit6MatrixTests.incidentTest",
+        "MainTheory.Orbit6MatrixTests.physical_matrix_tests"
+      ],
+      "review": "20261005 actual display-route type/context review: For every active physical coordinate, the actual two-by-two matrix identity contracts with any one-qubit operator. The sum uses the actual incident edge order and complementary singleton at the other endpoint, giving exactly the displayed pairing identity."
     },
     {
       "id": "supplementary.tex:eq:o6-matrixidentity",
@@ -38397,9 +38511,14 @@
       "line": 15235,
       "end_line": 15238,
       "statement_sha256": "cfa2fc5f30c10d99993dac8cd7924bf02a11f353c96d4e647716ade83b48255b",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17GraphDisplays.H",
+        "MainTheory.Orbit17GraphDisplays.normalized_nonneighbor_pair_sum",
+        "MainTheory.Orbit17GraphDisplays.isolated_matching_value",
+        "MainTheory.Orbit17GraphDisplays.normalized_universal_triangle"
+      ],
+      "review": "20261005 actual display-route type/context review: For the complex edge variables in the stated normalized graph, H is exactly the three-term four-vertex hafnian. Substitution of the stated zero/nonzero and unit edge labels gives the nonneighbor pair sums, isolated nonzero matching and universal-vertex triangle sums. These are literal algebraic intermediates in the manuscript graph argument, not new assumptions about physical KL."
     },
     {
       "id": "supplementary.tex:equation@15242",
@@ -38409,9 +38528,14 @@
       "line": 15242,
       "end_line": 15244,
       "statement_sha256": "c94224ab88891f27a21244ecf6ccaea5c8658cb96952d3addfc2a50a09c6686a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17GraphDisplays.H",
+        "MainTheory.Orbit17GraphDisplays.normalized_nonneighbor_pair_sum",
+        "MainTheory.Orbit17GraphDisplays.isolated_matching_value",
+        "MainTheory.Orbit17GraphDisplays.normalized_universal_triangle"
+      ],
+      "review": "20261005 actual display-route type/context review: For the complex edge variables in the stated normalized graph, H is exactly the three-term four-vertex hafnian. Substitution of the stated zero/nonzero and unit edge labels gives the nonneighbor pair sums, isolated nonzero matching and universal-vertex triangle sums. These are literal algebraic intermediates in the manuscript graph argument, not new assumptions about physical KL."
     },
     {
       "id": "supplementary.tex:eq:o17-degree4-pairsums",
@@ -38440,9 +38564,14 @@
       "line": 15258,
       "end_line": 15261,
       "statement_sha256": "340bd3f65b02cbd334eaee7c1d58e03e6d3e381541daddbc508db752bba13277",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit17GraphDisplays.H",
+        "MainTheory.Orbit17GraphDisplays.normalized_nonneighbor_pair_sum",
+        "MainTheory.Orbit17GraphDisplays.isolated_matching_value",
+        "MainTheory.Orbit17GraphDisplays.normalized_universal_triangle"
+      ],
+      "review": "20261005 actual display-route type/context review: For the complex edge variables in the stated normalized graph, H is exactly the three-term four-vertex hafnian. Substitution of the stated zero/nonzero and unit edge labels gives the nonneighbor pair sums, isolated nonzero matching and universal-vertex triangle sums. These are literal algebraic intermediates in the manuscript graph argument, not new assumptions about physical KL."
     },
     {
       "id": "supplementary.tex:prop:o20-nogo",
@@ -38509,9 +38638,19 @@
       "line": 15294,
       "end_line": 15299,
       "statement_sha256": "77e6ac8ea487496c479a8c8721aa5332192286caf7770b16760fb85c956206eb",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20DisplayCompletion.bottomWord",
+        "MainTheory.Orbit20DisplayCompletion.matchedTopWord",
+        "MainTheory.Orbit20DisplayCompletion.blockPattern",
+        "MainTheory.Orbit20DisplayCompletion.tail",
+        "MainTheory.Orbit20DisplayCompletion.epsilon",
+        "MainTheory.Orbit20DisplayCompletion.epsilon_checked",
+        "MainTheory.Orbit20DisplayCompletion.literal_matching",
+        "MainTheory.Orbit20DisplayCompletion.block_characters_of_data",
+        "MainTheory.Orbit20DisplayCompletion.physical_characters"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual sixteen bottom words and matched top words have the printed block parity and tail complement relation. Actual pre-obstruction diagonal rows make every block uniform; all three tail characters are balanced and hence both the global/mixed and each individual block character sums vanish."
     },
     {
       "id": "supplementary.tex:eq:o20-Pr",
@@ -38655,9 +38794,19 @@
       "line": 15365,
       "end_line": 15369,
       "statement_sha256": "79cabf8d9106a833756deb629c781ec6dc6b96738cedd8c1be50bdb63bbbf09d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20DisplayCompletion.bottomWord",
+        "MainTheory.Orbit20DisplayCompletion.matchedTopWord",
+        "MainTheory.Orbit20DisplayCompletion.blockPattern",
+        "MainTheory.Orbit20DisplayCompletion.tail",
+        "MainTheory.Orbit20DisplayCompletion.epsilon",
+        "MainTheory.Orbit20DisplayCompletion.epsilon_checked",
+        "MainTheory.Orbit20DisplayCompletion.literal_matching",
+        "MainTheory.Orbit20DisplayCompletion.block_characters_of_data",
+        "MainTheory.Orbit20DisplayCompletion.physical_characters"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual sixteen bottom words and matched top words have the printed block parity and tail complement relation. Actual pre-obstruction diagonal rows make every block uniform; all three tail characters are balanced and hence both the global/mixed and each individual block character sums vanish."
     },
     {
       "id": "supplementary.tex:eq:o20-minors",
@@ -38705,9 +38854,19 @@
       "line": 15389,
       "end_line": 15394,
       "statement_sha256": "f9f80a2e850cc235a28abfc77fd4ed2d943f259eacc74919848d84fae6191b48",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20DisplayCompletion.bottomWord",
+        "MainTheory.Orbit20DisplayCompletion.matchedTopWord",
+        "MainTheory.Orbit20DisplayCompletion.blockPattern",
+        "MainTheory.Orbit20DisplayCompletion.tail",
+        "MainTheory.Orbit20DisplayCompletion.epsilon",
+        "MainTheory.Orbit20DisplayCompletion.epsilon_checked",
+        "MainTheory.Orbit20DisplayCompletion.literal_matching",
+        "MainTheory.Orbit20DisplayCompletion.block_characters_of_data",
+        "MainTheory.Orbit20DisplayCompletion.physical_characters"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual sixteen bottom words and matched top words have the printed block parity and tail complement relation. Actual pre-obstruction diagonal rows make every block uniform; all three tail characters are balanced and hence both the global/mixed and each individual block character sums vanish."
     },
     {
       "id": "supplementary.tex:eq:o20-blockchars",
@@ -38719,9 +38878,19 @@
       "line": 15397,
       "end_line": 15401,
       "statement_sha256": "8db9f38e7a509bcd4b26c6872e508b933f03b87ce4f5e621a70c4f76ba7fec4c",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20DisplayCompletion.bottomWord",
+        "MainTheory.Orbit20DisplayCompletion.matchedTopWord",
+        "MainTheory.Orbit20DisplayCompletion.blockPattern",
+        "MainTheory.Orbit20DisplayCompletion.tail",
+        "MainTheory.Orbit20DisplayCompletion.epsilon",
+        "MainTheory.Orbit20DisplayCompletion.epsilon_checked",
+        "MainTheory.Orbit20DisplayCompletion.literal_matching",
+        "MainTheory.Orbit20DisplayCompletion.block_characters_of_data",
+        "MainTheory.Orbit20DisplayCompletion.physical_characters"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual sixteen bottom words and matched top words have the printed block parity and tail complement relation. Actual pre-obstruction diagonal rows make every block uniform; all three tail characters are balanced and hence both the global/mixed and each individual block character sums vanish."
     },
     {
       "id": "supplementary.tex:eq:o20-uniformblocks",
@@ -38768,9 +38937,18 @@
       "line": 15423,
       "end_line": 15427,
       "statement_sha256": "cb71cee61a48f464ac44fd9ecdb99b47b6f0aba3f8224ae892f8b737a798365e",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20PhaseCompletion.rho",
+        "MainTheory.Orbit20PhaseCompletion.ratio_unit_of_data",
+        "MainTheory.Orbit20PhaseCompletion.ratio_pairs_of_data",
+        "MainTheory.Orbit20PhaseCompletion.physical_ratio_pairs",
+        "MainTheory.Orbit20PhaseCompletion.oddTriangle",
+        "MainTheory.Orbit20PhaseCompletion.triangle_determinant",
+        "MainTheory.Orbit20PhaseCompletion.triangle_rows",
+        "MainTheory.Orbit20PhaseCompletion.physical_triangle"
+      ],
+      "review": "20261005 actual display-route type/context review: In any actual positive block, uniformity makes all four bottom amplitudes nonzero and matched physical norms make every displayed phase ratio unit modulus. The twenty-four actual pair rows imply all pairwise opposite-ratio equations. Three distinct actual ratios satisfy the displayed odd triangle whose literal coefficient determinant is minus two."
     },
     {
       "id": "supplementary.tex:eq:o20-oddtriangle",
@@ -38782,9 +38960,18 @@
       "line": 15429,
       "end_line": 15437,
       "statement_sha256": "8c334566d56b189e93504b45e43650f0bd36f2fd775c659b1c54dd91188a74a0",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit20PhaseCompletion.rho",
+        "MainTheory.Orbit20PhaseCompletion.ratio_unit_of_data",
+        "MainTheory.Orbit20PhaseCompletion.ratio_pairs_of_data",
+        "MainTheory.Orbit20PhaseCompletion.physical_ratio_pairs",
+        "MainTheory.Orbit20PhaseCompletion.oddTriangle",
+        "MainTheory.Orbit20PhaseCompletion.triangle_determinant",
+        "MainTheory.Orbit20PhaseCompletion.triangle_rows",
+        "MainTheory.Orbit20PhaseCompletion.physical_triangle"
+      ],
+      "review": "20261005 actual display-route type/context review: In any actual positive block, uniformity makes all four bottom amplitudes nonzero and matched physical norms make every displayed phase ratio unit modulus. The twenty-four actual pair rows imply all pairwise opposite-ratio equations. Three distinct actual ratios satisfy the displayed odd triangle whose literal coefficient determinant is minus two."
     },
     {
       "id": "supplementary.tex:prop:o12-nogo",
@@ -38832,9 +39019,18 @@
       "line": 15466,
       "end_line": 15470,
       "statement_sha256": "a031cb5771cf7fc87c8ed5783f829db90bc0daccd3a06bf73c313ed1561f54aa",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12BasisNotation.slot",
+        "MainTheory.Orbit12BasisNotation.bottomWord",
+        "MainTheory.Orbit12BasisNotation.topWord",
+        "MainTheory.Orbit12BasisNotation.bottomCoefficient",
+        "MainTheory.Orbit12BasisNotation.topCoefficient",
+        "MainTheory.Orbit12BasisNotation.active_patterns",
+        "MainTheory.Orbit12BasisNotation.physical_bottom_expansion",
+        "MainTheory.Orbit12BasisNotation.physical_top_expansion"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual native fibers are exactly the empty/full/even two-subset active patterns with the stated opposite half-angle bits. Both bottom and top words in the align block are exact supported computational-basis expansions, including their actual zero-angle spinor coefficients."
     },
     {
       "id": "supplementary.tex:eq:o12-topactive",
@@ -38846,9 +39042,18 @@
       "line": 15472,
       "end_line": 15476,
       "statement_sha256": "d34a60761a49fe3cfe6e07633285d3ce97049e83e94a9840a3ea1b0c713485e0",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12BasisNotation.slot",
+        "MainTheory.Orbit12BasisNotation.bottomWord",
+        "MainTheory.Orbit12BasisNotation.topWord",
+        "MainTheory.Orbit12BasisNotation.bottomCoefficient",
+        "MainTheory.Orbit12BasisNotation.topCoefficient",
+        "MainTheory.Orbit12BasisNotation.active_patterns",
+        "MainTheory.Orbit12BasisNotation.physical_bottom_expansion",
+        "MainTheory.Orbit12BasisNotation.physical_top_expansion"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual native fibers are exactly the empty/full/even two-subset active patterns with the stated opposite half-angle bits. Both bottom and top words in the align block are exact supported computational-basis expansions, including their actual zero-angle spinor coefficients."
     },
     {
       "id": "supplementary.tex:eq:o12-bottomword",
@@ -38861,9 +39066,18 @@
       "line": 15478,
       "end_line": 15489,
       "statement_sha256": "b027c02aa079ed4e3594a265796169b4f5cbec053cabbf5e5aceae44484590de",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12BasisNotation.slot",
+        "MainTheory.Orbit12BasisNotation.bottomWord",
+        "MainTheory.Orbit12BasisNotation.topWord",
+        "MainTheory.Orbit12BasisNotation.bottomCoefficient",
+        "MainTheory.Orbit12BasisNotation.topCoefficient",
+        "MainTheory.Orbit12BasisNotation.active_patterns",
+        "MainTheory.Orbit12BasisNotation.physical_bottom_expansion",
+        "MainTheory.Orbit12BasisNotation.physical_top_expansion"
+      ],
+      "review": "20261005 actual display-route type/context review: The actual native fibers are exactly the empty/full/even two-subset active patterns with the stated opposite half-angle bits. Both bottom and top words in the align block are exact supported computational-basis expansions, including their actual zero-angle spinor coefficients."
     },
     {
       "id": "supplementary.tex:eq:o12-anchor-equality",
@@ -39044,9 +39258,13 @@
       "line": 15561,
       "end_line": 15566,
       "statement_sha256": "8bd7a1644029c1f41aad88ccffdea1dd6da69d97fba441d6d7ca40488bd6dde9",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12AnchorLines.actual_anchor_lines",
+        "MainTheory.Orbit12LineDimensions.span_pair_scalar",
+        "MainTheory.Orbit12LineDimensions.actual_line_dimensions"
+      ],
+      "review": "20261005 actual display-route type/context review: Actual cross-block cancellation and the four positive anchor norms make both pairs of anchor spinors proportional. The spans of the exact actual pairs equal their nonzero singleton spans and each has complex dimension one."
     },
     {
       "id": "supplementary.tex:eq:o12-H0frame",
@@ -39087,9 +39305,14 @@
       "line": 15576,
       "end_line": 15582,
       "statement_sha256": "b4b357009692f10b44f87c25d87a5cbdfa044813598a2df4a5c2572aeae351aa",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12EdgeLines.physical_H1_frame",
+        "MainTheory.Orbit12EdgeLines.actual_edge_lines",
+        "MainTheory.Orbit12ScalarCompletion.ScalarData",
+        "MainTheory.Orbit12ScalarCompletion.actual_all_scalars"
+      ],
+      "review": "20261005 actual display-route type/context review: This align block includes all six edge scalars as well as the four anchors. The actual H=0 and independently derived H=1 positive frame identities force every edge spinor into the appropriate actual anchor line. Scaling each actual zero anchor by two gives unit directions and simultaneous scalar parameters for every displayed vector."
     },
     {
       "id": "supplementary.tex:eq:o12-anchor-cancellation",
@@ -39101,9 +39324,14 @@
       "line": 15585,
       "end_line": 15589,
       "statement_sha256": "e57484214d834d431fa56ca3afda34c5a829b76348cd3830c6aafd8177db56b3",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12ScalarCompletion.ScalarData",
+        "MainTheory.Orbit12ScalarCompletion.norm_one_coordinate",
+        "MainTheory.Orbit12ScalarCompletion.scalar_cancellation",
+        "MainTheory.Orbit12ScalarCompletion.actual_anchor_cancellation"
+      ],
+      "review": "20261005 actual display-route type/context review: With the actual simultaneous unit-direction parameterization, an entry of the actual AH cross-block equation at nonzero coordinates gives exactly beta0 times conjugate alpha0 plus beta4 times conjugate alpha4 equal to zero."
     },
     {
       "id": "supplementary.tex:eq:o12-pair-e",
@@ -39115,9 +39343,17 @@
       "line": 15595,
       "end_line": 15598,
       "statement_sha256": "d2ff93432c5665b1df697c578c4b0cf560c7142ba3e8b3b32fb6719f4704c34d",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12PairCompletion.complementEdge",
+        "MainTheory.Orbit12PairCompletion.actual_complement_edges",
+        "MainTheory.Orbit12PairCompletion.actual_pair_rows",
+        "MainTheory.Orbit12PairCompletion.actual_scalar_rows",
+        "MainTheory.Orbit12PairCompletion.actual_eliminated_anchor_equality",
+        "MainTheory.Orbit12ScalarCompletion.pair_scalar_rows",
+        "MainTheory.Orbit12ScalarCompletion.eliminated_anchor_equality"
+      ],
+      "review": "20261005 actual display-route type/context review: All six actual edges and their complements are checked. Each printed two-incidence pairing follows from the sum or difference of two actual native weight-two KL rows. The full actual normalized scalar parameterization gives both equations in the scalar align block. Positive chosen edge mass makes its scalar nonzero, and direct elimination gives the displayed anchor-product equality before the final contradiction."
     },
     {
       "id": "supplementary.tex:eq:o12-pair-ebar",
@@ -39129,9 +39365,17 @@
       "line": 15600,
       "end_line": 15603,
       "statement_sha256": "934cf7d909303e97b6a84cb41b9e08b7d17052ac989e02430d6d3674ef191e2f",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12PairCompletion.complementEdge",
+        "MainTheory.Orbit12PairCompletion.actual_complement_edges",
+        "MainTheory.Orbit12PairCompletion.actual_pair_rows",
+        "MainTheory.Orbit12PairCompletion.actual_scalar_rows",
+        "MainTheory.Orbit12PairCompletion.actual_eliminated_anchor_equality",
+        "MainTheory.Orbit12ScalarCompletion.pair_scalar_rows",
+        "MainTheory.Orbit12ScalarCompletion.eliminated_anchor_equality"
+      ],
+      "review": "20261005 actual display-route type/context review: All six actual edges and their complements are checked. Each printed two-incidence pairing follows from the sum or difference of two actual native weight-two KL rows. The full actual normalized scalar parameterization gives both equations in the scalar align block. Positive chosen edge mass makes its scalar nonzero, and direct elimination gives the displayed anchor-product equality before the final contradiction."
     },
     {
       "id": "supplementary.tex:eq:o12-scalar1",
@@ -39144,9 +39388,17 @@
       "line": 15606,
       "end_line": 15611,
       "statement_sha256": "3f892389215e8a7dc2a4396f5bad05fd66141b1d34632a7e32c308c032e78533",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12PairCompletion.complementEdge",
+        "MainTheory.Orbit12PairCompletion.actual_complement_edges",
+        "MainTheory.Orbit12PairCompletion.actual_pair_rows",
+        "MainTheory.Orbit12PairCompletion.actual_scalar_rows",
+        "MainTheory.Orbit12PairCompletion.actual_eliminated_anchor_equality",
+        "MainTheory.Orbit12ScalarCompletion.pair_scalar_rows",
+        "MainTheory.Orbit12ScalarCompletion.eliminated_anchor_equality"
+      ],
+      "review": "20261005 actual display-route type/context review: All six actual edges and their complements are checked. Each printed two-incidence pairing follows from the sum or difference of two actual native weight-two KL rows. The full actual normalized scalar parameterization gives both equations in the scalar align block. Positive chosen edge mass makes its scalar nonzero, and direct elimination gives the displayed anchor-product equality before the final contradiction."
     },
     {
       "id": "supplementary.tex:eq:o12-anchor-equality2",
@@ -39158,9 +39410,17 @@
       "line": 15613,
       "end_line": 15617,
       "statement_sha256": "097e4a7dfb8c3a4ad665383196d4e7989ee6da227870cb311a053622f7ca1e7f",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit12PairCompletion.complementEdge",
+        "MainTheory.Orbit12PairCompletion.actual_complement_edges",
+        "MainTheory.Orbit12PairCompletion.actual_pair_rows",
+        "MainTheory.Orbit12PairCompletion.actual_scalar_rows",
+        "MainTheory.Orbit12PairCompletion.actual_eliminated_anchor_equality",
+        "MainTheory.Orbit12ScalarCompletion.pair_scalar_rows",
+        "MainTheory.Orbit12ScalarCompletion.eliminated_anchor_equality"
+      ],
+      "review": "20261005 actual display-route type/context review: All six actual edges and their complements are checked. Each printed two-incidence pairing follows from the sum or difference of two actual native weight-two KL rows. The full actual normalized scalar parameterization gives both equations in the scalar align block. Positive chosen edge mass makes its scalar nonzero, and direct elimination gives the displayed anchor-product equality before the final contradiction."
     },
     {
       "id": "supplementary.tex:prop:o13-nogo",
@@ -39299,9 +39559,14 @@
       "line": 15671,
       "end_line": 15675,
       "statement_sha256": "0ae23d57c787c72ed3619b0c23c338ac9ad6217a73708e774c97484dd45893f2",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13DisplayCompletion.errors",
+        "MainTheory.Orbit13DisplayCompletion.error_weights",
+        "MainTheory.Orbit13DisplayCompletion.physical_error_rows",
+        "MainTheory.Orbit13DisplayCompletion.physical_trace_test"
+      ],
+      "review": "20261005 actual display-route type/context review: The eight literal X6/Y6 and dressed ZjX6/ZjY6 errors have physical weight at most two and their actual KL rows vanish. Actual block frame equality contracts with every two-by-two matrix to give the printed arbitrary-operator trace relation."
     },
     {
       "id": "supplementary.tex:eq:o13-X6overlaps",
@@ -39385,9 +39650,14 @@
       "line": 15713,
       "end_line": 15716,
       "statement_sha256": "516c6798ff1dcc9bc3e9b69d557bf4d00858cb516634e35eb2a555c8d7548e1a",
-      "status": "unreviewed",
-      "lean_declarations": [],
-      "review": ""
+      "status": "covered",
+      "lean_declarations": [
+        "MainTheory.Orbit13DisplayCompletion.errors",
+        "MainTheory.Orbit13DisplayCompletion.error_weights",
+        "MainTheory.Orbit13DisplayCompletion.physical_error_rows",
+        "MainTheory.Orbit13DisplayCompletion.physical_trace_test"
+      ],
+      "review": "20261005 actual display-route type/context review: The eight literal X6/Y6 and dressed ZjX6/ZjY6 errors have physical weight at most two and their actual KL rows vanish. Actual block frame equality contracts with every two-by-two matrix to give the printed arbitrary-operator trace relation."
     },
     {
       "id": "supplementary.tex:eq:o13-frameequality",

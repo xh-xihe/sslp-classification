@@ -1,0 +1,24 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit12PairCompletion.lean:189:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  u c
+in the target expression
+  pairing (a c e) (ut d) + pairing (v c) (b d (complementEdge e)) = 0
+
+c d : SS.State 6 ℂ
+hc : ∀ x ∉ S0, c x = 0
+hd : ∀ x ∉ S1, d x = 0
+hkl : SS.HasDistance ![c, d] 3
+alpha0 alpha4 beta0 beta4 : ℂ
+A B : Fin 6 → ℂ
+e : Fin 6
+hL : nsq (unitBottom c) = 1
+hM : nsq (unitTop d) = 1
+hu : u c = alpha0 • unitBottom c
+hv : v c = alpha4 • unitBottom c
+hU : ut d = beta0 • unitTop d
+hV : vt d = beta4 • unitTop d
+ha : ∀ (e : Fin 6), a c e = A e • unitTop d
+hb : ∀ (e : Fin 6), b d e = B e • unitBottom c
+h1 : pairing (a c e) (ut d) + pairing (v c) (b d (complementEdge e)) = 0
+h2 : pairing (u c) (b d (complementEdge e)) + pairing (a c e) (vt d) = 0
+⊢ star (A e) * beta0 + star alpha4 * B (complementEdge e) = 0 ∧
+    star alpha0 * B (complementEdge e) + star (A e) * beta4 = 0

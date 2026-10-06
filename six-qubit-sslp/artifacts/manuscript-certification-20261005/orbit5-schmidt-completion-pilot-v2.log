@@ -1,0 +1,14 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5SchmidtCompletion.lean:59:58: error: This simp argument is unused:
+  hs
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.diagonal, ̲hs̵,̵h̵t]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5SchmidtCompletion.lean:59:61: error: This simp argument is unused:
+  ht
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.diagonal, ̲hs,̵h̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

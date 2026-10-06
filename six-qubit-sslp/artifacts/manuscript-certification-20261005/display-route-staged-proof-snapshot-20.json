@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "staged_modules": [
+    {
+      "module": "Orbit13DisplayCompletion",
+      "staged_sha256_lf": "740e6b1a17582520e63d8031b3eaa0d3c462d205cb96b612f7f78a4179dae2cd",
+      "canonical_source": "MainTheory/Orbit13DisplayCompletion.lean",
+      "canonical_sha256_lf": "740e6b1a17582520e63d8031b3eaa0d3c462d205cb96b612f7f78a4179dae2cd",
+      "strict_pilot": "orbit13-display-completion-pilot-v2",
+      "pilot_record_sha256": "4fbe5df439ce214c9be4e512e6249e26779b2f2f8564440469664e8475441697",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6LineCompletion",
+      "staged_sha256_lf": "a04ac8e61ee2b72399f9c9b58aca89b0918ae7aa801e7fda2a2a994661cff601",
+      "canonical_source": "MainTheory/Orbit6LineCompletion.lean",
+      "canonical_sha256_lf": "829f62cbc26bf4993e5a6a8b1e6c7b6c0f1d139101189e0551cc0f3ebb29ea9c",
+      "strict_pilot": "orbit6-line-completion-pilot-v3",
+      "pilot_record_sha256": "28e3f977e9830320f396ddfff1fd7c7468ce91d283272c906c06b9725db27609",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6MatrixTests",
+      "staged_sha256_lf": "4b62fdd512f2ced73646dddbbf500b1fe7e82055f57f5f0e241204563d2d6f23",
+      "canonical_source": "MainTheory/Orbit6MatrixTests.lean",
+      "canonical_sha256_lf": "80edf53cc7a845c2f56ebc140cff70df5b0a8d804ba374ab007b79e27982e023",
+      "strict_pilot": "orbit6-matrix-tests-pilot-v1",
+      "pilot_record_sha256": "ef2a162e2974650a590568329c561a14f7bfd0e9c42b76d64ba1c58ea11d651f",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6CharacterRows",
+      "staged_sha256_lf": "b5ebb094227afda786a67d16343edbbe43fc03dd8c3fd47b67671bb88e365d33",
+      "canonical_source": "MainTheory/Orbit6CharacterRows.lean",
+      "canonical_sha256_lf": "d6052ed1e7c948cd10b1102ccc8920fd64fd42e4721537026c9720bcea67aa59",
+      "strict_pilot": "orbit6-character-rows-pilot-v2",
+      "pilot_record_sha256": "9ea165d343af8667cd3d9984b95435e7809c98e11895c3911dbe8286a0fe6e80",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit20DisplayCompletion",
+      "staged_sha256_lf": "bd323b354c992aa3e6f28ae3bc22b52d18d2cfcc8c4c6fece6756770cb7bff1f",
+      "canonical_source": "MainTheory/Orbit20DisplayCompletion.lean",
+      "canonical_sha256_lf": "94a58b276ad0ae918384e3f94bc7390edb965c5b9cd4ea693498c8ac1fca51b6",
+      "strict_pilot": "orbit20-display-completion-pilot-v3",
+      "pilot_record_sha256": "4a03dea3159a2333eac05b8929a8733fb882f9fdc2469767e821aeb25b90f82e",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit20PhaseCompletion",
+      "staged_sha256_lf": "a6bc87980238e2d8f66408de4fa643522a3938e406de1539143ce9ad814e13a7",
+      "canonical_source": "MainTheory/Orbit20PhaseCompletion.lean",
+      "canonical_sha256_lf": "6a23f02ee6b282309775609f4f83d8954148f0bd7f1b0d2ae694008f1f071f80",
+      "strict_pilot": "orbit20-phase-completion-pilot-v2",
+      "pilot_record_sha256": "db4969a6e610a213c3cf600542696fbb56e24bf14b7c9d9fb635b845c058b2f4",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit17GraphDisplays",
+      "staged_sha256_lf": "f7d17ec1fe8ceaf5248aa1e77bcc7c2209db8e9946b9b1fb83543964214b5917",
+      "canonical_source": "MainTheory/Orbit17GraphDisplays.lean",
+      "canonical_sha256_lf": "f7d17ec1fe8ceaf5248aa1e77bcc7c2209db8e9946b9b1fb83543964214b5917",
+      "strict_pilot": "orbit17-graph-displays-pilot-v2",
+      "pilot_record_sha256": "cbc12953b706b23bbcece7e55c66461f4d9dbccc7e32e736d93e6f936f2bad94",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SupportedBasisExpansion",
+      "staged_sha256_lf": "9b28812844c983585b0f62807f044a774bbfb19dcd55ef73f18c9514620c0f2c",
+      "canonical_source": "MainTheory/SupportedBasisExpansion.lean",
+      "canonical_sha256_lf": "9b28812844c983585b0f62807f044a774bbfb19dcd55ef73f18c9514620c0f2c",
+      "strict_pilot": "supported-basis-expansion-pilot-v1",
+      "pilot_record_sha256": "62f244334bc62eb692856662a426200e6c12ec9f98e60611bd96833c88b60dae",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit6BasisNotation",
+      "staged_sha256_lf": "e57cdaf2bb21dcd1f04f765c764650c222064cbb2a4c5c68c6424eb4d3f5a343",
+      "canonical_source": "MainTheory/Orbit6BasisNotation.lean",
+      "canonical_sha256_lf": "00ea52a454882c9f4f8021e0756e79ad2ab8a08d09d7ff08eefb67c6ff7e7f2e",
+      "strict_pilot": "orbit6-basis-notation-pilot-v1",
+      "pilot_record_sha256": "aa3cec01d51751a29fc42681ab5fc4a44e4b607fc3a40841d428ca025a6f5b92",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12BasisNotation",
+      "staged_sha256_lf": "3b528782e8c926fd985d94e8327140daf42324a601458d47fa509221061a4af8",
+      "canonical_source": "MainTheory/Orbit12BasisNotation.lean",
+      "canonical_sha256_lf": "d398301e23863d5cb88da77ccbd1221cf12e372897245d94cdaf4e04de9df6f3",
+      "strict_pilot": "orbit12-basis-notation-pilot-v1",
+      "pilot_record_sha256": "5d2865acd48bc1a7ca650d148947ad1869a45f91aae930065b60a2bd611e6a94",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12AnchorLines",
+      "staged_sha256_lf": "c1e3c3c7436895baf632ab0240f11d5c86b54f0862ebaaa890dcd1ed496e2e53",
+      "canonical_source": "MainTheory/Orbit12AnchorLines.lean",
+      "canonical_sha256_lf": "ee28506c87675aa7941abcd0b1f16b84b3e98affbdf44dbfb3358914bfe574c1",
+      "strict_pilot": "orbit12-anchor-lines-pilot-v2",
+      "pilot_record_sha256": "42d4744a0b43676380b389ef3b339062e8a93613d7c2e8a67bfef393d4cce5a9",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12AnchorScalars",
+      "staged_sha256_lf": "6329a7eb422a9460797dc9e01ba08b5c816c40832c8a63f846c15c9386d4eda7",
+      "canonical_source": "MainTheory/Orbit12AnchorScalars.lean",
+      "canonical_sha256_lf": "a9be3d5ec47859101eb4f14b71844bb38a76d9a57d49ba78a575107ebb3b15e4",
+      "strict_pilot": "orbit12-anchor-scalars-pilot-v2",
+      "pilot_record_sha256": "05510dd6c471c57b922c2ae662f1fe2c138132724df523b5788e512f8cbe997a",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "RankOneSpinorFrame",
+      "staged_sha256_lf": "9c09f44a8461faefdf44a4d9bbae0a2773db8ea465cb2d84229ab5cbd10eb6c6",
+      "canonical_source": "MainTheory/RankOneSpinorFrame.lean",
+      "canonical_sha256_lf": "b729b5d935bfe381394dc6384814cfd8e74d2f969251d58d25bd40142d054cb9",
+      "strict_pilot": "rank-one-spinor-frame-pilot-v4",
+      "pilot_record_sha256": "81fec9d4496536e3449f2e5b981624dc2c962b5a7a87a0be35fa56e14e7b4eb8",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit5MatrixRows",
+      "staged_sha256_lf": "544927e6fb8e2e7ed6b26025e4c730ef42f205b348bddb81fd79f0e76a5aecc0",
+      "canonical_source": "MainTheory/Orbit5MatrixRows.lean",
+      "canonical_sha256_lf": "abdeeb26d1ee0fdbc60aba86cd633774cefa45eee3c1ddaa323ce86def375631",
+      "strict_pilot": "orbit5-matrix-rows-pilot-v7",
+      "pilot_record_sha256": "6335198587c654ef2880d30301c66041d44498bac413cd812a651457dc4d9e9e",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12EdgeLines",
+      "staged_sha256_lf": "517032c0ebe456c9e0b537a2305766239eeb28859c872ce47c054340ce559788",
+      "canonical_source": "MainTheory/Orbit12EdgeLines.lean",
+      "canonical_sha256_lf": "6f2622abc0c083c56a0e73e2ecba9046ca7ef92ca07c0813c72f43341dc12317",
+      "strict_pilot": "orbit12-edge-lines-pilot-v5",
+      "pilot_record_sha256": "c7f5ea907c3ffb3304bb91d9386dd4775da25fdde3cf1abaa63b289f2f45e646",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12ScalarCompletion",
+      "staged_sha256_lf": "ca146d2fae8e0041db74cf8bbacd1bd7c3efcabc98993cb1272efa9fea77c267",
+      "canonical_source": "MainTheory/Orbit12ScalarCompletion.lean",
+      "canonical_sha256_lf": "883b9a70c2c5823c5334c37f1805d8e12ce3b702a5b3bc9729e848e0358ac0c3",
+      "strict_pilot": "orbit12-scalar-completion-pilot-v1",
+      "pilot_record_sha256": "e95d2407031c85716655c0a0bbc5267a7fb0e9b5b9b645e25f44556be21e4a77",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12PairCompletion",
+      "staged_sha256_lf": "cb16a6e08e80dc146030fb184b05112bf05ce203b3ba11ef1c1ec658238de430",
+      "canonical_source": "MainTheory/Orbit12PairCompletion.lean",
+      "canonical_sha256_lf": "e442a779cfae01ca75373454ff7e5bd3277383da3ec3fe8adb948e3ab5a2f0ad",
+      "strict_pilot": "orbit12-pair-completion-pilot-v2",
+      "pilot_record_sha256": "af75800631cbec8f980635c09b1a4e6796222e75afc2b14ea7daa3b214beb875",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit12LineDimensions",
+      "staged_sha256_lf": "19dcb2e85ca86bce5047ab78207d7fe6bff0699b7fbcaef8e012772ad41cf5e8",
+      "canonical_source": "MainTheory/Orbit12LineDimensions.lean",
+      "canonical_sha256_lf": "5afdac124fadaa2a9449d79b775de26a38c54e00130b5d6757653befb66f0639",
+      "strict_pilot": "orbit12-line-dimensions-pilot-v1",
+      "pilot_record_sha256": "9946d751f4633f7e14432242c5594e08671027632e9e89fdb5bfaa527ab68a96",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit5OffdiagonalDisplays",
+      "staged_sha256_lf": "ccf463f887d3978b499a116aca6fc934c690e5e42bddcda615edbd56301f5728",
+      "canonical_source": "MainTheory/Orbit5OffdiagonalDisplays.lean",
+      "canonical_sha256_lf": "47b09131ecf4471ed9c7c42591e4c0960c107dee4d2229f74d54a4e7e4fadd29",
+      "strict_pilot": "orbit5-offdiagonal-displays-pilot-v3",
+      "pilot_record_sha256": "ef2f1e88e32e835cad57b333b86bcdf08da941326d738b9155979a121001d291",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Orbit5PauliDisplays",
+      "staged_sha256_lf": "112e3a46fe56354c22fcb2cbaa836ed17e53479ad8c16105f9ffab63d35314a4",
+      "canonical_source": "MainTheory/Orbit5PauliDisplays.lean",
+      "canonical_sha256_lf": "d33326fc827f0ff7e088ad8115bc5db755ff922309e07e4917ab97e93fde8d2b",
+      "strict_pilot": "orbit5-pauli-displays-pilot-v7",
+      "pilot_record_sha256": "011e2da0734bd081bf032913b7d497e68ca7c282440dd9ca9b75759f63746d9a",
+      "pilot_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Independent strict pilots pass; canonical whole build, type/context review and fresh audit remain pending."
+}

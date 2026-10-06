@@ -1,0 +1,116 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:24:4: error: linarith failed to find a contradiction
+case «0».h1.h
+Y : M2
+i : Fin 2
+h : Complex.normSq (Y i 0) + Complex.normSq (Y i 1) = 0
+a✝ : Complex.normSq (Y i ((fun i => i) ⟨0, ⋯⟩)) < 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:25:4: error: linarith failed to find a contradiction
+case «1».h1.h
+Y : M2
+i : Fin 2
+h : Complex.normSq (Y i 0) + Complex.normSq (Y i 1) = 0
+a✝ : Complex.normSq (Y i ((fun i => i) ⟨1, ⋯⟩)) < 0
+⊢ False
+failed
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:66:46: error: unsolved goals
+case a.«_@»._internal._hyg.0.«0».«0»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (Matrix.vecTail fun i j => if i = j then ![↑s, 0] i else 0) 1 = 0
+
+case a.«_@»._internal._hyg.0.«0».«1»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (Matrix.vecTail fun i j => if i = j then ![↑s, 0] i else 0) 0 = 0
+
+case a.«_@»._internal._hyg.0.«1».«0»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (fun i j => if i = j then ![↑s, 0] i else 0) 1 = 0
+
+case a.«_@»._internal._hyg.0.«1».«1»
+Y : M2
+ho : star (Y 0 0) * Y 1 0 + star (Y 0 1) * Y 1 1 = 0
+hpos : ¬0 < rowNorm Y 0
+hzero : rowNorm Y 0 = 0
+hz : ∀ (j : Fin 2), Y 0 j = 0
+hpos1 : 0 < rowNorm Y 1
+Y' : M2 := swap * Y
+hy' : ∀ (j : Fin 2), Y' 0 j = Y 1 j ∧ Y' 1 j = Y 0 j
+hn' : 0 < rowNorm Y' 0
+ho' : star (Y' 0 0) * Y' 1 0 + star (Y' 0 1) * Y' 1 1 = 0
+R : M2
+s t : ℝ
+hR : ComplexSchmidtStep.unitary R
+hs : 0 ≤ s
+ht : 0 ≤ t
+hd : Y' * R = Matrix.diagonal ![↑s, ↑t]
+ht0 : t = 0
+hsY : swap * Y' = Y
+⊢ Matrix.vecHead (fun i j => if i = j then ![↑s, 0] i else 0) 0 = ↑s
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\ComplexSchmidtDecomposition.lean:109:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Matrix.diagonal ?m.264 0 1
+in the target expression
+  (fun A => A 0 1) (L * X * (L * X)ᴴ) = (fun A => A 0 1) (Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues))
+
+X : M2
+G : M2 := X * Xᴴ
+hG : Matrix.IsHermitian G
+E : M2 := ↑hG.eigenvectorUnitary
+L : M2 := Eᴴ
+hE : ComplexSchmidtStep.unitary E
+hL : ComplexSchmidtStep.unitary L
+hd : star ↑hG.eigenvectorUnitary * G * ↑hG.eigenvectorUnitary = Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues)
+he : L * X * (L * X)ᴴ = Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues)
+hh : (fun A => A 0 1) (L * X * (L * X)ᴴ) = (fun A => A 0 1) (Matrix.diagonal (RCLike.ofReal ∘ hG.eigenvalues))
+⊢ star ((L * X) 0 0) * (L * X) 1 0 + star ((L * X) 0 1) * (L * X) 1 1 = 0

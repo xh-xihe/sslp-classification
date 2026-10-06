@@ -1,0 +1,49 @@
+{
+  "paper_version": "20261003",
+  "full_suite": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "sources",
+      "passed": true,
+      "detail": "16218 Lean sources clean",
+      "seconds": 168.594
+    },
+    {
+      "check": "readme",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\readme-names.log; all present",
+      "seconds": 61.594
+    },
+    {
+      "check": "audit-names",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\audit-names.log; declarations found in MainTheory, SS, SixQubit, QECC, Orbit2: 590534\naudit names checked: 9251, unresolved: 1\n  MainTheory/ManuscriptCertificationAudit20261005.lean  7077  Complex.normSq_nonneg\nclaims-ledger names checked: 13780, unresolved: 0",
+      "seconds": 33.484
+    },
+    {
+      "check": "named-results",
+      "passed": true,
+      "detail": "exit=0; log=tmp\\verification\\20261003\\named-results.log; named-results document is current",
+      "seconds": 0.89
+    },
+    {
+      "check": "claims",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\claims.log; FAIL: 4 incomplete assertions (partial=1, unreviewed=3); 2 prose reviews not complete (main.tex, supplementary.tex); first: main.tex:eq:quantum-Singleton, supplementary.tex:q2fam:eq:split-orbits, supplementary.tex:eq:o5-schmidt, supplementary.tex:eq:o14-orthogonalframes",
+      "seconds": 0.907
+    },
+    {
+      "check": "prose-review",
+      "passed": false,
+      "detail": "exit=1; log=tmp\\verification\\20261003\\prose-review.log; FAIL: selected release prose review is not complete",
+      "seconds": 0.078
+    },
+    {
+      "check": "errata",
+      "passed": false,
+      "detail": "errata review incomplete; outstanding: singleton-rank-one, qmin-over-all-representatives, intro-finiteness-missing-hypothesis, kl-diagonal-requirements-bridge, rational-section-leadin-reversed",
+      "seconds": 0.0
+    }
+  ]
+}

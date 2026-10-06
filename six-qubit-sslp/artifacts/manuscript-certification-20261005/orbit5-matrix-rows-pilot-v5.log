@@ -1,0 +1,154 @@
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:24:2: error: 'change' tactic failed, pattern
+  star (u 0) * (F 0 0 * b 0 + F 0 1 * b 2) + star (u 1) * (F 0 0 * b 1 + F 0 1 * b 3) +
+          star (u 2) * (F 1 0 * b 0 + F 1 1 * b 2) +
+        star (u 3) * (F 1 0 * b 1 + F 1 1 * b 3) +
+      (star (a 0) * (F 0 0 * v 0 + F 0 1 * v 2) + star (a 1) * (F 0 0 * v 1 + F 0 1 * v 3) +
+          star (a 2) * (F 1 0 * v 0 + F 1 1 * v 2) +
+        star (a 3) * (F 1 0 * v 1 + F 1 1 * v 3)) =
+    F 0 0 * (b 0 * star (u 0) + b 1 * star (u 1) + (v 0 * star (a 0) + v 1 * star (a 1))) +
+          F 0 1 * (b 2 * star (u 0) + b 3 * star (u 1) + (v 2 * star (a 0) + v 3 * star (a 1))) +
+        F 1 0 * (b 0 * star (u 2) + b 1 * star (u 3) + (v 0 * star (a 2) + v 1 * star (a 3))) +
+      F 1 1 * (b 2 * star (u 2) + b 3 * star (u 3) + (v 2 * star (a 2) + v 3 * star (a 3)))
+is not definitionally equal to target
+  ip u (actFirst F b) + ip a (actFirst F v) = (F * (traceSecond b u + traceSecond v a)).trace
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:30:2: error: 'change' tactic failed, pattern
+  star (u 0) * (F 0 0 * b 0 + F 0 1 * b 1) + star (u 1) * (F 1 0 * b 0 + F 1 1 * b 1) +
+          star (u 2) * (F 0 0 * b 2 + F 0 1 * b 3) +
+        star (u 3) * (F 1 0 * b 2 + F 1 1 * b 3) +
+      (star (a 0) * (F 0 0 * v 0 + F 0 1 * v 1) + star (a 1) * (F 1 0 * v 0 + F 1 1 * v 1) +
+          star (a 2) * (F 0 0 * v 2 + F 0 1 * v 3) +
+        star (a 3) * (F 1 0 * v 2 + F 1 1 * v 3)) =
+    F 0 0 * (b 0 * star (u 0) + b 2 * star (u 2) + (v 0 * star (a 0) + v 2 * star (a 2))) +
+          F 0 1 * (b 1 * star (u 0) + b 3 * star (u 2) + (v 1 * star (a 0) + v 3 * star (a 2))) +
+        F 1 0 * (b 0 * star (u 1) + b 2 * star (u 3) + (v 0 * star (a 1) + v 2 * star (a 3))) +
+      F 1 1 * (b 1 * star (u 1) + b 3 * star (u 3) + (v 1 * star (a 1) + v 3 * star (a 3)))
+is not definitionally equal to target
+  ip u (actSecond F b) + ip a (actSecond F v) = (F * (traceFirst b u + traceFirst v a)).trace
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:38:4: error: 'change' tactic failed, pattern
+  bb1 d 0 * star (uu c 0) + bb1 d 1 * star (uu c 1) + (vv d 0 * star (aa1 c 0) + vv d 1 * star (aa1 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:40:4: error: 'change' tactic failed, pattern
+  bb1 d 0 * star (uu c 2) + bb1 d 1 * star (uu c 3) + (vv d 0 * star (aa1 c 2) + vv d 1 * star (aa1 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:42:4: error: 'change' tactic failed, pattern
+  bb1 d 2 * star (uu c 0) + bb1 d 3 * star (uu c 1) + (vv d 2 * star (aa1 c 0) + vv d 3 * star (aa1 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:44:4: error: 'change' tactic failed, pattern
+  bb1 d 2 * star (uu c 2) + bb1 d 3 * star (uu c 3) + (vv d 2 * star (aa1 c 2) + vv d 3 * star (aa1 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:52:4: error: 'change' tactic failed, pattern
+  bb1 d 0 * star (uu c 0) + bb1 d 2 * star (uu c 2) + (vv d 0 * star (aa1 c 0) + vv d 2 * star (aa1 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:54:4: error: 'change' tactic failed, pattern
+  bb1 d 0 * star (uu c 1) + bb1 d 2 * star (uu c 3) + (vv d 0 * star (aa1 c 1) + vv d 2 * star (aa1 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:56:4: error: 'change' tactic failed, pattern
+  bb1 d 1 * star (uu c 0) + bb1 d 3 * star (uu c 2) + (vv d 1 * star (aa1 c 0) + vv d 3 * star (aa1 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:58:4: error: 'change' tactic failed, pattern
+  bb1 d 1 * star (uu c 1) + bb1 d 3 * star (uu c 3) + (vv d 1 * star (aa1 c 1) + vv d 3 * star (aa1 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:66:4: error: 'change' tactic failed, pattern
+  bb2 d 0 * star (uu c 0) + bb2 d 1 * star (uu c 1) + (vv d 0 * star (aa2 c 0) + vv d 1 * star (aa2 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 1 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:68:4: error: 'change' tactic failed, pattern
+  bb2 d 0 * star (uu c 2) + bb2 d 1 * star (uu c 3) + (vv d 0 * star (aa2 c 2) + vv d 1 * star (aa2 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 1 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:70:4: error: 'change' tactic failed, pattern
+  bb2 d 2 * star (uu c 0) + bb2 d 3 * star (uu c 1) + (vv d 2 * star (aa2 c 0) + vv d 3 * star (aa2 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 1 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:72:4: error: 'change' tactic failed, pattern
+  bb2 d 2 * star (uu c 2) + bb2 d 3 * star (uu c 3) + (vv d 2 * star (aa2 c 2) + vv d 3 * star (aa2 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 1 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:80:4: error: 'change' tactic failed, pattern
+  bb2 d 0 * star (uu c 0) + bb2 d 2 * star (uu c 2) + (vv d 0 * star (aa2 c 0) + vv d 2 * star (aa2 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 1 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:82:4: error: 'change' tactic failed, pattern
+  bb2 d 0 * star (uu c 1) + bb2 d 2 * star (uu c 3) + (vv d 0 * star (aa2 c 1) + vv d 2 * star (aa2 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 1 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:84:4: error: 'change' tactic failed, pattern
+  bb2 d 1 * star (uu c 0) + bb2 d 3 * star (uu c 2) + (vv d 1 * star (aa2 c 0) + vv d 3 * star (aa2 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 1 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:86:4: error: 'change' tactic failed, pattern
+  bb2 d 1 * star (uu c 1) + bb2 d 3 * star (uu c 3) + (vv d 1 * star (aa2 c 1) + vv d 3 * star (aa2 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 1 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:94:4: error: 'change' tactic failed, pattern
+  bb3 d 0 * star (uu c 0) + bb3 d 1 * star (uu c 1) + (vv d 0 * star (aa3 c 0) + vv d 1 * star (aa3 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 2 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:96:4: error: 'change' tactic failed, pattern
+  bb3 d 0 * star (uu c 2) + bb3 d 1 * star (uu c 3) + (vv d 0 * star (aa3 c 2) + vv d 1 * star (aa3 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 2 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:98:4: error: 'change' tactic failed, pattern
+  bb3 d 2 * star (uu c 0) + bb3 d 3 * star (uu c 1) + (vv d 2 * star (aa3 c 0) + vv d 3 * star (aa3 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 2 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:100:4: error: 'change' tactic failed, pattern
+  bb3 d 2 * star (uu c 2) + bb3 d 3 * star (uu c 3) + (vv d 2 * star (aa3 c 2) + vv d 3 * star (aa3 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 2 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:108:4: error: 'change' tactic failed, pattern
+  bb3 d 0 * star (uu c 0) + bb3 d 2 * star (uu c 2) + (vv d 0 * star (aa3 c 0) + vv d 2 * star (aa3 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 2 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:110:4: error: 'change' tactic failed, pattern
+  bb3 d 0 * star (uu c 1) + bb3 d 2 * star (uu c 3) + (vv d 0 * star (aa3 c 1) + vv d 2 * star (aa3 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 2 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:112:4: error: 'change' tactic failed, pattern
+  bb3 d 1 * star (uu c 0) + bb3 d 3 * star (uu c 2) + (vv d 1 * star (aa3 c 0) + vv d 3 * star (aa3 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 2 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:114:4: error: 'change' tactic failed, pattern
+  bb3 d 1 * star (uu c 1) + bb3 d 3 * star (uu c 3) + (vv d 1 * star (aa3 c 1) + vv d 3 * star (aa3 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 2 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:122:4: error: 'change' tactic failed, pattern
+  bb4 d 0 * star (uu c 0) + bb4 d 1 * star (uu c 1) + (vv d 0 * star (aa4 c 0) + vv d 1 * star (aa4 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 3 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:124:4: error: 'change' tactic failed, pattern
+  bb4 d 0 * star (uu c 2) + bb4 d 1 * star (uu c 3) + (vv d 0 * star (aa4 c 2) + vv d 1 * star (aa4 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 3 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:126:4: error: 'change' tactic failed, pattern
+  bb4 d 2 * star (uu c 0) + bb4 d 3 * star (uu c 1) + (vv d 2 * star (aa4 c 0) + vv d 3 * star (aa4 c 1)) = 0
+is not definitionally equal to target
+  firstCross c d 3 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:128:4: error: 'change' tactic failed, pattern
+  bb4 d 2 * star (uu c 2) + bb4 d 3 * star (uu c 3) + (vv d 2 * star (aa4 c 2) + vv d 3 * star (aa4 c 3)) = 0
+is not definitionally equal to target
+  firstCross c d 3 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:136:4: error: 'change' tactic failed, pattern
+  bb4 d 0 * star (uu c 0) + bb4 d 2 * star (uu c 2) + (vv d 0 * star (aa4 c 0) + vv d 2 * star (aa4 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 3 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:138:4: error: 'change' tactic failed, pattern
+  bb4 d 0 * star (uu c 1) + bb4 d 2 * star (uu c 3) + (vv d 0 * star (aa4 c 1) + vv d 2 * star (aa4 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 3 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨0, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:140:4: error: 'change' tactic failed, pattern
+  bb4 d 1 * star (uu c 0) + bb4 d 3 * star (uu c 2) + (vv d 1 * star (aa4 c 0) + vv d 3 * star (aa4 c 2)) = 0
+is not definitionally equal to target
+  secondCross c d 3 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨0, ⋯⟩)
+D:\UTD\Project_purdue\Lean_certification\tmp\manuscript-publication-20261005\drafts\Orbit5MatrixRows.lean:142:4: error: 'change' tactic failed, pattern
+  bb4 d 1 * star (uu c 1) + bb4 d 3 * star (uu c 3) + (vv d 1 * star (aa4 c 1) + vv d 3 * star (aa4 c 3)) = 0
+is not definitionally equal to target
+  secondCross c d 3 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩) = 0 ((fun i => i) ⟨1, ⋯⟩) ((fun i => i) ⟨1, ⋯⟩)
