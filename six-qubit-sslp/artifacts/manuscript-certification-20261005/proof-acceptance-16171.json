@@ -25,8 +25,11 @@
   "held_main_issues": 5,
   "identified_si_qualifications": 0,
   "publication": {
-    "status": "pending",
-    "branch": "sixqubit-classification"
+    "status": "PASS",
+    "commit": "c52f9a1b897c49cc80b2cb745fffbaf9443e7f5b",
+    "branch": "sixqubit-classification",
+    "modules": 16171,
+    "record": "artifacts/manuscript-certification-20261005/publication-binding-16171.json"
   },
   "evidence": [
     {
