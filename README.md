@@ -1,4 +1,6 @@
-# Finite classification of transversal diagonal gates
+# SSLP Classification
+
+*Finite Classification of Transversal Diagonal Gates Beyond Stabilizer Codes*
 
 ## Projects in this repository
 

@@ -394,7 +394,7 @@ two images leaves the previously determined union unchanged.
 The portable package commands and their input/output roles are given in
 Sections~\ref{o2gc:subsec-reproducibility} and \ref{o3gc:reproduction}.
 The repository equivalents below are relative to the checkout root of
-\href{https://github.com/xh-xihe/dyadic-lifts/tree/main}
+\href{https://github.com/xh-xihe/sslp-classification/tree/main}
 {the \texttt{main} branch}. To identify a verification
 run, record its commit identifier, manuscript hashes, and build record.
 
@@ -499,7 +499,7 @@ Vanishing of the sampled target implies the original encoder's
 \end{longtable}
 The \texttt{Orbit2} declarations are supplied by
 \path{six-qubit-orbit2/lean} at
-\href{https://github.com/xh-xihe/dyadic-lifts/tree/f84bbd39451a3e0648fd1bd4ccf0ad38f558245a}
+\href{https://github.com/xh-xihe/sslp-classification/tree/f84bbd39451a3e0648fd1bd4ccf0ad38f558245a}
 {commit \texttt{f84bbd3}}. Their input consists of orthonormal logical
 words, full distance-three KL conditions, and the selected weight-four
 logical involution. The encoder reduction, quartic identity, rational
