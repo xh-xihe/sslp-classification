@@ -20,6 +20,7 @@
 
 <p align="center">
   <a href="docs/README.md"><strong>Explore the proofs</strong></a> ·
+  <a href="docs/explorer.md"><strong>Interactive explorer</strong></a> ·
   <a href="docs/reproduce.md"><strong>Reproduce</strong></a> ·
   <a href="docs/review-guide.md"><strong>Reviewer guide</strong></a> ·
   <a href="docs/status.md"><strong>Certification status</strong></a>
@@ -36,6 +37,7 @@ the complete project lives at the repository root.
 
 | Your goal | Best starting point |
 | --- | --- |
+| Search by orbit or theorem | [Interactive proof explorer](docs/explorer.md): 72 curated guides and the complete source catalog |
 | Understand the mathematics | [Selected proof entry points](docs/proof-index.md#selected-entry-points), then the complete [proof index](docs/proof-index.md) |
 | Review a paper claim | [Reviewer guide](docs/review-guide.md) → [version-bound correspondence](docs/manuscript-correspondence.md) |
 | Check the results yourself | [Setup and reproduction](docs/reproduce.md#setup), with focused and whole-project commands |
@@ -52,6 +54,9 @@ the complete project lives at the repository root.
 [Orbits and certificates](docs/proof-map.md#orbits-and-finite-certificates) ·
 [Final statements](docs/proof-map.md#final-physical-statements) ·
 [Evidence](docs/proof-map.md#two-evidence-routes)
+
+Want to search instead? Open the [interactive explorer](docs/explorer.md)
+locally with `python tools/open_explorer.py`; it needs no server or extra packages.
 
 ## Proof highlights
 

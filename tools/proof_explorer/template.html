@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Explore the Lean sources, exact certificates and recorded evidence for SSLP classification.">
+  <title>SSLP · Proof Explorer</title>
+  <style>__STYLE__</style>
+</head>
+<body>
+  <a class="skip" href="#search">Skip to proof search</a>
+  <header class="topbar">
+    <a class="brand" data-repo-path="README.md">
+      <svg viewBox="0 0 46 46" aria-hidden="true"><path d="M23 4 39 13 39 32 23 42 7 32 7 13Z M23 4 39 32 7 32Z"/><circle cx="23" cy="4" r="3"/><circle cx="39" cy="13" r="3"/><circle cx="39" cy="32" r="3"/><circle cx="23" cy="42" r="3"/><circle cx="7" cy="32" r="3"/><circle cx="7" cy="13" r="3"/></svg>
+      <span>SSLP<span class="brand-sub">CLASSIFICATION</span></span>
+    </a>
+    <nav aria-label="Repository"><a data-repo-path="docs/README.md">Documentation</a><a data-repo-path="docs/proof-map.md">Proof map</a><a data-repo-path="docs/status.md">Status &amp; scope</a></nav>
+    <button id="theme-toggle" class="icon-button" aria-label="Switch to light theme" title="Change theme">☼</button>
+  </header>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Library navigation">
+      <div class="sidebar-label">PROOF LIBRARIES</div>
+      <div id="library-buttons" class="library-buttons"></div>
+      <div class="sidebar-note"><span class="small-dot"></span> Source catalog<br><strong id="sidebar-count"></strong> active modules</div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-label">READING ROUTES</div>
+      <a class="side-link" data-repo-path="docs/proof-map.md">The proof landscape <span>↗</span></a>
+      <a class="side-link" data-repo-path="docs/reproduce.md">Reproduce the checks <span>↗</span></a>
+      <a class="side-link" data-repo-path="docs/review-guide.md">Reviewer guide <span>↗</span></a>
+      <div class="scope-note"><span class="scope-icon">◇</span><strong>Two verification layers</strong><p>Kernel proof checks and manuscript correspondence have separate evidence.</p><a data-repo-path="docs/review-guide.md#the-trust-boundary">Understand the scope ↗</a></div>
+    </aside>
+    <main id="main" class="workspace">
+      <div class="heading-row"><div><div class="eyebrow">MATHEMATICS, MADE NAVIGABLE</div><h1>Proof Explorer<span class="heading-dot">.</span></h1><p class="intro">Find a statement. Follow its sources. Inspect the evidence.</p></div><div class="snapshot-label">Recorded snapshot<span id="version-label"></span></div></div>
+      <div class="stats" aria-label="Recorded verification snapshot">
+        <div><span class="stat-label">Active Lean modules</span><strong id="module-count"></strong><span class="stat-caption">complete source catalog</span></div>
+        <div><span class="stat-label">Audited axiom roots</span><strong id="axiom-count"></strong><span class="stat-caption">standard Lean axioms only</span></div>
+        <div class="held-stat"><span class="stat-label">Held main-text issues</span><strong id="held-count"></strong><span id="held-caption" class="stat-caption"></span></div>
+      </div>
+      <div class="review-strip"><span class="review-dot"></span><span><strong>Review is version-specific.</strong> <span id="review-summary"></span></span><a data-repo-path="docs/status.md">Details ↗</a></div>
+      <section class="browser-area" aria-label="Proof browser">
+        <div class="browse-tabs" role="tablist" aria-label="Browse mode"><button id="guides-tab" role="tab" aria-controls="results" aria-selected="true" class="tab active">Proof guides <span id="guide-total"></span></button><button id="modules-tab" role="tab" aria-controls="results" aria-selected="false" class="tab">All modules <span id="catalog-total"></span></button></div>
+        <div class="search-row"><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" autocomplete="off" placeholder="Search orbit, theorem, topic, or module…" aria-label="Search proofs"><kbd>/</kbd></label><button id="reset" class="reset-button">Reset</button></div>
+        <div class="filters"><label class="mobile-library">Library<select id="library-select" aria-label="Library"></select></label><label>Topic<select id="topic-select" aria-label="Topic"></select></label><label>Orbit<select id="orbit-select" aria-label="Orbit"></select></label><label id="generated-control" class="check-label" hidden><input id="generated" type="checkbox">Include generated certificates</label></div>
+        <div class="results-meta"><p id="result-count" role="status" aria-live="polite"></p><span id="mode-note">Curated entry points from the proof index</span></div>
+        <div class="content-grid"><div><div id="results" class="results" role="tabpanel" aria-labelledby="guides-tab"></div><button id="load-more" class="load-more" hidden>Show more results</button></div><aside id="detail" class="detail" aria-label="Selected proof details"></aside></div>
+      </section>
+      <footer>Source navigation does not assign manuscript coverage. <a data-repo-path="docs/manuscript-correspondence.md">Read the correspondence record ↗</a><span id="source-binding"></span></footer>
+    </main>
+  </div>
+  <dialog id="detail-dialog" aria-label="Selected proof details"><button id="close-dialog" class="dialog-close" aria-label="Close proof details">×</button><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>This explorer needs JavaScript. The repository's proof index and module catalog provide equivalent static navigation.</noscript>
+  <script id="proof-data" type="application/json">__DATA__</script>
+  <script>__SCRIPT__</script>
+</body>
+</html>

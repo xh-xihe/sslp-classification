@@ -6,7 +6,8 @@ Use the curated entry points to read the mathematics, then the complete catalog
 to find supporting modules. Generated certificate shards are grouped by family
 in the catalog.
 
-Start with [the visual proof map](proof-map.md), or choose a path below.
+Start with [the visual proof map](proof-map.md), search with the
+[interactive proof explorer](explorer.md), or choose a path below.
 
 ## Choose a reading path
 
@@ -22,6 +23,7 @@ Start with [the visual proof map](proof-map.md), or choose a path below.
 
 | Guide | Purpose |
 | --- | --- |
+| [Interactive proof explorer](explorer.md) | Search by orbit, topic, or module; inspect Lean entries, exact data, and recorded evidence |
 | [Visual proof map](proof-map.md) | A graphical reading route with direct theorem and evidence links |
 | [Proof index](proof-index.md) | Selected theorem entry points and the detailed main/SI map |
 | [Modules by topic](proof-modules.md) | Generated inventory of all active Lean modules |

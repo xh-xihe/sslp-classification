@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "scope": "Standalone proof navigation and documentation. No new mathematical acceptance or manuscript correspondence is claimed.",
+  "parent_commit": "61f2fd6a65644f0396aea7f9b3e6e370da3efd9c",
+  "explorer_tree_before_this_record": "2b9c349da81efb089a2e1d54ea2e9381cca2aafe",
+  "changed_files": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "blob": "35cf0c8d90f41c7a154aadcea037b5c23ac0540d",
+      "sha256": "cfaa0ba021e7ebc3b36edfa26456485630cea39f55efe14675e04af792741795"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "blob": "1538fd5e6a8e198fe5b027ebce87478abc93f791",
+      "sha256": "696729c7f0315569bec31de9938dc1b32a05a8dfaf4808a5a5ecbb90276fa503"
+    },
+    {
+      "path": "docs/proof-map.md",
+      "mode": "100644",
+      "blob": "2158317a90e7e7d2533672721048d8161fb16611",
+      "sha256": "97fd833257c4a7fa9b0a4f6ad8d82d0ec8f87ddac63af33f6bac1192321a9b69"
+    },
+    {
+      "path": "tools/README.md",
+      "mode": "100644",
+      "blob": "6b17de9698e671e3286de77611d87f9f3aeeb624",
+      "sha256": "6efda24b49f7e614edc30ec59d99a0de86ef5577f546e523b933695b1964e9b4"
+    },
+    {
+      "path": ".github/workflows/navigation.yml",
+      "mode": "100644",
+      "blob": "78f92cd67cee7c403564b7b7d5e97d3b37899e2c",
+      "sha256": "52e185bf4a9d34e8f479b5d0ee99a687f951a903c15cdbf3ac5b32fee5e5dc90"
+    },
+    {
+      "path": "docs/assets/README.md",
+      "mode": "100644",
+      "blob": "de73dccdfe8d54d2cf2a4a6a29fc9818cb5192d2",
+      "sha256": "2ef472174ad852ebf2196e705336739cc2638c724c70875a20c2b27397325977"
+    },
+    {
+      "path": "docs/explorer.md",
+      "mode": "100644",
+      "blob": "b21155599b03d5deafe2dae957646fddd75fb667",
+      "sha256": "0c5eaaa76336f5647665860f04a11c3ee7b487ee75ffc890f0e33133e3377702"
+    },
+    {
+      "path": "docs/explorer/index.html",
+      "mode": "100644",
+      "blob": "3799d58b24a4364eb536e6b4ca89c92eb11702d1",
+      "sha256": "b02a4d3d8d1a0b52b88abf2d139f7a040167583853b1fda8f88f28f5b1e7d132"
+    },
+    {
+      "path": "docs/assets/explorer-preview.png",
+      "mode": "100644",
+      "blob": "f5785f96ad56fadce6489ba43e91feaa9650f012",
+      "sha256": "0dabe26aba8e3ff2f00e343529b008d2d919993e75fb05dbb891db1d8e328b3a"
+    },
+    {
+      "path": "tools/build_explorer.py",
+      "mode": "100644",
+      "blob": "6080e38b16645d799431c7ff430406f6e7d3dafc",
+      "sha256": "0c55c946c38f0c4d7fd295e864dcc7a036ad4a69e69b52c422622b0f1645a1c2"
+    },
+    {
+      "path": "tools/open_explorer.py",
+      "mode": "100644",
+      "blob": "e32c1e32741b48e585fd3a13ae285ee3803e2eab",
+      "sha256": "6d5b323185797220d4ec3274848b6295bc2e20d3ef356ab1106def5c46b24829"
+    },
+    {
+      "path": "tools/proof_explorer/template.html",
+      "mode": "100644",
+      "blob": "0a29ea5017e5d986877afb0b39a641739eb6beb4",
+      "sha256": "664a695696431d0a86bddfb742eb76963d3f1f371eed5567790363261d887993"
+    },
+    {
+      "path": "tools/proof_explorer/explorer.css",
+      "mode": "100644",
+      "blob": "5c84f84cf21b39dea7e24e32ce78367bc6ac3837",
+      "sha256": "48021e3c8909d317cd6a36efa8109f921ad444e72d7dc33280c9efd9b728062d"
+    },
+    {
+      "path": "tools/proof_explorer/explorer.js",
+      "mode": "100644",
+      "blob": "90f1998f47c2a764564a1441a5402d208d90b9fd",
+      "sha256": "b6a45e3a86534b00a2e9fead132cf29dc26b319e5cefe6d2d3ac67f9a46e1c5e"
+    },
+    {
+      "path": "tools/tests/test_proof_explorer.py",
+      "mode": "100644",
+      "blob": "c44826584113e64b6eee2899f3dc4f9d0b833d69",
+      "sha256": "a74eeb69bda626a938957029dc63df3a6473653ca63316816eeebd3b38fde31e"
+    },
+    {
+      "path": "tools/tests/check_proof_explorer_browser.py",
+      "mode": "100644",
+      "blob": "67127164863d119c69ffcd5645847e4a809ea83a",
+      "sha256": "b4de193c406535ae218e322b988a6cc77f3933adf7890e19cf08a522da410f16"
+    }
+  ],
+  "integrity": {
+    "original_files_retained": 21968,
+    "files_deleted": 0,
+    "active_lean_modules_byte_and_mode_unchanged": 16227,
+    "historical_artifacts_results_archives_unchanged": true,
+    "private_manuscripts_unchanged": true
+  },
+  "recorded_paper_version": "20261003",
+  "source_hashes_lf": {
+    "results/proof-modules.json": "3dd57c737d3dfed55e1fa9097fc8750b7fde43d7e4079d933e2e334c210ed4b5",
+    "results/repository-status.json": "eb0c1c7570445fd1a744d21886948e60cb9a08065a47faf74eacb2d01d65a03c",
+    "docs/proof-index.md": "2d4e4991b719b466cb97ca67114ee6fa238fb11c35cbfe29b1aff0105a6cfe25"
+  },
+  "explorer": {
+    "guides": 72,
+    "modules": 16227,
+    "bundle_bytes": 1096675,
+    "self_contained": true,
+    "external_assets": 0,
+    "hosting_deployed": false
+  },
+  "checks": {
+    "isolated_checkout": [
+      {
+        "command": [
+          "tools/check_navigation.py"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "tools/repository_index.py",
+          "--check"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "tools/build_explorer.py",
+          "--check"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_navigation.py",
+          "-v"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_proof_explorer.py",
+          "-v"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_explorer.py",
+          "-v"
+        ],
+        "status": "PASS"
+      },
+      {
+        "command": [
+          "tools/tests/check_proof_explorer_browser.py",
+          "--browser-channel",
+          "msedge",
+          "--output",
+          "tmp/explorer-browser"
+        ],
+        "status": "PASS"
+      }
+    ],
+    "navigation": {
+      "status": "PASS",
+      "documents": 17,
+      "links_and_anchors": 2247,
+      "svg_assets": 7,
+      "gif_assets": 1
+    },
+    "navigation_regressions": {
+      "status": "PASS",
+      "tests": 12,
+      "skips": 0
+    },
+    "explorer_generation_regressions": {
+      "status": "PASS",
+      "tests": 11,
+      "skips": 0
+    },
+    "existing_research_explorer_regressions": {
+      "status": "PASS",
+      "tests": 17,
+      "skips": 0
+    },
+    "source_index": {
+      "status": "PASS",
+      "active_lean_modules": 16227
+    },
+    "browser": {
+      "checks": [
+        "complete source count",
+        "default full-image endpoint",
+        "actual orbit-2 declaration",
+        "held manuscript scope remains visible",
+        "initial result pagination",
+        "load more results",
+        "light theme",
+        "orbit 2 exact token excludes orbit 20",
+        "orbit3 compact token",
+        "orbit-3 endpoint resources",
+        "generated shards initially hidden",
+        "all active modules available",
+        "qualified module search",
+        "skip link preserves filters",
+        "clipboard feedback",
+        "URL state restoration",
+        "library filtering",
+        "combined library and topic filters",
+        "orbit dropdown",
+        "empty state",
+        "keyboard tab navigation",
+        "keyboard search shortcut",
+        "no horizontal overflow at 1440px",
+        "no horizontal overflow at 1280px",
+        "no horizontal overflow at 1024px",
+        "no horizontal overflow at 768px",
+        "no horizontal overflow at 390px",
+        "no horizontal overflow at 320px",
+        "mobile detail dialog",
+        "mobile endpoint detail",
+        "Escape closes dialog",
+        "focus restored after dialog",
+        "no JavaScript errors",
+        "offline page makes zero external requests"
+      ],
+      "passed": 34,
+      "javascript_errors": [],
+      "external_requests": [],
+      "viewports": [
+        1440,
+        1280,
+        1024,
+        768,
+        390,
+        320
+      ],
+      "browser_channel": "msedge"
+    },
+    "visual_review": {
+      "status": "PASS",
+      "desktop_dark": true,
+      "desktop_light": true,
+      "mobile": true,
+      "mobile_details": true
+    }
+  }
+}

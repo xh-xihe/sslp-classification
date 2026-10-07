@@ -8,6 +8,9 @@ The diagram is a reading map. The exact dependency graph is defined by Lean
 imports. Use the links below to enter the relevant proof layer; the detailed
 index retains the complete main/SI correspondence map.
 
+To search this landscape by orbit, topic, or qualified module name, use the
+[interactive proof explorer](explorer.md).
+
 ## Foundations
 
 [SS](../SS.lean) supplies shared bitstrings, Pauli operators, KL conditions,

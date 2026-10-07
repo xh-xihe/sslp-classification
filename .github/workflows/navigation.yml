@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   navigation:
-    name: Links, assets, and checker regressions
+    name: Links, assets, explorer, and checker regressions
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -24,6 +24,8 @@ jobs:
           python-version: '3.12'
       - run: python tools/check_navigation.py
       - run: python -m unittest discover -s tools/tests -p test_navigation.py -v
+      - run: python tools/build_explorer.py --check
+      - run: python -m unittest discover -s tools/tests -p test_proof_explorer.py -v
 
 # This lightweight workflow checks repository presentation, not Lean proofs
 # or manuscript correspondence. Those have separate acceptance records.

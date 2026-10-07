@@ -12,6 +12,8 @@ provenance for older construction routes.
 | `verify.py --paper-version 20261003 --only sources generated audit-names axioms` | Public proof checks without private manuscripts |
 | `repository_index.py --check` | Source-catalog and topic-navigation consistency |
 | `check_navigation.py` | Curated links, anchors, SVGs and GIF block structure; also run by documentation CI |
+| `open_explorer.py` | Open the bundled offline proof explorer; Python standard library only |
+| `build_explorer.py --check` | Verify the explorer against the source catalog, curated index, status, and resource paths; also run by documentation CI |
 | `render_banner.py` | Optional visual-asset renderer; requires Pillow, Playwright and a local browser |
 | `rebuild_orbit_certificates.py` | Exact orbit-2/3 payload reconstruction |
 | `generators/emit_si_sector_counts.py` | Witnesses for both SI count tables, checked against actual records, distinct fibre pairs and orbit keys by ordinary Lean reduction |
