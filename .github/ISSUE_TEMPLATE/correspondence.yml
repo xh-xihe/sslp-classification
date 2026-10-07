@@ -1,0 +1,31 @@
+name: Manuscript correspondence
+description: Report differing hypotheses, conclusions, or an incorrect claim mapping.
+title: "[Correspondence] "
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Repository commit
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Manuscript version and locator
+      description: Version/date, section, theorem or equation label. Private manuscript files need not be attached.
+    validations:
+      required: true
+  - type: input
+    id: declaration
+    attributes:
+      label: Lean declaration or mapping record
+      description: Relevant declaration name, source file, or claim ledger entry.
+    validations:
+      required: true
+  - type: textarea
+    id: difference
+    attributes:
+      label: Mathematical discrepancy
+      description: Explain which hypotheses, conclusion, or surrounding context differ.
+    validations:
+      required: true

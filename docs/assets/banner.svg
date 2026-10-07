@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">SSLP Classification</title>
+  <desc id="desc">A dark blue banner with an abstract six-node orbit motif. Quantum codes, transversal gates, and formal proofs.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#091425"/><stop offset="1" stop-color="#172246"/></linearGradient>
+    <linearGradient id="orbit" x2="1" y2="1"><stop stop-color="#63e6dc"/><stop offset="1" stop-color="#a997ff"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#697de2" stop-opacity=".23"/><stop offset="1" stop-color="#697de2" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8ea7de" opacity=".14"/></pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="url(#background)"/>
+  <rect x="654" width="546" height="340" fill="url(#dots)"/>
+  <circle cx="930" cy="170" r="250" fill="url(#halo)"/>
+  <path d="M65 54h34" stroke="#68e4d9" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="113" y="59" fill="#a7b8d6" font-size="12" letter-spacing="2.4">QUANTUM CODES / TRANSVERSAL GATES</text>
+    <text x="64" y="139" fill="#f2f6ff" font-size="67" font-weight="700" letter-spacing="2">SSLP</text>
+    <text x="64" y="199" fill="#f2f6ff" font-size="52" font-weight="600" letter-spacing="-.8">Classification</text>
+    <text x="67" y="243" fill="#b1c1df" font-size="19">Exact mathematics. Kernel-checked proofs.</text>
+    <rect x="65" y="276" width="149" height="27" rx="13.5" fill="#13363c"/>
+    <circle cx="80" cy="289.5" r="3" fill="#68e4d9"/>
+    <text x="92" y="294" fill="#8ce9df" font-size="11" font-weight="600" letter-spacing="1.1">LEAN 4 + MATHLIB</text>
+    <text x="233" y="294" fill="#93a7cd" font-size="12" letter-spacing="1">THEORY · ORBITS · CERTIFICATES</text>
+  </g>
+  <g transform="translate(948 169)" fill="none">
+    <circle r="137" stroke="#8b9ed1" stroke-opacity=".13"/>
+    <circle r="101" stroke="#8b9ed1" stroke-opacity=".18" stroke-dasharray="3 9"/>
+    <ellipse rx="152" ry="55" transform="rotate(-32)" stroke="#8194ce" stroke-opacity=".32"/>
+    <ellipse rx="152" ry="55" transform="rotate(32)" stroke="#8194ce" stroke-opacity=".32"/>
+    <path d="M0-115 100-57 100 57 0 115-100 57-100-57Z" stroke="url(#orbit)" stroke-width="2.5"/>
+    <path d="M0-115 100 57-100 57Z M100-57 0 115-100-57Z" stroke="url(#orbit)" stroke-width="1" opacity=".4"/>
+    <circle r="39" fill="#142848" stroke="url(#orbit)" stroke-width="1.5"/>
+    <g fill="#d9e2fc" font-family="Georgia,serif" text-anchor="middle"><text x="-4" y="10" font-size="31" font-style="italic">U</text><text x="17" y="20" font-size="15">θ</text></g>
+    <g fill="#68e4d9" stroke="#1a304c" stroke-width="5"><circle cy="-115" r="8"/><circle cx="100" cy="-57" r="8"/><circle cx="100" cy="57" r="8"/></g>
+    <g fill="#ad9cff" stroke="#1a304c" stroke-width="5"><circle cy="115" r="8"/><circle cx="-100" cy="57" r="8"/><circle cx="-100" cy="-57" r="8"/></g>
+  </g>
+</svg>

@@ -1,19 +1,11 @@
-# Reproducing the classification proofs
+# Reproduce SSLP Classification
 
-Use `main` and run commands from the active package:
+Start with [setup and check selection](docs/reproduce.md#setup).
 
-```console
-lake exe cache get
-python tools/build_lean.py
-python tools/verify.py --paper-version 20261003 --only sources generated audit-names axioms
-python tools/repository_index.py --check
-```
+The [full reproduction guide](docs/reproduce.md) includes focused orbit proofs,
+whole-project kernel checks, exact rational data reconstruction, regression
+tests, and version-bound private manuscript review.
 
-The [package reproduction guide](docs/reproduce.md) documents
-the pinned Lean/Mathlib environment, Python checks, resource settings,
-dependency-stamp validation and private-source correspondence gates.
-Use [verification status](docs/status.md) to distinguish
-accepted proof snapshots from manuscript correspondence and open claims.
-
-The independent dyadic project's reproduction instructions are retained in
-its [historical archive](HISTORY.md).
+For the meaning of the results, see [the reviewer guide](docs/review-guide.md)
+and [certification status](docs/status.md). For historical dyadic reproduction,
+use the fixed tag linked in [HISTORY.md](HISTORY.md).

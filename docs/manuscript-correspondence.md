@@ -1,5 +1,7 @@
 # Current manuscript correspondence
 
+[Home](../README.md) · [Documentation](README.md) · [Reproduce](reproduce.md) · [Status](status.md)
+
 The authoritative inputs are the frozen `20261003/main.tex` and current
 `20261003/supplementary.tex`. Their exact hashes are recorded in
 [repository-status.json](../results/repository-status.json).

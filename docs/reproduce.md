@@ -1,12 +1,48 @@
-# Reproducing the six-qubit formalization
+# Reproducing SSLP Classification
 
-Use the `main` branch. From the GitHub repository root:
+[Home](../README.md) · [Documentation](README.md) · [Reviewer guide](review-guide.md) · [Status](status.md)
+
+## Setup
+
+Use Git, Python 3.12, and Lean's toolchain manager `elan`. Install Lean and
+its editor integration using [the official getting-started guide](https://leanprover-community.github.io/get_started.html).
+The toolchain file selects Lean **4.27.0**; the committed manifest pins Mathlib.
+The Python builders, navigation checks, and exact orbit-2/3 certificate checks
+use the standard library. Exploratory scripts can have additional dependencies
+listed in [the tool guide](../tools/README.md).
+
+```console
+git clone --branch main https://github.com/xh-xihe/sslp-classification.git
+cd sslp-classification
+lake exe cache get
+```
+
+Run all subsequent commands from this repository root. Keep the committed
+dependency pins when reproducing a dated record.
+
+## Choose the check
+
+| Goal | Route | Private manuscript needed? |
+| --- | --- | --- |
+| Check orbit-2/3 image proofs and dependencies | [Focused orbit checks](#focused-orbit-checks) | No |
+| Check all active modules and selected axiom roots | [Whole proof package](#whole-proof-package) | No |
+| Reconstruct exact rational certificate data | [Finite certificate data](#finite-certificate-data) | No |
+| Check repository links and assets | `python tools/check_navigation.py` | No |
+| Repeat source-specific claim matching | [Private-source correspondence](#private-source-correspondence-checks) | Yes, exact matching version |
+
+The Mathlib cache downloads dependency build products. A fresh checkout must
+still compile this project's certificates. Large generated families make first
+builds substantially more expensive than validated cached runs; no fixed runtime
+is implied by the commands below.
+
+## Whole proof package
 
 ```console
 lake exe cache get
 python tools/build_lean.py
 python tools/verify.py --paper-version 20261003 --only sources generated audit-names axioms
 python tools/repository_index.py --check
+python tools/check_navigation.py
 python -m unittest discover -s tools/tests -p test_certification_tools.py -v
 python -m unittest discover -s tools/tests -p test_paper_release.py -v
 ```
@@ -26,6 +62,18 @@ permits only `propext`, `Classical.choice` and `Quot.sound`.
 These commands do not require the private manuscripts. Python tooling tests
 may skip controls that require unavailable private sources or optional tiny
 Lean checks; their test output reports those skips explicitly.
+
+### Reading the outcomes
+
+| Command | Successful result means |
+| --- | --- |
+| `build_lean.py` | The requested modules and dependencies compiled or passed content/dependency stamp validation; inventory under `.lake/build/certification/` |
+| `verify.py --only sources generated audit-names axioms` | Only those selected proof checks passed; logs and a machine-readable report under `tmp/verification/` |
+| `repository_index.py --check` | The committed source catalog and topic index match the active Lean sources |
+| `check_navigation.py` | Curated documentation links, local anchors, and SVG assets pass navigation checks |
+
+The documentation workflow runs the last check and its regression tests. It
+does not run the Lean build or certify manuscript correspondence.
 
 ## Focused orbit checks
 
@@ -137,7 +185,7 @@ See [manuscript correspondence](manuscript-correspondence.md).
 
 The supplementary manuscript describes the mathematical reductions and
 identities. The complete coefficient data and implementation details are
-available here, using paths relative to `six-qubit-sslp`:
+available here, using paths relative to the repository root:
 
 | Certificate | Exact calculation | Complete data |
 | --- | --- | --- |

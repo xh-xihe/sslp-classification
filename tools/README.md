@@ -1,5 +1,7 @@
 # Tools
 
+[Home](../README.md) · [Documentation](../docs/README.md) · [Reproduction](../docs/reproduce.md)
+
 Current commands and verification scope are in
 [`docs/reproduce.md`](../docs/reproduce.md). The generator notes below retain
 provenance for older construction routes.
@@ -9,6 +11,7 @@ provenance for older construction routes.
 | `build_lean.py` | Content-validated serial build of all five active libraries |
 | `verify.py --paper-version 20261003 --only sources generated audit-names axioms` | Public proof checks without private manuscripts |
 | `repository_index.py --check` | Source-catalog and topic-navigation consistency |
+| `check_navigation.py` | Curated documentation links, local anchors, and SVG assets; also run by documentation CI |
 | `rebuild_orbit_certificates.py` | Exact orbit-2/3 payload reconstruction |
 | `generators/emit_si_sector_counts.py` | Witnesses for both SI count tables, checked against actual records, distinct fibre pairs and orbit keys by ordinary Lean reduction |
 | `verification/generate_orbit26_printed_moments.py --check` | Reproduce the literal orbit-26 rational matrix, complete affine solution and rank-fourteen certificate; Lean checks the output |

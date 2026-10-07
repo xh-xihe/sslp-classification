@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "scope": "Repository presentation and navigation only. No new proof acceptance or manuscript certification is claimed.",
+  "parent_commit": "5b1a62ee7336a477608b17367172f18ac2a2e560",
+  "presentation_tree_before_this_record": "15615f3dd52429beee0e833a7d8226a6812325cc",
+  "changed_files": [
+    {
+      "path": "README.md",
+      "sha256": "5d8b83af485a90049d15239f5cdffdb5d5fd3e7cc1c08ed9f3f0993f50033cab",
+      "blob": "e48b8a812ed19d9f55475204ef20d26eceaecade",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "9c38d079248106799343d6c6c6918c6af1ab456f1e700f94234af26db8d1e213",
+      "blob": "6f8dff4de263a57343c3e5d55c12f417ea511ae6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/review-guide.md",
+      "sha256": "2579247bb49ead28409866027aca8a29725752addde9e14975f81fe6b7e5682c",
+      "blob": "b5046b216dec434e6fe9221c81bc1fb252b3ab86",
+      "mode": "100644"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "c3a8862d80953efe9dcdc9fdedb9fbf5b2c4bf47eb87870786d131fc80c30702",
+      "blob": "de9ba66aa18f6aa5dce8f0c82eaebca84acb78bf",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "01ee70d0210b08bf4ff60bb1c98cc78a637b8617a286f5aa2a677f601eb25c81",
+      "blob": "0933e52ae04949c717d0ef3cec90c6dceb85b924",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/status.md",
+      "sha256": "171efbe1e2803324b6169242c45277abb3cbaf3aebfb29505aece426302d4642",
+      "blob": "03ea1cdf1768363a242bcc1ed36234df46089e9c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/proof-index.md",
+      "sha256": "2d4e4991b719b466cb97ca67114ee6fa238fb11c35cbfe29b1aff0105a6cfe25",
+      "blob": "7d8b0eb2fd645ee980332be8804886f6a2ca1b75",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/manuscript-correspondence.md",
+      "sha256": "52225a19be4d99f1e193b04d7042b5dcbf984f48e3f64d00067b6e54e333e2a0",
+      "blob": "2ba30263117c0a8e4a044e393e3f7fbd6fa4e290",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/reproduce.md",
+      "sha256": "e1b929e7a6c303f338eb4d47deea64c9b613dfa7f47dff409b7607b4c30c9da9",
+      "blob": "d9ac54951d1523b5c25ecf46e882fd85d3efa990",
+      "mode": "100644"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "sha256": "baf743ade9cc14c28ec6bcbce04b057a2641a4662fc0457975daf893393f69e2",
+      "blob": "64b3ecfbdc3862da0290b40ac76daf1bbb351dec",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/README.md",
+      "sha256": "8b5a142d0a7153575d6e2fa4924a227953f644b53070fe9ada2f93274e38bf59",
+      "blob": "8dc7672590c1b24820e0a3ae26ff425c0908509a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/assets/banner.svg",
+      "sha256": "4d231a3eb372115f79eba59aaa8a415ca910caa788df92e878d48ec77dc87423",
+      "blob": "d8dbe90889cccf3044dab50152e56d2fe60c36b4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/assets/kernel.svg",
+      "sha256": "8ebcd740aeb9407752d790de843a39311636e3752b0c70e1ccc5696390b666ff",
+      "blob": "925d76c4ef12a0ab4352924c729913df64709976",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/assets/lean.svg",
+      "sha256": "548d137121b3645936b61d420709ad577f284fbbcff539475b111625f88ffcfe",
+      "blob": "9799bd4b45691ca8ca72c385ef69bb9e80a4c0f6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/assets/mathlib.svg",
+      "sha256": "fff6f5c3a47f45b7d3f80ecd44fd3b79a82496279d5776816a124d04ed540b89",
+      "blob": "6126849f16ab8d8783cc96b3e01e42ff40199508",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/assets/review.svg",
+      "sha256": "4199be7eefd634998ba9ad773a1977feff3d9ec22e1a45bff7a33db4cf8a339f",
+      "blob": "ca5443262d41e2fa02f96b8b4d4e5b41048cccb5",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/reproduction.yml",
+      "sha256": "b862ea20eaadf60b929d731f6c1ce2e1e1a7c560b8a57f4b9a833db21213735e",
+      "blob": "dfcc8f81efd1433aaac22b6e080c320ae30e524c",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/correspondence.yml",
+      "sha256": "405929e0e22c3dca3243f13301824c8ec6b9bcbfbaa2987f5ef436bbf83233a2",
+      "blob": "e1478f32fa8167b5ef2a4a5cbe0a85be6a8e4395",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "0be4437fd89f06e915b6dee6571d63561cd5d470f65274b53ef64e94326ebcdb",
+      "blob": "225195a20d623c212c27e30fd976261ac65c4a07",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/navigation.yml",
+      "sha256": "3427a89c39d3016bdbd860f57d83c8d6053a7d84bfd3968cc2635c3355e9908e",
+      "blob": "66fa264151852f68073fb5f130dfc28607cad589",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/check_navigation.py",
+      "sha256": "8fb3655351325073f1301cd7833d86d0edeafee3a5f01cf465e7b35c39b62257",
+      "blob": "041bfd55707eff5f6afc0a385ba25ec2f98b616c",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/tests/test_navigation.py",
+      "sha256": "bcad538626dc5219c2b5d6d53b3ed501b2f14cf245eb9866030e62f0c81d87dd",
+      "blob": "bf99044349871b21124404810f9a5b77d1d2c7d7",
+      "mode": "100644"
+    }
+  ],
+  "integrity": {
+    "original_files_retained": 21946,
+    "original_files_deleted": 0,
+    "active_lean_modules_byte_and_mode_unchanged": 16227,
+    "all_historical_artifacts_archives_and_results_unchanged": true,
+    "private_manuscripts_unchanged": true
+  },
+  "checks": {
+    "isolated_candidate_navigation": {
+      "status": "PASS",
+      "documents": 14,
+      "local_links_and_anchors": 2188,
+      "svg_assets": 5
+    },
+    "navigation_negative_controls": {
+      "status": "PASS",
+      "tests": 9,
+      "skips": 0
+    },
+    "repository_index": {
+      "status": "PASS",
+      "active_modules": 16227
+    },
+    "repository_index_regressions": {
+      "status": "PASS",
+      "tests": 3,
+      "skips": 0
+    },
+    "readme_and_claim_ledger_lean_names": {
+      "status": "PASS",
+      "paper_version": "20261003",
+      "declarations": 4466
+    },
+    "local_visual_preview": {
+      "status": "PASS",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "mobile_width": 390,
+      "page_overflow": false,
+      "broken_images": 0
+    },
+    "workflow_and_issue_form_yaml": {
+      "status": "PASS",
+      "workflow_permission": "contents: read",
+      "issue_forms": 2
+    },
+    "github_markdown_api": {
+      "status": "NOT_RUN",
+      "reason": "Automatic approval review rejected transmitting the private README to the render endpoint; local rendering used instead."
+    }
+  },
+  "existing_proof_acceptance_preserved": "artifacts/repository-root-migration-20261006/accepted-proof-preservation.json",
+  "research_references": [
+    "https://github.com/leanprover-community/mathlib4",
+    "https://github.com/leanprover-community/physlib",
+    "https://github.com/Qiskit/qiskit",
+    "https://github.com/google-deepmind/alphafold3",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
+  ]
+}

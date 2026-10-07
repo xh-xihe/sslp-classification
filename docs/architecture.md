@@ -1,5 +1,7 @@
 # Repository architecture
 
+[Home](../README.md) · [Documentation](README.md) · [Reproduce](reproduce.md) · [Status](status.md)
+
 The canonical branch is `main`. The Lean package and all verification tools
 live at the repository root; run their commands from that directory.
 The earlier independent dyadic-lift project is preserved in the
@@ -26,6 +28,22 @@ the SI conventions to that proof. Orbit 3 uses `MainTheory/Orbit3*.lean` for
 these analytic connections and `SixQubit/Generated/Orbit3*` for its finite data.
 
 ## Dependency flow
+
+The following is a reading map of proof roles; the exact import graph is in
+the Lean sources.
+
+```mermaid
+flowchart LR
+    F["SS: Pauli and KL foundations"] --> Q["QECC: general theory"]
+    F --> P["MainTheory: physical semantics"]
+    Q --> P
+    O["SixQubit and Orbit2: orbit proofs"] --> T["Paper-facing classification theorems"]
+    P --> T
+    G["Exact data and generators"] --> C["Generated Lean certificates"]
+    C --> O
+    T --> A["Kernel build and axiom audits"]
+    T --> R["Version-specific manuscript review"]
+```
 
 The shared `SS` infrastructure feeds the physical code semantics. `QECC`
 provides the Section III abstractions; `MainTheory` connects them to concrete

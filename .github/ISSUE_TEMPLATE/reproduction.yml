@@ -1,0 +1,31 @@
+name: Reproduction problem
+description: Report a failing build, data check, or verification command.
+title: "[Reproduction] "
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Repository commit
+      description: Output of git rev-parse HEAD.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python and Lean versions; whether this is a fresh checkout or a cached build.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and relevant output
+      description: Include the exact command and the first relevant failure. Review logs for private information before posting.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: Expected result
+      description: Link the reproduction step or describe the expected behavior.

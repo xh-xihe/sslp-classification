@@ -1,10 +1,29 @@
 # Proof entry points
 
+[Home](../README.md) · [Documentation](README.md) · [Reproduce](reproduce.md) · [Status](status.md)
+
 Start with these final statements, then follow their imports. The full source
 inventory is [proof modules by topic](proof-modules.md). Verification scope and
 the SI correspondence and held main issues are recorded in [current status](status.md).
 
-## Main text
+## Selected entry points
+
+| Topic | Readable starting module |
+| --- | --- |
+| Diagonal logical groups and SSLP normal form | [FirstTheorem](../QECC/FirstTheorem.lean) · [SecondTheorem](../QECC/SecondTheorem.lean) |
+| Physical code/frame semantics | [QECCFrameBridge](../MainTheory/QECCFrameBridge.lean) |
+| General converse and finite lift | [PaperGeneralSSLPConverse](../MainTheory/PaperGeneralSSLPConverse.lean) · [PaperColoredFiniteLift](../MainTheory/PaperColoredFiniteLift.lean) |
+| Complete orbit-2/3 enumerator images | [Orbit2FullImage](../MainTheory/Orbit2FullImage.lean) · [Orbit3FullImage](../MainTheory/Orbit3FullImage.lean) |
+| Six-qubit exclusions and constructions | [SixQubit entry module](../SixQubit.lean) |
+| Exact split-family encoders and logical gates | [SplitFamilyTableCertification](../MainTheory/SplitFamilyTableCertification.lean) |
+| Seven-qubit example and minimum physical order | [SevenQubitMinimumOrder](../MainTheory/SevenQubitMinimumOrder.lean) |
+
+Continue with [main-text theory](#main-text-theory),
+[supplementary material](#supplementary-material), or
+[audits and correspondence](#audits-and-manuscript-correspondence).
+The tables below retain the full detailed map.
+
+## Main-text theory
 
 | Subject | Entry point |
 | --- | --- |

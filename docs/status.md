@@ -1,5 +1,20 @@
 # Current verification status
 
+[Home](../README.md) · [Documentation](README.md) · [Reproduce](reproduce.md) · [Status](status.md)
+
+## Snapshot summary
+
+| Layer | Recorded status |
+| --- | --- |
+| Whole active proof package | 16,227 Lean modules; 9,375 transitive axiom roots; standard Lean axioms only |
+| Reviewed manuscript | `20261003`, including SI edits through 2026-10-05 |
+| SI mathematical correspondence | Complete for that source snapshot: 1,622 covered assertions and three scope remarks |
+| Frozen main | Five author-held issues; combined manuscript certification incomplete |
+| Later manuscript versions | Separate correspondence review required, including `20261006` |
+
+For a short route through the evidence, see the [reviewer guide](review-guide.md).
+The detailed dated records and qualifications follow below.
+
 Canonical branch: **`main`**. Package: repository root.
 Private manuscript version: `20261003`, including the SI edits through
 2026-10-05. The current SI mathematical correspondence review is complete.
