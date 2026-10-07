@@ -16,7 +16,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CORE = ('README.md', 'REPRODUCE.md', 'HISTORY.md', 'CONTRIBUTING.md',
-        'tools/README.md', '.github/pull_request_template.md')
+        'tools/README.md', '.github/pull_request_template.md', 'docs/assets/README.md')
 
 
 def prose(text):
@@ -48,6 +48,8 @@ class Attributes(HTMLParser):
                 continue
             if name in ('href', 'src'):
                 self.links.append(value)
+            elif name == 'srcset':
+                self.links.extend(item.strip().split()[0] for item in value.split(',') if item.strip())
             elif name == 'id' or (tag == 'a' and name == 'name'):
                 self.ids.add(value)
 
@@ -146,6 +148,81 @@ def check_svgs(root):
     return count, errors
 
 
+def gif_info(data):
+    """Inspect GIF blocks without Pillow; reject missing/truncated payloads."""
+    if len(data) < 14 or data[:6] not in (b'GIF87a', b'GIF89a'):
+        raise ValueError('invalid GIF header')
+    width = int.from_bytes(data[6:8], 'little')
+    height = int.from_bytes(data[8:10], 'little')
+    if not width or not height:
+        raise ValueError('empty canvas')
+    position = 13
+    if data[10] & 128:
+        position += 3 * (2 << (data[10] & 7))
+    frames, duration, loop = 0, 0, None
+
+    def take(count):
+        nonlocal position
+        if position + count > len(data):
+            raise ValueError('truncated GIF block')
+        chunk = data[position:position + count]
+        position += count
+        return chunk
+
+    def blocks():
+        result = b''
+        while True:
+            count = take(1)[0]
+            if not count:
+                return result
+            result += take(count)
+
+    while True:
+        token = take(1)[0]
+        if token == 0x3b:
+            if position != len(data):
+                raise ValueError('unexpected data after GIF trailer')
+            break
+        if token == 0x21:
+            label = take(1)[0]
+            content = blocks()
+            if label == 0xf9:
+                if len(content) != 4:
+                    raise ValueError('invalid graphics control block')
+                duration += int.from_bytes(content[1:3], 'little') * 10
+            elif label == 0xff and content.startswith(b'NETSCAPE2.0\x01'):
+                loop = int.from_bytes(content[12:14], 'little')
+        elif token == 0x2c:
+            descriptor = take(9)
+            left, top, frame_width, frame_height = [int.from_bytes(descriptor[i:i + 2], 'little') for i in (0, 2, 4, 6)]
+            if not frame_width or not frame_height or left + frame_width > width or top + frame_height > height:
+                raise ValueError('frame outside GIF canvas')
+            if descriptor[8] & 128:
+                take(3 * (2 << (descriptor[8] & 7)))
+            code_size = take(1)[0]
+            if not 2 <= code_size <= 8 or not blocks():
+                raise ValueError('invalid image data block')
+            frames += 1
+        else:
+            raise ValueError('unknown GIF block')
+    if frames < 2 or duration <= 0:
+        raise ValueError('expected timed animation with multiple frames')
+    return {'width': width, 'height': height, 'frames': frames, 'duration_ms': duration, 'loop': loop}
+
+
+def check_gifs(root):
+    errors, count = [], 0
+    for path in sorted((Path(root) / 'docs/assets').glob('*.gif')):
+        count += 1
+        try:
+            info = gif_info(path.read_bytes())
+            if info['loop'] != 0:
+                errors.append(f'{path.name}: expected continuous loop')
+        except ValueError as exc:
+            errors.append(f'{path.name}: {exc}')
+    return count, errors
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
@@ -153,12 +230,13 @@ def main(argv=None):
     documents = list(CORE) + [p.relative_to(args.root).as_posix() for p in sorted((args.root / 'docs').glob('*.md'))]
     count, errors = check_links(args.root, documents)
     svg_count, svg_errors = check_svgs(args.root)
-    errors += svg_errors
+    gif_count, gif_errors = check_gifs(args.root)
+    errors += svg_errors + gif_errors
     if errors:
         for error in errors:
             print('FAIL: ' + error)
         return 1
-    print(f'PASS: {len(documents)} navigation documents, {count} local links/anchors, {svg_count} self-contained SVG assets')
+    print(f'PASS: {len(documents)} navigation documents, {count} local links/anchors, {svg_count} SVG assets, {gif_count} looping GIF assets')
     print('Scope: documentation only; external URLs, Lean proofs and manuscript correspondence are not checked.')
     return 0
 

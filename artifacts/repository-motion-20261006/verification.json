@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "scope": "Native artwork, README reading map, and presentation checks. No new mathematical acceptance or manuscript correspondence is claimed.",
+  "parent_commit": "ac21c784fdef26260d0126b2233dcce13bda3d98",
+  "presentation_tree_before_this_record": "db8faf502fb3957d1cc0ae39ba0ca196f257d0ab",
+  "changed_files": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "blob": "c3c12cecdb500499a1601753b3f39cac166b0a33",
+      "sha256": "7cbe2f73655482343a31a32fa1c2f07c1522a8edffd79c6a2a28b59a6164febe"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "blob": "071437cef692ab332adc618bf082c1e1de76c801",
+      "sha256": "069885eea352a670f8643fbd9fcc9dae97c0a6db5fb0ea4d879bd37f6b25ccfa"
+    },
+    {
+      "path": "tools/check_navigation.py",
+      "mode": "100644",
+      "blob": "3ab4ca30439011fbc68d3b9bde603b9f2dd619df",
+      "sha256": "bc17b11cfc5939d72db39efabe50204c3f4cb67528fe1c603ed3a381615ab353"
+    },
+    {
+      "path": "tools/tests/test_navigation.py",
+      "mode": "100644",
+      "blob": "0652315bc2a230ec2a253fabe0415da9001b0d3a",
+      "sha256": "4989f0a79aa46235187164cd95480a7a11c0f07c23e664279dc15c2fbe18d1d7"
+    },
+    {
+      "path": "tools/README.md",
+      "mode": "100644",
+      "blob": "f8502f001bac568a9290c3f323c812abbacc1211",
+      "sha256": "50b0c4b5a14efa36aaa434584f42296104b8427b7b52bd874fbdbf397b509db6"
+    },
+    {
+      "path": "docs/proof-map.md",
+      "mode": "100644",
+      "blob": "dcaac3b13330cd8607e759018e2f70c83c5506ee",
+      "sha256": "bbf74cd042c11b5b2b5b0882ad266bae1d787c395f9d85127d0d663d1e1279cf"
+    },
+    {
+      "path": "docs/assets/README.md",
+      "mode": "100644",
+      "blob": "5b8ecce3eb117147d73a41f5b9431ca572bb4986",
+      "sha256": "9c292b622305dab0de67e42d626495e45d7e0f4498bd7b81855fd4b966fd2ee5"
+    },
+    {
+      "path": "docs/assets/proof-map.svg",
+      "mode": "100644",
+      "blob": "d773c5614c9f5fb81c7b9aeb6f7dc81115d71706",
+      "sha256": "53696537f585ba9b94349f44fa7a042c7f58cea6e375850296707d76908cc396"
+    },
+    {
+      "path": "docs/assets/banner-motion.svg",
+      "mode": "100644",
+      "blob": "0435ed48017c372ab977d7c0173097fcfdaa4001",
+      "sha256": "539b2ed5720bbe4d0c0029c8fc24674f2923a3e426eda9e7e84c391a93cb3906"
+    },
+    {
+      "path": "docs/assets/banner.gif",
+      "mode": "100644",
+      "blob": "373302bc759ca979b23a68bc60490ec3543e1db2",
+      "sha256": "31b6ca4a6a9904880420f63248f04a927f0b57a21cefdeb762801a6f79d3eb7a"
+    },
+    {
+      "path": "tools/render_banner.py",
+      "mode": "100644",
+      "blob": "ca704ea1da200e1d830f00c3064c2996bade3e29",
+      "sha256": "59b649632572f6ea92a81c4f06d5ed958c082251bce3909f057ac55c4caff046"
+    }
+  ],
+  "integrity": {
+    "original_files_retained": 21961,
+    "files_deleted": 0,
+    "active_lean_modules_byte_and_mode_unchanged": 16227,
+    "historical_artifacts_results_archives_unchanged": true,
+    "private_manuscripts_unchanged": true
+  },
+  "checks": {
+    "isolated_navigation": {
+      "status": "PASS",
+      "documents": 16,
+      "links_and_anchors": 2229,
+      "svg_assets": 7,
+      "gif_assets": 1
+    },
+    "navigation_regressions": {
+      "status": "PASS",
+      "tests": 12,
+      "skips": 0
+    },
+    "source_index": {
+      "status": "PASS",
+      "active_lean_modules": 16227
+    },
+    "visual": {
+      "reduced_motion_selects_static_svg": true,
+      "normal_motion_selects_looping_gif": true,
+      "mobile_document_width": 390,
+      "broken_images": 0,
+      "proof_map_text_within_viewport": true,
+      "distinct_quarter_loop_frames": 4,
+      "gif_bytes": 1060548,
+      "gif_structure": {
+        "width": 1200,
+        "height": 340,
+        "frames": 120,
+        "duration_ms": 18000,
+        "loop": 0
+      }
+    }
+  },
+  "asset_generation": {
+    "source": "docs/assets/banner-motion.svg",
+    "renderer": "tools/render_banner.py",
+    "palette": "Common palette with reserved original vector accent colors; stable title pixels"
+  },
+  "platform_reference": "https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files"
+}

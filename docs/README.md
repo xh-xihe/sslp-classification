@@ -6,6 +6,8 @@ Use the curated entry points to read the mathematics, then the complete catalog
 to find supporting modules. Generated certificate shards are grouped by family
 in the catalog.
 
+Start with [the visual proof map](proof-map.md), or choose a path below.
+
 ## Choose a reading path
 
 | Path | Read first | Then follow |
@@ -20,6 +22,7 @@ in the catalog.
 
 | Guide | Purpose |
 | --- | --- |
+| [Visual proof map](proof-map.md) | A graphical reading route with direct theorem and evidence links |
 | [Proof index](proof-index.md) | Selected theorem entry points and the detailed main/SI map |
 | [Modules by topic](proof-modules.md) | Generated inventory of all active Lean modules |
 | [Reproduction](reproduce.md) | Setup, kernel checks, exact data checks, and private-source review |

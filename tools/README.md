@@ -11,7 +11,8 @@ provenance for older construction routes.
 | `build_lean.py` | Content-validated serial build of all five active libraries |
 | `verify.py --paper-version 20261003 --only sources generated audit-names axioms` | Public proof checks without private manuscripts |
 | `repository_index.py --check` | Source-catalog and topic-navigation consistency |
-| `check_navigation.py` | Curated documentation links, local anchors, and SVG assets; also run by documentation CI |
+| `check_navigation.py` | Curated links, anchors, SVGs and GIF block structure; also run by documentation CI |
+| `render_banner.py` | Optional visual-asset renderer; requires Pillow, Playwright and a local browser |
 | `rebuild_orbit_certificates.py` | Exact orbit-2/3 payload reconstruction |
 | `generators/emit_si_sector_counts.py` | Witnesses for both SI count tables, checked against actual records, distinct fibre pairs and orbit keys by ordinary Lean reduction |
 | `verification/generate_orbit26_printed_moments.py --check` | Reproduce the literal orbit-26 rational matrix, complete affine solution and rank-fourteen certificate; Lean checks the output |

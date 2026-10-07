@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="docs/assets/banner.svg" alt="SSLP Classification — quantum codes, transversal gates, and formal proofs" width="100%">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/banner.svg">
+    <img src="docs/assets/banner.gif" alt="SSLP Classification — quantum codes, transversal gates, and formal proofs" width="100%">
+  </picture>
 </p>
 
 <h1 align="center">SSLP Classification</h1>
@@ -37,6 +40,18 @@ the complete project lives at the repository root.
 | Review a paper claim | [Reviewer guide](docs/review-guide.md) → [version-bound correspondence](docs/manuscript-correspondence.md) |
 | Check the results yourself | [Setup and reproduction](docs/reproduce.md#setup), with focused and whole-project commands |
 | Work on the formalization | [Architecture](docs/architecture.md), [module catalog](docs/proof-modules.md), and [contribution guide](CONTRIBUTING.md) |
+
+## The proof landscape
+
+<p align="center">
+  <a href="docs/proof-map.md"><img src="docs/assets/proof-map.svg" alt="Reading map: foundations, general theory, orbit certificates, physical classification, and two evidence routes" width="100%"></a>
+</p>
+
+[Foundations](docs/proof-map.md#foundations) ·
+[General theory](docs/proof-map.md#general-theory) ·
+[Orbits and certificates](docs/proof-map.md#orbits-and-finite-certificates) ·
+[Final statements](docs/proof-map.md#final-physical-statements) ·
+[Evidence](docs/proof-map.md#two-evidence-routes)
 
 ## Proof highlights
 

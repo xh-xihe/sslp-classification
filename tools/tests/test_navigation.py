@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from check_navigation import anchors, check_links, check_svgs, links
+from check_navigation import anchors, check_links, check_svgs, gif_info, links
 
 
 class NavigationTests(unittest.TestCase):
@@ -69,6 +69,31 @@ class NavigationTests(unittest.TestCase):
         self.assertTrue(any('active embedded' in error for error in errors))
         self.assertTrue(any('external resource' in error for error in errors))
         self.assertTrue(any('invalid SVG' in error for error in errors))
+
+    def test_reduced_motion_srcset_target_is_checked(self):
+        self.write('README.md', '<picture><source srcset="missing.svg"><img src="present.gif"></picture>')
+        self.write('present.gif', 'placeholder')
+        count, errors = check_links(self.root, ['README.md'])
+        self.assertEqual(count, 2)
+        self.assertIn('missing target', errors[0])
+
+    def test_gif_parser_checks_animation_and_truncated_blocks(self):
+        header = b'GIF89a\x01\x00\x01\x00\x80\x00\x00\x00\x00\x00\xff\xff\xff'
+        application = b'\x21\xff\x0bNETSCAPE2.0\x03\x01\x00\x00\x00'
+        frame = b'\x21\xf9\x04\x00\x0f\x00\x00\x00\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02\x44\x01\x00'
+        animation = header + application + frame + frame + b';'
+        self.assertEqual(gif_info(animation), {'width': 1, 'height': 1, 'frames': 2, 'duration_ms': 300, 'loop': 0})
+        with self.assertRaisesRegex(ValueError, 'truncated'):
+            gif_info(animation[:-3])
+        with self.assertRaisesRegex(ValueError, 'multiple frames'):
+            gif_info(header + frame + b';')
+
+    def test_corrupt_gif_header_and_outside_frame_are_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'header'):
+            gif_info(b'not an image')
+        outside = b'GIF89a\x01\x00\x01\x00\x00\x00\x00\x2c\x00\x00\x00\x00\x02\x00\x01\x00\x00'
+        with self.assertRaisesRegex(ValueError, 'outside'):
+            gif_info(outside)
 
 
 if __name__ == '__main__':
