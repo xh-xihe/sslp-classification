@@ -19,6 +19,7 @@
 </p>
 
 <p align="center">
+  <a href="paper/supplementary.pdf"><strong>Supplementary Materials (PDF)</strong></a> ·
   <a href="docs/README.md"><strong>Explore the proofs</strong></a> ·
   <a href="docs/explorer.md"><strong>Interactive explorer</strong></a> ·
   <a href="docs/reproduce.md"><strong>Reproduce</strong></a> ·
@@ -37,6 +38,7 @@ the complete project lives at the repository root.
 
 | Your goal | Best starting point |
 | --- | --- |
+| Read the Supplementary Materials | [SI PDF](paper/supplementary.pdf): 189 pages, manuscript snapshot `20261020` |
 | Search by orbit or theorem | [Interactive proof explorer](docs/explorer.md): 72 curated guides and the complete source catalog |
 | Understand the mathematics | [Selected proof entry points](docs/proof-index.md#selected-entry-points), then the complete [proof index](docs/proof-index.md) |
 | Review a paper claim | [Reviewer guide](docs/review-guide.md) → [version-bound correspondence](docs/manuscript-correspondence.md) |
@@ -132,6 +134,7 @@ outputs, additional exact-data checks, and private-source review commands.
 
 | Layer | Locations | What you will find |
 | --- | --- | --- |
+| Manuscript | [Supplementary Materials](paper/README.md) | SI PDF accompanying the `20261020` main manuscript |
 | Foundations | [SS](SS) · [QECC](QECC/README.md) | Pauli and KL infrastructure; general diagonal-gate theory |
 | Classification | [MainTheory](MainTheory) · [SixQubit](SixQubit) · [Orbit2](Orbit2) | Paper-facing theorems, orbit proofs, and generated certificates |
 | Navigation | [Documentation](docs/README.md) · [Proof modules](docs/proof-modules.md) | Curated reading paths and the complete source inventory |
@@ -139,7 +142,8 @@ outputs, additional exact-data checks, and private-source review commands.
 | Evidence | [Artifacts](artifacts) · [Review guide](docs/review-guide.md#follow-the-evidence) | Dated build, axiom, source-binding, and correspondence records |
 | History | [Archive](archive/README.md) · [Historical tags](HISTORY.md) | Earlier stages and the preserved dyadic Bell ladder |
 
-Private manuscript sources are excluded from this repository. The public
+The [Supplementary Materials PDF](paper/supplementary.pdf) is available in `paper/`.
+Manuscript TeX sources are excluded from this repository. The public
 review records identify their versions, hashes, and claim locators.
 
 Questions or discrepancies can be reported through
